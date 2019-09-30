@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Void Theory Philosopher Personal Theory</name>
+        <author url="https://drive.google.com/file/d/0B4wSsNjnH-qROW1TTjRyQnFuZWM/view">u/Cometdance</author>
+        <update version="0.0.1">
+            <file name="philosopher-void-theory.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/philosopher-void-theory.xml" />
+        </update>
+    </info>
+    
+    <element name="Void Theory" type="Archetype" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_PHILOSOPHER_VOID_THEORY">
+        <supports>Personal Theory</supports>
+        <description>
+            <p>The Thesis of Void is the conclusion that the you are the only existence in the world that can be proven. Those who learn the Thesis of Void reduce their reliance on the world and aim to be an existence that cannot be interfered with. If they are alone in the world, then they decide destiny. With calmness derived from the philosopher, they become a hand that can cradle each and every person in their palm.</p>
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_VOID_BOOK" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_FIRST_AMONG_EQUALS" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_EMPTY_HAND" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_EMPTY_MIND" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_RETURN_TO_NOTHING" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_BOUNDARY_OF_EMPTINESS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_VOID_BOOK" level="1" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_FIRST_AMONG_EQUALS" level="7" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_EMPTY_HAND" level="7" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_EMPTY_MIND" level="11" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_RETURN_TO_NOTHING" level="15" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_BOUNDARY_OF_EMPTINESS" level="18" />
+        </rules>
+    </element>
+    
+        <element name="Void Book" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_VOID_BOOK">
+            <description>
+                <p>When you choose this archetype at 3rd level, you’ve written nothing in your spellbook. You can cast spells without any material components, except for those with a cost. While you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + the highest of your Intelligence, Wisdom, or Charisma modifiers. Your unarmed strike uses a d4 for damage. When you make a melee attack with an unarmed strike, you can choose to make the attack roll with the lowest of your Strength or Dexterity modifiers instead. If you do and you hit, you can push or pull the target up to 10 feet in a straight line.</p>
+            </description>
+            <sheet>
+                <description>You can cast spells without any material components, except for those with a cost. Your unarmed strike does 1d{{martial arts:dice}} damage. When you make a melee attack with an unarmed strike, you can choose to make the attack roll with the lowest of your Strength or Dexterity modifiers instead. If you do and you hit, you can push or pull the target up to 10 feet in a straight line.</description>
+            </sheet>
+            <rules>
+                <stat name="unarmored-mod" value="intelligence:modifier" bonus="mod" />
+                <stat name="unarmored-mod" value="wisdom:modifier" bonus="mod" />
+                <stat name="unarmored-mod" value="charisma:modifier" bonus="mod" />
+                <stat name="ac:unarmored defense philosopher:base" value="10" />
+                <stat name="ac:unarmored defense philosopher:dexterity" value="dexterity:modifier" />
+                <stat name="ac:unarmored defense philosopher:wisdom" value="unarmored-mod" />
+                <stat name="ac:unarmored defense philosopher" value="ac:unarmored defense philosopher:base" />
+                <stat name="ac:unarmored defense philosopher" value="ac:unarmored defense philosopher:dexterity" />
+                <stat name="ac:unarmored defense philosopher" value="ac:unarmored defense philosopher:wisdom" />
+        		<stat name="ac:calculation" value="ac:unarmored defense philosopher" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Unarmored Defense (Philosopher)" />
+                <stat name="martial arts:dice" value="4" bonus="martial arts" />
+
+            </rules>
+        </element>
+        <element name="First Among Equals" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_FIRST_AMONG_EQUALS">
+            <description>
+                <p>Starting at 7th level, there are none that can surpass you. When you make a contested ability check, you can choose to treat your result as the result of the creature contesting you + 1. You can use this feature twice. You regain expended uses when you finish a short or long rest.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>When you make a contested ability check, you can choose to treat your result as the result of the creature contesting you + 1.</description>
+            </sheet>
+        </element>
+        <element name="Empty Hand" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_EMPTY_HAND">
+            <description>
+                <p>At 7th level, there are none that can flee from you. If both of your hands are free, your unarmed strikes have a reach of 15 feet, and creatures provoke an opportunity attack from you when they enter your reach. Your unarmed strike uses 3d4 for damage against a creature you are grappling.</p>
+            </description>
+            <sheet>
+                <description>If both of your hands are free, your unarmed strikes have a reach of 15 feet, and creatures provoke an opportunity attack from you when they enter your reach. Your unarmed strike uses 3d4 for damage against a creature you are grappling.</description>
+            </sheet>
+        </element>
+        <element name="Empty Mind" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_EMPTY_MIND">
+            <description>
+                <p>At 11th level, there are none that can comprehend you. Your thoughts can’t be read by telepathy or other means unless you allow it. You have advantage on saving throws against being charmed or frightened, and you impose disadvantage on Wisdom (Insight) checks against you.</p>
+            </description>
+            <sheet>
+                <description>Your thoughts can’t be read by telepathy or other means unless you allow it. You have advantage on saving throws against being charmed or frightened, and you impose disadvantage on Wisdom (Insight) checks against you.</description>
+            </sheet>
+        </element>
+        <element name="Return to Nothing" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_RETURN_TO_NOTHING">
+            <description>
+                <p>At 15th level, there are none that can deny your desire, whatever it’d be. You can attune or end attunement to an item as an action. When you cast a spell, you can destroy a magical item that you’re attuned to with a rarity less than legendary to cast that spell at 8th level. You must finish a short or long rest before you can destroy an item again.</p>
+            </description>
+            <sheet>
+                <description>You can attune or end attunement to an item as an action. When you cast a spell, you can destroy a magical item that you’re attuned to with a rarity less than legendary to cast that spell at 8th level. You must finish a short or long rest before you can destroy an item again.</description>
+            </sheet>
+        </element>
+        <element name="Boundary of Emptiness" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_VOID_THEORY_BOUNDARY_OF_EMPTINESS">
+            <description>
+                <p>At 18th level, there are none that exist except you. As an action, choose any number of creatures within reach of your unarmed strike. You make an unarmed strike against each, then cast banishment targeting each creature you hit and give them disadvantage on the saving throw. You must finish a long rest before you can use this feature again.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>Choose any number of creatures within reach of your unarmed strike. You make an unarmed strike against each, then cast banishment targeting each creature you hit and give them disadvantage on the saving throw.</description>
+            </sheet>
+        </element>
+</elements>

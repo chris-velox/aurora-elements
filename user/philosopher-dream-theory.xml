@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Dream Theory Philosopher Personal Theory</name>
+        <author url="https://drive.google.com/file/d/1O5SU9xAxNNU_oEz-JjNHMNmgTBisMpll/view">u/Swordmeow</author>
+        <update version="0.0.1">
+            <file name="philosopher-dream-theory.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/philosopher-dream-theory.xml" />
+        </update>
+    </info>
+    
+    <element name="Dream Theory" type="Archetype" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_PHILOSOPHER_DREAM_THEORY">
+        <supports>Personal Theory</supports>
+        <description>
+            <p>The Thesis of Dreams is the conclusion that reality is a dream, a simulation, an illusion. Those who learn the Thesis of Dreams only know that they are real, and can’t know if anything else is. They strengthen their bodies and souls with the belief that they can win whatever empty victory awaits them, either through death or full disbelief, if anything does await them. With self-power derived from the atavist, they can become an unending outlet of power.</p>
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_DREAM_BOOK" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_UNREAL_OFFENSE" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_SEER_OF_TRUTH" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_SEER_OF_LIES" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_DOUBLE_SELF" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_FALSE_STORY" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_DREAM_BOOK" level="1" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_UNREAL_OFFENSE" level="7" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_SEER_OF_TRUTH" level="7" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_SEER_OF_LIES" level="11" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_DOUBLE_SELF" level="15" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_FALSE_STORY" level="18" />
+        </rules>
+    </element>
+        <element name="Dream Book" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_DREAM_BOOK">
+            <description>
+                <p>When you choose this thesis at 3rd level, you’ve written inconsistencies with the universe in your spellbook. You can use your spellbook to substitute for any material component of a spell granted by Theorycraft, regardless of if it has a cost or not. Additionally, you can lower your hitpoint maximum by half when you use your Comprehensive Casting feature, and can cast up to a number of spells equal to the lower of your Strength or Dexterity modifier granted by Theorycraft from any class you choose. Your hitpoint maximum is restored to normal after you finish a short or long rest, which is also when you can use this feature again.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>You can use your spellbook to substitute for any material component of a spell granted by Theorycraft, regardless of if it has a cost or not. Additionally, you can lower your hitpoint maximum by half when you use your Comprehensive Casting feature, and can cast up to a {{dream-book:uses}} spells granted by Theorycraft from any class you choose.</description>
+            </sheet>
+            <rules>
+                <stat name="dream-book:uses" value="strength:modifier" bonus="uses" />
+                <stat name="dream-book:uses" value="dexterity:modifier" bonus="uses" />
+            </rules>
+        </element>
+        <element name="Unreal Offense" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_UNREAL_OFFENSE">
+            <description>
+                <p>At 7th level, you can use harm against you. When you take damage from a creature, you can instantly slay a single creature you damage on your next turn if they have a number of hitpoints equal to or lesss than the sum of your Strength and Dexterity modifiers.</p>
+            </description>
+            <sheet>
+                <description>When you take damage from a creature, you can instantly slay a single creature you damage on your next turn if they have a number of hitpoints equal to or lesss than {{unreal-offense:damage}}.</description>
+            </sheet>
+            <rules>
+                <stat name="unreal-offense:damage" value="strength:modifier" />
+                <stat name="unreal-offense:damage" value="dexterity:modifier" />
+            </rules>
+        </element>
+        <element name="Seer of Truth" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_SEER_OF_TRUTH">
+            <description>
+                <p>Also at 7th level, you can see behind the veil. If you hit a creature with a melee attack, it hits you with one, either of you grapple or shove the other, or you otherwise physically touch a creature, you instantly know any immunities, resistances, and vulnerabilities it has.</p>
+            </description>
+            <sheet>
+                <description>If you hit a creature with a melee attack, it hits you with one, either of you grapple or shove the other, or you otherwise physically touch a creature, you instantly know any immunities, resistances, and vulnerabilities it has.</description>
+            </sheet>
+        </element>
+        <element name="Seer of Lies" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_SEER_OF_LIES">
+            <description>
+                <p>Starting at 11th level, nothing hides from your view. You can’t be blinded or deafened, and you can both see and hear any creatures and objects within 60 feet of you regardless of cover, darkness, invisibility, or obscurement.</p>
+            </description>
+            <sheet>
+                <description>You can’t be blinded or deafened, and you can both see and hear any creatures and objects within 60 feet of you regardless of cover, darkness, invisibility, or obscurement.</description>
+            </sheet>
+        </element>
+        <element name="Double Self" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_DOUBLE_SELF">
+            <description>
+                <p>At 15th level, you know the tear of reality, and can abuse it. As an action, you can lose half your hitpoints and instantly create a duplicate of yourself within 5 feet of you. It has actions and acts on your turn, with as many hitpoints as you have after losing hitpoints for this feature. You fully control it, as if it were you. It has none of your features except Theorycraft, Comprehensive Casting, and Proof of Concept. It begins with the maximum uses for those features, and once it exhausts them, it dies, disappearing. It otherwise lasts until either of you finish a short or long rest. Once you use this feature, you can’t do so again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest" action="Action">
+                <description>You can lose half your hitpoints and instantly create a duplicate of yourself within 5 feet of you. It has actions and acts on your turn, with as many hitpoints as you have after losing hitpoints for this feature. You fully control it, as if it were you. It has none of your features except Theorycraft, Comprehensive Casting, and Proof of Concept. It begins with the maximum uses for those features, and once it exhausts them, it dies, disappearing. It otherwise lasts until either of you finish a short or long rest.</description>
+            </sheet>
+        </element>
+        <element name="False Story" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DREAM_THEORY_FALSE_STORY">
+            <description>
+                <p>At 18th level, you know that you are only a piece of the dream, which is one of both balance and chaos; one that can be left. On your turn, you can choose to die. Doing so instantly revives one dead creature of your choice whose name you speak aloud, who can be anyone less than a god. They revive with 1 hitpoint. The next time the latest chosen creature dies, you instantly revive with 1 hitpoint.</p>
+            </description>
+            <sheet>
+                <description>On your turn, you can choose to die. Doing so instantly revives one dead creature of your choice whose name you speak aloud, who can be anyone less than a god. They revive with 1 hitpoint. The next time the latest chosen creature dies, you instantly revive with 1 hitpoint.</description>
+            </sheet>
+        </element>
+</elements>
