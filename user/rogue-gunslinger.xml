@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Gunslinger - Roguish Archetype</name>
+        <author url="https://homebrewery.naturalcrit.com/share/By9j_dfaV">u/the_laughingdoc</author>
+        <update version="0.0.1">
+            <file name="rogue-gunslinger.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/rogue-gunslinger.xml" />
+        </update>
+    </info>
+    
+    <element name="The Gunslinger" type="Archetype" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_ROGUE_GUNSLINGER">
+        <supports>Roguish Archetype</supports>
+        <requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
+        <description>
+            <p>For a renegade few, battle sounds different than it does for the typical rogue. The clash of steel and the sizzle of spell energy are drowned out by the thunderous rhythm of gunfire, the pounding beat of the gunslinger.</p>
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_FIREARM_FINESSE" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_SHOOTING" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TAKE_COVER" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_LUCKY_BULLET" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_FAN_THE_HAMMER" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_FIREARM_FINESSE" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_SHOOTING" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TAKE_COVER" level="9" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_LUCKY_BULLET" level="13" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_FAN_THE_HAMMER" level="17" />
+        </rules>
+    </element>
+    
+    <element name="Firearm Finesse" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_FIREARM_FINESSE">
+        <description>
+            <p>When you choose this archetype at 3rd level, you gain proficiency with firearms and Tinker's tools. Additionally, you can use the bonus action granted by your Cunning Action to reload or repair a gun.</p>
+        </description>
+        <sheet action="Bonuse Action">
+            <description>You can use the bonus action granted by your Cunning Action to reload or repair a gun.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+            <grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FIREARMS" />
+        </rules>
+    </element>
+    
+    <element name="Trick Shooting" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_SHOOTING">
+        <description>
+            <p>Starting at 3rd level, you use charismatic flair to accomplish near impossible feats with firearms. You learn two Trick Shots of your choice as listed below. Many Trick Shots enhance an attack in some way. You can use only one Trick Shot per attack. You learn one additional Trick Shot at 9th, 13th and 17th level. Each time you gain a level in this class you can replace one Trick Shot you know with a different one. The amount of Trick Shots you can make is equal to your Charisma modifier and you regain expended uses after finishing a short or long rest.</p>
+        </description>
+        <sheet usage="{{trick shot:uses}}/Short Rest">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Archetype Feature" name="Trick Shooting (3rd level)" supports="Rogue Gunslinger Trick Shot" number="2" level="3" allowreplace="true"/>
+            <select type="Archetype Feature" name="Trick Shooting (9th level)" supports="Rogue Gunslinger Trick Shot" number="1" level="9" allowreplace="true" />
+            <select type="Archetype Feature" name="Trick Shooting (13th level)" supports="Rogue Gunslinger Trick Shot" number="1" level="13" allowreplace="true" />
+            <select type="Archetype Feature" name="Trick Shooting (17th level)" supports="Rogue Gunslinger Trick Shot" number="1" level="17" allowreplace="true" />
+
+            <stat name="trick shot:uses" value="1" />
+            <stat name="trick shot:uses" value="charisma:modifier" />
+
+        </rules>
+    </element>
+    
+    <element name="Take Cover" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TAKE_COVER">
+        <description>
+            <p>When you reach 9th level, you've been in enough fights and shootouts to know when one is about to go down. You gain a bonus to your initiative equal half your level (rounded down). Additionally, you can move up to half your speed before initiative is determined.</p>
+        </description>
+        <sheet>
+            <description>You can move up to half your speed before initiative is determined.</description>
+        </sheet>
+        <rules>
+            <stat name="initiative" value="level:rogue:half" bonus="level:rogue:half" />
+        </rules>
+    </element>
+    
+    <element name="Lucky Bullet" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_LUCKY_BULLET">
+        <description>
+            <p>Starting at 13th level, just when you think you're out of luck, you're able to find that one bullet you've been saving when you need it the most. If you roll initiative and have no ammunition for your firearms or no more uses of your Trick Shooting left, you gain one bullet and one use of Trick Shooting.</p>
+        </description>
+        <sheet>
+            <description>If you roll initiative and have no ammunition for your firearms or no more uses of your Trick Shooting left, you gain one bullet and one use of Trick Shooting.</description>
+        </sheet>
+    </element>
+    
+    <element name="Fan the Hammer" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_FAN_THE_HAMMER">
+        <description>
+            <p>At 17th level, you've learned to focus all your fire into one devastating attack. You ignore the reload property for all firearms. Also on your turn, if you take the Attack action with a firearm, you can choose to Fan the Hammer. The amount of attacks you can make when you Fan the Hammer is equal to your Dexterity modifier (minimum two attacks). Make one attack roll, all subsequent attacks take a -2 penalty, and any critical or Sneak Attack damage dealt only applies to the first hit, as well as any Trick Shots you make. For example, with a Dexterity score of 16 you can make three attacks. If you have an attack roll of 22 (+ 3 Dexterity modifier + 6 proficiency bonus and a roll of 13 on the d20), the attacks have a 22, 20, and 18 to hit respectively. You can choose to Fan the Hammer after you roll the die, but before the outcome is determined. You regain the use of this feature when you finish a short or long rest.</p>
+        </description>
+        <sheet usage="1/Short Rest">
+            <description>You ignore the reload property for all firearms. If you take the Attack action with a firearm, you can choose to Fan the Hammer. You can make {{fan the hammer:attacks}}. All attacks use the first attack roll and each subsequent attack is -2 from the previous attack roll. Any critical or Sneak Attack damage applies only to the first attack.</description>
+        </sheet>
+        <rules>
+            <stat name="fan the hammer:attacks" value="2" />
+            <stat name="fan the hammer:attacks" value="dexterity:modifier" />
+        </rules>
+    </element>
+    
+    <!-- Rogue Gunslinger Trick Shots -->
+    <element name="Brutal Shot" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_BRUTAL_SHOT">
+        <supports>Rogue Gunslinger Trick Shot</supports>
+        <description>
+            <p>When you hit a creature with an attack using a firearm, you can expend one use of Trick Shot to add your Charisma modifier to the damage roll.</p>
+        </description>
+        <sheet>
+            <description>You can add {{charisma:modifier}} to a firearm damage roll.</description>
+        </sheet>
+    </element>
+    
+    <element name="Crippling Shot" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_CRIPPLING_SHOT">
+        <supports>Rogue Gunslinger Trick Shot</supports>
+        <description>
+            <p>When you hit a creature with an attack using a firearm, you can expend one use of Trick Shot to reduce the creature’s speed by 10 feet until the end of your next turn.</p>
+        </description>
+        <sheet>
+            <description>A successful firearm attack reduces the target’s speed by 10 feet until the end of your next turn.</description>
+        </sheet>
+    </element>
+    
+    <element name="Curving Shot" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_CURVING_SHOT">
+        <supports>Rogue Gunslinger Trick Shot</supports>
+        <description>
+            <p>You can choose one firearm you're holding and expend one use of Trick Shot to ignore 1/2 and 3/4 cover with that firearm, but not total cover. You must decide to use this feature before making an attack roll with the firearm.</p>
+        </description>
+        <sheet>
+            <description>You can choose one firearm you're holding and expend one use of Trick Shot to ignore 1/2 and 3/4 cover with that firearm, but not total cover. You must decide to use this feature before making an attack roll with the firearm.</description>
+        </sheet>
+    </element>
+    
+    <element name="Disarming Shot" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_DISARMING_SHOT">
+        <supports>Rogue Gunslinger Trick Shot</supports>
+        <description>
+            <p>When you hit a creature with an attack using a firearm, you can expend one use of Trick Shot to force the creature to drop one object of your choice they are holding.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with an attack using a firearm, you can expend one use of Trick Shot to force the creature to drop one object of your choice they are holding.</description>
+        </sheet>
+    </element>
+    
+    <element name="Dizzying Shot" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_DIZZYING_SHOT">
+        <supports>Rogue Gunslinger Trick Shot</supports>
+        <description>
+            <p>When you hit a creature with an attack using a firearm, you can expend one use of Trick Shot to cause the target to have disadvantage on the next attack roll it makes before the end of it's next turn.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with an attack using a firearm, you can expend one use of Trick Shot to cause the target to have disadvantage on the next attack roll it makes before the end of it's next turn.</description>
+        </sheet>
+    </element>
+    
+    <element name="Marksman’s Shot" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_MARKSMANS_SHOT">
+        <supports>Rogue Gunslinger Trick Shot</supports>
+        <description>
+            <p>You can choose one firearm you're holding and expend one use of Trick Shot to add half your Charisma modifier (rounded down) to the next attack roll you make using the firearm. You must decide to use this feature before making an attack roll with the firearm.</p>
+        </description>
+        <sheet>
+            <description>You can choose one firearm you're holding and expend one use of Trick Shot to add {{charisma:modifier:half}} to the next attack roll you make using the firearm. You must decide to use this feature before making an attack roll with the firearm.</description>
+        </sheet>
+    </element>
+    
+    <element name="Piercing Shot" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_PIERCING_SHOT">
+        <supports>Rogue Gunslinger Trick Shot</supports>
+        <description>
+            <p>When you hit a creature with an attack using a firearm, you can expend one use of Trick Shot to deal 1d8 damage against a different creature that is behind the target in a line within 10 feet of it.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with an attack using a firearm, you can expend one use of Trick Shot to deal 1d8 damage against a different creature that is behind the target in a line within 10 feet of it.</description>
+        </sheet>
+    </element>
+    
+    <element name="Repelling Shot" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_REPELLING_SHOT">
+        <supports>Rogue Gunslinger Trick Shot</supports>
+        <description>
+            <p>When you hit a creature with an attack using a firearm, you can expend one use of Trick Shot to push the target 10 feet away from you.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with an attack using a firearm, you can expend one use of Trick Shot to push the target 10 feet away from you.</description>
+        </sheet>
+    </element>
+    
+    <element name="Showman’s Shot" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_SHOWMANS_SHOT">
+        <supports>Rogue Gunslinger Trick Shot</supports>
+        <description>
+            <p>When you would make a Charisma (Performance) check related to firearms, you can expend one use of Trick Shot to gain advantage on the roll. You must decide to use this feature before making the roll.</p>
+        </description>
+        <sheet>
+            <description>When you would make a Charisma (Performance) check related to firearms, you can expend one use of Trick Shot to gain advantage on the roll. You must decide to use this feature before making the roll.</description>
+        </sheet>
+    </element>
+    
+    <element name="Sniping Shot" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_RG_TRICK_SNIPING_SHOT">
+        <supports>Rogue Gunslinger Trick Shot</supports>
+        <description>
+            <p>You can choose one firearm you're holding and expend one use of Trick Shot to double the range of that firearm until the end of your turn. You must decide to use this feature before making an attack roll with the firearm.</p>
+        </description>
+        <sheet>
+            <description>You can choose one firearm you're holding and expend one use of Trick Shot to double the range of that firearm until the end of your turn. You must decide to use this feature before making an attack roll with the firearm.</description>
+        </sheet>
+    </element>
+    
+</elements>

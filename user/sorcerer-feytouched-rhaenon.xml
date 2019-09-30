@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Feytouched Sorcerous Origin by Rhaenon</name>
+        <author url="https://www.gmbinder.com/share/-L6JXjHPNwMLb2ldedPA">Rhaenon</author>
+        <update version="0.0.1">
+            <file name="sorcerer-feytouched-rhaenon.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/sorcerer-feytouched-rhaenon.xml" />
+        </update>
+    </info>
+    
+    <element name="Feytouched" type="Archetype" source="GM Binder" id="ID_RHAENON_GM_BINDER_ARCHETYPE_SORCERER_FEYTOUCHED">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>Your innate magic comes from your connection to the strange and unearthly world of Fey. The Feywild is the plane of magic and life, a vibrant mirror of everything the material world could be, for good or ill. The origin of your powers might be a union between a powerful Fey Lord and a mortal beloved. A song of prophecy in some ancient wooded glade might have alighted upon your soul. You might have received a boon for some deed or service, or even an ancestor might have done so, the gift lying dormant for seven generations as according to the strange will of the entity that bestowed it. Whatever the source, you have within you a knack for the trickery and bargain magic that is the hall mark of one who may be destined to become a Fey Lord themselves.</p>
+            <p class="indent"></p>
+            <div element="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_EVERWALKING" />
+            <div element="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_MAGIC_OF_THE_FEY" />
+            <div element="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_BEGUILING_GLAMOUR" />
+            <div element="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_GLADEWALKER" />
+            <div element="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_STEP_OF_THE_FEY" />
+            <div element="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_FASCINATION_OF_THE_FEY" />
+            <div element="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_UNBLEMISHED_BEAUTY" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_EVERWALKING" level="1" />
+            <grant type="Archetype Feature" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_MAGIC_OF_THE_FEY" level="1" />
+            <grant type="Archetype Feature" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_BEGUILING_GLAMOUR" level="6" />
+            <grant type="Archetype Feature" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_GLADEWALKER" level="6" />
+            <grant type="Archetype Feature" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_STEP_OF_THE_FEY" level="14" />
+            <grant type="Archetype Feature" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_FASCINATION_OF_THE_FEY" level="18" />
+            <grant type="Archetype Feature" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_UNBLEMISHED_BEAUTY" level="18" />
+        </rules>
+    </element>
+    
+    <element name="Everwaking" type="Archetype Feature" source="GM Binder" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_EVERWALKING">
+        <description>
+            <p>You don't need sleep and can't be forced to sleep by any means, the influence of the Feywild enabling you to go without sleep. To gain the benefits of a long rest, you can spend 4 hours doing light activity.</p>
+            <p class="indent">You also learn to speak, read and write Sylvan. However, your feylike features prohibit you from telling a deliberate lie or breaking a deal.</p>
+        </description>
+        <sheet>
+            <description>You don't need sleep and can't be forced to sleep by any means, the influence of the Feywild enabling you to go without sleep. To gain the benefits of a long rest, you can spend 4 hours doing light activity. Your feylike features prohibit you from telling a deliberate lie or breaking a deal.</description>
+        </sheet>
+        <rules>
+            <grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+        </rules>
+    </element>
+    
+    <element name="Magic of the Fey" type="Archetype Feature" source="GM Binder" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_MAGIC_OF_THE_FEY">
+        <description>
+            <p>When your Spellcasting feature lets you learn a sorcerer cantrip or a sorcerer spell of 1st level or higher, you can choose the new spell from the bard spell list, as long as the spell belongs to the school of enchantment.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Sorcerer" extend="true">
+            <extend>Bard,Enchantment</extend>
+        </spellcasting>
+    </element>
+    
+    <element name="Beguiling Glamour" type="Archetype Feature" source="GM Binder" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_BEGUILING_GLAMOUR">
+        <description>
+            <p>At 6th level, you become immune to the charmed condition, as you attune to the magic of the fey. This attunement also allows you to influence your opponents. You learn the <i>zone of truth</i> spell, which counts as a sorcerer spell for you.</p>
+            <p class="indent">Additionally, when you are the target of an attack or spell, you can use your reaction to spend 1 sorcery point and gain a bonus to your Armor Class equal to your Charisma modifier if you aren’t wearing armor or wielding a shield.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>You can spend 1 sorcery point when you are the target of an attack or spell and add {{charisma:modifier}} to your Armor Class if you aren’t wearing armor or wielding a shield. You are also immune to the charmed condition.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ZONE_OF_TRUTH" spellcasting="Sorcerer" />
+        </rules>
+    </element>
+    
+    <element name="Gladewalker" type="Archetype Feature" source="GM Binder" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_GLADEWALKER">
+        <description>
+            <p>Starting at 6th level, moving through non-magical difficult terrain costs you no extra movement. You can also pass through non-magical plants without taking damage from them if they have thorns, spines, or a similar hazard.</p>
+        </description>
+        <sheet>
+            <description>Moving through non-magical difficult terrain costs you no extra movement. You can also pass through non-magical plants without taking damage from them if they have thorns, spines, or a similar hazard.</description>
+        </sheet>
+    </element>
+    
+    <element name="Step of the Fey" type="Archetype Feature" source="GM Binder" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_STEP_OF_THE_FEY">
+        <description>
+            <p>At 14th level, you can cast <i>misty step</i> at will, without expending a spell slot and you can spend 1 sorcery point to turn invisible until the start of your next turn or when you make an attack or force someone to make a saving throw.</p>
+            <p class="indent">Also, when casting <i>misty step</i> or <i>far step</i>, you can spend sorcery points to affect a number of creatures up to your Charisma modifier, as long as you are all touching. The sorcery points you spend depends on the number of creatures you want to affect, for each creature besides yourself you spend 2 sorcery points. An unwilling creature must make a Charisma saving throw.</p>
+        </description>
+        <sheet>
+            <description>You can cast misty step at will without expending a spell slot. You can spend 1 sorcery point to turn invisible until the start of your next turn, when you make an attack or force someone to make a saving throw. When casting misty step or far step, you can spend 2 sorcery points per creature (up to {{charisma:modifier}} creatures) to extend the affect to them, as long as all are touching.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" />
+        </rules>
+    </element>
+    
+    <element name="Fascination of the Fey" type="Archetype Feature" source="GM Binder" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_FASCINATION_OF_THE_FEY">
+        <description>
+            <p>At 18th level, you can spend 1 sorcery point to give creatures disadvantage on saving throws against your charm and persuasive effects.</p>
+            <p class="indent">Also, your charms no longer end automatically when the creature takes damage. Instead, the creature can try to break free each time it is damaged, getting to redo the original saving throw.</p>
+        </description>
+        <sheet>
+            <description>You can spend 1 sorcery point to give creatures disadvantage on saving throws against your charm and persuasive effects. Your charms no longer end automatically when the creature takes damage. Instead, the creature can try to break free each time it is damaged, getting to redo the original saving throw.</description>
+        </sheet>
+    </element>
+    
+    <element name="Unblemished Beauty" type="Archetype Feature" source="GM Binder" id="ID_RHAENON_GM_BINDER_ARCHETYPE_FEATURE_FEYTOUCHED_UNBLEMISHED_BEAUTY">
+        <description>
+            <p>At 18th level, the magic you exude has innately changed your form, protecting it from the ravages of time. You can no longer be aged magically, and for every 10 years that pass, your body only ages 1 year.</p>
+        </description>
+        <sheet>
+            <description>You cannot be aged magically, and for every 10 years that pass, your body only ages 1 year.</description>
+        </sheet>
+    </element>
+    
+</elements>

@@ -1,0 +1,1167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Rogue Archetype: Craftsman</name>
+        <author url="https://www.gmbinder.com/share/-Lm48Z9HxvhHMgblnjz7">Aevilok</author>
+        <update version="0.0.1">
+            <file name="rogue-craftsman.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/rogue-craftsman.xml" />
+        </update>
+    </info>
+    
+    <element name="Craftsman" type="Archetype" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_CRAFTSMAN">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>While some rogues prefer to focus on their agility or accuracy, the Craftsmen are the rogues that like to solve their problems using any tool they can get at their disposal. These rogues face problems with clever thinking, and an even more clever use of the items they can find, making makeshift ropes, tents, or bags of caltrops to execute their plan.</p>
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_MUNDANE_CREATIONS" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_JUNKYARD_SURVIVAL" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_FAST_HANDS" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_WINDUP_FAMILIAR" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_PREPARATION_WORK" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_MUNDANE_CREATIONS" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_JUNKYARD_SURVIVAL" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_FAST_HANDS" level="9" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_WINDUP_FAMILIAR" level="13" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_PREPARATION_WORK" level="17" />
+        </rules>
+    </element>
+    
+    <element name="Mundane Creations" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_MUNDANE_CREATIONS">
+        <description>
+            <p>At 3rd level, you start to understand how different items are created and how they can be improved.</p>
+            <p class="indent"><b>Tools of the Trade. </b>Your familiarity with thieves’ tools and their versatility allows you to use them as tinker's tools whenever something requires you to do so.</p>
+            <p class="indent"><b>Favored Formulae. </b>Choose four of the items detailed under the <i>Adventuring Gear</i> table (PHB p150). These are your Favored Formulae and cost a quarter their normal price for your crafting (rounded down). You can choose two additional items as your Favored Formulae when you reach 9th, 13th and 17th level.</p>
+            <p class="indent"><b>Crafting Favored Items. </b>By spending 1 hour with your tinker’s tools over the course of a short or long rest, you can craft items from your list of Favored Formulae, worth up to 6gp. You decide how many of each type of item you want to make. The maximum cost of these items increases as you gain levels in this class, increasing to 2 times your Rogue level. If an item in your favored formulae is worth less than 1 gp, you can spend 1 minute to craft it during the adventuring day.</p>
+            <p class="indent">For example, hunting traps cost 1 gp to craft for a Craftsman that has them as one of their favored formulae. At 3rd level, as part of a long or short rest, they can craft up to 6 hunting traps.</p>
+            <p class="indent"><b>Potent Creations. </b>Whenever an item you create forces a creature to make a saving throw, you can choose to set that saving throw's DC to 8 + your proficiency bonus + your Intelligence modifier. Additionally, whenever an item you have created deals damage to a creature, it takes additional damage equal to your Intelligence modifier.</p>
+        </description>
+        <sheet>
+            <description>By spending 1 hour with your Tinker’s tools during a rest, you can craft items from your Favored Formulae up to a maximum cost of {{favored items:cost max}} gp. You decide how many of each type of item you want to make.<br />Whenever an item you create forces a creature to make a saving throw, you can choose to set that saving throw's DC to {{potent creations:dc}}. Additionally, whenever an item you have created deals damage to a creature, it takes additional {{potent creations:damage}} hit points damage.</description>
+        </sheet>
+        <rules>
+            <stat name="potent creations:dc" value="8" />
+            <stat name="potent creations:dc" value="proficiency" />
+            <stat name="potent creations:dc" value="intelligence:modifier" />
+            <stat name="potent creations:damage" value="intelligence:modifier" />
+
+            <stat name="favored items:cost max" value="level:rogue" />
+            <stat name="favored items:cost max" value="level:rogue" />
+
+            <select type="Archetype Feature" name="Favored Formulae (Craftsman)" supports="Favored Formulae Item" number="4" level="3" />
+            <select type="Archetype Feature" name="Favored Formulae (Craftsman)" supports="Favored Formulae Item" number="2" level="9" />
+            <select type="Archetype Feature" name="Favored Formulae (Craftsman)" supports="Favored Formulae Item" number="2" level="13" />
+            <select type="Archetype Feature" name="Favored Formulae (Craftsman)" supports="Favored Formulae Item" number="2" level="17" />
+        </rules>
+    </element>
+
+    <element name="Junkyard Survival" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_JUNKYARD_SURVIVAL">
+        <description>
+            <p>Starting at 3rd level, while crafting an item in your list of favored formulae, you may scavenge for material scraps to reduce the material cost of your designs. If you choose to do so, the amount of gp you need to expend for your crafting is reduced by a number equal to your Rogue level + your Intelligence modifier.</p>
+            <p class="indent">Collecting scraps does not speed up or slow down the creation process and these scraps have no value to others, as they are simply stray pieces of wood, stone, metal, or other materials, specifically collected for the design you're currently working on.</p>
+            <p class="indent">Depending on your environment, your DM may determine that you can not find appropriate scraps for your design. Additionally, an item made this way looks rough and impractical; you have disadvantage and suffer a -5 penalty on charisma checks made to sell such an item.</p>
+        </description>
+        <sheet>
+            <description>When crafting an item on your list of favored formulae, you can scrounge the parts and reduce the cost of crafting the item by {{junkyard survival:cost reduction}} gp. You have disadvantage and suffer a -5 penalty on charisma checks made to sell an item crafted this way.</description>
+        </sheet>
+        <rules>
+                <stat name="junkyard survival:cost reduction" value="level:rogue" />
+                <stat name="junkyard survival:cost reduction" value="intelligence:modifier" />
+        </rules>
+    </element>
+
+    <element name="Fast Hands" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_FAST_HANDS">
+        <description>
+            <p>Starting at 9th level, you can use the bonus action granted by your Cunning Action to take the Use an Object action.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can use the bonus action granted by your Cunning Action to take the Use an Object action.</description>
+        </sheet>
+    </element>
+
+    <element name="Windup Familiar" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_WINDUP_FAMILIAR">
+        <description>
+            <p>When you reach 13th level, as part of a long rest, you can craft a clockwork familiar.</p>
+            <p class="indent">A clockwork familiar has the form of an animal you choose: bat, cat, crab, frog (toad), hawk, lizard, octopus, owl, poisonous snake, fish (quipper), rat, raven, sea horse, spider, or weasel. It has the statistics of the chosen animal, though it is a Construct instead of a Beast and has a speed of 30 feet or a flying speed of 20 feet (your choice). It has immunity to poison and psychic damage, as well as the charmed, frightened, poisoned conditions and exhaustion.</p>
+            <p class="indent">The familiar remains inactive, until you take the Use an Object action to cause it to animate. For the next minute, the familiar moves in a straight line away from the point where you activated it, causing a ruckus and distracting everyone within 15 feet of it. Creatures distracted by the familiar make Dexterity Saving throws with disadvantage and attacks against them have advantage. As a free action on your turn, you can change the direction a windup familiar within 5 feet of you is moving towards.</p>
+            <p class="indent">After the familiar drops to 0 hit points, or after it takes damage, you can spend a minute to repair it, healing it to full hit points.</p>
+        </description>
+        <sheet>
+            <description>You can use the Use an Object action to animate your windup familiar. For the next minute, it moves in a straight line away from the point you activated it, distracting all creatures within 15 feet of it. Creatures so distracted have disadvantage on Dexterity saving throws and attacks against them have advantage. As a free action, you can change the direction of your familiar if it is within 5 feet of you.</description>
+        </sheet>
+        <rules>
+                <select type="Companion" name="Windup Familiar" source="GM Binder" supports="Windup Familiar" />
+        </rules>
+    </element>
+
+    <element name="Preparation Work" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_PREPARATION_WORK">
+        <description>
+            <p>Beginning at 17th level, you can lay mechanical traps on the ground, setting the stage to suit your needs. While crafting an item, you can spend another 10 gp to encase it in an intricate trap design, that allows you to program it. When crafting a trap in this way, you may specify a trigger and how the trap should act.</p>
+            <p class="indent">The trap can only cause the original item's effect, but how it does so may vary; for example, a trap made with a base of Alchemist's Fire may include a tripwire that when stepped on, flings the flask of Alchemist's Fire towards where the tripwire was disturbed.</p>
+            <p class="indent">You can plant a trap on the ground or a wall, using the Use an Object action, and once you do so, it can be discovered by a successful Intelligence (Investigation) check against your effect save DC. If you have proficiency in Stealth, you can additionally add your proficiency bonus to this DC.</p>
+            <p class="indent">At your DM's discretion, a trap may be triggered more than once, if it makes sense for it to do so. Otherwise, once triggered, the trap can not be used again.</p>
+        </description>
+        <sheet>
+            <description>You can encase items in elaborate traps and place them on the ground or wall, using the Usa an Object action. It can be discovered on a successful Intelligence (Investigation) check (save DC {{preparation work:dc}}).</description>
+        </sheet>
+        <rules>
+            <stat name="preparation work:dc" value="potent creations:dc" />
+        </rules>
+    </element>
+
+    <!-- list of windup familiars -->
+	<element name="Bat (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_BAT">
+                <supports>Windup Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">4</set>
+			<set name="ac">12</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">5 ft., fly 30 ft.</set>
+			<set name="senses">blindsight 60 ft.</set>
+			<set name="languages">—</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_BAT_ECHOLOCATION,ID_WOTC_PHB_COMPANION_TRAIT_BAT_KEEN_HEARING</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_BAT_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+			<stat name="companion:speed:fly" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Cat (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_CAT">
+		<description />
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">7</set>
+			<set name="ac">12</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">40 ft., climb 30 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +3, Stealth +4</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_CAT_KEEN_SMELL</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_CAT_CLAWS</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Crab (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_CRAB">
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">11</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">8</set>
+			<set name="charisma">2</set>
+			<set name="ac">11 (natural armor)</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">20 ft., swim 20 ft.</set>
+			<set name="senses">blindsight 30 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Stealth +2</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_CRAB_AMPHIBIOUS</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_CRAB_CLAW</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:swim" value="20" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Frog (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_FROG">
+		<description />
+		<setters>
+			<set name="strength">1</set>
+			<set name="dexterity">13</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">8</set>
+			<set name="charisma">3</set>
+			<set name="ac">11</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">20 ft., swim 20 ft.</set>
+			<set name="senses">darkvision 30 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +1, Stealth +3</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_FROG_AMPHIBIOUS,ID_WOTC_PHB_COMPANION_TRAIT_FROG_STANDING_LEAP</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:swim" value="20" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Hawk (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_HAWK">
+		<description />
+		<setters>
+			<set name="strength">5</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">6</set>
+			<set name="ac">13</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">10 ft., fly 60 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +4</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_HAWK_KEEN_SIGHT</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_HAWK_TALONS</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Lizard (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_LIZARD">
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">11</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">8</set>
+			<set name="charisma">3</set>
+			<set name="ac">10</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">20 ft., climb 20 ft.</set>
+			<set name="senses">darkvision 30 ft.</set>
+			<set name="languages">—</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_LIZARD_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:climb" value="20" bonus="base" />
+		</rules>
+	</element>
+	<element name="Octopus (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_OCTOPUS">
+		<description />
+		<setters>
+			<set name="strength">4</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">4</set>
+			<set name="ac">12</set>
+			<set name="hp">3 (1d6)</set>
+			<set name="speed">5 ft., swim 30 ft.</set>
+			<set name="senses">darkvision 30 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +2, Stealth +4</set>
+			<set name="type">Construct</set>
+			<set name="size">Small</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_OCTOPUS_HOLD_BREATH,ID_WOTC_PHB_COMPANION_TRAIT_OCTOPUS_UNDERWATER_CAMOUFLAGE,ID_WOTC_PHB_COMPANION_TRAIT_OCTOPUS_WATER_BREATHING</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_OCTOPUS_TENTACLES,ID_WOTC_PHB_COMPANION_ACTION_OCTOPUS_INK_CLOUD</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Owl (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_OWL">
+		<description />
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">13</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">7</set>
+			<set name="ac">11</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">5 ft., fly 60 ft.</set>
+			<set name="senses">darkvision 120 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +3, Stealth +3</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_OWL_FLYBY,ID_WOTC_PHB_COMPANION_TRAIT_OWL_KEEN_HEARING_AND_SIGHT</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_OWL_TALONS</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Poisonous Snake (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_POISONOUS_SNAKE">
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">3</set>
+			<set name="ac">13</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">30 ft., swim 30 ft.</set>
+			<set name="senses">blindsight 10 ft.</set>
+			<set name="languages">—</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/8</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_POISONOUS_SNAKE_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Quipper (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_QUIPPER">
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">9</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">7</set>
+			<set name="charisma">2</set>
+			<set name="ac">13</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">swim 40 ft.</set>
+			<set name="senses">darkvision 60 ft.</set>
+			<set name="languages">—</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_QUIPPER_BLOOD_FRENZY,ID_WOTC_PHB_COMPANION_TRAIT_QUIPPER_WATER_BREATHING</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_QUIPPER_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="swim 40" bonus="base" />
+			<stat name="companion:speed:swim" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Rat (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_RAT">
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">11</set>
+			<set name="constitution">9</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">4</set>
+			<set name="ac">10</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">20 ft.</set>
+			<set name="senses">darkvision 30 ft.</set>
+			<set name="languages">—</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_RAT_KEEN_SMELL</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_RAT_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+		</rules>
+	</element>
+	<element name="Raven (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_RAVEN">
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">6</set>
+			<set name="ac">12</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">10 ft., fly 50 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +3</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_RAVEN_MIMICRY</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_RAVEN_BEAK</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="50" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Sea Horse (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_SEA_HORSE">
+		<description />
+		<setters>
+			<set name="strength">1</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">2</set>
+			<set name="ac">11</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">swim 20 ft.</set>
+			<set name="languages">—</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_SEA_HORSE_WATER_BREATHING</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="swim 20" bonus="base" />
+			<stat name="companion:speed:swim" value="20" bonus="base" />
+		</rules>
+	</element>
+	<element name="Spider (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_SPIDER">
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">2</set>
+			<set name="ac">12</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">20 ft., climb 20 ft.</set>
+			<set name="senses">darkvision 30 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Stealth +4</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_SPIDER_SPIDER_CLIMB,ID_WOTC_PHB_COMPANION_TRAIT_SPIDER_WEB_SENSE,ID_WOTC_PHB_COMPANION_TRAIT_SPIDER_WEB_WALKER</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_SPIDER_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:climb" value="20" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Weasel (Windup Familiar)" type="Companion" source="GM Binder" id="ID_GM_BINDER_COMPANION_WINDUP_WEASEL">
+		<description />
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">3</set>
+			<set name="ac">13</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">30 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +3, Stealth +5</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_PHB_COMPANION_TRAIT_WEASEL_KEEN_HEARING_AND_SMELL</set>
+			<set name="actions">ID_WOTC_PHB_COMPANION_ACTION_WEASEL_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+
+
+    <!-- equipment list for favored formulae -->
+        <element type="Archetype Feature" name="Abacus" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_ABACUS_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Acid (vial)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_ACID_VIAL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 25 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Alchemist’s Fire (flask)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_ALCHEMISTS_FIRE_FLASK_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 50 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Arrow" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_ARROW_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Blowgun Needle" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BLOWGUNNEEDLE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Crossbow Bolt" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CROSSBOWBOLT_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Sling Bullet" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SLINGBULLET_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Antitoxin (vial)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_ANTITOXIN_VIAL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 50 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Crystal" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CRYSTAL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 10 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Orb" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_ORB_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 20 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Rod" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_ROD_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Staff" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_STAFF_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Wand" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_WAND_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 10 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Backpack" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BACKPACK_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Ball Bearings (bag of 1,000)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BALLBEARINGS_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Barrel" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BARREL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Basket" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BASKET_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 4 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Bedroll" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BEDROLL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Bell" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BELL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Blanket" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BLANKET_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Block and Tackle" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BLOCKANDTACKLE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Book" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BOOK_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 25 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Bottle, Glass" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BOTTLE_GLASS_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Bucket" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_BUCKET_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Caltrops (bag of 20)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CALTROPS_BAGOF20_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Candle" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CANDLE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Case, Crossbow Bolt" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CASE_CROSSBOWBOLT_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Case, Map or Scroll" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CASE_MAPORSCROLL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Chain (10 feet)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CHAIN_10FEET_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Chalk" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CHALK_1PIECE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Chest" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CHEST_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Climber’s Kit" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CLIMBERSKIT_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 25 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Clothes, Common" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CLOTHES_COMMON_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Clothes, Costume" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CLOTHES_COSTUME_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Clothes, Fine" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CLOTHES_FINE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 15 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Clothes, Traveler’s" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CLOTHES_TRAVELERS_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Component Pouch" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_COMPONENTPOUCH_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 25 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Crowbar" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_CROWBAR_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Sprig of Mistletoe" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SPRIGOFMISTLETOE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Totem" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_TOTEM_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Wooden Staff" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_WOODENSTAFF_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Yew Wand" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_YEWWAND_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 10 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Fishing Tackle" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_FISHINGTACKLE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Flask or Tankard" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_FLASKORTANKARD_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Grappling Hook" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_GRAPPLINGHOOK_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Hammer" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_HAMMER_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Hammer, Sledge" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_HAMMER_SLEDGE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Healer’s Kit" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_HEALERSKIT_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Amulet" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_AMULET_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Emblem" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_EMBLEM_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Reliquary" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_RELIQUARY_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Holy Water (flask)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_HOLYWATER_FLASK_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 25 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Hourglass" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_HOURGLASS_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 25 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Hunting Trap" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_HUNTINGTRAP_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Ink (1 ounce bottle)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_INK_1OUNCEBOTTLE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 10 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Ink Pen" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_INKPEN_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Jug or Pitcher" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_JUGORPITCHER_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Ladder (10—foot)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_LADDER_10—FOOT_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Lamp" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_LAMP_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Lantern, Bullseye" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_LANTERN_BULLSEYE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 10 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Lantern, Hooded" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_LANTERN_HOODED_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Lock" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_LOCK_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 10 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Magnifying Glass" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_MAGNIFYINGGLASS_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 100 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Manacles" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_MANACLES_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Mess Kit" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_MESSKIT_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Mirror, Steel" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_MIRROR_STEEL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Oil (flask)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_OIL_FLASK_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Paper (one sheet)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_PAPER_ONESHEET_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Parchment (one sheet)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_PARCHMENT_ONESHEET_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Perfume (vial)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_PERFUME_VIAL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Pick, Miner’s" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_PICK_MINERS_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Piton" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_PITON_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Poison, Basic (vial)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_POISON_BASIC_VIAL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 100 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Pole (10—foot)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_POLE_10—FOOT_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Pot, Iron" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_POT_IRON_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Potion of Healing" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_POTIONOFHEALING_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 50 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Pouch" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_POUCH_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Quiver" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_QUIVER_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Ram, Portable" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_RAM_PORTABLE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 4 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Rations (1 day)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_RATIONS_1DAY_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Robes" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_ROBES_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="String (10 feet)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_STRING_10FEET_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 0 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Rope, Hempen (50 feet)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_ROPE_HEMPEN_50FEET_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Rope, Silk (50 feet)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_ROPE_SILK_50FEET_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 10 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Sack" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SACK_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Scale, Merchant’s" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SCALE_MERCHANTS_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Sealing Wax" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SEALINGWAX_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Shovel" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SHOVEL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Signal Whistle" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SIGNALWHISTLE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Signet Ring" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SIGNETRING_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Soap" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SOAP_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Spellbook" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SPELLBOOK_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 50 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Spikes, Iron (10)" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SPIKES_IRON_10_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Spyglass" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_SPYGLASS_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1000 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Tent, Two—Person" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_TENT_TWOPERSON_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Tinderbox" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_TINDERBOX_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Torch" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_TORCH_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Vial" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_VIAL_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Waterskin" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_WATERSKIN_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 sp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Whetstone" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_WHETSTONE_FORMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 cp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Bola" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_BOLA_FORUMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 2 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Magnet" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_MAGNET_FORUMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 100 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Mechanical Wings" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_MECHANICAL_WINGS_FORUMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 120 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Prince Rupert’s Drop" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_PRINCE_RUPERTS_DROP_FORUMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 50 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Smoke Bomb" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_SMOKE_BOMB_FORUMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 10 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Sticky Bell" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_STICKY_BELL_FORUMLAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 5 gp</description></sheet>
+        </element>
+        <element type="Archetype Feature" name="Tripwire" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_TRIPWIRE_FORUMULAE">
+                <supports>Favored Formulae Item</supports>
+                <description />
+                <sheet><description>Cost: 1 gp</description></sheet>
+        </element>
+
+        <!-- New Items -->
+        <element type="Item" name="Bola" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_BOLA">
+                <description>
+                        <p>A pair of weights connected by a rope. As an action, you can throw the bola up to 20 feet, to ensnare a creature. Make a ranged Attack against a creature, treating the Bola as an improvised ranged weapon. On a hit, the creature falls prone and its speed is reduced by 10 feet until it is freed. A bola has no effect on creatures that are formless, creatures that do not have legs or creatures that are Huge or larger. A creature can use its action to make a DC 12 Strength check, freeing itself or another creature within its reach on a success. Dealing 5 slashing damage to the bola (AC 10) also frees the creature without harming it, ending the effect and destroying the bola.</p>
+                </description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">2</set>
+			<set name="weight" lb="2">2 lb.</set>
+			<set name="stackable">true</set>
+		</setters>
+        </element>
+        <element type="Item" name="Magnet" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_MAGNET">
+                <description>
+                        <p>A magnet the size of 3 coins stacked. It can stop up to 2 pounds of steel or other magnetic material it is in contact with from falling.</p>
+                </description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">100</set>
+			<set name="weight" lb="2">0.5 lb.</set>
+			<set name="stackable">true</set>
+		</setters>
+        </element>
+        <element type="Item" name="Mechanical Wings" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_MECHANICAL_WINGS">
+                <description>
+                        <p>While wearing these wings and not wearing heavy armor or exceeding its carrying capacity, a creature gains a flying speed of 20 feet. To benefit from this flying speed, the creature must be able to operate the wings, which requires a free hand.</p>
+                </description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">120</set>
+			<set name="weight" lb="2">25 lb.</set>
+			<set name="stackable">false</set>
+		</setters>
+        </element>
+        <element type="Item" name="Prince Rupert’s Drop" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_PRINCE_RUPERTS_DROP">
+                <description>
+                        <p>A carefully blown droplet of glass, ready to explode at any moment. As an action, you can throw the droplet to a point you can see within 20 feet of you causing it to explode into millions of shards. Creatures within a 5 feet radius must succed in a DC 17 Dexterity saving throw, or take 2d12 piercing damage.</p>
+                </description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">50</set>
+			<set name="weight" lb="2">0.125 lb.</set>
+			<set name="stackable">true</set>
+		</setters>
+        </element>
+        <element type="Item" name="Smoke Bomb" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_SMOKE_BOMB">
+                <description>
+                        <p>When thrown, this cannister creates a 20-foot-radius sphere of fog centered on it. The sphere spreads around corners, and its area is heavily obscured. It lasts for one minute or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.</p>
+                </description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">10</set>
+			<set name="weight" lb="2">1 lb.</set>
+			<set name="stackable">true</set>
+		</setters>
+        </element>
+        <element type="Item" name="Sticky Bell" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_STICKY_BELL">
+                <description>
+                        <p>This tiny bell is covered in a strong adhesive and can very easily stick to any surface. As an action, you can draw the bell from its casing and make an attack against a creature, treating the bell as an improvised melee weapon with the thrown (20/60) property. On a hit, the bell sticks to the creature, causing it to make sound whenever it moves or takes an action. A creature can use its action to remove the bell, ending its effects.</p>
+                </description>
+ 		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">5</set>
+			<set name="weight" lb="2">0.25 lb.</set>
+			<set name="stackable">true</set>
+		</setters>
+       </element>
+        <element type="Item" name="Tripwire" source="GM Binder" id="ID_GM_BINDER_CRAFTSMAN_ITEM_TRIPWIRE">
+                <description>
+                        <p>When you use your action to set it, this string forms a discrete line that can make a creature trip over. When a creature that has at most 2 legs steps on the tripwire, it falls prone, destroying the tripwire. A bell of any kind can be attached to the tripwire, causing it to make sound when triggered.</p>
+                </description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">1</set>
+			<set name="weight" lb="2">0.25 lb.</set>
+			<set name="stackable">true</set>
+		</setters>
+        </element>
+
+</elements>

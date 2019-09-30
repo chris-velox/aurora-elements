@@ -1,0 +1,1696 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Blood Mage Class</name>
+        <author url="https://homebrewery.naturalcrit.com/share/HJ5FlesyQ">Eliar’s Lost Arts</author>
+        <update version="0.0.1">
+            <file name="class-blood-mage.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/class-blood-mage.xml" />
+        </update>
+    </info>
+<!-- Blood Mage class -->    
+    <element name="Blood Mage" type="Class" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_BLOOD_MAGE">
+        <description>
+            <p>A hooded half-elf overlooking a pallasade puts a knife through his hand and whispers an incantation. He watches as six droplets of blood fly from his outstretched palm into the backs of the guards stationed on the wall, who then silently succumb to sleep.</p>
+            <p class="indent">Grabbing a snow white bunny in one hand, a dying halfling mutters some few words of power, stealing life from his pet, and feeling it surge through his body as he rises to his feet.</p>
+            <p class="indent">A human hiding behind a stalagmite brings his blood-red axe down on a surprised spider, feeling its lifeforce drain and granting him a momentary surge of vigor.</p>
+            <p class="indent">Blood mages, through careful and dangerous studies, imbue the source of their life with arcane magic. By doing this they are able to empower their spells to help their allies or decimate their foes.</p>
+            <h4>AN ANCIENT ART</h4>
+            <p>A blood mage often being their journey in the library or in the field. Perhaps they learned their magic from the ruins of an ancient civilization that practiced the craft.</p>
+            <p class="indent">The descent into the profane art beings with enhancement of their own life-essence, making them preternaturally fit. Their newly imbued arcane flesh allows them to study the sanguine substance without quite as much risk.</p>
+            <h4>SACRIFICE AND GROWTH</h4>
+            <p>Loss is second nature to blood mages. Study for this school of the arcane often involves rigorous testing usually on small animals, though some turn to larger prey, before finally turning the experiments upon their own flesh.</p>
+            <p class="indent">Blood represents more than just death to these mages; it’s loss, sacrifice, purity, life, growth, and even the ability to cleanse. Through sacrificing their own body, these mages learn what it means to taste true power.</p>
+            <h4>CREATING A BLOOD MAGE</h4>
+            <p>When creating a blood mage, think of a reason as to why you  feel the need to delve into the study of magic and blood.  Perhaps it is due to the loss of a loved one. Maybe a friend  suffers from a genetic illness. Or you might be from a rich  and powerful bloodline, seeking to prove its strength.</p>
+            <h5>QUICK BUILD</h5>
+            <p>You can quickly make a blood mage by following these suggestions. First, Intelligence should be your highest ability score, followed by Constitution. Second, choose the Hermit background</p>
+            <h2>CLASS FEATURES</h2>
+            <p>As a blood mage, you gain the following class features.</p>
+            <h5>HIT POINTS</h5>
+            <ul class="unstyled">
+                <li><strong>Hit Dice:</strong> 2d6 per blood mage level</li>
+                <li><strong>Hit Points at 1st Level:</strong> 6 + your Constitution modifier + half your Intelligence modifier (rounded up)</li>
+                <li><strong>Hit Points at Higher Levels:</strong> 1d6 (or 4) + your Constitution modifier + half your Intelligence modifier (rounded up) per class level after 1st</li>
+            </ul>
+            <h5>PROFICIENCIES</h5>
+            <ul class="unstyled">
+                <li><strong>Armor:</strong> Shields</li>
+                <li><strong>Weapons:</strong> Daggers, darts, handaxes, sickles, and whips</li>
+                <li><strong>Tools:</strong> Choose two from Alchemist’s Supplies, Healer’s Kit, Herbalism Kit, and Poisoner’s Kit</li>
+            </ul>
+            <ul class="unstyled">
+                <li><strong>Saving Throws:</strong> Constitution, Intelligence</li>
+                <li><strong>Skills:</strong> Choose three from Animal Handling, Arcana, History, Investigation, Medicine, Nature, and Survival</li>
+            </ul>
+            <h5>EQUIPMENT</h5>
+            <p>You start with the following equipment, in addition to the equipment granted by your background:</p>
+            <ul>
+                <li>(a) a simple weapon or (b) a dagger</li>
+                <li>(a) a scholar’s pack or (b) a dungeoneer’s pack</li>
+                <li>(a) a healer’s kit or (b) a poisoner’s kit</li>
+                <li>A shield and two daggers</li>
+            </ul>
+            <div element="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_SPELLCASTING" />
+            <div element="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_CRIMSON_PACT" />
+            <div element="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_REJUVENATION" />
+            <div element="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_PROFANE_STUDY" />
+            <div element="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_SANGUINE_RELIEF" />
+            <div element="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_ABILITY_SCORE_IMPROVEMENT" />
+            <div element="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_ENDEARING_VISAGE" />
+            <div element="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_TOOLS_OF_THE_TRADE" />
+            <div element="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_EBB_AND_FLOW" />
+            <div element="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_OPEN_WOUNDS" />
+            <div element="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_EXSANGUINATE" />
+        </description>
+        <sheet display="false">
+            <description>description</description>
+        </sheet>
+        <setters>
+          <set name="short">A practitioner of profane Blood Magic.</set>
+          <set name="hd">d12</set>
+        </setters>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" requirements="!ID_ELA_TOBM_MULTICLASS_BLOOD_MAGE" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER" requirements="!ID_ELA_TOBM_MULTICLASS_BLOOD_MAGE"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_DART" requirements="!ID_ELA_TOBM_MULTICLASS_BLOOD_MAGE"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_HANDAXE" requirements="!ID_ELA_TOBM_MULTICLASS_BLOOD_MAGE"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SICKLE" requirements="!ID_ELA_TOBM_MULTICLASS_BLOOD_MAGE"/>
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP" requirements="!ID_ELA_TOBM_MULTICLASS_BLOOD_MAGE"/>
+
+            <grant type="Class Feature" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_SPELLCASTING" level="1" />
+            <grant type="Class Feature" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_CRIMSON_PACT" level="1" />
+            <grant type="Class Feature" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_REJUVENATION" level="2" />
+            <grant type="Class Feature" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_PROFANE_STUDY" level="2" />
+            <grant type="Class Feature" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_SANGUINE_RELIEF" level="3" />
+            <grant type="Class Feature" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_ABILITY_SCORE_IMPROVEMENT" level="4" />
+            <grant type="Class Feature" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_ENDEARING_VISAGE" level="5" />
+            <grant type="Class Feature" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_TOOLS_OF_THE_TRADE" level="6" />
+            <grant type="Class Feature" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_EBB_AND_FLOW" level="10" />
+            <grant type="Class Feature" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_OPEN_WOUNDS" level="18" />
+            <grant type="Class Feature" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_EXSANGUINATE" level="20" />
+        </rules>
+        <multiclass id="ID_ELA_TOBM_MULTICLASS_BLOOD_MAGE">
+            <prerequisite>Intelligence 13, Constitution 13</prerequisite>
+            <requirements>[int:13],[con:13]</requirements>
+            <setters>
+                <set name="multiclass proficiencies"></set>
+            </setters>
+            <rules>
+                <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SICKLE" />
+                
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+                
+            </rules>
+        </multiclass>
+    </element>
+
+  <!-- Class Features -->
+    <element name="Spellcasting" type="Class Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_SPELLCASTING">
+        <description>
+            <p>You have learned to alter the fabric of reality through study of an ancient form of magic. Through careful study, you infuse your blood with arcane energy, allowing you to tap a vast resevoir of magic at will. See chapter 10 of the <i>Player’s Handbook</i> for the general rules of spellcasting.</p>
+            <h5>CANTRIPS</h5>
+            <p>You know three cantrips of your choice from the blood mage spell list. You learn additional blood mage cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Blood Mage table.</p>
+            <h5>SPELL SLOTS</h5>
+            <p>The Blood Mage table shows how many spell slots you have to cast your blood mage spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
+            <p class="indent">For example, if you know the 1st-level spell command and have a 1st-level and a 2nd-level spell slot available, you can cast command using either slot.</p>
+            <h5>SPELLS KNOWN OF 1ST LEVEL AND HIGHER</h5>
+            <p>You know five 1st-level spells of your choice from the blood mage spell list.</p>
+            <p class="indent">The Spells Known column of the Blood Mage table shows when you learn more blood mage spells of your choice. Each of these spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.</p>
+            <p class="indent">Additionally, when you gain a level in this class, you can choose one of the blood mage spells you know and replace it with another spell from the blood mage spell list, which also must be of a level for which you have spell slots.</p>
+            <h5>SPELLCASTING ABILITY</h5>
+            <p>Intelligence is your spellcasting ability for your blood mage spells. Your magic comes from your knowledge and study of the inherent magic in your blood. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a blood mage spell you cast and when making an attack roll with one.</p>
+            <p class="indent"><strong>Spell save DC </strong>= 8 + your proficiency bonus + your Intelligence modifier</p>
+            <p class="indent"><strong>Spell attack modifier </strong>= your proficiency bonus + your Intelligence modifier</p>
+            <h5>RITUAL CASTING</h5>
+            <p>You can cast any blood mage spell you know as a ritual if that spell has the ritual tag.</p>
+            <h5>SPELLCASTING FOCUS</h5>
+            <p>As a blood mage, you can use a bladed weapon as a spellcasting focus.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Blood Mage" ability="Intelligence" prepare="false" allowReplace="true">
+            <list>Blood Mage</list>
+        </spellcasting>
+        <rules>
+            <grant type="Grants" id="ID_INTERNAL_RITUAL_CASTING" />
+            <grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_ARCANE_FOCUS" />
+
+            <stat name="blood mage:spellcasting:slots:1" value="2" level="1" />
+            <stat name="blood mage:spellcasting:slots:1" value="1" level="2" />
+            <stat name="blood mage:spellcasting:slots:1" value="1" level="3" />
+            <stat name="blood mage:spellcasting:slots:2" value="2" level="3" />
+            <stat name="blood mage:spellcasting:slots:2" value="1" level="4" />
+            <stat name="blood mage:spellcasting:slots:3" value="2" level="5" />
+            <stat name="blood mage:spellcasting:slots:3" value="1" level="6" />
+            <stat name="blood mage:spellcasting:slots:4" value="1" level="7" />
+            <stat name="blood mage:spellcasting:slots:4" value="1" level="8" />
+            <stat name="blood mage:spellcasting:slots:4" value="1" level="9" />
+            <stat name="blood mage:spellcasting:slots:5" value="1" level="9" />
+            <stat name="blood mage:spellcasting:slots:5" value="1" level="10" />
+            <stat name="blood mage:spellcasting:slots:5" value="1" level="17" />
+            <stat name="blood mage:spellcasting:slots:6" value="1" level="11" />
+            <stat name="blood mage:spellcasting:slots:6" value="1" level="19" />
+            <stat name="blood mage:spellcasting:slots:7" value="1" level="13" />
+            <stat name="blood mage:spellcasting:slots:7" value="1" level="19" />
+            <stat name="blood mage:spellcasting:slots:8" value="1" level="15" />
+            <stat name="blood mage:spellcasting:slots:9" value="1" level="17" />
+
+            <select type="Spell" name="Cantrip (Blood Mage)" supports="$(spellcasting:list), 0" level="1" number="3" spellcasting="Blood Mage" />
+            <select type="Spell" name="Cantrip (Blood Mage)" supports="$(spellcasting:list), 0" level="4" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Cantrip (Blood Mage)" supports="$(spellcasting:list), 0" level="10" number="1" spellcasting="Blood Mage" />
+
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="1" number="5" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="2" number="2" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="3" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="5" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="6" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="8" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="9" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="12" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="14" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="15" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="17" number="1" spellcasting="Blood Mage" />
+            <select type="Spell" name="Spell (Blood Mage)" supports="$(spellcasting:list), $(spellcasting:slots)" level="18" number="1" spellcasting="Blood Mage" />
+        </rules>
+    </element>
+    <element name="Crimson Pact" type="Class Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_CRIMSON_PACT">
+        <description>
+            <p>Beginning at the 1st level, after careful study, you have infused your blood with magic, granting you enhanced vitality and the ability to draw upon great wells of arcane energy, at the cost of your life essence.</p>
+            <h5>ARCANE FLESH</h5>
+            <p>The magic coursing through your veins has granted you supernal hardiness. Your hit points are equal to 1d6 (or 4) + your Constitution modifier + half your Intelligence modifier rounded up per blood mage level and you gain an additional hit die per blood mage level.</p>
+            <h5>BLOOD DICE</h5>
+            <p>Every turn, you have a number of "blood dice", which are d4s. The maximum number of blood dice you can roll in a turn is determined by your blood mage level, as shown in the Blood Dice column of the Blood Mage table. These blood dice are used in certain class features and are also be used to cast spells.</p>
+            <p class="indent">Whenever you roll a blood die, you take necrotic damage equal to the roll. This damage cannot be reduced or prevented, except by your Sanguine Relief ability, nor mitigated by temporary hit points. This damage also doesn’t force you to make Concentration checks.</p>
+            <p class="indent">You cannot roll blood dice, and therefore cannot cast spells, if you are wearing any armor that is not a shield.</p>
+            <h5>CASTING AND EMPOWERING SPELLS</h5>
+            <p>Your blood is bursting at the seams with magic itching to escape. Whenever you cast a blood mage spell of 5th-level or lower, you must roll a minimum number of blood dice equal to the level of the expended slot, though you may choose to roll extra, you must choose to do so as the spell is cast. You are not required to roll blood dice to cast spells of 6th-level or higher, but may still choose to do so.</p>
+            <p class="indent">If that spells deals damage or provides healing, you add the amount rolled to the healing given or necrotic damage dealt to a single creature affected by the spell, other than yourself.</p>
+            <p class="indent">Should the spell affect two or more creatures, you may choose to double the damage you took from your blood dice to have the extra damage or healing affect all of those creatures, other than you.</p>
+            <p class="indent">For example, if you are a 9th-level blood mage, and want to cast a burning hands spell at 5th-level, you must expend all five of your blood dice to do so, which damage you and empower your spell. If you, for whatever reason, do not have all five of your blood dice, you cannot cast that spell.</p>
+        </description>
+        <sheet usage="{{blood-dice:dice}}d4 Blood Dice">
+            <description>Whenever you cast a blood mage spell of 5th-level or lower, you must roll a minimum number of blood dice equal to the level of the expended slot, though you may choose to roll extra, you must choose to do so as the spell is cast. You are not required to roll blood dice to cast spells of 6th-level or higher, but may still choose to do so. If that spells deals damage or provides healing, you add the amount rolled to the healing given or necrotic damage dealt to a single creature affected by the spell, other than yourself. Whenever you roll a blood die, you take necrotic damage equal to the roll. This damage also doesn’t force you to make Concentration checks.</description>
+        </sheet>
+        <rules>
+            <stat name="blood-dice:dice" value="1" level="1" />
+            <stat name="blood-dice:dice" value="1" level="3" />
+            <stat name="blood-dice:dice" value="1" level="5" />
+            <stat name="blood-dice:dice" value="1" level="7" />
+            <stat name="blood-dice:dice" value="1" level="9" />
+            <stat name="blood-dice:dice" value="1" level="13" />
+            <stat name="blood-dice:dice" value="1" level="17" />
+            
+            <stat name="crimson-pact:hp" value="1" requirements="[intelligence:modifier:1]" />
+            <stat name="crimson-pact:hp" value="1" requirements="[intelligence:modifier:3]" />
+            <stat name="crimson-pact:hp" value="1" requirements="[intelligence:modifier:5]" />
+            <stat name="crimson-pact:hp" value="1" requirements="[intelligence:modifier:7]" />
+            <stat name="crimson-pact:hp" value="1" requirements="[intelligence:modifier:9]" />
+
+            <stat name="hp" value="crimson-pact:hp" level="1" />
+            <stat name="hp" value="crimson-pact:hp" level="2" />
+            <stat name="hp" value="crimson-pact:hp" level="3" />
+            <stat name="hp" value="crimson-pact:hp" level="4" />
+            <stat name="hp" value="crimson-pact:hp" level="5" />
+            <stat name="hp" value="crimson-pact:hp" level="6" />
+            <stat name="hp" value="crimson-pact:hp" level="7" />
+            <stat name="hp" value="crimson-pact:hp" level="8" />
+            <stat name="hp" value="crimson-pact:hp" level="9" />
+            <stat name="hp" value="crimson-pact:hp" level="10" />
+            <stat name="hp" value="crimson-pact:hp" level="11" />
+            <stat name="hp" value="crimson-pact:hp" level="12" />
+            <stat name="hp" value="crimson-pact:hp" level="13" />
+            <stat name="hp" value="crimson-pact:hp" level="14" />
+            <stat name="hp" value="crimson-pact:hp" level="15" />
+            <stat name="hp" value="crimson-pact:hp" level="16" />
+            <stat name="hp" value="crimson-pact:hp" level="17" />
+            <stat name="hp" value="crimson-pact:hp" level="18" />
+            <stat name="hp" value="crimson-pact:hp" level="19" />
+            <stat name="hp" value="crimson-pact:hp" level="20" />
+        </rules>
+    </element>
+    <element name="Rejuvenation" type="Class Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_REJUVENATION">
+        <description>
+            <p>At 2nd level, once per day while you take a short rest, you may choose expended spell slots of 5th level and below to recover. For each slot level, you must roll a blood die.</p>
+            <p class="indent">For example, if you’re a 3rd-level blood mage, you have two blood dice. You can recover either a 2nd-level spell slot or two 1st-level spell slots.</p>
+        </description>
+        <sheet usage="1/Day">
+            <description>At 2nd level, once per day while you take a short rest, you may choose expended spell slots of 5th level and below to recover. For each slot level, you must roll a blood die.</description>
+        </sheet>
+    </element>
+    <element name="Profane Study" type="Class Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_PROFANE_STUDY">
+        <description>
+            <p>Once you reach 2nd level, choose a blood mage specialization: the Bloodreaver, the Martyr, or the Hemomancer. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Archetype" name="Profane Study" supports="Profane Study" />
+        </rules>
+    </element>
+    <element name="Sanguine Relief" type="Class Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_SANGUINE_RELIEF">
+        <description>
+            <p>At 3rd level, as you gain a more fine control of the arcane power coursing through your blood, low-levels of magic begin to mend your wounds rather than create them. Whenever you cast a cantrip, you may roll up to half of your blood dice, rounded up and, instead of damaging you, you heal the rolled amount.</p>
+            <p class="indent">You may use this ability the same number of times as the maximum number of blood dice you can roll each turn and regain all spent uses whenever you take a short rest.</p>
+            <p class="indent">At 14th level, you no longer need to roll blood dice to cast 1st-level spells and they activate this ability as well.</p>
+        </description>
+        <sheet usage="{{blood-dice:dice}} Blood Dice/Short Rest">
+            <description>Whenever you cast a cantrip, you may roll up to half of your blood dice, rounded up and, instead of damaging you, you heal the rolled amount.</description>
+            <description level="14">Whenever you cast a cantrip or 1st-level spell, you may roll up to half of your blood dice, rounded up and, instead of damaging you, you heal the rolled amount.</description>
+        </sheet>
+    </element>
+    <element name="Ability Score Improvement" type="Class Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_ABILITY_SCORE_IMPROVEMENT">
+        <description>
+            <p>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
+            <p class="indent">Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Improvement Option (Blood Mage 4)" supports="Improvement Option,Blood Mage,4" level="4" />
+            <select type="Class Feature" name="Improvement Option (Blood Mage 8)" supports="Improvement Option,Blood Mage,8" level="8" />
+            <select type="Class Feature" name="Improvement Option (Blood Mage 12)" supports="Improvement Option,Blood Mage,12" level="12" />
+            <select type="Class Feature" name="Improvement Option (Blood Mage 16)" supports="Improvement Option,Blood Mage,16" level="16" />
+            <select type="Class Feature" name="Improvement Option (Blood Mage 19)" supports="Improvement Option,Blood Mage,19" level="19" />
+        </rules>
+    </element>
+    <element name="Endearing Visage" type="Class Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_ENDEARING_VISAGE">
+        <description>
+            <p>At 5th level you gain the ability to use your blood to influence other creature’s thinking. Once per day, as an action, you may roll blood dice and, for the next hour, the shed blood is infused with enchantment magic and charms the first creature who comes in contact with it. A creature that makes direct contact with the droplet must succeed on a wisdom saving throw where the DC is equal to 8 + the total of your blood dice roll, though it can’t be higher than your Spell Save DC, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the blood loses its magic or until you or your companions do anything harmful to it. The charmed creature regards you as a friend. When the effect ends, the creature is unaware that it was charmed by you unless the memories are scrutinized.</p>
+        </description>
+        <sheet usage="1/Day" action="Action">
+            <description>You may roll blood dice and, for the next hour, the shed blood is infused with enchantment magic and charms the first creature who comes in contact with it. A creature that makes direct contact with the droplet must succeed on a wisdom saving throw where the DC is equal to 8 + the total of your blood dice roll, though it can’t be higher than {{spellcasting:dc}}, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the blood loses its magic or until you or your companions do anything harmful to it. The charmed creature regards you as a friend. When the effect ends, the creature is unaware that it was charmed by you unless the memories are scrutinized.</description>
+        </sheet>
+    </element>
+    <element name="Tools of the Trade" type="Class Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_TOOLS_OF_THE_TRADE">
+        <description>
+            <p>When you reach 6th level, you learn to create solid objects, such as tools and weapons, out of your blood. To create a tool kit, such as a set of blacksmith’s tools or a flute, you must complete a 1 hour ritual after which your hit point maximum is reduced by 9.</p>
+            <p class="indent">You can also use this ritual to create a weapon, its appearance based on hit points spent, as shown in the chart below. This ritual takes 5 minutes for each hit point spent. If the weapon has the versatile property, use the larger damage die to determine the hit points that should be spent.</p>
+            <p class="indent">These tools and weapons are stored in your blood and as such they can be hidden, don’t take up space or weight, and can be summoned as a bonus action. Your creation automatically returns to your bloodstream if it is more than 5 feet away from you for 1 minute or if you dismiss the creation as a bonus action. You can use your action to consume the creation, destroying it until you perform the ritual again. When you do, you regain your lost max hit points, but are not healed. This effect also occurs if you fail a death saving throw or die.</p>
+            <p class="indent">Additionally, if you create a weapon, it counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
+            <table>
+                <thead>
+                    <tr><td>Hit Point Cost</td><td>Weapon Damage Die</td></tr>
+                </thead>
+                <tr><td>3</td><td>1d4</td></tr>
+                <tr><td>6</td><td>1d6</td></tr>
+                <tr><td>9</td><td>1d8</td></tr>
+                <tr><td>12</td><td>1d10</td></tr>
+                <tr><td>15</td><td>1d12 or 2d6</td></tr>
+            </table>
+        </description>
+        <sheet action="Ritual">
+            <description>You learn to create solid objects, such as tools and weapons, out of your blood. These tools and weapons are stored in your blood and as such they can be hidden, don’t take up space or weight, and can be summoned as a bonus action. Your creation automatically returns to your bloodstream if it is more than 5 feet away from you for 1 minute or if you dismiss the creation as a bonus action. You can use your action to consume the creation, destroying it until you perform the ritual again. When you do, you regain your lost max hit points, but are not healed. This effect also occurs if you fail a death saving throw or die.</description>
+        </sheet>
+    </element>
+    <element name="Ebb and Flow" type="Class Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_EBB_AND_FLOW">
+        <description>
+            <p>Beginning at 10th level, whenever you finish a long rest, you can choose one of the following:</p>
+            <ul>
+                <li>As long as you have more than half of your maximum hit points left, you can add your Intelligence modifier to the total of any blood dice you roll for spells, once per turn.</li>
+                <li>As long as you have less than half of your maximum hit points left, you can subtract your Intelligence modifier from the total of any blood dice you roll for spells, once per turn.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Whenever you finish a long rest, you can choose one of the following: As long as you have more than half of your maximum hit points left, you can add your Intelligence modifier to the total of any blood dice you roll for spells, once per turn; As long as you have less than half of your maximum hit points left, you can subtract your Intelligence modifier from the total of any blood dice you roll for spells, once per turn.</description>
+        </sheet>
+    </element>
+    <element name="Open Wounds" type="Class Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_OPEN_WOUNDS">
+        <description>
+            <p>Beginning at 18th level, whenever you roll blood dice to cast a spell, until the end of your next turn you don’t have to roll blood dice in order to cast another spell of the same level.</p>
+        </description>
+        <sheet>
+            <description>Whenever you roll blood dice to cast a spell, until the end of your next turn you don’t have to roll blood dice in order to cast another spell of the same level.</description>
+        </sheet>
+    </element>
+    <element name="Exsanguinate" type="Class Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_CLASS_FEATURE_BLOOD_MAGE_EXSANGUINATE">
+        <description>
+            <p>When you reach 20th level, whenever a small or larger creature with blood dies within 50 feet of you, you heal for 15 hit points.</p>
+            <p class="indent">Additionally, whenever you expend hit dice to heal yourself, you may use the max number they could roll instead of rolling them.</p>
+        </description>
+        <sheet>
+            <description>Whenever a small or larger creature with blood dies within 50 feet of you, you heal for 15 hit points. Additionally, whenever you expend hit dice to heal yourself, you may use the max number they could roll instead of rolling them.</description>
+        </sheet>
+    </element>
+
+
+<!-- Profane Studies -->
+  <!-- The Bloodreaver -->
+    <element name="The Bloodreaver" type="Archetype" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_BLOOD_MAGE_BLOODREAVER">
+        <supports>Profane Study</supports>
+        <description>
+            <p>Often when a blood mage finds themselves frequenting the front lines of combat, their magic tends to evolve into a more aggressive state. These practioners of blood magic become masters of their blade and their blood, using them to both stay in a fight longer and to end a fight quicker. These warriors are called bloodreavers.</p>
+            <p class="indent">When you choose this study at 2nd level, you gain proficiency with simple and martial melee weapons.</p>
+            <p class="indent">Additionally, you learn the following spells, which are accounted for on the Spells Known column of the Blood Mage table. These spells are not on the blood mage spell list but they are nonetheless a blood mage spell for you:</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell Name</td></tr>
+                </thead>
+                <tr><td>1</td><td><i>armor of Agathys, hex</i></td></tr>
+            </table>
+            <p class="indent">In addition, the following spells are added to the blood mage spell list for you:</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell Name</td></tr>
+                </thead>
+                <tr><td>2</td><td><i>shadow blade</i></td></tr>
+                <tr><td>3</td><td><i>elemental weapon</i></td></tr>
+                <tr><td>4</td><td><i>chilling scythe</i></td></tr>
+                <tr><td>5</td><td><i>destructive wave</i></td></tr>
+                <tr><td>6</td><td><i>Tenser’s transformation</i></td></tr>
+                <tr><td>7</td><td><i>Mordekainen’s sword</i></td></tr>
+                <tr><td>8</td><td><i>omniscience</i></td></tr>
+                <tr><td>9</td><td><i>illusionary army</i></td></tr>
+            </table>
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_ARCANE_TRACKING" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_BLOOD_RUSH" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_BUTCHERY" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_MENTAL_FORTITUDE" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_FRENZY" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Blood Mage" extend="true">
+            <extend>ID_XGTE_SPELL_SHADOW_BLADE</extend>
+            <extend>ID_PHB_SPELL_ELEMENTAL_WEAPON</extend>
+            <extend>ID_PHB_SPELL_DESTRUCTIVE_WAVE</extend>
+            <extend>ID_XGTE_SPELL_TENSERS_TRANSFORMATION</extend>
+            <extend>ID_PHB_SPELL_MORDENKAINENS_SWORD</extend>
+        </spellcasting>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_ARCANE_TRACKING" level="2" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_BLOOD_RUSH" level="6" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_BUTCHERY" level="6" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_MENTAL_FORTITUDE" level="10" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_FRENZY" level="14" />
+
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+
+            <grant type="Spell" id="ID_PHB_SPELL_ARMOR_OF_AGATHYS" spellcasting="Blood Mage" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_HEX" spellcasting="Blood Mage" known="true" />
+        </rules>
+    </element>
+        <element name="Arcane Tracking" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_ARCANE_TRACKING">
+            <description>
+                <p>Additionally, when you choose this study at 2nd level, you gain the ability to track creatures through their blood. Once per long rest, when you find bloodstains no more than a 48 hours old, you may use your action to force the owner of the bloodstains to make an Intelligence saving throw against your spell save DC. If it fails, for the next hour you can sense the direction of that creature as long as it’s is within 10 miles of you and, if the creature is moving, you know the direction of its movement. If a creature succeeds on this saving throw it is immune to this effect until it sheds more blood.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When you find bloodstains no more than a 48 hours old, you may use your action to force the owner of the bloodstains to make an Intelligence saving throw (save DC {{spellcasting:dc}}). If it fails, for the next hour you can sense the direction of that creature as long as it’s is within 10 miles of you and, if the creature is moving, you know the direction of its movement. If a creature succeeds on this saving throw it is immune to this effect until it sheds more blood.</description>
+            </sheet>
+        </element>
+        <element name="Blood Rush" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_BLOOD_RUSH">
+            <description>
+                <p>Beginning at 6th level, you may use a bonus action on each of your turns to increase your abilities. When you do, roll three blood dice and, for a number of rounds equal to your blood dice total, your Strength score becomes equal to your Constitution score.</p>
+                <p class="indent">Additionally, whenever you hit an enemy with a melee weapon attack, your movement speed increases by 10 feet and attacks of opportunity made against you have disadvantage until the end of your turn.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You may use a bonus action on each of your turns to increase your abilities. When you do, roll three blood dice and, for a number of rounds equal to your blood dice total, your Strength score becomes equal to your Constitution score. Additionally, whenever you hit an enemy with a melee weapon attack, your movement speed increases by 10 feet and attacks of opportunity made against you have disadvantage until the end of your turn.</description>
+            </sheet>
+        </element>
+        <element name="Butchery" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_BUTCHERY">
+            <description>
+                <p>Also at 6th level you can roll two blood dice to attack twice, instead of once, whenever you take the Attack action with a melee weapon on your turn. If your extra attack hits, you may add the blood dice total as necrotic damage to the attack.</p>
+            </description>
+            <sheet action="Attack">
+                <description>You can roll two blood dice to attack twice, instead of once, whenever you take the Attack action with a melee weapon on your turn. If your extra attack hits, you may add the blood dice total as necrotic damage to the attack.</description>
+            </sheet>
+        </element>
+        <element name="Mental Fortitude" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_MENTAL_FORTITUDE">
+            <description>
+                <p>Beginning at 10th level, by enhancing the bloodflow to your brain, you may Concentrate on two spells as long as they both have a range of Self. Whenever you make a Concentration check while Concentrating on two spells this way, you immediately lose Concentration on one of them before the check.</p>
+            </description>
+            <sheet>
+                <description>You may Concentrate on two spells as long as they both have a range of Self. Whenever you make a Concentration check while Concentrating on two spells this way, you immediately lose Concentration on one of them before the check.</description>
+            </sheet>
+        </element>
+        <element name="Frenzy" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_BLOODREAVER_FRENZY">
+            <description>
+                <p>Beginning at the 14th level, once per short rest, when you take the Attack action on your turn, you may cast any cantrip, or a spell up to 3rd level as long as it has a range of Self, as a bonus action.</p>
+            </description>
+            <sheet usage="1/Short Rest" action="Attack">
+                <description>When you take the Attack action on your turn, you may cast any cantrip, or a spell up to 3rd level as long as it has a range of Self, as a bonus action.</description>
+            </sheet>
+        </element>
+
+  <!-- The Martyr -->
+    <element name="The Martyr" type="Archetype" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_BLOOD_MAGE_MARTYR">
+        <supports>Profane Study</supports>
+        <description>
+            <p>Healing through the arcane, let alone through the oft-thought-unclean source of life, blood, is often seen as profane and unthinkable compared from the healing derived from gods or from the powers of nature herself. Those who embrace the practice of sacrificing their own well-being to assist their allies are called Martyrs.</p>
+            <p class="indent">When you choose this study at 2nd level, you learn the following spells, which are accounted for on the Spells Known column of the Blood Mage table. These spells are not on the blood mage spell list but they are nonetheless a blood mage spell for you:</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell Name</td></tr>
+                </thead>
+                <tr><td>1</td><td><i>bless, healing word</i></td></tr>
+            </table>
+            <p class="indent">In addition, the following spells are added to the blood mage spell list for you:</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell Name</td></tr>
+                </thead>
+                <tr><td>2</td><td><i>lesser restoration, silence</i></td></tr>
+                <tr><td>3</td><td><i>haste, mass healing word</i></td></tr>
+                <tr><td>4</td><td><i>aura of life, aura of purity</i></td></tr>
+                <tr><td>5</td><td><i>mass cure wounds, greater restoration</i></td></tr>
+                <tr><td>6</td><td><i>heal, heroes’ feast</i></td></tr>
+                <tr><td>7</td><td><i>resurrection, regenerate</i></td></tr>
+                <tr><td>8</td><td><i>power word: stun, mind blank</i></td></tr>
+                <tr><td>9</td><td><i>power word: heal, true resurrection</i></td></tr>
+            </table>
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_SENSE_ESSENCE" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_BLOODLETTING" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_BLOOD_BROTHERS" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_LEECHING" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Blood Mage" extend="true">
+            <extend>ID_PHB_SPELL_LESSER_RESTORATION</extend>
+            <extend>ID_PHB_SPELL_SILENCE</extend>
+            <extend>ID_PHB_SPELL_HASTE</extend>
+            <extend>ID_PHB_SPELL_MASS_HEALING_WORD</extend>
+            <extend>ID_PHB_SPELL_AURA_OF_LIFE</extend>
+            <extend>ID_PHB_SPELL_AURA_OF_PURITY</extend>
+            <extend>ID_PHB_SPELL_MASS_CURE_WOUNDS</extend>
+            <extend>ID_PHB_SPELL_GREATER_RESTORATION</extend>
+            <extend>ID_PHB_SPELL_HEAL</extend>
+            <extend>ID_PHB_SPELL_HEROES_FEAST</extend>
+            <extend>ID_PHB_SPELL_RESURRECTION</extend>
+            <extend>ID_PHB_SPELL_REGENERATE</extend>
+            <extend>ID_PHB_SPELL_POWER_WORD_STUN</extend>
+            <extend>ID_PHB_SPELL_MIND_BLANK</extend>
+            <extend>ID_PHB_SPELL_POWER_WORD_HEAL</extend>
+            <extend>ID_PHB_SPELL_TRUE_RESURRECTION</extend>
+        </spellcasting>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_SENSE_ESSENCE" level="2" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_BLOODLETTING" level="6" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_BLOOD_BROTHERS" level="10" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_LEECHING" level="14" />
+
+            <grant type="Spell" id="ID_PHB_SPELL_BLESS" spellcasting="Blood Mage" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_HEALING_WORD" spellcasting="Blood Mage" known="true" />
+        </rules>
+    </element>
+        <element name="Sense Essence" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_SENSE_ESSENCE">
+            <description>
+                <p>Additionally at 2nd level, you gain the ability to sense the lifeforce of enemies through their blood. As an action, you focus on a single creature you can see within 30 feet and force them to make an Intelligence saving throw. The target has the feeling that someone is watching them, though they do not know the origin or even if the feeling is real. If they are aware of you, they can choose to fail the saving throw. On a failure, you sense the general health of the target and any diseases, poisons, or nonmagical conditions affecting them. A target that succeeds on this saving throw is immune to this effect for 24 hours.</p>
+                <p class="indent">Finally, you gain advantage on all Wisdom (Medicine) checks you make with a healers kit.</p>
+            </description>
+            <sheet action="Action">
+                <description>You focus on a single creature you can see within 30 feet and force them to make an Intelligence saving throw (save DC {{spellcasting:dc}}). The target has the feeling that someone is watching them, though they do not know the origin or even if the feeling is real. If they are aware of you, they can choose to fail the saving throw. On a failure, you sense the general health of the target and any diseases, poisons, or nonmagical conditions affecting them. A target that succeeds on this saving throw is immune to this effect for 24 hours.</description>
+            </sheet>
+        </element>
+        <element name="name" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_BLOODLETTING">
+            <description>
+                <p>At 6th level, you may use your action to roll blood dice to give up to two creatures you can see within 30 feet that many temporary hit points. You may use this feature a number of times equal to your Intelligence modifier (minimum 1) and regain all spent uses upon finishing a long rest.</p>
+            </description>
+            <sheet action="Action" usage="{{bloodletting:uses}}/Long Rest">
+                <description>You may roll blood dice to give up to two creatures you can see within 30 feet that many temporary hit points.</description>
+            </sheet>
+            <rules>
+                <stat name="bloodletting:uses" value="1" bonus="base" />
+                <stat name="bloodletting:uses" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Blood Brothers" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_BLOOD_BROTHERS">
+            <description>
+                <p>Beginning at 10th level, when you take a long rest, choose up to five creatures you can see. Until your next long rest, those creatures may use a bonus action on each of their turns to touch you and force you to roll blood dice. That creature heals itself equal to the amount rolled and your hit point maximum is reduced by the same amount until you finish a long rest. Once a creature is healed this way, they must complete a short rest before healing this way again.</p>
+                <p class="indent">Additionally, the chosen creatures may choose to use your hit dice as though they were their own during a short rest.</p>
+            </description>
+            <sheet>
+                <description>When you take a long rest, choose up to five creatures you can see. Until your next long rest, those creatures may use a bonus action on each of their turns to touch you and force you to roll blood dice. That creature heals itself equal to the amount rolled and your hit point maximum is reduced by the same amount until you finish a long rest. Once a creature is healed this way, they must complete a short rest before healing this way again.</description>
+            </sheet>
+        </element>
+        <element name="Leeching" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_MARTYR_LEECHING">
+            <description>
+                <p>Beginning at the 14th level, whenever you cast a spell that heals a creature, you may force one enemy within 60 feet of that creature to make a Constitution saving throw against your spell save DC. On a failed save, they take necrotic damage equal to four times the slot level used, or half as much on a successful one and you regain a number of hit points equal to the damage dealt. You may use this ability a number of times equal to your Intelligence modifier (minimum 1) and regain all spent uses whenever you take a long rest.</p>
+            </description>
+            <sheet usage="{{leeching:uses}}/Long Rest">
+                <description>Whenever you cast a spell that heals a creature, you may force one enemy within 60 feet of that creature to make a Constitution saving throw (save DC {{spellcasting:dc}}). On a failed save, they take necrotic damage equal to four times the slot level used, or half as much on a successful one and you regain a number of hit points equal to the damage dealt.</description>
+            </sheet>
+            <rules>
+                <stat name="leeching:uses" value="1" bonus="base" />
+                <stat name="leeching:uses" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+
+  <!-- The Hemomancer -->
+    <element name="The Hemomancer" type="Archetype" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_BLOOD_MAGE_HEMOMANCER">
+        <supports>Profane Study</supports>
+        <description>
+            <p>Some who practice blood magic fall deep into the study, desiring to use it to crush their enemies through the strength their blood gives them. They practice the skill of drawing the arcane energy out of their blood, allowing them to manipulate the elements to a greater degree than a standard blood mage. Those who embrace this mindset call themselves hemomancers.</p>
+            <p class="indent">When you choose this study at 2nd level, you learn the following spells, which are accounted for on the Spells Known column of the Blood Mage table. These spells are not on the blood mage spell list but they are nonetheless a blood mage spell for you:</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell Name</td></tr>
+                </thead>
+                <tr><td>1</td><td><i>thunderwave, witch bolt</i></td></tr>
+            </table>
+            <p class="indent">In addition, the following spells are added to the blood mage spell list for you:</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell Name</td></tr>
+                </thead>
+                <tr><td>2</td><td><i>shatter, flame blade</i></td></tr>
+                <tr><td>3</td><td><i>tidal bomb, lightning bolt</i></td></tr>
+                <tr><td>4</td><td><i>ice storm, blight</i></td></tr>
+                <tr><td>5</td><td><i>blackflame burst, cone of cold</i></td></tr>
+                <tr><td>6</td><td><i>chain lightning, disintegrate</i></td></tr>
+                <tr><td>7</td><td><i>finger of death, delayed blast fireball</i></td></tr>
+                <tr><td>8</td><td><i>incendiary cloud, feeblemind</i></td></tr>
+                <tr><td>9</td><td><i>fury, turn to lightning</i></td></tr>
+            </table>
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_THICKER_THAN_WATER" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_CARNAGE" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_HEMORRHAGE" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_PANACEA" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Blood Mage" extend="true">
+            <extend>ID_PHB_SPELL_SHATTER</extend>
+            <extend>ID_PHB_SPELL_FLAME_BLADE</extend>
+            <extend>ID_PHB_SPELL_LIGHTNING_BOLT</extend>
+            <extend>ID_PHB_SPELL_ICE_STORM</extend>
+            <extend>ID_PHB_SPELL_BLIGHT</extend>
+            <extend>ID_PHB_SPELL_CHAIN_LIGHTNING</extend>
+            <extend>ID_PHB_SPELL_DISINTEGRATE</extend>
+            <extend>ID_PHB_SPELL_FINGER_OF_DEATH</extend>
+            <extend>ID_PHB_SPELL_INCENDIARY_CLOUD</extend>
+            <extend>ID_PHB_SPELL_FEEBLEMIND</extend>
+            <extend>ID_PHB_SPELL_DELAYED_BLAST_FIREBALL</extend>
+            <extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+        </spellcasting>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_THICKER_THAN_WATER" level="1" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_CARNAGE" level="1" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_HEMORRHAGE" level="1" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_PANACEA" level="1" />
+
+            <grant type="Spell" id="ID_PHB_SPELL_THUNDERWAVE" spellcasting="Blood Mage" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_WITCH_BOLT" spellcasting="Blood Mage" known="true" />
+        </rules>
+    </element>
+        <element name="Thicker Than Water" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_THICKER_THAN_WATER">
+            <description>
+                <p>Additionally when you choose this study at 2nd level, you may use your blood as materials for casting a spell. Whenever you cast a spell using a slot level equal to or less than your blood dice maximum, you may ignore any material components that spell would require, up to a cost of 15 gp times your level.</p>
+            </description>
+            <sheet>
+                <description>Whenever you cast a spell using a slot level equal to or less than your blood dice maximum, you may ignore any material components that spell would require, up to a cost of 15 gp times your level.</description>
+            </sheet>
+        </element>
+        <element name="Carnage" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_CARNAGE">
+            <description>
+                <p>Beginning at 6th level, you may use a bonus action on each of your turns to roll a d6 instead of a d4 whenever you would roll a blood die that turn. You may use this feature thrice and regain all spent uses whenever you take a long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="3/Long Rest">
+                <description>You may roll a d6 instead of a d4 whenever you would roll a blood die that turn.</description>
+            </sheet>
+        </element>
+        <element name="Hemorrhage" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_HEMORRHAGE">
+            <description>
+                <p>At 10th level, whenever you roll at least one blood die, you gain temporary hit points equal to half of the damage taken from them, rounded down. At the start of each of your turns, if you still have temporary hit points gained this way, you lose 1d4 temporary hit points.</p>
+            </description>
+            <sheet>
+                <description>Whenever you roll at least one blood die, you gain temporary hit points equal to half of the damage taken from them, rounded down. At the start of each of your turns, if you still have temporary hit points gained this way, you lose 1d4 temporary hit points.</description>
+            </sheet>
+        </element>
+        <element name="Panacea" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HEMOMANCER_PANACEA">
+            <description>
+                <p>At 14th level, your intense study into the arcane nature of your blood alows you to mimic spells that would otherwise be impossible for you. Choose three spells from any classes, including this one. A spell must be of a level you can cast, as shown on the Blood Mage table, or a cantrip.</p>
+                <p class="indent">The chosen spells count as blood mage spells for you and don’t count against your number of spells known.</p>
+                <p class="indent">Additionally, once per long rest you can cast one of those spells at its lowest level without expending a spell slot, so long as that spell is of 4th level or lower.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast one of your Panacea spells at its lowest level without expending a spell slot, so long as that spell is of 4th level or lower.</description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Spell (Panacea)" supports="$(spellcasting:slots)" number="3" spellcasting="Blood Mage" known="true" />
+            </rules>
+        </element>
+
+  <!-- The Hollow -->
+    <element name="The Hollow" type="Archetype" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_BLOOD_MAGE_HOLLOW">
+        <supports>Profane Study</supports>
+        <description>
+            <p>Among blood mages, there exist a sect who have learned to use their magic as a tool to enhance their speed. By shedding blood, the arcane content of their body rises, enhancing their physical traits in a number of ways.</p>
+            <p class="indent">Those who tend to focus it on raw strength are often better suited to become Bloodreavers. But those who desire speed, dexterity, or stealth often choose to become one of the Hollow. The Hollow lean heavily into the belief that with power must come sacrifice, and often leave every mission, from the largest battle to the quickest scout, battered, bruised, and most always bloody.</p>
+            <p class="indent">When you choose this study at 2nd level, you learn the following spells, which are accounted for on the Spells Known column of the Blood Mage table. These spells are not on the blood mage spell list but they are nonetheless a blood mage spell for you:</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell Name</td></tr>
+                </thead>
+                <tr><td>1</td><td><i>heroism, longstrider</i></td></tr>
+            </table>
+            <p class="indent">In addition, your blood dice maximum is increased by 1 starting at 3rd level. You gain an additional blood die again at level 7, level 11, and level 15.</p>
+            <table>
+                <thead>
+                    <tr><td>Levels</td><td>Blood Dice</td><td>Extra Dice</td></tr>
+                </thead>
+                <tr><td>3, 4</td><td>3</td><td>+1</td></tr>
+                <tr><td>5, 6</td><td>4</td><td>+1</td></tr>
+                <tr><td>7, 8</td><td>6</td><td>+2</td></tr>
+                <tr><td>9, 10</td><td>7</td><td>+2</td></tr>
+                <tr><td>11, 12</td><td>8</td><td>+3</td></tr>
+                <tr><td>13, 14</td><td>9</td><td>+3</td></tr>
+                <tr><td>15, 16</td><td>10</td><td>+4</td></tr>
+                <tr><td>17-20</td><td>11</td><td>+4</td></tr>
+            </table>
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_DRAINED" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_CALCULATED_RISK" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_SHEDDING_EXCESS" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_HARDY" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_DRAINED" level="2" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_CALCULATED_RISK" level="6" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_SHEDDING_EXCESS" level="10" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_HARDY" level="14" />
+
+            <grant type="Spell" id="ID_PHB_SPELL_HEROISM" spellcasting="Blood Mage" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_LONGSTRIDER" spellcasting="Blood Mage" known="true" />
+
+            <stat name="blood-dice:dice" value="1" level="3" />
+            <stat name="blood-dice:dice" value="1" level="7" />
+            <stat name="blood-dice:dice" value="1" level="11" />
+            <stat name="blood-dice:dice" value="1" level="15" />
+        </rules>
+    </element>
+        <element name="Drained" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_DRAINED">
+            <description>
+                <p>Beginning at 2nd level, you learn to fight while drained of blood. As long as you have less than half of your hit point maximum remaining, your speed increases by 10 feet and you can take a bonus action on each of your turns in combat. This bonus action can be used only to take the Dash or Disengage action.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>As long as you have less than half of your hit point maximum remaining, your speed increases by 10 feet and you can take a bonus action on each of your turns in combat. This bonus action can be used only to take the Dash or Disengage action.</description>
+            </sheet>
+        </element>
+        <element name="Calculated Risk" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_CALCULATED_RISK">
+            <description>
+                <p>Starting at 6th level, as a bonus action, you may choose to use a 1 instead of rolling for each blood die that you would roll that turn.</p>
+                <p class="indent">You may use this feature a number of times equal to your Intelligence modifier (minimum 1), regaining all spent uses on a long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{calculated-risk:uses}}/Long Rest">
+                <description>You may choose to use a 1 instead of rolling for each blood die that you would roll that turn.</description>
+            </sheet>
+            <rules>
+                <stat name="calculated-risk:uses" value="1" bonus="base" />
+                <stat name="calculated-risk:uses" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Shedding Excess" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_SHEDDING_EXCESS">
+            <description>
+                <p>Starting at 10th level, whenever you roll a blood die your speed increases by 5 feet until the start of your next turn.</p>
+            </description>
+            <sheet>
+                <description>Whenever you roll a blood die your speed increases by 5 feet until the start of your next turn.</description>
+            </sheet>
+        </element>
+        <element name="name" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_HOLLOW_HARDY">
+            <description>
+                <p>At 14th level, whenever you roll a blood die you gain +1 AC until the start of your next turn.</p>
+                <p class="indent">Additionally, you gain an extra hit die per blood mage level (3d6).</p>
+            </description>
+            <sheet>
+                <description>Whenever you roll a blood die you gain +1 AC until the start of your next turn. Additionally, you gain an extra hit die per blood mage level (3d6).</description>
+            </sheet>
+        </element>
+
+  <!-- The Shaman -->
+    <element name="The Shaman" type="Archetype" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_BLOOD_MAGE_SHAMAN">
+        <supports>Profane Study</supports>
+        <description>
+            <p>A blood mage raised in a smaller society, discovering their magic alone, may turn to a more traditional path: The Shaman. Shaman typically fill the role of a cunning folk or a medicine man in remote villages around the world. Using their blood magics as a means of warding off evil spirits, fighting that which lurks in the night, curing ailments and healing wounds, and blessing the village with bountiful harvests are all within the purview of a Shaman. </p>
+            <p class="indent">When you choose this study at 2nd level, you learn the following spells, which are accounted for on the Spells Known column of the Blood Mage table. These spells are not on the blood mage spell list but they are nonetheless a blood mage spell for you:</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell Name</td></tr>
+                </thead>
+                <tr><td>1</td><td><i>Bless, Hex</i></td></tr>
+            </table>
+            <p class="indent">In addition, you gain the ability to create a voodou doll. Creating one takes a 10 minute ritual and 10gp worth of fabric and string. To link a voodou doll to a creature, you may use your bonus action to make a melee spell attack against one creature within range. On hit, roll any number of blood dice, and the creature takes that much damage. It is now linked to your voodou doll for as long as you remain concentrating on it, as though on a spell, up to a maximum of 1 hour.</p>
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SIMBIS_BLESSINGS" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SHRUNKEN_HEAD" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_PRACTICED_MYSTICISM" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_BONDYES_BLESSING" />
+        </description>
+        <sheet usage="{{voodou-dolls:count}} Voudou Doll(s)">
+            <description>You can create a voodou doll. To link a voodou doll to a creature, you may use your bonus action to make a melee spell attack against one creature within range. On hit, roll any number of blood dice, and the creature takes that much damage. It is now linked to your voodou doll for as long as you remain concentrating on it, as though on a spell, up to a maximum of 1 hour. Your voodou doll has 10 HP and AC of 10.</description>
+            <description level="10">You can create two voodou dolls. To link a voodou doll to a creature, you may use your bonus action to make a melee spell attack against one creature within range. On hit, roll any number of blood dice, and the creature takes that much damage. It is now linked to your voodou doll for as long as you remain concentrating on it, as though on a spell, up to a maximum of 1 hour. Each voodou doll has 10 HP and AC of 10.</description>
+            <description level="14">You can create three voodou dolls. To link a voodou doll to a creature, you may use your bonus action to make a melee spell attack against one creature within range. On hit, roll any number of blood dice, and the creature takes that much damage. It is now linked to your voodou doll for as long as you remain concentrating on it, as though on a spell, up to a maximum of 1 hour. Each voodou doll has 10 HP and AC of 10.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SIMBIS_BLESSINGS" level="1" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SHRUNKEN_HEAD" level="1" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_PRACTICED_MYSTICISM" level="1" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_BONDYES_BLESSING" level="1" />
+
+            <stat name="voodou-dolls:count" value="1" level="2" />
+            <stat name="voodou-dolls:count" value="1" level="10" />
+            <stat name="voodou-dolls:count" value="1" level="14" />
+        </rules>
+    </element>
+        <element name="Simbi’s Blessings" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SIMBIS_BLESSINGS">
+            <description>
+                <p>Beginning at 2nd level, you gain two voodou practices of your choice. Your practice options are detailed at the end of the study description. Whenever you gain a level in this class, you may switch one of your practices for another.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Voodou Practice (Simbi’s Blessings)" supports="Voodou Practice" number="2" />
+            </rules>
+        </element>
+        <element name="Shrunken Head" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SHRUNKEN_HEAD">
+            <description>
+                <p>Beginning at 6th level, you gain the ability to create shrunken heads, imbued with your magic. The creation of a head requires a 1 hour ritual, 20gp worth of special salts and string, and a creature’s head. You can have up to two heads at once, and performing the ritual again while you have three heads destroys one of the old ones. Your heads have an AC of 12 (natural armor), 5 hit points, and darkvision out to 120 feet.</p>
+                <p class="indent">Your heads all share a number of charges equal to your Intelligence modifier, and regain 1d4+1 charges at dawn each day. While you’re holding a head, these charges can be used to cast the following spells:</p>
+                <p class="indent">Comprehend Languages (1 charge), Augury (2 charges), Speak with Dead (3 charges), Dissonant Whispers (4 charges) and Crown of Madness (5 charges), without material components. When you spend the last charge, roll 1d6. On a 1, the head you’re currently holding turns to dust.</p>
+                <p class="indent">Additionally, as an action, you can see through one of your head’s eyes and hear what it hears until you choose to stop. During this time, you are deaf and blind with regard to your own senses.</p>
+                <p class="indent">You may also choose to set a head somewhere to keep watch. As an action, you can expend 2 charges and cast the Alarm spell instead of with its normal casting time, creating a 20-foot cube area centered on the head. After the duration the head turns to dust.</p>
+            </description>
+            <sheet>
+                <description>You can have up to two shrunken heads at once. Your heads have an AC of 12 (natural armor), 5 hit points, and darkvision out to 120 feet. Each head holds {{intelligence:modifier}} charges and can cast the spells below without material components. When you spend the last charge, roll 1d6. On a 1, the head you’re currently holding turns to dust. Additionally, as an action, you can see through one of your head’s eyes and hear what it hears until you choose to stop. During this time, you are deaf and blind with regard to your own senses.</description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SH_COMPREHEND_LANGUAGES" />
+                <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SH_AUGURY" />
+                <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SH_SPEAK_WITH_DEAD" />
+                <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SH_DISSONANT_WHISPERS" />
+                <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SH_CROWN_OF_MADNESS" />
+            </rules>
+        </element>
+            <element name="Shrunken Head: Comprehend Languages" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SH_COMPREHEND_LANGUAGES">
+                <description>
+                    <p></p>
+                </description>
+                <sheet usage="Shrunken Head" alt="Comprehend Languages">
+                    <description></description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_COMPREHEND_LANGUAGES" spellcasting="Shrunken Head" />
+                </rules>
+            </element>
+            <element name="Shrunken Head: Augury" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SH_AUGURY">
+                <description>
+                    <p></p>
+                </description>
+                <sheet usage="Shrunken Head" alt="Augury">
+                    <description></description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_AUGURY" spellcasting="Shrunken Head" />
+                </rules>
+            </element>
+            <element name="Shrunken Head: Speak with Dead" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SH_SPEAK_WITH_DEAD">
+                <description>
+                    <p></p>
+                </description>
+                <sheet usage="Shrunken Head" alt="Speak with Dead">
+                    <description></description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" spellcasting="Shrunken Head" />
+                </rules>
+            </element>
+            <element name="Shrunken Head: Dissonant Whispers" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SH_DISSONANT_WHISPERS">
+                <description>
+                    <p></p>
+                </description>
+                <sheet usage="Shrunken Head" alt="Dissonant Whispers">
+                    <description></description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_DISSONANT_WHISPERS" spellcasting="Shrunken Head" />
+                </rules>
+            </element>
+            <element name="Shrunken Head: Crown of Madness" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_SH_CROWN_OF_MADNESS">
+                <description>
+                    <p></p>
+                </description>
+                <sheet usage="Shrunken Head" alt="Crown of Madness">
+                    <description></description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_CROWN_OF_MADNESS" spellcasting="Shrunken Head" />
+                </rules>
+            </element>
+        <element name="Practiced Mysticism" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_PRACTICED_MYSTICISM">
+            <description>
+                <p>At 10th level, you can now create and maintain two voodou dolls and three shrunken heads at all times. Additionally, your voodou dolls no longer require concentration.</p>
+                <p class="indent">You also gain two additional voodou practices of your choice. Finally, Pins and Needles’ damage and Stitch’s healing are improved to 2d10 and 4d8 respectively.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Voodou Practice (Practiced Mysticism)" supports="Voodou Practice" number="2" />
+            </rules>
+        </element>
+        <element name="name" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_BONDYES_BLESSING">
+            <description>
+                <p>At 14th level, you can create a third voodou doll.</p>
+                <p class="indent">Additionally, you gain an advanced voodou practice of your choice from the options detailed at the end of the study description. Whenever you gain a level in this class, you may switch your choice.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Advanced Voodou Practice" supports="Advanced Voodou Practice" />
+            </rules>
+        </element>
+            <element name="Pins and Needles" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_VP_PINS_AND_NEEDLES">
+                <supports>Voodou Practice</supports>
+                <description>
+                    <p>As an action, you can insert a pin into your voodou doll. To do so deals 1 damage to your doll. The linked creature must then succeed on a Wisdom saving throw against your spell save DC or take 1d10+1 force damage.</p>
+                </description>
+                <sheet action="Action">
+                    <description>You can insert a pin into your voodou doll. To do so deals 1 damage to your doll. The linked creature must then succeed on a Wisdom saving throw against your spell save DC or take 1d10+1 force damage.</description>
+                    <description level="10">You can insert a pin into your voodou doll. To do so deals 1 damage to your doll. The linked creature must then succeed on a Wisdom saving throw against your spell save DC or take 2d10+1 force damage.</description>
+                </sheet>
+            </element>
+            <element name="Jinx" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_VP_JINX">
+                <supports>Voodou Practice</supports>
+                <description>
+                    <p>The creatures linked by your voodou dolls are under the effects of the <i>hex</i> spell, as though it were cast at 1st-level. This effect doesn’t require concentration.</p>
+                </description>
+                <sheet>
+                    <description>The creatures linked by your voodou dolls are under the effects of the hex spell, as though it were cast at 1st-level. This effect doesn’t require concentration.</description>
+                </sheet>
+            </element>
+            <element name="Bad Juju" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_VP_BAD_JUJU">
+                <supports>Voodou Practice</supports>
+                <description>
+                    <p>Once per long rest, you may cast <i>bestow curse</i> on a linked creature through its voodou doll without expending a spell slot.</p>
+                </description>
+                <sheet usage="1/Long Rest">
+                    <description>You may cast bestow curse on a linked creature through its voodou doll without expending a spell slot.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_BESTOW_CURSE" spellcasting="Voodou Doll" />
+                </rules>
+            </element>
+            <element name="Sew" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_VP_SEW">
+                <supports>Voodou Practice</supports>
+                <description>
+                    <p>Once per long rest, as an action you may deal 1 damage to your doll and force a linked creature to succeed on a Constitution saving throw against your spell save DC or suffer one of the following effects:</p>
+                    <ul>
+                        <li><emphasis>Eyes:</emphasis> The creature is blinded.</li>
+                        <li><emphasis>Ears:</emphasis> The creature is deafened.</li>
+                        <li><emphasis>Mouth:</emphasis> The creature is rendered mute.</li>
+                        <li><emphasis>Legs:</emphasis> The creature’s speed is reduced by 15 feet.</li>
+                        <li><emphasis>Arms:</emphasis> The creature suffers a -2 penalty to attack and damage rolls.</li>
+                    </ul>
+                    <p class="indent">As long as a creature is affected by this ability, you may use subsequent actions to continue sewing that doll, choosing a new option each time.</p>
+                    <p class="indent">At the end of each of it’s turns an affected creature may attempt its saving throw again, ending all effects on a success.</p>
+                </description>
+                <sheet usage="1/Long Rest" action="Action">
+                    <description>You may deal 1 damage to your doll and force a linked creature to succeed on a Constitution saving throw against (save DC {{spellcasting:DC}}) or suffer one of the following effects. As long as a creature is affected by this ability, you may use subsequent actions to continue sewing that doll, choosing a new option each time. At the end of each of it’s turns an affected creature may attempt its saving throw again, ending all effects on a success.</description>
+                </sheet>
+            </element>
+            <element name="Stitch" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_VP_STITCH">
+                <supports>Voodou Practice</supports>
+                <description>
+                    <p>You may use your action to stitch your voodou doll, healing the linked creature for 2d8 hit points and dealing 1d4 damage to the doll.</p>
+                </description>
+                <sheet action="Action">
+                    <description>You stitch your voodou doll, healing the linked creature for 2d8 hit points and dealing 1d4 damage to the doll.</description>
+                    <description level="10">You stitch your voodou doll, healing the linked creature for 4d8 hit points and dealing 1d4 damage to the doll.</description>
+                </sheet>
+            </element>
+            <element name="Entreat the Loa" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_VP_ENTREAT_THE_LOA">
+                <supports>Voodou Practice</supports>
+                <description>
+                    <p>As an action, you may choose one ability score. A linked creature may add your profiency bonus to any ability checks or saving throws they make with the choosen score until you choose another.</p>
+                </description>
+                <sheet action="Action">
+                    <description>You may choose one ability score. A linked creature may add your profiency bonus to any ability checks or saving throws they make with the choosen score until you choose another.</description>
+                </sheet>
+            </element>
+            <element name="Reinforce Fabric" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_VP_REINFORCE_FABRIC">
+                <supports>Voodou Practice</supports>
+                <description>
+                    <p>As an action, you may sew extra fabric onto the voodou doll, dealing 1d4 damage to it. For the next minute, the linked creature is enhanced. Choose one of the following effects:</p>
+                    <ul>
+                        <li><emphasis>Eyes:</emphasis> The creature gains darkvision out to a range of 60 feet.</li>
+                        <li><emphasis>Ears:</emphasis> The creature gains advantage on any perception checks that rely on sound.</li>
+                        <li><emphasis>Legs:</emphasis> The creature’s speed is increased by 10 feet.</li>
+                        <li><emphasis>Arms:</emphasis> The creature gains a +1 bonus to attack and damage rolls.</li>
+                    </ul>
+                </description>
+                <sheet action="Action">
+                    <description>You may sew extra fabric onto the voodou doll, dealing 1d4 damage to it. For the next minute, the linked creature is enhanced. Choose one of several effects.</description>
+                </sheet>
+            </element>
+            <element name="Beg the Marasa" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_VP_BEG_THE_MARASA">
+                <supports>Voodou Practice</supports>
+                <description>
+                    <p>You perform a quick ritual in order to locate a creature previously linked to your voodou doll. By spending 10 minutes, in which you name a creature who was at one point linked to your voodou doll, you gain a preternatural sense for the creature if it’s within 10 miles. You instantly gain knowledge of the direction the creature is from you, as well as the ability to see the path the creature followed to get there.</p>
+                    <p class="indent">You gain these benefits for up to 1 hour, as long as you remain concentrating on the effect as though it were a spell. After the effect ends, the doll takes 1d4 damage.</p>
+                </description>
+                <sheet>
+                    <description>By spending 10 minutes, in which you name a creature who was at one point linked to your voodou doll, you gain a preternatural sense for the creature if it’s within 10 miles. You instantly gain knowledge of the direction the creature is from you, as well as the ability to see the path the creature followed to get there. You gain these benefits for up to 1 hour, as long as you remain concentrating on the effect as though it were a spell. After the effect ends, the doll takes 1d4 damage.</description>
+                </sheet>
+            </element>
+            <element name="Yank" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_AVP_YANK">
+                <supports>Advanced Voodou Practice</supports>
+                <description>
+                    <p>Once per long rest, as an action, one linked creature must make a Charisma saving throw as you rip off your effigy’s head, destroying it. On a failed save, the creature takes 10d12 force damage, or half as much on a success.</p>
+                </description>
+                <sheet usage="1/Long Rest" action="Action">
+                    <description>One linked creature must make a Charisma saving throw (save DC {{spellcasting:dc}}) as you rip off your effigy’s head, destroying it. On a failed save, the creature takes 10d12 force damage, or half as much on a success.</description>
+                </sheet>
+            </element>
+            <element name="Channel Papa Legba" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_SHAMAN_AVP_CHANNEL_PAPA_LEGBA">
+                <supports>Advanced Voodou Practice</supports>
+                <description>
+                    <p>You entreat the guardian of the crossroads to take you to a previously linked creature. By performing a 1 hour ritual in which you name a creature who was at one point linked to your voodou doll, you and up to five creatures you can see instantly transport to an unoccupied space within 30 feet of the named creature. As you arrive, the voodou doll you used crumbles to dust.</p>
+                </description>
+                <sheet>
+                    <description>By performing a 1 hour ritual in which you name a creature who was at one point linked to your voodou doll, you and up to five creatures you can see instantly transport to an unoccupied space within 30 feet of the named creature. As you arrive, the voodou doll you used crumbles to dust.</description>
+                </sheet>
+            </element>
+  <!-- The Tormentor -->
+    <element name="The Tormentor" type="Archetype" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_BLOOD_MAGE_TORMENTOR">
+        <supports>Profane Study</supports>
+        <description>
+            <p>Some blood mages, though exceedingly rare, simply love the blood. Be it through an occupation, a mental breakdown, or a deep-seated insanity, a type of blood magic emerged that excels at causing, spreading, sharing, and loving pain, torture, and in the end, blood. These unfortunate few are known simply as Tormentors.</p>
+            <p class="indent">When you choose this study at 2nd level, you learn the following spells, which are accounted for on the Spells Known column of the Blood Mage table. These spells are not on the blood mage spell list but they are nonetheless a blood mage spell for you:</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell Name</td></tr>
+                </thead>
+                <tr><td>1</td><td><i>ensnaring strike, inflict wounds</i></td></tr>
+            </table>
+            <p class="indent">In addition, the following spells are added to the blood mage spell list for you:</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell Name</td></tr>
+                </thead>
+                <tr><td>2</td><td><i>cloud of daggers</i></td></tr>
+                <tr><td>3</td><td><i>enemies abound</i></td></tr>
+                <tr><td>4</td><td><i>giant insect</i></td></tr>
+                <tr><td>5</td><td><i>insect plague</i></td></tr>
+                <tr><td>6</td><td><i>flesh to stone</i></td></tr>
+                <tr><td>7</td><td><i>Mordekainen's sword</i></td></tr>
+                <tr><td>8</td><td><i>feeblemind</i></td></tr>
+                <tr><td>9</td><td><i>psychic scream</i></td></tr>
+            </table>
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_THOUSAND_CUTS" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_EVERY_WORK_A_MASTERPIECE" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_MASOCHISM" />
+            <div element="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_BREAKING_POINT" />
+        </description>
+        <spellcasting name="Blood Mage" extend="true">
+            <extend>ID_PHB_SPELL_CLOUD_OF_DAGGERS</extend>
+            <extend>ID_XGTE_SPELL_ENEMIES_ABOUND</extend>
+            <extend>ID_PHB_SPELL_GIANT_INSECT</extend>
+            <extend>ID_PHB_SPELL_INSECT_PLAGUE</extend>
+            <extend>ID_PHB_SPELL_FLESH_TO_STONE</extend>
+            <extend>ID_PHB_SPELL_MORDENKAINENS_SWORD</extend>
+            <extend>ID_PHB_SPELL_FEEBLEMIND</extend>
+            <extend>ID_XGTE_SPELL_PSYCHIC_SCREAM</extend>
+        </spellcasting>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_THOUSAND_CUTS" level="2" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_EVERY_WORK_A_MASTERPIECE" level="6" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_MASOCHISM" level="10" />
+            <grant type="Archetype Feature" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_BREAKING_POINT" level="14" />
+
+            <grant type="Spell" id="ID_PHB_SPELL_ENSNARING_STRIKE" spellcasting="Blood Mage" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" spellcasting="Blood Mage" known="true" />
+        </rules>
+    </element>
+        <element name="Thousand Cuts" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_THOUSAND_CUTS">
+            <description>
+                <p>Beginning at 2nd level, you master the technique to properly bleed your enemies. Whenever an enemy is dealt damage by one of your spells, they begin to bleed. At the end of their next turn, they take 1d4 necrotic damage. This ability grows in strength at 6th, 10th, and 14th level.</p>
+                <p class="indent">Additionally, you gain proficiency in the Charisma (Intimidation) and Wisdom (Insight) skills.</p>
+            </description>
+            <sheet>
+                <description>Whenever an enemy is dealt damage by one of your spells, they begin to bleed. At the end of their next turn, they take 1d4 necrotic damage.</description>
+                <description level="6">Whenever an enemy is dealt damage by one of your spells, they begin to bleed. At the end of their next turn, they take 1d4 necrotic damage. Additionally, a creature damaged by your Thousand Cuts ability has disadvantage on Investigation checks to discern illusions until the start of their next turn.</description>
+                <description level="10">Whenever an enemy is dealt damage by one of your spells, they begin to bleed. At the end of their next turn, they take 2d4 necrotic damage. Additionally, a creature damaged by your Thousand Cuts ability has disadvantage on Investigation checks to discern illusions until the start of their next turn.</description>
+                <description level="14">Whenever an enemy is dealt damage by one of your spells, they begin to bleed. At the end of their next turn, they take 1d4 necrotic damage. Additionally, a creature damaged by your Thousand Cuts ability has disadvantage on Investigation checks to discern illusions and disadvantage on concentration checks until the start of their next turn.</description>
+            </sheet>
+        </element>
+        <element name="Every Work a Masterpiece" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_EVERY_WORK_A_MASTERPIECE">
+            <description>
+                <p>At 6th level you've perfected your art of butchery. Whenever you deal bludgeoning, slashing, or piercing damage, you may choose to deal the maximum damage, instead of rolling.</p>
+                <p class="indent">You may do this a number of times equal to your Intelligence modifier (minimum of 1), regaining all spent uses when you finish a long rest.</p>
+                <p class="indent">Additionally, a creature damaged by your Thousand Cuts ability has disadvantage on Investigation checks to discern illusions until the start of their next turn.</p>
+            </description>
+            <sheet usage="{{masterpiece:uses}}/Long Rest">
+                <description>Whenever you deal bludgeoning, slashing, or piercing damage, you may choose to deal the maximum damage, instead of rolling.</description>
+            </sheet>
+            <rules>
+                <stat name="masterpiece:uses" value="1" bonus="base" />
+                <stat name="masterpiece:uses" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Masochism" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_MASOCHISM">
+            <description>
+                <p>Starting at 10th level, you learn to love the pain. Whenever you damage yourself with a spell, you heal a number of hit points equal to half the damage taken at the start of your next turn, and you may add your Intelligence modifier to your AC until you heal this way.</p>
+                <p class="indent">Additionally, the damage of your Thousand Cuts ability increases by 1d4.</p>
+            </description>
+            <sheet>
+                <description>Whenever you damage yourself with a spell, you heal a number of hit points equal to half the damage taken at the start of your next turn, and you may add {{intelligence:modifier}} to your AC until you heal this way.</description>
+            </sheet>
+        </element>
+        <element name="Breaking Point" type="Archetype Feature" source="Tome of Blood Magics" id="ID_ELA_TOBM_ARCHETYPE_FEATURE_TORMENTOR_BREAKING_POINT">
+            <description>
+                <p>At 14th level, your ability to determine the breaking point of an enemy's descent into madness is amplified. When you deal damage to a creature you may have that creature temporarily descend into madness. That creature must succeed on a Wisdom saving throw or roll on the Short-Term Madness table. A creature driven insane this way may repeat the saving throw at the end of each of its turns, recovering from the insanity on a success.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a long rest.</p>
+                <p class="indent">Additionally, a creature damaged by your Thousand Cuts ability has disadvantage on concentration checks until the start of their next turn.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When you deal damage to a creature you may have that creature temporarily descend into madness. That creature must succeed on a Wisdom saving throw (save DC {{spellcasting:dc}}) or roll on the Short-Term Madness table. A creature driven insane this way may repeat the saving throw at the end of each of its turns, recovering from the insanity on a success.</description>
+            </sheet>
+        </element>
+
+
+<!-- Blood Mage Spells -->
+    <append id="ID_PHB_SPELL_ALARM">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ALTER_SELF">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ANIMATE_DEAD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ANTILIFE_SHELL">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ANTIMAGIC_FIELD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ANTIPATHY/SYMPATHY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ARCANE_EYE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ARCANE_GATE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ARCANE_LOCK">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ASTRAL_PROJECTION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_AURA_OF_VITALITY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_BANE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_BANISHMENT">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_BESTOW_CURSE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_BIGBYS_HAND">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_BLADE_BARRIER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_BLADE_WARD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_BLINDNESS_DEAFNESS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_BLINK">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_BLUR">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_BONES_OF_THE_EARTH">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_BURNING_HANDS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_CHARM_MONSTER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CHARM_PERSON">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CIRCLE_OF_DEATH">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CIRCLE_OF_POWER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CLONE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CLOUDKILL">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_COLOR_SPRAY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_COMMAND">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_COMPREHEND_LANGUAGES">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_COMPULSION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CONFUSION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CONTACT_OTHER_PLANE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CONTAGION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CONTINGENCY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CONTROL_WATER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_COUNTERSPELL">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_CREATE_HOMUNCULUS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CREATE_OR_DESTROY_WATER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CREATE_UNDEAD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CREATION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CROWN_OF_MADNESS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_CURE_WOUNDS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DANCING_LIGHTS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_DANSE_MACABRE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DARKNESS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DARKVISION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DEATH_WARD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DEMIPLANE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DETECT_MAGIC">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DETECT_THOUGHTS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DIMENSION_DOOR">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DISGUISE_SELF">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DISPEL_EVIL_AND_GOOD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DISPEL_MAGIC">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DIVINATION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DOMINATE_BEAST">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DOMINATE_MONSTER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DOMINATE_PERSON">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DRAWMIJS_INSTANT_SUMMONS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_DREAM">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_EARTH_TREMOR">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_EARTHQUAKE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_ELEMENTAL_BANE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_ENERVATION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ENTHRALL">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ETHEREALNESS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_EXPEDITIOUS_RETREAT">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_EYEBITE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FABRICATE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FALSE_LIFE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_FAR_STEP">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FEAR">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FEATHER_FALL">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FEIGN_DEATH">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FIND_FAMILIAR">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_FIND_GREATER_STEED">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FIND_STEED">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FINGER_OF_DEATH">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FIRE_SHIELD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FIRE_STORM">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FLESH_TO_STONE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FOG_CLOUD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FORBIDDANCE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FORCECAGE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_FRIENDS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_GASEOUS_FORM">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_GATE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_GEAS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_GENTLE_REPOSE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_GLYPH_OF_WARDING">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_GREASE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_GREATER_INVISIBILITY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_GUARDS_AND_WARDS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_HARM">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_HOLD_MONSTER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_HOLD_PERSON">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_HYPNOTIC_PATTERN">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_IDENTIFY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_ILLUSORY_DRAGON">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ILLUSORY_SCRIPT">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_IMMOLATION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_IMPRISONMENT">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_INFESTATION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_INVESTITURE_OF_ICE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_INVISIBILITY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_JUMP">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_KNOCK">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_LEGEND_LORE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_LEOMUNDS_SECRET_CHEST">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_LEOMUNDS_TINY_HUT">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_LEVITATE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_LOCATE_CREATURE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_LOCATE_OBJECT">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_LONGSTRIDER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_MADDENING_DARKNESS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_MAELSTROM">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MAGE_ARMOR">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MAGE_HAND">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MAGIC_CIRCLE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MAGIC_JAR">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MAGIC_MOUTH">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MAJOR_IMAGE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MASS_SUGGESTION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MAZE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MENDING">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_MENTAL_PRISON">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MESSAGE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_MIGHTY_FORTRESS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MINOR_ILLUSION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MIRAGE_ARCANE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MIRROR_IMAGE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MISLEAD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MISTY_STEP">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MODIFY_MEMORY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MORDENKAINENS_FAITHFUL_HOUND">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_MORDENKAINENS_PRIVATE_SANCTUM">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_NEGATIVE_ENERGY_FLOOD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_OTILUKES_FREEZING_SPHERE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_OTTOS_IRRESISTIBLE_DANCE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_PASSWALL">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_PHANTASMAL_FORCE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_PHANTASMAL_KILLER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_PLANE_SHIFT">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_POISON_SPRAY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_PRESTIDIGITATION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_PRISMATIC_SPRAY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_PRISMATIC_WALL">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_PROGRAMMED_ILLUSION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_PROJECT_IMAGE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_PURIFY_FOOD_AND_DRINK">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_RAISE_DEAD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_RARYS_TELEPATHIC_BOND">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_REINCARNATE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_REMOVE_CURSE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_REVERSE_GRAVITY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_REVIVIFY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_ROPE_TRICK">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_SCATTER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SCRYING">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SEE_INVISIBILITY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SEEMING">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SENDING">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SEQUESTER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_SHAPE_WATER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SHIELD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SHOCKING_GRASP">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_SICKENING_RADIANCE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SILENT_IMAGE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SIMULACRUM">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SLOW">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_SOUL_CAGE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SPARE_THE_DYING">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SPIDER_CLIMB">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_STINKING_CLOUD">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SUGGESTION">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_SYMBOL">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_TELEKINESIS">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_TELEPATHY">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_TELEPORT">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_TELEPORTATION_CIRCLE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_TENSERS_FLOATING_DISK">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_THUNDER_STEP">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_TIME_STOP">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_TONGUES">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_TRUE_SEEING">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_TSUNAMI">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_UNSEEN_SERVANT">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_VAMPIRIC_TOUCH">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_WALL_OF_FIRE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_WALL_OF_FORCE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_WALL_OF_ICE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_WALL_OF_WATER">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_WATER_BREATHING">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_WATER_WALK">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_XGTE_SPELL_WATERY_SPHERE">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_WEB">
+        <supports>Blood Mage</supports>
+    </append>
+    <append id="ID_PHB_SPELL_WEIRD">
+        <supports>Blood Mage</supports>
+    </append>
+
+</elements>

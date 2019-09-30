@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Primeval Bloodline</name>
+        <author url="https://www.gmbinder.com/share/-Ln5kSyeOMY9o8vFejDb">u/ch4rb0nne</author>
+        <update version="0.0.1">
+            <file name="sorcerer-primeval-bloodline.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/sorcerer-primeval-bloodline.xml" />
+        </update>
+    </info>
+    
+    <element name="Primeval Bloodline" type="Archetype" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_PRIMEVAL_BLOODLINE">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>Just as magic can be found in the blood of dragons or the destructive power of storms, it also courses more slowly and discreetly through the workings of the natural world. An individual descended from powerful druids or fey spirits, or who is exposed to an intersection between the material plane and the Feywild, may find themselves imbued with powerful and innate magic potential.</p>
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_NATURAL_CONNECTION" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_DRUIDIC_MAGIC" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHAIN_TO_EARTH" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_BESTIAL_ESCAPE" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_ONE_WITH_NATURE" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_NATURAL_CONNECTION" level="1" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_DRUIDIC_MAGIC" level="1" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHAIN_TO_EARTH" level="6" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_BESTIAL_ESCAPE" level="14" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_ONE_WITH_NATURE" level="18" />
+        </rules>
+    </element>
+    
+    <element name="Natural Connection" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_NATURAL_CONNECTION">
+        <description>
+            <p>At 1st level, you learn the druidcraft cantrip. It counts as a sorcerer cantrip for you, but doesn't count against your number of cantrips known.</p>
+            <p class="indent">Additionally, you gain the ability to communicate in a limited manner with beasts and plants. They can understand the meaning of your words, though you have no special ability to understand them in return. You have advantage on all Charisma checks you make to influence them.</p>
+        </description>
+        <sheet>
+            <description>You gain the ability to communicate in a limited manner with beasts and plants. They can understand the meaning of your words, though you have no special ability to understand them in return. You have advantage on all Charisma checks you make to influence them.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_DRUIDCRAFT" spellcasting="Sorcerer" />
+        </rules>
+    </element>
+
+    <element name="Druidic Magic" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_DRUIDIC_MAGIC">
+        <description>
+            <p>Your link to nature allows you to learn spells from the druid class. When your Spellcasting feature lets you learn or replace a sorcerer cantrip or a sorcerer spell of 1st level or higher, you can choose the new spell from the druid spell list or the sorcerer spell list. You must otherwise obey all the restrictions for selecting the spell, and it becomes a sorcerer spell for you.</p>
+            <p class="indent">In addition, choose an affinity for the source of your magic, connected to the type of nature that provides your power: arctic, coast, desert, forest, grassland, mountain, swamp, or Underdark. You learn an additional spell based on that affinity, as shown below. It is a sorcerer spell for you, but it doesn't count against your number of sorcerer spells known. If you later replace this spell, you must replace it with a spell from the druid spell list.</p>
+            <table>
+                <thead>
+                    <tr><td>Affinity</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>Arctic</td><td><i>ice knife</i></td></tr>
+                <tr><td>Coast</td><td><i>create or destroy water</i></td></tr>
+                <tr><td>Desert</td><td><i>absorb elements</i></td></tr>
+                <tr><td>Forest</td><td><i>entangle</i></td></tr>
+                <tr><td>Grassland</td><td><i>longstrider</i></td></tr>
+                <tr><td>Mountain</td><td><i>earth tremor</i></td></tr>
+                <tr><td>Swamp</td><td><i>detect poison and disease</i></td></tr>
+                <tr><td>Underdark</td><td><i>faerie fire</i></td></tr>
+            </table>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Sorcerer" extend="true">
+            <extend>Druid</extend>
+        </spellcasting>
+        <rules>
+            <select type="Archetype Feature" name="Druidic Magic Affinity" supports="Druidic Magic" />
+        </rules>
+    </element>
+
+    <element name="Chain to Earth" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHAIN_TO_EARTH">
+        <description>
+            <p>At 6th level, immediately after you cast a spell of 1st level or higher, you can use a bonus action to cause primeval forces to ensnare a foe (such as by vines or swirling winds). A Large or smaller creature within 30 feet of you that you can see must succeed on a Strength saving throw or be restrained until the end of your next turn. The target can use its action to make a Strength check against your spell save DC, ending the effect early on a success.</p>
+            <p class="indent">You can use this feature a number of times equal to your Charisma modifier (minimum of once). When you finish a long rest, you regain all expended uses.</p>
+        </description>
+        <sheet action="Bonus Action" usage="{{chain to earth:usage}}/Long Rest">
+            <description>When you cast a spell of 1st level or higher, you can use your bonus action to to cause a target to make a Strength saving throw or be restrained by primeval forces until the end of your next turn. The target can use its action to make a Strength saving throw to end the effect early.</description>
+        </sheet>
+        <rules>
+            <stat name="chain to earth:usage" value="1" />
+            <stat name="chain to earth:usage" value="charisma:modifier" />
+        </rules>
+    </element>
+
+    <element name="Bestial Escape" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_BESTIAL_ESCAPE">
+        <description>
+            <p>At 14th level, when you take damage that reduces you to 0 hit points and doesn't kill you outright, you can use your reaction to transform into a CR0 beast of your choice. Additionally, you can immediately move up to your speed without triggering opportunity attacks.</p>
+            <p class="indent">The transformation lasts for one hour, until you end it as a bonus action, or until you drop to 0 hit points or die. While transformed, your game statistics, including mental ability scores, are replaced by he statistics of the chosen beast. You retain your alignment and personality.</p>
+            <p class="indent">You assume the hit points of your new form. When you revert to your normal form, you retain the hit points that you had in your beast form if they are greater than you had before you transformed. If you revert as a result of dropping to 0 hit points, any excess damage does not carry over to your normal form.</p>
+            <p class="indent">You are limited in the actions you can perform by the nature of your new form, and you cannot speak, cast spells, or take any other action that requires hands or speech. Your gear melds into the new form. You can't activate, use, wield, or otherwise benefit from any of your equipment.</p>
+            <p class="indent">Once you use this feature, you can't use it again until you finish a long rest.</p>
+        </description>
+        <sheet usage="1/Long Rest" action="Reaction">
+            <description>When you take damage that reduces you to 0 hit points and doesn't kill you outright, you can use your reaction to transform into a CR0 beast of your choice, assuming the hit points of the beast form. Additionally, you can immediately move up to your speed without triggering opportunity attacks.</description>
+        </sheet>
+    </element>
+
+    <element name="One With Nature" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_ONE_WITH_NATURE">
+        <description>
+            <p>At 18th level, your magic fuses fully with the natural world around you, which answers to your beck and call. As an action, you can spend 6 sorcery points to gain one of the following sets of benefits for one minute:</p>
+            <ul>
+                <li><b>One With Flora. </b>Cloaked in nature's protection, you gain resistance to nonmagical bludgeoning, piercing, and slashing damage for the duration. As a bonus action on each of your turns, you can lash out with entangling plants at a number of creatures up to your Charisma modifier (minimum of one) that you can see within 60 feet of you. Each target must succeed on a Strength saving throw against your spell save DC or be restrained for the duration. The target can use its action to make a Strength check against your spell save DC, ending the effect early on a success.</li>
+                <li><b>One With Fauna. </b>Joining your mind with those of the world's living beings, you automatically succeed on saving throws to maintain concentration for the duration. As a bonus action on each of your turns, you can summon a beast or swarm of beasts of CR 1 or less at a point you can see within 60 feet of you for the duration. You have a telepathic link with the beast or swarm, which rolls its own initiative and fights as your ally, obeying all orders you give it.</li>
+            </ul>
+        </description>
+        <sheet action="Action">
+            <description>You can spend 6 sorcery points to gain the advantages of either <b>One With Flora</b> or <b>One With Fauna</b> for one minute.</description>
+        </sheet>
+    </element>
+
+    <!-- Druidic Magic Features -->
+    <element name="Arctic" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_DRUIDIC_MAGIC_ARCTIC">
+        <supports>Druidic Magic</supports>
+        <description>
+            <p>Grants <i>ice knife</i> as a sorcerer spell.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_XGTE_SPELL_ICE_KNIFE" spellcasting="Sorcerer"/>
+        </rules>
+    </element>
+
+    <element name="Coast" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_DRUIDIC_MAGIC_COAST">
+        <supports>Druidic Magic</supports>
+        <description>
+            <p>Grants <i>create or destroy water</i> as a sorcerer spell.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CREATE_OR_DESTROY_WATER" spellcasting="Sorcerer"/>
+        </rules>
+    </element>
+
+    <element name="Desert" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_DRUIDIC_MAGIC_DESERT">
+        <supports>Druidic Magic</supports>
+        <description>
+            <p>Grants <i>absorb elements</i> as a sorcerer spell.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_XGTE_SPELL_ABSORB_ELEMENTS" spellcasting="Sorcerer"/>
+        </rules>
+    </element>
+
+    <element name="Forest" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_DRUIDIC_MAGIC_FOREST">
+        <supports>Druidic Magic</supports>
+        <description>
+            <p>Grants <i>entangle</i> as a sorcerer spell.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ENTANGLE" spellcasting="Sorcerer"/>
+        </rules>
+    </element>
+
+    <element name="Grassland" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_DRUIDIC_MAGIC_GRASSLAND">
+        <supports>Druidic Magic</supports>
+        <description>
+            <p>Grants <i>longstrider</i> as a sorcerer spell.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_LONGSTRIDER" spellcasting="Sorcerer"/>
+        </rules>
+    </element>
+
+    <element name="Mountain" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_DRUIDIC_MAGIC_MOUNTAIN">
+        <supports>Druidic Magic</supports>
+        <description>
+            <p>Grants <i>earth tremor</i> as a sorcerer spell.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_XGTE_SPELL_EARTH_TREMOR" spellcasting="Sorcerer"/>
+        </rules>
+    </element>
+
+    <element name="Swamp" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_DRUIDIC_MAGIC_SWAMP">
+        <supports>Druidic Magic</supports>
+        <description>
+            <p>Grants <i>detect poison and disease</i> as a sorcerer spell.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE" spellcasting="Sorcerer"/>
+        </rules>
+    </element>
+
+    <element name="Underdark" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_DRUIDIC_MAGIC_UNDERDARK">
+        <supports>Druidic Magic</supports>
+        <description>
+            <p>Grants <i>faerie fire</i> as a sorcerer spell.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" spellcasting="Sorcerer"/>
+        </rules>
+    </element>
+
+</elements>

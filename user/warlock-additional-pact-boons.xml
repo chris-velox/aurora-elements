@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Additonal Pact Boons</name>
+        <author url="https://homebrewery.naturalcrit.com/share/ryrquGO-8r">u/KnightDragon</author>
+        <update version="0.0.1">
+            <file name="warlock-additional-pact-boons.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/warlock-additional-pact-boons.xml" />
+        </update>
+    </info>
+    
+    <element name="Pact of the Catalyst" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_CATALYST">
+        <supports>Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <p>Your patron grants you a crystal infused with their otherworldly energy. You can choose the type of gemstone you recieve. You can use this crystal as a spellcasting focus. Additionally, when you cast a spell using this gemstone as a spellcasting focus, when you roll damage for that spell, you may reroll any die with a result of one. You must use the new roll. You may use this feature a number of times equal to your charisma modifier (minimum one), and regain all uses after completing a long rest. If the gemstone is lost or destroyed, you can perform a ceremony during a long rest to recieve a replacement. The previous stone is destroyed at the end of this ritual.</p>
+        </description>
+        <sheet usage="{{pact of the catalyst:usage}}/Long Rest">
+            <description>When you cast a spell using your patron crystal as a spellcasting focus, when you roll damage for that spell, you may reroll any die with a result of one. You must use the new roll.</description>
+        </sheet>
+        <rules>
+            <stat name="pact of the catalyst:usage" value="1" />
+            <stat name="pact of the catalyst:usage" value="charisma:modifier" />
+            <select type="List" name="Quirk (Pact of the Catalyst)">
+                <item id="1">You have an obsession with the kind of gemstone your catalyst is made out of.</item>
+                <item id="2">The longer you go without casting a spell, the more restless you get.</item>
+                <item id="3">You only show your emotions when you're using magic.</item>
+                <item id="4">You bore incredibly easily of mundane and common things.</item>
+                <item id="5">Losing material wealth physically pains you.</item>
+                <item id="6">You collect various precious objects in the hopes of impressing your patron.</item>
+            </select>
+        </rules>
+    </element>
+    
+    <element name="Pact of the Chalice" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_CHALICE">
+        <supports>Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <p>Your patron bequeaths an ornate chalice unto you. At the end of each short or long rest you take, the chalice fills with a common liquid of your choice. Examples include holy water, blood, acid, wine, and a single dose of potion of healing. If the chalice is lost or destroyed, you can perform a one hour ritual during a long or short rest to recieve a replacement. If you die or recieve a replacement chalice, the old chalice melts.</p>
+        </description>
+        <sheet usage="1/Short Rest">
+            <description>At the end of each short or long rest you take, the chalice fills with a common liquid of your choice(for example, holy water, blood, acid, wine, a single dose of potion of healing).</description>
+        </sheet>
+        <rules>
+            <select type="List" name="Quirk (Pact of the Chalice)">
+                <item id="1">You enjoy bathing in odd liquids, such as blood, wine, or saltwater.</item>
+                <item id="2">You refuse to drink out of anything other than your chalice.</item>
+                <item id="3">Minor poisons taste delicious to you.</item>
+                <item id="4">The air around you always seems to be somewhat humid.</item>
+                <item id="5">You only sleep well with the sound of running water nearby.</item>
+                <item id="6">Ale is your best friend.</item>
+            </select>
+        </rules>
+    </element>
+    
+    <element name="Pact of the Flesh" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_FLESH">
+        <supports>Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <p>Your patron modifies your physical form to be more similar to its own. You gain one of the following permanent physical alterations, and can switch which alteration you have during a short or long rest.</p>
+            <h5>PHYSICAL ALTERATIONS</h5>
+            <table>
+                <thead>
+                    <tr><td>Name</td><td>Effect</td></tr>
+                </thead>
+                <tr><td><b>Resistance</b></td><td>Your form becomes tougher, perhaps growing scales, secreting a thin layer of mucus, or being surrounded by protective motes of light. You gain resistance to one damage type, chosen when you gain this alteration.</td></tr>
+                <tr><td><b>Aggression</b></td><td>Your body forms natural weapons, such as fangs, claws, or horns. Your unarmed attacks deal 1d6 bludgeoning, piercing, or slashing damage, depending on the form of the weapon.</td></tr>
+                <tr><td><b>Mobility</b></td><td>Your flesh warps into a swifter configuration, perhaps with legs lengthening, your lower half becoming quadrupedal, or gaining small wings to push your forward. Your movement speed increases by 10 feet.</td></tr>
+                <tr><td><b>Adaptation</b></td><td>You gain features that allow you to function in almost any environment. You gain a climbing or swimming speed equal to your movement speed, and can breathe in any environment.</td></tr>
+                <tr><td><b>Vigor</b></td><td>You flesh knits together at incredible speed. At the end of each short or long rest you take, you gain temporary hit points equal to twice your charisma modifier (minimum one).</td></tr>
+            </table>
+        </description>
+        <sheet usage="1/Short Rest">
+            <description>You gain one physical alteration, and can switch which alteration you have during a short or long rest.</description>
+        </sheet>
+        <rules>
+            <select type="List" name="Quirk (Pact of the Flesh)">
+                <item id="1">Cooked meat is revolting to you.</item>
+                <item id="2">People standing near you tend to notice a smell, like seawater or sulphur.</item>
+                <item id="3">The longer someone looks at you, the more unnerving you seem.</item>
+                <item id="4">You feel compelled to hide your appearance, even to those you trust most.</item>
+                <item id="5">If there's not enough around you to focus on, you can feel something writhing beneath your skin.</item>
+                <item id="6">You bleed an abnormal color.</item>
+            </select>
+        </rules>
+    </element>
+    
+    <element name="Pact of the Mirror" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_MIRROR">
+        <supports>Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <p>You learn the <i>silent image</i> spell. The spell doesn't count against your number of spells known.</p>
+            <p class="indent">When you cast the spell, if the illusion takes the form of a humanoid you're familiar with, you may have the illusion automatically act in the same manner as the humanoid it share's its appearance with. This acting includes information that you aren't personally aware of.</p>
+        </description>
+        <sheet>
+            <description>When you cast <i>silent illusion</i>, if the illusion takes the form of a humanoid you're familiar with, you may have the illusion automatically act in the same manner as the humanoid it share's its appearance with. This acting includes information that you aren't personally aware of.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_SILENT_IMAGE" />
+            <select type="List" name="Quirk (Pact of the Mirror)">
+                <item id="1">You often talk to your reflection as if it could hear you.</item>
+                <item id="2">You constantly compare yourself to other people.</item>
+                <item id="3">It upsets you when people don't notice that you're clearly the most beautiful person in the room.</item>
+                <item id="4">You often find yourself subconciously imitating others.</item>
+                <item id="5">Lying is second nature for you.</item>
+                <item id="6">An object isn't clean unless you can see yourself if you look at it.</item>
+            </select>
+        </rules>
+    </element>
+    
+    <element name="Pact of the Needle" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_NEEDLE">
+        <supports>Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <p>You learn the <i>cure wounds</i> spell. The spell doesn't count against your number of spells known.</p>
+            <p class="indent">Additionally, when you heal someone with your <i>cure wounds</i> spell, you may have the target make a constitution saving throw against your spell save DC. On a failure, the target is infected with your patron's essence, and is frightened or charmed (your choice) by you for the next 1d4 hours.</p>
+        </description>
+        <sheet>
+            <description>When you heal someone with your <i>cure wounds</i> spell, you may have the target make a constitution saving throw (DC {{warlock:spellcasting:dc}}). On a failure, the target is infected with your patron's essence, and is frightened or charmed (your choice) by you for the next 1d4 hours.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" />
+            <select type="List" name="Quirk (Pact of the Needle)">
+                <item id="1">The sight of blood comforts you.</item>
+                <item id="2">You almost always have a cold, but never seem to get seriously ill.</item>
+                <item id="3">Pain is usually something to be ignored.</item>
+                <item id="4">Saving a life is the only thing that quenches your guilt.</item>
+                <item id="5">You act far too calm and carelessly with sharp objects.</item>
+                <item id="6">Casually making people uncomfortable is one of your favorite pasttimes.</item>
+            </select>
+        </rules>
+    </element>
+    
+    <element name="Pact of the Sigil" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_SIGIL">
+        <supports>Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <p>You learn the <i>sanctuary</i> spell. The spell doesn't count against your number of spells known.</p>
+            <p class="indent">Additionally, during a short or long rest, you can call on your patron to grant you a gift in the form of a magical inscription. The inscription can be written on anything you can maintain contact with for the hour the ritual takes place. The inscription is clearly visible, and can cast one of your warlock spells as if you had casted it using a warlock spell slot when a trigger condition set during the ritual is met. The inscription disappears after the trigger is met, if another incription is created, or after 24 hours.</p>
+        </description>
+        <sheet usage="1/Short Rest">
+            <description>During a short or long rest, you can call on your patron to grant you a gift in the form of a magical inscription. The inscription can be written on anything you can maintain contact with for the hour the ritual takes place. The inscription is clearly visible, and can cast one of your warlock spells as if you had casted it using a warlock spell slot when a trigger condition set during the ritual is met. The inscription disappears after the trigger is met, if another incription is created, or after 24 hours.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" />
+
+            <select type="List" name="Quirk (Pact of the Sigil)">
+                <item id="1">You compulsively draw your patron's sigil wherever you can.</item>
+                <item id="2">Beautiful art is the only thing worth collecting.</item>
+                <item id="3">You usually write in reverse.</item>
+                <item id="4">During downtime, you can usually be found engrossed in a book.</item>
+                <item id="5">Poor handwriting is extremely upsetting to you.</item>
+                <item id="6">You attempt to teach everyone the languages you know, whether they want to or not.</item>
+            </select>
+        </rules>
+    </element>
+    
+    <element name="Pact of the Spirit" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_SPIRIT">
+        <supports>Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <p>Your patron suffuses your very soul with its essence, entwining itself with your very being. As an action, you can unleash this otherwordly essence, increasing your charisma by 5 until the end of your next turn. When you use this feature, you can't use it again until you finish a long rest.</p>
+        </description>
+        <sheet usage="1/Long Rest" action="Action">
+            <description>You can unleash the otherwordly essence of your patron, increasing your charisma by 5 until the end of your next turn.</description>
+        </sheet>
+        <rules>
+            <select type="List" name="Quirk (Pact of the Spirit)">
+                <item id="1">Your speech tends to have an odd lilt to it.</item>
+                <item id="2">Sometimes, you hear faint whispering that no one else can.</item>
+                <item id="3">You have nightmares almost every night.</item>
+                <item id="4">Answers to problems tend to pop right into your head the second they're posed.</item>
+                <item id="5">Your eyes change color every so often.</item>
+                <item id="6">The presence of certain objects fills you with dread.</item>
+            </select>
+        </rules>
+    </element>
+    
+    <element name="Pact of the Torch" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_TORCH">
+        <supports>Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <p>Your patron grants you a light source infused with eldritch energy, such as a torch, a candle, a lantern, or a firefly in a jar. When activated, the light source gives bright light out to 30 feet, and dim light to 60. While the light source is shining, you have advantage on perception and investigation rolls made in the lit area, and can see through the light source. If the gift is lost, you can perform a one hour ritual during a long or short rest to recieve a replacement. The light is consumed in flame if you recieve a replacement or die.</p>
+        </description>
+        <sheet>
+            <description>When activated, the light source your patron gifted to you gives bright light out to 30 feet, and dim light to 60. While the light source is shining, you have advantage on perception and investigation rolls made in the lit area, and can see through the light source.</description>
+        </sheet>
+        <rules>
+            <select type="List" name="Quirk (Pact of the Torch)">
+                <item id="1">You tend to ask far, far too many questions.</item>
+                <item id="2">You are utterly horrified of the dark.</item>
+                <item id="3">Solving mysteries seems to be the one thing that consistently brings you joy.</item>
+                <item id="4">Being as vigilant as possible is the only way to stay alive.</item>
+                <item id="5">You can and do fall asleep in broad daylight.</item>
+                <item id="6">You are utterly incapable of keeping a secret.</item>
+            </select>
+        </rules>
+    </element>
+    
+    <!-- Additional Eldritch Invocations-->
+
+    <element name="Overwhelming Catalyst" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_OVERWHELMING_CATALYST">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Pact of the Catalyst feature</prerequisite>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_CATALYST</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Pact of the Catalyst feature</p>
+            <p>Whenever you use your Pact of the Catalyst feature to reroll a spell's damage, you may reroll any die with the result 1 or 2 and take the highest result instead.</p>
+        </description>
+        <sheet>
+            <description>Whenever you use your Pact of the Catalyst feature to reroll a spell's damage, you may reroll any die with the result 1 or 2 and take the highest result instead.</description>
+        </sheet>
+    </element>
+    
+    <element name="Sacrificial Catalyst" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_SACRIFICAL_CATALYST">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Pact of the Catalyst feature</prerequisite>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_CATALYST</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Pact of the Catalyst feature</p>
+            <p>When you cast a spell using your catalyst as a spellcasting focus, you may have catalyst be destroyed by the spell's strength. If you do, you maximize the spell's damage.</p>
+        </description>
+        <sheet>
+            <description>When you cast a spell using your catalyst as a spellcasting focus, you may have catalyst be destroyed by the spell's strength. If you do, you maximize the spell's damage.</description>
+        </sheet>
+    </element>
+    
+    <element name="Empowered Chalice" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_EMPOWERED_CHALICE">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>8th level, Pact of the Chalice feature</prerequisite>
+        <requirements>[level:8],ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_CHALICE</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 8th level, Pact of the Chalice feature</p>
+            <p>When you fill your chalice at the end of a rest, the liquid can be an uncommon potion.</p>
+        </description>
+        <sheet>
+            <description>When you fill your chalice at the end of a rest, the liquid can be an uncommon potion.</description>
+        </sheet>
+    </element>
+    
+    <element name="Eldritch Communion" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_COMMUNION">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Contact other plane spell, Pact of the Chalice feature</prerequisite>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_CHALICE,ID_PHB_SPELL_CONTACT_OTHER_PLANE</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Contact other plane spell, Pact of the Chalice feature</p>
+            <p>During a short or long rest, if you have possesion of your chalice, you may cast <i>contact other plane</i> as a ritual to contact your patron. If you fail the spell's saving throw, you only take half damage from the backlash.</p>
+        </description>
+        <sheet>
+            <description>During a short or long rest, if you have possesion of your chalice, you may cast <i>contact other plane</i> as a ritual to contact your patron. If you fail the spell's saving throw, you only take half damage from the backlash.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CONTACT_OTHER_PLANE" />
+        </rules>
+    </element>
+    
+    <element name="Warped Form" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_WARPED_FORM">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Pact of the Flesh feature</prerequisite>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_FLESH</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Pact of the Flesh feature</p>
+            <p>You may choose two physical alterations at the end of each short or long rest rather than one.</p>
+        </description>
+        <sheet>
+            <description>You may choose two physical alterations at the end of each short or long rest.</description>
+        </sheet>
+    </element>
+    
+    <element name="Otherworldly Mending" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_OTHERWORLDLY_MENDING">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>11th level, Pact of the Flesh feature</prerequisite>
+        <requirements>[level:11],ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_FLESH</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 11th level, Pact of the Flesh feature</p>
+            <p>Whenever you use hit dice to recover during a short rest, you may maximize the result.</p>
+        </description>
+        <sheet>
+            <description>Whenever you use hit dice to recover during a short rest, you may maximize the result.</description>
+        </sheet>
+    </element>
+    
+    <element name="Gift of False Idols" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_GIFT_OF_FALSE_IDOLS">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>11th level, Pact of the Mirror feature</prerequisite>
+        <requirements>[level:11],ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_MIRROR</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 11th level, Pact of the Mirror feature</p>
+            <p>You may use your Mystic Arcanum (6th Level) Feature to cast the <i>programmed illusion</i> spell.</p>
+        </description>
+        <sheet>
+            <description>You may use your Mystic Arcanum (6th Level) Feature to cast the <i>programmed illusion</i> spell.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_PROGRAMMED_ILLUSION" />
+        </rules>
+    </element>
+    
+    <element name="Plague Needle" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_PLAGUE_NEEDLE">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Pact of the Needle feature</prerequisite>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_NEEDLE</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Pact of the Needle feature</p>
+            <p>You learn the <i>inflict wounds</i> spell. The spell does not count against your number of spells known.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" />
+        </rules>
+    </element>
+    
+    <element name="Epidemic Needle" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_EPIDEMIC_NEEDLE">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>18th level, Pact of the Needle feature</prerequisite>
+        <requirements>[level:18],ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_NEEDLE</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 18th level, Pact of the Needle feature</p>
+            <p>Creatures charmed or frightened by you gain the Pact of the Needle feature.</p>
+        </description>
+        <sheet>
+            <description>Creatures charmed or frightened by you gain the Pact of the Needle feature.</description>
+        </sheet>
+    </element>
+    
+    <element name="Enduring Sigil" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_ENDURING_SIGIL">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>11th level, Pact of the Sigil feature</prerequisite>
+        <requirements>[level:11],ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_SIGIL</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 11th level, Pact of the Sigil feature</p>
+            <p>You may have up to three inscriptions active concurrently.</p>
+        </description>
+        <sheet>
+            <description>You may have up to three inscriptions active concurrently.</description>
+        </sheet>
+    </element>
+    
+    <element name="Hidden Sigil" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_HIDDEN_SIGIL">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Pact of the Sigil feature</prerequisite>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_SIGIL</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Pact of the Sigil feature</p>
+            <p>Whenever you create an inscription, you may have it fade from view, requiring an Investigation check equal to your spell save DC to discover it.</p>
+        </description>
+        <sheet>
+            <description>Whenever you create an inscription, you may have it fade from view, requiring an Investigation check (DC {{warlock:spellcasting:dc}}).</description>
+        </sheet>
+    </element>
+    
+    <element name="Unyielding Soul" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_UNYIELDING_SOUL">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Pact of the Spirit feature</prerequisite>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_SPIRIT</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Pact of the Spirit feature</p>
+            <p>When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.</p>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead.</description>
+        </sheet>
+    </element>
+    
+    <element name="Empowered Soul" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_EMPOWERED_SOUL">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>16th level, Pact of the Spirit feature</prerequisite>
+        <requirements>[level:16],ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_SPIRIT</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 16th level, Pact of the Spirit feature</p>
+            <p>When you use your Pact of the Spirit Feature to increase your charisma, your charisma increases by 10 instead.</p>
+        </description>
+        <sheet>
+            <description>When you use your Pact of the Spirit Feature to increase your charisma, your charisma increases by 10.</description>
+        </sheet>
+    </element>
+    
+    <element name="Revealing Light" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_REVEALING_LIGHT">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>5th level, Pact of the Torch feature</prerequisite>
+        <requirements>[level:5],ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_TORCH</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 5th level, Pact of the Torch feature</p>
+            <p>The light from your torch acts as the <i>detect magic</i> spell.</p>
+        </description>
+        <sheet>
+            <description>The light from your torch acts as the <i>detect magic</i> spell.</description>
+        </sheet>
+    </element>
+    
+    <element name="Searing Torch" type="Class Feature" source="Homebrewery" id="ID_KD_HOMEBREWERY_CLASS_FEATURE_ELDRITCH_INVOCATION_SEARING_TORCH">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>5th level, Pact of the Torch feature</prerequisite>
+        <requirements>[level:5],ID_RDDT_PACT_BOONS_EXPANDED,ID_KD_HOMEBREWERY_CLASS_FEATURE_PACT_OF_THE_TORCH</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 5th level, Pact of the Torch feature</p>
+            <p>You learn the <i>fireball</i> spell. The spell does not count against your number of spells known. Additionally, whenever you cast the spell, you can choose to have the center of the spell be your torch.</p>
+        </description>
+        <sheet>
+            <description>Whenever you cast fireball, you can choose to have the center of the spell be your torch.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_FIREBALL" />
+        </rules>
+    </element>
+    
+</elements>

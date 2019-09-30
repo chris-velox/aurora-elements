@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Theurgy Arcane Tradition</name>
+        <description>This month, Unearthed Arcana presents two new options that allow arcane casters to express their faith in the gods. For warlock characters, the Pact of the Seeker defines a bond to a mysterious, inscrutable deity dedicated to gathering knowledge and lore. For wizards, the Theurgy arcane tradition creates a magic-user whose arcane instruction is guided by the teachings of a deity, and who gains the benefits of a divine domain.</description>
+        <author url="http://dnd.wizards.com/articles/features/faithful">Wizards of the Coast</author>
+        <update version="0.0.1">
+            <file name="wizard-theurgy.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/wizard-theurgy.xml" />
+        </update>
+    </info>
+
+ <!-- Theurgy Archetype -->   
+    <element name="Theurgy" type="Archetype" source="Unearthed Arcana: The Faithful" id="ID_WOTC_UA_ARCHETYPE_WIZARD_THEURGY">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>A number of deities claim arcane magic as their domain. While the idea of a divine being embracing such power might seem contradictory, magic is as much a part of the fabric of the cosmos as wind, fire, lightning, and all other primal forces. Just as there are deities of the sea and gods of warfare, the arcane arts feature their own divine patrons.</p>
+            <p class="indent">Such deities often have clerics, but many gods of magic bid their followers to take up the study of wizardry. These religious magic-users follow the arcane tradition of Theurgy and are commonly known as theurgists. Such spellcasters are as dedicated and scholarly as any other wizard, but they blend their arcane study with religious teachings.</p>
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_DIVINE_INSPIRATION" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_INITIATE" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_CHANNEL_ARCANA" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_ACOLYTE" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_PRIEST" />
+            <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_HIGH_PRIEST" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_DIVINE_INSPIRATION" level="2" />
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_INITIATE" level="2" />
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_CHANNEL_ARCANA" level="2" />
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_ACOLYTE" level="6" />
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_PRIEST" level="10" />
+            <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_HIGH_PRIEST" level="14" />
+        </rules>
+    </element>
+    
+        <element name="Divine Inspiration" type="Archetype Feature" source="Unearthed Arcana: The Faithful" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_DIVINE_INSPIRATION">
+            <description>
+                <p>When you select this tradition at 2nd level, pick a divine domain from your chosen deity's list of eligible domains. Alternatively, the following domains are thematically appropriate and easily compatible with the theurgist concept:</p>
+                <ul>
+                    <li>Arcana</li>
+                    <li>Knowledge</li>
+                    <li>Light</li>
+                </ul>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Divine Domain" supports="Theurgy Divine Domain" />
+            </rules>
+        </element>
+        <element name="Arcane Initiate" type="Archetype Feature" source="Unearthed Arcana: The Faithful" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_INITIATE">
+            <description>
+                <p>Beginning when you select this tradition at 2nd level, whenever you gain a wizard level, you can choose to replace one of the wizard spells you add to your spellbook with a cleric domain spell for your chosen domain. The spell must be of a level for which you have spell slots.</p>
+                <p class="indent">If you add all of your domain spells to your spellbook, you can subsequently opt to add any spell from the cleric spell list instead. The spell must still be of a level for which you have spell slots.</p>
+                <p class="indent">Other wizards cannot copy cleric spells from your spellbook into their own spellbooks.</p>
+            </description>
+            <sheet>
+                <description>Whenever you gain a wizard level, you can choose to replace one of the wizard spells you add to your spellbook with a cleric domain spell for your chosen domain. The spell must be of a level for which you have spell slots.
+                If you add all of your domain spells to your spellbook, you can subsequently opt to add any spell from the cleric spell list instead.</description>
+            </sheet>
+        </element>
+        <element name="Channel Arcana" type="Archetype Feature" source="Unearthed Arcana: The Faithful" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_CHANNEL_ARCANA">
+            <description>
+                <p>At 2nd level, you gain the ability to channel arcane energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Divine Arcana and the Channel Divinity option granted at 2nd level by your chosen domain. You employ that Channel Divinity option by using your Channel Arcana ability.</p>
+                <p class="indent">When you use your Channel Arcana, you choose which effect to create. You must then finish a short or long rest to use your Channel Arcana again.</p>
+                <p class="indent">Some Channel Arcana effects require saving throws. When you use such an effect, the save DC equals your wizard spell save DC.</p>
+                <p class="indent">Beginning at 6th level, you can use your Channel Arcana twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.</p>
+                <p class="indent">When you gain further uses for Channel Divinity from your domain, you can employ them by using your Channel Arcana ability.</p>
+            </description>
+            <sheet usage="{{channel-arcana:uses}}/Short Rest">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="channel-arcana:uses" value="1" level="2" />
+                <stat name="channel-arcana:uses" value="1" level="6" />
+                <stat name="channel-arcana:uses" value="1" level="18" />
+                <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_CHANNEL_ARCANA_DIVINE_ARCANA" level="2" />
+            </rules>
+        </element>
+        <element name="Channel Arcana: Divine Arcana" type="Archetype Feature" source="Unearthed Arcana: The Faithful" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_CHANNEL_ARCANA_DIVINE_ARCANA">
+            <description>
+                <p>As a bonus action, you speak a prayer to control the flow of magic around you. The next spell you cast gains a +2 bonus to its attack roll or saving throw DC, as appropriate.</p>
+            </description>
+            <sheet usage="Channel Arcana" alt="Divine Arcana" action="Bonus Action">
+                <description>You speak a prayer to control the flow of magic around you. The next spell you cast gains a +2 bonus to its attack roll or saving throw DC, as appropriate.</description>
+            </sheet>
+        </element>
+        <element name="Arcane Acolyte" type="Archetype Feature" source="Unearthed Arcana: The Faithful" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_ACOLYTE">
+            <description>
+                <p>At 6th level, you gain your chosen domain's 1st level benefits. However, you do not gain any weapon or armor proficiencies from your domain.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Arcane Priest" type="Archetype Feature" source="Unearthed Arcana: The Faithful" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_PRIEST">
+            <description>
+                <p>At 10th level, you gain your chosen domain's 6th level benefits. Your faith and your understanding of magic allow you to delve into your god's secrets.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="High Priest" type="Archetype Feature" source="Unearthed Arcana: The Faithful" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANE_HIGH_PRIEST">
+            <description>
+                <p>At 14th level, you gain your chosen domain's 17th level benefits. Your academic nature and understanding of magic and doctrine allow you to master this ability sooner than a cleric of your domain.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+        </element>
+
+<!-- Arcana Divine Domain for Theurgy -->
+        <element name="Arcana Domain" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN">
+            <supports>Theurgy Divine Domain</supports>
+            <description>
+                <div element="ID_WOTC_SCAG_ARCHETYPE_Arcana_Domain_" />
+                <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_INITIATE" />
+                <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_ARCANE_ABJURATION" />
+                <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_SPELL_BREAKER" />
+                <!--
+                    <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_POTENT_SPELLCASTING" />
+                -->
+                <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_MASTERY" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <!--
+                <grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" level="1" spellcasting="Wizard" />
+                <grant type="Spell" id="ID_PHB_SPELL_MAGIC_MISSILE" level="1" spellcasting="Wizard" />
+                <grant type="Spell" id="ID_PHB_SPELL_MAGIC_WEAPON" level="3" spellcasting="Wizard" />
+                <grant type="Spell" id="ID_PHB_SPELL_NYSTULS_MAGIC_AURA" level="3" spellcasting="Wizard" />
+                <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" level="5" spellcasting="Wizard" />
+                <grant type="Spell" id="ID_PHB_SPELL_MAGIC_CIRCLE" level="5" spellcasting="Wizard" />
+                <grant type="Spell" id="ID_PHB_SPELL_ARCANE_EYE" level="7" spellcasting="Wizard" />
+                <grant type="Spell" id="ID_PHB_SPELL_LEOMUNDS_SECRET_CHEST" level="7" spellcasting="Wizard" />
+                <grant type="Spell" id="ID_PHB_SPELL_PLANAR_BINDING" level="9" spellcasting="Wizard" />
+                <grant type="Spell" id="ID_PHB_SPELL_TELEPORTATION_CIRCLE" level="9" spellcasting="Wizard" />
+                -->
+      
+                <!--<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_INITIATE" level="6"/>-->
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+                <select type="Spell" name="Arcane Initiate" supports="Wizard,0" number="2" spellcasting="Wizard" level="6" />
+
+                <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_SPELL_BREAKER" level="10"/>
+                <!--<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANE_MASTERY" level="14"/>-->
+                <select type="Spell" name="Arcane Mastery" supports="Wizard,6" spellcasting="Wizard" level="14" />
+                <select type="Spell" name="Arcane Mastery" supports="Wizard,7" spellcasting="Wizard" level="14" />
+                <select type="Spell" name="Arcane Mastery" supports="Wizard,8" spellcasting="Wizard" level="14" />
+                <select type="Spell" name="Arcane Mastery" supports="Wizard,9" spellcasting="Wizard" level="14" />
+                <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_DIVINE_SPELLS" requirements="ID_PHB_SPELL_DETECT_MAGIC,ID_PHB_SPELL_MAGIC_MISSILE,ID_PHB_SPELL_MAGIC_WEAPON,ID_PHB_SPELL_NYSTULS_MAGIC_AURA,ID_PHB_SPELL_DISPEL_MAGIC,ID_PHB_SPELL_MAGIC_CIRCLE,ID_PHB_SPELL_ARCANE_EYE,ID_PHB_SPELL_LEOMUNDS_SECRET_CHEST,ID_PHB_SPELL_PLANAR_BINDING,ID_PHB_SPELL_TELEPORTATION_CIRCLE" />
+
+            </rules>
+        </element>
+
+        <element name="Channel Arcana: Arcane Abjuration" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_ARCANE_ABJURATION">
+            <description>
+            <p>Starting at 2nd level, you can use your Channel Divinity to abjure otherworldly creatures.</p>
+            <p class="indent">As an action, you present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.</p>
+            <p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. It also can't take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.</p>
+            <p class="indent">After you reach 5th level, when a creature fails its saving throw against your Arcane Abjuration feature, the creature is banished for 1 minute (as in the banishment spell, no concentration required) if it isn't on its plane of origin and its challenge rating is at or below a certain threshold, as shown on the Arcane Banishment table.</p>
+            <h5>Arcane Banishment</h5>
+            <table>
+                <thead><tr><td>Cleric Level</td><td>Banishes Creatures of CR ...</td></tr></thead>
+                <tr><td>5th</td><td>1/2 or lower</td></tr>
+                <tr><td>8th</td><td>1 or lower</td></tr>
+                <tr><td>11th</td><td>2 or lower</td></tr>
+                <tr><td>14th</td><td>3 or lower</td></tr>
+                <tr><td>17th</td><td>4 or lower</td></tr>
+            </table>
+            </description>
+            <sheet alt="Arcane Abjuration" action="Action" usage="Channel Arcana">
+                <description>You present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.
+                A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. It also can't take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.</description>
+                <description level="5">You present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.
+                A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. It also can't take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.
+                When a creature fails its saving throw against your Arcane Abjuration feature, the creature is banished for 1 minute (as in the banishment spell, no concentration required) if it isn't on its plane of origin and its challenge rating is {{arcane abjuration:cr}}.</description>
+            </sheet>
+            <rules>
+                <stat inline="true" name="arcane abjuration:cr" value="1/2 or lower" level="5"/>
+                <stat inline="true" name="arcane abjuration:cr" value="1 or lower" level="8"/>
+                <stat inline="true" name="arcane abjuration:cr" value="2 or lower" level="11"/>
+                <stat inline="true" name="arcane abjuration:cr" value="3 or lower" level="14"/>
+                <stat inline="true" name="arcane abjuration:cr" value="4 or lower" level="17"/>
+            </rules>
+        </element>
+
+<!-- Light Divine Domain for Theurgy -->
+        <element name="Light Domain" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_LIGHT_DOMAIN">
+            <supports>Theurgy Divine Domain</supports>
+            <description>
+                <div element="ID_WOTC_PHB_ARCHETYPE_CLERIC_LIGHT_DOMAIN" />
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_BONUS_CANTRIP" />
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_WARDING_FLARE" />
+                <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_RADIANCE_OF_THE_DAWN" />
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Improved_Flare" />
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Corona_of_Light" />
+            </description>
+            <spellcasting name="Wizard" extend="true">
+                <extend>ID_PHB_SPELL_FAERIE_FIRE</extend>
+                <extend>ID_PHB_SPELL_DAYLIGHT</extend>
+                <extend>ID_PHB_SPELL_GUARDIAN_OF_FAITH</extend>
+                <extend>ID_PHB_SPELL_FLAME_STRIKE</extend>
+            </spellcasting>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_RADIANCE_OF_THE_DAWN" level="2" />
+                <grant type="Spell" id="ID_PHB_SPELL_LIGHT" spellcasting="Wizard" level="6" />
+                <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_WARDING_FLARE" level="6" />
+                <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Improved_Flare" level="10" />
+                <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_Corona_of_Light" level="14" />
+                <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_DIVINE_SPELLS" requirements="ID_PHB_SPELL_BURNING_HANDS,ID_PHB_SPELL_FAERIE_FIRE,ID_PHB_SPELL_FLAMING_SPHERE,ID_PHB_SPELL_SCORCHING_RAY,ID_PHB_SPELL_DAYLIGHT,ID_PHB_SPELL_FIREBALL,ID_PHB_SPELL_GUARDIAN_OF_FAITH,ID_PHB_SPELL_WALL_OF_FIRE,ID_PHB_SPELL_FLAME_STRIKE,ID_PHB_SPELL_SCRYING" />
+            </rules>
+        </element>
+        <element name="Channel Arcana: Radiance of the Dawn" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_RADIANCE_OF_THE_DAWN">
+            <description>
+                <p>Starting at 2nd level, you can use your Channel Divinity to harness sunlight, banishing darkness and dealing radiant damage to your foes.</p>
+                <p class="indent">As an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 2d10 + your cleric level on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected.</p>
+            </description>
+            <sheet alt="Radiance of the Dawn" action="Action" usage="Channel Arcana">
+                <description>You present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes 2d10 + {{level:cleric}} radiant damage on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected.</description>
+            </sheet>
+        </element>
+
+
+<!-- Life Divine Domain for Theurgy -->
+        <element name="Life Domain" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_LIFE_DOMAIN">
+            <supports>Theurgy Divine Domain</supports>
+            <description>
+                <div element="ID_WOTC_PHB_ARCHETYPE_LIFEDOMAIN" />
+                <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_PRESERVE_LIFE" />
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_DISCIPLEOFLIFE" />
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_BLESSEDHEALER" />    
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_SUPREMEHEALING" />
+            </description>
+            <spellcasting name="Wizard" extend="true">
+                <extend>ID_PHB_SPELL_BLESS</extend>
+                <extend>ID_PHB_SPELL_CURE_WOUNDS</extend>
+                <extend>ID_PHB_SPELL_LESSER_RESTORATION</extend>
+                <extend>ID_PHB_SPELL_SPIRITUAL_WEAPON</extend>
+                <extend>ID_PHB_SPELL_BEACON_OF_HOPE</extend>
+                <extend>ID_PHB_SPELL_REVIVIFY</extend>
+                <extend>ID_PHB_SPELL_DEATH_WARD</extend>
+                <extend>ID_PHB_SPELL_GUARDIAN_OF_FAITH</extend>
+                <extend>ID_PHB_SPELL_MASS_CURE_WOUNDS</extend>
+                <extend>ID_PHB_SPELL_RAISE_DEAD</extend>
+            </spellcasting>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_PRESERVE_LIFE" level="2" />
+                <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_DISCIPLEOFLIFE" level="6" />
+                <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_BLESSEDHEALER" level="10" />
+                <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_SUPREMEHEALING" level="14" />
+                <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_DIVINE_SPELLS" requirements="ID_PHB_SPELL_BLESS,ID_PHB_SPELL_CURE_WOUNDS,ID_PHB_SPELL_LESSER_RESTORATION,ID_PHB_SPELL_SPIRITUAL_WEAPON,ID_PHB_SPELL_BEACON_OF_HOPE,ID_PHB_SPELL_REVIVIFY,ID_PHB_SPELL_DEATH_WARD,ID_PHB_SPELL_GUARDIAN_OF_FAITH,ID_PHB_SPELL_MASS_CURE_WOUNDS,ID_PHB_SPELL_RAISE_DEAD" />
+            </rules>
+        </element>
+        <element name="Channel Arcana: Preserve Life" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_PRESERVE_LIFE">
+            <description>
+                <p>Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.</p>
+                <p class="indent">As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can’t use this feature on an undead or a construct.</p>
+            </description>
+            <sheet alt="Preserve Life" action="Action" usage="Channel Arcana">
+                <description>You present your holy symbol and evoke healing energy that can restore {{preserve life:hp}} hit points. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can’t use this feature on an undead or a construct.</description>
+            </sheet>
+            <rules>
+                <stat name="preserve life:hp" value="level:wizard" />
+                <stat name="preserve life:hp" value="level:wizard" />
+                <stat name="preserve life:hp" value="level:wizard" />
+                <stat name="preserve life:hp" value="level:wizard" />
+                <stat name="preserve life:hp" value="level:wizard" />
+            </rules>
+        </element>
+
+
+<!-- Knowledge Divine Domain for Theurgy -->
+        <element name="Knowledge Domain" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_KKNOWLEDGE_DOMAIN">
+            <supports>Theurgy Divine Domain</supports>
+            <description>
+                <div element="ID_WOTC_PHB_ARCHETYPE_CLERIC_KNOWLEDGE_DOMAIN" />
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE" />
+                <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_KNOWLEDGE_OF_THE_AGES" />
+                <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_READ_THOUGHTS" />
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_VISIONS_OF_THE_PAST" />
+            </description>
+            <spellcasting name="Wizard" extend="true">
+                <extend>ID_PHB_SPELL_COMMAND</extend>
+                <extend>ID_PHB_SPELL_AUGURY</extend>
+                <extend>ID_PHB_SPELL_SPEAK_WITH_DEAD</extend>
+            </spellcasting>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_KNOWLEDGE_OF_THE_AGES" level="2" />
+                <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE" level="6" />
+                <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_READ_THOUGHTS" level="10" />
+                <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_VISIONS_OF_THE_PAST" level="14" />
+                <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_DIVINE_SPELLS" requirements="ID_PHB_SPELL_COMMAND,ID_PHB_SPELL_IDENTIFY,ID_PHB_SPELL_AUGURY,ID_PHB_SPELL_SUGGESTION,ID_PHB_SPELL_NONDETECTION,ID_PHB_SPELL_SPEAK_WITH_DEAD,ID_PHB_SPELL_ARCANE_EYE,ID_PHB_SPELL_CONFUSION,ID_PHB_SPELL_LEGEND_LORE,ID_PHB_SPELL_SCRYING" />
+            </rules>
+        </element>
+
+        <element name="Channel Arcana: Knowledge of the Ages" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_READ_THOUGHTS">
+            <supports>Channel Divinity</supports>
+            <description>
+                <p>Starting at 2nd level, you can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool.</p>
+            </description>
+            <sheet alt="Knowledge of the Ages" action="Action" usage="Channel Arcana">
+                <description>You choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool.</description>
+            </sheet>
+            <rules />
+        </element>
+        <element name="Channel Arcana: Read Thoughts" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_READ_THOUGHTS">
+            <description>
+                <p>At 6th level, you can use your Channel Divinity to read a creature’s thoughts. You can then use your access to the creature’s mind to command it.</p>
+                <p class="indent">As an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature succeeds on the saving throw, you can’t use this feature on it again until you finish a long rest.</p>
+                <p class="indent">If the creature fails its save, you can read its surface thoughts (those foremost in its mind, reflecting its current emotions and what it is actively thinking about) when it is within 60 feet of you. This effect lasts for 1 minute.</p>
+                <p class="indent">During that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell.</p>
+            </description>
+            <sheet action="Action" usagge="Channel Arcana">
+                <description>Choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature fails its save, you can read its surface thoughts when it is within 60 feet of you. This effect lasts for 1 minute. During that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell.</description>
+            </sheet>
+            <rules>
+            <!-- <grant type="Spell" id="ID_PHB_SPELL_SUGGESTION" />spellcasting="Cleric" prepared="true" -->
+            <!-- <set target="ID_PHB_SPELL_SUGGESTION" parent="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_CD_READ_THOUGHTS" field="name" value="Read Thoughts: Suggestion" /> -->
+            </rules>
+        </element>
+
+
+<!-- Nature Divine Domain for Theurgy -->
+        <element name="Nature Domain" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_NATURE_DOMAIN">
+            <supports>Theurgy Divine Domain</supports>
+            <description>
+                <div element="ID_WOTC_PHB_ARCHETYPE_CLERIC_NATURE_DOMAIN" />
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_ACOLYTE_OF_NATURE" />
+                <div element="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_CHARM_ANIMALS_AND_PLANTS" />
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_DAMPEN_ELEMENTS" />
+                <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_MASTER_OF_NATURE" />
+            </description>
+            <spellcasting name="Wizard" extend="true">
+                <extend>ID_PHB_SPELL_ANIMAL_FRIENDSHIP</extend>
+                <extend>ID_PHB_SPELL_SPEAK_WITH_ANIMALS</extend>
+                <extend>ID_PHB_SPELL_BARKSKIN</extend>
+                <extend>ID_PHB_SPELL_SPIKE_GROWTH</extend>
+                <extend>ID_PHB_SPELL_PLANT_GROWTH</extend>
+                <extend>ID_PHB_SPELL_WIND_WALL</extend>
+                <extend>ID_PHB_SPELL_DOMINATE_BEAST</extend>
+                <extend>ID_PHB_SPELL_GRASPING_VINE</extend>
+                <extend>ID_PHB_SPELL_INSECT_PLAGUE</extend>
+                <extend>ID_PHB_SPELL_TREE_STRIDE</extend>
+            </spellcasting>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_CHARM_ANIMALS_AND_PLANTS" level="2" />
+                <select type="Spell" name="Acolyte of Nature" supports="Druid,0" level="6" spellcasting="Wizard" />
+                <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_DAMPEN_ELEMENTS" level="10"/>
+                <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_MASTER_OF_NATURE" level="17"/>
+                <grant type="Archetype Feature" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_DIVINE_SPELLS" requirements="ID_PHB_SPELL_ANIMAL_FRIENDSHIP,ID_PHB_SPELL_SPEAK_WITH_ANIMALS,ID_PHB_SPELL_BARKSKIN,ID_PHB_SPELL_SPIKE_GROWTH,ID_PHB_SPELL_PLANT_GROWTH,ID_PHB_SPELL_WIND_WALL,ID_PHB_SPELL_DOMINATE_BEAST,ID_PHB_SPELL_GRASPING_VINE,ID_PHB_SPELL_INSECT_PLAGUE,ID_PHB_SPELL_TREE_STRIDE" />
+            </rules>
+        </element>
+        <element name="Channel Arcana: Charm Animals and Plants" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_ARCANA_DOMAIN_CA_CHARM_ANIMALS_AND_PLANTS">
+            <description>
+                <p>Starting at 2nd level, you can use your Channel Divinity to charm animals and plants.</p>
+                <p class="indent">As an action, you present your holy symbol and invoke the name of your deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate.</p>
+            </description>
+            <sheet alt="Charm Animals and Plants" action="Action" usage="Channel Arcana">
+            <description>You present your holy symbol and invoke the name of your deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate.</description>
+            </sheet>
+        </element>
+
+        <element name="Divine Spells" type="Archetype Feature" source="Unearthed Arcana: The Faithful" id="ID_WOTC_UA_ARCHETYPE_FEATURE_WIZARD_THEURGY_DIVINE_SPELLS">
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Wizard" extend="true">
+                <extend>Cleric</extend>
+            </spellcasting>
+        </element>
+</elements>

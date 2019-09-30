@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Vigilante - Roguish Archectype</name>
+        <author url="https://homebrewery.naturalcrit.com/share/HkZzcwBf9x">u/unclecaveman1</author>
+        <update version="0.0.1">
+            <file name="rogue-vigilante.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/rogue-vigilante.xml" />
+        </update>
+    </info>
+    
+    <element name="Vigilante" type="Archetype" source="r/UnearthedArcana" id="ID_RDDT_UA_ARCHETYPE_ROGUE_VIGILANTE">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Your skills have been sharpened and trained on the criminal element you surround yourself with. Perhaps you lead a double life, leading the scum of the city to believe you are a friend and equal while you systematically break their criminal enterprises down, one piece at a time. Perhaps you are an agent of the law, serving your patron by bringing an end to the criminal underworld. However you came about it, you are a criminal’s worst nightmare. Using advanced gadgets of your own creation, stealthy attacks, and high-wire work, you take your enemies by surprise and bring swift justice.</p>
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_GADGETEER" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_EXPERT_THROWER" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_HIGHWIRE_WORK" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_JUSTICE_BRINGER" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_FRIGHTFUL_TAKEDOWN" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_GADGETEER" level="3" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_EXPERT_THROWER" level="3" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_HIGHWIRE_WORK" level="9" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_JUSTICE_BRINGER" level="13" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_FRIGHTFUL_TAKEDOWN" level="17" />
+        </rules>
+    </element>
+    
+    <element name="Gadgeteet" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_GADGETEER">
+        <description>
+            <p>Starting at level 3 you gain proficiency with Tinker’s Tools. You also build a Smoke Pellet and 3 more Gadgets from the Gadget list and gain access to the blueprints to build them again. You can gain a fifth gadget at level 6, and a sixth at level 13. You may take the Use an Object action as a bonus action for using gadgets only. The DC for your gadgets is 8 + Intelligence modifier + proficiency bonus. If someone other than you attempts to use a gadget you created, they must make an Intelligence saving throw (DC equal to build DC) or the gadget fails to function as expected. Gadgets that fail like this break and must be repaired.</p>
+            <h5>BUILDING AND REPAIRING GADGETS</h5>
+            <p>To build a gadget you must know the blueprint, have all of the required components, and spend the specified time to build it in addition to rolling an Intelligence (Tinker’s Tools) check. The DC of the check is listed in the Gadget list. To repair a broken gadget you must treat it as if building a new one, but you can use the pieces of your broken gadget to cover the component cost. You can build as often as you have time and resources, but the DC increases by 1 for every additional build attempt in the same day.</p>
+        </description>
+        <sheet>
+            <description>You can build the gadgets for which you have blueprints. To use a gadget, you can take the Use and Object action as a bonus action. Your gadget DC is {{gadget:dc}}.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+            <stat name="gadget:dc" value="8" />
+            <stat name="gadget:dc" value="intelligence:modifier" />
+            <stat name="gadget:dc" value="proficiency" />
+            <grant type="Archetype Feature" source="source" name="Gadget Blueprint (3rd level)" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_SMOKE_PELLET" level="3" />
+            <grant type="Archetype Feature" source="source" name="Gadget Blueprint (3rd level)" supports="Vigilante Gadget" level="3" number="3" />
+            <grant type="Archetype Feature" source="source" name="Gadget Blueprint (6th level)" supports="Vigilante Gadget" level="6" number="1" />
+            <grant type="Archetype Feature" source="source" name="Gadget Blueprint (13th level)" supports="Vigilante Gadget" level="13" number="1" />
+            <stat name="gadget:uses" value="intelligence:modifier" />
+            <stat name="gadget:uses" value="1" level="13" />
+        </rules>
+    </element>
+    
+    <element name="Expert Thrower" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_EXPERT_THROWER">
+        <description>
+            <p>Starting at level 3 you gain the ability to make trip attacks with hand crossbows and light thrown weapons such as throwing knives and shuriken. Make a ranged attack and, if you hit, the enemy must succeed on a Strength saving throw. The DC for the save is 8 + Dexterity modifier + proficiency bonus. If they fail, they are knocked prone. This attack does no damage.</p>
+            <p class="indent">Additionally, you can do non-lethal damage to an enemy with a hand crossbow or light thrown weapon to knock them unconscious from a distance. This is treated the same as melee non-lethal damage.</p>
+        </description>
+        <sheet>
+            <description>You can use a hand crossbow or light thrown weapon to make a trip attack. If you hit with a ranged attack, target must make a Strength saving throw (save DC {{expert thrower:dc}}) or be knocked prone. The attack does no damage. With the same thrown weapons, you can make a non-lethal ranged attack.</description>
+        </sheet>
+        <rules>
+            <stat name="expert thrower:dc" value="8" />
+            <stat name="expert thrower:dc" value="dexterity:modifier" />
+            <stat name="expert thrower:dc" value="proficiency" />
+        </rules>
+    </element>
+    
+    <element name="Highwire Work" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_HIGHWIRE_WORK">
+        <description>
+            <p>At level 9 you gain advantage on any Dexterity (acrobatics) and Strength (athletics) checks needed to balance on thin surfaces like ledges, wires, fences, etc. or hang from them and may use your Dexterity score instead of your Strength score to leap from one edge to another.</p>
+            <p class="indent">Also, if you make a sneak attack from above you may add your Intelligence modifier to the damage done.</p>
+        </description>
+        <sheet>
+            <description>You gain advantage on any Dexterity (acrobatics) and Strength (athletics) checks needed to balance on thin surfaces like ledges, wires, fences, etc. or hang from them and may use your Dexterity score instead of your Strength score to leap from one edge to another. Also, if you make a sneak attack from above you add {{intelligence:modifier}} to the damage done.</description>
+        </sheet>
+    </element>
+    
+    <element name="Justice Bringer" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_JUSTICE_BRINGER">
+        <description>
+            <p>Starting at level 13 you have advantage on all Intelligence (Tinker’s Tools) checks to repair, build, or improve the gadgets you have created. You also gain the ability to use your gadgets one additional time (with the exception of Triggered Mine and Smoke Pellet), and may choose to enhance your gadgets, which increases the build DC by 5.</p>
+            <p class="indent">In addition, your reputation precedes you. You gain advantage on any Charisma (Intimidation) checks to get information out of people.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on all Intelligence (Tinker’s Tools) checks to repair, build, or improve the gadgets you have created. You also gain the ability to use your gadgets one additional time (with the exception of Triggered Mine and Smoke Pellet), and may choose to enhance your gadgets, which increases the build DC by 5. You gain advantage on any Charisma (Intimidation) checks to get information out of people.</description>
+        </sheet>
+    </element>
+    
+    <element name="Frightful Takedown" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_FRIGHTFUL_TAKEDOWN">
+        <description>
+            <p>Starting at level 17, if you make a melee sneak attack while hidden, add an additional 1d10 damage. You are no longer hidden. If this attack brings the enemy to 0 HP, all enemies within 60 feet that can see you must make a Wisdom saving throw or be frightened of you for 1d3 rounds. The DC of the saving throw is equal to 8 + Dexterity modifier + proficiency bonus. Enemies that fail the saving throw cannot be affected by this ability again for 1 minute, and those that succeed cannot be affected by this ability for one hour.</p>
+        </description>
+        <sheet>
+            <description>If you make a melee sneak attack while hidden, add an additional 1d10 damage. You are no longer hidden. If this attack brings the enemy to 0 HP, all enemies within 60 feet that can see you must make a Wisdom saving throw (save DC {{expert thrower:dc}}) or be frightened of you for 1d3 rounds.</description>
+        </sheet>
+    </element>
+    
+    <element name="Smoke Pellet" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_SMOKE_PELLET">
+        <supports>Vigilante Gadget</supports>
+        <description>
+            <p>When thrown up to 30 feet away, it creates smoke in a 15 foot radius that obscures vision for up to 30 seconds. After using this gadget all components are lost.</p>
+            <p class="flavor">Crafting DC: 8</p>
+            <p class="flavor">Crafting Time: 1/2 hours</p>
+            <p class="flavor">Components: 1 ball bearing, bit of ash</p>
+        </description>
+        <sheet action="Bonus Action" usage="1">
+            <description>Thrown up to 30 feet. Obscures vision in 15 foot radius for up to 30 minutes.</description>
+            <description level="13"></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_FLASHBANG" level="13" />
+        </rules>
+    </element>
+    
+    <element name="Grappling Gun" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_GRAPPLING_GUN">
+        <supports>Vigilante Gadget</supports>
+        <description>
+            <p>You may fire a small grappling hook attacked to a length of rope up to a range 80 feet. Upon hitting a ledge, wall, or other solid surface it locks in. The rope can hold up to 300 lbs at a time. Afterwords, the rope may be retracted. If fired at a large or smaller creature, they must make a Strength saving throw or be considered grappled for up to a minute. While a creature is grappled this way the rope can be pulled as an action to pull the target 5 feet forward or knock them prone. Doing this releases them from the grapple and the rope retracts. The enemy can make the saving throw again at the end of its turn until freed. After using this a number of times equal to your Intelligence modifier you cannot use it again until you take a short rest.</p>
+            <p class="flavor">Crafting DC: 10</p>
+            <p class="flavor">Crafting Time: 1 hours</p>
+            <p class="flavor">Components: 80 foot length of rope, 3 metal arrowheads</p>
+        </description>
+        <sheet usage="{{gadget:uses}}/Short Rest" action="Bonus Action">
+            <description>If fired at a large or smaller creature, they must make a Strength saving throw or be considered grappled for up to a minute. While a creature is grappled this way the rope can be pulled as an action to pull the target 5 feet forward or knock them prone. Doing this releases them from the grapple and the rope retracts. The enemy can make the saving throw again at the end of its turn until freed.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_MECHANIZED_GRAPPLING_GUN" level="13" />
+        </rules>
+    </element>
+    
+    <element name="Expandable Glider" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_EXPANDABLE_GLIDER">
+        <supports>Vigilante Gadget</supports>
+        <description>
+            <p>You may press the button on this backpack to expand a set of wings with a wingspan of 20 feet. While these wings are expanded you may glide up to one minute. Your gliding speed is 60 feet. While gliding, you cannot gain altitude higher than your starting height and you lose 5 feet altitude every round. After using this a number of times equal to your Intelligence modifier you cannot use it again until you take a short rest.</p>
+            <p class="flavor">Crafting DC: 13</p>
+            <p class="flavor">Crafting Time: 4 hours</p>
+            <p class="flavor">Components: backpack, 20 feet of cloth or light leather weighing no more than 10 lbs</p>
+        </description>
+        <sheet usage="{{gadget:uses}}/Short Rest" action="Bonus Action">
+            <description>While these wings are expanded you may glide up to one minute. Your gliding speed is 60 feet. You cannot gain altitude higher than your starting height and you lose 5 feet altitude every round.</description>
+        </sheet>
+        <rules>
+            <grant type="Archectype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_EXPANDABLE_FLIGHT_PACK" level="13" />
+        </rules>
+    </element>
+    
+    <element name="Auto-Bola" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_AUTOBOLA">
+        <supports>Vigilante Gadget</supports>
+        <description>
+            <p>You may throw this fist-sized ball at an enemy up to 20 feet away as a ranged attack. If it hits, it rapidly unwinds, creating a series of ropes that wrap around the target. If the target fails a Strength saving throw they are considered restrained for up to a minute. They may spend their action attempting to beat the saving throw on their turn. After using this a number of times equal to your Intelligence modifier you cannot use it again until you take a short rest.</p>
+            <p class="flavor">Crafting DC: 13</p>
+            <p class="flavor">Crafting Time: 4 hours</p>
+            <p class="flavor">Components: 20 foot length of rope, small leather pouch</p>
+        </description>
+        <sheet usage="{{gadget:uses}}/Short Rest" action="Bonus Action">
+            <description>Thrown up to 20 ft. If it hits a creature, the target must make a Strength saving throw (save DC {{gadget:dc}}) or be restrained for up to 1 minute. They may use an action to make the saving throw again on their turn to escape.</description>
+        </sheet>    
+        <rules>
+            <grant type="Archectype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_MULTI_BOLA" level="13" />
+        </rules>
+    </element>
+    
+    <element name="Auto-Key" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_AUTOKEY">
+        <supports>Vigilante Gadget</supports>
+        <description>
+            <p>This mechanical device allows you to unlock locks easier. When you roll for Dexterity (thieves’ tools) to unlock a locked object or door, you may treat a d20 roll of 9 or lower as a 10. You do not need to be proficient in thieves’ tools to use this item. After using this a number of times equal to your Intelligence modifier it breaks and must be repaired.</p>
+            <p class="flavor">Crafting DC: 15</p>
+            <p class="flavor">Crafting Time: 8 hours</p>
+            <p class="flavor">Components: Thieves’ Tools, a small cog</p>
+        </description>
+        <sheet usage="{{gadget:uses}}/Short Rest" action="Bonus Action">
+            <description>When you roll for Dexterity (Thieves’ tools) to unlock a locked object or door, you may treat a d20 roll of 9 or lower as a 10.</description>
+        </sheet>
+        <rules>
+            <grant type="Archectype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_AUTOTHIEF_TOOL" level="13" />
+        </rules>
+    </element>
+    
+    <element name="Auto-Wire Gun" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_AUTOWIRE_GUN">
+        <supports>Vigilante Gadget</supports>
+        <description>
+            <p>Similar to two Grappling Guns attached to one another, when used this item fires two grappling hooks in opposite directions attached to ropes to a maximum of 80 feet in each direction. When they hit a solid surface they latch on. This creates a tight rope that can hold up to 300 lbs at a time. Using the Auto-Wire gun you may zip from one end to the other with a speed of 30 feet. Upon using it this way, the grappling hooks disconnect and retract. After using this a number of times equal to your Intelligence modifier you cannot use it again until you take a short rest.</p>
+            <p class="flavor">Crafting DC: 15</p>
+            <p class="flavor">Crafting Time: 8 hours</p>
+            <p class="flavor">Components: 2 80 foot lengths of rope, 6 metal arrowheads, 2 small cogs</p>
+        </description>
+        <sheet usage="{{gadget:uses}}/Short Rest" action="Bonus Action">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archectype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_ZIPWIRE_GUN" level="13" />
+        </rules>
+    </element>
+    
+    <element name="Nightvision Goggles" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_NIGHTVISION_GOGGLES">
+        <supports>Vigilante Gadget</supports>
+        <description>
+            <p>A pair of goggles that allow sight even in the darkest of non-magical darkness. When wearing them, you gain darkvision out to 120 feet. This replaces any natural darkvision you may have. They can be worn for a total of 8 hours before the charge wears out they are considered broken and must be repaired. After level 13 this time increases to 16 hours.</p>
+            <p class="flavor">Crafting DC: 13</p>
+            <p class="flavor">Crafting Time: 4 hours</p>
+            <p class="flavor">Components: a pair of goggles, a diamond worth at least 50 gp</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>Can be used 8 hours before they must be repaired.</description>
+            <description level="13">Can be used 16 hours before they must be repaired.</description>
+        </sheet>
+        <rules>
+            <grant type="Archectype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_ULTRASIGHT_GOGGLES" level="13" />
+        </rules>
+    </element>
+    
+    <element name="Triggered Mine" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_TRIGGERED_MINE">
+        <supports>Vigilante Gadget</supports>
+        <description>
+            <p>As an action you can attach a small explosive mine to a surface or place it in a bag or pocket with a successful Dexterity (sleight of hand) check. It is the size of a fist. When placed on a surface, roll a Dexterity (stealth) check. Enemies must succeed on a Wisdom (perception) check to see this trap. Within ten minutes of being placed you can press the button on the remote as a bonus action if you are within 60 feet of the mine. This will cause a small explosion, dealing 2d6 fire damage to all enemies in a 10 foot radius and knocking them prone. If they succeed on a Dexterity saving throw, they take half damage and are not knocked prone. The damage of this device increases to 4d6 at level 6 and 6d6 at level 13. After using this gadget, it is broken and all components are lost.</p>
+            <p class="flavor">Crafting DC: 15</p>
+            <p class="flavor">Crafting Time: 8 hours</p>
+            <p class="flavor">Components: a small leather pouch, a vial of explosive powder, 2 small cogs</p>
+        </description>
+        <sheet action="Action" usage="1">
+            <description>You can attach a small explosive mine to a surface or place it in a bag or pocket with a successful Dexterity (sleight of hand) check. When placed on a surface, roll a Dexterity (stealth) check. Enemies must succeed on a Wisdom (perception) check to see this trap. Within ten minutes of being placed you can press the button on the remote as a bonus action if you are within 60 feet of the mine. This will cause a small explosion, dealing 2d6 fire damage to all enemies in a 10 foot radius and knocking them prone. If they succeed on a Dexterity saving throw, they take half damage and are not knocked prone.</description>
+            <description level="6">You can attach a small explosive mine to a surface or place it in a bag or pocket with a successful Dexterity (sleight of hand) check. When placed on a surface, roll a Dexterity (stealth) check. Enemies must succeed on a Wisdom (perception) check to see this trap. Within ten minutes of being placed you can press the button on the remote as a bonus action if you are within 60 feet of the mine. This will cause a small explosion, dealing 4d6 fire damage to all enemies in a 10 foot radius and knocking them prone. If they succeed on a Dexterity saving throw, they take half damage and are not knocked prone.</description>
+            <description level="13">You can attach a small explosive mine to a surface or place it in a bag or pocket with a successful Dexterity (sleight of hand) check. When placed on a surface, roll a Dexterity (stealth) check. Enemies must succeed on a Wisdom (perception) check to see this trap. Within ten minutes of being placed you can press the button on the remote as a bonus action if you are within 60 feet of the mine. This will cause a small explosion, dealing 6d6 fire damage to all enemies in a 10 foot radius and knocking them prone. If they succeed on a Dexterity saving throw, they take half damage and are not knocked prone.</description>
+        </sheet>
+        <rules>
+            <grant type="Archectype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_SHOCKING_MINE" level="13" />
+        </rules>
+    </element>
+    
+    <element name="Flashbang" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_FLASHBANG">
+        <description>
+            <p>Enhancing a smoke pellet allows you to create a flashbang instead. When thrown as a bonus action up to 30 feet away, it creates a bright flash of light and a loud bang. All creatures within 30 feet that can see it must make a Constitution saving throw or be blinded for 1d3 rounds.</p>
+            <p class="flavor">Crafting DC: 13</p>
+            <p class="flavor">Crafting Time: 1/2 hours</p>
+            <p class="flavor">Components: 1 ball bearing, bit of ash</p>
+        </description>
+        <sheet action="Bonus Action" usage="1">
+            <description>Thrown up to 30 feet. Creatures within 30 feet must make a Constitution saving throw (save DC {{gadget:dc}}) or be blinded for 1d3 rounds.</description>
+        </sheet>
+    </element>
+    
+    <element name="Mechanized Grappling Gun" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_MECHANIZED_GRAPPLING_GUN">
+        <description>
+            <p>Works similarly to a grappling gun except it has a strong motor built into it. After latching onto a solid surface, you can push a button as a bonus action to pull yourself rapidly toward it. You move at a speed of 60 toward the surface for one to two rounds, depending on how far it is. If fired at a creature, they must succeed on a Strength saving throw or be grappled. As an action, you can pull the rope to either pull the enemy 5 feet toward you or knock them prone, or can push the button and launch yourself up to 40 feet toward them.</p>
+            <p class="flavor">Crafting DC: 15</p>
+            <p class="flavor">Crafting Time: 1 hours</p>
+            <p class="flavor">Components: 80 foot length of rope, 3 metal arrowheads</p>
+        </description>
+        <sheet usage="{{gadget:uses}}/Short Rest" action="Bonus Action">
+            <description>If fired at a creature, they must succeed on a Strength saving throw (save DC {{gadget:dc}})or be grappled. As an action, you can pull the rope to either pull the enemy 5 feet toward you or knock them prone, or can push the button and launch yourself up to 40 feet toward them.</description>
+        </sheet>
+    </element>
+    
+    <element name="Expandable Flight Pack" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_EXPANDABLE_FLIGHT_PACK">
+        <description>
+            <p>Similar to the expandable glider, this backpack houses expanding wings. However, unlike the expandable glider, this also includes a small engine allowing real flight with a flight speed of 30 for up to 1 minute.</p>
+            <p class="flavor">Crafting DC: 18</p>
+            <p class="flavor">Crafting Time: 4 hours</p>
+            <p class="flavor">Components: backpack, 20 feet of cloth or light leather weighing no more than 10 lbs</p>
+        </description>
+        <sheet usage="{{gadget:uses}}/Short Rest" action="Bonus Action">
+            <description>This pack includes a small engine allowing real flight when the wings are expanded with a flight speed of 30 for up to 1 minute.</description>
+        </sheet>
+    </element>
+    
+    <element name="Multi-Bola" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_MULTI_BOLA">
+        <description>
+            <p>Designed like the auto-bola, this item will lash out at up to 2 other enemies within 5 feet of the first one hit. All must make a Strength saving throw or become restrained for up to a minute. They may spend their actions on their turns to attempt to beat the saving throw.</p>
+            <p class="flavor">Crafting DC: 18</p>
+            <p class="flavor">Crafting Time: 4 hours</p>
+            <p class="flavor">Components: 20 foot length of rope, small leather pouch</p>
+        </description>
+        <sheet usage="{{gadget:uses}}/Short Rest" action="Bonus Action">
+            <description>This item will lash out at up to 2 additional enemies within 5 feet of the first one hit. All must make a Strength saving throw or become restrained for up to a minute. They may spend their actions on their turns to attempt to beat the saving throw.</description>
+        </sheet>
+    </element>
+    
+    <element name="Auto-Thief Tool" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_AUTOTHIEF_TOOL">
+        <description>
+            <p>An expansion on the auto-key, this tool allows you to pick locks and find and disable traps. When you roll for Dexterity (thieves’ tools) to unlock a locked object or door or disable a trap, or roll an Intelligence (investigation) check to figure out how a trap works, you may treat a d20 roll of 11 or lower as a 12. You do not need to be proficient in thieves’ tools to use this item.</p>
+            <p class="flavor">Crafting DC: 20</p>
+            <p class="flavor">Crafting Time: 8 hours</p>
+            <p class="flavor">Components: Thieves’ Tools, a small cog</p>
+        </description>
+        <sheet usage="{{gadget:uses}}/Short Rest" action="Bonus Action">
+            <description>When you roll for Dexterity (thieves’ tools) to unlock a locked object or door or disable a trap, or roll an Intelligence (investigation) check to figure out how a trap works, you may treat a d20 roll of 11 or lower as a 12.</description>
+        </sheet>
+    </element>
+    
+    <element name="Zipwire Gun" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_ZIPWIRE_GUN">
+        <supports>Vigilante Gadget</supports>
+        <description>
+            <p>Similar to the auto-wire gun, this item allows multiple people to cross the wire. It can still only hold 300 lbs at a time, but the handle can be sent back to the other end multiple times. Pressing a button releases the grappling hooks and the ropes retract.</p>
+            <p class="flavor">Crafting DC: 20</p>
+            <p class="flavor">Crafting Time: 8 hours</p>
+            <p class="flavor">Components: 2 80 foot lengths of rope, 6 metal arrowheads, 2 small cogs</p>
+        </description>
+        <sheet usage="{{gadget:uses}}/Short Rest" action="Bonus Action">
+            <description>Similar to the auto-wire gun, this item allows multiple people to cross the wire. It can still only hold 300 lbs at a time, but the handle can be sent back to the other end multiple times.</description>
+        </sheet>
+    </element>
+    
+    <element name="Ultrasight Goggles" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_ULTRASIGHT_GOGGLES">
+        <description>
+            <p>These goggles, in addition to allowing darkvision to 120 feet, also give you advantage on perception checks and can be overcharged to allow the user to see invisible beings for up to one minute. If used in this way the user must make a DC 15 Intelligence check or the item breaks and must be repaired. This effect can only be used once per day.</p>
+            <p class="flavor">Crafting DC: 18</p>
+            <p class="flavor">Crafting Time: 4 hours</p>
+            <p class="flavor">Components: a pair of goggles, a diamond worth at least 50 gp</p>
+        </description>
+        <sheet usage="1/Day" action="Bonus Action">
+            <description>You gain advantage on perception checks and can overcharge the goggles to allow you to see invisible beings for up to one minute. If used in this way, you must make a DC 15 Intelligence check or the item breaks and must be repaired.</description>
+        </sheet>
+    </element>
+    
+    <element name="Shocking Mine" type="Archetype Feature" source="source" id="ID_RDDT_UA_ARCHETYPE_FEATURE_ROGUE_VIGILANTE_SHOCKING_MINE">
+        <description>
+            <p>This triggered mine is set with a shocking blast rather than explosive. Enemies caught within the 10 foot blast radius must succeed on a Dexterity saving throw or be shocked for 6d6 lightning damage and become paralyzed for 1d3 rounds. A successful save halves the damage and prevents the paralyzation.</p>
+            <p class="flavor">Crafting DC: 20</p>
+            <p class="flavor">Crafting Time: 8 hours</p>
+            <p class="flavor">Components: a small leather pouch, a vial of explosive powder, 2 small cogs</p>
+        </description>
+        <sheet action="Action" usage="1">
+            <description>Enemies caught within the 10 foot blast radius must succeed on a Dexterity saving throw or be shocked for 6d6 lightning damage and become paralyzed for 1d3 rounds. A successful save halves the damage and prevents the paralyzation.</description>
+        </sheet>
+    </element>
+    
+    
+</elements>

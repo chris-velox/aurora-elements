@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Martial Archetype - Scout Revised</name>
+        <author url="https://www.gmbinder.com/share/-Li1BgmpiTgEhYbGFB1a">Enraric</author>
+        <update version="0.0.1">
+            <file name="fighter-scout-revised.xml" url="" />
+        </update>
+    </info>
+    
+    <element name="Scout (Revised)" type="Archetype" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FIGHTER_SCOUT_REVISED">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>The archetypal Scout excels at finding safe passage through dangerous regions. Scouts usually favor light armor and ranged weapons, but they are comfortable using heavier gear when faced with intense fighting.</p>
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_BONUS_PROFICIENCIES" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_COMBAT_SUPERIORITY" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_NATURAL_EXPLORER" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_SUPERIOR_MOBILITY" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_AMBUSH_MASTER" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_RELENTLESS" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_MASTER_SKIRMISHER" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_BONUS_PROFICIENCIES" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_COMBAT_SUPERIORITY" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_NATURAL_EXPLORER" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_SUPERIOR_MOBILITY" level="7" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_AMBUSH_MASTER" level="10" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_RELENTLESS" level="15" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_MASTER_SKIRMISHER" level="18" />
+        </rules>
+    </element>
+    
+    <element name="Bonus Proficiencies" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_BONUS_PROFICIENCIES">
+        <description>
+            <p>When you choose this archetype at 3rd level, you gain proficiency in three of the following skills of your choice: Acrobatics, Athletics, Investigation, Medicine, Nature, Perception, Stealth, or Survival. You can choose to gain proficiency with thieves' tools in place of one skill choice.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Proficiency" name="Bonus Proficiencies (Scout)" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_STEALTH|ID_PROFICIENCY_SKILL_SURVIVAL" number="3"/>
+        </rules>
+    </element>
+
+    <element name="Combat Superiority" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_COMBAT_SUPERIORITY">
+        <description>
+            <p>At 3rd level, you gain a set of abilities that are fueled by special dice called superiority dice.</p>
+            <p class="indent">Superiority Dice. You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a long or short rest. You gain another superiority die at 7th level and one more at 15th level. Using Superiority Dice. You can expend superiority dice to gain a number of different benefits:</p>
+            <ul>
+            <li>When you make a check that allows you to apply your proficiency in Athletics, Nature, Perception, Stealth, or Survival, you can expend one superiority die to bolster the check. Add half the number rolled on the superiority die (rounding up) to your check. You apply this bonus after making the check but before learning if it was successful.</li>
+            <li>When you make a weapon attack against a creature, you can expend one superiority die to add it to the attack roll. You can use this ability before or after making the attack roll, but before any of the effects of the attack are applied.</li>
+            <li>If you are hit by an attack while wearing light or medium armor, you can expend one superiority die as a reaction, adding the number rolled to your AC. If the attack still hits, you take half damage from it.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have {{superiority dice:amount}} superiority dice which are d{{superiority dice:size}}s. You can use your superiority dice to improve certain skill checks, improve your attack rolls or improve your armor class against an attack (as a reaction).</description>
+        </sheet>
+        <rules>
+            <stat name="superiority dice:amount" value="4" />
+            <stat name="superiority dice:amount" value="1" level="7" />
+            <stat name="superiority dice:amount" value="1" level="15" />
+            <stat name="superiority dice:size" value="8" bonus="size"/>
+            <stat name="superiority dice:dc" value="8" />
+            <stat name="superiority dice:dc" value="proficiency" />
+            <stat name="superiority dice:dc:ability" value="strength:modifier" bonus="ability"/>
+            <stat name="superiority dice:dc:ability" value="dexterity:modifier" bonus="ability"/>
+            <stat name="superiority dice:dc" value="superiority dice:dc:ability" />
+            <stat name="superiority dice:size" value="10" level="10" bonus="size"/>
+            <stat name="superiority dice:size" value="12" level="18" bonus="size"/>
+        </rules>
+    </element>
+
+    <element name="Natural Explorer" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_NATURAL_EXPLORER">
+        <description>
+            <p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain: arctic, coast, desert, forest, grassland, mountain, swamp, or the Underdark. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you're proficient in.</p>
+            <p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+            <ul>
+                <li>Difficult terrain doesn’t slow your group’s travel.</li>
+                <li>Your group can’t become lost except by magical means.</li>
+                <li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+                <li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+                <li>When you forage, you find twice as much food as you normally would.</li>
+                <li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in. While traveling for an hour or more in your favored terrain, you gain benefits.</description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Favored Terrain" supports="Favored Terrain" level="3" />
+        </rules>
+    </element>
+
+    <element name="Arctic" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_arctic">
+        <supports>Favored Terrain</supports>
+        <description>
+        <p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+        <p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+        <ul>
+            <li>Difficult terrain doesn’t slow your group’s travel.</li>
+            <li>Your group can’t become lost except by magical means.</li>
+            <li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+            <li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+            <li>When you forage, you find twice as much food as you normally would.</li>
+            <li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+        </ul>
+        </description>
+        <sheet>
+        <description></description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Coast" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_coast">
+        <supports>Favored Terrain</supports>
+        <description>
+        <p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+        <p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+        <ul>
+            <li>Difficult terrain doesn’t slow your group’s travel.</li>
+            <li>Your group can’t become lost except by magical means.</li>
+            <li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+            <li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+            <li>When you forage, you find twice as much food as you normally would.</li>
+            <li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+        </ul>
+        </description>
+        <sheet>
+        <description></description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Desert" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_desert">
+        <supports>Favored Terrain</supports>
+        <description>
+        <p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+        <p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+        <ul>
+            <li>Difficult terrain doesn’t slow your group’s travel.</li>
+            <li>Your group can’t become lost except by magical means.</li>
+            <li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+            <li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+            <li>When you forage, you find twice as much food as you normally would.</li>
+            <li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+        </ul>
+        </description>
+        <sheet>
+        <description></description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Forest" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_forest">
+        <supports>Favored Terrain</supports>
+        <description>
+        <p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+        <p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+        <ul>
+            <li>Difficult terrain doesn’t slow your group’s travel.</li>
+            <li>Your group can’t become lost except by magical means.</li>
+            <li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+            <li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+            <li>When you forage, you find twice as much food as you normally would.</li>
+            <li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+        </ul>
+        </description>
+        <sheet>
+        <description></description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Grassland" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_grassland">
+        <supports>Favored Terrain</supports>
+        <description>
+        <p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+        <p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+        <ul>
+            <li>Difficult terrain doesn’t slow your group’s travel.</li>
+            <li>Your group can’t become lost except by magical means.</li>
+            <li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+            <li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+            <li>When you forage, you find twice as much food as you normally would.</li>
+            <li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+        </ul>
+        </description>
+        <sheet>
+        <description></description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Mountain" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_mountain">
+        <supports>Favored Terrain</supports>
+        <description>
+        <p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+        <p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+        <ul>
+            <li>Difficult terrain doesn’t slow your group’s travel.</li>
+            <li>Your group can’t become lost except by magical means.</li>
+            <li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+            <li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+            <li>When you forage, you find twice as much food as you normally would.</li>
+            <li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+        </ul>
+        </description>
+        <sheet>
+        <description></description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Swamp" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_swamp">
+        <supports>Favored Terrain</supports>
+        <description>
+        <p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+        <p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+        <ul>
+            <li>Difficult terrain doesn’t slow your group’s travel.</li>
+            <li>Your group can’t become lost except by magical means.</li>
+            <li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+            <li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+            <li>When you forage, you find twice as much food as you normally would.</li>
+            <li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+        </ul>
+        </description>
+        <sheet>
+        <description></description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Underdark" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_Underdark">
+        <supports>Favored Terrain</supports>
+        <description>
+        <p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+        <p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+        <ul>
+            <li>Difficult terrain doesn’t slow your group’s travel.</li>
+            <li>Your group can’t become lost except by magical means.</li>
+            <li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+            <li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+            <li>When you forage, you find twice as much food as you normally would.</li>
+            <li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+        </ul>
+        </description>
+        <sheet>
+        <description></description>
+        </sheet>
+        <rules />
+    </element>
+
+    <element name="Superior Mobility" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_SUPERIOR_MOBILITY">
+        <description>
+            <p>At 7th level, your walking speed increases by 10 feet. If you have a climbing or swimming speed, this increase applies to that speed as well.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+			<stat name="innate speed:misc" value="10" bonus="superior mobility" level="7" />
+			<stat name="innate speed:climb:misc" value="10" bonus="superior mobility" level="7" />
+			<stat name="innate speed:swim:misc" value="10" bonus="superior mobility" level="7" />
+        </rules>
+    </element>
+
+    <element name="Ambush Master" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_AMBUSH_MASTER">
+        <description>
+            <p>Starting at 10th level, you excel at leading ambushes and acting first in a fight.</p>
+            <p class="indent">You have advantage on initiative rolls. In addition, the first creature you hit during the first round of a combat becomes easier for you and others to strike; attack rolls against that target have advantage until the start of your next turn.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on initiative rolls. In addition, the first creature you hit during the first round of a combat becomes easier for you and others to strike; attack rolls against that target have advantage until the start of your next turn.</description>
+        </sheet>
+    </element>
+
+    <element name="Relentless" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_RELENTLESS">
+        <description>
+            <p>Starting at 15th level, when you roll initiative and have no superiority dice remaining, you regain 1 superiority die.</p>
+        </description>
+        <sheet>
+            <description>When you roll initiative and have no superiority dice remaining, you regain 1 superiority die.</description>
+        </sheet>
+    </element>
+
+    <element name="Master Skirmisher" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_SCOUT_REVISED_MASTER_SKIRMISHER">
+        <description>
+            <p>Starting at 18th level, you are always under the effects of freedom of movement, your movement is unaffected by difficult terrain, and spells and other magical effects can neither reduce your speed nor cause you to be paralyzed or restrained. You can also spend 5 feet of movement to automatically escape from nonmagical restraints, such as manacles or a creature that has you grappled. Finally, being underwater imposes no penalties on your movement or attacks.</p>
+        </description>
+        <sheet>
+            <description>You are always under the effects of freedom of movement, your movement is unaffected by difficult terrain, and spells and other magical effects can neither reduce your speed nor cause you to be paralyzed or restrained. You can also spend 5 feet of movement to automatically escape from nonmagical restraints, such as manacles or a creature that has you grappled. Finally, being underwater imposes no penalties on your movement or attacks.</description>
+        </sheet>
+    </element>
+
+</elements>

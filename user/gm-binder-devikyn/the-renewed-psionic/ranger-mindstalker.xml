@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Mindstalker Ranger Archetype</name>
+        <author url="https://www.reddit.com/u/devikyn">u/devikyn</author>
+        <update version="0.0.1">
+            <file name="ranger-mindstalker.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/ranger-mindstalker.xml" />
+        </update>
+    </info>
+    
+    <element name="Mindstalker" type="Archetype" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_RANGER_MINDSTALKER">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Never faltering in their task, the mindstalker is a fierce hunter of psionic aberrations. Armed with the same psionic ability that many of these aberrations use to take advantage of their prey, these rangers relentlessly seek their targets, turning a careless predator into unsuspecting quarry. Those wary enough to know of a mindstalker’s existence and skill set wisely respect them, and often fear them.</p>
+            <div element="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_MINDSTALKER_MAGIC" />
+            <div element="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_EGO_PIERCER" />
+            <div element="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_EMPATH_SENSE" />
+            <div element="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_LUCID_BUFFER" />
+            <div element="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_CEREBRAL_BLIND" />
+            <div element="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_BLAST_FEEDBACK" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_MINDSTALKER_MAGIC" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_EGO_PIERCER" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_EMPATH_SENSE" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_LUCID_BUFFER" level="7" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_CEREBRAL_BLIND" level="11" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_BLAST_FEEDBACK" level="15" />
+        </rules>
+    </element>
+    <element name="Mindstalker Magic" type="Archetype Feature" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_MINDSTALKER_MAGIC">
+        <description>
+            <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Mindstalker Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+            <h5>MINDSTALKER SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><i>command</i></td></tr>
+                <tr><td>5th</td><td><i>mind spike<sup>XGtE</sup></i></td></tr>
+                <tr><td>9th</td><td><i>sending</i></td></tr>
+                <tr><td>13th</td><td><i>confusion</i></td></tr>
+                <tr><td>17th</td><td><i>geas</i></td></tr>
+            </table>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_COMMAND" level="3" spellcasting="Ranger" known="true" />
+            <grant type="Spell" id="ID_XGTE_SPELL_MIND_SPIKE" level="5" spellcasting="Ranger" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_SENDING" level="9" spellcasting="Ranger" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_CONFUSION" level="13" spellcasting="Ranger" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_GEAS" level="17" spellcasting="Ranger" known="true" />
+        </rules>
+    </element>
+    <element name="Ego Piercer" type="Archetype Feature" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_EGO_PIERCER">
+        <description>
+            <p>At 3rd level, you can imbue your strikes with psionic energy that seeps through wounds and strikes at the mind.</p>
+            <p class="indent">You can use your bonus action to cause your next weapon attack that hits before the end of the turn to deal an extra 1d8 psychic damage. If a creature capable of telepathy takes this damage, it must succeed on a Wisdom saving throw against your spell save DC or be frightened of you until the start of your next turn.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can cause your next weapon attack that hits before the end of the turn to deal an extra 1d8 psychic damage. If a creature capable of telepathy takes this damage, it must succeed on a Wisdom saving throw (save DC {{spellcasting:dc}}) or be frightened of you until the start of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Empath Sense" type="Archetype Feature" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_EMPATH_SENSE">
+        <description>
+            <p>Also at 3rd level, your mind is keenly tuned to detect the presence of other psionic beings.</p>
+            <p class="indent">You know whenever a creature speaks via telepathy while within 60 feet of you. Also, you can use your action to attempt to weed out the presence of telepathic creatures within 300 feet of you. Any creature within range that is capable of telepathy must succeed on a Charisma saving throw against your spell save DC or you become aware of its presence and its distance away from you. Once you’ve used this action, you must finish a short or long rest before you can use it again.</p>
+        </description>
+        <sheet action="Action" usage="1/Short Rest">
+            <description>You know whenever a creature speaks via telepathy while within 60 feet of you. Also, you can use your action to attempt to weed out the presence of telepathic creatures within 300 feet of you. Any creature within range that is capable of telepathy must succeed on a Charisma saving throw against your spell save DC or you become aware of its presence and its distance away from you.</description>
+        </sheet>
+    </element>
+    <element name="Lucid Buffer" type="Archetype Feature" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_LUCID_BUFFER">
+        <description>
+            <p>At 7th level, your consciousness is firmly rooted, making it difficult to control you. You have advantage on saving throws against being charmed, frightened, and stunned.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on saving throws against being charmed, frightened, and stunned.</description>
+        </sheet>
+    </element>
+    <element name="Cerebral Blind" type="Archetype Feature" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_CEREBRAL_BLIND">
+        <description>
+            <p>At 11th level, you slip into the blind spot of minds attempting to divine you, becoming an undetectable presence.</p>
+            <p class="indent">When any manifestations, spells, or other effects attempt to divine information about you or your location - such as the <i>arcane eye</i>, <i>locate creature</i>, or <i>scrying</i> spells, or the manifestations <i>find creature</i>, <i>view aura</i>, or <i>unwavering eye</i> - the attempts fail if you are the target, and you are invisible to sensors created by these effects.</p>
+        </description>
+        <sheet>
+            <description>When any manifestations, spells, or other effects attempt to divine information about you or your location, the attempts fail if you are the target, and you are invisible to sensors created by these effects.</description>
+        </sheet>
+    </element>
+    <element name="Blast Feedback" type="Archetype Feature" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_MINDSTALKER_BLAST_FEEDBACK">
+        <description>
+            <p>At 15th level, afflictions of the mind have little effect on you, and you can even turn certain effects back onto your attackers.</p>
+            <p class="indent">You have resistance to psychic damage, and whenever a creature forces you to make an Intelligence saving throw for a manifestation, spell, or effect, your mind partially reflects the assault, forcing the originating creature to also make the saving throw or suffer the same effects it is attempting to inflict upon you.</p>
+        </description>
+        <sheet>
+            <description>Whenever a creature forces you to make an Intelligence saving throw for a manifestation, spell, or effect, your mind partially reflects the assault, forcing the originating creature to also make the saving throw or suffer the same effects it is attempting to inflict upon you.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+        </rules>
+    </element>
+</elements>

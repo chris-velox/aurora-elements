@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Silent - Roguish Archetype</name>
+        <author url="https://www.gmbinder.com/share/-LoboPOLP0Me3Izjwrt5">Alchahest</author>
+        <update version="0.0.1">
+            <file name="rogue-the-silent.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/rogue-the-silent.xml" />
+        </update>
+    </info>
+    
+    <element name="The Silent" type="Archetype" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_ROGUE_THE_SILENT">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Eerie silence is what defines you. You are to the ears what a shadow is to the eyes, and your mastery over the space between sounds is both terrifying and effective. You fear no broken twig or creaking floor, as you stalk your prey.</p>
+            <p class="indent">You have an unearthly and unnatural affinity for quiet that mirrors the space between stars - an unnerving and total silence that can drive lesser minds mad. You hold and shape this silence, and indeed it's counterpart, sound itself, as a weapon.</p>
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_QUIET_OF_THE_ABYSS" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_MASTER_OF_RESONANCE" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_HARMONIC_INTUITION" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_DISCORDANT_ECHOES" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_QUIET_OF_THE_ABYSS" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_MASTER_OF_RESONANCE" level="9" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_HARMONIC_INTUITION" level="13" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_DISCORDANT_ECHOES" level="17" />
+        </rules>
+    </element>
+
+    <element name="Quiet of the Abyss" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_QUIET_OF_THE_ABYSS">
+        <description>
+            <p>You are a locus of utter silence, you absorb any and all sounds that reach you, and you do not produce any sound. A field of complete silence surrounds you. You are always considered to be under the effects of the silence spell. The silence extends to anything you are wearing or carrying, and any creature you are grappling. As a reaction you may also extend it to cover a thrown weapon or piece of ammunition for one round.</p>
+            <p class="indent">You may use a bonus action to suppress the field. The field remains suppressed so long as you concentrate on it. While suppressed, you have advantage on Wisdom (perception) rolls that use hearing.</p>
+            <p class="indent">Unlike the silence spell, Quiet of the Abyss does not grant immunity to thunder damage.</p>
+        </description>
+        <sheet>
+            <description>You are always considered to be under the effects of the silence spell. The silence extends to anything you are wearing or carrying, and any creature you are grappling. As a reaction you may also extend it to cover a thrown weapon or piece of ammunition for one round. You may use a bonus action to suppress the field. The field remains suppressed so long as you concentrate on it. While suppressed, you have advantage on Wisdom (perception) rolls that use hearing. Unlike the silence spell, Quiet of the Abyss does not grant immunity to thunder damage.</description>
+        </sheet>
+    </element>
+    
+    <element name="Master of Resonance" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_MASTER_OF_RESONANCE">
+        <description>
+            <p>Starting at 9th level, you are able to absorb and channel the sound you absorb into a usable force, and use it to your advantage. You gain resistance to thunder damage.</p>
+            <p class="indent">Additionally, as a bonus action, you can concentrate on the internal echoes, entering a state of Harmonic Resonance. You gain the following benefits for up to one minute, while concentrating:</p>
+            <ul>
+                <li>Enhanced Absorbtion: If you take thunder damage, your AC is improved by 2 for one round, and your next attack deals an additional 2D4 thunder damage.</li>
+                <li>Harmonic Synchonicity: You may add your constitution bonus to Strength (athletics) checks made to climb or grapple.</li>
+                <li>Cacaphonous Discharge: You deal double damage to constructs and objects with melee weapon attacks.</li>
+            </ul>
+            <p class="indent">You may enter this state a number of times equal to your constitution modifier. You regain all uses when you complete a long rest.</p>
+        </description>
+        <sheet usage="{{master-of-resonance:uses}}/Long Rest" action="Bonus Action">
+            <description>You can enter a state of Harmonic Resonance. You gain the following benefits for up to one minute, while concentrating: Enhanced Absorption, Harmonic Synchronicity, Cacaphonous Discharge.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+            <stat name="master-of-resonance:uses" value="1" bonus="base" />
+            <stat name="master-of-resonance:uses" value="constitution:modifier" bonus="base" />
+        </rules>
+    </element>
+    
+    <element name="Harmonic Intuition" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_HARMONIC_INTUITION">
+        <description>
+            <p>By 13th level, your mastery of sound and vibration allows you to make sense of the sound you absorb, granting you Tremorsense with a range of 30 feet.</p>
+            <p class="indent">You are also able to become proficient in any musical instrument after ten minutes of study. Of course the instrument makes no noise if you are not suppressing Quiet of the Abyss. You can be proficient in one instrument at a time with this effect, and becoming proficient in a new instrument will cause you to lose proficiency in the first. This does not apply to proficiencies gained through normal methods.</p>
+        </description>
+        <sheet>
+            <description>You have Tremorsense with a range of 30 feet. You are also able to become proficient in any musical instrument after ten minutes of study. Of course the instrument makes no noise if you are not suppressing Quiet of the Abyss. You can be proficient in one instrument at a time with this effect, and becoming proficient in a new instrument will cause you to lose proficiency in the first. This does not apply to proficiencies gained through normal methods.</description>
+        </sheet>
+        <rules>
+            
+        </rules>
+    </element>
+    
+    <element name="Discordant Echoes" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_ROGUE_SILENT_DISCORDANT_ECHOES">
+        <description>
+            <p>Upon reaching 17th level, your power over sound becomes truly terrifying, as you are able to channel the very vibration of your component atoms into devastating attacks. Whenever you deal sneak attack damage, You can spend three hit dice to channel your stored sound into a monstrous attack. The damage of this attack increases by 3D8 thunder damage. Additionally, <i>shatter</i> is cast as a second level spell, centered on your opponent, with a save DC equal to your proficiency bonus + Constitution Modifier.</p>
+        </description>
+        <sheet>
+            <description>Whenever you deal sneak attack damage, You can spend three hit dice to channel your stored sound into a monstrous attack. You add 3d8 thunder damage to your attack. Additionally, shatter is cast as a second level spell, centered on your opponent, with a save DC of {{discordant-echoes:dc}}.</description>
+        </sheet>
+        <rules>
+            <stat name="discordant-echoes:dc" value="8" />
+            <stat name="discordant-echoes:dc" value="proficiency" />
+            <stat name="discordant-echoes:dc" value="constitution:modifier" />
+        </rules>
+    </element>
+    
+</elements>
