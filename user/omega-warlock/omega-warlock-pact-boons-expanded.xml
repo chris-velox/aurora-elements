@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Pact Boons Expanded</name>
+        <author url="https://drive.google.com/open?id=1UqaZmCF7l7qn8rZKRevw69o2HAhgCDvt">u/FrostBladeStorm</author>
+        <update version="0.0.1">
+            <file name="omega-warlock-pact-boons-expanded.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/omega-warlock/omega-warlock-pact-boons-expanded.xml" />
+        </update>
+    </info>
+
+  <!-- Pact of the Alchemist -->
+    <element name="Pact of the Alchemist" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ALCHEMIST">
+        <supports>Omega Warlock Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <h5>PACT KIT</h5>
+            <p>At 1st level, you gain the benefits of the <i>Pact of the Alchemist</i> feature.</p>
+            <div element="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_EXPERIMENTAL_BREWING" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_INFUSER" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_ALCHEMICAL_EXPLOSION" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_ULTIMATE_ALCHEMIST" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST" level="1" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_EXPERIMENTAL_BREWING" level="3" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_INFUSER" level="5" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_ALCHEMICAL_EXPLOSION" level="9" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_ULTIMATE_ALCHEMIST" level="18" />
+        </rules>
+    </element>
+        <element name="Experimental Brewing" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_EXPERIMENTAL_BREWING">
+            <description>
+                <p>At 3rd level, you gain the benefits of the <i>Experimental Brewer</i> invocation. In addition, Potions you create have a value increase equal to your Intelligence modifier (minimum 1).</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EXPERIMENTAL_BREWER" />
+            </description>
+            <sheet>
+                <description>Potions you create have a value increase of {{experimental-brewing:potion-mod}} gp.</description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EXPERIMENTAL_BREWER" />
+                <stat name="experimental-brewing:potion-mod" value="1" bonus="base" />
+                <stat name="experimental-brewing:potion-mod" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Infuser" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_INFUSER">
+            <description>
+                <p>At 5th level, you gain the benefits of the <i>Infusing Potions</i> invocation. The increase in value of a potion is changed from twice your Charisma modifier to your Intelligence modifier (minimum 1). This stacks with Experimental Brewer to make this twice your Intelligence modifier (minimum 2).</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_INFUSING_POTIONS" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_INFUSING_POTIONS" />
+            </rules>
+        </element>
+        <element name="Alchemical Explosion" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_ALCHEMICAL_EXPLOSION">
+            <description>
+                <p>At 9th level, you gain the benefits of the <i>Liquid Explosion</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LIQUID_EXPLOSION" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LIQUID_EXPLOSION" />
+            </rules>
+        </element>
+        <element name="Ultimate Alchemist" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_ULTIMATE_ALCHEMIST">
+            <description>
+                <p>At 18th level, you gain the benefits of the <i>Fusion</i> and <i>Philter of Shielding</i> invocations.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FUSION" />
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_PHILTER_OF_SHIELDING" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FUSION" />
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_PHILTER_OF_SHIELDING" />
+            </rules>
+        </element>
+
+  <!-- Pact of the Bloodline -->
+    <element name="Pact of the Bloodline" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_BLOODLINE">
+        <supports>Omega Warlock Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <h5>PACT KIT</h5>
+            <p>At 1st level, you gain the benefits of the <i>Pact of the Bloodline</i> feature. You use Intelligence instead of Charisma for the damage you deal.</p>
+            <div element="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_BLOODLINE" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ENHANCED_VIGOUR" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_INCREASED_VITALITY" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_BLOODBOUND_RESISTANCE" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_BLOODLINE" level="1" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ENHANCED_VIGOUR" level="3" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_INCREASED_VITALITY" level="5" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_BLOODBOUND_RESISTANCE" level="9" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" level="18" />
+        </rules>
+    </element>
+        <element name="Enhanced Vigour" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ENHANCED_VIGOUR">
+            <description>
+                <p>At 3rd level, you gain the benefits of the <i>Vigour</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_VIGOUR" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_VIGOUR" />
+            </rules>
+        </element>
+        <element name="Increased Vitality" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_INCREASED_VITALITY">
+            <description>
+                <p>At 5th level, you gain the benefits of the <i>Vitality</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_VITALITY" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_VITALITY" />
+            </rules>
+        </element>
+        <element name="Bloodbound Resistance" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_BLOODBOUND_RESISTANCE">
+            <description>
+                <p>At 9th level, you choose two of the following damage types: Acid, Cold, Fire, Lightning, Necrotic, Radiant. You gain resistance to the chosen damage types. You choose an additional type at 18th level.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Class Feature" name="Bloodbound Resistance" number="2" supports="ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_ACID_DAMAGE|ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_COLD_DAMAGE|ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_FIRE_DAMAGE|ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_LIGHTNING_DAMAGE|ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_NECROTIC_DAMAGE|ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_RADIANT_DAMAGE" />
+                <select type="Class Feature" name="Bloodbound Resistance" number="1" level="18" supports="ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_ACID_DAMAGE|ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_COLD_DAMAGE|ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_FIRE_DAMAGE|ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_LIGHTNING_DAMAGE|ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_NECROTIC_DAMAGE|ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_RADIANT_DAMAGE" />
+            </rules>
+        </element>
+          <!-- Resistances -->
+            <element name="Acid Damage Resistance" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_ACID_DAMAGE">
+                <description />
+                <sheet display="false" />
+                <rules>
+                    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+                </rules>
+            </element>
+            <element name="Cold Damage Resistance" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_COLD_DAMAGE">
+                <description />
+                <sheet display="false" />
+                <rules>
+                    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+                </rules>
+            </element>
+            <element name="Fire Damage Resistance" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_FIRE_DAMAGE">
+                <description />
+                <sheet display="false" />
+                <rules>
+                    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+                </rules>
+            </element>
+            <element name="Lightning Damage Resistance" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_LIGHTNING_DAMAGE">
+                <description />
+                <sheet display="false" />
+                <rules>
+                    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+                </rules>
+            </element>
+            <element name="Necrotic Damage Resistance" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_NECROTIC_DAMAGE">
+                <description />
+                <sheet display="false" />
+                <rules>
+                    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+                </rules>
+            </element>
+            <element name="Radiant Damage Resistance" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTB_BR_RADIANT_DAMAGE">
+                <description />
+                <sheet display="false" />
+                <rules>
+                    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+                </rules>
+            </element>
+        <element name="Ultimate Bloodline" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE">
+            <description>
+                <p>At 18th level, you gain the benefits of the <i>Blood Barrier</i> and <i>Retaliation</i> invocations. Both invocations use your Intelligence modifier instead of your Charisma modifier.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_BLOOD_BARRIER" />
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_RETALIATION" />
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_BLOOD_BARRIER" />
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_RETALIATION" />
+            </rules>
+        </element>
+
+  <!-- Pact of the Crown -->
+    <element name="Pact of the Crown" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN">
+        <supports>Omega Warlock Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <h5>PACT CROWN</h5>
+            <p>At 1st level, you gain the benefits of the <i>Pact of the Crown</i> feature.</p>
+            <div element="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_CROWN" />
+            <div element="id" />
+            <div element="id" />
+            <div element="id" />
+            <div element="id" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_CROWN" level="1" />
+            <grant type="Class Feature" id="id" level="3" />
+            <grant type="Class Feature" id="id" level="5" />
+            <grant type="Class Feature" id="id" level="9" />
+            <grant type="Class Feature" id="id" level="18" />
+        </rules>
+    </element>
+        <element name="King's Diadem" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTCROWN_KINGS_DIADEM">
+            <description>
+                <p>At 3rd level, you gain the benefits of the <i>King's Diadem</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_KINGS_DIADEM" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_KINGS_DIADEM" />
+            </rules>
+        </element>
+        <element name="Heroic Crown" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTCROWN_HEROIC_CROWN">
+            <description>
+                <p>At 5th level, you gain the benefits of the <i>Crown of Heroes</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_CROWN_OF_HEROES" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_CROWN_OF_HEROES" />
+            </rules>
+        </element>
+        <element name="Protector's Diadem" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTCROWN_PROTECTORS_DIADEM">
+            <description>
+                <p>At 9th level, you gain the benefits of the <i>Protector's Crown</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_PROTECTORS_CROWN" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_PROTECTORS_CROWN" />
+            </rules>
+        </element>
+        <element name="Ultimate Crown" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTCROWN_ULTIMATE_CROWN">
+            <description>
+                <p>At 18th level, you gain the benefits of the <i>Gift of the Crown</i> and <i>Glory to the Ruler</i> invocations.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_GIFT_OF_THE_CROWN" />
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_GLORY_TO_THE_RULER" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_GIFT_OF_THE_CROWN" />
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_GLORY_TO_THE_RULER" />
+            </rules>
+        </element>
+
+  <!-- Pact of the Eye -->
+    <element name="Pact of the Eye" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_EYE">
+        <supports>Omega Warlock Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <h5>PACT EYE</h5>
+            <p>At 1st level, you gain the benefits of the <i>Pact of the Eye</i> feature.</p>
+            <div element="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_EYE" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_HORUS_RES_EYE" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_SPELL_EXTENSION" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_MEDUSAS_EYE" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_ULTIMATE_EYE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_EYE" level="1" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_HORUS_RES_EYE" level="3" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_SPELL_EXTENSION" level="5" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_MEDUSAS_EYE" level="9" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_ULTIMATE_EYE" level="18" />
+        </rules>
+    </element>
+        <element name="Horus_Re's Eye" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_HORUS_RES_EYE">
+            <description>
+                <p>At 3rd level, you gain the benefits of the <i>Eye of Horus-Re</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EYE_OF_HORUS" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EYE_OF_HORUS" />
+            </rules>
+        </element>
+        <element name="Spell Extension" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_SPELL_EXTENSION">
+            <description>
+                <p>At 5th level, you gain the benefits of the <i>Extended Spell</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EXTENDED_SPELL" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EXTENDED_SPELL" />
+            </rules>
+        </element>
+        <element name="Medusa's Eye" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_MEDUSAS_EYE">
+            <description>
+                <p>At 9th level, you gain the benefits of the <i>Eye of Medusa</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EYE_OF_MEDUSA" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EYE_OF_MEDUSA" />
+            </rules>
+        </element>
+        <element name="Ultimate Eye" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTEYE_ULTIMATE_EYE">
+            <description>
+                <p>At 18th level, you gain the benefits of the <i>All-Seeing Eye</i> and <i>Inspector</i> invocations.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ALLSEEING_EYE" />
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_INSPECTOR" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ALLSEEING_EYE" />
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_INSPECTOR" />
+            </rules>
+        </element>
+
+  <!-- Pact of the Mask -->
+    <element name="Pact of the Mask" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_MASK">
+        <supports>Omega Warlock Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <h5>PACT MASK</h5>
+            <p>At 1st level, you gain the benefits of the <i>Pact of the Mask</i> feature.</p>
+            <div element="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_MASK" />
+            <div element="id" />
+            <div element="id" />
+            <div element="id" />
+            <div element="id" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_MASK" level="1" />
+            <grant type="Class Feature" id="id" level="3" />
+            <grant type="Class Feature" id="id" level="5" />
+            <grant type="Class Feature" id="id" level="9" />
+            <grant type="Class Feature" id="id" level="18" />
+        </rules>
+    </element>
+        <element name="Disguised One" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTMASK_DISGUISED_ONE">
+            <description>
+                <p>At 3rd level, you gain the benefits of the <i>Mask of Mirrors</i> and <i>Whispers of the Masked One</i> invocations.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_MASK_OF_MIRRORS" />
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_WHISPERS_OF_THE_MASKED_ONE" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_MASK_OF_MIRRORS" />
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_WHISPERS_OF_THE_MASKED_ONE" />
+            </rules>
+        </element>
+        <element name="Enhancing the Mask" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK">
+            <description>
+                <p>At 5th level, you gain the benefits of the <i>Enhanced Mask</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ENHANCED_MASK" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ENHANCED_MASK" />
+            </rules>
+        </element>
+        <element name="Illusory Master" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ILLUSORY_MASTER">
+            <description>
+                <p>At 9th level, you gain the benefits of the <i>Illusion Master</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ILLUSION_MASTER" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ILLUSION_MASTER" />
+            </rules>
+        </element>
+        <element name="Ultimate Mask" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ULTIMATE_MASK">
+            <description>
+                <p>At 18th level, you gain the benefits of the <i>Malevolent Intentions</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_MALEVOLENT_INTENTIONS" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_MALEVOLENT_INTENTIONS" />
+            </rules>
+        </element>
+
+  <!-- Pact of the Orb -->
+    <element name="Pact of the Orb" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB">
+        <supports>Omega Warlock Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <h5>PACT ORB</h5>
+            <p>At 1st level, you gain the benefits of the <i>Pact of the Orb</i> feature. You use Intelligence instead of Charisma for the number of charges the orb has.</p>
+            <div element="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ORB" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTORB_ORB_ENHANCEMENT" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTORB_CANTRIP_RAY" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTORB_LIGHTNING_CONDUIT" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTORB_ULTIMATE_ORB" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ORB" level="1" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTORB_ORB_ENHANCEMENT" level="3" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTORB_CANTRIP_RAY" level="5" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTORB_LIGHTNING_CONDUIT" level="9" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTORB_ULTIMATE_ORB" level="18" />
+        </rules>
+    </element>
+        <element name="Orb Enhancement" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTORB_ORB_ENHANCEMENT">
+            <description>
+                <p>At 3rd level, you gain the benefits of the <i>Improved Pact Orb</i> invocation. You use Intelligence instead of Charisma for the number of charges the orb has.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_ORB" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_ORB" />
+            </rules>
+        </element>
+        <element name="Cantrip Ray" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTORB_CANTRIP_RAY">
+            <description>
+                <p>At 5th level, you gain the benefits of the <i>Arcane Ray</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ARCANE_RAY" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ARCANE_RAY" />
+            </rules>
+        </element>
+        <element name="Lightning Conduit" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTORB_LIGHTNING_CONDUIT">
+            <description>
+                <p>At 9th level, you gain the benefits of the <i>Lightning Ball</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LIGHTNING_BALL" />
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LIGHTNING_BALL" />
+            </rules>
+        </element>
+        <element name="Ultimate Orb" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTORB_ULTIMATE_ORB">
+            <description>
+                <p>At 18th level, you gain the benefits of the <i>Annihilation</i> and <i>Energy Shield</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ANNIHILATION" />
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ENERGY_SHIELD" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ANNIHILATION" />
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ENERGY_SHIELD" />
+            </rules>
+        </element>
+
+  <!-- Pact of the Quill -->
+    <element name="Pact of the Quill" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_QUILL">
+        <supports>Omega Warlock Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <h5>Pact Quill</h5>
+            <p>At 1st level, you gain the benefits of the <i>Pact of the Quill</i> feature.</p>
+            <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LANGUAGE_OF_THE_ELDERS" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_VICIOUS_NOTE" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_FORGER" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_DARK_WRITING" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_ULTIMATE_QUILL" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LANGUAGE_OF_THE_ELDERS" level="1" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_VICIOUS_NOTE" level="3" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_FORGER" level="5" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_DARK_WRITING" level="9" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_ULTIMATE_QUILL" level="18" />
+        </rules>
+    </element>
+        <element name="Vicious Note" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_VICIOUS_NOTE">
+            <description>
+                <p>At 3rd level, you gain the benefits of the <i>Hurtful Words</i> invocation. You use Intelligence instead of Charisma for the spellcasting ability.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_HURTFUL_WORDS" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_HURTFUL_WORDS" />
+            </rules>
+        </element>
+        <element name="Forger" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_FORGER">
+            <description>
+                <p>At 5th level, you gain the benefits of the "Counterfeit" invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_COUNTERFEIT" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_COUNTERFEIT" />
+            </rules>
+        </element>
+        <element name="Dark Writing" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_DARK_WRITING">
+            <description>
+                <p>At 9th level, you gain the benefits of the <i>Quill of Shadows</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_QUILL_OF_SHADOWS" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_QUILL_OF_SHADOWS" />
+            </rules>
+        </element>
+        <element name="Ultimate Quill" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTQUILL_ULTIMATE_QUILL">
+            <description>
+                <p>At 18th level, you gain the benefits of the <i>Language of the Elders</i> invocation. In addition, you learn the <i>Contingency</i> spell and it does not count against your maximum number of known spells.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LANGUAGE_OF_THE_ELDERS" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LANGUAGE_OF_THE_ELDERS" />
+                <grant type="Spell" id="ID_PHB_SPELL_CONTINGENCY" spellcasting="Omega Warlock" known="true" />
+            </rules>
+        </element>
+
+  <!-- Pact of the Watch -->
+    <element name="Pact of the Watch" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_WATCH">
+        <supports>Omega Warlock Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <h5>PACT WATCH</h5>
+            <p>At 1st level, you gain the benefits of the <i>Pact of the Watch</i> feature. You use Intelligence instead of Charisma for the number of d6's the Watch has.</p>
+            <div element="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WATCH" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_TICK_TICK_TICK" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_EMPOWERING_THE_WATCH" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_SPEED_UP" />
+            <div element="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WATCH" level="1" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_TICK_TICK_TICK" level="3" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_EMPOWERING_THE_WATCH" level="5" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_SPEED_UP" level="9" />
+            <grant type="Class Feature" id="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" level="18" />
+        </rules>
+    </element>
+        <element name="Tick Tick Tick..." type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_TICK_TICK_TICK">
+            <description>
+                <p>At 3rd level, you gain the benefits of the <i>Hourglass</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_HOURGLASS" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_HOURGLASS" />
+            </rules>
+        </element>
+        <element name="Empowering the Watch" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_EMPOWERING_THE_WATCH">
+            <description>
+                <p>At 5th level, you gain the benefits of the <i>Empowered Watch</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EMPOWERED_WATCH" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EMPOWERED_WATCH" />
+            </rules>
+        </element>
+        <element name="Speed Up" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_SPEED_UP">
+            <description>
+                <p>At 9th level, you gain the benefits of the <i>Fast-Forward</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FASTFORWARD" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FASTFORWARD" />
+            </rules>
+        </element>
+        <element name="Ultimate Watch" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH">
+            <description>
+                <p>At 18th level, you gain the benefits of the <i>Freezing Time</i> and <i>Out of Time</i> invocations. You use Intelligence instead of Charisma for the Out of Time invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FREEZING_TIME" />
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_OUT_OF_TIME" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FREEZING_TIME" />
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_OUT_OF_TIME" />
+            </rules>
+        </element>
+
+  <!-- Pact of the Wing -->
+    <element name="Pact of the Wing" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_WING">
+        <supports>Omega Warlock Pact Boon</supports>
+        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <description>
+            <h5>PACT WINGS</h5>
+            <p>At 1st level, you gain the benefits of the <i>Pact of the Wing</i> feature.</p>
+            <div element="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WING" />
+            <div element="id" />
+            <div element="id" />
+            <div element="id" />
+            <div element="id" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WING" level="1" />
+            <grant type="Class Feature" id="id" level="3" />
+            <grant type="Class Feature" id="id" level="5" />
+            <grant type="Class Feature" id="id" level="9" />
+            <grant type="Class Feature" id="id" level="18" />
+        </rules>
+    </element>
+        <element name="Feather Faller" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTWING_FEATHER_FALLER">
+            <description>
+                <p>At 3rd level, you gain the benefits of the <i>Like a Feather</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LIKE_A_FEATHER" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LIKE_A_FEATHER" />
+            </rules>
+        </element>
+        <element name="Flying Nature" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTWING_FLYING_NATURE">
+            <description>
+                <p>At 5th level, you gain the benefits of the <i>Avian</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_AVIAN" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_AVIAN" />
+            </rules>
+        </element>
+        <element name="Master of Flight" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTWING_MASTER_OF_FLIGHT">
+            <description>
+                <p>At 9th level, you gain the benefits of the <i>Flyby</i> invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FLYBY" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FLYBY" />
+            </rules>
+        </element>
+        <element name="Ultimate Wings" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_PBE_CLASS_FEATURE_POTWING_ULTIMATE_WINGS">
+            <description>
+                <p>At 18th level, you gain the benefits of the <i>Death From Above</i> and <i>Flight of the Harpy</i> invocations. You use Intelligence instead of Charisma for the Death From Above invocation.</p>
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_DEATH_FROM_ABOVE" />
+                <div element="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FLIGHT_OF_THE_HARPY" />
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_DEATH_FROM_ABOVE" />
+                <grant type="Class Feature" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FLIGHT_OF_THE_HARPY" />
+            </rules>
+        </element>
+
+</elements>

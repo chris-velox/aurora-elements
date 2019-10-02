@@ -3,7 +3,7 @@
     <info>
         <name>Pact Boons Expanded</name>
         <author url="https://drive.google.com/open?id=1UqaZmCF7l7qn8rZKRevw69o2HAhgCDvt">u/FrostBladeStorm</author>
-        <update version="0.0.1">
+        <update version="0.0.3">
             <file name="warlock-pact-boons-expanded.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/warlock-pact-boons-expanded.xml" />
         </update>
     </info>
@@ -50,10 +50,12 @@
             <p class="indent">In addition, You gain resistance to poison damage and you are immune to disease.</p>
         </description>
         <sheet action="Reaction">
-            <description>When you take damage from a melee attack, you can use your reaction to deal your Charisma modifier (minimum 1) acid damage to the target that hit you. You are immune to disease.</description>
+            <description>When you take damage from a melee attack, you can use your reaction to deal {{pact-of-the-blood:damage}} acid damage to the target that hit you. You are immune to disease.</description>
         </sheet>
         <rules>
             <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+            <stat name="pact-of-the-blood:damage" value="1" bonus="base" />
+            <stat name="pact-of-the-blood:damage" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_BLOODLINE" />
             <select type="List" name="Quirk (Pact of the Bloodline)">
                 <item id="1">You are fascinated by blood.</item>
                 <item id="2">Your blood pulses with the colour of your patron.</item>
@@ -79,8 +81,16 @@
         </sheet>
         <rules>
             <stat name="pact of the crown:usage" value="1" bonus="base" />
-            <stat name="pact of the crown:usage" value="2" bonus="base" requirements="[charisma:modifier:3]" />
-            <stat name="pact of the crown:usage" value="charisma:modifier" bonus="base" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_GLORY_TO_THE_RULER" />
+            <stat name="pact of the crown:cha" value="2" bonus="base" requirements="[charisma:modifier:3]" />
+            <stat name="pact of the crown:cha" value="3" bonus="base" requirements="[charisma:modifier:5]" />
+            <stat name="pact of the crown:cha" value="4" bonus="base" requirements="[charisma:modifier:7]" />
+            <stat name="pact of the crown:int" value="2" bonus="base" requirements="[intelligence:modifier:3]" />
+            <stat name="pact of the crown:int" value="3" bonus="base" requirements="[intelligence:modifier:5]" />
+            <stat name="pact of the crown:int" value="4" bonus="base" requirements="[intelligence:modifier:7]" />
+            <stat name="pact of the crown:usage" value="pact of the crown:cha" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
+            <stat name="pact of the crown:usage" value="pact of the crown:int" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
+            <stat name="pact of the crown:usage" value="charisma:modifier" bonus="base" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_GLORY_TO_THE_RULER,!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
+            <stat name="pact of the crown:usage" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_GLORY_TO_THE_RULER,ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
             <select type="List" name="Quirk (Pact of the Crown)">
                 <item id="1">You are agitated when you are not wearing your crown.</item>
                 <item id="2">Your crown sparkles in the moonlight, but is extremely dull in the sunlight.</item>
@@ -125,13 +135,14 @@
             <p class="indent">You can perform a special ritual over the course of 1 hour, which can be done over a short or long rest. When you perform this ritual, you can convert a magic mask into your pact mask. When you perform this ritual, you can change the appearance of the mask. If you lose your mask, you can perform this ritual to receive a replacement from your patron. You can offer gold equal to 5 times your Warlock level to alter the identities you have from this feature, and any documentation you have supporting them from this feature is altered to support the new or changed identity. It destroys the previous mask. The mask turns to ash when you die.</p>
         </description>
         <sheet action="Action">
-            <description>While wearing your patron’s mask you can disguise your identity using one of two identities stored in the mask. Creatures with an Intelligence of {{pact of the mask:disguise minimum}} fail to see past the disguise. Creatures with higher Intelligence can make an Intelligence (Investiagion) check (DC {{pact of the mask:dc}}) to determine if you are wearing the mask. You can change the appearance as an action.</description>
+            <description>While wearing your patron’s mask you can disguise your identity using one of two identities stored in the mask. Creatures with an Intelligence of {{pact of the mask:disguise minimum}} or less fail to see past the disguise. Creatures with higher Intelligence can make an Intelligence (Investiagion) check (DC {{pact of the mask:dc}}) to determine if you are wearing the mask. You can change the appearance as an action.</description>
         </sheet>
         <rules>
             <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
             <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
             <stat name="pact of the mask:disguise minimum" value="8" />
-            <stat name="pact of the mask:disguise minimum" value="charisma:modifier" />
+            <stat name="pact of the mask:disguise minimum" value="charisma:modifier" requirements="!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_MASK" />
+            <stat name="pact of the mask:disguise minimum" value="intelligence:modifier" requirements="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_MASK" />
             <stat name="pact of the mask:dc" value="spellcasting:dc" />
             <select type="List" name="Quirk (Pact of the Mask)">
                 <item id="1">Your mask is featureless and a solid colour.</item>
@@ -158,9 +169,11 @@
             <description>The orb has {{pact of the orb:charges}} charges. You can expend any number of charges from the Orb to add a value to a single spell attack equal to the charges spent. In addition, you can expend any number of charges from the Orb to increase a single spell save DC on a spell you cast by half the number of charges expended (rounded down).</description>
         </sheet>
         <rules>
-            <stat name="pact of the orb:charges" value="1" />
-            <stat name="pact of the orb:charges" value="charisma:modifier" />
-            <stat name="pact of the orb:charges" value="charisma:modifier" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_ORB" />
+            <stat name="pact of the orb:charges" value="1" bonus="base"/>
+            <stat name="pact of the orb:charges" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB"/>
+            <stat name="pact of the orb:charges" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB"/>
+            <stat name="pact of the orb:charges" value="charisma:modifier" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_ORB,!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB" />
+            <stat name="pact of the orb:charges" value="intelligence:modifier" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_ORB,ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB" />
             <select type="List" name="Quirk (Pact of the Orb)">
                 <item id="1">Your orb is most animated while you have spell slots, gradually lowering in motion as you expend them.</item>
                 <item id="2">The orb has an environment inside it, resembling your mood. Storms when angry.</item>
@@ -208,8 +221,9 @@
             <description>You have a pool of {{pact of the watch:die pool}} d{{pact of the watch:die type}}s. When you fail an ability check, attack roll or saving throw, you can expend one of these d{{pact of the watch:die type}}'s to add the result to the roll, possibly turning the result into a success. Only one d6 can be used at a time and this feature can only be used once per round. You must have the watch in your possession to use this feature.</description>
         </sheet>
         <rules>
-            <stat name="pact of the watch:die pool" value="1" />
-            <stat name="pact of the watch:die pool" value="charisma:modifier" />
+            <stat name="pact of the watch:die pool" value="1" bonus="base" />
+            <stat name="pact of the watch:die pool" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_WATCH" />
+            <stat name="pact of the watch:die pool" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_WATCH" />
             <stat name="pact of the watch:die type" value="6" bonus="pact of the watch" />
             <stat name="pact of the watch:die type" value="8" bonus="pact of the watch" level="9" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EMPOWERED_WATCH" />
             <select type="List" name="Quirk (Pact of the Watch)">
@@ -312,9 +326,13 @@
             <p>When you use your Pact of the Bloodline feature and successfully damage another creature, you gain temporary hit points equal to your Charisma modifier (minimum 1).</p>
         </description>
         <sheet>
-            <description>When you use your Pact of the Bloodline feature and successfully damage another creature, you gain temporary hit points equal to your Charisma modifier (minimum 1).</description>
+            <description>When you use your Pact of the Bloodline feature and successfully damage another creature, you gain {{blood-barrier:temp-hp}} temporary hit points.</description>
         </sheet>
-        <rules />
+        <rules>
+            <stat name="blood-barrier:temp-hp" value="1" bonus="base" />
+            <stat name="blood-barrier:temp-hp" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
+            <stat name="blood-barrier:temp-hp" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
+        </rules>
     </element>
 
     <element name="Contingency Plan" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_CONTINGENCY_PLAN">
@@ -416,7 +434,14 @@
             <description>You can make your mask transparent, allowing you to maintain proficiency with Charisma (Deception) and Charisma (Persuasion) while your true face is shown. Creatures with truesight see the mask.</description>
         </sheet>
         <rules>
-            <stat name="pact of the mask:dc" value="intelligence:modifier:half" />
+            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:2],!ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:4],!ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:6],!ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:8],!ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:2],ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:4],ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:6],ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:8],ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
         </rules>
     </element>
 
@@ -652,8 +677,13 @@
             <description>You can combine two mixtures to create a unique potion. The name of the potion is decided by you when you create it. The potion has the properties of the two potions you mix. Potions do not stack properties, and any property has the values of the parent potions. The gold value of the potion is equal to the gold value of the two infused potions + {{infusing potions:cost}}.</description>
         </sheet>
         <rules>
-            <stat name="infusing potions:cost" value="charisma:modifier" />
-            <stat name="infusing potions:cost" value="charisma:modifier" />
+            <stat name="infusing potions:cha" value="charisma:modifier" />
+            <stat name="infusing potions:cha" value="charisma:modifier" />
+            <stat name="infusing potions:cost" value="infusing potions:cha" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_INFUSER" />
+            <stat name="infusing potions:int" value="intelligence:modifier" />
+            <stat name="infusing potions:int" value="intelligence:modifier" />
+            <stat name="infusing potions:cost" value="infusing potions:int" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_INFUSER" />
+            <stat name="infusing potions:cost" value="2" bonus="base" />
         </rules>
     </element>
 
@@ -792,9 +822,22 @@
             <p>When you expend your last use of the Pact of the Watch feature, you roll a d6. On a 6, you regain expended dice equal to your Charisma Modifier. On a 5, you regain half your Charisma modifier expended dice. On a 4 or lower, nothing happens.</p>
         </description>
         <sheet>
-            <description>When you expend your last use of the Pact of the Watch feature, you roll a d6. On a 6, you regain  {{charisma:modifier}} expended dice. On a 5, you regain {{charisma:modifier:half}} expended dice. On a 4 or lower, nothing happens.</description>
+            <description>When you expend your last use of the Pact of the Watch feature, you roll a d6. On a 6, you regain  {{out-of-time:dice}} expended dice. On a 5, you regain {{out-of-time:dice:half}} expended dice. On a 4 or lower, nothing happens.</description>
         </sheet>
-        <rules />
+        <rules>
+            <stat name="out-of-time:dice" value="1" bonus="base" />
+            <stat name="out-of-time:dice" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:2],!ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:4],!ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:6],!ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:8],!ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:2],ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:4],ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:6],ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:8],ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            
+        </rules>
     </element>
 
     <element name="Philter of Shielding" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_PHILTER_OF_SHIELDING">
@@ -809,8 +852,9 @@
             <description>When a creature consumes a potion that you have created, they gain {{philter of shielding:hp}} temporary hit points.</description>
         </sheet>
         <rules>
-            <stat name="philter of shielding:hp" value="0" />
-            <stat name="philter of shielding:hp" value="charisma:modifier" />
+            <stat name="philter of shielding:hp" value="0" bonus="base" />
+            <stat name="philter of shielding:hp" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_ULTIMATE_ALCHEMIST"/>
+            <stat name="philter of shielding:hp" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_ULTIMATE_ALCHEMIST"/>
         </rules>
     </element>
 
@@ -826,8 +870,9 @@
             <description>When you expend a use of your Pact of the Crown feature, you can choose to bolster yourself and the target. You and the creature targeted by the feature gain {{protectors crown:hp}} temporary hit points that last for 1 minute.</description>
         </sheet>
         <rules>
-            <stat name="protectors crown:hp" value="1" />
-            <stat name="protectors crown:hp" value="charisma:modifier" />
+            <stat name="protectors crown:hp" value="1" bonus="base" />
+            <stat name="protectors crown:hp" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTCROWN_PROTECTORS_DIADEM" />
+            <stat name="protectors crown:hp" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTCROWN_PROTECTORS_DIADEM" />
         </rules>
     </element>
 
@@ -876,8 +921,13 @@
             <description>You can use your Pact of the Bloodline feature without using your reaction. When you are damaged by a critical hit, your Pact of the Bloodline feature deals {{retaliation:damage}} damage.</description>
         </sheet>
         <rules>
-            <stat name="retaliation:damage" value="charisma:modifier" />
-            <stat name="retaliation:damage" value="charisma:modifier" />
+            <stat name="retaliation:cha" value="charisma:modifier" />
+            <stat name="retaliation:cha" value="charisma:modifier" />
+            <stat name="retaliation:int" value="intelligence:modifier" />
+            <stat name="retaliation:int" value="intelligence:modifier" />
+            <stat name="retaliation:damage" value="2" bonus="base" />
+            <stat name="retaliation:damage" value="retaliation:cha" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
+            <stat name="retaliation:damage" value="retaliation:int" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
         </rules>
     </element>
 
