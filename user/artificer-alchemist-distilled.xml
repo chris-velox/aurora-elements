@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Alchemist Distilled UA Artificer Specialist</name>
+        <author url="https://homebrewery.naturalcrit.com/print/HJ-iKEVKPS?dialog=true">BLTrun</author>
+        <update version="0.0.1">
+            <file name="artificer-alchemist-distilled.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/artificer-alchemist-distilled.xml" />
+        </update>
+    </info>
+    
+    <element name="Alchemist Distilled" type="Archetype" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_ALCHEMIST_DISTILLED">
+        <supports>UA Artificer Specialist</supports>
+        <description>
+            <p>An Alchemist is an expert at combining exotic reagents to produce mystical effects. Among artificers, members of this subclass are the greatest healers, as well as the ones most adept at wielding dangerous chemicals.</p>
+            <p class="indent"></p>
+            <div element="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_TOOLS_OF_THE_TRADE" />
+            <!-- <div element="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_MIXING_POTIONS" /> -->
+            <div element="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_ALCHEMIST_SPELLS" />
+            <div element="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_ALCHEMICAL_WIDGET" />
+            <div element="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_REFINED_CHEMTECH" />
+            <div element="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_CHEMICAL_SAVANT" />
+        </description>
+		<setters>
+			<set name="short">A master of combining exotics reagents to produce mystical effects and empower objects.</set>
+		</setters>
+        <sheet display="false">
+            <description>A master of combining exotics reagents to produce mystical effects and empower objects.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_TOOLS_OF_THE_TRADE" level="3" />
+            <grant type="Archetype Feature" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_ALCHEMIST_SPELLS" level="3" />
+            <grant type="Archetype Feature" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_ALCHEMICAL_WIDGET" level="3" />
+            <grant type="Archetype Feature" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_REFINED_CHEMTECH" level="6" />
+            <grant type="Archetype Feature" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_CHEMICAL_SAVANT" level="14" />
+       </rules>
+    </element>
+  <!-- Archetype Features -->    
+    <element name="Tools of the Trade" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_TOOLS_OF_THE_TRADE">
+        <description>
+            <p>By the time you adopt this specialty at 3rd level, you’re deeply familiar with employing its tools.</p>
+            <p class="indent"><b><i>Proficiencies.</i></b> You gain proficiency with alchemist’s supplies and the herbalism kit, assuming you don’t already have them. You also gain alchemist’s supplies and an herbalism kit for free—the result of tinkering you’ve done as you’ve prepared for this specialization.</p>
+            <p class="indent"><b><i>Crafting.</i></b> When you craft a potion or poison, consult the table below for the costs and crafting time. You need to have alchemists supplies and a poisoner’s kit, respectively.</p>
+            <h5>CRAFTING POTIONS AND POISONS</h5>
+            <table>
+                <thead>
+                    <tr><td>Rarity</td><td>Time</td><td>Cost</td></tr>
+                </thead>
+                <tr><td>Common</td><td>6 hours</td><td>12 gp 5 sp</td></tr>
+                <tr><td>Uncommon</td><td>2 days</td><td>50 gp</td></tr>
+                <tr><td>Rare</td><td>5 days</td><td>500 gp</td></tr>
+                <tr><td>Very rare</td><td>1 week</td><td>5,000 gp</td></tr>
+                <tr><td>Legendary</td><td>2 weeks</td><td>25,000 gp</td></tr>
+            </table>
+        </description>
+        <sheet>
+            <description>When you craft a potion or poison, consult the table for the costs and crafting time. You need to have alchemists supplies and a poisoner’s kit, respectively.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" /> 
+        </rules>
+    </element>
+    <element name="Mixing Potions" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_MIXING_POTIONS">
+        <description>
+            <p>A character might drink or be subjected to one potion while still under the effects of another, or pour several potions into a single container. The strange ingredients used in creating potions can result in unpredictable interactions. When a character mixes two potions together, you can roll on the Potion Miscibility table. </p>
+            <p class="indent">If more than two are combined, roll again for each subsequent potion, combining the results. Unless the effects are immediately obvious, they are only revealed when they become evident to you.</p>
+            <h5>POTION MISCIBILITY</h5>
+            <table>
+                <thead>
+                    <tr><td>d100</td><td>Result</td></tr>
+                </thead>
+                <tr><td>01</td><td>The mixture creates a magical explosion, dealing 6d10 force damage to the mixer and 1d10 forcer damage to each creature within 5 feet of the mixer.</td></tr>
+                <tr><td>02-08</td><td>The mixture becomes an ingested poison of the DM’s choice.</td></tr>
+                <tr><td>09-12</td><td>One potion does the opposite of what it’s meant to do.</td></tr>
+                <tr><td>13-20</td><td>Both potions lose their effect.</td></tr>
+                <tr><td>21-27</td><td>One potion loses its effect</td></tr>
+                <tr><td>28-35</td><td>Both potions work, but with their numerical effects and durations halved. A potion has no effect if it can’t be halved this way.</td></tr>
+                <tr><td>36-60</td><td>If either of the potions requires a dice roll, you take the lowest possible roll for both.</td></tr>
+                <tr><td>61-80</td><td>Both potions work normally.</td></tr>
+                <tr><td>81-90</td><td>If either of the potions requires a dice roll, you take the maximum for both.</td></tr>
+                <tr><td>91-99</td><td>The numerical effects and duration of one potion are doubled. If neither potion has anything to double in this way, they work normally.</td></tr>
+                <tr><td>00</td><td>Only one potion works, but its effect is permanent. Choose the simplest effect to make permanent, or the one that seems the most fun. For example, a potion of healing might increase the drinker’s hit point maximum by 4, or oil of etherealness might permanently trap the user in the Ethereal Plane. At your discretion, an appropriate spell, such as dispel magic or remove curse, might end this lasting effect.</td></tr>
+            </table>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Alchemist Spells" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_ALCHEMIST_SPELLS">
+        <description>
+            <p>Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Alchemist Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
+            <h5>ALCHEMIST SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Artificer Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><i>purify food and drink, ray of sickness</i></td></tr>
+                <tr><td>5th</td><td><i>Melf’s acid arrow, web</i></td></tr>
+                <tr><td>9th</td><td><i>create food and water, stinking cloud</i></td></tr>
+                <tr><td>13th</td><td><i>blight, death ward</i></td></tr>
+                <tr><td>17th</td><td><i>cloudkill, raise dead</i></td></tr>
+            </table>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_PURIFY_FOOD_AND_DRINK" level="3" spellcasting="Artificer" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_RAY_OF_SICKNESS" level="3" spellcasting="Artificer" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_MELFS_ACID_ARROW" level="5" spellcasting="Artificer" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_WEB" level="5" spellcasting="Artificer" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_CREATE_FOOD_AND_WATER" level="9" spellcasting="Artificer" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_STINKING_CLOUD" level="9" spellcasting="Artificer" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_BLIGHT" level="13" spellcasting="Artificer" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" level="13" spellcasting="Artificer" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_CLOUDKILL" level="17" spellcasting="Artificer" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_RAISE_DEAD" level="17" spellcasting="Artificer" prepared="true" />
+        </rules>
+    </element>
+    <element name="Alchemical Widget" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_ALCHEMICAL_WIDGET">
+        <description>
+            <p>At 3rd level, you have constructed a widget with intricate cavities in which reagents can reside within.</p>
+            <p class="indent">When you acquire a potion or a poison, you can use your alchemist’s supplies to split it into 10 parts. These widgets contain an invigorated yet less potent version of the original potion or poison called a fluid. The widget works as housing that administers the fluid in specific ways.</p>
+            <p class="indent">The fluid does not need to be ingested. It can now be administered in alternativeways, depending on the widget. When applied,the fluid starts its effects immediately. If the fluid has an instantaneous effect, it is only applied once. If it has a duration, it is reduced to 1 minute. Any dice that you need to roll for a fluid is totalled then halved.</p>
+            <p class="indent">The fluid’s duration does not exceed 1 minute, if you subject a creature multiple times to a fluid, the duration is only refreshed. If a fluid has its own DC from the previous potion or poison, you ignore it and instead use the DC from the widget. If the widget has no DC, you use the regular DC. The fluid otherwise obeys all the usual rules it would entail.</p>
+            <p class="indent">Choose one of the widgets listed below. Once you choose your widget, you cannot change it or choose another. You can create 10 widgets from one potion or poison per short rest.</p>
+            <p class="flavor indent">YOU AND YOUR WIDGET</p>
+            <p class="flavor indent">Similar to a fighting style, your widget dictates your playstyle for the entirety of your artificer’s career. It makes opportunities for particular playstyles as well as section off playstyles you could have had. And just like a fighting style, once chosen, you can’t chane it for a new one. Your artificer has dedicated a lot of time and research into your chosen widget and cannot just swap it on a whim. Look into each widget and which one fits you. </p>
+            <p class="flavor indent">Do you want to stay in the back, firing healing syringes into your allies? Making clouds of toxic fog that poisons enemies but heals allies? Or perhaps be on the front line, dissolving armour with your corrosive sword?</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Archetype Feature" name="Alchemical Widget" supports="Alchemical Widget" />
+        </rules>
+    </element>
+      <!-- Alchemical Widgets -->
+        <element name="Aerosol Canister" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_WIDGET_AEROSOL_CANISTER">
+            <supports>Alchemical Widget</supports>
+            <description>
+                <p>Choose from a bottle, vial or a flask to situate an atomizer inside the neck of the canister. As an action, you can activate then throw this canister, kick-starting it upon impact with a surface. Make a ranged attack against a creature or object, treating the canister as an Improvised Weapon.</p>
+                <p class="indent">Upon activation, the canister will start to churn out the contents as a fog-like mist in a 5ft spherical zone originating from the canister that expands to a 10ft radius after one round. Creatures that start their turn within this sphere must make a DC 15 Constitution saving throw or be subjected to the fluid’s effects. Holding one’s breath is ineffective against inhaled potions, as they affect nasal membranes, tear ducts, and other parts of the body. The instance of the fluid starts instantly, the duration only begins to count down when a creature is no longer within the zone. Re-entering the zone refreshes this duration back to 1 minute.</p>
+                <p class="indent">After 1 minute, the zone disperses. If the canister is moved before that time, it creates a new instance of the zone. This new zone also needs to expand similar to before, lasting for the remainder of the previous minute duration. The former zone lingers then expires one round later. This widget does not work underwater. A moderate wind (at least 10 miles per hour) will make the zone unable to expand past a 5ft radius. A strong wind (at least 20 miles per hour) will cause the canister unable to produce a usable zone at all.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can activate then throw this canister, kick-starting it upon impact with a surface. Make a ranged attack against a creature or object, treating the canister as an Improvised Weapon.</description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Aerosol Canister" number="2" requirements="[level:artificer:6]" />
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Aerosol Canister" requirements="[level:artificer:6],[intelligence:modifier:1]" />
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Aerosol Canister" requirements="[level:artificer:6],[intelligence:modifier:2]" />
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Aerosol Canister" requirements="[level:artificer:6],[intelligence:modifier:3]" />
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Aerosol Canister" requirements="[level:artificer:6],[intelligence:modifier:4]" />
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Aerosol Canister" requirements="[level:artificer:6],[intelligence:modifier:5]" />
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Aerosol Canister" requirements="[level:artificer:6],[intelligence:modifier:6]" />
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Aerosol Canister" requirements="[level:artificer:6],[intelligence:modifier:7]" />
+            </rules>
+        </element>
+        <element name="Eruptive Bullet" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_WIDGET_ERUPTIVE_BULLET">
+            <supports>Alchemical Widget</supports>
+            <description>
+                <p>You formulate custom bullets where many pellets of your fluid reside within the casing. Making a ranged attack with a firearm allows this bullet to be fired a short distance before it explodes into a vortex of shrapnel and fluid.</p>
+                <p class="indent">The projectile travels 10ft in front of you before proactively detonating into a 15ft cone. Creatures within 10ft of the gun are not subjected to the fluid’s effects but instead are inflicted with the bullet’s usual damage. Creatures within the cone must succeed a DC 15 Dexterity saving throw or be subjected to the potion or poison effects along with 1d4 piercing damage. Creatures behind cover or other creatures are not subjected to the fluid’s effects.</p>
+                <p class="indent">The fluid coated shrapnel stay inside the skin of the creature and can’t be removed without the aid of a healer’s kit. The cone disperses immediately after detonating and does not linger. When used, these bullets cannot be recovered from the battlefield.</p>
+            </description>
+            <sheet>
+                <description>Making a ranged attack with a firearm allows this bullet to be fired a short distance before it explodes into a vortex of shrapnel and fluid. The projectile travels 10ft in front of you before proactively detonating into a 15ft cone.</description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Eruptive Bullet Modification" supports="Eruptive Bullet" number="2" requirements="[level:artificer:6]" />
+                <select type="Archetype Feature" name="Eruptive Bullet Modification" supports="Eruptive Bullet" requirements="[level:artificer:6],[intelligence:modifier:1]" />
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Eruptive Bullet" requirements="[level:artificer:6],[intelligence:modifier:2]" />
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Eruptive Bullet" requirements="[level:artificer:6],[intelligence:modifier:3]" />
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Eruptive Bullet" requirements="[level:artificer:6],[intelligence:modifier:4]" />
+                <select type="Archetype Feature" name="Aerosol Canister Modification" supports="Eruptive Bullet" requirements="[level:artificer:6],[intelligence:modifier:5]" />
+                <select type="Archetype Feature" name="Eruptive Bullet Modification" supports="Eruptive Bullet" requirements="[level:artificer:6],[intelligence:modifier:6]" />
+                <select type="Archetype Feature" name="Eruptive Bullet Modification" supports="Eruptive Bullet" requirements="[level:artificer:6],[intelligence:modifier:7]" />
+            </rules>
+        </element>
+        <element name="Hilt Dispenser" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_WIDGET_HILT_DISPENSER">
+            <supports>Alchemical Widget</supports>
+            <description>
+                <p>You strap a liquid receptacle onto the hilt of a one-handed melee weapon, which has enough room to hold 10 uses of your fluid. Once per turn, you can activate an easily accessible trigger as a free interaction. When done so, it dispenses enough fluid to lace the weapon for one attack.</p>
+                <p class="indent">The receptacle can be triggered with the same hand the weapon is being used in and needs to be refilled when empty. You must use or empty the entire contents before being able to refill it with a different potion. The attack applies the effect of the fluid after applying the initial weapon damage. Unsuccessful attacks result in the potion being spattered off of the blade and will need to be reapplied.</p>
+                <p class="indent">After one hour of the potion being applied, it will dry up on the weapon and become redundant.</p>
+            </description>
+            <sheet>
+                <description>Once per turn, you can activate an easily accessible trigger as a free interaction. When done so, it dispenses enough fluid to lace the weapon for one attack.</description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Hilt Dispenser Modification" supports="Hilt Dispenser" number="2" requirements="[level:artificer:6]" />
+                <select type="Archetype Feature" name="Hilt Dispenser Modification" supports="Hilt Dispenser" requirements="[level:artificer:6],[intelligence:modifier:1]" />
+                <select type="Archetype Feature" name="Hilt Dispenser Modification" supports="Hilt Dispenser" requirements="[level:artificer:6],[intelligence:modifier:2]" />
+                <select type="Archetype Feature" name="Hilt Dispenser Modification" supports="Hilt Dispenser" requirements="[level:artificer:6],[intelligence:modifier:3]" />
+                <select type="Archetype Feature" name="Hilt Dispenser Modification" supports="Hilt Dispenser" requirements="[level:artificer:6],[intelligence:modifier:4]" />
+                <select type="Archetype Feature" name="Hilt Dispenser Modification" supports="Hilt Dispenser" requirements="[level:artificer:6],[intelligence:modifier:5]" />
+                <select type="Archetype Feature" name="Hilt Dispenser Modification" supports="Hilt Dispenser" requirements="[level:artificer:6],[intelligence:modifier:6]" />
+                <select type="Archetype Feature" name="Hilt Dispenser Modification" supports="Hilt Dispenser" requirements="[level:artificer:6],[intelligence:modifier:7]" />
+            </rules>
+        </element>
+        <element name="Needle Capsule" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_WIDGET_NEEDLE_CAPSULE">
+            <supports>Alchemical Widget</supports>
+            <description>
+                <p>Choose from an arrow, crossbow bolt or a blowgun needle to affix a syringe-like head onto it. This new ammunition can be used to inject creatures directly with your fluid. The projectile itself does no damage. You can use a weapon that has the ammunition property to make a ranged attack only if you have the correct ammunition to fire from the weapon. The ranged attack has advantage if the target is willing.</p>
+                <p class="indent">At the end of the battle, you can recover half your expended ammunition by taking a minute to Search the battlefield, recovered needle capsules will be empty. If you miss any shots, the needle capsule shatters, and the contents spill out on the ground. If this happens, both the projectile and the potion becomes irretrievable. If an injected creature knows about the widget, and are intelligent enough to comprehend what it does, they can remove it from their skin before it has a chance to dispense.</p>
+            </description>
+            <sheet>
+                <description>Choose from an arrow, crossbow bolt or a blowgun needle to affix a syringe-like head onto it. This new ammunition can be used to inject creatures directly with your fluid. The projectile itself does no damage.</description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Needle Capsule Modification" supports="Needle Capsule" number="2" requirements="[level:artificer:6]" />
+                <select type="Archetype Feature" name="Needle Capsule Modification" supports="Needle Capsule" requirements="[level:artificer:6],[intelligence:modifier:1]" />
+                <select type="Archetype Feature" name="Needle Capsule Modification" supports="Needle Capsule" requirements="[level:artificer:6],[intelligence:modifier:2]" />
+                <select type="Archetype Feature" name="Needle Capsule Modification" supports="Needle Capsule" requirements="[level:artificer:6],[intelligence:modifier:3]" />
+                <select type="Archetype Feature" name="Needle Capsule Modification" supports="Needle Capsule" requirements="[level:artificer:6],[intelligence:modifier:4]" />
+                <select type="Archetype Feature" name="Needle Capsule Modification" supports="Needle Capsule" requirements="[level:artificer:6],[intelligence:modifier:5]" />
+                <select type="Archetype Feature" name="Needle Capsule Modification" supports="Needle Capsule" requirements="[level:artificer:6],[intelligence:modifier:6]" />
+                <select type="Archetype Feature" name="Needle Capsule Modification" supports="Needle Capsule" requirements="[level:artificer:6],[intelligence:modifier:7]" />
+            </rules>
+        </element>
+
+    <element name="Refined Chemtech" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_REFINED_CHEMTECH">
+        <description>
+            <p>At 6th level, you have gained insight towards the flaws of your chosen widget and have tinkered with concepts to improve upon them. You can pick a number of modifications, listed below, equal to your 2 + your Intelligence modifier. These modifications are only for the specific widget you chose from the previous feature.</p>
+            <p class="indent">You cannot use modifications between separate widgets. Whenever you finish a long rest, you can swap one previously chosen upgrades with a new one.</p>
+        </description>
+        <sheet>
+            <description>You cannot use modifications between separate widgets. Whenever you finish a long rest, you can swap one previously chosen upgrades with a new one.</description>
+        </sheet>
+    </element>
+    <element name="Chemical Savant" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_CHEMICAL_SAVANT">
+        <description>
+            <p>By 14th level, you have been exposed to so many chemicals they have unlocked their secrets to you. You are now immune to the poisoned condition, and you gain a 10+ to your roll on the Potion Miscibility table.</p>
+            <p class="indent">In addition, you no longer have to half any die rolled with your widgets and instead get the maximum amount. This also carries over to any potion or poison you craft.</p>
+        </description>
+        <sheet>
+            <description>You are now immune to the poisoned condition, and you gain a 10+ to your roll on the Potion Miscibility table. In addition, you no longer have to half any die rolled with your widgets and instead get the maximum amount. This also carries over to any potion or poison you craft.</description>
+        </sheet>
+    </element>
+
+      <!-- Aerosol Canister -->
+        <element name="Accreting Aerosol" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_ACCRETING_AEROSOL">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>The mist condenses and congeals around the centre of the zone. The radius is increased by an additional 5 ft. Those within 5ft of the centre are subjected to the fluid’s effects without the dice being halved.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>The radius is increased by an additional 5 ft. Those within 5ft of the centre are subjected to the fluid’s effects without the dice being halved.</description>
+            </sheet>
+        </element>
+
+        <element name="Acidic Mist" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_ACIDIC_MIST">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>An aggressive enzyme harvested from black puddings has been worked into the fog. Creatures within the fog that have non-magical weapons have them slowly corrode away. When a creature spends more than 2 rounds within the fog, their weapon takes a permanent and cumulative -1 penalty to Damage Rolls. If its penalty drops to -5, the weapon is destroyed.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>Creatures within the fog that have non-magical weapons have them slowly corrode away. When a creature spends more than 2 rounds within the fog, their weapon takes a permanent and cumulative -1 penalty to Damage Rolls. If its penalty drops to -5, the weapon is destroyed.</description>
+            </sheet>
+        </element>
+
+        <element name="Adrenaline Spike" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_ADRENALINE_SPIKE">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>A spike of invigoration that does not fry a creature’s adrenal glands. A creature that is within the fog has the option to dash as a bonus action.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>A creature that is within the fog has the option to dash as a bonus action.</description>
+            </sheet>
+        </element>
+
+        <element name="Blinding Smog" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_BLINDING_SMOG">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>A fog so thick that it clouds a creature’s vision. Creatures within the fog are blinded until they leave. Bright light that passes through the fog is turned into dim light and dim light turns into darkness.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>Creatures within the fog are blinded until they leave. Bright light that passes through the fog is turned into dim light and dim light turns into darkness.</description>
+            </sheet>
+        </element>
+
+        <element name="Dawdling Trail" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_DAWDLING_TRAIL">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>Significant modifications to the widget allow the fog to linger much more efficiently if the canister is moved. If you move the widget, the zone that would have lingered for only 1 round now lasts for 3 rounds.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>If you move the widget, the zone that would have lingered for only 1 round now lasts for 3 rounds.</description>
+            </sheet>
+        </element>
+
+        <element name="Dense Cloud" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_DENSE_CLOUD">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>Once the widget has dispensed the fluid, it is much more challenging to get rid of. The fog cannot be destroyed or moved by both magical and non magical methods.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>The fog cannot be destroyed or moved by both magical and non magical methods.</description>
+            </sheet>
+        </element>
+
+        <element name="Flora’s Bane" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_FLORAS_BANE">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>A poison that repels plants and foliage alike. Plants take 1d4 necrotic damage every time they end their turn in the fog as they wither. If they take damage from the cloud, they gain the frightened condition towards the fog cloud until the canister is empty.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>Plants take 1d4 necrotic damage every time they end their turn in the fog as they wither. If they take damage from the cloud, they gain the frightened condition towards the fog cloud until the canister is empty.</description>
+            </sheet>
+        </element>
+
+        <element name="Glacial Brume" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_GLACIAL_BRUME">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>A simple addition of a chemical renders the mist icy and cold to the touch. Creatures that start their turn within the fog lose 10ft of their movement and take 2 cold damage.</p>
+                <p class="indent">Any water that remains within the fog and does not exceed a 5ft zone is frozen. If it is a large body of water, it is partially frozen, as only the surface freezes. The water unfreezes after 1 hour.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>Creatures that start their turn within the fog lose 10ft of their movement and take 2 cold damage. Any water that remains within the fog and does not exceed a 5ft zone is frozen. If it is a large body of water, it is partially frozen, as only the surface freezes. The water unfreezes after 1 hour.</description>
+            </sheet>
+        </element>
+
+        <element name="Lightweight Fumes" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_LIGHTWEIGHT_FUMES">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>The mist has been engineered to be less dense than air. Instead of creating a spherical zone with a 10ft radius from the canister, it instead creates a cylindrical zone with a 10ft radius that extends high into the air. The fog moves upward at a speed of 10ft per round before dispersing after 30ft. Moving the canister will result in the fog needing to refill the new location of the cylindrical zone.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>Instead of creating a spherical zone with a 10ft radius from the canister, it instead creates a cylindrical zone with a 10ft radius that extends high into the air. The fog moves upward at a speed of 10ft per round before dispersing after 30ft. Moving the canister will result in the fog needing to refill the new location of the cylindrical zone.</description>
+            </sheet>
+        </element>
+
+        <element name="Lingering Aura" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_LINGERING_AURA">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>The fog is enchanted to congeal around a creature. Creatures that exit the fog are still subjected to the fog’s effects for another 1d4 rounds.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>Creatures that exit the fog are still subjected to the fog’s effects for another 1d4 rounds.</description>
+            </sheet>
+        </element>
+
+        <element name="Masking Pheromones" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_MASKING_PHEROMONES">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>You have mixed a concoction of spores and animal pheromones into your mist to confuse creatures. Creatures within the fog cannot be perceived by any senses that rely on smell. If a creature has a trait that is reliant on smell and is inside the fog, they cannot use it until they leave the zone.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>Creatures within the fog cannot be perceived by any senses that rely on smell. If a creature has a trait that is reliant on smell and is inside the fog, they cannot use it until they leave the zone.</description>
+            </sheet>
+        </element>
+
+        <element name="Miscible Solvent" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_MISCIBLE_SOLVENT">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>You’ve added an emulsifier into the concoction. The Aerosol Canister now works underwater.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>The Aerosol Canister now works underwater.</description>
+            </sheet>
+        </element>
+
+        <element name="Noxious Vapour" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_NOXIOUS_VAPOUR">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>A toxic cloud that is morbidly potent. When administering a fluid that poisons, creatures within the fog take additional poison damage equal to half your artificer level each time they start their turn in the fog.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>When administering a fluid that poisons, creatures within the fog take additional {{level:artificer:half}} poison damage each time they start their turn in the fog.</description>
+            </sheet>
+        </element>
+
+        <element name="Paranoia Gas" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_PARANOIA_GAS">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>You’ve messed with the chemicals to mess with the enemies. Creatures who are within the fog are under the effects of the <i>enemies abound</i> spell until they leave.</p>
+                <div element="ID_PHB_SPELL_ENEMIES_ABOUND" />
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>Creatures who are within the fog are under the effects of the enemies abound spell until they leave.</description>
+            </sheet>
+        </element>
+
+        <element name="Quickened Dispenser" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_QUICKENED_DISPENSER">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>The atomizer has been refined to churn out the contents with excellent efficiency. The zone always starts at a 10ft radius instead of 5ft. When you move the canister, it continues to churn the contents out at a 10ft radius. A canister with this Chemtech only lasts for 5 rounds instead of 10.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>The zone always starts at a 10ft radius instead of 5ft. When you move the canister, it continues to churn the contents out at a 10ft radius. A canister with this Chemtech only lasts for 5 rounds instead of 10.</description>
+            </sheet>
+        </element>
+
+        <element name="Rejuvenating Mist" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_REJUVENATING_MIST">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>A fresh and pleasant mist that replenishes vitality. When the widget contains a fluid that heals, all creatures within the zone additionally regenerate 1 hitpoint per round if they stay in the mist.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>When the widget contains a fluid that heals, all creatures within the zone additionally regenerate 1 hitpoint per round if they stay in the mist.</description>
+            </sheet>
+        </element>
+
+        <element name="Repulsive Detonation" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_REPULSIVE_DETONATION">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>You’ve pushed the canister to its limits, pressurizing it to the point of volatility. When the widget activates it detonates, pushing all loose objects within a 10ft zone of the widget away. Any medium or smaller creature within the 5ft radius is knocked prone.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>When the widget activates it detonates, pushing all loose objects within a 10ft zone of the widget away. Any medium or smaller creature within the 5ft radius is knocked prone.</description>
+            </sheet>
+        </element>
+
+        <element name="Scrupulous Air" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_SCRUPULOUS_AIR">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>You have ensured the safety of all your allies without aiding your enemies. You can choose up to 4 + your Intelligence modifier willing creatures to gain only beneficial effects from the fog.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>You can choose up to {{scrupulous-air:creatures}} willing creatures to gain only beneficial effects from the fog.</description>
+            </sheet>
+            <rules>
+                <stat name="scrupulous-air:targets" value="4" />
+                <stat name="scrupulous-air:targets" value="intelligence:modifier" />
+            </rules>
+        </element>
+
+        <element name="Shrilling Sound" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_SHRILLING_SOUND">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>The widget emits an ear-piercing sound that can be heard from up to 100ft away. Those within a 10ft radius of the widget are subjected to 1d10 thunder damage and are deafened until they leave the radius. Creatures within the radius aren’t subjected to the recurring thunder damage per round if they are deafened. If the creature re-enters the radius, they will be subjected to both the damage and the deafen condition one more.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>Those within a 10ft radius of the widget are subjected to 1d10 thunder damage and are deafened until they leave the radius. Creatures within the radius aren’t subjected to the recurring thunder damage per round if they are deafened. If the creature re-enters the radius, they will be subjected to both the damage and the deafen condition one more.</description>
+            </sheet>
+        </element>
+
+        <element name="Vibrating Canister" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_AEROSOL_MOD_VIBRATING_CANISTER">
+            <supports>Aerosol Canister</supports>
+            <description>
+                <p>The canister hums and quivers violently when activated. A creature that has tremorsense or a creature whose blindsense relies on sound treats the widget as a creature and may attempt to attack it. Creatures with these senses also cannot discern how many creatures are standing in the fog without the aid of other senses.</p>
+            </description>
+            <sheet usage="Aerosol Canister">
+                <description>The canister hums and quivers violently when activated. A creature that has tremorsense or a creature whose blindsense relies on sound treats the widget as a creature and may attempt to attack it. Creatures with these senses also cannot discern how many creatures are standing in the fog without the aid of other senses.</description>
+            </sheet>
+        </element>
+      <!-- Erruptive Bullet -->
+        <element name="Acidic Spume" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_ACIDIC_SPUME">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>A frothing foam that sticks and corrodes. Creatures hit with the shrapnel are subjected to an extra 2d6 acid damage. If the creature is also facing you, they are also blinded until the start of your next turn.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Aquatic Adaptation" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_AQUATIC_ADAPTATION">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>The shrapnel should have a better time lingering with water as a foundation instead of air. If the widget is fired underwater, the shrapnel zone lingers for 3 rounds before dispersing as sharp shards of metal pirouette in the water.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Concussive Blast" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_CONCUSSIVE_BLAST">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>The detonation of the bullet is so powerful it knocks creatures back. Creatures, with a size of medium or smaller, that are within the 15ft cone are pushed back 5 ft.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Defence Dissolver" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_DEFENCE_DISSOLVER">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>Your bullet fires an enzyme that is super aggressive against nonliving matter but safe to the touch. Non-magical objects that aren’t being carried or worn (except shields) that is within the 15ft cone are slowly corroded away. Total cover becomes three-quarters, three-quarters becomes half and half is broken apart. If a creature’s shield is covered in this acid, it consecutively loses 1 AC every 2 rounds. They must spend an action to wipe away the acid before the end of the 4th round. If they fail to do this, the shield becomes too broken to use.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Efficacious Poison" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_EFFICACIOUS_POISON">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>Your poison is so potent, it sinks deep past any natural defences. When you administer a fluid that involves poison, it temporarily removes any poison resistances or immunities for a number of rounds equal to half your Intelligence modifier. </p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Enchanted Shell" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_ENCHANTED_SPELL">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>You’ve added magical properties to both the metal housing and the shrapnel of your widget. When firing this widget, it is classed as a magical attack and has a +3 to attack and damage rolls.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Expunge Blood" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_EXPUNGE_BLOOD">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>The shrapnel expels a creature’s blood as quickly as it administers the fluid. Creatures that are hit by the shrapnel bleed out 2d4 damage per round until they heal from a healer’s kit, have regenerative abilities or drop to zero hit points. Creatures that don’t have or rely on a blood-like substance are immune to this effect.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Fertilizing Shrapnel" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_FERTILIZING_SHRAPNEL">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>The shrapnel contains a potent nutrient that plants can’t resist. If a creature hit by shrapnel is near plant life, the plants elongate out and try to burrow into the shrapnel’s entry points in the skin. They take 2d6 piercing damage and become restrained. The creatures must succeed on a DC 15 Strength saving throw to break free. Upon a failed save, the plant life pulls them prone.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Fumigating Froth" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_FUMIGATING_FROTH">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>Undead hit with the shrapnel take acid damage equal to half your artificer level + your Intelligence modifier per round until the end of the fluid’s duration.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Incendiary Shot" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_INCENDIARY_SHOT">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>Coating the shrapnel in a flammable liquid is always a good idea. A creature hit with shrapnel is classed as a flammable object. If set on fire, they take 5 damage per round until someone takes an action to douse the fire.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Infallible Poison" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_INFALLIBLE_POISON">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>Your poison is so toxic it is immune to Antitoxins. Any fluid that involves a poison is immune to being quelled with an Antitoxin.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Long Shot" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_LONG_SHOT">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>Recalibration of both the barrel and the shape of your bullets allow for a reliable range to be maintained. The range you can fire both your widget and your regular bullets is doubled. If the bullet is your widget, it now detonates at 20ft instead of 10ft.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Numbing Touch" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_NUMBING_TOUCH">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>The fluid contains a local anaesthetic that numbs joints. Creatures hit with shrapnel must succeed a DC 16 Constitution saving throw or fall paralyzed for 1 minute. Whenever the creature takes damage while paralyzed, they can attempt the saving throw again once per turn.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Penetrating Shot" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_PENTRATING_SHOT">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>More creatures within the cone can be subjected to the shrapnel. A creature behind another creature now has a 50% chance of being subjected to the shrapnel.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Point-Blank Bang" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_POINTBLANK_BANG">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>The sheer force of the shrapnel across such a small space is devastating for a creature. A creature that is at the point of origin of the 15ft cone doesn’t get to make a saving throw and is subjected to 4d4 piercing damage instead of 1d4.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Potent Pheromones" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_POTENT_PHEROMONES">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>You’ve captured a hormone that enrages animals. Any beast within a 100ft radius of the target hit by your shrapnel is now hostile towards them.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Quelling Serum" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_QUELLING_SERUM">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>You can engineer your fluid in such a way that it stunts any healing a creature would have. When a creature is subjected to the shrapnel, they cannot heal or regenerate for a number of rounds equal to half your Intelligence modifier rounded up.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Repeating Spike" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_REPEATING_SPIKE">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>The fluid has an additional spike in it that is applied a few moments after. When you have a fluid with an instantaneous effect, it is applied one additional time the next round.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Rupturing Pop" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_RUPTURING_POP">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>When fired, you’ve made it so the bullet will always detonate. If a creature is hit with the widget within the 10ft range, the bullet embeds into them before exploding anyway. The target does not get to make a saving throw against the widget’s shrapnel if administered this way. </p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Startling Bang" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_BULLET_MOD_STARTLING_BANG">
+            <supports>Eruptive Bullet</supports>
+            <description>
+                <p>The bullet has added black powder and solid metals to acquire a devastatingly loud sound. When you fire a widget or a regular bullet, any creatures that can hear you with an Intelligence score of 3 or lower the target must succeed on a DC 15 Wisdom saving throw or be frightened of you until the end of your next turn. If they succeed on the saving throw, they can’t be frightened this way for another 24 hours.</p>
+            </description>
+            <sheet usage="Eruptive Bullet">
+                <description></description>
+            </sheet>
+        </element>
+
+      <!-- Hilt Dispenser -->
+        <element name="Adamantite Filings" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_ADAMANTITE_FILINGS">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>Your fluid contains self-regenerating adamantite filings that help protect the weapon in a robust and protective coat. When coated, the weapon is indestructible and cannot be destroyed.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>When coated, the weapon is indestructible and cannot be destroyed.</description>
+            </sheet>
+        </element>
+        <element name="Adhesive Coating" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_ADHESIVE_COATING">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>The fluid coating has a sticky residue to it. Disarming a creature using your coated weapon has advantage.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>Disarming a creature using your coated weapon has advantage.</description>
+            </sheet>
+        </element>
+        <element name="Auxiliary Attack" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_AUXILIARY_ATTACK">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>Your fluid is invigorated to generate a more toxic poison when you land strong blows. When you strike a critical hit, you can choose the additional die you roll to be poison damage instead of your weapon’s damage type.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>When you strike a critical hit, you can choose the additional die you roll to be poison damage instead of your weapon’s damage type.</description>
+            </sheet>
+        </element>
+        <element name="Babbling Juice" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_BABBLING_JUICE">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>A small modification in the fluid results in the target having great difficulty in talking normally. The target must succeed in a Constitution saving throw against your spell save DC or begin to incoherently babble and make strange noises. The target cannot communicate or cast spells that require verbal components for 1 minute.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>The target must succeed in a Constitution saving throw (save DC {{spellcasting:dc}}) or begin to incoherently babble and make strange noises. The target cannot communicate or cast spells that require verbal components for 1 minute.</description>
+            </sheet>
+        </element>
+        <element name="Cloaking Coat" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_CLOAKING_COAT">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>Your fluid, when drizzled over it, renders your weapon invisible. If the target can’t see invisible objects, then they struggle to dodge it. You decrease the target’s AC by an amount equal to their Dexterity modifier. If the creature doesn’t have any dexterity modifiers on their AC, then they ignore this effect.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>If the target can’t see invisible objects, then they struggle to dodge it. You decrease the target’s AC by an amount equal to their Dexterity modifier. If the creature doesn’t have any dexterity modifiers on their AC, then they ignore this effect.</description>
+            </sheet>
+        </element>
+        <element name="Desiccated Efficiency" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_DESICCATED_EFFICIENCY">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>The fluid no longer has to be in its liquid state. If the coating dries up, it is still able to administer the fluid’s effects. However, any Chemtech that gives boons relating to the coating no longer work.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>If the coating dries up, it is still able to administer the fluid’s effects. However, any Chemtech that gives boons relating to the coating no longer work.</description>
+            </sheet>
+        </element>
+        <element name="Doubled Dosage" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_DOUBLED_DOSAGE">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>Your fluid can be administered in double the quantity. If you hit with your extra attack, you can instead apply two instances of the fluid that has an instantaneous effect instead of the damage from the extra attack. Applying double the fluid in this way only uses 1 of your fluid’s uses instead of 2.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>If you hit with your extra attack, you can instead apply two instances of the fluid that has an instantaneous effect instead of the damage from the extra attack. Applying double the fluid in this way only uses 1 of your fluid’s uses instead of 2.</description>
+            </sheet>
+        </element>
+        <element name="Fixating Film" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_FIXATING_FILM">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>The thin layer of film that spans the liquid is firm and stretchy. If you miss a weapon attack, the coating stays fixated on the weapon.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>If you miss a weapon attack, the coating stays fixated on the weapon.</description>
+            </sheet>
+        </element>
+        <element name="Flammable Fluid" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_FLAMMABLE_FLUID">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>The fluid has become volatile and flammable, with an installed spark wheel to the hilt. You can ignite the fluid on the weapon at will, and it emits light similar to a torch. Attacking with the weapon deals an additional 2d8 fire damage. If the hit is successful, the flame is quelled.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>You can ignite the fluid on the weapon at will, and it emits light similar to a torch. Attacking with the weapon deals an additional 2d8 fire damage. If the hit is successful, the flame is quelled.</description>
+            </sheet>
+        </element>
+        <element name="Fluid Reserve" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_FLUID_RESERVE">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>The hilt of your weapon has a bowl-like guard fixated on it that works like a well to help collect the fluid. If you hold your weapon upright for one round, you can have the fluid trickle down the weapon into a well and back into the receptacle.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>If you hold your weapon upright for one round, you can have the fluid trickle down the weapon into a well and back into the receptacle.</description>
+            </sheet>
+        </element>
+        <element name="Handy Focus" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_HANDY_FOCUS">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>You’ve added all you need for your weapon to work in the way you want it to. Your widget now works as a sophisticated device that allows you to use your weapon as a spell focus.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>Your widget now works as a sophisticated device that allows you to use your weapon as a spell focus.</description>
+            </sheet>
+        </element>
+        <element name="Lightweight Weapon" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_LIGHTWEIGHT_WEAPON">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>The fluid has such a lightweight chemical in it that it tries to lift the weapon upwards. If the weapon has a damage die equal or lower than 1d8 and is currently coated in the fluid, the weapon gains the light and finesse properties.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>If the weapon has a damage die equal or lower than 1d8 and is currently coated in the fluid, the weapon gains the light and finesse properties.</description>
+            </sheet>
+        </element>
+        <element name="Overwhelming Poison" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_OVERWHELMING_POISON">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>When you make a weapon attack that does poison damage, it does extra poison damage equal to your alchemist level once per turn.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>When you make a weapon attack that does poison damage, it does {{level:artificer}} points extra poison damage.</description>
+            </sheet>
+        </element>
+        <element name="Percutaneous Wallop" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_PERCUTANEOUS_WALLOP">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>Your strike bounced off their thick armour, but your potion is being absorbed deep within. If your weapon does bludgeoning damage and you miss an attack roll with a number equal to or higher than 15, the fluid is applied anyway.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>If your weapon does bludgeoning damage and you miss an attack roll with a number equal to or higher than 15, the fluid is applied anyway.</description>
+            </sheet>
+        </element>
+        <element name="Profound Puncture" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_PROFOUND_PUNCTURE">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>Your weapon stabs deep into them, past their body’s muscle and bone. If the weapon does piercing damage, the fluid duration is increased a number of rounds equal to half your attack modifier rounded up.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>If the weapon does piercing damage, the fluid duration is increased a number of rounds equal to half your attack modifier rounded up.</description>
+            </sheet>
+        </element>
+        <element name="Pudding Power" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_PUDDING_POWER">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>Your fluid piggybacks off of Black Pudding’s chemical structure. When you hit a creature with a coated weapon, any non-magical armour they are wearing takes a permanent and cumulative -1 penalty to their AC. If the penalty manages to negate their armour’s AC modifier, the armour is destroyed.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>When you hit a creature with a coated weapon, any non-magical armour they are wearing takes a permanent and cumulative -1 penalty to their AC. If the penalty manages to negate their armour’s AC modifier, the armour is destroyed.</description>
+            </sheet>
+        </element>
+        <element name="Sadistic Strike" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_SADISTIC_STRIKE">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>Your strike heals back the damage it does. When you make a weapon attack and your fluid being healing potion, the attack does no damage and creature makes a Constitution saving throw. Upon a failed save, the target rolls on the Short-Term madness table.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>When you make a weapon attack and your fluid being healing potion, the attack does no damage and creature makes a Constitution saving throw. Upon a failed save, the target rolls on the Short-Term madness table.</description>
+            </sheet>
+        </element>
+        <element name="Slashing Splatter" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_SLASHING_SPLATTER">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>You may have missed your strike, but you can pretend you meant to. When you miss an attack roll against a creature, and your weapon does slashing damage, you can choose to fling the fluid from your blade onto another creature you can see within 5ft of your target. The target must succeed on a 15 Dexterity saving throw to avoid the splatter of fluid. You cannot choose this if you have selected Fixating Film Chemtech.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>When you miss an attack roll against a creature, and your weapon does slashing damage, you can choose to fling the fluid from your blade onto another creature you can see within 5ft of your target. The target must succeed on a 15 Dexterity saving throw to avoid the splatter of fluid. You cannot choose this if you have selected Fixating Film Chemtech.</description>
+            </sheet>
+        </element>
+        <element name="Spiked Slime" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_SPIKED_SLIME">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>The fluid on your weapon congeals into sharp spines and spikes when you swing or move it rapidly. Your weapon does extra piercing damage equal to your Intelligence modifier.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>Your weapon does {{intelligence:modifier}} points extra piercing damage.</description>
+            </sheet>
+        </element>
+        <element name="Watery Contingency" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_HILT_MOD_WATERY_CONTINGENCY">
+            <supports>Hilt Dispenser</supports>
+            <description>
+                <p>If your weapon is currently coated in fluid and a hostile creature tries to use your weapon, the fluid temporarily turns into water. The fluid turns back into the fluid when you touch your weapon.</p>
+            </description>
+            <sheet usage="Hilt Dispenser">
+                <description>If your weapon is currently coated in fluid and a hostile creature tries to use your weapon, the fluid temporarily turns into water. The fluid turns back into the fluid when you touch your weapon.</description>
+            </sheet>
+        </element>
+      <!-- Needle Capsule -->
+        <element name="Attenuation Fluid" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_ATTENUATION_FLUID">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>A weakening draught can hinder those who harm. Creatures injected with your fluid must succeed in an Intelligence saving throw against your spell save DC or have your Intelligence modifier deducted from their attack rolls for the duration.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>Creatures injected with your fluid must succeed in an Intelligence saving throw (save DC {{spellcasting:dc}}) or have {{intelligence:modifier}} deducted from their attack rolls for the duration.</description>
+            </sheet>
+        </element>
+        <element name="Cognizant Colloid" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_COGNIZANT_COLLOID">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>You have made a thick gel that when injected, elevates intelligence. Creatures injected with your fluid have their intelligence score increased by 4 for 1 minute. If the creature has an Intelligence score below 3, the creature undergoes the effects of the awaken spell for 1 minute before ending. When awakened in this way, the creature is not charmed.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>Creatures injected with your fluid have their intelligence score increased by 4 for 1 minute. If the creature has an Intelligence score below 3, the creature undergoes the effects of the awaken spell for 1 minute before ending. When awakened in this way, the creature is not charmed.</description>
+            </sheet>
+        </element>
+        <element name="Color Drain" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_COLOR_DRAIN">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>When administering your fluid, the target must succeed on a DC 16 Constitution saving throw or progressively lose their vision. A number of effects happen consecutively at the end of each of their turns. This effect lasts for the duration of the widget.</p>
+                <ul>
+                    <li>They have disadvantage on checks involving sight.</li>
+                    <li>They are unable to discern colours.</li>
+                    <li>They are blinded.</li>
+                </ul>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>The target must succeed on a DC 16 Constitution saving throw or progressively lose their vision. A number of effects happen consecutively at the end of each of their turns. This effect lasts for the duration of the widget.</description>
+            </sheet>
+        </element>
+        <element name="Delayed Discharge" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_DELAYED_DISCHARGE">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>Before firing your projectile, you can determine the length of time that must pass before it administers the fluid into the creature. You can choose a number of rounds, minutes or hours to pass before the widget dispenses the fluid into the creature.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>Before firing your projectile, you can determine the length of time that must pass before it administers the fluid into the creature. You can choose a number of rounds, minutes or hours to pass before the widget dispenses the fluid into the creature.</description>
+            </sheet>
+        </element>
+        <element name="Draught of Downscaling" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_DRAUGHT_OF_DOWNSCALING">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>You’ve enhanced the potion of Diminution. The unwilling target must succeed in a Constitution saving throw against your spell save DC or be shrunk For 1 minute. The injected creature must be of medium size or smaller as the Chemtech reduces them to a size smaller than tiny. For the duration. They gain +10 to Stealth checks and +5 to AC. They don’t have to squeeze through gaps smaller than 1 inch and are unable to make any melee weapon attacks.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>The unwilling target must succeed in a Constitution saving throw against your spell save DC ({{spellcasting:dc}}) or be shrunk For 1 minute. The injected creature must be of medium size or smaller as the Chemtech reduces them to a size smaller than tiny. For the duration. They gain +10 to Stealth checks and +5 to AC. They don’t have to squeeze through gaps smaller than 1 inch and are unable to make any melee weapon attacks.</description>
+            </sheet>
+        </element>
+        <element name="Hardy Shell" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_HARDY_SHELL">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>The integrity of your arrows has been enhanced. You can reclaim all expended projectiles when you Search the battlefield. Missed shots are also retrievable with the fluid still within and no longer shatter.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>You can reclaim all expended projectiles when you Search the battlefield. Missed shots are also retrievable with the fluid still within and no longer shatter.</description>
+            </sheet>
+        </element>
+        <element name="Illuminator Bolt" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_ILLUMINATOR_BOLT">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>Cause rapid bioluminescence in the target’s skin. Creatures injected with a potion start to shed dim light in a 10-foot radius and are unable to benefit from being invisible.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>Creatures injected with a potion start to shed dim light in a 10-foot radius and are unable to benefit from being invisible.</description>
+            </sheet>
+        </element>
+        <element name="Invigorating Boost" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_INVIGORATING_BOOST">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>A boost of adrenaline is sometimes all a creature needs to succeed. Creatures injected with a potion get +10 movement speed and a +3 bonus to their initiative until the end of their next turn.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>Creatures injected with a potion get +10 movement speed and a +3 bonus to their initiative until the end of their next turn.</description>
+            </sheet>
+        </element>
+        <element name="Placating Remedy" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_PLACATING_REMEDY">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>Sometimes you just need to disable a creature instead of harming. If a hostile creature is subjected to a potion that doesn’t directly harm them, the duration is doubled. This doesn’t work for instantaneous effects.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>If a hostile creature is subjected to a potion that doesn’t directly harm them, the duration is doubled. This doesn’t work for instantaneous effects.</description>
+            </sheet>
+        </element>
+        <element name="Prototype Formula" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_PROTOTYPE_FORMULA">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>A healing formula that seems potent but unreliable. When administering a fluid that heals, the fluid’s dice are no longer halved. Additionally, roll a percentile die, if you roll above 75% you take the max total of the potion’s die.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>When administering a fluid that heals, the fluid’s dice are no longer halved. Additionally, roll a percentile die, if you roll above 75% you take the max total of the potion’s die.</description>
+            </sheet>
+        </element>
+        <element name="Replenishing Elixir" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_REPLENISHING_ELIXER">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>A refreshing elixir that replenishes bodily tissue. Creatures injected with fluid that restores hit points regenerate 1 hit point per round for the duration of the fluid. </p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>Creatures injected with fluid that restores hit points regenerate 1 hit point per round for the duration of the fluid.</description>
+            </sheet>
+        </element>
+        <element name="Robust Needle" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_ROBUST_NEEDLE">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>The needle can inject through the toughest of materials. You gain +2 to your attack roll against medium armour, +4 against light and +6 against homebrew.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>You gain +2 to your attack roll against medium armour, +4 against light and +6 against homebrew.</description>
+            </sheet>
+        </element>
+        <element name="Rot Shot" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_ROT_SHOT">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>Creatures injected with your fluid start to slowly decay from the needle’s entry point. They take 2d6 necrotic damage per turn for 1 minute. They can not make a Constitution saving throw until a number of rounds pass equal to your Intelligence modifier. Succeeding the Constitution save causes the decaying effect to end early.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>Creatures injected with your fluid start to slowly decay from the needle’s entry point. They take 2d6 necrotic damage per turn for 1 minute. They can not make a Constitution saving throw until a {{intelligence:modifier}} rounds pass. Succeeding the Constitution save causes the decaying effect to end early.</description>
+            </sheet>
+        </element>
+        <element name="Skin Splice" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_SKIN_SPLICE">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>You’ve intermingled the genetic building blocks of an insect’s chitin into your fluid. When you administer a fluid, the target’s skin hardens like chitin. Their natural armour increases to 12 for 8 hours.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>When you administer a fluid, the target’s skin hardens like chitin. Their natural armour increases to 12 for 8 hours.</description>
+            </sheet>
+        </element>
+        <element name="Soaring Strike" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_SOARING_STRIKE">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>You have refined the form of your ammunition and have made it more aerodynamic. The distance you can fire your projectiles to is doubled.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>The distance you can fire your projectiles to is doubled.</description>
+            </sheet>
+        </element>
+        <element name="Temporary Tonic" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_TEMPORARY_TONIC">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>A temporary little pick me up to help out a fatigued creature. You temporarily remove up to 3 levels of exhaustion on a creature which lasts for the duration of the fluid. When the duration ends, the creature can’t move or take actions until the end of its next turn.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>You temporarily remove up to 3 levels of exhaustion on a creature which lasts for the duration of the fluid. When the duration ends, the creature can’t move or take actions until the end of its next turn.</description>
+            </sheet>
+        </element>
+        <element name="Toxic Tine" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_TOXIC_TINE">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>Add a fork-like structure to the needle that is efficient in injecting an influx of toxic chemicals. When administering a fluid that involves poison, the dice total is no longer halved.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>When administering a fluid that involves poison, the dice total is no longer halved.</description>
+            </sheet>
+        </element>
+        <element name="Vigilant Concoction" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_VIGILANT_CONCOCTION">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>You’ve created a risky concoction that dials a creature’s senses to eleven. An injected creature’s passive perception becomes 25 for the duration of the fluid, after which they take a level of exhaustion.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>An injected creature’s passive perception becomes 25 for the duration of the fluid, after which they take a level of exhaustion.</description>
+            </sheet>
+        </element>
+        <element name="Whetted Needle" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_WHETTED_NEEDLE">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>The needle has been sharpened to such an extent that the sensation of being struck is almost undetectable. When a creature has been hit by your projectile, and its passive perception is 18 or lower, it does not notice it has been injected. If the creature can see you, this number is lowered to 12.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>When a creature has been hit by your projectile, and its passive perception is 18 or lower, it does not notice it has been injected. If the creature can see you, this number is lowered to 12.</description>
+            </sheet>
+        </element>
+        <element name="Xylem Injection" type="Archetype Feature" source="Homebrewery" id="ID_BLTURN_HOMEBREWERY_ARCHETYPE_FEATURE_NEEDLE_MOD_XYLEM_INJECTION">
+            <supports>Needle Capsule</supports>
+            <description>
+                <p>When administering a fluid that poisons, you no longer half the dice towards plants and the damage is doubled.</p>
+            </description>
+            <sheet usage="Needle Capsule">
+                <description>When administering a fluid that poisons, you no longer half the dice towards plants and the damage is doubled.</description>
+            </sheet>
+        </element>
+      
+</elements>
