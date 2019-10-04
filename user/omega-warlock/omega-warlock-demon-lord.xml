@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Demon Lord Omega Warlock Patron</name>
+        <update version="0.0.1">
+            <file name="omega-warlock-demon-lord.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/omega-warlock/omega-warlock-demon-lord.xml" />
+        </update>
+    </info>
+    
+    <element name="The Demon Lord" type="Archetype" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_OMEGA_WARLOCK_OTHERWORLDLY_PATRON_">
+        <supports>Omega Warlock Otherworldly Patron</supports>
+        <description>
+            <p>Making a deal with a demon is something extremely foolish and dangerous, since they are beings of pure instinct and emotion, doing whatever they feel like for that particular moment. This means even if they give you their word, that word is null if they decide that you look tasty, problematic, or in the way of their ambition. Being able to maneuver such a creature demands both a superb intellect and a way with words beyond the norm, but even then, the odds are not in your favor.</p>
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_BESTOWED_SPELLS" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_CONSUME_POWER" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_REACH_OF_THE_ABYSS" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_FIENDISH_RESILIENCE" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_EMBRACE_OF_THE_VOID" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_BESTOWED_SPELLS" level="1" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_CONSUME_POWER" level="1" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_REACH_OF_THE_ABYSS" level="6" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_FIENDISH_RESILIENCE" level="10" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_EMBRACE_OF_THE_VOID" level="14" />
+        </rules>
+    </element>
+        <element name="Bestowed Spells" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_BESTOWED_SPELLS">
+            <description>
+                <p>You gain bestowed spells at the warlock levels listed.</p>
+                <h5>DEMON LORD BESTOWED SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Warlock Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><i>bane, corruption</i></td></tr>
+                    <tr><td>3rd</td><td><i>pull of the abyss, sunder</i></td></tr>
+                    <tr><td>5th</td><td><i>blasphemy, summon lesser demons</i></td></tr>
+                    <tr><td>7th</td><td><i>divine empowerment, summon greater demon</i></td></tr>
+                    <tr><td>9th</td><td><i>dominate person, nightmarish flight</i></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_BANE" level="1" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_CORRUPTION" level="1" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_PULL_OF_THE_ABYSS" level="3" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_SUNDER" level="3" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_BLASPHEMY" level="5" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_XGTE_SPELL_SUMMON_LESSER_DEMONS" level="5" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_DIVINE_EMPOWERMENT" level="7" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_XGTE_SPELL_SUMMON_GREATER_DEMON" level="7" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_DOMINATE_PERSON" level="9" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_ID_RDDT_UA_OW_SPELL_NIGHTMARISH_FLIGHT" level="9" spellcasting="Omega Warlock" known="true" />
+            </rules>
+        </element>
+        <element name="Consume Power" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_CONSUME_POWER">
+            <description>
+                <p>Starting at 1st level, the power of those who fell to you empowers you. When you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Intelligence modifier + your warlock level (minimum of 1).</p>
+            </description>
+            <sheet>
+                <description>When you reduce a hostile creature to 0 hit points, you gain {{consume-power:temp-hp}} temporary hit points.</description>
+            </sheet>
+            <rules>
+                <stat name="consume-power:temp-hp" value="1" bonus="base" />
+                <stat name="consume-power:temp-hp-calc" value="intelligence:modifier" />
+                <stat name="consume-power:temp-hp-calc" value="level:omega warlock:level" />
+                <stat name="consume-power:temp-hp" value="consume-power:temp-hp-calc" bonus="base" />
+                <grant type="Language" id="ID_LANGUAGE_ABYSSAL" />
+            </rules>
+        </element>
+        <element name="Reach of the Abyss" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_REACH_OF_THE_ABYSS">
+            <description>
+                <p>Starting at 6th level, whenever you expend a spell slot of 1st level or higher, you can let yourself be empowered by the power of the abyss. When you do so, enemies within 5 feet of you take necrotic damage equal to your Intelligence modifier as black tendrils grasp anything close to your body.</p>
+            </description>
+            <sheet>
+                <description>Whenever you expend a spell slot of 1st level or higher, you can let yourself be empowered by the power of the abyss. When you do so, enemies within 5 feet of you take {{intelligence:modifier}} necrotic damage as black tendrils grasp anything close to your body.</description>
+            </sheet>
+        </element>
+        <element name="Fiendish Resilience" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_FIENDISH_RESILIENCE">
+            <description>
+                <p>Starting at 10th level, you can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Damage from magical weapons or silver weapons ignores this resistance.</p>
+            </description>
+            <sheet>
+                <description>You can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Damage from magical weapons or silver weapons ignores this resistance.</description>
+            </sheet>
+        </element>
+        <element name="Embrace of the Void" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_DEMON_LORD_EMBRACE_OF_THE_VOID">
+            <description>
+                <p>At 14th level, you can use an action to surround yourself with the void of the abyss. The effect of a 9th level <i>darkness</i> and <i>silence</i> spell are centered on you for 1 minute. You are unaffected by both these effects.</p>
+                <p class="indent">A creature hostile to you who starts its turn within the darkness takes 3d4 cold damage. This effect lasts for 1 minute or until you end it (no action required).</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest" action="Action">
+                <description>You can use an action to surround yourself with the void of the abyss. The effect of a 9th level darkness and silence spell are centered on you for 1 minute. You are unaffected by both these effects.</description>
+            </sheet>
+        </element>
+</elements>

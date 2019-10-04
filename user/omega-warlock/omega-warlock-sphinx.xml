@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Sphinx Omega Warlock Patron</name>
+        <update version="0.0.1">
+            <file name="omega-warlock-sphinx.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/omega-warlock/omega-warlock-sphinx.xml" />
+        </update>
+    </info>
+    
+    <element name="The Sphinx" type="Archetype" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_OMEGA_WARLOCK_OTHERWORLDLY_PATRON_">
+        <supports>Omega Warlock Otherworldly Patron</supports>
+        <description>
+            <p>You have made your pact with a sphinx, a creature as powerful as it is inscrutable. Unflinching guardians of divine treasures, from temples to enchanted artifacts, as well as living repositories of lore and ancient knowledge, sphinxes desire only to fulfill their divinely appointed missions.</p>
+            <p class="indent">Bound eternally to a single place of stewardship, some sphinxes choose to cede fractions of power to mortals, empowering them to act as their agents in the world abroad.</p>
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_BESTOWED_SPELLS" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_STUDENT_OF_TIME" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_CHRONIC_SLIP" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_INSCRUTABLE_DEFENSE" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_ROAR_OF_CENSURE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_BESTOWED_SPELLS" level="1" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_STUDENT_OF_TIME" level="1" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_CHRONIC_SLIP" level="6" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_INSCRUTABLE_DEFENSE" level="10" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_ROAR_OF_CENSURE" level="14" />
+        </rules>
+    </element>
+        <element name="Bestowed Spells" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_BESTOWED_SPELLS">
+            <description>
+                <p>You gain bestowed spells at the warlock levels listed.</p>
+                <h5>SPHINX BESTOWED SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Warlock Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><i>heroism, tilt</i></td></tr>
+                    <tr><td>3rd</td><td><i>see invisibility, slipstream</i></td></tr>
+                    <tr><td>5th</td><td><i>nondetection, transposition</i></td></tr>
+                    <tr><td>7th</td><td><i>gleam, temporal thrust</i></td></tr>
+                    <tr><td>9th</td><td><i>mass tilt, scrying</i></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_HEROISM" level="1" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_ID_RDDT_UA_OW_SPELL_TILT" level="1" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_SEE_INVISIBILITY" level="3" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_ID_RDDT_UA_OW_SPELL_SLIPSTREAM" level="3" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_NONDETECTION" level="5" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_ID_RDDT_UA_OW_SPELL_TRANSPOSITION" level="5" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_GLEAM" level="7" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_TEMPORAL_THRUST" level="7" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_MASS_TILT" level="9" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_SCRYING" level="9" spellcasting="Omega Warlock" known="true" />
+            </rules>
+        </element>
+        <element name="Student of Time" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_STUDENT_OF_TIME">
+            <description>
+                <p>At 1st level, your patron teaches you how to step through time just ahead of others around you. When you make an initiative check, you can add a bonus to the check equal to your Intelligence modifier.</p>
+                <p class="indent">Additionally, you gain proficiency in the History skill.</p>
+            </description>
+            <sheet>
+                <description>When you make an initiative check, you can add a bonus of {{intelligence:modifier}}.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+            </rules>
+        </element>
+        <element name="Chronic Slip" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_CHRONIC_SLIP">
+            <description>
+                <p>Beginning at 6th level, you have become able to alter others passage in time. After initiative is rolled, you can choose a number of creatures equal to your Intelligence modifier to reroll their iniative check. They must use the new result.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>After initiative is rolled, you can choose {{intelligence:modifier}} creatures to reroll their iniative check. They must use the new result.</description>
+            </sheet>
+        </element>
+        <element name="Inscrutable Defense" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_INSCRUTABLE_DEFENSE">
+            <description>
+                <p>At 10th level, you have become able to shift others place in time. When a creature you can see makes an attack against a creature within 60 feet of you, you can use your reaction to alter time for the creature being attacked. The target of the attack gains a bonus to their AC equal to your Intelligence modifier until the end of their next turn. After the attack they can move 5 feet in a direction of their choosing.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+                <p class="indent">Additionally, Wisdom (Insight) checks made to ascertain your intentions or sincerity are made with disadvantage.</p>
+            </description>
+            <sheet usage="1/Short Rest" action="Action">
+                <description>When a creature you can see makes an attack against a creature within 60 feet of you, you can use your reaction to alter time for the creature being attacked. The target of the attack gains a bonus of {{intelligence:modifier}} their AC until the end of their next turn. After the attack they can move 5 feet in a direction of their choosing.</description>
+            </sheet>
+        </element>
+        <element name="Roar of Censure" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_SPHINX_ROAR_OF_CENSURE">
+            <description>
+                <p>At 14th level, you can use your action to channel a fraction of your patron's thunderous roar. Each creature of your choice within 30 feet of you that can hear your roar must succeed on a Constitution saving throw or take 8d8 thunder damage and be stunned until the end of your next turn. On a success, it takes half as much damage and is not stunned. This roar is audible out to 500 feet.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+            </description>
+            <sheet usage="1/Short Rest" action="Action">
+                <description>You can channel a fraction of your patron's thunderous roar. Each creature of your choice within 30 feet of you that can hear your roar must succeed on a Constitution saving throw (save DC {{spellcasting:dc}} or take 8d8 thunder damage and be stunned until the end of your next turn. On a success, it takes half as much damage and is not stunned. This roar is audible out to 500 feet.</description>
+            </sheet>
+        </element>
+</elements>

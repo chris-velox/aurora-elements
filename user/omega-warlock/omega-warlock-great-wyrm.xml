@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Great Wyrm Omega Warlock Patron</name>
+        <update version="0.0.1">
+            <file name="omega-warlock-great-wyrm.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/omega-warlock/omega-warlock-great-wyrm.xml" />
+        </update>
+    </info>
+    
+    <element name="The Great Wyrm" type="Archetype" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_OMEGA_WARLOCK_OTHERWORLDLY_PATRON_">
+        <supports>Omega Warlock Otherworldly Patron</supports>
+        <description>
+            <p>At some point in your past you made contact with a powerful dragon and convinced them to enter a bargain with you, using a ritual to tie your soul to theirs. This might have been the reward for a service rendered, they may see you as a pawn in a larger plan, or they may simply be using you as an amusing diversion. Either way, you inherit some of the dragon’s power, as part of its soul now burns inside you.</p>
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_BESTOWED_SPELLS" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_ENERGY_ATTUNEMENT" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_SOUL" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_ROAR_OF_THE_ANCIENTS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_BESTOWED_SPELLS" level="1" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY" level="1" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_ENERGY_ATTUNEMENT" level="6" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_SOUL" level="10" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_ROAR_OF_THE_ANCIENTS" level="14" />
+        </rules>
+    </element>
+        <element name="Bestowed Spells" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_BESTOWED_SPELLS">
+            <description>
+                <p>You gain bestowed spells at the warlock levels listed.</p>
+                <h5>GREAT WYRM BESTOWED SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Warlock Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><i>absorb elements, heroism</i></td></tr>
+                    <tr><td>3rd</td><td><i>dragon's breath, wing buffet</i></td></tr>
+                    <tr><td>5th</td><td><i>fear, lightning bolt</i></td></tr>
+                    <tr><td>7th</td><td><i>freedom of movement, moment</i></td></tr>
+                    <tr><td>9th</td><td><i>cone of cold, voidsight</i></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_ABSORB_ELEMENTS" level="1" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_HEROISM" level="1" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_DRAGONS_BREATH" level="3" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_WING_BUFFET" level="3" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_FEAR" level="5" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_LIGHTNING_BOLT" level="5" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="7" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_MOMENT" level="7" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_CONE_OF_COLD" level="9" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_VOIDSIGHT" level="9" spellcasting="Omega Warlock" known="true" />
+            </rules>
+        </element>
+        <element name="Draconic Affinity" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY">
+            <description>
+                <p>When you choose this patron at 1st level, it grants you a glimpse of its power. You have to choose what color yourdragon patron has. When you cast a Bestowed spell that has a damage type which exist on the Draconic Patron table, you can change it to the damage type associated with your draconic patron.</p>
+                <p class="indent">Additionally, you can speak, read, and write Draconic.</p>
+                <p class="indent">Finally, you are immune to the effects of a dragon's Frightful Presence.</p>
+            </description>
+            <sheet>
+                <description>When you cast a Bestowed spell that deals acid, cold, fire, lightning, or poison damage, you can change it to {{draconic-affinity:damage-type}} damage. Additionally, you are immune to the effects of a dragon's Frightful Presence.</description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Dragon Patron Color (Draconic Affinity)" supports="Omega Warlock Draconic Affinity" />
+                <grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+            </rules>
+        </element>
+        <element name="Energy Attunement" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_ENERGY_ATTUNEMENT">
+            <description>
+                <p>Starting at 6th level, your patron empowers some of your magic. When you cast a warlock spell that deals the damage type associated with your draconic patron you may reroll a number of damage dice equal to your Intelligence modifier.</p>
+            </description>
+            <sheet>
+                <description>When you cast a warlock spell that deals {{draconic-affinity:damage-type}} damage, may reroll {{intelligence:modifier}} damage dice.</description>
+            </sheet>
+        </element>
+        <element name="Draconic Soul" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_SOUL">
+            <description>
+                <p>Starting at 10th level, you have started to gain a few draconic aspects. You have resistance to the damage type associated with your Draconic Affinity.</p>
+                <p class="indent">Additionally, when you fail a saving throw, you can choose to reroll it. If you do so, you must use the new roll, and you cannot use this feature again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When you fail a saving throw, you can choose to reroll it. If you do so, you must use the new roll</description>
+            </sheet>
+        </element>
+        <element name="Roar of the Ancients" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_ROAR_OF_THE_ANCIENTS">
+            <description>
+                <p>At 14th level, as an action you can channel your patron's horrible roar. Any creature of your choice within 120 feet of you must succeed on a Wisdom saving throw against your warlock spell save DC or become frightened for 1 minute. A creature can use its action to repeat the saving throw, ending the effect on itself on a success.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can channel your patron's horrible roar. Any creature of your choice within 120 feet of you must succeed on a Wisdom saving throw (save DC {{spellcasting:dc}}) or become frightened for 1 minute. A creature can use its action to repeat the saving throw, ending the effect on itself on a success.</description>
+            </sheet>
+        </element>
+
+      <!-- Draconic Affinities -->
+        <element name="Black Dragon (Acid)" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY_BLACK">
+            <supports>Omega Warlock Draconic Affinity</supports>
+            <description>
+                <p>A black dragon is your patron. The acid damage type is used by features you gain later.</p>
+            </description>
+            <sheet>
+                <description>A black dragon is your patron. The acid damage type is used by features you gain later.</description>
+            </sheet>
+            <rules>
+                <stat name="draconic-affinity:damage-type" inline="true" value="acid" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" level="10" />
+            </rules>
+        </element>
+        <element name="Blue Dragon (Lightning)" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY_BLUE">
+            <supports>Omega Warlock Draconic Affinity</supports>
+            <description>
+                <p>A blue dragon is your patron. The lightning damage type is used by features you gain later.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="draconic-affinity:damage-type" inline="true" value="lightning" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" level="10" />
+            </rules>
+        </element>
+        <element name="Green Dragon (Poison)" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY_GREEN">
+            <supports>Omega Warlock Draconic Affinity</supports>
+            <description>
+                <p>A green dragon is your patron. The poison damage type is used by features you gain later.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="draconic-affinity:damage-type" inline="true" value="poison" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" level="10" />
+            </rules>
+        </element>
+        <element name="Red Dragon (Fire)" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY_RED">
+            <supports>Omega Warlock Draconic Affinity</supports>
+            <description>
+                <p>A red dragon is your patron. The fire damage type is used by features you gain later.</p>
+            </description>
+            <sheet>
+                <description>A red dragon is your patron. The fire damage type is used by features you gain later.</description>
+            </sheet>
+            <rules>
+                <stat name="draconic-affinity:damage-type" inline="true" value="fire" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" level="10" />
+            </rules>
+        </element>
+        <element name="White Dragon (Cold)" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY_WHITE">
+            <supports>Omega Warlock Draconic Affinity</supports>
+            <description>
+                <p>A white dragon is your patron. The cold damage type is used by features you gain later.</p>
+            </description>
+            <sheet>
+                <description>A white dragon is your patron. The cold damage type is used by features you gain later.</description>
+            </sheet>
+            <rules>
+                <stat name="draconic-affinity:damage-type" inline="true" value="cold" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" level="10" />
+            </rules>
+        </element>
+        <element name="Brass Dragon (Fire)" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY_BRASS">
+            <supports>Omega Warlock Draconic Affinity</supports>
+            <description>
+                <p>A brass dragon is your patron. The fire damage type is used by features you gain later.</p>
+            </description>
+            <sheet>
+                <description>A brass dragon is your patron. The fire damage type is used by features you gain later.</description>
+            </sheet>
+            <rules>
+                <stat name="draconic-affinity:damage-type" inline="true" value="fire" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" level="10" />
+            </rules>
+        </element>
+        <element name="Bronze Dragon (Lightning)" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY_BRONZE">
+            <supports>Omega Warlock Draconic Affinity</supports>
+            <description>
+                <p>A bronze dragon is your patron. The lightning damage type is used by features you gain later.</p>
+            </description>
+            <sheet>
+                <description>A bronze dragon is your patron. The lightning damage type is used by features you gain later.</description>
+            </sheet>
+            <rules>
+                <stat name="draconic-affinity:damage-type" inline="true" value="lightning" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" level="10" />
+            </rules>
+        </element>
+        <element name="Copper Dragon (Acid)" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY_COPPER">
+            <supports>Omega Warlock Draconic Affinity</supports>
+            <description>
+                <p>A copper dragon is your patron. The acid damage type is used by features you gain later.</p>
+            </description>
+            <sheet>
+                <description>A copper dragon is your patron. The acid damage type is used by features you gain later.</description>
+            </sheet>
+            <rules>
+                <stat name="draconic-affinity:damage-type" inline="true" value="acid" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" level="10" />
+            </rules>
+        </element>
+        <element name="Gold" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY_GOLD">
+            <supports>Omega Warlock Draconic Affinity</supports>
+            <description>
+                <p>A gold dragon is your patron. The fire damage type is used by features you gain later.</p>
+            </description>
+            <sheet>
+                <description>A gold dragon is your patron. The fire damage type is used by features you gain later.</description>
+            </sheet>
+            <rules>
+                <stat name="draconic-affinity:damage-type" inline="true" value="fire" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" level="10" />
+            </rules>
+        </element>
+        <element name="Silver Dragon (Cold)" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_GREAT_WYRM_DRACONIC_AFFINITY_SILVER">
+            <supports>Omega Warlock Draconic Affinity</supports>
+            <description>
+                <p>A silver dragon is your patron. The cold damage type is used by features you gain later.</p>
+            </description>
+            <sheet>
+                <description>A silver dragon is your patron. The cold damage type is used by features you gain later.</description>
+            </sheet>
+            <rules>
+                <stat name="draconic-affinity:damage-type" inline="true" value="cold" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" level="10" />
+            </rules>
+        </element>
+</elements>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Undying Omega Warlock Patron</name>
+        <update version="0.0.1">
+            <file name="omega-warlock-undying.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/omega-warlock/omega-warlock-undying.xml" />
+        </update>
+    </info>
+    
+    <element name="The Undying" type="Archetype" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_OMEGA_WARLOCK_OTHERWORLDLY_PATRON_">
+        <supports>Omega Warlock Otherworldly Patron</supports>
+        <description>
+            <p>Death holds no sway over your patron, who has unlocked the secrets of everlasting life, although such a prize- like all power- comes at a price. Once mortal, the Undying has seen mortal lifetimes pass like the seasons, like the flicker of endless days and nights. It has the secrets of the ages to share, secrets of life and death.</p>
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_BESTOWED_SPELLS" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_AMONG_THE_DEAD" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_DEFY_DEATH" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_UNDYING_NATURE" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_INDESTRUCTIBLE_LIFE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_BESTOWED_SPELLS" level="1" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_AMONG_THE_DEAD" level="1" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_DEFY_DEATH" level="6" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_UNDYING_NATURE" level="10" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_INDESTRUCTIBLE_LIFE" level="14" />
+        </rules>
+    </element>
+        <element name="Bestowed Spells" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_BESTOWED_SPELLS">
+            <description>
+                <p>You gain bestowed spells at the warlock levels listed.</p>
+                <h5>UNDYING BESTOWED SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Warlock Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><i>ray of sickness, shed skin</i></td></tr>
+                    <tr><td>3rd</td><td><i>gentle repose, silence</i></td></tr>
+                    <tr><td>5th</td><td><i>life link, speak with dead</i></td></tr>
+                    <tr><td>7th</td><td><i>aura of life, death ward</i></td></tr>
+                    <tr><td>9th</td><td><i>enervation, reap</i></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_RAY_OF_SICKNESS" level="1" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_SHED_SKIN" level="1" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_GENTLE_REPOSE" level="3" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_SILENCE" level="3" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_LIFE_LINK" level="5" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" level="5" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_AURA_OF_LIFE" level="7" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" level="7" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_XGTE_SPELL_ENERVATION" level="9" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_REAP" level="9" spellcasting="Omega Warlock" known="true" />
+            </rules>
+        </element>
+        <element name="Among the Dead" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_AMONG_THE_DEAD">
+            <description>
+                <p>Starting at 1st level, you learn the spare the dying cantrip, which counts as a warlock cantrip for you. You also have advantage on saving throws against any disease.</p>
+                <p class="indent">Additionally, undead have difficulty harming you. If an undead targets you directly with an attack or a harmful spell, that creature must make a Wisdom saving throw against your spell save DC (an undead needn't make the save when it includes you in an area effect, such as the explosion of fireball). On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell. On a successful save, the creature is immune to this effect for 24 hours. An undead is also immune to this effect for 24 hours if you target it with an attack or a harmful spell.</p>
+            </description>
+            <sheet>
+                <description>If an undead targets you directly with an attack or a harmful spell, that creature must make a Wisdom saving throw (save DC {{spellcasting:dc}}, an undead needn't make the save when it includes you in an area effect, such as the explosion of fireball). On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell. On a successful save, the creature is immune to this effect for 24 hours. An undead is also immune to this effect for 24 hours if you target it with an attack or a harmful spell.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" spellcasting="omega warlock" known="true" />
+            </rules>
+        </element>
+        <element name="Defy Death" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_DEFY_DEATH">
+            <description>
+                <p>Starting at 6th level, you can give yourself vitality when you cheat death or when you help someone else cheat it. You can regain hit points equal to 1d8 + your Constitution modifier (minimum of 1 hit point) when you succeed on a death saving throw or when you stabilize a creature with spare the dying.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>You can regain hit points equal to 1d8 + {{defy-death:hp}} hit points when you succeed on a death saving throw or when you stabilize a creature with spare the dying.</description>
+            </sheet>
+            <rules>
+                <stat name="defy-death:hp" value="1" bonus="base" />
+                <stat name="defy-death:hp" value="constitution:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Undying Nature" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_UNDYING_NATURE">
+            <description>
+                <p>Beginning at 10th level, you can hold your breath indefinitely, and you don't require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from finishing short and long rests.</p>
+                <p class="indent">In addition, you age at a slower rate. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged.</p>
+            </description>
+            <sheet>
+                <description>You can hold your breath indefinitely, and you don't require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from finishing short and long rests. In addition, you age at a slower rate. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged.</description>
+            </sheet>
+        </element>
+        <element name="Indestructible Life" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_UNDYING_INDESTRUCTIBLE_LIFE">
+            <description>
+                <p>When you reach 14th level, you partake of some of the true secrets of the Undying. On your turn, you can use a bonus action to regain hit points equal to 1d4 + your Intelligence modifier. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>On your turn, you can regain hit points equal to 1d4 + {{intelligence:modifier}}. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches.</description>
+            </sheet>
+        </element>
+</elements>

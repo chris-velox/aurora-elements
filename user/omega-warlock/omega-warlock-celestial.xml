@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Celestial Omega Warlock Patron</name>
+        <update version="0.0.1">
+            <file name="omega-warlock-celestial.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/omega-warlock/omega-warlock-celestial.xml" />
+        </update>
+    </info>
+    
+    <element name="The Celestial" type="Archetype" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_OMEGA_WARLOCK_OTHERWORLDLY_PATRON_">
+        <supports>Omega Warlock Otherworldly Patron</supports>
+        <description>
+            <p>Your patron is a powerful being of the Upper Planes. You have bound yourself to an ancient empyrean, solar, ki-rin, unicorn, or other entity that resides in the planes of everlasting bliss. Your pact with that being allows you to experience the barest touch of the holy light that illuminates the multiverse.</p>
+            <p class="indent">Being connected to such power can cause changes in your behavior and beliefs. You might find yourself driven to annihilate the undead, to defeat fiends, and to protect the innocent. At times, your heart might also be filled with a longing for the celestial realm of your patron, and a desire to wander that paradise for the rest of your days. But you know that your mission is among mortals for now, and that your pact binds you to bring light to the dark places of the world.</p>
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_BESTOWED_SPELLS" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_DIVINE_LIGHT" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_RADIANT_PROJECTION" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_CELESTIAL_RESILIENCE" />
+            <div element="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_SEARING_VENGEANCE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_BESTOWED_SPELLS" level="1" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_DIVINE_LIGHT" level="1" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_RADIANT_PROJECTION" level="6" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_CELESTIAL_RESILIENCE" level="10" />
+            <grant type="Archetype Feature" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_SEARING_VENGEANCE" level="14" />
+        </rules>
+    </element>
+        <element name="Bestowed Spells" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_BESTOWED_SPELLS">
+            <description>
+                <p>You gain bestowed spells at the warlock levels listed.</p>
+                <h5>CELESTIAL BESTOWED SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Warlock Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><i>bless, guiding bolt</i></td></tr>
+                    <tr><td>3rd</td><td><i>lesser restoration, zone of truth</i></td></tr>
+                    <tr><td>5th</td><td><i>daylight, revivify</i></td></tr>
+                    <tr><td>7th</td><td><i>divination, guardian of faith</i></td></tr>
+                    <tr><td>9th</td><td><i>angelic rebuke, dawn</i></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_BLESS" level="1" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_GUIDING_BOLT" level="1" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" level="3" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_ZONE_OF_TRUTH" level="3" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_DAYLIGHT" level="5" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_REVIVIFY" level="5" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_DIVINATION" level="7" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_GUARDIAN_OF_FAITH" level="7" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_RDDT_UA_OW_SPELL_ANGELIC_REBUKE" level="9" spellcasting="Omega Warlock" known="true" />
+                <grant type="Spell" id="ID_XGTE_SPELL_DAWN" level="9" spellcasting="Omega Warlock" known="true" />
+            </rules>
+        </element>
+        <element name="Divine Light" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_DIVINE_LIGHT">
+            <description>
+                <p>At 1st level, you gain the ability to channel celestial energy to heal wounds. You have a pool of d6s that you spend to fuel this healing. The number of dice in the pool equals 1 + your warlock level.</p>
+                <p class="indent">As a bonus action, you can heal one creature you can see within 60 feet of you, spending dice from the pool. The maximum number of dice you can spend at once equals your Intelligence modifier (minimum of one die). Roll the dice you spend, add them together, and restore a number of hit points equal to the total. Your pool regains all expended dice when you finish a long rest.</p>
+                <p class="indent">Additionally, you learn the <i>sacred flame</i> cantrip.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{divine-light:pool}} d6s/Long Rest">
+                <description>You can heal one creature you can see within 60 feet of you, spending dice from the pool. You can spend a maximum of {{divine-light:dice}} dice at once. Roll the dice you spend, add them together, and restore a number of hit points equal to the total.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" spellcasting="Omega Warlock" known="true" />
+                <stat name="divine-light:pool" value="1" />
+                <stat name="divine-light:pool" value="level:omega warlock" />
+                <stat name="divine-light:dice" value="1" bonus="base" />
+                <stat name="divine-light:dice" value="intelligence:modifier" bonus="base" />
+                <grant type="Language" id="ID_LANGUAGE_CELESTIAL" />
+            </rules>
+        </element>
+        <element name="Radiant Projection" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_RADIANT_PROJECTION">
+            <description>
+                <p>Starting at 6th level, you can project your patrons power to assist your allies. When a creature within 30 feet of you makes an ability check or a saving throw, you can use your reaction to add a d8 to the roll. You can do so after seeing the initial roll but before any of the roll's effects occur.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+                <p class="indent">Additionally, you gain resistance to radiant damage.</p>
+            </description>
+            <sheet usage="1/Short Rest" action="Reaction">
+                <description>hen a creature within 30 feet of you makes an ability check or a saving throw, you can add a d8 to the roll. You can do so after seeing the initial roll but before any of the roll's effects occur.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+            </rules>
+        </element>
+        <element name="Celestial Resilience" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_CELESTIAL_RESILIENCE">
+            <description>
+                <p>Starting at 10th level, you gain temporary hit points whenever you finish a short or long rest. These temporary hit points equal your half your warlock level + your Intelligence modifier. Additionally, choose up to five creatures you can see at the end of the rest. Those creatures each gain temporary hit points equal to your Intelligence modifier.</p>
+            </description>
+            <sheet>
+                <description>Whenever you finish a short or long rest, you gain {{celestial-resilience:temp-hp}} temporary hit points. Additionally, choose up to five creatures you can see at the end of the rest. Those creatures each gain temporary {{intelligence:modifier}} hit points.</description>
+            </sheet>
+            <rules>
+                <stat name="celestial-resilience:temp-hp" value="level:omega warlock:half" />
+                <stat name="celestial-resilience:temp-hp" value="intelligence:modifier" />
+            </rules>
+        </element>
+        <element name="Searing Vengeance" type="Archetype Feature" source="Omega Warlock Compendium" id="ID_SWECKY_OWC_ARCHETYPE_FEATURE_OW_CELESTIAL_SEARING_VENGEANCE">
+            <description>
+                <p>Starting at 14th level, the radiant energy you channel allows you to resist death. When you have to make a death saving throw at the start of your turn, you can instead spring back to your feet with a burst of radiant energy. You regain hit points equal to half your hit point maximum, and then you stand up if you so choose. Each creature of your choice that is within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 2d8 + your Intelligence modifier and is blinded until the end of your turn on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When you have to make a death saving throw at the start of your turn, you can instead spring back to your feet with a burst of radiant energy. You regain hit points equal to half your hit point maximum, and then you stand up if you so choose. Each creature of your choice that is within 30 feet of you must make a Constitution saving throw (save DC {{spellcasting:dc}}). A creature takes 2d8 + {{intelligence:modifier}} radiant damage and is blinded until the end of your turn on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected.</description>
+            </sheet>
+        </element>
+</elements>
