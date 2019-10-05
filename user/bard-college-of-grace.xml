@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of Grace</name>
+        <update version="0.0.1">
+            <file name="bard-college-of-grace.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/bard-college-of-grace.xml" />
+        </update>
+    </info>
+    
+    <element name="College of Grace" type="Archetype" source="GM Binder" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_COLLEGE_OF_GRACE">
+        <supports>Primal Path</supports>
+        <description>
+            <p>There are some bards whose innate magic comes from beyond the melodies of musical instruments. Bards of the College of Grace, also called Dancers, are able to use their own body as their instrument, channeling their magic through their rhythmic and fluid movements. Dancers can be found as high as the grandest concert halls, and as low as the smallest tavern or brothel. Wherever they may be, these bards are able to use the power of dance to entrance and inspire onlookers without making a single sound. </p>
+            <h5>COLLEGE OF GRACE FEATURES</h5>
+            <table>
+                <thead>
+                    <tr><td>Bard Level</td><td>Features</td></tr>
+                </thead>
+                <tr><td>3rd</td><td>Unarmored Defense, Arcane Step</td></tr>
+                <tr><td>6th</td><td>Bardic Aura</td></tr>
+                <tr><td>14th</td><td>Grace of the Coryphée</td></tr>
+            </table>
+            <div element="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_UNARMORED_DEFENSE" />
+            <div element="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_ARCANE_STEP" />
+            <div element="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_BARDIC_AURA" />
+            <div element="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_GRACE_OF_THE_CORPHYEE" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_UNARMORED_DEFENSE" level="3" />
+            <grant type="Archetype Feature" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_ARCANE_STEP" level="3" />
+            <grant type="Archetype Feature" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_BARDIC_AURA" level="6" />
+            <grant type="Archetype Feature" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_GRACE_OF_THE_CORPHYEE" level="14" />
+        </rules>
+    </element>
+    <element name="Unarmored Defense" type="Archetype Feature" source="GM Binder" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_UNARMORED_DEFENSE">
+        <description>
+            <p>When a Bard enters the College of Grace at 3rd level, they learn how to use their fluid movements to avoid harm. While you are not wearing armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Charisma modifier.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="ac:unarmored defense bard:base" value="10" />
+            <stat name="ac:unarmored defense bard:dexterity" value="dexterity:modifier" />
+            <stat name="ac:unarmored defense bard:charisma" value="charisma:modifier" />
+
+            <stat name="ac:unarmored defense bard" value="ac:unarmored defense bard:base" />
+            <stat name="ac:unarmored defense bard" value="ac:unarmored defense bard:dexterity" />
+            <stat name="ac:unarmored defense bard" value="ac:unarmored defense bard:charisma" />
+
+            <stat name="ac:calculation" value="ac:unarmored defense bard" bonus="calculation" equipped="[armor:none]" alt="Unarmored Defense (College of Grace)" />
+        </rules>
+    </element>
+    <element name="Arcane Step" type="Archetype Feature" source="GM Binder" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_ARCANE_STEP">
+        <description>
+            <p>As a Bonus Action, you can expend one use of your Bardic Inspiration feature to begin a dance, provided you aren't wearing armor or using a shield. While dancing, you gain the following benefits: </p>
+            <ul>
+                <li>The dance acts as your spellcasting focus, and replaces any verbal (V) spell component with a somatic (S) component.</li>
+                <li>Your speed increases by 10 ft.</li>
+                <li>You have advantage on Dexterity (Acrobatics) checks.</li>
+                <li>You gain a bonus to any Constitution saving throws you make to maintain concentration on a spell. The bonus equals your Charisma modifier (minimum of +1).</li>
+            </ul>
+            <p class="indent">The dance lasts one minute. It ends early if you are incapacitated, if you don armor or a shield, or if you use two hands to make an attack with a weapon. You can also choose to halt your dance at will (no action required). </p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can expend one use of your Bardic Inspiration feature to begin a dance, provided you aren't wearing armor or using a shield. While dancing, you gain the following benefits: The dance acts as your spellcasting focus, and replaces any verbal (V) spell component with a somatic (S) component; Your speed increases by 10 ft; You have advantage on Dexterity (Acrobatics) checks; You gain a bonus of +{{arcane-step:bonus}} to any Constitution saving throws you make to maintain concentration on a spell.</description>
+        </sheet>
+        <rules>
+            <stat name="arcane-step:bonus" value="1" bonus="base" />
+            <stat name="arcane-step:bonus" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Bardic Aura" type="Archetype Feature" source="GM Binder" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_BARDIC_AURA">
+        <description>
+            <p>Starting at 6th level, your dance's mystical effects extend beyond your own body. When you initiate a dance, choose a bardic aura to radiate around you. All friendly creatures within a 10 ft radius, excluding yourself, gain the chosen aura's benefits. A creature can only have the benefits of one aura at a given time.</p>
+            <p class="indent"><b><i>Dance of Strength.</i></b> When you initiate a dance, all friendly creatures within the 10 ft radius gain a die equal to your Bardic Inspiration die. Once before your dance ends, the creatures can roll this die and add half its value, rounded down (minimum of 1) , to an attack roll. This die can be used even if the creature leaves the 10 ft radius.</p>
+            <p class="indent"><b><i>Dance of Safety.</i></b> When you initiate a dance, all friendly creatures within the 10 ft radius gain a die equal to your Bardic Inspiration die. Once before your dance ends, the creatures can roll this die and add half its value, rounded down (minimum of 1) , to a saving throw. This die can be used even if the creature leaves the 10 ft radius.</p>
+            <p class="indent"><b><i>Dance of Health.</i></b> When you initiate a dance, roll a die equal to your Bardic Inspiration die. The friendly creatures within the 10 ft radius gain Temporary Hit Points equal to the number rolled on the die. They keep these Temporary Hit Points even if they leave the 10 ft radius, and they remain after the dance ends.</p>
+        </description>
+        <sheet>
+            <description>When you initiate a dance, choose a bardic aura to radiate around you. All friendly creatures within a 10 ft radius, excluding yourself, gain the chosen aura's benefits. A creature can only have the benefits of one aura at a given time.</description>
+            <description level="14">When you initiate a dance, choose a bardic aura to radiate around you. All friendly creatures within a 30 ft radius, excluding yourself, gain the chosen aura's benefits. A creature can only have the benefits of one aura at a given time.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_BARDIC_AURA_DANCE_OF_STRENGTH" level="6" />
+            <grant type="Archetype Feature" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_BARDIC_AURA_DANCE_OF_SAFETY" level="6" />
+            <grant type="Archetype Feature" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_BARDIC_AURA_DANCE_OF_HEALTH" level="6" />
+        </rules>
+    </element>
+    <element name="Grace of the Coryphée" type="Archetype Feature" source="GM Binder" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_GRACE_OF_THE_CORPHYEE">
+        <description>
+            <p>Starting at 14th level, the range of your Bardic Aura increases to 30 ft.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+    </element>
+
+        <element name="Dance of Strength" type="Archetype Feature" source="GM Binder" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_BARDIC_AURA_DANCE_OF_STRENGTH">
+            <description>
+                <p>When you initiate a dance, all friendly creatures within the 10 ft radius gain a die equal to your Bardic Inspiration die. Once before your dance ends, the creatures can roll this die and add half its value, rounded down (minimum of 1) , to an attack roll. This die can be used even if the creature leaves the 10 ft radius.</p>
+            </description>
+            <sheet usage="Bardic Aura">
+                <description>When you initiate a dance, all friendly creatures within the 10 ft radius gain a die equal to your Bardic Inspiration die. Once before your dance ends, the creatures can roll this die and add half its value, rounded down (minimum of 1) , to an attack roll. This die can be used even if the creature leaves the 10 ft radius.</description>
+                <description level="14">When you initiate a dance, all friendly creatures within the 30 ft radius gain a die equal to your Bardic Inspiration die. Once before your dance ends, the creatures can roll this die and add half its value, rounded down (minimum of 1) , to an attack roll. This die can be used even if the creature leaves the 30 ft radius.</description>
+            </sheet>
+        </element>
+        <element name="Dance of Safety" type="Archetype Feature" source="GM Binder" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_BARDIC_AURA_DANCE_OF_SAFETY">
+            <description>
+                <p>When you initiate a dance, all friendly creatures within the 10 ft radius gain a die equal to your Bardic Inspiration die. Once before your dance ends, the creatures can roll this die and add half its value, rounded down (minimum of 1) , to a saving throw. This die can be used even if the creature leaves the 10 ft radius.</p>
+            </description>
+            <sheet usage="Bardic Aura">
+                <description>When you initiate a dance, all friendly creatures within the 10 ft radius gain a die equal to your Bardic Inspiration die. Once before your dance ends, the creatures can roll this die and add half its value, rounded down (minimum of 1) , to a saving throw. This die can be used even if the creature leaves the 10 ft radius.</description>
+                <description level="14">When you initiate a dance, all friendly creatures within the 30 ft radius gain a die equal to your Bardic Inspiration die. Once before your dance ends, the creatures can roll this die and add half its value, rounded down (minimum of 1) , to a saving throw. This die can be used even if the creature leaves the 30 ft radius.</description>
+            </sheet>
+        </element>
+        <element name="Dance of Health" type="Archetype Feature" source="GM Binder" id="ID_MAVERICKMD_GM_BINDER_ARCHETYPE_FEATURE_BARDIC_AURA_DANCE_OF_HEALTH">
+            <description>
+                <p>When you initiate a dance, roll a die equal to your Bardic Inspiration die. The friendly creatures within the 10 ft radius gain Temporary Hit Points equal to the number rolled on the die. They keep these Temporary Hit Points even if they leave the 10 ft radius, and they remain after the dance ends.</p>
+            </description>
+            <sheet usage="Bardic Aura">
+                <description>When you initiate a dance, roll a die equal to your Bardic Inspiration die. The friendly creatures within the 10 ft radius gain Temporary Hit Points equal to the number rolled on the die. They keep these Temporary Hit Points even if they leave the 10 ft radius, and they remain after the dance ends. </description>
+                <description level="14">When you initiate a dance, roll a die equal to your Bardic Inspiration die. The friendly creatures within the 30 ft radius gain Temporary Hit Points equal to the number rolled on the die. They keep these Temporary Hit Points even if they leave the 30 ft radius, and they remain after the dance ends. </description>
+            </sheet>
+        </element>
+</elements>
