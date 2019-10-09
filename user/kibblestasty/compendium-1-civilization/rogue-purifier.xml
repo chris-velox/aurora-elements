@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Purifier Roguish Archetype</name>
+        <update version="0.0.1">
+            <file name="rogue-purifier.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/kibblestasty/compendium-1-civilization/rogue-purifier.xml" />
+        </update>
+    </info>
+    
+    <element name="Purifier" type="Archetype" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_ROGUE_PURIFIER">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Not all priests are clerics. Not all problems can be solved by prayer and preaching. Sometimes a more subtle touch is needed to steer the world as the faith dictates, and that is the roll of a Purifier. A blade in the night that commits the lesser evil for the greater good, or a quick end to someone that sniffed too close the Cult of Vecna's business, both could be the work of these divinely guided rogues.</p>
+            <p class="indent">Good is not nice, evil is not stupid. Whatever the organization or god a Purifier serves, it is one that understands the practical nature of the world. Spying, stealing, extracting information, purging the heretics... they have many tasks before them, and complete them with a grim determination.</p>
+            <p class="indent">A Purifier is almost always lawful following an organizational code with zealous focus, but the laws they follow may or may not have any relation to the laws of the land they are in.</p>
+            <div element="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_PURIFICATION" />
+            <div element="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_CHURCH_MILITANT" />
+            <div element="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_PATH_OF_FAITH" />
+            <div element="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_SANCTIFICATION" />
+            <div element="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_CONDEMNATION" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_PURIFICATION" level="3" />
+            <grant type="Archetype Feature" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_CHURCH_MILITANT" level="3" />
+            <grant type="Archetype Feature" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_PATH_OF_FAITH" level="9" />
+            <grant type="Archetype Feature" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_SANCTIFICATION" level="13" />
+            <grant type="Archetype Feature" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_CONDEMNATION" level="17" />
+        </rules>
+    </element>
+    <element name="Purification" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_PURIFICATION">
+        <description>
+            <p>Starting at 3rd level, when you deal damage with your Sneak Attack, you can choose to deal the extra damage as Radiant damage.</p>
+        </description>
+        <sheet>
+            <description>When you deal damage with your Sneak Attack, you can choose to deal the extra damage as Radiant damage.</description>
+        </sheet>
+    </element>
+    <element name="Church Militant" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_CHURCH_MILITANT">
+        <description>
+            <p>When you choose this archetype at 3rd level, you gain proficiency with the religion skill and martial weapons. Your proficiency bonus is doubled for Intelligence (Religion) checks.</p>
+        </description>
+        <sheet display="sheet">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+            <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_RELIGION" />
+        </rules>
+    </element>
+    <element name="Path of Faith" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_PATH_OF_FAITH">
+        <description>
+            <p>Starting at 9th level, you have mastered the darkness that your foes lurk in. Your Wisdom (Perception) is not effected by dim light.</p>
+            <p class="indent">Additionally, you learn the spell guidance.</p>
+        </description>
+        <sheet>
+            <description>Your Wisdom (Perception) is not effected by dim light.</description>
+        </sheet>
+        <spellcasting name="Purifier" ability="Wisdom" prepare="false">
+            <list></list>
+        </spellcasting>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_GUIDANCE" known="true" spellcasting="Purifier" />
+        </rules>
+    </element>
+    <element name="Sanctification" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_SANCTIFICATION">
+        <description>
+            <p>At 13th, you learn the spells protection from good and evil, divine favor, and shield of faith. You can cast these spells without consuming a spell lot a number of times equal to your Wisdom modifier (combining all uses of these spells). You regain all uses after completing a long rest.</p>
+            <p class="indent">Additionally, during a short or long rest, you can create one use of Holy Water from normal water without any additional components by reciting a ten minute ritual.</p>
+        </description>
+        <sheet>
+            <description>During a short or long rest, you can create one use of Holy Water from normal water without any additional components by reciting a ten minute ritual.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" spellcasting="Purifier" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_SHIELD_OF_FAITH" spellcasting="Purifier" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_DIVINE_FAVOR" spellcasting="Purifier" known="true" />
+            <stat name="cleric:spellcasting:slots:1" value="wisdom:modifier" level="13" />
+        </rules>
+    </element>
+    <element name="Condemnation" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_CONDEMNATION">
+        <description>
+            <p>Starting at 17th level, you can use the bonus action granted by your Cunning Action to instill supernatural dread in a foe you can see. They must make a Wisdom saving throw against 8 + your wisdom modifier + your proficiency, or become frightened of you. They make the save with disadvantage if they don't know where you are. A creature frightened may repeat the saving throw at the end of each of their turns.</p>
+            <p class="indent">While a creature is frightened of you, you have advantage on attacks against that creature.</p>
+            <p class="indent">Once a creature passes a save against this effect, they are immune to this effect for 24 hours.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can use the bonus action granted by your Cunning Action to instill supernatural dread in a foe you can see. They must make a Wisdom saving throw (save DC {{spellcasting:dc}}) or become frightened of you. They make the save with disadvantage if they don't know where you are. A creature frightened may repeat the saving throw at the end of each of their turns. While a creature is frightened of you, you have advantage on attacks against that creature. Once a creature passes a save against this effect, they are immune to this effect for 24 hours.</description>
+        </sheet>
+    </element>
+</elements>
