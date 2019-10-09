@@ -32,17 +32,22 @@
     
     <element name="Bonus Cantrips" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_DAPC_ARCHETYPE_FEATURE_ROGUE_SHADOW_BONUS_CANTRIPS">
         <description>
-            <p>When you choose this archetype at 3rd level, you gain the umbraturgy cantrip and the dueling shadows cantrip. Charisma is your spellcasting ability for these spells.</p>
+            <p>When you choose this archetype at 3rd level, you gain the <i>umbraturgy</i> cantrip and the <i>dueling shadows</i> cantrip. Charisma is your spellcasting ability for these spells.</p>
         </description>
         <sheet display="false">
             <description></description>
         </sheet>
+        <setters>
+            <set name="spellcaster">true</set>
+            <set name="spellcastingAbility">Charisma</set>
+            <set name="spellcastingClass">Shadow</set>
+        </setters>
         <spellcasting name="Shadow" ability="Charisma" allowReplace="false">
             <list></list>
         </spellcasting>
         <rules>
-            <grant type="Spell" id="ID_DAPC_SPELL_DUELING_SHADOWS" />
-            <grant type="Spell" id="ID_DAPC_SPELL_UMBRATURGY" />
+            <grant type="Spell" id="ID_DAPC_SPELL_DUELING_SHADOWS" known="true" spellcasting="Shadow" />
+            <grant type="Spell" id="ID_DAPC_SPELL_UMBRATURGY" known="true" spellcasting="Shadow" />
         </rules>
     </element>
     
