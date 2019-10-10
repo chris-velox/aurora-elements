@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Warrior’s Codex Items</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="items.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/the-warriors-codex/items.xml" />
+        </update>
+    </info>
+    
+	<element name="Spiked Armor" type="Armor" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARMOR_SPIKED_ARMOR">
+		<supports>ID_INTERNAL_ARMOR_GROUP_LIGHT</supports>
+		<description>
+			<p>Spiked armor is primarily made from plates of boiled leather with sharp metal embedded in the surface. On the right person, the armor deals additional damage to grappled targets.</p>
+		</description>
+		<setters>
+			<set name="cost" currency="gp">20</set>
+			<set name="weight" lb="1">20 lb.</set>
+			<set name="slot">body</set>
+			<set name="armor">Light</set>
+			<set name="armorClass">11 + Dex modifier</set>
+			<set name="proficiency">ID_FUBR_TWC_PROFICIENCY_ARMOR_PROFICIENCY_SPIKEDARMOR</set>
+		</setters>
+		<rules>
+			<stat name="ac:armored:armor" value="11" />
+		</rules>
+	</element>
+	<element name="Armor Proficiency (Spiked Armor)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_ARMOR_PROFICIENCY_SPIKEDARMOR">
+		<supports>Light Armor, ID_INTERNAL_ARMOR_GROUP_LIGHT, Spiked Armor</supports>
+	</element>
+	<!-- append the grant rule to the medium armor proficiency element  -->
+	<append id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR">
+		<rules>
+			<grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_ARMOR_PROFICIENCY_SPIKEDARMOR" />
+		</rules>
+	</append>
+    
+	<element name="Cestus" type="Weapon" source="The Warrior’s Codex" id="ID_FUBR_TWC_WEAPON_CESTUS">
+		<supports>ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_FUBR_TWC_WEAPON_PROPERTY_EXOTIC</supports>
+		<description>
+			<p>The weapon is not held in the hand, instead wrapped around the wrist, held in the fingers, or covering the knuckles. Wielding this weapon does not prevent you from grappling or shoving an enemy, using an item, or climbing, but you cannot wield other weapons or perform somatic components with that hand.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">1</set>
+			<set name="weight" lb=".5">1/2 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="damage" type="bludgeoning">1d4</set>
+			<set name="proficiency">ID_PROFICIENCY_WEAPON_PROFICIENCY_CESTUS</set>
+		</setters>
+	</element>
+    
+</elements>
