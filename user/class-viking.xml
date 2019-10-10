@@ -384,11 +384,10 @@
                 <p class="indent">Refer to the table at the end of the class description to discern which Runes can be etched on weapons as well as their effects.</p>
             </description>
             <sheet>
-                <description></description>
+                <description>You are able to etch Runes into weapons, altering their essence to serve the blade. Etching a weapon takes a day, as well as 100gp worth of materials, which the process consumes. A weapon can have only one Rune etched on it, the Rune must be one you have memorized while you etch it. Once etched, the Rune cannot be removed or replaced. Additionally, an etched weapon counts as a magical weapon for the purposes of overcoming resistances.</description>
             </sheet>
             <rules>
                 <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
-                <select type="Feat" name="Etched Weapon" supports="ID_STORMFIRE_FEAT_ETCHED_WEAPON" optional="true" />
             </rules>
         </element>
         <element name="Etched Essence" type="Archetype Feature" source="Homebrewery" id="ID_STORMFIRE_HOMEBREWERY_ARCHETYPE_FEATURE_FOTF_ETCHED_ESSENCE">
@@ -1457,24 +1456,6 @@
         </rules>
     </element>
 
-  <!-- Etched Weapon -->
-	<element name="Etched Weapon" type="Feat" source="Homebrewery" id="ID_STORMFIRE_FEAT_ETCHED_WEAPON">
-		<description>
-            <p>A weapon etched with Viking Runes.</p>
-		</description>
-		<sheet>
-            <description></description>
-        </sheet>
-		<setters>
-			<set name="allow multiple">true</set>
-		</setters>
-		<rules>
-			<select type="Weapon" name="Etched Weapon" />
-            <select type="Archetype Feature" name="Etched Rune" supports="Etched Rune" />
-            <select type="Archetype Feature" name="Etched Rune" supports="Etched Rune" requirements="ID_STORMFIRE_HOMEBREWERY_ARCHETYPE_FEATURE_FOTF_ADVANCED_SMITHING" />            
-		</rules>
-	</element>
-
   <!-- Close Combat Skills -->
     <element name="Parry" type="Class Feature" source="Homebrewery" id="ID_STORMFIRE_HOMEBREWERY_CLASS_FEATURE_VIKING_CC_PARRY">
         <supports>Close Combat Skill</supports>
@@ -1548,4 +1529,22 @@
             <description>As long as you are grappling a creature, you can use a bonus action to deal 1d4 bludgeoning damage to it.</description>
         </sheet>
     </element>
+
+
+	<element name="Rune-Etched Weapon" type="Magic Item" source="Homebrewery" id="ID_STORMFIRE_HOMEBREWERY_MAGIC_ITEM_RUNEETCHED_WEAPON">
+		<description>
+			<p>The weapon gains additional capabilities based on the runes etched into it.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="any">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="enhancement">0</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
+			<set name="name-format">Rune-Etched {{parent}}</set>
+		</setters>
+		<rules />
+	</element>
 </elements>
