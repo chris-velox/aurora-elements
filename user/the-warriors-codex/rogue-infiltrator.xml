@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Infiltrator Roguish Archetype</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="rogue-infiltrator.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/rogue-infiltrator.xml" />
+        </update>
+    </info>
+    
+    <element name="Infiltrator" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_ROGUE_INFILTRATOR">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Professional killers, master trespassers, and talented socialites, Infiltrators combine a keen eye and quick reflexes with mastery of the blade, stealth, and carefully-chosen word. Glamorous assassins who must infiltrate all manner of societies, their tongues are just as sharp as their knives.</p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_COUP_DE_GRACE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_TOOLS_OF_THE_TRADE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_ANALYZE_TARGET" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_UNDERCOVER" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_BACKSTABBER" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_COUP_DE_GRACE" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_TOOLS_OF_THE_TRADE" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_ANALYZE_TARGET" level="9" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_UNDERCOVER" level="13" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_BACKSTABBER" level="17" />
+        </rules>
+    </element>
+    <element name="Coup de Grâce" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_COUP_DE_GRACE">
+        <description>
+            <p>Your blows are deadliest when your foes are at their weakest and don’t realize you were ever there. Starting at 3rd level, you have advantage on initiative rolls, and on attack rolls against creatures that have not yet acted in combat. Any attack that you land against a creature that is restrained, unconscious, surprised, or has not yet taken a turn is a critical hit.</p>
+        </description>
+        <sheet>
+            <description>You have advantage on initiative rolls, and on attack rolls against creatures that have not yet acted in combat. Any attack that you land against a creature that is restrained, unconscious, surprised, or has not yet taken a turn is a critical hit.</description>
+        </sheet>
+    </element>
+    <element name="Tools of the Trade" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_TOOLS_OF_THE_TRADE">
+        <description>
+            <p>Also at 3rd level, you have assembled invaluable skills for any assassin. You gain two of the following benefits.</p>
+            <ul>
+                <li>proficiency in Disguise Kits</li>
+                <li>proficiency in Poisoner’s Kits</li>
+                <li>proficiency in Forgery Kits</li>
+                <li>proficiency in one gaming set of your choice</li>
+                <li>learn 2 languages of your choice</li>
+            </ul>
+            <p>If you take proficiency in a kit, you can use it, its components, or its products using your Cunning Action.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Archetype Feature" name="Tools of the Trade" supports="Infiltrator Tools of the Trade" number="2" />
+        </rules>
+    </element>
+        <element name="proficiency in Disguise Kits" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_TOOLS_OF_THE_TRADE_DISGUISE_KIT">
+            <supports>Infiltrator Tools of the Trade</supports>
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+            </rules>
+        </element>
+        <element name="proficiency in Poisoner’s Kits" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_TOOLS_OF_THE_TRADE_POISONERS_KIT">
+            <supports>Infiltrator Tools of the Trade</supports>
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+            </rules>
+        </element>
+        <element name="proficiency in Forgery Kits" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_TOOLS_OF_THE_TRADE_FORGERY_KIT">
+            <supports>Infiltrator Tools of the Trade</supports>
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT" />
+            </rules>
+        </element>
+        <element name="proficiency in one gaming set of your choice" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_TOOLS_OF_THE_TRADE_GAMING_SET">
+            <supports>Infiltrator Tools of the Trade</supports>
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Item" name="Tools of the Trade" supports="gaming set" />
+            </rules>
+        </element>
+        <element name="learn 2 languages of your choice" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_TOOLS_OF_THE_TRADE_TWO_LANGUAGES">
+            <supports>Infiltrator Tools of the Trade</supports>
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Language" name="Tools of the Trade" number="2" />
+            </rules>
+        </element>
+    <element name="Analyze Target" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_ANALYZE_TARGET">
+        <description>
+            <p>Starting at 9th level, if you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The DM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics of your choice:</p>
+            <ul>
+                <li>Dexterity</li>
+                <li>Intelligence</li>
+                <li>Wisdom</li>
+                <li>Charisma</li>
+                <li>Class levels (if any)</li>
+                <li>Hit Points</li>
+            </ul>
+            <p>At the DM’s discretion, you might also realize you know a piece of the creature’s history or one of its personality traits.</p>
+        </description>
+        <sheet>
+            <description>If you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The DM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics: Dex, Int, Wis, Cha, Class levels, HP.</description>
+        </sheet>
+    </element>
+    <element name="Undercover" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_UNDERCOVER">
+        <description>
+            <p>At 13th level, you can create a false identity by spending three hours considering facets of your new persona such as mannerisms, speech patterns, and clothing. If you spend at least 1 hour observing these features in an existing humanoid you can instead mimic that person instead. The identity also includes letters of introduction, forged certifications, appropriate clothing, etc. This disguise is indiscernible to the casual observer, and you have advantage on Charisma (Deception) checks to maintain it when questioned.</p>
+        </description>
+        <sheet>
+            <description>You can create a false identity by spending three hours considering facets of your new persona such as mannerisms, speech patterns, and clothing. If you spend at least 1 hour observing these features in an existing humanoid you can instead mimic that person instead. The identity also includes letters of introduction, forged certifications, appropriate clothing, etc. This disguise is indiscernible to the casual observer, and you have advantage on Charisma (Deception) checks to maintain it when questioned.</description>
+        </sheet>
+    </element>
+    <element name="Backstabber" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INFILTRATOR_BACKSTABBER">
+        <description>
+            <p>At 17th level, it is impossible to tell through magical means whether you are lying, and checks made to discern the truth of your statements are made with disadvantage. Magic cannot compel you to tell the truth, and your mind cannot be read through any means. The first time you damage a creature that regards you with affection or considers you an ally, you have advantage on the attack and forgo damage dice. Instead, you roll the maximum possible amount of damage.</p>
+            <p class="indent">When you damage a creature that is surprised, it must make a Constitution saving throw (DC 8 + your Dexterity modifier + your proficiency bonus). On a failed save, double the damage of your attack against the creature.</p>
+        </description>
+        <sheet>
+            <description>It is impossible to tell through magical means whether you are lying, and checks made to discern the truth of your statements are made with disadvantage. Magic cannot compel you to tell the truth, and your mind cannot be read through any means. The first time you damage a creature that regards you with affection or considers you an ally, you have advantage on the attack and forgo damage dice. Instead, you roll the maximum possible amount of damage. When you damage a creature that is surprised, it must make a Constitution saving throw (DC {{backstabber:dc}}). On a failed save, double the damage of your attack against the creature.</description>
+        </sheet>
+        <rules>
+            <stat name="backstabber:dc" value="8" />
+            <stat name="backstabber:dc" value="proficiency" />
+            <stat name="backstabber:dc" value="dexterity:modifier" />           
+        </rules>
+    </element>
+    
+</elements>
