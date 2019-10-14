@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Dervish Martial Archetype</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="fighter-dervish.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/the-warriors-codex/fighter-dervish.xml" />
+        </update>
+    </info>
+    
+    <element name="Dervish" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FIGHTER_DERVISH">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Graceful and dangerous as their whirling blades, dervishes combine incredible skill with the illusion of reckless abandon in their whirling battle-dances. Incredibly dextrous, they leap in and out of the fray and transform into a whirlwind of death that enemies dare not touch.</p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_SWORDDANCER" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_QUICK_FEET" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_WHIRLWIND" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_THE_WORLD_TURNS" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_DEATHWHEEL" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_SWORDDANCER" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_QUICK_FEET" level="7" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WHIRLWIND" level="10" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_THE_WORLD_TURNS" level="15" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_DEATHWHEEL" level="18" />
+        </rules>
+    </element>
+    <element name="Sworddancer" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_SWORDDANCER">
+        <description>
+            <p>When you take this archetype at 3rd level, you can use your training in spinning meditative dance as a potent weapon in close quarters. You gain a new action, which you can use to make a melee weapon attack against any number of creatures of your choice within your reach, with a separate attack roll for each target. You then spin in place until the start of your next turn. During that time, attack rolls against you made by creatures within your reach have disadvantage. You cannot move while dancing.</p>
+            <p class="indent">At the start of your next turn you can choose to continue spinning, and make a melee weapon attack against all creatures of your choice within your reach again, or end the dance. You must end the dance after 1 minute, and cannot move while dancing. If another force (such as a shove or the thunderwave spell) moves you, your dance ends.</p>
+            <p class="indent">You can dance a number of times equal to your Strength modifier + your Dexterity modifier (minimum of 2). You regain all uses at the end of a long rest.</p>
+        </description>
+        <sheet action="Action" usage="{{sworddancer:uses}}/Long Rest">
+            <description>You can make a melee weapon attack against any number of creatures of your choice within your reach, with a separate attack roll for each target. You then spin in place until the start of your next turn. During that time, attack rolls against you made by creatures within your reach have disadvantage. You cannot move while dancing. At the start of your next turn you can choose to continue spinning, and make a melee weapon attack against all creatures of your choice within your reach again, or end the dance. You must end the dance after 1 minute, and cannot move while dancing. If another force (such as a shove or the thunderwave spell) moves you, your dance ends.</description>
+        </sheet>
+        <rules>
+            <stat name="sworddancer:uses" value="2" bonus="base" />
+            <stat name="sworddancer:uses:mods" value="strength:modifier" />
+            <stat name="sworddancer:uses:mods" value="dexterity:modifer" />
+            <stat name="sworddancer:uses" value="sworddancer:uses:mods" bonus="base" />
+        </rules>
+    </element>
+    <element name="Quick Feet" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_QUICK_FEET">
+        <description>
+            <p>Beginning at 7th level, your movement speed increases by 10 feet, and you ignore movement penalties from difficult terrain. You gain proficiency in Acrobatics, and in Performance checks that rely on dancing. You can use your Dexterity modifier instead of your Charisma modifier for those Performance checks, as well.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Whirlwind" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WHIRLWIND">
+        <description>
+            <p>At 10th level, you can now move without ending your dance, and if an effect forces you to move while dancing your dance doesn’t end.</p>
+            <p class="indent">If you move on your turn while sworddancing and are attacked, you can use your reaction to add your attack bonus to your armor class until the end of your turn. If your armor class exceeds the attack roll after adding this bonus, the attack does not hit you.</p>
+            <p class="indent">Finally, at the end of your turn while dancing you can make a melee weapon attack against any number of creatures of your choice within your reach, with a separate attack roll for each target.</p>
+        </description>
+        <sheet>
+            <description>You can now move without ending your dance, and if an effect forces you to move while dancing your dance doesn’t end. If you move on your turn while sworddancing and are attacked, you can use your reaction to add your attack bonus to your armor class until the end of your turn. If your armor class exceeds the attack roll after adding this bonus, the attack does not hit you. At the end of your turn while dancing you can make a melee weapon attack against any number of creatures of your choice within your reach, with a separate attack roll for each target.</description>
+        </sheet>
+    </element>
+    <element name="The World Turns" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_THE_WORLD_TURNS">
+        <description>
+            <p>Beginning at 15th level, when you roll initiative and have no uses of Sworddancer remaining, you regain one use.</p>
+        </description>
+        <sheet>
+            <description>When you roll initiative and have no uses of Sworddancer remaining, you regain one use.</description>
+        </sheet>
+    </element>
+    <element name="Deathwheel" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_DEATHWHEEL">
+        <description>
+            <p>Starting at 18th level, your spinning never really ends. The first time any creature of your choice comes within your reach while you move during your turn, it takes damage equal to half your fighter level. This damage uses the same type as the weapon you are currently wielding.</p>
+        </description>
+        <sheet>
+            <description>The first time any creature of your choice comes within your reach while you move during your turn, it takes {{level:fighter}} points damage of the same type as the weapon you are currently wielding.</description>
+        </sheet>
+    </element>
+</elements>
