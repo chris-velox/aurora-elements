@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Firebreather Martial Archetype</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="fighter-firebreather.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/the-warriors-codex/fighter-firebreather.xml" />
+        </update>
+    </info>
+    
+    <element name="Firebreather" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FIGHTER_FIREBREATHER">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Fire was the first aspect of nature mastered by man, the first unnatural power to guard the races against the terrors of the night. Over time, civilization has tamed the capricious and consuming flame, harnessing it not only for security and energy, but for entertainment. Firebreathers have graduated from tricks, performances, and religious exercises for the battlefield, and likewise discard liquid fuels for elemental magic.</p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_FIREDANCE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_FLAME_BREATH" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_MASTER_TO_STUDENT" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_INTO_THE_HAND" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_COAL_ROAD" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_DANCING_FLAMES" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_FIREDANCE" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_FLAME_BREATH" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MASTER_TO_STUDENT" level="7" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INTO_THE_HAND" level="10" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COAL_ROAD" level="15" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_DANCING_FLAMES" level="18" />
+        </rules>
+    </element>
+    <element name="Firedance" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_FIREDANCE">
+        <description>
+            <p>When you take this archetype at 3rd level, you gain the ability to set your weapons aflame as a bonus action, without damaging them or yourself. The flames last for 1 minute or until you drop or sheathe your weapons. Lit weapons shed bright light for 20 feet and dim light for another 20 feet. When you make an attack with a lit weapon, it or the ammunition fired from it deals extra fire damage equal to 1/3 your fighter level. You can use this ability thrice per short rest.</p>
+        </description>
+        <sheet usage="3/Short Rest" action="Bonus Action">
+            <description>You can set your weapons aflame. The flames last for 1 minute or until you drop or sheathe your weapons. Lit weapons shed bright light for 20 feet and dim light for another 20 feet. When you make an attack with a lit weapon, it or the ammunition fired from it deals extra fire damage equal to 1/3 your fighter level.</description>
+        </sheet>
+    </element>
+    <element name="Flame Breath" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_FLAME_BREATH">
+        <description>
+            <p>Also at 3rd level, you can use an action to take the flames from your ignited weapons into yourself and then exhale them in 15-foot cone, 10-foot radius centered on yourself, or a 30-foot line. Each creature within the area must succeed on a Dexterity saving throw (DC = 8 + your proficiency bonus + your Constitution modifier). A creature takes 3d6 fire damage on a failed save, or half as much on a success. Once you use this feature, you cannot reignite your weapons until the end of your next turn, but doing so does not expend an additional use of Firedance. Flame Breath deals an additional 1d6 fire damage at 5th, 7th, 9th, and 11th levels.</p>
+            <p class="indent">Thanks to your skill and careful practice with controlling your fires, this and any other fire attacks you use do not ignite objects being worn or carried.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can use an action to take the flames from your ignited weapons into yourself and then exhale them in 15-foot cone, 10-foot radius centered on yourself, or a 30-foot line. Each creature within the area must succeed on a Dexterity saving throw (save DC {{flame-breath:dc}}). A creature takes {{flame-breath:damage-dice}}d6 fire damage on a failed save, or half as much on a success. Once you use this feature, you cannot reignite your weapons until the end of your next turn, but doing so does not expend an additional use of Firedance. This and any other fire attacks you use do not ignite objects being worn or carried.</description>
+        </sheet>
+        <rules>
+            <stat name="flame-breath:dc" value="8" />
+            <stat name="flame-breath:dc" value="proficiency" />
+            <stat name="flame-breath:dc" value="constitution:modifier" />
+            <stat name="flame-breath:damage-dice" value="3" level="3" />
+            <stat name="flame-breath:damage-dice" value="1" level="5" />
+            <stat name="flame-breath:damage-dice" value="1" level="7" />
+            <stat name="flame-breath:damage-dice" value="1" level="9" />
+            <stat name="flame-breath:damage-dice" value="1" level="11" />
+        </rules>
+    </element>
+    <element name="Master to Student" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MASTER_TO_STUDENT">
+        <description>
+            <p>Learning the art of firebreathing is an intimate affair, with knowledge and techniques passed down from masters to singular apprentices. Whoever your master may have been, their knowledge and personal flair will live in you long after their death. At 7th level you gain proficiency in either Performance or Religion, and have resistance to fire damage.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+            <select type="Proficiency" name="Skill Proficiency (Master to Student)" supports="ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_RELIGION" />
+        </rules>
+    </element>
+    <element name="Into the Hand" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_INTO_THE_HAND">
+        <description>
+            <p>Starting at 10th level you can pull fire to yourself. You can use a reaction to remove the fire damage from any attack or effect that targets you or a friendly creature within 10 feet. You can then add the fire damage dice the next time you hit with a weapon attack.</p>
+            <p class="indent">If the effect used 4 or more damage dice, you can regain one use of Firedance instead of adding extra damage.</p>
+            <p class="indent">You can also use this feature as a bonus action on large or smaller nonmagical fires at any time. Such flames grant you an extra 1d6 fire damage, and are extinguished after you target them.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>You can remove the fire damage from any attack or effect that targets you or a friendly creature within 10 feet. You can then add the fire damage dice the next time you hit with a weapon attack. If the effect used 4 or more damage dice, you can regain one use of Firedance instead of adding extra damage. You can also use this feature as a bonus action on large or smaller nonmagical fires at any time. Such flames grant you an extra 1d6 fire damage, and are extinguished after you target them.</description>
+        </sheet>
+    </element>
+    <element name="Coal Road" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COAL_ROAD">
+        <description>
+            <p>Beginning at 15th level you can use a bonus action to leave a path of burning coals behind you as you move. This path is difficult terrain to any creatures not resistant or immune to fire damage, and deals fire damage equal to your level to any creature that touches it. It lasts until the start of your next turn.</p>
+            <p class="indent">You can use this feature once per short rest, but if a fire attack absorbed by Into the Hand uses at least 6 damage dice, you can choose to regain a use of this feature instead of gaining extra damage on your next attack.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can leave a path of burning coals behind you as you move. This path is difficult terrain to any creatures not resistant or immune to fire damage, and deals {{level}} hit points fire damage to any creature that touches it. It lasts until the start of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Dancing Flames" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_DANCING_FLAMES">
+        <description>
+            <p>Beginning at 17th level, you can use an action summon a fire elemental that shadows your form and movements, moving in perfectly synchronicity with you.</p>
+            <p class="indent">This creature has 13 AC, 100 hit points, resists bludgeoning, piercing, and slashing damage from nonmagical attacks, and is immune to fire and poison damage. It cannot be exhausted, grappled, paralyzed, petrified, poisoned, prone, restrained, or unconscious. It has ability scores, proficiency bonus, and number of attacks equal to your own, and is under your control. When you create it, it appears next to you and moves based on your subconscious commands. It acts during your turn, moving at the same time you do and taking the same actions immediately after you take them.</p>
+            <p class="indent">After summoning a Dancing Flame, you cannot do so until the next dawn or until you absorb 10 or more damage dice with Into the Hand.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can use summon a fire elemental that shadows your form and movements, moving in perfectly synchronicity with you. This creature has 13 AC, 100 hit points, resists bludgeoning, piercing, and slashing damage from nonmagical attacks, and is immune to fire and poison damage. It cannot be exhausted, grappled, paralyzed, petrified, poisoned, prone, restrained, or unconscious. It has ability scores, proficiency bonus, and number of attacks equal to your own, and is under your control. When you create it, it appears next to you and moves based on your subconscious commands. It acts during your turn, moving at the same time you do and taking the same actions immediately after you take them.</description>
+        </sheet>
+    </element>
+</elements>
