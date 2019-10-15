@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Fighter Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="fighter-dancer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/x-the-elder/subclasses/fighter/fighter-dancer.xml" />
+        </update>
+    </info>
+    
+    <element name="Dancer" type="Archetype" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FIGHTER_DANCER">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>From lands far and wide come a troupe of graceful but deadly performers. Though certainly elegant and beautiful, their movements also speak of martial discipline─of a pulsing, persistent energy whose rhythm can inspire souls and soothe troubled hearts. Light on their feet and a master of motion, these fighters strike with their weapons with the same precision as their footfalls, challenging any who would seek to halt the beat of the dance.</p>
+            <h5>DANCER FEATURES</h5>
+            <table>
+                <thead>
+                    <tr><td>Fighter Level</td><td>Feature</td></tr>
+                </thead>
+                <tr><td>3rd</td><td>Bonus Proficiency, Dancing Style, Closed Position</td></tr>
+                <tr><td>7th</td><td>Cross the World Stage, Quickened Step</td></tr>
+                <tr><td>10th</td><td>Closed Position, Dancing Style</td></tr>
+                <tr><td>15th</td><td>Hearts Beat as One</td></tr>
+                <tr><td>18th</td><td>Dancing Style, Improvisation</td></tr>
+            </table>
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_BONUS_PROFICIENCY" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_DANCING_STYLE" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_CLOSED_POSITION" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_CROSS_THE_WORLD_STAGE" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_QUICKENED_STEP" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_HEARTS_BEAT_AS_ONE" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_IMPROVISATION" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_BONUS_PROFICIENCY" level="3" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_DANCING_STYLE" level="3" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_CLOSED_POSITION" level="3" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_CROSS_THE_WORLD_STAGE" level="7" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_QUICKENED_STEP" level="7" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_HEARTS_BEAT_AS_ONE" level="15" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_IMPROVISATION" level="18" />
+        </rules>
+    </element>
+    <element name="Bonus Proficiency" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_BONUS_PROFICIENCY">
+        <description>
+            <p>When you choose this archetype at 3rd level, you begin training to become nimble and light on your feet. You choose to gain proficiency in either the Acrobatics or the Performance skill.</p>
+        </description>
+        <sheet diplay="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Proficiency" name="Skill Proficiency (Dancer)" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_PERFORMANCE" level="3" />
+        </rules>
+    </element>
+    <element name="Dancing Style" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_DANCING_STYLE">
+        <description>
+            <p>At 3rd level, you choose a style of dancing to master. Choose one of the following options. You can’t take a dancing style option more than once, even if you are later allowed to choose again.</p>
+            <p class="indent"><b>Fan Dancing.</b> When you are targeted by a melee attack and can see the attacker, you can use your reaction to gain a +2 bonus to your AC until the end of the current turn.</p>
+            <p class="indent"><b>Ribbon Dancing.</b> While you are holding only weapons that have the light or finesse property, attacks of opportunity made against you have disadvantage.</p>
+            <p class="indent"><b>Saber Dancing.</b> When you make your first melee weapon attack in a turn, you can make a Dexterity (Acrobatics) check contested against the defender’s Dexterity (Acrobatics). On a success, you gain advantage on your next melee weapon attack against that target.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Archetype Feature" name="Dancing Style" supports="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_FAN_DANCING|ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_RIBBON_DANCING|ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_SABER_DANCING" level="3" />
+            <select type="Archetype Feature" name="Dancing Style" supports="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_FAN_DANCING|ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_RIBBON_DANCING|ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_SABER_DANCING" level="10" />
+            <select type="Archetype Feature" name="Dancing Style" supports="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_FAN_DANCING|ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_RIBBON_DANCING|ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_SABER_DANCING" level="18" />
+        </rules>
+    </element>
+    <element name="Closed Position" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_CLOSED_POSITION">
+        <description>
+            <p>Also at 3rd level, you can use your dance to benefit others. You can, as a bonus action, choose a friendly target other than yourself within 60 feet of you to be your dance partner. The target remains your dance partner until you choose to end the dance (you can do this at any time), are incapacitated, or move at least 120 feet away from them.</p>
+            <p class="indent">When you or your dance partner make an ability check, attack roll, or saving throw, the other can use their reaction to grant advantage to that roll. At 10th level, your dance partner can use your Dancing Style feature.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You choose a friendly target other than yourself within 60 feet of you. The target remains your dance partner until you choose to end the dance (you can do this at any time), are incapacitated, or move at least 120 feet away from them. When you or your dance partner make an ability check, attack roll, or saving throw, the other can use their reaction to grant advantage to that roll.</description>
+            <description level="10">You choose a friendly target other than yourself within 60 feet of you. The target remains your dance partner until you choose to end the dance (you can do this at any time), are incapacitated, or move at least 120 feet away from them. When you or your dance partner make an ability check, attack roll, or saving throw, the other can use their reaction to grant advantage to that roll. Your dance partner can also use your Dancing Style feature.</description>
+        </sheet>
+    </element>
+    <element name="Cross the World Stage" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_CROSS_THE_WORLD_STAGE">
+        <description>
+            <p>At 7th level, your steps and rhythm spur others to motion. As an action, choose a friendly creature within 30 feet of you. That creature’s speed increases by 10 feet until the end of its next turn, and it can immediately move up to half its speed.</p>
+            <p class="indent">If the chosen creature is your dance partner, it can move up to its full speed instead, and this movement doesn’t provoke attacks of opportunity.</p>
+            <p class="indent">You can use this feature twice, and you regain all uses when you finish a short or long rest.</p>
+        </description>
+        <sheet action="Action" usage="2/Short Rest">
+            <description>You choose a friendly creature within 30 feet of you. That creature’s speed increases by 10 feet until the end of its next turn, and it can immediately move up to half its speed. If the chosen creature is your dance partner, it can move up to its full speed instead, and this movement doesn’t provoke attacks of opportunity.</description>
+        </sheet>
+    </element>
+    <element name="Quickened Step" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_QUICKENED_STEP">
+        <description>
+            <p>At 7th level, your form and finesse grant you increased reflexes and speed. You gain proficiency in Dexterity saving throws. If you already have this proficiency, you instead gain proficiency in Charisma saving throws.</p>
+            <p class="indent">Additionally, while you aren’t wearing medium or heavy armor, your speed increases by 10 feet.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Proficiency" name="Saving Throw Proficiency (Dancer)" supports="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY|ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
+            <stat name="speed:misc" value="10" equipped="[armor:none,light]" />
+        </rules>
+    </element>
+    <element name="Hearts Beat as One" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_HEARTS_BEAT_AS_ONE">
+        <description>
+            <p>At 15th level, your grace inspires those around you to push beyond their limits. When you use your Action Surge or Cross the World Stage feature and your dance partner can see you, they can use their reaction to immediately take an action.</p>
+        </description>
+        <sheet>
+            <description>When you use your Action Surge or Cross the World Stage feature and your dance partner can see you, they can use their reaction to immediately take an action.</description>
+        </sheet>
+    </element>
+    <element name="Improvisation" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCER_IMPROVISATION">
+        <description>
+            <p>At 18th level, you have mastered all aspects of the dance and can fluidly change form. As a bonus action, you can change your dancing style from your Dancing Style feature.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can change your dancing style from your Dancing Style feature.</description>
+        </sheet>
+    </element>
+
+    <!-- Dancing Styles -->
+    <element name="Fan Dancing" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_FAN_DANCING">
+        <description>
+            <p>When you are targeted by a melee attack and can see the attacker, you can use your reaction to gain a +2 bonus to your AC until the end of the current turn.</p>
+        </description>
+        <sheet usage="Dancing Style">
+            <description>When you are targeted by a melee attack and can see the attacker, you can use your reaction to gain a +2 bonus to your AC until the end of the current turn.</description>
+        </sheet>
+    </element>
+    <element name="Ribbon Dancing" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_RIBBON_DANCING">
+        <description>
+            <p>While you are holding only weapons that have the light or finesse property, attacks of opportunity made against you have disadvantage.</p>
+        </description>
+        <sheet usage="Dancing Style">
+            <description>While you are holding only weapons that have the light or finesse property, attacks of opportunity made against you have disadvantage.</description>
+        </sheet>
+    </element>
+    <element name="Saber Dancing" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DANCING_STYLE_SABER_DANCING">
+        <description>
+            <p>When you make your first melee weapon attack in a turn, you can make a Dexterity (Acrobatics) check contested against the defender’s Dexterity (Acrobatics). On a success, you gain advantage on your next melee weapon attack against that target.</p>
+        </description>
+        <sheet usage="Dancing Style">
+            <description>When you make your first melee weapon attack in a turn, you can make a Dexterity (Acrobatics) check contested against the defender’s Dexterity (Acrobatics). On a success, you gain advantage on your next melee weapon attack against that target.</description>
+        </sheet>
+    </element>
+</elements>
