@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of the Dirgesinger</name>
+        <author url="https://homebrewery.naturalcrit.com/share/BkG4GzR4H">u/TaustyZ</author>
+        <update version="0.0.1">
+            <file name="bard-college-of-the-dirgesinger.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/bard/bard-college-of-the-dirgesinger.xml" />
+        </update>
+    </info>
+    
+    <element name="College of the Dirgesinger" type="Archetype" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_BARD_DIRGESINGER">
+        <supports>Bard College</supports>
+        <description>
+            <p>Bards of the College of the Dirgesingers play tunes of melancholy and death in contrast to the pleasant music of most bards. Dirgesingers embrace death into their music and channel powers of the grave into their works. Dirgesingers sing the tales of Fallen Heroes, and of tragedies. A dirgesinger embraces the dark side of things.</p>
+            <div element="ID____" />
+            <div element="ID____" />
+            <div element="ID____" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID____" level="3" />
+            <grant type="Archetype Feature" id="ID____" level="6" />
+            <grant type="Archetype Feature" id="ID____" level="14" />
+        </rules>
+    </element>
+    <element name="Dirgesong" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DIRGESINGER_DIRGESONG">
+        <description>
+            <p>Beginning at 3rd level you learn how to channel the powers of death into your songs. As an action, you may expend a use of your bardic inspiration and choose a target. The chosen individual then deals additional necrotic damage to their weapon attack equal to your bardic inspiration die. The effect lasts for one minute.</p>
+        </description>
+        <sheet action="Action">
+            <description>You may expend a use of your bardic inspiration and choose a target. The chosen individual then deals additional necrotic damage to their weapon attack equal to your bardic inspiration die. The effect lasts for one minute.</description>
+        </sheet>
+    </element>
+    <element name="Necrodancer" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DIRGESINGER_NECRODANCER">
+        <description>
+            <p>Beginning at 6th level, your songs call forth the dead. You learn the <i>animate dead</i> spell as a bard spell if you have not already and the spell does not count against the bard spells you know. Whenever you cast <i>animate dead</i> as a bard spell you may create one additional undead. All undead you create with the animate dead spell add {{necromancer:bonus}} to all their weapon attack rolls and gain a bonus to their melee weapon damage and spell attacks equal to your charisma modifier.</p>
+        </description>
+        <sheet>
+            <description>Whenever you cast animate dead as a bard spell you may create one additional undead. All undead you create with the animate dead spell uses your charisma modifier + your proficiency bonus for all their weapon attack rolls and gain a +{{charisma:bonus}} bonus to their melee weapon damage and spell attacks.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" spellcasting="Bard" known="true" />
+            <stat name="necromancer:bonus" value="charisma:modifier" />
+            <stat name="necromancer:bonus" value="proficiency" />
+        </rules>
+    </element>
+    <element name="Dance of the Dead" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DIRGESINGER_DANCE_OF_THE_DEAD">
+        <description>
+            <p>When you reach 14th level, you learn the <i>danse macabre</i> spell. It counts as a bard spell for you, and doesn't count against the number of spells known. Additionally as a bonus action, you can expend 1 Bardic Inspiration die, giving hit points to all the undead that you raised, be it by spell or another effect, equal to the number rolled in the dice.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can expend 1 Bardic Inspiration die, giving hit points to all the undead that you raised, be it by spell or another effect, equal to the number rolled in the dice.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_DANSE_MACABRE" spellcasting="Bard" known="true" />
+        </rules>
+    </element>
+</elements>
