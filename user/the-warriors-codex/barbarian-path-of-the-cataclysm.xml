@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Path of the Cataclysm Primal Path</name>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-the-cataclysm.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/user/the-warriors-codex/barbarian-path-of-the-cataclysm.xml" />
+        </update>
+    </info>
+    
+    <element name="Path of the Cataclysm" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_BARBARIAN_PATH_OF_THE_CATACLYSM">
+        <supports>Primal Path</supports>
+        <description>
+            <p>All barbarians have powerful rage. Those who follow the Path of the Cataclysm have a more tangible rage than most. Theirs is a rage that bursts from them as untamed elemental fury, devastating and all-encompassing. Attuned to the the greatest extremes of natural disasters, Cataclysms train with druids or other barbarians in places where the reaches of civilization end and the truth of primal magic can be revealed. These bastions of elemental power represent the chaotic energy of the natural world at its mightiest, and wield it on the battlefield to widespread, devastating effect.</p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_DISASTER_AURA" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_GAIAS_EMBRACE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_DISASTER_AURA" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE" level="6" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_GAIAS_EMBRACE" level="10" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE" level="14" />
+        </rules>
+    </element>
+    <element name="Disaster Aura" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_DISASTER_AURA">
+        <description>
+            <p>Starting at 3rd level, the power of a certain environment or phenomenon explodes from you while you rage, creating a roiling aura of elemental energy that extends 10 feet from you in every direction, though not behind total cover. The aura’s radius increases to 15 feet at level 10 and 20 feet at level 14.</p>
+            <p class="indent">Choose a catastrophe from the ones listed below. Your aura gains features based on the type you choose, and you can power the element to which you are attuned whenever you gain a level in this class.</p>
+            <p class="indent">Regardless of type, all auras deal damage equal to half your barbarian level to all creatures of your choice within your aura at the start of your turn. The damage type is determined by the aura, and is considered magical damage.</p>
+            <p class="indent">When you enter a rage, and as an action while raging, you can send a surge of power through your aura, dealing 1d8 + your Constitution modifier to all creatures of your choice within it. This explosion of power deals the same damage type as your aura.</p>
+            <p class="indent">If your aura’s effects require a saving throw, the DC equals 8 + your proficiency bonus + your Constitution modifier. If you can target an object, space, or creature with an aura’s features, you can do so at any time during your turn, requiring no action.</p>
+            <p class="indent"><b>Volcano.</b> You radiate incredible heat and powerful flames, dealing fire damage and casting bright light within and 15 feet beyond the limits of your aura, and dim light for another 15. Your attunement to magma or flame spreads it to the landscape around you, superheating the ground. When you deal aura damage at the start of your turn, all creatures within 5 feet of you take twice the damage instead, or thrice the damage if they are prone.</p>
+            <p class="indent"><b>Flood.</b> You are a portal to the crushing weight of the ocean’s depths. Your aura deals bludgeoning damage. Creatures in your aura have their jump height halved. For all creatures of your choice, the space in your aura is difficult terrain.</p>
+            <p class="indent"><b>Tempest.</b> Wind and lightning surge from your body, casting bright light within and 15 feet beyond the limits of your aura, and dim light for another 15. You deal lightning damage, and at the start of your turn you can deal doubled aura damage to a single creature of your choice. If that creature is composed of or wearing metal, you can move that creature up to 15 feet toward or away from you.</p>
+            <p class="indent"><b>Blizzard.</b> Winter winds and frigid snow surround you when you rage. You deal cold damage, and can use plunging temperature to sooth the flames of battle. Once per turn, you can give an allied creature of your choice a number of temporary hit points equal to your barbarian level.</p>
+            <p class="indent"><b>Blight.</b> You emanate miasma and disease. You deal necrotic damage, and all hostile creatures within your aura suffer disadvantage on Strength and Dexterity checks until they leave your aura as plague and parasites wrack their body.</p>
+            <p class="indent"><b>Earthquake.</b> Your blows carry the incredible power of shifting earth and falling avalanches. You deal thunder damage, and once per turn you can focus the tremors on a hostile of creature of your choice. That creature must succeed on a Strength saving throw or be knocked prone.</p>
+            <p class="indent"><b>Sandstorm.</b> Sand whirls around you, heavily obscuring creatures of your choice within your aura. You deal slashing damage, and can use your reaction to impose disadvantage on a ranged attack made within or that enters your aura.</p>
+            <p class="indent"><b>Corona.</b> You explode with the power of the sun. You deal radiant damage, and cast bright light in a 20-foot radius around yourself and dim light for another 20. Once per turn, you can intensify the glare for one creature, which must succeed on a Constitution saving throw or be blinded until the start of its next turn.</p>
+        </description>
+        <sheet>
+            <description>While you rage, creating a roiling aura of elemental energy that extends {{disaster-aura:range}} feet from you in every direction, though not behind total cover. Your aura deals {{level:barbarian:half}} points {{disaster-aura:damage-type}} points damage to all creatures of your choice within your aura at the start of your turn. The damage is considered magical. When you enter a rage, and as an action while raging, you can send a surge of power through your aura, dealing 1d8 + {{constitution:modifier}} points {{disaster-aura:damage-type}} damage to all creatures of your choice within it.</description>
+        </sheet>
+        <rules>
+            <stat name="disaster-aura:range" value="10" level="3" />
+            <stat name="disaster-aura:range" value="5" level="10" />
+            <stat name="disaster-aura:range" value="5" level="14" />
+            <select type="Archetype Feature" name="Disaster Aura" supports="Cataclysm Disaster Aura" />
+        </rules>
+    </element>
+    <element name="Omen of Catastrophe" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE">
+        <description>
+            <p>At 6th level, your power grants you benefits even when you aren’t raging.</p>
+            <p class="indent"><b>Volcano.</b> You gain resistance to fire damage, and don’t suffer the effects of extreme heat. You can also set aflame any object that isn’t being worn or carried simply by touching it.</p>
+            <p class="indent"><b>Flood.</b> You gain a swim speed equal to your walking speed, and can breathe underwater. You also gain darkvision up to 30 ft, or an additional 30 if you already have darkvision.</p>
+            <p class="indent"><b>Tempest.</b> You gain resistance to lightning damage, and suffer no ill effects such as movement penalties or vision impairment from rain or thunderstorms.</p>
+            <p class="indent"><b>Blizzard.</b> You gain resistance to cold damage, and ignore all drawbacks of extreme cold. You also ignore difficult terrain created by ice, slush, and snow.</p>
+            <p class="indent"><b>Blight.</b> You gain resistance to necrotic damage, and have advantage on saving throws against poisons and diseases.</p>
+            <p class="indent"><b>Earthquake.</b> You gain resistance to thunder damage, and have tremorsense within 15 feet.</p>
+            <p class="indent"><b>Sandstorm.</b> You don’t suffer the effects of extreme heat, and can survive for three times as long as you normally could without food or water. You also gain proficiency in acrobatics.</p>
+            <p class="indent"><b>orona.</b> You cannot be blinded by any means, gain darkvision within a range of 30 ft., and learn the light cantrip.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Gaia’s Embrace" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_GAIAS_EMBRACE">
+        <description>
+            <p>Beginning at 10th level, you can shield your allies not only from the power of your furious aura, but protect them against similar effects. All creatures of your choice within your aura are resistant to the damage type you deal with it.</p>
+        </description>
+        <sheet>
+            <description>All creatures of your choice within your aura are resistant to {{disaster-aura:damage-type}} damage.</description>
+        </sheet>
+    </element>
+    <element name="Channel the Apocalypse" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE">
+        <description>
+            <p>At 14th level, you can use powerful magics that personify your disaster. You learn a pair of spells determined by your chosen aura, which you can cast only while raging, though if your rage ends while you are concentrating on a spell the spell continues.</p>
+            <p class="indent">You can cast and concentrate upon these spells while raging, unlike normal spells. You also cast them without material components. You can cast each spell once per rage. You can cast either a second time, but if you do so your rage immediately ends. Your spellcasting stat for these spells is Constitution, and all are cast at 4th level if they are not a higher level.</p>
+            <p class="indent"><b>Volcano.</b> <i>immolation, wall of fire</i></p>
+            <p class="indent"><b>Flood.</b> <i>control water, maelstrom</i></p>
+            <p class="indent"><b>Tempest</b> <i>call lightning, wind wall</i><br />
+            You are considered the source of the lightning from call lightning, rather than the sky, and so can cast it inside. It is also considered stormy conditions when you cast this spell.</p>
+            <p class="indent"><b>Blizzard.</b> <i>ice storm, wall of ice</i></p>
+            <p class="indent"><b>Blight.</b> <i>antilife shell, giant insect</i></p>
+            <p class="indent"><b>Earthquake.</b> <i>bones of the earth, earthquake</i></p>
+            <p class="indent"><b>Sandstorm.</b> <i>wall of sand, whirlwind</i></p>
+            <p class="indent"><b>Corona.</b> <i>dawn, sickening radiance</i></p>
+            <p class="indent">In addition, you are immune to the damage type dealt by your aura while you are raging.</p>
+        </description>
+        <sheet>
+            <description>You can cast the following spells at 4th level (if not higher). Constitution is your spellcasting ability. Spell attack modifier: {{spell-attack:modifier}}. Spell Save DC: {{spell-save:dc}}. You are also immune to {{disaster-aura:damage-type}}.</description>
+        </sheet>
+        <rules>
+            <stat name="spell-attack:modifier" value="proficiency" />
+            <stat name="spell-attack:modifier" value="constitution:modifier" />
+            <stat name="spell-save:dc" value="8" />
+            <stat name="spell-save:dc" value="proficiency" />
+            <stat name="spell-save:dc" value="constitution:modifier" />
+        </rules>
+    </element>
+
+    <element name="Disaster Aura: Volcano" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_DISASTER_AURA_VOLCANO">
+        <supports>Cataclysm Disaster Aura</supports>
+        <description>
+            <p>You radiate incredible heat and powerful flames, dealing fire damage and casting bright light within and 15 feet beyond the limits of your aura, and dim light for another 15. Your attunement to magma or flame spreads it to the landscape around you, superheating the ground. When you deal aura damage at the start of your turn, all creatures within 5 feet of you take twice the damage instead, or thrice the damage if they are prone.</p>
+        </description>
+        <sheet usage="Disaster Aura" alt="Volcano">
+            <description>You deal fire damage and cast bright light within and 15 feet beyond the limits of your aura, and dim light for another 15. When you deal aura damage at the start of your turn, all creatures within 5 feet of you take twice the damage instead, or thrice the damage if they are prone.</description>
+        </sheet>
+        <rules>
+            <stat name="disaster-aura:damage-type" inline="true" value="fire" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_VOLCANO" level="6" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_VOLCANO" level="14" />
+        </rules>
+    </element>
+    <element name="Disaster Aura: Flood" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_DISASTER_AURA_FLOOD">
+        <supports>Cataclysm Disaster Aura</supports>
+        <description>
+            <p>You are a portal to the crushing weight of the ocean’s depths. Your aura deals bludgeoning damage. Creatures in your aura have their jump height halved. For all creatures of your choice, the space in your aura is difficult terrain.</p>
+        </description>
+        <sheet usage="Disaster Aura" alt="Flood">
+            <description>Creatures in your aura have their jump height halved. For all creatures of your choice, the space in your aura is difficult terrain.</description>
+        </sheet>
+        <rules>
+            <stat name="disaster-aura:damage-type" inline="true" value="bludgeoning" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_FLOOD" level="6" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_FLOOD" level="14" />
+        </rules>
+    </element>
+    <element name="Disaster Aura: Tempest" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_DISASTER_AURA_TEMPEST">
+        <supports>Cataclysm Disaster Aura</supports>
+        <description>
+            <p>Wind and lightning surge from your body, casting bright light within and 15 feet beyond the limits of your aura, and dim light for another 15. You deal lightning damage, and at the start of your turn you can deal doubled aura damage to a single creature of your choice. If that creature is composed of or wearing metal, you can move that creature up to 15 feet toward or away from you.</p>
+        </description>
+        <sheet usage="Disaster Aura" alt="Tempest">
+            <description>You cast bright light within and 15 feet beyond the limits of your aura, and dim light for another 15. At the start of your turn you deal doubled aura damage to a single creature of your choice. If that creature is composed of or wearing metal, you can move that creature up to 15 feet toward or away from you.</description>
+        </sheet>
+        <rules>
+            <stat name="disaster-aura:damage-type" inline="true" value="lightning" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_TEMPEST" level="6" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_TEMPEST" level="14" />
+        </rules>
+    </element>
+    <element name="Disaster Aura: Blizzard" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_DISASTER_AURA_BLIZZARD">
+        <supports>Cataclysm Disaster Aura</supports>
+        <description>
+            <p>Winter winds and frigid snow surround you when you rage. You deal cold damage, and can use plunging temperature to sooth the flames of battle. Once per turn, you can give an allied creature of your choice a number of temporary hit points equal to your barbarian level.</p>
+        </description>
+        <sheet usage="Disaster Aura" alt="Blizzard">
+            <description>Once per turn, you can give an allied creature of your choice {{level:barbarian}} temporary hit points.</description>
+        </sheet>
+        <rules>
+            <stat name="disaster-aura:damage-type" inline="true" value="cold" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_BLIZZARD" level="6" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_BLIZZARD" level="14" />
+        </rules>
+    </element>
+    <element name="Disaster Aura: Blight" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_DISASTER_AURA_BLIGHT">
+        <supports>Cataclysm Disaster Aura</supports>
+        <description>
+            <p>You emanate miasma and disease. You deal necrotic damage, and all hostile creatures within your aura suffer disadvantage on Strength and Dexterity checks until they leave your aura as plague and parasites wrack their body.</p>
+        </description>
+        <sheet usage="Disaster Aura" alt="Blight">
+            <description>All hostile creatures within your aura suffer disadvantage on Strength and Dexterity checks until they leave your aura as plague and parasites wrack their body.</description>
+        </sheet>
+        <rules>
+            <stat name="disaster-aura:damage-type" inline="true" value="necrotic" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_BLIGHT" level="6" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_BLIGHT" level="14" />
+        </rules>
+    </element>
+    <element name="Disaster Aura: Earthquake" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_DISASTER_AURA_EARTHQUAKE">
+        <supports>Cataclysm Disaster Aura</supports>
+        <description>
+            <p>Your blows carry the incredible power of shifting earth and falling avalanches. You deal thunder damage, and once per turn you can focus the tremors on a hostile of creature of your choice. That creature must succeed on a Strength saving throw or be knocked prone.</p>
+        </description>
+        <sheet usage="Disaster Aura" alt="Earthquake">
+            <description>Once per turn you can focus the tremors on a hostile of creature of your choice. That creature must succeed on a Strength saving throw or be knocked prone.</description>
+        </sheet>
+        <rules>
+            <stat name="disaster-aura:damage-type" inline="true" value="thunder" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_EARTHQUAKE" level="6" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_EARTHQUAKE" level="14" />
+        </rules>
+    </element>
+    <element name="Disaster Aura: Sandstorm" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_DISASTER_AURA_SANDSTORM">
+        <supports>Cataclysm Disaster Aura</supports>
+        <description>
+            <p>Sand whirls around you, heavily obscuring creatures of your choice within your aura. You deal slashing damage, and can use your reaction to impose disadvantage on a ranged attack made within or that enters your aura.</p>
+        </description>
+        <sheet usage="Disaster Aura" alt="Sandstorm" action="Reaction">
+            <description>You can impose disadvantage on a ranged attack made within or that enters your aura.</description>
+        </sheet>
+        <rules>
+            <stat name="disaster-aura:damage-type" inline="true" value="slashing" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_SANDSTORM" level="6" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_SANDSTORM" level="14" />
+        </rules>
+    </element>
+    <element name="Disaster Aura: Corona" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_DISASTER_AURA_CORONA">
+        <supports>Cataclysm Disaster Aura</supports>
+        <description>
+            <p>You explode with the power of the sun. You deal radiant damage, and cast bright light in a 20-foot radius around yourself and dim light for another 20. Once per turn, you can intensify the glare for one creature, which must succeed on a Constitution saving throw or be blinded until the start of its next turn.</p>
+        </description>
+        <sheet usage="Disaster Aura" alt="Corona">
+            <description>You cast bright light in a 20-foot radius around yourself and dim light for another 20. Once per turn, you can intensify the glare for one creature, which must succeed on a Constitution saving throw or be blinded until the start of its next turn.</description>
+        </sheet>
+        <rules>
+            <stat name="disaster-aura:damage-type" inline="true" value="radiant" />
+            <grant type="Archetype Feature" id="CORONA" level="6" />
+            <grant type="Archetype Feature" id="CORONA" level="14" />
+        </rules>
+    </element>
+
+    <element name="Omen of Catastrophe: Volcano" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_VOLCANO">
+        <description>
+            <p>You gain resistance to fire damage, and don’t suffer the effects of extreme heat. You can also set aflame any object that isn’t being worn or carried simply by touching it.</p>
+        </description>
+        <sheet usage="Omen of Catastrophe" alt="Volcano">
+            <description>You don’t suffer the effects of extreme heat. You can also set aflame any object that isn’t being worn or carried simply by touching it.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+        </rules>
+    </element>
+    <element name="Omen of Catastrophe: Flood" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_FLOOD">
+        <description>
+            <p>You gain a swim speed equal to your walking speed, and can breathe underwater. You also gain darkvision up to 30 ft, or an additional 30 if you already have darkvision.</p>
+        </description>
+        <sheet usage="Omen of Catastrophe" alt="Flood">
+            <description>You can breathe underwater. You also gain darkvision up to 30 ft, or an additional 30 if you already have darkvision.</description>
+        </sheet>
+        <rules>
+            <stat name="speed:swim" value="speed" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+        </rules>
+    </element>
+    <element name="Omen of Catastrophe: Tempest" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_TEMPEST">
+        <description>
+            <p>You gain resistance to lightning damage, and suffer no ill effects such as movement penalties or vision impairment from rain or thunderstorms.</p>
+        </description>
+        <sheet usage="Omen of Catastrophe" alt="Tempest">
+            <description>You suffer no ill effects such as movement penalties or vision impairment from rain or thunderstorms.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+        </rules>
+    </element>
+    <element name="Omen of Catastrophe: Blizzard" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_BLIZZARD">
+        <description>
+            <p>You gain resistance to cold damage, and ignore all drawbacks of extreme cold. You also ignore difficult terrain created by ice, slush, and snow.</p>
+        </description>
+        <sheet usage="Omen of Catastrophe" alt="Blizzard">
+            <description>You ignore all drawbacks of extreme cold. You also ignore difficult terrain created by ice, slush, and snow.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+        </rules>
+    </element>
+    <element name="Omen of Catastrophe: Blight" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_BLIGHT">
+        <description>
+            <p>You gain resistance to necrotic damage, and have advantage on saving throws against poisons and diseases.</p>
+        </description>
+        <sheet usage="Omen of Catastrophe" alt="Blight">
+            <description>You have advantage on saving throws against poisons and diseases.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+        </rules>
+    </element>
+    <element name="Omen of Catastrophe: Earthquake" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_EARTHQUAKE">
+        <description>
+            <p>You gain resistance to thunder damage, and have tremorsense within 15 feet.</p>
+        </description>
+        <sheet usage="Omen of Catastrophe" alt="Earthquake">
+            <description>You have tremorsense within 15 feet.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+        </rules>
+    </element>
+    <element name="Omen of Catastrophe: Sandstorm" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_SANDSTORM">
+        <description>
+            <p>You don’t suffer the effects of extreme heat, and can survive for three times as long as you normally could without food or water. You also gain proficiency in acrobatics.</p>
+        </description>
+        <sheet usage="Omen of Catastrophe" alt="Sandstorm">
+            <description>You don’t suffer the effects of extreme heat, and can survive for three times as long as you normally could without food or water.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ACROBATICS" />
+        </rules>
+    </element>
+    <element name="Omen of Catastrophe: Corona" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_OMEN_OF_CATASTROPHE_CORONA">
+        <description>
+            <p>You cannot be blinded by any means, gain darkvision within a range of 30 ft., and learn the light cantrip.</p>
+        </description>
+        <sheet usage="Omen of Catastrophe" alt="Corona">
+            <description>You cannot be blinded by any means, gain darkvision within a range of 30 ft.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_LIGHT" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+        </rules>
+    </element>
+
+    <element name="Channel the Apocalypse: Volcano" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_VOLCANO">
+        <description>
+            <p><i>immolation, wall of fire</i></p>
+        </description>
+        <sheet usage="Channel the Apocalypse" alt="Volcano">
+            <description>immolation, wall of fire</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_XGTE_SPELL_IMMOLATION" />
+            <grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FIRE" />
+        </rules>
+    </element>
+    <element name="Channel the Apocalypse: Flood" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_FLOOD">
+        <description>
+            <p><i>control water, maelstrom</i></p>
+        </description>
+        <sheet usage="Channel the Apocalypse" alt="Flood">
+            <description>control water, maelstrom</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CONTROL_WATER" />
+            <grant type="Spell" id="ID_XGTE_SPELL_MAELSTROM" />
+        </rules>
+    </element>
+    <element name="Channel the Apocalypse: Tempest" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_TEMPEST">
+        <description>
+            <p><i>call lightning, wind wall</i><br />You are considered the source of the lightning from call ldightning , rather than the sky, and so can cast it inside. It is also considered stormy conditions when you cast this spell.</p>
+        </description>
+        <sheet usage="Channel the Apocalypse" alt="Tempest">
+            <description>call lightning, wind wall. You are considered the source of the lightning from call ldightning , rather than the sky, and so can cast it inside. It is also considered stormy conditions when you cast this spell.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CALL_LIGHTNING" />
+            <grant type="Spell" id="ID_PHB_SPELL_WIND_WALL" />
+        </rules>
+    </element>
+    <element name="Channel the Apocalypse: Blizzard" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_BLIZZARD">
+        <description>
+            <p><i>ice storm, wall of ice</i></p>
+        </description>
+        <sheet usage="Channel the Apocalypse" alt="Blizzard">
+            <description>ice storm, wall of ice</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" />
+            <grant type="Spell" id="ID_PHB_SPELL_WALL_OF_ICE" />
+        </rules>
+    </element>
+    <element name="Channel the Apocalypse: Blight" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_BLIGHT">
+        <description>
+            <p><i>antilife shell, giant insect</i></p>
+        </description>
+        <sheet usage="Channel the Apocalypse" alt="Blight">
+            <description>antilife shell, giant insect</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ANTILIFE_SHELL" />
+            <grant type="Spell" id="ID_PHB_SPELL_GIANT_INSECT" />
+        </rules>
+    </element>
+    <element name="Channel the Apocalypse: Earthquake" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_EARTHQUAKE">
+        <description>
+            <p><i>bones of the earth, earthquake</i></p>
+        </description>
+        <sheet usage="Channel the Apocalypse" alt="Earthquake">
+            <description>bones of the earth, earthquake</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_XGTE_SPELL_BONES_OF_THE_EARTH" />
+            <grant type="Spell" id="ID_PHB_SPELL_EARTHQUAKE" />
+        </rules>
+    </element>
+    <element name="Channel the Apocalypse: Sandstorm" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_SANDSTORM">
+        <description>
+            <p><i>wall of sand, whirlwind</i></p>
+        </description>
+        <sheet usage="Channel the Apocalypse" alt="Sandstorm">
+            <description>wall of sand, whirlwind</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_XGTE_SPELL_WALL_OF_SAND" />
+            <grant type="Spell" id="ID_XGTE_SPELL_WHIRLWIND" />
+        </rules>
+    </element>
+    <element name="Channel the Apocalypse: Corona" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CATACLYSM_CHANNEL_THE_APOCALYPSE_CORONA">
+        <description>
+            <p><i>dawn, sickening radiance</i></p>
+        </description>
+        <sheet usage="Channel the Apocalypse" alt="Corona">
+            <description>dawn, sickening radiance</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_XGTE_SPELL_DAWN" />
+            <grant type="Spell" id="ID_XGTE_SPELL_SICKENING_RADIANCE" />
+        </rules>
+    </element>
+</elements>
