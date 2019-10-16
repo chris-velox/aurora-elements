@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Death Lord</name>
+        <author url="https://homebrewery.naturalcrit.com/share/BkG4GzR4H">u/TaustyZ</author>
+        <update version="0.0.1">
+            <file name="warlock-the-death-lord.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-the-death-lord.xml" />
+        </update>
+    </info>
+    
+    <element name="The Death Lord" type="Archetype" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_WARLOCK_THE_DEATH_LORD">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Your powers were bestowed onto you by a powerful undead being such as a vampire lord or a Lich.</p>
+            <h4>EXPANDED SPELLS</h4>
+            <p>The necrotic blood flowing through you, give you additional spells which you automatically know when you have the required spell slot required to cast it. These spells work as warlock spells for you but do not count against the number of spells known.</p>
+            <h5>PACT SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>1st</td><td><i>false life</i></td></tr>
+                <tr><td>2nd</td><td><i>blindness/deafness</i></td></tr>
+                <tr><td>3rd</td><td><i>animate dead</i></td></tr>
+                <tr><td>4th</td><td><i>shadow of moil</i></td></tr>
+                <tr><td>5th</td><td><i>enervation</i></td></tr>
+            </table>
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_NATURE_OF_UNDEATH" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_TOOLS_OF_THE_TRADE" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_DEATH_DEALER" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_NECROPHAGE" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_EATER_OF_LIFE" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_DEATHLY_RECOVERY" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <spellcasting name="Warlock" extend="true">
+            <extend>ID_PHB_SPELL_FALSE_LIFE</extend>
+            <extend>ID_PHB_SPELL_BLINDNESS_DEAFNESS</extend>
+            <extend>ID_PHB_SPELL_ANIMATE_DEAD</extend>
+            <extend>ID_XGTE_SPELL_SHADOW_OF_MOIL</extend>
+            <extend>ID_XGTE_SPELL_ENERVATION</extend>
+        </spellcasting>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_NATURE_OF_UNDEATH" level="1" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_TOOLS_OF_THE_TRADE" level="1" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_DEATH_DEALER" level="1" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_NECROPHAGE" level="6" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_EATER_OF_LIFE" level="10" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_DEATHLY_RECOVERY" level="14" />
+        </rules>
+    </element>
+    
+    <element name="Nature of Undeath" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_NATURE_OF_UNDEATH">
+        <description>
+            <p>Upon taking this otherworldly patron at 1st level, you take on the characteristics of an undead as you gain the undead subtype and are considered as undead for the effects of many spells and healing effects. You also do not need to eat, drink, or breathe, and are immune to being magically aged.</p>
+        </description>
+        <sheet>
+            <description>You are considered as undead for the effects of many spells and healing effects. You also do not need to eat, drink, or breathe, and are immune to being magically aged.</description>
+        </sheet>
+    </element>
+    <element name="Tools of the Trade" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_TOOLS_OF_THE_TRADE">
+        <description>
+            <p>Upon taking this Patron at 1st level you gain proficiency in martial melee weapons and in medium armor and shields.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_MELEE_WEAPONS" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+        </rules>
+    </element>
+    <element name="Death Dealer" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_DEATH_DEALER">
+        <description>
+            <p>Beginning at 1st level, once per each of your turns whenever you make a melee weapon or spell attack, or an attack with your eldritch blast, you may deal additional necrotic damage equal to 1d4+your warlock level.</p>
+        </description>
+        <sheet>
+            <description>Once per each of your turns whenever you make a melee weapon or spell attack, or an attack with your eldritch blast, you may deal additional 1d4 + {{level:fighter}} points necrotic damage.</description>
+        </sheet>
+    </element>
+    <element name="Necrophage" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_NECROPHAGE">
+        <description>
+            <p>Starting at 6th level, your necrotic damage ignores resistances to necrotic damage. Whenever you deal necrotic damage with a spell attack, you may add your charisma modifier to the damage.</p>
+        </description>
+        <sheet>
+            <description>Your necrotic damage ignores resistances to necrotic damage. Whenever you deal necrotic damage with a spell attack, you may add your charisma modifier to the damage.</description>
+        </sheet>
+    </element>
+    <element name="Eater of Life" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_EATER_OF_LIFE">
+        <description>
+            <p>Beginning at 10th level, whenever you deal necrotic damage to an enemy using your death dealer ability, you may choose to afflict them with one of the following conditions:</p>
+            <p class="indent"><b>Life Drain.</b> The target's maximum hp is reduced by the necrotic damage you dealt from your Death Dealer ability until they take a long or short rest.</p>
+            <p class="indent"><b>Harvester of Souls.</b> Whenever you deal necrotic damage to a target with your death dealer ability, you gain temporary hit points equal to the necrotic damage you dealt.</p>
+        </description>
+        <sheet>
+            <description>Whenever you deal necrotic damage to an enemy using your death dealer ability, you may choose to afflict them with one of the following conditions: the target's maximum hp is reduced by the necrotic damage you dealt from your Death Dealer ability until they take a long or short rest; whenever you deal necrotic damage to a target with your death dealer ability, you gain temporary hit points equal to the necrotic damage you dealt.</description>
+        </sheet>
+    </element>
+    <element name="Deathly Recovery" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_DEATH_LORD_DEATHLY_RECOVERY">
+        <description>
+            <p>At 14th level, you are able to siphon the life force from others. Whenever you reduce an enemy to 0 hp, you may use your action to consume the flesh from their body. When you do so, you regain hp equal to half the max hp of the enemy(Up to a max of half of your Max HP) as well as one warlock spell slot.</p>
+            <p class="indent">When you use this ability, you may not use it again until you take a long rest.</p>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>Whenever you reduce an enemy to 0 hp, you may use your action to consume the flesh from their body. When you do so, you regain hp equal to half the max hp of the enemy(Up to a max of half of your Max HP) as well as one warlock spell slot.</description>
+        </sheet>
+    </element>
+
+    <element name="Tainted Touch" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_UA_CLASS_FEATURE_ELDRITCH_INVOCATION_TAINTED_TOUCH">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>3rd level</prerequisite>
+        <requirements>[level:3]</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 3rd level</p>
+            <p class="indent">You may cast <i>inflict wounds</i> at its lowest level without expending material components or spell slots. Charisma is your spellcasting ability for it.</p>
+        </description>
+        <sheet>
+            <description>You may cast inflict wounds at its lowest level without expending material components or spell slots. Charisma is your spellcasting ability for it.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" />
+        </rules>
+    </element>
+    <element name="Instrument of Shadows" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_UA_CLASS_FEATURE_ELDRITCH_INVOCATION_INSTRUMENT_OF_SHADOWS">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>3rd level</prerequisite>
+        <requirements>[level:3]</requirements>
+        <description>
+            <p class="flavor">Prerequisite: 3rd level</p>
+            <p class="indent">You may cast <i>shadow blade</i> at its lowest level without expending spell slots or material components.</p>
+        </description>
+        <sheet>
+            <description>You may cast shadow blade at its lowest level without expending spell slots or material components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_XGTE_SPELL_SHADOW_BLADE" />
+        </rules>
+    </element>
+
+</elements>
