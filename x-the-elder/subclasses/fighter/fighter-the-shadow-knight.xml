@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Shadow Knight Martial Archetype</name>
+        <author url="https://homebrewery.naturalcrit.com/share/BkG4GzR4H">u/TaustyZ</author>
+        <update version="0.0.1">
+            <file name="fighter-the-shadow-knight.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/fighter/fighter-the-shadow-knight.xml" />
+        </update>
+    </info>
+    
+    <element name="The Shadow Knight" type="Archetype" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FIGHTER_THE_SHADOW_KNIGHT">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>The Archetypal Shadow knight is a warrior who harnesses dark magic to inflict harm upon their oponents. They draw upon necromantic magic to reap the life of their enemies and often times revel in the suffering of their enemies.</p>
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_AMONGST_THE_DEAD" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSES" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_DEATH_STRIKES" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_HELLFIRE_ORB" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_MARSHAL_UNDEAD" />
+            <div element="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_LORD_OF_SHADOWS" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_AMONGST_THE_DEAD" level="3" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSES" level="3" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_DEATH_STRIKES" level="7" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_HELLFIRE_ORB" level="10" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_MARSHAL_UNDEAD" level="15" />
+            <grant type="Archetype Feature" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_LORD_OF_SHADOWS" level="18" />
+        </rules>
+    </element>
+    <element name="Amongst the Dead" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_AMONGST_THE_DEAD">
+        <description>
+            <p>Beginning at 3rd level, you are considered as undead for the effects of many healing and game effects. You do not have to eat, breathe, or drink. You also do not age and are immune to being magically aged.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Curses" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSES">
+        <description>
+            <p>Beginning when you choose this archetype, at 3rd level, you are able to bestow upon yourself magical curses that both aid and harm you at the same time. You know two curses, and learn one more at 7th, 10th, 15th, and 18th levels. Additionally, when you gain a level in this class, you may replace one curse you know with another one. You may not have more than one curse active at one time, and activating another disables the first. Additionally, some curses may require saving throws and spell attack rolls.</p>
+            <p class="indent"><b>Curse spell attack modifer</b> = your proficiency bonus + your Charisma modifier</p>
+            <p class="indent"><b>Curse save DC</b> = 8 + your proficiency bonus + your Charisma modifier</p>
+        </description>
+        <sheet>
+            <description>You are able to bestow upon yourself magical curses that both aid and harm you at the same time. You may not have more than one curse active at one time, and activating another disables the first. Your curse attack modifier is {{curse:attack-modifier}}. Your curse save DC is {{curse:save-dc}}.</description>
+        </sheet>
+        <rules>
+            <stat name="curse:attack-modifier" value="proficiency" />
+            <stat name="curse:attack-modifier" value="charisma:modifier" />
+
+            <stat name="curse:save-dc" value="8" />
+            <stat name="curse:save-dc" value="proficiency" />
+            <stat name="curse:save-dc" value="charisma:modifier" />
+
+            <select type="Archetype Feature" name="Curse (Shadow Knight)" supports="Shadow Knight Curse" level="3" number="2" />
+            <select type="Archetype Feature" name="Curse (Shadow Knight)" supports="Shadow Knight Curse" level="7" />
+            <select type="Archetype Feature" name="Curse (Shadow Knight)" supports="Shadow Knight Curse" level="10" />
+            <select type="Archetype Feature" name="Curse (Shadow Knight)" supports="Shadow Knight Curse" level="15" />
+            <select type="Archetype Feature" name="Curse (Shadow Knight)" supports="Shadow Knight Curse" level="18" />
+        </rules>
+    </element>
+    <element name="Death Strikes" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_DEATH_STRIKES">
+        <description>
+            <p>Beginning at 7th level, you gain the ability to infuse your weapon attacks with necrotic energy. As a bonus action, you may choose to infuse your weapon with deathly energy. For 1 minute, all weapon attacks you make deal additional necrotic damage equal to 1d10+your player level+your charisma modifier.</p>
+            <p class="indent">Whenever you use this ability, you may not use it again until you take a long or short rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="1/Short Rest">
+            <description>You may choose to infuse your weapon with deathly energy. For 1 minute, all weapon attacks you make deal additional necrotic damage equal to 1d10 + {{death-strikes:damage}}.</description>
+        </sheet>
+        <rules>
+            <stat name="death-strikes:damage" value="level" />
+            <stat name="death-strikes:damage" value="charisma:modifier" />
+        </rules>
+    </element>
+    <element name="Hellfire Orb" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_HELLFIRE_ORB">
+        <description>
+            <p>Beginning at 10th level, you are able to conjure an orb of pure hellfire and hurl it at enemies. Make a ranged spell attack using your charisma modifier and on a hit, the target takes 1d8 fire damage and 1d8 necrotic damage.</p>
+        </description>
+        <sheet>
+            <description>Make a ranged spell attack using your charisma modifier and on a hit, the target takes 1d8 fire damage and 1d8 necrotic damage.</description>
+        </sheet>
+    </element>
+    <element name="Marshal Undead" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_MARSHAL_UNDEAD">
+        <description>
+            <p>Beginning at 15th level, you gain the ability to control undead creatures. You may target an undead and force it to make a wisdom saving throw against your curse save DC and on a fail it becomes your undead servant for the next 24 hours. if the undead has an intelligence score of 7 or lower it becomes permenantly under your control. You may only control one undead with this effect.</p>
+        </description>
+        <sheet>
+            <description>You may target an undead and force it to make a wisdom saving throw (save DC {{curse:save-dc}}) and on a fail it becomes your undead servant for the next 24 hours. if the undead has an intelligence score of 7 or lower it becomes permenantly under your control. You may only control one undead with this effect.</description>
+        </sheet>
+    </element>
+    <element name="Lord of Shadows" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_LORD_OF_SHADOWS">
+        <description>
+            <p>Beginning at 18th level, you may cast the <i>animate dead</i> spell at a 3rd level spell slot at will. Whenever you do so, you may choose to create a shadow, or a spectre instead of a skeleton or zombie.</p>
+            <p class="indent">Once you use this feature, you may not do so again until you take a long rest.</p>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>You may cast the animate dead spell at a 3rd level spell slot at will. Whenever you do so, you may choose to create a shadow, or a spectre instead of a skeleton or zombie.</description>
+        </sheet>
+    </element>
+
+    <element name="The One Who Bleeds" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSE_THE_ONE_WHO_BLEEDS">
+        <supports>Shadow Knight Curse</supports>
+        <description>
+            <p>You may activate this curse as a bonus action. While this curse is active, you deal 1d6 additional necrotic damage on each of your weapon attacks. At the end of each of your turns, you must either expend one hit die or take irreducible necrotic damage equal to your fighter level.</p>
+        </description>
+        <sheet usage="Curses" action="Bonus Action">
+            <description>While this curse is active, you deal 1d6 additional necrotic damage on each of your weapon attacks. At the end of each of your turns, you must either expend one hit die or take irreducible {{level:fighter}} points necrotic damage.</description>
+        </sheet>
+    </element>
+    <element name="Bringer of the Underworld" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSE_BRINGER_OF_THE_UNDERWORLD">
+        <supports>Shadow Knight Curse</supports>
+        <description>
+            <p>You may activate this curse as an action. When you first activate this curse, a beast of hell comes forth, to aid you. It is treated as a wolf, however it is resistant to fire-type and necrotic-type damage, uses your proficiency bonus instead of its own, adds your proficiency bonus to its damage rolls and armor class, and increases its maximum hitpoints by an amount equal to your fighter level. You may command the beast to move and attack as a bonus action. However, the beast struggles against your will, and tries to free itself. At the start of each of your turns, you must make a Charisma saving throw, with the DC equal to 5 plus the amount of rounds after you initially summoned it. On a failed save, the beast turns hostile to you, and you cannot dismiss it until it is dead.</p>
+        </description>
+        <sheet usage="Curses" action="Action">
+            <description>When you first activate this curse, a beast of hell comes forth, to aid you. It is treated as a wolf, however it is resistant to fire-type and necrotic-type damage, uses your proficiency bonus (+{{proficiency}}) instead of its own, adds your proficiency bonus to its damage rolls and armor class, and increases its maximum hitpoints by {{level:fighter}}. You may command the beast to move and attack as a bonus action. However, the beast struggles against your will, and tries to free itself. At the start of each of your turns, you must make a Charisma saving throw, with the DC equal to 5 plus the amount of rounds after you initially summoned it. On a failed save, the beast turns hostile to you, and you cannot dismiss it until it is dead.</description>
+        </sheet>
+    </element>
+    <element name="Share In The Pain" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSE_SHARE_IN_THE_PAIN">
+        <supports>Shadow Knight Curse</supports>
+        <description>
+            <p>You may activate this curse as a bonus action. While this curse is active, you treat all creatures you deal damage to as being vulnerable to all sources for only your weapon attacks, however you are also vulnerable to all sources of non-self-inflicted damage.</p>
+        </description>
+        <sheet usage="Curses" action="Bonus Action">
+            <description>While this curse is active, you treat all creatures you deal damage to as being vulnerable to all sources for only your weapon attacks, however you are also vulnerable to all sources of non-self-inflicted damage.</description>
+        </sheet>
+    </element>
+    <element name="Dome of Doom" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSE_DOME_OF_DOOM">
+        <supports>Shadow Knight Curse</supports>
+        <description>
+            <p>You may activate this curse as a bonus action. While this curse is active, you gain resistance to all types of damage. However, creatures are treated as having resistance to all damage you deal.</p>
+        </description>
+        <sheet usage="Curses" action="Bonus Action">
+            <description>While this curse is active, you gain resistance to all types of damage. However, creatures are treated as having resistance to all damage you deal.</description>
+        </sheet>
+    </element>
+    <element name="Distraught Muscularity" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSE_DISTRAUGHT_MUSCULARITY">
+        <supports>Shadow Knight Curse</supports>
+        <description>
+            <p>You may activate this curse as a bonus action. While this curse is active, you have advantage on all Strength, Dexterity, and Constitution saving throws. However, you have disadvantage on all Intelligence, Wisdom, and Charisma saving throws and checks aside from Intimidation.</p>
+        </description>
+        <sheet usage="Curses" action="Bonus Action">
+            <description>While this curse is active, you have advantage on all Strength, Dexterity, and Constitution saving throws. However, you have disadvantage on all Intelligence, Wisdom, and Charisma saving throws and checks aside from Intimidation.</description>
+        </sheet>
+    </element>
+    <element name="Spectre's Shield" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSE_SPECTRES_SHIELD">
+        <supports>Shadow Knight Curse</supports>
+        <description>
+            <p>You may activate this curse as a bonus action. While this curse is active, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your fighter level (minimum of 1). However, all healing effects are halved for you.</p>
+        </description>
+        <sheet usage="Curses" action="Bonus Action">
+            <description>While this curse is active, when you reduce a hostile creature to 0 hit points, you gain {{curse:temp-hp}} temporary hit points. However, all healing effects are halved for you.</description>
+        </sheet>
+        <rules>
+            <stat name="curse:temp-hp" value="1" bonus="base" />
+            <stat name="curse:temp-hp:base" value="level:fighter" />
+            <stat name="curse:temp-hp:base" value="charisma:modifier" />
+            <stat name="curse:temp-hp" value="curse:temp-hp:base" bonus="base" />
+        </rules>
+    </element>
+    <element name="Waves of Anguish" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSE_WAVES_OF_ANGUISH">
+        <supports>Shadow Knight Curse</supports>
+        <description>
+            <p>You may activate this curse as a bonus action. While this curse is active, you may use your action to attack all creatures within 10 feet, dealing necrotic damage that ignores resistance instead of your weapon damage, and replacing your Strength modifier for your Charisma modifier. You also take damage from this, however it ignores your armor class.</p>
+        </description>
+        <sheet usage="Curses" action="Bonus Action">
+            <description>While this curse is active, you may use your action to attack all creatures within 10 feet, dealing necrotic damage that ignores resistance instead of your weapon damage, and replacing your Strength modifier for your Charisma modifier. You also take damage from this, however it ignores your armor class.</description>
+        </sheet>
+    </element>
+    <element name="Undying Fighting Ghoul" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSE_UNDYING_FIGHTING_GHOUL">
+        <supports>Shadow Knight Curse</supports>
+        <description>
+            <p>You may activate this curse as a bonus action. While this curse is active, you gain sharp claws and teeth, which are natural weapons that deal 1d8 slashing or piercing damage, and are counted as magical. Whenever you deal damage with these natural weapons, you restore hit points equal to half the amount of damage dealt. However, all other healing effects are halved for you, and you are vulnerable to radiant-type damage.</p>
+        </description>
+        <sheet usage="Curses" action="Bonus Action">
+            <description>While this curse is active, you gain sharp claws and teeth, which are natural weapons that deal 1d8 slashing or piercing damage, and are counted as magical. Whenever you deal damage with these natural weapons, you restore hit points equal to half the amount of damage dealt. However, all other healing effects are halved for you, and you are vulnerable to radiant-type damage.</description>
+        </sheet>
+    </element>
+    <element name="Burning Mountain of the Soul" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSE_BURNING_MOUNTAIN_OF_THE_SOUL">
+        <supports>Shadow Knight Curse</supports>
+        <description>
+            <p>You may activate this curse as an action. While this curse is active, all creatures within 15 feet of you take necrotic damage equal to half your fighter level when they start their turn in the aura, and have their movement speed reduced by 10 feet. However, you take the same damage at the start of your turn, but it is irreducible, though you are not slowed.</p>
+        </description>
+        <sheet usage="Curses" action="Action">
+            <description>While this curse is active, all creatures within 15 feet of you take necrotic damage equal to half your fighter level when they start their turn in the aura, and have their movement speed reduced by 10 feet. However, you take the same damage at the start of your turn, but it is irreducible, though you are not slowed.</description>
+        </sheet>
+    </element>
+    <element name="Rushing Dullahan" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RDDT_UA_ARCHETYPE_FEATURE_SHADOW_KNIGHT_CURSE_RUSHING_DULLAHAN">
+        <supports>Shadow Knight Curse</supports>
+        <description>
+            <p>You may activate this curse as a bonus action. When you first activate this curse, you take the Dash action as a bonus action, and may take it as a bonus action on each turn until the curse is disabled, and cannot be beheaded. However, you have disadvantage on checks relying on sight, and take irreducible necrotic damage equal to your Charisma modifier at the start of each of your turns.</p>
+        </description>
+        <sheet usage="Curses" action="Bonus Action">
+            <description>When you first activate this curse, you take the Dash action as a bonus action, and may take it as a bonus action on each turn until the curse is disabled, and cannot be beheaded. However, you have disadvantage on checks relying on sight, and take irreducible {{charisma:modifier}} points necrotic damage at the start of each of your turns.</description>
+        </sheet>
+    </element>
+</elements>
