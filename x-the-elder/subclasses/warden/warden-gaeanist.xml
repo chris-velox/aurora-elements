@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Gaeanist Warden Combat Discipline</name>
+        <author url="https://www.reddit.com/u/BunnygeonMaster">u/BunnygeonMaster</author>
+        <update version="0.0.1">
+            <file name="warden-gaeanist.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warden/warden-gaeanist.xml" />
+        </update>
+        <!-- https://www.gmbinder.com/share/-L7ikwIkHjnjDZNFZyRM -->
+    </info>
+    
+    <element name="Gaeanist" type="Archetype" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_WARDEN_GAEANIST">
+        <supports>Warden Combat Discipline</supports>
+        <description>
+            <p>Even though most see the creatures of the primal world as unintelligent, even mindless, wardens who undergo the shamanistic combat training of the Gaeanists learn to tap into nature's psionic potency. Sometimes referred to as the earthmind, or Gaea, this primitive psychic network permeates much of the natural world. It is a wellspring of animal instinct, of bestial endurance, and, for wardens that practice this combat discipline, of psychic magic that augments their esoteric martial talent.</p>
+            <p class="indent"></p>
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_GAEANIST_SPELLS" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_MYSTICAL_ARMAMENTS" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_PSYCHIC_STRIKE" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_MYSTICAL_SHROUD" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_PSYCHIC_SURGE" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_GAEANIST_SPELLS" level="1" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_MYSTICAL_ARMAMENTS" level="1" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_PSYCHIC_STRIKE" level="6" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_MYSTICAL_SHROUD" level="10" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_PSYCHIC_SURGE" level="14" />
+        </rules>
+    </element>
+    <element name="Gaeanist Spells" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_GAEANIST_SPELLS">
+        <description>
+            <p>You learn an additional spell when you reach certain levels in this archetype, as shown in the Gaeanist Spells table. The spell counts as a warden spell for you, but it doesn't count against the number of warden spells you know.</p>
+            <h5></h5>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>1st</td><td><i>wrathful smite</i></td></tr>
+                <tr><td>2nd</td><td><i>psi blade</i></td></tr>
+                <tr><td>3rd</td><td><i>fly</i></td></tr>
+                <tr><td>4th</td><td><i>charm monster</i></td></tr>
+            </table>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_WRATHFUL_SMITE" spellcasting="Warden" known="true" level="2" />
+            <grant type="Spell" id="ID_GM_BINDER_SPELL_GAEANIST_PSI_BLADE" spellcasting="Warden" known="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_FLY" spellcasting="Warden" known="true" level="9" />
+            <grant type="Spell" id="ID_XGTE_SPELL_CHARM_MONSTER" spellcasting="Warden" known="true" level="13" />
+        </rules>
+    </element>
+    <element name="Mystical Armaments" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_MYSTICAL_ARMAMENTS">
+        <description>
+            <p>Your psychic magics are not hindered by cumbersome equipment. You gain proficiency with heavy armor. Also, whenever you hit a creature with a weapon attack, you can choose to inflict psychic damage instead of the weapon's normal damage type.</p>
+        </description>
+        <sheet>
+            <description>Whenever you hit a creature with a weapon attack, you can choose to inflict psychic damage instead of the weapon's normal damage type.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+        </rules>
+    </element>
+    <element name="Psychic Strike" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_PSYCHIC_STRIKE">
+        <description>
+            <p>Starting at 6th level, as a reaction when a creature makes an attack targeting you, you can expend and roll a power die and subtract the result from the creature's attack roll. If the attak misses, the creature takes psychic damage equal to the result. You can choose to use this feature after the creature makes its roll, but before the DM determines whether the attack roll succeeds or fails. Creatures that are immune to psychic damage cannot be affected by this feature.</p>
+            <p class="indent">You can do this a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
+        </description>
+        <sheet action="Reaction" usage="{{psychic-strike:uses}}/Long Rest">
+            <description>when a creature makes an attack targeting you, you can expend and roll a power die and subtract the result from the creature's attack roll. If the attak misses, the creature takes psychic damage equal to the result. You can choose to use this feature after the creature makes its roll, but before the DM determines whether the attack roll succeeds or fails. Creatures that are immune to psychic damage cannot be affected by this feature.</description>
+        </sheet>
+        <rules>
+            <stat name="psychic-strike:uses" value="1" bonus="base" />
+            <stat name="psychic-strike:uses" value="wisdom:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Mystical Shroud" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_MYSTICAL_SHROUD">
+        <description>
+            <p>At 10th level, you can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Damage from magical weapons ignores this resistance.</p>
+        </description>
+        <sheet>
+            <description>You can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Damage from magical weapons ignores this resistance.</description>
+        </sheet>
+    </element>
+    <element name="Psychic Surge" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAEANIST_PSYCHIC_SURGE">
+        <description>
+            <p>By 14th level, you can impose disadvantage on a target’s saving throw against a warden spell you cast by expending 2 power dice. If it fails the saving throw, you can roll the expended power dice and cause the target to take additional psychic damage equal to the total of the roll.</p>
+        </description>
+        <sheet>
+            <description>You can impose disadvantage on a target’s saving throw against a warden spell you cast by expending 2 power dice. If it fails the saving throw, you can roll the expended power dice and cause the target to take additional psychic damage equal to the total of the roll.</description>
+        </sheet>
+    </element>
+
+    <element name="Psi Blade" type="Spell" source="GM Binder" id="ID_GM_BINDER_SPELL_GAEANIST_PSI_BLADE">
+        <supports>Warden</supports>
+        <description>
+            <p>You coalesce an aquamarine blade of distilled pain, having the unique property of phasing through armor and carapace. When you cast this spell, you make a melee spell attack at a creature within range. You treat your target as having an AC of 10 + its Dexterity modifier. On a hit you deal 2d12 psychic damage.</p>
+            <p class="indent"><b>At Higher Levels.</b> When you cast this spell using a spell slot of 3rd level or higher, you deal an additional 1d12 damage for each slot level above second.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">Evocation</set>
+            <set name="time">1 action</set>
+            <set name="duration">Instantaneous</set>
+            <set name="range">5 ft.</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+</elements>
