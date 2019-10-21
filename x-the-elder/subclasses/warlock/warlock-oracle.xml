@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Oracle Otherworldly Patron</name>
+        <author url="">u/sandwichbear</author>
+        <update version="0.0.1">
+            <file name="warlock-oracle.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-oracle.xml" />
+        </update>
+        <!-- https://www.gmbinder.com/share/-LCijZn8hiIIhUZRQqny -->
+    </info>
+    
+    <element name="Oracle" type="Archetype" source="GM Binder" id="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_WARLOCK_ORACLE">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p></p>
+            <h5>Oracle Features</h5>
+            <table>
+                <thead>
+                    <tr><td>column1</td><td>column2</td></tr>
+                </thead>
+                <tr><td>1st</td><td>Expanded Spell List, Await Fate</td></tr>
+                <tr><td>6th</td><td>Fearless Pursuit</td></tr>
+                <tr><td>10th</td><td>Restless Pursuit</td></tr>
+                <tr><td>14th</td><td>Prophecy of Ruin</td></tr>
+            </table>
+            <div element="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_EXPANDED_SPELL_LIST" />
+            <div element="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_AWAIT_FATE" />
+            <div element="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_FEARLESS_PURSUIT" />
+            <div element="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_RESTLESS_PURSUIT" />
+            <div element="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_PROPHECY_OF_RUIN" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_AWAIT_FATE" level="1" />
+            <grant type="Archetype Feature" id="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_FEARLESS_PURSUIT" level="6" />
+            <grant type="Archetype Feature" id="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_RESTLESS_PURSUIT" level="10" />
+            <grant type="Archetype Feature" id="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_PROPHECY_OF_RUIN" level="14" />
+        </rules>
+    </element>
+    <element name="Expanded Spell List" type="Archetype Feature" source="GM Binder" id="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_EXPANDED_SPELL_LIST">
+        <description>
+            <p>The Oracle lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><i>detect evil and good, sanctuary</i></td></tr>
+                <tr><td>2nd</td><td><i>augury, lesser restoration</i></td></tr>
+                <tr><td>3rd</td><td><i>haste, sending</i></td></tr>
+                <tr><td>4th</td><td><i>divination, Otiluke's resilient sphere</i></td></tr>
+                <tr><td>5th</td><td><i>dispel evil and good, greater restoration</i></td></tr>
+            </table>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Warlock" extend="true">
+            <extend>ID_PHB_SPELL_DETECT_EVIL_AND_GOOD</extend>
+            <extend>ID_PHB_SPELL_SANCTUARY</extend>
+            <extend>ID_PHB_SPELL_AUGURY</extend>
+            <extend>ID_PHB_SPELL_LESSER_RESTORATION</extend>
+            <extend>ID_PHB_SPELL_HASTE</extend>
+            <extend>ID_PHB_SPELL_SENDING</extend>
+            <extend>ID_PHB_SPELL_DIVINATION</extend>
+            <extend>ID_PHB_SPELL_OTILUKES_RESILIENT_SPHERE</extend>
+            <extend>ID_PHB_SPELL_DISPEL_EVIL_AND_GOOD</extend>
+            <extend>ID_PHB_SPELL_GREATER_RESTORATION</extend>
+        </spellcasting>
+    </element>
+    <element name="Await Fate" type="Archetype Feature" source="GM Binder" id="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_AWAIT_FATE">
+        <description>
+            <p>At 1st level, your patron prepares you for the inevitable. You can cast contingency at will, without expending a spell slot or material components. When you do so, the spell lasts until you finish a short or long rest, and the contingent spell must be a warlock spell you know.</p>
+        </description>
+        <sheet>
+            <description>You can cast contingency at will, without expending a spell slot or material components. When you do so, the spell lasts until you finish a short or long rest, and the contingent spell must be a warlock spell you know.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CONTINGENCY" known="true" />
+        </rules>
+    </element>
+    <element name="Fearless Pursuit" type="Archetype Feature" source="GM Binder" id="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_FEARLESS_PURSUIT">
+        <description>
+            <p>Starting at 6th level, your patron leaves you no time to feel fear in the pursuit of your mission. Whenever you take the Dash action on your turn, you gain temporary hit points equal to 1d8 + your Charisma modifier, and you are immune to being frightened until the end of your next turn.</p>
+        </description>
+        <sheet>
+            <description>Whenever you take the Dash action on your turn, you gain temporary hit points equal to 1d8 + {{charisma:modifier}}, and you are immune to being frightened until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Restless Pursuit" type="Archetype Feature" source="GM Binder" id="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_RESTLESS_PURSUIT">
+        <description>
+            <p>Beginning at 10th level, your patron leaves you no time to rest in the pursuit of your mission. You no longer need food or water, and you suffer no ill effects from exhaustion except death.</p>
+            <p class="indent">Additionally, whenever you expend a warlock spell slot, your speed increases by 5 feet. This benefit lasts until you finish a short or long rest.</p>
+        </description>
+        <sheet>
+            <description>You no longer need food or water, and you suffer no ill effects from exhaustion except death. Whenever you expend a warlock spell slot, your speed increases by 5 feet. This benefit lasts until you finish a short or long rest.</description>
+        </sheet>
+    </element>
+    <element name="Prophecy of Ruin" type="Archetype Feature" source="GM Binder" id="ID_SANDWICHBEAR_GM_BINDER_ARCHETYPE_FEATURE_ORACLE_PATRON_PROPHECY_OF_RUIN">
+        <description>
+            <p>Starting at 14th level, you can spend 10 minutes talking to a crowd of people, recounting a vision foretold by your patron. Once the prophecy concludes, choose a number of creatures within 60 feet of you who listened to all of it (which can include yourself), up to a number equal to your Warlock level. A target is unaffected if it doesn't understand your language.</p>
+            <p class="indent">The first time a target is reduced to 0 hit points as a result of taking damage, it can use its reaction to take an action, before dying or falling unconscious.</p>
+            <p class="indent">This effect ends on a target once it finishes a long rest, after which time it can benefit from this feature again.</p>
+        </description>
+        <sheet>
+            <description>You can spend 10 minutes talking to a crowd of people, recounting a vision foretold by your patron. Once the prophecy concludes, choose a number of creatures within 60 feet of you who listened to all of it (which can include yourself), up to a number equal to your Warlock level. A target is unaffected if it doesn't understand your language. The first time a target is reduced to 0 hit points as a result of taking damage, it can use its reaction to take an action, before dying or falling unconscious. This effect ends on a target once it finishes a long rest, after which time it can benefit from this feature again.</description>
+        </sheet>
+    </element>
+    
+</elements>
