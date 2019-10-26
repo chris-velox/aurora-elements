@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Ghost Knight Martial Archetype</name>
+        <author url="https://www.reddit.com/user/Yorviing">u/Yorviing</author>
+        <update version="0.0.1">
+            <file name="fighter-ghost-knight.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/fighter/fighter-ghost-knight.xml" />
+        </update>
+    </info>
+    
+    <element name="Ghost Knight" type="Archetype" source="r/Unearthed Arcana" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FIGHTER_GHOST_KNIGHT">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>There exist knights and warriors who have a close connection to the realm of ghosts and spirits. Known as Ghost Knights, these fighters embrace the Ethereal Plane and its denizens to become spectral warriors, fearing neither death nor paint. Ghost Knights develop abilities to see and enter the Ethereal Plane, and eventually can become incorporeal themselves.</p>
+            <h5>Ghost Knight Features</h5>
+            <table>
+                <thead>
+                    <tr><td>Fighter Level</td><td>Feature</td></tr>
+                </thead>
+                <tr><td>3rd</td><td>Return from the Grave, Spirit Sight</td></tr>
+                <tr><td>7th</td><td>Ethereal Strikes</td></tr>
+                <tr><td>10th</td><td>Phantom Body, Ghost Walking</td></tr>
+                <tr><td>15th</td><td>Spectral Attunement</td></tr>
+                <tr><td>18th</td><td>Spirit Form</td></tr>
+            </table>
+            <div element="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_RETURN_FROM_THE_GRAVE" />
+            <div element="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_SPIRIT_SIGHT" />
+            <div element="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_ETHEREAL_STRIKES" />
+            <div element="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_PHANTOM_LIFE" />
+            <div element="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_GHOST_WALKING" />
+            <div element="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_SPECTRAL_ATTUNEMENT" />
+            <div element="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_SPIRIT_FORM" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_RETURN_FROM_THE_GRAVE" level="3" />
+            <grant type="Archetype Feature" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_SPIRIT_SIGHT" level="3" />
+            <grant type="Archetype Feature" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_ETHEREAL_STRIKES" level="7" />
+            <grant type="Archetype Feature" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_PHANTOM_LIFE" level="10" />
+            <grant type="Archetype Feature" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_GHOST_WALKING" level="10" />
+            <grant type="Archetype Feature" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_SPECTRAL_ATTUNEMENT" level="15" />
+            <grant type="Archetype Feature" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_SPIRIT_FORM" level="18" />
+        </rules>
+    </element>
+    
+    <element name="Return from the Grave" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_RETURN_FROM_THE_GRAVE">
+        <description>
+            <p>Beginning at 3rd level, your connection to death allows you to return from deadly attacks. When you are reduced to 0 hit points but not killed outright, you can drop to a number of hit points equal to half your fighter level, rounded up (minimum of 2).</p>
+            <p class="indent">You can’t use this feature again until you finish a long rest.</p>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>When you are reduced to 0 hit points but not killed outright, you can drop to {{level:fighter:half:up}} hit points.</description>
+        </sheet>
+    </element>
+    <element name="Spirit Sight" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_SPIRIT_SIGHT">
+        <description>
+            <p>At 3rd level, you have sense for detecting the presence of spirits. As a bonus action, you can cause your eyes to become pale and emit ethereal smoke, allowing you to see up to 30 feet into the Ethereal Plane while you are on the Material Plane, and vice versa for up to 1 minute. You can use feature twice per short or long rest.</p>
+            <p class="indent">Additionally, you gain proficiency in the Intimidation and Religion skills.</p>
+        </description>
+        <sheet action="Bonus Action" usage="2/Short Rest">
+            <description>You can cause your eyes to become pale and emit ethereal smoke, allowing you to see up to 30 feet into the Ethereal Plane while you are on the Material Plane, and vice versa for up to 1 minute.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+        </rules>
+    </element>
+    <element name="Ethereal Strikes" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_ETHEREAL_STRIKES">
+        <description>
+            <p>By 7th level, you can imbue ethereal magic into your attacks. Once per turn when you hit a creature with a weapon attack, you can use choose to deal force damage to the target, in addition to the weapon's damage, as part of the same action. The extra damage is 1d8. This amount increases to 2d8 at 15th level. The damage increases by 1d8 if the target is an undead or if the target is on the Ethereal Plane.</p>
+        </description>
+        <sheet>
+            <description>Once per turn when you hit a creature with a weapon attack, you can use choose to deal {{ethereal-strikes:damage-dice}} extra force damage to the target, in addition to the weapon's damage. The damage increases by 1d8 if the target is an undead or if the target is on the Ethereal Plane.</description>
+        </sheet>
+        <rules>
+            <stat name="ethereal-strikes:damage-dice" value="1" level="7" />
+            <stat name="ethereal-strikes:damage-dice" value="1" level="15" />
+        </rules>
+    </element>
+    <element name="Phantom Life" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_PHANTOM_LIFE">
+        <description>
+            <p>By 10th level, your have become more spirit than mortal. You are immune to disease, and you do not need to eat or breathe, but you can ingest food and drink if you wish.</p>
+        </description>
+        <sheet>
+            <description>You are immune to disease, and you do not need to eat or breathe, but you can ingest food and drink if you wish.</description>
+        </sheet>
+    </element>
+    <element name="Ghost Walking" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_GHOST_WALKING">
+        <description>
+            <p>At 10th level, you can move like a ghost. As a bonus action, you can cause your body to become partially incorporeal until the end of your turn, allowing you to move through other creatures and objects as if they were difficult terrain by temporarily making your body incorporeal. If you end your turn inside a creature or object, you are immediately shunted to the nearest unoccupied space that you can occupy and take force damage equal to your fighter level.</p>
+            <p class="indent">You can use this feature a number of times equal to your Constitution modifier (minimum 1) per short or long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="{{ghost-walking:uses}}/Short Rest">
+            <description>You can cause your body to become partially incorporeal until the end of your turn, allowing you to move through other creatures and objects as if they were difficult terrain by temporarily making your body incorporeal. If you end your turn inside a creature or object, you are immediately shunted to the nearest unoccupied space that you can occupy and take force damage equal to your fighter level.</description>
+        </sheet>
+        <rules>
+            <stat name="ghost-walking:uses" value="1" bonus="base" />
+            <stat name="ghost-walking:uses" value="constitution:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Spectral Attunement" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_SPECTRAL_ATTUNEMENT">
+        <description>
+            <p>At 15th level, you have become more spirit than mortal. You gain resistance to necrotic damage, and you become immune to the frightened condition.</p>
+        </description>
+        <sheet>
+            <description>You are immune to the frightened condition.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+        </rules>
+    </element>
+    <element name="Spirit Form" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_YORVIING_RDDT_UA_ARCHETYPE_FEATURE_GHOST_KNIGHT_SPIRIT_FORM">
+        <description>
+            <p>By 18th level, you can become a ghost yourself. As a bonus action, you can transform yourself into a ghostly form. In this form, you have resistance to all damage except force and radiant damage, and you gain a fly speed equal to your movement speed.</p>
+            <p class="indent">You remain in this form for 1 minute. It ends early if you are incapacitated, if you die, or if you dismiss it as a bonus action.</p>
+            <p class="indent">Once you have used this ability, you can’t do so again until you finish a short or long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="1/Short Rest">
+            <description>You can become a ghost, with resistance to all damage except from force and radiant damage. You have a {{speed}} ft. fly speed. The transformation lasts 1 minute or until you dismiss it as a bonus action or are incapacitated.</description>
+        </sheet>
+    </element>
+</elements>
