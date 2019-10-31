@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Circle of the Vibrant Ocean</name>
+        <author url="">Genuine Fantasy Press</author>
+        <update version="0.0.2">
+            <file name="druid-circle-of-the-vibrant-ocean.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/compendium-of-sacred-mysteries-resurrection/druid-circle-of-the-vibrant-ocean.xml" />
+        </update>
+    </info>
+    
+    <element name="Circle of the Vibrant Ocean" type="Archetype" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_CIRCLE_OF_THE_VIBRANT_OCEAN">
+        <supports>Druid Circle</supports>
+        <description>
+            <p>The sea is teeming with life, filled with plants and animals both seen and unseen. Stormy waves and crashing tides give way to beautiful coral and sandy beaches. Your circle is dedicated to the preservation of the sea, but that does not always mean the protection of life. Death is an ever-present danger when dealing with the ocean as fearsome predators and deadly creatures lurk in the depths. You learn to call upon all aspects of this enigmatic place, discovering its secrets in your quest for understanding. Your journeys will take you far across the sea and even beyond it as you search for the salvation of the place you call home. Rise with the tide, and wander with the waves.</p>
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_BARRIER_REEF" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_SHORELINE_SECRETS" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_RISING_TIDE" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_DEEP_PREDATOR" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_THE_NIGHTMARE_BELOW" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_BARRIER_REEF" level="1" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_SHORELINE_SECRETS" level="1" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_RISING_TIDE" level="1" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_DEEP_PREDATOR" level="1" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_THE_NIGHTMARE_BELOW" level="1" />
+        </rules>
+    </element>
+        <element name="Barrier Reef" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_BARRIER_REEF">
+            <description>
+                <p>At 2nd level, your connection to the tides allows you to call upon one of their greatest wonders. As an action, you can expend one use of you Wild Shape feature to create walls of coral. Choose up to ten 5-foot cubes within 30 feet of you that are touching the ground or another surface. A thick, colorful coral reef appears in these cubes, harmlessly shunting creatures and objects in these spaces to the nearest open spaces of their choosing.</p>
+                <p class="indent">The coral is sharp and abrasive. Once per turn when a creature other than you impacts the coral from being forcibly moved, it takes slashing damage equal to 1d6 + half your druid level.</p>
+                <p class="indent">The coral wall is difficult terrain for creatures other than you. You can move freely through the spaces of the coral without expending movement. While you are inside of the coral, you are heavily obscured to creatures that are more than 5 feet from you.</p>
+                <p class="indent">The cubes of coral are physical objects and can be destroyed. Each 5-foot cube has hit points equal to three times your druid level, immunity to psychic damage, resistance to radiant damage, and an AC equal to your Wisdom score.</p>
+                <p class="indent">The coral cubes vanish when they are destroyed, when you summon a new set using this feature, or after 1 hour.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can expend one use of you Wild Shape feature to create walls of coral. Choose up to ten 5-foot cubes within 30 feet of you that are touching the ground or another surface. A thick, colorful coral reef appears in these cubes, harmlessly shunting creatures and objects in these spaces to the nearest open spaces of their choosing. Once per turn when a creature other than you impacts the coral from being forcibly moved, it takes slashing damage equal to 1d6 + {{level:druid:half}}. The coral wall is difficult terrain for creatures other than you. You can move freely through the spaces of the coral without expending movement. While you are inside of the coral, you are heavily obscured to creatures that are more than 5 feet from you. The cubes of coral are physical objects and can be destroyed. Each 5-foot cube has {{coral:hp}} hit points, immunity to psychic damage, resistance to radiant damage, and an AC {{wisdom}}.</description>
+            </sheet>
+            <rules>
+                <stat name="coral:hp" value="level:druid" />
+                <stat name="coral:hp" value="level:druid" />
+                <stat name="coral:hp" value="level:druid" />
+            </rules>
+        </element>
+        <element name="Shoreline Secrets" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_SHORELINE_SECRETS">
+            <description>
+                <p>Also at 2nd level, your circle’s devotion to the sea has gifted you with the abilities of an ocean native. You gain a swimming speed equal to your walking speed, and you can breathe underwater. You can cast spells underwater without using material components as though you were using a spellcasting focus. If a material component must be provided but would not function underwater, you are able to provide the material in such a way that it fulfils the needs of the spell while underwater.</p>
+            </description>
+            <sheet>
+                <description>You can breathe underwater. You can cast spells underwater without using material components as though you were using a spellcasting focus. If a material component must be provided but would not function underwater, you are able to provide the material in such a way that it fulfils the needs of the spell while underwater.</description>
+            </sheet>
+            <rules>
+                <stat name="speed:swim" value="speed" />
+            </rules>
+        </element>
+        <element name="Rising Tide" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_RISING_TIDE">
+            <description>
+                <p>At 6th level, the seas respond easily to your call. Over the course of one minute, you can cause the tides within one mile of your location to rise or lower as they naturally would through the day.</p>
+                <p class="indent">Additionally, when you take damage from a creature that is within 10 feet of coral summoned using your Living Reef feature, you can use your reaction to summon a forceful undersea current to crash into your attacker. The attacker must make a Strength saving throw. If they fail, they are pushed 10 feet in a direction of your choosing.</p>
+            </description>
+            <sheet>
+                <description>Over the course of one minute, you can cause the tides within one mile of your location to rise or lower as they naturally would through the day. Additionally, when you take damage from a creature that is within 10 feet of coral summoned using your Living Reef feature, you can use your reaction to summon a forceful undersea current to crash into your attacker. The attacker must make a Strength saving throw (save DC {{spellcasting:dc}}). If they fail, they are pushed 10 feet in a direction of your choosing.</description>
+            </sheet>
+        </element>
+        <element name="Deep Predator" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_DEEP_PREDATOR">
+            <description>
+                <p>At 10th level, you gain darkvision out to 60 feet and you can treat all water as though it were clear and brightly lit. If you have darkvision from another source, it increases by 60 feet. You are aware of the location any creature within 60 feet of you that is below its hit point maximum.</p>
+            </description>
+            <sheet>
+                <description>You can treat all water as though it were clear and brightly lit. If you have darkvision from another source, it increases by 60 feet. You are aware of the location any creature within 60 feet of you that is below its hit point maximum.</description>
+            </sheet>
+            <rules>
+                <grant type="Vision" id="ID_VISION_DARKVISION" />
+            </rules>
+        </element>
+        <element name="The Nightmare Below" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_COTVO_THE_NIGHTMARE_BELOW">
+            <description>
+                <p>At 14th level, your exploration of the ocean depths has taught you of their most unspeakable mysteries. As an action, you can choose to expend two uses of your Wild Shape feature to assume the form of a beast with a CR of 5 or lower. This form is imbued with terrifying power, gaining advantage on Strength checks and a swimming and flying speed equal to its highest speed, as it is carried around on a harmless wave of water.</p>
+                <p class="indent">As an action while in this form, you can cause cubes of coral from your Barrier Reef feature to fully envelop you. These coral formations vanish when destroyed, one minute after you exit this form, or when you summon more.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can choose to expend two uses of your Wild Shape feature to assume the form of a beast with a CR of 5 or lower. This form is imbued with terrifying power, gaining advantage on Strength checks and a swimming and flying speed equal to its highest speed, as it is carried around on a harmless wave of water. As an action while in this form, you can cause cubes of coral from your Barrier Reef feature to fully envelop you. These coral formations vanish when destroyed, one minute after you exit this form, or when you summon more.</description>
+            </sheet>
+        </element>
+</elements>

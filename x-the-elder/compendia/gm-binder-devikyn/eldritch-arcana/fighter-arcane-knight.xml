@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Arcane Knight Martial Archetype</name>
+        <update version="0.0.4">
+            <file name="fighter-arcane-knight.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/gm-binder-devikyn/eldritch-arcana/fighter-arcane-knight.xml" />
+        </update>
+    </info>
+    
+    <element name="Arcane Knight" type="Archetype" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_ARCANE_KNIGHT">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p></p>
+            <p class="indent"></p>
+            <div element="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_SPELLCASTING" />
+            <div element="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_RESIDUAL_MAGIC" />
+            <div element="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_WAR_MAGIC" />
+            <div element="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_ARCANE_CHARGE" />
+            <div element="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_RIFT_STRIKE" />
+            <div element="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_DEFLECTIVE_MANTLE" />
+        </description>
+        <sheet>
+            <description>Primary school: $(School of Magic (Arcase Knight))</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_SPELLCASTING" level="3" />
+            <grant type="Archetype Feature" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_RESIDUAL_MAGIC" level="3" />
+            <grant type="Archetype Feature" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_WAR_MAGIC" level="7" />
+            <grant type="Archetype Feature" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_ARCANE_CHARGE" level="10" />
+            <grant type="Archetype Feature" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_RIFT_STRIKE" level="1" />
+            <grant type="Archetype Feature" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_DEFLECTIVE_MANTLE" level="1" />
+        </rules>
+    </element>
+    
+    <element name="Spellcasting" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_SPELLCASTING">
+        <description>
+            <p></p>
+        </description>
+        <setters>
+            <set name="spellcaster">true</set>
+            <set name="spellcastingAbility">Intelligence</set>
+            <set name="spellcastingClass">Arcane Knight</set>
+        </setters>
+        <spellcasting name="Arcane Knight" ability="Intelligence" prepare="false">
+            <list>Arcane Knight</list>
+        </spellcasting>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Archetype Feature" name="School of Magic (Arcane Knight)" supports="Arcane Knight School" number="2" />
+        
+            <stat name="arcane knight:spellcasting:slots:1" value="2" level="3" />
+            <stat name="arcane knight:spellcasting:slots:1" value="1" level="3" />
+            <stat name="arcane knight:spellcasting:slots:1" value="1" level="7" />
+            <stat name="arcane knight:spellcasting:slots:2" value="2" level="7" />
+            <stat name="arcane knight:spellcasting:slots:2" value="1" level="10" />
+            <stat name="arcane knight:spellcasting:slots:3" value="2" level="13" />
+            <stat name="arcane knight:spellcasting:slots:3" value="1" level="16" />
+            <stat name="arcane knight:spellcasting:slots:4" value="1" level="19" />
+
+            <select type="Spell" name="Cantrip (Arcane Knight)" supports="$(spellcasting:list),0" level="1" number="4" spellcasting="Arcane Knight" />
+            <select type="Spell" name="Cantrip (Arcane Knight)" supports="$(spellcasting:list),0" level="10" spellcasting="Arcane Knight"/>
+
+            <select type="Spell" name="Spell (Arcane Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" number="3" spellcasting="Arcane Knight"/>
+            <select type="Spell" name="Spell (Arcane Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="4" spellcasting="Arcane Knight"/>
+            <select type="Spell" name="Spell (Arcane Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="7" spellcasting="Arcane Knight"/>
+            <select type="Spell" name="Spell (Arcane Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="8" spellcasting="Arcane Knight"/>
+            <select type="Spell" name="Spell (Arcane Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="10" spellcasting="Arcane Knight"/>
+            <select type="Spell" name="Spell (Arcane Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="11" spellcasting="Arcane Knight"/>
+            <select type="Spell" name="Spell (Arcane Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="13" spellcasting="Arcane Knight"/>
+            <select type="Spell" name="Spell (Arcane Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="14" spellcasting="Arcane Knight"/>
+            <select type="Spell" name="Spell (Arcane Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="16" spellcasting="Arcane Knight"/>
+            <select type="Spell" name="Spell (Arcane Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="19" spellcasting="Arcane Knight"/>
+            <select type="Spell" name="Spell (Arcane Knight)" supports="$(spellcasting:list),$(spellcasting:slots)" level="20" spellcasting="Arcane Knight"/>
+
+        </rules>
+    </element>
+
+    <element name="Residual Magic" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_RESIDUAL_MAGIC">
+        <description>
+            <p>At 3rd level, you can harness the shed magic from your spells to transform your attacks. When you cast a spell that deals damage on your turn, you can choose one of the damage types that was dealt by the spell. Until the end of your next turn, you can cause your weapon attacks to deal damage of the chosen type, instead of their normal damage type.</p>
+        </description>
+        <sheet>
+            <description>When you cast a spell that deals damage on your turn, you can choose one of the damage types that was dealt by the spell. Until the end of your next turn, you can cause your weapon attacks to deal damage of the chosen type, instead of their normal damage type.</description>
+        </sheet>
+    </element>
+    <element name="War Magic" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_WAR_MAGIC">
+        <description>
+            <p>At 7th level, once on each of your turns when you take the Attack action, you can forfeit half of the attacks (rounded up) to cast one cantrip with a casting time of 1 action as part of the same action. You can add a bonus equal to your Intelligence modifier to the damage of a cantrip that you cast it in this way.</p>
+        </description>
+        <sheet>
+            <description>At 7th level, once on each of your turns when you take the Attack action, you can forfeit half of the attacks (rounded up) to cast one cantrip with a casting time of 1 action as part of the same action. You can add a bonus of {{intelligence:modifier}} to the damage of a cantrip that you cast it in this way.</description>
+        </sheet>
+    </element>
+    <element name="Arcane Charge" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_ARCANE_CHARGE">
+        <description>
+            <p>At 10th level, you gain the ability to teleport up to 30 feet to an unoccupied space you can see when you use your Action Surge. You can teleport before or after the additional action.</p>
+        </description>
+        <sheet>
+            <description>You can teleport up to 30 feet to an unoccupied space you can see when you use your Action Surge. You can teleport before or after the additional action.</description>
+        </sheet>
+    </element>
+    <element name="Rift Strike" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_RIFT_STRIKE">
+        <description>
+            <p>At 15th level, you learn how to make your weapon strikes undercut a creature’s resistance to your spells. When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against the next spell you cast before the end of your next turn.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against the next spell you cast before the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Deflective Mantle" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_DEFLECTIVE_MANTLE">
+        <description>
+            <p>At 18th level, you weave protective magics around a creature, increasing its ability to deflect blows. As an action, you touch a creature and cause any damage that creature takes to be reduced by your Intelligence modifier unless the damage type is psychic. The effect lasts for 1 minute.</p>
+            <p class="indent">Once you have used this feature, you can’t use it again until you finish a short or long rest.</p>
+        </description>
+        <sheet usage="1/Short Rest" action="Action">
+            <description>You touch a creature and cause any damage that creature takes to be reduced by {{intelligence:modifier}} unless the damage type is psychic. The effect lasts for 1 minute.</description>
+        </sheet>
+    </element>
+
+    <!-- School of Magic Features -->
+    <element name="Abjuration" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_ABJURATION">
+        <supports>Arcane Knight School</supports>
+        <description>
+            <p></p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Arcane Knight" extend="true">
+            <extend>Wizard,Abjuration</extend>
+        </spellcasting>
+    </element>
+    <element name="Conjuration" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_CONJURATION">
+        <supports>Arcane Knight School</supports>
+        <description>
+            <p></p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Arcane Knight" extend="true">
+            <extend>Wizard,Conjuration</extend>
+        </spellcasting>
+    </element>
+    <element name="Divination" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_DIVINATION">
+        <supports>Arcane Knight School</supports>
+        <description>
+            <p></p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Arcane Knight" extend="true">
+            <extend>Wizard,Divination</extend>
+        </spellcasting>
+    </element>
+    <element name="Enchantment" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_ENCHANTMENT">
+        <supports>Arcane Knight School</supports>
+        <description>
+            <p></p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Arcane Knight" extend="true">
+            <extend>Wizard,Enchantment</extend>
+        </spellcasting>
+    </element>
+    <element name="Evocation" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_EVOCATION">
+        <supports>Arcane Knight School</supports>
+        <description>
+            <p></p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Arcane Knight" extend="true">
+            <extend>Wizard,Evocation</extend>
+        </spellcasting>
+    </element>
+    <element name="Illusion" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_ILLUSION">
+        <supports>Arcane Knight School</supports>
+        <description>
+            <p></p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Arcane Knight" extend="true">
+            <extend>Wizard,Illusion</extend>
+        </spellcasting>
+    </element>
+    <element name="Necromancy" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_NECROMANCY">
+        <supports>Arcane Knight School</supports>
+        <description>
+            <p></p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Arcane Knight" extend="true">
+            <extend>Wizard,Necromancy</extend>
+        </spellcasting>
+    </element>
+    <element name="Transmutation" type="Archetype Feature" source="Eldritch Arcana" id="ID_EA_ARCHETYPE_FEATURE_ARCANE_KNIGHT_TRANSMUTATION">
+        <supports>Arcane Knight School</supports>
+        <description>
+            <p></p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <spellcasting name="Arcane Knight" extend="true">
+            <extend>Wizard,Transmutation</extend>
+        </spellcasting>
+    </element>
+</elements>

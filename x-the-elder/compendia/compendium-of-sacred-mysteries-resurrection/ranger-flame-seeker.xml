@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Flame Seeker Ranger Archetype</name>
+        <update version="0.0.2">
+            <file name="ranger-flame-seeker.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/compendium-of-sacred-mysteries-resurrection/ranger-flame-seeker.xml" />
+        </update>
+    </info>
+    
+    <element name="Flame Seeker" type="Archetype" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_RANGER_FLAME_SEEKER">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>There is darkness in the world, dwelling beneath the earth, in the ancient forests where few dare to tread, and in the shadowed alleways of the great cities. Defiance of that darkness is the calling of the flame seeker. You have chosen to walk this path not because you fear the dark, but because you embrace the light. Radiance follows in your footsteps, dances on your blades, and shimmers with every spell you cast. The fire speaks loudly within your heart as you press forwards into the darkness within and beyond civilized lands. It is your task to carry the torch.</p>
+            <p class="indent"></p>
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_FLAME_SEEKERS_GIFT" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_TORCH_BEARER" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_FIRE_STARTER" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_BURNING_HEART" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_TRAIL_BLAZER" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_SUNS_SALVATION" />
+            <h5>RANGER VARIANTS</h5>
+            <p>If you don’t gain a feature at 5th level, use this one.</p>
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_EXTRA_ATTACK" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_FLAME_SEEKERS_GIFT" level="3" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_TORCH_BEARER" level="3" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_FIRE_STARTER" level="3" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_EXTRA_ATTACK" level="5" requirements="!ID_WOTC_CLASSFEATURE_RANGER_EXTRA_ATTACK" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_BURNING_HEART" level="7" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_TRAIL_BLAZER" level="11" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_SUNS_SALVATION" level="15" />
+        </rules>
+    </element>
+    
+        <element name="Flame Seeker’s Gift" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_FLAME_SEEKERS_GIFT">
+            <description>
+                <p>Starting at 3rd level, you learn additional spells when you reach certain levels in this class, as shown in the table below. The spells count as ranger spells for you, but don’t count against the number of ranger spells you know.</p>
+                <table>
+                    <thead>
+                        <tr><td>Ranger Level</td><td>Spell</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><i>burning hands</i></td></tr>
+                    <tr><td>5th</td><td><i>heat metal</i></td></tr>
+                    <tr><td>9th</td><td><i>fireball</i></td></tr>
+                    <tr><td>13th</td><td><i>wall of fire</i></td></tr>
+                    <tr><td>17th</td><td><i>flame strike</i></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_BURNING_HANDS" spellcasting="Ranger" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_HEAT_METAL" spellcasting="Ranger" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_FIREBALL" spellcasting="Ranger" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FIRE" spellcasting="Ranger" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_FLAME_STRIKE" spellcasting="Ranger" known="true" />
+            </rules>
+        </element>
+        <element name="Torch Bearer" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_TORCH_BEARER">
+            <description>
+                <p>At 3rd level, your fascination with flame has granted you the ability to wield it. When you take any action, you can also summon your radiant torch to your open hand. The radiant torch is a simple melee weapon with the Light property that deals 1d8 fire or radiant damage (your choice). You can use your Wisdom modifier in place of your Strength modifier for attack and damage rolls with this weapon. It also sheds bright light in a 30 foot radius and dim light in a 30 foot radius beyond that. You can extinguish or reignite it at will during your turn. If you summon a second torch, the first one vanishes.</p>
+                <p class="indent">Once per turn when you take the Attack action and attack using your radiant torch, you can choose to drive your enemy back instead of dealing damage. If you hit, your target must make a Wisdom saving throw against your ranger spell save DC. If they fail, they are frightened of you until the start of your next turn. Once a creature succeeds their saving throw, they are immune to this effect for one minute.</p>
+            </description>
+            <sheet>
+                <description>When you take any action, you can also summon your radiant torch to your open hand. The radiant torch is a simple melee weapon with the Light property that deals 1d8 fire or radiant damage (your choice). You can use your Wisdom modifier in place of your Strength modifier for attack and damage rolls with this weapon. It also sheds bright light in a 30 foot radius and dim light in a 30 foot radius beyond that. You can extinguish or reignite it at will during your turn. If you summon a second torch, the first one vanishes. Once per turn when you take the Attack action and attack using your radiant torch, you can choose to drive your enemy back instead of dealing damage. If you hit, your target must make a Wisdom saving throw (save DC {{wisdom:modifier}}). If they fail, they are frightened of you until the start of your next turn. Once a creature succeeds their saving throw, they are immune to this effect for one minute.</description>
+            </sheet>
+        </element>
+        <element name="Fire Starter" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_FIRE_STARTER">
+            <description>
+                <p>Also at 3rd level, your dedication to this path teaches you to ward yourself against the darkness. You gain the following benefits:</p>
+                <ul>
+                    <li><i>Defy Darkness. </i>You can treat dim light as bright light for the purposes of vision.</li>
+                    <li><i>Warm Comfort. </i>You can use your reaction to reduce fire damage you take by an amount equal to your ranger level.</li>
+                    <li><i>Life in Light. </i>During your turn, you can choose to plant your radiant torch in the ground at your feet. While it is planted, spells you cast of 1st level or higher that target allied creatures within the light of the torch grant the targeted allies temporary hit points equal to half your ranger level.</li>
+                    <li><i>Molten Steel. </i>Whenever you start your turn within 10 feet of your radiant torch, you can call a mote of flame from it to imbue another weapon you possess. Until the start of your next turn, that weapon deals fire or radiant damage (your choice) instead of its normal damage type.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>You can treat dim light as bright light for the purposes of vision. You can use your reaction to reduce fire damage you take by {{level:ranger}}. During your turn, you can choose to plant your radiant torch in the ground at your feet. While it is planted, spells you cast of 1st level or higher that target allied creatures within the light of the torch grant the targeted allies {{level:ranger:half}} temporary hit points. Whenever you start your turn within 10 feet of your radiant torch, you can call a mote of flame from it to imbue another weapon you possess. Until the start of your next turn, that weapon deals fire or radiant damage (your choice) instead of its normal damage type.</description>
+            </sheet>
+        </element>
+        <element name="Burning Heart" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_BURNING_HEART">
+            <description>
+                <p>At 7th level, your love of light burns bright within you. You gain proficiency in Constitution saving throws. If you already have this proficiency, you gain proficiency in Strength or Charisma saving throws instead (your choice). Whenever you make a Constitution saving throw and fail, hostile creatures within 10 feet of you take fire damage equal to your ranger level.</p>
+            </description>
+            <sheet>
+                <description>Whenever you make a Constitution saving throw and fail, hostile creatures within 10 feet of you take {{level:ranger}} fire damage.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" />
+            </rules>
+        </element>
+        <element name="Trail Blazer" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_TRAIL_BLAZER">
+            <description>
+                <p>At 11th level, your dedication to quelling the darkness of the world allows you inspire your allies and burn your foes. Whenever you move, you can choose to leave behind a trail of radiant fire that is 5 feet wide and lasts until the start of your next turn. For other friendly creatures, movement along this path only costs 1 foot for every 3 feet moved. The first time a hostile creature enters this space or starts its turn inside, it must make a Dexterity saving throw. If it fails, it takes fire damage equal to twice your Wisdom modifier, or half as much damage on a success.</p>
+            </description>
+            <sheet>
+                <description>Whenever you move, you can choose to leave behind a trail of radiant fire that is 5 feet wide and lasts until the start of your next turn. For other friendly creatures, movement along this path only costs 1 foot for every 3 feet moved. The first time a hostile creature enters this space or starts its turn inside, it must make a Dexterity saving throw. If it fails, it takes {{trail-blazer:damage}} fire damage, or {{wisdom:modifer}} damage on a success.</description>
+            </sheet>
+            <rules>
+                <stat name="trail-blazer:damage" value="wisdom:modifier" />
+                <stat name="trail-blazer:damage" value="wisdom:modifier" />
+            </rules>
+        </element>
+        <element name="Sun’s Salvation" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_SUNS_SALVATION">
+            <description>
+                <p>At 15th level, your light sweeps the night away. You can have the light of your radiant torch count as natural sunlight. You can choose to increase the radius of the bright light to 60 feet and the radius of the dim light to a further 60 feet. When a creature attacks you while you are holding your radiant torch, you can use your reaction to unleash a dazzling burst of light. Your attacker must make a Dexterity saving throw against your ranger spell save DC. If they fail, they are blinded until the end of the current turn, potentially imposing disadvantage on their attack.</p>
+            </description>
+            <sheet actdion="Reaction">
+                <description>You can have the light of your radiant torch count as natural sunlight. You can choose to increase the radius of the bright light to 60 feet and the radius of the dim light to a further 60 feet. When a creature attacks you while you are holding your radiant torch, you can use your reaction to unleash a dazzling burst of light. Your attacker must make a Dexterity saving throw (save DC {{spellcasting:dc}}). If they fail, they are blinded until the end of the current turn, potentially imposing disadvantage on their attack.</description>
+            </sheet>
+        </element>
+        <element name="Extra Attack" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_FLAME_SEEKER_EXTRA_ATTACK">
+            <description>
+                <p>Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+            </description>
+            <sheet>
+                <description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+            </sheet>
+            <rules>
+                <stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
+            </rules>
+        </element>
+</elements>

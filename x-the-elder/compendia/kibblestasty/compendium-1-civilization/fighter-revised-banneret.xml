@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Revised Banneret Fighter Archetype</name>
+        <author url="https://www.gmbinder.com/profile/kibblestasty">KibblesTasty</author>
+        <update version="0.0.2">
+            <file name="fighter-revised-banneret.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/kibblestasty/compendium-1-civilization/fighter-revised-banneret.xml" />
+        </update>
+    </info>
+    
+    <element name="Revised Banneret" type="Archetype" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FIGHTER_REVISED_BANNERET">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Legends tell of Fighters that fight at the front of a legion, of the valor they display and the inspiration it gives their comrades. A Banneret before their army is a dauntless foe, and an army behind their Banneret is an unstoppable legion.</p>
+            <p class="indent">A Banneret is not inherently good or evil. An evil legion can be lead by a charismatic general just as effectively as the forces of good. As they tend to be those that inspire an organized force, more often than not they will be lawful, but what that personal code of laws entails can vary quite widely and is usually related to the code of their companions.</p>
+            <p class="indent">See the "Wise Pointer" variant for an alternate take on the Banneret - a seasoned Fighter that leverages their experience to guide their comrades to more effective heights... and still makes sure to lead by example, unwilling to let down his charges.</p>
+            <div element="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_BONUS_PROFICIENCIES" />
+            <div element="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_RALLY" />
+            <div element="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_STAND_DEFIANT" />
+            <div element="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_INSPIRING_SURGE" />
+            <div element="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_BULWARK" />
+            <div element="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_INVINCIBLE_LEGION" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_BONUS_PROFICIENCIES" level="3" />
+            <grant type="Archetype Feature" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_RALLY" level="3" />
+            <grant type="Archetype Feature" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_STAND_DEFIANT" level="7" />
+            <grant type="Archetype Feature" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_INSPIRING_SURGE" level="10" />
+            <grant type="Archetype Feature" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_BULWARK" level="15" />
+            <grant type="Archetype Feature" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_INVINCIBLE_LEGION" level="18" />
+        </rules>
+    </element>
+    <element name="Bonus Proficiencies" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_BONUS_PROFICIENCIES">
+        <description>
+            <p>At 3rd level, you gain proficiency in one of the following skills of your choice: Performance, Persuasion, or Intimidation.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Proficiency" name="Bonus Proficiency" supports="ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION" />
+        </rules>
+    </element>
+    <element name="Rally" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_RALLY">
+        <description>
+            <p>Starting at 3rd level, when you strike a target with a weapon attack, you can use your bonus action to rally your allies you to bring down the target. The next attack by another allied creature against the target deals additional damage equal to your Charisma modifier</p>
+            <p class="indent">You can use this a number of times equal to your Charisma modifier, regaining all uses on a short or long rest.</p>
+            <h5 class="flavor">VARIANT FEATURE: WISE POINTER</h5>
+            <p class="flavor">Though the Banneret is typically a charismatic inspiration who carries their allies on the back of sheer Charisma and never-say-die attitude, a variant of this character is the seasoned veteran that offers pieces of Wisdom to similar effects.</p>
+            <p class="flavor ident">If taking the Wise Pointer variant, replace the Charisma modifier with your Wisdom Modifier - and do this for all instances of the Charisma modifier as it appears in the class.</p>
+        </description>
+        <sheet action="Bonus Action" usage="{{banneret:modifier}}/Short Rest">
+            <description>When you strike a target with a weapon attack, you can use your bonus action to rally your allies you to bring down the target. The next attack by another allied creature against the target deals {{banneret:modifier}} additional damage.</description>
+        </sheet>
+        <rules>
+            <select type="Archetype Feature" name="Variant Banneret" supports="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_CHARISMA|ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_WISDOM" />
+        </rules>
+    </element>
+        <element name="Charismatic Inspiration" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_CHARISMA">
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="banneret:modifier" value="charisma:modifier" />
+            </rules>
+        </element>
+        <element name="Wise Pointer" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_WISDOM">
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="banneret:modifier" value="wisdom:modifier" />
+            </rules>
+        </element>
+    <element name="Stand Defiant" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_STAND_DEFIANT">
+        <description>
+            <p>Starting at 7th level, when you use your Second Wind feature, you can choose a number of creatures up to your Charisma (or Wisdom) modifier within 30 feet of you. Each one regains 1d10 hit points, provided that the creature can see or hear you.</p>
+            <p class="indent">Additionally, if you are reduced to zero hit points but not killed outright, you can use your reaction to immediately use Second Wind, regaining that many hit points and staying conscious.</p>
+        </description>
+        <sheet>
+            <description>When you use your Second Wind feature, you can choose {{banneret:modifier}} creatures within 30 feet of you. Each one regains 1d10 hit points, provided that the creature can see or hear you. Additionally, if you are reduced to zero hit points but not killed outright, you can use your reaction to immediately use Second Wind, regaining that many hit points and staying conscious.</description>
+        </sheet>
+    </element>
+    <element name="Inspiring Surge" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_INSPIRING_SURGE">
+        <description>
+            <p>Starting at 10th level, when you use Action Surge you can choose a number of other creatures up to your Charisma (or Wisdom) modifier within 30 feet of you to gain Advantage on their next attack roll before the start of your next turn.</p>
+        </description>
+        <sheet>
+            <description>When you use Action Surge you can choose {{banneret:modifier}} other creatures within 30 feet of you to gain Advantage on their next attack roll before the start of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Bulwark" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_BULWARK">
+        <description>
+            <p>Starting at 15th level, when you and any allied creature within 30 feet must make a Saving Throw against the same effect, if you pass your Saving Throw, you can use your reaction to grant your allies Advantage on their Saving Throw against the same effect.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>When you and any allied creature within 30 feet must make a Saving Throw against the same effect, if you pass your Saving Throw, you can use your reaction to grant your allies Advantage on their Saving Throw against the same effect.</description>
+        </sheet>
+    </element>
+    <element name="Invincible Legion" type="Archetype Feature" source="Compendium 1:Civilization" id="ID_KIBBLESTASTY_C1C_ARCHETYPE_FEATURE_REVISED_BANNERET_INVINCIBLE_LEGION">
+        <description>
+            <p>Starting at 18th level, your allies will never fall so long as their symbol of hope remains. When an ally is reduced to zero hit points withing 60 feet of you, they are instead reduced to 1 hit point so long as they can see or hear you.</p>
+            <p class="indent">Once an allied creature benefits from this effect, they cannot benefit from it again until they complete a long rest.</p>
+            <h5 class="flavor">INVINCIBLE LEGION’S DEATH WARD?</h5>
+            <p class="flavor">If a creature would benefit from both this effect and the effect of a death ward, the creature can choose which effect to benefit from (allowing them to benefit from the other the next time they would be reduced to zero).</p>
+        </description>
+        <sheet>
+            <description>When an ally is reduced to zero hit points withing 60 feet of you, they are instead reduced to 1 hit point so long as they can see or hear you. Once an allied creature benefits from this effect, they cannot benefit from it again until they complete a long rest.</description>
+        </sheet>
+    </element>
+</elements>
