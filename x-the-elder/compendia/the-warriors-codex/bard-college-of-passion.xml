@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of Passion</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="bard-college-of-passion.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/the-warriors-codex/bard-college-of-passion.xml" />
+        </update>
+    </info>
+    
+    <element name="College of Passion" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_BARD_COLLEGE_OF_PASSION">
+        <supports>Bard College</supports>
+        <description>
+            <p>Through your weapons and your words, you incite fervor in others. Whether attraction or lust, rapture or enthusiasm, in battle you use a combination of grace, dance, and the subtleties of romantic magic to beguile and bewilder.</p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_UNTARNISHED_BEAUTY" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_LOVESTRUCK" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_EXTRA_ATTACK" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_KILLING_WITH_KINDNESS" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_UNTARNISHED_BEAUTY" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_LOVESTRUCK" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_EXTRA_ATTACK" level="6" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_KILLING_WITH_KINDNESS" level="14" />
+        </rules>
+    </element>
+    <element name="Untarnished Beauty" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_UNTARNISHED_BEAUTY">
+        <description>
+            <p>Starting when you take this archetype at third level your Armor Class equals 10 + your Dexterity Modifier + your Charisma modifier when you are not wearing armor.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="ac:untarnished beauty bard:base" value="10" />
+            <stat name="ac:untarnished beauty bard:dexterity" value="dexterity:modifier" />
+            <stat name="ac:untarnished beauty bard:charisma" value="charisma:modifier" />
+            <stat name="ac:untarnished beauty bard" value="ac:untarnished beauty bard:base" />
+            <stat name="ac:untarnished beauty bard" value="ac:untarnished beauty bard:dexterity" />
+            <stat name="ac:untarnished beauty bard" value="ac:untarnished beauty bard:charisma" />
+            <stat name="ac:calculation" value="ac:untarnished beauty bard" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Untarnished Beauty (Bard)" />
+        </rules>
+    </element>
+    <element name="Lovestruck" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_LOVESTRUCK">
+        <description>
+            <p>When you enter this college at level 3, choose one of the following styles of combat concupiscence. When you reach 14th level, you gain the new feature from the same style that you chose before.</p>
+            <p class="indent"><b>Cupid.</b> You gain proficiency in greatbows, longbows, and recurve bows. When you damage a creature with one of these weapons (or a shortbow) you can use a bonus action to expend a use of your bardic inspiration and force your target to make a Charisma saving throw against your spell save DC. On a failure, they are charmed by one creature of your choice that they can see for 1 minute, or until that creature damages the target. While charmed in this way, they are also paralyzed.</p>
+            <p class="indent"><b>Pole Dancer.</b> You gain proficiency in glaives, guisarmes, halberds, lucernes, pikes, pollaxes, and spears. While you are wielding one of those weapons (or a shortspear or boar spear) and you grant bardic inspiration, the creature receiving it gains temporary hit points equal to twice your Charisma modifier + your bard level.</p>
+            <p class="indent"><b>Seven Veils.</b> You gain proficiency in scimitars. When wielding a scimitar in each hand, you can use an action to force a creature hostile to you to make a Wisdom saving throw against your spell save DC. On a failed save, they are charmed by you. You can then use a bonus action to make one attack with a scimitar, as though you were two-weapon fighting. You have advantage on attacks against creatures charmed by you, though the charm ends after you damage them. You can also use accessories on your person as spellcasting foci, such as ribbons, veils, scarves, and shawls.</p>
+            <p class="indent">Regardless of which feature you chose, you can use the weapons you gained proficiency in as a spellcasting focus, and can use your Charisma modifier instead of Strength or Dexterity on attack rolls (but not damage rolls) made with those weapons.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Archetype Feature" name="Archetype Feature (Lovestruck)" supports="Lovestruck Feature" />
+        </rules>
+    </element>
+        <element name="Cupid" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COTP_LOVESTRUCK_CUPID">
+            <supports>Lovestruck Feature</supports>
+            <description>
+                <p>You gain proficiency in greatbows, longbows, and recurve bows. When you damage a creature with one of these weapons (or a shortbow) you can use a bonus action to expend a use of your bardic inspiration and force your target to make a Charisma saving throw against your spell save DC. On a failure, they are charmed by one creature of your choice that they can see for 1 minute, or until that creature damages the target. While charmed in this way, they are also paralyzed.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>When you damage a creature with a greatbow, longbow, recurve bow or shortbow, you can use a bonus action to expend a use of your bardic inspiration and force your target to make a Charisma (save DC {{spellcasting:dc}}). On a failure, they are charmed by one creature of your choice that they can see for 1 minute, or until that creature damages the target. While charmed in this way, they are also paralyzed.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_GREATBOW" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGBOW" />
+                <grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_RECURVE_BOW" />
+                <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COTP_REINVIGORATION" level="14" />
+            </rules>
+        </element>
+        <element name="Pole Dancer" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COTP_LOVESTRUCK_POLE_DANCER">
+            <supports>Lovestruck Feature</supports>
+            <description>
+                <p>You gain proficiency in glaives, guisarmes, halberds, lucernes, pikes, pollaxes, and spears. While you are wielding one of those weapons (or a shortspear or boar spear) and you grant bardic inspiration, the creature receiving it gains temporary hit points equal to twice your Charisma modifier + your bard level.</p>
+            </description>
+            <sheet>
+                <description>While you are wielding a glaive, guisarme, halberd, lucerne, pike, pollaxe,spear, shortspearv or boar spear and you grant bardic inspiration, the creature receiving it gains {{poledancer:temp-hp}} temporary hit points.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GLAIVE" />
+                <grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_GUISARME" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_HALBERD" />
+                <grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_LUCERNE" />
+                <grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_PIKE" />
+                <grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_POLLAXE" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SPEAR" />
+
+                <stat name="poledancer:temp-hp" value="charisma:modifier" />
+                <stat name="poledancer:temp-hp" value="charisma:modifier" />
+                <stat name="poledancer:temp-hp" value="level:bard" />
+                <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COTP_LOVES_WINGS" level="14" />
+            </rules>
+        </element>
+        <element name="Seven Veils" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COTP_LOVESTRUCK_SEVEN_VEILS">
+            <supports>Lovestruck Feature</supports>
+            <description>
+                <p>You gain proficiency in scimitars. When wielding a scimitar in each hand, you can use an action to force a creature hostile to you to make a Wisdom saving throw against your spell save DC. On a failed save, they are charmed by you. You can then use a bonus action to make one attack with a scimitar, as though you were two-weapon fighting. You have advantage on attacks against creatures charmed by you, though the charm ends after you damage them. You can also use accessories on your person as spellcasting foci, such as ribbons, veils, scarves, and shawls.</p>
+            </description>
+            <sheet action="Action">
+                <description>When wielding a scimitar in each hand, you can force a creature hostile to you to make a Wisdom saving (save DC {{spellcasting:dc}}). On a failed save, they are charmed by you. You can then use a bonus action to make one attack with a scimitar, as though you were two-weapon fighting. You have advantage on attacks against creatures charmed by you, though the charm ends after you damage them. You can also use accessories on your person as spellcasting foci, such as ribbons, veils, scarves, and shawls.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR" />
+                <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COTP_GOSSAMER" level="14" />
+            </rules>
+        </element>
+    <element name="Extra Attack" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_EXTRA_ATTACK">
+        <description>
+            <p>Beginning at 6th level, you can make two weapon attacks instead of one when you take the attack action on your turn, so long as you are wielding one of the weapons detailed in the feature you chose from Lovestruck.</p>
+        </description>
+        <sheet>
+            <description>You can make two weapon attacks instead of one when you take the attack action on your turn, so long as you are wielding one of the weapons detailed in the feature you chose from Lovestruck.</description>
+        </sheet>
+    </element>
+    <element name="Killing With Kindness" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COLLEGE_OF_PASSION_KILLING_WITH_KINDNESS">
+        <description>
+            <p>At 14th level, you gain a new feature based on your choice at level 3. You must be holding a weapon listed in your choice of Lovestruck to use these features.</p>
+            <p class="indent"><b>Pole Dancer: Reinvigoration.</b> You can use your action and expend a spell slot of 3rd level or higher to perform a dance weaved with magic that reinvigorates one friendly creature of your choice. That creature can use its reaction at the end of your turn to take the dodge, attack, cast a spell, or use an object actions.</p>
+            <p class="indent"><b>Cupid: Love’s Wings.</b> You can expend a spell slot of 3rd level or higher to sprout massive feathered wings from your shoulders, granting you a flying speed of 60 feet for 1 minute.</p>
+            <p class="indent"><b>Seven Veils: Gossamer.</b> You can use a spell slot of 3rd level or higher to draw on illusion magic and pull it around your body. You teleport to any point within 60 feet and make two weapon attacks against a creature of your choice. You have advantage on both attack rolls.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+    </element>
+        <element name="Reinvigoration" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COTP_REINVIGORATION">
+            <description>
+                <p>You can use your action and expend a spell slot of 3rd level or higher to perform a dance weaved with magic that reinvigorates one friendly creature of your choice. That creature can use its reaction at the end of your turn to take the dodge, attack, cast a spell, or use an object actions.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can expend a spell slot of 3rd level or higher on one friendly creature of your choice. That creature can use its reaction at the end of your turn to take the Dodge, Attack, Cast a Spell, or Use an Object actions.</description>
+            </sheet>
+        </element>
+        <element name="Love’s Wings" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COTP_LOVES_WINGS">
+            <description>
+                <p>You can expend a spell slot of 3rd level or higher to sprout massive feathered wings from your shoulders, granting you a flying speed of 60 feet for 1 minute.</p>
+            </description>
+            <sheet>
+                <description>You can expend a spell slot of 3rd level or higher to sprout massive feathered wings from your shoulders, granting you a flying speed of 60 feet for 1 minute.</description>
+            </sheet>
+        </element>
+        <element name="Gossamer" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_COTP_GOSSAMER">
+            <description>
+                <p>You can use a spell slot of 3rd level or higher to draw on illusion magic and pull it around your body. You teleport to any point within 60 feet and make two weapon attacks against a creature of your choice. You have advantage on both attack rolls.</p>
+            </description>
+            <sheet>
+                <description>You can use a spell slot of 3rd level or higher to teleport to any point within 60 feet and make two weapon attacks against a creature of your choice. You have advantage on both attack rolls.</description>
+            </sheet>
+        </element>
+</elements>

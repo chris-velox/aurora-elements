@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Path of the Bonebreaker Primal Path</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-the-bonebreaker.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/the-warriors-codex/barbarian-path-of-the-bonebreaker.xml" />
+        </update>
+    </info>
+    
+    <element name="Path of the Bonebreaker" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_BARBARIAN_PATH_OF_THE_BONEBREAKER">
+        <supports>Primal Path</supports>
+        <description>
+            <p>Brawlers, battleragers, gladiators, ravagers, and pugilists, Bonebreakers wield crude-but-powerful weapons older than any other: their own two fists. Seemingly impervious to pain, their bone-shattering blows can dent the finest armor and sunder the hardest scales. To a Bonebreaker, magic and weapon alike can never compete with a strong right hook.</p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_STEELEMBEDDED_FLESH" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_FURIOUS_FISTS" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_MUSCLE_MASS" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_I_AM_UNBREAKABLE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_THORNED_CHARGE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_RIGHT_HOOK" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_STEELEMBEDDED_FLESH" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_FURIOUS_FISTS" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MUSCLE_MASS" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_I_AM_UNBREAKABLE" level="6" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_THORNED_CHARGE" level="10" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_RIGHT_HOOK" level="14" />
+        </rules>
+    </element>
+    
+    <element name="Steel-Embedded Flesh" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_STEELEMBEDDED_FLESH">
+        <description>
+            <p>You are proficient in spiked armor. Spiked armor is light armor that weighs 20 lbs. While you wear it, your AC is 13 + your Dexterity modifier. It is primarily made from plates of boiled leather with sharp metal embedded in the surface. When worn by a bonebreaker, it deals 1d4 piercing damage to any creature that the wearer grapples, or grapples the wearer, at the start of each of the grappler’s turns. When worn by any other character, it is considered leather armor.</p>
+            <p class="indent">You also gain proficiency in Leatherworker’s Tools, and can use them to reassemble any leather or hide armor into a set of spiked armor and two cestuses during a short rest.</p>
+        </description>
+        <sheet>
+            <description>When wearing spiked armor, it deals 1d4 piercing damage to any creature that the wearer grapples, or grapples the wearer, at the start of each of the grappler’s turns. You can use Leatherwork’s Tools to reassemble any leather or hide armor into a set of spiked armor and two cestuses during a short rest.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS" />
+            <grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_ARMOR_PROFICIENCY_SPIKEDARMOR" />
+            <stat name="ac:spiked armor bonebreaker:base" value="13" />
+            <stat name="ac:spiked armor bonebreaker:misc" value="bonebreaker-ac:bonus" />
+            <stat name="ac:spiked armor bonebreaker" value="ac:spiked armor bonebreaker:base" />
+            <stat name="ac:spiked armor bonebreaker" value="ac:spiked armor bonebreaker:misc" />
+            <stat name="ac:calculation" value="ac:spiked armor bonebreaker" bonus="calculation" equipped="[armor:ID_FUBR_TWC_ARMOR_SPIKED_ARMOR],[shield:none]" alt="Spiked Armor (Bonebreaker)" />
+        </rules>
+    </element>
+    <element name="Furious Fists" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_FURIOUS_FISTS">
+        <description>
+            <p>Your unarmed strikes hit harder than any others, striking vital areas and crushing armor. At 3rd level you gain proficiency in unarmed strikes and improvised weapons. Your unarmed strikes deal 1d6 bludgeoning damage, and your attacks with a cestus (detailed in part 2) deal 1d8 bludgeoning damage. When you make a weapon attack while holding no weapons or wielding a cestus in both hands, you can make an additional melee weapon attack when you take the attack action.</p>
+        </description>
+        <sheet>
+            <description>Your unarmed strikes deal 1d6 bludgeoning damage, and your attacks with a cestus deal 1d8 bludgeoning damage. When you make a weapon attack while holding no weapons or wielding a cestus in both hands, you can make an additional melee weapon attack when you take the attack action.</description>
+        </sheet>
+        <rules>
+            <stat name="unarmed strikes:attack" value="strength:modifier" bonus="unarmed strikes" />
+
+            <stat name="unarmed strikes:damage" value="strength:modifier" bonus="unarmed strikes" />
+
+            <stat name="unarmed strikes:dice" value="6" bonus="unarmed strikes" />
+            <stat name="unarmed strikes:dice" value="8" bonus="unarmed strikes" requirements="[weapon:ID_FUBR_TWC_WEAPON_CESTUS]" />
+            <grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_CESTUS" />
+        </rules>
+    </element>
+    <element name="Muscle Mass" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MUSCLE_MASS">
+        <description>
+            <p>Starting at 3rd level, your raw size provides an additional layer of physical defense. Whenever you would use your Dexterity modifier to calculate your AC, you can use your Strength modifier instead.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="bonebreaker-ac:bonus" value="dexterity:modifier" bonus="base" />
+            <stat name="bonebreaker-ac:bonus" value="strength:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="I am Unbreakable!" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_I_AM_UNBREAKABLE">
+        <description>
+            <p>Starting at 6th level, your stamina in a brawl matches even the most hardened soldier. You have advantage on saving throws against being stunned or being put to sleep.</p>
+            <p class="indent">You can also use a bonus action to expend a hit die and recover the resulting HP. When you do so, you can end one condition affecting you, such as frightened or charmed. You cannot use this bonus action while incapacitated.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You have advantage on saving throws against being stunned or being put to sleep. You can also use a bonus action to expend a hit die and recover the resulting HP. When you do so, you can end one condition affecting you, such as frightened or charmed. You cannot use this bonus action while incapacitated.</description>
+        </sheet>
+    </element>
+    <element name="Thorned Charge" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_THORNED_CHARGE">
+        <description>
+            <p>At 10th level, when you take the dash action and move at least 30 feet in a straight line, you deal 2d4 piercing damage against all creatures in your path, and they must succeed on a Strength saving throw or be knocked prone (save DC 8 + your proficiency bonus + your Strength modifier). At the end of the charge you can make one weapon attack as a bonus action. You can charge once per rage.</p>
+        </description>
+        <sheet usage="1/Rage">
+            <description>When you take the dash action and move at least 30 feet in a straight line, you deal 2d4 piercing damage against all creatures in your path, and they must succeed on a Strength saving throw or be knocked prone (save DC {{thorned-charge:dc}}). At the end of the charge you can make one weapon attack as a bonus action.</description>
+        </sheet>
+        <rules>
+            <stat name="thorned-charge:dc" value="8" />
+            <stat name="thorned-charge:dc" value="proficiency" />
+            <stat name="thorned-charge:dc" value="strength:modifier" />
+        </rules>
+    </element>
+    <element name="Right Hook" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_RIGHT_HOOK">
+        <description>
+            <p>Beginning at 14th level, the first time you damage a creature with an unarmed strike, improvised weapon, or cestus on your turn when you had advantage on the attack roll, you can treat the number rolled on the damage die as the highest possible number instead of the amount you rolled.</p>
+        </description>
+        <sheet>
+            <description>The first time you damage a creature with an unarmed strike, improvised weapon, or cestus on your turn when you had advantage on the attack roll, you can treat the number rolled on the damage die as the highest possible number instead of the amount you rolled.</description>
+        </sheet>
+    </element>
+</elements>

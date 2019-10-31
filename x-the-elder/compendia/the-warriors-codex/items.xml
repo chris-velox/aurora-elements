@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Warrior’s Codex Items</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="items.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/the-warriors-codex/items.xml" />
+        </update>
+    </info>
+
+<!-- Armor Options -->    
+	<element name="Spiked Armor" type="Armor" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARMOR_SPIKED_ARMOR">
+		<supports>ID_INTERNAL_ARMOR_GROUP_LIGHT</supports>
+		<description>
+			<p>Spiked armor is primarily made from plates of boiled leather with sharp metal embedded in the surface. On the right person, the armor deals additional damage to grappled targets.</p>
+		</description>
+		<setters>
+			<set name="cost" currency="gp">20</set>
+			<set name="weight" lb="1">20 lb.</set>
+			<set name="slot">body</set>
+			<set name="armor">Light</set>
+			<set name="armorClass">11 + Dex modifier</set>
+			<set name="proficiency">ID_FUBR_TWC_PROFICIENCY_ARMOR_PROFICIENCY_SPIKEDARMOR</set>
+		</setters>
+		<rules>
+			<stat name="ac:armored:armor" value="11" />
+		</rules>
+	</element>
+	<element name="Armor Proficiency (Spiked Armor)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_ARMOR_PROFICIENCY_SPIKEDARMOR">
+		<supports>Light Armor, ID_INTERNAL_ARMOR_GROUP_LIGHT, Spiked Armor</supports>
+	</element>
+	<!-- append the grant rule to the light armor proficiency element  -->
+	<append id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR">
+		<rules>
+			<grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_ARMOR_PROFICIENCY_SPIKEDARMOR" />
+		</rules>
+	</append>
+
+
+  <!-- Weapons -->
+	<element name="Boar Spear" type="Weapon" source="The Warrior’s Codex" id="ID_The Warrior’s Codex_Weapon_Boar Spear">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_VERSATILE, ID_FUBR_TWC_WEAPON_PROPERTY_WINGED</supports>
+		<description>
+			<p></p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">5</set>
+			<set name="weight" lb="5">5 lbs.</set>
+			<set name="slot">onehand</set>
+			<set name="damage" type="piercing">1d6</set>
+			<set name="versatile">1d8</set>
+			<set name="proficiency">ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_BOAR_SPEAR</set>
+		</setters>
+	</element>
+	<element name="Cestus" type="Weapon" source="The Warrior’s Codex" id="ID_FUBR_TWC_WEAPON_CESTUS">
+		<supports>Weapon, Exotic, Melee, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_FUBR_TWC_WEAPON_PROPERTY_STATUS, ID_FUBR_TWC_WEAPON_PROPERTY_EXOTIC_MELEE, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL</supports>
+		<description>
+			<p>The cestus is not held in the hand, but instead wrapped around the wrist, held in the fingers, or covering the knuckles. Wielding this weapon does not prevent you from grappling or shoving an enemy, using an item, or climbing, but you cannot wield other weapons or perform somatic components with that hand.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">1</set>
+			<set name="weight" lb=".5">1/2 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="damage" type="bludgeoning">1d4</set>
+			<set name="proficiency">ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_CESTUS</set>
+		</setters>
+	</element>
+	<element name="Goedendag" type="Weapon" source="The Warrior’s Codex" id="ID_FUBR_TWC_WEAPON_GOEDENDAG">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_FUBR_TWC_WEAPON_PROPERTY_FINISHER, ID_FURBR_TWC_WEAPON_PROPERTY_SUNDERING, ID_INTERNAL_WEAPON_GROUP_CLUBS, ID_INTERNAL_WEAPON_GROUP_SPEARS</supports>
+		<description>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="sp">5</set>
+			<set name="weight" lb="3">3 lbs.</set>
+			<set name="slot">onehand</set>
+			<set name="damage" type="bludgeoning">1d4</set>
+			<set name="damage" type="piercing">1d4</set>
+			<set name="proficiency">ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_GOEDENDAG</set>
+		</setters>
+	</element>
+	<element name="Greatbow" type="Weapon" source="The Warrior’s Codex" id="ID_FUBR_TWC_WEAPON_GREATBOW">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_BOWS, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL</supports>
+		<description>
+			<p>An enormous bow with an equally enormous draw weight, users of this bow must be a medium or larger creature with at least 18 Strength. It uses Strength instead of Dexterity for attack and damage.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">200</set>
+			<set name="weight" lb="25">25 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="damage" type="piercing">2d6</set>
+			<set name="proficiency">ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_GREATBOW</set>
+			<set name="range">200/600</set>
+		</setters>
+	</element>
+    <element name="Guisarme" type="Weapon" source="The Warrior’s Codex" id="ID_FUBR_TWC_WEAPON_GUISARME">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_FUBR_TWC_WEAPON_PROPERTY_ENSNARING</supports>
+		<description>
+			<p></p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">5</set>
+			<set name="weight" lb="8">8 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="damage" type="piercing">1d10</set>
+			<set name="proficiency">ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_GUISARME</set>
+		</setters>
+	</element>
+    <element name="Lucerne" type="Weapon" source="The Warrior’s Codex" id="ID_FUBR_TWC_WEAPON_LUCERNE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, </supports>
+		<description>
+			<p></p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">20</set>
+			<set name="weight" lb="7">7 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="damage" type="bludgeoning">1d10</set>
+			<set name="proficiency">ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_LUCERNE</set>
+		</setters>
+	</element>
+    <element name="Pike" type="Weapon" source="The Warrior’s Codex" id="ID_FUBR_TWC_WEAPON_PIKE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<description>
+			<p></p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">5</set>
+			<set name="weight" lb="8">8 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="damage" type="piercing">1d10</set>
+			<set name="proficiency">ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_PIKE</set>
+		</setters>
+	</element>
+    <element name="Pollaxe" type="Weapon" source="The Warrior’s Codex" id="ID_FUBR_TWC_WEAPON_POLLAXE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<description>
+			<p></p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">50</set>
+			<set name="weight" lb="3">3 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="damage" type="piercing">1d8</set>
+			<set name="proficiency">ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_POLLAXE</set>
+		</setters>
+	</element>
+	<element name="Recurve Bow" type="Weapon" source="The Warrior’s Codex" id="ID_FUBR_TWC_WEAPON_RECURVE_BOW">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_BOWS, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL</supports>
+		<description>
+			<p></p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">200</set>
+			<set name="weight" lb="25">25 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="damage" type="piercing">2d6</set>
+			<set name="proficiency">ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_RECURVE_BOW</set>
+			<set name="range">200/600</set>
+		</setters>
+	</element>
+
+  <!-- Proficiencies -->
+	<element name="Weapon Proficiency (Boar Spear)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_BOAR_SPEAR">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_VERSATILE</supports>
+		<sheet alt="Boar Spear" />
+	</element>
+	<element name="Weapon Proficiency (Cestus)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_CESTUS">
+		<supports>Weapon, Exotic, Melee, ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_EXOTIC, ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_EXOTIC_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING</supports>
+		<sheet alt="Cestus" />
+	</element>
+	<element name="Weapon Proficiency (Goedendag)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_GOEDENDAG">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_FUBR_TWC_WEAPON_PROPERTY_FINISHER, ID_FURBR_TWC_WEAPON_PROPERTY_SUNDERING</supports>
+	</element>
+	<element name="Weapon Proficiency (Greatbow)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_GREATBOW">
+		<supports>Weapon, Range, Martial, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<sheet alt="Greatbow" />
+	</element>
+	<element name="Weapon Proficiency (Guisarme)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_GUISARME">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<sheet alt="Guisarme" />
+	</element>
+	<element name="Weapon Proficiency (Lucerne)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_LUCERNE">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<sheet alt="Lucerne" />
+	</element>
+	<element name="Weapon Proficiency (Pike)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_PIKE">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<sheet alt="Pike" />
+	</element>
+	<element name="Weapon Proficiency (Pollaxe)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_POLLAXE">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING,ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<sheet alt="Pollaxe" />
+	</element>
+	<element name="Weapon Proficiency (Recurve Bow)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_RECURVE_BOW">
+		<supports>Weapon, Range, Martial, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<sheet alt="Greatbow" />
+	</element>
+
+	<element name="Weapon Proficiency (Exotic)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_EXOTIC">
+		<sheet alt="Exotic" />
+		<rules>
+			<grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_CESTUS" />
+		</rules>
+	</element>
+	<element name="Weapon Proficiency (Exotic Melee)" type="Proficiency" source="The Warrior’s Codex" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_EXOTIC_MELEE">
+		<sheet alt="Exotic" />
+		<rules>
+			<grant type="Proficiency" id="ID_FUBR_TWC_PROFICIENCY_WEAPON_PROFICIENCY_CESTUS" />
+		</rules>
+	</element>
+
+  <!-- Append rules -->
+	<append id="ID_WOTC_PHB_WEAPON_CLUB">
+		<supports>ID_FUBR_TWC_WEAPON_PROPERTY_NONLETHAL</supports>
+	</append>
+	<append id="ID_WOTC_PHB_WEAPON_DAGGER">
+		<supports>ID_FUBR_TWC_WEAPON_PROPERTY_FINISHER, ID_FUBR_TWC_WEAPON_PROPERTY_PRONE_FIGHTING</supports>
+	</append>
+	<append id="ID_WOTC_PHB_WEAPON_WHIP">
+		<supports>ID_FUBR_TWC_WEAPON_PROPERTY_ENSNARING</supports>
+	</append>
+</elements>

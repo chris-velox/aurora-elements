@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Warlord Martial Archetype</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="fighter-warlord.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/the-warriors-codex/fighter-warlord.xml" />
+        </update>
+    </info>
+    
+    <element name="Warlord" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FIGHTER_WARLORD">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Warlords are accomplished and competent battle leaders. They stand on the front line issuing commands and bolstering their allies while leading the battle with weapon in hand. Warlords know how to rally a team to win a fight.</p>
+            <p class="indent"></p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTICAL_MANEUVER" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTICAL_COMMAND" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_COMMANDERS_SIGHT" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_LEAD_FROM_THE_FRONT" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_INSPIRING_SURGE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_THIRST_FOR_BATTLE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_PERFECT_COORDINATION" />
+            <h4>TACTICS</h4>
+            <p>The tactics are presented in alphabetical order. Unless stated otherwise, any movement referenced by a tactic is the movement granted by your Tactical Maneuver feature.</p>
+            <p class="indent"><b><i>Advance/Retreat.</i></b> The targeted ally can move up to its speed, rather than only half its speed.</p>
+            <p class="indent"><b><i>Charge.</i></b> The targeted ally can attempt to shove one creature of your choice. This shove can be attempted at any point before, during, or after the move.</p>
+            <p class="indent"><b><i>Cover That Flank.</i></b> Attacks against the targeted ally have disadvantage until the start of your next turn.</p>
+            <p class="indent"><b><i>Cut Them Down.</i></b> The targeted ally has advantage on the next attack it makes against a creature of your choice that you can see before the start of your next turn.</p>
+            <p class="indent"><b><i>Defend Yourself.</i></b> The targeted ally gains temporary hit points equal to your fighter level + your Intelligence modifier (minimum of 1) for 1 minute.</p>
+            <p class="indent"><b><i>Press Onwards.</i></b> If the targeted ally is charmed or frightened, those conditions end on the creature.</p>
+            <p class="indent"><b><i>Subdue Them.</i></b> The targeted ally can attempt to grapple one creature of your choice. This grapple can be attempted at any point before, during, or after the move.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTICAL_MANEUVER" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTICAL_COMMAND" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_COMMANDERS_SIGHT" level="7" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_LEAD_FROM_THE_FRONT" level="7" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_INSPIRING_SURGE" level="10" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_THIRST_FOR_BATTLE" level="15" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_PERFECT_COORDINATION" level="18" />
+        </rules>
+    </element>
+    <element name="Tactical Maneuver" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTICAL_MANEUVER">
+        <description>
+            <p>At 3rd level, your tactical acumen allows you to provide direction to your allies that can tilt a battle in your favor. As a bonus action, you can choose one ally within 60 feet of you who can hear or see you. That ally can use its reaction to move up to half its speed.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can choose one ally within 60 feet of you who can hear or see you. That ally can use its reaction to move up to half its speed.</description>
+            <description level="7">You can choose one ally within 120 feet of you who can hear or see you. That ally can use its reaction to move up to half its speed.</description>
+        </sheet>
+    </element>
+    <element name="Tactical Command" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTICAL_COMMAND">
+        <description>
+            <p>Starting at 3rd level, your tactical cunning allows you to seize the moment in battle.</p>
+            <p class="indent"><b><i>Tactics.</i></b> You learn two tactics of your choice, which are listed under "Tactics" below. You gain an additional tactic at 7th and 15th level.</p>
+            <p class="indent"><b><i>Uses.</i></b> When you use your Tactical Maneuver feature, you can choose to apply one of your known tactics to the maneuver, granting the targeted ally an additional bonus. When you do so, the movement granted to the targeted ally does not provoke opportunity attacks.</p>
+            <p class="indent">You have two uses of this ability, and you regain all expended uses of it when you finish a short or long rest. You gain another use at 7th level and one more at 15th level.</p>
+        </description>
+        <sheet usage="{{tactical-command:uses}}/Short Rest">
+            <description>When you use your Tactical Maneuver feature, you can choose to apply one of your known tactics to the maneuver, granting the targeted ally an additional bonus. When you do so, the movement granted to the targeted ally does not provoke opportunity attacks.</description>
+        </sheet>
+        <rules>
+            <select type="Archetype Feature" name="Tactic (Tactical Command)" supports="Warlord Tactic" number="2" level="3" />
+            <select type="Archetype Feature" name="Tactic (Tactical Command)" supports="Warlord Tactic" number="1" level="7" />
+            <select type="Archetype Feature" name="Tactic (Tactical Command)" supports="Warlord Tactic" number="1" level="15" />
+            <stat name="tactical-command:uses" value="2" level="3" />
+            <stat name="tactical-command:uses" value="1" level="7" />
+            <stat name="tactical-command:uses" value="1" level="15" />
+        </rules>
+    </element>
+    <element name="Commander’s Sight" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_COMMANDERS_SIGHT">
+        <description>
+            <p>At 7th level, you learn to view your surroundings in a way that grants you a better understanding of the battle as a whole. The range of your Tactical Maneuver increases to 120 feet.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Lead from the Front" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_LEAD_FROM_THE_FRONT">
+        <description>
+            <p>Starting at 7th level, your battle experience has taught you how to act swiftly in dangerous situations. You can give yourself a bonus to your initiative rolls equal to your Intelligence modifier.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="initiative:misc" value="intelligence:modifier" />
+        </rules>
+    </element>
+    <element name="Inspiring Surge" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_INSPIRING_SURGE">
+        <description>
+            <p>Starting at 10th level, when you use your Action Surge feature, you can choose one ally within 120 feet of you who can hear or see you. That creature can make one weapon attack with its reaction, provided that it can see or hear you.</p>
+            <p class="indent">Starting at 18th level, you can choose two allies within 120 feet of you, rather than one.</p>
+        </description>
+        <sheet usage="Action Surge">
+            <description>When you use your Action Surge feature, you can choose one ally within 120 feet of you who can hear or see you. That creature can make one weapon attack with its reaction, provided that it can see or hear you.</description>
+            <description level="18">When you use your Action Surge feature, you can choose two allies within 120 feet of you who can hear or see you. Those creatures can make one weapon attack with its reaction, provided that it can see or hear you.</description>
+        </sheet>
+    </element>
+    <element name="Thirst for Battle" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_THIRST_FOR_BATTLE">
+        <description>
+            <p>Starting at 15th level, when you roll initiative and have no uses of Tactical Command left, you regain one use.</p>
+        </description>
+        <sheet>
+            <description>When you roll initiative and have no uses of Tactical Command left, you regain one use.</description>
+        </sheet>
+    </element>
+    <element name="Perfect Coordination" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_PERFECT_COORDINATION">
+        <description>
+            <p>Starting at 18th level, you gain the ability to unleash a devastating combination of your allies’ abilities. As an action, select up to five allies within 120 feet of you who can see or hear you. Each ally can use its reaction to immediately move up to its speed without provoking opportunity attacks, and to take the Attack (one weapon attack, shove, or grapple only), Cast a Spell (one cantrip only), Dodge, Hide, Search, or Use an Object action.</p>
+            <p class="indent">Once you use this ability, you cannot use it again until you complete a long rest.</p>
+        </description>
+        <sheet action="Action" usage="1/Long Rest">
+            <description>Select up to five allies within 120 feet of you who can see or hear you. Each ally can use its reaction to immediately move up to its speed without provoking opportunity attacks, and to take the Attack (one weapon attack, shove, or grapple only), Cast a Spell (one cantrip only), Dodge, Hide, Search, or Use an Object action.</description>
+        </sheet>
+    </element>
+
+    <!-- Tactics -->
+    <element name="Advance/Retreat" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTIC_ADVANCE_RETREAT">
+        <supports>Warlord Tactic</supports>
+        <description>
+            <p>The targeted ally can move up to its speed, rather than only half its speed.</p>
+        </description>
+        <sheet usage="Tactical Command">
+            <description>The targeted ally can move up to its speed, rather than only half its speed.</description>
+        </sheet>
+    </element>
+    <element name="Charge." type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTIC_CHARGE">
+        <supports>Warlord Tactic</supports>
+        <description>
+            <p>The targeted ally can attempt to shove one creature of your choice. This shove can be attempted at any point before, during, or after the move.</p>
+        </description>
+        <sheet usage="Tactical Command">
+            <description>The targeted ally can attempt to shove one creature of your choice. This shove can be attempted at any point before, during, or after the move.</description>
+        </sheet>
+    </element>
+    <element name="Cover That Flank." type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTIC_COVER_THAT_FLANK">
+        <supports>Warlord Tactic</supports>
+        <description>
+            <p>Attacks against the targeted ally have disadvantage until the start of your next turn.</p>
+        </description>
+        <sheet usage="Tactical Command">
+            <description>Attacks against the targeted ally have disadvantage until the start of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Cut Them Down." type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTIC_CUT_THEM_DOWN">
+        <supports>Warlord Tactic</supports>
+        <description>
+            <p>The targeted ally has advantage on the next attack it makes against a creature of your choice that you can see before the start of your next turn.</p>
+        </description>
+        <sheet usage="Tactical Command">
+            <description>The targeted ally has advantage on the next attack it makes against a creature of your choice that you can see before the start of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Defend Yourself." type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTIC_DEFEND_YOURSELF">
+        <supports>Warlord Tactic</supports>
+        <description>
+            <p>The targeted ally gains temporary hit points equal to your fighter level + your Intelligence modifier (minimum of 1) for 1 minute.</p>
+        </description>
+        <sheet usage="Tactical Command">
+            <description>The targeted ally gains temporary hit points equal to your fighter level + your Intelligence modifier (minimum of 1) for 1 minute.</description>
+        </sheet>
+    </element>
+    <element name="Press Onwards." type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTIC_PRESS_ONWARDS">
+        <supports>Warlord Tactic</supports>
+        <description>
+            <p>If the targeted ally is charmed or frightened, those conditions end on the creature.</p>
+        </description>
+        <sheet usage="Tactical Command">
+            <description>If the targeted ally is charmed or frightened, those conditions end on the creature.</description>
+        </sheet>
+    </element>
+    <element name="Subdue Them." type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_WARLORD_TACTIC_SUBDUE_THEM">
+        <supports>Warlord Tactic</supports>
+        <description>
+            <p>The targeted ally can attempt to grapple one creature of your choice. This grapple can be attempted at any point before, during, or after the move.</p>
+        </description>
+        <sheet usage="Tactical Command">
+            <description>The targeted ally can attempt to grapple one creature of your choice. This grapple can be attempted at any point before, during, or after the move.</description>
+        </sheet>
+    </element>
+</elements>

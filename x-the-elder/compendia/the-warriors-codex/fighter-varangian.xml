@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Varangian Martial Archetype</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="fighter-varangian.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/the-warriors-codex/fighter-varangian.xml" />
+        </update>
+    </info>
+    
+    <element name="Varangian" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FIGHTER_VARANGIAN">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Warriors from the far reaches of the north who sailed and settled across the known world, who seek wealth through by any means possible. By plunder, mercantilism, ransom, or mercenary, these vagabonds accumulate the wealth of the world and use it to tie themselves to friends and allies through oath, wealth, and blood.</p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_SHOOT_TO_WOUND" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_MERCANTILE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_SHOTCALLER" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_BLOOD_BROTHERS" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_GLINT_OF_GOLD" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_SHOOT_TO_WOUND" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_MERCANTILE" level="7" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_SHOTCALLER" level="10" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_BLOOD_BROTHERS" level="15" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_GLINT_OF_GOLD" level="18" />
+        </rules>
+    </element>
+    <element name="Shoot to Wound" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_SHOOT_TO_WOUND">
+        <description>
+            <p>You are used to taking your foes alive. A dead enemy cannot be ransomed, and putting an enemy down quickly does less damage to any valuables they might be carrying. After taking this archetype at 3rd level, you can wound enemies instead of killing them. Once per turn when you hit a creature with a weapon attack, you can inflict one of the following wounds.</p>
+            <h5>WOUNDS</h5>
+            <ul>
+                <li><b>Arm.</b> The first weapon attack roll the target makes each turn is made with disadvantage.</li>
+                <li><b>Eye.</b> The target is blinded until the end of its next turn.</li>
+                <li><b>Ear.</b> The target is deafened.</li>
+                <li><b>Gut</b> The target cannot take reactions.</li>
+                <li><b>Leg.</b> The target's movement speed is reduced by 10 feet.</li>
+                <li><b>Throat.</b> The target cannot speak.</li>
+            </ul>
+            <p class="indent">The effects of wounds last for one hour. The target's anatomy need not perfectly match those described in the feature for wounds to take effect. You can use this feature a number of times equal to your Strength modifier (minimum of 1). You regain all expended uses after completing a short or long rest.</p>
+        </description>
+        <sheet usage="{{shoot-to-wound:uses}}/Short Rest">
+            <description>You can wound enemies instead of killing them. Once per turn when you hit a creature with a weapon attack, you can inflict one of several wounds listed in the full description. The effects of wounds last for one hour.</description>
+        </sheet>
+        <rules>
+            <stat name="shoot-to-wound:uses" value="1" bonus="base" />
+            <stat name="shoot-to-wound:uses" value="strength:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Mercantile" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_MERCANTILE">
+        <description>
+            <p>You are accustomed to wandering far to sell your war loot. At 7th level, you gain proficiency in navigator's tools, and either land or water vehicles. You add your fighter level to the number of miles you and up to 10 other creatures with you can travel in a day.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+            <select type="Proficiency" name="Vehicle Proficiency (Mercantile)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND|ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+        </rules>
+    </element>
+    <element name="Shotcaller" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_SHOTCALLER">
+        <description>
+            <p>When you reach 10th level, you can sacrifice one of your attacks on your turn to indicate an opening to an allied creature that can see or hear you within 30 feet of you. That creature can use its reaction to make one weapon attack. If the attack hits they can inflict one effect from Shoot to Wound of their choice on that target, which lasts until the end of your next turn.</p>
+        </description>
+        <sheet>
+            <description>You can sacrifice one of your attacks on your turn to indicate an opening to an allied creature that can see or hear you within 30 feet of you. That creature can use its reaction to make one weapon attack. If the attack hits they can inflict one effect from Shoot to Wound of their choice on that target, which lasts until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Blood Brothers" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_BLOOD_BROTHERS">
+        <description>
+            <p>Starting at 15th level, whenever an allied creature within 10 feet of you fails a saving throw, you can expend one use of Indomitable and allow them to reroll it.</p>
+        </description>
+        <sheet>
+            <description>Whenever an allied creature within 10 feet of you fails a saving throw, you can expend one use of Indomitable and allow them to reroll it.</description>
+        </sheet>
+    </element>
+    <element name="Glint of Gold" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_VARANGIAN_GLINT_OF_GOLD">
+        <description>
+            <p>You understand riches, and the people who carry them. Moreover, you know that those are the most lucrative targets. Starting at 18th level, you know the exact monetary value of any object you see, magical or nonmagical, and have advantage on the first attack roll you make each turn against creatures with a net worth of at least 2,000 gp. This wealth includes hoards, magical items, clothing, weapons, lands, or treasure, as well as liquid currency.</p>
+        </description>
+        <sheet>
+            <description>You know the exact monetary value of any object you see, magical or nonmagical, and have advantage on the first attack roll you make each turn against creatures with a net worth of at least 2,000 gp. This wealth includes hoards, magical items, clothing, weapons, lands, or treasure, as well as liquid currency.</description>
+        </sheet>
+    </element>
+</elements>

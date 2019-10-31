@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Exemplar Martial Archetype</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="fighter-exemplar.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/the-warriors-codex/fighter-exemplar.xml" />
+        </update>
+    </info>
+    
+    <element name="Exemplar" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FIGHTER_EXEMPLAR">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Simple, mighty warriors who combine raw power with rigorous training. Regardless of the weapons they wield, an Exemplar displays martial prowess honed to deadly perfection. They might be even more effective than other warriors using the tried-and-true, or experiment with a variety of bizarre weapons and exotic fighting styles. A champion makes any warrior archetype possible.</p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_STRIKE_TRUE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_REMARKABLE_ATHLETE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_EMPOWERED_FIGHTING_STYLES" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_FINAL_STAND" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_SURVIVOR" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_STRIKE_TRUE" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_REMARKABLE_ATHLETE" level="7" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_EMPOWERED_FIGHTING_STYLES" level="10" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_FINAL_STAND" level="15" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_SURVIVOR" level="18" />
+        </rules>
+    </element>
+    <element name="Strike True" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_STRIKE_TRUE">
+        <description>
+            <p>You are the master of every weapon and every fighting form. When you take this archetype at 3rd level, you gain proficiency in exotic weapons. Any weapon you wield has a damage die of 1d8 while you use it, unless it already uses a larger die. Furthermore, your weapon attacks score a critical hit on a roll of 19 or 20. This expands to include a roll of 18 at level 15.</p>
+        </description>
+        <sheet>
+            <description>Any weapon you wield has a damage die of 1d8 while you use it, unless it already uses a larger die. Furthermore, your weapon attacks score a critical hit on a roll of 19 or 20.</description>
+            <description level="15">Any weapon you wield has a damage die of 1d8 while you use it, unless it already uses a larger die. Furthermore, your weapon attacks score a critical hit on a roll of 18, 19 or 20.</description>
+        </sheet>
+        <rules>
+
+        </rules>
+    </element>
+    <element name="Remarkable Athlete" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_REMARKABLE_ATHLETE">
+        <description>
+            <p>Starting at 7th level you may add your proficiency bonus to all Strength and Constitution checks that you are not already proficient in, and to the length of your long jumps and height of your high jumps. Your movement speed also increases by 5 feet.</p>
+        </description>
+        <sheet>
+            <description>You may add your proficiency bonus to all Strength and Constitution checks that you are not already proficient in, and to the length of your long jumps and height of your high jumps.</description>
+        </sheet>
+        <rules>
+            <stat name="speed:misc" value="5" />
+        </rules>
+    </element>
+    <element name="Empowered Fighting Styles" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_EMPOWERED_FIGHTING_STYLES">
+        <description>
+            <p>At 10th level, your chosen fighting style provides further benefits.</p>
+            <p><b>Archery.</b> The short range of your attacks with ranged weapons increases by 20 feet. This bonus cannot exceed the weapon’s long range.</p>
+            <p><b>Brawling.</b> You become proficient in improvised weapons, and your unarmed strikes deal 1d6 bludgeoning damage.</p>
+            <p><b>Defense.</b> You gain an additional +1 to AC while wearing armor, and you can don and doff armor in half the time it normally takes.</p>
+            <p><b>Dueling.</b> When you hit a creature with a weapon attack, you can use your bonus action to attempt to disarm the target.</p>
+            <p><b>Flexibility.</b> You can add your Dexterity modifier (maximum of +1 while one-handed, maximum of +2 while two-handed) to your damage rolls with versatile weapons if you are wielding a versatile weapon and not wielding a shield.</p>
+            <p><b>Great Weapon Fighting.</b> If your size is small, you ignore disadvantage inflicted by using heavy weapons. If your size is medium, you can reroll 3s on damage dice in addition to 1s and 2s when attacking with a versatile or two-handed weapon.</p>
+            <p><b>Protection.</b> You may use your reaction to impose disadvantage on an attack roll against yourself as well as others. If you impose disadvantage on an attack and it misses, you can make one weapon attack against the creature who made it as part of the same reaction.</p>
+            <p><b>Two-weapon fighting.</b> When you make the additional attack granted by two-weapon fighting, you can choose to deal half the damage you ordinarily would and attempt to shove the target prone.</p>
+        </description>
+        <sheet>
+            <description>{{empowered-style:description}}</description>
+        </sheet>
+        <rules>
+            <stat name="empowered-style:description" inline="true" requirements="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_ARCHERY" value="The short range of your attacks with ranged weapons increases by 20 feet. This bonus cannot exceed the weapon’s long range." />
+            <stat name="empowered-style:description" inline="true" requirements="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_BRAWLING" value="You are proficient in improvised weapons and your unarmed strikes deal 1d6 bludgeoning damage." />
+            <stat name="empowered-style:description" inline="true" requirements="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DEFENSE" value="You gain an additional +1 to AC while wearing armor, and you can don and doff armor in half the time it normally takes." />
+            <stat name="empowered-style:description" inline="true" requirements="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DUELING" value="When you hit a creature with a weapon attack, you can use your bonus action to attempt to disarm the target." />
+            <stat name="empowered-style:description" inline="true" requirements="ID_FUBR_TWC_CLASS_FEATURE_FIGHTINGSTYLE_FLEXIBILITY" value="You can add your Dexterity modifier (maximum of +1 while one-handed, maximum of +2 while two-handed) to your damage rolls with versatile weapons if you are wielding a versatile weapon and not wielding a shield." />
+            <stat name="empowered-style:description" inline="true" requirements="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_GREAT_WEAPON_FIGHTING" value="If your size is small, you ignore disadvantage inflicted by using heavy weapons. If your size is medium, you can reroll 3s on damage dice in addition to 1s and 2s when attacking with a versatile or two-handed weapon." />
+            <stat name="empowered-style:description" inline="true" requirements="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_PROTECTION" value="You may use your reaction to impose disadvantage on an attack roll against yourself as well as others. If you impose disadvantage on an attack and it misses, you can make one weapon attack against the creature who made it as part of the same reaction." />
+            <stat name="empowered-style:description" inline="true" requirements="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_TWOWEAPON_FIGHTING" value="When you make the additional attack granted by two-weapon fighting, you can choose to deal half the damage you ordinarily would and attempt to shove the target prone." />
+        </rules>
+    </element>
+    <element name="Final Stand" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_FINAL_STAND">
+        <description>
+            <p>Starting at 15th level, you can power through mortal injuries. Once per day when you succeed on a death saving throw, you regain 1 hit point, stand without consuming any movement, and can take your turn as normal. Any allied creature within 30 feet that can see you gains inspiration.</p>
+        </description>
+        <sheet usage="1/Day">
+            <description>When you succeed on a death saving throw, you regain 1 hit point, stand without consuming any movement, and can take your turn as normal. Any allied creature within 30 feet that can see you gains inspiration.</description>
+        </sheet>
+    </element>
+    <element name="Survivor" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_SURVIVOR">
+        <description>
+            <p>At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don’t gain this benefit if you have 0 hit points.</p>
+        </description>
+        <sheet>
+            <description>At the start of each of your turns, you regain {{survivor:hp}} hit points if you have no more than half of your hit points left. You don’t gain this benefit if you have 0 hit points.</description>
+        </sheet>
+        <rules>
+            <stat name="survivor:hp" value="5" />
+            <stat name="survivor:hp" value="consitution:modifier" />
+        </rules>
+    </element>
+    
+</elements>

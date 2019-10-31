@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bastion Martial Archetype</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="fighter-bastion.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/the-warriors-codex/fighter-bastion.xml" />
+        </update>
+    </info>
+    
+    <element name="Bastion" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FIGHTER_BASTION">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Bulwarks of grit and implacable scions of self-sacrifice, Bastions are master guardians. They pride themselves on the simple (but fundamental) dwarven martial art of collective defense. To dwarves, clan and honor eclipse the self, so others’ defence is fundamental to their military training. But anyone can use these skills.</p>
+            <p class="indent"></p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_DEFENSIVE_STANCE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_BASTION_FEATURE_SOLDIER_ON" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_WARDING_MANEUVER" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_ROLLING_THUNDER" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_STEEL_BASTILLE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_RAMPART" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_DEFENSIVE_STANCE" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_BASTION_FEATURE_SOLDIER_ON" level="7" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_WARDING_MANEUVER" level="7" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_ROLLING_THUNDER" level="10" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_STEEL_BASTILLE" level="15" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_RAMPART" level="18" />
+        </rules>
+    </element>
+    <element name="Defensive Stance" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_DEFENSIVE_STANCE">
+        <description>
+            <p>When you take this archetype at 3rd level, you can use a bonus action while you are wielding a shield to adopt a stance that braces you and yours against attacks. You can enter or leave Defensive Stance as a bonus action on your turn. It lasts for 1 minute or until you choose to end it, and it confers the following benefits while active.</p>
+            <p class="indent"><b>Towering Shield.</b> You can take the Dodge action as a bonus action, have advantage on Strength checks, and can use your reaction to become the target of an attack made against any creature within your reach so long as the attacker can reach you as well. Creatures of your choice have half cover when within 5 feet of you.</p>
+            <p class="indent"><b>Center of Attention.</b> When you hit a creature with a melee weapon atttack it has disadvantage on attack rolls against creatures other than you until the start of your next turn. You can only affect one creature at a time with this feature.</p>
+            <p class="indent"><b>Mad Taunt.</b> At any time during the turn of a creature within your reach, you can taunt or otherwise draw the creature’s attention. The next attack the creature makes against you is made with advantage, and the next attack made against it before the end of your next turn has advantage. You can only taunt one creature at a time.</p>
+            <p class="indent">You cannot move more than half your speed in Defensive stance. You can enter a Defensive Stance a number of times equal to your Strength modifier (a minimum of 1), and regain all uses of it when you finish a long rest.</p>
+        </description>
+        <sheet usage="{{defensive-stance:uses}}/Long Rest" action="Bonus Action">
+            <description>You can enter or leave Defensive Stance on your turn. It lasts for 1 minute or until you choose to end it, and it confers the following benefits while active. You cannot move more than half your speed in Defensive stance.</description>
+        </sheet>
+        <rules>
+            <stat name="defensive-stance:uses" value="1" bonus="base" />
+            <stat name="defensive-stance:uses" value="strength:modifier" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_DEFENSIVE_STANCE_TOWERING_SHIELD" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_DEFENSIVE_STANCE_CENTER_OF_ATTENTION" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_DEFENSIVE_STANCE_MAD_TAUNT" level="3" />
+        </rules>
+    </element>
+        <element name="Towering Shield" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_DEFENSIVE_STANCE_TOWERING_SHIELD">
+            <description>
+                <p>You can take the Dodge action as a bonus action, have advantage on Strength checks, and can use your reaction to become the target of an attack made against any creature within your reach so long as the attacker can reach you as well. Creatures of your choice have half cover when within 5 feet of you.</p>
+            </description>
+            <sheet usage="Defensive Stance">
+                <description>You can take the Dodge action as a bonus action, have advantage on Strength checks, and can use your reaction to become the target of an attack made against any creature within your reach so long as the attacker can reach you as well. Creatures of your choice have half cover when within 5 feet of you.</description>
+            </sheet>
+        </element>
+        <element name="Center of Attention" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_DEFENSIVE_STANCE_CENTER_OF_ATTENTION">
+            <description>
+                <p>When you hit a creature with a melee weapon atttack it has disadvantage on attack rolls against creatures other than you until the start of your next turn. You can only affect one creature at a time with this feature.</p>
+            </description>
+            <sheet usage="Defensive Stance">
+                <description>When you hit a creature with a melee weapon atttack it has disadvantage on attack rolls against creatures other than you until the start of your next turn. You can only affect one creature at a time with this feature.</description>
+            </sheet>
+        </element>
+        <element name="Mad Taunt" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_DEFENSIVE_STANCE_MAD_TAUNT">
+            <description>
+                <p>At any time during the turn of a creature within your reach, you can taunt or otherwise draw the creature’s attention. The next attack the creature makes against you is made with advantage, and the next attack made against it before the end of your next turn has advantage. You can only taunt one creature at a time.</p>
+            </description>
+            <sheet usage="Defensive Stance">
+                <description>At any time during the turn of a creature within your reach, you can taunt or otherwise draw the creature’s attention. The next attack the creature makes against you is made with advantage, and the next attack made against it before the end of your next turn has advantage. You can only taunt one creature at a time.</description>
+            </sheet>
+        </element>
+    <element name="Soldier On" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_BASTION_FEATURE_SOLDIER_ON">
+        <description>
+            <p>At 7th level, you and all creatures accompanying you suffer no penalties for the first 4 hours of a forced march. Encouraged by your stoic form, carrying crushing weight in armor without breaking, you steel their wills to push on.</p>
+        </description>
+        <sheet>
+            <description>You and all creatures accompanying you suffer no penalties for the first 4 hours of a forced march.</description>
+        </sheet>
+    </element>
+    <element name="Warding Maneuver" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_WARDING_MANEUVER">
+        <description>
+            <p>Starting at 7th level, you learn to fend off strikes directed at you and other nearby creatures while in a Defensive Stance. If you or a creature you can see within your reach is hit by an attack, you can roll 1d8 as a reaction if you’re wielding a melee weapon or a shield. You add the result of the die to the target’s AC against that attack. You can use this reaction once per Defensive Stance.</p>
+            <p class="indent">At 15th level, if the attack still hits, the target has resistance against the attack’s damage.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>While in a Defensive Stance, if you or a creature you can see within your reach is hit by an attack, you can roll 1d8 if you’re wielding a melee weapon or a shield. You add the result of the die to the target’s AC against that attack. You can do this once per Defensive Stance.</description>
+            <description level="15">While in a Defensive Stance, if you or a creature you can see within your reach is hit by an attack, you can roll 1d8 if you’re wielding a melee weapon or a shield. You add the result of the die to the target’s AC against that attack. If the attack still hits, the target has resistance against the attack’s damage. You can do this once per Defensive Stance.</description>
+        </sheet>
+    </element>
+    <element name="Rolling Thunder" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_ROLLING_THUNDER">
+        <description>
+            <p>At 10th level, you can move up to 10 feet when becoming the target of an attack against a creature using Defensive Stance, so long as you end your movement in a place where the attack could hit you. After the attack hits or misses you, you can attempt to shove the attacker as part of the same reaction, so long as that creature is within 5 feet of you.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>You can move up to 10 feet when becoming the target of an attack against a creature using Defensive Stance, so long as you end your movement in a place where the attack could hit you. After the attack hits or misses you, you can attempt to shove the attacker as part of the same reaction, so long as that creature is within 5 feet of you.</description>
+        </sheet>
+    </element>
+    <element name="Steel Bastille" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_STEEL_BASTILLE">
+        <description>
+            <p>Beginning at 15th level you gain temporary hit points equal to your fighter level when you enter a Defensive Stance. When you are in Defensive Stance, the area within your reach becomes difficult terrain for creatures of your choice, and creatures that move at least 5 feet within your reach provoke opportunity attacks.</p>
+        </description>
+        <sheet>
+            <description>When you enter a Defensive Stance you gain {{level:fighter}} temporary hit points. When you are in Defensive Stance, the area within your reach becomes difficult terrain for creatures of your choice, and creatures that move at least 5 feet within your reach provoke opportunity attacks.</description>
+        </sheet>
+    </element>
+    <element name="Rampart" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_BASTION_RAMPART">
+        <description>
+            <p>Starting at 18th level, you respond to danger with unquenchable stamina. You regain your reaction at the start of each creature’s turn, rather than only at the start of yours. Your enormous stamina allows you to spread your presence across the battlefield, defending allies and stopping enemies with impunity.</p>
+        </description>
+        <sheet>
+            <description>You regain your reaction at the start of each creature’s turn, rather than only at the start of yours.</description>
+        </sheet>
+    </element>
+</elements>

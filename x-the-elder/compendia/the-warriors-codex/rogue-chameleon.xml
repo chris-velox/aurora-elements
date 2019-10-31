@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Chameleon Roguish Archetype</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="rogue-chameleon.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/the-warriors-codex/rogue-chameleon.xml" />
+        </update>
+    </info>
+    
+    <element name="Chameleon" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_ROGUE_CHAMELEON">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Most rogues can hide, but few hide in plain sight. From mere disguises to physical changes in color, Chameleons master covert skills both mundane and magical to immerse themselves into any situation and strike at a moment’s notice.</p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_SOCIAL_CHAMELEON" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_COLOR_CHANGE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_PINPOINT_EYES" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_NUMBING_LASH" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_WALKING_CHROMATOPHORE" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_SOCIAL_CHAMELEON" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_COLOR_CHANGE" level="3" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_PINPOINT_EYES" level="9" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_NUMBING_LASH" level="13" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_WALKING_CHROMATOPHORE" level="17" />
+        </rules>
+    </element>
+    <element name="Social Chameleon" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_SOCIAL_CHAMELEON">
+        <description>
+            <p>When you choose this archetype at 3rd level, you gain proficiency in Disguise Kits and the Deception skill. If you are already proficient in Deception, you can double your proficiency bonus for all checks made with it instead.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+            <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_DECEPTION" />
+        </rules>
+    </element>
+    <element name="Color Change" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_COLOR_CHANGE">
+        <description>
+            <p>Most infiltrators operate in cramped conditions far away from pursuers, but you can hide in the open. At 3rd level, when you hide, you and everything you are wearing or carrying change color to match a large or larger object to which you are adjacent, and you are considered invisible until you move more than 5 feet or take actions. Smaller objects provide insufficient cover to use this ability. You can hide using this feature even if other creatures can see you.</p>
+            <p class="indent">At 13th level, you can move up to half your walking speed during your turn without revealing yourself.</p>
+        </description>
+        <sheet>
+            <description>When you hide, you and everything you are wearing or carrying change color to match a large or larger object to which you are adjacent, and you are considered invisible until you move more than 5 feet or take actions. Smaller objects provide insufficient cover to use this ability. You can hide using this feature even if other creatures can see you.</description>
+            <description level="13">When you hide, you and everything you are wearing or carrying change color to match a large or larger object to which you are adjacent, and you are considered invisible until you take actions. Smaller objects provide insufficient cover to use this ability. You can hide using this feature even if other creatures can see you. You can move up to half your walking speed during your turn without revealing yourself.</description>
+        </sheet>
+    </element>
+    <element name="Pinpoint Eyes" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_PINPOINT_EYES">
+        <description>
+            <p>At 9th level, your eyes mimic the abilities of your reptile namesake. Lightly-obscured areas don’t impose disadvantage on your Perception checks, and you have advantage on saving throws against being blinded. You gain darkvision to a range of 60 feet, and can make Perception checks to search for hidden objects and enemies as a bonus action. At 17th level, your advanced eyesight also pierces magical illusions, granting you truesight within a 30 ft. range.</p>
+        </description>
+        <sheet>
+            <description>Lightly-obscured areas don’t impose disadvantage on your Perception checks, and you have advantage on saving throws against being blinded. You gain darkvision to a range of 60 feet, and can make Perception checks to search for hidden objects and enemies as a bonus action.</description>
+            <description level="17">Lightly-obscured areas don’t impose disadvantage on your Perception checks, and you have advantage on saving throws against being blinded. You gain darkvision to a range of 60 feet, and can make Perception checks to search for hidden objects and enemies as a bonus action. Your advanced eyesight also pierces magical illusions, granting you truesight within a 30 ft. range.</description>
+        </sheet>
+    </element>
+    <element name="Numbing Lash" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_NUMBING_LASH">
+        <description>
+            <p>Starting at 13th level, you produce a potent poison that can be applied to your weapons. When you hit an opponent with your sneak attack, you can paralyze them until the end of your next turn. You must wait until the end of a short or long rest to use this feature again.</p>
+        </description>
+        <sheet usage="1/Short Rest">
+            <description>You produce a potent poison that can be applied to your weapons. When you hit an opponent with your sneak attack, you can paralyze them until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Walking Chromatophore" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_CHAMELEON_WALKING_CHROMATOPHORE">
+        <description>
+            <p>Beginning at 17th level, you can change your body’s colors in real time. You can cast <i>greater invisiblity</i>, targeting only yourself, five times per long rest.</p>
+        </description>
+        <sheet usage="5/Long Rest">
+            <description>You can cast greater invisibility on yourself.</description>
+        </sheet>
+    </element>
+    
+</elements>
