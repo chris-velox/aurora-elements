@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Frost Warden Ranger Archetype</name>
+        <author url="https://www.gmbinder.com/profile/blueisherp">blueisherp</author>
+        <update version="0.0.1">
+            <file name="ranger-frost-warden.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/ranger/ranger-frost-warden.xml" />
+        </update>
+    </info>
+    
+    <element name="Frost Warden Conclave" type="Archetype" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_RANGER_FROST_WARDEN">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Frost Wardens make their home in the world’s most enchanting tundras and boreal forests. They abide by an ancient druidic tradition that bestows upon them the mystical essence that flows through their homeland. They rarely travel far from home, but when they do, they bring with them the cold asperity of the wild fjords.</p>
+            <div element="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FROST_WARDEN_MAGIC" />
+            <div element="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_BONUS_CANTRIP" />
+            <div element="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_HOAR_FROST" />
+            <div element="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FLASH_FREEZE" />
+            <div element="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_WARDENS_AMNESTY" />
+            <div element="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_RIME_ICE" />
+            <div element="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_PERMAFROST" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FROST_WARDEN_MAGIC" level="3" />
+            <grant type="Archetype Feature" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_BONUS_CANTRIP" level="3" />
+            <grant type="Archetype Feature" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_HOAR_FROST" level="3" />
+            <grant type="Archetype Feature" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FLASH_FREEZE" level="3" />
+            <grant type="Archetype Feature" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_WARDENS_AMNESTY" level="7" />
+            <grant type="Archetype Feature" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_RIME_ICE" level="11" requirements="!ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FRACTAL_FORMATION" />
+            <select type="Archetype Feature" name="Glacial Warden (Variant Feature)" level="11" supports="Frost Warden Variant Feature" optional="true" />
+            <grant type="Archetype Feature" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_PERMAFROST" level="15" />
+        </rules>
+    </element>
+    <element name="Frost Warden Magic" type="Archetype Feature" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FROST_WARDEN_MAGIC">
+        <description>
+            <p>You gain conclave spells at the ranger levels listed in the Hunter Spells table. These are always prepared and don’t count against your list of prepared spells.</p>
+            <h5>Frost Warden Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><i>create or destroy water</i></td></tr>
+                <tr><td>5th</td><td><i>Snilloc’s snowball swarm</i></td></tr>
+                <tr><td>9th</td><td><i>sleet storm</i></td></tr>
+                <tr><td>13th</td><td><i>control water</i></td></tr>
+                <tr><td>17th</td><td><i>cone of cold</i></td></tr>
+            </table>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CREATE_OR_DESTROY_WATER" level="3" spellcasting="Ranger" prepared="true" />
+            <grant type="Spell" id="ID_XGTE_SPELL_SNILLOCS_SNOWBALL_SWARM" level="5" spellcasting="Ranger" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_SLEET_STORM" level="9" spellcasting="Ranger" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_CONTROL_WATER" level="13" spellcasting="Ranger" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_CONE_OF_COLD" level="17" spellcasting="Ranger" prepared="true" />
+        </rules>
+    </element>
+    <element name="Bonus Cantrip" type="Archetype Feature" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_BONUS_CANTRIP">
+        <description>
+            <p>At 3rd level, you learn the <i>shape water</i> cantrip. It can move or melt frozen water, and you can use it as a bonus action.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can cast the shape water cantrip.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_XGTE_SPELL_SHAPE_WATER" spellcasting="Ranger" prepared="true" />
+        </rules>
+    </element>
+    <element name="Hoar Frost" type="Archetype Feature" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_HOAR_FROST">
+        <description>
+            <p>Beginning at 3rd level, you can imbue your magic with the essence of frost. Damage from your ranger spells and weapon attacks can be dealt in cold damage instead. After a creature takes cold damage from you, it takes 1d4 extra cold damage from your weapon attacks until the end of your next turn. This 1d4 deals maximum damage if the target is in fog, mist, precipitation, or an otherwise wet or cold environment.</p>
+        </description>
+        <sheet>
+            <description>Damage from your ranger spells and weapon attacks can be dealt in cold damage instead. After a creature takes cold damage from you, it takes 1d4 extra cold damage from your weapon attacks until the end of your next turn. This 1d4 deals maximum damage if the target is in fog, mist, precipitation, or an otherwise wet or cold environment.</description>
+        </sheet>
+    </element>
+    <element name="Flash Freeze" type="Archetype Feature" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FLASH_FREEZE">
+        <description>
+            <p>At 3rd level, you can freeze your target when you deal maximum damage with a die of cold damage, along with any uncontained water in its space. The target must succeed a Constitution saving throw or become frozen, incapacitated and unable to move, for 1 minute or until after it takes damage. If this damage is the maximum result of a die of cold damage from you, the target must repeat this saving throw.</p>
+            <p class="indent">A frozen target can repeat the saving throw at the start of its turns, unfreezing on success. Creatures with resistance against cold damage have advantage on saving throws against this effect.</p>
+        </description>
+        <sheet>
+            <description>When you deal maximum damage with a die of cold damage, along with any uncontained water in its space. The target must succeed a Constitution saving throw or become frozen, incapacitated and unable to move, for 1 minute or until after it takes damage. A frozen target can repeat the saving throw at the start of its turns, unfreezing on success. Creatures with resistance against cold damage have advantage on saving throws against this effect.</description>
+        </sheet>
+    </element>
+    <element name="Warden’s Amnesty" type="Archetype Feature" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_WARDENS_AMNESTY">
+        <description>
+            <p>Starting at 7th level, magic of the frozen wilds flows through your veins. While in conditions between -50 and 140 degrees Fahrenheit, you automatically succeed Constitution saving throws against extreme cold and heat.</p>
+            <p class="indent">You also ignore light and heavy obscurity induced by fog, water, or precipitation within 60 feet of you.</p>
+        </description>
+        <sheet>
+            <description>While in conditions between -50 and 140 degrees Fahrenheit, you automatically succeed Constitution saving throws against extreme cold and heat. You also ignore light and heavy obscurity induced by fog, water, or precipitation within 60 feet of you.</description>
+        </sheet>
+    </element>
+    <element name="Rime Ice" type="Archetype Feature" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_RIME_ICE">
+        <description>
+            <p>At 11th level, those surrounded in your element risk being frozen solid. When you freeze a target in fog, mist, precipitation, or an otherwise wet or cold environment, you can make it so the target is stunned while its frozen and damage can’t unfreeze it. After you do this, you can’t do so again until you complete a short or long rest.</p>
+            <p class="indent">Additionally, targets frozen by your Flash Freeze lose resistance to cold damage.</p>
+        </description>
+        <sheet usage="1/Short Rest">
+            <description>When you freeze a target in fog, mist, precipitation, or an otherwise wet or cold environment, you can make it so the target is stunned while its frozen and damage can’t unfreeze it. Additionally, targets frozen by your Flash Freeze lose resistance to cold damage.</description>
+        </sheet>
+    </element>
+    <element name="Permafrost" type="Archetype Feature" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_PERMAFROST">
+        <description>
+            <p>At 15th level, the frost essence emanating from you can freeze assailants in their tracks. When a creature makes a melee attack against you, it takes the 1d4 cold damage from your Hoar Frost before it can finish its attack, provided you are conscious.</p>
+            <p class="indent">You also gain resistance to cold damage.</p>
+        </description>
+        <sheet>
+            <description>When a creature makes a melee attack against you, it takes the 1d4 cold damage from your Hoar Frost before it can finish its attack, provided you are conscious.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+        </rules>
+    </element>
+
+    <element name="Fractal Formation" type="Archetype Feature" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FRACTAL_FORMATION">
+        <supports>Frost Warden Variant Feature</supports>
+        <description>
+            <p>At 11th level, you can create crystals with your frost magic, allowing you to perform the following abilities. Once you use one of these abilities, you must complete a short or long rest before you can use the same one again.</p>
+            <h5>CRYSTAL ARROW</h5>
+            <p>As an action, you crystallize a piece of ammunition to be fired at a target you can see. As part of the same action, you ready a ranged weapon attack against that target using that crystallized ammunition, which will trigger at the start of your next turn. On hit, the attack deals an additional 3d8 + your Wisdom modifier in cold damage.</p>
+            <p class="indent">If this attack hits the target while it's within 10 feet of where it was when you readied the attack, it critically hits. If this attack freezes the target, the target is stunned while its frozen and damage can't unfreeze it.</p>
+            <h5>ICE FLURRY</h5>
+            <p>As an action, you cast a magic missile that fires three missiles, each dealing cold damage. If the missiles activate Flash Freeze, the target makes only one saving throw, regardless of how many missiles it takes.</p>
+            <p class="indent">For each missile the target takes, it loses 10 feet of its speed until the end of your next turn.</p>
+            <h5>FREEZING TRAP</h5>
+            <p>As an action, you create a magical trap contained in a crystal that fits in your hand. You can deploy the crystal with the same action you use to create it, tossing it into a space within 30 feet. It can also be given to another user, who can then deploy it in the same way. Once deployed, it becomes a translucent, silvery web stretched over a circle on the ground with a 15-foot diameter.</p>
+            <p class="indent">Whether or not it is deployed, the trap disappears 24 hours after you create it. You can control up to three traps at a time. If you create a trap while already having three, you choose which of them disappears. Once triggered, disabled, or dispelled, the trap disappears. You will magically know when this occurs while you remain on the same plane as the trap.</p>
+            <p class="indent"><b><i>Trigger.</i></b> The trap triggers when a creature enters or starts its turn within the trap's area. When you create the trap, you can also designate a type of creature (such as beasts, humanoids, fey, etc.) to be exempt from triggering the trap and suffering its effects.</p>
+            <p class="indent"><b><i>Effect.</i></b> When the trap triggers, each creature within 10 feet of the trap's center must make a Dexterity saving throw against your spell save DC, taking 3d6 cold damage on a failed save and half damage on a successful one. Each creature that fails to save against this trap or its Flash Freeze is frozen for 1 hour or until it takes damage. A creature frozen in this way is stunned and can't make saving throws on its turns to unfreeze.</p>
+            <p class="indent"><b><i>Countermeasures.</i></b> You use your spell save DC to determine the trap's DCs. A successful Wisdom (Perception) check reveals the trap, and a successful Intelligence (Arcana) check disables it. A creature can walk through or jump over the trap without triggering it with a successful Dexterity (Acrobatics) check, and a successful dispel magic will destroy the trap.</p>
+        </description>
+        <sheet usage="1/Short Rest">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FRACTAL_FORMATION_CRYSTAL_ARROW" level="11" />
+            <grant type="Archetype Feature" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FRACTAL_FORMATION_ICE_FLURRY" level="11" />
+            <grant type="Archetype Feature" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FRACTAL_FORMATION_FREEZING_TRAP" level="11" />
+        </rules>
+    </element>
+        <element name="Crystal Arrow" type="Archetype Feature" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FRACTAL_FORMATION_CRYSTAL_ARROW">
+            <description>
+                <p>As an action, you crystallize a piece of ammunition to be fired at a target you can see. As part of the same action, you ready a ranged weapon attack against that target using that crystallized ammunition, which will trigger at the start of your next turn. On hit, the attack deals an additional 3d8 + your Wisdom modifier in cold damage.</p>
+                <p class="indent">If this attack hits the target while it's within 10 feet of where it was when you readied the attack, it critically hits. If this attack freezes the target, the target is stunned while its frozen and damage can't unfreeze it.</p>
+            </description>
+            <sheet usage="Frost Formation" action="Action">
+                <description>you crystallize a piece of ammunition to be fired at a target you can see. As part of the same action, you ready a ranged weapon attack against that target using that crystallized ammunition, which will trigger at the start of your next turn. On hit, the attack deals an additional 3d8 + {{wisdom:modifier}} in cold damage. If this attack hits the target while it's within 10 feet of where it was when you readied the attack, it critically hits. If this attack freezes the target, the target is stunned while its frozen and damage can't unfreeze it.</description>
+            </sheet>
+        </element>
+        <element name="Ice Flurry" type="Archetype Feature" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FRACTAL_FORMATION_ICE_FLURRY">
+            <description>
+                <p>As an action, you cast a magic missile that fires three missiles, each dealing cold damage. If the missiles activate Flash Freeze, the target makes only one saving throw, regardless of how many missiles it takes.</p>
+                <p class="indent">For each missile the target takes, it loses 10 feet of its speed until the end of your next turn.</p>
+            </description>
+            <sheet usage="Frost Formation" action="Action">
+                <description>Iou cast a magic missile that fires three missiles, each dealing cold damage. If the missiles activate Flash Freeze, the target makes only one saving throw, regardless of how many missiles it takes. For each missile the target takes, it loses 10 feet of its speed until the end of your next turn.</description>
+            </sheet>
+        </element>
+        <element name="Freezing Trap" type="Archetype Feature" source="GM Binder" id="ID_BLUEISHERP_GM_BINDER_ARCHETYPE_FEATURE_FROST_WARDEN_FRACTAL_FORMATION_FREEZING_TRAP">
+            <description>
+                <p>As an action, you create a magical trap contained in a crystal that fits in your hand. You can deploy the crystal with the same action you use to create it, tossing it into a space within 30 feet. It can also be given to another user, who can then deploy it in the same way. Once deployed, it becomes a translucent, silvery web stretched over a circle on the ground with a 15-foot diameter.</p>
+                <p class="indent">Whether or not it is deployed, the trap disappears 24 hours after you create it. You can control up to three traps at a time. If you create a trap while already having three, you choose which of them disappears. Once triggered, disabled, or dispelled, the trap disappears. You will magically know when this occurs while you remain on the same plane as the trap.</p>
+                <p class="indent"><b><i>Trigger.</i></b> The trap triggers when a creature enters or starts its turn within the trap's area. When you create the trap, you can also designate a type of creature (such as beasts, humanoids, fey, etc.) to be exempt from triggering the trap and suffering its effects.</p>
+                <p class="indent"><b><i>Effect.</i></b> When the trap triggers, each creature within 10 feet of the trap's center must make a Dexterity saving throw against your spell save DC, taking 3d6 cold damage on a failed save and half damage on a successful one. Each creature that fails to save against this trap or its Flash Freeze is frozen for 1 hour or until it takes damage. A creature frozen in this way is stunned and can't make saving throws on its turns to unfreeze.</p>
+                <p class="indent"><b><i>Countermeasures.</i></b> You use your spell save DC to determine the trap's DCs. A successful Wisdom (Perception) check reveals the trap, and a successful Intelligence (Arcana) check disables it. A creature can walk through or jump over the trap without triggering it with a successful Dexterity (Acrobatics) check, and a successful dispel magic will destroy the trap.</p>
+            </description>
+            <sheet usage="Frost Formation" action="Action">
+                <description>You create a magical trap contained in a crystal that fits in your hand. You can deploy the crystal with the same action you use to create it, tossing it into a space within 30 feet. It can also be given to another user, who can then deploy it in the same way. Once deployed, it becomes a translucent, silvery web stretched over a circle on the ground with a 15-foot diameter.</description>
+            </sheet>
+        </element>
+
+</elements>
