@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Channeler Ranger Archetype</name>
+        <update version="0.0.1">
+            <file name="ranger-channeler.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/ranger/ranger-channeler.xml" />
+        </update>
+    </info>
+    
+    <element name="Channeler" type="Archetype" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_RANGER_CHANNELER">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>You learn to wield the powers of the spirits. As a Channeler you connect yourself to a spirit animal to enhance your abilities.</p>
+            <p class="indent"></p>
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRIT_ANIMAL" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRIT_ANIMAL_ATTACK" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPRITIUAL_BOND" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRIT_ANIMAL" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRIT_ANIMAL_ATTACK" level="3" />
+        </rules>
+    </element>
+    <element name="Spirit Animal" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRIT_ANIMAL">
+        <description>
+            <p>At 3rd level, you connect with a certain animal spirit. Choose one of the following animals to become your spirit animal: Bear, Eagle, Tiger, Wolf. You gain one feature for your spirit animal.</p>
+            <p class="indent"><b>Bear.</b> After you finish a long rest, you gain temporary hit points equal to your Ranger level + your Wisdom modifier (mimimum of 1).</p>
+            <p class="indent"><b>Eagle.</b> You gain advantage on perception checks that rely on sight. Additionally, you can see up to 1 mile away with no difficulty, able to discern even fine details as though looking at something no more than 100 feet away from you.</p>
+            <p class="indent"><b>Tiger.</b> Your speed increases by 10 feet. Additionally, opportunity attacks against you are made with disadvantage.</p>
+            <p class="indent"><b>Wolf.</b> When you make a melee attack against a creature, you don’t provoke opportunity attacks from that creature for the rest of the turn, whether you hit or not.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Archetype Feature" name="Spirit Animal" supports="Channeler Spirit Animal" level="3" />
+        </rules>
+    </element>
+    <element name="Spirit Animal Attack" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRIT_ANIMAL_ATTACK">
+        <description>
+            <p>At 3rd level, you can use your spiritual bond to aid you in combat. As an action you can summon your spirit animal to make a single attack. You can make a melee spell attack against a creature within 30 feet of you. On a hit, the target takes force damage equal to 1d10 + your Wisdom modifier.</p>
+            <p class="indent">The damage increases to 2d10 + your Wisdom modifier at 7th level.</p>
+        </description>
+        <sheet action="Action">
+            <description>you can summon your spirit animal to make a single attack. You can make a melee spell attack against a creature within 30 feet of you. On a hit, the target takes force damage equal to {{spiritual-animal:damage}}d10 + {{wisdom:modifier}}.</description>
+        </sheet>
+        <rules>
+            <stat name="spiritual-animal:damage" value="1" level="3" />
+            <stat name="spiritual-animal:damage" value="1" level="7" />
+        </rules>
+    </element>
+    <element name="Spiritual Bond" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPRITIUAL_BOND">
+        <description>
+            <p>At 7th level, your bond with your spirit animal enhances your abilities even more. You gain one feature for the same spirit animal you have chosen at 3rd level.</p>
+            <p class="indent"><b>Bear.</b> You have advantage on Strength (Athletics) checks in order to Shove or Grapple a target.</p>
+            <p class="indent"><b>Eagle.</b> Your ranged attacks ignore half cover and three-quarters cover.</p>
+            <p class="indent"><b>Tiger.</b> If you move at least 10 feet straight toward a creature before attacking it with a melee weapon, you have advantage on the attack roll.</p>
+            <p class="indent"><b>Wolf.</b> If one of your allies makes a melee weapon attack against a target within 5 feet of you, you can use your reaction to give the ally advantage on the roll.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Unified Spirits" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS">
+        <description>
+            <p>At 11th level, when you use your action for a spirit animal attack, you can make one weapon attack as a bonus action against the same enemy.</p>
+            <p class="indent">Additionally you gain one feature for the same spirit animal you have chosen at 3rd level.</p>
+            <p class="indent"><b>Bear.</b> The damage of your spirit animal attack becomes 2d12 + your Wisdom modifier.</p>
+            <p class="indent"><b>Eagle.</b> The range of your spirit animal attack becomes 120 feet.</p>
+            <p class="indent"><b>Tiger.</b> If you move at least 20 feet straight toward a creature before attacking it with a your spirit animal attack, that target must succeed on a Strength saving throw against your spell DC or be knocked prone.</p>
+            <p class="indent"><b>Wolf.</b> If you are within 5 feet of the target, the spirit animal attack is made with advantage.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Spiritual Fusion" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION">
+        <description>
+            <p>At 15th level, you gain one ability for the same spirit animal you have chosen at 3rd level. You can use this ability a number of times equal to your Wisdom modifier (minimum of 1) before you need to take a long rest.</p>
+            <p class="indent"><b>Bear.</b> You gain resistance to all damage until the start of your next turn.</p>
+            <p class="indent"><b>Eagle.</b> You gain the ability to fly for 1 minute. You have a flying speed equal to your current walking speed.</p>
+            <p class="indent"><b>Tiger.</b> When you score a hit with a melee weapon attack on which you had advantage, you can make this attack a critical hit.</p>
+            <p class="indent"><b>Wolf.</b> As an action you can Howl. Creatures of your choice that you can see within 30 feet and that can hear you must succeed on a Wisdom saving throw against your spell DC or have disadvantage on the next attack roll they make before the end of their next turn.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    
+    <!-- Spirit Animals -->
+        <element name="Spirit Animal: Bear" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRIT_ANIMAL_BEAR">
+            <supports>Channeler Spirit Animal</supports>
+            <description>
+                <p>At 3rd level, you connect with the animal spirit of a bear.</p>
+                <p class="indent">After you finish a long rest, you gain temporary hit points equal to your Ranger level + your Wisdom modifier (mimimum of 1).</p>
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_BEAR" />
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_BEAR" />
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_BEAR" />
+            </description>
+            <sheet>
+                <description>After you finish a long rest, you gain {{spirit-animal:temp-hp}} temporary hit points.</description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_BEAR" level="7" />
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_BEAR" level="11" />
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_BEAR" level="15" />
+                <stat name="spirit-animal:temp-hp" value="level:ranger" />
+                <stat name="spirit-animal:temp-hp" value="wisdom:modifier" />
+            </rules>
+        </element>
+            <element name="Spiritual Bond: Bear" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_BEAR">
+                <description>
+                    <p>At 7th level, your bond with your spirit animal enhances your abilities even more. You gain one feature for the same spirit animal you have chosen at 3rd level.</p>
+                    <p class="indent">You have advantage on Strength (Athletics) checks in order to Shove or Grapple a target.</p>
+                </description>
+                <sheet>
+                    <description>You have advantage on Strength (Athletics) checks in order to Shove or Grapple a target.</description>
+                </sheet>
+            </element>
+            <element name="Unified Spirits: Bear" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_BEAR">
+                <description>
+                    <p>At 11th level, when you use your action for a spirit animal attack, you can make one weapon attack as a bonus action against the same enemy.</p>
+                    <p class="indent">Additionally you gain one feature for the same spirit animal you have chosen at 3rd level.</p>
+                    <p class="indent">The damage of your spirit animal attack becomes 2d12 + your Wisdom modifier.</p>
+                </description>
+                <sheet>
+                    <description>When you use your action for a spirit animal attack, you can make one weapon attack as a bonus action against the same enemy. The damage of your spirit animal attack becomes 2d12 + {{wisdom:modifier}}.</description>
+                </sheet>
+            </element>
+            <element name="Spiritual Fusion: Bear" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_BEAR">
+                <description>
+                    <p>At 15th level, you gain one ability for the same spirit animal you have chosen at 3rd level. You can use this ability a number of times equal to your Wisdom modifier (minimum of 1) before you need to take a long rest.</p>
+                    <p class="indent">You gain resistance to all damage until the start of your next turn.</p>
+                </description>
+                <sheet usage="{{spiritual-fusion:uses}}/Long Rest">
+                    <description>You gain resistance to all damage until the start of your next turn.</description>
+                </sheet>
+                <rules>
+                    <stat name="spiritual-fusion:uses" value="1" bonus="base" />
+                    <stat name="spiritual-fusion:uses" value="wisdom:modifier" bonus="base" />
+                </rules>
+            </element>
+
+        <element name="Spirit Animal: Eagle" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRIT_ANIMAL_EAGLE">
+            <supports>Channeler Spirit Animal</supports>
+            <description>
+                <p>At 3rd level, you connect with the animal spirit of an eagle.</p>
+                <p class="indent">You gain advantage on perception checks that rely on sight. Additionally, you can see up to 1 mile away with no difficulty, able to discern even fine details as though looking at something no more than 100 feet away from you.</p>
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_EAGLE" />
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_EAGLE" />
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_EAGLE" />
+            </description>
+            <sheet>
+                <description>You gain advantage on perception checks that rely on sight. Additionally, you can see up to 1 mile away with no difficulty, able to discern even fine details as though looking at something no more than 100 feet away from you.</description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_EAGLE" level="7" />
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_EAGLE" level="11" />
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_EAGLE" level="15" />
+            </rules>
+        </element>
+            <element name="Spiritual Bond: Eagle" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_EAGLE">
+                <description>
+                    <p>At 7th level, your bond with your spirit animal enhances your abilities even more. You gain one feature for the same spirit animal you have chosen at 3rd level.</p>
+                    <p class="indent">Your ranged attacks ignore half cover and three-quarters cover.</p>
+                </description>
+                <sheet>
+                    <description>Your ranged attacks ignore half cover and three-quarters cover.</description>
+                </sheet>
+            </element>
+            <element name="Unified Spirits: Eagle" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_EAGLE">
+                <description>
+                    <p>At 11th level, when you use your action for a spirit animal attack, you can make one weapon attack as a bonus action against the same enemy.</p>
+                    <p class="indent">Additionally you gain one feature for the same spirit animal you have chosen at 3rd level.</p>
+                    <p class="indent">The range of your spirit animal attack becomes 120 feet.</p>
+                </description>
+                <sheet>
+                    <description>When you use your action for a spirit animal attack, you can make one weapon attack as a bonus action against the same enemy. The range of your spirit animal attack becomes 120 feet.</description>
+                </sheet>
+            </element>
+            <element name="Spiritual Fusion: Eagle" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_EAGLE">
+                <description>
+                    <p>At 15th level, you gain one ability for the same spirit animal you have chosen at 3rd level. You can use this ability a number of times equal to your Wisdom modifier (minimum of 1) before you need to take a long rest.</p>
+                    <p class="indent">You gain the ability to fly for 1 minute. You have a flying speed equal to your current walking speed.</p>
+                </description>
+                <sheet usage="{{spiritual-fusion:uses}}/Long Rest">
+                    <description>You gain the ability to fly for 1 minute. You have a flying speed equal to your current walking speed.</description>
+                </sheet>
+                <rules>
+                    <stat name="spiritual-fusion:uses" value="1" bonus="base" />
+                    <stat name="spiritual-fusion:uses" value="wisdom:modifier" bonus="base" />
+                </rules>
+            </element>
+
+        <element name="Spirit Animal: Tiger" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRIT_ANIMAL_TIGER">
+            <supports>Channeler Spirit Animal</supports>
+            <description>
+                <p>At 3rd level, you connect with the animal spirit of a tiger.</p>
+                <p class="indent">Your speed increases by 10 feet. Additionally, opportunity attacks against you are made with disadvantage.</p>
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_TIGER" />
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_TIGER" />
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_TIGER" />
+            </description>
+            <sheet>
+                <description>Opportunity attacks against you are made with disadvantage.</description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_TIGER" level="7" />
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_TIGER" level="11" />
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_TIGER" level="15" />
+                <stat name="speed:misc" value="10" />
+            </rules>
+        </element>
+            <element name="Spiritual Bond: Tiger" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_TIGER">
+                <description>
+                    <p>At 7th level, your bond with your spirit animal enhances your abilities even more. You gain one feature for the same spirit animal you have chosen at 3rd level.</p>
+                    <p class="indent">If you move at least 10 feet straight toward a creature before attacking it with a melee weapon, you have advantage on the attack roll.</p>
+                </description>
+                <sheet>
+                    <description>If you move at least 10 feet straight toward a creature before attacking it with a melee weapon, you have advantage on the attack roll.</description>
+                </sheet>
+            </element>
+            <element name="Unified Spirits: Tiger" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_TIGER">
+                <description>
+                    <p>At 11th level, when you use your action for a spirit animal attack, you can make one weapon attack as a bonus action against the same enemy.</p>
+                    <p class="indent">Additionally you gain one feature for the same spirit animal you have chosen at 3rd level.</p>
+                    <p class="indent">If you move at least 20 feet straight toward a creature before attacking it with a your spirit animal attack, that target must succeed on a Strength saving throw against your spell DC or be knocked prone.</p>
+                </description>
+                <sheet>
+                    <description>When you use your action for a spirit animal attack, you can make one weapon attack as a bonus action against the same enemy. If you move at least 20 feet straight toward a creature before attacking it with a your spirit animal attack, that target must succeed on a Strength saving throw (save DC {{spellcasting:dc}}) or be knocked prone.</description>
+                </sheet>
+            </element>
+            <element name="Spiritual Fusion: Tiger" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_TIGER">
+                <description>
+                    <p>At 15th level, you gain one ability for the same spirit animal you have chosen at 3rd level. You can use this ability a number of times equal to your Wisdom modifier (minimum of 1) before you need to take a long rest.</p>
+                    <p class="indent">When you score a hit with a melee weapon attack on which you had advantage, you can make this attack a critical hit.</p>
+                </description>
+                <sheet usage="{{spiritual-fusion:uses}}/Long Rest">
+                    <description>When you score a hit with a melee weapon attack on which you had advantage, you can make this attack a critical hit.</description>
+                </sheet>
+                <rules>
+                    <stat name="spiritual-fusion:uses" value="1" bonus="base" />
+                    <stat name="spiritual-fusion:uses" value="wisdom:modifier" bonus="base" />
+                </rules>
+            </element>
+
+        <element name="Spirit Animal: Wolf" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRIT_ANIMAL_WOLF">
+            <supports>Channeler Spirit Animal</supports>
+            <description>
+                <p>At 3rd level, you connect with the animal spirit of a wolf.</p>
+                <p class="indent">When you make a melee attack against a creature, you don’t provoke opportunity attacks from that creature for the rest of the turn, whether you hit or not.</p>
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_WOLF" />
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_WOLF" />
+                <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_WOLF" />
+            </description>
+            <sheet>
+                <description>When you make a melee attack against a creature, you don’t provoke opportunity attacks from that creature for the rest of the turn, whether you hit or not.</description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_WOLF" level="7" />
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_WOLF" level="11" />
+                <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_WOLF" level="15" />
+            </rules>
+        </element>
+            <element name="Spiritual Bond: Wolf" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_BOND_WOLF">
+                <description>
+                    <p>At 7th level, your bond with your spirit animal enhances your abilities even more. You gain one feature for the same spirit animal you have chosen at 3rd level.</p>
+                    <p class="indent">If one of your allies makes a melee weapon attack against a target within 5 feet of you, you can use your reaction to give the ally advantage on the roll.</p>
+                </description>
+                <sheet action="Reaction">
+                    <description>If one of your allies makes a melee weapon attack against a target within 5 feet of you, you can give the ally advantage on the roll.</description>
+                </sheet>
+            </element>
+            <element name="Unified Spirits: Wolf" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_UNIFIED_SPIRITS_WOLF">
+                <description>
+                    <p>At 11th level, when you use your action for a spirit animal attack, you can make one weapon attack as a bonus action against the same enemy.</p>
+                    <p class="indent">Additionally you gain one feature for the same spirit animal you have chosen at 3rd level.</p>
+                    <p class="indent">If you are within 5 feet of the target, the spirit animal attack is made with advantage.</p>
+                </description>
+                <sheet>
+                    <description>When you use your action for a spirit animal attack, you can make one weapon attack as a bonus action against the same enemy. If you are within 5 feet of the target, the spirit animal attack is made with advantage.</description>
+                </sheet>
+            </element>
+            <element name="Spiritual Fusion: Wolf" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_CHANNELER_SPIRITUAL_FUSION_WOLF">
+                <description>
+                    <p>At 15th level, you gain one ability for the same spirit animal you have chosen at 3rd level. You can use this ability a number of times equal to your Wisdom modifier (minimum of 1) before you need to take a long rest.</p>
+                    <p class="indent">As an action you can Howl. Creatures of your choice that you can see within 30 feet and that can hear you must succeed on a Wisdom saving throw against your spell DC or have disadvantage on the next attack roll they make before the end of their next turn.</p>
+                </description>
+                <sheet usage="{{spiritual-fusion:uses}}/Long Rest" action="Action">
+                    <description>You can Howl. Creatures of your choice that you can see within 30 feet and that can hear you must succeed on a Wisdom saving throw (save DC {{spellcasting:dc}}) or have disadvantage on the next attack roll they make before the end of their next turn.</description>
+                </sheet>
+                <rules>
+                    <stat name="spiritual-fusion:uses" value="1" bonus="base" />
+                    <stat name="spiritual-fusion:uses" value="wisdom:modifier" bonus="base" />
+                </rules>
+            </element>
+</elements>
