@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Dracolich Dragon Knight Practice</name>
+        <author url="https://www.reddit.com/r/shadowheartforge/">u/Dracovitch</author>
+        <update version="0.0.1">
+            <file name="dragon-knight-dracolich-practice.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/dragon-knight/dragon-knight-dracolich-practice.xml" />
+        </update>
+    </info>
+    
+    <element name="Dracolich Practice" type="Archetype" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_DRAGON_KNIGHT_DRACOLICH_PRACTICE">
+        <supports>Dragon Knight Practice</supports>
+        <description>
+            <p>There are those who believe that death is an obstacle, and to overcome it is to obtain unlimited power. When a Dragon Knight seeks these dark arts, they transform their companion into a dracolich, a powerful undead dragon of immense power. In some cases, the dragon itself desires the transformation and willingly gives its humanity for power. These Knights and their dragons are seen as abominations to most and are often hunted by those who seek out undead.</p>
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_RITUAL_OF_UNDEATH" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_PHYLACTERY" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_SOVEREIGN_OF_THE_DEAD" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_ESSENCE_SIPHON" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_WALKING_BOMB" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_MIGHT_OF_UNDEATH" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_RITUAL_OF_UNDEATH" level="3" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_PHYLACTERY" level="3" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_SOVEREIGN_OF_THE_DEAD" level="7" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_ESSENCE_SIPHON" level="10" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_WALKING_BOMB" level="15" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_MIGHT_OF_UNDEATH" level="18" />
+            </rules>
+    </element>
+    <element name="Ritual of Undeath" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_RITUAL_OF_UNDEATH">
+        <description>
+            <p>At 3rd level, you have performed the profane rites that transform your dragon companion into a dracolich. Your dragon’s relevant damage type becomes necrotic, and any damage and condition immunities it has are replaced with immunity to necrotic damage. Your dragon gains undead as an additional creature type. It can be affected by a game effect if it works on either dragon or undead creature types.</p>
+            <p class="indent">When your dragon reaches its Wyrmling Advancement and Young Advancement, it does not grow as a normal dragon, but instead grows by harvesting the souls of those it has killed to craft a more powerful body.</p>
+            <p class="indent">Additionally your dracolich is immune to being charmed, exhausted, frightened, paralyzed, or poisoned.</p>
+        </description>
+        <sheet>
+            <description>Your dracolich is immune to being charmed, exhausted, frightened, paralyzed, or poisoned.</description>
+        </sheet>
+        <rules>
+            <grant type="Class Feature" id="ID_DRACOVITCH_RDDT_UA_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_DRACOLICH" level="3" />
+            <stat name="companion:type" value="Dragon, Undead" inline="true" />
+        </rules>
+    </element>
+    <element name="Phylactery" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_PHYLACTERY">
+        <description>
+            <p>At 3rd Level, when you create your dracolich, its soul is housed in an a small gemstone, known as a phylactery. Whenever your dracolich dies, its soul returns to its phylactery.</p>
+            <p class="indent">When resurrecting your dracolich, the material cost is removed due to the creature’s soul being bound to the phylactery, however the time increases to 24 hours as the soul within the phylactory must recreate a new undead form to possess from the souls of the dead.</p>
+            <p class="indent">Additionally, you have advantage on the saving throw to return your dracolich to unlife. Failing the ability check to bring your dracolich back to unlife incurs only a 3 day period before you can regain spent hit dice and grants you only one level of exhaustion due to the powerful life siphoning magics of undeath.</p>
+            <p class="indent">If your dracolich dies while its phylactory is on a different plane of existence, its soul passes into the afterlife normally and you must go through the normal process to bring it back, with the exception that you must spend at least 100 gp on a gemstone to be used as a new phylactory.</p>
+        </description>
+        <sheet>
+            <description>Whenever your dracolich dies, its soul returns to its phylactery.</description>
+        </sheet>
+    </element>
+    <element name="Sovereign of the Dead" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_SOVEREIGN_OF_THE_DEAD">
+        <description>
+            <p>Beginning at 7th level, your dracolich has enough understanding of the necromantic magics of undeath to bring the dead back to life under its command. Whenever you or your dracolich reduces a medium or small humanoid to 0 hit points, your dracolich can use an action on the following turn to raise it as a Zombie (found on page 315 of the Monster Manual), with the following changes.</p>
+            <ul>
+                <li>If the slain humanoid is wearing armor, the zombie’s AC matches the type of armor worn, with a -2 penalty.</li>
+                <li>The zombie’s alignment is neutral.</li>
+                <li>Your dracolich adds its Charisma modifier to the zombie’s attack and damage rolls.</li>
+            </ul>
+            <p class="indent">The zombie lasts a number of hours equal to your dracolich’s Charisma modifier (minimum 1), and acts immediately after the dracolich’s initiative count. They take orders from both you and the dracolich, requiring no action from either of you.</p>
+            <p class="indent">Your dracolich can raise a number of zombies per short rest equal to its Charisma modifier (minimum 1). In order to raise the creature as a zombie, it must have physical remains to animate.</p>
+        </description>
+        <sheet>
+            <description>Whenever you or your dracolich reduces a medium or small humanoid to 0 hit points, your dracolich can use an action on the following turn to raise it as a Zombie, with a -2 AC from its previous form. Your dracolich adds its {{companion:charisma:modifier}} to the zombie’s attack and damage rolls.</description>
+        </sheet>
+    </element>
+    <element name="Essence Siphon" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_ESSENCE_SIPHON">
+        <description>
+            <p>At 10th level, you understand the intricacies of weaving life from death. As an action, you can cast <i>vampiric touch</i> as a 3rd-level spell. You use your Charisma modifier for the attack, and can cast it a number of times per long rest equal to half your Charisma modifier (minimum 1). When you hit with your vampiric touch, you can choose to heal your dracolich for the same amount. At 14th-level you cast it as a 4th-level spell. At 17th-level you cast the spell as a 5th-level spell.</p>
+        </description>
+        <sheet action="Action" usage="{{essence-siphon:uses}}/Long Rest">
+            <description>You can cast vampiric touch as a 3rd-level spell. You use your Charisma modifier for the attack. When you hit with your vampiric touch, you can choose to heal your dracolich for the same amount.</description>
+            <description level="14">You can cast vampiric touch as a 4th-level spell. You use your Charisma modifier for the attack. When you hit with your vampiric touch, you can choose to heal your dracolich for the same amount.</description>
+            <description level="17">You can cast vampiric touch as a 5th-level spell. You use your Charisma modifier for the attack. When you hit with your vampiric touch, you can choose to heal your dracolich for the same amount.</description>
+        </sheet>
+        <rules>
+            <stat name="essence-siphon:uses" value="1" bonus="base" />
+            <stat name="essence-siphon:uses" value="2" bonus="base" requirements="[charisma:modifier:4]" />
+            <stat name="essence-siphon:uses" value="3" bonus="base" requirements="[charisma:modifier:6]" />
+            <stat name="essence-siphon:uses" value="4" bonus="base" requirements="[charisma:modifier:8]" />
+        </rules>
+    </element>
+    <element name="Walking Bomb" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_WALKING_BOMB">
+        <description>
+            <p>Starting at 15th level, your dracolich can fill one of its zombie minions with enough necromantic energy to cause it to explode. As an action, the dracolich forces the zombie to use its reaction to move up to 15 feet while feeding necromantic energy into it, causing it to burst once it completes its movement. Each creature within 10 feet of the zombie must make a Dexterity saving throw equal to 8 + your dracolich’s Charisma modifier + your proficiency bonus, taking 8d6 necrotic damage on a failed save, half as much on a successful one. Once the corpse has exploded, your dracolich cannot create another walking bomb until it has completed a long rest.</p>
+        </description>
+        <sheet usage="1/Companion Long Rest">
+            <description>As an action, the dracolich forces the zombie to use its reaction to move up to 15 feet while feeding necromantic energy into it, causing it to burst once it completes its movement. Each creature within 10 feet of the zombie must make a Dexterity saving throw (save DC {{walking-bomb:save-dc}}), taking 8d6 necrotic damage on a failed save, half as much on a successful one.</description>
+        </sheet>
+        <rules>
+            <stat name="walking-bomb:save-dc" value="8" />
+            <stat name="walking-bomb:save-dc" value="proficiency" />
+            <stat name="walking-bomb:save-dc" value="companion:charisma:modifier" />
+        </rules>
+    </element>
+    <element name="Might of Undeath" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_DRACOLICH_MIGHT_OF_UNDEATH">
+        <description>
+            <p>At 18th level you and your dracolich have mastered to the arts of undeath. Whenever a feature of this archetype uses you or your dracolich’s Charisma modifier, add a +3 bonus to the modifier.</p>
+        </description>
+        <sheet>
+            <description>Whenever a feature of this archetype uses you or your dracolich’s Charisma modifier, add a +3 bonus to the modifier.</description>
+        </sheet>
+    </element>
+
+
+    <element name="Dracolich" type="Class Feature" source="GM Binder" id="ID_DRACOVITCH_RDDT_UA_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_DRACOLICH">
+        <description />
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="companion:color" inline="true" value="dracolich" />
+            <stat name="companion:damage-type" inline="true" value="necrotic" />
+            <!--<grant type="Class Feature" id="ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_BREATH_WEAPON_LINE" />
+            <stat name="companion:breath-weapon:save" inline="true" value="Constitution" />
+
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" level="11" />
+            -->
+            <stat name="companion:name" inline="true" value="Dracolich" />
+        </rules>
+    </element>
+
+</elements>

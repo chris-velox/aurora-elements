@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Solar Halo Dragon Knight Practice</name>
+        <author url="https://www.reddit.com/r/shadowheartforge/">u/Dracovitch</author>
+        <update version="0.0.1">
+            <file name="dragon-knight-solar-halo-practice.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/dragon-knight/dragon-knight-solar-halo-practice.xml" />
+        </update>
+    </info>
+    
+    <element name="Solar Halo Practice" type="Archetype" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_DRAGON_KNIGHT_SOLAR_HALO_PRACTICE">
+        <supports>Dragon Knight Practice</supports>
+        <requirements>ID_DRACOVITCH_RDDT_UA_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_SOLHALYSIS</requirements>
+        <description>
+            <p>Due to their social nature, solhalysis dragons make excellent companions for any adventurer, however Knights who bond with these unique dragons find themselves with a deep psychic connection unlike any other.</p>
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_PSYCHIC_BOND" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_SOLAR_RESISTANCE" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_CORONAL_EJECTION" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_PSYCHIC_SYMBIOSIS" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_HIVE_INFLUENCE" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_OMNISCIENT_BOND" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_PSYCHIC_BOND" level="3" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_SOLAR_RESISTANCE" level="3" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_CORONAL_EJECTION" level="7" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_PSYCHIC_SYMBIOSIS" level="10" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_HIVE_INFLUENCE" level="15" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_OMNISCIENT_BOND" level="18" />
+        </rules>
+    </element>
+    <element name="Psychic Bond" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_PSYCHIC_BOND">
+        <description>
+            <p>Beginning at 3rd level you and your dragon have an unbreakable psychic connection. As long as you are on the same plane of existence, you and your dragon companion always known the exact location of each other. Additionally, you and your dragon have a telepathic connection. As long as you are within 300 feet of your dragon, you can speak telepathically to each other.</p>
+        </description>
+        <sheet>
+            <description>As long as you are on the same plane of existence, you and your dragon companion always known the exact location of each other. Additionally, you and your dragon have a telepathic connection. As long as you are within 300 feet of your dragon, you can speak telepathically to each other.</description>
+        </sheet>
+    </element>
+    <element name="Solar Resistance" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_SOLAR_RESISTANCE">
+        <description>
+            <p>At 3rd level, your connection to your dragon companion strengthens, giving you a portion of its resistances. You have resistance to radiant damage. Additionally, you are immune to fire and radiant damage from your solhalysis dragon companion.</p>
+        </description>
+        <sheet>
+            <description>You are immune to fire and radiant damage from your solhalysis dragon companion.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+        </rules>
+    </element>
+    <element name="Coronal Ejection" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_CORONAL_EJECTION">
+        <description>
+            <p>Starting at 7th level, your companion has learned how to vent excess energy it has stored up, and is capable to using it as a weapon. Instead of exhaling destructive energy, your dragon can expend a use of its Breath Weapon trait to create a brief destructive field of radiant energy around it.</p>
+            <p class="indent">This attack creates a 10 foot radius sphere centered on your dragon. Each creature other than your dragon within the field must make a Constitution saving throw (DC your proficiency bonus + your dragon’s Constitution modifier). Each creature in the area takes 4d6 radiant damage on a failed save, or half as much on a successful one. The damage of this ability increases to 6d6 at 9th level, and 8d6 at 14th level.</p>
+            <p class="indent">Once your dragon has used this ability, it cannot do so again until you finish a short or long rest.</p>
+        </description>
+        <sheet usage="1/Short Rest">
+            <description>Your dragon can expend a use of its Breath Weapon trait to create a brief destructive field of radiant energy around it. This attack creates a 10 foot radius sphere centered on your dragon. Each creature other than your dragon within the field must make a Constitution saving throw (save DC {{coronal-ejection:save-dc}}). Each creature in the area takes {{coronal-ejection:dice}}d6 radiant damage on a failed save, or half as much on a successful one.</description>
+        </sheet>
+        <rules>
+            <stat name="coronal-ejection:save-dc" value="8" />
+            <stat name="coronal-ejection:save-dc" value="proficiency" />
+            <stat name="coronal-ejection:save-dc" value="companion:constitution:modifier" />
+            <stat name="coronal-ejection:dice" value="4" level="7" />
+            <stat name="coronal-ejection:dice" value="2" level="9" />
+            <stat name="coronal-ejection:dice" value="2" level="14" />
+        </rules>
+    </element>
+    <element name="Psychic Symbiosis" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_PSYCHIC_SYMBIOSIS">
+        <description>
+            <p>Beginning at 10th level, your psychic connection to your dragon further grows. You and your dragon gain resistance to psychic damage. Additionally, as long as your dragon can see you, you have advantage on all saving throws, as your dragon’s instincts help guide you through your connection.</p>
+        </description>
+        <sheet>
+            <description>You and your dragon gain resistance to psychic damage. Additionally, as long as your dragon can see you, you have advantage on all saving throws, as your dragon’s instincts help guide you through your connection.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+        </rules>
+    </element>
+    <element name="Hive Influence" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_HIVE_INFLUENCE">
+        <description>
+            <p>Starting at 15th level, your dragon’s ability to influence others awakens and your shared connection grants you the same abilities. Whenever you make a Charisma skill check to deceive, intimidate, or persuade, you have advantage on the check.</p>
+            <p class="indent">Additionally, as long as your dragon is within line of sight to the creature you are making a Charisma check against, the target of your Charisma skill check has disadvantage on opposing Wisdom (insight) checks made against you.</p>
+        </description>
+        <sheet>
+            <description>Whenever you make a Charisma skill check to deceive, intimidate, or persuade, you have advantage on the check. Additionally, as long as your dragon is within line of sight to the creature you are making a Charisma check against, the target of your Charisma skill check has disadvantage on opposing Wisdom (insight) checks made against you.</description>
+        </sheet>
+    </element>
+    <element name="Omniscient Bond" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_SOLHALYSIS_OMNISCIENT_BOND">
+        <description>
+            <p>At 18th level, the psychic connection between you and your dragon has become so strong it is akin to a shared hive mind. Both you and your dragon share all immunities and resistances, and you both gain immunity to psychic damage.</p>
+            <p class="indent">Additionally, Whenever you or your dragon succeeds on a saving throw, the other may use their reaction to make a saving throw with advantage, if you or your dragon are making the save against the same effect.</p>
+        </description>
+        <sheet>
+            <description>Both you and your dragon share all immunities and resistances, and you both gain immunity to psychic damage. Additionally, Whenever you or your dragon succeeds on a saving throw, the other may use their reaction to make a saving throw with advantage, if you or your dragon are making the save against the same effect.</description>
+        </sheet>
+    </element>
+
+  <!-- Dragon Knight Covenants -->
+    <element name="Solhalysis Dragon" type="Class Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_SOLHALYSIS">
+        <supports>Dragon Knight Covenant</supports>
+        <description />
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="companion:color" inline="true" value="solhalysis" />
+            <stat name="companion:damage-type" inline="true" value="fire" />
+            <grant type="Class Feature" id="ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_BREATH_WEAPON_LINE" />
+            <stat name="companion:breath-weapon:save" inline="true" value="Dexterity" />
+            <select type="Companion" name="Dragon Companion" supports="Solhalysis Dragon Companion" />
+
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" level="11" requirements="!ID_RAINJUNKIE_GM_BINDER_ARCHETYPE_DRAGON_KNIGHT_PLATINUM_PRACTICE,!ID_RAINJUNKIE_GM_BINDER_ARCHETYPE_DRAGON_KNIGHT_SHADOW_PRACTICE" />
+        </rules>
+    </element>
+
+    <!-- Solhalysis Dragon -->
+    	<element name="Solhalysis Dragon" type="Companion" source="GM Binder" id="ID_RAINJUNKIE_GM_BINDER_COMPANION_DRAGON_BLACK">
+            <supports>Solhalysis Dragon Companion</supports>
+            <description>
+                <p>Solhalysis dragons, also known as Solar Halo dragons or Hive Lord dragons, are an extremely unique and powerful breed of dragon that fire streams of superheated plasma from their jaws, and build up large amounts of magical energy in their body that must be expelled at regular intervals. Even more terrifying is the psychic abilities possessed by some that can influence other dragons and dragon blooded creatures.</p>
+                <h4>PHYSICAL DESCRIPTION</h4>
+                <p>Solhalysis dragons are primarily a deep blood red in color, with white underbellies and white wing membranes. Their most notable feature is the long mane of black spikes that starts at the top of their skull and stretches all the way down their necks. When the dragon charges up for an attack with its breath weapon, or it is about to vent out built up magical energy, the spikes heat to extreme temperatures and glow white.</p>
+                <h4>SOCIAL AND IMPRESSIONABLE</h4>
+                <p>Charismatic and talkative by nature, most solhalysis dragons are more than willing to talk with anyone that ventures into their territory with no hostile intent. They love to sing and try to “befriend” humanoid races to try and better understand their surroundings. These dragons garner most of their knowledge from the experiences they live rather than reading through books, and care little for past histories.</p>
+                <p class="indent">Due to their very impressionable nature and knowledge via lived experiences, solhalysis dragons are often “true neutral” with great sways in alignment based on events that shape the dragon’s outlook on life. For instance, a solhalysis dragon who saw its mother killed and was hunted by dragonslayers for years might be of an evil alignment and despise humanoids. Contrast to this, if the same dragon was instead saved from the dragonslayers after its mother’s demise, it might instead become lawful and strive to protect those that are helpless.</p>
+                <h4>THE SOLAR HALO</h4>
+                <p>Solhalysis dragons have earned the moniker “solar halo dragons” due to their two unique abilities. Their breath weapon is a stream of superheated plasma, when expelled, a halo of light forms around the dragon’s jaws. The other, is their natural ability to absorb magical energy. When expelled, this energy forms a halo of pure magical energy around the dragon that dissipates in moments.</p>
+                <h4>PSYCHIC CONTROLLERS</h4>
+                <p>While not present in every member of the species, some solhalysis dragons have developed extremely powerful psychic abilities. These special psionics are generally used to control other dragon blooded creatures and influence their actions. This has given the dragons the moniker “hive lords” as the more talented of these dragons often surround themselves with other dragons and smaller dragonblooded creatures to do their bidding or protect them from intruders. The most powerful of these psionic dragons are known as Siren Queens, females who weave their psychic talents with draconic song magic to exude a vast influence over even the most powerful draconic creatures.</p>
+            </description>
+            <setters>
+                <set name="strength">14</set>
+                <set name="dexterity">14</set>
+                <set name="constitution">14</set>
+                <set name="intelligence">10</set>
+                <set name="wisdom">12</set>
+                <set name="charisma">12</set>
+                <set name="ac">12</set>
+                <set name="hd">d10</set>
+                <set name="hp">8 (1d10 + 2)</set>
+                <set name="speed">20 ft., fly 30 ft., climb 20 ft.</set>
+                <set name="languages">Draconic</set>
+                <set name="skills">Perception +5, Stealth +2</set>
+                <set name="immunities">radiant</set>
+                <set name="resistances">fire</set>
+                <set name="senses">darkvision 60 ft., passive Perception 15</set>
+                <set name="type">Dragon</set>
+                <set name="size">Medium</set>
+                <set name="alignment">alignment same as knight</set>
+                <set name="challenge">1</set>
+                <set name="traits">ID_DRACOVITCH_RDDT_UA_COMPANION_TRAIT_DRAGON_COMPANION_SUPERHEATED_SCALES</set>
+                <set name="actions">ID_RAINJUNKIE_GM_BINDER_COMPANION_ACTION_DRAGON_COMPANION_CLAW</set>
+            </setters>
+            <rules>
+                <stat name="companion:hp:max" value="12" bonus="base" />
+                <stat name="companion:speed" value="20" bonus="base" />
+                <stat name="companion:speed:fly" value="30" bonus="base" />
+                <stat name="companion:speed:climb" value="companion:speed" bonus="base" />
+                <stat name="companion:stealth:proficiency" value="proficiency" bonus="base" />
+                <stat name="companion:perception:proficiency" value="proficiency" bonus="base" />
+            </rules>
+        </element>
+        <element name="Superheated Scales" type="Companion Trait" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_COMPANION_TRAIT_DRAGON_COMPANION_SUPERHEATED_SCALES">
+            <description>
+                <p>Any creature that is physically attached to the dragon via climbing, grappling, or riding upon it takes fire damage equal to the knight’s proficiency bonus at the beginning of the dragon’s turn.</p>
+            </description>
+            <sheet>
+                <description>Any creature that is physically attached to the dragon via climbing, grappling, or riding upon it takes fire damage equal to the knight’s proficiency bonus at the beginning of the dragon’s turn.</description>
+            </sheet>
+        </element>
+</elements>

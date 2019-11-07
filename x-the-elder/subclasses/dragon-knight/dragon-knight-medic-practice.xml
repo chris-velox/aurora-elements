@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Medic Dragon Knight Practice</name>
+        <author url="https://www.reddit.com/r/shadowheartforge/">u/Dracovitch</author>
+        <update version="0.0.1">
+            <file name="dragon-knight-medic-practice.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/dragon-knight/dragon-knight-medic-practice.xml" />
+        </update>
+    </info>
+    
+    <element name="Medic Practice" type="Archetype" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_DRAGON_KNIGHT_MEDIC_PRACTICE">
+        <supports>Dragon Knight Practice</supports>
+        <description>
+            <p>Dragon Knights who wish to help those that aid them often join special battlefield corps dedicated to healing magic. These Knights and their dragons learn that defeating your foes is only part of how a battle is won. Dragons learn how to exhale positive healing energy and Knights master the art of stitching up wounds.</p>
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_BATTLEFIELD_MEDIC" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_RESTORATIVE_EXHALATION" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_ADVANCED_RESTORATION" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_CALM_UNDER_PRESSURE" />
+            <div element="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_REGENERATIVE_AURA" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_BATTLEFIELD_MEDIC" level="3" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_RESTORATIVE_EXHALATION" level="7" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_ADVANCED_RESTORATION" level="10" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_CALM_UNDER_PRESSURE" level="15" />
+                <grant type="Archetype Feature" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_REGENERATIVE_AURA" level="18" />
+        </rules>
+    </element>
+    <element name="Battlefield Medic" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_BATTLEFIELD_MEDIC">
+        <description>
+            <p>Starting at 3rd level you and your dragon have learned how to keep the wounded alive under pressure. You gain proficiency with the healer’s kit if you don’t have it already.</p>
+            <p class="indent">As an action, you can spend one use of a healer’s kit to restore 1d6 + 4 hit points to it to a creature, plus additional hit points equal to the creature’s maximum number of Hit Dice. The creature can’t regain hit points this way again until it finishes a short or long rest.</p>
+            <p class="indent">Additionally, whenever you use your healer’s kit and your dragon is within 5 feet of both you and the target of your healer’s kit, it can use its reaction to grant a +2 bonus to the target’s AC until the beginning of your next turn.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can spend one use of a healer’s kit to restore 1d6 + 4 hit points to it to a creature, plus additional hit points equal to the creature’s maximum number of Hit Dice. The creature can’t regain hit points this way again until it finishes a short or long rest. Additionally, whenever you use your healer’s kit and your dragon is within 5 feet of both you and the target of your healer’s kit, it can use its reaction to grant a +2 bonus to the target’s AC until the beginning of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Restorative Exhalation" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_RESTORATIVE_EXHALATION">
+        <description>
+            <p>At 7th level, your dragon’s breath is charged with positive energy, giving it the ability to heal wounds rather than create them. Your dragon’s breath weapon no longer deals damage, instead each friendly creature within its line or cone is healed for 2d6 + your dragon’s Charisma modifier. At 9th level this increases to 4d6, and to 6d6 at 14th level.</p>
+            <p class="indent">Additionally if you are in the healing exhalation, you gain 10 temporary hit points. At 9th level this increases to 15 hit points, and to 20 hit points at 14th level.</p>
+        </description>
+        <sheet>
+            <description>Your dragon’s breath weapon no longer deals damage, instead each friendly creature within its line or cone is healed for {{restorative-exhalation:dice}}d6 + {{companion:charisma:modifier}}. Additionally if you are in the healing exhalation, you gain {{restorative-exhalation:temp-hp}} temporary hit points.</description>
+        </sheet>
+        <rules>
+            <stat name="restorative-exhalation:dice" value="2" level="7" />
+            <stat name="restorative-exhalation:dice" value="2" level="9" />
+            <stat name="restorative-exhalation:dice" value="2" level="14" />
+            <stat name="restorative-exhalation:temp-hp" value="10" level="7" />
+            <stat name="restorative-exhalation:temp-hp" value="5" level="9" />
+            <stat name="restorative-exhalation:temp-hp" value="5" level="14" />
+        </rules>
+    </element>
+    <element name="Advanced Restoration" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_ADVANCED_RESTORATION">
+        <description>
+            <p>Beginning at 10th level, your dragon’s healing breath can cure and revitalize those in its area of effect. Your dragon’s restorative exhalation removes the blinded, deafened, paralyzed, poisoned, and stunned conditions from creatures within its area of effect. The breath can also reduce a creature’s level of exhaustion by 1.</p>
+            <p class="indent">Additionally, you and your dragon are immune to poison and disease.</p>
+        </description>
+        <sheet>
+            <description>Your dragon’s restorative exhalation removes the blinded, deafened, paralyzed, poisoned, and stunned conditions from creatures within its area of effect. The breath can also reduce a creature’s level of exhaustion by 1. Additionally, you and your dragon are immune to poison and disease.</description>
+        </sheet>
+    </element>
+    <element name="Calm Under Pressure" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_CALM_UNDER_PRESSURE">
+        <description>
+            <p>At 15th level you have become adept at using a healer’s kit to bandage up your wounded allies. Healer’s kits you use now have 20 charges instead of 10. When you use a healer’s kit to restore a creature’s hit points and you roll the maximum number on the die, you double the amount healed. When you use a healer’s kit to stabilize a dying creature, it regains 10 + it’s Constitution modifier hit points.</p>
+            <p class="indent">Additionally, when your dragon uses its reaction granted by the Battlefield Medic feature to increase your target’s AC, you get a +2 bonus to AC until the beginning of your next turn.</p>
+        </description>
+        <sheet>
+            <description>Healer’s kits you use now have 20 charges instead of 10. When you use a healer’s kit to restore a creature’s hit points and you roll the maximum number on the die, you double the amount healed. When you use a healer’s kit to stabilize a dying creature, it regains 10 + it’s Constitution modifier hit points. Additionally, when your dragon uses its reaction granted by the Battlefield Medic feature to increase your target’s AC, you get a +2 bonus to AC until the beginning of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Regenerative Aura" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_DRACOVITCH_RDDT_UA_ARCHETYPE_FEATURE_MEDIC_REGENERATIVE_AURA">
+        <description>
+            <p>Starting at 18th level, you and your dragon are immersed the the restorative magics that it uses to heal others. Your dragon regains hit points equal to twice its Constitution modifier at the start of its turn as long as it has at least 1 hit point.</p>
+            <p class="indent">Additionally, as long as you are within 10 feet of your dragon, you regain the same amount of hit points as long as you have at least 1 hit point.</p>
+        </description>
+        <sheet>
+            <description>Your dragon regains {{regenerative-aura:hp-grant}} hit points at the start of its turn as long as it has at least 1 hit point.</description>
+        </sheet>
+        <rules>
+            <stat name="regenerative-aura:hp-grant" value="companion:constitution:modifier" />
+            <stat name="regenerative-aura:hp-grant" value="companion:constitution:modifier" />
+        </rules>
+    </element>
+</elements>
