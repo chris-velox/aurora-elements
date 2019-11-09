@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Gambler Roguish Archetype</name>
+        <update version="0.0.1">
+            <file name="rogue-gambler.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/rogue/rogue-gambler.xml" />
+        </update>
+    </info>
+    
+    <element name="The Gambler" type="Archetype" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_THE_GAMBLER">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Rogues who follow this archetype are known as reckless and risk-takers, obsessed with games of both chance and skill.</p>
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_WINNING_STREAK" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_CARD_THROW" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_POKER_FACE" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_DEAL_WITH_DEATH" />
+            <div element="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_DEALERS_BLUFF" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_WINNING_STREAK" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_CARD_THROW" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_POKER_FACE" level="9" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_DEAL_WITH_DEATH" level="13" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_DEALERS_BLUFF" level="17" />
+        </rules>
+    </element>
+    
+    <element name="Winning Streak" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_WINNING_STREAK">
+        <description>
+            <p>Beginning when you choose this archetype at 3rd level, whenever you score a critical hit on an attack roll (weapon or spell), roll a d4. For a number of rounds equal to the number rolled on the d4, your attack rolls score a critical hit on a roll of 19-20. If you score a critical hit on an attack roll during this duration, the duration is extended by 1d4 rounds and your attack rolls score a critical hit on a roll of 18-20. If you score a critical hit during this duration, the range becomes 17-20, and so on. However, if you reach a range of 18-20, for the same duration, your attack rolls are critical fails on a roll of 1-2. This range increases at the same rate as the critical hit range.</p>
+            <p class="indent">The base duration increases to 1d6 at 13th level, and 1d8 at 17th level. In addition, beginning at 17th level, the amount the duration gets extended for additional critical hits is increased to 1d6.</p>
+        </description>
+        <sheet>
+            <description>whenever you score a critical hit on an attack roll (weapon or spell), roll a d{{winning-streak:dice}}. For a number of rounds equal to the number rolled on the die, your attack rolls score a critical hit on a roll of 19-20. If you score a critical hit on an attack roll during this duration, the duration is extended by 1d{{winning-streak:extended-dice}} rounds and your attack rolls score a critical hit on a roll of 18-20. If you score a critical hit during this duration, the range becomes 17-20, and so on. However, if you reach a range of 18-20, for the same duration, your attack rolls are critical fails on a roll of 1-2. This range increases at the same rate as the critical hit range.</description>
+        </sheet>
+        <rules>
+            <stat name="winning-streak:dice" value="4" bonus="base" level="3" />
+            <stat name="winning-streak:dice" value="6" bonus="base" level="13" />
+            <stat name="winning-streak:dice" value="8" bonus="base" level="17" />
+            <stat name="winning-streak:extended-dice" value="4" bonus="base" level="3" />
+            <stat name="winning-streak:extended-dice" value="6" bonus="base" level="17" />
+        </rules>
+    </element>
+    <element name="Card Throw" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_CARD_THROW">
+        <description>
+            <p>Also at 3rd level, you gain knowledge of playing cards and how to wield them as effective weapons. You gain a new attack that you can use with the Attack action, that has the following features: Ammunition (Playing cards), Ranged (20/60), 1d4 damage. Additionally, whenever you make this attack, you can make this attack again as a bonus action. Finally, at 13th level, you can add your proficiency bonus to the damage rolls of this weapon.</p>
+        </description>
+        <sheet>
+            <description>You can throw a card as an attack action.The card has the following features: Ammunition (Playing cards), Ranged (20/60), 1d4 damage. Additionally, whenever you make this attack, you can make this attack again as a bonus action. Finally, at 13th level, you can add your proficiency bonus to the damage rolls of this weapon.</description>
+        </sheet>
+        <rules>
+            <stat name="card-throw:attack" value="dexterity:modifier" />
+            <stat name="card-throw:damage" value="proficiency" level="13" />
+        </rules>
+    </element>
+    <element name="Poker Face" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_POKER_FACE">
+        <description>
+            <p>At 9th level, you can use this feature to give yourself advantage on a Charisma (Deception) check. The DM may give a bonus or penalty to the check, depending on how long the person you’re trying to deceive has known you. You can use this feature 2 times, and you gain all expended uses when you finish a long rest.</p>
+        </description>
+        <sheet usage="2/Long Rest">
+            <description>You can give yourself advantage on a Charisma (Deception) check.</description>
+        </sheet>
+    </element>
+    <element name="Deal with Death" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_DEAL_WITH_DEATH">
+        <description>
+            <p>Starting at 13th level, you learn to either pull yourself from the brink of death--or throw yourself into the abyss. When you are unconscious and rolling death saves, you can choose to use this feature. When you do, you choose whether to play it safe or risk it all. Either way, roll a d4. If you play it safe, you gain the following benefits/curses:</p>
+            <ul>
+                <li>If you roll a 1-2 on the d4, you gain the effect of two failed death saves. If you roll a 3-4, you gain the effect of two successful death saves</li>
+            </ul>
+            <p>If you decide to risk it all, you gain the following benefits:</p>
+            <ul>
+                <li>If you roll a 1-2 on the d4, you instantly die. However, if you roll a 3-4, you come back to life with half your hit point maximum restored.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you are unconscious and rolling death saves, you choose whether to play it safe or risk it all. Either way, roll a d4. If you play it safe, you get two failed death saves on a 1-2, or two successful saves on a 3-4. If you risk it all, you instantly die on a 1-2, or come back with half your hit point maximum on a 3-4.</description>
+        </sheet>
+    </element>
+    <element name="Dealer’s Bluff" type="Archetype Feature" source="GM Binder" id="ID_GM_BINDER_ARCHETYPE_FEATURE_GAMBLER_DEALERS_BLUFF">
+        <description>
+            <p>At 17th level, you gain a new way to use your Cunning Action: You make either a Charisma (Deception) or Charisma (Intimidation) check against a creatures Wisdom (Insight) check. If you succeed, attack rolls the target makes against you have disadvantage for 1d4 rounds. You can use this ability twice, and regain one use when you finish a short rest and regain all uses when you finish a long rest.</p>
+        </description>
+        <sheet usage="Cunning Action">
+            <description>You make either a Charisma (Deception) or Charisma (Intimidation) check against a creatures Wisdom (Insight) check. If you succeed, attack rolls the target makes against you have disadvantage for 1d4 rounds. You can use this ability twice, and regain one use when you finish a short rest and regain all uses when you finish a long rest.</description>
+        </sheet>
+    </element>
+</elements>
