@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Elevation Practice</name>
+        <author url="https://www.reddit.com/user/SoraKBM/">u/SoraKBM5</author>
+        <update version="0.0.1">
+            <file name="dragon-knight-elevation-practice.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/dragon-knight-elevation-practice.xml" />
+        </update>
+        <!-- https://homebrewery.naturalcrit.com/share/BkXi4e4T0E -->
+    </info>
+    
+    <element name="Elevation Practice" type="Archetype" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DRAGON_KNIGHT_ELEVATION_PRACTICE">
+        <supports>Dragon Knight Practice</supports>
+        <description>
+            <p>Some Dragon Knights are considered to be servants, vassals, or knights in the truest fashion to their dragon. Some simply value the power of their dragon more than their own. Whateve rthe case, those under the Elevation Practice seek to help their Dragon and even others around them reach their fullest potential.</p>
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_COMBAT_ABETMENT" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_CLOSE_QUARTERS_COMFORT" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_ELEVATED_STRIKES" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_POINT_OF_RALLY" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_EXALTING_ROAR" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_GREATER_ELEVATED_STRIKES" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_COMBAT_ABETMENT" level="3" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_CLOSE_QUARTERS_COMFORT" level="3" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_ELEVATED_STRIKES" level="7" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_POINT_OF_RALLY" level="10" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_EXALTING_ROAR" level="15" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_GREATER_ELEVATED_STRIKES" level="18" />
+        </rules>
+    </element>
+    
+    <element name="Combat Abetment" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_COMBAT_ABETMENT">
+        <description>
+            <p>Starting at 3rd level, you’ve become effective at assisting others in the midst of combat without hindering your own. When you take the Help action on your turn, you can use your bonus action to make one weapon attack or take the Use an Object action.</p>
+        </description>
+        <sheet>
+            <description>When you take the Help action on your turn, you can use your bonus action to make one weapon attack or take the Use an Object action.</description>
+        </sheet>
+    </element>
+    <element name="Close Quarters Comfort" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_CLOSE_QUARTERS_COMFORT">
+        <description>
+            <p>Also at 3rd level, when a friendly creature within 10 feet of you makes a saving throw that you are proficient in, you can use your reaction to grant it advantage on the saving throw. Reversely, when you make a saving throw, a friendly creature within 10 feet of you that is proficient in that saving throw can use its reaction to grant you advantage on the saving throw. You can use this feature to grant your dragon advantage on saving throws that you aren’t proficient in.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>When a friendly creature within 10 feet of you makes a saving throw that you are proficient in, you can grant it advantage on the saving throw. Reversely, when you make a saving throw, a friendly creature within 10 feet of you that is proficient in that saving throw can use its reaction to grant you advantage on the saving throw. You can use this feature to grant your dragon advantage on saving throws that you aren’t proficient in.</description>
+        </sheet>
+    </element>
+    <element name="Elevated Strikes" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_ELEVATED_STRIKES">
+        <description>
+            <p>Starting at 7th level, when you are within 5 feet of your dragon, when your dragon deals damage of its relevant damage type, it ignores resistance to the damage type (but not immunity).</p>
+            <p class="indent">Additionally, when an ally makes an attack roll with advantage as a result of you taking the Help action, your ally gains a bonus to the damage roll of the attack equal to your Charisma modifier + half your Dragon Knight level. When your dragon gains bonus damage using this feature, it can make the bonus damage its relevant damage type.</p>
+        </description>
+        <sheet>
+            <description>When you are within 5 feet of your dragon, when your dragon deals damage of its relevant damage type, it ignores resistance to the damage type (but not immunity). Additionally, when an ally makes an attack roll with advantage as a result of you taking the Help action, your ally gains a +{{elevated-strikes:damage-bonus}} bonus to the damage roll of the attack. When your dragon gains bonus damage using this feature, it can make the bonus damage its relevant damage type.</description>
+        </sheet>
+        <rules>
+            <stat name="elevated-strikes:damage-bonus" value="charisma:modifier" />
+            <stat name="elevated-strikes:damage-bonus" value="level:dragon knight:half" />
+        </rules>
+    </element>
+    <element name="Point of rally" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_POINT_OF_RALLY">
+        <description>
+            <p>At 10th level, the first 10 feet of movement allies make toward you does not consume movement. Your dragon can move an extra 10 feet in this manner.</p>
+            <p class="indent">Additionally, when you or your dragon makes a saving throw to resist or end a condition affecting you, you and your dragon can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you, (maximum bonus of +5).</p>
+        </description>
+        <sheet>
+            <description>The first 10 feet of movement allies make toward you does not consume movement. Your dragon can move an extra 10 feet in this manner. Additionally, when you or your dragon makes a saving throw to resist or end a condition affecting you, you and your dragon can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you, (maximum bonus of +5).</description>
+        </sheet>
+    </element>
+    <element name="Exhalting Roar" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_EXALTING_ROAR">
+        <description>
+            <p>At 15th level you are able to gain a burst of zeal when your dragon unleashes its roar that either bolsters the both of your or instills further fear in your foes. When your dragon uses its Titanic Roar feature and you are within its range, you can use your reaction to either impose Disadvantage on the saving throw to any creature within five feet of you, or give you and your dragon temporary hit points equal to 1d10 + your dragon knight level.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>When your dragon uses its Titanic Roar feature and you are within its range, you can either impose Disadvantage on the saving throw to any creature within five feet of you, or give you and your dragon 1d10 + {{level:dragon knight}} temporary hit points.</description>
+        </sheet>
+    </element>
+    <element name="Greater Elevated Strikes" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_ELEVATION_GREATER_ELEVATED_STRIKES">
+        <description>
+            <p>At 18th level, your blows mark enemies for your dragon to take advantage. Your dragon’s attacks benefit from your Elevated Strikes feature on any enemy you’ve damaged within the past minute, regardless of if it has advantage. Additionally, when your dragon scores a critical hit, it can add the damage granted by your Elevated Strikes feature twice.</p>
+        </description>
+        <sheet>
+            <description>Your dragon’s attacks benefit from your Elevated Strikes feature on any enemy you’ve damaged within the past minute, regardless of if it has advantage. Additionally, when your dragon scores a critical hit, it can add the damage granted by your Elevated Strikes feature twice.</description>
+        </sheet>
+    </element>
+
+</elements>

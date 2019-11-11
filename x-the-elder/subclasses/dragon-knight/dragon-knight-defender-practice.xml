@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Defender Practice</name>
+        <author url="https://www.reddit.com/user/SoraKBM/">u/SoraKBM5</author>
+        <update version="0.0.1">
+            <file name="dragon-knight-defender-practice.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/dragon-knight-defender-practice.xml" />
+        </update>
+        <!-- https://homebrewery.naturalcrit.com/share/BkXi4e4T0E -->
+    </info>
+    
+    <element name="Defender Practice" type="Archetype" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DRAGON_DEFENDER_ELEVATION_PRACTICE">
+        <supports>Dragon Knight Practice</supports>
+        <description>
+            <p>Dragon Knights under the Defender Practice have been infused with powerful magic as a result of their bond. This magic maniefests in defensive wards that allow them to protect their dragon and others around them.</p>
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_VALIANT_DEFENDER" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_DEFENSIVE_BULWARK" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_QUICKENED_DEFENSES" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_FORCEFUL_BLOCKADE" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_UNYIELDING_BODIES" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_MIGHTY_DEFENSE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_VALIANT_DEFENDER" level="3" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_DEFENSIVE_BULWARK" level="3" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_QUICKENED_DEFENSES" level="7" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_FORCEFUL_BLOCKADE" level="10" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_UNYIELDING_BODIES" level="15" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_MIGHTY_DEFENSE" level="18" />
+        </rules>
+    </element>
+    
+    <element name="Valiant Defender" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_VALIANT_DEFENDER">
+        <description>
+            <p>Starting at 3rd level, you’re able to easily shield your allies with your protective magic. As a reaction when a creature within 5 feet of you takes bludgeoning, piercing or slashing damage from a source you can see, you can reach out towards them and magically take that damage, instead of that creature taking it. The feature doesn’t transfer any other effects that might accompany the damage, and any damage you take this way is first reduced by an amount equal to your Constitution modifier + half your dragon knight level.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>When a creature within 5 feet of you takes bludgeoning, piercing or slashing damage from a source you can see, you can reach out towards them and magically take that damage, instead of that creature taking it. The feature doesn’t transfer any other effects that might accompany the damage, and any damage you take this way is first reduced {{valiant-defender:damage-reduction}}points.</description>
+        </sheet>
+        <rules>
+            <stat name="valiant-defender:damage-reduction" value="constitution:modifier" />
+            <stat name="valiant-defender:damage-reduction" value="level:dragon knight:half" />            
+        </rules>
+    </element>
+    <element name="Defensive Bulwark" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_DEFENSIVE_BULWARK">
+        <description>
+            <p>Also at 3rd level, you can create a defensive bulwark that allows you to better protect your allies from harm. As an action on your turn, you can create a bulwark that is a 10-foot radius sphere centered on you (but doesn’t move with you) that lasts for 1 minute, and appears as a transparent bubble of shimmering energy. The bulwark has the following benefits:</p>
+            <ul>
+                <li>You don’t need to be within 5 feet of a creature to use your Valiant Defender feature, as long as you and the creature are both inside your bulwark.</li>
+                <li>At the start of each of your turns, you can give a number of creatures other than you equal to your Constitution modifier (minimum 1) inside your bulwark a number of temporary hit points equal to your Constitution modifier, or twice your Constitution modifier to your dragon.</li>
+                <li>Hostile creatures treat the inside of the bulwark as difficult terrain.</li>
+                <li>When an allied creature is reduced to 0 hit points while inside your bulwark, you can have them drop to 1 hit point instead. That creature also gains temporary hit points equal to your Constitution modifier + your dragon knight level. Once you return a creature to 1 hit point this way, your bulwark ends.</li>
+            </ul>
+            <p class="indent">Once you use this feature, you can’t do so again until you finish a short or long rest.</p>
+        </description>
+        <sheet action="{{defensive-bulwark:action}}" usage="{{defensive-bulwark:uses}}/Short Rest">
+            <description>You can create a bulwark that is a {{defensive-bulwark:radius}}-foot radius sphere centered on you (but doesn’t move with you) that lasts for 1 minute, and appears as a transparent bubble of shimmering energy. At the start of each of your turns, you can give {{defensive-bulwark:count}} creatures other than you inside your bulwark {{constitution:modifier}}  temporary hit points or {{defensive-bulwark:dragon-temp-hp}} temporary hit points to your dragon. Hostile creatures treat the inside of the bulwark as difficult terrain. When an allied creature is reduced to 0 hit points while inside your bulwark, you can have them drop to 1 hit point instead. That creature also gains {{defensive-bulwark:temp-hp}} temporary hit points. Once you return a creature to 1 hit point this way, your bulwark ends.</description>
+            <description level="7">You can create a bulwark that is a {{defensive-bulwark:radius}}-foot radius sphere centered on you (but doesn’t move with you) that lasts for 1 minute, and appears as a transparent bubble of shimmering energy. At the start of each of your turns, you can give {{defensive-bulwark:count}} creatures other than you inside your bulwark {{constitution:modifier}}  temporary hit points or {{defensive-bulwark:dragon-temp-hp}} temporary hit points to your dragon. Hostile creatures treat the inside of the bulwark as difficult terrain. When an allied creature is reduced to 0 hit points while inside your bulwark, you can have them drop to 1 hit point instead. That creature also gains {{defensive-bulwark:temp-hp}} temporary hit points. Once you return a creature to 1 hit point this way, your bulwark ends. You can only have 1 bulwark active at a time.</description>
+        </sheet>
+        <rules>
+            <stat name="defensive-bulwark:radius" value="10" level="3" />
+            <stat name="defensive-bulwark:radius" value="5" level="10" />
+            <stat name="defensive-bulwark:radius" value="5" level="20" />
+            <stat name="defensive-bulwark:count" value="1" bonus="base" />
+            <stat name="defensive-bulwark:count" value="constitution:modifier" bonus="base" />
+            <stat name="defensive-bulwark:dragon-temp-hp" value="constitution:modifier" />
+            <stat name="defensive-bulwark:dragon-temp-hp" value="constitution:modifier" />
+            <stat name="defensive-bulwark:temp-hp" value="constitution:modifier" />
+            <stat name="defensive-bulwark:temp-hp" value="level:dragon knight" />
+            <stat name="defensive-bulwark:uses" value="1" level="3" />
+            <stat name="defensive-bulwark:action" value="Action" inline="true" level="3" />
+        </rules>
+    </element>
+    <element name="Quickened Defenses" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_QUICKENED_DEFENSES">
+        <description>
+            <p>At 7th level, you’re easily able to ready yourself for battle. You can use Defensive Bulwark twice before a rest, but you can only have one bulwark created at a time; if you create a second bulwark, the first one immediately vanishes.</p>
+            <p class="indent">Additionally, you can create a bulwark as a bonus action on your turn, rather than an action.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="defensive-bulwark:uses" value="1" level="3" />
+            <stat name="defensive-bulwark:action" value="Bonus Action" inline="true" level="3" />
+        </rules>
+    </element>
+    <element name="Forceful Blockade" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_FORCEFUL_BLOCKADE">
+        <description>
+            <p>Beginning at 10th level, you’re able to rebuke those who would dare attack your allies. When you use your Valiant Defender feature, you deal 1d6 force damage to the creature that attacked your ally. Additionally, when you reduce the damage dealt to 0 with your Valiant Defender feature, you use the highest number possible for each damage die. For example, instead of dealing 1d6 force damage, you instead deal 6. This force damage increases to 2d6 at 13th level and 3d6 at 17th level.</p>
+            <p class="indent">Additionally, The radius of your defensive bulwark increase by 5 feet, and by an additional 5 feet at 20th level.</p>
+        </description>
+        <sheet>
+            <description>When you use your Valiant Defender feature, you deal {{forceful-blockade:damage-dice}}d6 force damage to the creature that attacked your ally. Additionally, when you reduce the damage dealt to 0 with your Valiant Defender feature, you use the highest number possible for each damage die.</description>
+        </sheet>
+        <rules>
+            <stat name="forceful-blockade:damage-dice" value="1" level="10" />
+            <stat name="forceful-blockade:damage-dice" value="1" level="13" />
+            <stat name="forceful-blockade:damage-dice" value="1" level="17" />
+        </rules>
+    </element>
+    <element name="Unyielding Bodies" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_UNYIELDING_BODIES">
+        <description>
+            <p>Starting at 15th level, you and your dragon’s bodies can’t be broken. Your Strength scores, your Constitution scores, and your hit point maximums can’t be reduced.</p>
+            <p class="indent">Additionally, you both have advantage on ability checks and saving throws to avoid being knocked prone, grappled, restrained, or otherwise moved against your will.</p>
+        </description>
+        <sheet>
+            <description>Your and your dragon’s Strength scores, Constitution scores, and your hit point maximums can’t be reduced. You both have advantage on ability checks and saving throws to avoid being knocked prone, grappled, restrained, or otherwise moved against your will.</description>
+        </sheet>
+    </element>
+    <element name="Mighty Defense" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DEFENDER_MIGHTY_DEFENSE">
+        <description>
+            <p>At 18th level, you’ve realized the best defense is a good offense. Whenever a creature within the area of effect of your Defensive Bulwark feature makes a melee attack against you, you can immediately make a melee attack against them at a -2 penalty. Any features you have that improve your attacks of opportunity apply to this attack, but it does not use your reaction.</p>
+        </description>
+        <sheet>
+            <description>Whenever a creature within the area of effect of your Defensive Bulwark feature makes a melee attack against you, you can immediately make a melee attack against them at a -2 penalty. Any features you have that improve your attacks of opportunity apply to this attack, but it does not use your reaction.</description>
+        </sheet>
+    </element>
+
+</elements>

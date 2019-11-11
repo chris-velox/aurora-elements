@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Conduit Practice</name>
+        <author url="https://www.reddit.com/user/SoraKBM/">u/SoraKBM5</author>
+        <update version="0.0.1">
+            <file name="dragon-knight-conduit-practice.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/dragon-knight-conduit-practice.xml" />
+        </update>
+        <!-- https://homebrewery.naturalcrit.com/share/BkXi4e4T0E -->
+    </info>
+    
+    <element name="Conduit Practice" type="Archetype" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_DRAGON_KNIGHT_CONDUIT_PRACTICE">
+        <supports>Dragon Knight Practice</supports>
+        <description>
+            <p>Those under the Conduit Practice devote themselves to becoming a vessel, an extention of their dragon’s power, using their bodies and their presence to bolster their dragon’s abilties.</p>
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_INFUSION" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_ELEMENTAL_MARKS" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_LEGENDARY_ACTION" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_DRAGONS_EDGE" />
+            <div element="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_DRAGONS_DETERMINATION" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_INFUSION" level="3" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_ELEMENTAL_MARKS" level="3" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER" level="7" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_LEGENDARY_ACTION" level="10" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_DRAGONS_EDGE" level="15" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_DRAGONS_DETERMINATION" level="18" />
+        </rules>
+    </element>
+    
+    <element name="Infusion" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_INFUSION">
+        <description>
+            <p>Starting at 3rd level, you’ve become infused with some of your dragon’s elemental energies as a result of your bond. You learn two cantrips that deal the same damage as your dragon’s relevant damage type from any class’s spell list.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Spell" number="2" name="{{companion:damage-type}} Cantrip (Conduit Practice)" supports="0" />
+        </rules>
+    </element>
+    <element name="Elemental Marks" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_ELEMENTAL_MARKS">
+        <description>
+            <p>Also at 3rd level, your attacks can leave behind trace amounts of elemental energy onto enemies. When you deal damage to an enemy from a weapon attack or a cantrip that does your dragon’s relevant damage type, that enemy is Marked for a number of rounds equal to your Charisma modifier. When your dragon deals damage to a Marked creature, it takes and extra 1d4 bonus damage of your dragon’s relevant damage type.</p>
+            <p class="indent">The bonus damage increases to 1d6 at 7th level, and to 1d8 at 10th level.</p>
+        </description>
+        <sheet>
+            <description>When you deal damage to an enemy from a weapon attack or a cantrip that does {{companion:damage-type}} damage, that enemy is Marked for {{charisma:modifier}} rounds. When your dragon deals damage to a Marked creature, it does an extra 1d{{elemental-marks:damage-dice}} bonus {{companion:damage-type}} damage.</description>
+        </sheet>
+        <rules>
+            <stat name="elemental-marks:damage-dice" value="4" bonus="base" />
+            <stat name="elemental-marks:damage-dice" value="6" bonus="base" />
+            <stat name="elemental-marks:damage-dice" value="8" bonus="base" />
+        </rules>
+    </element>
+    <element name="Mark Trigger" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER">
+        <description>
+            <p>At 7th level, your marks carry enough residual energy to create effects upon being triggered. When a creature marked by you is hit by your dragon’s breath weapon, it has to make a Dexterity saving throw using the same DC or be subjected to an effected based on your dragon’s relevant damage type. Effects last for one minute unless otherwise noted, and the creature can make the saving throw at the end of its turns, ending the effect on itself on a success.</p>
+            <ul>
+                <li><b><i>Acid:</i></b> The creature takes your Mark damage in Acid damage at the start of its turns, and has their AC reduced by 2 for one minute.</li>
+                <li><b><i>Cold:</i></b> The creature takes your Mark damage in Cold damage at the start of each of its turns, has their speed reduced by 15, and can’t take reactions for one minute.</li>
+                <li><b><i>Fire:</i></b> The creature takes your Mark damage in Fire damage at the start of its turns, and it must drop any metal weapons or objects it is holding and doff any metal armor or take further mark damage each turn. The target has disadvantage on attack rolls and ability checks for one minute, and metal objects stay heated this way for one minute even after the creature makes the saving throw.</li>
+                <li><b><i>Lightning:</i></b> The creature takes your Mark damage in Lightning damage at the start of its turns, and is paralyzed for one minute.</li>
+                <li><b><i>Poison:</i></b> The creature takes your Mark damage in Poison damage at the start of its turns, and is poisoned for one minute.</li>
+            </ul>
+            <p class="indent">Additionally, when you take the Attack action on your turn, you can forgo the weapon attack to give your dragon another attack on its turn.</p>
+        </description>
+        <sheet>
+            <description>When you take the Attack action on your turn, you can forgo the weapon attack to give your dragon another attack on its turn.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER_ACID" level="7" requirements="(ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_BLACK||ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_COPPER)" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER_COLD" level="7" requirements="(ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_SILVER||ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_WHITE)" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER_FIRE" level="7" requirements="(ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_BRASS||ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_GOLD||ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_RED)" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER_LIGHTNING" level="7" requirements="(ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_BLUE||ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_BRONZE)" />
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER_POISON" level="7" requirements="(ID_RAINJUNKIE_GM_BINDER_CLASS_FEATURE_DRAGON_KNIGHT_COVENANT_GREEN)" />
+        </rules>
+    </element>
+        <element name="Mark Trigger: Acid" type="Archetype Feature" source="R/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER_ACID">
+            <description />
+            <sheet>
+                <description>When a creature marked by you is hit by your dragon’s breath weapon, it has to make a Dexterity saving throw using the same DC or The creature takes your Mark damage in Acid damage at the start of its turns, and has their AC reduced by 2 for one minute.</description>
+            </sheet>
+        </element>
+        <element name="Mark Trigger: Cold" type="Archetype Feature" source="R/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER_COLD">
+            <description />
+            <sheet>
+                <description>When a creature marked by you is hit by your dragon’s breath weapon, it has to make a Dexterity saving throw using the same DC or The creature takes your Mark damage in Cold damage at the start of each of its turns, has their speed reduced by 15, and can’t take reactions for one minute.</description>
+            </sheet>
+        </element>
+        <element name="Mark Trigger: Fire" type="Archetype Feature" source="R/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER_FIRE">
+            <description />
+            <sheet>
+                <description>When a creature marked by you is hit by your dragon’s breath weapon, it has to make a Dexterity saving throw using the same DC or the creature takes your Mark damage in Fire damage at the start of its turns, and it must drop any metal weapons or objects it is holding and doff any metal armor or take further mark damage each turn. The target has disadvantage on attack rolls and ability checks for one minute, and metal objects stay heated this way for one minute even after the creature makes the saving throw.</description>
+            </sheet>
+        </element>
+        <element name="Mark Trigger: Lightning" type="Archetype Feature" source="R/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER_LIGHTNING">
+            <description />
+            <sheet>
+                <description>When a creature marked by you is hit by your dragon’s breath weapon, it has to make a Dexterity saving throw using the same DC or the creature takes your Mark damage in Lightning damage at the start of its turns, and is paralyzed for one minute.</description>
+            </sheet>
+        </element>
+        <element name="Mark Trigger: Poison" type="Archetype Feature" source="R/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_MARK_TRIGGER_POISON">
+            <description />
+            <sheet>
+                <description>When a creature marked by you is hit by your dragon’s breath weapon, it has to make a Dexterity saving throw using the same DC or the creature takes your Mark damage in Poison damage at the start of its turns, and is poisoned for one minute.</description>
+            </sheet>
+        </element>
+    <element name="Lengendary Action" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_LEGENDARY_ACTION">
+        <description>
+            <p>At 10th level, your dragon’s prowess begins to surge forth in a rush during combat. Each round, your dragon can use a Legendary Action, choosing from the options below. Only one option can be used, and it can only be used during the end of another creature’s turn. Your dragon regains Legendary actions at the start of its turn</p>
+            <ul>
+                <li><b><i>Attack</i></b> - The Dragon makes a claw, bite, or tail attack</li>
+                <li><b><i>Move</i></b> -The Dragon moves up to half its speed</li>
+                <li><b><i>Detect</i></b> - The Dragon makes a Wisdom (Perception) check</li>
+            </ul>
+        </description>
+        <sheet usage="1 Legendary Action/Round">
+            <description>Your dragon can perform one of the following Legendary Actions at the end of another creature’s turn: Attack, Move, or Detect.</description>
+        </sheet>
+    </element>
+    <element name="Dragon’s Edge" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_DRAGONS_EDGE">
+        <description>
+            <p>At 15th level, your dragon’s attacks critically hit marked targets on a roll of 19 or 20.</p>
+            <p class="indent">Additionally, your dragon can use its action to make a claw attack against all marked targets within range, ending the mark on the target on a hit. Once it uses this feature, it make take a short or long rest before it can use it again.</p>
+        </description>
+        <sheet>
+            <description>Your dragon’s attacks critically hit marked targets on a roll of 19 or 20.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_DRAGONS_EDGE_ATTACK" level="15" />
+        </rules>
+    </element>
+        <element name="Dragon’s Edge" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_DRAGONS_EDGE_ATTACK">
+            <description />
+            <sheet usage="1/Short Rest">
+                <description>Your dragon can use its action to make a claw attack against all marked targets within range, ending the mark on the target on a hit.</description>
+            </sheet>
+        </element>
+    <element name="Dragon’s Determination" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_SORAKBM5_RDDT_UA_ARCHETYPE_FEATURE_CONDUIT_DRAGONS_DETERMINATION">
+        <description>
+            <p>At 18th level, when you or your dragon are below half your maximum hitpoints, your dragon gains another legendary action until both of your have more hitpoints than half your maximum.</p>
+        </description>
+        <sheet>
+            <description>When you or your dragon are below half your maximum hitpoints, your dragon gains another legendary action until both of your have more hitpoints than half your maximum.</description>
+        </sheet>
+    </element>
+    
+</elements>
