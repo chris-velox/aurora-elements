@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Kibbles´ Book of Feats for the Competent Hero on the Go</name>
+        <author url="https://www.gmbinder.com/profile/kibblestasty">KibblesTasty</author>
+        <update version="0.0.1">
+            <file name="kibbles-book-of-feats.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/options/kibbles-book-of-feats.xml" />
+        </update>
+        <!-- https://www.gmbinder.com/share/-LpTGbtupCF1bdXJqvQx -->
+    </info>
+    
+    <element name="Freeform Fighting" type="Feat" source="GM Binder" id="ID_KIBBLESTASTY_GM_BINDER_FEAT_FREEFORM_FIGHTING">
+        <description>
+            <p>You master an unpredictable and versatile style of fighting. While wielding a versatile weapon, you gain the following benefits on your turn; you can only gain each effect once per turn, but can gain multiple effects in a turn:</p>
+            <ul>
+                <li>After making a weapon attack using two-hands, if you make a weapon attack using one-hand, an unarmed strike, or a grapple check, you can add 1d4 to the attack roll or ability check.</li>
+                <li>After making a weapon attack using one-hand, an unarmed strike, or a grapple check, if you make a weapon attack using two-hands, you can add 1d6 to the damage roll of that attack.</li>
+                <li>If you take the attack action against a prone target or one that you are grappling, you can make an additional weapon attack using the hilt of your weapon or unarmed strike against that target using your bonus action. The damage die for this attack is 1d4 regardless of the method used. If this damage triggers a concentration check, they have disadvantage on the check.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>While wielding a versatile weapon, you gain benefits on your turn; you can only gain each effect once per turn, but can gain multiple effects in a turn.</description>
+        </sheet>
+    </element>
+    <element name="Precise Striker" type="Feat" source="GM Binder" id="ID_KIBBLESTASTY_GM_BINDER_FEAT_PRECISE_STRIKER">
+        <prerequisite>Cannot have the Lightning Striker Feat</prerequisite>
+        <requirements>!ID_KIBBLESTASTY_GM_BINDER_FEAT_LIGHTNING_STRIKER</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Cannot have the Lightning Striker Feat</p>
+            <p>You have learned to strike deftly with unerring precision when wielding lighter weapons.</p>
+            <ul>
+                <li>When attacking with a melee weapon with the Light property, it's damage die is increased by one size (for example, a dagger's d4 becomes a d6).</li>
+                <li>When you strike a creature for the second time on your turn, the second attack adds damage equal to twice your proficiency modifier (this occurs only once on your turn).</li>
+                <li>When you score a critical strike, the first damage die of your weapon is treated as it's maximum value.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When attacking with a melee weapon with the Light property, it's damage die is increased by one size (for example, a dagger's d4 becomes a d6). When you strike a creature for the second time on your turn, the second attack adds {{proficiency}} hit points damage. When you score a critical strike, the first damage die of your weapon is treated as it's maximum value.</description>
+        </sheet>
+    </element>
+    <element name="Lightning Striker" type="Feat" source="GM Binder" id="ID_KIBBLESTASTY_GM_BINDER_FEAT_LIGHTNING_STRIKER">
+        <prerequisite>Cannot have the Precise Striker Feat.</prerequisite>
+        <requirements>!ID_KIBBLESTASTY_GM_BINDER_FEAT_PRECISE_STRIKER</requirements>
+        <description>
+            <p class="flavor">Prerequisite: Cannot have the Precise Striker Feat.</p>
+            <p>You have learned to strike with lightning speed in a blur of deadly motion.</p>
+            <ul>
+                <li>On your turn, each subsequent time you hit after the first against a creature with a light melee weapon, your attack deals an additional die of damage equal to the weapon's damage die (up to one additional die).</li>
+                <li>Whenever you make an attack, you can draw a weapon as part of taking the attack.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>On your turn, each subsequent time you hit after the first against a creature with a light melee weapon, your attack deals an additional die of damage equal to the weapon's damage die (up to one additional die). Whenever you make an attack, you can draw a weapon as part of taking the attack.</description>
+        </sheet>
+    </element>
+    <element name="Trick Shooter" type="Feat" source="GM Binder" id="ID_KIBBLESTASTY_GM_BINDER_FEAT_TRICK_SHOOTER">
+        <prerequisite>Cannot have the Sharpshooter Feat</prerequisite>
+        <requirements>!ID_PHB_FEAT_SHARPSHOOTER</requirements>
+        <description>
+            <p class="flavor">Preresquisite: Cannot have the Sharpshooter Feat</p>
+            <p>The feats you can perform with a bow are artistic as they are lethal. You gain proficiency in Performance, and have advantage on archery related Performance checks.</p>
+            <ul>
+                <li>Your flair for performance allows you to hit improbable shots; once per turn you can add your Proficiency modifier to an ranged weapon attack made with a shortbow or longbow; the harder the attack, the better the Performance: if you have disadvantage on the attack roll, you can add your Charisma modifier as well.</li>
+                <li>When you use your action to Disengage, you can make a single ranged weapon attack as part of the action.</li>
+                <li>When making an ranged weapon attack, you can use your bonus action to make it a trick shot, giving yourself disadvantage but either adding another die of damage to the damage roll or making the same attack against two targets.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have advantage on archery related Performance checks. Once per turn you can add {{proficiency}} to an ranged weapon attack made with a shortbow or longbow; the harder the attack, the better the Performance: if you have disadvantage on the attack roll, you can add {{charisma:modifier}} as well. When you use your action to Disengage, you can make a single ranged weapon attack as part of the action. When making an ranged weapon attack, you can use your bonus action to make it a trick shot, giving yourself disadvantage but either adding another die of damage to the damage roll or making the same attack against two targets.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+        </rules>
+    </element>
+    
+</elements>
