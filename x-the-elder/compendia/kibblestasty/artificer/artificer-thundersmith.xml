@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>Thundersmith Specialization for Kibbles’ Artificer</name>
-        <update version="0.0.2">
+        <update version="0.0.3">
             <file name="artificer-thundersmith.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/kibblestasty/artificer/artificer-thundersmith.xml" />
         </update>
     </info>
@@ -103,10 +103,10 @@
     </element>
     <element name="Unleashed Power" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_THUNDERSMITH_UNLEASHED_POWER">
         <description>
-            <p>Starting at 14th level, when roll damage for Thundermonger or your Stormforged Weapon, you can expend a spell slot to reroll a number of the damage dice up to the level of the spell slot + your Intelligence modifier (minimum of one). You must use the new rolls.</p>
+            <p>Starting at 14th level, when rolling damage for Thundermonger or your Stormforged Weapon, you can expend a spell slot to reroll a number of the damage dice up to your Intelligence modifier (minimum of one) and maximize a number of dice equal to the level of the spell slot expended. You must use the new rolls.</p>
         </description>
         <sheet>
-            <description>When you roll damage for Thundermonger or Stormforged, you can expend a spell slot to reroll up to the spell slot + {{intelligence:modifier}} dice. You must use the new rolls.</description>
+            <description>When you roll damage for Thundermonger or Stormforged, you can expend a spell slot to reroll up to {{intelligence:modifier}} dice and maximize a number of dice equal to the level of the spell slot expended. You must use the new rolls.</description>
         </sheet>
     </element>
     <element name="Thundersmith Upgrades" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_THUNDERSMITH_THUNDERSMITH_UPGRADES">
@@ -560,14 +560,14 @@
 			<set name="weight" lb="8">5 lb.</set>
 			<set name="slot">onehand</set>
 			<set name="range">30/90</set>
-			<set name="damage" type="piercing">1d8</set>
+			<set name="damage" type="piercing">1d10</set>
 			<set name="proficiency">ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_HAND_CANNON</set>
             <set name="attunement" addition="by Thundersmith">true</set>
 		</setters>
 		<rules />
 	</element>
 	<element name="Kinetic Hammer" type="Weapon" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_WEAPON_STORMFORGED_WEAPON_KINETIC_HAMMER">
-        <supports>ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_LOUD, ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_CHARGED</supports>
+        <supports>ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_LOUD</supports>
 		<description>
             <p>Rather than launching a projectile with the thundering force, you keep that force imbued in the weapon, allowing for devastating force to be applied to the attack.</p>
         </description>
@@ -576,14 +576,14 @@
 			<set name="cost" currency="gp">0</set>
 			<set name="weight" lb="10">10 lb.</set>
 			<set name="slot">twohand</set>
-			<set name="damage" type="bludgeoning">1d10</set>
+			<set name="damage" type="bludgeoning">1d10 + 1d4 thunder</set>
 			<set name="proficiency">ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_KINETIC_HAMMER</set>
             <set name="attunement" addition="by Thundersmith">true</set>
 		</setters>
 		<rules />
 	</element>
-	<element name="Charged Blade" type="Weapon" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_WEAPON_STORMFORGED_WEAPON_CHARGED_BLADE">
-        <supports>ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_LOUD, ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_CHARGED</supports>
+ 	<element name="Charged Blade" type="Weapon" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_WEAPON_STORMFORGED_WEAPON_CHARGED_BLADE">
+        <supports>ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_LOUD</supports>
 		<description>
             <p>You create a bladed weapon that channels the harnessed power of the elemental storm power directly into the blade, causing it to lay waste to all it strikes. This weapon deals Lightning damage when applying Thundermonger.</p>
         </description>
@@ -592,12 +592,29 @@
 			<set name="cost" currency="gp">0</set>
 			<set name="weight" lb="3">3 lb.</set>
 			<set name="slot">onehand</set>
-			<set name="damage" type="slashing">1d6</set>
+			<set name="damage" type="slashing">1d6 + 1d4 lightning</set>
 			<set name="proficiency">ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_CHARGED_BLADE</set>
             <set name="attunement" addition="by Thundersmith">true</set>
 		</setters>
 		<rules />
 	</element>
+ 	<element name="Lightning Pike" type="Weapon" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_WEAPON_STORMFORGED_WEAPON_LIGHTNING_PIKE">
+        <supports>ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_LOUD</supports>
+		<description>
+            <p>You create a bladed weapon that channels the harnessed power of the elemental storm power directly into the blade, causing it to lay waste to all it strikes. This weapon deals Lightning damage when applying Thundermonger.</p>
+        </description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="3">3 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="damage" type="piercing">1d8 + 1d4 lightning</set>
+			<set name="proficiency">ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_LIGHTNING_PIKE</set>
+            <set name="attunement" addition="by Thundersmith">true</set>
+		</setters>
+		<rules />
+	</element>
+  
 
     <element name="Weapon Proficiency (Stormforged Weapons)" type="type" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON">
         <sheet alt="Stormforged Weapons" />
@@ -606,6 +623,7 @@
             <grant type="Proficiency" id="ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_HAND_CANNON" />
             <grant type="Proficiency" id="ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_KINETIC_HAMMER" />
             <grant type="Proficiency" id="ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_CHARGED_BLADE" />
+            <grant type="Proficiency" id="ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_LIGHTNING_PIKE" />
         </rules>
     </element>
     <element name="Weapon Proficiency (Stormforged Thunder Cannon)" type="type" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_THUNDER_CANNON">
@@ -617,11 +635,15 @@
         <sheet alt="Hand Cannon" />
     </element>
     <element name="Weapon Proficiency (Stormforged Kinetic Hammer)" type="type" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_KINETIC_HAMMER">
-        <supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_LOUD, ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_CHARGED</supports>
+        <supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY,ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_LOUD</supports>
         <sheet alt="Kinetic Hammer" />
     </element>
     <element name="Weapon Proficiency (Stormforged Charged Blade)" type="type" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_CHARGED_BLADE">
-        <supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_LOUD, ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_CHARGED</supports>
+        <supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_LOUD</supports>
+        <sheet alt="Charged Blade" />
+    </element>
+    <element name="Weapon Proficiency (Stormforged Lightning Pike)" type="type" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_PROFICIENCY_WEAPON_STORMFORGED_WEAPON_LIGHTNING_PIKE">
+        <supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_LOUD</supports>
         <sheet alt="Charged Blade" />
     </element>
 
@@ -631,11 +653,13 @@
 			<p>Your weapon rings with thunder that is audible within 300 feet of you whenever it makes an attack.</p>
 		</description>
 	</element>
+    <!-- removed in version 2.0.2 
 	<element name="Charged" type="Weapon Property" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_WEAPON_PROPERTY_STORMFORGED_WEAPON_CHARGED">
 		<description>
 			<p>Your weapon is powered by elemental energies; the first time per turn you make a damage roll with it, you can add 1d4 to the damage roll.</p>
 		</description>
 	</element>
+    -->
 	<element name="Reload" type="Weapon Property" source="Internal" id="ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD">
 		<description>
 			<p>A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character’s choice).</p>

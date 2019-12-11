@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>Potionsmith Specialization for Kibbles’ Artificer</name>
-        <update version="0.0.2">
+        <update version="0.0.3">
             <file name="artificer-potionsmith.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/kibblestasty/artificer/artificer-potionsmith.xml" />
         </update>
     </info>
@@ -64,7 +64,7 @@
         <description>
             <p>At 1st level, you know how to get instant reactions to occur without the niceties of grinding, simmering and brewing required for more refined concoctions.</p>
             <p class="indent">Moreover, you know enough ways to do these that with just a few standard supplies, you can get these results out of a wide range of things you can gather in almost any locale and a pinch from your reagent pouch.</p>
-            <p class="indent">You can pick three instant reactions from your Upgrade list; these include Alchemical Fire, Alchemical Acid, Healing Draught, Poisonous Gas, or Fortifying Fumes. The reactions you pick do not count against your maximum Upgrades known.</p>
+            <p class="indent">You can pick three instant reactions from your Upgrade list; these include <b>Alchemical Fire</b>, <b>Alchemical Acid</b>, <b>Healing Draught</b>, <b>Poisonous Gas</b>, or <b>Fortifying Fumes</b>. The reactions you pick do not count against your maximum Upgrades known.</p>
         </description>
         <sheet>
             <description></description>
@@ -87,7 +87,7 @@
                 <tr><td>5th</td><td><i>cloudkill, skill empowerment</i></td></tr>
             </table>
             <p>When you cast spells in this way, the spell does not take effect immediately, but is infused into the potion. If the spell grants an effect or restores health, the creature will gain the effect of the spell when the potion is consumed as an action.</p>
-            <p class="indent">If the spell has an area of effect, that area of effect takes place when the vial is broken, with the effect centered on where the vial breaks. As an action, you or another creature can either consume the vial, or throw it up to 30 feet where it shatters on impact.</p>
+            <p class="indent">If the spell has an area of effect, that area of effect takes place when the vial is broken, with the effect centered on where the vial breaks. You can consume the contents of a vial as a bonus action, or, as an action, administer its contents to another creature or throw it up to 30 feet where it shatters on impact.</p>
             <p class="indent">If the spell has a persistent effect that requires concentration, it does not require concentration to maintain, but its duration is shortened to a number of rounds equal to your intelligence modifier.</p>
             <p class="indent">A spell that does not require concentration lasts its normal duration. An infused potion loses its potency if it is not used by the end of your next long rest.</p>
             <p class="indent">You can gain additional spells for your Alchemical Infusions through your Alchemist upgrades.</p>
@@ -98,7 +98,7 @@
             </div>
         </description>
         <sheet>
-            <description>You can infuse one or more spells from the list into a potion you mix in an empty vial, by extending a spell slot.</description>
+            <description>You can infuse one or more spells from the list into a potion you mix in an empty vial, by extending a spell slot. You can consume the contents of a vial as a bonus action, or, as an action, administer its contents to another creature or throw it up to 30 feet where it shatters on impact.</description>
         </sheet>
     </element>
     <element name="Empowered Alchemy" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_POTIONSSMITH_EMPOWERED_ALCHEMY">
@@ -186,21 +186,7 @@
             <stat name="alchemical-acid:die-type" value="6" bonus="base" requirements="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_POTENT_REACTIONS" />
         </rules>
     </element>
-    <element name="Adrenaline Serum" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_ADRENALINE_SERUM">
-        <supports>Specialization Upgrade,Potionsmith,3</supports>
-        <requirements></requirements>
-        <prerequisite></prerequisite>
-        <description>
-            <p>You create a potent serum. As a bonus action on your turn, you can consume a dose of this serum. Consuming this Serum increases your Strength and Dexterity ability score by your Intelligence ability score (up to a maximum of 22) for a number of rounds equal to your Intelligence modifier. On the round that this wears off, your movement speed is zero and you cannot take any actions until the end of your turn. You can use this a number of times equal to your Constitution modifier (minimum 1) before you must take a short or long rest to be able to gain the effects from the serum again.</p>
-        </description>
-        <sheet action="Bonus Action" usage="{{adrenaline-serum:uses}}/Short Rest">
-            <description>Str and Dex +{{intelligence:modifier}} (max 22) for {{intelligence:modifier}} rounds.</description>
-        </sheet>
-        <rules>
-            <stat name="adrenaline-serum:uses" value="1" bonus="base" />
-            <stat name="adrenaline-serum:uses" value="constitution:modifier" bonus="base" />
-        </rules>
-    </element>
+    <!-- removed in version 2.0.2 
     <element name="Auto Injector" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_AUTO_INJECTOR">
         <supports>Specialization Upgrade,Potionsmith,3</supports>
         <requirements></requirements>
@@ -214,6 +200,7 @@
         <rules>
         </rules>
     </element>
+    -->
     <element name="Delivery Mechanism" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_DELIVERY_MECHANISM">
         <supports>Specialization Upgrade,Potionsmith,3</supports>
         <requirements></requirements>
@@ -352,6 +339,18 @@
         <rules>
             <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
         </rules>
+    </element>
+    <!-- Added in version 2.0.2 -->
+    <element name="Long Acting" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_LONG_ACTING">
+        <supports>Specialization Upgrade,Potionsmith,3</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p>Your consumed Alchemical Infusions for spells that require concentration have their duration increased by a number of rounds equal to your Proficiency modifier.</p>
+        </description>
+        <sheet>
+            <description>Your consumed Alchemical Infusions for spells that require concentration have their duration increased by {{proficiency}} rounds.</description>
+        </sheet>
     </element>
     <element name="Persistent Reactions" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_PERSISTENT_REACTIONS">
         <supports>Specialization Upgrade,Potionsmith,3</supports>
@@ -510,6 +509,24 @@
     </element>
 
     <!-- 5th level upgrades -->
+    <element name="Adrenaline Serum" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_ADRENALINE_SERUM">
+        <supports>Specialization Upgrade,Potionsmith,5</supports>
+        <requirements>[level:artificer:5]</requirements>
+        <prerequisite>Artificer Level 5</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Artificer Level 5</p>
+            <p>You create a potent serum. As a bonus action on your turn, you can consume a dose of this serum. Consuming this concoction increases your Strength and Dexterity ability score modifier by your Intelligence modifier (up to a maximum of +6) for a number of rounds equal to your Constitution modifier, after which all effects of the serum fade at the start of your next turn. When the effect ends, your speed is reduced by half and you cannot benefit from Adrenaline Serum until the start of your next turn. While you are under the effect of Adrenaline Serum, you gain the benefits of <em>heroism</em>.</p>
+            <p class="indent">You can consume an Infused Potion as part of the same action you apply Adrenaline Serum.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>Str and Dex +{{intelligence:modifier}} (max 22) for {{constitution:modifier}} rounds. While you are under the effect of Adrenaline Serum, you gain the benefits of heroism. When the effect ends, your speed is reduced by half and you cannot benefit from Adrenaline Serum until the start of your next turn.</description>
+        </sheet>
+        <rules>
+            <stat name="adrenaline-serum:uses" value="1" bonus="base" />
+            <stat name="adrenaline-serum:uses" value="constitution:modifier" bonus="base" />
+            <grant type="Spell" id="ID_PHB_SPELL_HEROISM" />
+        </rules>
+    </element>
     <element name="Explosive Powder" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_EXPLOSIVE_POWDER">
         <supports>Specialization Upgrade,Potionsmith,5</supports>
         <requirements>[level:artificer:5],ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_EXPLOSIVE_REACTION</requirements>
@@ -540,6 +557,7 @@
         <rules>
         </rules>
     </element>
+    <!-- remove in version 2.0.2 
     <element name="Greater Adrenaline Serum" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_GREATER_ADRENALINE_SERUM">
         <supports>Specialization Upgrade,Potionsmith,9</supports>
         <requirements>[level:artificer:9],ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_ADRENALINE_SERUM</requirements>
@@ -559,6 +577,7 @@
             <grant type="Spell" id="ID_PHB_SPELL_HEROISM" />
         </rules>
     </element>
+    -->
     <element name="Infusion Stone" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_POTIONSMITH_INFUSION_STONE">
         <supports>Specialization Upgrade,Potionsmith,9</supports>
         <requirements>[level:artificer:9]</requirements>

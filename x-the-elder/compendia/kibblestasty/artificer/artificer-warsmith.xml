@@ -138,6 +138,9 @@
             <p class="flavor">You can apply this upgrade twice.</p>
             <p>You reduce the weight of your armor by 15 lbs. While wearing your armor your speed increases by 10 feet. This applies to all movement speeds you have while wearing your armor.</p>
         </description>
+        <setters>
+            <set name="allow duplicate">true</set>
+        </setters>
         <sheet>
             <description></description>
         </sheet>
@@ -149,23 +152,61 @@
         <requirements></requirements>
         <prerequisite></prerequisite>
         <description>
-            <p>While wearing your armor, you have darkvision to a range of 60 feet. If you already have darkvision, this upgrade increases its range by 60 feet. Additionally, you gain advantage on saving throws against being blinded.</p>
+            <p class="flavor">You can take this upgrade multiple times selecting a different option each time.</p>
+            <p>You magical enchant your visor. You gain one of the following effects while wearing your armor; you pick the effect when selecting the upgrade.</p>
+            <ul>
+                <li>You gain darkvision to a range of 60 feet. If you already have darkvision, the range of that darkvision is increased by 60 feet.</li>
+                <li>You can ignore Sunlight Sensitivity.</li>
+                <li>Divination spells no longer require your Concentration to maintain. You can only use this effect one spell at a time.</li>
+            </ul>
+            <p class="indent">Regardless of the selection, you have advantage on saving throws against being blinded while wearing your armor.</p>
         </description>
+        <setters>
+            <set name="allow duplicate">true</set>
+        </setters>
         <sheet>
-            <description></description>
+            <description>You have advantage on saving throws against being blinded while wearing your armor.</description>
         </sheet>
         <rules>
+            <select type="Archetype Feature" name="Arcane Visor Option" supports="Arcane Visor Option" />
         </rules>
     </element>
+        <element name="Darkvision" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_ARCANE_VISOR_">
+            <supports>Arcane Visor Option</supports>
+            <description>
+                <p>You gain darkvision to a range of 60 feet. If you already have darkvision, the range of that darkvision is increased by 60 feet.</p>
+            </description>
+            <sheet>
+                <description>You gain darkvision to a range of 60 feet. If you already have darkvision, the range of that darkvision is increased by 60 feet.</description>
+            </sheet>
+        </element>
+        <element name="Block Sunlight Sensitivity" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_ARCANE_VISOR_">
+            <supports>Arcane Visor Option</supports>
+            <description>
+                <p>You can ignore Sunlight Sensitivity.</p>
+            </description>
+            <sheet>
+                <description>You can ignore Sunlight Sensitivity.</description>
+            </sheet>
+        </element>
+        <element name="Diviniation Concentration" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_ARCANE_VISOR_">
+            <supports>Arcane Visor Option</supports>
+            <description>
+                <p>Divination spells no longer require your Concentration to maintain. You can only use this effect one spell at a time.</p>
+            </description>
+            <sheet>
+                <description>Divination spells no longer require your Concentration to maintain. You can only use this effect one spell at a time.</description>
+            </sheet>
+        </element>
     <element name="Faraday Helmet" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_FARADAY_HELMET">
         <supports>Specialization Upgrade,Warsmith,3</supports>
         <requirements></requirements>
         <prerequisite></prerequisite>
         <description>
-            <p>You arrange the magical channels of your armor to interfere with magical manipulation of your mind. While wearing your armor, when you make a Saving Throw to save against being charmed, mind controlled, stunned, or confused by magical means, you can replace the number rolled on the die with the number of Upgrades you have.</p>
+            <p>After casting a spell of first level or higher, you have advantage on Saving Throws to save against being charmed, mind controlled, stunned, or confused by magical means until the start of your next turn.</p>
         </description>
         <sheet>
-            <description>While wearing your armor, when you make a Saving Throw to save against being charmed, mind controlled, stunned, or confused by magical means, you can replace the number rolled on the die with the number of Upgrades you have.</description>
+            <description>After casting a spell of first level or higher, you have advantage on Saving Throws to save against being charmed, mind controlled, stunned, or confused by magical means until the start of your next turn.</description>
         </sheet>
         <rules>
         </rules>
@@ -356,13 +397,13 @@
         <prerequisite>Artificer Level 5, Sentient Armor</prerequisite>
         <description>
             <p class="flavor">Prerequisite: Artificer Level 5, Prerequisite: Sentient Armor</p>
-            <p>You upgrade the artificial personality integrated into your armor to assist with a new skill. Select a skill from the following: Arcana, History, Investigation, Nature, or Religion. While able to communicate with your armor, you gain proficiency in this skill.</p>
+            <p>You upgrade the artificial personality integrated into your armor to assist with a new skill. While able to communicate with your armor, you can gain the effect of <em>guidance</em> when making an Intelligence ability check.</p>
         </description>
-        <sheet display="false">
-            <description></description>
+        <sheet>
+            <description>While able to communicate with your armor, you can gain the effect of guidance when making an Intelligence ability check.</description>
         </sheet>
         <rules>
-            <select type="Proficiency" name="Skill Proficiency (Arcaneware)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_RELIGION" />
+            <grant type="Spell" id="ID_PHB_SPELL_GUIDANCE" />
         </rules>
     </element>
     <element name="Active Camouflage" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_ACTIVE_CAMOUFLAGE">
@@ -394,6 +435,7 @@
         <rules>
         </rules>
     </element>
+    <!-- folded into Arcane Visor in version 2.0.2
     <element name="Divination Visor" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_DIVINATION_VISOR">
         <supports>Specialization Upgrade,Warsmith,5</supports>
         <requirements>[level:artificer:5],ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_ARCANE_VISOR</requirements>
@@ -408,6 +450,7 @@
         <rules>
         </rules>
     </element>
+    -->
     <element name="Emergency Protocol" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_EMERGENCY_PROTOCOL">
         <supports>Specialization Upgrade,Warsmith,5</supports>
         <requirements>[level:artificer:5],ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_SENTIENT_ARMOR</requirements>
@@ -616,6 +659,27 @@
             <description>You can use the Reactor to cast additional spells, 1 charge per spell level. If your reactor runs out of charges, you can overdraw for one last spell, but become immobile for a number of rounds equal to the level of the spell cast. You cannot do this again until you complete a long rest.</description>
         </sheet>
         <rules>
+        </rules>
+    </element>
+    <!-- added Heads Up Display in version 2.0.2 -->
+    <element name="Heads Up Display" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_HEADS_UP_DISPLAY">
+        <supports>Specialization Upgrade,Warsmith,9</supports>
+        <requirements>[level:artificer:9],ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_ARCANE_VISOR,ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_SENTIENT_ARMOR</requirements>
+        <prerequisite>Artificer Level 9, Arcane Visor, Sentient Armor</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Artificer Level 9, Arcane Visor, Sentient Armor</p>
+            <p>You can delegate displaying and tracking things in your sight to your Sentient armor, granting you the following benefits:</p>
+            <ul>
+                <li>When a creature attempts to take the Hide action against you, you can make an active Wisdom (Perception) check to contest its Dexterity (Stealth) check as a reaction.</li>
+                <li>When making an Dexterity saving throw against an attack you can see, you can make an Intelligence saving throw instead.</li>
+                <li>When a creature hits you with a ranged attack roll, you can cast true strike as a reaction targeting that creature.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Your visor can display and track targets, granted specific benefits.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_TRUE_STRIKE" />
         </rules>
     </element>
     <element name="Iron Muscle" type="Archetype Feature" source="Kibbles’ Artificer" id="ID_KIBBLESTASTY_GM_BINDER_ARCHETYPE_FEATURE_ARTIFICER_UPGRADE_WARSMITH_IRON_MUSCLE">
