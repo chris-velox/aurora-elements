@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Path of the Psychic Warrior</name>
+        <author url="https://www.reddit.com/u/devikyn">u/devikyn</author>
+        <update version="0.0.2">
+            <file name="barbarian-path-of-the-psychic-warrior.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/gm-binder-devikyn/the-renewed-psionic/barbarian-path-of-the-psychic-warrior.xml" />
+        </update>
+    </info>
+    
+    <element name="Path of the Psychic Warrior" type="Archetype" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_PATH_OF_THE_PSYCHIC_WARRIOR">
+        <supports>Primal Path</supports>
+        <description>
+            <p>Psychic warriors are naturally talented psionic barbarians who forego any mental training in favor of letting their psionics run wild. These warriors are as unpredictable as they are powerful, for even with a low level of mastery, they can channel limited, but powerful effects while simultaneously posing great physical threat.</p>
+            <div element="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_UNREFINED_PSIONICS" />
+            <div element="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_RAGING_MINDSTORM" />
+            <div element="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_SEEDS_OF_RAGE" />
+            <div element="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_METABOLIC_INSTABILITY" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_UNREFINED_PSIONICS" level="3" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_RAGING_MINDSTORM" level="6" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_SEEDS_OF_RAGE" level="10" />
+            <grant type="Archetype Feature" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_METABOLIC_INSTABILITY" level="14" />
+        </rules>
+    </element>
+    <element name="Unrefined Psionics" type="Archetype Feature" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_UNREFINED_PSIONICS">
+        <description>
+            <p>At 3rd level, your latent psionic abilities begin to express themselves in unrefined ways, becoming particularly volatile while you rage.</p>
+            <p class="indent">You know two talents of your choice from the psion spell list. You learn one additional psion talent of your choice at 10th level. Your psionic ability for these talents is Constitution.</p>
+            <p class="indent">While you are raging, you can invoke a psionic talent as a bonus action. When you do, if you invoke a talent that deals damage, you take half the damage dealt by the talent; otherwise, you take psychic damage equal to half your barbarian level.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>While you are raging, you can invoke a psionic talent. When you do, if you invoke a talent that deals damage, you take half the damage dealt by the talent; otherwise, you take {{level:barbarian:half}} points psychic damage.</description>
+        </sheet>
+        <spellcasting name="Barbarian" ability="Constitution" prepare="false">
+            <list>Barbarian</list>
+        </spellcasting>
+        <setters>
+            <set name="spellcaster">true</set>
+            <set name="spellcastingAbility">Constitution</set>
+        </setters>
+        <rules>
+            <select type="Spell" name="Unrefined Psionic Talent (Level 3)" supports="Psion,0" level="3" spellcasting="Barbarian" number="2" />
+            <select type="Spell" name="Unrefined Psionic Talent (Level 10)" supports="Psion,0" level="10" spellcasting="Barbarian" number="1" />
+        </rules>
+    </element>
+    <element name="Raging Mindstorm" type="Archetype Feature" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_RAGING_MINDSTORM">
+        <description>
+            <p>At 6th level, you unleash wild psionic energy while raging, which rotates around you like frenzied blades.</p>
+            <p class="indent">While raging, ranged attacks against you have disadvantage, and any creature that touches you takes psychic damage equal to your Constitution modifier.</p>
+        </description>
+        <sheet>
+            <description>While raging, ranged attacks against you have disadvantage, and any creature that touches you takes {{constitution:modifier}} points psychic damage.</description>
+        </sheet>
+    </element>
+    <element name="Seeds of Rage" type="Archetype Feature" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_SEEDS_OF_RAGE">
+        <description>
+            <p>At 10th level, you can convert your rage into a mental wave that draws rage out of others and inhibits their ability to focus.</p>
+            <p class="indent">As an action while you’re raging, you can end your rage early to force any amount of creatures of your choice within 30 feet of you to make a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Constitution modifier). On a failed save, an affected creature takes 4d8 psychic damage, and it can’t concentrate on manifestations, spells, or other effects for 1 minute, as a growing rage inhibits its ability to focus.</p>
+            <p class="indent">Once you’ve used this ability, you can’t use it again until you finish a short or long rest.</p>
+        </description>
+        <sheet usage="1/Short Rest" action="Action">
+            <description>As an action while you’re raging, you can end your rage early to force any amount of creatures of your choice within 30 feet of you to make a Wisdom saving throw (DC {{spellcasting:dc}}). On a failed save, an affected creature takes 4d8 psychic damage, and it can’t concentrate on manifestations, spells, or other effects for 1 minute, as a growing rage inhibits its ability to focus.</description>
+        </sheet>
+    </element>
+    <element name="Metabolic Instability" type="Archetype Feature" source="The Renewed Psionic" id="ID_GM_BINDER_TRP_ARCHETYPE_FEATURE_WOTPW_METABOLIC_INSTABILITY">
+        <description>
+            <p>At 14th level, your unstable psionic ability has grown to a point where it affects your physical form.</p>
+            <p class="indent">When you start raging, roll a d4 and consult the table below. You gain the effects of the psionic manifestation for the number you rolled until your rage ends. Your psionics ability is Constitution for manifestations invoked in this way.</p>
+            <table>
+                <thead>
+                    <tr><td>d4</td><td>column2</td></tr>
+                </thead>
+                <tr><td>1</td><td><i>iron durability</i></td></tr>
+                <tr><td>2</td><td><i>giant limbs</i></td></tr>
+                <tr><td>3</td><td><i>corrosive metabolism</i></td></tr>
+                <tr><td>4</td><td><i>bestial transformation</i></td></tr>
+            </table>
+        </description>
+        <sheet>
+            <description>When you start raging, roll a d4 and consult the table on the feature card. You gain the effects of the psionic manifestation for the number you rolled until your rage ends. Your psionics ability is Constitution for manifestations invoked in this way.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_GM_BINDER_TRP_SPELL_IRON_DURABILITY" spellcasting="Barbarian" />
+            <grant type="Spell" id="ID_GM_BINDER_TRP_SPELL_GIANT_LIMBS" spellcasting="Barbarian" />
+            <grant type="Spell" id="ID_GM_BINDER_TRP_SPELL_CORROSIVE_METABOLISM" spellcasting="Barbarian" />
+            <grant type="Spell" id="ID_GM_BINDER_TRP_SPELL_BESTIAL_TRANSFORMATION" spellcasting="Barbarian" />
+        </rules>
+    </element>
+</elements>
