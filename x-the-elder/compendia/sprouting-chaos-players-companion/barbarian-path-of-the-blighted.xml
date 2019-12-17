@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Path of the Blighted Primal Path</name>
+        <author url="http://guidetohomebrew.blogspot.com/">Jonoman3000</author>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-the-blighted.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/sprouting-chaos-players-companion/barbarian-path-of-the-blighted.xml" />
+        </update>
+    </info>
+    
+    <element name="Path of the Blighted" type="Archetype" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_BARBARIAN_PATH_OF_THE_BLIGHTED">
+        <supports>Primal Path</supports>
+        <description>
+            <p>The Path of the Blighted is a path of unholy origin, traced back to the same origin of the Blights: the Gulthias Tree. By gaining power from this evil source, you can channel your rage to shift your physical form, becoming a monstrous abomination of vines and branches. While transformed, you engulf and constrict your enemies as you tear them apart.</p>
+            <p class="indent"></p>
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_BLIGHTED_TRANSFORMATION" />
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_FALSE_APPEARANCE" />
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_UNNATURAL_GROWTH" />
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_REACTIVE_TENDRILS" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_BLIGHTED_TRANSFORMATION" level="3" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_FALSE_APPEARANCE" level="6" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_UNNATURAL_GROWTH" level="10" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_REACTIVE_TENDRILS" level="14" />
+        </rules>
+    </element>
+        <element name="Blighted Transformation" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_BLIGHTED_TRANSFORMATION">
+            <description>
+                <p>Starting when you choose this path at 3rd level, you become a blighted monster when you rage. For the duration of your rage, when you hit a creature with a weapon attack on your turn, you can use a bonus action to attempt to grapple the target with blighted vines that sprout out of your body. This grapple does not require a free hand, but otherwise follows all of the rules for grappling. You can have 1 creature grappled with this feature at a time.</p>
+                <p class="indent">If you already have a creature grappled with this feature, this bonus action instead constricts the target, causing them to take bludgeoning damage equal to half your barbarian level, rounded up.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>For the duration of your rage, when you hit a creature with a weapon attack on your turn, you can use a bonus action to attempt to grapple the target with blighted vines that sprout out of your body. This grapple does not require a free hand, but otherwise follows all of the rules for grappling. You can have 1 creature grappled with this feature at a time. If you already have a creature grappled with this feature, this bonus action instead constricts the target, causing them to take {{level:barbarian:half}} points bludgeoning damage.</description>
+            </sheet>
+        </element>
+        <element name="False Appearance" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_FALSE_APPEARANCE">
+            <description>
+                <p>Beginning at 6th level, your body is now able to become temporarily plantlike to hide from foes. As an action, you can camouflage yourself against the surface of a plant, such as the bark of a tree, a large bush, or an area of thick vines. When you do so, you make a Dexterity (Stealth) check with advantage, remaining camouflaged until you move or take an action.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can camouflage yourself against the surface of a plant, such as the bark of a tree, a large bush, or an area of thick vines. When you do so, you make a Dexterity (Stealth) check with advantage, remaining camouflaged until you move or take an action.</description>
+            </sheet>
+        </element>
+        <element name="Unnatural Growth" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_UNNATURAL_GROWTH">
+            <description>
+                <p>At 10th level, you can cast the <em>plant growth</em> spell once with this feature, and you regain the ability to cast it this way once you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast plant growth.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_PLANT_GROWTH" />
+            </rules>
+        </element>
+        <element name="Reactive Tendrils" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_PATH_OF_THE_BLIGHTED_REACTIVE_TENDRILS">
+            <description>
+                <p>Starting at 14th level, whenever you take damage from a creature within 5 feet of you while you’re raging, you can use your reaction to release grasping vines at the attacker, attempting to grapple the target. This grapple does not require a free hand, and you can have 1 creature grappled with this feature at a time.</p>
+                <p class="indent">If you use your Blighted Transformation feature to constrict a creature you’re grappling, you deal damage to both the creature you’re grappling with Blighted Transformation as well as the creature you’re grappling with Reactive Tendrils.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>Whenever you take damage from a creature within 5 feet of you while you’re raging, you can use your reaction to release grasping vines at the attacker, attempting to grapple the target. This grapple does not require a free hand, and you can have 1 creature grappled with this feature at a time. If you use your Blighted Transformation feature to constrict a creature you’re grappling, you deal damage to both the creature you’re grappling with Blighted Transformation as well as the creature you’re grappling with Reactive Tendrils.</description>
+            </sheet>
+        </element>
+    
+</elements>
