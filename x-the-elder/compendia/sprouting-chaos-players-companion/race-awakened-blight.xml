@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Awakened Blight Race</name>
+        <update version="0.0.1">
+            <file name="race-awakened-blight.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/sprouting-chaos-players-companion/race-awakened-blight.xml" />
+        </update>
+    </info>
+    
+    <element name="Awakened Blight" type="Race" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_RACE_AWAKENED_BLIGHT">
+        <description>
+            <p>Awakened plants gifted with the powers of intelligence and mobility, blights plague lands contaminated by darkness. “Awakened” Blights are those blights which have ascended to even greater intelligence and power. Although most still follow their evil masters, the awakened ones are able to stray from that path if they so desire. Although they are not necessarily evil, an Awakened Blight is still feared and hunted wherever they go. Most races of the world do not consider awakened blights a race, but instead consider them monstrosities.</p>
+            <h4>ROOTS OF THE GULTHIAS TREE</h4>
+            <p>Legends tell of a vampire named Gulthias who worked terrible magic and raised up an abominable tower called Nightfang Spire. Gulthias was undone when a hero plunged a wooden stake through his heart, but as the vampire was destroyed, his blood infused the stake with a dreadful power. In time, tendrils of new growth sprouted from the wood, growing into a sapling infused with the vampire’s evil essence. It is said that a mad druid discovered the sapling, transplanting it to an underground grotto where it could grow. From this Gulthias tree came the seeds from which the first blights were sown.</p>
+            <h4>DARK CONQUEST</h4>
+            <p>Wherever a tree or plant is contaminated by a fragment of an evil mind or power, a Gulthias tree can rise to infest and corrupt the surrounding forest. Its evil spreads through root and soil to other plants, which perish or transform into blights. As those blights spread, they poison and uproot healthy plants, replacing them with brambles, toxic weeds, and others of their kind. In time, an infestation of blights can turn any land or forest into a place of corruption. In forests infested with blights, trees and plants grow with supernatural speed. Vines and undergrowth rapidly spread through buildings and overrun trails and roads. After blights have killed or driven off their inhabitants, whole villages can disappear in the space of days.</p>
+            <h4>EVIL HERITAGE</h4>
+            <p>Awakened Blights are independent creatures, but most are still influenced by their evil past. They tend towards the evil alignments, and are most often not welcome in civilized places. It is in their nature to carry on the evil legacy of their forefathers.</p>
+            <h4>AWAKENED BLIGHT NAMES</h4>
+            <p>When Blights awaken, they generally take on any name that they have heard. Their names may be based off of elves, dwarves, humans, halflings - any race that they have encountered.</p>
+            <h4>Awakened Blight Traits</h4>
+            <p>Your awakened blight character has certain traits derived from its blighted nature.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Constitution score increases by 2, and your Strength score increases by 1.</p>
+            <p class="indent"><strong><em>Age.</em></strong> Blights become awakened a few years after they are grown, if they become awakened at all. They generally live under 60 years after they are awakened.</p>
+            <p class="indent"><strong><em>Alignment.</em></strong> Most Awakened Blights retain their evil nature, still serving their ancient evils. They are generally neutral, not tending towards either chaotic or lawful.</p>
+            <p class="indent"><strong><em>Size.</em></strong> Awakened Blights are about 5-6 feet tall. They weigh about 150-200 pounds. Your size is Medium.</p>
+            <p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+            <p class="indent"><strong><em>Blindsight.</em></strong> Possessing no real eyes, Awakened Blights have adapted to see without them. You gain Blindsight with a radius of 30 feet, and you are unaffected by the blinded condition within the area of your blindsight. However, you are blind beyond this radius.</p>
+            <p class="indent"><strong><em>Constricting Vines.</em></strong> You know the thorn whip cantrip, and Constitution is your spellcasting ability for it. Whenever you cast this cantrip and use it to bring a creature within 5 feet of you, you can use a bonus action to attempt to grapple the target.</p>
+            <p class="indent"><strong><em>Natural Armor. </em></strong>Your skin is made of thick bark and vines. When you aren’t wearing armor, your AC is equal to 12 + your Dexterity modifier.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common and one other language of your choice.</p>
+        </description>
+        <sheet display="false" />
+        <setters>
+            <set name="names" type="male"></set>
+            <set name="names" type="female"></set>
+            <set name="names" type="clan">not used</set>
+            <set name="names-format">{{name}}</set>
+            <set name="height" modifier="2d8">4’10"</set>
+            <set name="weight" modifier="2d4">130 lb.</set>
+        </setters>
+        <rules>
+            <grant type="Racial Trait" id="ID_JONOMAN3000_SCPC_RACIAL_TRAIT_AWAKENED_BLIGHT_BLINDSIGHT" />
+            <grant type="Racial Trait" id="ID_JONOMAN3000_SCPC_RACIAL_TRAIT_AWAKENED_BLIGHT_CONSTRICTING_VINES" />
+            <grant type="Racial Trait" id="ID_JONOMAN3000_SCPC_RACIAL_TRAIT_AWAKENED_BLIGHT_NATURAL_ARMOR" />
+            <stat name="constitution" value="2" />
+            <stat name="strength" value="1" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <stat name="innate speed" value="30" bonus="base" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <select type="Language" name="Language (Awakened Blight)" supports="Starting" />
+        </rules>
+    </element>
+        <element name="Blindsight" type="Racial Trait" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_RACIAL_TRAIT_AWAKENED_BLIGHT_BLINDSIGHT">
+            <description>
+                <p>Possessing no real eyes, Awakened Blights have adapted to see without them. You gain Blindsight with a radius of 30 feet, and you are unaffected by the blinded condition within the area of your blindsight. However, you are blind beyond this radius.</p>
+            </description>
+            <sheet>
+                <description>You gain Blindsight with a radius of 30 feet, and you are unaffected by the blinded condition within the area of your blindsight. However, you are blind beyond this radius.</description>
+            </sheet>
+            <rules>
+                <grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+            </rules>
+        </element>
+        <element name="Constricting Vines" type="Racial Trait" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_RACIAL_TRAIT_AWAKENED_BLIGHT_CONSTRICTING_VINES">
+            <description>
+                <p>You know the thorn whip cantrip, and Constitution is your spellcasting ability for it. Whenever you cast this cantrip and use it to bring a creature within 5 feet of you, you can use a bonus action to attempt to grapple the target.</p>
+            </description>
+            <sheet>
+                <description>You know the thorn whip cantrip, and Constitution is your spellcasting ability for it. Whenever you cast this cantrip and use it to bring a creature within 5 feet of you, you can use a bonus action to attempt to grapple the target.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_THORN_WHIP" />
+            </rules>
+        </element>
+        <element name="Natural Armor" type="Racial Trait" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_RACIAL_TRAIT_AWAKENED_BLIGHT_NATURAL_ARMOR">
+            <description>
+                <p>Your skin is made of thick bark and vines. When you aren’t wearing armor, your AC is equal to 12 + your Dexterity modifier.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="ac:natural-armor:base" value="12" />
+                <stat name="ac:natural-armor:dexterity" value="dexterity:modifier" />
+                <stat name="ac:natural-armor" value="ac:natural-armor:base" />
+                <stat name="ac:natural-armor" value="ac:natural-armor:dexterity" />
+                <stat name="ac:calculation" value="ac:natural-armor" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Natural Defense (Awakened Blight)" />
+            </rules>
+        </element>
+</elements>

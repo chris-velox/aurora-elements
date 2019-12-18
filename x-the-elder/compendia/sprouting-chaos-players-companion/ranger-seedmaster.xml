@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Seedmaster Ranger Archetype</name>
+        <update version="0.0.1">
+            <file name="ranger-seedmaster.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/sprouting-chaos-players-companion/ranger-seedmaster.xml" />
+        </update>
+    </info>
+    
+    <element name="Seemaster" type="Archetype" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_RANGER_SEEDMASTER">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>The Seedmaster archetype serves as an alternate path to the Beastmaster archetype, instead growing a bond between a small plant creature and the ranger. The ranger and the plant work as one to fight off forces of evil and destruction. Seedmaster rangers lovingly cultivate their magic seedlings, forming an almost pet-like bond between themselves and the animated plant.</p>
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_COMPANION" />
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_POWER_OF_THE_SEED" />
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_UNCANNY_STRIKES" />
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_NATURES_BOND" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_COMPANION" level="3" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_POWER_OF_THE_SEED" level="7" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_UNCANNY_STRIKES" level="11" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_NATURES_BOND" level="15" />
+        </rules>
+    </element>
+        <element name="Seedling Companion" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_COMPANION">
+            <description>
+                <p>At 3rd level, you learn a ritual that creates a magical bond between yourself and a small seedling. You perform the ritual over the course of 1 hour, which can be done during a short rest. At the conclusion of this ritual, the seedling gains magical abilities that you can activate.</p>
+                <p class="indent">As a bonus action, you may throw the seedling up to 30 feet, which then roots itself into the ground where it lands. The seedling’s size when deployed is Small, and it has 8 Strength, 14 Dexterity, 10 Constitution, 5 Wisdom, 3 Intelligence, and 1 Charisma. It has 10 + your proficiency bonus AC and hit points equal to 8 + double your ranger level, and cannot move until you safely unroot it using a 1 minute ritual. If the seedling is reduced to 0 hit points, it withers back into a small seed which cannot be deployed again until you complete a short rest. Once the seedling is planted, you can give it the following commands:</p>
+                <p class="indent">Thorn Strike. As a bonus action, you can command the seedling to shoot a thorn at an enemy within 20 feet of it that you can see. Make a ranged spell attack against that enemy using your Ranger spell attack bonus. On a hit, the target takes 1d4 piercing damage.</p>
+                <p class="indent">This damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).</p>
+                <p class="indent">Trip Attack. When a Large or smaller creature that you can see moves within 5 feet of the seedling, you may use your reaction to command the seedling to trip that creature. The creature must succeed on a Dexterity saving throw against your Ranger spell save DC or fall prone.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You are magically bonded to a small seedling. As a bonus action, you may throw the seedling up to 30 feet, which then roots itself into the ground where it lands.</description>
+            </sheet>
+            <rules>
+                <select type="Companion" name="Seedling Companion" supports="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING" default="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING" />
+            </rules>
+        </element>
+            <element name="Thorn Strike" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_COMPANION_THORN_STRIKE">
+                <description>
+                    <p>As a bonus action, you can command the seedling to shoot a thorn at an enemy within 20 feet of it that you can see. Make a ranged spell attack against that enemy using your Ranger spell attack bonus. On a hit, the target takes 1d4 piercing damage.</p>
+                    <p class="indent">This damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).</p>
+                </description>
+                <sheet action="Bonus Action" usage="Seedling Companion">
+                    <description>You can command the seedling to shoot a thorn at an enemy within 20 feet of it that you can see. Make a ranged spell attack against that enemy using your Ranger spell attack bonus. On a hit, the target takes {{thorn-strike:damage-dice}}d4 piercing damage.</description>
+                </sheet>
+                <rules>
+                    <stat name="thorn-strike:damage-dice" value="1" level="3" />
+                    <stat name="thorn-strike:damage-dice" value="1" level="5" />
+                    <stat name="thorn-strike:damage-dice" value="1" level="11" />
+                    <stat name="thorn-strike:damage-dice" value="1" level="17" />
+                </rules>
+            </element>
+            <element name="Trip Attack" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_COMPANION_TRIP_ATTACK">
+                <description>
+                    <p>When a Large or smaller creature that you can see moves within 5 feet of the seedling, you may use your reaction to command the seedling to trip that creature. The creature must succeed on a Dexterity saving throw against your Ranger spell save DC or fall prone.</p>
+                </description>
+                <sheet action="Reaction" usage="Seedling Companion">
+                    <description>When a Large or smaller creature that you can see moves within 5 feet of the seedling, you may use your reaction to command the seedling to trip that creature. The creature must succeed on a Dexterity (save DC {{spellcasting:dc}}) or fall prone.</description>
+                </sheet>
+            </element>
+        <element name="Power of the Seed" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_POWER_OF_THE_SEED">
+            <description>
+                <p>At 7th level, you can either upgrade the seedling’s Thorn strike or Trip attack feature.</p>
+                <p class="indent">Thorn Strike Upgrade. Whenever Thorn Strike hits an enemy, your next attack against that enemy is made with advantage.</p>
+                <p class="indent">Trip Attack Upgrade. Trip Attack’s range increases to 15 feet</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Power of the Seed" supports="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_COMPANION_THORN_STRIKE_UPGRADE|ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_COMPANION_TRIP_ATTACK_UPGRADE" />
+            </rules>
+        </element>
+            <element name="Thorn Strike Upgrade" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_COMPANION_THORN_STRIKE_UPGRADE">
+                <description>
+                    <p>Whenever Thorn Strike hits an enemy, your next attack against that enemy is made with advantage.</p>
+                </description>
+                <sheet usage="Seedling Companion">
+                    <description>Whenever Thorn Strike hits an enemy, your next attack against that enemy is made with advantage.</description>
+                </sheet>
+            </element>
+            <element name="Trip Attack Upgrade" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_COMPANION_TRIP_ATTACK_UPGRADE">
+                <description>
+                    <p>Trip Attack’s range increases to 15 feet.</p>
+                </description>
+                <sheet usage="Seedling Companion">
+                    <description>Trip Attack’s range increases to 15 feet.</description>
+                </sheet>
+            </element>
+        <element name="Uncanny Strikes" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_UNCANNY_STRIKES">
+            <description>
+                <p>Beginning at 11th level, your seedling has advantage on all of its Thorn Strikes, and creatures have disadvantage on the saving throw against Trip Attack.</p>
+            </description>
+            <sheet>
+                <description>Your seedling has advantage on all of its Thorn Strikes, and creatures have disadvantage on the saving throw against Trip Attack.</description>
+            </sheet>
+        </element>
+        <element name="Nature’s Bond" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_NATURES_BOND">
+            <description>
+                <p>Starting at 15th level, you and your seedling gain a protective bond. At the end of each of your turns, if you are within 5 feet of your seedling, you can choose to either protect your seedling or have it protect you until the start of your next turn. If you protect your seedling, attacks against it have disadvantage, and if it protects you, attacks against you have disadvantage.</p>
+            </description>
+            <sheet>
+                <description>At the end of each of your turns, if you are within 5 feet of your seedling, you can choose to either protect your seedling or have it protect you until the start of your next turn. If you protect your seedling, attacks against it have disadvantage, and if it protects you, attacks against you have disadvantage.</description>
+            </sheet>
+        </element>
+
+	<element name="Seedling" type="Companion" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING">
+		<description />
+		<setters>
+			<set name="strength">8</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">5</set>
+			<set name="charisma">1</set>
+			<set name="ac">10</set>
+			<set name="hp">8 + double your ranger level</set>
+			<set name="speed">0</set>
+			<set name="languages">—</set>
+			<set name="skills"></set>
+			<set name="type">Plant</set>
+			<set name="size">Small</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/2</set>
+			<set name="actions">ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_THORN_STRIKE,ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_TRIP_ATTACK</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+            <stat name="companion:ac" value="proficiency" />
+			<stat name="companion:hp:max" value="19" bonus="base" />
+			<stat name="companion:speed" value="0" bonus="base" />
+		</rules>
+	</element>
+	<element name="Thorn Strike" type="Companion Action" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_THORN_STRIKE">
+		<description>
+			<p>As a bonus action, you can command the seedling to shoot a thorn at an enemy within 20 feet of it that you can see. Make a ranged spell attack against that enemy using your Ranger spell attack bonus. On a hit, the target takes 1d4 piercing damage.</p>
+            <p class="indent">This damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+	</element>
+	<element name="Trip Attack" type="Companion Action" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_SEEDMASTER_SEEDLING_TRIP_ATTACK">
+		<description>
+			<p>When a Large or smaller creature that you can see moves within 5 feet of the seedling, you may use your reaction to command the seedling to trip that creature. The creature must succeed on a Dexterity saving throw against your Ranger spell save DC or fall prone.</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+	</element>
+</elements>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Way of Thorns Monastic Tradition</name>
+        <update version="0.0.1">
+            <file name="monk-way-of-thorns.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/sprouting-chaos-players-companion/monk-way-of-thorns.xml" />
+        </update>
+    </info>
+    
+    <element name="Way of Thorns" type="Archetype" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_MONK_WAY_OF_THORNS">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>You follow a monastic tradition that teaches you to harness the power of nature. Nature has become an extension of yourself, and you have learned to use it to great effect. By following this Way, you learn techniques to manipulate plants, allowing them to bend to your will and aid you both in combat and out of it.</p>
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_DISCIPLE_OF_THE_WILDS" />
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_NATURE_DISCIPLINES" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_DISCIPLE_OF_THE_WILDS" level="3" />
+        </rules>
+    </element>
+        <element name="Disciple of the Wilds" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_DISCIPLE_OF_THE_WILDS">
+            <description>
+                <p>When you choose this tradition at 3rd level, you learn magical disciplines that harness the power of nature. A discipline requires you to spend ki points each time you use it.</p>
+                <p class="indent">You know the Natural Attunement discipline and one other nature discipline of your choice, which are detailed in the "Nature Disciplines" section below. You learn one additional nature discipline of your choice at 6th, 11th.and 17th level.</p>
+                <p class="indent">Whenever you learn a new nature discipline, you can also replace one nature discipline that you already know with a different discipline.</p>
+                <p class="indent">Casting Nature Spells. Some nature disciplines allow you to cast spells. To cast one of these spells, you use its casting time and other rules, but you don’t need to provide material components for it.</p>
+                <p class="indent">Once you reach 5th level in this class, you can spend additional ki points to increase the level of a nature discipline spell that you cast, provided that the spell has an enhanced effect at a higher level, as slicing leaves does. The spell’s level increases by 1 for each additional ki point you spend. For example, if you are a 5th-level monk and use Nature’s Weapon to cast <em>slicing leaves</em>, you can spend 3 ki points to cast it as a 2nd-level spell (the discipline’s base cost of 2 ki points plus 1).</p>
+                <p class="indent">The maximum number of ki points you can spend to cast a spell in this way(including its base ki point cost and any additional ki points you spend to increase its level) is determined by your monk level, as shown in the Spells and Ki Points table.</p>
+                <h5>SPELLS AND KI POINTS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Monk Levels</td><td>Maximum Ki Points for a Spell</td></tr>
+                    </thead>
+                    <tr><td>5th-8th</td><td>3</td></tr>
+                    <tr><td>9th-12th</td><td>4</td></tr>
+                    <tr><td>13th-16th</td><td>5</td></tr>
+                    <tr><td>17th-20th</td><td>6</td></tr>
+                </table>
+            </description>
+            <sheet>
+                <description>You can use Natural Disciplines you have selected.</description>
+                <description level="5">You can use Natural Disciplines you have selected. You can spend up to {{natural-discipline:max-ki}} ki points maximum to cast a spell. Ki points spent beyond the base increase the level at which discipline spells are cast by 1 level per ki point.</description>
+            </sheet>
+            <rules>
+                <stat name="natural-discipline:max-ki" value="3" level="5" />
+                <stat name="natural-discipline:max-ki" value="1" level="9" />
+                <stat name="natural-discipline:max-ki" value="1" level="13" />
+                <stat name="natural-discipline:max-ki" value="1" level="17" />
+                <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_NATURAL_ATTUNEMENT" level="3" />
+                <select type="Archetype Feature" name="Natural Discipline (Level 3)" supports="Way of Thorns Natural Discipline" level="3" />
+                <select type="Archetype Feature" name="Natural Discipline (Level 6)" supports="Way of Thorns Natural Discipline" level="6" />
+                <select type="Archetype Feature" name="Natural Discipline (Level 11)" supports="Way of Thorns Natural Discipline" level="11" />
+                <select type="Archetype Feature" name="Natural Discipline (Level 17)" supports="Way of Thorns Natural Discipline" level="17" />
+            </rules>
+        </element>
+        <element name="Nature Disciplines" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_NATURE_DISCIPLINES">
+            <description>
+                <p>The nature disciplines are presented in alphabetical order. If a discipline requires a level, you must be that level in this class to learn the discipline.</p>
+                <p class="indent"><b><i>Breath of Pain (6th Level Required).</i></b> You can spend 3 ki points to cast spray of thorns.</p>
+                <p class="indent"><b><i>Bridge of Spring.</i></b> You can spend 2 ki points to cast bridge of branches.</p>
+                <p class="indent"><b><i>Earthen Restraints.</i></b> You can spend 2 ki points to cast entangle.</p>
+                <p class="indent"><b><i>Fang of the Earth (6th Level Required).</i></b> You can spend 3 ki points to cast explosive seed.</p>
+                <p class="indent"><b><i>Felling Strike (11th Level Required).</i></b> You can spend 4 ki points to cast fell.</p>
+                <p class="indent"><b><i>Hidden Grove.</i></b> You can spend 2 ki points to cast overgrowth.</p>
+                <p class="indent"><b><i>Natural Attunement.</i></b> You can use your action to briefly control the natural world, causing one of the following effects of your choice</p>
+                <ul>
+                    <li>Create a harmless, instantaneous sensory effect related to nature such as the smell of flowers, a rustling of tree branches, or the brush of falling leaves.</li>
+                    <li>Cause a plant’s flowers to blossom or fruits to ripen.</li>
+                    <li>Change the color of a plant for 1 minute, choosing a portion of the plant that can fit in a 5 ft. cube.</li>
+                    <li>Cause a plant that can fit within a 5 ft. cube to shape itself into a crude form you designate for 1 minute.</li>
+                </ul>
+                <p class="indent"><b><i>Nature’s Commune.</i></b> You can spend 2 ki points to cast rapport spores.</p>
+                <p class="indent"><b><i>Nature’s Weapon.</i></b> You can spend 2 ki points to cast slicing leaves.</p>
+                <p class="indent"><b><i>Skewering Fist (11th Level Required).</i></b> You can spend 4 ki points to cast skewering branch.</p>
+                <p class="indent"><b><i>Stride of the Dryad (17th Level Required).</i></b> You can spend 6 ki points to cast tree stride.</p>
+                <p class="indent"><b><i>Striking Vine (6th Level Required).</i></b> You can spend 3 ki points to cast arm of the wild.</p>
+                <p class="indent"><b><i>Treant’s Fist (17th Level Required).</i></b> You can spend 5 ki points to cast tree strike.</p>
+                <p class="indent"><b><i>Verdant Grasp (17th Level Required).</i></b> You can spend 5 ki points to cast grasping vine.</p>
+                <p class="indent"><b><i>Verdant Hand.</i></b> You can spend 2 ki points to cast gaea’s hand. The hand uses your unarmed strike damage as its damage die.</p>
+                <p class="indent"><b><i>Wave of Thorns (11th Level Required).</i></b> You can spend 4 ki points to cast engulfing thorns.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+        </element>
+        
+      <!-- Natural Disciplines -->
+        <element name="Breath of Pain" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_BREATH_OF_PAIN">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <prerequisite>Monk Level 6</prerequisite>
+            <requirements>[level:monk:6]</requirements>
+            <description>
+                <p class="flavor">Monk Level 6</p>
+                <p>You can spend 3 ki points to cast <em>spray of thorns</em>.</p>
+            </description>
+            <sheet usage="3 ki points">
+                <description>You can cast spray of thorns.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_SPRAY_OF_THORNS" />
+            </rules>
+        </element>
+        <element name="Bridge of Spring" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_BRIDGE_OF_SPRING">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <description>
+                <p>You can spend 2 ki points to cast <em>bridge of branches</em>.</p>
+            </description>
+            <sheet usage="2 ki points">
+                <description>You can cast bridge of branches.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_BRIDGE_OF_BRANCHES" />
+            </rules>
+        </element>
+        <element name="Earthen Restraints" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_EARTHEN_RESTRAINTS">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <description>
+                <p>You can spend 2 ki points to cast <em>entangle</em>.</p>
+            </description>
+            <sheet usage="2 ki points">
+                <description>You can cast entangle.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_ENTANGLE" />
+            </rules>
+        </element>
+        <element name="Fang of the Earth" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_FANG_OF_THE_EARTH">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <prerequisite>Monk Level 6</prerequisite>
+            <requirements>[level:monk:6]</requirements>
+            <description>
+                <p class="flavor">Monk Level 6</p>
+                <p>You can spend 3 ki points to cast <em>explosive seed</em>.</p>
+            </description>
+            <sheet usage="3 ki points">
+                <description>You can cast explosive seed.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_EXPLOSIVE_SEED" />
+            </rules>
+        </element>
+        <element name="Felling Strike" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_FELLING_STRIKE">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <prerequisite>Monk Level 11</prerequisite>
+            <requirements>[level:monk:11]</requirements>
+            <description>
+                <p class="flavor">Monk Level 11</p>
+                <p>You can spend 4 ki points to cast <em>fell</em>.</p>
+            </description>
+            <sheet usage="4 ki points">
+                <description>You can cast fell.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_FELL" />
+            </rules>
+        </element>
+        <element name="Hidden Grove" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_HIDDEN_GROVE">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <description>
+                <p>You can spend 2 ki points to cast <em>overgrowth</em>.</p>
+            </description>
+            <sheet usage="2 ki points">
+                <description>You can cast overgrowth.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_OVERGROWTH" />
+            </rules>
+        </element>
+        <element name="Natural Attunement" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_NATURAL_ATTUNEMENT">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <description>
+                <p>You can use your action to briefly control the natural world, causing one of the following effects of your choice</p>
+                <ul>
+                    <li>Create a harmless, instantaneous sensory effect related to nature such as the smell of flowers, a rustling of tree branches, or the brush of falling leaves.</li>
+                    <li>Cause a plant’s flowers to blossom or fruits to ripen.</li>
+                    <li>Change the color of a plant for 1 minute, choosing a portion of the plant that can fit in a 5 ft. cube.</li>
+                    <li>Cause a plant that can fit within a 5 ft. cube to shape itself into a crude form you designate for 1 minute.</li>
+                </ul>
+            </description>
+            <sheet action="Action">
+                <description>You can use your action to briefly control the natural world, causing a harmless effect.</description>
+            </sheet>
+        </element>
+        <element name="Nature’s Commune" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_NATURES_COMMUNE">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <description>
+                <p>You can spend 2 ki points to cast <em>rapport spores</em>.</p>
+            </description>
+            <sheet usage="2 ki points">
+                <description>You can scast rapport spores.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_RAPPORT_SPORES" />
+            </rules>
+        </element>
+        <element name="Nature’s Weapon" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_NATURES_WEAPON">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <description>
+                <p>You can spend 2 ki points to cast <em>slicing leaves</em>.</p>
+            </description>
+            <sheet usage="2 ki points">
+                <description>You can cast slicing leaves.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_SLICING_LEAVES" />
+            </rules>
+        </element>
+        <element name="Skewering Fist" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_SKEWERING_FIST">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <prerequisite>Monk Level 11</prerequisite>
+            <requirements>[level:monk:11]</requirements>
+            <description>
+                <p class="flavor">Monk Level 11</p>
+                <p>You can spend 4 ki points to cast <em>skewering branch</em>.</p>
+            </description>
+            <sheet usage="4 ki points">
+                <description>You can cast skewering branch.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_SKEWERING_BRANCH" />
+            </rules>
+        </element>
+        <element name="Stride of the Dryad" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_STRIDE_OF_THE_DRYAD">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <prerequisite>Monk Level 17</prerequisite>
+            <requirements>[level:monk:17]</requirements>
+            <description>
+                <p class="flavor">Monk Level 17</p>
+                <p>You can spend 6 ki points to cast <em>tree stride</em>.</p>
+            </description>
+            <sheet usage="6 ki points">
+                <description>You can cast tree stride.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_TREE_STRIDE" />
+            </rules>
+        </element>
+        <element name="Striking Vine" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_STRIKING_VINE">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <prerequisite>Monk Level 6</prerequisite>
+            <requirements>[level:monk:6]</requirements>
+            <description>
+                <p class="flavor">Monk Level 6</p>
+                <p>You can spend 3 ki points to cast <em>arm of the wild</em>.</p>
+            </description>
+            <sheet usage="3 ki points">
+                <description>You can cast arm of the wild.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_ARM_OF_THE_WILD" />
+            </rules>
+        </element>
+        <element name="Treant’s Fist" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_TREANTS_FIST">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <prerequisite>Monk Level 17</prerequisite>
+            <requirements>[level:monk:17]</requirements>
+            <description>
+                <p class="flavor">Monk Level 17</p>
+                <p>You can spend 5 ki points to cast <em>tree strike</em>.</p>
+            </description>
+            <sheet usage="5 ki points">
+                <description>You can cast tree strike.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_TREE_STRIKE" />
+            </rules>
+        </element>
+        <element name="Wave of Thorns" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_WAVE_OF_THORNS">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <prerequisite>Monk Level 11</prerequisite>
+            <requirements>[level:monk:11]</requirements>
+            <description>
+                <p class="flavor">Monk Level 11</p>
+                <p>You can spend 4 ki points to cast <em>engulfing thorns</em>.</p>
+            </description>
+            <sheet usage="4 ki points">
+                <description>You can cast engulfing thorns.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_ENGULFING_THORNS" />
+            </rules>
+        </element>
+        <element name="Verdant Grasp" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_VERDANT_GRASP">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <prerequisite>Monk Level 17</prerequisite>
+            <requirements>[level:monk:17]</requirements>
+            <description>
+                <p class="flavor">Monk Level 17</p>
+                <p>You can spend 5 ki points to cast <em>grasping vine</em>.</p>
+            </description>
+            <sheet usage="5 ki points">
+                <description>You can cast grasping vine.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_GRASPING_VINE" />
+            </rules>
+        </element>
+        <element name="Verdant Hand" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_WAY_OF_THORNS_NATURAL_DISCIPLINE_VERDANT_HAND">
+            <supports>Way of Thorns Natural Discipline</supports>
+            <description>
+                <p>You can spend 2 ki points to cast <em>gaea’s hand</em>. The hand uses your unarmed strike damage as its damage die.</p>
+            </description>
+            <sheet usage="2 ki points">
+                <description>You can cast gaea’s hand. The hand uses your unarmed strike damage as its damage die.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_JONOMAN3000_SCPC_SPELL_GAEAS_HAND" />
+            </rules>
+        </element>
+</elements>

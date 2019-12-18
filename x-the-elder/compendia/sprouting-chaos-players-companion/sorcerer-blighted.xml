@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Blighted Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-blighted.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/sprouting-chaos-players-companion/sorcerer-blighted.xml" />
+        </update>
+    </info>
+    
+    <element name="Blighted" type="Archetype" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_SORCERER_BLIGHTED">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>Your innate magic stems from the corrupting power of a Gulthias tree. Most with this origin can trace their magic back to a near-death experience caused by a blighted creature, or through extended exposure to blighted land and plant life. Attempting to consume blighted plants over a period of a few weeks or months can often lead to this magic becoming imbued into a creature’s system, assuming it doesn’t kill them first. Whatever the cause, blight magic allows you to animate blighted creatures to do your bidding, as if you were a living Gulthias tree.</p>
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_BLIGHTED_CONSTRUCT" />
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_ROTTING_TOUCH" />
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_AWAKENING" />
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_BLIGHTED_COMMAND" />
+            <div element="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_UNRELENTING_ARMY" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_BLIGHTED_CONSTRUCT" level="1" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_ROTTING_TOUCH" level="1" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_AWAKENING" level="6" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_BLIGHTED_COMMAND" level="14" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_UNRELENTING_ARMY" level="18" />
+        </rules>
+    </element>
+        <element name="Blighted Construct" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_BLIGHTED_CONSTRUCT">
+            <description>
+                <p>Starting when you choose this origin at 1st level, you gain the ability to animate a plant to do your bidding. As an action, you can touch a pile of twigs and infuse it with blighted magic, awakening it as a twig blight. This blight cannot attack, but it can take other actions as normal.</p>
+                <p class="indent">While the blight is within 150 feet of you, you can mentally command it to move (no action required). Additionally, as an action, you can see and hear through the blight until the start of your next turn. During this time, you are deaf and blind with regard to your own senses.</p>
+                <p class="indent">You may only have one twig blight animated with this feature at a time.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can touch a pile of twigs and infuse it with blighted magic, awakening it as a twig blight. This blight cannot attack, but it can take other actions as normal. While the blight is within 150 feet of you, you can mentally command it to move (no action required). Additionally, as an action, you can see and hear through the blight until the start of your next turn. During this time, you are deaf and blind with regard to your own senses. You may only have one twig blight animated with this feature at a time.</description>
+            </sheet>
+        </element>
+        <element name="Rotting Touch" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_ROTTING_TOUCH">
+            <description>
+                <p>Also at 1st level, your touch can rot objects and plants. As an action, you can touch a Small or smaller plant or object made from plant material. The target slowly rots over the next minute as if a year had passed. This feature can only be used once on any one plant or object.</p>
+            </description>
+            <sheet action="Action" usage="1/Plant or Object">
+                <description>You can touch a Small or smaller plant or object made from plant material. The target slowly rots over the next minute as if a year had passed.</description>
+            </sheet>
+        </element>
+        <element name="Awakening" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_AWAKENING">
+            <description>
+                <p>At 6th level, you gain the ability to awaken plants into needle blights. Using a 1 minute long process, you can touch an area of plant life and expend 3 sorcery points to imbue it with foul magic, awakening it as a needle blight. Blights that you create have their hit point maximum increased by an amount equal to your sorcerer level, and they add your proficiency modifier to their attack and damage rolls.</p>
+                <p class="indent">On each of your turns, you can use a bonus action to mentally command any creature you made with this feature if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.</p>
+                <p class="indent">Once you complete a long rest, the creatures created using this feature fall apart, returning to their original form.</p>
+            </description>
+            <sheet>
+                <description>Using a 1 minute long process, you can touch an area of plant life and expend 3 sorcery points to imbue it with foul magic, awakening it as a needle blight. Blights that you create have their hit point maximum increased by {{level:sorcerer}}, and they add your proficiency modifier to their attack and damage rolls.</description>
+            </sheet>
+        </element>
+        <element name="Blighted Command" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_BLIGHTED_COMMAND">
+            <description>
+                <p>Beginning at 14th level, you can create vine blights in much the same way you create needle blights. Following the same rules as outlined in the awakening feature, you can awaken a vine blight by expending 4 sorcery points.</p>
+                <p class="indent">Vine blights can be commanded in the same way as needle blights, except you can command them from up to 500 feet away. You can choose to have any needle blights within 60 feet of a vine blight receive the same command.</p>
+            </description>
+            <sheet>
+                <description>Following the same rules as outlined in the awakening feature, you can awaken a vine blight by expending 4 sorcery points. You can command them from up to 500 feet away. You can choose to have any needle blights within 60 feet of a vine blight receive the same command.</description>
+            </sheet>
+        </element>
+        <element name="Unrelenting Army" type="Archetype Feature" source="Sprouting Chaos Player’s Companion" id="ID_JONOMAN3000_SCPC_ARCHETYPE_FEATURE_BLIGHTED_UNRELENTING_ARMY">
+            <description>
+                <p>Beginning at 18th level, you can imbue life into back into your blights after they have fallen. As an action, you can touch a blight that was reduced to 0 hit points within the last minute and spend 1 sorcery point to revive it with half of its hit point maximum in current hit points.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can touch a blight that was reduced to 0 hit points within the last minute and spend 1 sorcery point to revive it with half of its hit point maximum in current hit points.</description>
+            </sheet>
+        </element>
+</elements>
