@@ -4,7 +4,7 @@
     <name>Paladin - Oath of Judgement</name>
     <description>The Oath of Judgement for the Paladin class.</description>
     <author url="https://www.reddit.com/user/AdmiralVahl/">u/AdmiralVahl</author>
-    <update version="0.1.03">
+    <update version="0.1.1">
       <file name="paladin-oath-of-judgement.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/paladin/paladin-oath-of-judgement.xml" />
     </update>
   </info>
@@ -110,8 +110,12 @@
       <p>As an action, you can use your Channel Divinity to bring due punishment to those who would escape justice. You can mark a number of creatures equal to your Charisma modifier within 30 feet. For the next minute, you and your allies deal an amount of psychic damage when you hit to those creatures for the first time on a turn equal to your Charisma modifier (minimum 1).</p>
     </description>
     <sheet alt="Sentence the Guilty" action="Action" usage="Channel Divinity">
-      <description>You can mark a number of creatures equal to your Charisma modifier for punishment. For the next minute, you and your allies deal your Charisma modifier of psychic damage the first time you and your allies hit on a turn.</description>
+      <description>You can mark up to {{sentence-the-guilty:stat}} creatures for punishment. For the next minute, you and your allies deal an additional {{sentence-the-guilty:stat}} psychic damage the first time you and your allies hit on a turn.</description>
     </sheet>
+    <rules>
+      <stat name="sentence-the-guilty:stat" value="1" bonus="base" />
+      <stat name="sentence-the-guilty:stat" value="charisma:modifier" bonus="base" />
+    </rules>
   </element>
   <element name="Aura of the Unfaltering" type="Archetype Feature" source="Reddit" id="ID_RDDT_ARCHETYPE_FEATURE_OOJ_AURA_OF_THE_UNFALTERING">
     <description level="7">
