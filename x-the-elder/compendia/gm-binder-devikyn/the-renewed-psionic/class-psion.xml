@@ -3,9 +3,10 @@
     <info>
         <name>The Psion Class</name>
         <author url="https://www.reddit.com/u/devikyn">u/devikyn</author>
-        <update version="0.0.3">
+        <update version="0.0.5">
             <file name="class-psion.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/gm-binder-devikyn/the-renewed-psionic/class-psion.xml" />
         </update>
+        <!-- version 3.040 -->
     </info>
 
 <!-- Psion -->    
@@ -864,18 +865,10 @@
             <description>
                 <p>At 1st level, you can use your mind to move and manipulate objects as if you were touching them.</p>
                 <p class="indent">You can attack with kinetic energy as an action, at a range of 60 feet. Make a ranged psionic attack against a creature or object within range that you can see. On a hit, it takes force damage equal to 1d8 plus your Intelligence modifier, and you can move it up to 10 feet in a straight line if it is Huge or smaller. This damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).</p>
-                <p class="indent">You can also use your action and spend 1 psionic power to lift, hold, catch or throw willing creatures or objects, other than you, that you are not in physical contact with. While you are concentrating (as if on a spell), creatures and objects remain held in place for up to 1 minute. As a bonus action, you can move one held creature or object up to 30 feet.</p>
-                <p class="indent">Ending a turn with an object in a creature's space forces you to let go of the item. Alternatively, you can drop any number of creatures or objects on your turn (no action required by you).</p>
-                <p class="indent">A creature attempting to move something you're holding with this feature must succeed on a Strength check against your discipline save DC or the attempt fails.</p>
-                <p class="indent">Other uses of this feature are limited mostly by your imagination, but your mental prowess limits you as well. The maximum combined weight you can hold at once with this feature equals 15 lbs times your Intelligence score.</p>
+                <p class="indent">You also learn the mage hand cantrip, or one psion cantrip of your choice if you already know it. If you focus when you cast mage hand, you can affect a willing creature with the hand. If the creature that you're manipulating with mage hand is pushed or pulled, the creature instead remains in place if you succeed an Intelligence saving throw (DC equals the amount of feet the creature would be pushed or pulled).</p>
             </description>
             <sheet action="Action">
-                <description>You can attack with kinetic energy, at a range of 60 feet. Make a ranged psionic attack against a creature or object within range that you can see. On a hit, it takes force damage equal to {{psi-attack:dice}}d8 plus {{intelligence:modifier}}, and you can move it up to 10 feet in a straight line if it is Huge or smaller.
-                You can also use your action and spend 1 point of psionic power to lift, hold, catch or throw willing creatures or objects, other than you, that you are not in physical contact with. While you are concentrating (as if on a spell), creatures and objects remain held in place for up to 1 minute. As a bonus action, you can move one held creature or object up to 30 feet.
-                The maximum combined weight you can hold at once with this feature is {{telekinetic-mind:limit}} lbs.</description>
-                <description level="20">You can attack with kinetic energy, at a range of 60 feet. Make a ranged psionic attack against a creature or object within range that you can see. On a hit, it takes force damage equal to {{psi-attack:dice}}d8 plus {{intelligence:modifier}}, and you can move it up to 10 feet in a straight line if it is Huge or smaller.
-                You can also use your action and spend 1 point of psionic power to lift, hold, catch or throw willing creatures or objects, other than you, that you are not in physical contact with. Creatures and objects remain held in place for up to 1 minute. As a bonus action, you can move one held creature or object up to 30 feet.
-                The maximum combined weight you can hold at once with this feature is {{telekinetic-mind:limit-double}} lbs.</description>
+                <description>You can attack with kinetic energy, at a range of 60 feet. Make a ranged psionic attack against a creature or object within range that you can see. On a hit, it takes force damage equal to {{psi-attack:dice}}d8 plus {{intelligence:modifier}}, and you can move it up to 10 feet in a straight line if it is Huge or smaller.</description>
             </sheet>
             <rules>
                 <stat name="psi-attack:dice" value="1" level="1" />
@@ -907,7 +900,7 @@
 
                 <stat name="telekinetic-mind:limit-double" value="telekinetic-mind:limit" level="20" />
                 <stat name="telekinetic-mind:limit-double" value="telekinetic-mind:limit" level="20" />
-
+                <select type="Spell" id="ID_PHB_SPELL_MAGE_HAND" spellcasting="Psion" level="1" supports="Psion,0" default="ID_PHB_SPELL_MAGE_HAND" />
             </rules>
         </element>
         <element name="Intertial Shield" type="Archetype Feature" source="The Renewed Psionic" id="ID_DEVIKYN_GM_BINDER_ARCHETYPE_FEATURE_KINETICIST_INTERTIAL_SHIELD">
