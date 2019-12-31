@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Marksman Martial Archetype</name>
+        <author url="https://www.gmbinder.com/profile/fungal%20brews">Fungal Brews</author>
+        <update version="0.0.1">
+            <file name="fighter-marksman.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/the-warriors-codex/fighter-marksman.xml" />
+        </update>
+    </info>
+    
+    <element name="Marksman" type="Archetype" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FIGHTER_MARKSMAN">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Marksmans’ impeccable aim make them invaluable on the battlefield, where they can pick off vital targets. They are famous for both accuracy and showmanship. Sharpshooting holds a long history of competition and fame; skilled snipers often surpass great warriors.</p>
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_TRICKSHOTS" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_EXHIBITION_SHOOTER" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_SHOWOFF" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_SHARPSHOOTER_STYLE" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_TWAIN_ARROW" />
+            <div element="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_DEADSHOT" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_TRICKSHOTS" level="1" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_EXHIBITION_SHOOTER" level="1" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_SHOWOFF" level="1" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_SHARPSHOOTER_STYLE" level="1" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_TWAIN_ARROW" level="1" />
+            <grant type="Archetype Feature" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_DEADSHOT" level="1" />
+        </rules>
+    </element>
+        <element name="Trickshots" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_TRICKSHOTS">
+            <description>
+                <p>When you take this archetype at 3rd level, you exceed a common archer or triggerman and enter the realm of entertainment. You learn two of the following Trickshots, and an additional one when you reach 10th and 15th level in this class. You can only use Trickshots with ranged attacks made with ranged or thrown weapons. You can only use one Trickshot per attack roll, and cannot use Trickshots on attack rolls already affected by or granted by another Trickshot.</p>
+                <p><strong>Barrage.</strong> You can use your action to make a ranged attack against any number of creatures within 5 feet of a point you can see within your weapon’s range. You must have ammunition or thrown weapons for each target, as normal, and you make a separate attack roll for each target.</p>
+                <p><strong>Double Up.</strong> You can expend two weapons or pieces of identical ammunition instead of one on an attack, which deals an additional damage die if it hits. The close and long ranges of this attack are halved.</p>
+                <p><strong>Hairtrigger.</strong> When you have advantage on an attack roll against a target, you can forgo the advantage for that roll to make an additional attack against the same target as a bonus action.</p>
+                <p><strong>Heavy Impact.</strong> When you hit a Huge or smaller creature with an attack you can push them 5 feet away from you.</p>
+                <p><strong>Richochet.</strong> When you hit a creature with a weapon attack you can make a second attack against another creature within 30 feet of the original target, using the same piece of ammunition. The second attack’s damage is halved.</p>
+            </description>
+            <sheet usage="1/Ranged Attack">
+                <description>You can only use one Trickshot per attack roll, and cannot use Trickshots on attack rolls already affected by or granted by another Trickshot.</description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Trickshot" number="2" level="3" supports="Marksman Trickshot" />
+                <select type="Archetype Feature" name="Trickshot" number="1" level="10" supports="Marksman Trickshot" />
+                <select type="Archetype Feature" name="Trickshot" number="1" level="15" supports="Marksman Trickshot" />
+            </rules>
+        </element>
+            <element name="Barrage" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_TRICKSHOT_BARRAGE">
+                <supports>Marksman Trickshot</supports>
+                <description>
+                    <p>You can use your action to make a ranged attack against any number of creatures within 5 feet of a point you can see within your weapon’s range. You must have ammunition or thrown weapons for each target, as normal, and you make a separate attack roll for each target.</p>
+                </description>
+                <sheet usage="Trickshot" action="Action">
+                    <description>You can make a ranged attack against any number of creatures within 5 feet of a point you can see within your weapon’s range. You must have ammunition or thrown weapons for each target, as normal, and you make a separate attack roll for each target.</description>
+                </sheet>
+            </element>
+            <element name="Double Up" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_TRICKSHOT_DOUBLE_UP">
+                <supports>Marksman Trickshot</supports>
+                <description>
+                    <p>You can expend two weapons or pieces of identical ammunition instead of one on an attack, which deals an additional damage die if it hits. The close and long ranges of this attack are halved.</p>
+                </description>
+                <sheet usage="Trickshot">
+                    <description>You can expend two weapons or pieces of identical ammunition instead of one on an attack, which deals an additional damage die if it hits. The close and long ranges of this attack are halved.</description>
+                </sheet>
+            </element>
+            <element name="Hairtrigger" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_TRICKSHOT_HAIRTRIGGER">
+                <supports>Marksman Trickshot</supports>
+                <description>
+                    <p>When you have advantage on an attack roll against a target, you can forgo the advantage for that roll to make an additional attack against the same target as a bonus action.</p>
+                </description>
+                <sheet usage="Trickshot">
+                    <description>When you have advantage on an attack roll against a target, you can forgo the advantage for that roll to make an additional attack against the same target as a bonus action.</description>
+                </sheet>
+            </element>
+            <element name="Heavy Impact" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_TRICKSHOT_HEAVY_IMPACT">
+                <supports>Marksman Trickshot</supports>
+                <description>
+                    <p>When you hit a Huge or smaller creature with an attack you can push them 5 feet away from you.</p>
+                </description>
+                <sheet usage="Trickshot">
+                    <description>When you hit a Huge or smaller creature with an attack you can push them 5 feet away from you.</description>
+                </sheet>
+            </element>
+            <element name="Richochet" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_TRICKSHOT_RICOCHET">
+                <supports>Marksman Trickshot</supports>
+                <description>
+                    <p>When you hit a creature with a weapon attack you can make a second attack against another creature within 30 feet of the original target, using the same piece of ammunition. The second attack’s damage is halved.</p>
+                </description>
+                <sheet usage="Trickshot">
+                    <description>When you hit a creature with a weapon attack you can make a second attack against another creature within 30 feet of the original target, using the same piece of ammunition. The second attack’s damage is halved.</description>
+                </sheet>
+            </element>
+        <element name="Exhibition Shooter" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_EXHIBITION_SHOOTER">
+            <description>
+                <p>Also at 3rd level, you can rally your allies with your displays of incredible skill. When you use a Trickshot, you can grant up to 6 creatures that can see and hear you temporary hit points equal to half your fighter level. You have 3 uses of this feature, and regain all uses of this feature when you finish a short or long rest, and when you damage a hostile creature benefitting from 1/2 or 3/4 cover, you regain one use of this feature.</p>
+            </description>
+            <sheet usage="3/Short Rest">
+                <description>When you use a Trickshot, you can grant up to 6 creatures that can see and hear you {{level:fighter:half}} temporary hit points. When you damage a hostile creature benefitting from 1/2 or 3/4 cover, you regain one use of this feature.</description>
+            </sheet>
+        </element>
+        <element name="Showoff" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_SHOWOFF">
+            <description>
+                <p>At 7th level, when you land a critical hit with a ranged attack, you can use a bonus action to give an ally within 30 feet that can see and hear you advantage on the next ability check or saving throw they make within the next minute. You also gain proficiency in Performance.</p>
+            </description>
+            <sheet>
+                <description>When you land a critical hit with a ranged attack, you can use a bonus action to give an ally within 30 feet that can see and hear you advantage on the next ability check or saving throw they make within the next minute.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+            </rules>
+        </element>
+        <element name="Sharpshooter Style" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_SHARPSHOOTER_STYLE">
+            <description>
+                <p>Starting at 10th level, you choose one of the following styles to further distinguish yourself.</p>
+                <p><strong>Close Quarters.</strong> Ranged attacks you make against a target within 5 feet of you aren’t made with disadvantage, and you can use your ranged weapons, bolts, and arrows as melee weapons that you are proficient in. Weapons deal 1d8 bludgeoning damage. Arrows and bolts are light and finesse, and deal 1d4 piercing damage.</p>
+                <p><strong>Sniper.</strong> The standard and long ranges of your weapons increase by 15 feet, you can Search as a bonus action, and if you haven’t moved you can expend all your movement to gain advantage on the first ranged attack you make on your turn.</p>
+                <p><strong>Quickdraw.</strong> You add your proficiency bonus to initiative rolls. When you roll initiative, you can make a single ranged attack.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Sharpshooter Style" level="10" supports="Marksman Sharpshooter Style" />
+            </rules>
+        </element>
+            <element name="Close Quarters" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_SHARPSHOOTER_STYLE_CLOSE_QUARTERS"> 
+                <supports>Marksman Sharpshooter Style</supports>
+                <description>
+                    <p>Ranged attacks you make against a target within 5 feet of you aren’t made with disadvantage, and you can use your ranged weapons, bolts, and arrows as melee weapons that you are proficient in. Weapons deal 1d8 bludgeoning damage. Arrows and bolts are light and finesse, and deal 1d4 piercing damage.</p>
+                </description>
+                <sheet>
+                    <description>Ranged attacks you make against a target within 5 feet of you aren’t made with disadvantage, and you can use your ranged weapons, bolts, and arrows as melee weapons that you are proficient in. Weapons deal 1d8 bludgeoning damage. Arrows and bolts are light and finesse, and deal 1d4 piercing damage.</description>
+                </sheet>
+            </element>
+            <element name="Sniper" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_SHARPSHOOTER_STYLE_SNIPER"> 
+                <supports>Marksman Sharpshooter Style</supports>
+                <description>
+                    <p>The standard and long ranges of your weapons increase by 15 feet, you can Search as a bonus action, and if you haven’t moved you can expend all your movement to gain advantage on the first ranged attack you make on your turn.</p>
+                </description>
+                <sheet>
+                    <description>The standard and long ranges of your weapons increase by 15 feet, you can Search as a bonus action, and if you haven’t moved you can expend all your movement to gain advantage on the first ranged attack you make on your turn.</description>
+                </sheet>
+            </element>
+            <element name="Quickdraw" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_SHARPSHOOTER_STYLE_QUICKDRAW"> 
+                <supports>Marksman Sharpshooter Style</supports>
+                <description>
+                    <p>You add your proficiency bonus to initiative rolls. When you roll initiative, you can make a single ranged attack.</p>
+                </description>
+                <sheet>
+                    <description>When you roll initiative, you can make a single ranged attack.</description>
+                </sheet>
+                <rules>
+                    <stat name="initiative:misc" value="proficiency" />
+                </rules>
+            </element>
+        <element name="Twain Arrow" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_TWAIN_ARROW">
+            <description>
+                <p>Beginning at 15th level when you or another creature that you can see within the normal range of your weapon is targeted by a ranged attack, you can use your reaction to deflect the projectile with a shot. Make an attack roll. If your roll matches or exceeds the enemy’s, the attack misses.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When you or another creature that you can see within the normal range of your weapon is targeted by a ranged attack, you can use your reaction to deflect the projectile with a shot. Make an attack roll. If your roll matches or exceeds the enemy’s, the attack misses.</description>
+            </sheet>
+        </element>
+        <element name="Deadshot" type="Archetype Feature" source="The Warrior’s Codex" id="ID_FUBR_TWC_ARCHETYPE_FEATURE_MARKSMAN_DEADSHOT">
+            <description>
+                <p>At 18th level, your devastating aim takes enemies out of the fight quickly. When you reduce an enemy to a number of hit points less than your fighter level with a ranged attack, that target is immediately reduced to 0 hit points instead.</p>
+            </description>
+            <sheet>
+                <description>When you reduce an enemy to fewer than {{level:fighter}} hit points with a ranged attack, that target is immediately reduced to 0 hit points instead.</description>
+            </sheet>
+        </element>
+    
+</elements>
