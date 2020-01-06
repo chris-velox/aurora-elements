@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Valyrian Dragonrider Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-valyrian-dragonrider.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/a-song-of-ice-and-fire-subclasses/sorcerer-valyrian-dragonrider.xml" />
+        </update>
+    </info>
+    
+    <element name="Valyrian Dragonrider" type="Archetype" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_SORCERER_VALYRIAN_DRAGONRIDER">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>Before the Doom, the Valyrian skies were filled with dragonlords atop their dragon mounts. But much has changed since, and such sights are all but lost throughout the world. Yet, the rare unity of dragon and rider can exist.</p>
+            <p class="indent">None can tame a dragon unless some the magic of Old Valyria runs in their blood. Of course, this lineage has been known to crop up in the most unexpected people. But this bloodline is no guarantee of successfully bonding with a dragon. Dragons do not merely submit to anyone with the magic inside them. It takes a strong personality, the ability to foster trust and respect, and time to bend such creatures to one’s will. However, once formed this connection between a dragon and dragonrider is absolute; the dragon will not accept another master while its previous rider lives.</p>
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_EGG" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_IMMUNITY" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_TAMER" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGONRIDER" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGONLORD" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_EGG" level="1" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_IMMUNITY" level="1" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_TAMER" level="6" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGONRIDER" level="14" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGONLORD" level="18" />
+        </rules>
+    </element>
+        <element name="Dragon Egg" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_EGG">
+            <description>
+                <p>At 1st level, you gain a dragon egg. Choose which type of dragon or roll randomly based on the Dragon Egg table.</p>
+                <p class="indent">You have advantage on all Intelligence checks to recall information about dragons and Wisdom and Charisma checks to interact with them.</p>
+                <h5 class="caption">Dragon Egg</h5>
+                <table>
+                    <thead>
+                        <tr><td>d10</td><td>Dragon Type</td><td>Egg appearance</td><td>Damage</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>Black</td><td>Chartreuse with a sticky, wet shell</td><td>acid</td></tr>
+                    <tr><td>2</td><td>Blue</td><td>Cyan with sharp bumps along the shell</td><td>lightning</td></tr>
+                    <tr><td>3</td><td>Brass</td><td>Yellow with a soft shell</td><td>fire</td></tr>
+                    <tr><td>4</td><td>Bronze</td><td>Pink with a translucent, soft shell</td><td>lightning</td></tr>
+                    <tr><td>5</td><td>Copper</td><td>Brown with a metallic shell</td><td>acid</td></tr>
+                    <tr><td>6</td><td>Gold</td><td>Gold with shell hot to the touch</td><td>fire</td></tr>
+                    <tr><td>7</td><td>Green</td><td>Green speckled with light brown</td><td>poison</td></tr>
+                    <tr><td>8</td><td>Red</td><td>Red with a shell of hard scales</td><td>fire</td></tr>
+                    <tr><td>9</td><td>Silver</td><td>Grey with a shell that shimmers</td><td>cold</td></tr>
+                    <tr><td>10</td><td>White</td><td>White with a shell cold to the touch</td><td>cold</td></tr>
+                </table>
+            </description>
+            <sheet>
+                <description>You have a {{dragon-egg:color}} dragon egg. The egg is {{dragon-egg:appearance}}. You have advantage on all Intelligence checks to recall information about dragons and Wisdom and Charisma checks to interact with them.</description>
+                <description level="6">You have advantage on all Intelligence checks to recall information about dragons and Wisdom and Charisma checks to interact with them.</description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Dragon Companion" supports="Valyrian Dragon" />
+            </rules>
+        </element>
+        <element name="Dragon Immunity" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_IMMUNITY">
+            <description>
+                <p>Beginning at 1st level, you start to form a magic bond with your dragon egg that will aid when you begin to train it. As a reaction to when you would take the damage type of your dragon as shown in the Dragon Egg table, you can become immune to this damage type, including against the triggering damage, until the start of your next turn.</p>
+                <p class="indent">Once you use this feature, you must take a short or long rest before using it again. Alternatively, you may spend 1 sorcery point, to regain the use of this feature.</p>
+            </description>
+            <sheet action="Reaction" usage="1/Short Rest">
+                <description>When you would {{dragon-egg:damage-type}} damage, you can become immune to this damage type, including against the triggering damage, until the start of your next turn. You may spend 1 sorcery point, to regain the use of this feature.</description>
+            </sheet>
+        </element>
+        <element name="Dragon Tamer" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_TAMER">
+            <description>
+                <p>At 6th level, your dragon egg has hatched into a dragon wyrmling. The dragon wyrmling is friendly to you and your allies.</p>
+                <p class="indent">Some of your dragon’s stats are changed. Regardless of its normal stats, its armor class becomes 17 (natural armor), its hit points become 38 (7d8+7), and its Strength and Constitution ability scores become 15 and 13 respectively. As a result of the change in ability scores, its bonus to hit on attack rolls becomes +4, its bonus to damage becomes +2, its save DC for its breath weapon becomes 11, and its bonus for Constitution saving throws becomes +3.</p>
+                <p class="indent">You can control your dragon’s movement (no action required by you). You can use the dragon as a mount if you are size Medium or smaller and are not exceeding your carrying capacity. While mounted, you can have your dragon take all the normal actions a mount can take (see Mounted Combat pg. 198 of the Player’s Handbook). Otherwise, you must use your action to command your dragon to take any actions, and some actions cost sorcery points to use as noted in the Dragon Taming table. Some of the options on the Dragon Taming table won’t be available to use until your dragon grows and gains those actions. Your dragon can not act independently, even if you are not mounted.</p>
+                <h5 class="caption">Dragon Taming</h5>
+                <table>
+                    <thead>
+                        <tr><td>Action</td><td>Sorcery Point Cost</td></tr>
+                    </thead>
+                    <tr><td>Bite</td><td>2</td></tr>
+                    <tr><td>Breath Weapon</td><td>5</td></tr>
+                    <tr><td>Claw</td><td>1</td></tr>
+                    <tr><td>Multiattack</td><td>8</td></tr>
+                    <tr><td>Tail</td><td>2</td></tr>
+                    <tr><td>Frightful Presence</td><td>3</td></tr>
+                </table>
+            </description>
+            <sheet>
+                <description>Your companion is a {{dragon-egg:color}} dragon wyrmling. You can spend sorcery points to have your dragon make a bite or breath weapon attack.</description>
+                <description level="14"></description>
+            </sheet>
+            <rules>
+                <stat name="companion:proficiency" value="2" bonus="base" />
+                <stat name="companion:ac" value="17" />
+                <stat name="companion:hp:max" value="40" bonus="base" />
+            </rules>
+        </element>
+        <element name="Dragonrider" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGONRIDER">
+            <description>
+                <p>The magic that fuels the connection between you and your dragon hastens its growth. At 14th level, your wyrmling grows into a young dragon.</p>
+                <p class="indent">Some of your dragon’s stats are changed. Regardless of its normal stats, its proficiency bonus becomes +3, its armor class becomes 18 (natural armor), its hit points become 136 (16d10+48), and its Strength and Constitution ability scores become 19 and 17 respectively. As a result of the change in ability scores and proficiency bonus, its bonus to hit on attack rolls becomes +7, its bonus to damage becomes +4, its save DC for its breath weapon becomes 14, and its bonus for its various saving throws and skills need to be recalculated accordingly.</p>
+            </description>
+            <sheet>
+                <description>Your companion is a young {{dragon-egg:color}} dragon. You can spend sorcery points to have your dragon make a bite or breath weapon attack.</description>
+                <description level="18"></description>
+            </sheet>
+            <rules>
+                <stat name="companion:proficiency" value="1" />
+                <stat name="companion:ac" value="18" />
+                <stat name="companion:hp:max" value="140" bonus="base" />
+            </rules>
+        </element>
+        <element name="Dragonlord" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGONLORD">
+            <description>
+                <p>At 18th level, your young dragon grows into an adult dragon.</p>
+                <p class="indent">Some of your dragon’s stats are changed. Regardless of its normal stats, its proficiency bonus becomes +5, its armor class becomes 19 (natural armor), its hit points become 207 (18d12 + 90), and its Strength and Constitution ability scores become 23 and 21 respectively. As a result of the change in ability scores and proficiency bonus, its bonus to hit on attack rolls becomes +11, its bonus to attack damage becomes +6, its save DC for its breath weapon becomes 18, its save DC for its Wing Attack becomes 19, and its bonus for its various saving throws and skills need to be recalculated accordingly.</p>
+                <p class="indent">Your dragon gains the use of legendary actions. At the end of another creature’s turn, you can spend sorcery points to use your reaction to allow your dragon use its reaction to make one of the actions as noted in the Legendary Dragon table.</p>
+                <h5 class="caption">Legendary Dragon</h5>
+                <table>
+                    <thead>
+                        <tr><td>Legendary Action</td><td>Sorcery Point Cost</td></tr>
+                    </thead>
+                    <tr><td>Detect</td><td>2</td></tr>
+                    <tr><td>Tail Attack</td><td>6</td></tr>
+                    <tr><td>Wing Attack</td><td>12</td></tr>
+                </table>
+                <p class="indent">In addition, if your dragon would fail a saving throw, you may use your reaction to spend 5 sorcery points to have your dragon use one of its legendary resistances to succeed instead. Your dragon has three uses of this ability, which it regains when it finishes a long rest.</p>
+                <div class="sidebar">
+                    <h5 class="caption">Replacing Your Dragon</h5>
+                    <p>If your dragon dies, attempting to replace it will be an arduous task. It is one thing to raise a dragon from birth to be your mount, it is quite another to tame one that has lived in freedom. Even approaching a dragon is a risky proposition, but you will need to go through an extensive process of trust and training to get the dragon to accept you as a master. Such an ordeal may take months and even then the dragon may never submit, merely join with you as a partner.</p>
+                    <p class="indent">Alternatively, you may find it easier to acquire another dragon egg and slowly raise another dragon. In either case, the damage immunity you gained from your Dragon Immunity feature would change to reflect your new dragon’s type.</p>
+                </div>
+            </description>
+            <sheet>
+                <description>Your companion is a adult {{dragon-egg:color}} dragon. Your dragon gains the use of legendary actions. At the end of another creature’s turn, you can spend sorcery points to use your reaction to allow your dragon use its reaction to make one of the actions as noted in the Legendary Dragon table. In addition, if your dragon would fail a saving throw, you may use your reaction to spend 5 sorcery points to have your dragon use one of its legendary resistances to succeed instead. Your dragon has three uses of this ability, which it regains when it finishes a long rest.</description>
+            </sheet>
+            <rules>
+                <stat name="companion:proficiency" value="2" />
+                <stat name="companion:ac" value="19" />
+                <stat name="companion:hp:max" value="215" bonus="base" />
+            </rules>
+        </element>
+    
+    <!-- Dragon Eggs -->
+        <element name="Black" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_BLACK">
+            <supports>Valyrian Dragon</supports>
+            <compendium display="false" />
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="dragon-egg:color" inline="true" value="black" />
+                <stat name="dragon-egg:damage-type" inline="true" value="acid" />
+                <stat name="dragon-egg:appearance" inline="true" value="chartreuse with a sticky, wet shell" />
+                <select type="Companion" name="Black Dragon Companion" supports="Valyrian Dragon,Black" />
+            </rules>
+        </element>
+        <element name="Blue" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_BLUE">
+            <supports>Valyrian Dragon</supports>
+            <compendium display="false" />
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="dragon-egg:color" inline="true" value="blue" />
+                <stat name="dragon-egg:damage-type" inline="true" value="lightning" />
+                <stat name="dragon-egg:appearance" inline="true" value="cyan with sharp bumps along the shell" />
+                <select type="Companion" name="Blue Dragon Companion" supports="Valyrian Dragon,Blue" />
+            </rules>
+        </element>
+        <element name="Brass" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_BRASS">
+            <supports>Valyrian Dragon</supports>
+            <compendium display="false" />
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="dragon-egg:color" inline="true" value="brass" />
+                <stat name="dragon-egg:damage-type" inline="true" value="fire" />
+                <stat name="dragon-egg:appearance" inline="true" value="yellow with a soft shell" />
+                <select type="Companion" name="Brass Dragon Companion" supports="Valyrian Dragon,Brass" />
+            </rules>
+        </element>
+        <element name="Bronze" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_BRONZE">
+            <supports>Valyrian Dragon</supports>
+            <compendium display="false" />
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="dragon-egg:color" inline="true" value="bronze" />
+                <stat name="dragon-egg:damage-type" inline="true" value="lightning" />
+                <stat name="dragon-egg:appearance" inline="true" value="pink with a translucent, soft shell" />
+                <select type="Companion" name="Bronze Dragon Companion" supports="Valyrian Dragon,Bronze" />
+            </rules>
+        </element>
+        <element name="Copper" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_COPPER">
+            <supports>Valyrian Dragon</supports>
+            <compendium display="false" />
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="dragon-egg:color" inline="true" value="copper" />
+                <stat name="dragon-egg:damage-type" inline="true" value="acid" />
+                <stat name="dragon-egg:appearance" inline="true" value="brown with a metallic shell" />
+                <select type="Companion" name="Copper Dragon Companion" supports="Valyrian Dragon,Copper" />
+            </rules>
+        </element>
+        <element name="Gold" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_GOLD">
+            <supports>Valyrian Dragon</supports>
+            <compendium display="false" />
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="dragon-egg:color" inline="true" value="gold" />
+                <stat name="dragon-egg:damage-type" inline="true" value="fire" />
+                <stat name="dragon-egg:appearance" inline="true" value="gold with shell hot to the touch" />
+                <select type="Companion" name="Gold Dragon Companion" supports="Valyrian Dragon,Gold" />
+            </rules>
+        </element>
+        <element name="Green" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_GREEN">
+            <supports>Valyrian Dragon</supports>
+            <compendium display="false" />
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="dragon-egg:color" inline="true" value="green" />
+                <stat name="dragon-egg:damage-type" inline="true" value="poison" />
+                <stat name="dragon-egg:appearance" inline="true" value="green speckled with light brown" />
+                <select type="Companion" name="Green Dragon Companion" supports="Valyrian Dragon,Green" />
+            </rules>
+        </element>
+        <element name="Red" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_RED">
+            <supports>Valyrian Dragon</supports>
+            <compendium display="false" />
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="dragon-egg:color" inline="true" value="red" />
+                <stat name="dragon-egg:damage-type" inline="true" value="fire" />
+                <stat name="dragon-egg:appearance" inline="true" value="red with a shell of hard scales" />
+                <select type="Companion" name="Red Dragon Companion" supports="Valyrian Dragon,Red" />
+            </rules>
+        </element>
+        <element name="Silver" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_SILVER">
+            <supports>Valyrian Dragon</supports>
+            <compendium display="false" />
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="dragon-egg:color" inline="true" value="silver" />
+                <stat name="dragon-egg:damage-type" inline="true" value="cold" />
+                <stat name="dragon-egg:appearance" inline="true" value="grey with a shell that shimmers" />
+                <select type="Companion" name="Silver Dragon Companion" supports="Valyrian Dragon,Silver" />
+            </rules>
+        </element>
+        <element name="White" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_VALYRIAN_DRAGONRIDER_DRAGON_WHITE">
+            <supports>Valyrian Dragon</supports>
+            <compendium display="false" />
+            <description>
+                <p></p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="dragon-egg:color" inline="true" value="white" />
+                <stat name="dragon-egg:damage-type" inline="true" value="cold" />
+                <stat name="dragon-egg:appearance" inline="true" value="white with a shell cold to the touch" />
+                <select type="Companion" name="White Dragon Companion" supports="Valyrian Dragon,White" />
+            </rules>
+        </element>
+
+
+</elements>

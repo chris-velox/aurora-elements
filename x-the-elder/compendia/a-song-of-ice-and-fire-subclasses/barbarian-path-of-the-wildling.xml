@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Primal Path of the Wildling</name>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-the-wildling.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/a-song-of-ice-and-fire-subclasses/barbarian-path-of-the-wildling.xml" />
+        </update>
+    </info>
+    
+    <element name="Path of the Wildling" type="Archetype" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_BARBARIAN_PATH_OF_THE_WILDLING">
+        <supports>Primal Path</supports>
+        <description>
+            <p>Wlldlings, or the free folk as they call themselves, are the people who live beyond the Wall. They live in the harshest coldest environs and comprise hundreds of cultures, tribes, clans, villages, and raiding parties, varying from reasonably civilized to utterly barbaric. But what separates the Wildlings from the rest of Westeros is more than the Wall; it is their belief in the freedom to not be forced to kneel to lords and kings, but follow their own paths and choose whom to follow, if anyone.</p>
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_NO_MERCY_FOR_KNEELERS" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_NORTH_OF_THE_WALL" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_FREE_FOLK" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_HORN_OF_WINTER" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_NO_MERCY_FOR_KNEELERS" level="3" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_NORTH_OF_THE_WALL" level="6" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_FREE_FOLK" level="10" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_HORN_OF_WINTER" level="14" />
+        </rules>
+    </element>
+        <element name="No Mercy for Kneelers" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_NO_MERCY_FOR_KNEELERS">
+            <description>
+                <p>When you choose this path at 3rd level, you will not bend the knee and will punish those who do. While you are raging, you are immune to the prone condition, and when you successfully hit a prone creature, you deal an extra 1d8 damage to the creature.</p>
+            </description>
+            <sheet>
+                <description>While you are raging, you are immune to the prone condition, and when you successfully hit a prone creature, you deal an extra 1d8 damage to the creature.</description>
+            </sheet>
+        </element>
+        <element name="North of the Wall" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_NORTH_OF_THE_WALL">
+            <description>
+                <p>At 6th level, life in the north has prepared you in the ways of traversing freezing landscapes. You are resistant to cold damage, climbing does not cost you extra movement, you can move across and climb icy surfaces without needing to make an ability check, and difficult terrain composed of ice or snow doesn’t cost you extra movement. Also, you learn to speak, read, and write Giant.</p>
+            </description>
+            <sheet>
+                <description>Climbing does not cost you extra movement, you can move across and climb icy surfaces without needing to make an ability check, and difficult terrain composed of ice or snow doesn’t cost you extra movement.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+                <grant type="Language" id="ID_MM_LANGUAGE_GIANT" />
+            </rules>
+        </element>
+        <element name="Free Folk" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_FREE_FOLK">
+            <description>
+                <p>When you reach 10th level, you have become resolute in your life of independence and are resistant to attempts to sway your mind and attitudes. You are immune to being charmed and gain proficiency in Wisdom saving throws. If you already have this proficiency, you instead gain proficiency in Intelligence or Charisma saving throws (your choice).</p>
+            </description>
+            <sheet>
+                <description>You are immune to being charmed.</description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Saving Throw Proficiency (Free Folk)" option="true" default="ID_PROFICIENCY_SAVINGTHROW_WISDOM" supports="ID_PROFICIENCY_SAVINGTHROW_WISDOM|ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE|ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
+            </rules>
+        </element>
+        <element name="Horn of Winter" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_WILDLING_HORN_OF_WINTER">
+            <description>
+                <p>When you reach 14th level, you have become imbued with the magic of Joramun’s horn. As an action, you can let out a magical blast from your mouth in a 90-foot cone originating from you that can be heard from up to 1000 feet away. Any magical wall or structure in the area created from a spell of 6th-level or lower is dispelled. Any wall or structures in the area take 200 bludgeoning damage.</p>
+                <p class="indent">If a wall or structure drops to 0 hit points, it collapses and potentially damages nearby creatures. A creature within half the distance of a wall or structure’s height must make a Dexterity saving throw (DC equal to 8 + your proficiency bonus + your Constitution modifier). On a failed save, the creature takes 5d6 bludgeoning damage, is knocked prone, and is buried in the rubble, requiring a DC 20 Strength (Athletics) check as an action to escape. The DM can adjust the DC higher or lower, depending on the nature of the rubble. On a successful save, the creature takes half as much damage and doesn’t fall prone or become buried.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest" action="Action">
+                <description>You can let out a magical blast from your mouth in a 90-foot cone originating from you that can be heard from up to 1000 feet away. Any magical wall or structure in the area created from a spell of 6th-level or lower is dispelled. Any wall or structures in the area take 200 bludgeoning damage. If a wall or structure drops to 0 hit points, it collapses and potentially damages nearby creatures.</description>
+            </sheet>
+        </element>
+    
+</elements>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Way of Shadowbinding Monastic Tradition</name>
+        <update version="0.0.1">
+            <file name="monk-way-of-shadowbinding.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/a-song-of-ice-and-fire-subclasses/monk-way-of-shadowbinding.xml" />
+        </update>
+    </info>
+    
+    <element name="Way of Shadowbinding" type="Archetype" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_MONK_WAY_OF_SHADOWBINDING">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>Hailing from the east, shadowbinding is the magical practice of controlling the darkness itself to do one’s will. Although their history and practices are almost completely unknown to the people of Westeros, there are many shadowbinders in Asshai, near the Shadow Lands, that work their magic at night throughout the city. These shadowbinders typically hide their face with a lacquered masks, however, not all do. While Asshai is renown for its warlocks and maegi, it is the shadowbinders that are considered to be the most sinister in the city, harnessing power a Seven-worshipping man would shun.</p>
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_SHADOW_ARTS" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_SHADOW_OF_ILL_OMEN" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_SHADOW_STEP" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_OPPORTUNIST" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_SHADOW_ARTS" level="3" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_SHADOW_OF_ILL_OMEN" level="6" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_SHADOW_STEP" level="11" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_OPPORTUNIST" level="17" />
+        </rules>
+    </element>
+        <element name="Shadow Arts" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_SHADOW_ARTS">
+            <description>
+                <p>Starting when you choose this tradition at 3rd level, you can use your ki to duplicate the effects of certain spells. As an action, you can spend 2 ki points to cast <em>darkness</em>, <em>darkvision</em>, <em>pass without trace</em>, or <em>silence</em>, without providing material components. Additionally, you gain the minor illusion cantrip if you don’t already know it.</p>
+            </description>
+            <sheet action="Action" usage="2 Ki Points">
+                <description>You can spend 2 ki points to cast darkness, darkvision, pass without trace, or silence, without providing material components.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_MINOR_ILLUSION" />
+                <grant type="Spell" id="ID_PHB_SPELL_DARKNESS" />
+                <grant type="Spell" id="ID_PHB_SPELL_DARKVISION" />
+                <grant type="Spell" id="ID_PHB_SPELL_PASS_WITHOUT_TRACE" />
+                <grant type="Spell" id="ID_PHB_SPELL_SILENCE" />
+            </rules>
+        </element>
+        <element name="Shadow of Ill Omen" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_SHADOW_OF_ILL_OMEN">
+            <description>
+                <p>At 6th level, you gain the ability to call forth a creature of darkness to harass your foes. As an action, you can spend 3 ki points to magically summon a shadow of ill omen to target one creature you can see within 120 feet of you. The shadow uses the shadow demon’s statistics (see the Monster Manual), with the following changes:</p>
+                <ul>
+                    <li>The shadow counts as a monstrosity, not a fiend (demon) and is unaligned, not chaotic evil.</li>
+                    <li>The shadow’s maximum hit points are reduced by half.</li>
+                    <li>At the start of its turn, the shadow automatically knows its target’s location. If the target was hidden, it is no longer hidden from the hound.</li>
+                </ul>
+                <p class="indent">The shadow appears in an unoccupied space of your choice within 30 feet of the target. Roll initiative for the shadow. On its turn, it can move only toward its target by the most direct route, and it can use its action only to attack its target. The shadow can make opportunity attacks, but only against its target.</p>
+                <p class="indent">The shadow disappears if it is reduced to 0 hit points, if its target is reduced to 0 hit points, or after 5 minutes.</p>
+                <p class="indent">Once you use this feature you can’t use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can spend 3 ki points to magically summon a shadow of ill omen to target one creature you can see within 120 feet of you. The shadow uses the shadow demon’s statistics, with the following changes: it is a monstrosity; its maximum hit points are reduced by half; it automatically knows its targets location at the start of its turn.</description>
+            </sheet>
+        </element>
+        <element name="Shadow Step" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_SHADOW_STEP">
+            <description>
+                <p>At 11th level, you gain the ability to step from one shadow into another. When you are in dim light or darkness, as a bonus action, you can teleport up to 120 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>When you are in dim light or darkness, you can teleport up to 120 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn.</description>
+            </sheet>
+        </element>
+        <element name="Opportunist" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_SHADOWBINDING_OPPORTUNIST">
+            <description>
+                <p>At 17th level, you can exploit a creature’s momentary distraction when it is hit by an attack. Whenever a creature within 5 feet of you is hit by an attack made by a creature other than you, you can use your reaction to make a melee attack against that creature.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>Whenever a creature within 5 feet of you is hit by an attack made by a creature other than you, you can make a melee attack against that creature.</description>
+            </sheet>
+        </element>
+    
+</elements>

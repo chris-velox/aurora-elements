@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of the Citadel</name>
+        <update version="0.0.1">
+            <file name="bard-college-of-the-citadel.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/a-song-of-ice-and-fire-subclasses/bard-college-of-the-citadel.xml" />
+        </update>
+    </info>
+    
+    <element name="College of the Citadel" type="Archetype" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_BARD_COLLEGE_OF_THE_CITADEL">
+        <supports>Bard College</supports>
+        <description>
+            <p>The Citadel is where maesters -- the scholars in service to the nobility and people of Westeros -- are trained. You can find boys and men of low and high birth status from all over the Seven Kingdoms studying at the Citadel, and though the Citadel would never admit it, you may find some girls and women who have disguised themselves in order to seek knowledge there.</p>
+            <p class="indent">When a student has mastered a subject to the satisfaction of an archmaester, he is awarded a link of a metal representing knowledge of that subject. With more links he begins to form his maester’s chain. Most who start their studies won’t complete their chain, either growing aged as they continue their study or simply leaving to pursue other aspects of the world. Your leaving may have something to do with the magic you have managed to learn. Viewed as a force lost since the end of Valyria or a myth that never really existed, magic is wholly suppressed by almost all the archmaesters of the Citadel.</p>
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_FORGING_YOUR_CHAIN" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_SERVICE" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_HIGHER_MYSTERIES" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_ARCHMAESTER" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_FORGING_YOUR_CHAIN" level="3" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_SERVICE" level="3" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_HIGHER_MYSTERIES" level="6" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_ARCHMAESTER" level="14" />
+        </rules>
+    </element>
+        <element name="Forging Your Chain" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_FORGING_YOUR_CHAIN">
+            <description>
+                <p>When you join the College of the Citadel at 3rd level, you begin to forge a maester’s chain, a symbol of both the knowledge you’ve mastered and that you serve not yourself but all of Westeros. Pick two skills to gain proficiency with from Animal Handling, Arcana, History, Medicine, Religion, or Nature. You pick one additional proficiency to gain from this list at 6th level and 14th level.</p>
+                <p class="indent">Each proficiency has a corresponding spell you may cast as a ritual (as described in chapter 10 of the Player’s Handbook) while you posses your maester’s chain.</p>
+                <table>
+                    <thead>
+                        <tr><td>Metal Link</td><td>Proficiency</td><td>Spell</td></tr>
+                    </thead>
+                    <tr><td>Black iron</td><td>Animal Handling</td><td><i>speak with animals</i></td></tr>
+                    <tr><td>Valyrian steel</td><td>Arcana</td><td><i>detect magic</i></td></tr>
+                    <tr><td>Copper</td><td>History</td><td><i>comprehend languages</i></td></tr>
+                    <tr><td>Silver</td><td>Medicine</td><td><i>detect poison and disease</i></td></tr>
+                    <tr><td>Platinum</td><td>Religion</td><td><i>ceremony<sup>XGtE</sup></i></td></tr>
+                    <tr><td>Pewter</td><td>Nature</td><td><i>locate animals or plants</i></td></tr>
+                </table>
+                <div class="sidebar">
+                    <h5>Variant: Alternative Spells</h5>
+                    <p>For players who do not have access to Xanathar’s Guide to Everything, the chain link spell ceremony can be replaced with purify food and drink.</p>
+                </div>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Maester Link (Level 3)" supports="Maester Chain Link" level="3" number="2" />
+                <select type="Archetype Feature" name="Maester Link (Level 6)" supports="Maester Chain Link" level="6" />
+                <select type="Archetype Feature" name="Maester Link (Level 14)" supports="Maester Chain Link" level="14" />
+            </rules>
+        </element>
+        <element name="Service" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_SERVICE">
+            <description>
+                <p>Also at 3rd level, you begin your life of service to others. When you grant a friendly creature one of your Bardic Inspirations, the target also benefits from the Help action. If you aid an ally in attacking a creature, the target of that attack can be within 30 feet of you, rather than within 5 feet of you.</p>
+            </description>
+            <sheet>
+                <description>When you grant a friendly creature one of your Bardic Inspirations, the target also benefits from the Help action. If you aid an ally in attacking a creature, the target of that attack can be within 30 feet of you, rather than within 5 feet of you.</description>
+            </sheet>
+        </element>
+        <element name="Higher Mysteries" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_HIGHER_MYSTERIES">
+            <description>
+                <p>When you reach 6th level, you have developed ways to hide or end magic akin to the Citadel’s censorship. You learn the <em>counterspell</em>, <em>dispel magic</em>, and <em>Nystul’s magic aura</em> spells. These spells count as bard spells for you but don’t count against the number of bard spells you know.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_COUNTERSPELL" spellcasting="Bard" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" spellcasting="Bard" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_NYSTULS_MAGIC_AURA" spellcasting="Bard" known="true" />
+            </rules>
+        </element>
+        <element name="Archmaester" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_ARCHMAESTER">
+            <description>
+                <p>Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roil the die for the ability check, but before the DM tells you whether you succeed or fail.</p>
+            </description>
+            <sheet>
+                <description>When you make an ability check, you can expend one use of Bardic Inspiration and add the number rolled to your ability check. You can choose to do so after you roil the die for the ability check, but before the DM tells you whether you succeed or fail.</description>
+            </sheet>
+        </element>
+
+        <!-- Maester Chain Links -->
+            <element name="Black iron" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_FORGING_YOUR_CHAIN_BLACK_IRON">
+                <compendium display="false" />
+                <supports>Maester Chain Link</supports>
+                <description>
+                    <p>You gain proficiency in Animal Handling and you can cast <em>speak with animals</em> as a ritual spell.</p>
+                </description>
+                <sheet display="false">
+                    <description>You can cast speak with animals as a ritual spell.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" />
+                </rules>
+            </element>
+            <element name="Valyrian steel" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_FORGING_YOUR_CHAIN_VALYRIAN_STEEL">
+                <compendium display="false" />
+                <supports>Maester Chain Link</supports>
+                <description>
+                    <p>You gain proficiency in Arcana and you can cast <em>detect magic</em> as a ritual spell.</p>
+                </description>
+                <sheet display="false">
+                    <description>You can cast detect magic as a ritual spell.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" />
+                </rules>
+            </element>
+            <element name="Copper" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_FORGING_YOUR_CHAIN_COPPER">
+                <compendium display="false" />
+                <supports>Maester Chain Link</supports>
+                <description>
+                    <p>You gain proficiency in History and you can cast <em>comprehend languages</em> as a ritual spell.</p>
+                </description>
+                <sheet display="false">
+                    <description>You can cast comprehend languages as a ritual spell.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_COMPREHEND_LANGUAGES" />
+                </rules>
+            </element>
+            <element name="Silver" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_FORGING_YOUR_CHAIN_SILVER">
+                <compendium display="false" />
+                <supports>Maester Chain Link</supports>
+                <description>
+                    <p>You gain proficiency in Medicine and you can cast <em>detect poison and disease</em> as a ritual spell.</p>
+                </description>
+                <sheet display="false">
+                    <description>You can cast detect poison and disease as a ritual spell.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE" />
+                </rules>
+            </element>
+            <element name="Platinum" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_FORGING_YOUR_CHAIN_PLATINUM">
+                <compendium display="false" />
+                <supports>Maester Chain Link</supports>
+                <description>
+                    <p>You gain proficiency in Religion and you can cast <em>ceremony<sup>XGtE</sup>></em> as a ritual spell.</p>
+                    <div class="sidebar">
+                        <h5>Variant: Alternative Spells</h5>
+                        <p>For players who do not have access to Xanathar’s Guide to Everything, the chain link spell ceremony can be replaced with purify food and drink.</p>
+                    </div>
+                </description>
+                <sheet display="false">
+                    <description>You can cast ceremony as a ritual spell.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_XGTE_SPELL_CEREMONY" />
+                    <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+                </rules>
+            </element>
+            <element name="Pewter" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_CITADEL_FORGING_YOUR_CHAIN_PEWTER">
+                <compendium display="false" />
+                <supports>Maester Chain Link</supports>
+                <description>
+                    <p>You gain proficiency in Nature and you can cast <em>locate animals or plants</em> as a ritual spell.</p>
+                </description>
+                <sheet display="false">
+                    <description>You can cast locate animals or plants as a ritual spell.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_LOCATE_ANIMALS_OR_PLANTS" />
+                    <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+                </rules>
+            </element>
+
+    
+</elements>

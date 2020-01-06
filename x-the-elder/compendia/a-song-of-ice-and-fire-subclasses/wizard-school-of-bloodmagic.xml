@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>School of Bloodmagic Arcane Tradition</name>
+        <update version="0.0.1">
+            <file name="wizard-school-of-bloodmagic.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/a-song-of-ice-and-fire-subclasses/wizard-school-of-bloodmagic.xml" />
+        </update>
+    </info>
+    
+    <element name="School of Bloodmagic" type="Archetype" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_WIZARD_SCHOOL_OF_BLOODMAGIC">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>Perhaps the oldest form of magic, bloodmagic is partially fueled by the sacrifice of blood and life, and the greater the sacrifice, the greater the magics created. The blood of kings is believed to be the most powerful. Much of the capabilities of bloodmagic remain esoteric with scholars speculating bloodmagic’s work involved with the crafting of Valyrian steel and even in the birth of dragons. As a wizard of this school, typically called a maegi or bloodmage, you will begin to unravel these mysteries and master the more common functions such as imprecations and prophecy. Given its grisly nature, and especially since the Doom of Valyria, bloodmagic is hated and distrusted throughout the world save in Asshai-by-the-Shadow.</p>
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_BLOOD_INK" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_LESSER_VALYRIAN_STEEL" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_PAYMENT_OF_DEATH" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_BLOOD_CHANT" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_MAEGIS_MALEDICTION" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_BLOOD_INK" level="2" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_LESSER_VALYRIAN_STEEL" level="2" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_PAYMENT_OF_DEATH" level="6" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_BLOOD_CHANT" level="10" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_MAEGIS_MALEDICTION" level="14" />
+        </rules>
+    </element>
+        <element name="Blood Ink" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_BLOOD_INK">
+            <description>
+                <p>Starting at 2nd level, you may add any spell of 1st level or higher to your spellbook even those that are not wizard spells. To do so, in addition to the regular amount of ink and paper, you must provide your own blood. For each level of the spell, roll one your Hit Die, expending it, and reduce your hit point maximum by an amount equal to the total rolled.</p>
+                <p class="indent">The maximum hit points reduced cannot be prevented or undone by any other spell or feature. The reduction to your hit point maximum lasts until you regain all of your Hit Dice.</p>
+                <p class="indent">When you copy a spell into your spell book in this way the spell is always prepared and doesn’t count against the number spells you can prepare each day. When casting the spell using a spell slot, you must pay an additional cost of blood. Roll a number of d4s equal to the spell slot level used to cast the spell and take necrotic damage equal to the amount rolled. This damage to you can’t be reduced or prevented in any way.</p>
+                <p class="indent">If you are performing the spell as a ritual, you need not provide your own blood but it does need to be fresh blood, and much less of it is required, approximately one vial’s worth per level of spell. If you were to provide the blood of a living creature, the target would take 1 necrotic damage per vial’s worth extracted, and this damage can’t be reduced or prevented in any way.</p>
+                <p class="indent">When you reach 3rd level in this class, you add the augury spell to your spellbook through this process. You don’t need to expend Hit Die or reduce your hit point maximum for this instance.</p>
+            </description>
+            <sheet>
+                <description>You may add any spell of 1st level or higher to your spellbook even those that are not wizard spells. To do so, in addition to the regular amount of ink and paper, you must provide your own blood. For each level of the spell, roll one your Hit Die, expending it, and reduce your hit point maximum by an amount equal to the total rolled. When casting the spell using a spell slot, you must pay an additional cost of blood. Roll a number of d4s equal to the spell slot level used to cast the spell and take necrotic damage equal to the amount rolled. This damage to you can’t be reduced or prevented in any way.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_AUGURY" spellcasting="Wizard" level="3" />
+            </rules>
+            <spellcasting name="Wizard" extend="true">
+                <extend>Cleric</extend>
+                <extend>Druid</extend>
+                <extend>Sorcerer</extend>
+                <extend>Bard</extend>
+                <extend>Paladin</extend>
+                <extend>Blood Mage</extend>
+                <extend>Sigilant</extend>
+                <extend>Maledictor</extend>
+            </spellcasting>
+        </element>
+        <element name="Lesser Valyrian Steel" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_LESSER_VALYRIAN_STEEL">
+            <description>
+                <p>Also at 2nd level, you have learned a process to enhance forged arms to imitate Valyrian steel. By taking an hour to bathe a metal weapon or piece of ammunition in blood and fire, you turn the weapon or piece of ammunition magical.</p>
+            </description>
+            <sheet>
+                <description>By taking an hour to bathe a metal weapon or piece of ammunition in blood and fire, you turn the weapon or piece of ammunition magical.</description>
+            </sheet>
+        </element>
+        <element name="Payment of Death" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_PAYMENT_OF_DEATH">
+            <description>
+                <p>Starting at 6th level, when you reduce a creature to 0 hit points, the next spell you cast using your Blood Ink feature within the next minute doesn’t require you to roll d4s and take the damage.</p>
+            </description>
+            <sheet>
+                <description>When you reduce a creature to 0 hit points, the next spell you cast using your Blood Ink feature within the next minute doesn’t require you to roll d4s and take the damage.</description>
+            </sheet>
+        </element>
+        <element name="Blood Chant" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_BLOOD_CHANT">
+            <description>
+                <p>At 10th level, you learn a primeval chant to help focus on spells which require your power to maintain. As a bonus action on your turn, you may take 1d6 necrotic damage and begin a blood chant. This damage to you can’t be reduced or prevented in any way. Until the end of your next turn, you do not need to make Constitution saving throws to maintain your concentration on spells of 3rd-level or lower.</p>
+                <p class="indent">You may take more damage to have this effect applied to higher level spells, taking 2d6 for spells of 6th-level or lower and 3d6 for spells of 9th-level or lower.</p>
+           </description>
+            <sheet action="Bonus Action">
+                <description>You may take 1d6 necrotic damage and begin a blood chant. This damage to you can’t be reduced or prevented in any way. Until the end of your next turn, you do not need to make Constitution saving throws to maintain your concentration on spells of 3rd-level or lower. You may take more damage to have this effect applied to higher level spells, taking 2d6 for spells of 6th-level or lower and 3d6 for spells of 9th-level or lower.</description>
+            </sheet>
+        </element>
+        <element name="Maegi’s Malediction" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_BLOODMAGIC_MAEGIS_MALEDICTION">
+            <description>
+                <p>When you reach 14th level, you can curse a creature with its imminent death. As an action, choose a creature within 60 feet of you to make a Constituion saving throw against your wizard spell save DC. On a failure, the target takes an extra 1d4 necrotic damage each time it takes damage. This effect lasts until you use this feature again.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>Choose a creature within 60 feet of you to make a Constituion saving throw against your wizard spell save DC. On a failure, the target takes an extra 1d4 necrotic damage each time it takes damage. This effect lasts until you use this feature again.</description>
+            </sheet>
+        </element>
+    
+</elements>

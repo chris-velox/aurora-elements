@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Night King Otherworldly Patron</name>
+        <update version="0.0.1">
+            <file name="warlock-the-night-king.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/a-song-of-ice-and-fire-subclasses/warlock-the-night-king.xml" />
+        </update>
+    </info>
+    
+    <element name="The Night King" type="Archetype" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_WARLOCK_THE_NIGHT_KING">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Your patron is the Night King, a divine being of darkness, cold, and death. The Night King leads the others, or white walkers, and is in direct opposition to the Lord of Light. He and the others are tall, gaunt with ice-blue eyes, white hair, and blue skin who bring freezing cold and bitter death where they travel. They also have an army of wights and other undead creatures brought back from the corpses of their fallen enemies. And now you have become a soldier in the Night King’s forces.</p>
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_EXPANDED_SPELL_LIST" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_BEINGS_OF_ICE_AND_COLD" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_BRING_THE_COLD_NIGHT" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_BEWARE_DRAGONSTEEL" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_DEATH_IS_THE_ENEMY" />
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_BEINGS_OF_ICE_AND_COLD" level="1" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_BRING_THE_COLD_NIGHT" level="6" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_BEWARE_DRAGONSTEEL" level="10" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_DEATH_IS_THE_ENEMY" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Night King lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">Night King Expanded Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Warlock Level</td><td>Spell</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><i>fog cloud, ice knife<sup>EE</sup></i></td></tr>
+                    <tr><td>3rd</td><td><i>darkvision, Snilloc’s snowball swarm<sup>EE</sup></i></td></tr>
+                    <tr><td>5th</td><td><i>animate dead, sleet storm</i></td></tr>
+                    <tr><td>7th</td><td><i>death ward, ice storm</i></td></tr>
+                    <tr><td>9th</td><td><i>antilife shell, cone of cold</i></td></tr>
+                </table>
+                <div class="sidebar">
+                    <h5 class="caption">Variant: Alternative Spells</h5>
+                    <p>For players who do not have access to <em>Elemental Evil Player’s Companion</em>, the great other expanded spells <em>ice knife</em> and <em>Snilloc’s snowball swarm</em> can be replaced with <em>chromatic orb</em> and <em>gust of wind</em> respectively.</p>
+                </div>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_FOG_CLOUD</extend>
+                <extend>ID_XGTE_SPELL_ICE_KNIFE</extend>
+                <extend>ID_PHB_SPELL_DARKVISION</extend>
+                <extend>ID_XGTE_SPELL_SNILLOCS_SNOWBALL_SWARM</extend>
+                <extend>ID_PHB_SPELL_ANIMATE_DEAD</extend>
+                <extend>ID_PHB_SPELL_SLEET_STORM</extend>
+                <extend>ID_PHB_SPELL_DEATH_WARD</extend>
+                <extend>ID_PHB_SPELL_ICE_STORM</extend>
+                <extend>ID_PHB_SPELL_ANTILIFE_SHELL</extend>
+                <extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+            </spellcasting>
+        </element>
+        <element name="Beings of Ice and Cold" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_BEINGS_OF_ICE_AND_COLD">
+            <description>
+                <p>At 1st level, your patron allows you to shape yourself in its image. You know the <em>armor of Agathys</em> spell and it doesn’t count against the number of warlock spells known. When you cast <em>armor of Agathys</em> using a warlock spell slot, you gain a bonus number of temporary hit points equal to your Charisma modifier.</p>
+            </description>
+            <sheet>
+                <description>When you cast armor of Agathys using a warlock spell slot, you gain {{charisma:modifier}} temporary hit points.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_ARMOR_OF_AGATHYS" known="true" spellcasting="Warlock" />
+            </rules>
+        </element>
+        <element name="Bring the Cold Night" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_BRING_THE_COLD_NIGHT">
+            <description>
+                <p>At 6th level, you gain resistance to cold and necrotic damage. Additionally, when you cast a spell that deals cold damage, creatures within 5 feet of you take cold damage equal to your Charisma modifier.</p>
+            </description>
+            <sheet>
+                <description>Additionally, when you cast a spell that deals cold damage, creatures within 5 feet of you take {{charisma:modifier}} points cold damage.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+            </rules>
+        </element>
+        <element name="Beware Dragonsteel" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_BEWARE_DRAGONSTEEL">
+            <description>
+                <p>Starting at 10th level, when you cast <em>armor of Agathys</em> using a warlock spell slot, you gain resistance to nonmagical bludgeoning, piercing, and slashing damage while you have the temporary hit points.</p>
+            </description>
+            <sheet>
+                <description>When you cast armor of Agathys using a warlock spell slot, you gain resistance to nonmagical bludgeoning, piercing, and slashing damage while you have the temporary hit points.</description>
+            </sheet>
+        </element>
+        <element name="Death is the Enemy" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_NIGHT_KING_DEATH_IS_THE_ENEMY">
+            <description>
+                <p>At 14th level, your patron grants you the ability to animate a corpse and control it. If a creature within 10 feet of you dies, you can use your reaction to animate it, causing it to stand up immediately with a number of hit points equal to your warlock level. The creature uses the zombie stat block in the <em>Monster Manual</em>, although will keep the creature’s original size. It remains animate for 1 hour, after which time it collapses and dies.</p>
+                <p class="indent">In combat, the zombie’s turn comes immediately after yours. lt obeys your mental commands, and the only action it can take is the Attack action, making one melee attack. It gains a bonus to the attack and damage rolls equal to your Charisma modifier.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="1/Short Rest">
+                <description>If a creature within 10 feet of you dies, you can animate it, causing it to stand up immediately with a {{level:warlock}} hit points. The creature uses the zombie stat block in the Monster Manual, although will keep the creature’s original size. It remains animate for 1 hour, after which time it collapses and dies. In combat, the zombie’s turn comes immediately after yours. lt obeys your mental commands, and the only action it can take is the Attack action, making one melee attack. It gains a + {{charisma:modifier}} bonus to the attack and damage rolls.</description>
+            </sheet>
+        </element>
+
+</elements>

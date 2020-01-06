@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Path of the Dothraki Screamer Primal Path</name>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-the-dothraki-screamer.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/a-song-of-ice-and-fire-subclasses/barbarian-path-of-the-dothraki-screamer.xml" />
+        </update>
+    </info>
+    
+    <element name="Path of the Dothraki Screamer" type="Archetype" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_BARBARIAN_PATH_OF_THE_DOTHRAKI_SCREAMER">
+        <supports>Primal Path</supports>
+        <description>
+            <p>Numerous khalasars, a horde of Dothraki, ruled by khals roam the Great Grass Sea of Essos on horseback, pillaging what they can in battles and raids announced with their infamous war scream. The Dothraki’s style of warfare and even its culture, religion, and authority revolve around horses. A khal who cannot ride, cannot rule.</p>
+            <p class="indent">The Dothraki are a wild, nomadic peoples only having one city, Vaes Dothrak. Reveling in violence, thet follow strength and often battle each other for possesions or the right to rule. Warriors keep their hair long and braided adding a bell after every victory and cutting off the braid upon a defeat.</p>
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_BORN_IN_THE_SADDLE" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_STRONG_AND_SWIFT" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_MOBILE_KHALASAR" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_DOTHRAKI_WAR_CRY" />
+            <div element="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_GALLOPING_ATTACK" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_BORN_IN_THE_SADDLE" level="3" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_STRONG_AND_SWIFT" level="3" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_MOBILE_KHALASAR" level="6" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_DOTHRAKI_WAR_CRY" level="10" />
+            <grant type="Archetype Feature" id="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_GALLOPING_ATTACK" level="14" />
+        </rules>
+    </element>
+        <element name="Born in the Saddle" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_BORN_IN_THE_SADDLE">
+            <description>
+                <p>Starting when you choose this path at 3rd level, you and your mount become a single fighting unit. While mounted and raging, your mount gains all the benefits of rage that you do.</p>
+            </description>
+            <sheet>
+                <description>While mounted and raging, your mount gains all the benefits of rage that you do.</description>
+            </sheet>
+        </element>
+        <element name="Strong and Swift" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_STRONG_AND_SWIFT">
+            <description>
+                <p>At 3rd level, you have learned to strike fiercely and move quickly. If you have made a Reckless Attack on your turn, you may use your bonus action to either take the Dash action or have your mount take the Dash action.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>If you have made a Reckless Attack on your turn, you may either take the Dash action or have your mount take the Dash action.</description>
+            </sheet>
+        </element>
+        <element name="Mobile Khalasar" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_MOBILE_KHALASAR">
+            <description>
+                <p>Starting at 6th level, whether mounted or on foot, your travel pace is doubled, as is the travel pace of up to ten companions while they’re within 60 feet of you and you’re not incapacitated (see chapter 8 in the <em>Player’s Handbook</em> for more information about travel pace).</p>
+            </description>
+            <sheet>
+                <description>Whether mounted or on foot, your travel pace is doubled, as is the travel pace of up to ten companions while they’re within 60 feet of you and you’re not incapacitated.</description>
+            </sheet>
+        </element>
+        <element name="Dothraki War Cry" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_DOTHRAKI_WAR_CRY">
+            <description>
+                <p>When you reach 10th level, your infamous scream can truly terrify enemies. When you enter your rage, you may let loose a terrible cry. While certainly heard all around, the effect of this cry extends in a 30-foot cone from you. Any creature in the area must make a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier). On a failure, the creature is frightened of you for 1 minute.</p>
+                <p class="indent">It may make another Wisdom saving throw at the end of each of its turns, ending the condition on a success. Once a creature succeeds on its saving throw, it is immune to being frightened by you in this way for 24 hours.</p>
+                <p class="indent">If a creature was surprised, it automatically fails this saving throw, and only makes another saving throw at the end of its turns it is not surprised.</p>
+            </description>
+            <sheet>
+                <description>When you enter your rage, you may let loose a terrible cry that affects creatures in a 30-foot cone from you. Any creature in the area must make a Wisdom saving throw (DC {{war-cry:save-dc}}). On a failure, the creature is frightened of you for 1 minute. It may make another Wisdom saving throw at the end of each of its turns, ending the condition on a success. If a creature was surprised, it automatically fails this saving throw.</description>
+            </sheet>
+            <rules>
+                <stat name="war-cry:save-dc" value="8" />
+                <stat name="war-cry:save-dc" value="proficiency" />
+                <stat name="war-cry:save-dc" value="charisma:modifier" />
+            </rules>
+        </element>
+        <element name="Galloping Attack" type="Archetype Feature" source="A Song of Ice and Fire Subclasses" id="ID_ASOIAFS_ARCHETYPE_FEATURE_DOTHRAKI_SCREAMER_GALLOPING_ATTACK">
+            <description>
+                <p>At 14th level, your speed adds to your strength. Once on your turn, when you hit a Large or smaller creature with a melee weapon attack, you may also make a shove attack as a part of that attack. For every 20 feet you traveled in a straight line before the attack, you gain a bonus equal to that number to both the Strength (Athletics) check and the damage of the attack.</p>
+            </description>
+            <sheet>
+                <description>Once on your turn, when you hit a Large or smaller creature with a melee weapon attack, you may also make a shove attack as a part of that attack. For every 20 feet you traveled in a straight line before the attack, you gain a bonus equal to that number to both the Strength (Athletics) check and the damage of the attack.</description>
+            </sheet>
+        </element>
+    
+</elements>
