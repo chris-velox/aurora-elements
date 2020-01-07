@@ -3,7 +3,7 @@
     <info>
         <name>Additonal Pact Boons</name>
         <author url="https://homebrewery.naturalcrit.com/share/ryrquGO-8r">u/KnightDragon</author>
-        <update version="0.0.2">
+        <update version="0.0.3">
             <file name="warlock-additional-pact-boons.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-additional-pact-boons.xml" />
         </update>
     </info>
@@ -90,12 +90,15 @@
         <description>
             <p>You learn the <i>silent image</i> spell. The spell doesn’t count against your number of spells known.</p>
             <p class="indent">When you cast the spell, if the illusion takes the form of a humanoid you’re familiar with, you may have the illusion automatically act in the same manner as the humanoid it share’s its appearance with. This acting includes information that you aren’t personally aware of.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SILENT_IMAGE" />
+			</div>
         </description>
         <sheet>
             <description>When you cast <i>silent illusion</i>, if the illusion takes the form of a humanoid you’re familiar with, you may have the illusion automatically act in the same manner as the humanoid it share’s its appearance with. This acting includes information that you aren’t personally aware of.</description>
         </sheet>
         <rules>
-            <grant type="Spell" id="ID_PHB_SPELL_SILENT_IMAGE" />
+            <grant type="Spell" id="ID_PHB_SPELL_SILENT_IMAGE" known="true" spellcasting="Warlock" />
             <select type="List" name="Quirk (Pact of the Mirror)">
                 <item id="1">You often talk to your reflection as if it could hear you.</item>
                 <item id="2">You constantly compare yourself to other people.</item>
@@ -113,12 +116,15 @@
         <description>
             <p>You learn the <i>cure wounds</i> spell. The spell doesn’t count against your number of spells known.</p>
             <p class="indent">Additionally, when you heal someone with your <i>cure wounds</i> spell, you may have the target make a constitution saving throw against your spell save DC. On a failure, the target is infected with your patron’s essence, and is frightened or charmed (your choice) by you for the next 1d4 hours.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_CURE_WOUNDS" />
+			</div>
         </description>
         <sheet>
             <description>When you heal someone with your <i>cure wounds</i> spell, you may have the target make a constitution saving throw (DC {{warlock:spellcasting:dc}}). On a failure, the target is infected with your patron’s essence, and is frightened or charmed (your choice) by you for the next 1d4 hours.</description>
         </sheet>
         <rules>
-            <grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" />
+            <grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" known="true" spellcasting="Warlock" />
             <select type="List" name="Quirk (Pact of the Needle)">
                 <item id="1">The sight of blood comforts you.</item>
                 <item id="2">You almost always have a cold, but never seem to get seriously ill.</item>
@@ -136,12 +142,15 @@
         <description>
             <p>You learn the <i>sanctuary</i> spell. The spell doesn’t count against your number of spells known.</p>
             <p class="indent">Additionally, during a short or long rest, you can call on your patron to grant you a gift in the form of a magical inscription. The inscription can be written on anything you can maintain contact with for the hour the ritual takes place. The inscription is clearly visible, and can cast one of your warlock spells as if you had casted it using a warlock spell slot when a trigger condition set during the ritual is met. The inscription disappears after the trigger is met, if another incription is created, or after 24 hours.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SANCTUARY" />
+			</div>
         </description>
         <sheet usage="1/Short Rest">
             <description>During a short or long rest, you can call on your patron to grant you a gift in the form of a magical inscription. The inscription can be written on anything you can maintain contact with for the hour the ritual takes place. The inscription is clearly visible, and can cast one of your warlock spells as if you had casted it using a warlock spell slot when a trigger condition set during the ritual is met. The inscription disappears after the trigger is met, if another incription is created, or after 24 hours.</description>
         </sheet>
         <rules>
-            <grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" />
+            <grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" known="true" spellcasting="Warlock" />
 
             <select type="List" name="Quirk (Pact of the Sigil)">
                 <item id="1">You compulsively draw your patron’s sigil wherever you can.</item>
@@ -244,12 +253,15 @@
         <description>
             <p class="flavor">Prerequisite: Contact other plane spell, Pact of the Chalice feature</p>
             <p>During a short or long rest, if you have possesion of your chalice, you may cast <i>contact other plane</i> as a ritual to contact your patron. If you fail the spell’s saving throw, you only take half damage from the backlash.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_CONTACT_OTHER_PLANE" />
+			</div>
         </description>
         <sheet>
             <description>During a short or long rest, if you have possesion of your chalice, you may cast <i>contact other plane</i> as a ritual to contact your patron. If you fail the spell’s saving throw, you only take half damage from the backlash.</description>
         </sheet>
         <rules>
-            <grant type="Spell" id="ID_PHB_SPELL_CONTACT_OTHER_PLANE" />
+            <grant type="Spell" id="ID_PHB_SPELL_CONTACT_OTHER_PLANE" known="true" />
         </rules>
     </element>
     
@@ -286,9 +298,12 @@
         <description>
             <p class="flavor">Prerequisite: 11th level, Pact of the Mirror feature</p>
             <p>You may use your Mystic Arcanum (6th Level) Feature to cast the <i>programmed illusion</i> spell.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_PROGRAMMED_ILLUSION" />
+			</div>
         </description>
         <sheet>
-            <description>You may use your Mystic Arcanum (6th Level) Feature to cast the <i>programmed illusion</i> spell.</description>
+            <description>You may use your Mystic Arcanum (6th Level) Feature to cast the programmed illusion spell.</description>
         </sheet>
         <rules>
             <grant type="Spell" id="ID_PHB_SPELL_PROGRAMMED_ILLUSION" />
@@ -302,12 +317,15 @@
         <description>
             <p class="flavor">Prerequisite: Pact of the Needle feature</p>
             <p>You learn the <i>inflict wounds</i> spell. The spell does not count against your number of spells known.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_INFLICT_WOUNDS" />
+			</div>
         </description>
         <sheet display="false">
             <description></description>
         </sheet>
         <rules>
-            <grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" />
+            <grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" known="true" spellcasting="Warlock" />
         </rules>
     </element>
     
@@ -396,12 +414,15 @@
         <description>
             <p class="flavor">Prerequisite: 5th level, Pact of the Torch feature</p>
             <p>You learn the <i>fireball</i> spell. The spell does not count against your number of spells known. Additionally, whenever you cast the spell, you can choose to have the center of the spell be your torch.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_FIREBALL" />
+			</div>
         </description>
         <sheet>
             <description>Whenever you cast fireball, you can choose to have the center of the spell be your torch.</description>
         </sheet>
         <rules>
-            <grant type="Spell" id="ID_PHB_SPELL_FIREBALL" />
+            <grant type="Spell" id="ID_PHB_SPELL_FIREBALL" known="true" spellcasting="Warlock" />
         </rules>
     </element>
     
