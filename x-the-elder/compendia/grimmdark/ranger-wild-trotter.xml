@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Wild Trotter Ranger Archetype</name>
+        <update version="0.0.1">
+            <file name="ranger-wild-trotter.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/grimmdark/ranger-wild-trotter.xml" />
+        </update>
+    </info>
+    
+    <element name="Wild Trotter" type="Archetype" source="GrimmDark" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_RANGER_WILD_TROTTER">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Many adventurers often go seeking fairy tales or ways into the feywild to find new places to explore. or to ensure that the great evils festering within do not escape. Many of these heroes are often eager to return to their homeworlds. Wild Trotters, however. find themselves at home amongst the insane fey and their equally insane world. They welcome the unpredictable environments. the chaotic people. and the nonsensical threats that are often born within the wild.</p>
+            <p class="indent">Many Wild Trotters are humans that have been lured into a fairy story or a fey—born soul that has grown an attachment to their home. These individuals know better than any the importance of maintaining the hard to understand balance of the feywild. and have come face to face with the dangers that lurk within the twilight realm of fairies. Those that seek to right the wrongs of this crazed universe rarely return sane or alive.</p>
+            <p class="indent">Wild Trotters master the unpredictable landscape of the feywild, and are some of the few that can keep track of the chaotic realm‘s many changes. They are often loners due to the madness that can plague them, but they have been known to find other adventurers when a situation is spiraling out of control——even for them.</p>
+            <div element="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_FEYWILD_TRACKER" />
+            <div element="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_TRICK_BREAKER" />
+            <div element="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_TROTTERS_METHODS" />
+            <div element="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_FEY_SURGE" />
+            <div element="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_TROTTERS_SECRETS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_FEYWILD_TRACKER" level="3" />
+            <grant type="Archetype Feature" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_TRICK_BREAKER" level="3" />
+            <grant type="Archetype Feature" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_TROTTERS_METHODS" level="7" />
+            <grant type="Archetype Feature" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_FEY_SURGE" level="11" />
+            <grant type="Archetype Feature" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_TROTTERS_SECRETS" level="15" />
+        </rules>
+    </element>
+        <element name="Feywild Tracker" type="Archetype Feature" source="GrimmDark" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_FEYWILD_TRACKER">
+            <description>
+                <p>Upon taking this archetype at the 3rd level, you have begun to master the ever—changing world of the feywild. Once per long rest, you may change your favored terrain as long as you are within the feywild. While outside of the feywild, your favored terrain is the same as when you originally gained the feature.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You may change your favored terrain as long as you are within the feywild. While outside of the feywild, your favored terrain is the same as when you originally gained the feature.</description>
+            </sheet>
+        </element>
+        <element name="Trick Breaker" type="Archetype Feature" source="GrimmDark" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_TRICK_BREAKER">
+            <description>
+                <p>At the 3rd level, you have become used to dealing with the tricks of the feywild and its denizens. You have advantage on all Intelligence checks when dealing with a fey’s illusions, as well as all Charisma checks when dealing with a fey personally.</p>
+                <p class="indent">Additionally, when an allied creature within 30 feet of you that you can see falls Victim to the illusions or charming effects of a fey, you can use your reaction to break the effect over them. You may do this a number of times equal to your Wisdom modifier per long rest.</p>
+            </description>
+            <sheet usage="{{trick-breaker:uses}}/Long Rest">
+                <description>You have advantage on all Intelligence checks when dealing with a fey’s illusions, as well as all Charisma checks when dealing with a fey personally. Additionally, when an allied creature within 30 feet of you that you can see falls Victim to the illusions or charming effects of a fey, you can use your reaction to break the effect over them.</description>
+            </sheet>
+            <rules>
+                <stat name="trick-breaker:uses" value="1" bonus="base" />
+                <stat name="trick-breaker:uses" value="wisdom:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Trotter’s Methods" type="Archetype Feature" source="GrimmDark" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_TROTTERS_METHODS">
+            <description>
+                <p>At the 7th level, you have learned how to fight more effectively while in the feywild. When in combat, if you are in a favored terrain chosen from your Feywild Tracker feature, you can take the Dodge or Hide actions as a bonus action. As an addition. by using your knowledge of the plane. when you use the Dash action you do not provoke of opportunity attacks.</p>
+            </description>
+            <sheet>
+                <description>When in combat, if you are in a favored terrain chosen from your Feywild Tracker feature, you can take the Dodge or Hide actions as a bonus action. As an addition. by using your knowledge of the plane. when you use the Dash action you do not provoke of opportunity attacks.</description>
+            </sheet>
+        </element>
+        <element name="Fey Surge" type="Archetype Feature" source="GrimmDark" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_FEY_SURGE">
+            <description>
+                <p>From the 11th level onwards, you have learned to tap into the magic of the feywild when fighting. Whenever you miss a spell attack or a creature succeeds on a spell saving throw versus your spell save DC, you can roll on the Wild Magic Surge table found on page 104 of the <em>Player’s Handbook</em>.</p>
+            </description>
+            <sheet>
+                <description>Whenever you miss a spell attack or a creature succeeds on a spell saving throw versus your spell save DC, you can roll on the Wild Magic Surge table found on page 104 of the Player’s Handbook.</description>
+            </sheet>
+        </element>
+        <element name="Trotter’s Secrets" type="Archetype Feature" source="GrimmDark" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_WILD_TROTTER_TROTTERS_SECRETS">
+            <description>
+                <p>Starting at the 15th level, you have begun to learn the secrets of the feywild’s chaotic nature. You and up to 4 other creatures of your choice have advantage on all saving throws from environmental obstacles while in a favored terrain granted to you by the Feywild Tracker feature.</p>
+                <p class="indent">Additionally, your long study of the world around you has allowed you access to some of their magics. You add the <em>compulsion</em>, <em>phantasmal killer</em>, and <em>polymorph</em> spells to your spells known list.</p>
+            </description>
+            <sheet>
+                <description>You and up to 4 other creatures of your choice have advantage on all saving throws from environmental obstacles while in a favored terrain granted to you by the Feywild Tracker feature.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_COMPULSION" spellcasting="Ranger" known="true" level="15" />
+                <grant type="Spell" id="ID_PHB_SPELL_PHANTASMAL_KILLER" spellcasting="Ranger" known="true" level="15" />
+                <grant type="Spell" id="ID_PHB_SPELL_POLYMORPH" spellcasting="Ranger" known="true" level="15" />
+            </rules>
+        </element>
+    
+</elements>

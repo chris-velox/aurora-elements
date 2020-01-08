@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Tradition of the Cauldron Arcane Tradition</name>
+        <update version="0.0.1">
+            <file name="wizard-tradition-of-the-cauldron.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/grimmdark/wizard-tradition-of-the-cauldron.xml" />
+        </update>
+    </info>
+    
+    <element name="Tradition of the Cauldron" type="Archetype" source="GrimmDark" id="ID_STRIDERT_GRIMMDARD_ARCHETYPE_WIZARD_TRADITION_OF_THE_CAULDRON">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>As a member of the School of the Cauldron, you have forsaken the knowledge that your fellow wizards and witches seek out. Instead, you want the dark and arcane power of the fey and their tales. Much like the mythic Baba Yaga or Salem Witch, your magic is exev cuted through ritual and dark tradition, and often ends with curses and hexes being placed on your unwitting foes.</p>
+            <div element="THE_WITCHS_SECRET" />
+            <div element="CAULDRON_MAGIC" />
+            <div element="EXTRA_PREPARATIONS" />
+            <div element="OVERFLOWING_CAULDRON" />
+            <div element="CURSE_YOU,_AND_YOUR_LITTLE_DOG_TOO" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="THE_WITCHS_SECRET" level="2" />
+            <grant type="Archetype Feature" id="CAULDRON_MAGIC" level="2" />
+            <grant type="Archetype Feature" id="EXTRA_PREPARATIONS" level="6" />
+            <grant type="Archetype Feature" id="OVERFLOWING_CAULDRON" level="10" />
+            <grant type="Archetype Feature" id="CURSE_YOU,_AND_YOUR_LITTLE_DOG_TOO" level="14" />
+        </rules>
+    </element>
+        <element name="The Witch’s Secret" type="Archetype Feature" source="GrimmDark" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_CAULDRON_THE_WITCHS_SECRET">
+            <description>
+                <p>Starting when you take this archetype at the 2nd level, you add the hex spell to your spells known list. In addition, when performing an Arcana (Intelligence) check, you may add double your proficiency bonus to the number rolled instead ofjust your proficiency bonus.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_HEX" spellcasting="Wizard" known="true" />
+                <stat name="arcana:proficiency" bonus="double" value="proficiency" />
+            </rules>
+        </element>
+        <element name="Cauldron Magic" type="Archetype Feature" source="GrimmDark" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_CAULDRON_CAULDRON_MAGIC">
+            <description>
+                <p>At the 2nd level, you have learned the secrets of cauldron magic. You create a magical cauldron out of cold iron. This cauldron is sentient with an intelligence of 2. It follows basic commands, levitates to follow you, and rolls its own initiative in combat. It can take no actions in combat other than to Dash or to Move. The cauldron has an Armor Class of 15 and hit points equal to twice your Intelligence ability score. If the cauldron is destroyed it takes 8 hours and 100 gp to recreate it. Additionally, the Cauldron has a fly speed of 30 feet. A counterspell or remove curse removes the magical proper ties of the cauldron and destroys it.</p>
+                <p class="indent">As an action, you may prepare a spell of your choice that you know by throwing a number of ingredients into your cauldron. The cauldron must be within 5 feet of you to do this, and you can take no reactions, bonus actions, or movement on your turn if you choose to do this. On the cauldron’s turn the spell is cast without you having to expend a spell slot. On the cauldron‘s turn, you can choose to cancel the spell. A spell prepared through this method cannot have a spell slot higher than 7, and cannot use a higher level spell slot.</p>
+                <p class="indent">If more than 1 minute passes and the spell has not been cast the ingredients are destroyed and the spell must be prepared again.</p>
+            </description>
+            <sheet action="Action">
+                <description>You may prepare a spell of your choice that you know by throwing a number of ingredients into your cauldron. The cauldron must be within 5 feet of you to do this, and you can take no reactions, bonus actions, or movement on your turn if you choose to do this. On the cauldron’s turn the spell is cast without you having to expend a spell slot. The cauldron has an Armor Class of 15 and {{cauldron-magic}} hit points.</description>
+            </sheet>
+            <rules>
+                <stat name="cauldron-magic:hp" value="intelligence" />
+                <stat name="cauldron-magic:hp" value="intelligence" />
+            </rules>
+        </element>
+        <element name="Extra Preparations" type="Archetype Feature" source="GrimmDark" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_CAULDRON_EXTRA_PREPARATIONS">
+            <description>
+                <p>Upon reaching the 6th level, you can add extra components to your cauldron when preparing a spell on your turn. You are able to cast a cantrip of your choice in addition to preparing a spell for your Cauldron Magic feature.</p>
+            </description>
+            <sheet>
+                <description>You are able to cast a cantrip of your choice in addition to preparing a spell for your Cauldron Magic feature.</description>
+            </sheet>
+        </element>
+        <element name="Overflowing Cauldron" type="Archetype Feature" source="GrimmDark" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_CAULDRON_OVERFLOWING_CAULDRON">
+            <description>
+                <p>By the 10th level, you have learned how to create powerful dark secrets within your cauldron. During a long rest, you can prepare a number of spells equal to your Intelligence modifier inside of your cauldron. You must know the spells you wish to prepare and they cannot have a spell level higher than 4th. These spells do not fade after 1 minute and can be refreshed during a long rest.</p>
+            </description>
+            <sheet>
+                <description>During a long rest, you can prepare {{overflowing-cauldron:spells}} spells inside of your cauldron. You must know the spells you wish to prepare and they cannot have a spell level higher than 4th. These spells do not fade after 1 minute and can be refreshed during a long rest.</description>
+            </sheet>
+            <rules>
+                <stat name="overflowing-cauldron:spells" value="1" bonus="base" />
+                <stat name="overflowing-cauldron:spells" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Curse You And Your Little Dog Too" type="Archetype Feature" source="GrimmDark" id="ID_STRIDERT_GRIMMDARK_ARCHETYPE_FEATURE_CAULDRON_CURSE_YOU,_AND_YOUR_LITTLE_DOG_TOO">
+            <description>
+                <p>At the 14th level you have learned how to specifically create a curse tailored towards a target of your choice. As long as you have a lock of hair, a jar of fingernail clippings, a vial of blood, or some other small portion of organic material from your target, you can enhance a spell prepared through your Cauldron Magic feature. A spell enhanced this way gains one of the following effects versus the targeted creature:</p>
+                <ul>
+                    <li>The creature is ruined by your spell. It suffers 1d6 necrotic damage for a number of turns equal to your Intelligence modifier.</li>
+                    <li>The creature is haunted by your spell. They have disadvantage on all saving throws for a number of turns equal to your Intelligence modifier.</li>
+                    <li>The creature’s mind is twisted by your spell. It loses all proficiencies for a number of turns equal to your Intelligence modifier.</li>
+                </ul>
+                <p class="indent">The above effects can be removed by a <em>remove curse</em> spell. Once a creature has been affected by one of the above curses, it cannot be affected by this feature again for 24 hours. Additionally, you can only curse a number of creatures per long rest equal to your Intelligence modifier.</p>
+            </description>
+            <sheet>
+                <description>As long as you have a lock of hair, a jar of fingernail clippings, a vial of blood, or some other small portion of organic material from your target, you can enhance a spell prepared through your Cauldron Magic feature. The creature takes 1d6 necrotic damage for {{curse-you:creatures}} turns; the creature has disadvantage on all savings throws for {{curse-you:creatures}} turns; the creature loses all proficiencies for {{curse-you:creatures}} turns. You can curse up to {{curse-you:creatures}} per long rest.</description>
+            </sheet>
+            <rules>
+                <stat name="curse-you:creatures" value="1" bonus="base" />
+                <stat name="curse-you:creatures" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+    
+</elements>
