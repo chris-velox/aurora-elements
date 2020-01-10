@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Flesh Mage Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-flesh-mage.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/beyond-the-stars/sorcerer-flesh-mage.xml" />
+        </update>
+    </info>
+    
+    <element name="Flesh Mage" type="Archetype" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_SORCERER_FLESH_MAGE">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>Flesh Mages are those who have been warped by the Far Realms, gaining access to magic that lets them warp the very flesh of them and others around them. The versatility and malleability of flesh opens endless possibilities for them.</p>
+            <p class="indent"></p>
+            <div element="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_FLESH_MAGIC" />
+            <div element="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_LIVING_WEAPON" />
+            <div element="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_MALLEABLE_FLESH" />
+            <div element="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_FLESH_IS_POWER" />
+            <div element="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_DURABLE_SKIN" />
+            <div element="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_FLESH_REBORN" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_FLESH_MAGIC" level="1" />
+            <grant type="Archetype Feature" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_LIVING_WEAPON" level="1" />
+            <grant type="Archetype Feature" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_MALLEABLE_FLESH" level="1" />
+            <grant type="Archetype Feature" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_FLESH_IS_POWER" level="6" />
+            <grant type="Archetype Feature" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_DURABLE_SKIN" level="14" />
+            <grant type="Archetype Feature" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_FLESH_REBORN" level="18" />
+        </rules>
+    </element>
+        <element name="Flesh Magic" type="Archetype Feature" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_FLESH_MAGIC">
+            <description>
+                <p>Starting at 1st level, you learn an additional spell when you reach certain levels in this class, as shown in the Flesh Magic Spells table. The spell counts as a sorcerer spell for you, but it doesn’t count against the number of sorcerer spells you know.</p>
+                <table>
+                    <thead>
+                        <tr><td>Sorcerer Level</td><td>Spell</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><i>arms of Hadar</i></td></tr>
+                    <tr><td>3rd</td><td><i>enlarge / reduce</i></td></tr>
+                    <tr><td>5th</td><td><i>vampiric touch</i></td></tr>
+                    <tr><td>9th</td><td><i>polymorph</i></td></tr>
+                    <tr><td>13th</td><td><i>hold monster</i></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_ARMS_OF_HADAR" spellcasting="Sorcerer" known="true" level="1" />
+                <grant type="Spell" id="ID_PHB_SPELL_ENLARGE_REDUCE" spellcasting="Sorcerer" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_VAMPIRIC_TOUCH" spellcasting="Sorcerer" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_POLYMORPH" spellcasting="Sorcerer" known="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" spellcasting="Sorcerer" known="true" level="13" />
+            </rules>
+        </element>
+        <element name="Living Weapon" type="Archetype Feature" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_LIVING_WEAPON">
+            <description>
+                <p>At 1st level, when you choose this sorcerous origin, you have learned to contort and twist portions of your flesh to become a living weapon. As a Bonus Action, you contort portions of your flesh into tentacles to batter your enemies, they have a reach of 10 feet, and deal 1d6 bludgeoning damage. When you create these tentacles and on subsequent turns you can use a bonus action to make an attack with them, using your Charisma Modifier to determine its attack and damage rolls. They last for 1 minute or until you willingly end it (no action required). When you cast a cantrip or spell with a range of touch, you can deliver it through these tentacles.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You contort portions of your flesh into tentacles to batter your enemies, they have a reach of 10 feet, and deal 1d6 bludgeoning damage. You have a +{{charisma:modifier}} bonus to attack and damage rolls with them. They last for 1 minute and can deliver touch spells.</description>
+            </sheet>
+        </element>
+        <element name="Malleable Flesh" type="Archetype Feature" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_MALLEABLE_FLESH">
+            <description>
+                <p>At 1st level, you learn how to warp your flesh to a variety of forms, never stagnant, always changing to suit your needs. As an Action, you can perform one of the following effects below, each effect lasts for 1 hour, or until you end it willingly (no action required):</p>
+                <ul>
+                    <li><strong>Change Self:</strong> You transform your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and distinguishing characteristics, if any. You can make yourself appear as a member of another race, though none of your statistics change. You also can’t appear as a creature of a different size than you, and your basic shape stays the same; if you’re bipedal, you can’t use this spell to become quadrupedal, for instance. At any time for the duration of the effect, you can use your action to change your appearance in this way again.</li>
+                    <li><strong>Hardened Skin:</strong> You can temporarily increase the toughness and density of your skin, changing your Armor Class while Unarmored to be 13 + Your Constitution Modifier + Your Dexterity Modifier.</li>
+                    <li><strong>Extra Appendages:</strong> You can reform your flesh to grow an extra pair of limbs. You can only gain the benefit of items held by two of your arms at any given time, and once per round you can switch which arms you are benefiting from (no action required).</li>
+                </ul>
+            </description>
+            <sheet action="Action">
+                <description>You can perform one of the following effects, which last for 1 hour or you end it: Change Self; Hardened Skin; or Extra Appendages.</description>
+            </sheet>
+        </element>
+        <element name="Flesh is Power" type="Archetype Feature" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_FLESH_IS_POWER">
+            <description>
+                <p>Starting at 6th level, you have found strength in the flesh of others, and gain so by consuming it. You can spend 1 minute eating the flesh of another being, when you consume the flesh of a corporeal creature that died no longer than 24 hours ago, you gain 1 sorcery point, and 1 hit point for every hit die that the deceased creature you feast upon had (a minimum of 1). In addition, you acquire a fragment of a memory that the creature retained in life, this could be its last emotional state before it died, the last fleeting moments of what it saw before it died, something that loomed large in its mind (such as someone or something it loved, an important goal or something it hated) or some form of important information or such, it could likewise simply be a random memory of no consequence, your DM has discretion in this case. Lastly, you take on temporary aspects of the consumed creature and gain an additional benefit depending on the type of creature you feast on. If you consume the flesh of more than one kind of creature within the same hour, the previous effect dissipates and the most recent effect takes place.</p>
+                <ul>
+                    <li><strong>Aberration:</strong> for the next hour, your body becomes alien in appearance, unnatural and perverted by the farrealm. For the duration, you have resistance to psychic damage and can cast the "Detect Thoughts" spell, though you must still spend a spell slot as normal to cast the spell.</li>
+                    <li><strong>Beast:</strong> For the next hour, you become more beastial in appearance, your movement speed increases by an additional 10 feet, and you gain advantage on Strength (Athletics) checks.</li>
+                    <li><strong>Dragon:</strong> For the next hour, you gain resistance to one damage type (if any) that the deceased creature you consumed had, if none, then you simply gain a +1 bonus to your Armor Class, and your skin becomes slightly covered in scales mimicking the consumed creature.</li>
+                    <li><strong>Fey:</strong> For the next hour, you have immunity to the charmed condition and magic cannot put you to sleep.</li>
+                    <li><strong>Fiend:</strong> For the next hour, you gain resistance to bludgeoning, piercing, and slashing damage from non-magical weapons.</li>
+                    <li><strong>Giant:</strong> For the next hour, you have advantage on strength checks and saving throws.</li>
+                    <li><strong>Humanoid:</strong> For the next hour, your hit point maximum and current hit points are increased by 15 for the duration.</li>
+                    <li><strong>Undead (Corporeal Only):</strong> For the next hour, you smell of the stench of death, you gain advantage on saving throws against poison and disease, and gain resistance against poison damage.</li>
+                </ul>
+                <p class="indent">You can only feast on the flesh of others so much in one day before it sickens you. You can only use this feature a number of times equal to 1 + Your Constitution Modifier, regaining expended uses of it after a long rest.</p>
+            </description>
+            <sheet usage="{{flesh-is-power:uses}}/Long Rest">
+                <description>You can spend 1 minute eating the flesh of another being, when you consume the flesh of a corporeal creature that died no longer than 24 hours ago, you gain 1 sorcery point, and 1 hit point for every hit die that the deceased creature you feast upon had (a minimum of 1). You can get a glimpse of its last memory and temporarily gain aspects of the creature depending on the type of creature.</description>
+            </sheet>
+            <rules>
+                <stat name="flesh-is-power:uses" value="1" />
+                <stat name="flesh-is-power:uses" value="constitution:modifier" />
+            </rules>
+        </element>
+        <element name="Durable Skin" type="Archetype Feature" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_DURABLE_SKIN">
+            <description>
+                <p>upon reaching 14th level, the constant changes your flesh has gone through has permanently toughened it, bludgeoning, piercing, and slashing damage that you take from non-magical weapons is reduced by 3.</p>
+            </description>
+            <sheet>
+                <description>Bludgeoning, piercing, and slashing damage that you take from non-magical weapons is reduced by 3.</description>
+            </sheet>
+        </element>
+        <element name="Flesh Reborn" type="Archetype Feature" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FLESH_MAGE_FLESH_REBORN">
+            <description>
+                <p>Starting at 18th level, your body can stitch itself anew from even the most grievous of wounds, even missing limbs. Your body can regrow missing or severed limbs after a short rest, alternatively you can reattach a severed limb to the stump and cause it to magically stitch itself anew. If you are dropped to 0 hit points, you can spend any number of sorcery points to instead be dropped to 1 hit point and gain additional hit points equal to your Constitution Modifier times the amount of sorcery points you expended. Once you use the latter portion of this feature, you cannot do so again until after a short or long rest.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>Your body can regrow missing or severed limbs after a short rest, alternatively you can reattach a severed limb to the stump and cause it to magically stitch itself anew. If you are dropped to 0 hit points, you can spend any number of sorcery points to instead be dropped to 1 hit point and gain additional hit points equal to {{constitution:modifier}} times the amount of sorcery points you expended.</description>
+            </sheet>
+        </element>
+    
+</elements>

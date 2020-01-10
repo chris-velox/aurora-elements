@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Starfinder Ranger Conclave</name>
+        <update version="0.0.1">
+            <file name="ranger-starfinder.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/beyond-the-stars/ranger-starfinder.xml" />
+        </update>
+    </info>
+    
+    <element name="Starfinder" type="Archetype" source="Beyond the Stars" id="ID_NOVRONIAN_BTS_ARCHETYPE_RANGER_STARFINDER">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Rangers of the Starfinder Conclave find home in the night sky. They are wayfarers, sailors, and guides, mapping the roads they’ve traveled and the experiences they’ve had within the stars. A starfinder’s celestial connection allows them to see the night for its true vulnerable and gentle self. What terror lays in the darkest corners of the night are the starfinder’s quarry, for the night should provide solace and calmness, not fear.</p>
+            <div element="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_STARFINDER_MAGIC" />
+            <div element="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_STAR_CHILD" />
+            <div element="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_CELESTIAL_TETHER" />
+            <div element="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_BLINDING_BRILLIANCE" />
+            <div element="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_RADIANT_STRIKE" />
+            <div element="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_THROUGH_THE_DARK" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_STARFINDER_MAGIC" level="3" />
+            <grant type="Archetype Feature" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_STAR_CHILD" level="3" />
+            <grant type="Archetype Feature" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_CELESTIAL_TETHER" level="3" />
+            <grant type="Archetype Feature" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_BLINDING_BRILLIANCE" level="7" />
+            <grant type="Archetype Feature" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_RADIANT_STRIKE" level="11" />
+            <grant type="Archetype Feature" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_THROUGH_THE_DARK" level="15" />
+        </rules>
+    </element>
+        <element name="Starfinder Magic" type="Archetype Feature" source="Beyond the Stars" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_STARFINDER_MAGIC">
+            <description>
+                <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Starfinder Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+                <table>
+                    <thead>
+                        <tr><td>Ranger Level</td><td>Spell</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><i>guiding bolt</i></td></tr>
+                    <tr><td>5th</td><td><i>locate object</i></td></tr>
+                    <tr><td>9th</td><td><i>remove curse</i></td></tr>
+                    <tr><td>13th</td><td><i>Mordenkainen’s private sanctum</i></td></tr>
+                    <tr><td>17th</td><td><i>scrying</i></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_GUIDING_BOLT" spellcasting="Ranger" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_LOCATE_OBJECT" spellcasting="Ranger" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_REMOVE_CURSE" spellcasting="Ranger" known="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_MORDENKAINENS_PRIVATE_SANCTUM" spellcasting="Ranger" known="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_SCRYING" spellcasting="Ranger" known="true" level="17" />
+            </rules>
+        </element>
+        <element name="Star Child" type="Archetype Feature" source="Beyond the Stars" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_STAR_CHILD">
+            <description>
+                <p>Starting at 3rd level, you have become accustomed to the night’s embrace. You gain darkvision out to a range of 60 feet. If you already have darkvision from your race, its range increases by 30 feet. While under the night sky, you always know which way is north and you can’t become lost, magically or otherwise.</p>
+            </description>
+            <sheet>
+                <description>While under the night sky, you always know which way is north and you can’t become lost, magically or otherwise.</description>
+            </sheet>
+            <rules>
+                <grant type="Vision" id="ID_VISION_DARKVISION" />
+            </rules>
+        </element>
+        <element name="Celestial Tether" type="Archetype Feature" source="Beyond the Stars" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_CELESTIAL_TETHER">
+            <description>
+                <p>When you enter this conclave at 3rd level, you can guide those within the dark. As a bonus action, you can select a willing creature within 60 feet of you that you can see. You form a tether made of starlight to that willing creature, which only the two of you can see. While tethered to a willing creature, both of you always know each other’s locations, and you are both aware of the other’s emotions. That creature also gains 60 feet of darkvision, or an additional 30 if they already have it. As a bonus action on subsequent turns while tethered to a willing creature, you can grant that creature a number of temporary hit points equal to your Wisdom modifier (minimum of 1), which disappear if the tether breaks. In addition, whenever you damage a hostile creature with a weapon attack on your turn, you can choose to tether yourself to it through starlight, which only you can see. That creature cannot benefit from being invisible. Once per turn, you can deal extra radiant damage equal to your Wisdom modifier (minimum 1) when you hit a tethered hostile creature with a weapon attack. The tether breaks if you dismiss it as a bonus action, if you create a second tether, or if a tethered creature is further than 150 feet away from you.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can tether yourself to a willing creature within 60 feet of you that you can see. That gains 60 feet of darkvision, or an additional 30 if they already have it. As a bonus action on subsequent turns while tethered, you can grant that creature {{celestial-tether:temp-hp}} temporary hit points, which disappear if the tether breaks. When you damage a hostile creature, you can create a tether. That creature can’t be invisible to you and you deal an extra {{celestial-tether:temp-hp}} radiant damage once per turn when you hit.</description>
+            </sheet>
+            <rules>
+                <stat name="celestial-tether:temp-hp" value="1" bonus="base" />
+                <stat name="celestial-tether:temp-hp" value="wisdom:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Blinding Brilliance" type="Archetype Feature" source="Beyond the Stars" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_BLINDING_BRILLIANCE">
+            <description>
+                <p>At 7th level, you can call upon the dormant starlight that rests within you to stave off danger. As an action, or a reaction when a creature targets you with an attack, you can force the target to make a Constitution saving throw or become blinded until the start of the target’s next turn. The target for this feature must be within 60 feet of you. After you use this feature, you shed bright light in a 30 feet radius, and dim light for an additional 30 feet. This light lasts for 1 minute or until you dismiss it (no action required). You can use this feature a number of times equal to your Wisdom modifier (a minimum of once) and regain expended uses after you complete a long rest.</p>
+            </description>
+            <sheet uses="{{blinding-brilliance:uses}}/Long Rest">
+                <description>As an action, or a reaction when a creature targets you with an attack, you can force the target to make a Constitution saving throw or become blinded until the start of the target’s next turn.</description>
+            </sheet>
+            <rules>
+                <stat name="blinding-brilliance:uses" value="1" bonus="base" />
+                <stat name="blinding-brilliance:uses" value="wisdom:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Radiant Strike" type="Archetype Feature" source="Beyond the Stars" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_RADIANT_STRIKE">
+            <description>
+                <p>By 11th level, your stellar connection allows you to imbue your attacks with radiance. When an ally you are tethered to with your Celestial Tether deals damage against a creature, you can immediately make one weapon attack against the same target. You can choose to deal radiant damage with this attack. You can’t make this attack again until the start of your next turn.</p>
+            </description>
+            <sheet>
+                <description>When an ally you are tethered to with your Celestial Tether deals damage against a creature, you can immediately make one weapon attack against the same target. You can choose to deal radiant damage with this attack. You can’t make this attack again until the start of your next turn.</description>
+            </sheet>
+        </element>
+        <element name="Through the Dark" type="Archetype Feature" source="Beyond the Stars" id="ID_NOVRONIAN_BTS_ARCHETYPE_FEATURE_STARFINDER_THROUGH_THE_DARK">
+            <description>
+                <p>At 15th level, you are the night’s embrace and the star’s shine, taking lost souls through the haunting dark. You can tether yourself up to a number of creatures equal to half your ranger level. If you create another tether past this limit, you must choose another tether to break. When allied creatures you are tethered to deal damage, once per turn, they can deal additional radiant damage equal to your Wisdom modifier (minimum of 1).</p>
+            </description>
+            <sheet>
+                <description>You can tether yourself to up to {{level:ranger:half}} creatures. When tethered allies deal damage, once per turn they deal {{celestial-tether:temp-hp}} additional radiant damage.</description>
+            </sheet>
+        </element>
+    
+</elements>

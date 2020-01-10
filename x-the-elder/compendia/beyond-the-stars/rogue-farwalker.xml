@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Farwalker Roguish Archetype</name>
+        <update version="0.0.1">
+            <file name="rogue-farwalker.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/beyond-the-stars/rogue-farwalker.xml" />
+        </update>
+    </info>
+    
+    <element name="Farwalker" type="Archetype" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_ROGUE_FARWALKER">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Slipping between the veil, a Farwalker is an individual who through some various means has the ability to walk between worlds, between dimensions. A Farwalker can just as easily slip through space and between worlds as easily as someone opens a door to a room. Farwalkers have glimpsed places many would never dream, as many growing up have little to no control over their abilities, they are exceptionally rare as few ever live to adulthood as they meet unfortunate mishaps and accidents from their teleporting. Whatever accident or origination gave you your magicks, you have the capability to master space, master the maneuverinng between worlds and nothing is off-limits to a Farwalker!</p>
+            <div element="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_PHASE" />
+            <div element="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_KNOWLEDGE_OF_THE_BEYOND" />
+            <div element="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_JOINT_STEP" />
+            <div element="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_FAR_RETREAT" />
+            <div element="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_A_STEP_BEYOND" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_PHASE" level="3" />
+            <grant type="Archetype Feature" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_KNOWLEDGE_OF_THE_BEYOND" level="3" />
+            <grant type="Archetype Feature" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_JOINT_STEP" level="9" />
+            <grant type="Archetype Feature" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_FAR_RETREAT" level="13" />
+            <grant type="Archetype Feature" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_A_STEP_BEYOND" level="17" />
+        </rules>
+    </element>
+        <element name="Phase" type="Archetype Feature" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_PHASE">
+            <description>
+                <p>Starting at 3rd level, you learn how to step through the veil between space and time, and flicker to appear a short distance elsewhere. You can use your bonus action to phase between worlds and teleport up to half your movement speed. When you reappear, your form flickers as its grasp on the material world is still weak, causing you to distort and making it difficult for foes to predict your movements. After teleporting, you have advantage on your next melee weapon attack you make before the end of this turn. You can use this feature a number of times equal to 1 + your Charisma modifier, regaining expended uses of it after a short or long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{phase:uses}}/Short Rest">
+                <description>You can use your bonus action to phase between worlds and teleport up to half your movement speed. When you reappear, your form flickers as its grasp on the material world is still weak, causing you to distort and making it difficult for foes to predict your movements. After teleporting, you have advantage on your next melee weapon attack you make before the end of this turn.</description>
+            </sheet>
+            <rules>
+                <stat name="phase:uses" value="1" />
+                <stat name="phase:uses" value="charisma:modifier" />
+            </rules>
+        </element>
+        <element name="Knowledge of the Beyond" type="Archetype Feature" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_KNOWLEDGE_OF_THE_BEYOND">
+            <description>
+                <p>At 3rd level, you gain proficiency in the Intelligence (Arcana) skill. If you already have proficiency in said skill, then you can add double your proficiency bonus to checks made with it.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+    			<grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_ARCANA" />
+            </rules>
+        </element>
+        <element name="Joint Step" type="Archetype Feature" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_JOINT_STEP">
+            <description>
+                <p>Starting at 9th level, your skill with teleporting has improved to the point that you can bring others along. Whenever you teleport, you can bring one willing creature within 5 of you along with the teleportation, At the end of which, they appear within 5 feet of you in an unoccupied space. If there are no unoccupied spaces within 5 feet of you, they forcibly return to where they were prior to the teleport and take 1d10 force damage. If you attempt to bring an unwilling creature, they must make a Dexterity Saving Throw equal to 8 + Your Proficiency Bonus + your Charisma Modifier. On a successful save, they are not forced along with you.</p>
+            </description>
+            <sheet>
+                <description>Whenever you teleport, you can bring one willing creature within 5 of you along with the teleportation, At the end of which, they appear within 5 feet of you in an unoccupied space. If you attempt to bring an unwilling creature, they must make a Dexterity saving throw (DC {{joint-step:save-dc}}) or be forced along with you.</description>
+            </sheet>
+            <rules>
+                <stat name="joint-step:save-dc" value="8" />
+                <stat name="joint-step:save-dc" value="proficiency" />
+                <stat name="joint-step:save-dc" value="charisma:modifier" />
+            </rules>
+        </element>
+        <element name="Far Retreat" type="Archetype Feature" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_FAR_RETREAT">
+            <description>
+                <p>Starting at 13th level, you can slip away between worlds on a subconcious level to protect yourself from harm. When you are struck by a melee or ranged attack, but before damage is rolled, you can use your reaction to teleport up to your movement speed. Once you use this feature, you cannot do so again until after a short or long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="1/Short Rest">
+                <description>When you are struck by a melee or ranged attack, but before damage is rolled, you can teleport up to your movement speed.</description>
+            </sheet>
+        </element>
+        <element name="A Step Beyond" type="Archetype Feature" source="Beyond the Stars" id="ID_DMMALUS_BTS_ARCHETYPE_FEATURE_FARWALKER_A_STEP_BEYOND">
+            <description>
+                <p>Starting at 17th level, Your experience of the hidden paths between worlds, between the stars, has rewarded you with newfound mastery of your abilities. You gain the following benefits:</p>
+                <ul>
+                    <li>You can use your Phase feature at-will, and now teleport a distance equal to your total movement speed, instead of half.</li>
+                    <li>You can bring a number of willing creatures equal to your Charisma Modifier (minimum of 1) for your "Joint Step" feature.</li>
+                    <li>As an Action, you can teleport or plane shift as if you had cast the <em>teleport</em> or <em>plane shift</em> spell, however you can only target yourself and cannot bring others with you. If you Teleport as per this feature, your GM rolls his d100 with advantage when consulting the teleportation mishap chart. If performing a Plane Shift, you can ignore the material component requirement for the Plane Shift, but you must know the name and have a specific location known of the plane you are attempting to travel to. Once you use this portion of the feature, you cannot do so again until after a long rest.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>You can use your Phase feature at-will, and now teleport a distance equal to your total movement speed, instead of half. You can bring up to {{phase:uses}} willing creatures for your Joint Step feature. As an action you can cast teleport or plane shift. Once you use this latter feature, you cannot do so again until you finish a long rest.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_TELEPORT" />
+                <grant type="Spell" id="ID_PHB_SPELL_PLANE_SHIFT" />
+            </rules>
+        </element>
+    
+</elements>
