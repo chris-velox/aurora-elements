@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Duelist Variant Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="variant-fighter-duelist.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/variant-fighter/variant-fighter-duelist.xml" />
+        </update>
+    </info>
+    
+    <element name="Duelist" type="Archetype" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_VF_DUELIST">
+        <supports>Variant Martial Archetype</supports>
+        <description>
+            <p>The archetypal duelist has gained his skill in combat as a product of his upbringing. Sometimes a civilized form of combat, married with an overt arrogance. Other times a crass combination of vicious mockery and infamous legend. Those who model themselves after this archetype combine fencing and bravado to entangle and distract foes, utilizing a final strike to put an end to cowards or punctuate whatever point they were making.</p>
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_SIGNATURE_MANEUVER" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_TAUNT" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_QUICK_RETORT" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_IMPROVED_DUELIST" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_INSOLENT_CUR" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_PUNISHING_FLOURISH" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_SIGNATURE_MANEUVER" level="3" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_TAUNT" level="3" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_QUICK_RETORT" level="7" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_IMPROVED_DUELIST" level="10" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_INSOLENT_CUR" level="15" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_PUNISHING_FLOURISH" level="18" />
+        </rules>
+    </element>
+        <element name="Signature Maneuver" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_SIGNATURE_MANEUVER">
+            <description>
+                <p>At 3rd level, you know the Finisher maneuver in addition to other maneuvers you know.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_FINISHER" level="3" />
+            </rules>
+        </element>
+        <element name="Taunt" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_TAUNT">
+            <description>
+                <p>Also at 3rd level, you have learned to entangle your foe in a deadly dance of strikes. Once per round after making a weapon attack against a creature, you can taunt them. This taunt lasts until the end of your next turn. When a creature taunted by you makes an attack or casts a spell that doesn’t include you as a target, you can use your reaction to cast <em>vicious mockery</em> on that creature. Charisma is your spellcasting ability for this spell.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_VICIOUS_MOCKERY" />
+                </div>
+            </description>
+            <sheet action="Reaction">
+                <description>Once per round after making a weapon attack against a creature, you can taunt them. This taunt lasts until the end of your next turn. When a creature taunted by you makes an attack or casts a spell that doesn’t include you as a target, you can cast vicious mockery on that creature. Charisma is your spellcasting ability for this spell.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_VICIOUS_MOCKERY" level="3" />
+            </rules>
+        </element>
+        <element name="Quick Retort" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_QUICK_RETORT">
+            <description>
+                <p>Starting at 7th level, your gilded tongue can get you out of as many confrontations as it gets you into. When making an Intimidation or Persuasion check against a creature, you add double your proficiency bonus if you are deliberating insulting or threatening that creature, or if that creature is taunted by you.</p>
+            </description>
+            <sheet>
+                <description>When making an Intimidation or Persuasion check against a creature, you add double your proficiency bonus if you are deliberating insulting or threatening that creature, or if that creature is taunted by you.</description>
+            </sheet>
+        </element>
+        <element name="Improved Duelist" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_IMPROVED_DUELIST">
+            <description>
+                <p>Starting at 10th level, your training has honed the harmony between your weapon and fighting techniques.</p>
+                <p class="indent">If you have successfully hit a creature with a weapon attack this round, that creature has disadvantage on any saving throw from the next maneuver you use against it before the start of its next turn.</p>
+            </description>
+            <sheet>
+                <description>If you have successfully hit a creature with a weapon attack this round, that creature has disadvantage on any saving throw from the next maneuver you use against it before the start of its next turn.</description>
+            </sheet>
+        </element>
+        <element name="Insolent Cur" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_INSOLENT_CUR">
+            <description>
+                <p>Upon reaching 15th level, your confidence inspires fear in your enemies.</p>
+                <p class="indent">When you use your Action Surge feature, you can spout a threat to any number of creatures within 20 feet that can see and hear you. Each creature affected must make a Wisdom saving throw against your maneuver save DC. Any creatures that fail this saving throw drop whatever they are holding and become frightened. If you have taunted a creature, it automatically fails this saving throw.</p>
+                <p class="indent">A creature can repeat this saving throw at the end of any turn where it cannot see you or cannot hear you. On a successful save, they are no longer frightened.</p>
+            </description>
+            <sheet>
+                <description>When you use your Action Surge feature, you can spout a threat to any number of creatures within 20 feet that can see and hear you. Each creature affected must make a Wisdom saving throw against your maneuver save DC. Any creatures that fail this saving throw drop whatever they are holding and become frightened. If you have taunted a creature, it automatically fails this saving throw.</description>
+            </sheet>
+        </element>
+        <element name="Punishing Flourish" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_DUELIST_PUNISHING_FLOURISH">
+            <description>
+                <p>Starting at 18th level, your mastery and flourish leave your opponents open to more punishing strikes.</p>
+                <p class="indent">The next attack you make against a creature after you have successfully affected it with a maneuver deals an extra 2d8 + Charisma modifier damage.</p>
+            </description>
+            <sheet>
+                <description>The next attack you make against a creature after you have successfully affected it with a maneuver deals an extra 2d8 + {{charisma:modifier}} damage.</description>
+            </sheet>
+        </element>
+
+    <!-- Maneuvers -->
+        <element name="Finisher" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_FINISHER">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_DUELIST</requirements>
+            <prerequisite>Duelist archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Duelist archetype</p>
+                <p>When you take the Attack action and make a melee weapon attack with a light or finesse weapon that you’re holding in one hand, you can use a bonus action to make a ranged weapon attack with a light weapon that you’re holding in the other hand.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The bonus action ranged weapon attack roll hits on any result other than a 1, and is a critical hit on a roll of 19-20.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>When you take the Attack action and make a melee weapon attack with a light or finesse weapon that you’re holding in one hand, you can make a ranged weapon attack with a light weapon that you’re holding in the other hand. Superiority: The bonus action ranged weapon attack roll hits on any result other than a 1, and is a critical hit on a roll of 19-20.</description>
+            </sheet>
+        </element>
+        <element name="Foil" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_FOIL">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_DUELIST</requirements>
+            <prerequisite>Duelist archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Duelist archetype</p>
+                <p>When a creature misses you with a melee attack, you can use your reaction to attempt to disarm them as long as you have an empty hand to do so. You must make a Strength or Dexterity check, with a DC equal to the creature’s attack roll. If you succeed, you disarm them of that weapon, and it falls to the ground at your feet.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> If you successfully disarm the creature, instead of the weapon dropping to the ground you can instead be wielding the weapon.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When a creature misses you with a melee attack, you can attempt to disarm them as long as you have an empty hand to do so. You must make a Strength or Dexterity check, with a DC equal to the creature’s attack roll. If you succeed, you disarm them of that weapon, and it falls to the ground at your feet. Superiority: If you successfully disarm the creature, instead of the weapon dropping to the ground you can instead be wielding the weapon.</description>
+            </sheet>
+        </element>
+        <element name="Flourish" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_FLOURISH">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_DUELIST</requirements>
+            <prerequisite>Duelist archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Duelist archetype</p>
+                <p>When you take the Attack action on your turn, you can forgo one of your attacks to attempt a defensive flourish against a creature within range of a melee weapon you’re holding. Instead of an attack roll, the target must make a Dexterity saving throw. On a failed save, that creature has disadvantage on attack rolls against you until the start of your next turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> In addition, that creature cannot willing move away from you until the start of your next turn.</p>
+            </description>
+            <sheet>
+                <description>When you take the Attack action on your turn, you can forgo one of your attacks. Instead of an attack roll, the target must make a Dexterity saving throw. On a failed save, that creature has disadvantage on attack rolls against you until the start of your next turn. Superiority: In addition, that creature cannot willing move away from you until the start of your next turn.</description>
+            </sheet>
+        </element>
+
+    
+</elements>

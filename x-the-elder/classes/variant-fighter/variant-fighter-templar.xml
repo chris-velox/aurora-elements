@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Templar Variant Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="variant-fighter-templar.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/variant-fighter/variant-fighter-templar.xml" />
+        </update>
+    </info>
+    
+    <element name="Templar" type="Archetype" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_VF_TEMPLAR">
+        <supports>Variant Martial Archetype</supports>
+        <description>
+            <p>Those who model themselves after the archetypal Templar have dedicated themselves to a singular divine directive. To root out profane magic and uphold the virtues of their deity. Templars receive the divine accent of their power from their devotion to a particular deity who is opposed to arcane magic.</p>
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_CHANNEL_DIVINITY" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_BLESSED_DIRECTION" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_COUNTERMAGIC" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_RESIDUAL_DEFENSE" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_BOON_OF_FERVOR" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_DISRUPTION" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_CHANNEL_DIVINITY" level="3" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_BLESSED_DIRECTION" level="3" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_COUNTERMAGIC" level="7" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_RESIDUAL_DEFENSE" level="10" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_BOON_OF_FERVOR" level="15" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_DISRUPTION" level="18" />
+        </rules>
+    </element>
+        <element name="Channel Divinity" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_CHANNEL_DIVINITY">
+            <description>
+                <p>At 3rd level, you gain the ability to channel divine energy directly from your deity, using that energy to produce a magical effect. You start with one such effect: Gift. When you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again. Some Channel Divinity effects require saving throws. The DC for these spells is 8 + your proficiency bonus + your Charisma modifier.</p>
+                <p class="indent">Beginning at 6th level, you can use your Channel Divinity feature twice between rests. When you finish a short or long rest, you regain your expended uses.</p>
+                <h5>Channel Divinity: Gift</h5>
+                <p>As an action, you present a symbol of your faith and speak a prayer calling for assistance from your deity. When you use this feature, you can cast a single divination or enchantment spell from the cleric spell list of an appropriate level or lower, as shown on the Gifted Magic table below. Charisma is your spellcasting modifier for this spell.</p>
+                <h5 class="caption">Gifted Magic</h5>
+                <table>
+                    <thead>
+                        <tr><td>Level</td><td>Spell Level</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td>1st level</td></tr>
+                    <tr><td>7th</td><td>2nd level</td></tr>
+                    <tr><td>13th</td><td>3rd level</td></tr>
+                    <tr><td>19th</td><td>4th level</td></tr>
+                </table>
+            </description>
+            <sheet usage="{{channel-divinity:uses}}/Short Rest">
+                <description>You channel divine energy to produce a magical effect. Your Channel Divinity save DC is {{channel-divinity:save-dc}}.</description>
+            </sheet>
+            <rules>
+                <stat name="channel-divinity:uses" value="1" level="3" />
+                <stat name="channel-divinity:uses" value="1" level="6" />
+                <stat name="channel-divinity:save-dc" value="8" />
+                <stat name="channel-divinity:save-dc" value="proficiency" />
+                <stat name="channel-divinity:save-dc" value="charisma:modifier" />
+                <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_CHANNEL_DIVINITY_GIFT" level="3" />
+            </rules>
+        </element>
+            <element name="Channel Divinity: Gift" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_CHANNEL_DIVINITY_GIFT">
+                <compendium display="false" />
+                <description>
+                    <p>As an action, you present a symbol of your faith and speak a prayer calling for assistance from your deity. When you use this feature, you can cast a single divination or enchantment spell from the cleric spell list of an appropriate level or lower, as shown on the Gifted Magic table below. Charisma is your spellcasting modifier for this spell.</p>
+                </description>
+                <sheet usage="Channel Divinity" alt="Gift" action="Action">
+                    <description>You can cast a single divination or enchantment spell from the cleric spell list of {{channel-divinity:gift:spell-level}} level or lower. Charisma is your spellcasting modifier for this spell.</description>
+                </sheet>
+                <rules>
+                    <stat name="channel-divinity:gift:spell-level" inline="true" value="1st" level="3" />
+                    <stat name="channel-divinity:gift:spell-level" inline="true" value="2nd" level="7" />
+                    <stat name="channel-divinity:gift:spell-level" inline="true" value="3rd" level="13" />
+                    <stat name="channel-divinity:gift:spell-level" inline="true" value="4th" level="19" />
+                </rules>
+            </element>
+        <element name="Blessed Direction" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_BLESSED_DIRECTION">
+            <description>
+                <p>Also at 3rd level, you learn the guidance cantrip and gain proficiency in either Religion or History (your choice). You also gain the ability to use a holy symbol as a spellcasting focus for spells you cast granted by your Channel Divinity.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_GUIDANCE" known="true" />
+                <select type="Proficiency" name="Skill Proficiency (Templar)" supports="ID_PROFICIENCY_SKILL_RELIGION|ID_PROFICIENCY_SKILL_HISTORY" level="3" />
+                <grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_HOLY_SYMBOL" />
+            </rules>
+        </element>
+        <element name="Countermagic" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_COUNTERMAGIC">
+            <description>
+                <p>Starting at 7th level, you’ve become adept at predicting the nature of magic and delaying its effect. If a creature you can see or hear within 60 feet casts a spell, you can use your reaction to attempt to stall its effect and potentially end it. If that spell is 3rd level or lower and has a casting time of 1 action or less, that creature must make a contested Charisma check to resist your delaying effect. If you succeed, the creature is forced to concentrate on the spell until it’s next turn, and the creature must cast the spell immediately at the start of it’s turn (no action required). If it can’t, the spell is wasted.</p>
+                <p class="indent">You can use this feature twice. You regain all expended uses after completing a long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="2/Long Rest">
+                <description>If a creature you can see or hear within 60 feet casts a spell, you can attempt to stall its effect and potentially end it. If that spell is 3rd level or lower and has a casting time of 1 action or less, that creature must make a contested Charisma check to resist your delaying effect. If you succeed, the creature is forced to concentrate on the spell until it’s next turn, and the creature must cast the spell immediately at the start of it’s turn (no action required). If it can’t, the spell is wasted.</description>
+            </sheet>
+        </element>
+        <element name="Residual Defense" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_RESIDUAL_DEFENSE">
+            <description>
+                <p>Beginning at 10th level, your experience dealing with magic and its effects has given you a sheen of reflex against it. After taking damage from a spell or magical source, you can use your reaction to gain resistance to that damage type until the end of your next turn. If a single spell or effect deals damage of more than one type, you gain resistances to all types dealt.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>After taking damage from a spell or magical source, you can gain resistance to that damage type until the end of your next turn. If a single spell or effect deals damage of more than one type, you gain resistances to all types dealt.</description>
+            </sheet>
+        </element>
+        <element name="Boon of Fervor" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_BOON_OF_FERVOR">
+            <description>
+                <p>At 15th level, your deity has rewarded you for your furious pursuit of your goal. You and any number of creatures within 30 feet that can see or hear you gain temporary hit points equal to your Fighter level when you use Action Surge.</p>
+            </description>
+            <sheet>
+                <description>You and any number of creatures within 30 feet that can see or hear you gain {{level:variant fighter}} temporary hit points when you use Action Surge.</description>
+            </sheet>
+        </element>
+        <element name="Disruption" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_TEMPLAR_DISRUPTION">
+            <description>
+                <p>Starting at 18th level, your mastery over fighting spellcasters has allowed you to develop a technique for interrupting their ongoing magical boons. Any maneuver you use that affects a creature forces that creature to make a Constitution saving throw to maintain their concentration. The DC for this is equal to your maneuver save DC. If the maneuver also deals damage to the creature, it must make a separate concentration check for that damage as normal.</p>
+            </description>
+            <sheet>
+                <description>Any maneuver you use that affects a creature forces that creature to make a Constitution saving throw to maintain their concentration. The DC for this is equal to your maneuver save DC. If the maneuver also deals damage to the creature, it must make a separate concentration check for that damage as normal.Templar</description>
+            </sheet>
+        </element>
+
+    <!-- Maneuvers -->
+        <element name="Divination Sphere" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_DIVINATION_SPHERE">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_TEMPLAR</requirements>
+            <prerequisite>Templar archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Templar archetype</p>
+                <p>As an action, you can summon a ball of light that you hold in both of your hands. With no action required of you, you can speak a command word and its surfaces will shift and create spikes pointing in the direction of magical effects within 30 feet of you. The length of each spike is a rough estimate of the distance from the effect. Magic behind 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt are obscured from the abilities of this maneuver. This effect ends immediately if you let go of the ball, take damage, or take any other actions.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> This effect floats in front of you, freeing your hands. It lasts up to 1 minute, but you must concentrate on it as though you were concentrating on a spell.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can summon a ball of light that you hold in both of your hands. With no action required of you, you can speak a command word and its surfaces will shift and create spikes pointing in the direction of magical effects within 30 feet of you. Superiority: This effect floats in front of you, freeing your hands. It lasts up to 1 minute, but you must concentrate on it as though you were concentrating on a spell.</description>
+            </sheet>
+        </element>
+        <element name="Feedback Strike" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_FEEDBACK_STRIKE">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_TEMPLAR</requirements>
+            <prerequisite>Templar archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Templar archetype</p>
+                <p>When you hit a creature with a weapon attack, if that creature is forced to make a Constitution saving throw to maintain concentration on a spell and fails, it takes an additional 1d8 psychic damage.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> You impose disadvantage on any concentration saving throws made as a result of damage from this attack.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with a weapon attack, if that creature is forced to make a Constitution saving throw to maintain concentration on a spell and fails, it takes an additional 1d8 psychic damage. Superiority: You impose disadvantage on any concentration saving throws made as a result of damage from this attack.</description>
+            </sheet>
+        </element>
+        <element name="Anti-Magic Aura" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_ANTIMAGIC_AURA">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_TEMPLAR</requirements>
+            <prerequisite>Templar archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Templar archetype</p>
+                <p>You emit a dampening aura within a radius of 15 feet of you. Whenever a creature casts a spell within this aura, you can use your reaction to attempt to punish them for it. That creature must make a Wisdom saving throw, and takes 1d4 psychic damage on a failed save.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> When you take the Attack action on your turn, you can forgo an attack to bolster the effect of this aura. It’s range increases to 30 feet, and if a creature fails the Wisdom saving throw, the damage increases to 3d4.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>You emit a dampening aura within a radius of 15 feet of you. Whenever a creature casts a spell within this aura, you can use your reaction to attempt to punish them for it. That creature must make a Wisdom saving throw, and takes 1d4 psychic damage on a failed save. Superiority: When you take the Attack action on your turn, you can forgo an attack to bolster the effect of this aura. It’s range increases to 30 feet, and if a creature fails the Wisdom saving throw, the damage increases to 3d4.</description>
+            </sheet>
+        </element>
+
+    
+</elements>

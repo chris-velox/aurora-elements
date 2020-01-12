@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Colossal Bully Variant Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="variant-fighter-colossal-bully.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/variant-fighter/variant-fighter-colossal-bully.xml" />
+        </update>
+    </info>
+    
+    <element name="Colossal Bully" type="Archetype" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_VF_COLOSSAL_BULLY">
+        <supports>Variant Martial Archetype</supports>
+        <requirements>ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER</requirements>
+        <description>
+            <p>Those who model themselves after the archetypal bully like to throw their size around, so to speak. They have a long history of picking on the little guy and have learned to exploit their size against them. They don’t fare as well against an equal opponent, that’s for sure.</p>
+            <h5>Restriction: Powerful Build racial trait</h5>
+            <p>Only races who have always been larger than others their whole life have enough experience to benefit from throwing their weight around in such a way.</p>
+            <p class="indent">Your DM can lift this restriction but it is highly discouraged. It would be more applicable for your DM to swap a racial trait for Powerful Build instead to accommodate this archetype. Your DM can also open this archetype up to any races that are Large in size if they feel it is appropriate for their setting.</p>
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_LARGER_THAN_LIFE" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_PHYSIQUE" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_ANYTHING_SWUNG_HARD_ENOUGH" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_PUNITIVE_DAMAGES" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_OVERWHELMING_THREAT" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_FORCEFUL_LEAP" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_LARGER_THAN_LIFE" level="3" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_PHYSIQUE" level="3" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_ANYTHING_SWUNG_HARD_ENOUGH" level="7" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_PUNITIVE_DAMAGES" level="10" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_OVERWHELMING_THREAT" level="15" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_FORCEFUL_LEAP" level="18" />
+        </rules>
+    </element>
+        <element name="Larger than Life" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_LARGER_THAN_LIFE">
+            <description>
+                <p>At 3rd level, you can become an imposing and overbearing figure on the battlefield. On your turn, you can manipulate your stature to seem larger than you are as a bonus action. While enlarged, you gain the following benefits:</p>
+                <ul>
+                    <li>You count as being one size larger, but your physical dimensions remain the same.</li>
+                    <li>You have advantage on Intimidation checks.</li>
+                    <li>Maneuvers you use that affect creatures smaller than you deal 1d4 bludgeoning damage for each size category they are smaller than you.</li>
+                </ul>
+                <p>You must concentrate on this feature as though you were concentrating on a spell. This lasts 1 minute. It ends early if you are knocked unconscious, or if you lose concentration. You can also end this feature on your turn as a bonus action.</p>
+                <p class="indent">You can use this feature twice. You regain expended uses after completing a long or short rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="2/Short Rest">
+                <description>You can increase your stature. You count as one size larger, but your physical dimensions remain the same. You have advantage on Intimidation checks. Maneuvers you use that affect creatures smaller than you deal 1d4 bludgeoning damage for each size category they are smaller than you. You must concentrate on this feature as though you were concentrating on a spell. This lasts 1 minute. It ends early if you are knocked unconscious, or if you lose concentration. You can also end this feature on your turn as a bonus action.</description>
+            </sheet>
+        </element>
+        <element name="Physique" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_PHYSIQUE">
+            <description>
+                <p>Also at 3rd level, you gain proficiency in Athletics if you did not already have it. You can add double your proficiency bonus to Athletics checks when grappling, shoving, or tossing a creature smaller than you.</p>
+                <p class="indent">Additionally, you can use your Strength modifier for Intimidation checks instead of your Charisma modifier.</p>
+            </description>
+            <sheet>
+                <description>You can add double your proficiency bonus to Athletics checks when grappling, shoving, or tossing a creature smaller than you.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+                <stat name="intimidation:misc" value="-charisma:modifier" />
+                <stat name="intimidation:misc" value="strength:modifier" />
+            </rules>
+        </element>
+        <element name="Anything Swung Hard Enough" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_ANYTHING_SWUNG_HARD_ENOUGH">
+            <description>
+                <p>Starting at 7th level, just about anything has become your weapon. You are proficient with improvised weapons, which deal at least 1d6 + Strength modifier damage for you.</p>
+                <p class="indent">Additionally, when you force a creature smaller than you to move using a Shove attack or by tossing them, they take 1d8 bludgeoning damage if they collide with a surface or other creature before completing that movement.</p>
+            </description>
+            <sheet>
+                <description>You are proficient with improvised weapons, which deal at least 1d6 + {{strength:modifier}} damage for you. Additionally, when you force a creature smaller than you to move using a Shove attack or by tossing them, they take 1d8 bludgeoning damage if they collide with a surface or other creature before completing that movement.</description>
+            </sheet>
+        </element>
+        <element name="Punitive Damages" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_PUNITIVE_DAMAGES">
+            <description>
+                <p>At 10th level, you’re able to brush off the attacks of those smaller than you as simple nuisances. As a reaction after a creature smaller than you deals damage to you, you can reduce the damage dealt by 1d4 for each size category they are smaller than you.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>After a creature smaller than you deals damage to you, you can reduce the damage dealt by 1d4 for each size category they are smaller than you.</description>
+            </sheet>
+        </element>
+        <element name="Overwhelming Threat" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_OVERWHELMING_THREAT">
+            <description>
+                <p>Starting at 15th level, you are a force of nature, relentless in all things you do. Whenever you score a critical hit against or reduce a creature smaller than you to 0 hit points, you regain a use of your Larger than Life feature.</p>
+            </description>
+            <sheet>
+                <description>Whenever you score a critical hit against or reduce a creature smaller than you to 0 hit points, you regain a use of your Larger than Life feature.</description>
+            </sheet>
+        </element>
+        <element name="Forceful Leap" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_COLOSSAL_BULLY_FORCEFUL_LEAP">
+            <description>
+                <p>At 18th level, your size allows you to enter any fray without worry. As an action on your turn, you can leap into a space within 20 feet that is either unoccupied or occupied by a creature smaller than you. Each creature within 15 feet of where you land must make a Strength saving throw against your maneuver save DC. On a failed save they take 1d12 bludgeoning damage and are knocked prone. On a successful save, they take half as much damage and are not knocked prone. Creatures smaller than you within 5 feet have disadvantage on this saving throw and any creature that is occupying the space you leap to automatically fails.</p>
+            </description>
+            <sheet action="Action">
+                <description>On your turn, you can leap into a space within 20 feet that is either unoccupied or occupied by a creature smaller than you. Each creature within 15 feet of where you land must make a Strength saving throw against your maneuver save DC. On a failed save they take 1d12 bludgeoning damage and are knocked prone. On a successful save, they take half as much damage and are not knocked prone. Creatures smaller than you within 5 feet have disadvantage on this saving throw and any creature that is occupying the space you leap to automatically fails.</description>
+            </sheet>
+        </element>
+
+    <!-- Maneuvers -->
+        <element name="Knock Heads" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_COLOSSAL_BULLY</requirements>
+            <prerequisite>Colossal Bully archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Colossal Bully archetype</p>
+                <p>When you take the Attack action on your turn and grapple a creature that is smaller than you, you can use your bonus action to attempt to grapple another creature smaller than you. If you succeed, as part of the grapple you knock the creatures into one another dealing damage to each as though they were improvised weapons.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> You have advantage on your bonus action grapple attempt.</p>
+            </description>
+            <sheet action="Action">
+                <description>When you take the Attack action on your turn and grapple a creature that is smaller than you, you can attempt to grapple another creature smaller than you. If you succeed, as part of the grapple you knock the creatures into one another dealing damage to each as though they were improvised weapons. Superiority: You have advantage on your bonus action grapple attempt.</description>
+            </sheet>
+        </element>
+        <element name="Toss" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_COLOSSAL_BULLY</requirements>
+            <prerequisite>Colossal Bully archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Colossal Bully archetype</p>
+                <p>When you take the Attack action on your turn, you can forgo an attack to toss a creature that is grappled by you. You make a Strength (Athletics) check contested by the target’s Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). If you succeed, you toss the creature up to 25 feet in a direction of your choice. If the creature collides with an object, this movement ends and it lands in an unoccupied space closest to you.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> You can toss the creature at a space occupied by a creature its size or smaller. If you do, both creatures must make a Dexterity saving throw or be knocked prone. The creature you tossed lands in an unoccupied space nearest to you.</p>
+            </description>
+            <sheet>
+                <description>When you take the Attack action on your turn, you can forgo an attack to toss a creature that is grappled by you. You make a Strength (Athletics) check contested by the target’s Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). If you succeed, you toss the creature up to 25 feet in a direction of your choice. If the creature collides with an object, this movement ends and it lands in an unoccupied space closest to you. Superiority: You can toss the creature at a space occupied by a creature its size or smaller. If you do, both creatures must make a Dexterity saving throw or be knocked prone. The creature you tossed lands in an unoccupied space nearest to you.</description>
+            </sheet>
+        </element>
+
+    
+</elements>

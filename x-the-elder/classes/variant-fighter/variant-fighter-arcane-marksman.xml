@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Arcane Marksman Variant Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="variant-fighter-arcane-marksman.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/variant-fighter/variant-fighter-arcane-marksman.xml" />
+        </update>
+    </info>
+    
+    <element name="Arcane Marksman" type="Archetype" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_VF_ARCANE_MARKSMAN">
+        <supports>Variant Martial Archetype</supports>
+        <description>
+            <p>The archetypal Arcane Marksman has spent a significant amount of time off the battlefield, in rigorous study of eldritch texts and spellcasting manuals. They have not eschewed their martial talents entirely and have chosen instead to augment that talent with magical power delivered at a distance.</p>
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_SPELL_SHOTS" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_ARCHER_LORE" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_UTILITY_PROJECTILE" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_CURVING_SHOT" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_CELESTIAL_SHOT" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_EVERFORCEFUL_SHOT" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_SPELL_SHOTS" level="3" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_ARCHER_LORE" level="3" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_UTILITY_PROJECTILE" level="7" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_CURVING_SHOT" level="10" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_CELESTIAL_SHOT" level="15" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_EVERFORCEFUL_SHOT" level="18" />
+        </rules>
+    </element>
+        <element name="Spell Shots" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_SPELL_SHOTS">
+            <description>
+                <p>At 3rd level, you’ve learned a unique set of arcane maneuvers. You have access to all the Spell Shots listed, but must spend time to prepare them. Spell Shot maneuvers that are prepared can be used in the same way as any other maneuver.</p>
+                <p class="indent">During a short or long rest, you can prepare up to two Spell Shot maneuvers this way. You can prepare an additional Spell Shot maneuver at 7th, 10th, 15th, and 18th level.</p>
+                <p class="indent">The saving throw for your Spell Shots maneuvers is calculated as follows:</p>
+                <center>
+                    <p><strong>Maneuver save DC</strong> = 8 + your proficiency bonus + your Intelligence modifier</p>
+                </center>
+            </description>
+            <sheet>
+                <description>You can prepare up to {{arcane marksman:spellcasting:prepare}} spell shot maneuvers during a short or long rest. Spell Shot maneuvers that are prepared can be used in the same way as any other maneuver. Your spell shot save DC is {{spell-shot:save-dc}}.</description>
+            </sheet>
+            <spellcasting name="Arcane Marksman" ability="Intelligence" prepare="true">
+                <list known="true">Arcane Marksman</list>
+            </spellcasting>
+            <rules>
+                <stat name="spell-shot:save-dc" value="8" />
+                <stat name="spell-shot:save-dc" value="proficiency" />
+                <stat name="spell-shot:save-dc" value="intelligence:modifier" />
+
+                <stat name="arcane marksman:spellcasting:prepare" value="2" level="3" />
+                <stat name="arcane marksman:spellcasting:prepare" value="1" level="7" />
+                <stat name="arcane marksman:spellcasting:prepare" value="1" level="10" />
+                <stat name="arcane marksman:spellcasting:prepare" value="1" level="15" />
+                <stat name="arcane marksman:spellcasting:prepare" value="1" level="18" />
+
+                <stat name="arcane marksman:spellcasting:slots:1" value="1" level="3" />
+                <stat name="arcane marksman:spellcasting:slots:1" value="-1" level="3" />
+
+            </rules>
+        </element>
+        <element name="Archer Lore" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_ARCHER_LORE">
+            <description>
+                <p>Also at 3rd level, you gain proficiency in one of the following skills of your choice: Arcana, Nature, or Perception.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Skill Proficiency (Arcane Marksman)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION" level="3" />
+            </rules>
+        </element>
+        <element name="Utility Projectile" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_UTILITY_PROJECTILE">
+            <description>
+                <p>Starting at 7th level, you can use your arcane magic to imbue your ranged weapon to create an effect. You gain one of the following shots, which can be performed as an action by imbuing a thrown weapon or piece of ammunition with magic that is cast when the projectile hits its target.</p>
+                <p class="indent"><strong><em>Ascension Shot.</em></strong> When this shot impacts a point on a surface within range of the weapon that you can see, it sprouts sinewy tendrils that grip the surface and reinforce the projectile. Once embedded, it can support a weight of up to 300 pounds for a duration of 1 hour, after which the magic fades and it falls to the ground.</p>
+                <p class="indent"><strong><em>Silent Shot.</em></strong> When this shot impacts a surface within 30 feet that you can see, it creates the effect of the minor illusion spell where it impacts. This lasts 1 minute and uses your maneuver save DC.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Utility Projectile" supports="Arcane Marksman Utility Projectile" level="7" />
+            </rules>
+        </element>
+            <element name="Utility Projectile: Ascension Shot" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_UTILITY_PROJECTILE_ASCENSION_SHOT">
+                <compendium display="false" />
+                <supports>Arcane Marksman Utility Projectile</supports>
+                <description>
+                    <p>As an Action, you can imbue a thrown weapon or piece of ammunition with magic that is cast when the projectile hits its target.</p>
+                    <p class="indent">When this shot impacts a point on a surface within range of the weapon that you can see, it sprouts sinewy tendrils that grip the surface and reinforce the projectile. Once embedded, it can support a weight of up to 300 pounds for a duration of 1 hour, after which the magic fades and it falls to the ground.</p>
+                </description>
+                <sheet action="Action" alt="Ascension Shot">
+                    <description>You imbue a thrown weapon or piece of ammunition with magic. When this shot impacts a point on a surface within range of the weapon that you can see, it sprouts sinewy tendrils that grip the surface and reinforce the projectile. Once embedded, it can support a weight of up to 300 pounds for a duration of 1 hour, after which the magic fades and it falls to the ground.</description>
+                </sheet>
+            </element>
+            <element name="Utility Projectile: Silent Shot" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_UTILITY_PROJECTILE_SILENT_SHOT">
+                <compendium display="false" />
+                <supports>Arcane Marksman Utility Projectile</supports>
+                <description>
+                    <p>As an Action, you can imbue a thrown weapon or piece of ammunition with magic that is cast when the projectile hits its target.</p>
+                    <p class="indent">When this shot impacts a surface within 30 feet that you can see, it creates the effect of the <em>minor illusion</em>> spell where it impacts. This lasts 1 minute and uses your maneuver save DC.</p>
+                    <div class="reference">
+                        <div element="ID_PHB_SPELL_MINOR_ILLUSION" />
+                    </div>
+                </description>
+                <sheet action="Action" alt="Silent Shot">
+                    <description>You imbue a thrown weapon or piece of ammunition with magic. When this shot impacts a surface within 30 feet that you can see, it creates the effect of the minor illusion spell where it impacts. This lasts 1 minute and uses your maneuver save DC ({{maneuver:save-dc}}).</description>
+                </sheet>
+            </element>
+        <element name="Curving Shot" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_CURVING_SHOT">
+            <description>
+                <p>At 10th level, you learn how to direct an errant shot toward a new target. When you make an attack roll through a Spell Shot maneuver and miss, you can use a bonus action to reroll the attack roll against a different target within 30 feet of the original target that you can see.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>When you make an attack roll through a Spell Shot maneuver and miss, you can reroll the attack roll against a different target within 30 feet of the original target that you can see.</description>
+            </sheet>
+        </element>
+        <element name="Celestial Shot" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_CELESTIAL_SHOT">
+            <description>
+                <p>Starting at 15th level, you’ve woven the arcane nature of the lunar cycles into your shots. You gain the following shots, which can be performed as an action by imbuing a thrown weapon or piece of ammunition with magic that is cast when the projectile reaches its target.</p>
+                <p class="indent"><strong><em>Blackout Shot.</em></strong> When this shot is fired, when it impacts a surface or after 60 feet of travel it bursts into a harmless globe of inky black magic, which fills a 30-foot-radius sphere with magical darkness, which lasts 1 minute.</p>
+                <p class="indent"><strong><em>Flare Shot.</em></strong> When this shot is fired, when it impacts a surface or after 60 feet of travel it bursts into a harmless globe of light and sparks, which illuminates a 30-foot radius sphere with bright magical light and sheds dim light for an additional 30 feet. The globe slowly descends and fades after 1 minute.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_CELESTIAL_SHOT_BLACKOUT_SHOT" level="15" />
+                <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_CELESTIAL_SHOT_FLARE_SHOT" level="15" />
+            </rules>
+        </element>
+            <element name="Celestial Shot: Blackout Shot" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_CELESTIAL_SHOT_BLACKOUT_SHOT">
+                <description>
+                    <p>As an Action, you can imbue a thrown weapon or piece of ammunition with magic that is cast when the projectile hits its target.</p>
+                    <p class="indent">When this shot is fired, when it impacts a surface or after 60 feet of travel it bursts into a harmless globe of inky black magic, which fills a 30-foot-radius sphere with magical darkness, which lasts 1 minute.</p>
+                </description>
+                <sheet action="Action" alt="Blackout Shot">
+                    <description>You imbue a thrown weapon or piece of ammunition with magic. When it impacts a surface or after 60 feet of travel it bursts into a harmless globe of inky black magic, which fills a 30-foot-radius sphere with magical darkness, which lasts 1 minute.</description>
+                </sheet>
+            </element>
+            <element name="Celestial Shot: Flare Shot" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_CELESTIAL_SHOT_FLARE_SHOT">
+                <description>
+                    <p>As an Action, you can imbue a thrown weapon or piece of ammunition with magic that is cast when the projectile hits its target.</p>
+                    <p class="indent">When this shot is fired, when it impacts a surface or after 60 feet of travel it bursts into a harmless globe of light and sparks, which illuminates a 30-foot radius sphere with bright magical light and sheds dim light for an additional 30 feet. The globe slowly descends and fades after 1 minute.</p>
+                </description>
+                <sheet action="Action" alt="Flare Shot">
+                    <description>You imbue a thrown weapon or piece of ammunition with magic. When it impacts a surface or after 60 feet of travel it bursts into a harmless globe of light and sparks, which illuminates a 30-foot radius sphere with bright magical light and sheds dim light for an additional 30 feet. The globe slowly descends and fades after 1 minute.</description>
+                </sheet>
+            </element>
+        <element name="Ever-Forceful Shot" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_ARCANE_MARKSMAN_EVERFORCEFUL_SHOT">
+            <description>
+                <p>Starting at 18th level, your marksmanship is always at the ready. When you roll initiative, you regain one use of your superiority feature.</p>
+                <p class="indent">Additionally, your Spell Shot maneuvers can deliver a more stinging blow. Creatures hit by the attack made as part of the maneuver take an additional 1d8 damage.</p>
+            </description>
+            <sheet>
+                <description>When you roll initiative, you regain one use of your superiority feature. Additionally, creatures hit by the attack made as part of a Spell Shot maneuver take an additional 1d8 damage.</description>
+            </sheet>
+        </element>
+
+    <!-- Maneuvers -->
+        <element name="Dancing Weapons" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_DANCING_WEAPONS">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_ARCANE_MARKSMAN</requirements>
+            <prerequisite>Arcane Marksman archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Arcane Marksman archetype</p>
+                <p>You can draw a number of thrown weapons up to your Intelligence modifier as a bonus action, causing them to float in the air in front of you. You can draw one of these weapons as part of your attack as long as you are making a ranged weapon attack. At the end of your turn, the magic fades and any weapons still floating drop to the ground at your feet.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> Instead of fading at the end of your turn, any remaining weapons instead begin to slowly circle you. The first melee attack a creature makes against you causes them to suffer force damage equal to the damage die of one of the weapons. At the end of your next turn, the magic fades and the weapons drop to the ground at your feet.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can draw up to {{intelligence:modifier}} thrown weapons, causing them to float in the air in front of you. You can draw one of these weapons as part of your attack as long as you are making a ranged weapon attack. At the end of your turn, the magic fades and any weapons still floating drop to the ground at your feet. Superiority: Any remaining weapons instead begin to slowly circle you. The first melee attack a creature makes against you causes them to suffer force damage equal to the damage die of one of the weapons. At the end of your next turn, the magic fades and the weapons drop to the ground at your feet.</description>
+            </sheet>
+        </element>
+        <element name="Grounding Strike" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_GROUNDING_STRIKE">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_ARCANE_MARKSMAN</requirements>
+            <prerequisite>Arcane Marksman archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Arcane Marksman archetype</p>
+                <p>As an action, you imbue a thrown weapon or piece of ammunition with a burdening transmutation magic. This projectile seeks out a target of your choice within range. That creature must succeed on a Strength saving throw or become laden with the heavy magic. If that creature has a flying speed, it is reduced by half until the end of its next turn. An airborne creature affected by this magic descends at 30 feet per round until it reaches the ground or the effect ends.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> Instead of lasting until the end of the target’s next turn, this effect instead lasts 1 minute, and the creature’s walking speed is reduced by half as well.</p>
+            </description>
+            <sheet action="Action">
+                <description>You imbue a thrown weapon or piece of ammunition with a burdening transmutation magic.  This projectile seeks out a target of your choice within range. That creature must succeed on a Strength saving throw or become laden with the heavy magic. If that creature has a flying speed, it is reduced by half until the end of its next turn. An airborne creature affected by this magic descends at 30 feet per round until it reaches the ground or the effect ends. Superiority: Instead of lasting until the end of the target’s next turn, this effect instead lasts 1 minute, and the creature’s walking speed is reduced by half as well.</description>
+            </sheet>
+        </element>
+        <element name="Hidden Strike" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_HIDDEN_STRIKE">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_ARCANE_MARKSMAN</requirements>
+            <prerequisite>Arcane Marksman archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Arcane Marksman archetype</p>
+                <p>When attacking a creature that cannot see you, you can imbue your attack with a small amount of illusion magic to disguise your location. You do not give away your location on a missed attack.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The potency of your illusion magic increases. The target of your attack must succeed on a Wisdom saving throw if the attack hits. On a failed save, instead of learning your location, roll a d8 and assign a direction to each number. The creature believes the attack to have come from that direction instead.</p>
+            </description>
+            <sheet>
+                <description>When attacking a creature that cannot see you, you can imbue your attack with a small amount of illusion magic to disguise your location. You do not give away your location on a missed attack. Superiority: The target of your attack must succeed on a Wisdom saving throw if the attack hits. On a failed save, instead of learning your location, roll a d8 and assign a direction to each number. The creature believes the attack to have come from that direction instead.</description>
+            </sheet>
+        </element>
+
+    <!-- Spell Shots -->
+        <element name="Spell Shot: Banish" type="Spell" source="Variant Fighter" id="ID_VDP_VF_SPELL_SHOT_BANISH">
+            <supports>Arcane Marksman</supports>
+            <description>
+                <p class="flavor">Prerequisite: Arcane Marksman archetype</p>
+                <p>When you take the Attack action on your turn, this shot becomes imbued with abjuration magic. On a hit, you create a ward that hinders this creature's attacks. Until the end of its next turn, any nonmagical weapon attacks made by this creature don't add their Strength or Dexterity modifier to their damage.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> If this shot hits a creature, that creature must succeed on a Charisma saving throw or be banished. While banished in this way, its speed is 0 and it is incapacitated. At the end of its next turn, the target reappears in the space it vacated or in the nearest unoccupied space.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">1</set>
+                <set name="school">Abjuration</set>
+                <set name="time">Spell Shot</set>
+                <set name="range">Self</set>
+                <set name="duration">Instantaneous</set>
+                <set name="hasVerbalComponent">false</set>
+                <set name="hasSomaticComponent">false</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">a thrown weapon or piece of ammunition</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Spell Shot: Brute Bane" type="Spell" source="Variant Fighter" id="ID_VDP_VF_SPELL_SHOT_BRUTE_BANE">
+            <supports>Arcane Marksman</supports>
+            <description>
+                <p class="flavor">Prerequisite: Arcane Marksman archetype</p>
+                <p>When you take the Attack action on your turn, this shot becomes imbued with necromantic magic. On a hit, a ghostly energy surrounds the target, preventing it from regaining hit points until the start of its turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> If this shot hits a creature, it takes an additional 1d8 necrotic damage. In addition, that creature must succeed on a Constitution saving throw. On a failed save, the damage of the creature's weapon attacks is halved until the start of your next turn.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">1</set>
+                <set name="school">Necromancy</set>
+                <set name="time">Spell Shot</set>
+                <set name="range">Self</set>
+                <set name="duration">Instantaneous</set>
+                <set name="hasVerbalComponent">false</set>
+                <set name="hasSomaticComponent">false</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">a thrown weapon or piece of ammunition</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Spell Shot: Bursting" type="Spell" source="Variant Fighter" id="ID_VDP_VF_SPELL_SHOT_BURSTING">
+            <supports>Arcane Marksman</supports>
+            <description>
+                <p class="flavor">Prerequisite: Arcane Marksman archetype</p>
+                <p>When you take the Attack action on your turn, this shot becomes imbued with evocation magic. On a hit, the projectile splinters. Each other creature within 5 feet of the target must make a Dexterity saving throw or take 1d4 piercing damage.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> If this shot hits a creature, each other creature within 10 feet of it take an additional 1d8 force damage.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">1</set>
+                <set name="school">Evocation</set>
+                <set name="time">Spell Shot</set>
+                <set name="range">Self</set>
+                <set name="duration">Instantaneous</set>
+                <set name="hasVerbalComponent">false</set>
+                <set name="hasSomaticComponent">false</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">a thrown weapon or piece of ammunition</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Spell Shot: Charming" type="Spell" source="Variant Fighter" id="ID_VDP_VF_SPELL_SHOT_CHARMING">
+            <supports>Arcane Marksman</supports>
+            <description>
+                <p class="flavor">Prerequisite: Arcane Marksman archetype</p>
+                <p>When you take the Attack action on your turn, this shot becomes imbued with enchantment magic. On a hit, choose an ally within 30 feet of the target. The affected creature has disadvantage on attack rolls against that ally until the end of its next turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> If the shot hits a creature, it deals an additional 1d8 psychic damage. Additionally, choose one of your allies within 30 feet of the target. Your target must succeed on a Wisdom saving throw or it is charmed by the chosen ally until the start of your next turn. This effect ends early if the chosen ally deals any damage to the target.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">1</set>
+                <set name="school">Enchantment</set>
+                <set name="time">Spell Shot</set>
+                <set name="range">Self</set>
+                <set name="duration">Instantaneous</set>
+                <set name="hasVerbalComponent">false</set>
+                <set name="hasSomaticComponent">false</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">a thrown weapon or piece of ammunition</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Spell Shot: Grasping" type="Spell" source="Variant Fighter" id="ID_VDP_VF_SPELL_SHOT_GRASPING">
+            <supports>Arcane Marksman</supports>
+            <description>
+                <p class="flavor">Prerequisite: Arcane Marksman archetype</p>
+                <p>When you take the Attack action on your turn, this shot becomes imbued with conjuration magic. On a hit, the target must make a Strength saving throw. On a failed save, its movement speed is reduced by half until the end of its next turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> If this shot hits a creature, brambles form and wrap around the target dealing an additional 1d8 slashing damage. Its speed is reduced by an additional 10 feet and it takes 1d8 slashing damage on each turn it moves 1 foot or more without teleporting. The target or any creature that can reach it can use its action to remove the brambles with a successful Strength (Athletics) check against your maneuver save DC. Otherwise, the brambles last for 1 minute.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">1</set>
+                <set name="school">Conjuration</set>
+                <set name="time">Spell Shot</set>
+                <set name="range">Self</set>
+                <set name="duration">Instantaneous</set>
+                <set name="hasVerbalComponent">false</set>
+                <set name="hasSomaticComponent">false</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">a thrown weapon or piece of ammunition</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Spell Shot: Ethereal" type="Spell" source="Variant Fighter" id="ID_VDP_VF_SPELL_SHOT_ETHEREAL">
+            <supports>Arcane Marksman</supports>
+            <description>
+                <p class="flavor">Prerequisite: Arcane Marksman archetype</p>
+                <p>When you take the Attack action on your turn, this shot becomes imbued with transmutation magic. This attack ignores half cover, and treats three quarters cover as half cover instead.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> Instead of an attack roll, this shot fires forward in a line that is 1 foot wide and 30 feet long. The shot passes harmlessly through objects, ignoring cover. Each creature in that line must making a Dexterity saving throw. On a failed save, a target takes damage as if it were hit by the shot plus an additional 1d8 force damage. On a successful save, a target takes half as much damage.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">1</set>
+                <set name="school">Transmutation</set>
+                <set name="time">Spell Shot</set>
+                <set name="range">Self</set>
+                <set name="duration">Instantaneous</set>
+                <set name="hasVerbalComponent">false</set>
+                <set name="hasSomaticComponent">false</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">a thrown weapon or piece of ammunition</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Spell Shot: Shadow" type="Spell" source="Variant Fighter" id="ID_VDP_VF_SPELL_SHOT_SHADOW">
+            <supports>Arcane Marksman</supports>
+            <description>
+                <p class="flavor">Prerequisite: Arcane Marksman archetype</p>
+                <p>When you take the Attack action on your turn, this shot becomes imbued with illusion magic. On a hit, the creature suffers from disadvantage on ability checks that rely on sight until the start of its next turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> Instead of an attack roll, choose a target point within normal range of your weapon. On impact, all creatures within 10 feet of this point must make a Wisdom saving throw. Affected creatures that fail this save take 1d8 psychic damage and are unable to see anything father than 5 feet away from itself until the start of your next turn.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">1</set>
+                <set name="school">Illusion</set>
+                <set name="time">Spell Shot</set>
+                <set name="range">Self</set>
+                <set name="duration">Instantaneous</set>
+                <set name="hasVerbalComponent">false</set>
+                <set name="hasSomaticComponent">false</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">a thrown weapon or piece of ammunition</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        
+</elements>

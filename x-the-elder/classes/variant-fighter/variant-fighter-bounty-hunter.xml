@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bounty Hunter Variant Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="variant-fighter-bounty-hunter.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/variant-fighter/variant-fighter-bounty-hunter.xml" />
+        </update>
+    </info>
+    
+    <element name="Bounty Hunter" type="Archetype" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_VF_BOUNTY_HUNTER">
+        <supports>Variant Martial Archetype</supports>
+        <description>
+            <p>Those who model themselves after the bounty hunter are those who feel as though their skill is worth its weight in gold. They are often contract mercenaries, or at the very least hold a strong grudge against those that sleight them. Either way, they good at both tracking and hunting certain groups of creatures and those they study and do so with great efficacy.</p>
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_FAVORED_ENEMY" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_HUNTERS_PREY" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_PREPARED" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_ALLIED_TACTICS" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_FORTITUDE" />
+            <div element="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_FOE_SLAYER" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_FAVORED_ENEMY" level="3" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_HUNTERS_PREY" level="3" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_PREPARED" level="7" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_ALLIED_TACTICS" level="10" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_FORTITUDE" level="15" />
+            <grant type="Archetype Feature" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_FOE_SLAYER" level="18" />
+        </rules>
+    </element>
+        <element name="Favored Enemy" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_FAVORED_ENEMY">
+            <description>
+                <p>Beginning at 3rd level, you have learned enough about your enemies to begin to put the knowledge to practice in defeating them. Choose either two types of favored enemy from the following list, or one type from the list and two races of humanoid (such as gnolls and orcs): abberations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. You have advantage on all Wisdom or Intelligence checks related to your favored enemies, including tracking them, detecting them, intuiting or recalling information about them, and discerning their motives or intentions.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on all Wisdom or Intelligence checks related to your favored enemies, including tracking them, detecting them, intuiting or recalling information about them, and discerning their motives or intentions.</description>
+            </sheet>
+        </element>
+        <element name="Hunter’s Prey" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_HUNTERS_PREY">
+            <description>
+                <p>Also at 3rd level, with enough time you can extend your favored enemy to a single individual. Over the duration of a short rest, you can focus intently on a creature you’ve met and interacted with, or have significant enough information about to understand. This creature also becomes a favored enemy for you until you know its been killed or you choose another prey.</p>
+                <p class="indent">In addition, any maneuver you use that affects a favored enemy also causes it to take 1d6 damage of a damage type a weapon you’re wielding can deal as your knowledge allows you to exploit their weaknesses.</p>
+            </description>
+            <sheet>
+                <description>Over the duration of a short rest, you can focus intently on a creature you’ve met and interacted with, or have significant enough information about to understand. This creature also becomes a favored enemy for you until you know its been killed or you choose another prey. Any maneuver you use that affects a favored enemy does an additional 1d6 damage.</description>
+            </sheet>
+        </element>
+        <element name="Prepared" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_PREPARED">
+            <description>
+                <p>Starting at 7th level, your expectations of your favored enemies gives you a preternatural sense to avoid ambush. When determining if creatures are surprised, you cannot be surprised if at least one favored enemy is within 60 feet of you.</p>
+                <p class="indent">In addition, you have advantage on checks to notice and avoid traps set by a favored enemy.</p>
+            </description>
+            <sheet>
+                <description>When determining if creatures are surprised, you cannot be surprised if at least one favored enemy is within 60 feet of you. In addition, you have advantage on checks to notice and avoid traps set by a favored enemy.</description>
+            </sheet>
+        </element>
+        <element name="Allied Tactics" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_ALLIED_TACTICS">
+            <description>
+                <p>At 10th level, your experience with hunting your favored enemy allows you to announce weaknesses to your allies. As a reaction, when an ally within 30 feet of you that you can see makes an attack roll against a favored enemy, you can give that ally advantage on its attack roll.</p>
+                <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses after completing a short or long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="{{allied-tactics:uses}}/Short Rest">
+                <description>When an ally within 30 feet of you that you can see makes an attack roll against a favored enemy, you can give that ally advantage on its attack roll.</description>
+            </sheet>
+            <rules>
+                <stat name="allied-tactics:uses" value="1" bonus="base" />
+                <stat name="allied-tactics:uses" value="wisdom:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Fortitude" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_FORTITUDE">
+            <description>
+                <p>Starting at 15th level, you gain advantage on nonmagical saving throws and skill contests from attacks from your favored enemies. Additionally, you cannot be charmed, possessed, or frightened by them and have advantage on death saving throws while within 60 feet of a favored enemy that is hostile to you.</p>
+                <p class="indent">If a blow from one of your favored enemies would reduce you to 0 hitpoints without killing you outright, it reduces you to 1 instead. Once you use this feature, you cannot use it again until you complete a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>If a blow from one of your favored enemies would reduce you to 0 hitpoints without killing you outright, it reduces you to 1 instead. Additionally, you always have advantage on nonmagical saving throws and skill contests from attacks from your favored enemies, and you cannot be charmed, possessed, or frightened by them and have advantage on death saving throws while within 60 feet of a favored enemy that is hostile to you. </description>
+            </sheet>
+        </element>
+        <element name="Foe Slayer" type="Archetype Feature" source="Variant Fighter" id="ID_VDP_VF_ARCHETYPE_FEATURE_BOUNTY_HUNTER_FOE_SLAYER">
+            <description>
+                <p>At 18th level, you become a master at slaying your most hunted foes. Once per turn, when you hit one of your favored enemies with a weapon attack, it takes an additional 3d8 bludgeoning, piercing, or slashing damage (your choice). If it has 30 or less hitpoints, it immediately dies.</p>
+            </description>
+            <sheet>
+                <description>Once per turn, when you hit one of your favored enemies with a weapon attack, it takes an additional 3d8 bludgeoning, piercing, or slashing damage (your choice). If it has 30 or less hitpoints, it immediately dies.</description>
+            </sheet>
+        </element>
+
+    <!-- Maneuvers -->
+        <element name="Knock-Out Strike" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_BOUNTY_HUNTER</requirements>
+            <prerequisite> Bounty Hunter archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Bounty Hunter archetype</p>
+                <p>When making an attack against a creature, you can attempt a nonlethal blow. If that attack hits, and the damage reduces the creature to 0 hit points, they are knocked unconscious instead of dying outright.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The target is knocked unconscious if the creature has any number of hitpoints remaining less than your Fighter level.</p>
+            </description>
+            <sheet>
+                <description>You can make nonlethal blows against creatures, knocking them unconscious if you reduce them to 0 hit points. Superiority: The target is knocked unconscious if the creature has fewer than {{level:variant fighter}} hit points.</description>
+            </sheet>
+        </element>
+        <element name="Foe Retribution" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_BOUNTY_HUNTER</requirements>
+            <prerequisite> Bounty Hunter archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Bounty Hunter archetype</p>
+                <p>When a favored enemy within 60 feet of you hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided you can see that creature.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> Being within 5 feet of a hostile creature doesn’t impose disadvantage on this attack roll, and you have advantage on this attack.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When a favored enemy within 60 feet of you hits or misses you with an attack, you can attack that creature immediately after its attack, provided you can see that creature. Superiority: Being within 5 feet of a hostile creature doesn’t impose disadvantage on this attack roll, and you have advantage on this attack.</description>
+            </sheet>
+        </element>
+        <element name="Restraining Order" type="Class Feature" source="GM Binder" id="ID_VDP_GM_BINDER_CLASS_FEATURE_VF_MANEUVER_">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_VDP_VF_ARCHETYPE_VF_BOUNTY_HUNTER</requirements>
+            <prerequisite> Bounty Hunter archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Bounty Hunter archetype</p>
+                <p>You can use your reaction to make a ranged weapon attack against a creature you can see, within the normal range of your weapon, immediately before it leaves your line of sight using its movement. If this attack hits the creature, instead of rolling damage that creature is restrained until the end of its next turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The creature is stunned instead of restrained.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>You can make a ranged weapon attack against a creature you can see, within the normal range of your weapon, immediately before it leaves your line of sight using its movement. If this attack hits the creature, instead of rolling damage that creature is restrained until the end of its next turn. Superiority: The creature is stunned instead of restrained.</description>
+            </sheet>
+        </element>
+    
+</elements>
