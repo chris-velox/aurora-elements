@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>Variant Fighter 1.6</name>
-        <update version="0.0.1">
+        <update version="0.0.2">
             <file name="class-variant-fighter.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/variant-fighter/class-variant-fighter.xml" />
         </update>
     </info>
@@ -85,16 +85,16 @@
             <description></description>
         </sheet>
         <rules>
-            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" requirements="!ID_VDP_VARIANT_FIGHTER_MULTICLASS_VARIANT_FIGHTER" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_VDP_VARIANT_FIGHTER_MULTICLASS_VARIANT_FIGHTER" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_VDP_VARIANT_FIGHTER_MULTICLASS_VARIANT_FIGHTER" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" requirements="!ID_VDP_VARIANT_FIGHTER_MULTICLASS_VARIANT_FIGHTER" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_VDP_VARIANT_FIGHTER_MULTICLASS_VARIANT_FIGHTER" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" requirements="!ID_VDP_VARIANT_FIGHTER_MULTICLASS_VARIANT_FIGHTER" />
 
-            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" />
-			<select type="Proficiency" name="Skill Proficiency (Fighter)" supports="Skill,Fighter" number="2" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" requirements="!ID_VDP_VARIANT_FIGHTER_MULTICLASS_VARIANT_FIGHTER" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" requirements="!ID_VDP_VARIANT_FIGHTER_MULTICLASS_VARIANT_FIGHTER" />
+			<select type="Proficiency" name="Skill Proficiency (Fighter)" supports="Skill,Fighter" number="2" requirements="!ID_VDP_VARIANT_FIGHTER_MULTICLASS_VARIANT_FIGHTER" />
             <grant type="Class Feature" id="ID_VDP_VF_CLASS_FEATURE_VF_FIGHTING_STYLE" level="1" />
             <grant type="Class Feature" id="ID_VDP_VF_CLASS_FEATURE_VF_SECOND_WIND" level="1" />
             <grant type="Class Feature" id="ID_VDP_VF_CLASS_FEATURE_VF_MANEUVERS" level="2" />
@@ -104,6 +104,21 @@
             <grant type="Class Feature" id="ID_VDP_VF_CLASS_FEATURE_VF_EXTRA_ATTACK" level="5" />
             <grant type="Class Feature" id="ID_VDP_VF_CLASS_FEATURE_VF_INDOMITABLE" level="9" />
         </rules>
+		<multiclass id="ID_VDP_VARIANT_FIGHTER_MULTICLASS_VARIANT_FIGHTER">
+			<prerequisite>Strength 13 or Dexterity 13</prerequisite>
+			<requirements>([str:13]||[dex:13])</requirements>
+			<setters>
+				<set name="multiclass proficiencies">Light armor, medium armor, shields, simple weapons, martial weapons</set>
+			</setters>
+			<rules>
+				<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			</rules>
+		</multiclass>
     </element>
         <element name="Fighting Style" type="Class Feature" source="Variant Fighter" id="ID_VDP_VF_CLASS_FEATURE_VF_FIGHTING_STYLE">
             <description>
