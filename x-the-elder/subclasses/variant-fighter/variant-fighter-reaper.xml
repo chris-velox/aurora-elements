@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Reaper Variant Martial Archetype</name>
+        <author url="">u/RainJunkie</author>
+        <update version="0.0.1">
+            <file name="variant-fighter-reaper.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/variant-fighter/variant-fighter-reaper.xml" />
+        </update>
+    </info>
+    
+    <element name="Reaper" type="Archetype" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_REAPER">
+        <supports>Variant Martial Archetype</supports>
+        <description>
+            <p>The archetypical Reaper is a battle-hardened warrior imbued with necrotic energy. Perhaps you survived a lich’s paralyzing touch, or suffered at the hands of an evil warlock. No matter how you obtained your dark powers, you can use them to empower your combat abilities.</p>
+            <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_REAPERS_CURSE" />
+            <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_DARK_FRENZY" />
+            <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_UNRESTING_CURSE" />
+            <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_RELENTLESS_KILLER" />
+            <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_VILE_CURSE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_REAPERS_CURSE" level="3" />
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_DARK_FRENZY" level="7" />
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_UNRESTING_CURSE" level="10" />
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_RELENTLESS_KILLER" level="15" />
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_VILE_CURSE" level="18" />
+        </rules>
+    </element>
+        <element name="Reaper’s Curse" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_REAPERS_CURSE">
+            <description>
+                <p>Starting at 3rd level, you gain the ability to curse a creature. As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute, and you can only have one creature cursed at a time. Until the curse ends, you gain the following benefits:</p>
+                <ul>
+                    <li>The first time you would effect a cursed creature with a maneuver on each of your turns, the target takes necrotic damage equal to your proficiency bonus.</li>
+                    <li>The creature does not gain advantage on attack rolls as a result of being hidden from you.</li>
+                    <li>Whenever you reduce the cursed target to 0 hit points, you gain temporary hit points equal to 1d10 + half your fighter level, which last for a minute.</li>
+                </ul>
+                <p class="indent">You can use this ability twice. You regain all expended uses of it when you finish a short or long rest.</p>
+                <p class="indent">When you reach 10th level, this feature can now be used three times, instead of twice, per short or long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{reapers-curse:uses}}/Short Rest">
+                <description>Choose one creature you can see within 30 feet of you. The target is cursed for 1 minute, and you can only have one creature cursed at a time. The first time you would effect a cursed creature with a maneuver on each of your turns, the target takes {{proficiency}} necrotic damage. The creature does not gain advantage on attack rolls as a result of being hidden from you. Whenever you reduce the cursed target to 0 hit points, you gain 1d10 + {{level:variant fighter:half}} temporary hit points, which last for a minute.</description>
+            </sheet>
+            <rules>
+                <stat name="reapers-curse:uses" value="2" level="3" />
+                <stat name="reapers-curse:uses" value="1" level="10" />
+            </rules>
+        </element>
+        <element name="Dark Frenzy" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_DARK_FRENZY">
+            <description>
+                <p>At 7th level, when you reduce a creature to 0 hit points with a melee attack on your turn, you can take a bonus action to move up to half your speed and make a single melee attack.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>When you reduce a creature to 0 hit points with a melee attack on your turn, you can move up to half your speed and make a single melee attack.</description>
+            </sheet>
+        </element>
+        <element name="Unresting Curse" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_UNRESTING_CURSE">
+            <description>
+                <p>At 10th level, if the target of your Reaper’s Curse drops to 0 hit points before the curse ends, you can use your reaction to curse a new creature. Doing so does not refresh the duration of your curse.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>If the target of your Reaper’s Curse drops to 0 hit points before the curse ends, you can curse a new creature. Doing so does not refresh the duration of your curse.</description>
+            </sheet>
+        </element>
+        <element name="Relentless Killer" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_RELENTLESS_KILLER">
+            <description>
+                <p>At 15th level, your weapon attacks against a creature under the effects of your Reaper’s Curse score a critical hit on a roll of 18-20.</p>
+            </description>
+            <sheet>
+                <description>Your weapon attacks against a creature under the effects of your Reaper’s Curse score a critical hit on a roll of 18-20.</description>
+            </sheet>
+        </element>
+        <element name="Vile Curse" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_REAPER_VILE_CURSE">
+            <description>
+                <p>At 18th level, whenever you curse a creature, it takes necrotic damage equal to your 1d10 + your fighter level.</p>
+            </description>
+            <sheet>
+                <description>Whenever you curse a creature, it takes 1d10 + {{level:variant fighter}} necrotic damage.</description>
+            </sheet>
+        </element>
+
+    <!-- Maneuvers -->
+        <element name="Hemorrhage" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_ACROBAT">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_REAPER</requirements>
+            <prerequisite>Reaper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Reaper archetype</p>
+                <p>When you would deal necrotic damage to a creature through your Reaper’s Curse feature, the creature takes additional necrotic damage equal to half the necrotic damage it took (rounded down).</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The creature becomes poisoned until the start of your next turn.</p>
+            </description>
+            <sheet>
+                <description>When you would deal necrotic damage to a creature through your Reaper’s Curse feature, the creature takes additional necrotic damage equal to half the necrotic damage it took (rounded down). Superiority: The creature becomes poisoned until the start of your next turn.</description>
+            </sheet>
+        </element>
+        <element name="Shadow Magic" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_ACROBAT">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_REAPER</requirements>
+            <prerequisite>Reaper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Reaper archetype</p>
+                <p>You can cast <em>minor illusion</em>, with Charisma being your spellcasting ability for it.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> As a bonus action, you can become invisible until the end of your next turn. Anything you are wearing or carrying is invisible as long as it is on your person. The invisibility ends if you attack or cast a spell.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_MINOR_ILLUSION" />
+                </div>
+            </description>
+            <sheet>
+                <description>You can cast minor illusion, with Charisma being your spellcasting ability for it. Superiority: As a bonus action, you can become invisible until the end of your next turn. Anything you are wearing or carrying is invisible as long as it is on your person. The invisibility ends if you attack or cast a spell.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_MINOR_ILLUSION" />
+            </rules>
+        </element>
+        <element name="Silencer" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_ACROBAT">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_REAPER</requirements>
+            <prerequisite>Reaper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Reaper archetype</p>
+                <p>When you hit a creature with a weapon attack, instead of dealing weapon damage you can attempt to silence the target. The target must make a Constitution saving throw. On a failed save, it is unable to speak until the end of your next turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The target is also incapacitated if it failed the saving throw.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with a weapon attack, the target must make a Constitution saving throw. On a failed save, it is unable to speak until the end of your next turn. Superiority: The target is also incapacitated if it failed the saving throw.</description>
+            </sheet>
+        </element>
+
+</elements>
