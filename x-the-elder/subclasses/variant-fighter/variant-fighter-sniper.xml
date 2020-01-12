@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Sniper Variant Martial Archetype</name>
+        <author url="">u/RainJunkie</author>
+        <update version="0.0.1">
+            <file name="variant-fighter-sniper.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/variant-fighter/variant-fighter-sniper.xml" />
+        </update>
+        <!-- https://homebrewery.naturalcrit.com/share/HJB3ndLib -->
+    </info>
+    
+    <element name="Sniper" type="Archetype" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER">
+        <supports>Variant Martial Archetype</supports>
+        <description>
+            <p>The archetypal Sniper uses distance to gain the upper hand in battle. Firing arrows or bolts from afar, each of the sniper’s shots is precise, calculated, and deadly. With a bow or crossbow in hand, nothing can hope to hide from them.</p>
+            <div class="reference">
+                <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_TRAP_MANEUVERS" />
+            </div>
+            <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_PEERLESS_SHOOTER" />
+            <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_QUICKSHOT" />
+            <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_LYING_IN_WAIT" />
+            <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_TRAP_MASTER" />
+            <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_PATIENT_SHOT" />
+            <div element="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_SHOOT_TO_KILL" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_TRAP_MANEUVERS" level="3" />
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_PEERLESS_SHOOTER" level="3" />
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_QUICKSHOT" level="3" />
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_LYING_IN_WAIT" level="7" />
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_TRAP_MASTER" level="10" />
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_PATIENT_SHOT" level="15" />
+            <grant type="Archetype Feature" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_SHOOT_TO_KILL" level="18" />
+        </rules>
+    </element>
+        <element name="Peerless Shooter" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_PEERLESS_SHOOTER">
+            <description>
+                <p>At 3rd level, you know your choice of the Marking Shot or Noxious Shot maneuver. The maneuver you choose gains an additional benefit, as listed below.</p>
+                <p class="indent"><strong><em>Marking Shot.</em></strong> When you trigger this maneuver’s superiority option, your next attack roll made against a marked creature scores a critical hit on a roll of 19 or 20.</p>
+                <p class="indent"><strong><em>Noxious Shot.</em></strong> When you trigger this maneuver’s superiority option, the creature takes an additional 1d4 poison damage at the start of its next turn.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Class Feature" name="Maneuver (Peerless Shooter)" supports="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_MARKING_SHOT|ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_NOXIOUS_SHOT" level="3" />
+            </rules>
+        </element>
+        <element name="Quickshot" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_QUICKSHOT">
+            <description>
+                <p>Also at 3rd level, you can add your proficiency bonus to your initiative checks.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="initiative" value="proficiency" />
+            </rules>
+        </element>
+        <element name="Lying in Wait" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_LYING_IN_WAIT">
+            <description>
+                <p>At 7th level, you gain proficiency in the Stealth skill. Additionally, being prone doesn’t cause disadvantage on your ranged attack rolls.</p>
+            </description>
+            <sheet>
+                <description>Being prone doesn’t cause disadvantage on your ranged attack rolls.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+            </rules>
+        </element>
+        <element name="Trap Master" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_TRAP_MASTER">
+            <description>
+                <p>At 10th level, you know your choice of one of your trap maneuvers. In addition, you can enhance one of the traps you know. When you trigger your chosen enhanced trap maneuver’s superiority option, you can place the trap as an action, rather than taking a minute to place it.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Class Feature" name="Trap Maneuver (Trap Master)" supports="Variant Fighter Maneuver,Trap" level="10" />
+                <select type="Class Feature" name="Enhanced Trap Maneuver (Trap Master)" supports="Variant Fighter Maneuver,Enhanced Trap" level="10" />
+            </rules>
+        </element>
+        <element name="Patient Shot" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_PATIENT_SHOT">
+            <description>
+                <p>At 15th level, you can choose to calculate a deadly shot. As an action on your turn, you can make an attack against a creature within the maximum range of your weapon. This attack has advantage, and scores a critical hit on a roll of 18-20.</p>
+            </description>
+            <sheet action="Action">
+                <description>On your turn, you can make an attack against a creature within the maximum range of your weapon. This attack has advantage, and scores a critical hit on a roll of 18-20.</description>
+            </sheet>
+        </element>
+        <element name="Shoot to Kill" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_SHOOT_TO_KILL">
+            <description>
+                <p>At 18th level, the maximum range of your Patient Shot attack is doubled. In addition, when you score a critical hit with a ranged weapon attack, you can roll one of the weapon’s damage dice two additional times and add it to the extra damage of the critical hit.</p>
+            </description>
+            <sheet>
+                <description>The maximum range of your Patient Shot attack is doubled. In addition, when you score a critical hit with a ranged weapon attack, you can roll one of the weapon’s damage dice two additional times and add it to the extra damage of the critical hit.</description>
+            </sheet>
+        </element>
+    
+    <!-- Maneuvers -->
+        <element name="Acrobat" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_ACROBAT">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>When you would make an Athletics check to jump or climb, you can make an Acrobatics check instead.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> You can also gain advantage on the next acrobatics check you make.</p>
+            </description>
+            <sheet>
+                <description>When you would make an Athletics check to jump or climb, you can make an Acrobatics check instead. Superiority: You can also gain advantage on the next acrobatics check you make.</description>
+            </sheet>
+        </element>
+        <element name="Grappling Hook" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_GRAPPLING_HOOK">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>As an action, you can throw a grappling hook at a point within 30 feet of you. You can then use your full movement to move to an empty space within 5 feet of the point.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> You don’t need to use your movement to move to an empty space within 5 feet of the point.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can throw a grappling hook at a point within 30 feet of you. You can then use your full movement to move to an empty space within 5 feet of the point. Superiority: You don’t need to use your movement to move to an empty space within 5 feet of the point.</description>
+            </sheet>
+        </element>
+        <element name="Marking Shot" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_MARKING_SHOT">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>When you hit a creature with a ranged attack, you can mark it. Until the end of your next turn, disadvantage can’t be imposed on the next attack roll you make against a marked creature.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The next attack roll you make against a marked creature also has advantage.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with a ranged attack, you can mark it. Until the end of your next turn, disadvantage can’t be imposed on the next attack roll you make against a marked creature. Superiority: The next attack roll you make against a marked creature also has advantage.</description>
+            </sheet>
+        </element>
+        <element name="Noxious Shot" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_NOXIOUS_SHOT">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>When you hit a creature with a ranged attack, you can add 1d4 poison damage to the damage of that attack.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The creature takes an additional 2d4 damage at the start of its next turn.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with a ranged attack, you can add 1d4 poison damage to the damage of that attack. Superiority: The creature takes an additional 2d4 damage at the start of its next turn.</description>
+            </sheet>
+        </element>
+
+    <!-- Trap Maneuvers -->
+        <element name="Maneuvers: Traps" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_FEATURE_SNIPER_TRAP_MANEUVERS">
+            <description>
+                <p>The Sniper has unique maneuvers available to it. As a Sniper, you may choose from the maneuvers below whenever you gain a maneuver. Trap maneuvers all follow the same rules, in addition to their unique effects described:</p>
+                <ul>
+                    <li>When you place a trap, you must place it in an empty space on the ground within 5 feet of you.</li>
+                    <li>The trap is invisible and can only be detected by an Intelligence (Investigation) check against your maneuver DC to be found.</li>
+                    <li>The trap triggers when a Small or larger creature moves into the trap’s space.</li>
+                    <li>A trap lasts until it is triggered, but you can only have a maximum number of traps placed equal to your Dexterity modifier.</li>
+                    <li>When you create the trap using your superiority option, the trap includes the additional effect described there.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+        </element>
+
+        <element name="Bear Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_BEAR_TRAP">
+            <supports>Variant Fighter Maneuver,Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>You can spend a minute placing a bear trap. When a creature steps on the trap, it must make a Dexterity saving throw or take 2d8 piercing damage.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> If they fail the save, the creature is also restrained by the trap until it can succeed on a Strength saving throw to escape it. The creature can attempt to make this saving throw at the start of each of its turns.</p>
+            </description>
+            <sheet>
+                <description>You can spend a minute placing a bear trap. When a creature steps on the trap, it must make a Dexterity saving throw or take 2d8 piercing damage. Superiority: If they fail the save, the creature is also restrained by the trap until it can succeed on a Strength saving throw to escape it. The creature can attempt to make this saving throw at the start of each of its turns.</description>
+            </sheet>
+        </element>
+        <element name="Fire Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_FIRE_TRAP">
+            <supports>Variant Fighter Maneuver,Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>You can spend a minute placing a fire trap. When a creature steps on the trap, it must make a Dexterity saving throw or take 2d8 fire damage.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The trap deals an additional 1d8 fire damage.</p>
+            </description>
+            <sheet>
+                <description>You can spend a minute placing a fire trap. When a creature steps on the trap, it must make a Dexterity saving throw or take 2d8 fire damage. Superiority: The trap deals an additional 1d8 fire damage.</description>
+            </sheet>
+        </element>
+        <element name="Flashbang Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_FLASHBANG_TRAP">
+            <supports>Variant Fighter Maneuver,Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>You can spend a minute placing a flashbang trap. When a creature steps on the trap, they must make a Constitution saving throw or be blinded until the end of your next turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The trap instead stuns the creature until the end of your next turn if they fail the save.</p>
+            </description>
+            <sheet>
+                <description>You can spend a minute placing a flashbang trap. When a creature steps on the trap, they must make a Constitution saving throw or be blinded until the end of your next turn. Superiority: The trap instead stuns the creature until the end of your next turn if they fail the save.</description>
+            </sheet>
+        </element>
+        <element name="Poisonous Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_POISONOUS_TRAP">
+            <supports>Variant Fighter Maneuver,Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>You can spend a minute placing a poisonous trap. When a creature steps on the trap, it must make a Constitution saving throw or take 2d8 poison damage.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The trap also poisons the creature until the end of your next turn if they fail the save.</p>
+            </description>
+            <sheet>
+                <description>You can spend a minute placing a poisonous trap. When a creature steps on the trap, it must make a Constitution saving throw or take 2d8 poison damage. Superiority: The trap also poisons the creature until the end of your next turn if they fail the save.</description>
+            </sheet>
+        </element>
+        <element name="Smokescreen Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_SMOKESCREEN_TRAP">
+            <supports>Variant Fighter Maneuver,Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>You can spend a minute placing a smokescreen trap. When a creature steps on the trap, it sets off a burst of smoke with fills a 10-foot-radius sphere. The smoke makes this space heavily obscured, and it the smoke lasts until the start of your next turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The radius of the smokescreen increases by 10 feet.</p>
+            </description>
+            <sheet>
+                <description>You can spend a minute placing a smokescreen trap. When a creature steps on the trap, it sets off a burst of smoke with fills a 10-foot-radius sphere. The smoke makes this space heavily obscured, and it the smoke lasts until the start of your next turn. Superiority: The radius of the smokescreen increases by 10 feet.</description>
+            </sheet>
+        </element>
+        <element name="Tripwire Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_TRIPWIRE_TRAP">
+            <supports>Variant Fighter Maneuver,Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>You can spend a minute placing a tripwire trap. When a creature steps on the trap, it must make a Dexterity saving throw or fall prone.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The trap also binds the creature’s legs if they fail the save. It’s speed is halved until it cuts the bindings (with a dagger, knife, sword, ect).</p>
+            </description>
+            <sheet>
+                <description>You can spend a minute placing a tripwire trap. When a creature steps on the trap, it must make a Dexterity saving throw or fall prone. Superiority: The trap also binds the creature’s legs if they fail the save. It’s speed is halved until it cuts the bindings (with a dagger, knife, sword, ect).</description>
+            </sheet>
+        </element>
+
+    <!-- Enhanced Trap Maneuvers -->
+        <element name="Enhanced Bear Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_BEAR_TRAP_ENHANCED">
+            <supports>Variant Fighter Maneuver,Enhanced Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER,ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_BEAR_TRAP</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>As an Action, you can place a bear trap. When a creature steps on the trap, it must make a Dexterity saving throw or take 2d8 piercing damage.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> If they fail the save, the creature is also restrained by the trap until it can succeed on a Strength saving throw to escape it. The creature can attempt to make this saving throw at the start of each of its turns.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can place a bear trap. When a creature steps on the trap, it must make a Dexterity saving throw or take 2d8 piercing damage. Superiority: If they fail the save, the creature is also restrained by the trap until it can succeed on a Strength saving throw to escape it. The creature can attempt to make this saving throw at the start of each of its turns.</description>
+            </sheet>
+        </element>
+        <element name="Enhanced Fire Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_FIRE_TRAP_ENHANCED">
+            <supports>Variant Fighter Maneuver,Enhanced Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER,ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_FIRE_TRAP</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>As an Action, you can place a fire trap. When a creature steps on the trap, it must make a Dexterity saving throw or take 2d8 fire damage.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The trap deals an additional 1d8 fire damage.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can place a fire trap. When a creature steps on the trap, it must make a Dexterity saving throw or take 2d8 fire damage. Superiority: The trap deals an additional 1d8 fire damage.</description>
+            </sheet>
+        </element>
+        <element name="Enhanced Flashbang Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_FLASHBANG_TRAP_ENHANCED">
+            <supports>Variant Fighter Maneuver,Enhanced Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER,ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_FLASHBANG_TRAP</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>As an Action, you can place a flashbang trap. When a creature steps on the trap, they must make a Constitution saving throw or be blinded until the end of your next turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The trap instead stuns the creature until the end of your next turn if they fail the save.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can place a flashbang trap. When a creature steps on the trap, they must make a Constitution saving throw or be blinded until the end of your next turn. Superiority: The trap instead stuns the creature until the end of your next turn if they fail the save.</description>
+            </sheet>
+        </element>
+        <element name="Enhanced Poisonous Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_POISONOUS_TRAP_ENHANCED">
+            <supports>Variant Fighter Maneuver,Enhanced Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER,ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_POISONOUS_TRAP</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>As an Action, you can place a poisonous trap. When a creature steps on the trap, it must make a Constitution saving throw or take 2d8 poison damage.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The trap also poisons the creature until the end of your next turn if they fail the save.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can place a poisonous trap. When a creature steps on the trap, it must make a Constitution saving throw or take 2d8 poison damage. Superiority: The trap also poisons the creature until the end of your next turn if they fail the save.</description>
+            </sheet>
+        </element>
+        <element name="Enhanced Smokescreen Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_SMOKESCREEN_TRAP_ENHANCED">
+            <supports>Variant Fighter Maneuver,Enhanced Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER,ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_SMOKESCREEN_TRAP</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>As an Action, you can place a smokescreen trap. When a creature steps on the trap, it sets off a burst of smoke with fills a 10-foot-radius sphere. The smoke makes this space heavily obscured, and it the smoke lasts until the start of your next turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The radius of the smokescreen increases by 10 feet.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can place a smokescreen trap. When a creature steps on the trap, it sets off a burst of smoke with fills a 10-foot-radius sphere. The smoke makes this space heavily obscured, and it the smoke lasts until the start of your next turn. Superiority: The radius of the smokescreen increases by 10 feet.</description>
+            </sheet>
+        </element>
+        <element name="Enhanced Tripwire Trap" type="Class Feature" source="r/Unearthed Arcana" id="ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_TRIPWIRE_TRAP_ENHANCED">
+            <supports>Variant Fighter Maneuver,Enhanced Trap</supports>
+            <requirements>ID_RAINJUNKIE_RDDT_UA_ARCHETYPE_VF_SNIPER,ID_RAINJUNKIE_RDDT_UA_CLASS_FEATURE_VF_MANEUVER_TRIPWIRE_TRAP</requirements>
+            <prerequisite>Sniper archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Sniper archetype</p>
+                <p>As an Action, you can place a tripwire trap. When a creature steps on the trap, it must make a Dexterity saving throw or fall prone.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> The trap also binds the creature’s legs if they fail the save. It’s speed is halved until it cuts the bindings (with a dagger, knife, sword, ect).</p>
+            </description>
+            <sheet action="Action">
+                <description>You can place a tripwire trap. When a creature steps on the trap, it must make a Dexterity saving throw or fall prone. Superiority: The trap also binds the creature’s legs if they fail the save. It’s speed is halved until it cuts the bindings (with a dagger, knife, sword, ect).</description>
+            </sheet>
+        </element>
+
+</elements>
