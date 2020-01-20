@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Dread Necromancer Sorcerous Origin</name>
+        <author url="https://www.reddit.com/user/freakingfairy/">u/freakingfairy</author>
+        <update version="0.0.1">
+            <file name="sorcerer-dread-necromancer.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/sorcerer/sorcerer-dread-necromancer.xml" />
+        </update>
+        <!-- https://homebrewery.naturalcrit.com/share/HkbyWBHI1r -->
+    </info>
+    
+    <element name="Dread Necromancer" type="Archetype" source="r/Unearthed Arcana" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_SORCERER_DREAD_NECROMANCER">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p class="flavor">"Annabelle, not four hours ago you instructed a dead man to stand up and he did.”</p>
+            <p class="flavor indent">“Okay, he wasn’t dead, obviously. He was almost dead, at best.”</p>
+            <p class="flavor indent">“No. He was dead.”</p>
+            <p class="flavor indent">“I felt his pulse! It was very faint!”</p>
+            <p class="flavor indent">“You called his pulse. No one else would have felt it, because it wasn’t there except in response to you.”</p>
+            <p>-Molly Hall, ofgeography.tumblr.com</p>
+            <div element="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_DEAD_INSIDE" />
+            <div element="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_CALL_THE_PULSE" />
+            <div element="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_POWER_BEYOND_THE_GRAVE" />
+            <div element="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_DEATH_HUNGERS" />
+            <div element="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_OVERWHELMING_NECROSIS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_DEAD_INSIDE" level="1" />
+            <grant type="Archetype Feature" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_CALL_THE_PULSE" level="1" />
+            <grant type="Archetype Feature" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_POWER_BEYOND_THE_GRAVE" level="6" />
+            <grant type="Archetype Feature" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_DEATH_HUNGERS" level="14" />
+            <grant type="Archetype Feature" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_OVERWHELMING_NECROSIS" level="18" />
+        </rules>
+    </element>
+        <element name="Dead Inside" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_DEAD_INSIDE">
+            <description>
+                <p>At 1st level your natural connection to death and the undead makes you harder for them to detect. Mindless undead are not automatically hostile to you merely for being alive, and may ignore you if left unprovoked. They can still be commanded to attack you by a creature controlling them, and inteligent undead are free to make up their own mind about you as always.</p>
+                <p class="indent">Regardless, all undead have disadvantage on Wisdom (Perception) checks made to detect you.</p>
+            </description>
+            <sheet>
+                <description>Mindless undead are not automatically hostile to you merely for being alive, and may ignore you if left unprovoked. All undead have disadvantage on Perception checks made to detect you.</description>
+            </sheet>
+        </element>
+        <element name="Call the pulse" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_CALL_THE_PULSE">
+            <description>
+                <p>At 1st level you learn the <em>spare the dying</em> cantrip if you do not already know it. This does not count against your number of cantrips known.</p>
+                <p class="indent">Also at first level, you can raise an undead mockery of life from a body long dead to serve you. As an action, choose a pile of bones or a corpse of a Medium or Small humanoid within 30 feet of you, expending either a first level spell slot or two sorcery points. The target becomes a Skeleton if you chose bones or a Zombie if you chose a corpse. You may command this creature in battle the same way detailed in the animate dead spell.</p>
+                <p class="indent">You can maintain control over a number of creatures equal to half your sorcery level rounded down (minimum of one). If you animate another undead creature while already controling the maximum number, the oldest creature you've created is immediately freed from your control and becomes hostile to you.</p>
+            </description>
+            <sheet action="Action">
+                <description>Choose a pile of bones or a corpse of a Medium or Small humanoid within 30 feet of you, expending either a first level spell slot or two sorcery points. The target becomes a Skeleton if you chose bones or a Zombie if you chose a corpse. You may control up to {{call-the-pulse:creature-count}} creatures.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" spellcasting="Sorcerer" known="true" level="1" />
+                <stat name="call-the-pulse:creature-count" value="1" bonus="base" />
+                <stat name="call-the-pulse:creature-count" value="level:sorcerer:half" bonus="base" />
+            </rules>
+        </element>
+        <element name="Power Beyond the Grave" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_POWER_BEYOND_THE_GRAVE">
+            <description>
+                <p>At 6th level your learn to empower your undead servants. As an action, you may spend two sorcery points to infuse a chosen undead with aditional necrotic energy. For the next minute, the target creature gains a bonus to its AC equal to half your proficeny bonus (rounded down), gains temporary hitpoints equal to your sorceror level, and deals an additional 1d8 necrotic damage on all melee attacks.</p>
+                <p class="indent">In addition, you may expend five sorcery points to cast <em>revivify</em> on a non-undead creature without using a spell slot or material componants. Once you cast <em>revivify</em> this way, you can't do so again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action">
+                <description>You may spend 2 sorcery points to grant a chosen undead with a +{{proficiency:half}} AC bonus, {{level:sorcerer}} temporary hit points and it deals +1d8 necrotic damage on all melee attacks for the next minute. </description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_REVIVIFY" level="6" />
+            </rules>
+        </element>
+            <element name="Revivify" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_REVIVIFY">
+                <description>
+                    <p>You may expend five sorcery points to cast <em>revivify</em> on a non-undead creature without using a spell slot or material componants. Once you cast <em>revivify</em> this way, you can't do so again until you finish a long rest.</p>
+                </description>
+                <sheet action="Action" usage="1/Long Rest">
+                    <description>You may expend 5 sorcery points to cast revivify on a non-undead creature without using a spell slot or material componants.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_REVIVIFY" level="6" />
+                </rules>
+            </element>
+        <element name="Death Hungers" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_DEATH_HUNGERS">
+            <description>
+                <p>At 14th level your necrotic essence is so potent, it can tear the life directly from other creatures. As an action, you can make a melee spell attack against a creature within your reach. On a hit, the creature takes 3d6 necrotic damage and you regain hit points equal to half the damage taken.</p>
+                <p class="indent">Your mastery over life and death is also pushed to the limit. Starting at 14th level, you may cast the spell <em>resurrection</em> without expending a spell slot or material componants. You may only cast this spell a number of times equal to your charisma modifier (minimum of once) before losing the ability to do so forever.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can make a melee spell attack against a creature within your reach. On a hit, the creature takes 3d6 necrotic damage and you regain hit points equal to half the damage taken. You may cast the spell resurrection without expending a spell slot or material componants. You may only cast this spell {{death-hungers:uses}} times before losing the ability to do so forever.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_RESURRECTION" level="14" />
+                <stat name="death-hungers:uses" value="1" bonus="base" />
+                <stat name="death-hungers:uses" value="charisma:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Overwhelming Necrosis" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_FREAKINGFAIRY_RDDT_UA_ARCHETYPE_FEATURE_DREAD_NECROMANCER_OVERWHELMING_NECROSIS">
+            <description>
+                <p>At 18th level you have become one with the undead legions and your minions will lay down their unlife for your glory. As an action, you can flood all the undead currently under your control with negative energy, detonating them in an explosive burst. Any creature within 10ft of one of these explosions must make a Constitution saving throw versus your spell save DC. A creature in the area of more than one necrotic burst is affected only once. A target takes 8d6 necrotic damage on a failed save, or half as much damage on a successful one.</p>
+                <p class="indent">If any living humanoids are killed by one of these explosions, they are immediately raised as a zombie under your control. This feature does not allow you to control more undead than would be appropriate for your level (nine at 18th level and ten at 20th). If you manage to kill more than ten humaniods in the blast, the remainder turn to ash and you instead gain temporary hitpoints equal to your sorceror level.</p>
+            </description>
+            <sheet action="Action">
+                <description>You detonate all the undead currently under your control. Any creature within 10ft of one of these explosions must make a Constitution saving throw save DC {{spellcasting:dc}}. A creature in the area of more than one necrotic burst is affected only once. A target takes 8d6 necrotic damage on a failed save, or half as much damage on a successful one. If any living humanoids are killed by one of these explosions, they are immediately raised as a zombie under your control. Any humanoids beyond the {{level:sorcerer:half}} you can control turn to ash and you gain {{level:sorcerer}} temporary hit points.</description>
+            </sheet>
+        </element>
+    
+</elements>
