@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Alpha Druid Spells</name>
+        <update version="0.0.1">
+            <file name="spells.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/alpha-druid/spells.xml" />
+        </update>
+        <!-- https://drive.google.com/file/d/1HH-t_gPo88a_V26P3VG3KDHz4hjpWLj0/view -->
+    </info>
+
+  <!-- cantrips -->    
+    <element name="Blightclaw" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_BLIGHTCLAW">
+        <supports>Sorcerer, Warlock</supports>
+        <description>
+            <p>You slash at a target with a claw of greenish-black energy at a target within range. Make a melee spell attack against the target. On a hit, the target takes 1d6 poison damage and is poisoned until the start of their next turn.</p>
+            <p class="indent">This spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">0</set>
+            <set name="school">Necromancy</set>
+            <set name="time">1 action</set>
+            <set name="range">Touch</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Douse" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_DOUSE">
+        <supports>Druid, Sorcerer, Wizard</supports>
+        <description>
+            <p>You gesture, summoning a splash of saltwater to fall upon a creature or object within range. Flames are instantly quenched, and objects targeted by this spell cannot be ignited for at least one minute. If you target a creature, you can choose to have the saltwater be bone-chillingly cold. The target must make a Constitution saving throw. If they fail, they take 1d10 cold damage.</p>
+            <p class="indent">This spell’s damage increases by 1d8 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">0</set>
+            <set name="school">Conjuration</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Flash Enchantment" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_FLASH_ENCHANTMENT">
+        <supports>Druid, Warlock, Sorcerer, Wizard</supports>
+        <description>
+            <p>Elemental energy billows from your fingers and wrap around a weapon held by an ally of your choice. Choose acid, cold, fire, or lightning damage, the next time the ally hits with a weapon attack using that weapon they deal an additional 1d8 of the chosen type and the weapon is considered to be magical for the purpose of overcoming resistances and immunities.</p>
+            <p class="indent">This spell’s damage increases when you reach higher levels. At 5th level, the attack deals an extra 1d8 damage (2d8). This damage increase by 1d8 at 11th level (3d8) and 17th level (4d8).</p>
+       </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">0</set>
+            <set name="school">Transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">60 feet</set>
+            <set name="duration">1 round</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Stonefist" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_STONEFIST">
+        <supports>Druid, Sorcerer</supports>
+        <description>
+            <p>You magically transform one of your hands into solid stone and strike your foe with it. Make a melee spell attack. On a hit, the target takes 1d12 bludgeoning damage. This spell deals double damage against objects.</p>
+            <p class="indent">This spell’s damage increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), and 17th level (4d12).</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">0</set>
+            <set name="school">Transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">Touch</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+
+  <!-- 1st level -->
+    <element name="Dark Pounce" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_DARK_POUNCE">
+        <supports>Ranger, Warlock</supports>
+        <description>
+            <p>The first time before the end of your next turn you make a running jump, you instead teleport to your landing location. If this jump would take you into a Large or smaller creature’s space you appear in an unoccupied space in front of the creature (if there is none, the spell fails). The target must make a Strength saving throw. On a failure, the target falls prone and if you have a free hand, is grappled by you.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a 3rd level slot or higher, you can cast it with a bonus action.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">conjuration</set>
+            <set name="time">1 action</set>
+            <set name="range">Self</set>
+            <set name="duration">1 round</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Hunter’s Pace" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_HUNTERS_PACE">
+        <supports>Ranger</supports>
+        <description>
+            <p>You let out a hunting cry, empowering your body with speed and tirelessness. While you maintain concentration on this spell, you gain advantage on Athletics checks to jump, climb, swim, or move. You also gain advantage on saving throws against exhaustion and on checks to mitigate the effects of difficult terrain.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a slot of 2nd level or higher, your movement speed also increases by 5 feet per slot level above 1st.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">Self</set>
+            <set name="duration">Concentration, up to 1 hour</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Klazomania" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_KLAZOMANIA">
+        <supports>Bard, Warlock, Wizard</supports>
+        <description>
+            <p>You point at a creature within range and suggest a short phrase of up to 5 words, forcing the target to make a Wisdom saving throw. On a failure, the creature is forced to use their reaction to shout the nearest approximation to the proffered phrase that exists in their native tongue.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">enchantment</set>
+            <set name="time">1 action</set>
+            <set name="range">120 feet</set>
+            <set name="duration">1 round</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Ocean Pulse" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_OCEAN_PULSE">
+        <supports>Druid, Sorcerer, Wizard</supports>
+        <description>
+            <p>You attempt to hit a creature within range with a blast of salty water, forcing them to make a Dexterity saving throw. On a failed save, the target takes 3d6 bludgeoning damage and is knocked prone. On a success, the target takes half damage and is not knocked prone. Creatures that is Large or larger is immune to the prone effect of the spell.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">60 feet</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a seashell</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Rapport Spores" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_RAPPORT_SPORES">
+        <supports>Druid</supports>
+        <description>
+            <p>You conjure a 30-foot radius of spores extending from your position. These spores can go around corners and affect only creatures with an Intelligence of 2 or higher that aren’t undead, constructs, or elementals. For the duration, affected creatures can communicate telepathically with one another while they are within 60 feet of each other.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">conjuration</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (30-foot radius)</set>
+            <set name="duration">1 hour</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a fungal spore</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Safety Net" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_SAFETY_NET">
+        <supports>Druid, Ranger</supports>
+        <description>
+            <p>When you are forced to move in any direction and within 10 feet of solid ground, you can use your reaction call forth vines from the ground. They wrap around your body to keep you in place and remain until the started of your next turn.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">conjuration</set>
+            <set name="time">1 reaction</set>
+            <set name="range">Self</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+
+  <!-- 2nd level -->  
+    <element name="Arm of the Wild" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_ARM_OF_THE_WILD">
+        <supports>Druid, Ranger</supports>
+        <description>
+            <p>You transform one of your arms into an extendable vine whose end sticks to any surface that it touches. The arm cannot be used to wield any objects or weapons. On every turn within the duration, including the turn that you cast the spell, you can make either of the following actions:</p>
+            <p class="indent"><strong>Grab Creature.</strong> As a bonus action, you extend your vine arm forward, attempting to pull one creature you choose within 20 feet of you. The target must succeed on a Dexterity saving throw or be pulled 10 feet directly towards you.</p>
+            <p class="indent"><strong>Grab Surface.</strong> As a bonus action, you extend your vine arm forward, pulling yourself to a hard surface such as a wall or ceiling within 20 feet of you. If this movement would cause you to be suspended off the ground, you remain so until you take an action or the concentration ends.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">Self</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Corrode Metal" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_CORRODE_METAL">
+        <supports>Artificer, Druid, Wizard</supports>
+        <description>
+            <p>Choose a nonmagical metal object such as a stove, weapon, suit of armor, or shield that you can see within range. When you cast the spell and as a bonus action until the spell ends you cause the object to rust and corrode. The spell has different effects depending on your target.</p>
+            <p class="indent"><strong>Armor.</strong> The armor receives a -1 penalty to the AC it offers. A nonmagical armor reduced to an AC of 10 is destroyed.</p>
+            <p class="indent"><strong>Shield.</strong> The shield receives a -1 penalty to the AC it offers. A nonmagical shield that drops to a +0 bonus is destroyed.</p>
+            <p class="indent"><strong>Weapon.</strong> The weapon takes a -1 penalty to its attack and damage rolls. A nonmagical weapon that drops to -3 penalty is destroyed.</p>
+            <p class="indent"><strong>Other Object.</strong> An object takes 3 pounds of acid damage. An object that is reduced to 0 pounds is destroyed.</p>
+            <p class="indent">While an object is under the effect of the spell it is vulnerable to bludgeoning, piercing, and slashing damage.</p>
+            <p class="indent">The effect the spell has on an item is not removed after the spell ends but can be removed with mending or similar spell.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, you can target an additional object for each slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">60 feet</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a vial of stomach acid</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Guiding Light" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_GUIDING_LIGHT">
+        <supports>Cleric</supports>
+        <description>
+            <p>You release an orb of light from your palm. It travels in a line 5 feet wide 60 feet long in a direction you choose. Each creature in the line must make a Constitution saving throw. A creature takes 3d6 radiant damage on a failed save, or half as much damage on a successful one. Fiends and undead make the saving throw with disadvantage.</p>
+            <p class="indent">The area is illuminated by bright light until the end of your next turn, and the area within 5 feet of the spell is illuminated by dim light.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">60 feet</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Skyward Rise" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_SKYWARD_RISE">
+        <supports>Druid, Ranger</supports>
+        <description>
+            <p>You shout, calling the winds to bind a creature within range. The target must make a Strength saving throw. If it fails, it is suspended above the ground until the end of its next turn and is restrained. As a bonus action before the end of your current turn, you can make a melee weapon attack against the creature if it is within your reach, inflicting an additional 2d6 damage if you hit.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 damage for each slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">15 feet</set>
+            <set name="duration">1 round</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Suffer" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_SUFFER">
+        <supports>Bard, Cleric</supports>
+        <description>
+            <p>You point at a creature within range and speak a terrible word, commanding them to suffer. The target must make a Charisma saving throw. If they fail, they take 4d8 psychic damage and they have disadvantage on Strength and Dexterity ability checks until the end of their next turn. If they succeed, they take half as much damage and do not have disadvantage.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">enchantment</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Waterspout" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_WATERSPOUT">
+        <supports>Druid, Sorcerer, Wizard</supports>
+        <description>
+            <p>You create a forceful stream of water that rushes out in a line 15 feet long and 5 feet wide. Each creature in the line must make a Strength saving throw. On a failure, the creature takes 3d6 bludgeoning damage and is pushed up to 15 feet away from you. If the creature succeeds on its saving throw, it takes half as much damage and is not pushed.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, increase the bludgeoning damage by 1d6 per slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">conjuration</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (15-foot line)</set>
+            <set name="duration">Instant</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a vial of water</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+
+  <!-- 3rd level -->  
+    <element name="Cyclone Blast" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_CYCLONE_BLAST">
+        <supports>Druid, Sorcerer, Wizard</supports>
+        <description>
+            <p>You blast a creature with gale-force winds, dealing damage and knocking it down. One creature you can see within range is affected by the winds. It must make a Strength saving throw. On a failure, it takes 5d8 bludgeoning damage, is pushed up to 10 feet away from you, and is knocked prone. On a success, it takes half as much damage and is neither pushed or knocked down.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Grasp of the Wind" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_GRASP_OF_THE_WIND">
+        <supports>Druid, Ranger</supports>
+        <description>
+            <p>You call upon the wind to aid you, and let it guide your strikes. Each Large or smaller creature you choose within range and line of sight must make a Strength saving throw. On a failure, they are pushed as close to you as possible in a straight line towards you. When you cast this spell, you also take the Attack action after pushing your enemies closer. All melee attacks are made with advantage until the start of your next turn.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the range of the spell increases by 5 feet for each slot level above the third.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (20 feet radius)</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a melee weapon</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Perplex" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_PERPLEX">
+        <supports>Bard, Warlock, Wizard</supports>
+        <description>
+            <p>Designate a creature you can see within range, which makes a Intelligence saving throw. A creature with an Intelligence score of 2 or lower can’t be affected by this spell. On a failure, the target rolls a d6 at the start of its turn, taking the amount rolled as psychic damage, and subtracting that number from attack rolls, ability checks, and Constitution saving throws to maintain concentration. The target can make an Intelligence saving throw at the end of each of its turns, ending the effect on itself on a success.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">enchantment</set>
+            <set name="time">1 action</set>
+            <set name="range">60 feet</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Pincushion" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_PINCUSHION">
+        <supports>Artificer, Bard, Ranger, Wizard</supports>
+        <description>
+            <p>You change one object or creature of Small or larger size to magically attract physical projectiles that pass near it. If the target is a creature, you must make a melee spell attack to touch the creature. Any ranged attack that fires a physical projectile towards another creature or point within 15 feet of the affected creature or object is made with disadvantage. If the attack misses it automatically hits the affected creature or object. Any ranged weapon attack aimed at the target is made with advantage.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">Touch</set>
+            <set name="duration">Concentration, up to 10 minutes</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Serpent’s Bite" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_SERPENTS_BITE">
+        <supports>Druid, Ranger</supports>
+        <description>
+            <p>Massive, venomous fangs spring from your mouth. Make a melee spell attack against a target within your reach. On a hit, the target takes 3d6 poison damage, and the target must make a Constitution saving throw. If they fail, they are poisoned until the start of your next turn. Until the spell ends, you can make the attack again on each of your turns as a bonus action.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 per slot level above 3rd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">Self</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Skewering Branch" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_SKEWERING_BRANCH">
+        <supports>Druid, Ranger</supports>
+        <description>
+            <p>You cause a thick branch to shoot out of the ground along a line 5 feet wide and 30 feet long. Each creature in the line must succeed on a Dexterity saving throw or be pushed along the length of the branch as it grows in a direction of your choice. If the branch impacts a hard surface, such as a wall, it immediately stops and skewers all creatures that were pushed against that wall. Each creature takes 3d4 piercing damage and is restrained, skewered to the surface. If a creature can’t be pushed against the wall, as other creatures are taking up the space, it is moved as close as possible to the wall.</p>
+            <p class="indent">A restrained creature can use an action to make a Strength or Dexterity check (the creature’s choice) against the spell’s save DC, ending the effect on a success. On a failed check, a creature takes an additional 3d4 piercing damage.</p>
+            <p class="indent">When the spell ends, the conjured branch breaks and wilts away.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, both instances of damage increases by 1d4 for each slot level above 3rd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">conjuration</set>
+            <set name="time">1 action</set>
+            <set name="range">60 feet</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Spray of Thorns" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_SPRAY_OF_THORNS">
+        <supports>Druid, Ranger</supports>
+        <description>
+            <p>You shoot forth a burst of thorns from your hands which pierce through your enemy’s defenses, making them vulnerable to attacks. Each creature in a 20-foot cone must make a Dexterity saving throw. On a failed save, a creature takes 8d4 piercing damage, and until the start of your next turn they take an additional 1d4 piercing damage whenever they are hit by a weapon attack. On a successful save, a creature takes half damage and suffers no other effect.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the initial damage increases by 2d4 for each slot level above 3rd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">conjuration</set>
+            <set name="time">1 action</set>
+            <set name="range">20-foot cone</set>
+            <set name="duration">1 round</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a rose thorn</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Warrior’s Cry" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_WARRIORS_CRY">
+        <supports>Bard, Paladin</supports>
+        <description>
+            <p>You unleash a mighty war cry, inspiring your allies and demoralizing your enemies. Each creature of your choice within the area that can hear you adds your spellcasting ability modifier to its next attack roll or ability check. All other creatures in the area that can hear you must make a Wisdom saving throw. On a failure, they apply your spellcasting ability modifier as a penalty to their next attack roll or ability check. Once a creature has applied the bonus (or penalty) the spell ends for that creature.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, each affected creature applies the bonus or the penalty to the next two attack rolls or ability checks.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">enchantment</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">Self (25-foot radius)</set>
+            <set name="duration">1 minute</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+
+  <!-- 4th level -->  
+    <element name="Awareness" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_AWARENESS">
+        <supports>Artificer, Druid, Ranger, Warlock, Wizard</supports>
+        <description>
+            <p>You create an invisible magical sensor that floats just above your head and shares your space. You can see through the sensor in all directions. For the duration, no melee attack roll can have advantage against you, and you have advantage on Wisdom (Perception) and Intelligence (Investigation) checks that rely on sight.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">4</set>
+            <set name="school">divination</set>
+            <set name="time">1 action</set>
+            <set name="range">Self</set>
+            <set name="duration">Concentration, up to 1 hour</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a glass eye</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Avenger’s Wrath" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_AVENGERS_WRATH">
+        <supports>Paladin</supports>
+        <description>
+            <p>Your allies suffering triggers the divine wrath inside you. In response to an ally being damaged by a creature within 5 feet of you that you can see, you can make a melee weapon attack towards the creature which attacked your ally, on a hit you deal an additional 2d10 radiant damage.</p>
+            <p class="indent">If the damage made your ally unconscious the attack is made with advantage.</p>
+            <p class="indent">If the damage killed your ally the attack is a critical hit.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level, increase the radiant damage by 1d10.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">4</set>
+            <set name="school">evocation</set>
+            <set name="time">1 reaction</set>
+            <set name="range">5 feet</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Hammer of the Gods" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_HAMMER_OF_THE_GODS">
+        <supports>Cleric</supports>
+        <description>
+            <p>You summon a pillar of bright golden light that burns creatures in its area with its radiance. The spell affects a cylinder that is 40 feet high and has a 15-foot radius. All creatures in the area must make a Constitution saving throw, taking 6d8 radiant damage on a failed save, or half as much on a successful one. Fiends and undead makes this saving throw with disadvantage and are stunned on a failed save.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, increase the radiant damage by 1d8 per slot level above 4th.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">4</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">120 feet</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a tiny golden hammer worth at least 25 gold</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Splitting Shout" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_SPLITTING_SHOUT">
+        <supports>Bard, Sorcerer, Warlock, Wizard</supports>
+        <description>
+            <p>You release a magically-enhanced ear-splitting cry, that deafens and damage creatures near you, and can be heard up to 1000 feet away. Each creature other than you within 30 feet of you must make a Constitution save, if a creature is within 10 feet, they make the saving throw with disadvantage. On a failure, it takes 10d6 thunder damage, and is deafened for 1 minute. On a success, it takes half the damage and is not deafened. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.</p>
+            <p class="indent">A non magical object that isn’t being worn or carried also takes the damage if it’s in the spell’s area.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, the thunder damage increases by 2d6 for each slot level above 4th.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">4</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (30-foot-radius)</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Steel Wind Strike" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_STEEL_WIND_STRIKE">
+        <supports>Ranger, Wizard</supports>
+        <description>
+            <p>You flourish the weapon used in the casting and then vanish to strike like the wind. Choose up to four creatures you can see within range. As part of the casting of this spell, make a melee attack against each target with the weapon used in the casting. On each hit, the target takes additional force damage equal to 1d10 + your spellcasting ability modifier.</p>
+            <p class="indent">You can then teleport to an unoccupied space you can see within 5 feet of one of the targets you hit or missed.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">4</set>
+            <set name="school">conjuration</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a melee weapon</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Tree Strike" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_TREE_STRIKE">
+        <supports>Druid, Ranger</supports>
+        <description>
+            <p>You cause a tree to grasp at a creature within 10 feet of it with its branches, pulling and constricting that creature. The target must succeed on a Dexterity saving throw or take 6d8 bludgeoning damage, be pulled to the tree, and become restrained. At the start of each of its turns, the restrained creature takes 2d8 bludgeoning damage. A restrained creature can use an action to make a Strength or Dexterity check (the creature’s choice) against the spell’s saving throw DC. On a success, the creature is no longer restrained.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">4</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a small twig</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Windblade" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_WINDBLADE">
+        <supports>Druid, Sorcerer, Wizard</supports>
+        <description>
+            <p>With a sweeping gesture you unleash an invisible scythe of wind in a 30-foot cone, which cuts cleanly through trees and walls. Creatures within the area must make a Dexterity saving throw. If they fail, they take 8d8 slashing damage. On a success, a creature takes half the damage.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, the slashing damage increases by 1d8 per slot level above 5th.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">4</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (30-foot cone)</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+
+  <!-- 5th level -->  
+    <element name="Agonizing Whip" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_AGONIZING_WHIP">
+        <supports>Cleric, Sorcerer, Warlock</supports>
+        <description>
+            <p>You manifest a whip out of pure coalesced pain that hums with the faint screams of horrors inflicted past. When you cast this spell, you make 3 melee spell attacks at targets within range. You can lash out at one target or several. On a hit, the target takes 3d8 psychic damage.</p>
+            <p class="indent">If at least two of your attacks hit the same creature, the creature must make a Constitution saving throw or be incapacitated for the duration. If three hit, the creature is stunned for the same duration. At the end of each of its turns, it can make another Wisdom save. On a success, the spell ends.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th-level or higher, you make an additional attack for each slot level above 5th.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">20 feet</set>
+            <set name="duration">1 minute</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Magic Missile Barrage" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_MAGIC_MISSILE_BARRAGE">
+        <supports>Sorcerer, Wizard</supports>
+        <description>
+            <p>You call forth a swarm of magical darts of glowing force, which swirl around you as they move with you. Each time a creature that you can see ends its turn within range, you can have a single dart fly forth and unerringly strike them.</p>
+            <p class="indent">Additionally, as part of casting this spell and as an action on your turn you cause up to 6 darts to fly forth and strike a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target and is considered a magic missile for effects such as the shield spell. The darts all strike simultaneously and you can direct them to hit one creature or several.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, the spell creates one more dart for each slot above 5th each time you use an action on your turn to cause darts to fly forth.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">60 feet</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Midnight" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_MIDNIGHT">
+        <supports>Druid</supports>
+        <description>
+            <p>A 60-foot-radius sphere of darkness spreads out from a point you choose within range. The sphere is magical darkness, which means that darkvision can’t see through it.</p>
+            <p class="indent">If the point you choose is on an object you are holding or one that isn’t being worn or carried, the darkness emanates from the object and moves with it. Completely covering the source of the darkness with an opaque object, such as a bowl or a helm, blocks the darkness.</p>
+            <p class="indent">If any of this spell’s area overlaps with an area of light created by a spell of the same level or lower, the spell that created the light is dispelled.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, the radius increases 5 feet for each slot level above 5th.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">60 feet</set>
+            <set name="duration">1 hour</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Nemesis" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_NEMESIS">
+        <supports>Ranger</supports>
+        <description>
+            <p>You declare a challenge, and describe a creature that you have damaged or has damaged you within the past year. If that creature is on the same plane of existence that creature becomes marked by your magic, and it feels a sense of impending doom that grows the closer you get to it.</p>
+            <p class="indent">You become supernaturally alert towards any sign of your quarry or information that would aid your search, gaining advantage on all checks made to discern the target’s location or path of travel. The first time the target sees you, they must make a Wisdom saving throw. If they fail, they are frightened until the end of their next turn, and must attempt to flee via the safest route they are aware of during their next turn. Once the target has seen you, the spell ends.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">divination</set>
+            <set name="time">1 minute</set>
+            <set name="range">Unlimited</set>
+            <set name="duration">8 hours</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a small trinket</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Pride of the Wild" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_PRIDE_OF_THE_WILD">
+        <supports>Druid, Ranger</supports>
+        <description>
+            <p>Up to 6 creatures of your choosing within range have their movement speed doubled for the duration. This effect is removed if a target takes a hostile action towards any creature.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">enchantment</set>
+            <set name="time">1 minute</set>
+            <set name="range">5 feet</set>
+            <set name="duration">1 hour</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">the claw of a cheetah</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Shard Storm" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_SHARD_STORM">
+        <supports>Sorcerer, Warlock, Wizard</supports>
+        <description>
+            <p>You create a whirling maelstrom of invisible blades that fills a cylinder 30 feet tall and 30 feet across. Any creature that starts its turn in the area must make a Dexterity saving throw. On a failure, the creature takes 12d4 slashing damage. On a success, it only takes half damage.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, increase the slashing damage by 2d4 for each slot level above 5th.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">60 feet</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a shard of glass</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Survival Instincts" type="Spell" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_SPELL_SURVIVAL_INSTINCTS">
+        <supports>Druid, Ranger</supports>
+        <description>
+            <p>You imbue yourself and up to 6 allies within range with improved reflexes. Affected creatures gain a bonus to Dexterity saves equal to your spellcasting ability modifier, and when they are subjected to an effect that allows them to make a Dexterity save for half damage, they instead take no damage on a success. On a failure, they only take half damage.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="duration">Concentration, up to 10 minutes</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a pinch of powdered emerald worth 100 gold, which the spell consumes</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    
+</elements>

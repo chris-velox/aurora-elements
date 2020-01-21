@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Alpha Druid Companion Feats</name>
+        <update version="0.0.1">
+            <file name="feats.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/alpha-druid/feats.xml" />
+        </update>
+        <!-- https://drive.google.com/file/d/1HH-t_gPo88a_V26P3VG3KDHz4hjpWLj0/view -->
+    </info>
+    
+    <element name="Agile Mount" type="Feat" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_FEAT_AGILE_MOUNT">
+        <prerequisite>Companion</prerequisite>
+        <description>
+            <p class="flavor">Prequisite: Companion</p>
+            <p>You and your Companion have learned to anticipate each other’s movement and trust each other implicitly, making you a seamless unit in combat. While you are mounted on your Companion and aren’t incapacitated, you and your Companion gain the following benefits:</p>
+            <ul>
+                <li>Opportunity attacks against either of you have disadvantage.</li>
+                <li>If both you and your Companion are subjected to an effect that allows you to make a Dexterity saving throw, you or your Companion can choose to forgo its roll. If you do, you both use your Companion’s result. If your Companion does, you gain advantage on the roll, and you both use your result.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>While mounted, opportunity attacks against either of you have disadvantage. Additionally, if both you and your Companion are subjected to an effect that allows you to make a Dexterity saving throw, you or your Companion can choose to forgo its roll. If you do, you both use your Companion’s result. If your Companion does, you gain advantage on the roll, and you both use your result.</description>
+        </sheet>
+    </element>
+    
+    <element name="Apex Predator" type="Feat" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_FEAT_APEX_PREDATOR">
+        <prerequisite>Companion</prerequisite>
+        <description>
+            <p class="flavor">Prequisite: Companion</p>
+            <p>Through extreme training and a special diet your Companion has outgrown most, if not all, of its species. Your Companion gain the following benefits:</p>
+            <ul>
+                <li>Your Companion’s size increase by one, up to a maximum of Large. If it become Large, its carrying capacity is doubled.</li>
+                <li>Your Companion gains proficiency in the Athletics, Intimidation, or Survival skill.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Your Companion’s size increase by one, up to a maximum of Large. If it become Large, its carrying capacity is doubled. Your Companion gains proficiency in the Athletics, Intimidation, or Survival skill.</description>
+        </sheet>
+    </element>
+    
+    <element name="Barding Mastery" type="Feat" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_FEAT_BARDING_MASTERY">
+        <requirements></requirements>
+        <prerequisite>Companion</prerequisite>
+        <description>
+            <p class="flavor">Prequisite: Companion, Barding proficiency</p>
+            <p>You have trained your Companion to master the use of barding, granting it the following benefits:</p>
+            <ul>
+                <li>No barding imposes disadvantage on its Stealth (Dexterity) checks.</li>
+                <li>The barding is considered to weigh half when determining encumbrance.</li>
+                <li>When wearing medium barding, it can add 3, rather than 2, to its AC if it have a Dexterity of 16 or higher.</li>
+                <li>When wearing heavy barding, bludgeoning, piercing, and slashing damage that it take from non-magical weapons is reduced by your proficiency.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>No barding imposes disadvantage on its Stealth (Dexterity) checks. The barding is considered to weigh half when determining encumbrance. When wearing medium barding, it can add 3, rather than 2, to its AC if it have a Dexterity of 16 or higher. When wearing heavy barding, bludgeoning, piercing, and slashing damage that it take from non-magical weapons is reduced by {{proficiency}}.</description>
+        </sheet>
+    </element>
+    
+    <element name="Endurance Training" type="Feat" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_FEAT_ENDURANCE_TRAINING">
+        <prerequisite>Companion</prerequisite>
+        <description>
+            <p class="flavor">Prequisite: Companion</p>
+            <p>Your Companion’s hit point maximum increases by an amount equal to twice your level. Whenever you gain a level thereafter, your Companion’s hit point maximum increases by an additional 2 hit points.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="companion:hp" value="level" />
+            <stat name="companion:hp" value="level" />
+        </rules>
+    </element>
+    
+    <element name="Kindred Spirits" type="Feat" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_FEAT_KINDRED_SPIRITS">
+        <prerequisite>Companion</prerequisite>
+        <description>
+            <p class="flavor">Prequisite: Companion</p>
+            <p>Through journeying the world together, you and your Companion have come to a deeper understanding, gaining the following benefits:</p>
+            <ul>
+                <li>You can cast <strong>beast bond</strong> and <strong>beast sense</strong> targeting your Companion without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest.</li>
+            </ul>
+            <div class="reference">
+                <div element="ID_XGTE_SPELL_BEAST_BOND" />
+                <div element="ID_PHB_SPELL_BEAST_SENSE" />
+            </div>
+        </description>
+        <sheet usage="{{kindred-spirits:uses}}/Long Rest">
+            <description>You can cast beast bond and beast sense targeting your Companion without expending a spell slot.</description>
+        </sheet>
+        <rules>
+            <stat name="kindred-spirits:uses" value="1" bonus="base" />
+            <stat name="kindred-spirits:uses" value="wisdom:modifier" bonus="base" />
+            <grant type="Spell" id="ID_XGTE_SPELL_BEAST_BOND" />
+            <grant type="Spell" id="ID_PHB_SPELL_BEAST_SENSE" />
+        </rules>
+    </element>
+    
+    <element name="Overprotective" type="Feat" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_FEAT_OVERPROTECTIVE">
+        <prerequisite>Companion</prerequisite>
+        <description>
+            <p class="flavor">Prequisite: Companion</p>
+            <p>You and your Companion truly have each other’s backs. While within 5 feet of each other, you both get the following benefits:</p>
+            <ul>
+                <li>If a creature hits you with a melee attack and your Companion is within 5 feet of the creature, your Companion can use its reaction to attack the creature.</li>
+                <li>If a creature hits you with a melee attack and your Companion is within 5 feet of the creature, it can use its reaction to throw itself in harm’s way, forcing the damage to be dealt to itself instead.</li>
+                <li>If a creature hits your Companion with a melee attack and you are within 5 feet of your Companion and the target, you can use your reaction to throw yourself in harm’s way, forcing the damage to be dealt to you itself of your Companion.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>While within 5 feet of each other, you both get the following benefits: If a creature hits you with a melee attack and your Companion is within 5 feet of the creature, your Companion can use its reaction to attack the creature. If a creature hits you with a melee attack and your Companion is within 5 feet of the creature, it can use its reaction to throw itself in harm’s way, forcing the damage to be dealt to itself instead. If a creature hits your Companion with a melee attack and you are within 5 feet of your Companion and the target, you can use your reaction to throw yourself in harm’s way, forcing the damage to be dealt to you itself of your Companion.</description>
+        </sheet>
+    </element>
+    
+    <element name="Spirit Bond" type="Feat" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_FEAT_SPIRIT_BOND">
+        <prerequisite>Companion</prerequisite>
+        <description>
+            <p class="flavor">Prequisite: Companion</p>
+            <p>Through the years you spent together, you and your Companion have learned to listen, watch and understand each other, even though no words have been spoken. You and your Companion gain the following benefits:</p>
+            <ul>
+                <li>When you roll for Initiative, your Companion may also roll, and you can then decide which roll to use.</li>
+                <li>Your Companion can use its Wisdom modifier instead of its Dexterity modifier when making Initiative checks.</li>
+                <li>You both have advantage on any Perception (Wisdom) check which relates to you or your Companion.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You and your Companion gain the following benefits: When you roll for Initiative, your Companion may also roll, and you can then decide which roll to use. Your Companion can use its Wisdom modifier instead of its Dexterity modifier when making Initiative checks. You both have advantage on any Perception (Wisdom) check which relates to you or your Companion.</description>
+        </sheet>
+    </element>
+    
+    <element name="Survival of the Fittest" type="Feat" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_FEAT_SURVIVAL_OF_THE_FITTEST">
+        <prerequisite>Companion</prerequisite>
+        <description>
+            <p class="flavor">Prequisite: Companion</p>
+            <p>Even though your Companion is smaller than most of its relatives, it has had enough training and skill to stalk the largest of preys. Your Companion gains the following benefits:</p>
+            <ul>
+                <li>Your Companion’s size is reduced by one, down to a minimum of Tiny. If it becomes Tiny, its carrying capacity is halved.</li>
+                <li>Your Companion gains proficiency in the Acrobatics, Perception, or Stealth.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Your Companion’s size is reduced by one, down to a minimum of Tiny. If it becomes Tiny, its carrying capacity is halved. Your Companion gains proficiency in the Acrobatics, Perception, or Stealth.</description>
+        </sheet>
+    </element>
+    
+    <element name="Survival Instincts" type="Feat" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_FEAT_SURVIVAL_INSTINCTS">
+        <prerequisite>Companion</prerequisite>
+        <description>
+            <p class="flavor">Prequisite: Companion</p>
+            <p>Your Companion’s will to survive makes it a slippery foe. Your Companion gains the following benefits:</p>
+            <ul>
+                <li>Whenever your Companion uses its action to Disengage, it gains 15 feet of additional movement.</li>
+                <li>Whenever your Companion takes the Dodge action, it can Disengage as a bonus action.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Whenever your Companion uses its action to Disengage, it gains 15 feet of additional movement. Whenever your Companion takes the Dodge action, it can Disengage as a bonus action.</description>
+        </sheet>
+    </element>
+    
+    <element name="Unleashed Fury" type="Feat" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_FEAT_UNLEASHED_FURY">
+        <prerequisite>Companion</prerequisite>
+        <description>
+            <p class="flavor">Prequisite: Companion</p>
+            <p>Your Companion, though a trusted friend and ally, still carries remnants of the wild beast within. Your Companion gains the following benefits:</p>
+            <ul>
+                <li>When your Companion takes the Dash action, it can use a bonus action to make one attack with disadvantage.</li>
+                <li>Once per round, when your Companion has advantage on an attack, it can choose to attack normally instead. If the attack hits, the Companion can roll one additional weapon damage die and add it to the damage dealt.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When your Companion takes the Dash action, it can use a bonus action to make one attack with disadvantage. Once per round, when your Companion has advantage on an attack, it can choose to attack normally instead. If the attack hits, the Companion can roll one additional weapon damage die and add it to the damage dealt.</description>
+        </sheet>
+    </element>
+    
+    <element name="Well Trained" type="Feat" source="r/Unearthed Arcana" id="ID_SWECKY_RDDT_UA_FEAT_WELL_TRAINED">
+        <prerequisite>Companion</prerequisite>
+        <description>
+            <p class="flavor">Prequisite: Companion</p>
+            <p>You and your Companion has spent most hours training. Your Companion gains the following benefits:</p>
+            <ul>
+                <li>All of its movement speeds increases by 5 feet.</li>
+                <li>Your Companion gains proficiency in one of the following skills: Acrobatics, Athletics, Insight, Intimidate, Perception, Performance, Stealth, and Survival.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Your Companion gains proficiency in one of the following skills: Acrobatics, Athletics, Insight, Intimidate, Perception, Performance, Stealth, and Survival.</description>
+        </sheet>
+        <rules>
+            <stat name="companion:speed" value="5" />
+        </rules>
+    </element>
+    
+</elements>
