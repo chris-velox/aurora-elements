@@ -4,15 +4,13 @@
     <name>Witch</name>
     <description>Witch by Zarieth.</description>
     <author url="https://www.gmbinder.com/share/-L7fK9yKzbw1PUOM3iJi">Zarieth</author>
-    <update version="0.1.3">
+    <update version="0.1.31">
       <file name="class-witch.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-witch.xml" />
     </update>
   </info>
 
   <!-- Witch Class -->
   <element name="Witch" type="Class" source="GM Binder" id="ID_GM_BINDER_CLASS_WITCH">
-    <supports />
-    <requirements />
     <description>
       <p class="flavor">A tattooed elf, veiled and cloaked, draws his obsidian dagger across the sand, calling forth from the lines a ghostly apparition to help him and his allies find their way. A trio of halfling hermits gather among candles and incense, chanting words of power to bait spirits from the shadows. The bejeweled human, dressed in exotic garb and golden chains bellows a spell which echoes with the voices of an army of lost souls, a fiendish glint in his eyes as blood drips from his palm.</p>
       <p class="indent">Unlike shamans who pray to the spirits of nature, witches bind the transient souls of intelligent beings lost betwixt the realm of the living and the beyond. As a witch, you learn to summon these souls and bind them to your will, gaining protection from them as well as the power to debilitate your enemies. As you attain higher levels, the covenant you choose to live by grants you further abilities which extend the utility and power of these bonds in different ways.</p>
@@ -98,8 +96,6 @@
     <setters>
       <set name="short">A spellcaster that relies on binding spirits and using those spirits’ power.</set>
       <set name="hd">d6</set>
-      <set name="spellcaster">true</set>
-      <set name="spellcastingAbility">Charisma</set>
     </setters>
     <rules>
       <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
@@ -152,7 +148,7 @@
       <set name="spellcastingAbility">Charisma</set>
     </setters>
     <spellcasting name="Witch" ability="Charisma" allowReplace="true">
-      <list>Witch</list>
+      <list>Spirit Witch</list>
     </spellcasting>
     <rules>
       <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
@@ -181,25 +177,24 @@
       <select type="Spell" name="Cantrip (Witch)" supports="$(spellcasting:list),0" level="4" spellcasting="Witch"/>
       <select type="Spell" name="Cantrip (Witch)" supports="$(spellcasting:list),0" level="10" spellcasting="Witch"/>
       
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="1" number="4" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="2" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="4" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="5" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="6" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="7" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="9" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="9" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="11" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="13" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="15" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="17" spellcasting="Witch"/>
-      <select type="Spell" name="Spell (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="19" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="1" number="4" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="2" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="4" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="5" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="6" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="7" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="9" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="9" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="11" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="13" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="15" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="17" spellcasting="Witch"/>
+      <select type="Spell" name="Spellcasting (Witch)" supports="$(spellcasting:list),$(spellcasting:slots)" level="19" spellcasting="Witch"/>
     </rules>
   </element>
 
   <element name="Quickening" type="Class Feature" source="GM Binder" id="ID_GM_BINDER_CLASS_FEATURE_WITCH_QUICKENING">
-    <supports>Witch</supports>
     <requirements />
     <description>
       <p>At 1st level, you gain the ability to enter a trance known as the witch’s quickening. Entering the trance is a bonus action and allows you to see into the Ethereal Plane up to 60 feet for up to one minute. You also gain insight into the emotional energy surrounding you, letting you know if and what spiritual creatures are within 60 feet, as well as granting you advantage to Wisdom (Insight) checks for the duration. Finally, while in your quickening, if you cast a spell that deals necrotic damage you can substitute that damage with psychic damage instead. You may use this ability a number of times equal to your Charisma modifier. You regain any expended uses when you finish a long rest.</p>
@@ -214,7 +209,6 @@
   </element>
 
   <element name="Witch Covenant" type="Class Feature" source="GM Binder" id="ID_GM_BINDER_CLASS_FEATURE_WITCH_WITCH_COVENANT">
-    <supports>Witch</supports>
     <requirements />
     <description>
       <p>At 2nd level you commit yourself to a spiritual philosophy known as a witch’s covenant: the Covenant of Blood, the Covenant of Charm, the Covenant of Ruin, the Covenant of Shadows, or the Covenant of Unity, detailed at the end of the class description. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level.</p>
@@ -230,7 +224,6 @@
   </element>
 
   <element name="Binding Rites" type="Class Feature" source="GM Binder" id="ID_GM_BINDER_CLASS_FEATURE_WITCH_BINDING_RITES">
-    <supports>Witch</supports>
     <requirements />
     <description>
       <p>At 2nd level you can bind spirits to your service. Binding a spirit is much like casting a ritual spell and takes 10 minutes of uninterrupted activity. During this time, the witch speaks the invocations required to summon the spirit forth and enacts the rite of binding depending on which philosophy the witch belongs to. A blood witch might utilize a bone fragment to bind the spirit, while a shadow witch might bargain with the summoned spirit, exchanging a secret for the spirit’s service.</p>
@@ -267,7 +260,6 @@
   </element>
 
   <element name="Spirit Ward" type="Class Feature" source="GM Binder" id="ID_GM_BINDER_CLASS_FEATURE_WITCH_SPIRIT_WARD">
-    <supports>Witch</supports>
     <requirements />
     <description>
       <p>At 3rd level, you learn a rite that offers protection against spirits who wish you or your allies harm. As an action, you can create a spirit ward with a radius of 30 feet, centered on your location. The ward lasts 1 minute and is stationary for the duration. While inside the ward, friendly creatures (yourself included) cannot be charmed, frightened, or possessed by undead and have resistance to all damage from incorporeal undead sources. Additionally, if a friendly creature is reduced to 0 hit points within the ward but is not killed outright, the creature becomes stable.</p>
@@ -295,7 +287,6 @@
   </element>
 
   <element name="Spiritual Spellcasting" type="Class Feature" source="GM Binder" id="ID_GM_BINDER_CLASS_FEATURE_WITCH_SPIRITUAL_SPELLCASTING">
-    <supports>Witch</supports>
     <requirements />
     <description>
       <p>At 7th level you may call upon the spirits you have bound to help you cast your spells. You may dismiss a spirit as a bonus action to recover a spell slot of a level equal to that of the spirit’s. The release effect of the spirit you dismissed is not activated.</p>
@@ -307,7 +298,6 @@
   </element>
   
   <element name="Channel Spell" type="Class Feature" source="GM Binder" id="ID_GM_BINDER_CLASS_FEATURE_WITCH_CHANNEL_SPELL">
-    <supports>Witch</supports>
     <requirements />
     <description>
       <p>Beginning at 11th level, damage you deal with spells of 1st level or higher ignore damage resistances of undead and creatures on the Ethereal Plane. In addition, any damage immunities of these creatures become resistances to your spells of 1st level or higher.</p>
@@ -319,7 +309,6 @@
   </element>
 
   <element name="Strength of Spirit" type="Class Feature" source="GM Binder" id="ID_GM_BINDER_CLASS_FEATURE_WITCH_STRENGTH_OF_SPIRIT">
-    <supports>Witch</supports>
     <requirements />
     <description>
       <p>At 15th level, you learn to sap additional fortitude from the spirits you bind. When you finish a long rest, you gain temporary hit points equal to 5 times the highest-level spirit you have bound.</p>
@@ -331,7 +320,6 @@
   </element>
 
   <element name="Familiar Spirit" type="Class Feature" source="GM Binder" id="ID_GM_BINDER_CLASS_FEATURE_WITCH_FAMILIAR_SPIRIT">
-    <supports>Witch</supports>
     <requirements />
     <description>
       <p>At 18th level, when cast <i>find familiar</i> or if you already have a familiar, you can awaken spiritual energy within the animal as part of an additional ritual taking 10 minutes. Once complete, you choose one spirit from the list at the end of the class description. Its level is equal to your Charisma modifier.</p>
@@ -346,7 +334,6 @@
   </element>
 
   <element name="Ghostly Step" type="Class Feature" source="GM Binder" id="ID_GM_BINDER_CLASS_FEATURE_WITCH_GHOSTLY_STEP">
-    <supports>Witch</supports>
     <requirements />
     <description>
       <p>At 20th level you gain the ability to enter the spirit realm as a bonus action by projecting part of yourself beyond the material plane. You and your belongings become invisible and incorporeal for up to 1 minute. You gain resistance to all damage from non-magical sources, and are immune to being grappled, paralyzed, petrified, poisoned, and restrained.</p>
@@ -806,524 +793,524 @@
 
   <!-- Witch Skills-->
   <append id="ID_PROFICIENCY_SKILL_ARCANA">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_ANIMALHANDLING">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_HISTORY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_INSIGHT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_MEDICINE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_NATURE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_RELIGION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
 
 
   <!-- Witch Spell List -->
   <!-- Witch Cantrips-->
   <append id="ID_PHB_SPELL_BLADE_WARD">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CHILL_TOUCH">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DANCING_LIGHTS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FRIENDS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_GUIDANCE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_INFESTATION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LIGHT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MAGE_HAND">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MENDING">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MINOR_ILLUSION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_POISON_SPRAY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_RAY_OF_FROST">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_RESISTANCE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_THAUMATURGY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_TOLL_THE_DEAD">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_TRUE_STRIKE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
 
   <!-- Witch First Level Spells -->
   <append id="ID_PHB_SPELL_ANIMAL_FRIENDSHIP">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_CAUSE_FEAR">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_CEREMONY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_CHAOS_BOLT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CHARM_PERSON">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CURE_WOUNDS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DETECT_MAGIC">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DISGUISE_SELF">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FAERIE_FIRE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FIND_FAMILIAR">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HEALING_WORD">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HEX">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_ICE_KNIFE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LONGSTRIDER">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PURIFY_FOOD_AND_DRINK">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SPEAK_WITH_ANIMALS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_WITCH_BOLT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
 
   <!-- Witch Second Level Spells -->
   <append id="ID_XGTE_SPELL_AGANAZZARS_SCORCHER">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ALTER_SELF">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_AUGURY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CALM_EMOTIONS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CROWN_OF_MADNESS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DARKNESS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DARKVISION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ENHANCE_ABILITY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ENTHRALL">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_HEALING_SPIRIT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HOLD_PERSON">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LESSER_RESTORATION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LOCATE_ANIMALS_OR_PLANTS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LOCATE_OBJECT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_MIND_SPIKE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MISTY_STEP">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MOONBEAM">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_NYSTULS_MAGIC_AURA">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PHANTASMAL_FORCE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PROTECTION_FROM_POISON">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_RAY_OF_ENFEEBLEMENT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SEE_INVISIBILITY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SHADOW_BLADE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SUGGESTION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
 
   <!-- Witch Third Level Spells -->
   <append id="ID_PHB_SPELL_BESTOW_CURSE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CLAIRVOYANCE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONJURE_ANIMALS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DAYLIGHT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DISPEL_MAGIC">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_ENEMIES_ABOUND">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FEAR">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FLY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_LIFE_TRANSFERENCE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MAGIC_CIRCLE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MAJOR_IMAGE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_REMOVE_CURSE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SPEAK_WITH_DEAD">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SPIRIT_GUARDIANS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SUMMON_LESSER_DEMONS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_TINY_SERVANT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_TONGUES">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_VAMPIRIC_TOUCH">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_WATER_BREATHING">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_WATER_WALK">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
 
   <!-- Witch Fourth Level Spells -->
   <append id="ID_PHB_SPELL_BANISHMENT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_BLIGHT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_CHARM_MONSTER">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONFUSION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DEATH_WARD">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DIVINATION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DOMINATE_BEAST">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_GUARDIAN_OF_NATURE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HALLUCINATORY_TERRAIN">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LOCATE_CREATURE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_POLYMORPH">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SHADOW_OF_MOIL">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SUMMON_GREATER_DEMON">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_VIRTIOLIC_SPHERE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_WALL_OF_FIRE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
 
   <!-- Witch Fifth Level Spells -->
   <append id="ID_PHB_SPELL_ANIMATE_OBJECTS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ANTILIFE_SHELL">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_AWAKEN">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_COMMUNE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONTACT_OTHER_PLANE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONTAGION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_DANSE_MACABRE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DOMINATE_PERSON">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DREAM">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_ENERVATION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_GEAS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_GREATER_RESTORATION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HOLD_MONSTER">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_INSECT_PLAGUE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LEGEND_LORE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MASS_CURE_WOUNDS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MODIFY_MEMORY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_NEGATIVE_ENERGY_FLOOD">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PLANAR_BINDING">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_REINCARNATE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SCRYING">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SYNAPTIC_STATIC">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_WRATH_OF_NATURE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
 
   <!-- Witch Sixth Level Spells -->
   <append id="ID_PHB_SPELL_CIRCLE_OF_DEATH">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONJURE_FEY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONTINGENCY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_EYEBITE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FIND_THE_PATH">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FORBIDDANCE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HEAL">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MASS_SUGGESTION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_MENTAL_PRISON">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_PRIMORDIAL_WARD">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SOUL_CAGE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SUNBEAM">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_TRUE_SEEING">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
 
   <!-- Witch Seventh Level Spells -->
   <append id="ID_XGTE_SPELL_CROWN_OF_STARS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ETHEREALNESS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FINGER_OF_DEATH">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MIRAGE_ARCANE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MORDENKAINENS_MAGNIFICENT_MANSION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PLANE_SHIFT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_POWER_WORD_PAIN">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_REGENERATE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SEQUESTER">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SYMBOL">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
 
   <!-- Witch Eighth Level Spells-->
   <append id="ID_XGTE_SPELL_ABI_DALZIMS_HORRID_WILTING">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ANIMAL_SHAPES">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ANTIPATHY/SYMPATHY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DOMINATE_MONSTER">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FEEBLEMIND">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_MADDENING_DARKNESS">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MIND_BLANK">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_POWER_WORD_STUN">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SUNBURST">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
 
   <!-- Witch Ninth Level Spells -->
   <append id="ID_PHB_SPELL_ASTRAL_PROJECTION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FORESIGHT">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_INVULNERABILITY">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_MASS_POLYMORPH">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_PSYCHIC_SCREAM">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SHAPECHANGE">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_TRUE_POLYMORPH">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_TRUE_RESURRECTION">
-    <supports>Witch</supports>
+    <supports>Spirit Witch</supports>
   </append>
 
   <element name="Spirit: Agony" type="Class Feature" source="GM Binder" id="ID_GM_BINDER_WITCH_SPIRIT_AGONY">
