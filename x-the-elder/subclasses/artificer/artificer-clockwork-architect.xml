@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Clockwork Architect Artificer Specialis</name>
+        <update version="0.0.1">
+            <file name="artificer-clockwork-architect.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/artificer/artificer-clockwork-architect.xml" />
+        </update>
+        <!-- https://www.gmbinder.com/share/-LwkEsWlpH0hDLeqpiWm -->
+    </info>
+    
+    <element name="Clockwork Architect" type="Archetype" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_Clockwork Architect">
+        <supports>Artificer Specialist</supports>
+        <description>
+            <p>A Clockwork Architect is an expert in the creation of golems. Using their craft, they create their own companion, and use the magic of Artifice to conjure constructs to aid them in their tasks. Whether seeking the secrets of the warforged, or trying to unlock the mysteries of the plane of Mechanus, the Clockwork Architect is always searching for ways to improve their craft to bring mechanisms to life.</p>
+            <div element="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_TOOL_PROFICIENCY" />
+            <div element="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_CLOCKWORK_ARCHITECT_SPELLS" />
+            <div element="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_CLOCKWORK_COMPANION" />
+            <div element="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_OVERDRIVE" />
+            <div element="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_APPARATUS_UPGRADE" />
+            <div element="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_CLOCKWORK_CREATION" />
+            <div element="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_OPTIMAL_PRIMUS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_TOOL_PROFICIENCY" level="3" />
+            <grant type="Archetype Feature" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_CLOCKWORK_ARCHITECT_SPELLS" level="3" />
+            <grant type="Archetype Feature" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_CLOCKWORK_COMPANION" level="3" />
+            <grant type="Archetype Feature" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_OVERDRIVE" level="3" />
+            <grant type="Archetype Feature" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_APPARATUS_UPGRADE" level="5" />
+            <grant type="Archetype Feature" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_CLOCKWORK_CREATION" level="9" />
+            <grant type="Archetype Feature" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_OPTIMAL_PRIMUS" level="15" />
+        </rules>
+    </element>
+        <element name="Tool Proficiency" type="Archetype Feature" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_TOOL_PROFICIENCY">
+            <description>
+                <p>When you adopt this specialization at 3rd level, you gain proficiency with smith's tools. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Tool Proficiency (Clockwork Architect)" level="3" supports="Tool" optional="true" default="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+            </rules>
+        </element>
+        <element name="Clockwork Architect Spells" type="Archetype Feature" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_CLOCKWORK_ARCHITECT_SPELLS">
+            <description>
+                <p>Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Clockwork Architect Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
+                <h5 class="caption">Clockwork Architect Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Artificer Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><i>repair*, flywheel*</i></td></tr>
+                    <tr><td>5th</td><td><i>ablative armor*, gearwork barrrage*</i></td></tr>
+                    <tr><td>9th</td><td><i>conjure animals, reconstruction*</i></td></tr>
+                    <tr><td>13th</td><td><i>conjure beast*, conjure modron*</i></td></tr>
+                    <tr><td>17th</td><td><i>cogwork barricade*, summon monstrosity*</i></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_KAJAGRAE_GM_BINDER_SPELL_REPAIR" spellcasting="Artificer" known="true" level="3" />
+                <grant type="Spell" id="ID_KAJAGRAE_GM_BINDER_SPELL_FLYWHEEL" spellcasting="Artificer" known="true" level="3" />
+                <grant type="Spell" id="ID_KAJAGRAE_GM_BINDER_SPELL_ABLATIVE_ARMOR" spellcasting="Artificer" known="true" level="5" />
+                <grant type="Spell" id="ID_KAJAGRAE_GM_BINDER_SPELL_GEARWORK_BARRAGE" spellcasting="Artificer" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_CONJURE_ANIMALS" spellcasting="Artificer" known="true" level="9" />
+                <grant type="Spell" id="ID_KAJAGRAE_GM_BINDER_SPELL_RECONSTRUCTION" spellcasting="Artificer" known="true" level="9" />
+                <grant type="Spell" id="ID_KAJAGRAE_GM_BINDER_SPELL_CONJURE_BEAST" spellcasting="Artificer" known="true" level="13" />
+                <grant type="Spell" id="ID_KAJAGRAE_GM_BINDER_SPELL_CONJURE_MODRON" spellcasting="Artificer" known="true" level="13" />
+                <grant type="Spell" id="ID_KAJAGRAE_GM_BINDER_SPELL_COGWORK_BARRICADE" spellcasting="Artificer" known="true" level="17" />
+                <grant type="Spell" id="ID_KAJAGRAE_GM_BINDER_SPELL_SUMMON_MONSTROSITY" spellcasting="Artificer" known="true" level="17" />
+            </rules>
+        </element>
+        <element name="Clockwork Companion" type="Archetype Feature" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_CLOCKWORK_COMPANION">
+            <description>
+                <p>By 3rd level, your tinkering has led you to create a mechanical masterpiece, a clockwork companion. It is friendly to you and your companions, and it obeys your commands.</p>
+                <p class="indent">See this creature’s game statistics in the clockwork companion stat block. You choose from the available customization options in the stat block. Once chosen, those cannot be changed for that companion. You determine the companion’s appearance; your choice has no effect on its game statistics.</p>
+                <p class="indent">In combat, the clockwork companion shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or the Dash, Disengage, Help, Hide, or Search action.</p>
+                <p class="indent">If the mending spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith’s tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The clockwork companion returns to life after 1 minute with all its hit points restored.</p>
+                <p class="indent">At the end of a long rest, you can create a new clockwork companion if you have your smith’s tools with you. If you already have a clockwork companion from this feature, the first one immediately perishes.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Overdrive" type="Archetype Feature" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_OVERDRIVE">
+            <description>
+                <p>Beginning at 3rd level, you can use your action to channel a burst of magic through your smith's tools into a construct that you can see, that is under your control. For the next minute, the construct gains the following benefits:</p>
+                <ul>
+                    <li>Its speed increases by 10 feet.</li>
+                    <li>It gains a +1 bonus to its AC.</li>
+                    <li>It gains an additional action on its turn that can only be used to take the Dash, Disengage, or Use an Object action.</li>
+                </ul>
+                <p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum 1). You regain all expended uses after you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="{{intelligence-based:uses}}/Long Rest">
+                <description>You channel a burst of magic through your smith's tools into a construct that you can see, that is under your control. For the next minute: its speed increases by 10 feet; it gains +1 to AC; it gains an additional action to Dash, Disengage or Use an Object.</description>
+            </sheet>
+            <rules>
+                <stat name="intelligence-based:uses" value="1" bonus="base" />
+                <stat name="intelligence-based:uses" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Apparatus Upgrade" type="Archetype Feature" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_APPARATUS_UPGRADE">
+            <description>
+                <p>Starting at 5th level, constructs created or summoned by you have additional hit points equal to your level in this class + your Intelligence modifier. Additionally, its weapon attacks are magical.</p>
+            </description>
+            <sheet>
+                <description>Constructs created or summoned by you have {{apparatus-upgrade:add-hp}}additional hit points. Additionally, its weapon attacks are magical.</description>
+            </sheet>
+            <rules>
+                <stat name="apparatus-upgrade:add-hp" value="level:artificer" level="5" />
+                <stat name="apparatus-upgrade:add-hp" value="intelligence:modifier" level="5" />
+            </rules>
+        </element>
+        <element name="Clockwork Creation" type="Archetype Feature" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_CLOCKWORK_CREATION">
+            <description>
+                <p>At 9th level, any conjuration spell that the you cast to summon a beast or monstrosity, instead summons a clockwork version of it. The creatures stats change in the following ways:</p>
+                <ul>
+                    <li>Its type changes to Construct.</li>
+                    <li>It gains Damage Immunities: poison, psychic</li>
+                    <li>It gains Condition Immunities: charmed, exhaustion, frightened, paralyzed, petrified, poisoned</li>
+                </ul>
+                <p class="indent">All other stats for the creature remain the same.</p>
+            </description>
+            <sheet>
+                <description>Any conjuration spell that the you cast to summon a beast or monstrosity, instead summons a clockwork version of it. The creatures stats change in the following ways: its type changes to Construct; it is immune to poison and psychic damage; it is immune to being charmed, exhausted, frightened, paralyzed, petrified and poisoned.</description>
+            </sheet>
+        </element>
+        <element name="Optimal Primus" type="Archetype Feature" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_ARCHETYPE_FEATURE_CLOCKWORK_ARCHITECT_OPTIMAL_PRIMUS">
+            <description>
+                <p>When you reach 15th level, you learn to channel the raw energy of the plane of Mechanus directly into a construct under your control.</p>
+                <p class="indent">For 1 minute, the construct gains the following benefits:</p>
+                <ul>
+                    <li>Its senses are upgraded to truesight 120 ft.</li>
+                    <li>It gains resistance to all damage.</li>
+                    <li>When it hits with a weapon attack, it rolls one additional weapon damage die when determining damage for the hit.</li>
+                </ul>
+                <p class="indent">Once you have used this feature, you can't do so again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You channel energy into a construct under your control. For 1 minute: it has truesight to 120 feet; it is resistant to all damage; when it hits with a weapon attack, it rolls one additional damage die.</description>
+            </sheet>
+        </element>
+    
+    <!-- Spells -->
+        <element name="Ablative Armor" type="Spell" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_SPELL_ABLATIVE_ARMOR">
+            <supports>Artificer</supports>
+            <description>
+            <p>A protective magic force surrounds a creature you touch, manifesting as tiny plates of steel. These plates move and intercept attacks directed at the protected creature. For the duration, any damage, except psychic damage, taken by the protected creature is reduced by 3.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage reduced increases by 1 for each slot level above 2nd.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">2</set>
+                <set name="school">abjuration</set>
+                <set name="time">1 action</set>
+                <set name="range">Touch</set>
+                <set name="hasVerbalComponent">true</set>
+                <set name="hasSomaticComponent">true</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">a tiny plate of steel</set>
+                <set name="duration">Concentration, up to 1 minute.</set>
+                <set name="isConcentration">true</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Cogwork Barricade" type="Spell" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_SPELL_COGWORK_BARRICADE">
+            <supports>Artificer</supports>
+            <description>
+            <p>You create a vertical wall of whirling, smashing gears made of magical energy. The wall appears within range and lasts for the duration. You can make a straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed wall up to 60 feet in diameter, 20 feet high, and 5 feet thick. The wall provides three-quarters cover to creatures behind it, and its space is difficult terrain. When a creature enters the wall’s area for the first time on a turn or starts its turn there, the creature must make a Dexterity saving throw. On a failed save, the creature takes 6d10 bludgeoning damage. On a successful save, the creature takes half as much damage.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">5</set>
+                <set name="school">conjuration</set>
+                <set name="time">1 action</set>
+                <set name="range">90 feet</set>
+                <set name="hasVerbalComponent">true</set>
+                <set name="hasSomaticComponent">true</set>
+                <set name="hasMaterialComponent">false</set>
+                <set name="materialComponent">component</set>
+                <set name="duration">Concentration, up to 10 minutes</set>
+                <set name="isConcentration">true</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Conjure Beast" type="Spell" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_SPELL_CONJURE_BEAST">
+            <supports>Artificer, Druid</supports>
+            <description>
+            <p>You summon a fey spirit that takes the form of a beast of challenge rating 5 or lower. It appears in an unoccupied space that you can see within range. The fey creature disappears when it drops to 0 hit points or when the spell ends.</p>
+            <p class="indent">The summoned creature is friendly to you and your companions. Roll initiative for the summoned creature, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you). If you don't issue any commands to it, it defend itself from hostile creatures, but otherwise takes no actions.</p>
+            <p class="indent">The DM has the creatures statistics.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">4</set>
+                <set name="school">conjuration</set>
+                <set name="time">1 action</set>
+                <set name="range">90 feet</set>
+                <set name="hasVerbalComponent">true</set>
+                <set name="hasSomaticComponent">true</set>
+                <set name="hasMaterialComponent">false</set>
+                <set name="materialComponent">component</set>
+                <set name="duration">Concentration, up to 1 hour</set>
+                <set name="isConcentration">true</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Conjure Modron" type="Spell" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_SPELL_CONJURE_MODRON">
+            <supports>Artificer</supports>
+            <description>
+            <p>You summon modrons that appear in unoccupied spaces that you can see within range. Choose one of the following options for what appears:</p>
+            <p class="indent">One modron of challenge rating 2 or lower
+            Two modrons of challenge rating 1 or lower
+            Four modrons of challenge rating 1/2 or lower
+            Eight modrons of challenge rating 1/4 or lower
+            Each modron disintegrates when it drops to 0 hit points or when the spell ends. The summoned modrons are friendly to you and your companions. Roll initiative for the summoned modrons as a group, which has its own turns. They obey any verbal commands that you issue to them (no action required by you). If you don't issue any commands to them, they defend themselves from hostile creatures, but otherwise take no actions.</p>
+            <p class="indent">The DM has the creatures’ statistics.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using certain higher-level spell slots, you choose one of the summoning options above, and more creatures appear: twice as many with a 5th-level slot.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">4</set>
+                <set name="school">conjuration</set>
+                <set name="time">1 action</set>
+                <set name="range">90 feet</set>
+                <set name="hasVerbalComponent">true</set>
+                <set name="hasSomaticComponent">true</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">a small cog made of adamantine worth 50g</set>
+                <set name="duration">Concentration, up to 1 hour</set>
+                <set name="isConcentration">true</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Flywheel" type="Spell" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_SPELL_FLYWHEEL">
+            <supports>Artificer</supports>
+            <description>
+            <p>You conjure a magical cog made of admantine, and launch it at a target within range. Make a ranged spell attack against the target. On a hit, the target takes 3d8 bludgeoning damage.</p>
+            <p class="indent">When you hit an object, a construct, or any creature made primarily of bone with this spell, the hit is a critical hit.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">1</set>
+                <set name="school">conjuration</set>
+                <set name="time">1 action</set>
+                <set name="range">120 feet</set>
+                <set name="hasVerbalComponent">true</set>
+                <set name="hasSomaticComponent">true</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">a small adamantine cog worth 50gp</set>
+                <set name="duration">Instantaneous</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Gearwork Barrage" type="Spell" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_SPELL_GEARWORK_BARRAGE">
+            <supports>Artificer</supports>
+            <description>
+            <p>With a word and a gesture, you summon into being a cloud of magical cogs that pummel and smash all those around you. Each creature in a 15-foot cube originating from you must make a Dexterity saving throw. On a failed save, a creature takes 3d10 bludgeoning damage. On a successful save, the creature takes half as much damage.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d10 for each slot level above 2nd.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">2</set>
+                <set name="school">conjuration</set>
+                <set name="time">1 action</set>
+                <set name="range">Self (15-foot cube)</set>
+                <set name="hasVerbalComponent">true</set>
+                <set name="hasSomaticComponent">true</set>
+                <set name="hasMaterialComponent">false</set>
+                <set name="materialComponent">component</set>
+                <set name="duration">Instantaneous</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Reconstruction" type="Spell" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_SPELL_RECONSTRUCTION">
+            <supports>Artificer</supports>
+            <description>
+            <p>As you call out primal words of order, up to six constructs or objects of your choice that you can see within range, are repaired for hit points equal to 2d6 + your spellcasting ability modifier.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the healing increases by 1d6 for each slot level above 3rd.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">3</set>
+                <set name="school">transmutation</set>
+                <set name="time">1 bonus action</set>
+                <set name="range">60 feet</set>
+                <set name="hasVerbalComponent">true</set>
+                <set name="hasSomaticComponent">false</set>
+                <set name="hasMaterialComponent">false</set>
+                <set name="materialComponent">component</set>
+                <set name="duration">Instantaneous</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Repair" type="Spell" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_SPELL_REPAIR">
+            <supports>Artificer</supports>
+            <description>
+            <p>This spell repairs a single object or construct you touch. For objects, the object must be smaller than a 5-foot cube and all pieces of the object must be present. The object or construct is repaired for hit points equal to 3d8 + your spellcasting ability modifier.</p>
+            <p class="indent">This spell can physically repair a magic item, but the spell can’t restore magic to such an object.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, the the size of the object that can be repaired increases by one additional 5-foot cube, and the amount repaired increases by 1d8 for each slot level above 1st.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">1</set>
+                <set name="school">transmutation</set>
+                <set name="time">1 action</set>
+                <set name="range">Touch</set>
+                <set name="hasVerbalComponent">true</set>
+                <set name="hasSomaticComponent">true</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">two lodestones</set>
+                <set name="duration">Instantaneous</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+        <element name="Summon Monstrosity" type="Spell" source="GM Binder" id="ID_KAJAGRAE_GM_BINDER_SPELL_SUMMON_MONSTROSITY">
+            <supports>Artificer, Wizard</supports>
+            <description>
+            <p>You utter ancient words, summoning one unaligned monstrosity. You choose the monstrosity's type, which must be one of challenge rating 5 or lower, such as a bulette or a girallon. The monstrosity appears in an unoccupied space you can see within range, and the monstrosity disappears when it drops to 0 hit points or when the spell ends.</p>
+            <p class="indent">The monstrosity is friendly to you and your companions for the duration. Roll initiative for the creature, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you). If you don't issue any commands to the monstrosity, it spends its turn attacking any creature within reach that has attacked it. If your concentration is broken, the monstrosity doesn't disappear. Instead, you lose control of the monstrosity, it becomes hostile toward you and your companions, and it might attack. An uncontrolled monstrosity can't be dismissed by you, and it disappears 1 hour after you summoned it.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using certain higher-level spell slots, you can summon a more powerful monstrosity. If you use a 7th level spell slot, you can summon a monstrosity of up to challenge rating 7. If you use a 9th level spell slot, you can summon a monstrosity of up to challenge rating 9.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">5</set>
+                <set name="school">conjuration</set>
+                <set name="time">1 action</set>
+                <set name="range">90 feet</set>
+                <set name="hasVerbalComponent">true</set>
+                <set name="hasSomaticComponent">true</set>
+                <set name="hasMaterialComponent">true</set>
+                <set name="materialComponent">a magical lure worth 500 gp</set>
+                <set name="duration">Concentration, up to 1 hour</set>
+                <set name="isConcentration">true</set>
+                <set name="isRitual">false</set>
+            </setters>
+        </element>
+</elements>
