@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Upgrades for Stormchaser’s Engineering Disciplines</name>
+        <update version="0.0.1">
+            <file name="upgrades.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-engineer/upgrades.xml" />
+        </update>
+    </info>
+    
+  <!-- Armourer Upgrades -->
+    <element name="Accelerated Movement" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_ACCELERATED_MOVEMENT">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>You reduce the weight of your powered armour’s bulk and increase the power to joints. If the armor has a Strength requirement, you ignore it. The armour’s weight is reduced by 15 lbs. While wearing your powered armour your speed increases by 10 feet. This applies to all movement speeds you have while wearing your armour.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>If the armor has a Strength requirement, you ignore it. The armour’s weight is reduced by 15 lbs. While wearing your powered armour your speed increases by 10 feet. This applies to all movement speeds you have while wearing your armour.</description>
+        </sheet>
+    </element>
+    <element name="Adaptable Armour" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_ADAPTABLE_ARMOUR">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>You integrate deployable hooks into your armour, augmenting its mobility. While wearing your powered armour, you gain a climbing speed equal to your walking speed, and you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>While wearing your powered armour, you gain a climbing speed equal to your walking speed, and you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.</description>
+        </sheet>
+    </element>
+    <element name="Advanced Power Fist" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_ADVANCED_POWER_FIST">
+        <supports>SCEC Armour Upgrade</supports>
+        <requirements>[level:engineer:11],ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_PROTOTYPE_POWER_FIST</requirements>
+        <prerequisite>11th level, Prototype Power Fist</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 11th level, Prototype Power Fist</p>
+            <p>You further upgrade your powered armour’s gauntlet with increased reinforcement and weight. Your powered armour’s unarmed strike deals 1d8 bludgeoning damage. Additionally, your unarmed strikes score a critical hit on a roll of 19 or 20.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>Your powered armour’s unarmed strike deals 1d8 bludgeoning damage. Additionally, your unarmed strikes score a critical hit on a roll of 19 or 20.</description>
+        </sheet>
+    </element>
+    <element name="Bulwark" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_BULWARK">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>You upgrade your powered armour to be used as a portable source of cover. As a bonus action you can anchor your armour to the ground. While anchored, your armour provides three-quarters cover, but cannot be moved. You can unanchor using a bonus action.</p>
+        </description>
+        <sheet usage="Armour Upgrade" action="Bonus Action">
+            <description>You can anchor or unanchor your armour to the ground. While anchored, your armour provides three-quarters cover, but cannot be moved.</description>
+        </sheet>
+    </element>
+    <element name="Cannon Mount" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_CANNON_MOUNT">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>You upgrade your powered armour with a mounted cannon. This cannons has 2 uses. As an action, you can use the heavy cannon invention, consuming 1 use per invention level.</p>
+            <p class="indent">You can choose this upgrade twice. The cannon regains all uses after the armour undergoes maintenance.</p>
+        </description>
+        <setters>
+            <set name="allowDuplicate">true</set>
+        </setters>
+        <sheet usage="Armour Upgrade" action="Action">
+            <description>This cannons has 2 uses. You can use the heavy cannon invention, consuming 1 use per invention level.</description>
+        </sheet>
+    </element>
+    <element name="Capacitor Discharge" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_CAPACITOR_DISCHARGE">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>You install capacitors in your powered armour. Whenever an enemy misses you with a melee attack, you can use your reaction to deal 1d4 + your Intelligence modifier in lightning damage to the attacker.</p>
+        </description>
+        <sheet usage="Armour Upgrade" action="Reaction">
+            <description>Whenever an enemy misses you with a melee attack, you can deal 1d4 + {{intelligence:modifier}} in lightning damage to the attacker.</description>
+        </sheet>
+    </element>
+    <element name="Darkvision Visor" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_DARKVISION_VISOR">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>While wearing your powered armour, you have darkvision to a range of 60 feet. If you already have darkvision, this upgrade increases its range by 60 feet.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>You have darkvision to a range of 60 feet. If you already have darkvision, this upgrade increases its range by 60 feet.</description>
+        </sheet>
+    </element>
+    <element name="Enhanced Endurance" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_ENHANCED_ENDURANCE">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>When you are reduced to 0 hit points while wearing your powered armour but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until the armour undergoes maintenance.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>When you are reduced to 0 hit points while wearing your powered armour but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until the armour undergoes maintenance.</description>
+        </sheet>
+    </element>
+    <element name="Enhanced Strength" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_ENHANCED_STRENGTH">
+        <supports>SCEC Armour Upgrade</supports>
+        <requirements>[level:engineer:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p>While wearing your powered armour your Strength score is 18 (this has no effect if your Strength is already 18 or higher).</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>While wearing your powered armour your Strength score is a minimum of 18.</description>
+        </sheet>
+    </element>
+    <element name="Hardened Overlay" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_HARDENED_OVERLAY">
+        <supports>SCEC Armour Upgrade</supports>
+        <requirements>[level:engineer:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p>You gain a +1 bonus to AC. This bonus increases to +2 at 11th level and +3 at 17th level.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>You gain a +{{hardened-overlay:ac-bonus}} bonus to AC.</description>
+        </sheet>
+        <rules>
+            <stat name="hardened-overlay:ac-bonus" value="1" level="5" />
+            <stat name="hardened-overlay:ac-bonus" value="1" level="11" />
+            <stat name="hardened-overlay:ac-bonus" value="1" level="17" />
+        </rules>
+    </element>
+    <element name="Harpoon" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_HARPOON">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>Your powered armour gains an integrated grappling harpoon set into your gauntlet. With this harpoon, you can make a ranged weapon attack with a range of 30/60. On a hit, it deals 1d6 piercing damage. This attack can target a surface, object, or creature.</p>
+            <p class="indent">A creature struck by this attack is impaled by the harpoon. As an action, a creature can attempt to remove the harpoon. Removing the harpoon requires a Strength check. While the harpoon is stuck in the target, you are connected to the target by a 60 foot cable.</p>
+            <p class="indent">While the harpoon is deployed, you can use your bonus action to activate the reel, pulling yourself to the location if the target is larger than you. A creature or object your size or smaller is pulled to you. Alternatively, you can opt to release the cable (no action required).</p>
+            <p class="indent">Once you’ve used this feature, you can’t use it again until you recover and reinsert the harpoon as an action.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>You can make a ranged weapon attack with a range of 30/60. On a hit, it deals 1d6 piercing damage. The creature is also impaled by and stuck to the harpoon.</description>
+        </sheet>
+    </element>
+    <element name="Heavy Suit" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_HEAVY_SUIT">
+        <supports>SCEC Armour Upgrade</supports>
+        <requirements>[level:engineer:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p>You enhance your suit, making it difficult to move. As a bonus action, you can anchor your feet to the ground. While anchored, your speed is 0, you have advantage on Strength checks and Strength saving throws, and you count as one size larger when determining your carrying capacity and the size of weapons you can wield.</p>
+        </description>
+        <sheet usage="Armour Upgrade" action="Bonus Action">
+            <description>You can anchor your feet to the ground. While anchored, your speed is 0, you have advantage on Strength checks and Strength saving throws, and you count as one size larger when determining your carrying capacity and the size of weapons you can wield.</description>
+        </sheet>
+    </element>
+    <element name="Power Fist" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_POWER_FIST">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>You upgrade your powered armour gauntlet with increased reinforcement and weight. Your powered armour’s unarmed strike is a melee invention attack that deals 1d4 bludgeoning damage.</p>
+            <p class="indent">Additionally, when you take the Attack action and make an unarmed attack, you can make an additional unarmed attack as a bonus action.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>Your powered armour’s unarmed strike is a melee invention attack that deals 1d4 bludgeoning damage. When you take the Attack action and make an unarmed attack, you can make an additional unarmed attack as a bonus action.</description>
+        </sheet>
+    </element>
+    <element name="Prototype Power Fist" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_PROTOTYPE_POWER_FIST">
+        <supports>SCEC Armour Upgrade</supports>
+        <requirements>[level:engineer:7],ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_POWER_FIST</requirements>
+        <prerequisite>7th level, Power Fist</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 7th level, Power Fist</p>
+            <p>You further upgrade your powered armour’s gauntlet with increased reinforcement and weight. Your powered armour’s unarmed strike deals 1d6 bludgeoning damage.</p>
+            <p class="indent">Additionally, if you or your target move at least 10 feet in a straight line immediately before making an unarmed attack, the first unarmed attack you make deals additional damage equal to your Strength modifier.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>Your powered armour’s unarmed strike deals 1d6 bludgeoning damage. If you or your target move at least 10 feet in a straight line immediately before making an unarmed attack, the first unarmed attack you make deals additional damage equal to your Strength modifier.</description>
+        </sheet>
+    </element>
+    <element name="Reactive Servos" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_REACTIVE_SERVOS">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>You upgrade your powered armour to better respond to incoming damage. As a bonus action, you can activate this ability and gain temporary hit points equal to 1d4 + Intelligence modifier. These hit points last for one hour.</p>
+            <p class="indent">You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain any expended uses when your armour undergoes maintenance.</p>
+        </description>
+        <sheet usage="Armour Upgrade" action="Bonus Action">
+            <description>You can activate this ability and gain temporary hit points equal to 1d4 + {{intelligence:modifier}}. These hit points last for one hour. You can use this feature {{reactive-servos:uses}} times, then you must perform maintenance on your armour to regain all uses.</description>
+        </sheet>
+        <rules>
+            <stat name="reactive-servos:uses" value="1" bonus="base" />
+            <stat name="reactive-servos:uses" value="intelligence:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Resistance" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_RESISTANCE">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>You tune your powered armour against certain forms of damage. Choose acid, cold, fire, lightning, or thunder damage. While wearing your powered armour you have resistance to that type of damage.</p>
+            <p class="indent">You can select this upgrade multiple times. Each time you do so, you must choose a different damage type.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>While wearing your powered armour you have resistance to that type of damage.</description>
+        </sheet>
+        <setters>
+            <set name="allowDuplicate">true</set>
+        </setters>
+        <rules>
+            <select type="Archetype Feature" name="Armour Resistance" supports="SCEC Armour Updgrade Resistance" />
+        </rules>
+    </element>
+        <element name="Acid" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_RESISTANCE_ACID">
+            <supports>SCEC Armour Upgrade Resistance</supports>
+            <description />
+            <sheet />
+        </element>
+        <element name="Cold" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_RESISTANCE_COLD">
+            <supports>SCEC Armour Upgrade Resistance</supports>
+            <description />
+            <sheet />
+        </element>
+        <element name="Fire" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_RESISTANCE_FIRE">
+            <supports>SCEC Armour Upgrade Resistance</supports>
+            <description />
+            <sheet />
+        </element>
+        <element name="Lightning" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_RESISTANCE_LIGHTNING">
+            <supports>SCEC Armour Upgrade Resistance</supports>
+            <description />
+            <sheet />
+        </element>
+        <element name="Thunder" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_RESISTANCE_THUNDER">
+            <supports>SCEC Armour Upgrade Resistance</supports>
+            <description />
+            <sheet />
+        </element>
+    <element name="Rocket Boots" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_ROCKET_BOOTS">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>You integrate rocket propelled boots into your powered armour. These rockets have 2 uses. As an action, your armour can use the <em>rocket boots</em> invention, consuming 1 use.</p>
+            <p class="indent">You can choose this upgrade twice. The rockets regain all uses after the armour undergoes maintenance.</p>
+            <div class="reference">
+                <div element="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_ROCKET_BOOTS" />
+            </div>
+        </description>
+        <sheet usage="Armour Upgrade" action="Action">
+            <description>You can use the rocket boots invention 2 times, then you must perform maintenance to regain any expended uses.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_ROCKET_BOOTS" spellcasting="Engineering Upgrade" />
+        </rules>
+    </element>
+    <element name="Sealed Suit" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_SEALED_SUIT">
+        <supports>SCEC Armour Upgrade</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p>As a bonus action you can hermetically seal your powered armour, giving you an air supply for up to 1 hour and making you immune to poison (but not curing you of existing poisoned conditions). Your armour regains 1 minute of air for every minute that you are in a breathable environment and the armour is not sealed.</p>
+            <p class="indent">Additionally, while you are wearing your powered armour you are considered adapted to cold and hot climates as well as high altitude, as described in chapter 5 of the <em>Dungeon Master’s Guide</em>.</p>
+        </description>
+        <sheet usage="Armour Upgrade" action="Bonus Action">
+            <description>You can hermetically seal your powered armour, giving you an air supply for up to 1 hour and making you immune to poison. Your armour regains 1 minute of air for every minute that you are in a breathable environment and the armour is not sealed. While you are wearing your powered armour you are considered adapted to cold and hot climates as well as high altitude.</description>
+        </sheet>
+    </element>
+    <element name="Shock-Absorbing Underlay" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_SHOCK-ABSORBING_UNDERLAY">
+        <supports>SCEC Armour Upgrade</supports>
+        <requirements>[level:engineer:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p>You gain a +1 bonus to physical saving throws. This bonus increases to +2 at 11th level and +3 at 17th level.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>You have a +{{shock-absorbing-underlay:save-bonus}} bonus to physical saving throws.</description>
+        </sheet>
+        <rules>
+            <stat name="shock-absorbing-underlay:save-bonus" value="1" level="5" />
+            <stat name="shock-absorbing-underlay:save-bonus" value="1" level="11" />
+            <stat name="shock-absorbing-underlay:save-bonus" value="1" level="17" />
+        </rules>
+    </element>
+    <element name="Steam Blast" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_STEAM_BLAST">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>You upgrade your steam engine to emit a wave of steam and hot air. As an action you can force each Large or smaller creature within 5 feet of you to make a Dexterity or Strength saving throw (their choice) against your Invention save DC. On a failed save, they are pushed back 5 feet and knocked prone.</p>
+            <p class="indent">You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain any expended uses when the armour undergoes maintenance.</p>
+        </description>
+        <sheet usage="Armour Upgrade" action="Action">
+            <description>You can force each Large or smaller creature within 5 feet of you to make a Dexterity or Strength saving throw (their choice) against your Invention save DC. On a failed save, they are pushed back 5 feet and knocked prone. You can use this feature {{steam-blast:uses}} times. You regain any expended uses when the armour undergoes maintenance.</description>
+        </sheet>
+        <rules>
+            <stat name="steam-blast:uses" value="1" bonus="base" />
+            <stat name="steam-blast:uses" value="intelligence:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Weapon Integration" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_ARMOURER_UPGRADE_WEAPON_INTEGRATION">
+        <supports>SCEC Armour Upgrade</supports>
+        <description>
+            <p>You can integrate a single weapon, which may not have the two-handed property, into your armour. You have advantage on Strength saving throws to avoid being disarmed.</p>
+        </description>
+        <sheet usage="Armour Upgrade">
+            <description>You can integrate a single weapon, which may not have the two-handed property, into your armour. You have advantage on Strength saving throws to avoid being disarmed.</description>
+        </sheet>
+    </element>
+    
+  <!-- Automaton Upgrades -->
+    <element name="Ablative Armour" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_ABLATIVE_ARMOUR">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You install very hard armour on your automaton that is designed to fracture as it absorbs incoming blows. This armour has 2 uses. As a reaction, your automaton can spend 1 to use the <em>ablative armour</em> invention.</p>
+            <p class="indent">You can choose this upgrade multiple times. Each time you do so, the armour gains another 2 uses. All expended uses are regained after the automaton undergoes maintenance.</p>
+            <div class="reference">
+                <div element="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_ABLATIVE_ARMOUR" />
+            </div>
+        </description>
+        <setters>
+            <set name="allowDuplicate">true</set>
+        </setters>
+        <sheet usage="Upgrade" action="Reaction">
+            <description>Your automaton can spend 1 to use the ablative armour invention. This armour has {{ablative-armour:uses}}. All expended uses are regained after the automaton undergoes maintenance.</description>
+        </sheet>
+        <rules>
+            <stat name="ablative-armour:uses" value="2" />
+            <grant type="Spell" id="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_ABLATIVE_ARMOUR" spellcasting="Engineering Upgrade" />
+        </rules>
+    </element>
+    <element name="Advanced Steam Engine" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_ADVANCED_STEAM_ENG">
+        <supports>SCEC Automaton Upgrade</supports>
+        <requirements>[level:engineer:7],ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_PROTOTYPE_STEAM_ENGINE</requirements>
+        <prerequisite>7th level, Prototype Steam Engine</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 7th level, Prototype Steam Engine</p>
+            <p>You greatly improve the steam engine of your automaton. Its Hit Die becomes a d12.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description>Your automaton’s Hit Die is a d12.</description>
+        </sheet>
+    </element>
+    <element name="Alarm Protocol" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_ALARM_PROTOCOL">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You install an alarm module in your automaton, granting the following benefits:</p>
+            <ul>
+                <li>Your automaton gains a +5 bonus to initiative.</li>
+                <li>You can’t be surprised while your automaton is active.</li>
+            </ul>
+        </description>
+        <sheet usage="Upgrade">
+            <description>Your automaton gains a +5 bonus to initiative. You can’t be surprised while your automaton is active.</description>
+        </sheet>
+    </element>
+    <element name="Augmented Celerity" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_AUGMENTED_CELERITY">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You augment your automaton to move a little faster. Your automaton’s speed increases by 5 feet.</p>
+            <p class="indent">You can choose this upgrade twice.</p>
+        </description>
+        <setters>
+            <set name="allowDuplicate">true</set>
+        </setters>
+        <sheet usage="Upgrade">
+            <description>Your automaton’s speed increases by {{augmented-celerity:speed-increase}} feet.</description>
+        </sheet>
+        <rules>
+            <stat name="augmented-celerity:speed-increase" value="5" />
+        </rules>
+    </element>
+    <element name="Augmented Senses" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_AUGMENTED_SENSES">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You augment your automaton with advanced sensors, granting the following benefits:</p>
+            <ul>
+                <li>Your automaton has advantage on Wisdom (Perception) and Intelligence (Investigation) checks made to detect the presence of secret doors.</li>
+                <li>Your automaton has advantage on saving throws made to avoid or resist traps.</li>
+                <li>Your automaton has resistance to damage dealt by traps.</li>
+                <li>Your automaton can search for traps while traveling at a normal pace, instead of only at a slow pace.</li>
+            </ul>
+        </description>
+        <sheet usage="Upgrade">
+            <description>Your automaton has advantage on Perception and Investigation checks made to detect the presence of secret doors. Your automaton has advantage on saving throws made to avoid or resist traps. Your automaton has resistance to damage dealt by traps. Your automaton can search for traps while traveling at a normal pace, instead of only at a slow pace.</description>
+        </sheet>
+    </element>
+    <element name="Durability Module" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_DURABILITY_MODULE">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You enhance your automaton’s durability, granting the following benefits:</p>
+            <ul>
+                <li>When your automaton rolls a Hit Die to regain hit points, the minimum number of hit points your automaton can regain from the roll equals twice your automaton’s Constitution modifier (minimum of 2).</li>
+                <li>Your automaton’s hit point maximum increases by an amount equal to twice its level when you make this upgrade. Whenever your automaton gains a level thereafter, its hit point maximum increases by an additional 2 hit points.</li>
+            </ul>
+        </description>
+        <sheet usage="Upgrade">
+            <description>When your automaton rolls a Hit Die to regain hit points, the minimum number of hit points your automaton can regain from the roll equals twice your automaton’s Constitution modifier (minimum of 2). Your automaton’s hit point maximum increases by an amount equal to twice its level when you make this upgrade. Whenever your automaton gains a level thereafter, its hit point maximum increases by an additional 2 hit points.</description>
+        </sheet>
+    </element>
+    <element name="Emergency Countermeasures" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_EMERGENCY_COUNTERMEASURES">
+        <supports>SCEC Automaton Upgrade</supports>
+        <requirements>[level:engineer:15],ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_SYSTEM_REDUNDANCY</requirements>
+        <prerequisite>15th level, System Redundancy</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 15th level, System Redundancy</p>
+            <p>You upgrade your automaton’s system redundancy. When your automaton’s System Redundancy is triggered, it can immediately use its reaction to make one attack roll against a target within range. If the target is the source of the damage that reduced your automaton to 0, the attack roll has advantage.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description>When your automaton’s System Redundancy is triggered, it can immediately use its reaction to make one attack roll against a target within range. If the target is the source of the damage that reduced your automaton to 0, the attack roll has advantage.</description>
+        </sheet>
+    </element>
+    <element name="Expertise Protocol" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_EXPERTISE_PROTOCOL">
+        <supports>SCEC Automaton Upgrade</supports>
+        <requirements>[level:engineer:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p>You upgrade your automaton, granting it expertise in a skill. Choose a skill that your automaton is proficient in. Your automaton gains expertise in it.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description>Choose a skill that your automaton is proficient in. Your automaton gains expertise in it.</description>
+        </sheet>
+    </element>
+    <element name="False Combustion" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_FALSE_COMBUSTION">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You upgrade your automaton to deceive the enemy. As a reaction in response to taking damage, your automaton can feign an explosion. For 1 minute, your automaton appears to be destroyed to all outward inspection. A creature can use its action to inspect the automaton and make an Intelligence (Investigation) check against your invention save DC. If it succeeds, it becomes aware that the target is disguised.</p>
+        </description>
+        <sheet usage="Upgrade" action="Reaction">
+            <description>In response to taking damage, your automaton can feign an explosion. For 1 minute, your automaton appears to be destroyed to all outward inspection.</description>
+        </sheet>
+    </element>
+    <element name="Fighting Style" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_FIGHTING_STYLE">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>Your automaton adopts a particular style of fighting as its specialty. Choose one Fighting Style option. Your automaton can’t take a Fighting Style option more than once, even if it later gets to choose again.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Automaton Fighting Style" supports="Fighting Style" />
+        </rules>
+    </element>
+    <element name="Flamethrower" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_FLAMETHROWER">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You install a flamethrower in your automaton. The flamethrower has 2 uses. As an action, your automaton can use the <em>jet of flame</em> invention or spend 1 use to use the <em>flame sweep</em> invention at 1st level. The saving throw is made against your invention save DC. You can use multiple uses to use flame sweep at a higher level at a rate of 1 use per level.</p>
+            <p class="indent">You can choose this upgrade twice. The flamethrower regains all uses after the automaton undergoes maintenance.</p>
+            <div class="reference">
+                <div element="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_JET_OF_FLAME" />
+            </div>
+            <div class="reference">
+                <div element="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_FLAME_SWEEP" />
+            </div>
+        </description>
+        <sheet usage="Upgrade" action="Action">
+            <description>Your automaton can use the jet of flame invention or spend 1 use to use the flame sweep invention at 1st level. You can use multiple uses to use flame sweep at a higher level at a rate of 1 use per level. The flamethrower has {{flamethrower:uses}}. The flamethrower regains all uses after the automaton undergoes maintenance.</description>
+        </sheet>
+        <setters>
+            <set name="allowDuplicate">true</set>
+        </setters>
+        <rules>
+            <stat name="flamethrower:uses" value="2" />
+            <grant type="Spell" id="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_JET_OF_FLAME" spellcasting="Engineering Upgrade" />
+            <grant type="Spell" id="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_FLAME_SWEEP" spellcasting="Engineering Upgrade" />
+        </rules>
+    </element>
+    <element name="Four-Armed Combatant" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_FOURARMED_COMBATANT">
+        <supports>SCEC Automaton Upgrade</supports>
+        <requirements>[level:engineer:9]</requirements>
+        <prerequisite>9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 9th level</p>
+            <p>You install two additional arms to improve your automaton’s combat capabilities, granting it four arms which it can use independently of one another. Your automaton can only gain the benefit of items held by two of its arms at any given time, and once per round your automaton can switch which arms it is benefiting from (no action required).</p>
+            <p class="indent">When your automaton hits a creature with a melee weapon attack on its turn, it can use a bonus action to attempt to grapple the target.</p>
+            <p class="indent">While your automaton has at least 3 arms free, it has a climbing speed equal to its walking speed.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description>When your automaton hits a creature with a melee weapon attack on its turn, it can use a bonus action to attempt to grapple the target. While your automaton has at least 3 arms free, it has a climbing speed equal to its walking speed.</description>
+        </sheet>
+    </element>
+    <element name="Heavy Plating" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_HEAVY_PLATING">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>Bludgeoning, piercing and slashing damage that your automaton takes from non-magical weapons is reduced by an amount equal to its proficiency bonus.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description>Bludgeoning, piercing and slashing damage that your automaton takes from non-magical weapons is reduced by an amount equal to its proficiency bonus.</description>
+        </sheet>
+    </element>
+    <element name="Invention Protocol" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_INVENTION_PROTOCOL">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You install two gadgets and one invention on your automaton. Once your automaton uses the invention, your automaton must undergo maintenance before it can use it again.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Gadget (Automaton)" number="2" supports="SCEC Invention,0" spellcasting="Engineering Upgrade" level="3"/>
+            <select type="Spell" name="Invention (Automaton)" supports="SCEC Invention,$(spellcasting:slots)" spellcasting="Engineering Upgrade" level="3" />
+        </rules>
+    </element>
+    <element name="Jumper Rockets" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_JUMPER_ROCKETS">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You install a rockets in your automaton’s legs. These rockets have 2 uses. As an action, your automaton can use the rocket boots invention, consuming 1 use.</p>
+            <p class="indent">You can choose this upgrade twice. The rockets regain all uses after the automaton undergoes maintenance.</p>
+            <div class="reference">
+                <div element="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_ROCKET_BOOTS" />
+            </div>
+        </description>
+        <setters>
+            <set name="allowDuplicate">true</set>
+        </setters>
+        <sheet usage="Upgrade" action="Action">
+            <description>Your automaton can use the rocket boots invention, consuming 1 use. The rockets have {{jumper-rockets:uses}} uses. The rockets regain all uses after the automaton undergoes maintenance.</description>
+        </sheet>
+        <rules>
+            <stat name="jumper-rockets:uses" value="2" />
+            <grant type="Spell" id="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_ROCKET_BOOTS" spellcasting="Engineering Upgrade" />
+        </rules>
+    </element>
+    <element name="Light Plating" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_LIGHT_PLATING">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>Your automaton’s speed increases by 5 feet while light armour is integrated.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description>Your automaton’s speed increases by 5 feet while light armour is integrated.</description>
+        </sheet>
+    </element>
+    <element name="Medium Plating" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_MEDIUM_PLATING">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>The maximum Dexterity bonus that your automaton can add to AC increases to 3 from 2 while medium armour is integrated.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description>The maximum Dexterity bonus that your automaton can add to AC increases to 3 from 2 while medium armour is integrated.</description>
+        </sheet>
+    </element>
+    <element name="Observant Protocol" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_OBSERVANT_PROTOCOL">
+        <supports>SCEC Automaton Upgrade</supports>
+        <requirements>[level:engineer:7],ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_ALARM_PROTOCOL</requirements>
+        <prerequisite>7th level, Alarm Protocol</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 7th level, Alarm Protocol</p>
+            <p>You modify the alarm module in your automaton, granting the following benefits:</p>
+            <ul>
+                <li>If your automaton can see a creature’s mouth while it is speaking a language it understands, your automaton can interpret what it’s saying by reading its lips.</li>
+                <li>Your automaton has a +5 bonus to its passive Wisdom (Perception) and passive Intelligence (Investigation) scores.</li>
+            </ul>
+        </description>
+        <sheet usage="Upgrade">
+            <description>If your automaton can see a creature’s mouth while it is speaking a language it understands, your automaton can interpret what it’s saying by reading its lips. Your automaton has a +5 bonus to its passive Perception and passive Investigation scores.</description>
+        </sheet>
+    </element>
+    <element name="Proficiency Protocol" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_PROFICIENCY_PROTOCOL">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You upgrade your automaton, granting it proficiency in a tool or skill. Your automaton gains proficiency in a tool or skill of your choice.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description>Your automaton gains proficiency in a tool or skill of your choice.</description>
+        </sheet>
+    </element>
+    <element name="Prototype Steam Engine" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_PROTOTYPE_STEAM_ENGINE">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You further improve the steam engine of your automaton. Its Hit Die becomes a d10.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description>Your automaton’s Hit Die is a d10.</description>
+        </sheet>
+    </element>
+    <element name="Repair Module" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_REPAIR_MODULE">
+        <supports>SCEC Automaton Upgrade</supports>
+        <requirements>[level:engineer:11],ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_DURABILITY_MODULE</requirements>
+        <prerequisite>11th level, Durability Module</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 11th level, Durability Module</p>
+            <p>Your automaton becomes proficient in a saving throw of your choice. Additionally, whenever your automaton takes the Dodge action in combat, it can spend one Hit Die to heal itself. Roll the die, add its Constitution modifier, and it regains a number of hp equal to the total (minimum of one).</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description>Your automaton becomes proficient in a saving throw of your choice. Additionally, whenever your automaton takes the Dodge action in combat, it can spend one Hit Die to heal itself. Roll the die, add its Constitution modifier, and it regains a number of hp equal to the total (minimum of one).</description>
+        </sheet>
+    </element>
+    <element name="Shockwave" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_SHOCKWAVE">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You install defensive countermeasures on the underbelly of your automaton. This upgrade has 2 uses. As an action, your automaton can use the <em>overload</em> invention, consuming 1 use per level. The saving throw is made against your invention save DC.</p>
+            <p class="indent">You can choose this upgrade twice. The countermeasures regain all uses after the automaton undergoes maintenance.</p>
+            <div class="reference">
+                <div element="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_OVERLOAD" />
+            </div>
+        </description>
+        <setters>
+            <set name="allowDuplicate">true</set>
+        </setters>
+        <sheet usage="Upgrade" action="Action">
+            <description>Your automaton can use the overload invention, consuming 1 use per level. This upgrade has {{shockwave:uses}} uses. The countermeasures regain all uses after the automaton undergoes maintenance.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_OVERLOAD" spellcasting="Engineering Upgrade" />
+            <stat name="shockwave:uses" value="2" />
+        </rules>
+    </element>
+    <element name="System Redundancy" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_SYSTEM_REDUNDANCY">
+        <supports>SCEC Automaton Upgrade</supports>
+        <requirements>[level:engineer:7]</requirements>
+        <prerequisite>7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 7th level</p>
+            <p>You install an emergency protocol in your automaton, prompting a quick reboot after critical damage is taken. If your automaton would be reduced to 0 hit points, it instead is reduced to 1.</p>
+            <p class="indent">Once your automaton uses this feature, it must undergo maintenance before it can use it again.</p>
+        </description>
+        <sheet usage="Upgrade">
+            <description>If your automaton would be reduced to 0 hit points, it instead is reduced to 1. Once your automaton uses this feature, it must undergo maintenance before it can use it again.</description>
+        </sheet>
+    </element>
+    <element name="Taser" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_AUTOMATON_UPGRADE_TASER">
+        <supports>SCEC Automaton Upgrade</supports>
+        <description>
+            <p>You install a taser in your automaton. The taser has 2 uses. As an action, your automaton can use the <em>paralyse person</em> invention, consuming 1 use. The saving throw is made against your invention save DC.</p>
+            <p class="indent">You can choose this upgrade twice. The taser regains all uses after the automaton undergoes maintenance.</p>
+            <div class="reference">
+                <div element="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_PARALYSE_PERSON" />
+            </div>
+        </description>
+        <setters>
+            <set name="allowDuplicate">true</set>
+        </setters>
+        <sheet usage="Upgrade" action="Action">
+            <description>Your automaton can use the paralyse person invention, consuming 1 use. This upgrade has {{taser:uses}} uses. The taser regains all uses after the automaton undergoes maintenance.</description>
+        </sheet>
+        <rules>
+            <stat name="taser:uses" value="2" />
+            <grant type="Spell" id="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_PARALYSE_PERSON" spellcasting="Engineering Upgrade" />
+        </rules>
+    </element>
+
+  <!-- Weaponsmith Upgrades -->
+    <element name="Adamantine Edge" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_ADAMANTINE_EDGE">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:5]</requirements>
+        <prerequisite>5th level, Melee Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level, Melee Weapon</p>
+            <p>You gain a +1 bonus to damage rolls made with this weapon. This bonus increases to +2 at 11th level and +3 at 17th level.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>You gain a +{{adamantine-edge:damage-bonus}} bonus to damage rolls made with this weapon.</description>
+        </sheet>
+        <rules>
+            <stat name="adamantine-edge:damage-bonus" value="1" level="5" />
+            <stat name="adamantine-edge:damage-bonus" value="1" level="11" />
+            <stat name="adamantine-edge:damage-bonus" value="1" level="17" />
+        </rules>
+    </element>
+    <element name="Bayonet" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_BAYONET">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements></requirements>
+        <prerequisite>Ranged Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Ranged Weapon</p>
+            <p>You affix a short blade to the front of your prototype weapon, allowing you to make a melee weapon attack with it. The blade is a melee weapon with the finesse property that you are proficient with, and deals 1d6 piercing damage.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>You affix a short blade to the front of your prototype weapon. The blade is a melee weapon with the finesse property that you are proficient with, and deals 1d6 piercing damage.</description>
+        </sheet>
+    </element>
+    <element name="Burst Fire" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_BURST_FIRE">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:9]</requirements>
+        <prerequisite>9th level, Ranged Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 9th level, Ranged Weapon</p>
+            <p>A weapon that has the burst property can make a normal single-target attack, or it can spray a 10-foot-cube area within range with shots. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to ranged weapon attacks) or take the weapon’s normal damage. This consumes an amount of ammunition equal to half its capacity. If the ranged weapon attack would have disadvantage, affected targets instead have advantage.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>A weapon that has the burst property can make a normal single-target attack, or it can spray a 10-foot-cube area within range with shots. Each creature in the area must make a Dexterity saving throw (DC {{burst-fire:save-dc}}) or take the weapon’s normal damage. This consumes an amount of ammunition equal to half its capacity. If the ranged weapon attack would have disadvantage, affected targets instead have advantage.</description>
+        </sheet>
+        <rules>
+            <stat name="burst-fire:save-dc" value="8" />
+            <stat name="burst-fire:save-dc" value="ranged:attack" />
+        </rules>
+    </element>
+    <element name="Carbine" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_CARBINE">
+        <supports>SCEC Weapon Upgrade</supports>
+        <description>
+            <p>Once per turn, when you deal damage with your prototype weapon, your walking speed increases by 10 feet until the start of your next turn, and the damaged creature can’t make opportunity attacks against you for the rest of your turn.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>Once per turn, when you deal damage with your prototype weapon, your walking speed increases by 10 feet until the start of your next turn, and the damaged creature can’t make opportunity attacks against you for the rest of your turn.</description>
+        </sheet>
+    </element>
+    <element name="Collapsible Hilt" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_COLLAPSIBLE_HILT">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements></requirements>
+        <prerequisite>Melee Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Melee Weapon</p>
+            <p>You install an expandable hilt on your prototype weapon. Your prototype weapon gains the reach property.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>You install an expandable hilt on your prototype weapon. Your prototype weapon gains the reach property.</description>
+        </sheet>
+    </element>
+    <element name="Contoured Grip" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_CONTOURED_GRIP">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:5]</requirements>
+        <prerequisite>5th level, Melee Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level, Melee Weapon</p>
+            <p>You gain a +1 bonus to attack rolls made with this weapon. This bonus increases to +2 at 11th level and +3 at 17th level.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>You gain a +{{contoured-grip:attack-bonus}} bonus to attack rolls made with this weapon.</description>
+        </sheet>
+        <rules>
+            <stat name="contoured-grip:attack-bonus" value="1" level="5" />
+            <stat name="contoured-grip:attack-bonus" value="1" level="11" />
+            <stat name="contoured-grip:attack-bonus" value="1" level="17" />
+        </rules>
+    </element>
+    <element name="Expanded Capacity" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_EXPANDED_CAPACITY">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements></requirements>
+        <prerequisite>Ranged Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Ranged Weapon</p>
+            <p>Your prototype weapon can hold two ammunition at a time, allowing you to expend both before a reload is required. You can only reload one ammunition at a time.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>Your prototype weapon can hold two ammunition at a time, allowing you to expend both before a reload is required. You can only reload one ammunition at a time.</description>
+        </sheet>
+    </element>
+    <element name="Explosive Strikes" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_EXPLOSIVE_STRIKES">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:7]</requirements>
+        <prerequisite>7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 7th level</p>
+            <p>You pack extra firepower into your prototype weapon. Once per turn, when you hit with the weapon, you can deal an additional 1d6 damage. If you do so, the weapon makes a loud boom which can be heard 100 feet away. If you are hidden, Intelligence (Investigation) and Wisdom (Perception) checks made to locate you that rely on sound have advantage.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>Once per turn, when you hit with the weapon, you can deal an additional 1d6 damage. If you do so, the weapon makes a loud boom which can be heard 100 feet away. If you are hidden, Investigation and Perception checks made to locate you that rely on sound have advantage.</description>
+        </sheet>
+    </element>
+    <element name="Gadget Attachment" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_GADGET_ATTACHMENT">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:9]</requirements>
+        <prerequisite>9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 9th level</p>
+            <p>You modify your weapon to carry a gadget. Over the course of a short rest, you can attach a gadget to your weapon. The next time you hit with your weapon, the gadget is activated. If the gadget would require an attack roll, make an invention attack roll. If the gadget would require a saving throw, the target must make the saving throw as normal. On a hit, or a failure, the target suffers the gadget’s normal effects.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>Over the course of a short rest, you can attach a gadget to your weapon. The next time you hit with your weapon, the gadget is activated. If the gadget would require an attack roll, make an invention attack roll. If the gadget would require a saving throw, the target must make the saving throw as normal. On a hit, or a failure, the target suffers the gadget’s normal effects.</description>
+        </sheet>
+    </element>
+    <element name="Harpoon Gadget" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_HARPOON_GADGET">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:9],ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_HARPOON_REEL</requirements>
+            <supports>SCEC Weapon Upgrade</supports>
+        <prerequisite>9th level, Harpoon Reel</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 9th level, Harpoon Reel</p>
+            <p>After hitting a creature with the harpoon fire mode, you can use the connection to deliver a gadget effect. As a bonus action, you can use a gadget on the target as if you were standing in the target’s space. If the gadget requires a saving throw, the target has disadvantage.</p>
+            <p class="indent">Once you’ve used this feature, you can’t use it again until you recover the harpoon.</p>
+       </description>
+        <sheet usage="Upgrade" action="Bonus Action">
+            <description>fter hitting a creature with the harpoon fire mode, you can use the connection to deliver a gadget effect. Once you’ve used this feature, you can’t use it again until you recover the harpoon.</description>
+        </sheet>
+    </element>
+    <element name="Harpoon Reel" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_HARPOON_REEL">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p>You install a secondary mode that launches a harpoon attached to a tightly coiled cord. With this harpoon, you can make a ranged weapon attack with a range of 30/60. On a hit, it deals 1d6 piercing damage. This attack can target a surface, object, or creature.</p>
+            <p class="indent">A creature struck by this attack is impaled by the harpoon. As an action, a creature can attempt to remove the harpoon. Removing the harpoon requires a Strength check. While the harpoon is stuck in the target, you are connected to the target by a 60 foot cable.</p>
+            <p class="indent">While connected in this manner, you can use your bonus action to activate the reel, pulling yourself to the location if the target is your size or larger. A creature or object smaller than you is pulled to you. Alternatively, you can opt to release the cable (no action required).</p>
+            <p class="indent">Once you’ve used this feature, you can’t use it again until you recover and reinsert the harpoon as an action.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>You install a secondary mode that launches a harpoon attached to a tightly coiled cord. With this harpoon, you can make a ranged weapon attack with a range of 30/60. On a hit, it deals 1d6 piercing damage. This attack can target a surface, object, or creature. A creature struck by this attack is impaled by the harpoon. Once you’ve used this feature, you can’t use it again until you recover and reinsert the harpoon as an action.</description>
+        </sheet>
+    </element>
+    <element name="High Calibre" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_HIGH_CALIBRE">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:5]</requirements>
+        <prerequisite>5th level, Ranged Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level, Ranged Weapon</p>
+            <p>You gain a +1 bonus to damage rolls made with this weapon. This bonus increases to +2 at 11th level and +3 at 17th level.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>You gain a +{{high-calibre:damage-bonus}} bonus to damage rolls made with this weapon.</description>
+        </sheet>
+        <rules>
+            <stat name="high-calibre:damage-bonus" value="1" level="5" />
+            <stat name="high-calibre:damage-bonus" value="1" level="11" />
+            <stat name="high-calibre:damage-bonus" value="1" level="17" />
+        </rules>
+    </element>
+    <element name="Integrated Magazine" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_INTEGRATED_MAGAZINE">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_EXPANDED_CAPACITY</requirements>
+            <supports>SCEC Weapon Upgrade</supports>
+        <prerequisite>Expanded Capacity</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Expanded Capacity</p>
+            <p>Your prototype weapon can hold three ammunition at a time, and you can replace all ammunition with the same action.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>Your prototype weapon can hold three ammunition at a time, and you can replace all ammunition with the same action.</description>
+        </sheet>
+    </element>
+    <element name="Inventive Weapon" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_INVENTIVE_WEAPON">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:11],ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_EXPLOSIVE_STRIKES</requirements>
+            <supports>SCEC Weapon Upgrade</supports>
+        <prerequisite>11th level, Explosive Strikes</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 11th level, Explosive Strikes</p>
+            <p>You gain the ability to create an invention that enhances your weapon’s damage. You can expend one invention to deal an additional 5d6 damage to the target. The damage is the same type as the weapon damage. If you also use your Explosive Strikes with an attack, you add this damage to the extra damage of your inventive weapon.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>You gain the ability to create an invention that enhances your weapon’s damage. You can expend one invention to deal an additional 5d6 damage to the target. The damage is the same type as the weapon damage. If you also use your Explosive Strikes with an attack, you add this damage to the extra damage of your inventive weapon.</description>
+        </sheet>
+    </element>
+    <element name="Jagged Edge" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_JAGGED_EDGE">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements></requirements>
+        <prerequisite>Melee Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Melee Weapon</p>
+            <p>When you critically hit with the weapon, you deal an additional 1d8 damage.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>When you critically hit with the weapon, you deal an additional 1d8 damage.</description>
+        </sheet>
+    </element>
+    <element name="Keen Edge" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_KEEN_EDGE">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:11],ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_JAGGED_EDGE</requirements>
+            <supports>SCEC Weapon Upgrade</supports>
+        <prerequisite>11th level, Jagged Edge</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 11th level, Jagged Edge</p>
+            <p>Your weapon now scores a critical hit on a roll of 19 or 20.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>Your weapon now scores a critical hit on a roll of 19 or 20.</description>
+        </sheet>
+    </element>
+    <element name="Lantern" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_LANTERN">
+        <supports>SCEC Weapon Upgrade</supports>
+        <description>
+            <p>You affix a targeted light to your weapon. As a bonus action, you can toggle the light on or off. While on, your weapon sheds bright light in a 60-foot cone.</p>
+       </description>
+        <sheet usage="Upgrade" action="Bonus Action">
+            <description>You can toggle the light affixed to your weapon on or off. While on, your weapon sheds bright light in a 60-foot cone.</description>
+        </sheet>
+    </element>
+    <element name="Muffled Weapon" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_MUFFLED_WEAPON">
+        <supports>SCEC Weapon Upgrade</supports>
+        <description>
+            <p>You modify your prototype weapon with a muffling system. When you make a weapon attack with your weapon while hidden, Investigation and Perception checks made to locate you that rely on sound have disadvantage.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>When you make a weapon attack with your weapon while hidden, Investigation and Perception checks made to locate you that rely on sound have disadvantage.</description>
+        </sheet>
+    </element>
+    <element name="Optical Scope" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_OPTICAL_SCOPE">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:5]</requirements>
+        <prerequisite>5th level, Ranged Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level, Ranged Weapon</p>
+            <p>You gain a +1 bonus to attack rolls made with this weapon. This bonus increases to +2 at 11th level and +3 at 17th level.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>You gain a +{{optical-scope:attack-bonus}} bonus to attack rolls made with this weapon.</description>
+        </sheet>
+        <rules>
+            <stat name="optical-scope:attack-bonus" value="1" level="5" />
+            <stat name="optical-scope:attack-bonus" value="1" level="11" />
+            <stat name="optical-scope:attack-bonus" value="1" level="17" />
+        </rules>
+    </element>
+    <element name="Reduced Recoil" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_REDUCED_RECOIL">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements></requirements>
+        <prerequisite>Ranged Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Ranged Weapon</p>
+            <p>You install a recoil dampener in your prototype weapon, removing the strength property from it.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>You install a recoil dampener in your prototype weapon, removing the strength property from it.</description>
+        </sheet>
+    </element>
+    <element name="Returning Weapon" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_RETURNING_WEAPON">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements></requirements>
+        <prerequisite>Melee Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Melee Weapon</p>
+            <p>You install a retractable chain in your prototype weapon. If the weapon does not already have the thrown property, it gains it with a range of 20/60. Additionally, when you throw the weapon, it immediately returns to your hand.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>ou install a retractable chain in your prototype weapon. If the weapon does not already have the thrown property, it gains it with a range of 20/60. Additionally, when you throw the weapon, it immediately returns to your hand.</description>
+        </sheet>
+    </element>
+    <element name="Siege Weapon" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_SIEGE_WEAPON">
+        <supports>SCEC Weapon Upgrade</supports>
+        <description>
+            <p>You modify your weapon to be more effective against barriers. Your weapon deals double damage against structures.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>Your weapon deals double damage against structures.</description>
+        </sheet>
+    </element>
+    <element name="Shock Absorber" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_SHOCK_ABSORBER">
+        <supports>SCEC Weapon Upgrade</supports>
+        <description>
+            <p>You add mechanical suspension to your prototype weapon to absorb energy from impacts. While wielding your prototype weapon, you can use the <em>absorb energy</em> invention and the invention’s extra damage applies to both melee and ranged weapon attacks.</p>
+            <div class="reference">
+                <div element="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_ABSORB_ENERGY" />
+            </div>
+       </description>
+        <sheet usage="Upgrade">
+            <description>While wielding your prototype weapon, you can use the absorb energy invention and the invention’s extra damage applies to both melee and ranged weapon attacks.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_STORMCHASER_SCEC_SPELL_ENGINEER_INVENTION_ABSORB_ENERGY" spellcasting="Engineering Upgrade" />
+        </rules>
+    </element>
+    <element name="Shocking Strike" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_SHOCKING_STRIKE">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:9]</requirements>
+        <prerequisite>9th level, Melee Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 9th level, Melee Weapon</p>
+            <p>When you hit with the weapon, you can create an electric burst. Each creature in a 15-foot cone centered on the creature you hit must make a Dexterity saving throw against your invention save DC, taking 1d8 lightning damage on a failed save or half as much on a successful one.</p>
+            <p class="indent">Once you’ve used this feature, the weapon must undergo maintenance before you can use it again.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>When you hit with the weapon, each creature in a 15-foot cone centered on the creature you hit must make a Dexterity saving throw against your invention save DC, taking 1d8 lightning damage on a failed save or half as much on a successful one. Once you’ve used this feature, the weapon must undergo maintenance before you can use it again.</description>
+        </sheet>
+    </element>
+    <element name="Snap Fire" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_SNAP_FIRE">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:9]</requirements>
+        <prerequisite>9th level, Ranged Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 9th level, Ranged Weapon</p>
+            <p>You modify your prototype weapon for quick shots. You can use your reaction to take an opportunity attack with your prototype weapon if an enemy comes within 10 ft of you. You have disadvantage on this attack.</p>
+       </description>
+        <sheet usage="Upgrade" action="Reaction">
+            <description>You can make an opportunity attack with your prototype weapon if an enemy comes within 10 ft of you. You have disadvantage on this attack.</description>
+        </sheet>
+    </element>
+    <element name="Staggering Strike" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_STAGGERING_STRIKE">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements></requirements>
+        <prerequisite>Melee Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Melee Weapon</p>
+            <p>When you hit with the weapon, you can force the target to make a Strength saving throw. On a failed save, the creature is pushed back 10 feet and knocked prone.</p>
+            <p class="indent">Once you’ve used this feature, the weapon must undergo maintenance before you can use it again.</p>
+       </description>
+        <sheet usage="Upgrade">
+            <description>When you hit with the weapon, the target must make a Strength saving throw. On a failed save, the creature is pushed back 10 feet and knocked prone. Once you’ve used this feature, the weapon must undergo maintenance before you can use it again.</description>
+        </sheet>
+    </element>
+    <element name="Venomous Weapon" type="Archetype Feature" source="Stormchaser’s Engineer" id="ID_STORMCHASER_SCEC_ARCHETYPE_FEATURE_WEAPONSMITH_UPGRADE_VENOMOUS_WEAPON">
+        <supports>SCEC Weapon Upgrade</supports>
+        <requirements>[level:engineer:7]</requirements>
+        <prerequisite>7th level, Melee Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 7th level, Melee Weapon</p>
+            <p>As a bonus action, you can coat your weapon in a thin layer of poison for 1 minute. The next time you hit with the weapon, the creature must make a Constitution saving throw against your invention DC. On a failed save, a creature takes 1d10 poison damage and becomes poisoned for 1 minute.</p>
+            <p class="indent">Once you’ve used this feature, the weapon must undergo maintenance before you can use it again.</p>
+       </description>
+        <sheet usage="Upgrade" action="Bonus Action">
+            <description>You can coat your weapon in a thin layer of poison for 1 minute. The next time you hit with the weapon, the creature must make a Constitution saving throw against your invention DC. On a failed save, a creature takes 1d10 poison damage and becomes poisoned for 1 minute. Once you’ve used this feature, the weapon must undergo maintenance before you can use it again.</description>
+        </sheet>
+    </element>
+</elements>
