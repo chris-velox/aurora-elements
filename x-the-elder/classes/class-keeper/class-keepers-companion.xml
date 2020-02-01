@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Keeper’s Companion Class</name>
+        <update version="0.0.1">
+            <file name="class-keepers-companion.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-keeper/class-keepers-companion.xml" />
+        </update>
+    </info>
+    
+    <element name="Keeper’s Companion" type="Class" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION">
+        <description>
+            <p>Starting at 1st level, the binding placed upon your companion grounds it in reality, tying it to the material world. This more physical presence grants it a number of benefits.</p>
+            <p class="indent">Your companion obeys your commands as best it can. It takes its turn on your initiative, and you determine its actions, decisions, attitudes, and so on. If you are incapacitated or absent, your companion acts on its own.</p>
+            <p class="indent">Your companion’s anchoring in this world is fledgling. As a result, it can’t attack until you reach 3rd level in this class.</p>
+            <p class="indent">Your companion has features and game statistics determined in part by your level. Your companion uses your proficiency bonus rather than its own.</p>
+            <p class="indent">Your companion gains no benefit from armour or weapons, whether or not it is physically capable of using them. Your companion has a natural armour class of 12 + your proficiency bonus.</p>
+            <p class="indent">For each keeper level after 1st, your companion gains an additional Hit Die and increases its hit points accordingly. Your companion’s Hit Dice are d8s, regardless of its size. When your companion is reduced to 0 hit points, it makes death saving throws as a player character would.</p>
+            <p class="indent">Your companion’s level is equal to your keeper level for the purpose of spells and features like <em>polymorph</em> and <em>true polymorph</em>.</p>
+            <p class="indent">Whenever you gain the Ability Score Improvement class feature, your companion’s abilities also improve. Your companion can increase one ability score of your choice by 2, or it can increase two ability scores of your choice by 1. As normal, your companion can’t increase an ability score above 20 using this feature unless its description specifies otherwise.</p>
+            <p class="indent">You decide your companion’s alignment and ideal. At your option, you can pick from or roll on the the tables below to determine its traits and flaws. Its bond is always "I must protect my keeper. We are greater together than alone."</p>
+            <h5>CREATING A COMPANION</h5>
+            <p>You use the rules presented here when creating your companion.</p>
+            <p class="indent">Your companion is a Small or Medium creature (your choice). If mounted, it continues to act independently, not as a controlled mount.</p>
+            <p class="indent">You generate your companion’s abilty scores using the following numbers: 15, 14, 13, 12, 10, and 8. You assign each of these numbers to an ability score of your choice.</p>
+            <p class="indent">Your companion can be one of many creature types. Select one of the following types: aberration, beast, celestial, construct, dragon, elemental, fey, fiend, giant, monstrosity, ooze, plant, or undead.</p>
+            <p class="indent">Your companion is proficient in Charisma saving throws. Additionally, choose one ability score other than Charisma. Your companion gains proficiency in saving throws using the chosen ability.</p>
+            <p class="indent">Your companion is proficient in two skills of your choice.</p>
+            <p class="indent">Finally, select two traits from the following list to give your companion a feeling uniquely its own. Choose carefully. Once created, your companion’s features cannot be changed.</p>
+            <h2>CLASS FEATURES</h2>
+            <p>As an keeper’s companion, you gain the following class features.</p>
+            <h5 class="caption">HIT POINTS</h5>
+            <ul class="unstyled">
+                <li><strong>Hit Dice:</strong> 1d8 per keeper’s companion level</li>
+                <li><strong>Hit Points at 1st Level:</strong> 8 + your Constitution modifier</li>
+                <li><strong>Hit Points at Higher Levels:</strong> 1d8 (or 5) + your Constitution modifier per keeper’s companion level after 1st</li>
+            </ul>
+            <h5 class="caption">PROFICIENCIES</h5>
+            <ul class="unstyled">
+                <li><strong>Saving Throws:</strong> Charisma, one of your choice</li>
+                <li><strong>Skills:</strong> Choose any two skills.</li>
+            </ul>
+        </description>
+        <setters>
+            <set name="hd">d8</set>
+            <set name="short">A customizable companion for your Keeper class character.</set>
+        </setters>
+        <sheet display="false" />
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
+            <select type="Class Feature" name="Companion Size" supports="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_SIZE_SMALL|ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_SIZE_MEDIUM" level="1" requirements="!ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_TOWERING" />
+            <select type="Proficiency" name="Saving Throw Proficiency" supports="ID_PROFICIENCY_SAVINGTHROW_STRENGTH|ID_PROFICIENCY_SAVINGTHROW_DEXTERITY|ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION|ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE|ID_PROFICIENCY_SAVINGTHROW_WISDOM" />
+            <select type="Proficiency" name="Skill Proficiency, Keeper’s Companion" supports="Skill" />
+            <select type="Class Feature" name="Keeper Companion Trait" number="2" supports="Keeper Companion Trait" />
+            <grant type="Class Feature" id="" level="3" />
+            <grant type="Class Feature" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_ABILITY_SCORE_IMPROVEMENT" level="4" />
+            <grant type="Class Feature" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_GATE_OF_TRAVEL" level="10" />
+            <grant type="Class Feature" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_RETRIBUTION" level="15" />
+        </rules>
+    </element>
+        <element name="Aerial" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_AERIAL">
+            <supports>Keeper Companion Trait</supports>
+            <description>
+                <p>Your companion has a flying speed equal to its base walking speed. Your companion can’t use its flying speed while mounted or while grappling another creature until you reach 5th level in this class.</p>
+            </description>
+            <sheet>
+                <description>Your companion has a flying speed equal to its base walking speed. Your companion can’t use its flying speed while mounted or while grappling another creature.</description>
+                <description level="5">Your companion has a flying speed equal to its base walking speed.</description>
+            </sheet>
+            <rules>
+                <stat name="speed:fly" value="speed" bonus="base" />
+            </rules>
+        </element>
+        <element name="Amphibious" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_AMPHIBIOUS">
+            <supports>Keeper Companion Trait</supports>
+            <description>
+                <p>Your companion can breathe air and water, and has a swimming speed equal to its base walking speed.</p>
+            </description>
+            <sheet>
+                <description>Your companion can breathe air and water, and has a swimming speed equal to its base walking speed.</description>
+            </sheet>
+            <rules>
+                <stat name="speed:swim" value="speed" bonus="base" />
+            </rules>
+        </element>
+        <element name="Earth Mover" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_EARTH_MOVER">
+            <supports>Keeper Companion Trait</supports>
+            <description>
+                <p>Your companion has a burrowing speed equal to half its base walking speed, and has tremorsense with a range of 5 feet.</p>
+            </description>
+            <sheet>
+                <description>Your companion has a burrowing speed equal to half its base walking speed, and has tremorsense with a range of 5 feet.</description>
+            </sheet>
+        </element>
+        <element name="Incorporeal" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_INCORPOREAL">
+            <supports>Keeper Companion Trait</supports>
+            <description>
+                <p>Your companion can move through other creatures and objects as if they were difficult terrain. It takes 1d10 force damage if it ends its turn inside an object.</p>
+            </description>
+            <sheet>
+                <description>Your companion can move through other creatures and objects as if they were difficult terrain. It takes 1d10 force damage if it ends its turn inside an object.</description>
+            </sheet>
+        </element>
+        <element name="Keen Senses" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_KEEN_SENSES">
+            <supports>Keeper Companion Trait</supports>
+            <description>
+                <p>Your companion has advantage on Wisdom (Perception) checks relying on two of the following senses of your choice: hearing, sight, or smell.</p>
+            </description>
+            <sheet>
+                <description>Your companion has advantage on Wisdom (Perception) checks relying on two of the following senses of your choice: hearing, sight, or smell.</description>
+            </sheet>
+        </element>
+        <element name="Resistance" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_RESISTANCE">
+            <supports>Keeper Companion Trait</supports>
+            <description>
+                <p>Your companion has resistance to one of the following damage types (your choice): acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Swarm" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_SWARM">
+            <supports>Keeper Companion Trait</supports>
+            <description>
+                <p>Your companion can occupy another creature’s space and vice versa, and can move through any opening large enough for a Tiny creature.</p>
+            </description>
+            <sheet>
+                <description>Your companion can occupy another creature’s space and vice versa, and can move through any opening large enough for a Tiny creature.</description>
+            </sheet>
+        </element>
+        <element name="Swift" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_SWIFT">
+            <supports>Keeper Companion Trait</supports>
+            <description>
+                <p>Your companion’s base walking speed is 50 feet.</p>
+            </description>
+            <sheet>
+                <description>Your companion’s base walking speed is 50 feet.</description>
+            </sheet>
+            <rules>
+                <stat name="speed" value="50" bonus="base" />
+            </rules>
+        </element>
+        <element name="Teleporter" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_TELEPORTER">
+            <supports>Keeper Companion Trait</supports>
+            <description>
+                <p>As an action, your companion can teleport, along with any equipment it is wearing or carrying, to an unoccupied space it can see within 30 feet of itself.</p>
+            </description>
+            <sheet action="Action">
+                <description>Your companion can teleport, along with any equipment it is wearing or carrying, to an unoccupied space it can see within 30 feet of itself.</description>
+            </sheet>
+        </element>
+        <element name="Towering" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_TOWERING">
+            <supports>Keeper Companion Trait</supports>
+            <description>
+                <p>Your companion is Large instead of Small or Medium.</p>
+            </description>
+            <sheet>
+                <description>Your companion is Large.</description>
+            </sheet>
+            <rules>
+    			<grant type="Size" id="ID_SIZE_LARGE" />
+            </rules>
+        </element>
+        <element name="Wall Crawler" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_TRAIT_WALL_CRAWLER">
+            <supports>Keeper Companion Trait</supports>
+            <description>
+                <p>Your companion can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.</p>
+            </description>
+            <sheet>
+                <description>Your companion can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.</description>
+            </sheet>
+        </element>
+        <element name="Companion Attack" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_ATTACK">
+            <description>
+                <p>Your companion gains an attack option that it can use with the Attack action. This attack is a melee spell attack with a range of 5 feet. Your companion is proficient with this attack, and can add its Strength, Dexterity, Intelligence, Wisdom, or Charisma modifier to its attack and damage rolls. Its damage is your companion’s damage type, and its damage die is a d6.</p>
+                <p class="indent">Choose one of the following damage types: acid, bludgeoning, cold, fire, force, lightning, necrotic, piercing, poison, psychic, radiant, slashing, or thunder. Whenever a feature refers to your companion’s damage type, you use this damage type.</p>
+            </description>
+            <sheet action="Action">
+                <description>Your companion can make a melee spell attack that does 1d6 {{companion-damage:type}} damage. Your companion is proficient with this attack, and can add its Strength, Dexterity, Intelligence, Wisdom, or Charisma modifier to its attack and damage rolls.</description>
+                <description level="6">Your companion can make a melee spell attack that does 1d6 {{companion-damage:type}} damage. Your companion is proficient with this attack, and can add its Strength, Dexterity, Intelligence, Wisdom, or Charisma modifier to its attack and damage rolls. Your companion’s attacks count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage, and ignore resistance to {{companion-damage:type}} damage.</description>
+            </sheet>
+            <rules>
+                <select type="Class Feature" name="Companion Damage Type" supports="Keeper Companion Damage" level="3" />
+            </rules>
+        </element>
+        <element name="Ability Score Improvement" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_ABILITY_SCORE_IMPROVEMENT">
+            <description>
+                <p>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1.</p>
+                <p class="indent">As normal, you can’t increase an ability score above 20 using this feature.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Class Feature" name="Improvement Option (Keeper Companion 4)" supports="Improvement Option,Keeper Companion,4" level="4" />
+                <select type="Class Feature" name="Improvement Option (Keeper Companion 8)" supports="Improvement Option,Keeper Companion,8" level="8" />
+                <select type="Class Feature" name="Improvement Option (Keeper Companion 12)" supports="Improvement Option,Keeper Companion,12" level="12" />
+                <select type="Class Feature" name="Improvement Option (Keeper Companion 16)" supports="Improvement Option,Keeper Companion,16" level="16" />
+                <select type="Class Feature" name="Improvement Option (Keeper Companion 19)" supports="Improvement Option,Keeper Companion,19" level="19" />
+            </rules>
+        </element>
+        <element name="Small" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_SIZE_SMALL">
+            <description>
+                <p>Your companion’s size is small.</p>
+            </description>
+            <sheet>
+                <description>Your companion’s size is small.</description>
+            </sheet>
+            <rules>
+    			<grant type="Size" id="ID_SIZE_SMALL" />
+            </rules>
+        </element>
+        <element name="Medium" type="Class Feature" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_CLASS_FEATURE_KEEPER_COMPANION_SIZE_MEDIUM">
+            <description>
+                <p>Your companion’s size is medium.</p>
+            </description>
+            <sheet>
+                <description>Your companion’s size is medium.</description>
+            </sheet>
+            <rules>
+    			<grant type="Size" id="ID_SIZE_MEDIUM" />
+            </rules>
+        </element>
+
+    <element name="Keeper Companion" type="Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_KEEPER_COMPANION_RACE">
+        <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+        <description>
+        </description>
+        <sheet display="false" />
+		<setters>
+			<set name="names" type="male"></set>
+			<set name="names" type="female"></set>
+			<set name="names-format">{{name}}</set>
+			<set name="height" modifier="2d8">3’0"</set>
+			<set name="weight" modifier="2d6">70 lb.</set>
+		</setters>
+        <rules>
+            <grant type="Vision" id="ID_VISION_DARKVISION" />
+            <stat name="ac:keeper-companion" value="12" />
+            <stat name="ac:keeper-companion" value="proficiency" />
+            <stat name="ac:calculation" value="ac:keeper-companion" bonus="calculation" equipped="[armor:none]" alt="Occultist’s Seal" />
+            <select type="Sub Race" name="Keeper Companion Form" supports="Keeper Companion Race" />
+        </rules>
+    </element>
+        <element name="Aberration" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_ABERRATION">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is an Aberration.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Beast" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_BEAST">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is a Beast.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Celestial" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_CELESTIAL">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is a Celestial.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Construct" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_CONSTRUCT">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is a Construct.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Dragon" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_DRAGON">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is a Dragon.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Elemental" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_ELEMENTAL">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is an Elemental.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Fey" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_FEY">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is a Fey.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Fiend" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_FIEND">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is a Fiend.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Giant" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_GIANT">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is a Giant.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Monstrosity" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_MONSTROSITY">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is a Monstrosity.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Ooze" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_OOZE">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is an Ooze.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Plant" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_PLANT">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is a Plant.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Undead" type="Sub Race" source="The Keeper" id="ID_NOTTHESMOOZE_KEEPER_RACE_UNDEAD">
+            <supports>Keeper Companion Race</supports>
+            <requirements>ID_NOTTHESMOOZE_KEEPER_CLASS_KEEPERS_COMPANION</requirements>
+            <description>
+                <p>Your companion is an Undead.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+
+
+</elements>
