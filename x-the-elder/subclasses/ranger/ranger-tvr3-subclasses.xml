@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Ranger Subclasses from The Versatile Ranger for PHB Ranger</name>
+        <update version="0.0.1">
+            <file name="ranger-tvr3-subclasses.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/ranger/ranger-tvr3-subclasses.xml" />
+        </update>
+    </info>
+    
+    <element name="Bounty Hunter Conclave" type="Archetype" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_RANGER_BOUNTY_HUNTER_CONCLAVE">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Rangers seeking to improve their skills in hunting and hounding their chosen prey are often drawn to the Bounty Hunter Conclave. Whether it be because of some personal vendetta, their people’s tradition, or simply for the love of the hunt (or the rewards the hunt brings), Bounty Hunters learn to master the art of tracking and slaying a singular target.</p>
+            <h5>Bounty Hunter Magic</h5>
+            <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Bounty Hunter Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+            <h5 class="caption">Bounty Hunter Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>compelled duel</em></td></tr>
+                <tr><td>5th</td><td><em>branding smite</em></td></tr>
+                <tr><td>9th</td><td><em>glyph of warding</em></td></tr>
+                <tr><td>13th</td><td><em>banishment</em></td></tr>
+                <tr><td>17th</td><td><em>passwall</em></td></tr>
+            </table>
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_PRIMED_HUNTER" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_IMPROVED_HUNTERS_MARK" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_RESILIENT_PREDATOR" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_MARKED_FOR_DEATH" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_PREYS_BANE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_COMPELLED_DUEL" spellcasting="Ranger" known="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_BRANDING_SMITE" spellcasting="Ranger" known="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_GLYPH_OF_WARDING" spellcasting="Ranger" known="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_BANISHMENT" spellcasting="Ranger" known="true" level="13" />
+            <grant type="Spell" id="ID_PHB_SPELL_PASSWALL" spellcasting="Ranger" known="true" level="17" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_PRIMED_HUNTER" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_IMPROVED_HUNTERS_MARK" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_RESILIENT_PREDATOR" level="7" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_MARKED_FOR_DEATH" level="11" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_PREYS_BANE" level="15" />
+        </rules>
+    </element>
+        <element name="Primed Hunter" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_PRIMED_HUNTER">
+            <description>
+                <p>At 3rd level, you learn the <em>hunter’s mark</em> spell and it doesn’t count against the number of ranger spells you know. If you already know this spell, you learn a different 1st-level ranger spell of your choice.</p>
+                <p class="indent">Additionally, you gain a bonus to any Constitution saving throws you make to maintain concentration on the <em>hunter’s mark</em> spell equal to your Wisdom modifier.</p>
+            </description>
+            <sheet>
+                <description>You have a +{{wisdom:modifier}} bonus to any Constitution saving throws you make to maintain concentration on hunter’s mark.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_HUNTERS_MARK" spellcasting="Ranger" known="true" />
+            </rules>
+        </element>
+        <element name="Improved Hunter’s Mark" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_IMPROVED_HUNTERS_MARK">
+            <description>
+                <p>At 3rd level, you have learned to use the magic at your disposal to its fullest potential against your prey. The extra damage you deal from the hunter’s mark spell increases to 1d8.</p>
+                <p class="indent">Additionally, once on each of your turns, before you make a weapon attack against a creature, you can spend a spell slot to cast the <em>hunter’s mark</em> spell on your attack’s target as part of the attack if the attack hits. The spell is cast before determining damage, but fails if the creature is not a valid target of the spell. On a miss, the spell slot is lost.</p>
+            </description>
+            <sheet>
+                <description>The extra damage you deal from the hunter’s mark spell increases to 1d8. Once on each of your turns, before you make a weapon attack against a creature, you can spend a spell slot to cast the hunter’s mark spell on your attack’s target as part of the attack if the attack hits. The spell is cast before determining damage, but fails if the creature is not a valid target of the spell. On a miss, the spell slot is lost.</description>
+            </sheet>
+        </element>
+        <element name="Resilient Predator" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_RESILIENT_PREDATOR">
+            <description>
+                <p>At 7th level, when a creature currently affected by a <em>hunter’s mark</em> spell that you cast targets you with an attack or forces you to make a saving throw, you can use your reaction to impose disadvantage on the attack, or to gain advantage on the saving throw. Once you use this feature, you must recast the hunter’s mark spell or mark a different creature with the spell before you can use it again.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When a creature currently affected by a hunter’s mark spell that you cast targets you with an attack or forces you to make a saving throw, you can use your reaction to impose disadvantage on the attack, or to gain advantage on the saving throw. Once you use this feature, you must recast the hunter’s mark spell or mark a different creature with the spell before you can use it again.</description>
+            </sheet>
+        </element>
+        <element name="Marked For Death" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_MARKED_FOR_DEATH">
+            <description>
+                <p>At 11th level, the primal ire you have against your chosen foes is enough to harm them. When you mark a creature using the <em>hunter’s mark</em> spell, you can choose to force it to make a Wisdom saving throw. On a failed save, the target takes psychic damage equal to 1d8 plus your Wisdom modifier, or half as much damage on a success.</p>
+            </description>
+            <sheet>
+                <description>When you mark a creature using the hunter’s mark spell, you can choose to force it to make a Wisdom saving throw. On a failed save, the target takes 1d8 + {{wisdom:modifier}} psychic damage, or half as much damage on a success.</description>
+            </sheet>
+        </element>
+        <element name="Prey’s Bane" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_BOUNTY_HUNTER_PREYS_BANE">
+            <description>
+                <p>At 15th level, when a creature affected by the hunter’s mark spell drops to 0 hit points before the spell ends, you can immediately use your reaction to mark a new creature instead of using a bonus action on a succeeding turn.</p>
+                <p class="indent">Additionally, when you cast the hunter’s mark spell using a 5th or 6th level spell slot, the spell is treated as a 7th level spell for the purposes of counterspell, dispel magic, limited magic immunity, etc.</p>
+                <div class="sidebar">
+                <h5 class="caption">Note on Improved Hunter’s Mark</h5>
+                <p>You cannot cast a bonus action spell on the same turn you cast the hunter’s mark spell as part of your attack. This is because of the bonus action spellcasting rule which prevents the casting of any spell (other than a cantrip with a casting time of 1 action) on the same turn no matter how it is cast if you cast a bonus action spell. If you cast hunter’s mark as part of an attack, you can still cast reaction spells as normal, or use the fighter’s Action Surge feature to cast a leveled spell. If the spell fails as part of the attack, you can cast bonus action spells as normal, as you never actually cast a spell.</p>
+                <p class="indent">A creature is “not a valid target” if you can’t see the creature (invisible, in darkness, etc.) or if it is outside of the spell’s range of 90 feet, as is normal for the hunter’s mark spell.</p>
+                </div>
+                <div class="sidebar">
+                <h5 class="caption">How powerful is the Bounty Hunter?</h5>
+                <p>Anydice calculations comparing the damage output of a 5th level Hunter Ranger and a Bounty Hunter Ranger. Accuracy was not taken into account since both archetypes will have identical accuracy (though if it were taken into account, it will favour the Hunter even more). This shows that the Hunter will almost always outperform the Bounty Hunter except when using two-weapon fighting. In the first two rounds, the TWF BH will have a noticeably higher damage output than a TWF Hunter because if its hunter’s mark attack hits, it will free up its bonus action for TWF. The damage discrepancy will balance out after the 3rd round of combat, and the BH will eventually be overtaken as rounds go on. I believe this is balanced as the BH has a significant chance of wasting a spell slot when using its Improved Hunter’s Mark feature, and has less defensive features than the Hunter.</p>
+                </div>
+            </description>
+            <sheet action="Reaction">
+                <description>When a creature affected by the hunter’s mark spell drops to 0 hit points before the spell ends, you can immediately use your reaction to mark a new creature instead of using a bonus action on a succeeding turn. Additionally, when you cast the hunter’s mark spell using a 5th or 6th level spell slot, the spell is treated as a 7th level spell for the purposes of counterspell, dispel magic, limited magic immunity, etc.</description>
+            </sheet>
+        </element>
+    
+
+    <element name="Herbalist Conclave" type="Archetype" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_RANGER_HERBALIST_CONCLAVE">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Herbalists have learned to extract the magical properties of plants and nature in order to create potent mixtures that can aid allies and hinder foes.</p>
+            <h5>Herbalist Magic</h5>
+            <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Herbalist Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+            <h5 class="caption">Herbalist Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>purify food and drink</em></td></tr>
+                <tr><td>5th</td><td><em>aid</em></td></tr>
+                <tr><td>9th</td><td><em>stinking cloud</em></td></tr>
+                <tr><td>13th</td><td><em>blight</em></td></tr>
+                <tr><td>17th</td><td><em>greater restoration</em></td></tr>
+            </table>
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_ALCHEMIST" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_VOLATILE_MIXTURES" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_NATURAL_RESISTANCE" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_QUICK_MIXING" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_MASTER_ALCHEMIST" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_PURIFY_FOOD_AND_DRINK" spellcasting="Ranger" known="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_AID" spellcasting="Ranger" known="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_STINKING_CLOUD" spellcasting="Ranger" known="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_BLIGHT" spellcasting="Ranger" known="true" level="13" />
+            <grant type="Spell" id="ID_PHB_SPELL_GREATER_RESTORATION" spellcasting="Ranger" known="true" level="17" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_ALCHEMIST" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_VOLATILE_MIXTURES" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_NATURAL_RESISTANCE" level="7" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_QUICK_MIXING" level="11" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_MASTER_ALCHEMIST" level="15" />
+        </rules>
+    </element>
+        <element name="Alchemist" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_ALCHEMIST">
+            <description>
+                <p>At 3rd level, you gain proficiency with herbalism kits and you add double your proficiency bonus for any ability check you make using it. Also, the gold and time you must spend to create antitoxins and potions using an herbalism kit is halved.</p>
+            </description>
+            <sheet>
+                <description>You double your proficiency bonus for ability checks made using your herbalism kit. Also, the gold and time you must spend to create antitoxins and potions using an herbalism kit is halved.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+            </rules>
+        </element>
+        <element name="Volatile Mixtures" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_VOLATILE_MIXTURES">
+            <description>
+                <p>At 3rd level, as long as you have an herbalism kit, at the end of a long rest, you prepare five mixtures, chosen from the list below, in any combination. For example, you can prepare three healing draughts and two quick coatings at the end of a long rest.</p>
+                <p class="indent">It is assumed that your mixtures are created from ingredients foraged or gathered while traveling. Your mixtures lose their potency after 24 hours.</p>
+                <p class="indent">Some mixtures require a target to make a saving throw to resist the mixture’s effects. The saving throw DC is your ranger spell save DC.</p>
+                <h5>LIST OF MIXTURES</h5>
+                <p>The options for your Volatile Mixtures feature are presented here.</p>
+                <p class="indent"><strong>Healing Draught.</strong> This draught takes an action to drink or administer to another creature. Creatures that drink this draught regains 1d6 hit points. This draught has no effect on undead or constructs.</p>
+                <p class="indent">The healing increases by 1d6 when you reach 11th level (2d6).</p>
+                <p class="indent"><strong>Restorative Draught.</strong> This draught takes an action to drink or administer to another creature. Creatures that drink this draught is cured of either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned. This draught has no effect on undead or constructs.</p>
+                <p class="indent"><strong>Quick Coating.</strong> As a bonus action on your turn, you can coat one melee weapon or up to five pieces of ammunition with a reactive alchemical mixture. Once applied, the coating loses its potency at the start of your next turn.</p>
+                <p class="indent">A coated weapon or piece of ammunition deals an additional 1d6 damage. The damage type is acid, cold, fire, or poison (your choice).</p>
+                <p class="indent">The additional damage increases by 1d6 when you reach 11th level (2d6).</p>
+                <p class="indent"><strong>Poison Bomb.</strong> As an action, you can throw this flask to a point up to 20 feet from you, shattering it on impact, releasing a small cloud of poison that disperses quickly. Each creature in a 5-foot-radius sphere centered on the point of impact must make a Constitution saving throw or take 1d4 poison damage and become poisoned for one minute. The creature can repeat the saving throw at the end of each of its turns, ending the condition on itself on a success.</p>
+                <p class="indent">Holding one’s breath is ineffective against the poison, as it affects nasal membranes, tear ducts, and other parts of the body.</p>
+                <p class="indent">The damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).</p>
+                <p class="indent"><strong>Smoke Bomb.</strong> As an action, you can throw this flask to a point up to 20 feet from you, shattering it on impact. It creates a 10-foot-radius sphere of smoke centered on the point of impact. The sphere spreads around corners, and its area is heavily obscured. It lasts for one minute or until winds (at least 5 miles per hour) disperses it.</p>
+                <p class="indent"><strong>Sludge Bomb.</strong> As an action, you can throw this flask to a point up to 20 feet from you, shattering it on impact. The ground in a 5-foot-radius centered on that point becomes difficult terrain for one minute.</p>
+            </description>
+            <sheet usage="{{volatile-mixtures:uses}} Mixtures/Long Rest">
+                <description>As long as you have an herbalism kit, at the end of a long rest, you can prepare up to {{volatile-mixtures:uses}} mixtures, chosen from the your mixture list, in any combination. Your mixtures lose their potency after 24 hours. The Save DC for your mixtures is {{spellcasting:dc}}.</description>
+            </sheet>
+                <rules>
+                    <stat name="volatile-mixtures:uses" value="5" level="3" />
+                    <stat name="volatile-mixtures:uses" value="wisdom:modifier" level="11" />
+                </rules>
+        </element>
+        <element name="Natural Resistance" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_NATURAL_RESISTANCE">
+            <description>
+                <p>At 7th level, due to repeated exposure to alchemical mixtures and poisons, your body’s natural resistances have increased. You gain proficiency in Constitution saving throws.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" />
+            </rules>
+        </element>
+        <element name="Quick Mixing" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_QUICK_MIXING">
+            <description>
+                <p>At 11th level, at the end of a long rest, you prepare an additional number of mixtures equal to your Wisdom modifier (total of 5 + your Wisdom modifier).</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Master Alchemist" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_HERBALIST_MASTER_ALCHEMIST">
+            <description>
+                <p>At 15th level, you have mastered your mixtures’ recipes, and have learned to combine your ingredients to deadly effectiveness. Your mixtures gain additional effects:</p>
+                <p class="indent"><strong>Healing Draught.</strong> You add your Wisdom modifier to the amount of hit points the draught restores.</p>
+                <p class="indent"><strong>Restorative Draught.</strong> In addition to curing one disease or condition, the mixture also reduces the target’s exhaustion level by one.</p>
+                <p class="indent"><strong>Quick Coating.</strong> When you roll damage for the quick coating, you can treat any 1 on a damage die as a 2.</p>
+                <p class="indent"><strong>Poison Bomb.</strong> A creature who succeeds on the saving throw takes half the damage instead of no damage.</p>
+                <p class="indent"><strong>Smoke Bomb.</strong> The smoke’s radius increases to 15 feet, and it lasts for up to 10 minutes. Winds can no longer disperse the smoke.</p>
+                <p class="indent"><strong>Sludge Bomb.</strong> When a Large or smaller creature enters the sludge’s area for the first time on a turn or starts its turn there, that creature must make a Strength saving throw. On a failed save, the creature is grappled by the sludge until the start of its next turn.</p>
+            </description>
+            <sheet>
+                <description>Your mixtures gain additional effects.</description>
+            </sheet>
+        </element>
+    
+
+    <element name="Nomadic Conclave" type="Archetype" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_RANGER_NOMADIC_CONCLAVE">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Some rangers are tireless wanderers, with a hunger for exploring the world and traveling to new places. Explorers who take to the Nomad Conclave are hardened adventurers who have no true home, always on the move towards distant lands and exotic locations.</p>
+            <h5>Nomadic Magic</h5>
+            <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Nomadic Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+            <h5 class="caption">Nomadic Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>feather fall</em></td></tr>
+                <tr><td>5th</td><td><em>misty step</em></td></tr>
+                <tr><td>9th</td><td><em>fly</em></td></tr>
+                <tr><td>13th</td><td><em>dimension door</em></td></tr>
+                <tr><td>17th</td><td><em>far step</em></td></tr>
+            </table>
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_WANDERER" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_SPEED_OF_THE_WIND" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_ESCAPIST" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_DRIFTER" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_AMBUSCADE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_FEATHER_FALL" spellcasting="Ranger" known="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" spellcasting="Ranger" known="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_FLY" spellcasting="Ranger" known="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_DIMENSION_DOOR" spellcasting="Ranger" known="true" level="13" />
+            <grant type="Spell" id="ID_XGTE_SPELL_FAR_STEP" spellcasting="Ranger" known="true" level="17" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_WANDERER" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_SPEED_OF_THE_WIND" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_ESCAPIST" level="7" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_DRIFTER" level="11" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_AMBUSCADE" level="15" />
+        </rules>
+    </element>
+        <element name="Wanderer" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_WANDERER">
+            <description>
+                <p>At 3rd level, you have learned from your journeys, and you are even more adept at traveling and surviving in environments that you are familiar with. You learn one language of your choice and you gain an additional favored terrain. When you gain a favored terrain though the Natural Explorer Improvement feature, you also learn an additional language.</p>
+                <p class="indent">You gain the following additional benefits while traveling in your favored terrain:</p>
+                <ul>
+                    <li>Your group can travel stealthily at a normal pace.</li>
+                    <li>Your group can travel at a fast pace without a penalty to your Wisdom (Perception) scores.</li>
+                    <li>You have advantage on ability checks to avoid getting lost by magical means.</li>
+                </ul>
+                <p class="indent">Additionally, you gain features depending on each of your chosen favored terrains, as shown in the Favored Terrain Feature table.</p>
+                <h5 class="caption">Favored Terrain Features</h5>
+                <table>
+                    <thead>
+                        <tr><td>Terrain</td><td>Feature</td></tr>
+                    </thead>
+                    <tr><td>Arctic</td><td>Cold damage you take is reduced by 3. You are naturally adapted to cold climates, as described in chapter 5 of the Dungeon Master’s Guide.</td></tr>
+                    <tr><td>Coast</td><td>You have a swimming speed of 30 feet. If you already have a swimming speed, it is increased by 10 feet.</td></tr>
+                    <tr><td>Desert</td><td>Fire damage you take is reduced by 3. You are naturally adapted to hot climates, as described in chapter 5 of the Dungeon Master’s Guide.</td></tr>
+                    <tr><td>Forest</td><td>In a natural environment, you gain a bonus to your Dexterity (Stealth) and Wisdom (Perception) checks equal to your Wisdom modifier.</td></tr>
+                    <tr><td>Grassland</td><td>While you are not wearing heavy armor, your base walking speed is increased by 10 feet.</td></tr>
+                    <tr><td>Mountain</td><td>You have a climbing speed of 30 feet. If you already have a climbing speed, it is increased by 10 feet.</td></tr>
+                    <tr><td>Swamp</td><td>Poison damage you take is reduced by 3. You gain a bonus on saving throws to avoid getting poisoned equal to your Wisdom modifier.</td></tr>
+                    <tr><td>Urban</td><td>When speaking with humanoids, you gain a bonus to Persuasion and Insight checks equal to your Wisdom modifier.</td></tr>
+                    <tr><td>Underdark</td><td>You gain darkvision out to a range of 60 feet. If you already have darkvision, its range is increases by 30 feet.</td></tr>
+                </table>
+            </description>
+            <sheet>
+                <description>You gain benefits while traveling in a favored terrain. Your group can travel stealthily at a normal pace. Your group can travel at a fast pace without a penalty to your Perception scores. You have advantage on ability checks to avoid getting lost by magical means.</description>
+            </sheet>
+            <rules>
+                <select type="Class Feature" name="Favored Terrain" supports="Favored Terrain" level="3" />
+                <select type="Language" name="Language, Wanderer" level="3" />
+                <select type="Language" name="Language, Wanderer" level="6" />
+                <select type="Language" name="Language, Wanderer" level="10" />
+            </rules>
+        </element>
+        <element name="Speed of the Wind" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_SPEED_OF_THE_WIND">
+            <description>
+                <p>At 3rd level, while you are not wearing heavy armor, you gain the following benefits:</p>
+                <ul>
+                    <li>You can take the Dash or Disengage action as a bonus action on your turn.</li>
+                    <li>When you use an action to Dash, Disengage, or Dodge, you can move an additional 10 feet on your turn.</li>
+                </ul>
+            </description>
+            <sheet action="Bonus Action">
+                <description>While not wearing heavy armor, you can take the Dash or Disengage action as a bonus action on your turn. When you use an action to Dash, Disengage, or Dodge, you can move an additional 10 feet on your turn.</description>
+            </sheet>
+        </element>
+        <element name="Escapist" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_ESCAPIST">
+            <description>
+                <p>At 7th level, you have advantage on initiative rolls while in your favored terrain. Also, after a creature hits or misses you with an attack, you can use your reaction to move up half to your speed. Opportunity attacks triggered by this movement are made with disadvantage.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>You have advantage on initiative rolls while in your favored terrain. Also, after a creature hits or misses you with an attack, you can use your reaction to move up half to your speed. Opportunity attacks triggered by this movement are made with disadvantage.</description>
+            </sheet>
+        </element>
+        <element name="Drifter" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_DRIFTER">
+            <description>
+                <p>At 11th level, you ignore difficult terrain while in your favored terrain. Also, when you use your action to Dash or Disengage, you can make one weapon attack against a creature as part of that action. Whether you hit or miss, the target takes 1d6 magical slashing damage as the winds you leave in your wake slice your foe.</p>
+            </description>
+            <sheet>
+                <description>You ignore difficult terrain while in your favored terrain. Also, when you use your action to Dash or Disengage, you can make one weapon attack against a creature as part of that action. Whether you hit or miss, the target takes 1d6 magical slashing damage as the winds you leave in your wake slice your foe.</description>
+            </sheet>
+        </element>
+        <element name="Ambuscade" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_NOMAD_AMBUSCADE">
+            <description>
+                <p>At 15th level, you take two turns in the first round of combat: one on the initiative you rolled, and another on initiative count 20. In the first turn you take in combat, you can only use your action to take either the Attack or Hide action. In the succeeding rounds of combat, your initiative count is equal to 20 or the initiative you rolled, whichever is higher. You can’t use this feature when you are surprised.</p>
+                <div class="sidebar">
+                    <h5 class="caption">Note on Speed of the Wind</h5>
+                    <p>The additional 10 feet is not doubled on a Dash action as the Dash action lets you move equal to your base movement speed, and this feature lets you move an additional 10 feet separate from your movement or your Dash. This feature and the Drifter feature also cannot be used when you Dash or Disengage as a bonus action.</p>
+                </div>
+            </description>
+            <sheet>
+                <description>You take two turns in the first round of combat: one on the initiative you rolled, and another on initiative count 20. In the first turn you take in combat, you can only use your action to take either the Attack or Hide action. In the succeeding rounds of combat, your initiative count is equal to 20 or the initiative you rolled, whichever is higher. You can’t use this feature when you are surprised</description>
+            </sheet>
+        </element>
+    
+
+    <element name="Predator Conclave" type="Archetype" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_RANGER_PREDATOR_CONCLAVE">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Some rangers learn to hunt their favored enemies even more effectively. They spend their lives honing their skills to a deadly degree, and learn techniques to combat specific types of foes. Some train to hunt their prey because of their peoples’ culture, some because of necessity, and some even because of a personal goal or mission.</p>
+            <h5>Predator Magic</h5>
+            <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Predator Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+            <h5 class="caption">Predator Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>faerie fire</em></td></tr>
+                <tr><td>5th</td><td><em>mind spike</em></td></tr>
+                <tr><td>9th</td><td><em>glyph of warding</em></td></tr>
+                <tr><td>13th</td><td><em>arcane eye</em></td></tr>
+                <tr><td>17th</td><td><em>hold monster</em></td></tr>
+            </table>
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_FAVORED_ENEMY_IMPROVEMENTS" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_WEAKNESS_EXPLOIT" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_PREDATORS_INSTINCTS" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_PREDATORY_STRIKE" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_PREDATORS_RESISTANCE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" spellcasting="Ranger" known="true" level="3" />
+            <grant type="Spell" id="ID_XGTE_SPELL_MIND_SPIKE" spellcasting="Ranger" known="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_GLYPH_OF_WARDING" spellcasting="Ranger" known="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_ARCANE_EYE" spellcasting="Ranger" known="true" level="13" />
+            <grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" spellcasting="Ranger" known="true" level="17" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_FAVORED_ENEMY_IMPROVEMENTS" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_WEAKNESS_EXPLOIT" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_PREDATORS_INSTINCTS" level="7" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_PREDATORY_STRIKE" level="11" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_PREDATORS_RESISTANCE" level="15" />
+        </rules>
+    </element>
+        <element name="Favored Enemy Improvements" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_FAVORED_ENEMY_IMPROVEMENTS">
+            <description>
+                <p>At 3rd level, your experiences with your favored enemies grants you the upper hand when dealing with them.</p>
+                <p class="indent">You have advantage on Wisdom checks to perceive or gain insight on your favored enemies. Additionally, your weapon attacks against your favored enemies deal an additional 1d6 damage.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on Wisdom checks to perceive or gain insight on your favored enemies. Additionally, your weapon attacks against your favored enemies deal an additional 1d6 damage.</description>
+            </sheet>
+        </element>
+        <element name="Weakness Exploit" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_WEAKNESS_EXPLOIT">
+            <description>
+                <p>At 3rd level, you can share your knowledge to your companions, giving them an edge against your favored enemies. You can spend one hour teaching others tactics against your favored enemies. The one hour you spend teaching can be spent during a short rest. When you do so, choose a number of friendly creatures up to up to your Wisdom modifier within 30 feet of you who can see or hear you and who can understand you. The weapon attacks of your chosen creatures deal an additional 1d4 damage against one of your favored enemy types of your choice for 16 hours.</p>
+            </description>
+            <sheet>
+                <description>You can spend one hour teaching others tactics against your favored enemies. The one hour you spend teaching can be spent during a short rest. When you do so, choose a number of friendly creatures up to up to your Wisdom modifier within 30 feet of you who can see or hear you and who can understand you. The weapon attacks of your chosen creatures deal an additional 1d4 damage against one of your favored enemy types of your choice for 16 hours.</description>
+            </sheet>
+        </element>
+        <element name="Predator’s Instincts" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_PREDATORS_INSTINCTS">
+            <description>
+                <p>At 7th level, when one of your favored enemies that you can see attacks you, you can roll a d4 and subtract the number rolled from the attack roll. You must use this feature before you know the outcome of the attack roll.</p>
+            </description>
+            <sheet>
+                <description>When one of your favored enemies that you can see attacks you, you can roll a d4 and subtract the number rolled from the attack roll. You must use this feature before you know the outcome of the attack roll.</description>
+            </sheet>
+        </element>
+        <element name="Predatory Strike" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_PREDATORY_STRIKE">
+            <description>
+                <p>At 11th level, you gain an additional favored enemy, as well as an associated language. When you use the Attack action on your turn and hit two weapon attacks on one your favored enemies, you can make another weapon attack against the same target.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+			<select type="Class Feature" name="Favored Enemy" supports="Favored Enemy" level="11" />			
+			<select type="Language" name="Language (Favored Enemy)" level="11" />
+            </rules>
+        </element>
+        <element name="Predator’s Resistance" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_PREDATOR_PREDATORS_RESISTANCE">
+            <description>
+                <p>At 15th level, you have advantage on saving throws against the spells and abilities used by your favored enemies.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on saving throws against the spells and abilities used by your favored enemies.</description>
+            </sheet>
+        </element>
+    
+
+    <element name="Shamanic Conclave" type="Archetype" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_RANGER_SHAMANIC_CONCLAVE">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Some rangers attempt to attune further with the magic of the wilds. They learn to harness the raw magic at work in the world and use it to protect the wilderness from those who would threaten it. Some shamans use their magic to bring harmony between civilization and the wilderness, while others see themselves fully as extensions of nature, as much part of it as the trees of the forest or the beasts within.</p>
+            <h5>Shamanic Magic</h5>
+            <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Shamanic Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+            <h5 class="caption">Shamanic Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>entangle</em></td></tr>
+                <tr><td>5th</td><td><em>flaming sphere</em></td></tr>
+                <tr><td>9th</td><td><em>erupting earth</em></td></tr>
+                <tr><td>13th</td><td><em>control water</em></td></tr>
+                <tr><td>17th</td><td><em>control winds</em></td></tr>
+            </table>
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANSHAMANIC_SPELLCASTING" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANSHAMANIC_FOCUS" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANPRIMAL_WISDOM" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANNATURES_FURY" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANFORESTS_FORTITUDE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ENTANGLE" spellcasting="Ranger" known="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_FLAMING_SPHERE" spellcasting="Ranger" known="true" level="5" />
+            <grant type="Spell" id="ID_XGTE_SPELL_ERUPTING_EARTH" spellcasting="Ranger" known="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_CONTROL_WATER" spellcasting="Ranger" known="true" level="13" />
+            <grant type="Spell" id="ID_XGTE_SPELL_CONTROL_WINDS" spellcasting="Ranger" known="true" level="17" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANSHAMANIC_SPELLCASTING" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANSHAMANIC_FOCUS" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANPRIMAL_WISDOM" level="7" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANNATURES_FURY" level="11" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANFORESTS_FORTITUDE" level="15" />
+        </rules>
+    </element>
+        <element name="Shamanic Spellcasting" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANSHAMANIC_SPELLCASTING">
+            <description>
+                <p>At 3rd level, you gain the ability to attune to and harness the magic of nature deeper than most rangers. When you learn or replace a ranger spell when you gain a ranger level, you can learn a spell from either the druid or ranger spell list. If you learn a spell that is not on the ranger spell list, the spell is nonetheless a ranger spell for you.</p>
+                <p class="indent"><strong>Cantrips.</strong> You learn a cantrip of your choice from the druid spell list. You learn an additional druid cantrip of your choice at 7th level and again at 15th level. These cantrips count as ranger spells for you.</p>
+                <p class="indent"><strong>Ritual Casting.</strong> You can cast any ranger spell you know as a ritual if that spell has the ritual tag.</p>
+            </description>
+            <spellcasting name="Ranger" extend="true">
+                <extend>Druid</extend>
+            </spellcasting>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Cantrip, Shamanic Spellcastig" number="2" supports="Druid,0" spellcasting="Ranger" level="3" />
+                <select type="Spell" name="Cantrip, Shamanic Spellcastig" number="1" supports="Druid,0" spellcasting="Ranger" level="7" />
+                <select type="Spell" name="Cantrip, Shamanic Spellcastig" number="1" supports="Druid,0" spellcasting="Ranger" level="15" />
+                <grant type="Grants" id="ID_INTERNAL_RITUAL_CASTING" />
+            </rules>
+        </element>
+        <element name="Shamanic Focus" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANSHAMANIC_FOCUS">
+            <description>
+                <p>At 3rd level, your attunement to druidic practices combined with your knowledge of ranger lore lets you imbue a wooden weapon with natural magic to create a spellcasting focus only you can use. You can conduct a ritual on a wooden club, quarterstaff, or shortbow. The ritual takes place over the course of one hour or a short rest. The weapon must be within your reach throughout the ritual. At the end of the ritual, you instil the weapon with your magic. You can use it as a spellcasting focus for your ranger spells, and the weapon becomes magical, if it isn’t already. You can perform the somatic components of spells with your shamanic focus if you are holding it.</p>
+                <p class="indent">You can have only one shamanic focus at a time. Performing the ritual on a second weapon will end the magic affecting the previous one.</p>
+                <p class="indent">As an action, you can expend a ranger spell slot to have your shamanic focus grow piercing thorns which last for one hour. When you hit with your shamanic focus while it is thorned, the target takes an extra 1d4 piercing damage.</p>
+            </description>
+            <sheet>
+                <description>You can conduct a 1-hour ritual on a wooden club, quarterstaff, or shortbow. At the end of the ritual, you can use the item as a spellcasting focus. As an action, you can expend a ranger spell slot to have your shamanic focus grow piercing thorns which last for one hour. When you hit with your shamanic focus while it is thorned, the target takes an extra 1d4 piercing damage.</description>
+            </sheet>
+        </element>
+        <element name="Primal Wisdom" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANPRIMAL_WISDOM">
+            <description>
+                <p>At 7th level, the spirits of nature lend you their guidance. You gain proficiency in Wisdom saving throws. If you already have this proficiency, you instead gain proficiency in Intelligence or Charisma saving throws (your choice).</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Saving Throw Proficiency, Iron Mind" level="7" option="true" supports="ID_PROFICIENCY_SAVINGTHROW_WISDOM|ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE|ID_PROFICIENCY_SAVINGTHROW_CHARISMA" default="ID_PROFICIENCY_SAVINGTHROW_WISDOM" />
+            </rules>
+        </element>
+        <element name="Nature’s Fury" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANNATURES_FURY">
+            <description>
+                <p>At 11th level, your mastery over both the martial and magical aspects of ranger lore lets you seamlessly shift between both in battle. When you take the Attack action on your turn, you can replace one of your attacks and instead cast a ranger spell with a casting time of one action. The spell must be a cantrip or a 1st-level spell.</p>
+            </description>
+            <sheet>
+                <description>When you take the Attack action on your turn, you can replace one of your attacks and instead cast a ranger spell with a casting time of one action. The spell must be a cantrip or a 1st-level spell.</description>
+            </sheet>
+        </element>
+        <element name="Forest’s Fortitude" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_SHAMANFORESTS_FORTITUDE">
+            <description>
+                <p>At 15th level, your body’s link to the energies of nature lets you shrug off blows easier in battle. When you take damage, you can use your reaction to gain a number of temporary hit points equal to twice your Wisdom modifier.</p>
+                <div class="sidebar">
+                    <h5 class="caption">Note on Forest’s Fortitude</h5>
+                    <p>Remember that temporary hit points do not stack with each other, even if they come from the same source. When you use this feature while you still have temporary hit points, you choose to use either the old total or the new one.</p>
+                </div>
+            </description>
+            <sheet action="Reaction">
+                <description>When you take damage, you can use your reaction to gain {{forests-fortitude:temp-hp}} temporary hit points.</description>
+            </sheet>
+            <rules>
+                <stat name="forests-fortitude:temp-hp" value="wisdom:modifier" />
+                <stat name="forests-fortitude:temp-hp" value="wisdom:modifier" />
+            </rules>
+        </element>
+    
+
+    <element name="Warden Conclave" type="Archetype" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_RANGER_WARDEN_CONCLAVE">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Some rangers gain the ability to embody the power of nature itself, using the elements to defend and protect. These wardens are fierce warriors of nature that safeguard the wilds from unnatural threats. Wardens have gained the ability to transform themselves using the forces of the elements and nature, somewhat similar to a druid.</p>
+            <h5>Warden Magic</h5>
+            <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Warden Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+            <h5 class="caption">Warden Spells</h5>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>armor of Agathys</em></td></tr>
+                <tr><td>5th</td><td><em>warding bond</em></td></tr>
+                <tr><td>9th</td><td><em>erupting earth</em></td></tr>
+                <tr><td>13th</td><td><em>storm sphere</em></td></tr>
+                <tr><td>17th</td><td><em>wall of stone</em></td></tr>
+            </table>
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_WILDBLOOD" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_EARTHSTRENGTH" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_LIFESPIRIT" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_ELEMENTAL_GUARDIAN" />
+            <div element="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_STORMHEART" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ARMOR_OF_AGATHYS" spellcasting="Ranger" known="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_WARDING_BOND" spellcasting="Ranger" known="true" level="5" />
+            <grant type="Spell" id="ID_XGTE_SPELL_ERUPTING_EARTH" spellcasting="Ranger" known="true" level="9" />
+            <grant type="Spell" id="ID_XGTE_SPELL_STORM_SPHERE" spellcasting="Ranger" known="true" level="13" />
+            <grant type="Spell" id="ID_PHB_SPELL_WALL_OF_STONE" spellcasting="Ranger" known="true" level="17" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_WILDBLOOD" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_EARTHSTRENGTH" level="3" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_LIFESPIRIT" level="7" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_ELEMENTAL_GUARDIAN" level="11" />
+            <grant type="Archetype Feature" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_STORMHEART" level="15" />
+        </rules>
+    </element>
+        <element name="Wildblood" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_WILDBLOOD">
+            <description>
+                <p>At 3rd level, as a bonus action on your turn, you assume the form of a primal guardian of nature. You manifest bestial features of a creature of your choice – for example, your feet turn into powerful hooves and you grow fearsome horns if you assume the form of a ram, the forked tongue and thin pupils of a serpent, or the snout, sharp claws, and fangs of a bear. Regardless of your choice, you gain the following benefits while transformed:</p>
+                <ul>
+                    <li>Your form gives you increased physical ability. You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes using your hands. If you have two free hands, when you use the Attack action on your turn and make an unarmed strike, you can make another unarmed strike as a bonus action. If your wildblood form grows claws, unarmed strikes using your claws deal slashing damage instead of the normal bludgeoning.</li>
+                    <li>The primal energy of your transformation empowers your attacks. Your weapon attacks count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage and deal an extra 1d4 damage.</li>
+                    <li>If you are not wearing heavy armor, you gain a +1 bonus to your AC.</li>
+                    <li>You gain the keen senses of wild beasts. You gain advantage on Wisdom (Perception) checks that rely on sight or smell.</li>
+                </ul>
+                <p class="indent">Your wildblood form lasts for one minute. You are considered a shapeshifter while in your wildblood form. It ends early if you end it as a bonus action on your turn, become unconscious, drop to 0 hit points, die, or if your form is dispelled (as in the moonbeam, dispel magic, or antimagic field spells).</p>
+                <p class="indent">You can assume your wildblood form twice. You regain all expended uses on a long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="2/Long Rest">
+                <description>You assume the form of a primal guardian of nature. You manifest bestial features of a creature of your choice for 1 minute.</description>
+            </sheet>
+        </element>
+        <element name="Earthstrength" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_EARTHSTRENGTH">
+            <description>
+                <p>At 3rd level, you can channel the energy of the earth to strengthen your attacks. Once on each of your turns, you can use a bonus action on your turn to empower the next melee weapon attack you make before your turn ends. If your next melee weapon attack hits a Huge or smaller creature, you can force your target to make a Strength saving throw against your ranger spell save DC. On a failed save, the target is pushed up to 10 feet away from you. If the target fails the save by 3 or more, you can choose to knock it prone instead of pushing it away.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>Once on each of your turns, you can use a bonus action on your turn to empower the next melee weapon attack you make before your turn ends. If your next melee weapon attack hits a Huge or smaller creature, you can force your target to make a Strength saving throw (save DC {{spellcasting:dc}}). On a failed save, the target is pushed up to 10 feet away from you. If the target fails the save by 3 or more, you can choose to knock it prone instead of pushing it away.</description>
+            </sheet>
+        </element>
+        <element name="Lifespirit" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_LIFESPIRIT">
+            <description>
+                <p>At 7th level, you can all upon the energy of fey spirits to mend the wounds of yourself or your allies when you are endangered. When you take damage from a hostile creature, you can use a reaction to choose a creature within 30 feet of you, including yourself. The chosen creature regains a number of hit points equal to half the damage you took, up to a maximum of 25 points of healing. You can use this feature a number of times equal to your Wisdom modifier. You regain all expended uses on a long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="{{wisdom:modifier}}/Long Rest">
+                <description>When you take damage from a hostile creature, you can use a reaction to choose a creature within 30 feet of you, including yourself. The chosen creature regains a number of hit points equal to half the damage you took, up to a maximum of 25 points of healing.</description>
+            </sheet>
+        </element>
+        <element name="Elemental Guardian" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_ELEMENTAL_GUARDIAN">
+            <description>
+                <p>At 11th level, you can channel the elements to retaliate against your enemies. When a hostile creature you can see damages another creature you can see within 30 feet of you (including yourself), you can use a reaction to make one weapon attack against the hostile creature. All damage dealt by the weapon becomes cold, fire, or lightning damage (your choice).</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When a hostile creature you can see damages another creature you can see within 30 feet of you (including yourself), you can use a reaction to make one weapon attack against the hostile creature. All damage dealt by the weapon becomes cold, fire, or lightning damage (your choice).</description>
+            </sheet>
+        </element>
+        <element name="Stormheart" type="Archetype Feature" source="The Versatile Ranger" id="ID_REGULAR_TVR3_ARCHETYPE_FEATURE_PHB_RANGER_WARDEN_STORMHEART">
+            <description>
+                <p>At 15th level, even the elemental strength of the storm is yours to command. Using a bonus action on your turn, you can make strong winds blow around you in a 20-foot radius. You can also create the winds when you enter your warden form. The wind’s area moves with you, remaining centered on you. When the winds appear, you can designate any number of creatures you can see to be unaffected by it. The wind’s area is difficult terrain for affected creatures. The winds expire if you are knocked unconscious, drop to 0 hit points, or die, or if you disperse them (no action required).</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can make strong winds blow around you in a 20-foot radius. You can also create the winds when you enter your warden form. The wind’s area moves with you, remaining centered on you. When the winds appear, you can designate any number of creatures you can see to be unaffected by it. The wind’s area is difficult terrain for affected creatures.</description>
+            </sheet>
+        </element>
+    
+
+</elements>
