@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Witch Hunter Ranger Archetype</name>
+        <update version="0.0.1">
+            <file name="ranger-witch-hunter.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/ranger/ranger-witch-hunter.xml" />
+        </update>
+    </info>
+    
+    <element name="Ranger Archetype: Witch Hunter" type="Source" source="Core" id="ID_JOLLER_WITCH_HUNTER_SOURCE_WITCH_HUNTER">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation"></set>
+            <set name="url">https://www.gmbinder.com/share/-LtLkhU-UzaKEUHWqSBH/-Lzc0SqyyV0XJL9sSx3T</set>
+            <set name="image"></set>
+            <set name="author" url="https://www.gmbinder.com/profile/joller">u/JollerMcAwesome</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200203</set>
+        </setters>
+    </element>
+    <element name="Witch Hunter" type="Archetype" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_RANGER_WITCH_HUNTER">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Witch Hunters are grim individuals often trained with crossbows or firearms who through holy power seek out corruption in order to bring it down. They often have varying motivations why they are apart of this archetype, could it be for vengeance, wealth or a religious cause. How they attain their divine aid also differs from person to person, but in its core it's a tool to take out the wicked that plague the world.</p>
+            <h5>WITCH HUNTER SPELLS</h5>
+            <p>Starting at 3rd level, you learn the cantrip sacred flame, aswell as an additional spell when you reach certain levels in this class, as shown in the Witch Hunter Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+            <table>
+                <thead>
+                    <tr><td>Ranger Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>protection from evil and good</em></td></tr>
+                <tr><td>5th</td><td><em>gentle repose</em></td></tr>
+                <tr><td>9th</td><td><em>remove curse</em></td></tr>
+                <tr><td>13th</td><td><em>locate creature</em></td></tr>
+                <tr><td>17th</td><td><em>holy weapon*</em></td></tr>
+            </table>
+            <div element="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_HOLY_ARSENAL" />
+            <div element="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_COATED_FOR_DEATH" />
+            <div element="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_PRYING_ASSASSIN" />
+            <div element="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_BATTLE_SANCTUARY" />
+            <div element="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_EXPECT_THE_UNEXPECTED" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" spellcasting="Ranger" known="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_GENTLE_REPOSE" spellcasting="Ranger" known="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_REMOVE_CURSE" spellcasting="Ranger" known="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_LOCATE_CREATURE" spellcasting="Ranger" known="true" level="13" />
+            <grant type="Spell" id="ID_XGTE_SPELL_HOLY_WEAPON" spellcasting="Ranger" known="true" level="17" />
+            <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_HOLY_ARSENAL" level="3" />
+            <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_COATED_FOR_DEATH" level="3" />
+            <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_PRYING_ASSASSIN" level="7" />
+            <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_BATTLE_SANCTUARY" level="11" />
+            <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_EXPECT_THE_UNEXPECTED" level="15" />
+        </rules>
+    </element>
+        <element name="Holy Arsenal" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_HOLY_ARSENAL">
+            <description>
+                <p>At 3rd level, you are adept at making use of different weaponry to purge the unholy in efficient ways. Once per turn, when attacking with a crossbow or a firearm, you may add your Wisdom modifier to the damage. This bonus damage is radiant damage.</p>
+                <p class="indent">Additionally, choose an option that compliments your arsenal.</p>
+                <p class="indent"><strong>Assorted.</strong> If you have a melee weapon in one hand, being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls.</p>
+                <p class="indent"><strong>Distant.</strong> Attacking at long range doesn't impose disadvantage on your ranged weapon attack rolls.</p>
+                <p class="indent"><strong>Immediate.</strong> The bonus radiant damage from this feature can also be applied to melee weapons.</p>
+                <p class="indent"><strong>Utilizing.</strong> Consumable items that require an action can instead be used as a bonus action.</p>
+            </description>
+            <sheet>
+                <description>Once per turn, when attacking with a crossbow or a firearm, you may add {{wisdom:modifier}} radiant damage to the damage. </description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Holy Arsenal Option" supports="Witch Hunter Holy Arsenal Option" level="3" />
+            </rules>
+        </element>
+            <element name="Holy Arsenal: Assorted" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_HOLY_ARSENAL_ASSORTED">
+                <supports>Witch Hunter Holy Arsenal Option</supports>
+                <description>
+                    <p>If you have a melee weapon in one hand, being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls.</p>
+                </description>
+                <sheet>
+                    <description>If you have a melee weapon in one hand, being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls.</description>
+                </sheet>
+            </element>
+            <element name="Holy Arsenal: Distant" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_HOLY_ARSENAL_DISTANT">
+                <supports>Witch Hunter Holy Arsenal Option</supports>
+                <description>
+                    <p>Attacking at long range doesn't impose disadvantage on your ranged weapon attack rolls.</p>
+                </description>
+                <sheet>
+                    <description>Attacking at long range doesn't impose disadvantage on your ranged weapon attack rolls.</description>
+                </sheet>
+            </element>
+            <element name="Holy Arsenal: Immediate" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_HOLY_ARSENAL_IMMEDIATE">
+                <supports>Witch Hunter Holy Arsenal Option</supports>
+                <description>
+                    <p>The bonus radiant damage from this feature can also be applied to melee weapons.</p>
+                </description>
+                <sheet>
+                    <description>The bonus radiant damage from this feature can also be applied to melee weapons.</description>
+                </sheet>
+            </element>
+            <element name="Holy Arsenal: Utilizing" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_HOLY_ARSENAL_UTILIZING">
+                <supports>Witch Hunter Holy Arsenal Option</supports>
+                <description>
+                    <p>Consumable items that require an action can instead be used as a bonus action.</p>
+                </description>
+                <sheet>
+                    <description>Consumable items that require an action can instead be used as a bonus action.</description>
+                </sheet>
+            </element>
+        <element name="Coated For Death" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_COATED_FOR_DEATH">
+            <description>
+                <p>At 3rd level, you can gain proficiency in firearms.</p>
+                <p class="indent">The cost of crafting silvered ammunition and coating weapons in silver is halved. When you use silvered ammunition or weapon for an attack, it is considered magical for the purposes of overcoming resistances and immunities.</p>
+            </description>
+            <sheet>
+                <description>The cost of crafting silvered ammunition and coating weapons in silver is halved. When you use silvered ammunition or weapon for an attack, it is considered magical for the purposes of overcoming resistances and immunities.</description>
+            </sheet>
+        </element>
+        <element name="Prying Assassin" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_PRYING_ASSASSIN">
+            <description>
+                <p>By 7th level, you gain proficiency in the Insight and Investigation skills. If you are already proficient in either skill, your proficiency bonus is doubled for any ability check you make that uses either of those proficiencies.</p>
+                <p class="indent">Additionally, as an action you can examine a creature through divine aid. Select a creature within 30 feet of you and make a Wisdom (Insight) check contested by the creature's Charisma (Deception) check. On a success, you know if the creature is affected by magic, its creature type, and you perceive the original form if the creature is a shapechanger for 1 hour. You may use this feature once per long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>Select a creature within 30 feet of you and make a Insight check contested by the creature's Deception check. On a success, you know if the creature is affected by magic, its creature type, and you perceive the original form if the creature is a shapechanger for 1 hour.</description>
+            </sheet>
+            <rules>
+                <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_INSIGHT" />
+                <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_INVESTIGATION" />
+            </rules>
+        </element>
+        <element name="Battle Sanctuary" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_BATTLE_SANCTUARY">
+            <description>
+                <p>At 11th level, your pantheon's powers can't go unnoticed around you. You may use one of the following features by speaking a phrase.</p>
+                <p class="indent"><strong>Primed for Cleansing.</strong> Until the end of your turn, your bonus radiant damage from holy arsenal is doubled, and can be triggered an additional time.</p>
+                <p class="indent"><strong>Curse Monsters.</strong> As an action, select up to three creatures that can hear you and are within 30 feet of you to make a Charisma saving throw against your spell save DC. If a creature fails, that creature takes 3d4 psychic damage, and must use its reaction to move 10 feet away from you.</p>
+                <p class="indent"><strong>Decline the Heresy.</strong> As a reaction when you or a creature within 60 feet gain a charmed or frightened condition, you remove that condition from yourself or the creature.</p>
+                <p class="indent"><strong>Stop the Devious.</strong> As a reaction when a creature moves within 60 feet of you, the creature must make a Wisdom saving throw against your spell save DC. If the creature fails, its movement speed is reduced to 0, and attacks against the creature can't suffer disadvantage, until its next turn.</p>
+                <p class="indent">You can use this feature an amount equal to your Wisdom modifier (minimum of 1). The uses reset after you finish a long rest.</p>
+            </description>
+            <sheet usage="{{battle-sanctuary:uses}}/Long Rest">
+                <description>You may use one of the following features:</description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_PRIMED_FOR_CLEANSING" level="11" />
+                <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_CURSE_MONSTERS" level="11" />
+                <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_DECLINE_THE_HERESY" level="11" />
+                <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_STOP_THE_DEVIOUS" level="11" />
+                <stat name="battle-sanctuary:uses" value="1" bonus="base" />
+                <stat name="battle-sanctuary:uses" value="wisdom:modifier" bonus="base" />
+            </rules>
+        </element>
+            <element name="Battle Sanctuary: Primed for Cleansing" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_PRIMED_FOR_CLEANSING">
+                <description>
+                    <p>Until the end of your turn, your bonus radiant damage from holy arsenal is doubled, and can be triggered an additional time.</p>
+                </description>
+                <sheet alt="Primed for Cleansing" usage="Battle Sanctuary">
+                    <description>Until the end of your turn, your bonus radiant damage from holy arsenal is doubled, and can be triggered an additional time.</description>
+                </sheet>
+            </element>
+            <element name="Battle Sanctuary: Curse Monsters" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_CURSE_MONSTERS">
+                <description>
+                    <p>As an action, select up to three creatures that can hear you and are within 30 feet of you to make a Charisma saving throw against your spell save DC. If a creature fails, that creature takes 3d4 psychic damage, and must use its reaction to move 10 feet away from you.</p>
+                </description>
+                <sheet alt="Curse Monsters" usage="Battle Sanctuary" action="Action">
+                    <description>Select up to three creatures that can hear you and are within 30 feet of you to make a Charisma saving throw against your spell save DC. If a creature fails, that creature takes 3d4 psychic damage, and must use its reaction to move 10 feet away from you.</description>
+                </sheet>
+            </element>
+            <element name="Battle Sanctuary: Decline the Heresy" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_DECLINE_THE_HERESY">
+                <description>
+                    <p>As a reaction when you or a creature within 60 feet gain a charmed or frightened condition, you remove that condition from yourself or the creature.</p>
+                </description>
+                <sheet alt="Decline the Heresy" usage="Battle Sanctuary" action="Reaction">
+                    <description>As a reaction when you or a creature within 60 feet gain a charmed or frightened condition, you remove that condition from yourself or the creature.</description>
+                </sheet>
+            </element>
+            <element name="Battle Sanctuary: Stop the Devious" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_STOP_THE_DEVIOUS">
+                <description>
+                    <p>As a reaction when a creature moves within 60 feet of you, the creature must make a Wisdom saving throw against your spell save DC. If the creature fails, its movement speed is reduced to 0, and attacks against the creature can't suffer disadvantage, until its next turn.</p>
+                </description>
+                <sheet alt="Stop the Devious" usage="Battle Sanctuary" action="Reaction">
+                    <description>As a reaction when a creature moves within 60 feet of you, the creature must make a Wisdom saving throw against your spell save DC. If the creature fails, its movement speed is reduced to 0, and attacks against the creature can't suffer disadvantage, until its next turn.</description>
+                </sheet>
+            </element>
+        <element name="Expect the Unexpected" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_EXPECT_THE_UNEXPECTED">
+            <description>
+                <p>When you reach 15th level, your intuition tells you when things turn grim. At the beginning of combat, you can treat your initiative roll as a 20, and on your first turn in combat you have advantage on your attack rolls and enemies have disadvantage against saving throws you trigger.</p>
+            </description>
+            <sheet>
+                <description>At the beginning of combat, you can treat your initiative roll as a 20, and on your first turn in combat you have advantage on your attack rolls and enemies have disadvantage against saving throws you trigger.</description>
+            </sheet>
+        </element>
+
+</elements>
