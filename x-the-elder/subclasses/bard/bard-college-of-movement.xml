@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of Movement</name>
+        <update version="0.0.1">
+            <file name="bard-college-of-movement.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/bard/bard-college-of-movement.xml" />
+        </update>
+    </info>
+    
+    <element name="Bard: College of Movement" type="Source" source="Core" id="ID_HOMEBREWERY_SOURCE_COLLEGE_OF_MOVEMENT">
+        <description>
+            <![CDATA[<p>In addition to the Bardic College archetypes available in the PHB, Xanathar's Guide, and UA, detailed below is a homebrew option: The College of Movement.</p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation"></set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/a51Uzcha</set>
+            <set name="image"></set>
+            <set name="author"></set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200207</set>
+        </setters>
+    </element>
+
+    <element name="College of Movement" type="Archetype" source="Bard: College of Movement" id="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_BARD_COLLEGE_OF_MOVEMENT">
+        <supports>Bard College</supports>
+        <description>
+            <p>Members of the College of Movement are experts in physical theatre and dance. A bard of this college uses their physical body movements to cast most spells and to tell stories. A bard proficient in physical theatre can tell a story with just as much, if not more, emotion and feeling than bard who performs with music.</p>
+            <div element="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_WHIRLWIND_OF_KNIVES" />
+            <div element="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_LIGHT_FOOTED" />
+            <div element="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_DANCE_OF_DIVERSION" />
+            <div element="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_MOVEMENT_SPECIALIST" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_WHIRLWIND_OF_KNIVES" level="3" />
+            <grant type="Archetype Feature" id="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_LIGHT_FOOTED" level="3" />
+            <grant type="Archetype Feature" id="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_DANCE_OF_DIVERSION" level="6" />
+            <grant type="Archetype Feature" id="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_MOVEMENT_SPECIALIST" level="14" />
+        </rules>
+    </element>
+        <element name="Whirlwind of Knives" type="Archetype Feature" source="Bard: College of Movement" id="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_WHIRLWIND_OF_KNIVES">
+            <description>
+                <p>When you choose this College at 3rd level, you gain the ability to fight in a whirlwind-like dance style. Whenever you make a ranged attack with a dart or dagger, rather than making an attack roll, you can make a Charisma (Performance) check against the target’s AC to determine success in the attack.</p>
+                <p class="indent">Additionally, when you reach 6th level, the damage dice for thrown dart or dagger become d6s instead of d4s for you.</p>
+            </description>
+            <sheet>
+                <description>Whenever you make a ranged attack with a dart or dagger, rather than making an attack roll, you can make a Performance check against the target’s AC to determine success in the attack.</description>
+                <description level="6">Whenever you make a ranged attack with a dart or dagger, rather than making an attack roll, you can make a Performance check against the target’s AC to determine success in the attack. The damage dice for thrown dart or dagger become d6s instead of d4s for you.</description>
+            </sheet>
+        </element>
+        <element name="Light-Footed" type="Archetype Feature" source="Bard: College of Movement" id="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_LIGHT_FOOTED">
+            <description>
+                <p>Starting at 3rd level, the way you move is so fluid and quick that it makes it extremely difficult to pin you down or hit you. When not wearing armour, your AC is equal to 10 + your Dexterity modifier + your Charisma modifier, as you always move as if you're ready to dance or dodge.</p>
+                <p class="indent">Additionally, whenever you perform a captivating dance or movement while casting a spell, you can ignore all material components that don’t have a cost.</p>
+            </description>
+            <sheet>
+                <description>Whenever you perform a captivating dance or movement while casting a spell, you can ignore all material components that don’t have a cost.</description>
+            </sheet>
+            <rules>
+                <stat name="ac:light-footed:base" value="10" />
+                <stat name="ac:light-footed:dexterity" value="dexterity:modifier" />
+                <stat name="ac:light-footed:charisma" value="charisma:modifier" />
+                <stat name="ac:light-footed" value="ac:light-footed:base" />
+                <stat name="ac:light-footed" value="ac:light-footed:dexterity" />
+                <stat name="ac:light-footed" value="ac:light-footed:charisma" />
+                <stat name="ac:calculation" value="ac:light-footed" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Light-Footed (Bard)" />
+            </rules>
+        </element>
+        <element name="Dance of Diversion" type="Archetype Feature" source="Bard: College of Movement" id="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_DANCE_OF_DIVERSION">
+            <description>
+                <p>Beginning at 6th level, you can perform a dance or expressive movement that distracts your opponents. While enacting this performance, all hostile creatures that can see you have disadvantage on attack rolls as they are entranced by you. Your walking speed is also increased by 5 feet while enacting this performance.</p>
+                <p class="indent">You use your action to start this performance, and you must use an action or bonus action each following turn to continue this distracting dance.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can perform a dance or expressive movement that distracts your opponents. While enacting this performance, all hostile creatures that can see you have disadvantage on attack rolls as they are entranced by you. Your walking speed is also increased by 5 feet while enacting this performance. You use your action to start this performance, and you must use an action or bonus action each following turn to continue this distracting dance.</description>
+            </sheet>
+        </element>
+        <element name="Movement Specialist" type="Archetype Feature" source="Bard: College of Movement" id="ID_COLLEGE_OF_MOVEMENT_ARCHETYPE_FEATURE_COLLEGE_OF_MOVEMENT_MOVEMENT_SPECIALIST">
+            <description>
+                <p>When you reach 14th level, your ability to dance and move has improved greatly. Whenever you make a Charisma (Performance), a Dexterity (Acrobatics) check, or a Dexterity saving throw, you can expend a use of your Bardic Inspiration and add the result to the ability check.</p>
+                <p class="indent">Whenever you use this feature and succeed on the saving throw or ability check, you regain that use of Bardic Inspiration.</p>
+            </description>
+            <sheet>
+                <description>Whenever you make a Performance, a Acrobatics check, or a Dexterity saving throw, you can expend a use of your Bardic Inspiration and add the result to the ability check. Whenever you use this feature and succeed on the saving throw or ability check, you regain that use of Bardic Inspiration.</description>
+            </sheet>
+        </element>
+    
+</elements>
