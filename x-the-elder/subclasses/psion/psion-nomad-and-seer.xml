@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Nomad and Seer Psionic Archetypes for KibblesTasty's Psion</name>
+        <update version="0.0.1">
+            <file name="psion-nomad-and-seer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/psion-nomad-and-seer.xml" />
+        </update>
+    </info>
+    
+    <element name="Nomad and Seer" type="Source" source="Core" id="ID_IVAN_ILLEST_GM_BINDER_SOURCE_Nomad and Seer">
+        <description>
+            <![CDATA[<p>I had the good fortune to be allowed to use the Psion made by /u/KibblesTasty in a campaign and ended up falling in love with the Transposition discipline and the unique gishy playstyle it enables, despite it not being the discipline associated with my subclass. Since its one of the two disciplines that isn't paired to an archetype, I was inspired to whip up one based on its traditional archetype, Nomad, from 3e and the Mystic, with permission from KT. [...]</p><p>While researching material, I also noticed that the Seer and Clairsentience discipline had also not been represented in the Psion, and wanted to also try my hand at filling the gap.</p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation"></set>
+            <set name="url">https://www.gmbinder.com/share/-LumaE24_N5w8l0oGIG4</set>
+            <set name="image"></set>
+            <set name="author" url="https://www.reddit.com/u/Ivan_Illest">u/Ivan_Illest</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200209</set>
+        </setters>
+    </element>
+
+    <element name="Nomad" type="Archetype" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_PSION_NOMAD">
+        <supports>Kibbles Psionic Archetype</supports>
+        <description>
+            <p>Certain psions wield power over physical space, manifesting as abilities that transport objects and people in the blink of an eye. Referring to themselves as Nomads, wielders of this power inevitably feel wanderlust- how can they feel at home in one spot when the entire world is their oyster?</p>
+            <p class="indent">Their mercurial nature and the capabilities of their powers result in many Nomads being distrusted or characterized as thieves. Many tend toward neutral or dispassionate tempraments as a result.</p>
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_ALL_ROADS" />
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_RIPPLES" />
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_SPATIAL_RESIDUE" />
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_EMPOWERED_PSIONICS" />
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_MEMORY_OF_ONE_THOUSAND_STEPS" />
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_THE_WORLD_IS_NO_BARRIER" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_ALL_ROADS" level="1" />
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_RIPPLES" level="1" />
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_SPATIAL_RESIDUE" level="3" />
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_EMPOWERED_PSIONICS" level="6" />
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_MEMORY_OF_ONE_THOUSAND_STEPS" level="10" />
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_THE_WORLD_IS_NO_BARRIER" level="14" />
+        </rules>
+    </element>
+        <element name="All Roads" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_ALL_ROADS">
+            <description>
+                <p>At 1st level when you select this Archetype, you gain the ability to move and displace matter through space with only your mind, granting the psionic discipline of Transposition.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TRANSPOSITION_DISCIPLINE" level="1" />
+            </rules>
+        </element>
+        <element name="Ripples" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_RIPPLES">
+            <description>
+                <p>Additionally starting at 1st level, you gain a sense for disturbances in space. You sense the distance and direction of planar portals within 1 mile of you. If you can see such a portal, you learn its destination.</p>
+            </description>
+            <sheet>
+                <description>You sense the distance and direction of planar portals within 1 mile of you. If you can see such a portal, you learn its destination.</description>
+            </sheet>
+        </element>
+        <element name="Spatial Residue" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_SPATIAL_RESIDUE">
+            <description>
+                <p>Starting at 3rd level, if a creature fails a saving throw against your Phase Rift, unstable energy lingers around their location. If the creature is struck by a weapon attack before it leaves its space, the energy combusts and the creature takes an additional 1d6 force damage.</p>
+            </description>
+            <sheet>
+                <description>If a creature fails a saving throw against your Phase Rift, unstable energy lingers around their location. If the creature is struck by a weapon attack before it leaves its space, the energy combusts and the creature takes an additional {{spatial-residue:damage-dice}}d6 force damage.</description>
+            </sheet>
+            <rules>
+                <stat name="spatial-residue:damage-dice" value="1" level="3" />
+            </rules>
+        </element>
+        <element name="Empowered Psionics" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_EMPOWERED_PSIONICS">
+            <description>
+                <p>Starting at 6th level, when you deal damage with a psionic discipline you can add your Intelligence modifier to one damage roll of that power.</p>
+            </description>
+            <sheet>
+                <description>When you deal damage with a psionic discipline you can add {{intelligence:modifier}} to one damage roll of that power.</description>
+            </sheet>
+        </element>
+        <element name="Memory of One Thousand Steps" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_MEMORY_OF_ONE_THOUSAND_STEPS">
+            <description>
+                <p>Starting at 10th level, you gain the ability to use psionics to recall your steps. After performing your Phase Rift during your turn, you can teleport to the space you started your turn in, if it is unoccupied, though you cannot use any remaining movement if you do so.</p>
+            </description>
+            <sheet>
+                <description>After performing your Phase Rift during your turn, you can teleport to the space you started your turn in, if it is unoccupied, though you cannot use any remaining movement if you do so.</description>
+            </sheet>
+        </element>
+        <element name="The World is No Barrier" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_NOMAD_THE_WORLD_IS_NO_BARRIER">
+            <description>
+                <p>Starting at 14th level, you can transcend even the bonds between planes. You can cast teleport or plane shift, but cannot target unwilling creatures if casting a spell in this way. After you cast either spell with this feature, use this feature again until you finish a long rest.</p>
+                <p class="indent">Additionally, the damage of your Spatial Residue increases to 2d6.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_TELEPORT" />
+                </div>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_PLANE_SHIFT" />
+                </div>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast teleport or plane shift, but cannot target unwilling creatures if casting a spell in this way.</description>
+            </sheet>
+            <rules>
+                <stat name="spatial-residue:damage-dice" value="1" level="14" />
+                <grant type="Spell" id="ID_PHB_SPELL_TELEPORT" />
+                <grant type="Spell" id="ID_PHB_SPELL_PLANE_SHIFT" />
+            </rules>
+        </element>
+    
+    <element name="Seer" type="Archetype" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_PSION_SEER">
+        <supports>Kibbles Psionic Archetype</supports>
+        <description>
+            <p>Seers are psionics burdened with knowledge of what has passed and what is yet to come. Their power manifests as glimpses into time. They excel as advisors and gatherers of information, and for this reason many find employment under nobles or theologians, or even as alarmingly accurate fortune tellers.</p>
+            <p class="indent">Seers are often born with their power, though many have had their power imparted upon them later in life by an outside source, divine or otherwise. Seers are among the most positively perceived of Psions, with many turning to them for guidance and advice. They largely tend towards the lawful, seeing fate as an inevitable road to walk, a truth to be obeyed and upheld. Some may instead seek to defy or change the fate they foretell and favor chaotic outlooks.</p>
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_BEYOND_SIGHT" />
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_GUIDED_PATH" />
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_PSIONIC_INVESTIGATION" />
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_EMPOWERED_PSIONICS" />
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_MISFORTUNE_DEFERRED" />
+            <div element="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_AS_EXPECTED" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_BEYOND_SIGHT" level="1" />
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_GUIDED_PATH" level="1" />
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_PSIONIC_INVESTIGATION" level="3" />
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_EMPOWERED_PSIONICS" level="6" />
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_MISFORTUNE_DEFERRED" level="10" />
+            <grant type="Archetype Feature" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_AS_EXPECTED" level="14" />
+        </rules>
+    </element>
+        <element name="Beyond Sight" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_BEYOND_SIGHT">
+            <description>
+                <p>At 1st level when you select this Archetype, you gain the ability to project your perception beyond your body and through time, granting you the psionic discipline Clairsentience.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_II_NOMAD_SEER_CLASS_FEATURE_PSIONIC_DISCIPLINE_CLAIRSENTIENCE_DISCIPLINE" level="1" />
+            </rules>
+        </element>
+        <element name="Guided Path" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_GUIDED_PATH">
+            <description>
+                <p>Additionally at 1st level, you gain the ability to cast guidance with your psionic powers. When you cast it in this way, you do not need to maintain concentration on it.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Psionic Investigation" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_PSIONIC_INVESTIGATION">
+            <description>
+                <p>Starting at 3rd level, you can focus your mind to read the psionic imprint left on an object. If you hold an object and concentrate on it for 10 minutes (as if concentrating on a spell), you learn a few basic facts about it.</p>
+                <p class="indent">You gain a mental image from the object’s point of view, showing the last creature to hold the object within the past 24 hours. You also learn of any events that have occurred within 20 feet of the object within the past hour. The events you perceive unfold from the object’s perspective. You see and hear such events as if you were there, but can’t use other senses. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Empowered Psionics" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_EMPOWERED_PSIONICS">
+            <description>
+                <p>Starting at 6th level, when you deal damage with a psionic discipline you can add your Intelligence modifier to one damage roll of that power.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Misfortune Deferred" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_MISFORTUNE_DEFERRED">
+            <description>
+                <p>Starting at 10th level, your powers have grown enough to let you tip the scales of fate somewhat. As a reaction when you see an ally making an attack or being attacked, you may use your Impart Knowledge on them. You can choose to use this feature after the roll, but before the GM determines whether the Attack roll or ability check succeeds or fails. You cannot add modifiers when you cast it in this way.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+        </element>
+        <element name="As Expected" type="Archetype Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_ARCHETYPE_FEATURE_SEER_AS_EXPECTED">
+            <description>
+                <p>Starting at 14th level, you can always see events unfolding shortly before they do. You cannot be surprised and whenever you roll initiative you take a surprise round if no other creatures are surprised.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+        </element>
+
+    <element name="Clairsentience Discipline" type="Class Feature" source="Nomad and Seer" id="ID_II_NOMAD_SEER_CLASS_FEATURE_PSIONIC_DISCIPLINE_CLAIRSENTIENCE_DISCIPLINE">
+        <supports>Kibbles Psionic Discipline</supports>
+        <description>
+            <p>Clairsentience is the ability to transcend the senses and see past, present, and future with your Psionic power.</p>
+            <h5>ONE STEP AHEAD</h5>
+            <p>Your powers grant you awareness of immediate threats. Whenever you roll initiative, you may roll 1d4 and add it to the result.</p>
+            <div class="reference">
+                <div element="ID_II_NOMAD_SEER_PSIONIC_POWER_IMPART_KNOWLEDGE" />
+            </div>
+            <h5>ALTERNATE EFFECTS</h5>
+            <p>Additionally, when you learn the Clairesentience psionic discipline you can use your Psionics feature to cast the following spells as per the rules defined in the feature:</p>
+            <table>
+                <thead>
+                    <tr><td>Point Cost</td><td>Alternate Effects</td></tr>
+                </thead>
+                <tr><td>1</td><td><em>detect evil and good, detect magic, identify</em></td></tr>
+                <tr><td>2</td><td><em>augury, locate object, see invisibility</em></td></tr>
+                <tr><td>3</td><td><em>clairvoyance, speak with dead**</em></td></tr>
+                <tr><td>4</td><td><em>arcane eye, locate creature</em></td></tr>
+                <tr><td>5</td><td><em>legend lore, scrying</em></td></tr>
+            </table>
+            <p class="indent">If a spell can be cast at a higher level, you can spend an additional psi point to cast it at that higher level.</p>
+            <div class="sidebar">
+                <h5 class="caption">Psychic Necromancers?</h5>
+                <p>Powers over life and death are generally beyond the capablities of psionics. Instead of reviving a corpse, you may wish to flavor use of Speak with Dead as the Psion accessing the memories of the deceased or the events surrounding their demise. In this case, you might change the requirement of a mouth to requiring a brain or eyes, as appropriate.</p>
+            </div>
+        </description>
+        <sheet>
+            <description>Whenever you roll initiative, you may roll 1d4 and add it to the result.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_II_NOMAD_SEER_PSIONIC_POWER_IMPART_KNOWLEDGE" spellcasting="Psion" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_DETECT_EVIL_AND_GOOD" spellcasting="Psion" known="true" requirements="[psi-limit:1]" />
+            <grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" spellcasting="Psion" known="true" requirements="[psi-limit:1]" />
+            <grant type="Spell" id="ID_PHB_SPELL_IDENTIFY" spellcasting="Psion" known="true" requirements="[psi-limit:1]" />
+            <grant type="Spell" id="ID_PHB_SPELL_AUGURY" spellcasting="Psion" known="true" requirements="[psi-limit:2]" />
+            <grant type="Spell" id="ID_PHB_SPELL_LOCATE_OBJECT" spellcasting="Psion" known="true" requirements="[psi-limit:2]" />
+            <grant type="Spell" id="ID_PHB_SPELL_SEE_INVISIBILITY" spellcasting="Psion" known="true" requirements="[psi-limit:2]" />
+            <grant type="Spell" id="ID_PHB_SPELL_CLAIRVOYANCE" spellcasting="Psion" known="true" requirements="[psi-limit:3]" />
+            <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" spellcasting="Psion" known="true" requirements="[psi-limit:3]" />
+            <grant type="Spell" id="ID_PHB_SPELL_ARCANE_EYE" spellcasting="Psion" known="true" requirements="[psi-limit:4]" />
+            <grant type="Spell" id="ID_PHB_SPELL_LOCATE_CREATURE" spellcasting="Psion" known="true" requirements="[psi-limit:4]" />
+            <grant type="Spell" id="ID_PHB_SPELL_LEGEND_LORE" spellcasting="Psion" known="true" requirements="[psi-limit:5]" />
+            <grant type="Spell" id="ID_PHB_SPELL_SCRYING" spellcasting="Psion" known="true" requirements="[psi-limit:5]" />
+        </rules>
+    </element>
+
+    <element name="Impart Knowledge" type="Spell" source="Nomad and Seer" id="ID_II_NOMAD_SEER_PSIONIC_POWER_IMPART_KNOWLEDGE">
+        <supports>Kibbles Psionic Power</supports>
+        <description>
+            <p>You perceive the immediate future and psychically grant this knowledge to a creature of your choice. The target gains a +2 bonus to AC and the next time the target makes an attack roll, they gain a +2 bonus to the attack roll. Any remaining effects of this spell end at the start of your next turn.</p>
+            <p class="indent">You can spend Psi Points up to your per use limit to add the following modifiers to Impart Knowledge (you can add multiple modifiers). The points must be spent when choosing the target of the power.</p>
+            <p class="indent"><strong>Confidence (1+ psi point):</strong> The target's next attack deals +1d6 additional damage for each point spent.</p>
+            <p class="indent"><strong>Caution (1+ psi point):</strong> The target gains a +1 bonus to the next saving throw it makes for each point spent.</p>
+            <p class="indent"><strong>Awareness (2 psi points):</strong> Attacks against the target cannot have advantage or critically hit.</p>
+            <p class="indent"><strong>Find Weak Point (3 psi points):</strong> The target's next attack scores a critical hit on a roll of 17 or higher.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">Psionic Power</set>
+            <set name="time">1 Action</set>
+            <set name="range">60 feet</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">1 Round</set>
+            <set name="isConcentration">false</set>
+        </setters>
+    </element>
+
+</elements>
