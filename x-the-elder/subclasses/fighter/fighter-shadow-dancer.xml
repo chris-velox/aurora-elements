@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Shadow Dancer Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="fighter-shadow-dancer.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/fighter/fighter-shadow-dancer.xml" />
+        </update>
+    </info>
+    
+    <element name="The Shadow Dancer" type="Source" source="Core" id="ID_DEEJJSTER_TSD_SOURCE_The Shadow Dancer">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">TSD</set>
+            <set name="url">https://www.gmbinder.com/share/-LuFs3HAf5zzuiAWb3P4</set>
+            <set name="image"></set>
+            <set name="author" url="https://www.reddit.com/user/Deejjster/">u/Deejjster</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200205</set>
+        </setters>
+    </element>
+    
+    <element name="Shadow Dancer" type="Archetype" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FIGHTER_SHADOW_DANCER">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Forsaken by the Light, many people have been possessed by Demons throughout history. For most, possession quickly leads to madness, inhuman behavior, and ultimately, death. However, the tenacious keep a hold on reality and stand against the tide of Darkness. Instead of succumbing to a cursed fate, they harness the power of their Demon within to gain access to supernatural agility and deadly combat prowess. Their darkness within craves one thing: bloodshed. Be it an enemy’s blood, or their own, Shadow Dancers satisfy their Demon’s thirst and manipulate its energy. Spilt blood serves as a catalyst to manifest incorporeal shadow demons capable of unlocking devastating arts on the battlefield. To challenge a Shadow Dancer is to dance with death itself.</p>
+            <div element="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_MANIFEST_SHADOWS" />
+            <div element="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_GATHERING_DARKNESS" />
+            <div element="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_PERFECT_EXECUTION" />
+            <div element="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_MASTER_OF_SHADOWS" />
+            <div element="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_ONSLAUGHT_OF_SHADOWS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_MANIFEST_SHADOWS" level="3" />
+            <grant type="Archetype Feature" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_GATHERING_DARKNESS" level="7" />
+            <grant type="Archetype Feature" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_PERFECT_EXECUTION" level="10" />
+            <grant type="Archetype Feature" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_MASTER_OF_SHADOWS" level="15" />
+            <grant type="Archetype Feature" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_ONSLAUGHT_OF_SHADOWS" level="18" />
+        </rules>
+    </element>
+        <element name="Manifest Shadows" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_MANIFEST_SHADOWS">
+            <description>
+                <p>Beginning when you choose this archetype at 3rd level, you gain Darkvision out to 60 feet. If you already have Darkvision, its range increases by 30 feet. While you are wielding a weapon that does not have the ’Two-Handed’ or ’Heavy’ property, it gains the ’Finesse’ property.</p>
+                <p class="indent">Your bloodlust enables you to sate your Demon’s hunger and wield its power as your own. You learn the ability Manifest Shadow. When you or a Shadow deal damage to a creature with a melee attack, as a bonus action, you may use this ability. When you take damage, as your reaction, you may use this ability.</p>
+                <p class="indent"><strong>Manifest Shadow.</strong> You manifest a incorporeal Shadow within 15 feet of you, resembling your vestiture and wielding your current weapon. They have the same move speed as you, must remain within 30 feet of you, and are untargetable. When you make the attack action, you can choose to attack from any of your Shadows. Your Shadows’ attacks are identical to yours. If a Shadow hits with an attack, they dissipate afterwards. The number of Shadows you can have active at one time equals 1 + your Constitution modifier.</p>
+                <p class="indent"><strong>Shadow Arts.</strong> You become adept at shaping your demonic energy into deadly abilities . You learn 3 Shadow Arts from the list below. You learn 2 additional Shadow Arts at 7th, 10th, and 15th level. Each time you learn a new Shadow Art, you may replace one you already know with a different one.</p>
+                <p class="indent"><strong>Blood Shards.</strong> You have four Blood Shards. The shards enable you to exert your will over your Shadows and fuel your Shadow Arts. A shard is expended when you use a Shadow Art. You regain up to half of your maximum shards after a short or long rest. You gain an additional Blood Shard at 7th, 10th, 15, and 18th level.</p>
+                <p class="indent">You siphon the life force released from bloodshed into your shards. When you or your Shadows reduce a creature to 0 hit points or score a critical hit, regain 1 Blood Shard.</p>
+                <center>
+                    <p><strong>Shadow Arts save DC</strong> = 8 + your proficiency bonus + your dexterity modifier</p>
+                </center>
+            </description>
+            <sheet>
+                <description>While you are wielding a weapon that does not have the ’Two-Handed’ or ’Heavy’ property, it gains the ’Finesse’ property. When you or a Shadow deal damage to a creature with a melee attack, as a bonus action, or when you take damage, as your reaction, you may use Manifest Shadow: You manifest a incorporeal Shadow within 15 feet of you, resembling your vestiture and wielding your current weapon. They have the same move speed as you, must remain within {{manifest-shadow:range}} feet of you, and are untargetable. When you make the attack action, you can choose to attack from any of your Shadows. Your Shadows’ attacks are identical to yours. If a Shadow hits with an attack, they dissipate afterwards. You can have up to {{manifest-shadow:count}} Shadows active at a time. You have {{blood-shards:count}} Blood Shards. You expend a Blood Shard when you use a Shadow Art and regain half your expended shards on a short or long rest. When you or your Shadows reduce a creature to 0 hit points or score a critical hit, regain 1 Blood Shard. Your Shadow Art Save DC is {{shadow-art:save-dc}}.</description>
+            </sheet>
+            <rules>
+                <grant type="Vision" id="ID_VISION_DARKVISION" />
+                <stat name="manifest-shadow:count" value="1" />
+                <stat name="manifest-shadow:count" value="constitution:modifier" />
+                <stat name="blood-shards:count" value="4" level="3" />
+                <stat name="blood-shards:count" value="1" level="7" />
+                <stat name="blood-shards:count" value="1" level="10" />
+                <stat name="blood-shards:count" value="1" level="15" />
+                <stat name="blood-shards:count" value="1" level="18" />
+                <stat name="shadow-art:save-dc" value="8" />
+                <stat name="shadow-art:save-dc" value="proficiency" />
+                <stat name="shadow-art:save-dc" value="dexterity:modifier" />
+                <select type="Archetype Feature" name="Shadow Art" number="3" supports="Shadow Dancer Shadow Art" level="3" />
+                <select type="Archetype Feature" name="Shadow Art" number="2" supports="Shadow Dancer Shadow Art" level="7" />
+                <select type="Archetype Feature" name="Shadow Art" number="2" supports="Shadow Dancer Shadow Art" level="10" />
+                <select type="Archetype Feature" name="Shadow Art" number="2" supports="Shadow Dancer Shadow Art" level="15" />
+                <select type="Archetype Feature" name="Shadow Art" number="2" supports="Shadow Dancer Shadow Art" level="18" />
+                <stat name="manifest-shadow:range" value="30" level="3" />
+            </rules>
+        </element>
+        <element name="Gathering Darkness" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_GATHERING_DARKNESS">
+            <description>
+                <p>At 7th level, gain the ability to see through magical Darkness. You have advantage on Dexterity (Stealth) checks when in areas of dim light or darkness.</p>
+                <p class="indent">You gain the ability to cast <em>darkness</em> twice without providing material components. This ability recharges after taking a short or long rest. At 10th level, you can cast it 3 times. At 18th level, you may cast it 5 times.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_DARKNESS" />
+                </div>
+            </description>
+            <sheet usage="{{gathering-darkness:uses}}/Short Rest">
+                <description>You can cast darkness without material components. Additionally, you can see through magical darkness and have advantage on Stealth checks when in areas of dim light or darkness.</description>
+            </sheet>
+            <rules>
+                <stat name="gathering-darkness:uses" value="2" level="7" />
+                <stat name="gathering-darkness:uses" value="1" level="10" />
+                <stat name="gathering-darkness:uses" value="1" level="15" />
+                <stat name="gathering-darkness:uses" value="1" level="18" />
+                <grant type="Spell" id="ID_PHB_SPELL_DARKNESS" />
+            </rules>
+        </element>
+        <element name="Perfect Execution" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_PERFECT_EXECUTION">
+            <description>
+                <p>At 10th level, when you score a critical hit, you can regain up to 2 Blood Shards and manifest up to 2 Shadows.</p>
+                <p class="indent">When you roll initiative and have 0 shards remaining, gain 1 shard.</p>
+            </description>
+            <sheet>
+                <description>When you score a critical hit, you can regain up to 2 Blood Shards and manifest up to 2 Shadows. When you roll initiative and have 0 shards remaining, gain 1 shard.</description>
+                <description level="18">When you score a critical hit, you can regain up to 4 Blood Shards and manifest up to 4 Shadows. When you roll initiative and have 0 shards remaining, gain 1 shard.</description>
+            </sheet>
+        </element>
+        <element name="Master of Shadows" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_MASTER_OF_SHADOWS">
+            <description>
+                <p>At 15th level, the range of Manifest Shadows increases to 60 feet. Your Shadows gain the ability to use their move speed to instead apparate to a point that you can see.</p>
+            </description>
+            <sheet>
+                <description>Your Shadows can use their move speed to instead apparate to a point that you can see.</description>
+            </sheet>
+            <rules>
+                <stat name="manifest-shadow:range" value="30" level="15" />
+            </rules>
+        </element>
+        <element name="Onslaught of Shadows" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_DANCER_ONSLAUGHT_OF_SHADOWS">
+            <description>
+                <p>At 18th level, when you or your Shadows reduce a creature to 0 hit points, you may move a Shadow up to 15 extra feet and make an additional attack.</p>
+                <p class="indent">When you score a critical hit, you can regain up to 4 Blood Shards and manifest up to 4 Shadows.</p>
+            </description>
+            <sheet>
+                <description>When you or your Shadows reduce a creature to 0 hit points, you may move a Shadow up to 15 extra feet and make an additional attack.</description>
+            </sheet>
+        </element>
+
+    <!-- Shadow Arts -->
+        <element name="One with the Shadows" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_ART_ONE_WITH_THE_SHADOWS">
+            <supports>Shadow Dancer Shadow Art</supports>
+            <description>
+                <p>As a bonus action, you make a Dexterity (stealth) check. On a successful check, assume the appearance of a Shadow and swap places with one. Your Shadows become targetable until you make an attack or are hit by an attack. If an enemy hits a Shadow with an attack, it dissipates. You may attack freely with your Shadows without breaking the effects of this ability.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1 Blood Shard">
+                <description>You make a Dexterity (stealth) check. On a successful check, assume the appearance of a Shadow and swap places with one. Your Shadows become targetable until you make an attack or are hit by an attack. If an enemy hits a Shadow with an attack, it dissipates. You may attack freely with your Shadows without breaking the effects of this ability.</description>
+            </sheet>
+        </element>
+        <element name="Shadow Assault" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_ART_SHADOW_ASSAULT">
+            <supports>Shadow Dancer Shadow Art</supports>
+            <description>
+                <p>As a bonus action, you teleport behind an enemy within 30 feet. Your next attack has advantage and deals an additional 1d6. This damage increases by 1d6 at 7th, 10th, 15th, and 18th level.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1 Blood Shard">
+                <description>You teleport behind an enemy within 30 feet. Your next attack has advantage and deals an additional {{shadow-assault:damage-dice}}d6.</description>
+            </sheet>
+            <rules>
+                <stat name="shadow-assault:damage-dice" value="1" level="3" />
+                <stat name="shadow-assault:damage-dice" value="1" level="7" />
+                <stat name="shadow-assault:damage-dice" value="1" level="10" />
+                <stat name="shadow-assault:damage-dice" value="1" level="15" />
+                <stat name="shadow-assault:damage-dice" value="1" level="18" />
+            </rules>
+        </element>
+        <element name="Shadow Shroud" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_ART_SHADOW_SHROUD">
+            <supports>Shadow Dancer Shadow Art</supports>
+            <description>
+                <p>As a bonus action, you command a Shadow to shroud you from harm. For 5 minutes, you have +2 to your AC. Once struck, the Shadow dissipates.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1 Blood Shard">
+                <description>You command a Shadow to shroud you from harm. For 5 minutes, you have +2 to your AC. Once struck, the Shadow dissipates.</description>
+            </sheet>
+        </element>
+        <element name="Shadow Martyr" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_ART_SHADOW_MARTYR">
+            <supports>Shadow Dancer Shadow Art</supports>
+            <description>
+                <p>When you are hit by an attack, make a Dexterity saving throw. On a successful save, as your reaction, swap places with one of your Shadows. Your Shadow takes the attack for you and dissipates.</p>
+            </description>
+            <sheet action="Reaction" usage="1 Blood Shard">
+                <description>When you are hit by an attack, make a Dexterity saving throw. On a successful save, you swap places with one of your Shadows. Your Shadow takes the attack for you and dissipates.</description>
+            </sheet>
+        </element>
+        <element name="Shadow’s Riposte" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_ART_SHADOWS_RIPOSTE">
+            <supports>Shadow Dancer Shadow Art</supports>
+            <description>
+                <p>If you or an ally within 10 feet of a Shadow are struck by a melee attack, as your reaction, your Shadow can attempt a counterattack against the attacker. The attacker must make a Strength saving throw. On a failed save, the attack is negated and the attacker suffers a melee attack from your Shadow. On a successful save, your Shadow absorbs half the damage from the blow. Your Shadow dissipates afterwards.</p>
+            </description>
+            <sheet action="Reaction" usage="1 Blood Shard">
+                <description>If you or an ally within 10 feet of a Shadow are struck by a melee attack, your Shadow can attempt a counterattack against the attacker. The attacker must make a Strength saving throw. On a failed save, the attack is negated and the attacker suffers a melee attack from your Shadow. On a successful save, your Shadow absorbs half the damage from the blow. Your Shadow dissipates afterwards.</description>
+            </sheet>
+        </element>
+        <element name="Shadow Refuge" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_ART_SHADOW_REFUGE">
+            <supports>Shadow Dancer Shadow Art</supports>
+            <description>
+                <p>As a bonus action, you dissipate a Shadow and shroud yourself with its essence. If struck by an attack before the end of your next turn, take half damage and explode in a cloud of darkness. Enemies within a 10 foot radius must make a Constitution saving throw. On a failed save, they are blinded until the end of their next turn. On a successful save, they have disadvantage on their next attack.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1 Blood Shard">
+                <description>You dissipate a Shadow and shroud yourself with its essence. If struck by an attack before the end of your next turn, take half damage and explode in a cloud of darkness. Enemies within a 10 foot radius must make a Constitution saving throw. On a failed save, they are blinded until the end of their next turn. On a successful save, they have disadvantage on their next attack.</description>
+            </sheet>
+        </element>
+        <element name="Shadow Slash" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_ART_SHADOW_SLASH">
+            <supports>Shadow Dancer Shadow Art</supports>
+            <description>
+                <p>As a bonus action, you command one of your Shadows to join you on your next attack. Your next attack hits an area in a 10 ft cone. Enemies caught in the area must succeed on a Dexterity saving throw or take 2D8 slashing damage. Your Shadow dissipates afterwards.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1 Blood Shard">
+                <description>You command one of your Shadows to join you on your next attack. Your next attack hits an area in a 10 ft cone. Enemies caught in the area must succeed on a Dexterity saving throw or take 2D8 slashing damage. Your Shadow dissipates afterwards.</description>
+            </sheet>
+        </element>
+        <element name="Shadow Step" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_ART_SHADOW_STEP">
+            <supports>Shadow Dancer Shadow Art</supports>
+            <description>
+                <p>You can use half your movement to swap places with any of your shadows.</p>
+            </description>
+            <sheet usage="1 Blood Shard">
+                <description>You can use half your movement to swap places with any of your shadows.</description>
+            </sheet>
+        </element>
+        <element name="Unspeakable Horrors" type="Archetype Feature" source="The Shadow Dancer" id="ID_DEEJJSTER_TSD_ARCHETYPE_FEATURE_SHADOW_ART_UNSPEAKABLE_HORRORS">
+            <supports>Shadow Dancer Shadow Art</supports>
+            <description>
+                <p>As a bonus action, you empower a Shadow’s next attack. On a successful hit, their target must make a Wisdom saving throw. On a failed save, the target takes 1D8 psychic damage and is Frightened of you until the end of your next turn.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1 Blood Shard">
+                <description>You empower a Shadow’s next attack. On a successful hit, their target must make a Wisdom saving throw. On a failed save, the target takes 1D8 psychic damage and is Frightened of you until the end of your next turn.</description>
+            </sheet>
+        </element>
+</elements>
