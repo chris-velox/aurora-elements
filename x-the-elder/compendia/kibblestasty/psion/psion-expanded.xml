@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>KibblesTasty’s Psion Expanded</name>
+        <update version="0.0.1">
+            <file name="psion-expanded.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/psion-expanded.xml" />
+        </update>
+    </info>
+    
+    <element name="Nullification Discipline" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_DISCIPLINE_NULLIFICATION_DISCIPLINE">
+        <supports>Kibbles Psionic Discipline</supports>
+        <description>
+            <p>Nullification is the ability to interfere with the supernatural effects of the world, reverting reality back it’s original state.</p>
+            <h5>DISRUPTIVE TOUCH</h5>
+            <p>When you gain this feature, you can control the aura of interference, wreathing yourself in the disruptive power that asserts reality. You can end minor magical or psionic effects (such as the result of cantrips or zero point psionic powers) by touching them, and have resistance to illusions or magical damage from things you touch (gaining advantage on the saving throw against them, if applicable).</p>
+            <p class="indent">If you are grappling or otherwise touching a spellcasting or psionic creature, at the start of your turn you can expend 1 or more psi to interfere with their abilities until the start of your next turn. In order to cast a spell or use a Psionic power, they must succeed a Saving Throw of their spell casting or psionic ability score against your Psionics DC unless casting a spell with a higher level or using a power with more psi points than the psi points spent on this feature.</p>
+            <div class="reference">
+                <div element="ID_KT_PSION_EXP_PSIONIC_POWER_DENIAL" />
+            </div>
+            <h5>ALTERNATE EFFECTS</h5>
+            <p>Additionally, when you learn the Transposition psionic discipline you can use your Psionics feature to cast the following spells as per the rules defined in the feature:</p>
+            <table>
+                <thead>
+                    <tr><td>Point Cost</td><td>Alternate Effects</td></tr>
+                </thead>
+                <tr><td>1</td><td><em>protection from evil and good</em></td></tr>
+                <tr><td>2</td><td><em>nullify effect<sup>psion</sup></em></td></tr>
+                <tr><td>3</td><td><em>dispel magic, counterspell, remove curse</em></td></tr>
+                <tr><td>4</td><td><em>banishment</em></td></tr>
+                <tr><td>5</td><td><em>dispel evil and good</em></td></tr>
+            </table>
+            <p class="indent">If a spell can be cast at a higher level, you can spend an additional psi point to cast it at that higher level.</p>
+        </description>
+        <sheet>
+            <description>You can pass through difficult terrain without expending additional movement, including the spaces of friendly creatures. You can duplicate the effects of spells by spending Psi Points as indicated in the Alternate Effects table. If a spell can be cast at a higher level, you can spend an additional psi point to cast it at that higher level.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_KT_PSION_EXP_PSIONIC_POWER_DENIAL" spellcasting="Psion" known="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" spellcasting="Psion" known="true" requirements="[psi:limit:1]" />
+            <grant type="Spell" id="ID_KT_PSION_EXP_SPELL_NULLIFY_EFFECT" spellcasting="Psion" known="true" requirements="[psi:limit:2]" />
+            <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" spellcasting="Psion" known="true" requirements="[psi:limit:3]" />
+            <grant type="Spell" id="ID_PHB_SPELL_COUNTERSPELL" spellcasting="Psion" known="true" requirements="[psi:limit:3]" />
+            <grant type="Spell" id="ID_PHB_SPELL_REMOVE_CURSE" spellcasting="Psion" known="true" requirements="[psi:limit:3]" />
+            <grant type="Spell" id="ID_PHB_SPELL_BANISHMENT" spellcasting="Psion" known="true" requirements="[psi:limit:4]" />
+            <grant type="Spell" id="ID_PHB_SPELL_DISPEL_EVIL_AND_GOOD" spellcasting="Psion" known="true" requirements="[psi:limit:5]" />
+        </rules>
+    </element>
+    
+    <element name="Denial" type="Spell" source="Kibbles’ Psion Expanded" id="ID_KT_PSION_EXP_PSIONIC_POWER_DENIAL">
+        <supports>Kibbles Psionic Power</supports>
+        <description>
+            <p>You release a burst of raw psionic nullification at a creature you can see within range. The creature must make a Charisma saving throw. On failure, you can apply 1d4 force damage as its existence is disrupted.</p>
+            <p class="indent">If the target is a celestial, fiend, construct, elemental, aberration, undead, or a creature with the ability to cast spells or use psionic powers it takes an additional 1d4 force damage, and becomes disoriented; until the end of its next turn, it rolls a d4 and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration.</p>
+            <p class="indent">A creature can chose to fail the saving throw.</p>
+            <p class="indent">You can spend Psi Points up to your per use limit to add the following prefixes to Denial modifying it’s functionality (you can add multiple prefixes). The points must be spent when choosing the target of the power.</p>
+            <p class="indent"><strong>Aura of (3 psi points):</strong> Instead of targeting a creature, it becomes an effect around you with a radius of 20 feet; any creature of your choice that enters or starts its turn in the area of effect is targeted by the spell.</p>
+            <p class="indent"><strong>Existential (1+ psi points):</strong> You can deal an additional 1d4 initial and bonus (if applicable) force damage to the target creature.</p>
+            <p class="indent"><strong>Firm (2 psi points):</strong> The target creature has disadvantage on the saving throw against the ability.</p>
+            <p class="indent"><strong>Lingering (1+ psi points):</strong> You can apply the effect of Disruptive Touch to an affected creature.</p>
+            <p class="indent"><strong>Supernatural (1+ psi points):</strong> A supernatural effect of or on the creature is ended; if the effect is a magical or psionic power, it is only ended if the psi points spent on this modifier equals or exceeds the spell level or psi points spent on the effect.</p>
+            <p class="indent">If the property is an innate property of a creature (either of the target creature, or effecting the target this power), it is only ended if the psi points exceed the CR (or class levels) of the target creature, and they return at the end of that creatures next turn. The supernatural effect cannot be its existence, unless it has less than 10 hit points and it would otherwise qualify.</p>
+            <div class="sidebar">
+                <h5 class="caption">WHAT IS A SUPERNATURAL EFFECT?</h5>
+                <p>Outside of spells or psionic powers, what a supernatural effect is will be up to your DM. I would typically consider things like a Beholder’s ability to float, a banshee’s screech, a medusa’s gaze, or similar effects to be an innate supernatural property that could be temporarily suppressed when the criteria was met.</p>
+            </div>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">Psionic Power</set>
+            <set name="time">1 Action</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+
+    <element name="Nullify Effect" type="Spell" source="Kibbles’ Psion Expanded" id="ID_KT_PSION_EXP_SPELL_NULLIFY_EFFECT">
+        <supports>Kibbles Pson</supports>
+        <description>
+            <p>You gain advantage on Intelligence, Wisdom, and Charisma saving throws until the start of your next turn. You also gain resistance to Psychic and Force damage until the start of your next turn.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, you can roll an additional d20 as part of your advantage roll. If you cast this at the 5th level or higher, it grants immunity to Psyhic and Force damage for the duration.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">psionic</set>
+            <set name="time">1 reaction, which you take when you are forced to make an Intelligence, a Wisdom, or a Charisma saving throw</set>
+            <set name="range">Self</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">1 round.</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+
+    <element name="Dreamwalker" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_TALENT_DREAMWALKER">
+        <supports>Kibbles Psionic Talent</supports>
+        <requirements>[level:psion:9]</requirements>
+        <prerequisite>9th level Psion</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 9th level Psion</p>
+            <p>You gain the ability cast <em>dream</em>. You can cast the spell without expending a spell slot or psi points to cast it, but once casted cannot cast it again until you complete a long rest.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_DREAM" />
+            </div>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>You can cast dream without expending a spell slot or psi points.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_DREAM" />
+        </rules>
+    </element>
+    <element name="Imaginary Mount" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_TALENT_IMAGINARY_MOUNT">
+        <supports>Kibbles Psionic Talent</supports>
+        <requirements>ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_PROJECTION_DISCIPLINE</requirements>
+        <prerequisite>Projection Discipline</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Projection Discipline</p>
+            <p>You gain the ability to cast <em>phantom steed</em>. You do not need to expend spell slots or psi points to cast it, but cannot cast the spell again in this way until you complete a short or long rest.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_PHANTOM_STEED" />
+            </div>
+        </description>
+        <sheet usage="1/Short Rest">
+            <description>You can cast phantom steed without expending a spell slot or psi points.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_PHANTOM_STEED" />
+        </rules>
+    </element>
+
+</elements>
