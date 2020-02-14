@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Fighting Manuevers Fighting Style</name>
+        <update version="0.0.1">
+            <file name="manuevers-fighting-style.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/variant-fighter/manuevers-fighting-style.xml" />
+        </update>
+    </info>
+    
+    <element name="Maneuvers" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVERS_FIGHTER">
+        <supports>Fighting Style, Fighter</supports>
+        <description>
+            <p>You adopt a particular style of fighting as your specialty. Choose a number of fighting style maneuvers based on your class to learn. A Fighter learns four maneuvers at 1st level.</p>
+            <p class="indent">The maneuvers you learn from these fighting styles (detailed in the Maneuvers section below) are intricate and only one can be performed per turn. Some of your maneuvers require your target to make a saving throw to resist the maneuver’s effects. The saving throw is calculated as:</p>
+            <center>
+                <p><strong>Maneuver save DC</strong> = 8 + your Proficiency bonus + your Strength or Dexterity modifier (your choice)</p>
+            </center>
+        </description>
+        <sheet>
+            <description>Your Maneuver Save DC is {{maneuvers:save-dc}}.</description>
+        </sheet>
+        <rules>
+            <stat name="maneuvers:save-dc" value="8" />
+            <stat name="maneuvers:save-dc" value="proficiency" />
+            <stat name="maneuvers:save-dc:base" value="strength:modifier" bonus="base" />
+            <stat name="maneuvers:save-dc:base" value="dexterity:modifier" bonus="base" />
+            <stat name="maneuvers:save-dc" value="maneuvers:save-dc:base" />
+            <select type="Class Feature" name="Fighting Maneuvers" number="4" supports="VDP Fighting Style Maneuver" level="1" />
+        </rules>
+    </element>
+    <element name="Maneuvers" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVERS_RANGER_PALADIN">
+        <supports>Fighting Style, Ranger, Paladin</supports>
+        <description>
+            <p>You adopt a particular style of fighting as your specialty. Choose a number of fighting style maneuvers based on your class to learn. A Ranger or Paladin learns two maneuvers at 2nd level.</p>
+            <p class="indent">The maneuvers you learn from these fighting styles (detailed in the Maneuvers section below) are intricate and only one can be performed per turn. Some of your maneuvers require your target to make a saving throw to resist the maneuver’s effects. The saving throw is calculated as:</p>
+            <center>
+                <p><strong>Maneuver save DC</strong> = 8 + your Proficiency bonus + your Strength or Dexterity modifier (your choice)</p>
+            </center>
+        </description>
+        <sheet>
+            <description>Your Maneuver Save DC is {{maneuvers:save-dc}}.</description>
+        </sheet>
+        <rules>
+            <stat name="maneuvers:save-dc" value="8" />
+            <stat name="maneuvers:save-dc" value="proficiency" />
+            <stat name="maneuvers:save-dc:base" value="strength:modifier" bonus="base" />
+            <stat name="maneuvers:save-dc:base" value="dexterity:modifier" bonus="base" />
+            <stat name="maneuvers:save-dc" value="maneuvers:save-dc:base" />
+            <select type="Class Feature" name="Fighting Maneuvers" number="2" supports="VDP Fighting Style Maneuver" level="2" />
+        </rules>
+    </element>
+    
+  <!-- Maneuvers -->
+    <element name="Arresting Strike" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_ARRESTING_STRIKE">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When a creature within reach of a melee weapon you’re wielding moves, you can use a reaction to attempt to arrest that creature’s movement. It must make a Strength saving throw. On a failed save, its speed is reduced to 0 until the end of its turn.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>When a creature within reach of a melee weapon you’re wielding moves, you can attempt to arrest that creature’s movement. It must make a Strength saving throw. On a failed save, its speed is reduced to 0 until the end of its turn.</description>
+        </sheet>
+    </element>
+    <element name="Disarming Attack" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_DISARMING_ATTACK">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you take the Attack action on your turn, you can forgo one of your attacks to attempt to disarm a creature within 5 feet, forcing it to drop one item of your choice that it’s holding. The target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet.</p>
+        </description>
+        <sheet>
+            <description>When you take the Attack action on your turn, you can forgo one of your attacks to attempt to disarm a creature within 5 feet, forcing it to drop one item of your choice that it’s holding. The target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet.</description>
+        </sheet>
+    </element>
+    <element name="Distracting Strike" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_DISTRACTING_STRIKE">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you take the Attack action on your turn, you can forgo one of your attacks to creating an opening against a creature within 5 feet. You flourish, distract the target, or in some other way team up to make your ally’s attack more effective. The first attack roll any allied creature makes against the target before the start of your next turn has advantage.</p>
+        </description>
+        <sheet>
+            <description>When you take the Attack action on your turn, you can forgo one of your attacks to creating an opening against a creature within 5 feet. You flourish, distract the target, or in some other way team up to make your ally’s attack more effective. The first attack roll any allied creature makes against the target before the start of your next turn has advantage.</description>
+        </sheet>
+    </element>
+    <element name="Feinting Attack" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_FEINTING_ATTACK">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you take the Attack action on your turn while wielding a melee weapon in each hand, you can forgo one of your attacks and attempt to feint, creating an opening for yourself to strike. Choose one creature within 5 feet of you as your target. You have advantage on the next attack roll against that creature.</p>
+        </description>
+        <sheet>
+            <description>When you take the Attack action on your turn while wielding a melee weapon in each hand, you can forgo one of your attacks and attempt to feint, creating an opening for yourself to strike. Choose one creature within 5 feet of you as your target. You have advantage on the next attack roll against that creature.</description>
+        </sheet>
+    </element>
+    <element name="Goading Attack" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_GOADING_ATTACK">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you take the Attack action on your turn, you can forgo one of your attacks and attempt to goad a creature within 5 feet into attacking you. That creature must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn.</p>
+        </description>
+        <sheet>
+            <description>When you take the Attack action on your turn, you can forgo one of your attacks and attempt to goad a creature within 5 feet into attacking you. That creature must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Lunging Attack" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_LUNGING_ATTACK">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you take the Attack action on your turn while wielding a versatile weapon in both hands, you can forgo one of your attacks to make a lunging strike. You attack in a line 1 foot wide and as long as your reach. Any creature effected must make a Dexterity saving throw or suffer your normal weapon damage.</p>
+        </description>
+        <sheet>
+            <description>When you take the Attack action on your turn while wielding a versatile weapon in both hands, you can forgo one of your attacks to make a lunging strike. You attack in a line 1 foot wide and as long as your reach. Any creature effected must make a Dexterity saving throw or suffer your normal weapon damage.</description>
+        </sheet>
+    </element>
+    <element name="Menacing Attack" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_MENACING_ATTACK">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you hit a creature with a melee weapon attack with a heavy weapon, instead of dealing weapon damage you can attempt to frighten the target. The target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with a melee weapon attack with a heavy weapon, instead of dealing weapon damage you can attempt to frighten the target. The target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Power Attack" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_POWER_ATTACK">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you take the Attack action on your turn and make a melee weapon attack against a creature with advantage, you can choose to forgo advantage to make a powerful strike. If you hit, you deal additional damage equal to your Proficiency bonus.</p>
+        </description>
+        <sheet>
+            <description>When you take the Attack action on your turn and make a melee weapon attack against a creature with advantage, you can choose to forgo advantage to make a powerful strike. If you hit, you deal additional {{proficiency}} damage.</description>
+        </sheet>
+    </element>
+    <element name="Precision Aim" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_PRECISION_AIM">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you take the Attack action on your turn and make a ranged weapon attack against a creature with disadvantage, you can choose to ignore disadvantage as you make a more precise strike. If you hit, you do not add your ability modifier to the damage dealt by this attack.</p>
+        </description>
+        <sheet>
+            <description>When you take the Attack action on your turn and make a ranged weapon attack against a creature with disadvantage, you can choose to ignore disadvantage as you make a more precise strike. If you hit, you do not add your ability modifier to the damage dealt by this attack.</description>
+        </sheet>
+    </element>
+    <element name="Pushing Attack" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_PUSHING_ATTACK">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you hit a creature with a weapon attack while wielding a shield, you can attempt to drive the target back. If the target is Large or smaller, you can push the target up to 5 feet away from you.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with a weapon attack while wielding a shield, you can attempt to drive the target back. If the target is Large or smaller, you can push the target up to 5 feet away from you.</description>
+        </sheet>
+    </element>
+    <element name="Rally" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_RALLY">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>On your turn, you can use a bonus action to bolster the resolve of one of your companions by banging your weapon on your shield. When you do so, choose a friendly creature that can see or hear you. That creature gains temporary hit points equal to your Charisma modifier (a minimum of 1).</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>On your turn, you can use a bonus action to bolster the resolve of one of your companions by banging your weapon on your shield. When you do so, choose a friendly creature that can see or hear you. That creature gains {{rally:temp-hp}} temporary hit points.</description>
+        </sheet>
+        <rules>
+            <stat name="rally:temp-hp" value="1" bonus="base" />
+            <stat name="rally:temp-hp" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Rapid Fire" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_RAPID_FIRE">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you make a ranged weapon attack and miss, you can use your bonus action to quickly make another attack against the same target with disadvantage.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>When you make a ranged weapon attack and miss, you can use your bonus action to quickly make another attack against the same target with disadvantage.</description>
+        </sheet>
+    </element>
+    <element name="Riposte" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_RIPOSTE">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When a creature misses you with a melee attack, you can use your reaction to make a melee attack with a light weapon against that creature with disadvantage.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>When a creature misses you with a melee attack, you can use your reaction to make a melee attack with a light weapon against that creature with disadvantage.</description>
+        </sheet>
+    </element>
+    <element name="Shield Block" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_SHIELD_BLOCK">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be holding a shield to perform this maneuver.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be holding a shield to perform this maneuver.</description>
+        </sheet>
+    </element>
+    <element name="Sweeping Attack" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_SWEEPING_ATTACK">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you hit a creature with a heavy melee weapon attack you can attempt to damage another creature with the same attack. Choose another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to your Strength modifier. The damage is of the same type dealt by the original attack.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with a heavy melee weapon attack you can attempt to damage another creature with the same attack. Choose another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes {{strength:modifier}} damage. The damage is of the same type dealt by the original attack.</description>
+        </sheet>
+    </element>
+    <element name="Twin Strike" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_TWIN_STRIKE">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>When you take the Attack action on your turn, and have a different light melee weapon in each hand, you can use your bonus action to make a twin strike with both weapons. Make a single attack roll against a creature with reach of both weapons. On hit, you deal the combined damage of both weapons. You do not add your ability modifier to the damage of either weapon.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>When you take the Attack action on your turn, and have a different light melee weapon in each hand, you can use your bonus action to make a twin strike with both weapons. Make a single attack roll against a creature with reach of both weapons. On hit, you deal the combined damage of both weapons. You do not add your ability modifier to the damage of either weapon.</description>
+        </sheet>
+    </element>
+    <element name="Volley" type="Class Feature" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVER_VOLLEY">
+        <supports>VDP Fighting Style Maneuver</supports>
+        <description>
+            <p>Choose two creatures within 5 feet of each other that you can see within your ranged weapon’s normal range. You can forgo one of your attacks when you take the Attack action and make a single volley attack against both creatures. You must have enough ammunition for each target. Make a single attack roll against both creatures. If this attack hits, the targets take your weapon’s normal damage but you do not add your ability modifier.</p>
+        </description>
+        <sheet>
+            <description>Choose two creatures within 5 feet of each other that you can see within your ranged weapon’s normal range. You can forgo one of your attacks when you take the Attack action and make a single volley attack against both creatures. You must have enough ammunition for each target. Make a single attack roll against both creatures. If this attack hits, the targets take your weapon’s normal damage but you do not add your ability modifier.</description>
+        </sheet>
+    </element>
+
+  <!-- Feats -->
+    <element name="Dual Wielder" type="Feat" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_FEAT_DUAL_WIELDER">
+        <description>
+            <p>You master fighting with two weapons, gaining the following benefits:</p>
+            <ul>
+                <li>You gain a +1 bonus to AC while you are wielding a separate melee weapon in each hand.</li>
+                <li>You can use two-weapon fighting (both the general rule and the fighting style) even when the one-handed melee weapons you are wielding aren’t light.</li>
+                <li>You can draw or stow two one-handed weapons when you would normally be able to draw or stow only one.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You gain a +1 bonus to AC while you are wielding a separate melee weapon in each hand. You can use two-weapon fighting (both the general rule and the fighting style) even when the one-handed melee weapons you are wielding aren’t light. You can draw or stow two one-handed weapons when you would normally be able to draw or stow only one.</description>
+        </sheet>
+    </element>
+    <element name="Martial Adept" type="Feat" source="Variant Fighter" id="ID_VDP_VARIANT_FIGHTER_FEAT_MARTIAL_ADEPT">
+        <description>
+            <p>You have martial training that allows you to perform special combat maneuvers. Choose a fighting style from the list of optional features available to the Fighter. You can’t take the same Fighting Style option more than once, even if you get to choose again. If a maneuver you use requires your target to make a saving throw to resist the maneuver’s effects, the saving throw DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).</p>
+        </description>
+        <sheet alt="Fighting Style">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Fighting Style, Martial Adept" supports="Fighting Style, Fighter" />
+        </rules>
+    </element>
+
+</elements>
