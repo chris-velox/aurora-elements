@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Civilization Divine Domain</name>
+        <update version="0.0.1">
+            <file name="cleric-civilization.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/rule-of-law/cleric-civilization.xml" />
+        </update>
+    </info>
+    
+    <element name="Civilization Domain" type="Archetype" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_CLERIC_CIVILIZATION_DOMAIN">
+        <supports>Divine Domain</supports>
+        <description>
+            <p>Gods of Civilization —including Amaunator, Erastil, and Athena— concern themselves with the ideals of communities and laws. They oversee the construction of towns, cities, and empires. Devouts of Civilization are leaders of small villages and sprawling metropolises, they are pioneers and settlers, taming the wilds in the name of order and society. Whether grand cathedrals or humble abbies, the gathering places of followers of Civilization gods tend to become the centers of communities.</p>
+            <h5 class="caption">CIVILIZATION DOMAIN SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Cleric Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><em>comprehend languages, sanctuary</em></td></tr>
+                <tr><td>3rd</td><td><em>suggestion, warding bond</em></td></tr>
+                <tr><td>5th</td><td><em>beacon of hope, Leomund’s tiny hut</em></td></tr>
+                <tr><td>7th</td><td><em>fabricate, guardian of faith</em></td></tr>
+                <tr><td>9th</td><td><em>commune with civilization, hallow</em></td></tr>
+            </table>
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_BONUS_PROFICIENCIES" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_DIVINE_WAYFINDER" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_CD_FLAGBEARER" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_SHARED_BURDEN" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_DIVINE_STRIKE" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_BANNERLORD" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_BONUS_PROFICIENCIES" level="1" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_DIVINE_WAYFINDER" level="1" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_CD_FLAGBEARER" level="2" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_SHARED_BURDEN" level="6" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_DIVINE_STRIKE" level="8" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_BANNERLORD" level="17" />
+            <grant type="Spell" id="ID_PHB_SPELL_COMPREHEND_LANGUAGES" spellcasting="Cleric" prepared="true" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" spellcasting="Cleric" prepared="true" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_SUGGESTION" spellcasting="Cleric" prepared="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_WARDING_BOND" spellcasting="Cleric" prepared="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_BEACON_OF_HOPE" spellcasting="Cleric" prepared="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_LEOMUNDS_TINY_HUT" spellcasting="Cleric" prepared="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_FABRICATE" spellcasting="Cleric" prepared="true" level="7" />
+            <grant type="Spell" id="ID_PHB_SPELL_GUARDIAN_OF_FAITH" spellcasting="Cleric" prepared="true" level="7" />
+            <grant type="Spell" id="ID_IB_ROL_SPELL_COMMUNE_WITH_CIVILIZATION" spellcasting="Cleric" prepared="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_HALLOW" spellcasting="Cleric" prepared="true" level="9" />
+        </rules>
+    </element>
+        <element name="Bonus Proficiencies" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_BONUS_PROFICIENCIES">
+            <description>
+                <p>At 1st level, you gain proficiency with martial weapons, as well as two tools of your choice. You also gain proficiency in one of the following skills of your choice: History, Investigation, or Persuasion.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+                <select type="Proficiency" name="Tool Proficiency, Civilization Domain" number="2" supports="Tool" />
+                <select type="Proficiency" name="Skill Proficiency, Civilization Domain" supports="ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_PERSUASION" />
+            </rules>
+        </element>
+        <element name="Divine Wayfinder" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_DIVINE_WAYFINDER">
+            <description>
+                <p>Starting at 1st level, you are able to sense the auras of nations and empires. You are innately aware of the ruling nation of the land you are in, its government type, and who its leader is. As an action, you are able to discern the direction and distance of the nearest settlement.</p>
+            </description>
+            <sheet action="Action">
+                <description>You are innately aware of the ruling nation of the land you are in, its government type, and who its leader is. As an action, you are able to discern the direction and distance of the nearest settlement.</description>
+            </sheet>
+        </element>
+        <element name="Channel Divinity: Flagbearer" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_CD_FLAGBEARER">
+            <description>
+                <p>Starting at 2nd level, you carry the flag of your civilization wherever you go, exerting and expanding the influence of your culture in any environment.</p>
+                <p class="indent">As an action, you can use your Channel Divinity to conjure a Divine Banner in an unoccupied space within 5 feet of you. The Divine Banner is attached to the ground and can’t be moved without being destroyed. The Divine Banner bears the flag of your nation, religion, or personal heraldry. The Divine Banner is a 10-foot-tall medium object, with hitpoints equal to four times your cleric level, and AC equal to your cleric spell save DC. If you summon a Divine Banner while you already have one active, the first banner is destroyed.</p>
+                <p class="indent">When you place a Divine Banner, you choose one of the following options. Unless otherwise specified, the Divine Banner lasts for 10 minutes, or until dispelled as an action.</p>
+                <p class="indent"><strong><em>Hallowed Ground.</em></strong> Friendly creatures within 15 feet of the Divine Banner gain the effects of a bless spell. Undead within 30 feet have disadvantage on saving throws against any effect that turns undead.</p>
+                <p class="indent"><strong><em>Rally Point.</em></strong> All friendly creatures that can see the Divine Banner can move up to their speed towards it as a bonus action, and opportunity attacks provoked by this movement have disadvantage.</p>
+                <p class="indent"><strong><em>Resilience.</em></strong> All friendly creatures within 30 feet of the Divine Banner have advantage on saving throws that they are proficient with.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Flagbearer" action="Action">
+                <description>You can use your Channel Divinity to conjure a Divine Banner in an unoccupied space within 5 feet of you. The Divine Banner is attached to the ground and can’t be moved without being destroyed. When you place a Divine Banner, you choose one of the following options: Hallowed Ground, Rally Point, or Resilience. Unless otherwise specified, the Divine Banner lasts for 10 minutes, or until dispelled as an action.</description>
+            </sheet>
+        </element>
+        <element name="Shared Burden" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_SHARED_BURDEN">
+            <description>
+                <p>Beginning at 6th level, when a friendly creature within 30 feet of you takes damage, you can use your reaction to cause it to instead take half as much damage. After the target takes the damage, you take the same amount of damage, which can’t be reduced or prevented in any way. If the target has damage altering features such as resistance or vulnerability, these are applied to the damage before you use your reaction. You can use this feature a number of times equal to 1 + your Wisdom modifier (minimum of 1). When you finish a long rest, you regain all expended uses.</p>
+            </description>
+            <sheet action="Reaction" usage="{{shared-burden:uses}}/Long Rest">
+                <description>When a friendly creature within 30 feet of you takes damage, you can use your reaction to cause it to instead take half as much damage. After the target takes the damage, you take the same amount of damage, which can’t be reduced or prevented in any way. If the target has damage altering features such as resistance or vulnerability, these are applied to the damage before you use your reaction.</description>
+            </sheet>
+            <rules>
+                <stat name="shared-burden:uses" value="1" />
+                <stat name="shared-burden:uses" value="wisdom:modifier" />
+            </rules>
+        </element>
+        <element name="Divine Strike" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_DIVINE_STRIKE">
+            <description>
+                <p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
+            </description>
+            <sheet>
+                <description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra {{divine-strike:damage-dice}}d8 radiant damage to the target.</description>
+            </sheet>
+            <rules>
+                <stat name="divine-strike:damage-dice" value="1" level="8" />
+                <stat name="divine-strike:damage-dice" value="1" level="14" />
+            </rules>
+        </element>
+        <element name="Bannerlord" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_CIVILIZATION_BANNERLORD">
+            <description>
+                <p>Starting at 17th, your Divine Banner gains increased power and new abilities.</p>
+                <p class="indent">Your Divine Banner gains immunity to radiant damage, and damage from nonmagical attacks. You also gain the following Flagbearer options:</p>
+                <p class="indent"><strong><em>Colonization.</em></strong> The Divine Banner lasts for 12 hours. After 30 minutes, the Divine Banner becomes a portal to a Mordekainen’s magnificent mansion. If the Divine Banner takes any damage during these 30 minutes, it is destroyed.</p>
+                <p class="indent"><strong><em>Final Stand.</em></strong> All friendly creatures within 30 feet of the Divine Banner have advantage on all attack rolls, ability checks, and saving throws. This effect lasts for a number of rounds equal to your Wisdom modifier. Once the effect is over, all allies affected have disadvantage on all attack rolls, ability checks, and saving throws for 7 days. Once you have used this option, you can’t use it again for 7 days.</p>
+                <p class="indent"><strong><em>Resistance.</em></strong> Choose a damage type. All friendly creatures that can see the Divine Banner have resistance against that damage type.</p>
+            </description>
+            <sheet>
+                <description>Your Divine Banner gains immunity to radiant damage, and damage from nonmagical attacks. You also gain the following Flagbearer options: Colonization, Final Stand or Resistance.</description>
+            </sheet>
+        </element>
+    
+        <element name="Commune with Civilization" type="Spell" source="Rule of Law" id="ID_IB_ROL_SPELL_COMMUNE_WITH_CIVILIZATION">
+            <supports>Cleric</supports>
+            <description>
+                <p>You briefly become one with civilization and gain knowledge of the surrounding territory. In a civilized area, the spell gives you knowledge of the area within 3 miles of you. The spell doesn’t function where there is no construction, such as in the wilderness.</p>
+                <p class="indent">You instantly gain knowledge of up to three facts of your choice about any of the following subjects as they relate to the area:</p>
+                <ul>
+                    <li>road layout and landmarks</li>
+                    <li>prevalent goods, services, factions, or cultures</li>
+                    <li>powerful celestials, fey, fiends, elementals, or undead</li>
+                    <li>influence from other planes of existence</li>
+                    <li>building types of your choice</li>
+                </ul>
+                <p class="indent">For example, you could determine the fastest route to the city center, the popular local foods, and the location of any blacksmiths in the area.</p>
+            </description>
+            <setters>
+                <set name="keywords"></set>
+                <set name="level">5</set>
+                <set name="school">Divination</set>
+                <set name="time">1 minute</set>
+                <set name="range">Self</set>
+                <set name="duration">Instantaneous</set>
+                <set name="hasVerbalComponent">true</set>
+                <set name="hasSomaticComponent">true</set>
+                <set name="hasMaterialComponent">false</set>
+                <set name="materialComponent">component</set>
+                <set name="isConcentration">false</set>
+                <set name="isRitual">true</set>
+            </setters>
+        </element>
+</elements>

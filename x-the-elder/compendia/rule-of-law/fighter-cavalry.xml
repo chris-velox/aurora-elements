@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Cavalry Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="fighter-cavalry.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/rule-of-law/fighter-cavalry.xml" />
+        </update>
+    </info>
+    
+    <element name="Cavalry" type="Archetype" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FIGHTER_CAVALRY">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Cavalry are mounted fighters. Whether charging into combat on their armored mount, or harassing the enemy flanks on a swift horse, cavalry are the masters of mobility on the battlefield.</p>
+            <div class="sidebar">
+                <p>This archetype is designed with the assumption that you can readily acquire a horse by 3rd level, and that your mount is not acting independently from you, that you are directly controlling your mount as described in the second paragraph of Controlling a Mount on page 198 of the Player’s Handbook.</p>
+            </div>
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_MOUNTED_TRAINING" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_PERSISTENCE" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_MOUNTED_FIGHTING_STYLE" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_QUICK_RESPONSE" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_INDOMITABLE_STEED" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_ELITE_CAVALRY" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_MOUNTED_TRAINING" level="3" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_PERSISTENCE" level="7" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_MOUNTED_FIGHTING_STYLE" level="10" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_QUICK_RESPONSE" level="15" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_INDOMITABLE_STEED" level="18" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_ELITE_CAVALRY" level="18" />
+        </rules>
+    </element>
+        <element name="Mounted Training" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_MOUNTED_TRAINING">
+            <description>
+                <p>When you choose this archetype at 3rd level, you are trained to control a mount amidst the chaos of battle.</p>
+                <p class="indent">You gain proficiency in Animal Handling. Over the course of 2 hours you can designate a mount as your steed, which can be done during a rest. Your steed becomes trained to answer your commands without hesitation. While riding your steed, you can use your action to command it to use any of its actions.</p>
+                <p class="indent">For each level you gain after 3rd, your steed gains an additional Hit Die and increases its hitpoint maximum accordingly. (This benefit has no effect if another feature has already improved the creature’s Hit Dice.)</p>
+                <p class="indent">Whenever you gain the Ability Score Improvement class feature from this class, your steed’s abilities also improve. Your steed can increase one ability score of your choice by 2, or it can increase two ability scores of your choice by 1. As normal, your steed can’t increase an ability score above 20.</p>
+                <p class="indent">Your steed has advantage on saving throws to avoid falling prone and being frightened.</p>
+                <p class="indent">You can only have one steed at a time. If you designate a different mount as your steed, the original mount loses the ability score and Hit Dice increases, and the new mount gains them.</p>
+            </description>
+            <sheet>
+                <description>Over the course of 2 hours you can designate a mount as your steed, which can be done during a rest. Your steed becomes trained to answer your commands without hesitation. While riding your steed, you can use your action to command it to use any of its actions. For each level you gain after 3rd, your steed gains an additional Hit Die and increases its hitpoint maximum accordingly. Your steed has advantage on saving throws to avoid falling prone and being frightened. You can only have one steed at a time.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+            </rules>
+        </element>
+        <element name="Persistence" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_PERSISTENCE">
+            <description>
+                <p>Starting at 7th level, you and your steed have advantage on saving throws to resist exhaustion, and your steed gains proficiency in Constitution saving throws.</p>
+                <p class="indent">Additionally, you add double your proficiency bonus to Animal Handling checks involving your steed and similar creatures.</p>
+            </description>
+            <sheet>
+                <description>You and your steed have advantage on saving throws to resist exhaustion, and your steed has proficiency in Constitution saving throws.</description>
+            </sheet>
+            <rules>
+                <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_ANIMALHANDLING" />
+            </rules>
+        </element>
+        <element name="Mounted Fighting Style" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_MOUNTED_FIGHTING_STYLE">
+            <description>
+                <p>At 10th level, you specialize into your personal style of mounted combat. Gain one of the following features of your choice.</p>
+                <p class="indent"><strong>Cataphract.</strong> While your steed is wearing barding, it gains a +1 bonus to AC and resistance to slashing damage from nonmagical attacks.</p>
+                <p class="indent"><strong>Jinete.</strong> While mounted on your steed and wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.</p>
+                <p class="indent"><strong>Keshik.</strong> While mounted on your steed, you can make one additional ranged weapon attack against a target within 15 feet of you as a bonus action when you take the Attack action on your turn.</p>
+                <p class="indent"><strong>Sowar.</strong> While mounted on your steed and wielding a shield, attacks against you from more than 10 feet away are made with disadvantage.</p>
+                <p class="indent"><strong>Uhlan.</strong> While mounted on your steed and wielding a heavy weapon or a lance, when you hit a creature smaller than your steed with a melee attack, it must succeed on a Strength saving throw or be knocked prone. The DC is equal to 8 + your proficiency bonus + your Strength modifier.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Mounted Fighting Style" supports="ROL Banneret Mounted Fighting Style" />
+            </rules>
+        </element>
+            <element name="Cataphract" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_MOUNTED_FIGHTING_STYLE_CATAPHRACT">
+                <supports>ROL Banneret Mounted Fighting Style</supports>
+                <description>
+                    <p>While your steed is wearing barding, it gains a +1 bonus to AC and resistance to slashing damage from nonmagical attacks.</p>
+                </description>
+                <sheet>
+                    <description>While your steed is wearing barding, it gains a +1 bonus to AC and resistance to slashing damage from nonmagical attacks.</description>
+                </sheet>
+            </element>
+            <element name="Jinete" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_MOUNTED_FIGHTING_STYLE_JINETE">
+                <supports>ROL Banneret Mounted Fighting Style</supports>
+                <description>
+                    <p>While mounted on your steed and wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.</p>
+                </description>
+                <sheet>
+                    <description>While mounted on your steed and wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.</description>
+                </sheet>
+            </element>
+            <element name="Keshik" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_MOUNTED_FIGHTING_STYLE_KESHIK">
+                <supports>ROL Banneret Mounted Fighting Style</supports>
+                <description>
+                    <p>While mounted on your steed, you can make one additional ranged weapon attack against a target within 15 feet of you as a bonus action when you take the Attack action on your turn.</p>
+                </description>
+                <sheet>
+                    <description>While mounted on your steed, you can make one additional ranged weapon attack against a target within 15 feet of you as a bonus action when you take the Attack action on your turn.</description>
+                </sheet>
+            </element>
+            <element name="Sowar" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_MOUNTED_FIGHTING_STYLE_SOWAR">
+                <supports>ROL Banneret Mounted Fighting Style</supports>
+                <description>
+                    <p>While mounted on your steed and wielding a shield, attacks against you from more than 10 feet away are made with disadvantage.</p>
+                </description>
+                <sheet>
+                    <description>While mounted on your steed and wielding a shield, attacks against you from more than 10 feet away are made with disadvantage.</description>
+                </sheet>
+            </element>
+            <element name="Uhlan" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_MOUNTED_FIGHTING_STYLE_UHLAN">
+                <supports>ROL Banneret Mounted Fighting Style</supports>
+                <description>
+                    <p>While mounted on your steed and wielding a heavy weapon or a lance, when you hit a creature smaller than your steed with a melee attack, it must succeed on a Strength saving throw or be knocked prone. The DC is equal to 8 + your proficiency bonus + your Strength modifier.</p>
+                </description>
+                <sheet>
+                    <description>While mounted on your steed and wielding a heavy weapon or a lance, when you hit a creature smaller than your steed with a melee attack, it must succeed on a Strength saving throw (Save DC {{uhlan:save-dc}}) or be knocked prone.</description>
+                </sheet>
+                <rules>
+                    <stat name="uhlan:save-dc" value="8" />
+                    <stat name="uhlan:save-dc" value="proficiency" />
+                    <stat name="uhlan:save-dc" value="strength:modifier" />
+                </rules>
+            </element>
+        <element name="Quick Response" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_QUICK_RESPONSE">
+            <description>
+                <p>Starting at 15th level, while mounted on your steed, you gain advantage on initiative rolls and can’t be surprised while you are conscious.</p>
+            </description>
+            <sheet>
+                <description>While mounted on your steed, you gain advantage on initiative rolls and can’t be surprised while you are conscious.</description>
+            </sheet>
+        </element>
+        <element name="Indomitable Steed" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_INDOMITABLE_STEED">
+            <description>
+                <p>Beginning at 18th level, your steed can reroll a saving throw that it fails. If it does so, it must use the new roll. Your steed can use this feature three times between long rests.</p>
+            </description>
+            <sheet usage="3/Long Rest">
+                <description>Your steed can reroll a saving throw that it fails. If it does so, it must use the new roll.</description>
+            </sheet>
+        </element>
+        <element name="Elite Cavalry" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_BANNERET_ELITE_CAVALRY">
+            <description>
+                <p>At 18th level, you are the master of battlefield mobility. Your steed’s movement speed increases by 15 feet, and you can use your bonus action to command your steed to take the Dash action.</p>
+            </description>
+            <sheet>
+                <description>Your steed’s movement speed increases by 15 feet, and you can use your bonus action to command your steed to take the Dash action.</description>
+            </sheet>
+        </element>
+    
+</elements>

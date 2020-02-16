@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Rule of Law Feats</name>
+        <update version="0.0.1">
+            <file name="feats.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/rule-of-law/feats.xml" />
+        </update>
+    </info>
+    
+    <element name="Armorer" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_ARMORER">
+        <description>
+            <p>You are trained in the upkeep and construction of weapons and armor. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Intelligence score by 1, to a maximum of 20.</li>
+                <li>You gain proficiency with leatherworker’s and smith’s tools. If you are already proficient with them, you add double your proficiency bonus to checks you make with them.</li>
+                <li>You can spend an hour repairing a piece of equipment damaged by rust, ooze, or similar degrading effects. Each hour spent repairing an item removes one instance of its cumulative penalty. You must have smith’s tools, as well as access to a sufficient heat source and materials to use this benefit.</li>
+                <li>You are able to refine armor in a variety of ways. Over 12 hours, you can modify one piece of nonmagical armor to either remove its disadvantage on Dexterity (Stealth) checks, or to give it resistance to either acid or cold damage. You must have smith’s tools or leatherworker’s tools, as appropiate to the type of armor, as well as access to a sufficient heat source and materials worth the base cost of the armor, which are consumed, to use this benefit. You can’t apply multiple modifications to a single suit of armor with this feature.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You can spend an hour repairing a piece of equipment damaged by rust, ooze, or similar degrading effects. Each hour spent repairing an item removes one instance of its cumulative penalty. You must have smith’s tools, as well as access to a sufficient heat source and materials to use this benefit. You are able to refine armor in a variety of ways. Over 12 hours, you can modify one piece of nonmagical armor to either remove its disadvantage on Stealth checks, or to give it resistance to either acid or cold damage.</description>
+        </sheet>
+        <rules>
+            <stat name="intelligence" value="1" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_LEATHERWORKERS_TOOLS_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS,!ID_IB_ROL_FEAT_LEATHERWORKERS_TOOLS_PROFICIENCY" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_LEATHERWORKERS_TOOLS_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_SMITHS_TOOLS_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS,!ID_IB_ROL_FEAT_SMITHS_TOOLS_PROFICIENCY" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_SMITHS_TOOLS_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+        </rules>
+    </element>
+        <element name="Armorer (Leatherworker’s Tools Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_LEATHERWORKERS_TOOLS_PROFICIENCY">
+            <supports>Armorer</supports>
+            <description>
+                <p>You become proficient with Leatherworker’s Tools.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS" />
+            </description>
+            <sheet display="false" />
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS" />
+            </rules>
+        </element>
+        <element name="Armorer (Leatherworker’s Tools Double Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_LEATHERWORKERS_TOOLS_DOUBLE_PROFICIENCY">
+            <supports>Armorer</supports>
+            <description>
+                <p>Your proficiency bonus is doubled for any check you make with Leatherworker’s Tools.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS" />
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any check you make with Leatherworker’s Tools.</description>
+            </sheet>
+            <rules>
+                <stat name="leatherworker’s tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Armorer (Smith’s Tools Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_SMITHS_TOOLS_PROFICIENCY">
+            <supports>Armorer</supports>
+            <description>
+                <p>You become proficient with Smith’s Tools.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+            </description>
+            <sheet display="false" />
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+            </rules>
+        </element>
+        <element name="Armorer (Smith’s Tools Double Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_SMITHS_TOOLS_DOUBLE_PROFICIENCY">
+            <supports>Armorer</supports>
+            <description>
+                <p>Your proficiency bonus is doubled for any check you make with Smith’s Tools.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any check you make with Smith’s Tools.</description>
+            </sheet>
+            <rules>
+                <stat name="smith’s tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+    <element name="Artisan" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_ARTISAN">
+        <description>
+            <p>You are a creative, learning a variety of artistic crafts. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Intelligence by 1, to a maximum of 20.</li>
+                <li>You gain proficiency with two artisan’s tools of your choice. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Your proficiency bonus is doubled for any ability check you make that uses either of the chosen artisan tool proficiencies.</description>
+        </sheet>
+        <rules>
+            <stat name="intelligence" value="1" />
+            <select type="Proficiency" name="Artisan Tools Proficiency (Artisan)" number="2" supports="Artisan tools" />
+        </rules>
+    </element>
+    <element name="Blowdart Mastery" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_BLOWDART_MASTERY">
+        <description>
+            <p>You have mastered the careful application of blowguns and darts. You gain the following benefits:</p>
+            <ul>
+                <li>You gain a +1 bonus to damage rolls you make with blowguns and darts.</li>
+                <li>Your ranged attacks with blowguns use a d4 for damage.</li>
+                <li>When you are hidden from a creature and attack it with a blowgun or dart, making the attack doesn’t reveal your position.</li>
+                <li>You ignore the loading property of blowguns.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You gain a +1 bonus to damage rolls you make with blowguns and darts. Your ranged attacks with blowguns use a d4 for damage. When you are hidden from a creature and attack it with a blowgun or dart, making the attack doesn’t reveal your position. You ignore the loading property of blowguns.</description>
+        </sheet>
+    </element>
+    <element name="Bow Mastery" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_BOW_MASTERY">
+        <description>
+            <p>Bows are used by many, but you have trained to make the most of these elegant weapons. You gain the following benefits:</p>
+            <ul>
+                <li>You gain a +1 bonus to damage rolls you make with shortbows and longbows.</li>
+                <li>When you use the Attack action with a shortbow on your turn, you can make one ranged weapon attack as a bonus action.</li>
+                <li>You can use Strength instead of Dexterity for the attack and damage rolls you make with longbows.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You gain a +1 bonus to damage rolls you make with shortbows and longbows. When you use the Attack action with a shortbow on your turn, you can make one ranged weapon attack as a bonus action. You can use Strength instead of Dexterity for the attack and damage rolls you make with longbows.</description>
+        </sheet>
+    </element>
+    <element name="Cartographer" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_CARTOGRAPHER">
+        <description>
+            <p>You have studied in the methods and techniques of mapmaking. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Intelligence score by 1, to a maximum of 20.</li>
+                <li>You gain proficiency with cartographer’s and navigator’s tools. If you are already proficient with them, you add double your proficiency bonus to checks you make with them.</li>
+                <li>You can easily and accurately understand maps, even those written in a language you can’t read.</li>
+                <li>Even when you are drawing a map while traveling, you remain alert to danger.</li>
+                <li>Maps that you draw can be easily understood by any creature that shares a language with you, and a creature possessing such a map cannot become lost within the area the map displays if it can understand it. You must have cartographer’s tools to use this benefit.</li>
+                <li>You cannot become lost except by magical means, and always know which way is north. You must have navigator’s tools to use this benefit.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You can easily and accurately understand maps, even those written in a language you can’t read. Even when you are drawing a map while traveling, you remain alert to danger. Maps that you draw can be easily understood by any creature that shares a language with you, and a creature possessing such a map cannot become lost within the area the map displays if it can understand it. You must have cartographer’s tools to use this benefit. You cannot become lost except by magical means, and always know which way is north. You must have navigator’s tools to use this benefit.</description>
+        </sheet>
+        <rules>
+            <stat name="intelligence" value="1" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_CARTOGRAPHERS_TOOLS_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_CARTOGRAPHERS_TOOLS,!ID_IB_ROL_FEAT_CARTOGRAPHERS_TOOLS_PROFICIENCY" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_CARTOGRAPHERS_TOOLS_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_CARTOGRAPHERS_TOOLS" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_NAVIGATORS_TOOLS_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS,!ID_IB_ROL_FEAT_NAVIGATORS_TOOLS_PROFICIENCY" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_NAVIGATORS_TOOLS_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+        </rules>
+    </element>
+        <element name="Cartographer (Cartographer’s Tools Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_CARTOGRAPHERS_TOOLS_PROFICIENCY">
+            <supports>Cartographer</supports>
+            <description>
+                <p>You become proficient with Cartographer’s Tools.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_CARTOGRAPHERS_TOOLS" />
+            </description>
+            <sheet display="false" />
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CARTOGRAPHERS_TOOLS" />
+            </rules>
+        </element>
+        <element name="Cartographer (Cartographer’s Tools Double Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_CARTOGRAPHERS_TOOLS_DOUBLE_PROFICIENCY">
+            <supports>Cartographer</supports>
+            <description>
+                <p>Your proficiency bonus is doubled for any check you make with Cartographer’s Tools.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_CARTOGRAPHERS_TOOLS" />
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any check you make with Cartographer’s Tools.</description>
+            </sheet>
+            <rules>
+                <stat name="cartographer’s tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Cartographer (Navigator’s Tools Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_NAVIGATORS_TOOLS_PROFICIENCY">
+            <supports>Cartographer</supports>
+            <description>
+                <p>You become proficient with Navigator’s Tools.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+            </description>
+            <sheet display="false" />
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+            </rules>
+        </element>
+        <element name="Cartographer (Navigator’s Tools Double Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_NAVIGATORS_TOOLS_DOUBLE_PROFICIENCY">
+            <supports>Cartographer</supports>
+            <description>
+                <p>Your proficiency bonus is doubled for any check you make with Navigator’s Tools.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any check you make with Navigator’s Tools.</description>
+            </sheet>
+            <rules>
+                <stat name="navigator’s tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+    <element name="Gladiator" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_GLADIATOR">
+        <description>
+            <p>Fighting for an audience is your forte, and you maximize the use of more exotic weapons to show off your prowess. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Charisma score by 1, to a maximum of 20.</li>
+                <li>You gain proficiency in Performance.</li>
+                <li>You gain proficiency with nets, and when you use the Attack action and attack with a net, you can use a bonus action to attack with a one-handed weapon you are holding. Being within 5 feet of a hostile creature doesn’t impose disadvantage on your attack rolls with a net, and the escape DC for your nets increases by your proficiency bonus.</li>
+                <li>You gain proficiency with tridents, and you can roll one additional weapon damage die when determining the extra damage for a critical hit with a trident.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you use the Attack action and attack with a net, you can use a bonus action to attack with a one-handed weapon you are holding. Being within 5 feet of a hostile creature doesn’t impose disadvantage on your attack rolls with a net, and the escape DC for your nets increases by your proficiency bonus. You can roll one additional weapon damage die when determining the extra damage for a critical hit with a trident.</description>
+        </sheet>
+        <rules>
+            <stat name="charism" value="1" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_NET" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_TRIDENT" />
+        </rules>
+    </element>
+    <element name="Herbalist" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_HERBALIST">
+        <description>
+            <p>You are adept at harnessing the useful properties of herbs and other plants. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Intelligence or Wisdom score by 1, to a maximum of 20.</li>
+                <li>You gain proficiency with herbalism kits. If you are already proficient with them, you add double your proficiency bonus to checks you make with them.</li>
+                <li>As an action, you can inspect a plant within 5 feet of you and determine whether it is edible or poisonous, provided that you can see and smell it.</li>
+                <li>You can apply herbal remedies to help yourself or your allies recover from maladies. Over the course of a short rest, you can remove one poison or disease from a friendly creature within reach. You must have an herbalism kit and either a component pouch or access to local herbs to use this benefit.</li>
+            </ul>
+        </description>
+        <sheet action="Action">
+            <description>As an action, you can inspect a plant within 5 feet of you and determine whether it is edible or poisonous, provided that you can see and smell it. You can apply herbal remedies to help yourself or your allies recover from maladies. Over the course of a short rest, you can remove one poison or disease from a friendly creature within reach. You must have an herbalism kit and either a component pouch or access to local herbs to use this benefit.</description>
+        </sheet>
+        <rules>
+            <stat name="wisdom" value="1" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_HERBALISM_KIT_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT,!ID_IB_ROL_FEAT_HERBALISM_KIT_PROFICIENCY" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_HERBALISM_KIT_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+        </rules>
+    </element>
+        <element name="Herbalist (Herbalism Kit Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_HERBALISM_KIT_PROFICIENCY">
+            <supports>Herbalist</supports>
+            <description>
+                <p>You become proficient with the Herbalism Kit.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+            </description>
+            <sheet display="false" />
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+            </rules>
+        </element>
+        <element name="Herbalist (Herbalism Kit Double Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_HERBALISM_KIT_DOUBLE_PROFICIENCY">
+            <supports>Herbalist</supports>
+            <description>
+                <p>Your proficiency bonus is doubled for any check you make with Herbalism Kit.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any check you make with your Herbalism Kit.</description>
+            </sheet>
+            <rules>
+                <stat name="herbalism kit:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+    <element name="Martial Training" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_MARTIAL_TRAINING">
+        <requirements>[level:4],([dex:13]||[str:13])</requirements>
+        <prerequisite>Character level 4, Dexterity 13 or Strength 13</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Character level 4, Dexterity 13 or Strength 13</p>
+            <p>You have trained in a certain specialized technique of fighting. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength or Dexterity score by 1, to a maximum of 20.</li>
+                <li>You gain the benefits of a Fighting Style of your choice. (Page 72 of the <em>Player’s Handbook</em>, and additional options below.)</li>
+            </ul>
+            You can select this feat multiple times. You can’t take a Fighting Style option more than once, even if you later get to choose again.
+        </description>
+        <setters>
+            <set name="allow duplicate">true</set>
+        </setters>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="strength" value="1" />
+            <select type="Class Feature" name="Fighting Style, Martial Training" supports="Fighting Style" />
+        </rules>
+    </element>
+    <element name="Mounted Adept" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_MOUNTED_ADEPT">
+        <description>
+            <p>You have mounted training that allows you to effectively control a mount in the chaos of battle. You gain the following benefits:</p>
+            <ul>
+                <li>You gain proficiency in Animal Handling.</li>
+                <li>Over the course of 2 hours, which can be done during a rest, you can designate a mount as your steed. Your steed becomes trained to answer your commands without hesitation. While riding your steed, you can use your action to command it to use any of its actions. For each level you gain after 3rd, your steed gains an additional Hit Die and increases its hitpoints accordingly. (This benefit has no effect if another feature has already improved the creature’s Hit Dice.)</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Over the course of 2 hours, which can be done during a rest, you can designate a mount as your steed. Your steed becomes trained to answer your commands without hesitation. While riding your steed, you can use your action to command it to use any of its actions. For each level you gain after 3rd, your steed gains an additional Hit Die and increases its hitpoints accordingly. (This benefit has no effect if another feature has already improved the creature’s Hit Dice.)</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+        </rules>
+    </element>
+    <element name="Mounted Mage" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_MOUNTED_MAGE">
+        <requirements>[type:spell]</requirements>
+        <prerequisite>The ability to cast at least one spell</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: The ability to cast at least one spell</p>
+            <p>You are trained in the use of magic from horseback. You gain the following benefits:</p>
+            <ul>
+                <li>You gain proficiency in Animal Handling.</li>
+                <li>When you cast a spell targeting yourself while mounted, you can also affect your mount with the spell.</li>
+                <li>While mounted, you have advantage on melee spell attack rolls against any unmounted creature that is smaller than your mount.</li>
+                <li>While mounted, if your mount is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you cast a spell targeting yourself while mounted, you can also affect your mount with the spell. While mounted, you have advantage on melee spell attack rolls against any unmounted creature that is smaller than your mount. While mounted, if your mount is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+        </rules>
+    </element>
+    <element name="Poisoner" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_POISONER">
+        <description>
+            <p>You have studied the secrets of poisons and toxins, gaining the following benefits:</p>
+            <ul>
+                <li>Increase your Intelligence by 1, to a maximum of 20.</li>
+                <li>You gain proficiency with poisoner’s kits. If you are already proficient with them, you add double your proficiency bonus to checks you make with them.</li>
+                <li>As an action, you can identify one poison within 5 feet of you. You must see the poison for this benefit to work.</li>
+                <li>Over the course of a short rest, you can temporarily improve the potency of one dose of poison. To use this benefit, you must have a poisoner’s kit, and the poison must be within reach. If the poison is applied within 1 hour after the short rest ends, its DC becomes 8 + your proficiency bonus + your Intelligence modifier, and it deals extra poison damage equal to your Intelligence modifier.</li>
+            </ul>
+        </description>
+        <sheet action="Action">
+            <description>As an action, you can identify one poison within 5 feet of you. You must see the poison for this benefit to work. Over the course of a short rest, you can temporarily improve the potency of one dose of poison. To use this benefit, you must have a poisoner’s kit, and the poison must be within reach. If the poison is applied within 1 hour after the short rest ends, its DC is {{poisoner:save-dc}}, and it deals {{intelligence:modifier}} extra poison damage.</description>
+        </sheet>
+        <rules>
+            <stat name="poisoner:save-dc" value="8" />
+            <stat name="poisoner:save-dc" value="proficiency" />
+            <stat name="poisoner:save-dc" value="intelligence:modifier" />
+            <stat name="intelligence" value="1" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_POISONERS_KIT_DOUBLE_PROFICIENCY" requirements="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT,!ID_IB_ROL_FEAT_POISONERS_KIT_PROFICIENCY" />
+			<grant type="Feat Feature" id="ID_IB_ROL_FEAT_POISONERS_KIT_PROFICIENCY" requirements="!ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+        </rules>
+    </element>
+        <element name="Poisoner (Poisoner’s Kit Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_POISONERS_KIT_PROFICIENCY">
+            <supports>Poisoner</supports>
+            <description>
+                <p>You become proficient with the Poisoner’s Kit.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+            </description>
+            <sheet display="false" />
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+            </rules>
+        </element>
+        <element name="Poisoner (Poisoner’s Kit Double Proficiency)" type="Feat Feature" source="Rule of Law" id="ID_IB_ROL_FEAT_POISONERS_KIT_DOUBLE_PROFICIENCY">
+            <supports>Poisoner</supports>
+            <description>
+                <p>Your proficiency bonus is doubled for any check you make with Poisoner’s Kit.</p>
+                <div element="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any check you make with your Poisoner’s Kit.</description>
+            </sheet>
+            <rules>
+                <stat name="poisoner’s kit:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+    <element name="Slinger" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_SLINGER">
+        <description>
+            <p>You are an expert with the sling, capable of striking your foes with deadly precision. You gain the following benefits:</p>
+            <ul>
+                <li>You gain a +1 bonus to damage rolls made with a sling.</li>
+                <li>When you use a sling, its damage die increases from a d4 to a d6. (This benefit has no effect if another feature has already improved the weapon’s die.)</li>
+                <li>Your weapon attacks with a sling score a critical hit on a roll of 19 or 20.</li>
+                <li>When you score a critical hit using a sling, the target can’t take reactions until the end of your next turn.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You gain a +1 bonus to damage rolls made with a sling. When you use a sling, its damage die increases from a d4 to a d6. (This benefit has no effect if another feature has already improved the weapon’s die.)Your weapon attacks with a sling score a critical hit on a roll of 19 or 20. When you score a critical hit using a sling, the target can’t take reactions until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Thrown Weapon Master" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_THROWN_WEAPON_MASTER">
+        <description>
+            <p>You are an expert at the techniques of throwing weapons. You gain the following benefits:</p>
+            <ul>
+                <li>You gain a +1 bonus to damage rolls you make with thrown weapons.</li>
+                <li>Attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls with thrown weapons.</li>
+                <li>When you hit a creature with a ranged weapon attack with a thrown weapon, you have advantage on your next melee weapon attack against that creature before the end of your next turn.</li>
+                <li>You can use two-weapon fighting even when the onehanded melee weapons you are wielding aren’t light, if at least one of them has the thrown property.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You gain a +1 bonus to damage rolls you make with thrown weapons. Attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls with thrown weapons. When you hit a creature with a ranged weapon attack with a thrown weapon, you have advantage on your next melee weapon attack against that creature before the end of your next turn. You can use two-weapon fighting even when the onehanded melee weapons you are wielding aren’t light, if at least one of them has the thrown property.</description>
+        </sheet>
+    </element>
+    <element name="Trapper" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_TRAPPER">
+        <description>
+            <p>You are skilled at hunting and trapping, gaining the following benefits:</p>
+            <ul>
+                <li>Increase your Wisdom score by 1, to a maximum of 20.</li>
+                <li>You gain proficiency in Survival. If you are already proficient in it, you add double your proficiency bonus to checks made with Survival.</li>
+                <li>You gain proficiency with nets, and when you use the Attack action and attack with a net, you can use a bonus action to attack with a one-handed weapon you are holding. Being within 5 feet of a hostile creature doesn’t impose disadvantage on your attack rolls with a net, and the escape DC for your nets increases by your proficiency bonus.</li>
+                <li>The escape DC of hunting traps that you place increases by your proficiency bonus.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you use the Attack action and attack with a net, you can use a bonus action to attack with a one-handed weapon you are holding. Being within 5 feet of a hostile creature doesn’t impose disadvantage on your attack rolls with a net, and the escape DC for your nets increases by your proficiency bonus. The escape DC of hunting traps that you place increases {{proficiency}}.</description>
+        </sheet>
+        <rules>
+            <stat name="wisdom" value="1" />
+            <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_SURVIVAL" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_NET" />
+        </rules>
+    </element>
+    <element name="Whip Mastery" type="Feat" source="Rule of Law" id="ID_IB_ROL_FEAT_WHIP_MASTERY">
+        <description>
+            <p>You have mastered the strange and difficult art of using a whip in combat. You gain the following benefits:</p>
+            <ul>
+                <li>You gain a +1 bonus to damage rolls made with a whip.</li>
+                <li>When you use a whip, its damage die increases from a d4 to a d6. (This benefit has no effect if another feature has already improved the weapon’s die.)</li>
+                <li>Whenever you have advantage on a melee attack roll you make with a whip and hit, you can knock a weapon or another item from the target’s grasp if the lower of the two d20 rolls would also hit the target.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You gain a +1 bonus to damage rolls made with a whip. When you use a whip, its damage die increases from a d4 to a d6. (This benefit has no effect if another feature has already improved the weapon’s die.) Whenever you have advantage on a melee attack roll you make with a whip and hit, you can knock a weapon or another item from the target’s grasp if the lower of the two d20 rolls would also hit the target.</description>
+        </sheet>
+    </element>
+
+</elements>

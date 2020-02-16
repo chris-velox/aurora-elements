@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Imperial Ancestry Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-imperial-ancestry.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/rule-of-law/sorcerer-imperial-ancestry.xml" />
+        </update>
+    </info>
+    
+    <element name="Imperial Ancestry" type="Archetype" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_SORCERER_IMPERIAL_ANCESTRY">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>There is power in king’s blood. Whether a far flung cousin, the son of a deposed prince, or an unknown bastard, your lineage can be traced back to great kings and emperors. You might be totally unaware of your connection to a lost empire, or you are the last surviving heir of a deposed dynasty. Whatever your connection to your lineage, your bloodline has granted you powerful magical abilities.</p>
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_HOMELAND" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_COMMANDING_VOICE" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_MAJESTIC_PRESENCE" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_BEND_THE_KNEE" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_TITLE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_HOMELAND" level="1" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_COMMANDING_VOICE" level="1" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_MAJESTIC_PRESENCE" level="6" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_BEND_THE_KNEE" level="14" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_TITLE" level="18" />
+        </rules>
+    </element>
+        <element name="Ancestral Homeland" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_HOMELAND">
+            <description>
+                <p>Starting at 1st level, you gain knowledge of your lineage’s homeland. You or your DM selects the location of your homeland, be it a city, region, or country. You always know roughly how far away you are from your homeland and in what direction it lies. You also gain knowledge of the geography, people, and culture of your homeland, even if you have never been there, and learn the predominant native language if you don't already know it.</p>
+            </description>
+            <sheet>
+                <description>You always know roughly how far away you are from your homeland and in what direction it lies. You also gain knowledge of the geography, people, and culture of your homeland, even if you have never been there, and learn the predominant native language if you don't already know it.</description>
+            </sheet>
+        </element>
+        <element name="Commanding Voice" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_COMMANDING_VOICE">
+            <description>
+                <p>Your bloodline has granted you a powerful, imposing voice. At 1st level, you learn the command spell, which counts as a sorcerer spell for you, and does not count against your number of spells known. Additionally, you gain proficiency in either Intimidation or Persuasion, and gain advantage in the chosen skill when interacting with someone from your homeland.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_COMMAND" spellcasting="Sorcerer" known="true" />
+                <select type="Archetype Feature" name="Skill Proficiency, Commanding Voice" supports="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_COMMANDING_VOICE_INTIMIDATION|ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_COMMANDING_VOICE_PERSUASION" />
+            </rules>
+        </element>
+            <element name="Intimidation" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_COMMANDING_VOICE_INTIMIDATION">
+                <description>
+                    <p>You gain proficiency in Intimidation, and gain advantage in the chosen skill when interacting with someone from your homeland.</p>
+                </description>
+                <sheet>
+                    <description>You have advantage on Intimidation checks when interacting with someone from your homeland.</description>
+                </sheet>
+                <rules>
+                    <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+                </rules>
+            </element>
+            <element name="Persuasion" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_COMMANDING_VOICE_PERSUASION">
+                <description>
+                    <p>you gain proficiency in Persuasion, and gain advantage in the chosen skill when interacting with someone from your homeland.</p>
+                </description>
+                <sheet>
+                    <description>You have advantage on Persuasion checks when interacting with someone from your homeland.</description>
+                </sheet>
+                <rules>
+                    <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+                </rules>
+            </element>
+        <element name="Majestic Presence" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_MAJESTIC_PRESENCE">
+            <description>
+                <p>Starting at 6th level, when you or a friendly creature within 30 feet of you makes a Charisma or Wisdom saving throw, you can spend 2 sorcery points to grant them advantage on the saving throw. You can choose to use this feature after the creature makes its roll, but before the DM determines whether the saving throw succeeds or fails.</p>
+            </description>
+            <sheet usage="2 Sorcery Points">
+                <description>When you or a friendly creature within 30 feet of you makes a Charisma or Wisdom saving throw, you can spend 2 sorcery points to grant them advantage on the saving throw. You can choose to use this feature after the creature makes its roll, but before the DM determines whether the saving throw succeeds or fails.</description>
+            </sheet>
+        </element>
+        <element name="Bend the Knee" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_BEND_THE_KNEE">
+            <description>
+                <p>Starting at 14th level, when a creature fails a saving throw imposed by one of your spells, you can spend 3 sorcery points to cause them to be frightened of you until the end of your next turn.</p>
+            </description>
+            <sheet usage="3 Sorcery Points">
+                <description>When a creature fails a saving throw imposed by one of your spells, you can spend 3 sorcery points to cause them to be frightened of you until the end of your next turn.</description>
+            </sheet>
+        </element>
+        <element name="Ancestral Title" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_TITLE">
+            <description>
+                <p>Starting at 18th level, the combined talents and knowledge of your storied ancestors flow through your veins. You adopt a title befit a king, and gain permanent benefits associated with that title. Choose one of the following benefits:</p>
+                <p class="indent"><strong><em>The Conqueror.</em></strong> Your Empowered Spell Metamagic option no longer costs sorcery points if you do not also use a different Metamagic option during the casting of the spell.</p>
+                <p class="indent"><strong><em>The Great.</em></strong> Increase one ability score of your choice by 2. Your maximum for that score is now 22.</p>
+                <p class="indent"><strong><em>The Holy.</em></strong> You learn three cleric spells of your choice, which must be of 3rd level or lower. These spells count as sorcerer spells for you and do not count against your number of spells known.</p>
+                <p class="indent"><strong><em>The Kind.</em></strong> You gain advantage on Charisma checks and saving throws, and Majestic Presence costs 1 sorcery point.</p>
+                <p class="indent"><strong><em>The Terrible.</em></strong> You are immune to being frightened, and Bend the Knee costs 1 sorcery point.</p>
+                <p class="indent"><strong><em>The Wise.</em></strong> You gain proficiency with Intelligence and Wisdom saving throws, and Majestic Presence costs 1 sorcery point.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Ancestral Title" supports="ROL Imperial Ancestry Ancestral Title" />
+            </rules>
+        </element>
+            <element name="The Conqueror" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_TITLE_THE_CONQUEROR">
+                <supports>ROL Imperial Ancestry Ancestral Title</supports>
+                <description>
+                    <p>Your Empowered Spell Metamagic option no longer costs sorcery points if you do not also use a different Metamagic option during the casting of the spell.</p>
+                </description>
+                <sheet>
+                    <description>Your Empowered Spell Metamagic option no longer costs sorcery points if you do not also use a different Metamagic option during the casting of the spell.</description>
+                </sheet>
+            </element>
+            <element name="The Great" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_TITLE_THE_GREAT">
+                <supports>ROL Imperial Ancestry Ancestral Title</supports>
+                <description>
+                    <p>Increase one ability score of your choice by 2. Your maximum for that score is now 22.</p>
+                </description>
+                <sheet display="false">
+                    <description>Increase one ability score of your choice by 2. Your maximum for that score is now 22.</description>
+                </sheet>
+                <rules>
+                    <select type="Archetype Feature" name="Ability Score Improvement, Ancestral Title" supports="ROL Ancestral Title The Great Ability Score" />
+                </rules>
+            </element>
+                <element name="Strength" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_ANCESTRAL_TITLE_THE_GREAT_STRENGTH">
+                    <supports>ROL Ancestral Title The Great Ability Score</supports>
+                    <description />
+                    <sheet display="false" />
+                    <rules>
+                        <stat name="strength" value="2" />
+                        <stat name="strength:max" value="2" />
+                    </rules>
+                </element>
+                <element name="Dexterity" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_ANCESTRAL_TITLE_THE_GREAT_DEXTERITY">
+                    <supports>ROL Ancestral Title The Great Ability Score</supports>
+                    <description />
+                    <sheet display="false" />
+                    <rules>
+                        <stat name="dexterity" value="2" />
+                        <stat name="dexterity:max" value="2" />
+                    </rules>
+                </element>
+                <element name="Constitution" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_ANCESTRAL_TITLE_THE_GREAT_CONSTITUTION">
+                    <supports>ROL Ancestral Title The Great Ability Score</supports>
+                    <description />
+                    <sheet display="false" />
+                    <rules>
+                        <stat name="constitution" value="2" />
+                        <stat name="constitution:max" value="2" />
+                    </rules>
+                </element>
+                <element name="Intelligence" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_ANCESTRAL_TITLE_THE_GREAT_INTELLIGENCE">
+                    <supports>ROL Ancestral Title The Great Ability Score</supports>
+                    <description />
+                    <sheet display="false" />
+                    <rules>
+                        <stat name="intelligence" value="2" />
+                        <stat name="intelligence:max" value="2" />
+                    </rules>
+                </element>
+                <element name="Wisdom" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_ANCESTRAL_TITLE_THE_GREAT_WISDOM">
+                    <supports>ROL Ancestral Title The Great Ability Score</supports>
+                    <description />
+                    <sheet display="false" />
+                    <rules>
+                        <stat name="wisdom" value="2" />
+                        <stat name="wisdom:max" value="2" />
+                    </rules>
+                </element>
+                <element name="Charisma" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_ANCESTRAL_TITLE_THE_GREAT_CHARISMA">
+                    <supports>ROL Ancestral Title The Great Ability Score</supports>
+                    <description />
+                    <sheet display="false" />
+                    <rules>
+                        <stat name="charisma" value="2" />
+                        <stat name="charisma:max" value="2" />
+                    </rules>
+                </element>
+            <element name="The Holy" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_TITLE_THE_HOLY">
+                <supports>ROL Imperial Ancestry Ancestral Title</supports>
+                <description>
+                    <p>You learn three cleric spells of your choice, which must be of 3rd level or lower. These spells count as sorcerer spells for you and do not count against your number of spells known.</p>
+                </description>
+                <sheet>
+                    <description>You learn three cleric spells of your choice, which must be of 3rd level or lower. These spells count as sorcerer spells for you and do not count against your number of spells known.</description>
+                </sheet>
+                <rules>
+                    <select type="Spell" name="Spellcasting, The Holy" number="3" supports="Cleric,(1||2||3)" spellcasting="Sorcerer" known="true" />
+                </rules>
+            </element>
+            <element name="The Kind" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_TITLE_THE_KIND">
+                <supports>ROL Imperial Ancestry Ancestral Title</supports>
+                <description>
+                    <p>You gain advantage on Charisma checks and saving throws, and Majestic Presence costs 1 sorcery point.</p>
+                </description>
+                <sheet>
+                    <description>You gain advantage on Charisma checks and saving throws, and Majestic Presence costs 1 sorcery point.</description>
+                </sheet>
+            </element>
+            <element name="The Terrible" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_TITLE_THE_TERRIBLE">
+                <supports>ROL Imperial Ancestry Ancestral Title</supports>
+                <description>
+                    <p>You are immune to being frightened, and Bend the Knee costs 1 sorcery point.</p>
+                </description>
+                <sheet>
+                    <description>You are immune to being frightened, and Bend the Knee costs 1 sorcery point.</description>
+                </sheet>
+            </element>
+            <element name="The Wise" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_IMPERIAL_ANCESTRY_ANCESTRAL_TITLE_THE_WISE">
+                <supports>ROL Imperial Ancestry Ancestral Title</supports>
+                <description>
+                    <p>You gain proficiency with Intelligence and Wisdom saving throws, and Majestic Presence costs 1 sorcery point.</p>
+                </description>
+                <sheet>
+                    <description>Majestic Presence costs 1 sorcery point.</description>
+                </sheet>
+                <rules>
+                    <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" />
+                    <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" />
+                </rules>
+            </element>
+    
+</elements>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Travel Divine Domain</name>
+        <update version="0.0.1">
+            <file name="cleric-travel.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/rule-of-law/cleric-travel.xml" />
+        </update>
+    </info>
+    
+    <element name="Travel Domain" type="Archetype" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_CLERIC_TRAVEL_DOMAIN">
+        <supports>Divine Domain</supports>
+        <description>
+            <p>Gods whose portfolios include the Travel domain—such as Desna, Avandra, Fharlanghn, and Hermes—are patrons of travelers and explorers, whether by sea or land. Travel gods send their priests wandering throughout the world as itinerant preachers, or as guides to those who travel the roads, rivers, wilds, and seas of the world. Followers of Travel gods worship at small roadside temples or self-made shrines at locations important to the traveller.</p>
+            <h5 class="caption">TRAVEL DOMAIN SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Cleric Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><em>expeditious retreat, jump</em></td></tr>
+                <tr><td>3rd</td><td><em>find steed, misty step</em></td></tr>
+                <tr><td>5th</td><td><em>haste, phantom steed</em></td></tr>
+                <tr><td>7th</td><td><em>dimension door, freedom of movement</em></td></tr>
+                <tr><td>9th</td><td><em>teleportation circle, tree stride</em></td></tr>
+            </table>
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_WELL_TRAVELED" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_QUICKENED_PACE" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_CD_TRAVELING_COMPANION" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_CD_DIVINE_TRANSPOSITION" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_DIVINE_STRIKE" />
+            <div element="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_GUIDED_TELEPORT" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_WELL_TRAVELED" level="1" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_QUICKENED_PACE" level="1" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_CD_TRAVELING_COMPANION" level="2" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_CD_DIVINE_TRANSPOSITION" level="6" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_DIVINE_STRIKE" level="8" />
+            <grant type="Archetype Feature" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_GUIDED_TELEPORT" level="17" />
+            <grant type="Spell" id="ID_PHB_SPELL_EXPEDITIOUS_RETREAT" spellcasting="Cleric" prepared="true" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_JUMP" spellcasting="Cleric" prepared="true" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_FIND_STEED" spellcasting="Cleric" prepared="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" spellcasting="Cleric" prepared="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_HASTE" spellcasting="Cleric" prepared="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_PHANTOM_STEED" spellcasting="Cleric" prepared="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_DIMENSION_DOOR" spellcasting="Cleric" prepared="true" level="7" />
+            <grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" spellcasting="Cleric" prepared="true" level="7" />
+            <grant type="Spell" id="ID_PHB_SPELL_TELEPORTATION_CIRCLE" spellcasting="Cleric" prepared="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_TREE_STRIDE" spellcasting="Cleric" prepared="true" level="9" />
+        </rules>
+    </element>
+        <element name="Well-Traveled" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_WELL_TRAVELED">
+            <description>
+                <p>At 1st level, you gain proficiency with land and water vehicles, as well as navigator’s tools. You also learn one language of your choice.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+                <select type="Language" name="Language, Well-Traveled" />
+            </rules>
+        </element>
+        <element name="Quickened Pace" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_QUICKENED_PACE">
+            <description>
+                <p>At 1st level, you are blessed with quickened travel. Your speed is increased by 5 feet. At 10th level, this bonus increases to 10 feet. While you are mounted, your mount is also granted this bonus.</p>
+            </description>
+            <sheet>
+                <description>While you are mounted, your mount’s speed is also increased by 5 feet.</description>
+                <description level="10">While you are mounted, your mount’s speed is also increased by 10 feet.</description>
+            </sheet>
+            <rules>
+                <stat name="speed:misc" value="5" level="1" />
+                <stat name="speed:misc" value="5" level="10" />
+            </rules>
+        </element>
+        <element name="Channel Divinity: Traveling Companion" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_CD_TRAVELING_COMPANION">
+            <description>
+                <p>Starting at 2nd level, you can use your Channel Divinity to share beneficial magic with a traveling companion.</p>
+                <p class="indent">When you cast a spell targeting a single friendly creature, you can use your Channel Divinity to target a second friendly creature (including yourself) in range with the same spell. To be eligible, a spell must be incapable of targeting more than one creature at the spell’s current level.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Traveling Companion">
+                <description>When you cast a spell targeting a single friendly creature, you can use your Channel Divinity to target a second friendly creature (including yourself) in range with the same spell. To be eligible, a spell must be incapable of targeting more than one creature at the spell’s current level.</description>
+            </sheet>
+        </element>
+        <element name="Channel Divinity: Divine Transposition" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_CD_DIVINE_TRANSPOSITION">
+            <description>
+                <p>Starting at 6th level, you can use your Channel Divinity to teleport or to swap positions with allies.</p>
+                <p class="indent">As an action, you can use your Channel Divinity to teleport up to 30 feet to an unoccupied space that you can see. Alternatively, you can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, you both teleport, swapping places.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Divine Transposition" action="Action">
+                <description>You can use your Channel Divinity to teleport up to 30 feet to an unoccupied space that you can see. Alternatively, you can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, you both teleport, swapping places.</description>
+            </sheet>
+        </element>
+        <element name="Divine Strike" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_DIVINE_STRIKE">
+            <description>
+                <p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage. When you reach 14th level, the extra damage increases to 2d8.</p>
+            </description>
+            <sheet>
+                <description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra {{divine-strike:damage-dice}}d8 radiant damage.</description>
+            </sheet>
+            <rules>
+                <stat name="divine-strike:damage-dice" value="1" level="8" />
+                <stat name="divine-strike:damage-dice" value="1" level="14" />
+            </rules>
+        </element>
+        <element name="Guided Teleport" type="Archetype Feature" source="Rule of Law" id="ID_IB_ROL_ARCHETYPE_FEATURE_TRAVEL_GUIDED_TELEPORT">
+            <description>
+                <p>Starting at 17th level, you gain the ability to prepare the <em>teleport</em> spell, which counts as a cleric spell for you. You treat your familiarity with the destination as very familiar, unless it is a false destination.</p>
+                <p class="indent">Additionally, any creatures you teleport (via any means, not just teleport) are granted the effects of a <em>freedom of movement</em> spell for 1 minute after arriving at their destination.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_FREEDOME_OF_MOVEMENT" />
+                </div>
+            </description>
+            <sheet>
+                <description>For the teleport spell, you treat your familiarity with the destination as very familiar, unless it is a false destination. Additionally, any creatures you teleport (via any means, not just teleport) are granted the effects of a freedom of movement spell for 1 minute after arriving at their destination.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_TELEPORT" spellcasting="Cleric" prepared="true" />
+            </rules>
+        </element>
+    
+</elements>
