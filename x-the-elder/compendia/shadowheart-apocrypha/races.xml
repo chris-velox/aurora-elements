@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Shadowheart Apocrypha Races</name>
+        <update version="0.0.1">
+            <file name="races.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/shadowheart-apocrypha/races.xml" />
+        </update>
+    </info>
+    
+    <element name="Angeling" type="Race" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_ANGELING">
+        <description>
+            <p>It is said that roughly one out of every hundred thousand dead children are found alive and well, with great wings and powers unnatural. These children are known as angelings, eternally young beings who have been granted a strange gift from an unknown source. Angelings are created when a child pure of soul and with inner calm dies in a horrific event. When reincarnated they are only guaranteed to be sent back to the plane of their origin, however their “rebirth” location is entirely random and very rarely do they appear where they died.</p>
+            <p class="indent">Angelings have supernatural powers based on their wishes of the future. If a child wanted to grow up to be a worldly scholar he may return with an open mind capable of learning vast amounts of information, giving him the ability to cast spells. If a child wanted to grow up to be a mighty warrior, she may return with enhanced strength and a mind fit to absorb tactical knowledge for battle.</p>
+            <p class="indent">One of the most unknown things about angelings is how they occur. Some believe it is the favor of the gods, giving an innocent a second chance at life. Others believe it is some ancient spell lost to time that affects only the young. Few even believe that a parent's love for the child is so great that it brings them back to life.</p>
+            <p class="indent">Most angelings never see their families again. Many were too young upon death to understand where their home was or even what continent or country they are from. Some even elect to never return, fearing their new powers might cause their family fear or strife.</p>
+            <h4>Angelings in your Campaign</h4>
+            <p>Children as heroes is quite a large trope across many kinds of media, but can be hard to justify in games of D&amp;D. Angelings are a way for players to try and take the "hero child" fantasy and make it a reality, with ways to make it work in even the most serious settings. The creation of Angelings in your world can range from the gods, to experiments, to just being a natural phenomena.</p>
+            <p class="indent">Perhaps a powerful entity takes interest in a dying child and chooses to revive them in return for service, creating a Warlock. Maybe upon death the child magically recreates itself elsewhere as its innate sorcerer powers bloom. A family that has always been devout to a God prays for the return of their lost child, and the god obliges, though not in the way the parents expect.</p>
+            <h4>Playing an Angeling</h4>
+            <p>Playing an angeling is more than just role playing a quirky kid, your angeling has been gifted supernatural powers! Suddenly they have strength they didn't think possible, the kid in life who was never all the bright suddenly can memorize entire libraries! The natural curiosity and craziness of children can be a great way to explore a class in a new way.</p>
+            <p class="indent">Alternatively you can go the opposite route. Angelings are immortal, perhaps your angeling has been around for hundreds, maybe even thousands of years. Your character could still use traditions and customs from centuries dead cultures. There's even the route that your character has been around for so long that they are going on dangerous adventures just to feel alive.</p>
+            <h4>Angeling Traits</h4>
+            <p>Your angeling character has the following characteristics.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Wisdom score increases by 1. Another ability score of your choice increases by 2.</p>
+            <p class="indent"><strong><em>Age.</em></strong> Angelings range from ages 8 to 12 and do not age past the time that they originally die, rendering them biologically immortal. Angelings still need food, sleep, and other sustenances that they would require to survive in life.</p>
+            <p class="indent"><strong><em>Alignment.</em></strong> Most Angelings do not understand their transformation and as such tend towards neutral or chaotic alignments. Those that find welcoming company may lean towards the alignments of those around them.</p>
+            <p class="indent"><strong><em>Size.</em></strong> Angelings range between 3 and 4 feet tall and average between 60 to 80 pounds. Your size is Small.</p>
+            <p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 20 feet. You have a fly speed of 40 feet.</p>
+            <p class="indent"><strong><em>Eternal Light.</em></strong> You know the dancing lights cantrip.</p>
+            <p class="indent"><strong><em>Parent Race.</em></strong> Every angeling hails from a race of the living. This race defines several of your abilities. When you choose to play an angeling, choose an existing race as your parent race, the species from which you hail. You gain the following benefits from your parent race.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You learn the languages of your parent race. If your parent race allows you to learn an additional language, you are also granted a bonus language of your choice.</p>
+        </description>
+        <sheet display="false" />
+		<setters>
+			<set name="names" type="male"></set>
+			<set name="names" type="female"></set>
+			<set name="names" type="child">Ara, Bryn, Del, Eryn, Faen, Innil. Lael, Mella, Naill, Naeris, Phann, Rael, Rinn, Sai, Syllin, Thia, Vall</set>
+			<set name="names" type="family">Amakiir, Amastacia, Galanodel, Holimion, Ilphelkiir, Liadon, Meliamne, Nai'lo, Siannodel, Xiloscient</set>
+			<set name="names-format">{{name}} {{family}}</set>
+			<set name="height" modifier="2d10">2'8"</set>
+			<set name="weight" modifier="1d4">50 lb.</set>
+		</setters>
+        <rules>
+			<stat name="wisdom" value="1" requirements="!ID_UA_PSK_GRANTS_ELF_SUBRACE" />
+			<stat name="innate speed" value="20" bonus="base" />
+            <stat name="innate speed:fly" value="40" bonus="base" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+            <grant type="Racial Trait" id="ID_DV_SHAR_RACIAL_TRAIT_ETERNAL_LIGHT" />
+            <grant type="Racial Trait" id="ID_DV_SHAR_RACIAL_TRAIT_PARENT_RACE" />
+            <select type="Racial Trait" name="Ability Score Increase (Angeling)" supports="Angeling" />
+            <select type="Race Variant" name="Parent Race" supports="Angeling" />
+        </rules>
+    </element>
+        <element name="Eternal Light" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_ETERNAL_LIGHT">
+            <description>
+                <p>You know the <em>dancing lights</em> cantrip.</p>
+            </description>
+            <sheet>
+                <description>You know the dancing lights cantrip.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DANCING_LIGHTS" />
+            </rules>
+        </element>
+        <element name="Parent Race" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_PARENT_RACE">
+            <description>
+                <p>Every angeling hails from a race of the living. This race defines several of your abilities. When you choose to play an angeling, choose an existing race as your parent race, the species from which you hail. You gain the following benefits from your parent race.</p>
+                <p class="indent">You learn the languages of your parent race. If your parent race allows you to learn an additional language, you are also granted a bonus language of your choice.</p>
+                <p class="indent">If your parent race has darkvision, you do as well. You also suffer sunlight sensitivity if your parent race also suffers from sunlight sensitivity.</p>
+                <p class="indent">Any natural born traits of your parent race are bestowed to you, such as a dragonborn's breath weapon. Proficiencies in skills, tools, weapons, and or armor are not natural born traits and as such you do not acquire them. Speak with your DM about what traits of your parent race are deemed acceptable as natural born traits.</p>
+                <div class="sidebar">
+                    <h5 class="caption">Human Angelings</h5>
+                    <p>Humans as a parent race don't get any real bonuses by default. If you choose your angeling's parent race to be human, you can choose one additional language, and you start with a human or angeling racial feat of your choice.</p>
+                </div>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+        </element>
+  <!--Angeling Ability Score Increase-->
+    <element name="Ability Score Increase (Strength)" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_ANGELING_ASI_STRENGTH">
+        <compendium display="false" />
+        <supports>Angeling</supports>
+        <description>
+        <p>Your Strength score increases by 2.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+        <stat name="strength" value="2" alt="Angeling" />
+        </rules>
+    </element>
+    <element name="Ability Score Increase (Dexterity)" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_ANGELING_ASI_DEXTERITY">
+        <compendium display="false" />
+        <supports>Angeling</supports>
+        <description>
+        <p>Your Dexterity score increases by 2.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+        <stat name="dexterity" value="2" alt="Angeling" />
+        </rules>
+    </element>
+    <element name="Ability Score Increase (Constitution)" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_ANGELING_ASI_CONSTITUTION">
+        <compendium display="false" />
+        <supports>Angeling</supports>
+        <description>
+        <p>Your Constitution score increases by 2.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+        <stat name="constitution" value="2" alt="Angeling" />
+        </rules>
+    </element>
+    <element name="Ability Score Increase (Intelligence)" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_ANGELING_ASI_INTELLIGENCE">
+        <compendium display="false" />
+        <supports>Angeling</supports>
+        <description>
+        <p>Your Intelligence score increases by 2.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+        <stat name="intelligence" value="2" alt="Angeling" />
+        </rules>
+    </element>
+    <element name="Ability Score Increase (Wisdom)" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_ANGELING_ASI_WISDOM">
+        <compendium display="false" />
+        <supports>Angeling</supports>
+        <description>
+        <p>Your Wisdom score increases by 2.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+        <stat name="wisdom" value="2" alt="Angeling" />
+        </rules>
+    </element>
+    <element name="Ability Score Increase (Charisma)" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_ANGELING_ASI_CHARISMA">
+        <compendium display="false" />
+        <supports>Angeling</supports>
+        <description>
+        <p>Your Charisma score increases by 2.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+        <stat name="charisma" value="2" alt="Angeling" />
+        </rules>
+    </element>
+  <!-- Parent Races -->
+    <element name="Parent Race: Human" type="Race Variant" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_VARIANT_ANGELING_HUMAN">
+        <supports>Angeling</supports>
+        <description>
+            <p>You were originally a human child.</p>
+        </description>
+        <sheet alt="Human">
+            <description>You were originally a human child.</description>
+        </sheet>
+        <rules>
+            <select type="Feat" name="Feat (Angeling)" />
+            <select type="Language" name="Language (Human Parents)" supports="Standard||Exotic" />
+        </rules>
+    </element>
+    <element name="Parent Race: Half-Elf" type="Race Variant" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_VARIANT_ANGELING_HALFELF">
+        <supports>Angeling</supports>
+        <description>
+            <p>You were originally a half-elf child.</p>
+        </description>
+        <sheet alt="Half-Elf">
+            <description>You were originally a half-elf child.</description>
+        </sheet>
+        <rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_ELVISH" />
+			<select type="Language" name="Language (Half-Elf)" supports="Standard||Exotic" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_HALFELF_FEY_ANCESTRY" />
+        </rules>
+    </element>
+    <element name="Parent Race: Elf" type="Race Variant" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_VARIANT_ANGELING_ELF">
+        <supports>Angeling</supports>
+        <description>
+            <p>You were originally an elf child.</p>
+        </description>
+        <sheet alt="Elf">
+            <description>You were originally an elf child.</description>
+        </sheet>
+        <rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_UA20171113_SUB_RACE_GRUGACH" />
+			<grant type="Language" id="ID_LANGUAGE_ELVISH" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_KEEN_SENSES" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_FEY_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_TRANCE" />
+        </rules>
+    </element>
+    <element name="Parent Race: Dragonborn" type="Race Variant" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_VARIANT_ANGELING_DRAGONBORN">
+        <supports>Angeling</supports>
+        <description>
+            <p>You were originally a  child.</p>
+        </description>
+        <sheet alt="Dragonborn">
+            <description>You were originally a  child.</description>
+        </sheet>
+        <rules>
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_BREATH_WEAPON" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_DAMAGE_RESISTANCE" />
+        </rules>
+    </element>
+    <element name="Parent Race: Gnome" type="Race Variant" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_VARIANT_ANGELING_GNOME">
+        <supports>Angeling</supports>
+        <description>
+            <p>You were originally a gnome child.</p>
+        </description>
+        <sheet alt="Gnome">
+            <description>You were originally a gnome child.</description>
+        </sheet>
+        <rules>
+            <grant type="Vision" id="ID_VISION_DARKVISION" />
+            <grant type="Racial Trait" id="ID_RACIAL_TRAIT_GNOME_CUNNING" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_GNOMISH" />
+        </rules>
+    </element>
+    <element name="Parent Race: Halfling" type="Race Variant" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_VARIANT_ANGELING_HALFLING">
+        <supports>Angeling</supports>
+        <description>
+            <p>You were originally a halfling child.</p>
+        </description>
+        <sheet alt="Halfling">
+            <description>You were originally a halfling child.</description>
+        </sheet>
+        <rules>
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_HALFLING" />
+            <grant type="Racial Trait" id="ID_RACIAL_TRAIT_LUCKY" />
+            <grant type="Racial Trait" id="ID_RACIAL_TRAIT_BRAVE" />
+            <grant type="Racial Trait" id="ID_RACIAL_TRAIT_HALFLING_NIMBLENESS" />
+        </rules>
+    </element>
+    <element name="Parent Race: Half-Orc" type="Race Variant" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_VARIANT_ANGELING_HALFORC">
+        <supports>Angeling</supports>
+        <description>
+            <p>You were originally a half-orc child.</p>
+        </description>
+        <sheet alt="Half-Orc">
+            <description>You were originally a half-orc child.</description>
+        </sheet>
+        <rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_GRANTS_DRAGONMARK" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_MENACING" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK"/>
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_RELENTLESS_ENDURANCE" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK"/>
+        </rules>
+    </element>
+    <element name="Parent Race: Aer" type="Race Variant" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_VARIANT_ANGELING_AER">
+        <supports>Angeling</supports>
+        <description>
+            <p>You were originally an aer child.</p>
+        </description>
+        <sheet alt="Aer">
+            <description>You were originally an aer child.</description>
+        </sheet>
+        <rules>
+            <grant type="Racial Trait" id="ID_XM_GM_BINDER_RACIAL_TRAIT_AER_SHAPESHIFTER" />
+            <grant type="Racial Trait" id="ID_XM_GM_BINDER_RACIAL_TRAIT_AER_NATURAL_HUNTERS" />
+            <grant type="Racial Trait" id="ID_XM_GM_BINDER_RACIAL_TRAIT_AER_HOLLOW_BONES" />
+            <grant type="Racial Trait" id="ID_XM_GM_BINDER_RACIAL_TRAIT_AER_BIRD_SPEAK" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_MM_LANGUAGE_AURAN" />
+        </rules>
+    </element>
+    <element name="Parent Race: Greater Dragonborn" type="Race Variant" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_VARIANT_ANGELING_GREATER_DRAGONBORN">
+        <supports>Angeling</supports>
+        <description>
+            <p>You were originally a dragonborn child.</p>
+        </description>
+        <sheet alt="Greater Dragonborn">
+            <description>You were originally a dragonborn child.</description>
+        </sheet>
+        <rules>
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+            <grant type="Racial Trait" id="ID_RACIAL_TRAIT_BREATH_WEAPON" />
+            <stat name="ac:natural armor:base" value="13" />
+            <stat name="ac:natural armor:dexterity" value="dexterity:modifier" />
+            <stat name="ac:natural armor" value="ac:natural armor:base" />
+            <stat name="ac:natural armor" value="ac:natural armor:dexterity" />
+            <stat name="ac:calculation" value="ac:natural armor" bonus="calculation" equipped="[armor:none]" alt="Natural Armor" />
+            <select type="Racial Trait" name="Draconic Heritage (Color)" supports="Greater Draconic Ancestry" />
+        </rules>
+    </element>
+    <element name="Parent Race: Koradi" type="Race Variant" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_VARIANT_ANGELING_KORADI">
+        <supports>Angeling</supports>
+        <description>
+            <p>You were originally a koradi child.</p>
+        </description>
+        <sheet alt="Koradi">
+            <description>You were originally a koradi child.</description>
+        </sheet>
+        <rules>
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <select type="Language" name="Language (Koradi)" supports="Starting" />
+            <grant type="Racial Trait" id="ID_RACIAL_TRAIT_NATURAL_CAMOUFLAGE" />
+            <grant type="Racial Trait" id="ID_RACIAL_TRAIT_VERDANT_BEING" requirements="!ID_RACE_VARIANT_KORADI_VARIANT" />
+        </rules>
+    </element>
+
+
+  <!-- Lupines -->
+    <element name="Lupine" type="Race" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_LUPINE">
+        <description>
+            <p>Lupines are bipedal canine humanoids that sport long faces, pointed ears, and are covered in fur. While they share the same features, lupines vary just as much as any other race sporting looks similar to wolves, foxes, hyenas and a host of similar canines. Lupines average roughly five and a half feet tall, with anything over six feet or under four feet being considered an outlier. They have five fingered hand and toes and generally the same body shape as a human in good physical condition. Eye color can range from any color on the spectrum with enough randomness that no one color is considered more common than another.</p>
+            <p class="indent">Lupines are very community driven and as such, loners are a rarity, even among the homeless. Most businesses are run by groups of close knit friends and family because of this, creating welcoming environments for shoppers. Lupines interact with other races with cautious optimism, trying their best to make friends rather than enemies. However when confronted with hostility, the same instinct that forms loving communities can a make for a deadly encounter when a whole group wishes to protect one of their own.</p>
+            <h4>Lupine Traits</h4>
+            <p>Your lupine character has the following characteristics.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength score increase by 2, and your Dexterity score increases by 1.</p>
+            <p class="indent"><strong><em>Variant Ability Score Increase.</em></strong> Your Charisma score increase by 2, and your Wisdom score increases by 1.</p>
+            <p class="indent"><strong><em>Age.</em></strong> Lupines generally live 80 years, reaching full maturity after about 15 years.</p>
+            <p class="indent"><strong><em>Alignment.</em></strong> Most Lupines tend towards lawful alignments, forming groups of like-minded individuals, however loners tend towards more chaotic alignments.</p>
+            <p class="indent"><strong><em>Size.</em></strong> Lupines average between 5 and 6 feet tall and about 200 pounds. Your size is medium.</p>
+            <p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+            <p class="indent"><strong><em>Keen Senses.</em></strong> You have proficiency in the Perception skill.</p>
+            <p class="indent"><strong><em>Pack Tactics.</em></strong> You have advantage on an attack rolls against a creature if at least one of your allies is within 5 feet of the creature and the ally isn't incapacitated.</p>
+            <p class="indent"><strong><em>Bonus Feat.</em></strong> You gain one feat of your choice with the Lupine prerequisite.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common and one other language of your choice.</p>
+        </description>
+        <setters>
+            <set name="names" type="male"></set>
+            <set name="names" type="female"></set>
+            <set name="names-format">{{name}}</set>
+			<set name="height" modifier="2d10">2'8"</set>
+			<set name="weight" modifier="1d4">50 lb.</set>
+        </setters>
+        <sheet display="false" />
+        <rules>
+            <stat name="strength" value="2" requirements="!ID_DV_SHAR_RACE_VARIANT_LUPINE_VARIANT" />
+            <stat name="dexterity" value="1" requirements="!ID_DV_SHAR_RACE_VARIANT_LUPINE_VARIANT" />
+            <select type="Race Variant" name="Lupine Variant" option="true" supports="Lupine" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+            <grant type="Racial Trait" id="ID_DV_SHAR_RACIAL_TRAIT_LUPINE_PACK_TACTICS" />
+            <select type="Feat" name="Bonus Feat (Lupine)" supports="Lupine" />
+        </rules>
+    </element>
+    <element name="Lupine Variant" type="Race Variant" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_VARIANT_LUPINE_VARIANT">
+        <supports>Lupine</supports>
+        <requirements>ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
+        <description>
+            <p>
+                <span class="feature">Ability Score Increase.</span>Your Charisma score increase by 2, and your Wisdom score increases by 1.<br />
+            </p>
+        </description>
+        <sheet alt="Lupine" display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="charisma" value="2" />
+            <stat name="wisdom" value="1" />
+        </rules>
+    </element>
+        <element name="Pack Tactics" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_LUPINE_PACK_TACTICS">
+            <description>
+                <p>You have advantage on an attack rolls against a creature if at least one of your allies is within 5 feet of the creature and the ally isn't incapacitated.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on an attack rolls against a creature if at least one of your allies is within 5 feet of the creature and the ally isn't incapacitated.</description>
+            </sheet>
+        </element>
+
+    <!-- Pixie -->
+    <element name="Pixie" type="Race" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACE_PIXIE">
+        <description>
+            <p>Standing barely a foot tall, pixies resemble diminutive elves with gossamer wings like those of dragonflies or butterflies, bright as the clear dawn and as luminous as the full moonrise. Curious as cats and shy as deer, pixies go where they please. They like to spy on other creatures and can barely contain their excitement around them.</p>
+            <p class="indent">The urge to introduce themselves and strike up a friendship is almost overwhelming; only a pixie's fear of being captured or attacked stays its hand. Those who wander through a pixie's glade might never see the creatures, yet hear the occasional giggle, gasp, or sigh.</p>
+            <h4>Pixie Traits</h4>
+            <p>Your pixie character has the following traits.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Charisma score increases by 2, and your Dexterity score increases by 1.</p>
+            <p class="indent"><strong><em>Age.</em></strong> Pixies do not age after reaching maturity, their immortality only being cut short through fatal wounds and disease.</p>
+            <p class="indent"><strong><em>Alignment.</em></strong> Pixies are generally good natured, if a bit mischievous. Most tend towards good alignments.</p>
+            <p class="indent"><strong><em>Size.</em></strong> Pixies only stand a few inches tall and weigh between one to three pounds. Your size is Tiny.</p>
+            <p class="indent"><strong><em>Speed.</em></strong> You're walking speed is 10 feet. Your pixie wings grant you a fly speed of 25 feet.</p>
+            <p class="indent"><strong><em>Fey.</em></strong> Pixies are creatures of magic, and are native to the feywild. You are treated as a fey for all spells or effects that affect fey creatures.</p>
+            <p class="indent"><strong><em>Miniaturization.</em></strong> As a bonus action, you can touch an object of Medium or Small size and make it Tiny. The item cannot be inside a container, it cannot contain any other objects, and you can't shrink objects being held, worn, or carried by other creatures.</p>
+            <p class="indent">While shrunk, gear and weapons can be used normally by you. You can use a bonus action to return the item to normal size.</p>
+            <p class="indent"><strong><em>Tiny Adversary.</em></strong> Due to your size, you have disadvantage on strength checks made to force open or break objects. Additionally, you follow the same rules as a small creatures when wielding weapons.</p>
+            <p class="indent"><strong><em>Innate Spellcasting.</em></strong> You know the druidcraft and dancing lights cantrips. When you reach 3rd level, you can cast invisibility targeting yourself once per day. Charisma is your spellcasting ability for these spells.</p>
+            <p class="indent"><strong><em>Magic Resistance.</em></strong> You have advantage on saving throws against spells and other magical effects that you are aware of.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write, Common and Sylvan.</p>
+        </description>
+        <setters>
+            <set name="names" type="male"></set>
+            <set name="names" type="female"></set>
+            <set name="names-format">{{name}}</set>
+			<set name="height" modifier="1d6">8"</set>
+			<set name="weight" modifier="1d4">10 lb.</set>
+        </setters>
+        <sheet display="false" />
+        <rules>
+            <stat name="charisma" value="2" />
+            <stat name="dexterity" value="1" />
+            <grant type="Size" id="ID_SIZE_TINY" />
+            <stat name="innate speed" value="10" bonus="base" />
+            <stat name="innate speed:fly" value="25" bonus="base" />
+            <grant type="Racial Trait" id="ID_DV_SHAR_RACIAL_TRAIT_PIXIE_FEY" />
+            <grant type="Racial Trait" id="ID_DV_SHAR_RACIAL_TRAIT_PIXIE_MINIATURIZATION" />
+            <grant type="Racial Trait" id="ID_DV_SHAR_RACIAL_TRAIT_PIXIE_TINY_ADVERSARY" />
+            <grant type="Racial Trait" id="ID_DV_SHAR_RACIAL_TRAIT_PIXIE_INNATE_SPELLCASTING" />
+            <grant type="Racial Trait" id="ID_DV_SHAR_RACIAL_TRAIT_PIXIE_MAGIC_RESISTANCE" />
+        </rules>
+    </element>
+        <element name="Fey" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_PIXIE_FEY">
+            <description>
+                <p>Pixies are creatures of magic, and are native to the feywild. You are treated as a fey for all spells or effects that affect fey creatures.</p>
+            </description>
+            <sheet>
+                <description>You are treated as a fey for all spells or effects that affect fey creatures.</description>
+            </sheet>
+        </element>
+        <element name="Miniaturization" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_PIXIE_MINIATURIZATION">
+            <description>
+                <p>As a bonus action, you can touch an object of Medium or Small size and make it Tiny. The item cannot be inside a container, it cannot contain any other objects, and you can't shrink objects being held, worn, or carried by other creatures.</p>
+                <p class="indent">While shrunk, gear and weapons can be used normally by you. You can use a bonus action to return the item to normal size.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can touch an object of Medium or Small size and make it Tiny. The item cannot be inside a container, it cannot contain any other objects, and you can't shrink objects being held, worn, or carried by other creatures. While shrunk, gear and weapons can be used normally by you. You can use a bonus action to return the item to normal size.</description>
+            </sheet>
+        </element>
+        <element name="Tiny Adversary" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_PIXIE_TINY_ADVERSARY">
+            <description>
+                <p>Due to your size, you have disadvantage on strength checks made to force open or break objects. Additionally, you follow the same rules as a small creatures when wielding weapons.</p>
+            </description>
+            <sheet>
+                <description>You have disadvantage on strength checks made to force open or break objects. Additionally, you follow the same rules as a small creatures when wielding weapons.</description>
+            </sheet>
+        </element>
+        <element name="Innate Spellcasting" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_PIXIE_INNATE_SPELLCASTING">
+            <description>
+                <p>You know the <em>druidcraft</em> and <em>dancing lights</em> cantrips. When you reach 3rd level, you can cast invisibility targeting yourself once per day. Charisma is your spellcasting ability for these spells.</p>
+            </description>
+            <sheet display="false">
+                <description>You know the druidcraft and dancing lights cantrips.</description>
+                <description level="3">You know the druidcraft and dancing lights cantrips. When you reach 3rd level, you can cast invisibility targeting yourself once per day. Charisma is your spellcasting ability for these spells.</description>
+            </sheet>
+            <spellcasting name="Pixie" ability="Charisma" prepare="false">
+                <list>Pixie</list>
+            </spellcasting>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DRUIDCRAFT" spellcasting="Pixie" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_DANCING_LIGHTS" spellcasting="Pixie" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_INVISIBILITY" spellcasting="Pixie" known="true" level="3" />
+            </rules>
+        </element>
+        <element name="Magic Resistance" type="Racial Trait" source="Shadowheart Apocrypha Races" id="ID_DV_SHAR_RACIAL_TRAIT_PIXIE_MAGIC_RESISTANCE">
+            <description>
+                <p>You have advantage on saving throws against spells and other magical effects that you are aware of.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on saving throws against spells and other magical effects that you are aware of.</description>
+            </sheet>
+        </element>
+
+</elements>
