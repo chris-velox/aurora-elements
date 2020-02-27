@@ -2,13 +2,14 @@
 <elements>
     <info>
         <name>Pact Boons Expanded</name>
-        <author url="https://drive.google.com/open?id=1UqaZmCF7l7qn8rZKRevw69o2HAhgCDvt">u/FrostBladeStorm</author>
-        <update version="0.0.6">
+        <author>Chris Ecks</author>
+        <update version="0.0.7">
             <file name="warlock-pact-boons-expanded.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-pact-boons-expanded.xml" />
         </update>
     </info>
 
-    <element name="Expanded Pact Boons" type="Option" source="Pact Boons Expanded" id="ID_RDDT_PACT_BOONS_EXPANDED">
+  <!--
+    <element name="Expanded Pact Boons" type="Option" source="Pact Boons Expanded" id="">
         <description>
             <p>Enable expanded pact boons for the Warlock class.</p>
         </description>
@@ -16,7 +17,8 @@
             <description></description>
         </sheet>
     </element>
-
+  -->
+  
     <element name="Pact Boons Expanded" type="Source" source="Core" id="ID_FROSTBLADESTORM_RDDT_UA_SOURCE_PACT_BOONS_EXPANDED">
         <description>
             <![CDATA[<p></p>]]>
@@ -25,7 +27,7 @@
             <set name="abbreviation">PBE</set>
             <set name="url">https://drive.google.com/open?id=1UqaZmCF7l7qn8rZKRevw69o2HAhgCDvt</set>
             <set name="image"></set>
-            <set name="author" abbreviation="uFBS" url="https://www.reddit.com/user/frostbladestorm">u/FrostBladeStorm</set>
+            <set name="author" abbreviation="FBS" url="https://www.reddit.com/user/frostbladestorm">u/FrostBladeStorm</set>
             <set name="official">false</set>
             <set name="supplement">false</set>
             <set name="playtest">false</set>
@@ -36,9 +38,9 @@
         </setters>
     </element>
 
-    <element name="Pact of the Alchemist" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST">
+    <element name="Pact of the Alchemist" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST">
         <supports>Pact Boon</supports>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <requirements></requirements>
         <description>
             <p>Your patron lends you a modified potion brewing kit that combines the alchemist tools with the herbalism kit. The kit is covered in runic scripture and runes. You gain proficiency in Herbalism kits and Alchemist’s tools, and double your proficiency bonus with any checks you make using these. The kit is treated as one or the other, and you decide which when choosing this Pact Boon.</p>
             <p class="indent">The kit lets you add your proficiency bonus to any ability checks you make to identify or apply herbs. Any creation of potions take half as long compared to a regular herbalism kit. You can create any potion using this kit. If you have never made a specific potion before, you can attempt to create it, but you only add your proficiency bonus once to the creation process. If you succeed, you add your proficiency bonus twice to any future rolls made to create that potion.</p>
@@ -61,9 +63,9 @@
         </rules>
     </element>
     
-    <element name="Pact of the Bloodline" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_BLOODLINE">
+    <element name="Pact of the Bloodline" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_BLOODLINE">
         <supports>Pact Boon</supports>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <requirements></requirements>
         <description>
             <p>Your patron has gifted you a taste of perfection, blessing your blood with purity. You can control the flow of your blood, allowing you to strike back when you are wounded. When you take damage from a melee attack, you can use your reaction to deal your Charisma modifier (minimum 1) acid damage to the target that hit you.</p>
             <p class="indent">In addition, You gain resistance to poison damage and you are immune to disease.</p>
@@ -74,7 +76,7 @@
         <rules>
             <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
             <stat name="pact-of-the-blood:damage" value="1" bonus="base" />
-            <stat name="pact-of-the-blood:damage" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_BLOODLINE" />
+            <stat name="pact-of-the-blood:damage" value="charisma:modifier" bonus="base" requirements="!ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_BLOODLINE" />
             <select type="List" name="Quirk (Pact of the Bloodline)">
                 <item id="1">You are fascinated by blood.</item>
                 <item id="2">Your blood pulses with the colour of your patron.</item>
@@ -86,9 +88,9 @@
         </rules>
     </element>
     
-    <element name="Pact of the Crown" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_CROWN">
+    <element name="Pact of the Crown" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_CROWN">
         <supports>Pact Boon</supports>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <requirements></requirements>
         <description>
             <p>Your patron gives you a crown with elegant styling. When worn, the crown empowers your voice, giving you commanding strength over those near you. At the end of a long rest, you can choose Deception, Intimidation, Performance or Persuasion. You gain proficiency in that skill until your next long rest. If you already are proficient in the chosen skill, you double your proficiency bonus with the skill.</p>
             <p class="indent">As a reaction taken when a creature makes an ability check or attack roll, you can cause the creature to have disadvantage on the roll. This feature can only be used half your Charisma modifier (rounded up, minimum 1) times.</p>
@@ -106,10 +108,10 @@
             <stat name="pact of the crown:int" value="2" bonus="base" requirements="[intelligence:modifier:3]" />
             <stat name="pact of the crown:int" value="3" bonus="base" requirements="[intelligence:modifier:5]" />
             <stat name="pact of the crown:int" value="4" bonus="base" requirements="[intelligence:modifier:7]" />
-            <stat name="pact of the crown:usage" value="pact of the crown:cha" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
-            <stat name="pact of the crown:usage" value="pact of the crown:int" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
-            <stat name="pact of the crown:usage" value="charisma:modifier" bonus="base" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_GLORY_TO_THE_RULER,!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
-            <stat name="pact of the crown:usage" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_GLORY_TO_THE_RULER,ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
+            <stat name="pact of the crown:usage" value="pact of the crown:cha" bonus="base" requirements="!ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
+            <stat name="pact of the crown:usage" value="pact of the crown:int" bonus="base" requirements="ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
+            <stat name="pact of the crown:usage" value="charisma:modifier" bonus="base" requirements="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_GLORY_TO_THE_RULER,!ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
+            <stat name="pact of the crown:usage" value="intelligence:modifier" bonus="base" requirements="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_GLORY_TO_THE_RULER,ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_CROWN" />
             <select type="List" name="Quirk (Pact of the Crown)">
                 <item id="1">You are agitated when you are not wearing your crown.</item>
                 <item id="2">Your crown sparkles in the moonlight, but is extremely dull in the sunlight.</item>
@@ -121,9 +123,9 @@
         </rules>
     </element>
     
-    <element name="Pact of the Eye" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_EYE">
+    <element name="Pact of the Eye" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_EYE">
         <supports>Pact Boon</supports>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <requirements></requirements>
         <description>
             <p>Your patron has blessed one of your eyes with magical energy. The eye changes colour to match your patron, and may have a particular change in iris. The changes are recognisable to those talking to you, but they may not know why. You gain proficiency with Wisdom (Perception) checks that rely on sight, and you double your proficiency bonus with this skill. You can see up to 1 mile away with no difficulty, able to discern even fine details as though looking at something no more than 100 feet away from you. Dim light doesn’t impose disadvantage on your Wisdom (Perception) checks. In addition, you become more attentive to your surroundings. You add your +5 to your Passive Wisdom (Perception).</p>
         </description>
@@ -143,9 +145,9 @@
         </rules>
     </element>
     
-    <element name="Pact of the Mask" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_MASK">
+    <element name="Pact of the Mask" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_MASK">
         <supports>Pact Boon</supports>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <requirements></requirements>
         <description>
             <p>Your patron lends you an illusory mask. The mask can be donned or doffed as a bonus action. When you wear this mask, you gain proficiency in Charisma (Deception) and Charisma (Persuasion). If you already have proficiency in these skills, you double your proficiency bonus with them.</p>
             <p class="indent">While wearing this mask, your real identity is disguised from others. You have two additional fictional identities stored in the mask. These identities must be of the same body type as you. They have names, documentation to support them, and most importantly, a different face. Instead of appearing as your pact mask, your mask can create an illusion to trick people into believing they see the face of one of these identities when they look at the mask.</p>
@@ -160,8 +162,8 @@
             <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
             <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
             <stat name="pact of the mask:disguise minimum" value="8" />
-            <stat name="pact of the mask:disguise minimum" value="charisma:modifier" requirements="!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_MASK" />
-            <stat name="pact of the mask:disguise minimum" value="intelligence:modifier" requirements="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_MASK" />
+            <stat name="pact of the mask:disguise minimum" value="charisma:modifier" requirements="!ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_MASK" />
+            <stat name="pact of the mask:disguise minimum" value="intelligence:modifier" requirements="ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_MASK" />
             <stat name="pact of the mask:dc" value="spellcasting:dc" />
             <select type="List" name="Quirk (Pact of the Mask)">
                 <item id="1">Your mask is featureless and a solid colour.</item>
@@ -174,9 +176,9 @@
         </rules>
     </element>
     
-    <element name="Pact of the Orb" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ORB">
+    <element name="Pact of the Orb" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_ORB">
         <supports>Pact Boon</supports>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <requirements></requirements>
         <description>
             <p>Your patron gives you a crystal ball enchanted with magical energy. The orb acts as a spellcasting focus for your Warlock spells. It floats no more than 5 feet from you, and you can control its location as a free action on your turns. It cannot move more than 5 feet away from you or else it becomes a mundane object until it is returned within 5 feet of you.</p>
             <p class="indent">The orb has a number of charges equal to your Charisma modifier. As a bonus action on your turns, you can expend any number of charges from the Orb to add a value to a single spell attack equal to the charges spent. In addition, you can expend any number of charges from the Orb to increase a single spell save DC on a spell you cast by half the number of charges expended (rounded down).</p>
@@ -189,10 +191,10 @@
         </sheet>
         <rules>
             <stat name="pact of the orb:charges" value="1" bonus="base"/>
-            <stat name="pact of the orb:charges" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB"/>
-            <stat name="pact of the orb:charges" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB"/>
-            <stat name="pact of the orb:charges" value="charisma:modifier" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_ORB,!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB" />
-            <stat name="pact of the orb:charges" value="intelligence:modifier" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_ORB,ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB" />
+            <stat name="pact of the orb:charges" value="charisma:modifier" bonus="base" requirements="!ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB"/>
+            <stat name="pact of the orb:charges" value="intelligence:modifier" bonus="base" requirements="ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB"/>
+            <stat name="pact of the orb:charges" value="charisma:modifier" requirements="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_ORB,!ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB" />
+            <stat name="pact of the orb:charges" value="intelligence:modifier" requirements="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_ORB,ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_ORB" />
             <select type="List" name="Quirk (Pact of the Orb)">
                 <item id="1">Your orb is most animated while you have spell slots, gradually lowering in motion as you expend them.</item>
                 <item id="2">The orb has an environment inside it, resembling your mood. Storms when angry.</item>
@@ -204,9 +206,9 @@
         </rules>
     </element>
     
-    <element name="Pact of the Quill" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_QUILL">
+    <element name="Pact of the Quill" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_QUILL">
         <supports>Pact Boon</supports>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <requirements></requirements>
         <description>
             <p>A rare gift, your patron gifts you a quill with a unique and recognisable design. The quill can be used as a writing implement, and the quality of your handwriting with it is always flawless. You can channel your energy through your quill as you write on a surface, infusing the spell in your ink to be cast at a later time. Choose a spell of or lower than a level that you can cast, with a casting time of one action. You cast that spell as part of this feature, expending a Warlock Spell Slot, any material components along with it, and fine ink worth 25 times the spell level in gp, but the spell doesn’t come into effect. Instead, it takes effect when you activate the ink, requiring an action to do so. If the spell infused into the ink is a concentration spell, you must concentrate on it when you activate it.</p>
             <p class="indent">The spell takes effect when you activate it in this manner. If the ink has not been activated, but the ink is tampered with or the surface it is on is destroyed, the effect ends. The ink remains for 1 week, after which it becomes non-magical ink and an unused spell stored this way is lost. You can have a maximum number of infused spells equal to half your Proficiency bonus. If you try and use this feature again but the maximum amount is in use, the oldest infused ink becomes non-magical.</p>
@@ -228,9 +230,9 @@
         </rules>
     </element>
     
-    <element name="Pact of the Watch" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WATCH">
+    <element name="Pact of the Watch" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WATCH">
         <supports>Pact Boon</supports>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <requirements></requirements>
         <description>
             <p>Your patron has given you an artifact which has limited power over time. When you gain this feature, you gain a pool of d6’s equal to your Charisma modifier. When you fail an ability check, attack roll or saving throw, you can expend one of these d6’s to add the result to the roll, possibly turning the result into a success. Only one d6 can be used at a time and this feature can only be used once per round. You must have the watch in your possession to use this feature.</p>
             <p class="indent">You regain all expended uses of these dice on a long rest.</p>
@@ -241,10 +243,10 @@
         </sheet>
         <rules>
             <stat name="pact of the watch:die pool" value="1" bonus="base" />
-            <stat name="pact of the watch:die pool" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_WATCH" />
-            <stat name="pact of the watch:die pool" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_OW_PACT_OF_THE_WATCH" />
+            <stat name="pact of the watch:die pool" value="charisma:modifier" bonus="base" requirements="!ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_WATCH" />
+            <stat name="pact of the watch:die pool" value="intelligence:modifier" bonus="base" requirements="ID_FBS_PBE_PBE_CLASS_FEATURE_OW_PACT_OF_THE_WATCH" />
             <stat name="pact of the watch:die type" value="6" bonus="pact of the watch" />
-            <stat name="pact of the watch:die type" value="8" bonus="pact of the watch" level="9" requirements="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EMPOWERED_WATCH" />
+            <stat name="pact of the watch:die type" value="8" bonus="pact of the watch" level="9" requirements="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_EMPOWERED_WATCH" />
             <select type="List" name="Quirk (Pact of the Watch)">
                 <item id="1">Time feels like it goes slower for you whilst you are holding your watch.</item>
                 <item id="2">Your watch ticks like a metronome in your ear whilst you hold your watch. This is comforting to you.</item>
@@ -256,9 +258,9 @@
         </rules>
     </element>
     
-    <element name="Pact of the Wing" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WING">
+    <element name="Pact of the Wing" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WING">
         <supports>Pact Boon</supports>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED</requirements>
+        <requirements></requirements>
         <description>
             <p>You have been blessed with the gift of flight from your patron. You have the ability to manifest a pair of incorporeal wings as an action, giving you a flying speed equal to your walking speed. These wings last until you dismiss them as a free action. You can fly only in short bursts; you fall if you end your turn in the air and nothing else is holding you aloft. To use this speed, you can’t be wearing medium or heavy armour.</p>
             <p class="indent">All wings you create through this feature do not damage the armour you wear. If they are incorporeal, they do not interact with other forms of matter and only allow you to touch them. You choose the appearance they have when you gain this feature.</p>
@@ -280,10 +282,10 @@
     
     <!-- expanded Eldritch Invocations -->
     
-    <element name="All-Seeing Eye" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ALLSEEING_EYE">
+    <element name="All-Seeing Eye" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_ALLSEEING_EYE">
         <supports>Eldritch Invocation</supports>
         <prerequisite>15th level, Pact of the Eye feature</prerequisite>
-        <requirements>[level:15],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_EYE</requirements>
+        <requirements>[level:15],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_EYE</requirements>
         <description>
             <p class="flavor">Prerequisite: 15th level, Pact of the Eye feature</p>
             <p>As an action, you can activate your eye and see more than most. While this invocation is active, you can see the exact location of any creature within 300 feet of you, even if they are behind cover or invisible. You can see through up to 10 feet of stone or wood, and 2 feet of metal. Creatures hidden by divination magic or have more than these limits are not revealed to you. You gain these benefits for 1 minute. Once you use this invocation, you cannot do so until you finish a long rest.</p>
@@ -294,10 +296,10 @@
         <rules />
     </element>
 
-    <element name="Annihilation" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ANNIHILATION">
+    <element name="Annihilation" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_ANNIHILATION">
         <supports>Eldritch Invocation</supports>
         <prerequisite>12th level, Pact of the Orb feature</prerequisite>
-        <requirements>[level:12],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ORB</requirements>
+        <requirements>[level:12],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_ORB</requirements>
         <description>
             <p class="flavor">Prerequisite: 12th level, Pact of the Orb feature</p>
             <p>When you roll for damage on a spell that you cast, you can choose to have that spell deal maximum damage. Once you use this invocation, you cannot do so again until you finish a long rest.</p>
@@ -308,10 +310,10 @@
         <rules />
     </element>
 
-    <element name="Arcane Ray" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ARCANE_RAY">
+    <element name="Arcane Ray" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_ARCANE_RAY">
         <supports>Eldritch Invocation</supports>
         <prerequisite>5th level, Pact of the Orb feature</prerequisite>
-        <requirements>[level:5],ID_RDDT_PACT_BOONS_EXPANDED,,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ORB</requirements>
+        <requirements>[level:5],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_ORB</requirements>
         <description>
             <p class="flavor">Prerequisite: 5th level, Pact of the Orb feature</p>
             <p>When you take the cast a spell action on your turn, you can expend 3 charges to cast a cantrip with a casting time of one action as a bonus action.</p>
@@ -322,10 +324,10 @@
         <rules />
     </element>
 
-    <element name="Avian" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_AVIAN">
+    <element name="Avian" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_AVIAN">
         <supports>Eldritch Invocation</supports>
         <prerequisite>5th level, Pact of the Wing feature</prerequisite>
-        <requirements>[level:5],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WING</requirements>
+        <requirements>[level:5],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WING</requirements>
         <description>
             <p class="flavor">Prerequisite: 5th level, Pact of the Wing feature</p>
             <p>Your wings become strong enough to support your weight for extended periods of time. You no longer fall if you finish your turn airborne.</p>
@@ -336,10 +338,10 @@
         <rules />
     </element>
 
-    <element name="Blood Barrier" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_BLOOD_BARRIER">
+    <element name="Blood Barrier" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_BLOOD_BARRIER">
         <supports>Eldritch Invocation</supports>
         <prerequisite>12th level, Pact of the Bloodline feature</prerequisite>
-        <requirements>[level:12],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_BLOODLINE</requirements>
+        <requirements>[level:12],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_BLOODLINE</requirements>
         <description>
             <p class="flavor">Prerequisite: 12th level, Pact of the Bloodline feature</p>
             <p>When you use your Pact of the Bloodline feature and successfully damage another creature, you gain temporary hit points equal to your Charisma modifier (minimum 1).</p>
@@ -349,15 +351,15 @@
         </sheet>
         <rules>
             <stat name="blood-barrier:temp-hp" value="1" bonus="base" />
-            <stat name="blood-barrier:temp-hp" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
-            <stat name="blood-barrier:temp-hp" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
+            <stat name="blood-barrier:temp-hp" value="charisma:modifier" bonus="base" requirements="!ID_FBS_PBE_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
+            <stat name="blood-barrier:temp-hp" value="intelligence:modifier" bonus="base" requirements="ID_FBS_PBE_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
         </rules>
     </element>
 
-    <element name="Contingency Plan" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_CONTINGENCY_PLAN">
+    <element name="Contingency Plan" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_CONTINGENCY_PLAN">
         <supports>Eldritch Invocation</supports>
         <prerequisite>12th level, Pact of the Quill feature</prerequisite>
-        <requirements>[level:12],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_QUILL</requirements>
+        <requirements>[level:12],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_QUILL</requirements>
         <description>
             <p class="flavor">Prerequisite: 12th level, Pact of the Quill feature</p>
             <p>When you use your Pact of the Quill feature, you can expend additional magical ink worth 10 times the spell level to specify a different activation condition. You describe the activation condition when you cast the spell and use the feature. The spell takes effect immediately after the circumstance is met for the first time, whether or not you want it to.</p>
@@ -368,10 +370,10 @@
         <rules />
     </element>
 
-    <element name="Counterfeit" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_COUNTERFEIT">
+    <element name="Counterfeit" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_COUNTERFEIT">
         <supports>Eldritch Invocation</supports>
         <prerequisite>5th level, Pact of the Quill feature</prerequisite>
-        <requirements>[level:5],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_QUILL</requirements>
+        <requirements>[level:5],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_QUILL</requirements>
         <description>
             <p class="flavor">Prerequisite: 5th level, Pact of the Quill feature</p>
             <p>Your quill acts as as a Forgery Kit with unlimited uses. In addition, you gain proficiency in Forgery Kits, and you double your proficiency bonus with checks made with them.</p>
@@ -384,10 +386,10 @@
         </rules>
     </element>
 
-    <element name="Crown of Heroes" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_CROWN_OF_HEROES">
+    <element name="Crown of Heroes" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_CROWN_OF_HEROES">
         <supports>Eldritch Invocation</supports>
         <prerequisite>5th level, Pact of the Crown feature</prerequisite>
-        <requirements>[level:5],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_CROWN</requirements>
+        <requirements>[level:5],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_CROWN</requirements>
         <description>
             <p class="flavor">Prerequisite: 5th level, Pact of the Crown feature</p>
             <p>Your presence makes those quake around you. You can expend two uses of your Pact of the Crown feature to force an enemy to have disadvantage on a saving throw.</p>
@@ -398,10 +400,10 @@
         <rules />
     </element>
 
-    <element name="Death from Above" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_DEATH_FROM_ABOVE">
+    <element name="Death from Above" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_DEATH_FROM_ABOVE">
         <supports>Eldritch Invocation</supports>
         <prerequisite>15th level, Pact of the Wing feature</prerequisite>
-        <requirements>[level:15],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WING</requirements>
+        <requirements>[level:15],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WING</requirements>
         <description>
             <p class="flavor">Prerequisite: 15th level, Pact of the Wing feature</p>
             <p>You have mastered flight and can strike down targets with even greater precision. While you are at least 30 feet higher than your target, you can add your Dexterity modifier to all ranged spell attacks you make, and your Charisma modifier to all ranged attacks you make. In addition, you ignore half and three quarters cover while you are at least 30 feet higher than your target.</p>
@@ -412,10 +414,10 @@
         <rules />
     </element>
 
-    <element name="Empowered Watch" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EMPOWERED_WATCH">
+    <element name="Empowered Watch" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_EMPOWERED_WATCH">
         <supports>Eldritch Invocation</supports>
         <prerequisite>9th level, Pact of the Watch feature</prerequisite>
-        <requirements>[level:9],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WATCH</requirements>
+        <requirements>[level:9],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WATCH</requirements>
         <description>
             <p class="flavor">Prerequisite: 9th level, Pact of the Watch feature</p>
             <p>Your watch becomes more disconnected from reality, allowing you to manipulate time easier. The pool of d6’s become a pool of d8’s.</p>
@@ -426,10 +428,10 @@
         <rules />
     </element>
 
-    <element name="Energy Shield" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ENERGY_SHIELD">
+    <element name="Energy Shield" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_ENERGY_SHIELD">
         <supports>Eldritch Invocation</supports>
         <prerequisite>15th level, Pact of the Orb feature</prerequisite>
-        <requirements>[level:15],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ORB</requirements>
+        <requirements>[level:15],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_ORB</requirements>
         <description>
             <p class="flavor">Prerequisite: 15th level, Pact of the Orb feature</p>
             <p>Your Pact Orb acts as an energy well, absorbing energy from spells targeting you. You have advantage on saving throws against spells and other magical effects.</p>
@@ -440,10 +442,10 @@
         <rules />
     </element>
 
-    <element name="Enhanced Mask" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ENHANCED_MASK">
+    <element name="Enhanced Mask" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_ENHANCED_MASK">
         <supports>Eldritch Invocation</supports>
         <prerequisite>5th level, Pact of the Mask feature</prerequisite>
-        <requirements>[level:5],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_MASK</requirements>
+        <requirements>[level:5],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_MASK</requirements>
         <description>
             <p class="flavor">Prerequisite: 5th level, Pact of the Mask feature</p>
             <p>Your mask never truly leaves your face. Instead of donning or doffing the mask, it can become completely transparent or opaque as a free action, allowing you to maintain proficiency with Charisma (Deception) and Charisma (Persuasion) while your true face is shown. Creatures with truesight see the mask.</p>
@@ -453,21 +455,21 @@
             <description>You can make your mask transparent, allowing you to maintain proficiency with Charisma (Deception) and Charisma (Persuasion) while your true face is shown. Creatures with truesight see the mask.</description>
         </sheet>
         <rules>
-            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:2],!ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
-            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:4],!ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
-            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:6],!ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
-            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:8],!ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
-            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:2],ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
-            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:4],ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
-            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:6],ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
-            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:8],ID_RDDT_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:2],!ID_FBS_PBE_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:4],!ID_FBS_PBE_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:6],!ID_FBS_PBE_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[intelligence:modifier:8],!ID_FBS_PBE_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:2],ID_FBS_PBE_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:4],ID_FBS_PBE_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:6],ID_FBS_PBE_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
+            <stat name="pact of the mask:dc" value="1" requirements="[charisma:modifier:8],ID_FBS_PBE_PBE_CLASS_FEATURE_POTMASK_ENHANCING_THE_MASK" />
         </rules>
     </element>
 
-    <element name="Experimental Brewer" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EXPERIMENTAL_BREWER">
+    <element name="Experimental Brewer" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_EXPERIMENTAL_BREWER">
         <supports>Eldritch Invocation</supports>
         <prerequisite>Pact of the Alchemist feature</prerequisite>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST</requirements>
+        <requirements>ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST</requirements>
         <description>
             <p class="flavor">Prerequisite: Pact of the Alchemist feature</p>
             <p>You learn how to create new potions better. You double your proficiency bonus even with potions you have never attempted to make before.</p>
@@ -478,10 +480,10 @@
         <rules />
     </element>
 
-    <element name="Extended Spell" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EXTENDED_SPELL">
+    <element name="Extended Spell" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_EXTENDED_SPELL">
         <supports>Eldritch Invocation</supports>
         <prerequisite>5th level, Pact of the Eye feature</prerequisite>
-        <requirements>[level:5],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_EYE</requirements>
+        <requirements>[level:5],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_EYE</requirements>
         <description>
             <p class="flavor">Prerequisite: 5th level, Pact of the Eye feature</p>
             <p>When you cast a spell that requires a ranged attack roll, the spell’s range is doubled.</p>
@@ -492,10 +494,10 @@
         <rules />
     </element>
 
-    <element name="Eye of Medusa" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EYE_OF_MEDUSA">
+    <element name="Eye of Medusa" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_EYE_OF_MEDUSA">
         <supports>Eldritch Invocation</supports>
         <prerequisite>9th level</prerequisite>
-        <requirements>[level:9],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_EYE</requirements>
+        <requirements>[level:9],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_EYE</requirements>
         <description>
             <p class="flavor">Prerequisite: 9th level</p>
             <p>You can cast the <i>flesh to stone</i> spell once, without expending a use of your Mystic Arcanum (6th level) feature. Once you use this invocation, you cannot do so again until you finish a long rest.</p>
@@ -511,10 +513,10 @@
         </rules>
     </element>
 
-    <element name="Eye of Horus" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_EYE_OF_HORUS">
+    <element name="Eye of Horus" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_EYE_OF_HORUS">
         <supports>Eldritch Invocation</supports>
         <prerequisite>Pact of the Eye feature</prerequisite>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_EYE</requirements>
+        <requirements>ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_EYE</requirements>
         <description>
             <p class="flavor">Prerequisite: Pact of the Eye feature</p>
             <p>Your eye enhances your other bodily functions. You are immune to disease, and you have advantage on Constitution saving throws against being poisoned.</p>
@@ -525,10 +527,10 @@
         <rules />
     </element>
 
-    <element name="Fast-Forward" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FASTFORWARD">
+    <element name="Fast-Forward" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_FASTFORWARD">
         <supports>Eldritch Invocation</supports>
         <prerequisite>12th level, Pact of the Watch feature</prerequisite>
-        <requirements>[level:12],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WATCH</requirements>
+        <requirements>[level:12],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WATCH</requirements>
         <description>
             <p class="flavor">Prerequisite: 12th level, Pact of the Watch feature</p>
             <p>You can cast <i>haste</i> using a Warlock spell slot. Once you do, you cannot do so again until you finish a long rest.</p>
@@ -544,10 +546,10 @@
         </rules>
   </element>
 
-    <element name="Flight of the Harpy" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FLIGHT_OF_THE_HARPY">
+    <element name="Flight of the Harpy" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_FLIGHT_OF_THE_HARPY">
         <supports>Eldritch Invocation</supports>
         <prerequisite>12th level, Pact of the Wing feature</prerequisite>
-        <requirements>[level:12],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WING</requirements>
+        <requirements>[level:12],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WING</requirements>
         <description>
             <p class="flavor">Prerequisite: 12th level, Pact of the Wing feature</p>
             <p>In addition to wings, your feet take on a more talon-like appearance. While in flight, you can make an attack against an enemy, cutting them with your talons and dealing slashing damage equal to 2d4 + your Dexterity modifier on a hit. You are considered proficient in these natural weapons, and you use your Dexterity to hit.</p>
@@ -558,10 +560,10 @@
         <rules />
     </element>
 
-    <element name="Flyby" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FLYBY">
+    <element name="Flyby" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_FLYBY">
         <supports>Eldritch Invocation</supports>
         <prerequisite>9th level</prerequisite>
-        <requirements>[level:9],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WING</requirements>
+        <requirements>[level:9],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WING</requirements>
         <description>
             <p class="flavor">Prerequisite: 9th level</p>
             <p>While your wings are summoned and you exclusively use your flying speed, your movement does not provoke opportunity attacks.</p>
@@ -572,10 +574,10 @@
         <rules />
     </element>
 
-    <element name="Freezing Time" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FREEZING_TIME">
+    <element name="Freezing Time" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_FREEZING_TIME">
         <supports>Eldritch Invocation</supports>
         <prerequisite>17th level, Pact of the Watch feature</prerequisite>
-        <requirements>[level:17],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WATCH</requirements>
+        <requirements>[level:17],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WATCH</requirements>
         <description>
             <p class="flavor">Prerequisite: 17th level, Pact of the Watch feature</p>
             <p>You can pause your watch, temporarily disrupting time. You can cast <i>time stop</i> using your <i>Mystic Arcanum (9th-level)</i> feature.</p>
@@ -591,10 +593,10 @@
         </rules>
     </element>
 
-    <element name="Fusion" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_FUSION">
+    <element name="Fusion" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_FUSION">
         <supports>Eldritch Invocation</supports>
         <prerequisite>15th level, Infusing Potions, Pact of the Alchemist Feature</prerequisite>
-        <requirements>[level:15],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_INFUSING_POTIONS</requirements>
+        <requirements>[level:15],ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_INFUSING_POTIONS</requirements>
         <description>
             <p class="flavor">Prerequisite: 15th level, Infusing Potions, Pact of the Alchemist Feature</p>
             <p>When you use the <i>Infusing Potions</i> invocation, you can instead choose to mix up to three potions together. Effects do not stack, and you choose which value is used when there is clash. The potion costs an additional 15gp to create for every level of rarity, and an extra day for every level of rarity. The rarity of the potion is decided by the highest rarity of potion you use to create this mixture.</p>
@@ -605,10 +607,10 @@
         <rules />
     </element>
 
-    <element name="Gift of the Crown" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_GIFT_OF_THE_CROWN">
+    <element name="Gift of the Crown" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_GIFT_OF_THE_CROWN">
         <supports>Eldritch Invocation</supports>
         <prerequisite>15th level, Pact of the Crown feature</prerequisite>
-        <requirements>[level:15],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_CROWN</requirements>
+        <requirements>[level:15],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_CROWN</requirements>
         <description>
             <p class="flavor">Prerequisite: 15th level, Pact of the Crown feature</p>
             <p>Whenever you gain temporary hit points from any source, the total you gain is doubled. Your total temporary hit points can never exceed your total hit points.</p>
@@ -619,10 +621,10 @@
         <rules />
     </element>
 
-    <element name="Glory to the Ruler" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_GLORY_TO_THE_RULER">
+    <element name="Glory to the Ruler" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_GLORY_TO_THE_RULER">
         <supports>Eldritch Invocation</supports>
         <prerequisite>12th level, Pact of the Crown featureF:</prerequisite>
-        <requirements>[level:12],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_CROWN</requirements>
+        <requirements>[level:12],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_CROWN</requirements>
         <description>
             <p class="flavor">Prerequisite: 12th level, Pact of the Crown featureF:</p>
             <p>You can use your Pact of the Crown feature a number of times equal to your Charisma modifier (minimum 1).</p>
@@ -630,13 +632,15 @@
         <sheet display="false">
             <description></description>
         </sheet>
-        <rules />
+        <rules>
+            <stat name="pact of the crown:usage" value="charisma:modifier" bonus="base" />
+        </rules>
     </element>
 
-    <element name="Hurtful Words" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_HURTFUL_WORDS">
+    <element name="Hurtful Words" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_HURTFUL_WORDS">
         <supports>Eldritch Invocation</supports>
         <prerequisite>Path of the Quill feature</prerequisite>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_QUILL</requirements>
+        <requirements>ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_QUILL</requirements>
         <description>
             <p class="flavor">Prerequisite: Path of the Quill feature</p>
             <p>You learn the <i>vicious mockery</i> cantrip. Charisma is your spellcasting modifier for this spell.</p>
@@ -652,10 +656,10 @@
         </rules>
     </element>
 
-    <element name="Hourglass" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_HOURGLASS">
+    <element name="Hourglass" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_HOURGLASS">
         <supports>Eldritch Invocation</supports>
         <prerequisite>Pact of the Watch feature</prerequisite>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WATCH</requirements>
+        <requirements>ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WATCH</requirements>
         <description>
             <p class="flavor">Prerequisite: Pact of the Watch feature</p>
             <p>Your watch is constantly ticking. You regain 1 use of the Pact of the Watch feature at the end of a short rest. In addition, you can always know what hour of the day it is on the plane you are on. If time is not measured in hours on the plane you are on, the watch begins to gently fidget, as though it is uncomfortable.</p>
@@ -666,10 +670,10 @@
         <rules />
     </element>
 
-    <element name="Illusion Master" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_ILLUSION_MASTER">
+    <element name="Illusion Master" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_ILLUSION_MASTER">
         <supports>Eldritch Invocation</supports>
         <prerequisite>12th level, Pact of the Mask feature</prerequisite>
-        <requirements>[level:12],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_MASK</requirements>
+        <requirements>[level:12],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_MASK</requirements>
         <description>
             <p class="flavor">Prerequisite: 12th level, Pact of the Mask feature</p>
             <p>You can cast <i>seeming</i> using a Warlock spell slot. Once you do, you cannot do so again until you finish a long rest.</p>
@@ -685,10 +689,10 @@
         </rules>
     </element>
 
-    <element name="Improved Pact Orb" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_ORB">
+    <element name="Improved Pact Orb" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_ORB">
         <supports>Eldritch Invocation</supports>
         <prerequisite>Pact of the Orb feature</prerequisite>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ORB</requirements>
+        <requirements>ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_ORB</requirements>
         <description>
             <p class="flavor">Prerequisite: Pact of the Orb feature</p>
             <p>The weapon gains a +1 bonus to spell attack and spell save DC, unless it is a magic weapon that already has a bonus to those rolls. In addition, your pool of charges is increased to twice your Charisma modifier.</p>
@@ -699,10 +703,10 @@
         <rules />
     </element>
 
-    <element name="Infusing Potions" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_INFUSING_POTIONS">
+    <element name="Infusing Potions" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_INFUSING_POTIONS">
         <supports>Eldritch Invocation</supports>
         <prerequisite>5th level, Pact of the Alchemist feature</prerequisite>
-        <requirements>[level:5],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST</requirements>
+        <requirements>[level:5],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST</requirements>
         <description>
             <p class="flavor">Prerequisite: 5th level, Pact of the Alchemist feature</p>
             <p>When you brew potions, you can combine two mixtures to create a unique potion. The name of the potion is decided by you when you create it. The potion has the properties of the two potions you mix. Potions do not stack properties, and any property has the values of the parent potions. You choose the property and the value of the property between the options when there is conflict. The potion costs an additional 10gp to create for every rarity the potion is, and an extra day for every level of rarity the potion is to perfect. The rarity of the potion is decided by the highest potion level used in the creation process. The gold value of the potion is equal to the gold value of the two infused potions + twice your Charisma modifier.</p>
@@ -713,21 +717,21 @@
         <rules>
             <stat name="infusing potions:cha" value="charisma:modifier" />
             <stat name="infusing potions:cha" value="charisma:modifier" />
-            <stat name="infusing potions:cost" value="infusing potions:cha" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_INFUSER" />
+            <stat name="infusing potions:cost" value="infusing potions:cha" bonus="base" requirements="!ID_FBS_PBE_PBE_CLASS_FEATURE_POTALCHEMIST_INFUSER" />
             <stat name="infusing potions:int" value="intelligence:modifier" />
             <stat name="infusing potions:int" value="intelligence:modifier" />
-            <stat name="infusing potions:cost" value="infusing potions:int" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_INFUSER" />
+            <stat name="infusing potions:cost" value="infusing potions:int" bonus="base" requirements="ID_FBS_PBE_PBE_CLASS_FEATURE_POTALCHEMIST_INFUSER" />
             <stat name="infusing potions:cost" value="2" bonus="base" />
         </rules>
     </element>
 
-    <element name="Inspector" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_INSPECTOR">
+    <element name="Inspector" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_INSPECTOR">
         <supports>Eldritch Invocation</supports>
         <prerequisite>9th level, Pact of the Eye feature</prerequisite>
-        <requirements>[level:9],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_EYE</requirements>
+        <requirements>[level:9],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_EYE</requirements>
         <description>
             <p class="flavor">Prerequisite: 9th level, Pact of the Eye feature</p>
-            <p>You can cast <i>identify</i>, without expending a spell slot or material components. In addition, you gain proficiency in Intelligence (Investigation) checks.</p>
+            <p>You can cast <i>identify</i> without expending a spell slot or material components. In addition, you gain proficiency in Intelligence (Investigation) checks.</p>
 			<div class="reference">
 				<div element="ID_PHB_SPELL_IDENTIFY" />
 			</div>
@@ -741,10 +745,10 @@
         </rules>
     </element>
 
-    <element name="King’s Diadem" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_KINGS_DIADEM">
+    <element name="King’s Diadem" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_KINGS_DIADEM">
         <supports>Eldritch Invocation</supports>
         <prerequisite>5th level, Pact of the Crown feature</prerequisite>
-        <requirements>[level:5],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_CROWN</requirements>
+        <requirements>[level:5],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_CROWN</requirements>
         <description>
             <p class="flavor">Prerequisite: 5th level, Pact of the Crown feature</p>
             <p>You can bless those through the crown. When you take a reaction to use the Pact of the Crown feature, you can instead choose to give a creature advantage on their ability check or attack roll.</p>
@@ -755,10 +759,10 @@
         <rules />
     </element>
 
-    <element name="Language of the Elders" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LANGUAGE_OF_THE_ELDERS">
+    <element name="Language of the Elders" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_LANGUAGE_OF_THE_ELDERS">
         <supports>Eldritch Invocation</supports>
         <prerequisite>15th level, Pact of the Quill feature</prerequisite>
-        <requirements>[level:15],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_QUILL</requirements>
+        <requirements>[level:15],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_QUILL</requirements>
         <description>
             <p class="flavor">Prerequisite: 15th level, Pact of the Quill feature</p>
             <p>You learn <em>comprehend languages</em> and can cast it at will, without expending a spell slot. In addition, you learn 3 languages of your choice.</p>
@@ -775,10 +779,10 @@
         </rules>
     </element>
 
-    <element name="Lightning Ball" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LIGHTNING_BALL">
+    <element name="Lightning Ball" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_LIGHTNING_BALL">
         <supports>Eldritch Invocation</supports>
         <prerequisite>9th level</prerequisite>
-        <requirements>[level:9],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ORB</requirements>
+        <requirements>[level:9],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_ORB</requirements>
         <description>
             <p class="flavor">Prerequisite: 9th level</p>
             <p>You gain resistance to Lightning and Thunder damage. In addition, you learn the <i>lightning bolt</i> spell and can cast it using a warlock spell slot, but only using the Orb as a spellcasting focus.</p>
@@ -796,10 +800,10 @@
         </rules>
     </element>
 
-    <element name="Like a Feather" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LIKE_A_FEATHER">
+    <element name="Like a Feather" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_LIKE_A_FEATHER">
         <supports>Eldritch Invocation</supports>
         <prerequisite>Pact of the Wing feature</prerequisite>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WING</requirements>
+        <requirements>ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WING</requirements>
         <description>
             <p class="flavor">Prerequisite: Pact of the Wing feature</p>
             <p>You can cast <i>feather fall</i> without expending a spell slot or material components.</p>
@@ -815,10 +819,10 @@
         </rules>
     </element>
 
-    <element name="Liquid Explosion" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_LIQUID_EXPLOSION">
+    <element name="Liquid Explosion" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_LIQUID_EXPLOSION">
         <supports>Eldritch Invocation</supports>
         <prerequisite>9th level, Pact of the Alchemist feature</prerequisite>
-        <requirements>[level:9],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST</requirements>
+        <requirements>[level:9],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST</requirements>
         <description>
             <p class="flavor">Prerequisite: 9th level, Pact of the Alchemist feature</p>
             <p>You can double the cost of a potion during the creation process to make it an area effect potion. When you use this potion, instead of drinking it, you can throw it to a point within 10 times your Dexterity modifier feet (minimum 10). Every creature within 15 feet of the location is effected by the potion. The glass shattering is audible out to 60 feet.</p>
@@ -829,10 +833,10 @@
         <rules />
    </element>
 
-    <element name="Malevolent Intentions" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_MALEVOLENT_INTENTIONS">
+    <element name="Malevolent Intentions" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_MALEVOLENT_INTENTIONS">
         <supports>Eldritch Invocation</supports>
         <prerequisite>15th level, Pact of the Mask feature</prerequisite>
-        <requirements>[level:15],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_MASK</requirements>
+        <requirements>[level:15],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_MASK</requirements>
         <description>
             <p class="flavor">Prerequisite: 15th level, Pact of the Mask feature</p>
             <p>You tend to make people more trusting towards you. You can cast Charm Person at will, without expending a spell slot. If a creature succeeds their saving throw, they can not be targeted by this Invocation until next dawn.</p>
@@ -848,10 +852,10 @@
         </rules>
     </element>
 
-    <element name="Mask of Mirrors" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_MASK_OF_MIRRORS">
+    <element name="Mask of Mirrors" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_MASK_OF_MIRRORS">
         <supports>Eldritch Invocation</supports>
         <prerequisite>Pact of the Mask feature</prerequisite>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_MASK</requirements>
+        <requirements>ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_MASK</requirements>
         <description>
             <p class="flavor">Prerequisite: Pact of the Mask feature</p>
             <p>Your mask can now steal the faces of others. As an action when you touch the face of a humanoid of the same type as you, you can choose to steal their face and add it to the list of faces your mask can mutate into. A number of faces can be stored this way equal to your Charisma modifier. If you use this invocation to steal a face but you have already stored up the maximum amount of faces, you choose which face it replaces.</p>
@@ -862,10 +866,10 @@
         <rules />
     </element>
 
-    <element name="Out of Time" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_OUT_OF_TIME">
+    <element name="Out of Time" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_OUT_OF_TIME">
         <supports>Eldritch Invocation</supports>
         <prerequisite>15th level</prerequisite>
-        <requirements>[level:15],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_WATCH</requirements>
+        <requirements>[level:15],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_WATCH</requirements>
         <description>
             <p class="flavor">Prerequisite: 15th level</p>
             <p>When you expend your last use of the Pact of the Watch feature, you roll a d6. On a 6, you regain expended dice equal to your Charisma Modifier. On a 5, you regain half your Charisma modifier expended dice. On a 4 or lower, nothing happens.</p>
@@ -875,24 +879,24 @@
         </sheet>
         <rules>
             <stat name="out-of-time:dice" value="1" bonus="base" />
-            <stat name="out-of-time:dice" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
-            <stat name="out-of-time:dice" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
-            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:2],!ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
-            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:4],!ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
-            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:6],!ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
-            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:8],!ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
-            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:2],ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
-            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:4],ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
-            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:6],ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
-            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:8],ID_RDDT_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice" value="charisma:modifier" bonus="base" requirements="!ID_FBS_PBE_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice" value="intelligence:modifier" bonus="base" requirements="ID_FBS_PBE_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:2],!ID_FBS_PBE_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:4],!ID_FBS_PBE_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:6],!ID_FBS_PBE_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[charisma:modifier:8],!ID_FBS_PBE_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:2],ID_FBS_PBE_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:4],ID_FBS_PBE_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:6],ID_FBS_PBE_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
+            <stat name="out-of-time:dice:half" value="1" requirements="[intelligence:modifier:8],ID_FBS_PBE_PBE_CLASS_FEATURE_POTWATCH_ULTIMATE_WATCH" />
             
         </rules>
     </element>
 
-    <element name="Philter of Shielding" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_PHILTER_OF_SHIELDING">
+    <element name="Philter of Shielding" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_PHILTER_OF_SHIELDING">
         <supports>Eldritch Invocation</supports>
         <prerequisite>12th level, Pact of the Alchemist feature</prerequisite>
-        <requirements>[level:12],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST</requirements>
+        <requirements>[level:12],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_ALCHEMIST</requirements>
         <description>
             <p class="flavor">Prerequisite: 12th level, Pact of the Alchemist feature</p>
             <p>When a creature consumes a potion that you have created, they gain temporary hit points equal to your Charisma modifier (minimum 0).</p>
@@ -902,15 +906,15 @@
         </sheet>
         <rules>
             <stat name="philter of shielding:hp" value="0" bonus="base" />
-            <stat name="philter of shielding:hp" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_ULTIMATE_ALCHEMIST"/>
-            <stat name="philter of shielding:hp" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTALCHEMIST_ULTIMATE_ALCHEMIST"/>
+            <stat name="philter of shielding:hp" value="charisma:modifier" bonus="base" requirements="!ID_FBS_PBE_PBE_CLASS_FEATURE_POTALCHEMIST_ULTIMATE_ALCHEMIST"/>
+            <stat name="philter of shielding:hp" value="intelligence:modifier" bonus="base" requirements="ID_FBS_PBE_PBE_CLASS_FEATURE_POTALCHEMIST_ULTIMATE_ALCHEMIST"/>
         </rules>
     </element>
 
-    <element name="Protector’s Crown" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_PROTECTORS_CROWN">
+    <element name="Protector’s Crown" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_PROTECTORS_CROWN">
         <supports>Eldritch Invocation</supports>
         <prerequisite>King’s Diadem, Pact of the Crown Feature</prerequisite>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_KINGS_DIADEM,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_CROWN</requirements>
+        <requirements>ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_KINGS_DIADEM,ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_CROWN</requirements>
         <description>
             <p class="flavor">Prerequisite: King’s Diadem, Pact of the Crown Feature</p>
             <p>When you expend a use of your Pact of the Crown feature, you can choose to bolster yourself and the target. You and the creature targeted by the feature gain temporary hit points equal to your Charisma modifier (minimum 1). These temporary hit points last for 1 minute.</p>
@@ -920,15 +924,15 @@
         </sheet>
         <rules>
             <stat name="protectors crown:hp" value="1" bonus="base" />
-            <stat name="protectors crown:hp" value="charisma:modifier" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTCROWN_PROTECTORS_DIADEM" />
-            <stat name="protectors crown:hp" value="intelligence:modifier" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTCROWN_PROTECTORS_DIADEM" />
+            <stat name="protectors crown:hp" value="charisma:modifier" bonus="base" requirements="!ID_FBS_PBE_PBE_CLASS_FEATURE_POTCROWN_PROTECTORS_DIADEM" />
+            <stat name="protectors crown:hp" value="intelligence:modifier" bonus="base" requirements="ID_FBS_PBE_PBE_CLASS_FEATURE_POTCROWN_PROTECTORS_DIADEM" />
         </rules>
     </element>
 
-    <element name="Quill of Shadows" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_QUILL_OF_SHADOWS">
+    <element name="Quill of Shadows" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_QUILL_OF_SHADOWS">
         <supports>Eldritch Invocation</supports>
         <prerequisite>9th level, Pact of the Quill feature</prerequisite>
-        <requirements>[level:9],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_QUILL</requirements>
+        <requirements>[level:9],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_QUILL</requirements>
         <description>
             <p class="flavor">Prerequisite: 9th level, Pact of the Quill feature</p>
             <p>Your quill radiates a soft aura of shadows. You can cloak any spell infused on a surface. Cloaking it in this method requires an additional 10 minutes to cloak the writing from anyone but you. Creatures with true sight can still see the writing.</p>
@@ -939,10 +943,10 @@
         <rules />
   </element>
 
-    <element name="Resilience to the Elements" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_RESILIENCE_TO_THE_ELEMENTS">
+    <element name="Resilience to the Elements" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_RESILIENCE_TO_THE_ELEMENTS">
         <supports>Eldritch Invocation</supports>
         <prerequisite>9th level, Pact of the Bloodline feature</prerequisite>
-        <requirements>[level:9],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_BLOODLINE</requirements>
+        <requirements>[level:9],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_BLOODLINE</requirements>
         <description>
             <p class="flavor">Prerequisite: 9th level, Pact of the Bloodline feature</p>
             <p>You can choose one of the following damage types: Acid, Cold, Fire, Lightning, Necrotic, Radiant. You gain resistance to the chosen damage type. You can take this invocation up to three times.</p>
@@ -958,10 +962,10 @@
         </rules>
     </element>
 
-    <element name="Retaliation" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_RETALIATION">
+    <element name="Retaliation" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_RETALIATION">
         <supports>Eldritch Invocation</supports>
         <prerequisite>15th level, Pact of the Bloodline feature</prerequisite>
-        <requirements>[level:15],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_BLOODLINE</requirements>
+        <requirements>[level:15],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_BLOODLINE</requirements>
         <description>
             <p class="flavor">Prerequisite: 15th level, Pact of the Bloodline feature</p>
             <p>You can use your Pact of the Bloodline feature without using your reaction. In addition, when you are damaged by a critical hit, your Pact of the Bloodline feature deals damage equal to twice your Charisma modifier.</p>
@@ -975,15 +979,15 @@
             <stat name="retaliation:int" value="intelligence:modifier" />
             <stat name="retaliation:int" value="intelligence:modifier" />
             <stat name="retaliation:damage" value="2" bonus="base" />
-            <stat name="retaliation:damage" value="retaliation:cha" bonus="base" requirements="!ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
-            <stat name="retaliation:damage" value="retaliation:int" bonus="base" requirements="ID_RDDT_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
+            <stat name="retaliation:damage" value="retaliation:cha" bonus="base" requirements="!ID_FBS_PBE_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
+            <stat name="retaliation:damage" value="retaliation:int" bonus="base" requirements="ID_FBS_PBE_PBE_CLASS_FEATURE_POTBLOODLINE_ULTIMATE_BLOODLINE" />
         </rules>
     </element>
 
-    <element name="Vigour" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_VIGOUR">
+    <element name="Vigour" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_VIGOUR">
         <supports>Eldritch Invocation</supports>
         <prerequisite>Pact of the Bloodline feature</prerequisite>
-        <requirements>ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_BLOODLINE</requirements>
+        <requirements>ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_BLOODLINE</requirements>
         <description>
             <p class="flavor">Prerequisite: Pact of the Bloodline feature</p>
             <p>Your hit point maximum increases by +1 per level. This applies retroactively, as well as to every level you take hereafter.</p>
@@ -996,10 +1000,10 @@
         </rules>
     </element>
 
-    <element name="Vitality" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_VITALITY">
+    <element name="Vitality" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_VITALITY">
         <supports>Eldritch Invocation</supports>
         <prerequisite>5th level, Pact of the Bloodline feature</prerequisite>
-        <requirements>[level:5],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_BLOODLINE</requirements>
+        <requirements>[level:5],ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_BLOODLINE</requirements>
         <description>
             <p class="flavor">Prerequisite: 5th level, Pact of the Bloodline feature</p>
             <p>When you finish a short rest, you regain additional hit points equal to your Warlock level.</p>
@@ -1010,10 +1014,10 @@
         <rules />
   </element>
 
-    <element name="Whispers of the Masked One" type="Class Feature" source="Pact Boons Expanded" id="ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_WHISPERS_OF_THE_MASKED_ONE">
+    <element name="Whispers of the Masked One" type="Class Feature" source="Pact Boons Expanded" id="ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_WHISPERS_OF_THE_MASKED_ONE">
         <supports>Eldritch Invocation</supports>
         <prerequisite>Mask of Mirrors, Pact of the Mask feature</prerequisite>
-        <requirements>[level:15],ID_RDDT_PACT_BOONS_EXPANDED,ID_RDDT_CLASS_FEATURE_ELDRITCH_INVOCATION_MASK_OF_MIRRORS,ID_RDDT_CLASS_FEATURE_PACT_OF_THE_MASK</requirements>
+        <requirements>[level:15],ID_FBS_PBE_CLASS_FEATURE_ELDRITCH_INVOCATION_MASK_OF_MIRRORS,ID_FBS_PBE_CLASS_FEATURE_PACT_OF_THE_MASK</requirements>
         <description>
             <p class="flavor">Prerequisite: Mask of Mirrors, Pact of the Mask feature</p>
             <p>You can mimic the speech of the creature whose face you have stolen. If you use Mask of Mirrors to alter your mask to appear as someone else, you can alter your voice to replicate the creatures vocal chords. A successful Wisdom (Insight) allows a listener to determine that the effect is faked. The DC is equal to your Warlock spell save DC.</p>
