@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Gravity Wielder Arcane Tradition</name>
+        <update version="0.0.1">
+            <file name="wizard-gravity-wielder.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/yorviings-arcane-grimoire/wizard-gravity-wielder.xml" />
+        </update>
+    </info>
+    
+    <element name="Gravity Wielder" type="Archetype" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_WIZARD_GRAVITY_WIELDER">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>The rare tradition of Gravity Wielding is one where wizards explore the universal forces of gravity, focusing on spells andmagic that help to manipulate the cosmic forces that hold and move objects and people Wizards who study this tradition are hard to find, yet when they are encountered, they are usually found either in astronomies, or traversing the planes in order to master their control over all objects within existence.</p>
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_GRAVITY_SAVANT" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_MIGHTY_RETALIATION" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_FORCE_ATTUNEMENT" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_STRENGTHENED_FORCE" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_GRAVITATIONAL_MASTERY" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_GRAVITY_SAVANT" level="1" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_MIGHTY_RETALIATION" level="1" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_FORCE_ATTUNEMENT" level="1" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_STRENGTHENED_FORCE" level="1" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_GRAVITATIONAL_MASTERY" level="1" />
+        </rules>
+    </element>
+        <element name="Gravity Savant" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_GRAVITY_SAVANT">
+            <description>
+                <p>Starting at 2nd level, the power of gravity has become yours to control. You learn the <em>mage hand</em> cantrip if you do not already know it, and it does not count towards the total number of cantrips that you know. When you cast <em>mage hand</em>, you can choose to have the hand become invisible, and the maximum it can lift, push, or pull is an amount of weight equal to 10 times your Intelligence modifier in pounds.</p>
+            </description>
+            <sheet>
+                <description>When you cast mage hand, you can choose to have the hand become invisible, and the maximum it can lift, push, or pull is {{mage-hand:weight}} pounds.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" spellcasting="Wizard" known="true" />
+                <stat name="mage-hand:weight" value="10" requirements="[intelligence:modifier:1]" />
+                <stat name="mage-hand:weight" value="10" requirements="[intelligence:modifier:2]" />
+                <stat name="mage-hand:weight" value="10" requirements="[intelligence:modifier:3]" />
+                <stat name="mage-hand:weight" value="10" requirements="[intelligence:modifier:4]" />
+                <stat name="mage-hand:weight" value="10" requirements="[intelligence:modifier:5]" />
+                <stat name="mage-hand:weight" value="10" requirements="[intelligence:modifier:6]" />
+                <stat name="mage-hand:weight" value="10" requirements="[intelligence:modifier:7]" />
+            </rules>
+        </element>
+        <element name="Mighty Retaliation" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_MIGHTY_RETALIATION">
+            <description>
+                <p>Beginning at 2nd level, you have learned how to manipulate the gravitational forces around others. When a creature misses you or an ally within 5 feet of your mage hand with an attack, you can use your reaction to force that creature to make a Constitution saving throw against your wizard spell save DC. On a failed save, the creature is either pushed or pulled from you or your ally's location or your mage hand’s location (your choice) by 5 feet. This increases by an additional 5 feet at 6th level (10 feet), 10th level (15 feet), and 14th level (20 feet).</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When a creature misses you or an ally within 5 feet of your mage hand with an attack, you can force that creature to make a Constitution saving throw (save DC {{spellcasting:dc}}). On a failed save, the creature is either pushed or pulled from you or your ally's location or your mage hand’s location (your choice) by {{mighty-retaliation:range}} feet.</description>
+            </sheet>
+            <rules>
+                <stat name="mighty-retaliation:range" value="5" level="2" />
+                <stat name="mighty-retaliation:range" value="5" level="6" />
+                <stat name="mighty-retaliation:range" value="5" level="10" />
+                <stat name="mighty-retaliation:range" value="5" level="14" />
+            </rules>
+        </element>
+        <element name="Force Attunement" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_FORCE_ATTUNEMENT">
+            <description>
+                <p>By 6th level, you have learned to attune your body to gravity. Whenever you fall, you can use your reaction to cast either <em>feather fall</em> or <em>levitate</em> on yourself without expending a wizard spell slot. You can do this a number of times equal to your Intelligence modifier per long rest.</p>
+                <p class="indent">In addition, you have advantage on saving throws against being pushed or pulled against your will.</p>
+            </description>
+            <sheet action="Reaction" usage="{{intelligence:modifier}}/Long Rest">
+                <description>Whenever you fall, you can use your reaction to cast either feather fall or levitate on yourself without expending a wizard spell slot. In addition, you have advantage on saving throws against being pushed or pulled against your will.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_FEATHER_FALL" />
+                <grant type="Spell" id="ID_PHB_SPELL_LEVITATE" />
+            </rules>
+        </element>
+        <element name="Strengthened Force" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_STRENGTHENED_FORCE">
+            <description>
+                <p>At 10th level, you have become even more attuned to the power of gravity and force. You gain resistance to force damage, and whenever you cast a spell that deals force damage or bludgeoning damage, you can deal additional force damage equal to your Intelligence modifier to one damage die roll.</p>
+            </description>
+            <sheet>
+                <description>Whenever you cast a spell that deals force damage or bludgeoning damage, you can deal {{intelligence:modifier}} additional force damage to one damage die roll.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FORCE" />
+            </rules>
+        </element>
+        <element name="Gravitational Mastery" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_GRAVITY_WIELDER_GRAVITATIONAL_MASTERY">
+            <description>
+                <p>At 14th level, you have learned how to fully control the effects of gravity. You add the spell <em>reverse gravity</em> to your spellbook. If you already know the spell <em>reverse gravity</em>, then you may choose another spell of 7th level or lower on the wizard spell list. When you cast the spell <em>reverse gravity</em>, you may choose a number of creatures within the affected area equal to your Intelligence modifier to be excluded from the spell’s effects. In addition, you can use a bonus action to exclude one affected creature from the spell’s effects. You also also considered anchored to the ground whenever <em>reverse gravity</em> is cast against you.</p>
+            </description>
+            <sheet>
+                <description>When you cast the spell reverse gravity, you may choose to exclude up to {{intelligence:modifier}} creatures within the affected area equal from the spell’s effects. In addition, you can use a bonus action to exclude one affected creature from the spell’s effects. You also also considered anchored to the ground whenever reverse gravity is cast against you.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_REVERSE_GRAVITY" spellcasting="Wizard" known="true" />
+            </rules>
+        </element>
+
+</elements>
