@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>Yorviing’s Arcane Grimoire Backgrounds</name>
-        <update version="0.0.10">
+        <update version="0.0.15">
             <file name="backgrounds.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/yorviings-arcane-grimoire/backgrounds.xml" />
         </update>
     </info>
@@ -777,7 +777,7 @@
             </sheet>
         </element>
 
-    <element name="Academy Student" type="Background" source="Yorviing's Arcane Grimoiure" id="ID_YORVIING_YAG_BACKGROUND_ACADEMY_STUDENT">
+    <element name="Academy Student" type="Background" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_ACADEMY_STUDENT">
         <description>
             <p>You are a student of a major institution of magical learning, studying a variety of magics under the supervision of expert spellcasters and teachers of the arcane. You are ambitious and studious, often spending your time pouring over dusty tomes, practicing the art of spellcasting, and training both your mind and body to become a mighty student of magic.</p>
             <p class="indent">As a part of being a student at a prestigious learning institution, you dedicate your time and energy towards learning as much as you can, and being able to show what you know by recitation, application, and other displays of your knowledge.</p>
@@ -809,11 +809,15 @@
             <p>Students are as varied as they come, with many developing different habits, ambitions, and world views throughout their academic careers. Some students may take a more laidback approach when it comes to their studies, preferring to study and live freely, knowing that they can pick up their academic work just as easily as they can put it down. Others tend to gravitate towards almost extreme means, dedicating every waking moment of their lives in the pursuit of knowledge and understanding.</p>
         </description>
         <setters>
-            <set name="short"></set>
+            <set name="short">Arcana plus 1 skill, 2 languages</set>
         </setters>
         <rules>
             <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_ACADEMIC_ACCESS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
             <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+            <select type="Proficiency" name="Skill Proficiency (Academy Student)" supports="Skill" />
+            <select type="Language" name="Language (Academy Student)" supports="Starting" />
+            <select type="Language" name="Language (Academy Student)" supports="Exotic" />
             <select type="List" name="Personality Trait" number="2">
                 <item id="1">I often over explain and use long words to appear intelligent and impressive.</item>
                 <item id="2">I spend every moment of my time reading or writing something related to my studies.</item>
@@ -858,7 +862,7 @@
             </sheet>
         </element>
 
-    <element name="Coven Witch" type="Background" source="Yorviing's Arcane Grimoiure" id="ID_YORVIING_YAG_BACKGROUND_COVEN_WITCH">
+    <element name="Coven Witch" type="Background" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_COVEN_WITCH">
         <description>
             <p>You are a witch, a member of a coven that lives out in the wilds. You are wise and knowledgeable regarding aspects of nature, plants, magic, and a multitude of obscure arcane arts. You often dwell within nature’s deep forests, elaborate caves, sun scorched deserts, or frigid taiga along with your fellow coven witches.</p>
             <p class="indent">As a part of being a member of a coven, you work towards the greater good and the goals of the coven itself. You trade magical secrets with your fellow members, and will sometimes venture off to help with some task your coven needs. Some covens will keep generally to themselves and work towards helping nature, while others will play a more active role in relation to some community, whether that is to harm it or to aid it.</p>
@@ -886,15 +890,78 @@
                 <tr><td>5th</td><td><em>druid grove, tree stride</em></td></tr>
             </table>
             <p class="indent">Should your GM grant you an extended spell list, your magic can vary in terms of its appearance. Some witches call forth mangled roots and dark colored vapor when casting their spells. Others conjure ethereal shapes of animals, and others imbue their spells with warming, golden lights. The style of your magic is usually influenced by the nature of your coven.</p>
+            <h4>SACRED RITES</h4>
+            <p>When you are born into a covenor not, you are not considered a witch until you reach adulthood and you have completed the Sacred Rites, special rituals or tasks that must be performed to become a witch of a coven. Below is a sample of rites or rituals that your coven may use to initiate members. You can roll a d8 or choose from the options in the Sacred Rites Options table to determine your character’s specific rituals that they must or have already performed.</p>
+            <h5 class="caption">Sacred Rites</h5>
+            <table>
+                <thead>
+                    <tr><td>d8</td><td>Sacred Rite</td></tr>
+                </thead>
+                <tr><td>1</td><td><strong>Sacrifice.</strong> You must perform a sacrifice of an adult animal or person, devour its heart, and bath in their blood for 1 hour under a full moon.</td></tr>
+                <tr><td>2</td><td><strong>Retribution.</strong> You must find a witch hunter, traitor, or exile and put an end to them, and bring back their head to place at the feet of your coven’s First Witch.</td></tr>
+                <tr><td>3</td><td><strong>Protection.</strong> You must protect an animal from being hunted, and if necessary, offer forth an adult animal in exchange.</td></tr>
+                <tr><td>4</td><td><strong>Curse.</strong> You must accept a curse that your coven’s members all bear, such as lycanthropy or vampirism. You must live on your own for a month while you grow accustomed to it.</td></tr>
+                <tr><td>5</td><td><strong>Combat.</strong> You must prove yourself in bloody combat, either by protecting the coven or fighting a mighty creature.</td></tr>
+                <tr><td>6</td><td><strong>Benevolence.</strong> Over the course of a month, you must provide good services for a hamlet or village without hesitation or accepting anything in exchange.</td></tr>
+                <tr><td>7</td><td><strong>Pilgrimage.</strong> You must make a journey through the lands to a specific site alone, praying at the site and bringing forth something from there to show as proof.</td></tr>
+                <tr><td>8</td><td><strong>Possession.</strong> While surrounded by your coven’s members under a new moon, you must allow yourself to become possessed by a spirit for 4 hours, and must endure throughout the entirety of the time.</td></tr>
+            </table>
+            <h4>WITCH QUIRKS</h4>
+            <p>Given their deep connection to ancient magic, as well as the variety of covens that exist, it is no wonder that witches have peculiar traits to them. Many witches, either at birth of upon completion of a Sacred Rite, often have some minor quirk that distinguishes them from the common folk. These quirks can range from the minor to the extreme, from bodily changes to their presence itself. Below is a sample of quirks that your witch character may have. You can roll a d12 or choose from the options in the Witch Quirk Options table to determine your character’s specific quirks.</p>
+            <table>
+                <thead>
+                    <tr><td>d12</td><td>Witch Quirk</td></tr>
+                </thead>
+                <tr><td>1</td><td>The pupils in your eyes are slits, either vertical or horizontal.</td></tr>
+                <tr><td>2</td><td>It is hard to make out exactly why, but the area around you appears dimmer than around others.</td></tr>
+                <tr><td>3</td><td>You have fangs and long, sharp fingernails or claws.</td></tr>
+                <tr><td>4</td><td>Parts of your body, particularly your joints, have become covered in scales, fur, or feathers.</td></tr>
+                <tr><td>5</td><td>Your hair is wild and unruly, and appears to move as if always in a breeze.</td></tr>
+                <tr><td>6</td><td>The fur, scales, or skin on your hands, ears, feet, and lips appear blackened, or have a permanent dark green or red color to them.</td></tr>
+                <tr><td>7</td><td>Your limbs have lengthened an extra inch or two.</td></tr>
+                <tr><td>8</td><td>You have a captivating and undeniable beauty to you that some find hard to look away from.</td></tr>
+                <tr><td>9</td><td>You constantly smell like fallen rain, mid-morning dew, fresh herbs, incense, or the ashes of a fire.</td></tr>
+                <tr><td>10</td><td>Your voice sounds both elderly and youthful at the same time.</td></tr>
+                <tr><td>11</td><td>Small critters, such as beetles or spiders, can be seen crawling over you from time to time, appearing from within your cloak or hair.</td></tr>
+                <tr><td>12</td><td>Though you breathe, it often appears to others as if you are not.</td></tr>
+            </table>
             <h5>SUGGESTED CHARACTERISTICS</h5>
             <p>Witches are, as a whole, a varied lot of individuals. Their personalities and mannerisms can differ drastically from one to another, even within a coven. Many witches believe in being themselves, though many witches are mindful of both themselves and their surroundings, and know when and where it is best to reveal their true personalities. Given that many people may either be seeking them out for either assistance or to hunt them down, witches are careful of who they reveal themselves around.</p>
         </description>
         <setters>
-            <set name="short"></set>
+            <set name="short">2 skills, 1 tool, Witchtongue plus 1 language</set>
         </setters>
         <rules>
             <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_WITCHS_WISDOM" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
             <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <select type="Proficiency" name="Skill Proficiency (Coven Witch)" number="2" supports="Skill" />
+            <select type="Proficiency" name="Tool Proficiency (Coven Witch)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES|ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT|ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT|ID_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS" />
+            <select type="Language" name="Language (Coven Witch)" supports="!Secret" />
+            <grant type="Language" id="ID_YORVIING_YAG_LANGUAGE_WITCHTONGUE" />
+            <select type="List" name="Sacred Rite">
+                <item id="1">Sacrifice. You must perform a sacrifice of an adult animal or person, devour its heart, and bath in their blood for 1 hour under a full moon.</item>
+                <item id="2">Retribution. You must find a witch hunter, traitor, or exile and put an end to them, and bring back their head to place at the feet of your coven’s First Witch.</item>
+                <item id="3">Protection. You must protect an animal from being hunted, and if necessary, offer forth an adult animal in exchange.</item>
+                <item id="4">Curse. You must accept a curse that your coven’s members all bear, such as lycanthropy or vampirism. You must live on your own for a month while you grow accustomed to it.</item>
+                <item id="5">Combat. You must prove yourself in bloody combat, either by protecting the coven or fighting a mighty creature.</item>
+                <item id="6">Benevolence. Over the course of a month, you must provide good services for a hamlet or village without hesitation or accepting anything in exchange.</item>
+                <item id="7">Pilgrimage. You must make a journey through the lands to a specific site alone, praying at the site and bringing forth something from there to show as proof.</item>
+                <item id="8">Possession. While surrounded by your coven’s members under a new moon, you must allow yourself to become possessed by a spirit for 4 hours, and must endure throughout the entirety of the time.</item>
+            </select>
+            <select type="List" name="Witch Quirk">
+                <item id="1">The pupils in your eyes are slits, either vertical or horizontal.</item>
+                <item id="2">It is hard to make out exactly why, but the area around you appears dimmer than around others.</item>
+                <item id="3">You have fangs and long, sharp fingernails or claws.</item>
+                <item id="4">Parts of your body, particularly your joints, have become covered in scales, fur, or feathers.</item>
+                <item id="5">Your hair is wild and unruly, and appears to move as if always in a breeze.</item>
+                <item id="6">The fur, scales, or skin on your hands, ears, feet, and lips appear blackened, or have a permanent dark green or red color to them.</item>
+                <item id="7">Your limbs have lengthened an extra inch or two.</item>
+                <item id="8">You have a captivating and undeniable beauty to you that some find hard to look away from.</item>
+                <item id="9">You constantly smell like fallen rain, mid-morning dew, fresh herbs, incense, or the ashes of a fire.</item>
+                <item id="10">Your voice sounds both elderly and youthful at the same time.</item>
+                <item id="11">Small critters, such as beetles or spiders, can be seen crawling over you from time to time, appearing from within your cloak or hair.</item>
+                <item id="12">Though you breathe, it often appears to others as if you are not.</item>
+            </select>
             <select type="List" name="Personality Trait" number="2">
                 <item id="1">I often find more meaningful friendships in animals than I do people outside of my coven.</item>
                 <item id="2">You can insult me all you want to, but don’t you dare insult my coven.</item>
@@ -939,4 +1006,16 @@
             </sheet>
         </element>
 
+    <element name="Witchtongue" type="Language" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_LANGUAGE_WITCHTONGUE">
+        <supports>Secret</supports>
+        <description>
+            <p>Just like druids have their own secret language, witches also share a special language that all witches learn. It is a heavily guarded language, and for an outsider to learn or know it is considered to be either a hefty and worthy gift or an incredible anomaly. It is rarely written down save for special circumstances, such as notating the history of a coven or for communication from one coven to another.</p>
+            <p class="indent">It is a language that is very beautiful, yet eerie and strange. There are many harsher vocal sounds, and words are often longer and contain multiple syllables. There are also two peculiar sounds that can be heard within the language. The first is a ‘hr’, which sounds akin to pronouncing an r with an h sound in front of it, and the second being a ‘hl’, which sounds similar to ‘hil’, with a heavy and breathy h sound. These two sounds give the language a very breathy and almost haunting quality to it. It is sometimes referred to as ‘the Old Speech’ by coven members or as ‘black tongue’ or ‘wicked tongue’ by those who wish to demean the language.</p>
+        </description>
+        <setters>
+            <set name="secret">true</set>
+            <set name="speakers">Witches</set>
+            <set name="script"></set>
+        </setters>
+    </element>
 </elements>
