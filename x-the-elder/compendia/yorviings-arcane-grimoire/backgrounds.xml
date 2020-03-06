@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Yorviing’s Arcane Grimoire Backgrounds</name>
+        <update version="0.0.1">
+            <file name="backgrounds.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/yorviings-arcane-grimoire/backgrounds.xml" />
+        </update>
+    </info>
+    
+    <element name="Combat Medic" type="Background" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_COMBAT_MEDIC">
+        <description>
+            <p>You were someone who aided soldiers and the wounded in warfare. Trained as both a doctor and a soldier, you focused on trying to help your allies and innocents to ease their pain. Perhaps you were stationed on the front lines and had to deal with massive casualties. Or, you may have stayed in an outpost or medical center, providing treatment to any wounded who came in.</p>
+            <p class="indent">When you choose this background, work with your DM to determine which military organization you were a part of, how your medical career progressed in the military, and what kind of experiences you had during your time as a combat medic. Was it a standing army or militia? Or was it a private army or mercenary group?</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Medicine, and one of: Investigation, Nature, or Survival</li>
+                <li><strong>Tool Proficiencies:</strong> Healer’s Kit, vehicles (land)</li>
+                <li><strong>Languages:</strong> None</li>
+                <li><strong>Equipment:</strong> A set of common clothes, a military uniform, a healer’s kit, a bottle of sterilizing alcohol, a bottle of clean water, a waterskin, and a small pouch containing 10 gp</li>
+            </ul>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_IMPROVISED_MEDICINE" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>The life of a combat medic is a grim one. These people often see the true horrors of war, and the harm that it can cause to civilian and soldier alike. As such, many combat medics are quiet people, and their personalities and be drastically altered by their service.</p>
+        </description>
+        <setters>
+            <set name="short">Medicine plus 1 skill, Healer’s Kit, vehicles (land)</set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_IMPROVISED_MEDICINE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_MEDICINE" />
+            <select type="Proficiency" name="Skill Proficiency (Combat Medic)" supports="ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I try to speak softly and assuringly.</item>
+                <item id="2">I am proud of my service and medical talents.</item>
+                <item id="3">When I have moments to myself, I try to focus on pleasant things.</item>
+                <item id="4">I try to not get attached to people too easily.</item>
+                <item id="5">I constantly feel on edge.</item>
+                <item id="6">There is not enough respect shown to medics in warfare.</item>
+                <item id="7">I try everything I can to help people in need.</item>
+                <item id="8">I suffer from terrible nightmares about the things I have seen.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Medicine. I will use my talents to aid my side. (Any)</item>
+                <item id="2">Aid. I will help anyone, whether it is a civilian, ally, or enemy. (Lawful)</item>
+                <item id="3">Survivability. War is unpredictable, and so you must be at the ready. (Chaotic)</item>
+                <item id="4">Cruel. If you are not on my side, you must suffer. (Evil)</item>
+                <item id="5">Honor. It is my duty to assist in any way that I can. (Good)</item>
+                <item id="6">Grit. I have to do what I can, regardless of any ethical implications. (Neutral)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">While treating the wounded, I made friends with an enemy soldier.</item>
+                <item id="2">I lost my best friend to a battle.</item>
+                <item id="3">I once treated the wounds of one of my commanding officers.</item>
+                <item id="4">I aim to keep my family safe and proud.</item>
+                <item id="5">I feel as though I am nothing but a stalling point for death.</item>
+                <item id="6">I won’t let the horrors I see get to me.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I get scared very easily.</item>
+                <item id="2">I secretly pray to the gods when I am nervous.</item>
+                <item id="3">I try to avoid especially grievous wounds and injuries.</item>
+                <item id="4">I have a hard time trying to relax.</item>
+                <item id="5">I have an addiction.</item>
+                <item id="6">I have difficulty in showing emotion.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Improvised Medicine" type="Background Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_IMPROVISED_MEDICINE">
+            <description>
+                <p>You have a military rank as a combat medic. Soldiers and other members of militaries recognize your skills and value, and they defer to you if they are of a lower rank or are in need of medical assistance. You can usually gain access to friendly military encampments and fortresses where your rank and skills are recognized.</p>
+                <p class="indent">Additionally, you can usually find ways to create makeshift medical supplies, provided that the land or surroundings offer such.</p>
+            </description>
+            <sheet alt="Improvised Medicine">
+                <description>You have a military rank as a combat medic. Additionally, you can usually find ways to create makeshift medical supplies, provided that the land or surroundings offer such.</description>
+            </sheet>
+        </element>
+    
+    <element name="Cursed" type="Background" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_CURSED">
+        <description>
+            <p>Before you began your life as an adventurer, it was changed by a single event that caused you to be cursed. You now bear a curse that both magic and medicine alike have yet to lift, and you fear that you may never be rid of it. Because of this event, certain elements have great importance in your life. Choose a terrible event, a curse mark, and a curse breaker from the options below, or roll a 1d10 for each table.</p>
+            <p class="indent">When you choose this background, work with your DM to determine the nature of your curse, how you acquired it, and what kind of effects, both positive and negative, that the curse has upon you. Is it one that has been passed down through your family? Or is it one you acquired during your travels throughout the land?</p>
+            <table>
+                <thead>
+                    <tr><td>d10</td><td>Terrible Event</td></tr>
+                </thead>
+                <tr><td>1</td><td>You angered a local witch after double crossing her.</td></tr>
+                <tr><td>2</td><td>While out exploring, you stumbled upon a magical object. Touching it placed a curse upon you.</td></tr>
+                <tr><td>3</td><td>You and other members of your village performed a ritual that went horribly wrong. You all now bear a curse.</td></tr>
+                <tr><td>4</td><td>An otherworldly being descended upon your city. Those who survived were wracked with a terrible curse.</td></tr>
+                <tr><td>5</td><td>You had your fortune told, and ignored the omens.</td></tr>
+                <tr><td>6</td><td>While fighting an otherworldly or undead creature, you came in contact with them, and they placed a powerful enchantment upon you.</td></tr>
+                <tr><td>7</td><td>Whilst visiting in a vast library or museum, you broke your way into a restricted area, and found a forbidden tome that you proceeded to open.</td></tr>
+                <tr><td>8</td><td>You used to worship a particular god, but then angered them. They have since brought down their wrath upon you.</td></tr>
+                <tr><td>9</td><td>Your curse is hereditary, and was passed onto you without your will or say in the matter. Members of your family have been dealing with this curse for generations.</td></tr>
+                <tr><td>10</td><td>In a state of bitterness and anger, a former lover of yours went to a sorceress and had them place a harmful effect upon you.</td></tr>
+            </table>
+            <table>
+                <thead>
+                    <tr><td>d10</td><td>Curse Mark</td></tr>
+                </thead>
+                <tr><td>1</td><td>Your eyes are an unnatural color, such as purple or red, or appear like cat or reptile eyes.</td></tr>
+                <tr><td>2</td><td>Your body is covered in tattoos consisting of words and phrases in a forgotten language.</td></tr>
+                <tr><td>3</td><td>Your tongue is long and forked.</td></tr>
+                <tr><td>4</td><td>When you bleed, your blood appears black and thick.</td></tr>
+                <tr><td>5</td><td>Your hand has a small, black mark upon it that cannot be removed.</td></tr>
+                <tr><td>6</td><td>Your hair or fur is ashen colored, and cannot be dyed into a new color.</td></tr>
+                <tr><td>7</td><td>Your body is covered in burn marks that you cover in bandages and wraps.</td></tr>
+                <tr><td>8</td><td>When you speak, a second voice seems to follow yours, slightly echoing your words.</td></tr>
+                <tr><td>9</td><td>Your lips, tongue, teeth, eyes, fingers, hands, and feet appear blackened and constantly covered in black ash.</td></tr>
+                <tr><td>10</td><td>Somewhere on your body is a brand mark that appears to be some kind of magical seal.</td></tr>
+            </table>
+            <h4 class="caption">Breaking the Curse</h4>
+            <p>Having a character that has a curse associated with them can lead to many fun and exciting moments, both for mechanics and for elements of plot and storytelling. However, should a player decide upon having their character have a curse, it is best to work out some degree of understanding regarding not only the nature of the curse and the ways in which it manifests itself, but also having an understanding of how to end the curse or break it.</p>
+            <p class="indent">Players, should you choose this background for a character, work with your DM to discuss how one would go about breaking your curse. Perhaps your character is fully aware of how to break it, yet the means with which to do so are incredibly difficult to obtain. Or, your character may know very little about the curse, and may only have a small clue or hint towards how to break it, or maybe no clue at all.</p>
+            <h5>Curses</h5>
+            <p>A curse can manifest itself in a variety of different ways. Some are cursed with a disease that allows them to transform into different beings, such as lycanthropy or vampirism. Other curses can render one unable to properly use one or more of their senses, may cause one to live an unnaturally long life, or may never allow for someone to ever feel loved again. Talk with your DM about the nature of your character’s curse, and how it will best fit within the confines of your DM’s world and campaign.</p>
+            <p class="indent">To DMs: Some curses are severe, while others are not. If a curse is severe, consider possibly giving your player a small bonus to them to compensate. For example, if a curse blinds the character, perhaps allow them to have advantage on Wisdom (Perception) checks that rely on hearing.</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Arcana, Intimidation</li>
+                <li><strong>Tool Proficiencies:</strong> None</li>
+                <li><strong>Languages:</strong> One exotic language (Abyssal, Celestial, Deep Speech, Draconic, Infernal, Primordial, Sylvan, or Undercommon)</li>
+                <li><strong>Equipment:</strong> A memento from a time before you were cursed, a set of traveler’s clothes, a small bag of sage, a quill, an ink pot, a blank journal, a cloak, and a small coin sack of 5 gp</li>
+            </ul>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_CURSED_EXISTENCE" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>Those who are cursed can be varied in terms of their appearances, backgrounds, and professions. How they choose to interact with others, as well as how they handle their curses, can shape their outlook on their lives.</p>
+        </description>
+        <setters>
+            <set name="short">Arcana, Intimidation, 1 exotic language</set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_CURSED_EXISTENCE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+            <select type="Language" name="Language (Cursed)" supports="Exotic" />
+            <select type="List" name="Terrible Event">
+				<item id="1">You angered a local witch after double crossing her.</item>
+				<item id="2">While out exploring, you stumbled upon a magical object. Touching it placed a curse upon you.</item>
+				<item id="3">You and other members of your village performed a ritual that went horribly wrong. You all now bear a curse.</item>
+				<item id="4">An otherworldly being descended upon your city. Those who survived were wracked with a terrible curse.</item>
+				<item id="5">You had your fortune told, and ignored the omens.</item>
+				<item id="6">While fighting an otherworldly or undead creature, you came in contact with them, and they placed a powerful enchantment upon you.</item>
+				<item id="7">Whilst visiting in a vast library or museum, you broke your way into a restricted area, and found a forbidden tome that you proceeded to open.</item>
+				<item id="8">You used to worship a particular god, but then angered them. They have since brought down their wrath upon you.</item>
+				<item id="9">Your curse is hereditary, and was passed onto you without your will or say in the matter. Members of your family have been dealing with this curse for generations.</item>
+				<item id="10">In a state of bitterness and anger, a former lover of yours went to a sorceress and had them place a harmful effect upon you.</item>
+            </select>
+            <select type="List" name="Curse Mark">
+				<item id="1">Your eyes are an unnatural color, such as purple or red, or appear like cat or reptile eyes.</item>
+				<item id="2">Your body is covered in tattoos consisting of words and phrases in a forgotten language.</item>
+				<item id="3">Your tongue is long and forked.</item>
+				<item id="4">When you bleed, your blood appears black and thick.</item>
+				<item id="5">Your hand has a small, black mark upon it that cannot be removed.</item>
+				<item id="6">Your hair or fur is ashen colored, and cannot be dyed into a new color.</item>
+				<item id="7">Your body is covered in burn marks that you cover in bandages and wraps.</item>
+				<item id="8">When you speak, a second voice seems to follow yours, slightly echoing your words.</item>
+				<item id="9">Your lips, tongue, teeth, eyes, fingers, hands, and feet appear blackened and constantly covered in black ash.</item>
+				<item id="10">Somewhere on your body is a brand mark that appears to be some kind of magical seal.</item>
+            </select>
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I try to focus on anything but my curse, hoping it will distract me from it.</item>
+                <item id="2">I speak often about my optimism on finding a cure, but secretly I doubt I will ever be rid of this curse.</item>
+                <item id="3">I try my best to hide the effects of my curse, so as to not alarm others.</item>
+                <item id="4">I embrace my curse as just another part of my personality and being. I want to find the cure, but am not sure if I would use it on myself.</item>
+                <item id="5">I have little memory of my life before I received this curse.</item>
+                <item id="6">I long to find a way to remove this curse so that others will not suffer from it.</item>
+                <item id="7">I have little care for the gods.</item>
+                <item id="8">I often put a lot of hope behind every clue I can regarding a cure for this curse.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Freedom. I long to be free of this curse. (Any).</item>
+                <item id="2">Redemption. It is my fault that I am cursed, thus it is my burden to remove myself of it’s grasp. (Lawful)</item>
+                <item id="3">Revenge. I swear to defeat the one who cursed me, no matter what. (Chaotic)</item>
+                <item id="4">Acceptance. I wish only to be accepted as a normal person, and not to let this curse define me. (Good)</item>
+                <item id="5">Distribution. I will have all who wronged me suffer from this same curse. (Evil)</item>
+                <item id="6">Purity. I long to not only rid myself of my curse, but the curses of others as well. (Good).</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">Though I journey to rid my curse, I would gladly die for my friends.</item>
+                <item id="2">The gods cruelly manipulate people. I will stand against this.</item>
+                <item id="3">I will free my family from the curse that has haunted us.</item>
+                <item id="4">I can feel the curse tempting me with power every day, but I always deny it.</item>
+                <item id="5">I yearn for companionship, as my curse often drives others away.</item>
+                <item id="6">Having been cursed, I sympathize with those who fall upon terrible times or fortunes of which they have no control over.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I assume everyone thinks little of me.</item>
+                <item id="2">I jump at even bad gambles for any clue to a cure.</item>
+                <item id="3">When I am in pain, I never confide in others so as to not burden them with my troubles.</item>
+                <item id="4">My curse has a voice that only I can hear. I struggle to not listen to it.</item>
+                <item id="5">I care little for companionships, knowing that I won’t have them for long.</item>
+                <item id="6">I do anything I can to take my mind off of my curse. Anything.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Cursed Existence" type="Background Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_CURSED_EXISTENCE">
+            <description>
+                <p>The nature of your curse can change not only your appearance, but how others react to you as well. Your curse may cause others to take pity upon you, offering anything that they can to aid or help you. In doing so, they may give you advice or directions to people who might be able to help you more.</p>
+                <p class="indent">However, your curse may also cause others to fear you, and shut their doors and homes to you, fearing that you may bring your curse upon their family or home.</p>
+            </description>
+            <sheet alt="Cursed Existence">
+                <description>The nature of your curse can change not only your appearance, but how others react to you as well.</description>
+            </sheet>
+        </element>
+    
+    <element name="Engineer" type="Background" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_ENGINEER">
+        <description>
+            <p>Clockwork, machinery, and technology have all played parts of high importance in your life. You have apprenticed and trained to become a skilled engineer, learning how to work with a variety of tools and even vehicles throughout your life. You might have been an inventor whose creations helped out the place you came from, or you may have been someone who worked on constructs or weapons of war.</p>
+            <p class="indent">When you choose this background, work with your DM to determine where and on what you worked on regarding your engineering skills, how far your skills have progressed, and what kind of experiences you have had due to your trade. Were you and engineer who worked on machines of war? Or were you someone who helped to build newer tools and technology for a city?</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> History, Investigation</li>
+                <li><strong>Tool Proficiencies:</strong> Tinker’s Tools, vehicles (land)</li>
+                <li><strong>Languages:</strong> None</li>
+                <li><strong>Equipment:</strong> A pouch containing 15 gp, a set of Tinker’s Tools, a small bundle of copper wire, a dozen small gears, a set of protective eyewear, a small hammer, and a set of common clothes</li>
+            </ul>
+            <h5>Specialty</h5>
+            <p>During your time as an engineer, you developed the knowledge and skills to focus on a certain type of creation. Roll a d6 or choose from the options in the table below to determine your focus.</p>
+            <table>
+                <thead>
+                    <tr><td>d6</td><td>Specialty</td></tr>
+                </thead>
+                <tr><td>1</td><td>Gunsmith</td></tr>
+                <tr><td>2</td><td>Construct Creator</td></tr>
+                <tr><td>3</td><td>Electrical Engineer</td></tr>
+                <tr><td>4</td><td>War Machinery</td></tr>
+                <tr><td>5</td><td>Gadgetry</td></tr>
+                <tr><td>6</td><td>Vehicles</td></tr>
+            </table>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_SKILLED_ENGINEERING" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>The life of an engineer means working with a variety of equipment and creations. This has led you to have a different outlook on life based on your work with machines and technology.</p>
+        </description>
+        <setters>
+            <set name="short">History, Investigation, Tinker’s Tools, vehicles (land)</set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_SKILLED_ENGINEERING" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+            <select type="List" name="Specialty">
+                <item id="1">Gunsmith</item>
+                <item id="2">Construct Creator</item>
+                <item id="3">Electrical Engineer</item>
+                <item id="4">War Machinery</item>
+                <item id="5">Gadgetry</item>
+                <item id="6">Vehicles</item>
+            </select>
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I always read any type of manual or instructions regarding a new piece of equipment.</item>
+                <item id="2">I never go anywhere without my trusty tools.</item>
+                <item id="3">I am always fiddling and tinkering with something, looking for new ways to improve it.</item>
+                <item id="4">I like making sure my work station is clean and tidy, and my equipment is clean, in great condition, and tidy.</item>
+                <item id="5">I am constantly fascinated with new developments in technology.</item>
+                <item id="6">I find great companionship in automations and constructs.</item>
+                <item id="7">I tend to think logically, preferring to adhere to schedules and structure.</item>
+                <item id="8">I don’t mind getting myself dirty, so long as I am productive.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Knowledge. Through technology and my engineering skills, I can acquire fantastic knowledge. (Any).</item>
+                <item id="2">Logic. I tend to favor logic as opposed to my emotions. (Neutral)</item>
+                <item id="3">Innovation. I aim to create new machinery that can benefit the lives of others. (Good)</item>
+                <item id="4">Profit. I see my creations as a viable way to make money, regardless of what my creations can do. (Evil)</item>
+                <item id="5">Power. I aim to show the world how strong my creations can be. (Chaotic)</item>
+                <item id="6">Foresight. I know that civilization would benefit from well conducted research into engineering. (Lawful)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">I find relationships with constructs more valuable to me than with people.</item>
+                <item id="2">Knowledge should be shared, and I’m always willing to teach others how things work.</item>
+                <item id="3">My tools were given to me by my instructor. I will use them to make them proud.</item>
+                <item id="4">I find that working on a specific lifelong project distracts me from any pain or sadness I may feel.</item>
+                <item id="5">I will prove myself by way of my creations.</item>
+                <item id="6">It is my duty to serve civilization by making helpful creations.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">If something doesn’t make logical sense to me, I get easily flustered.</item>
+                <item id="2">I focus on fixing anything but myself.</item>
+                <item id="3">If something I make fails or breaks down, I feel incredibly sad or angry about it.</item>
+                <item id="4">I often find myself chatting on and on and on about machinery and what I make.</item>
+                <item id="5">I sometimes forget how loud my work can get.</item>
+                <item id="6">I often scoff at primitive technology.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Skilled Engineering" type="Background Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_SKILLED_ENGINEERING">
+            <description>
+                <p>You have considerable knowledge regarding engineering. You know much about famous engineers and tinkerers, and what they are famous for. You also always have free room and board in any place where engineers reside, and the individuals in such a settlement might grant you use of their shops or tools.</p>
+                <p class="indent">In addition, you can generally find the materials needed to repair various tools, equipment, or even constructs, and can inspect them to understand exactly what went wrong and how to repair them.</p>
+            </description>
+            <sheet alt="Skilled Engineering">
+                <description>You also always have free room and board in any place where engineers reside, and the individuals in such a settlement might grant you use of their shops or tools. In addition, you can generally find the materials needed to repair various tools, equipment, or even constructs, and can inspect them to understand exactly what went wrong and how to repair them.</description>
+            </sheet>
+        </element>
+    
+    <element name="Exile" type="Background" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_EXILE">
+        <description>
+            <p>Through a series of events, you became an exile to your homeland. Banished and forbidden to ever return, you have set off on a journey to find a new home. It could have been that you committed some terrible act, or were wrongly accused of doing so. Or perhaps it was a mass banishment decreed by a new leadership in your homeland.</p>
+            <p class="indent">When you choose this background, work with your DM to determine what exactly caused you to become an exile, how those events took place, and what the terms of your banishment are. Was it the case that you rightfully deserved to be exiled from your home? Or were you innocent, and wrongfully accused of acts you were told you committed?</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Survival, and one other skill of your choice</li>
+                <li><strong>Tool Proficiencies:</strong> One tool of your choice</li>
+                <li><strong>Languages:</strong> One language from your homeland</li>
+                <li><strong>Equipment:</strong> A walking stick, a set of travelers clothes, one week’s supply of rations, a backpack, a small knife, a tankard, and a small pouch containing 5 gp</li>
+            </ul>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_EXILED_LIFE" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>The life of an exile is a tough one, and is often filled with strife and change. They are unmoored from the only life they have ever known, which could radically change them from the person they used to be.</p>
+        </description>
+        <setters>
+            <set name="short">Survival plus 1 skill, 1 tool, 1 language</set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_EXILED_LIFE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <select type="Proficiency" name="Skill Proficiency (Exile)" supports="Skill" />
+            <select type="Proficiency" name="Tool Proficiency (Exile)" supports="Artisan tool" />
+            <select type="Language" name="Language (Exile)" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">Though I am exiled, I remember my homeland fondly.</item>
+                <item id="2">I am glad to be gone from the hellish conditions that were plaguing my home.</item>
+                <item id="3">I yearn to one day return to my homeland to prove my innocence.</item>
+                <item id="4">I openly admit to others what caused me to be banished. I am proud of what I did.</item>
+                <item id="5">While I do miss my homeland, I don’t mind learning of and experiencing other lands and cultures.</item>
+                <item id="6">I often cook dishes or read books that were prominent in my homeland.</item>
+                <item id="7">I try to hide why I was exiled, as it brings me great shame.</item>
+                <item id="8">I long to bring both myself and others back to my homeland to live as we once did.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Revenge. I know I was wrongly accused, and those who accused me will pay. (Chaotic)</item>
+                <item id="2">Return. I want to do all that I can to right make things right again so that I can return home. (Good)</item>
+                <item id="3">Renewal. I will find a new home for myself and others in a place where we can be free. (Lawful)</item>
+                <item id="4">Redemption. I know I was wrong with my actions, yet I will prove that I am worthy of a second chance. (Good)</item>
+                <item id="5">Retribution. I will bring all of the might and power that I can against those who exiled me. (Evil)</item>
+                <item id="6">Retrospection. At the time, I did not know why I was exiled. However, I will try to learn from my actions. (Any)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">I take those who were exiled alongside me.</item>
+                <item id="2">I have someone I care deeply about back home.</item>
+                <item id="3">My new friends are who I care about now in my journeys.</item>
+                <item id="4">I found comfort in knowing that there are others in similar predicaments as me.</item>
+                <item id="5">I had a dear friend who was exiled with me. I will learn to at least give them a way to return home.</item>
+                <item id="6">The new rules of my homeland will stop at nothing to hunt down exiles. I will find a way to stop them.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I am slow to trust anyone after my trials.</item>
+                <item id="2">I often speak too harshly about those who exiled me.</item>
+                <item id="3">I become sad very easily when I think or speak about my home.</item>
+                <item id="4">Even though I know I deserved to be exiled, I still want to take it out on those who banished me.</item>
+                <item id="5">I often belittle other cultures and countries for minor cultural habits.</item>
+                <item id="6">I lash out with anger at anyone who belittles my homeland.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Exiled Life" type="Background Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_EXILED_LIFE">
+            <description>
+                <p>Whatever your prior standing was in your homeland, you are now an exile. You are able to find refuge with others who are exiled, as well as those who sympathize with your situation. Generally, this means that you can find a place to bed down, recover, and hide from any potential followers or trackers attempting to hunt you down. People from where you hail from are less willing to assist you if it means putting themselves in harms way.</p>
+            </description>
+            <sheet alt="Exiled Life">
+                <description>You are able to find refuge with others who are exiled, as well as those who sympathize with your situation. Generally, this means that you can find a place to bed down, recover, and hide from any potential followers or trackers attempting to hunt you down. People from where you hail from are less willing to assist you if it means putting themselves in harms way.</description>
+            </sheet>
+        </element>
+    
+    <element name="Guardian" type="Background" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_GUARDIAN">
+        <description>
+            <p>You were trained and provisioned to be a guardian to a special place. Whether you were brought up in a family that has always been guardians, or decided to become one out of choice, you are a staunch defender and warrior. Perhaps you guard a temple or sacred site from those who wish to take it. Or, you could have been a member of a royal guard or protected a city from invaders.</p>
+            <p class="indent">When you choose this background, work with your DM to determine what kind of organization you were a part of, how your training was, and what kind of place you swore to protect. Was it an ancient temple dedicated to the gods? Or was it a city which you loved dearly, and would give your life to protect?</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Intimidation, Perception</li>
+                <li><strong>Tool Proficiencies:</strong> None</li>
+                <li><strong>Languages:</strong> Two of your choice</li>
+                <li><strong>Equipment:</strong> A set of common clothes, a set of medium armor, a simple or martial weapon of your choice, a banner, a ring of keys that go to where you are stationed, and a pouch containing 10 gp</li>
+            </ul>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_GUARDIANS_CONNECTIONS" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>For those who are guardians, the law and upholding of vows and honor are important, regardless of what, where, or whom you serve. Thus, guardians tend to be those with a firm understanding and respect for rules and structure, while also being people who are strong and brave.</p>
+        </description>
+        <setters>
+            <set name="short">Intimidation, Perception, 2 languages</set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_GUARDIANS_CONNECTIONS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+            <select type="Language" name="Language (Guardian)" number="2" supports="Starting" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I take great pride in guarding what I have sworn to protect.</item>
+                <item id="2">While I once had a passion for what I guard, it has been a rather dull experience so far.</item>
+                <item id="3">I tend to create little stories in my head to occupy my time.</item>
+                <item id="4">I may adhere to my post with honor and dignity, but I do enjoy a good distraction every now and then.</item>
+                <item id="5">I tend to enjoy the company of those who adhere to the law.</item>
+                <item id="6">Protecting the innocent is the most admirable thing that one can do.</item>
+                <item id="7">I know that the place I defend will play a role of great importance in the events to come.</item>
+                <item id="8">I guard one who is going to change the world.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Honor. I adhere to the strict rules and requirements of being a guardian. (Lawful)</item>
+                <item id="2">Sacrifice. I will lay down my life if need be for those that I protect. (Good)</item>
+                <item id="3">Power. I know how to wield my position to obtain what I want. (Evil)</item>
+                <item id="4">Determination. I will stop at nothing and will do anything to protect that which I guard. (Chaotic)</item>
+                <item id="5">Defense. I chose this path, and it is one that I swear to uphold the tenets of. (Lawful)</item>
+                <item id="6">Protection. I will defend the one I am told to protect. (Any)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">I am the guardian of an heir to a fallen empire. I will restore them to power, but until then I must keep them hidden and safe.</item>
+                <item id="2">My closest friends are the priests and priestesses of the temple I protect.</item>
+                <item id="3">I am the sole surviving guardian of an ancient and forgotten magical structure.</item>
+                <item id="4">An otherworldly entity instructed me with guarding a portal to their realm.</item>
+                <item id="5">I uphold the laws and tenets of the city I have vowed to defend.</item>
+                <item id="6">Through heat and rain and storm, I shall stand as a shield that protects my master.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">Those who break the law are the worst society has to offer, and I show them no pity or remorse.</item>
+                <item id="2">I often find myself wishing for a life of guarding something more worthwhile.</item>
+                <item id="3">I don’t often agree with how my charge acts and thinks, to their continuous consternation.</item>
+                <item id="4">I talk a big game, but deep down I doubt myself constantly.</item>
+                <item id="5">I am secretly scared of dying for my cause.</item>
+                <item id="6">I feel as though I will never be seen as worthy by those I protect, and thus I do anything I can to feel as though I have value.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Guardian’s Connections" type="Background Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_GUARDIANS_CONNECTIONS">
+            <description>
+                <p>You have a special position due to your profession as a guardian. Other guardians, regardless of whether or not they work with you or not, recognize your nature as a guardian, and will show their respect. You can also invoke your status as a guardian to gain access to the occasional restricted area, provided that you have not shown yourself to be a threat. Additionally, you can requisition simple equipment from other guardians, so long as they are equipped to do so.</p>
+            </description>
+            <sheet alt="Guardian’s Connections">
+                <description>Other guardians, regardless of whether or not they work with you or not, recognize your nature as a guardian, and will show their respect. You can also invoke your status as a guardian to gain access to the occasional restricted area, provided that you have not shown yourself to be a threat. Additionally, you can requisition simple equipment from other guardians, so long as they are equipped to do so.</description>
+            </sheet>
+        </element>
+    
+    <element name="Heretic" type="Background" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_HERETIC">
+        <description>
+            <p>You are one who holds ideas that many have deemed as being both blasphemous and dangerous. As a heretic, your work and what you believe has grabbed the attention of the priests and temples of the gods, and thus many have begun to see you as a threat. Perhaps you believe that the gods are not gods at all, but merely powerful mortal beings. Or, it could be that your methods of worship and interpretations of holy texts are seen as too unorthodox.</p>
+            <p class="indent">When you choose this background, work with your DM to determine the nature of your heresy, how it differs from the established canonical faiths, and how these beliefs have been received by the populace. Is it the case that you are a devout worshipper who is alone in their style of worship? Or are you trying to lead others to see a greater truth?</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Religion, and your choice of either Deception, Intimidation, or Persuasion</li>
+                <li><strong>Tool Proficiencies:</strong> None</li>
+                <li><strong>Languages:</strong> One exotic language (Abyssal, Celestial, Deep Speech, Draconic, Infernal, Primordial, Sylvan, or Undercommon)</li>
+                <li><strong>Equipment:</strong> A pouch containing 10 gp, book or scroll or holy text, a tome of notes and theories written by you, a torch, a quill, an ink pot, a small crate, and a set of traveler’s clothes</li>
+            </ul>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_HERETICAL_IDEOLOGY" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>While some may embrace your new theories or changes to a common ideology, many will find your heresies to be dangerous to the public. Thus, heretics have a certain perspective and attitude towards others and the world that reflects these situations.</p>
+        </description>
+        <setters>
+            <set name="short">Religion plus 1 skill, 1 exotic language</set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_HERETICAL_IDEOLOGY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+            <select type="Proficiency" name="Skill Proficiency (Heretic)" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERSUASION" />
+            <select type="Language" name="Language (Heretic)" supports="Exotic" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I believe in what I think with every fiber of my being.</item>
+                <item id="2">I yearn for people to see the truth in what I say.</item>
+                <item id="3">My beliefs are not heresy, but proof that I have been called to serve a higher purpose.</item>
+                <item id="4">I am slow to trust many people.</item>
+                <item id="5">The gods are false, and it is my duty to prove it.</item>
+                <item id="6">Once I get going, it’s hard to get me to stop talking.</item>
+                <item id="7">I see what can change in people, as I have seen what can change in scripture.</item>
+                <item id="8">If I am to change the world, I must pick up my pen and write.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Enlightenment. I aim to show everyone the truth in what I say and believe. (Lawful)</item>
+                <item id="2">Leadership. I will rally the people behind my rule and revelations of the truth. (Any)</item>
+                <item id="3">Revenge. I will prove my heresies true to as to take down those who doubted me. (Evil)</item>
+                <item id="4">Affirmation. I know the gods to be the highest powers. (Any)</item>
+                <item id="5">Discord. I am to make my heresies cause disruption in the land. (Chaotic)</item>
+                <item id="6">Divinity. I will use my heresies to solidify the role of the gods. (Good)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">I worship a god that seeks to overthrow another.</item>
+                <item id="2">A colleague helped me with my theories, though it was not safe for them to do so.</item>
+                <item id="3">A mentor entrusted me with these heresies. Is I’ll honor their trust in me.</item>
+                <item id="4">I am fully alone in my thoughts and beliefs, and yearn for someone to share them with me.</item>
+                <item id="5">I await those who will hear my words.</item>
+                <item id="6">Many of my friends worry for my life given my outspokenness.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I often jump to conclusions.</item>
+                <item id="2">I sometimes doubt if what I believe is actually the truth.</item>
+                <item id="3">My friends think I’m obsessed with my theories.</item>
+                <item id="4">I think that if someone shows interest in what I think, that must mean they trust me completely.</item>
+                <item id="5">My beliefs are true, regardless of what others may think.</item>
+                <item id="6">I can sometimes cling to those who find my beliefs to be valid.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Heretical Ideology" type="Background Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_HERETICAL_IDEOLOGY">
+            <description>
+                <p>The nature of your study and worship has lead you to a conclusion that, to others, is seen as heretical. It might be a great truth about the gods or how a vast system of higher level clergy operate. It could also be that you have found a way to defy the gods, and thus you have become a threat to them. You might have uncovered a fact that has long been forgotten, or unearthed some relic of the past that could rewrite history. It might be information that would be damaging to the general public or to those who maintain high religious power.</p>
+                <p class="indent">Work with your DM to determine the details of your heresy and its impact on the campaign.</p>
+            </description>
+            <sheet alt="Heretical Ideology">
+                <description>The nature of your study and worship has lead you to a conclusion that, to others, is seen as heretical.</description>
+            </sheet>
+        </element>
+    
+    <element name="Occult Detective" type="Background" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_OCCULT_DETECTIVE">
+        <description>
+            <p>You are an investigator, one who studies magic or otherworldly entities and deities. You specialize in finding out the reasons and people behind occult activities, and trying to put a stop to them. Perhaps you were inspired to choose this life because of a terrible past. Or, you may have an innate talent for rooting out the unfamiliar.</p>
+            <p class="indent">When you choose this background, work with your DM to determine what kind of occult investigations you often do, how your skills have developed, and what kinds of occult findings you have discovered. Was it a religious group trying to perform some forbidden ritual? Or is it some type of monster that has been killing the people it has been hiding amongst?</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Investigation, and one from: Arcana, Religion, or Survival</li>
+                <li><strong>Tool Proficiencies:</strong> None</li>
+                <li><strong>Languages:</strong> Two exotic languages (Abyssal, Celestial, Deep Speech, Draconic, Infernal, Primordial, Sylvan, or Undercommon)</li>
+                <li><strong>Equipment:</strong> A vial of holy water, a set of travelers clothes, three wooden stakes, a silver ring, an empty vial, a book discussing local religions and religious movements, and a whip</li>
+            </ul>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_OCCULT_AWARENESS" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>Many occult detectives and investigators see a lot of strange and frightening things in their lifetimes, from horrible crimes to witnessing creatures from other realms be summoned in places they should not be. As such, to grow old in this profession is seen as incredible, and those that do are often shaped by their experiences into living a hardened and sometimes lonely life.</p>
+        </description>
+        <setters>
+            <set name="short">Investigation plus 1 skill, 2 exotic languages</set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_OCCULT_AWARENESS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+            <select type="Proficiency" name="Skill Proficiency (Occult Detective)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_RELIGION|ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I take my profession seriously, and hope to rid the world of terrors.</item>
+                <item id="2">While I do enjoy company, I am wary to make lifelong friends, as I have had many end in terrible ways.</item>
+                <item id="3">The gods don’t do enough in the world.</item>
+                <item id="4">I can’t help but inspect every corner of every room at least once. You can never be too sure.</item>
+                <item id="5">I have a small hobby that keeps me sane.</item>
+                <item id="6">I don’t think I could ever have a family. Not after what I have seen.</item>
+                <item id="7">I laugh and taunt my foes when I have the upper hand.</item>
+                <item id="8">Not all I track down are evil. Some are just people trying to experiment with new things.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Justice. I will bring every monster and dark practitioner of magic to answer to the law. (Good)</item>
+                <item id="2">Tenets. There are strict rules that I must adhere to while working. (Lawful)</item>
+                <item id="3">Temptation. I can be persuaded to look the other way, if provided the right compensation. (Evil)</item>
+                <item id="4">Methodology. I get the job done, anyway I can. (Chaotic)</item>
+                <item id="5">Knowledge. I long to know why most people do the things they do. (Any)</item>
+                <item id="6">Focus. I don’t involve myself in the morality of situations and motivations. I just focus on the job at hand. (Neutral)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">It is because of the occult that I no longer have a family.</item>
+                <item id="2">I don’t view all occult practices as bad. I’m just good at tracking them.</item>
+                <item id="3">I picked up a thing or too after having fallen for a member of a secretive religious group.</item>
+                <item id="4">I try to protect the innocent from things beyond their control.</item>
+                <item id="5">I try to show mercy whenever I can.</item>
+                <item id="6">I try not to focus on what happened on a job once its done. If I do, it will wear me down.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">Deep down, I have a lot of things I am afraid of. I just can’t speak of them.</item>
+                <item id="2">I drown myself in drinks and gambling when my mind is heavy.</item>
+                <item id="3">I don’t want to find myself slipping into becoming some of the things I have seen.</item>
+                <item id="4">It’s hard for me to open up to others.</item>
+                <item id="5">I am too confident in my abilities and tracking skills.</item>
+                <item id="6">I want to have a family one day, yet I don’t know if I will live long enough to see that happen.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Occult Awareness" type="Background Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_OCCULT_AWARENESS">
+            <description>
+                <p>Though others may have to go through a variety of loops and paperwork to gain access to areas heavy with occult activity, you have an easier time with acquiring access to scenes and places rife with paranormal occurrences, or know of people who can get you into them.</p>
+                <p class="indent">You also have a wealth of knowledge related to obscure or underground religious groups and sects, and have an easier time noticing clues and traces of the occult. Additionally, you are likely to gain special treatment by those who have hired you for their services in tracking foul creatures and other occult signs.</p>
+            </description>
+            <sheet alt="Occult Awareness">
+                <description>Though others may have to go through a variety of loops and paperwork to gain access to areas heavy with occult activity, you have an easier time with acquiring access to scenes and places rife with paranormal occurrences, or know of people who can get you into them.</description>
+            </sheet>
+        </element>
+    
+    <element name="Prodigy" type="Background" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_PRODIGY">
+        <description>
+            <p>You are someone with an innate talent and prowess at a particular skill, or even several. Beginning at a young age, others watched as you outshone all of your peers with an incredible display of your talents. You may have been someone blessed at birth, or even prophesied. Or perhaps you were someone who just simply had a knack for a particular skill.</p>
+            <p class="indent">When you choose this background, work with your DM to determine what skills or abilities you are prodigious in, how others have reacted to your talents, and what kind of experiences this life has brought you. Was it that you were a brilliant academic or intellectual? Or was it the case that you had mastered a specific skill or techniques regarding combat?</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Two skills of your choice</li>
+                <li><strong>Tool Proficiencies:</strong> Two tool sets or instruments of your choice</li>
+                <li><strong>Languages:</strong> Two of your choice</li>
+                <li><strong>Equipment:</strong> A set of common clothes, a quill, an inkpot, a blank journal, one tool set of your choice, and a small pouch containing 10 gp</li>
+            </ul>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_PRODIGIOUS_SKILL" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>The life of a prodigy is one riddled with success after success, and they are often the talk of the town. Some prodigies have to learn how to deal with the attention they receive, while others acquire confidence and even cockiness with the acknowledgement of their unique abilities.</p>
+        </description>
+        <setters>
+            <set name="short">2 skills, 2 tools or instruments, 2 languages</set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_PRODIGIOUS_SKILL" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <select type="Proficiency" name="Skill Proficiency (Prodigy)" supports="Skill" number="2" />
+            <select type="Proficiency" name="Tool Proficiency (Prodigy)" supports="Toool" number="2" />
+            <select type="Language" name="Language (Prodigy)" number="2" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I like any time that I get to display my talents.</item>
+                <item id="2">While I understand my talents are impressive, I think that I always have room to improve.</item>
+                <item id="3">I try not to draw too much attention to myself. It can be unsettling.</item>
+                <item id="4">My talents are a major part of what defines me.</item>
+                <item id="5">I often find myself trying to focus on things I can’t do well.</item>
+                <item id="6">I like knowing that there are things that I do surprisingly well.</item>
+                <item id="7">I like to sit and listen to others discuss their methods and techniques.</item>
+                <item id="8">I sometimes pretend to mess up to let others have a moment to show their skills.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Selfish. My talents are special, and I should be treated with respect and great treatment. (Evil).</item>
+                <item id="2">Display. I take any moment to show off. (Chaotic)</item>
+                <item id="3">Divinity. I believe that my skills are a blessing from the gods. (Any)</item>
+                <item id="4">Instructional. I try to use my skills and knowledge to help others. (Good)</item>
+                <item id="5">Humble. I know I have talent, but I try to make a point to not show off (Good)</item>
+                <item id="6">Results. I don’t focus on anything except the outcome. (Neutral)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">My parents always tried to show me off and push my limits.</item>
+                <item id="2">I have someone that I tutor and teach about the subject and skill I am</item>
+                <item id="3">I have had to deal with jealous people all my life.</item>
+                <item id="4">I just want to be treated like a normal person.</item>
+                <item id="5">I have quite a few people who are admirers of my skills.</item>
+                <item id="6">I deserve all of the great treatment that people give me.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I can get very cocky. A lot.</item>
+                <item id="2">Even though I have skill, I always compare myself to others.</item>
+                <item id="3">I wish I could have people notice other aspects of my personality and not just my skills.</item>
+                <item id="4">I see myself as merely an efficient tool.</item>
+                <item id="5">I can’t seem to shake the feeling that I am just being used.</item>
+                <item id="6">I act really confident to hide my doubt.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Prodigious Skill" type="Background Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_PRODIGIOUS_SKILL">
+            <description>
+                <p>Your talents and skills mark you as a very special individual. Wherever you go, curious glances are sent your way, and you are often the point of affection, admiration, or even jealousy.</p>
+                <p class="indent">You can use this attention to gain access to people and places that others might not otherwise have, and for your traveling companions. Experts or masters in a field related to your talents will be particularly curious and may even ask you to show off your skills.</p>
+            </description>
+            <sheet alt="Prodigious Skill">
+                <description>Wherever you go, curious glances are sent your way, and you are often the point of affection, admiration, or even jealousy. You can use this attention to gain access to people and places that others might not otherwise have, and for your traveling companions. Experts or masters in a field related to your talents will be particularly curious and may even ask you to show off your skills.</description>
+            </sheet>
+        </element>
+    
+    <element name="Revolutionary" type="Background" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_REVOLUTIONARY">
+        <description>
+            <p>You are someone who has felt the spark of revolution within you. You are brave, and know that a change is needed for society to progress. It could be that there is an oligarchy or dictatorship that has your homeland under harsh rule. Or, it could be that the social and political systems of your country are failing to change with the times.</p>
+            <p class="indent">When you choose this background, work with your DM to determine the nature of your revolutionary position, how others are reacting to these views, and what impact your views have had so far. Is it the case that you are one of many, and there is a revolution currently underway? Or is it the case that you are one of the few who think this way, and the road ahead will be a difficult one?</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> History, Persuasion</li>
+                <li><strong>Tool Proficiencies:</strong> None</li>
+                <li><strong>Languages:</strong> Two of your choice</li>
+                <li><strong>Equipment:</strong> A set of common clothes, a dagger, a book of history from your homeland, a flag or banner, a small broach or pin bearing an insignia, and a small pouch containing 10 gp</li>
+            </ul>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_ONE_OF_THE_PEOPLE" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>Those who hold onto and act upon revolutionary ideas are going to face many obstacles in their lives. Even if many feel the same, there are those, particularly those in power, who will try to stop you. This leads many revolutionaries to hold a specific world view.</p>
+        </description>
+        <setters>
+            <set name="short">History, Persuasion, 2 languages</set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_ONE_OF_THE_PEOPLE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+            <select type="Language" name="Language (Revolutionary)" number="2" supports="(Exotic||Starting)" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I often read books about politics and economics.</item>
+                <item id="2">I live life in the moment, knowing that any day could be my last.</item>
+                <item id="3">I actually have no personal quarrel with those in power, but the system has to change.</item>
+                <item id="4">I despise any type of nobility or royalty.</item>
+                <item id="5">I know that there are both good and bad people in every walk of life.</item>
+                <item id="6">If you want to know anything about my homelands culture, I am the one to go to.</item>
+                <item id="7">I am most at home when amongst the common folk.</item>
+                <item id="8">I am joyous with my friends, and harsh to those in power.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Change. I will try everything I can to bring about a new paradigm in my homeland. (Any)</item>
+                <item id="2">Anarchy. The current system does not work, yet none will. (Chaotic)</item>
+                <item id="3">Defiance. The current leaders do nothing to help those in need. I aim to change that. (Good)</item>
+                <item id="4">Spite. I aim to overthrow the rules of my land purely because I do not like them. (Evil)</item>
+                <item id="5">Catalyst. I know the current system doesn’t work, but I don’t care or know what system will replace it. (Neutral)</item>
+                <item id="6">Revision. I aim to set forth a new system that will help with all who live in my country. (Lawful)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">I have a close friend who is a member of a royal family.</item>
+                <item id="2">I am secretly the illegitimate child of one of the leaders.</item>
+                <item id="3">I will live to see change happen, or die trying.</item>
+                <item id="4">I dream of a day where we can all live in peace again, though things must happen before that can be obtained.</item>
+                <item id="5">My family was harmed by the rules of my homeland.</item>
+                <item id="6">I have seen many of my close friends die in service to the cause.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I secretly doubt that any real change will happen.</item>
+                <item id="2">I am slow to trust any outside of my close circle.</item>
+                <item id="3">I am too trusting of some of the common folk.</item>
+                <item id="4">I am suspicious of every guard, watchman, or noble.</item>
+                <item id="5">I have an addiction.</item>
+                <item id="6">I am quick to action, slow to words.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: One of the People" type="Background Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_ONE_OF_THE_PEOPLE">
+            <description>
+                <p>Your connection to other revolutionaries gives you a feel of how the populace, or at least a part of them, are feeling. You can easily find outposts and hidden groups who are a part of or are similar to your revolution and its ideals, and you can pick out the places of underground political activity in a community.</p>
+            </description>
+            <sheet alt="One of the People">
+                <description>Your connection to other revolutionaries gives you a feel of how the populace, or at least a part of them, are feeling. You can easily find outposts and hidden groups who are a part of or are similar to your revolution and its ideals, and you can pick out the places of underground political activity in a community.</description>
+            </sheet>
+        </element>
+    
+    <element name="Witch Doctor" type="Background" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_WITCH_DOCTOR">
+        <description>
+            <p>You are a local authority on magic, medicine, nature, or spirits. You are well versed in a variety of fields, and many come to you when they have trouble or need guidance. You may be known as a medicine man or wise woman, or are known simply as a witch doctor. Many may look up to you, while others may fear you and your abilities.</p>
+            <p class="indent">When you choose this background, work with your DM to determine what kind of witch doctor you are, how the local common folk and nobility view you, and what kind of experiences you have had as a witch doctor. Are you someone who communicates often with spirits and animals? Or are you someone who focuses on medicine, magic, and herbology?</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Choose two from Arcana, Medicine, Nature, or Religion, Nature, or Religion.</li>
+                <li><strong>Tool Proficiencies:</strong> Herbalism Kit, Poisoner’s Kit</li>
+                <li><strong>Languages:</strong> One exotic language (Abyssal, Celestial, Deep Speech, Draconic, Infernal, Primordial, Sylvan, or Undercommon)</li>
+                <li><strong>Equipment:</strong> A set of common clothes, an herbalism kit, a dozen small bones, a walking stick, a small dagger, a vial of holy water, a small book discussing otherworldly creatures, three scarves, and a black candle</li>
+            </ul>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_WITCH_KNOWLEDGE" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p></p>
+        </description>
+        <setters>
+            <set name="short">2 skills, Herbalism Kit, Poisoner’s Kit, 1 exotic language</set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_WITCH_KNOWLEDGE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <select type="Proficiency" name="Skill Proficiency (Witch Doctor)" number="2" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_RELIGION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+            <select type="Language" name="Language (Witch Doctor)" supports="Exotic" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I like to dress in simple clothing, or even barefoot.</item>
+                <item id="2">If more people focused on the old ways, there would be fewer problems in the world.</item>
+                <item id="3">I take pity on those who fear death and the dead.</item>
+                <item id="4">People are too scared of what they don’t understand.</item>
+                <item id="5">I like knowing that I can help out others in troubling times.</item>
+                <item id="6">When I have to take from nature, I try to give something in return.</item>
+                <item id="7">Those who harm nature or animals without cause are vile.</item>
+                <item id="8">I like to study the arcane as much as I do the divine.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Nature. Nature does not wait for anyone. (Neutral)</item>
+                <item id="2">Trickery. I often play pranks on others and delight in deception. (Chaotic)</item>
+                <item id="3">Assistance. I try to help out those who come to see me. (Good)</item>
+                <item id="4">Death. Death is not the end, as some make it out to be. (Any)</item>
+                <item id="5">Greed. I only help those who do favors for me or can provide me great compensation. (Evil)</item>
+                <item id="6">Order. I try to work in regards to the natural order and laws of the land. (Lawful)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">The one who taught my was a village elder.</item>
+                <item id="2">Animals and the dead are more friends to me than the living are.</item>
+                <item id="3">I speak with spirits as often as I can.</item>
+                <item id="4">I once had a small village work for me and my command.</item>
+                <item id="5">I have many friends in local tribes and villages.</item>
+                <item id="6">For the past few years, I have been in hiding from local witch hunter and authorities.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I don’t help people unless they have something they can give in return.</item>
+                <item id="2">I am slow to trust people from larger cities.</item>
+                <item id="3">I envy those who never have to deal with spirits.</item>
+                <item id="4">I secretly think that those who cannot use magic are lesser than me.</item>
+                <item id="5">I am secretly afraid of ghosts and undead.</item>
+                <item id="6">I don’t like to share secrets of my trade.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Witch Knowledge" type="Background Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_WITCH_KNOWLEDGE">
+            <description>
+                <p>You occasionally see spirits or visions during your journeys that others cannot see. These spirits and visions can be pleasant, or can be ominous and frightening. Your DM may occasionally use this as a guide, or may tie it into a story or plot. Your DM may also allow you to voluntarily evoke these visions through some mechanic of their choice.</p>
+                <p class="indent">Additionally, you have an excellent knowledge of not only the local territory, but also its terrain and natural resources. You can usually call upon the hospitality of locals, and some may even approach you to employ your services regarding the afterlife, medicine, or nature.</p>
+            </description>
+            <sheet alt="Witch Knowledge">
+                <description>You occasionally see spirits or visions during your journeys that others cannot see. Additionally, you have an excellent knowledge of not only the local territory, but also its terrain and natural resources. You can usually call upon the hospitality of locals, and some may even approach you to employ your services regarding the afterlife, medicine, or nature.</description>
+            </sheet>
+        </element>
+    
+</elements>
