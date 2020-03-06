@@ -1,117 +1,433 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Yorviing's Arcane Grimoire Magic Items</name>
+        <name>Yorviing’s Arcane Grimoire Magic Items</name>
         <update version="0.0.1">
             <file name="magic-items.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/yorviings-arcane-grimoire/magic-items.xml" />
         </update>
     </info>
     
-    <element name="Amulet of Garamar" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_AMULET_OF_GARAMAR">
+    <element name="Amulet of Garamar" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_AMULET_OF_GARAMAR">
         <description>
-            <p></p>
+            <p>Your Intelligence score is 19 while you wear this amulet. It has no effect on you if your Intelligence is already 19 or higher without it.</p>
+            <p class="indent">Additionally, you gain resistance to necrotic damage.</p>
         </description>
         <setters>
             <set name="category">Wondrous Items</set>
             <set name="cost" currency="gp">0</set>
             <set name="weight" lb="0">0 lb.</set>
             <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
+            <set name="rarity">Rare</set>
+            <set name="attunement">true</set>
         </setters>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+            <stat name="strength:score:set" value="19" bonus="base" />
+        </rules>
     </element>
-	<element name="Armor of the Battlemage" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_ARMOR_OF_THE_BATTLEMAGE">
+	<element name="Armor of the Battlemage" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_ARMOR_OF_THE_BATTLEMAGE">
 		<description>
-			<p></p>
+            <p>This set of light armor is elegantly made from rare and exotic metals and leather, and is covered in arcane symbols. Once attuned, the armor will magically adjust to fit the wearer perfectly. This armor grants defensive and mobility properties.</p>
+            <p class="indent">You gain the following benefits while wearing this set of armor:</p>
+            <p class="indent">Your AC becomes 17 if it is not already.</p>
+            <p class="indent">You have advantage on saving throws against spells and other magical effects.</p>
+            <p class="indent">You gain resistance to force damage.</p>
+            <p class="indent">Your movement speed increase by 20 feet. If you have wings, the armor adjust to accommodate your wings.</p>
 		</description>
 		<setters>
 			<set name="category">Magic Armor</set>
 			<set name="cost" currency="gp">0</set>
 			<set name="slot">body</set>
-			<set name="type" addition="light, medium, or heavy">Armor</set>
-			<set name="rarity">Rare</set>
-			<set name="enhancement">1</set>
-			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">{{parent}} +{{enhancement}}</set>
+			<set name="type" addition="light">Armor</set>
+            <set name="rarity">Legendary</set>
+            <set name="attunement" addition="by a Sorcerer, Warlock, or Wizard">true</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT</set>
+			<set name="name-format">{{parent}} Armor of the Battlemage</set>
 		</setters>
 		<rules>
-			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
+			<stat name="ac:armored:armor" value="17" bonus="base" />
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FORCE" />
+            <stat name="innate speed:misc" value="20" bonus="enhancement" />
 		</rules>
 	</element>
-    <element name="Bracelet of School Mastery" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_BRACELET_OF_SCHOOL_MASTERY">
+    <element name="Bracelet of School Mastery" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_BRACELET_OF_SCHOOL_MASTERY">
         <description>
-            <p></p>
+            <p>While wearing this bracelet, you gain a +1 bonus to spell attack rolls and to the saving throw DCs of your wizard spells that belong to one of the nine schools of magic: abjuration, conjuration, divination, enchantment, evocation, illusion, necromancy, quantumurgy, and transmutation.</p>
         </description>
         <setters>
             <set name="category">Wondrous Items</set>
             <set name="cost" currency="gp">0</set>
             <set name="weight" lb="0">0 lb.</set>
             <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
+            <set name="rarity">Uncommon</set>
+            <set name="attunement" addition="by a Wizard">true</set>
         </setters>
+        <rules>
+			<stat name="spellcasting:attack" value="1" />            
+        </rules>
     </element>
-    <element name="Cloak of the Autumn Witch" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_CLOAK_OF_THE_AUTUMN_WITCH">
+    <element name="Cloak of the Autumn Witch" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_CLOAK_OF_THE_AUTUMN_WITCH">
         <description>
-            <p></p>
+            <p>This long, thick cloak is lukewarm to the touch and is adorned with numerous fallen leaves, in shades and hues of orange, brown, red, and yellow.</p>
+            <p class="indent">While wearing this cloak, the wearer gains proficiency in the Nature and Survival skills.</p>
+            <p class="indent">In addition, the cloak grants the wearer resistance to necrotic damage.</p>
         </description>
         <setters>
             <set name="category">Wondrous Items</set>
             <set name="cost" currency="gp">0</set>
             <set name="weight" lb="0">0 lb.</set>
             <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
+            <set name="rarity">Very Rare</set>
+            <set name="attunement">true</set>
         </setters>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+        </rules>
     </element>
-    <element name="Dreadnight" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_DREADNIGHT">
+    <element name="Dreadnight" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_DREADNIGHT">
         <description>
-            <p></p>
+            <p>This quarter staff is wrapped in a strange, exotic leather that is cool to the touch. The leather straps along the staff are marked with an inscription in Elvish that reads ‘Within the heart lies shadow’.</p>
+            <p class="indent">When you hit with an attack using this magic quarterstaff, the target takes an extra 1d6 necrotic damage. In addition, while you hold the staff, you have resistance to necrotic damage and you have advantage on Dexterity (Stealth) checks made while in dim light or darkness.</p>
+            <p class="indent">While attuned to this staff, you gain darkvision up to 60 feet, and you can see through both magical and non magical darkness. When you draw this weapon, you can extinguish all nonmagical flames within 30 feet of you. This property can be used no more than once per hour.</p>
+        </description>
+        <setters>
+            <set name="category">Magic Weapons</set>
+            <set name="keywords">Staffs</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="4">4 lb.</set>
+            <set name="type">Staff</set>
+            <set name="rarity">Very Rare</set>
+            <set name="attunement">true</set>
+			<set name="slot">onehand</set>
+			<set name="weapon">Quarterstaff</set>
+        </setters>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+            <grant type="Vision" id="ID_VISION_DARKVISION" />
+        </rules>
+    </element>
+    <element name="Eyes of The Eternal Bloodline v 1.0" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_EYES_OF_THE_ETERNAL_BLOODLINE">
+        <description>
+            <p>The Eyes of the Eternal Bloodline are a mystical and magical set of eyes. Spoken of in legends and myths, the Eyes are the result of ancient magical secrets brought to life. Some view the Eyes as a sacred relic, the appearance of which signal the sign of a new dawn. Others fear the Eyes, seeing them as bringing nothing but chaos and downfall.</p>
+            <p class="indent">These eyes can appear in whatever design the DM chooses. However, if there are multiple sets of the Eyes of the Eternal Bloodline in a world or setting, all sets of the Eyes appear the same.</p>
+            <p class="indent">To attune to the eye, you must meet the requirements, both mentally and physically, and either perform one of the following: awaken the Eyes to replace your own, or gouge out your own eyes and press the Eyes of the Eternal Bloodline into the empty sockets. The Eyes plant themselves into your head and remain there until you die. Once in place, the Eyes transform into a design and shape of the DM’s choice.</p>
+            <p class="indent">While you have these eyes and are attuned to them, you can use your action to activate the eyes, and your eyes shift from their normal appearance to that of the eyes. You gain the following benefits for 1 minute:</p>
+            <ul>
+                <li>You gain truesight up to 30 feet.</li>
+                <li>You have advantage on saving throws against being blinded.</li>
+                <li>You can use an action to see as if you were wearing a <strong>Ring of X-ray Vision</strong>. You can end this effect as a bonus action.</li>
+            </ul>
+            <p class="indent">The eyes have 6 charges. You can use an action to expend 1 or more charges to cast one of the following spells (DC 18) from it, and each spell requires only the vocal component of the spell and that you can see the target: <em>charm person</em> (1 charge), <em>dissonant whispers</em> (1 charge), <em>enthrall</em> (2 charges), <em>catnap</em> (3 charges), <em>compulsion</em> (4 charges), and <em>dominate person</em> (5 charges), and <em>mass suggestion</em> (6 charges). The eyes regain 1d6 charges daily at dawn.</p>
+            <p class="indent">Each time you cast a spell using the eyes, you must roll a d20. On a 5 or lower, you are wracked with pain, taking 1d10 necrotic damage. This damage ignores resistance and immunity.</p>
+            <p class="indent">When the minute passes, you can use a bonus action to strain your body, attempting to prolong this effect. Make a DC 20 Constitution saving throw. On a failed save, you take one level of exhaustion, and 2d10 necrotic damage, as blood begins to seep from your eyes. This damage ignores resistance and immunity. On a successful save, you can maintain this benefit for an additional minute.</p>
+            <div class="sidebar">
+                <h5 class="caption">Special Notes to DMs Regarding ’The Eyes of the Eternal Bloodline’</h5>
+                <p>The Eyes of the Eternal Bloodline can appear in multiple different forms in a world. For example, you could have these eyes appear as an incredibly rare item, of which there are only one set of these eyes in the world. Or, perhaps, you could grant these eyes to a PC based on their backstory. While it would be cautioned to not give access to these eyes right away to a PC, these eyes could be ‘awakened’ after the PC completes a specific task or ritual, and thus these eyes could have been their eyes all along.</p>
+                <p class="indent">Below are a two examples of ways one could implement these eyes into a world or setting.</p>
+                <p class="indent">These eyes are only held by people of a specific clan or bloodline. They are awakened only after someone has performed a series of tasks, and meets a level requirement.</p>
+                <p class="indent">There could be a prophecy of one who has these eyes, either by awakening them or finding them. This prophecy could be one tied to a new era in society, or a sense of doom and dread.</p>
+            </div>
         </description>
         <setters>
             <set name="category">Wondrous Items</set>
             <set name="cost" currency="gp">0</set>
             <set name="weight" lb="0">0 lb.</set>
             <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
+            <set name="rarity">Artifact</set>
+            <set name="attunement" addition="by someone with 16 Constitution and 16 Intelligence">true</set>
+			<set name="charges">6</set>
         </setters>
     </element>
-    <element name="Eyes of The Eternal Bloodline v 1.0" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_EYES_OF_THE_ETERNAL_BLOODLINE">
+    <element name="Eyes of the Reader" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_EYES_OF_THE_READER">
         <description>
-            <p></p>
+            <p>These crystal lenses fit over the eyes. While wearing them, you can read all writing.</p>
         </description>
         <setters>
             <set name="category">Wondrous Items</set>
             <set name="cost" currency="gp">0</set>
             <set name="weight" lb="0">0 lb.</set>
             <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
+            <set name="rarity">Uncommon</set>
+            <set name="attunement">true</set>
         </setters>
     </element>
-    <element name="Eyes of the Reader" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_EYES_OF_THE_READER">
+    <element name="Gem of the Protective Tree" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_GEM_OF_THE_PROTECTIVE_TREE">
         <description>
-            <p></p>
+            <p>This tiny object looks like a 2-inch oak tree encased in amber.</p>
+            <p class="indent">Protective Tree: You must be outdoors to use this token. You can use an action to place the Amber encased tiny tree on an unoccupied space on the ground. The gem breaks, and in its place a magical oak tree springs into existence, the branches of which contain small glowing crystals. The tree is 60 feet tall and has a 5-foot-diameter trunk, and its branches at the top spread out in a 20-foot radius. While under the radius of the branches, you and creatures of your choice can benefit from the effects of the leomund’s tiny hut spell. The glowing crystals on the tree only appear when underneath the tree. On the outside, the tree appears like a normal tree. At the end of 8 hours, the tree reverts back into the gem, and the gem repairs itself around it.</p>
         </description>
         <setters>
             <set name="category">Wondrous Items</set>
             <set name="cost" currency="gp">0</set>
             <set name="weight" lb="0">0 lb.</set>
             <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
+            <set name="rarity">Very Rare</set>
+            <set name="attunement">false</set>
         </setters>
     </element>
-    <element name="Gem of the Protective Tree" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_GEM_OF_THE_PROTECTIVE_TREE">
-        <description>
-            <p></p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
-        </setters>
-    </element>
-	<element name="Gentleman’s Rapier" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_GENTLEMANS_RAPIER">
+	<element name="Gentleman’s Rapier" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_GENTLEMANS_RAPIER">
 		<description>
-			<p></p>
+            <p>This finely made handkerchief gives off a faint scent of lavender and vanilla. While attuned to this handkerchief, you create a simple command word. As a bonus action, you can speak the handkerchief’s command word to change the handkerchief into a magical rapier.</p>
+            <p class="indent">While wielding the rapier, you are considered proficient in wielding it, and you have a +1 bonus to attack and damage rolls made with this weapon. You can speak the command word to change it back into a handkerchief (no action required).</p>
+		</description>
+		<setters>
+			<set name="keywords">rapier</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="any sword">Weapon</set>
+			<set name="attunement">true</set>
+            <set name="rarity">Rare</set>
+            <set name="attunement">true</set>
+			<set name="weapon">Rapier</set>
+            <set name="enhancement">1</set>
+		</setters>
+	</element>
+    <element name="Handwraps of Yune" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_HANDWRAPS_OF_YUNE">
+        <description>
+            <p>While wearing these handwraps, you gain resistance to lightning damage, and you have a +1 to attack and damage rolls made while wielding a quarterstaff. You also learn the <em>shocking grasp</em> cantrip.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous Items</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="0">0 lb.</set>
+            <set name="type">Wondrous Item</set>
+            <set name="rarity">Rare</set>
+            <set name="attunement" addition="by a Bard, Sorcerer, Warlock, or Wizard">true</set>
+            <set name="enhancement">1</set>
+        </setters>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+            <grant type="Spell" id="ID_PHB_SPELL_SHOCKING_GRASP" />
+        </rules>
+    </element>
+    <element name="Hat of Yotham" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_HAT_OF_YOTHAM">
+        <description>
+            <p>This hat is an overly large and wide brimmed hat that is a darker color, such as dark green, red, blue, or grey. While wearing this hat, you have advantage on Wisdom (Perception) checks. These effects end if the hat is removed. You also can see through fog, mist, smoke, and other similar obscurants without penalty.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous Items</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="0">0 lb.</set>
+            <set name="type">Wondrous Item</set>
+            <set name="rarity">Uncommon</set>
+            <set name="attunement" addition="by a Sorcerer, Warlock, or Wizard">true</set>
+        </setters>
+    </element>
+    <element name="Mask of the Plague Doctor" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_MASK_OF_THE_PLAGUE_DOCTOR">
+        <description>
+            <p>This mask has round protective lenses for the eyes, and included a section near the nose in which pleasant smelling herbs and dried plants are placed. While you wear it, you have advantage on Intelligence (Medicine) checks, and you are immune to the poisoned condition and have immunity to poison damage. Additionally, you can breath smoke and other noxious fumes without penalty.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous Items</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="0">0 lb.</set>
+            <set name="type">Wondrous Item</set>
+            <set name="rarity">Very Rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Nakano’s Tarot Cards" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_NAKANOS_TAROT_CARDS">
+        <description>
+            <p>This magical deck of tarot cards contains 52 cards, each in beautiful designs and well made. It is considered as a playing card set. While attuned to these cards, you can add your proficiency bonus to ability checks you make to play a game that involves tarot cards with this deck.</p>
+            <p class="indent">In addition, this deck of tarot cards has 3 charges, and it regains 1d3 expended charges daily at dawn. While using this deck of tarot cards, you can spend up to one minute laying out the cards to expend 1 of its charges to cast the spell <em>augury</em>.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous Items</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="0">0 lb.</set>
+            <set name="type">Wondrous Item</set>
+            <set name="rarity">Uncommon</set>
+            <set name="attunement">true</set>
+            <set name="charges">3</set>
+        </setters>
+    </element>
+    <element name="Pouch of Exquisite Components" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_POUCH_OF_EXQUISITE_COMPONENTS">
+        <description>
+            <p>This component pouch keeps your material components fresh and in perfect condition. While using this component pouch, you gain a +1 bonus to spell attack rolls and to the saving throw DCs of your wizard spells.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous Items</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="0">0 lb.</set>
+            <set name="type">Wondrous Item</set>
+            <set name="rarity">Uncommon</set>
+            <set name="attunement" addition="by a Wizard">true</set>
+        </setters>
+        <rules>
+            <stat name="spellcasting:attack" valud="1" />
+        </rules>
+    </element>
+	<element name="Ring of Rotted Wood" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_RING_OF_ROTTED_WOOD">
+		<description>
+            <p>This ring feels incredibly cold to the touch, regardless of the surrounding environment. It is made of deadwood that has been tempered in black flames.</p>
+            <p class="indent">While you are attuned to this ring and wearing it, no matter how much you eat, drink and food turns to ash in your mouth. This ring provides nourishment to you, nonetheless, though your appearance becomes more gaunt and pale over time, and your lips and tongue become dried and covered in ash. You don’t suffer levels of exhaustion from starvation or dehydration, and you are immune to disease and the poisoned condition.</p>
+            <p class="indent">Additionally, this ring has 3 charges, and it regains 1d3 expended charges daily at dawn. While wearing this ring, you can use an action to expend 1 of its charges to cast one of the following spells:</p>
+            <p class="indent"><em>inflict wounds</em></p>
+            <p class="indent"><em>false life</em></p>
+            <p class="indent"><em>ray of sickness</em></p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="type">Ring</set>
+            <set name="rarity">Very Rare</set>
+            <set name="attunement">true</set>
+			<set name="slot">ring</set>
+			<set name="equippable">true</set>
+			<set name="attunement">true</set>
+            <set name="charges">3</set>
+		</setters>
+	</element>
+	<element name="Ring of Twilight" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_RING_OF_TWILIGHT">
+		<description>
+            <p>This ring feels cool to the touch, regardless of the surrounding environment. While you are attuned to this ring and wearing it, you no longer need to sleep and can’t be forced to sleep by any means. To gain the benefits of a long rest, you can spend all 8 hours doing light activities, such as keeping watch.</p>
+            <p class="indent">Additionally, your eyes slowly become catlike, and you gain darkvision out to 120 feet, and you can see through magical darkness up to 60 feet.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="type">Ring</set>
+            <set name="rarity">Rare</set>
+            <set name="attunement">true</set>
+			<set name="slot">ring</set>
+			<set name="equippable">true</set>
+			<set name="attunement">true</set>
+		</setters>
+        <rules>
+            <grant type="Vision" id="ID_VISION_SUPERIORDARKVISION" />
+        </rules>
+	</element>
+	<element name="Staff of Flesh" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_STAFF_OF_FLESH">
+		<description>
+            <p>This slender staff is made of a unique wood whose bark feels like flesh. You must be attuned to the staff to gain its benefits and cast its spells. While holding the staff, you have a +1 bonus to your Armor Class, provided you are not wearing armor.</p>
+            <p class="indent">The staff has 10 charges, which are used to fuel the spells within it. With the staff in hand, you can use your action to cast one of the following spells from the staff: <em>inflict wounds</em> (1 charge) or <em>alter self</em> (2 charges). No components are required.</p>
+            <p class="indent">The staff regains 1d6 + 4 expended charges each day at dawn. If you expend the staff’s last charge, roll a d20. On a 1, the staff withers and is destroyed.</p>
+		</description>
+		<setters>
+			<set name="keywords">cleric, druid, warlock</set>
+			<set name="category">Staffs</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="4">4 lb.</set>
+			<set name="type">Staff</set>
+			<set name="attunement" addition="by a cleric, druid, or warlock">true</set>
+            <set name="rarity">Rare</set>
+            <set name="attunement">true</set>
+			<set name="slot">onehand</set>
+			<set name="weapon">Quarterstaff</set>
+            <set name="charges">10</set>
+		</setters>
+        <rules>
+            <stat name="ac:misc" value="1" />
+        </rules>
+	</element>
+	<element name="Staff of the Blackened Storm" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_STAFF_OF_THE_BLACKENED_STORM">
+		<description>
+            <p>This staff can be wielded as a magic quarterstaff that grants a +2 bonus to attack and damage rolls made with it. While holding it, you have a +2 bonus to spell attack rolls.</p>
+            <p class="indent">The staff has 10 charges for the following properties. It regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff loses its properties and becomes a nonmagical quarterstaff.</p>
+            <p class="indent">Spells: You can use an action to expend 1 or more of the staff’s charges to cast one of the following spells from it, using your spell save DC: <em>witchcurse</em> (1 charge), <em>wall of lightning</em> (4 charges), <em>thunder step</em> (2 charges), <em>thunderwave</em> (1 charge), <em>lightning bolt</em> (3 charges), or <em>black lightning</em> (7 charges).</p>
+            <p class="indent">You can also use an action to cast the <em>lightning strike</em> cantrip from the staff without using any charges.</p>
+            <p class="indent">Any spell cast through this staff that contains lightning in the spell changes the lightning’s color to black.</p>
+		</description>
+		<setters>
+			<set name="keywords">cleric, druid, warlock</set>
+			<set name="category">Staffs</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="4">4 lb.</set>
+			<set name="type">Staff</set>
+			<set name="attunement" addition="by a cleric, druid, or warlock">true</set>
+            <set name="rarity">Rare</set>
+            <set name="attunement">true</set>
+			<set name="slot">onehand</set>
+			<set name="weapon">Quarterstaff</set>
+            <set name="charges">10</set>
+		</setters>
+	</element>
+	<element name="Staff of the Three Toads" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_STAFF_OF_THE_THREE_TOADS">
+		<description>
+            <p>You can use an action to speak this staff’s command word and send three small blasts of dark green energy from the staff towards three points on the ground within 10 feet of you. Each blast then turns into smoke, revealing a giant toad (see the MM for statistics) under your control and each act on its own initiative count. By using a bonus action to speak the command word again, you can dispel a toad, turning it into dark green smoke.</p>
+            <p class="indent">On your turn, you can mentally command each giant toad if it is within 60 feet of you and you aren’t incapacitated. You decide what actions the giant toads take and where they move during their next turn, or you can issue each giant toad a general command, such as to attack your enemies or guard a location.</p>
+            <p class="indent">If a giant toad is reduced to 0 hit points, it dies and vanished in a puff of dark green smoke. If each giant toad is reduced to 0 hit points, the staff then loses its power for 1d8 days.</p>
+		</description>
+		<setters>
+			<set name="keywords">cleric, druid, warlock</set>
+			<set name="category">Staffs</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="4">4 lb.</set>
+			<set name="type">Staff</set>
+			<set name="attunement" addition="by a cleric, druid, or warlock">true</set>
+            <set name="rarity">Uncommon</set>
+            <set name="attunement" addition="by a Druid, Warlock, or Wizard">true</set>
+			<set name="slot">onehand</set>
+			<set name="weapon">Quarterstaff</set>
+		</setters>
+	</element>
+    <element name="The Mask of Mist" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_THE_MASK_OF_MIST">
+        <description>
+            <p>This mask is made of silver, and while wearing it, your eyes appear to be covered in light grey smoke. While wearing it, you can use it to cast the <em>misty step</em> spell as an action. This property of the mask can’t be used again until the next dawn.</p>
+            <p class="indent">When you disappear, you leave behind a cloud of grey smoke, and you appear in a similar cloud of smoke at your destination. The smoke lightly obscures the space you left and the space you appear in, and it dissipates at the end of your next turn. A light or stronger wind disperses the smoke.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous Items</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="0">0 lb.</set>
+            <set name="type">Wondrous Item</set>
+            <set name="rarity">Rare</set>
+            <set name="attunement">false</set>
+        </setters>
+    </element>
+    <element name="Tome of the Ascendant Wizard" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_TOME_OF_THE_ASCENDANT_WIZARD">
+        <description>
+            <p>This thick tome is bound by leather from a creature of unknown origin, and has the design of a simple star on the front covered in vines.</p>
+            <p class="indent">If you attune to this item, you can use it as a spellbook and an arcane focus. In addition, while holding the tome, you can use a bonus action to regain one expended spell slot of your choice. Once used, this property of the tome can’t be used again until the next dawn.</p>
+            <p class="indent">While attuned to the book, you gain the following benefits:</p>
+            <ul>
+                <li>You always know which direction is north.</li>
+                <li>You know the names of every constellation, star, and other heavenly bodies in the night sky.</li>
+                <li>You have advantage on any Intelligence (History) or Intelligence (Nature) checks made related to astrology, astronomy, and different culture’s attitudes and beliefs related to stars and other heavenly bodies.</li>
+            </ul>
+        </description>
+        <setters>
+            <set name="category">Wondrous Items</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="0">0 lb.</set>
+            <set name="type">Wondrous Item</set>
+            <set name="rarity">Very Rare</set>
+            <set name="attunement" addition="by a Wizard">true</set>
+        </setters>
+    </element>
+    <element name="Tome of the Elements" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_TOME_OF_THE_ELEMENTS">
+        <description>
+            <p>This book contains knowledge and descriptions of beings from the various Elemental Planes, as well as descriptions of the elements themselves, and its words are infused with magic. If you spend 48 hours over a period of 6 days or fewer studying the book’s contents, you permanently gain resistance to two of the following: acid, cold, fire, lightning, or thunder damage. The tome then loses its magic, but regains it in a century.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous Items</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="0">0 lb.</set>
+            <set name="type">Wondrous Item</set>
+            <set name="rarity">Very Rare</set>
+            <set name="attunement">false</set>
+        </setters>
+    </element>
+    <element name="Tome of the Traveling Wizard" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_TOME_OF_THE_TRAVELING_WIZARD">
+        <description>
+            <p>This thick leather-bound volume has a circle composed of arcane runes on the front cover. The pages of the time are blank and pristine.</p>
+            <p class="indent">If you can attune to this item, you can use it as a spellbook and an arcane focus. In addition, while holding the tome, you can prepare two additional spells per long rest.</p>
+            <p class="indent">Additionally, the tome can’t be damaged by fire or immersion in water, and the spellbook doesn’t deteriorate with age.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous Items</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="0">0 lb.</set>
+            <set name="type">Wondrous Item</set>
+            <set name="rarity">Uncommon</set>
+            <set name="attunement" addition="by a Wizard">true</set>
+        </setters>
+    </element>
+	<element name="Whip of the Mystic Sage" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_WHIP_OF_THE_MYSTIC_SAGE">
+		<description>
+            <p>This magical whip is bound in leather and a strange, vibrant amber colored thread that makes the whip feel warm to the touch. When you roll a 20 with this magic weapon, the target takes an extra 1d8 force damage. Additionally, the whip has the following properties:</p>
+            <p class="indent"><em>Reach:</em> This weapon adds 10 feet to your reach when you attack with it.</p>
+            <p class="indent"><em>Special:</em> When making an attack with this whip, you can use your Intelligence, Wisdom, or Charisma modifier for the attack and damage rolls.</p>
 		</description>
 		<setters>
 			<set name="keywords">any sword</set>
@@ -119,230 +435,118 @@
 			<set name="cost" currency="gp">0</set>
 			<set name="type" addition="any sword">Weapon</set>
 			<set name="attunement">true</set>
-			<set name="rarity">Very Rare</set>
+            <set name="rarity">Rare</set>
+            <set name="attunement">false</set>
 			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
 			<set name="name-format">Dancing {{parent}}</set>
 		</setters>
 	</element>
-    <element name="Handwraps of Yune" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_HANDWRAPS_OF_YUNE">
+    <element name="Yoland’s Grimoire" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_YOLANDS_GRIMOIRE">
         <description>
-            <p></p>
+            <p>Requires attunement by a creature who can cast at least 7th-level spells</p>
+            <p class="indent">An ancient text filled with numerous accounts on almost every area and field of magic, the mythical book ‘Yoland’s Grimoire’ is sought after by many wizards and other spellcasters alike, and has been the goal of many a failed expedition, adventure, or quest. The book’s author, the great wizard sage Yoland of Athria, filled the pages with accounts of every definitive account of magic that he could find, from divine powers to arcane spells.</p>
+            <p class="indent">Fearing the true power of his work, the ancient wizard Yoland imbued the pages of the time with powerful magic. Since then, Yoland’s Grimoire rarely lingers in one place. As soon as the book is read, it vanishes to some other corner of the multiverse where its repertoire of magical understand can be read by another. Although attempts have been made to copy the work, efforts to do so fail to capture its magical nature or translate the text it offers to anyone aside from those ‘with the blood of Yoland’.</p>
+            <p class="indent">A heavy clasp, wrought to look like thorny vines, keeps the book’s contents secure. Only a creature who can cast spells of at least 7th-level or higher that is attuned to the book can release the clasp that holds it shut. Once the book is opened, the attuned creature must spend 80 hours reading and studying the book to digest its contents and gain its benefits. Other creatures that peruse the book’s open pages can read the text but glean no deeper meaning and reap no benefits. A creature that tries to read from the book who cannot cast any spell of 7th-level or higher takes 24d6 force damage. This damage ignores resistance and immunity, and can’t be reduced or avoided by any means. A creature reduced to 0 hit points by this damage disappears and is destroyed, leaving its possessions behind.</p>
+            <p class="indent">Benefits granted by Yoland’s Grimoire last only as long as you maintain the ability to cast spells of 7th-level or higher. If you lose the ability to cast spells, you lose all the benefits granted by the book.</p>
+            <p class="indent">Yoland’s Grimoire has the following properties:</p>
+            <p class="indent"><strong>Random Properties:</strong></p>
+            <ul>
+                <li>2 minor beneficial properties</li>
+                <li>2 major beneficial properties</li>
+            </ul>
+            <p class="indent"><strong>Wizardly Spells:</strong> After you spend the appropriate amount of time reading and studying the book, you gain proficiency in the Arcana skill, and your proficiency bonus is doubled for any ability check you make that uses this skill.</p>
+            <p class="indent">Additionally, you learn two cantrips of your choices from the wizard spell list, and you learn one 1st-level spell and one 2nd-level spell from the wizard spell list. These spells are always known or prepared for you. Intelligence is your spellcasting ability for these spells.</p>
+            <p class="indent"><strong>Increased Intelligence:</strong> After you spend the requisite amount of time reading and studying the book, your Intelligence score increases by 2, to a maximum of 24. You can’t gain this benefit from the book more than once.</p>
+            <p class="indent"><strong>Esoteric Magic:</strong> Once you’ve read and studied the book, any spell slot you expend to cast a bard, sorcerer, warlock, or wizard spell counts as a spell slot of one level higher.</p>
+            <p class="indent"><strong>Arcane Aura:</strong> Once you’ve read and studied the book, you gain an aura of arcane power. The aura gives you advantage on any Intelligence based skill check. In addition, you have resistance against the damage of spells..</p>
+            <p class="indent"><strong>Destroying the Grimoire:</strong> It is rumored that Yoland’s Grimoire can’t be destroyed as by any being in the universe, even deities, unless they ‘possess the blood of Yoland’.</p>
         </description>
         <setters>
             <set name="category">Wondrous Items</set>
             <set name="cost" currency="gp">0</set>
             <set name="weight" lb="0">0 lb.</set>
             <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
+            <set name="rarity">Artifact</set>
+            <set name="attunement">false</set>
         </setters>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+            <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_ARCANA" />
+            <stat name="intelligence:max" value="4" />
+            <stat name="intelligence" value="2" />
+        </rules>
     </element>
-    <element name="Hat of Yotham" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_HAT_OF_YOTHAM">
+    <element name="Zolias Chester, the Traveling Home of the Wizard" type="Magic Item" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_ZOLIAS_CHESTER_THE_TRAVELING_HOME_OF_THE_WIZARD">
         <description>
-            <p></p>
+            <p>The creation of the ancient gnome wizard Tobias Funderslip Escataronund Pufflebirth Ringadingding-Ringaroo-Ringadingdingityding Silverhair Shallywobble, or Toby as his friends called him, Zolias Chester the Traveling Home of the Wizard is a chest that can magically transform into a moving home, able to walk, swim, fly, and even teleport to random and exotic places.</p>
+            <p class="indent">This item first appears to be a Small wooden and metal chest weighing 100 pounds. The chest has a hidden mechanism used to open it, which can be found with a successful DC 20 Intelligence (Investigation) check. Using the hidden mechanism unlocks the chest, and the chest grows to become a size Large object that appears in the form of a makeshift house, with a small stone tower, moss growing on the sides, several windows, several iron chimneys, a set of eight mechanical legs all around the home, and a magically extending stone staircase that descends from the door to the ground. The chest home then opens a small set of double wooden doors above the front door to reveal a long, mechanical neck and head, who can speak and has an Intelligence of 18 and can see in darkness and dim light out to 120 feet, and introduces itself as Zolias Chester.</p>
+            <h5 class="caption">Zolias Chester</h5>
+            <p class="indent">The DM has full control over Zolias Chester’s personality, attitudes, and mannerisms, and Zolias Chester can speak and read any language that the current owner of the chest home knows. Only those who have the appropriate password and provide it to the head may enter the home, and the password is set by the owner of the home, of which there can only be one at a time. The owner of the home is determined by the chest home to be whoever’s name is written on a magical deed stored by the home. Zolias Chester always knows who is the current owner, and always knows the exact location of the owner, provided they are not hidden away by magical means.</p>
+            <h5 class="caption">Interior</h5>
+            <p class="indent">Once inside, the home appears to be larger on the inside than on the outside, and the home contains a default number of seven rooms. The rooms are as follows:</p>
+            <ul>
+                <li>A bedroom with a bed, chairs, three chests, a magical fireplace, and a set of dressers</li>
+                <li>A study with desks, books, bookshelves, parchments, ink, and ink pens</li>
+                <li>A dining space with a table, chairs, a magical fireplace, containers, and cooking utensils, and enough food to provide nourishment for up to 10 creatures over the course of two weeks</li>
+                <li>A lounge with couches, armchairs, footstools, and a small dresser filled with various games, such as card games or board games</li>
+                <li>A washroom with toilets, washtubs, a magical brazier, and a steam sauna complete with benches</li>
+                <li>A room for experimentation filled with standard alchemical equipment, books, a magical fireplace, candles, two tables, chairs, and a tall mirror</li>
+                <li>A living room/front room complete with couches, chairs, a magical fireplace, rug, and table</li>
+                <li>A small piloting room with a table, a high backed chair, and a large half-dome window</li>
+            </ul>
+            <p class="indent">The interior of the chest home is warm and dry, regardless of conditions outside. Any equipment or furnishings within the chest home can be removed from it, and as such any new equipment or furnishings can be added to it.</p>
+            <h5 class="caption">Piloting Room</h5>
+            <p class="indent">A small front room acts as the piloting room for the home, in which sits a high backed chair and a large table complete with levers and other arcane apparatus, and a half-dome glass window. The levers are set in a row at the far end, each in a neutral position, able to move either up or down. When certain levers are used, the chest home transforms to accommodate different terrains and surroundings.</p>
+            <p class="indent">The half-dome glass window in the piloting room enables those in the room to see through smoke, fog, mist, murky waters, and other obscuring hindrances. Additionally, those in the piloting room who look through the half-dome glass window can see out into dim light and darkness up to 120 feet.</p>
+            <p class="indent">While inside the home, a creature can pull a lever in the piloting home to make the home appear as a normal chest from the outside. While in this state, the chest home cannot move unless reverted back into a home, and the DC to find the hidden mechanism increases by 1 for every creature inside the chest home.</p>
+            <h5 class="caption">Zolias Chester, the Traveling Home of the Wizard Statistics</h5>
+            <p class="indent">The Zolias Chester, the Traveling Home of the Wizard is a Large object with the following statistics:</p>
+            <ul class="unstyled">
+                <li><strong>Armor Class:</strong> 20</li>
+                <li><strong>Hit Points:</strong> 200</li>
+                <li><strong>Speed:</strong> 40 ft., swim 40 ft., flying 40 ft. (or 0 ft. for all three if the legs, tail and fins, or wings aren’t extended)</li>
+                <li><strong>Damage Immunities:</strong> poison, psychic</li>
+                <li><strong>Condition Immunitites:</strong> charmed, exhaustion, frightened, paralyzed, petrified, poisoned</li>
+                <li><strong>Special:</strong> The chest home is immune to any spell or effect that would alter its form.</li>
+                <li><strong>Special:</strong> The chest home has advantage on Saving Throws against Spells and other magical Effects.</li>
+            </ul>
+            <p class="indent">To be used as a vehicle, the chest home requires one pilot. While the chest home’s chest opening entrance is closed, the chest home is airtight and watertight. The chest home provides enough air for up to 72 hours of breathing, divided by the number of breathing creatures inside.</p>
+            <p class="indent">The chest home floats on water. It can also go underwater to a depth of 900 feet. Below that, the chest home takes 2d6 bludgeoning damage per minute from pressure.</p>
+            <p class="indent">A creature in the chest home can use an action to move as many as two of the chest home’s levers up or down. After each use, a lever goes back to its neutral position. Each lever, from left to right, functions as shown in the Zolias Chest, the Traveling Home of the Wizard’s table.</p>
+                <h5 class="caption">Zolias Chester, the Traveling Home of the Wizard Levers:</h5>
+                <table>
+                    <thead>
+                        <tr><td>Lever</td><td>Direction, Effect</td></tr>
+                    </thead>
+                    <tr><td>1</td><td><strong>Up:</strong> Legs, tail, and fins extend, allowing the chest home to walk and swim.</td></tr>
+                    <tr><td>1</td><td><strong>Down:</strong> Legs, tail, and fins retract, reducing the chest home’s speed to 0 and making it unable to benefit from bonuses to speed.</td></tr>
+                    <tr><td>2</td><td><strong>Up:</strong> Wings extend, allowing the chest home to fly.</td></tr>
+                    <tr><td>2</td><td><strong>Down:</strong> Wings retract, reducing the chest home’s flying speed to 0.</td></tr>
+                    <tr><td>3</td><td><strong>Up:</strong> The chest home randomly teleports to a new location as if by the teleportation circle spell. Note: Chester counts as knowing the location of any place he has been to for the purposes of the spell.</td></tr>
+                    <tr><td>3</td><td><strong>Down:</strong> The chest home teleports back to the previous location visited by using this level Up.</td></tr>
+                    <tr><td>4</td><td><strong>Up:</strong> The chest home creates a new room in the form of a small tower. The room is unfurnished and empty.</td></tr>
+                    <tr><td>4</td><td><strong>Down:</strong> The chest home removed the new room. Any equipment and furnishings in the room when retracted remain there when the room is extended again, though they can only be retrieved by going into the room again. Any creatures in the room when the room is retracted and forcibly moved to the living room/front room, though they take no damage.</td></tr>
+                    <tr><td>5</td><td><strong>Up:</strong> The chest home covers the outside with an invincible cloaking magic, making the chest home appear on the outside as of under the effects of the greater invisibility spell. While in this state, the chest home can move, but creating a new room or opening an outside door ends the effect.</td></tr>
+                    <tr><td>5</td><td><strong>Down:</strong> The chest home’s invisibility is turned off.</td></tr>
+                    <tr><td>6</td><td><strong>Up:</strong> The chest home walks, swims, or flies forward.</td></tr>
+                    <tr><td>6</td><td><strong>Down:</strong> The chest home walks, swims, or flies backward.</td></tr>
+                    <tr><td>7</td><td><strong>Up:</strong> The chest home turns 90 degrees left.</td></tr>
+                    <tr><td>7</td><td><strong>Down:</strong> The chest home turns 90 degrees right.</td></tr>
+                    <tr><td>8</td><td><strong>Up:</strong> The chest home becomes hidden away from divination magic for 24 hours.</td></tr>
+                    <tr><td>8</td><td><strong>Down:</strong> The chest home ends the hidden away effect from divination magic.</td></tr>
+                    <tr><td>9</td><td><strong>Up:</strong> The chest home gains a burst in its movement speed, doubling its movement speed for 10 minutes.</td></tr>
+                    <tr><td>9</td><td><strong>Down:</strong> The chest home anchors itself to the ground and the outer materials harden, increasing the chest home’s AC by 5.</td></tr>
+                    <tr><td>10</td><td><strong>Up:</strong> The front door unseals and opens.</td></tr>
+                    <tr><td>10</td><td><strong>Down:</strong> The front door closes and seals.</td></tr>
+                </table>
         </description>
         <setters>
             <set name="category">Wondrous Items</set>
             <set name="cost" currency="gp">0</set>
             <set name="weight" lb="0">0 lb.</set>
             <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
-        </setters>
-    </element>
-    <element name="Mask of the Plague Doctor" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_MASK_OF_THE_PLAGUE_DOCTOR">
-        <description>
-            <p></p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
-        </setters>
-    </element>
-    <element name="Nakano’s Tarot Cards" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_NAKANOS_TAROT_CARDS">
-        <description>
-            <p></p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
-        </setters>
-    </element>
-    <element name="Pouch of Exquisite Components" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_POUCH_OF_EXQUISITE_COMPONENTS">
-        <description>
-            <p></p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
-        </setters>
-    </element>
-	<element name="Ring of Rotted Wood" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_RING_OF_ROTTED_WOOD">
-		<description>
-			<p></p>
-		</description>
-		<setters>
-			<set name="category">Rings</set>
-			<set name="type">Ring</set>
-			<set name="rarity">Uncommon</set>
-			<set name="slot">ring</set>
-			<set name="equippable">true</set>
-			<set name="attunement">true</set>
-		</setters>
-	</element>
-	<element name="Ring of Twilight" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_RING_OF_TWILIGHT">
-		<description>
-			<p></p>
-		</description>
-		<setters>
-			<set name="category">Rings</set>
-			<set name="type">Ring</set>
-			<set name="rarity">Uncommon</set>
-			<set name="slot">ring</set>
-			<set name="equippable">true</set>
-			<set name="attunement">true</set>
-		</setters>
-	</element>
-	<element name="Staff of Flesh" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_STAFF_OF_FLESH">
-		<description>
-			<p></p>
-		</description>
-		<setters>
-			<set name="keywords">cleric, druid, warlock</set>
-			<set name="category">Staffs</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="4">4 lb.</set>
-			<set name="type">Staff</set>
-			<set name="attunement" addition="by a cleric, druid, or warlock">true</set>
-			<set name="rarity">Uncommon</set>
-			<set name="slot">onehand</set>
-			<set name="weapon">Quarterstaff</set>
-		</setters>
-	</element>
-	<element name="Staff of the Blackened Storm" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_STAFF_OF_THE_BLACKENED_STORM">
-		<description>
-			<p></p>
-		</description>
-		<setters>
-			<set name="keywords">cleric, druid, warlock</set>
-			<set name="category">Staffs</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="4">4 lb.</set>
-			<set name="type">Staff</set>
-			<set name="attunement" addition="by a cleric, druid, or warlock">true</set>
-			<set name="rarity">Uncommon</set>
-			<set name="slot">onehand</set>
-			<set name="weapon">Quarterstaff</set>
-		</setters>
-	</element>
-	<element name="Staff of the Three Toads" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_STAFF_OF_THE_THREE_TOADS">
-		<description>
-			<p></p>
-		</description>
-		<setters>
-			<set name="keywords">cleric, druid, warlock</set>
-			<set name="category">Staffs</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="4">4 lb.</set>
-			<set name="type">Staff</set>
-			<set name="attunement" addition="by a cleric, druid, or warlock">true</set>
-			<set name="rarity">Uncommon</set>
-			<set name="slot">onehand</set>
-			<set name="weapon">Quarterstaff</set>
-		</setters>
-	</element>
-    <element name="The Mask of Mist" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_THE_MASK_OF_MIST">
-        <description>
-            <p></p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
-        </setters>
-    </element>
-    <element name="Tome of the Ascendant Wizard" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_TOME_OF_THE_ASCENDANT_WIZARD">
-        <description>
-            <p></p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
-        </setters>
-    </element>
-    <element name="Tome of the Elements" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_TOME_OF_THE_ELEMENTS">
-        <description>
-            <p></p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
-        </setters>
-    </element>
-    <element name="Tome of the Traveling Wizard" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_TOME_OF_THE_TRAVELING_WIZARD">
-        <description>
-            <p></p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
-        </setters>
-    </element>
-	<element name="Whip of the Mystic Sage" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_WHIP_OF_THE_MYSTIC_SAGE">
-		<description>
-			<p></p>
-		</description>
-		<setters>
-			<set name="keywords">any sword</set>
-			<set name="category">Magic Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="type" addition="any sword">Weapon</set>
-			<set name="attunement">true</set>
-			<set name="rarity">Very Rare</set>
-			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
-			<set name="name-format">Dancing {{parent}}</set>
-		</setters>
-	</element>
-    <element name="Yoland’s Grimoire" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_YOLANDS_GRIMOIRE">
-        <description>
-            <p></p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
-        </setters>
-    </element>
-    <element name="Zolias Chester, the Traveling Home of the Wizard" type="Magic Item" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_MAGIC_ITEM_ZOLIAS_CHESTER_THE_TRAVELING_HOME_OF_THE_WIZARD">
-        <description>
-            <p></p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Common</set>
+            <set name="rarity">Legendary</set>
+            <set name="attunement">false</set>
         </setters>
     </element>
     
