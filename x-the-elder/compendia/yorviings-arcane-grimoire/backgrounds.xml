@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>Yorviing’s Arcane Grimoire Backgrounds</name>
-        <update version="0.0.1">
+        <update version="0.0.10">
             <file name="backgrounds.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/yorviings-arcane-grimoire/backgrounds.xml" />
         </update>
     </info>
@@ -776,5 +776,167 @@
                 <description>You occasionally see spirits or visions during your journeys that others cannot see. Additionally, you have an excellent knowledge of not only the local territory, but also its terrain and natural resources. You can usually call upon the hospitality of locals, and some may even approach you to employ your services regarding the afterlife, medicine, or nature.</description>
             </sheet>
         </element>
-    
+
+    <element name="Academy Student" type="Background" source="Yorviing's Arcane Grimoiure" id="ID_YORVIING_YAG_BACKGROUND_ACADEMY_STUDENT">
+        <description>
+            <p>You are a student of a major institution of magical learning, studying a variety of magics under the supervision of expert spellcasters and teachers of the arcane. You are ambitious and studious, often spending your time pouring over dusty tomes, practicing the art of spellcasting, and training both your mind and body to become a mighty student of magic.</p>
+            <p class="indent">As a part of being a student at a prestigious learning institution, you dedicate your time and energy towards learning as much as you can, and being able to show what you know by recitation, application, and other displays of your knowledge.</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Arcana, and any one skill of your choice</li>
+                <li><strong>Tool Proficiencies:</strong> None</li>
+                <li><strong>Languages:</strong> One common language of your choice, and one exotic language of your choice</li>
+                <li><strong>Equipment:</strong> A cloak, a bag containing 10 gp, two books dedicated to fields of magic you study, a candle, quill, inkpot, blank parchment, and a staff.</li>
+            </ul>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_ACADEMIC_ACCESS" />
+            <h4>Academy Student Spells</h4>
+            <p class="flavor">Prerequisite: Spellcasting or Pact Magic class feature</p>
+            <p>For you, your GM may rule that you can acquire a small extended list of spells based on your area of focus and the type of magic that it pertains to. For example, if you are a student that practices magic related to a particular school of magic, your GM may grant you an extended spell list of additional spells that involves that particular school of magic. Should your GM grant you an extended spell list, the spells in said list are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+            <p class="indent">Below is an example of an extended spell list that your GM may use or allow for a character. The below extended spell list is for a character that practices ‘magic in warfare’ or 'battle magic'.</p>
+            <h5 class="caption">Academy Student Spells (Example)</h5>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>Cantrip</td><td><em>blade ward, sword burst</em></td></tr>
+                <tr><td>1st</td><td><em>absorb elements, mage armor</em></td></tr>
+                <tr><td>2nd</td><td><em>magic weapon, mirror image</em></td></tr>
+                <tr><td>3rd</td><td><em>haste, protection from energy</em></td></tr>
+                <tr><td>4th</td><td><em>fire shield, resilient sphere</em></td></tr>
+                <tr><td>5th</td><td><em>skill empowerment, steel wind strike</em></td></tr>
+            </table>
+            <p class="indent">Should your GM grant you an extended spell list, your magic can vary in terms of its appearance. Some students might chagne the appearance of their spells to reflect the nature of what they primarily study when casting their spells. Others might prefer to cast their spells while speaking in a particular language, or in a certain style that is popular amongst their fellow academics. Still, others might try to develop a style and flavor unique to them and them alone, perhaps even setting off a new trend or style.</p>
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>Students are as varied as they come, with many developing different habits, ambitions, and world views throughout their academic careers. Some students may take a more laidback approach when it comes to their studies, preferring to study and live freely, knowing that they can pick up their academic work just as easily as they can put it down. Others tend to gravitate towards almost extreme means, dedicating every waking moment of their lives in the pursuit of knowledge and understanding.</p>
+        </description>
+        <setters>
+            <set name="short"></set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_ACADEMIC_ACCESS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I often over explain and use long words to appear intelligent and impressive.</item>
+                <item id="2">I spend every moment of my time reading or writing something related to my studies.</item>
+                <item id="3">I always pleasure every opportunity to explain or discuss my studies and research.</item>
+                <item id="4">I thrive for intellectual stimulus and challenges that make me think.</item>
+                <item id="5">I always view every alternative before making a decision or lending input.</item>
+                <item id="6">I always get a second opinion on a topic, just to be sure.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Analyze. I must see to it that I always stick to the logical answers to problems. (Lawful)</item>
+                <item id="2">Might. Magic is a powerful and creative tool. I will use it to serve my own ends. (Evil).</item>
+                <item id="3">Absolutism. It does not mater how I obtain the information I need for my studies, only that I obtain it. (Chaotic)</item>
+                <item id="4">Benevolence. I strive to learn all that I can in order to improve the conditions of the world. (Good)</item>
+                <item id="5">Tool. I see magic as a tool, a means to an end. I put no stock in stigmas or dogma related to magic. (Neutral)</item>
+                <item id="6">Specialize. I prefer to only focus on those areas that interest me. Leave other subjects to other people. (Any)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">I cherish the relationships I have with all of my fellow academics.</item>
+                <item id="2">I mentor underneath a well respected senior member of the academy. I hope to one day take their position.</item>
+                <item id="3">I have better relationships with the faculty members than I do with my peers.</item>
+                <item id="4">I love my academy and will do anything to improve it and defend it.</item>
+                <item id="5">I tutor a new student, and hope that my teaching makes them successful.</item>
+                <item id="6">I have a rival student who I must surpass in every way that I can.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I have a habit of talking over people.</item>
+                <item id="2">I often speak without fully thinking about what it is I am going to say first.</item>
+                <item id="3">I have a tendency to not organize my research and materials.</item>
+                <item id="4">I tend to overthink even the smallest of matters.</item>
+                <item id="5">I cannot pass up an opportunity to demonstrate my skills and knowledge on a subject I specialize in.</item>
+                <item id="6">I have a habit of correcting everything, from spelling errors to grammatical issues.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Academic Access" type="Background Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_ACADEMIC_ACCESS">
+            <description>
+                <p>As a student at an institution of learning, you understand what it is like to devote your life towards theory and discovery, as well as knowing who to go to for answers related to questions of an academic nature. You and your adventuring companions can expect to have an audience with lower level students and faculty members regarding questions and theories on a particular subject, from magic to history. You (but only you) can also request to speak with an expert in that field, provided that there is an expert at your institution of learning, or can request access to otherwise prohibited or ancient studying material, such as ancient tomes or items, provided that you take care of any items you request and you observe them while under the supervision of a senior member.</p>
+                <p class="indent">You also can expect to receive food, shelter, and other assistance from your colleagues at your academy or university, provided that you ask for assistance that is not life threatening and you remain in good standing with the academy or university.</p>
+            </description>
+            <sheet alt="Academic Access">
+                <description></description>
+            </sheet>
+        </element>
+
+    <element name="Coven Witch" type="Background" source="Yorviing's Arcane Grimoiure" id="ID_YORVIING_YAG_BACKGROUND_COVEN_WITCH">
+        <description>
+            <p>You are a witch, a member of a coven that lives out in the wilds. You are wise and knowledgeable regarding aspects of nature, plants, magic, and a multitude of obscure arcane arts. You often dwell within nature’s deep forests, elaborate caves, sun scorched deserts, or frigid taiga along with your fellow coven witches.</p>
+            <p class="indent">As a part of being a member of a coven, you work towards the greater good and the goals of the coven itself. You trade magical secrets with your fellow members, and will sometimes venture off to help with some task your coven needs. Some covens will keep generally to themselves and work towards helping nature, while others will play a more active role in relation to some community, whether that is to harm it or to aid it.</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Any two skills of your choice</li>
+                <li><strong>Tool Proficiencies:</strong> Choose one from Alchemist Supplies, Herbalism Kit, Poisoner’s Kit, or Woodcarver’s Tools</li>
+                <li><strong>Languages:</strong> Witchtongue, and one language of your choice</li>
+                <li><strong>Equipment:</strong> An athame, a cloak, a small pouch of local herbs, a sickle or wooden staff, a waterskin, and the fur of an animal.</li>
+            </ul>
+            <div element="ID_YORVIING_YAG_BACKGROUND_FEATURE_WITCHS_WISDOM" />
+            <h4>Witch Coven Spells</h4>
+            <p class="flavor">Prerequisite: Spellcasting or Pact Magic class feature</p>
+            <p>For you, your DM may rule that you can acquire a small extended list of spells based on your coven and the type of magic that it practices. For example, if your coven practices dark arts and forbidden magic, your DM may grant you an extended spell list of additional spells that involves enchantment or necromancy. Or, if your coven focuses on wielding the power of nature, your DM may grant you an extended spell list of additional spells that involve spells from the druid spell list. Should your DM grant you an extended spell list, the spells in said list are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+            <p class="indent">Below is an example of an extended spell list that your DM may use or allow for a character. The below extended spell list is for a character that practices ‘green magic’ or nature wielding magic.</p>
+            <h5 class="caption">Witch Coven Spells (Example)</h5>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>Cantrip</td><td><em>druidcraft, thorn whip</em></td></tr>
+                <tr><td>1st</td><td><em>entangle, speak with animals</em></td></tr>
+                <tr><td>2nd</td><td><em>beast sense, moonbeam</em></td></tr>
+                <tr><td>3rd</td><td><em>conjure animals, plant growth</em></td></tr>
+                <tr><td>4th</td><td><em>dominate beast, guardian of nature</em></td></tr>
+                <tr><td>5th</td><td><em>druid grove, tree stride</em></td></tr>
+            </table>
+            <p class="indent">Should your GM grant you an extended spell list, your magic can vary in terms of its appearance. Some witches call forth mangled roots and dark colored vapor when casting their spells. Others conjure ethereal shapes of animals, and others imbue their spells with warming, golden lights. The style of your magic is usually influenced by the nature of your coven.</p>
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+            <p>Witches are, as a whole, a varied lot of individuals. Their personalities and mannerisms can differ drastically from one to another, even within a coven. Many witches believe in being themselves, though many witches are mindful of both themselves and their surroundings, and know when and where it is best to reveal their true personalities. Given that many people may either be seeking them out for either assistance or to hunt them down, witches are careful of who they reveal themselves around.</p>
+        </description>
+        <setters>
+            <set name="short"></set>
+        </setters>
+        <rules>
+            <grant type="Background Feature" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_WITCHS_WISDOM" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I often find more meaningful friendships in animals than I do people outside of my coven.</item>
+                <item id="2">You can insult me all you want to, but don’t you dare insult my coven.</item>
+                <item id="3">I laugh at those who try to constantly stay clean and are afraid to get dirty.</item>
+                <item id="4">The only rules that I truly adhere to are the unspoken laws of nature and the rules of my coven.</item>
+                <item id="5">I begin every morning with a small ritual that keeps me calm and clears my head.</item>
+                <item id="6">I believe that the wilds will ultimately reclaim civilization. In time.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Coven. I would do anything for my coven. (Any)</item>
+                <item id="2">Nature. Living amongst the native flora and wildlife is the true way to live. (Neutral).</item>
+                <item id="3">Ancestors. We must strive to emulate our ancestors and make them proud. (Any)</item>
+                <item id="4">Pride. Only those who understand the old magics can understand true power. (Evil)</item>
+                <item id="5">Independence. My coven and I will do whatever it takes to maintain our way of life. (Chaotic)</item>
+                <item id="6">Openness. I am willing to show the ways of my coven to those who are willing to learn and respect them. (Good)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">Many of the members of my coven wish to keep our ways secret to others. I aim to change that.</item>
+                <item id="2">My coven has been at odds with many other covens.</item>
+                <item id="3">I am often finding myself doubting the leadership of my coven.</item>
+                <item id="4">The leader of my coven has been training me to eventually take over as the coven elder.</item>
+                <item id="5">I love my coven with every fiber of my being. I will protect them till my dying breath.</item>
+                <item id="6">I had to leave my old coven behind to join a new one. The events that lead to this are … complicated.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I have a habit of being suspicious of most people.</item>
+                <item id="2">Having seen how some of my fellow witches are treated, I am either too open or too harsh with many people I encounter.</item>
+                <item id="3">I can often come across as frightening even when I am not trying to be.</item>
+                <item id="4">When I see an animal being harmed that was not defending itself, I can become quite angered.</item>
+                <item id="5">I sometimes have a habit of speaking what I really want to say in Witchtongue.</item>
+                <item id="6">I feel compelled to curse those who have done me or my friends wrong.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Witch’s Wisdom" type="Background Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_BACKGROUND_FEATURE_WITCHS_WISDOM">
+            <description>
+                <p>You are a practitioner of ancient, obscure magic crafts. As such, most people have mixed opinions of you and your skills, and some may seek you out for aid or guidance. If so, you can receive a small fee from them in exchange for your services (the fee is determined by the DM). Services that one may ask of you can range wildly, from questions regarding how best to tend to their fields, whether to place or remove a curse on someone else, or for homeopathic medical aid. Your DM can assist you in determining the nature of other meetings you may have with others.</p>
+                <p class="indent">You also know a set of secret codes, runes, and symbols that you can use to identify other witches, who can provide you with access to a hidden safe house, free room and board, or assistance in finding information. These witches never risk their lives for you, though they will assist you in what you ask so long as they are not in danger.</p>
+            </description>
+            <sheet alt="Witch’s Wisdom">
+                <description></description>
+            </sheet>
+        </element>
+
 </elements>
