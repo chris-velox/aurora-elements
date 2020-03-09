@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Thirteen Expanded Feats</name>
+        <update version="0.0.1">
+            <file name="feats-thirteen-expanded-feats.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/options/feats-thirteen-expanded-feats.xml" />
+        </update>
+    </info>
+
+    <element name="Thirteen Expanded Feats" type="Source" source="Core" id="ID_SWORDMEOW_RDDT_SOURCE_THIRTEEN_EXPANDED_FEATS">
+        <description>
+            <![CDATA[<p>Thirteen additional feats to supplement those in the Player’s Handbook.</p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">13EF</set>
+            <set name="url">https://drive.google.com/file/d/0B40nce9YZ1MbTDJsVjh0ZFpXenc/view</set>
+            <set name="image"></set>
+            <set name="author" url="https://www.reddit.com/u/SwordMeow">u/SwordMeow</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200118</set>
+        </setters>
+    </element>
+    
+    <element name="Calloused" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_CALLOUSED">
+        <description>
+            <p>You’ve been hit, wounded, cut, struck, smote, clubbed, axed, and any other blow of a weapon in your history, and your body has attempted to adapt to its constant bruising. You gain the following benefits:</p>
+            <ul>
+                <li>When you are reduced to 0 hitpoints but not killed outright, you can drop to 1 hitpoint instead. Once you use this feature, you can’t do so again until you finish a long rest.</li>
+                <li>You have advantage on ability checks and saving throws against injuries.</li>
+                <li>When you roll a 19 or a 20 on the d20 for a death saving throw, you regain 1 hit point.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you are reduced to 0 hitpoints but not killed outright, you can drop to 1 hitpoint instead. Once you use this feature, you can’t do so again until you finish a long rest. You have advantage on ability checks and saving throws against injuries. When you roll a 19 or a 20 on the d20 for a death saving throw, you regain 1 hit point.</description>
+        </sheet>
+    </element>
+    <element name="Expert Climber" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_EXPERT_CLIMBER">
+        <description>
+            <p>You excel at scaling cliffsides, hills, trees, and general climbing. You gain the following benefits:</p>
+            <ul>
+                <li>Your Strength, Dexterity, or Constitution score increases by 1, to a maximum of 20.</li>
+                <li>Your climbing speed equals your walking speed.</li>
+                <li>You have advantage on ability checks and saving throws to avoid falling off or down while climbing.</li>
+                <li>You can spend 5 minutes instructing, pointing out handholds, and guiding other creatures before making a climb. When you do so, choose up to 6 friendly creatures (which can include yourself) within 30 feet of you that can hear you. Each creature can add a 1d6 to any ability check or saving throw they make for that climb.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have advantage on ability checks and saving throws to avoid falling off or down while climbing. You can spend 5 minutes instructing, pointing out handholds, and guiding other creatures before making a climb. When you do so, choose up to 6 friendly creatures (which can include yourself) within 30 feet of you that can hear you. Each creature can add a 1d6 to any ability check or saving throw they make for that climb.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Increase" name="Ability Score Increase (Expert Climber)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_CONSTITUTION" source="Player’s Handbook" />
+            <stat name="speed:climb" value="speed" bonus="base" />
+        </rules>
+    </element>
+    <element name="Game Master" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_GAME_MASTER">
+        <description>
+            <p>You’ve whiled away the hours and days in the strategies of playing cards, board games, or other kinds of rules-bound activities. You gain the following benefits:</p>
+            <ul>
+                <li>Your Intelligence, Wisdom, or Charisma score increases by 1, to a maximum of 20.</li>
+                <li>You gain proficiency in three gaming sets of your choice and double your proficiency bonus for one of those sets of your choice.</li>
+                <li>If you are playing against an opponent that you have lost against within 1 month, you can add a 1d6 to any checks made for the first game played against them since you last lost.</li>
+                <li>If you are introduced to a new game, you gain proficiency in it after 8 hours total spent playing.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>If you are playing against an opponent that you have lost against within 1 month, you can add a 1d6 to any checks made for the first game played against them since you last lost. If you are introduced to a new game, you gain proficiency in it after 8 hours total spent playing.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Increase" name="Ability Score Increase (Expert Climber)" supports="ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_WISDOM|ID_PHB_FEAT_ASI_CHARISMA" source="Player’s Handbook" />
+            <select type="Proficiency" name="Gaming Set Proficiency (Game Master)" number="3" supports="Gaming Set" />
+            <select type="Feat Feature" name="Gaming Set Expertise (Game Master)" supports="Game Master Expertise" />
+        </rules>
+    </element>
+        <element name="Dice Set" type="Feat Feature" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_DOUBLE_PROFICIENCY_DICE_SET">
+            <supports>Game Master Expertise</supports>
+            <requirements>ID_PROFICIENCY_GAMING_SET_PROFICIENCY_DICE_SET</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled when playing dice games.</p>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled when playing dice games.</description>
+            </sheet>
+            <rules>
+                <stat name="dice set:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Dragonchess Set" type="Feat Feature" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_DOUBLE_PROFICIENCY_DRAGONCHESS_SET">
+            <supports>Game Master Expertise</supports>
+            <requirements>ID_PROFICIENCY_GAMING_SET_PROFICIENCY_DRAGONCHESS_SET</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled when playing dragonchess.</p>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled when playing dragonchess.</description>
+            </sheet>
+            <rules>
+                <stat name="dragonchess set:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Playing Card Set" type="Feat Feature" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_DOUBLE_PROFICIENCY_PLAYING_CARD_SET">
+            <supports>Game Master Expertise</supports>
+            <requirements>ID_PROFICIENCY_GAMING_SET_PROFICIENCY_PLAYING_CARD_SET</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled when playing games with playing cards.</p>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled when playing games with playing cards.</description>
+            </sheet>
+            <rules>
+                <stat name="playing card set:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Three Dragon Ante Set" type="Feat Feature" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_DOUBLE_PROFICIENCY_THREE_DRAGON_ANTE_SET">
+            <supports>Game Master Expertise</supports>
+            <requirements>ID_PROFICIENCY_GAMING_SET_PROFICIENCY_THREE_DRAGON_ANTE_SET</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled when playing three dragon ante.</p>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled when playing three dragon ante.</description>
+            </sheet>
+            <rules>
+                <stat name="three dragon ante set:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+    <element name="Gish’s Aftermagic" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_GISHS_AFTERMAGIC">
+        <description>
+            <p>When you cast a spell of 1st level or higher that does damage, the next successful weapon attack you make before the end of your next turn deals an additional 1d10 damage, the same type as the spell cast.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Grift with Confidence" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_GRIFT_WITH_CONFIDENCE">
+        <description>
+            <p>Some call you a cheat, scoundrel, or charlatan, but for others, grifting is a way of life. Striding in and looking like you know what you are doing tends to work out somehow. You gain the following benefits:</p>
+            <ul>
+                <li>You gain proficiency in Deception and double your proficiency bonus for ability checks made with this skill.</li>
+                <li>If you succeed on a Deception check against a creature, the next Deception check you make receives a 1d6 bonus if it is made within 10 minutes of the previous check.</li>
+                <li>When you make an ability check for a task with which you lack proficiency in and others are watching, you can make a DC 15 Deception check to appear as if you have proficiency. On a success, you add half your proficiency bonus, rounded down, to the result of the ability check.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>If you succeed on a Deception check against a creature, the next Deception check you make receives a 1d6 bonus if it is made within 10 minutes of the previous check. When you make an ability check for a task with which you lack proficiency in and others are watching, you can make a DC 15 Deception check to appear as if you have proficiency. On a success, you add half your proficiency bonus, rounded down, to the result of the ability check.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+            <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_DECEPTION" />
+        </rules>
+    </element>
+    <element name="Long March" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_LONG_MARCH">
+        <description>
+            <p>Armies, merchants, refugees or convicts, many people push themselves farther than they could naturally go, and some who are regulars at this have adapted to be so. You gain the following benefits:</p>
+            <ul>
+                <li>You have advantage on saving throws against exhaustion from extensive travel.</li>
+                <li>You can comfortably travel 12 hours in a day, without making saving throws against exhaustion.</li>
+                <li>When you finish a short or long rest, you gain your proficiency bonus in temporary hitpoints.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have advantage on saving throws against exhaustion from extensive travel. You can comfortably travel 12 hours in a day, without making saving throws against exhaustion. >When you finish a short or long rest, you gain {{proficiency}} temporary hitpoints.</description>
+        </sheet>
+    </element>
+    <element name="Might of the Magus" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_MIGHT_OF_THE_MAGUS">
+        <requirements>[type:spell:1]</requirements>
+        <prerequisite>The ability to cast a spell of 1st level or higher</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: The ability to cast a spell of 1st level or higher</p>
+            <p>When a creature rolls a 1 on the d20 roll of a saving throw against a spell you cast that deals damage, they take the maximum possible damage from the dice, instead of the result you rolled.</p>
+        </description>
+        <sheet>
+            <description>>When a creature rolls a 1 on the d20 roll of a saving throw against a spell you cast that deals damage, they take the maximum possible damage from the dice, instead of the result you rolled.</description>
+        </sheet>
+    </element>
+    <element name="Minimal Armor Master" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_MINIMAL_ARMOR_MASTER">
+        <description>
+            <p>You’re practiced in streamlined protection, granting useful measures. You gain the following benefits while unarmored or wearing light armor:</p>
+            <ul>
+                <li>When you hit a creature that hasn’t taken a turn in combat yet, you deal an additional 1d6 damage.</li>
+                <li>When you make a standing jump, the distance you cover increases by a number of feet equal to your Dexterity modifier.</li>
+                <li>Any Initiative check result of yours that is lower than 8 + your Dexterity modifier is raised to that.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you hit a creature that hasn’t taken a turn in combat yet, you deal an additional 1d6 damage. When you make a standing jump, the distance you cover increases by {{dexterity:modifier}} feet. Any initiative roll below {{minimal-armor-master:initiative-minimum}} is raised to {{minimal-armor-master:initiative-minimum}}.</description>
+        </sheet>
+        <rules>
+            <stat name="minimal-armor-master:initiative-minimum" value="8" />
+            <stat name="minimal-armor-master:initiative-minimum" value="dexterity:modifier" />
+        </rules>
+    </element>
+    <element name="Mariner" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_MARINER">
+        <description>
+            <p>You gain the following benefits:</p>
+            <ul>
+                <li>Your swimming speed equals your walking speed.</li>
+                <li>You gain proficiency in water vehicles and double your proficiency bonus for any related checks.</li>
+                <li>When you make an Intelligence ability check regarding navigation on water or direct towards ships, you have proficiency and add double your proficiency bonus.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You double your proficiency bonus for any checks related to water vehicles. When you make an Intelligence ability check regarding navigation on water or direct towards ships, you have proficiency and add double your proficiency bonus.</description>
+        </sheet>
+        <rules>
+            <stat name="speed:swim" value="speed" bonus="base" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+            <stat name="water vehicles:proficiency" value="proficiency" bonus="double" />
+        </rules>
+    </element>
+    <element name="Rugged Wanderer" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_RUGGED_WANDERER">
+        <description>
+            <p>You’ve traveled far and wide, and are used to the hardships that more extreme parts of the world have to give. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Constitution score by 1, to a maximum of 20.</li>
+                <li>You can ignore the effects of heavy precipitation, high altitude, and you’re adapted to the effects of hot and cold climates.</li>
+                <li>You can ignore nonmagical difficult terrain.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You can ignore the effects of heavy precipitation, high altitude, and you’re adapted to the effects of hot and cold climates. >You can ignore nonmagical difficult terrain.</description>
+        </sheet>
+        <rules>
+            <stat name="constitution" value="1" />
+        </rules>
+    </element>
+    <element name="Spelunker" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_SPELUNKER">
+        <description>
+            <p>You have spent extensive time in the darkness of caves, deep forests, murky waters, or other dark and shadowy places of the world. You gain the following benefits:</p>
+            <ul>
+                <li>Increase an ability score of your choice by 1, to a maximum of 20.</li>
+                <li>You can sense objects and creatures within 5 feet of you, even if they are invisible or make no sound.</li>
+                <li>You can’t become lost in subterranean, deep oceanic, or deep forest environments, except by magical means.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You can sense objects and creatures within 5 feet of you, even if they are invisible or make no sound. >You can’t become lost in subterranean, deep oceanic, or deep forest environments, except by magical means.</description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Ability Score Improvement (Spelunker)" supports="Feat" />
+        </rules>
+    </element>
+    <element name="Somatomancer" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_SOMATOMANCER">
+        <description>
+            <p>You can read into the future of others. As part of being in contact with a creature for at least 1 minute, you can cast <em>augury</em>. You receive an omen about the future of the creature you are touching or a course of action the creature plans to take within the next 30 minutes. You can cast this spell at will, without expending a spell slot, but you do require the material components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_AUGURY" />
+            </div>
+        </description>
+        <sheet>
+            <description>As part of being in contact with a creature for at least 1 minute, you can cast augury. You receive an omen about the future of the creature you are touching or a course of action the creature plans to take within the next 30 minutes. You can cast this spell at will, without expending a spell slot, but you do require the material components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_AUGURY" />
+        </rules>
+    </element>
+    <element name="Versatile Weapons Master" type="Feat" source="Thirteen Expanded Feats" id="ID_SWORDMEOW_13EF_FEAT_VERSATILE_WEAPONS_MASTER">
+        <description>
+            <p>You’ve mastered the flow of holding a weapon from one to two hands, and the freedom it allows. You gain the following benefits:</p>
+            <ul>
+                <li>Wielding a versatile weapon increases the damage die. A d6 becomes a d8, a d8 becomes a d10, and a d10 becomes a d12 (This benefit has no effect if another feature has already increased the weapon’s damage die).</li>
+                <li>You can don or doff a shield as a bonus action.</li>
+                <li>The first time you make an attack using both hands with a versatile weapon after attacking with it with one, you roll the damage die twice and choose either result.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You increase the damage die by one type (d6 becomes d8) when wielding a versatile weapon (unless you have another feature that already does this). You can don or doff a shield as a bonus action. The first time you make an attack using both hands with a versatile weapon after attacking with it with one, you roll the damage die twice and choose either result.</description>
+        </sheet>
+    </element>
+    
+</elements>
