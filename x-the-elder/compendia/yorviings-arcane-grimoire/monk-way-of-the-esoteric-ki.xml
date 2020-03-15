@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Way of the Esoteric Ki Monastic Tradition</name>
+        <update version="0.0.1">
+            <file name="monk-way-of-the-esoteric-ki.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/yorviings-arcane-grimoire/monk-way-of-the-esoteric-ki.xml" />
+        </update>
+    </info>
+    
+    <element name="Way of the Esoteric Ki" type="Archetype" source="Yorviing’s Arcane Grimoire" id="ID_YORVIINGS_YAG_ARCHETYPE_MONK_WAY_OF_THE_ESOTERIC_KI">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>Monks of the Way of the Esoteric Ki are masters of connecting to the power of the Weave via manipulating their ki. They learn how to channel their ki to access arcane magic, granting them the ability to conjure forth mighty creatures and devastate their foes with powerful blasts of energy.</p>
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_ARCANE_KNOWLEDGE" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_KI_CASTING" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_REPLENISHING_WEAVE" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_ULTIMATE_SPELLS" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_ESOTERIC_BEING" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_ARCANE_KNOWLEDGE" level="3" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_KI_CASTING" level="3" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_REPLENISHING_WEAVE" level="6" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_ULTIMATE_SPELLS" level="11" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_ESOTERIC_BEING" level="17" />
+        </rules>
+    </element>
+        <element name="Arcane Knowledge" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_ARCANE_KNOWLEDGE">
+            <description>
+                <p>When you choose this tradition at 3rd level, you have expanded your knowledge regarding the arcane, and have learned simple magic. You gain proficiency in the Arcana skill if you don’t already have it. You also learn two cantrips of your choice from the wizard spell list. You learn an additional wizard cantrip of your choice at 11th level.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+                <select type="Spell" name="Cantrip (Esoteric Ki Casting)" number="2" supports="Wizard,0" spellcasting="Esoteric Ki" known="true" level="3" />
+                <select type="Spell" name="Cantrip (Esoteric Ki Casting)" supports="Wizard,0" spellcasting="Esoteric Ki" known="true" level="3" />
+            </rules>
+        </element>
+        <element name="Ki Casting" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_KI_CASTING">
+            <description>
+                <p>When you reach 3rd level, you learn how to channel your ki to cast spells.</p>
+                <h5>SPELLS</h5>
+                <p>The Way of the Esoteric Ki Spellcasting table shows how many spells you have of 1st level or higher that you can cast.</p>
+                <h5>SPELLS KNOWN OF 1ST-LEVEL AND HIGHER</h5>
+                <p>Choose two schools of magic. You know three 1st-level wizard spells of your choice, two of which you must choose from the two schools of magic that you selected on the wizard spell list.</p>
+                <p class="indent">The Spells Known column of the Way of the Esoteric Ki Spellcasting table shows when you learn more wizard spells of 1st level or higher. Each of these spells must be from one of the two schools of magic that you chose, and must be of a level which corresponds to the Way of the Esoteric Ki Spellcasting table. For instance, when you reach 7th level in this class, you can learn one new spell of 1st or 2nd level.</p>
+                <p class="indent">To cast one of these spells, you must expend a number of ki points equal to the spell’s level or higher. You use its casting time and other rules, but you don’t need to provide material components for it, provided that the material component does not require a gold cost. The spell’s level increases by 1 for each additional ki point you spend. The maximum number of ki points you can spend to cast a spell in this way (including its base ki point cost and any additional ki points you spend to increase its level) is six.</p>
+                <p class="indent">The spells you learn at 8th, 14th, and 20th level can come from any school of magic.</p>
+                <p class="indent">Whenever you gain a level in this class, you can replace one of the wizard spells you know with another spell of your choice from the wizard spell list. The new spell must be of a level for which you have spell slots, and it must be from one of the two schools of magic that you chose, unless you’re replacing the spell you gained at 8th, 14th, or 20th level.</p>
+                <h5>SPELLCASTING ABILITY</h5>
+                <p>Wisdom is your spellcasting ability for your wizard spells, since you learn your spells through the discipline of manipulating ki with arcane energy. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one.</p>
+                <center>
+                    <p><strong>Spell save DC</strong> = 8 + your proficiency bonus + your Intelligence modifier</p>
+                    <p><strong>Spell attack modifier</strong> = your proficiency bonus + your Intelligence modifier</p>
+                </center>
+                <h5 class="caption">WAY OF THE ESOTERIC KI SPELLCASTING</h5>
+                <table class="class-features">
+                    <thead>
+                        <tr><td class="col-10">Level</td><td class="col-10">Cantrips Known</td><td class="col-10">Spells Known</td><td>1st</td><td>2nd</td><td>3rd</td><td>4th</td></tr>
+                    </thead>
+                    <tr><td> 3rd</td><td>2</td><td> 3</td><td>2</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td> 4th</td><td>2</td><td> 4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td> 5th</td><td>2</td><td> 4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td> 6th</td><td>2</td><td> 4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td> 7th</td><td>2</td><td> 5</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+                    <tr><td> 8th</td><td>2</td><td> 6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+                    <tr><td> 9th</td><td>2</td><td> 6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+                    <tr><td>10th</td><td>2</td><td> 7</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+                    <tr><td>11th</td><td>3</td><td> 8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+                    <tr><td>12th</td><td>3</td><td> 8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+                    <tr><td>13th</td><td>3</td><td> 9</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+                    <tr><td>14th</td><td>3</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+                    <tr><td>15th</td><td>3</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+                    <tr><td>16th</td><td>3</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+                    <tr><td>17th</td><td>3</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+                    <tr><td>18th</td><td>3</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+                    <tr><td>19th</td><td>3</td><td>12</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+                    <tr><td>20th</td><td>3</td><td>13</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+                </table>				
+            </description>
+            <spellcasting name="Esoteric Ki" ability="Intelligence" prepare="false">
+                <list>Esoteric Ki</list>
+            </spellcasting>
+            <sheet>
+                <description>To cast one of your Esoteric Ki spells, you must expend a number of ki points equal to the spell’s level or higher. You use its casting time and other rules, but you don’t need to provide material components for it, provided that the material component does not require a gold cost. The spell’s level increases by 1 for each additional ki point you spend. The maximum number of ki points you can spend to cast a spell in this way (including its base ki point cost and any additional ki points you spend to increase its level) is six.</description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="School of Magic, Esoteric Ki" number="2" supports="YAG Esoteric Ki Spell School" />
+                <stat name="esoteric ki:spellcasting:slots:1" value="2" level="3" />
+                <stat name="esoteric ki:spellcasting:slots:1" value="1" level="4" />
+                <stat name="esoteric ki:spellcasting:slots:1" value="1" level="7" />
+                <stat name="esoteric ki:spellcasting:slots:2" value="2" level="7" />
+                <stat name="esoteric ki:spellcasting:slots:2" value="1" level="10" />
+                <stat name="esoteric ki:spellcasting:slots:3" value="2" level="13" />
+                <stat name="esoteric ki:spellcasting:slots:3" value="1" level="16" />
+                <stat name="esoteric ki:spellcasting:slots:4" value="1" level="19" />
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="Wizard, 1" level="3" number="1" spellcasting="Esoteric Ki" allowReplace="false" />
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="$(spellcasting:list), 1" level="3" number="2" spellcasting="Esoteric Ki" />
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" spellcasting="Esoteric Ki"/>
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" spellcasting="Esoteric Ki"/>
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="8" spellcasting="Esoteric Ki"/>
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" spellcasting="Esoteric Ki"/>
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" spellcasting="Esoteric Ki"/>
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" spellcasting="Esoteric Ki"/>
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="14" spellcasting="Esoteric Ki"/>
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" spellcasting="Esoteric Ki"/>
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" spellcasting="Esoteric Ki"/>
+                <select type="Spell" name="Spell (Esoteric Ki)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="20" spellcasting="Esoteric Ki"/>
+            </rules>
+        </element>
+            <element name="Abjuration" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_SPELLCASTING_ABJURATION">
+                <supports>YAG Esoteric Ki Spell School</supports>
+                <description>
+                    <p>You can choose spells from the Abjuration school of magic.</p>
+                </description>
+                <sheet display="false" />
+                <spellcasting name="Esoteric Ki" extend="true">
+                    <extend>Wizard, Abjuration</extend>
+                </spellcasting>
+            </element>
+            <element name="Conjuration" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_SPELLCASTING_CONJURATION">
+                <supports>YAG Esoteric Ki Spell School</supports>
+                <description>
+                    <p>You can choose spells from the Conjuration school of magic.</p>
+                </description>
+                <sheet display="false" />
+                <spellcasting name="Esoteric Ki" extend="true">
+                    <extend>Wizard, Conjuration</extend>
+                </spellcasting>
+            </element>
+            <element name="Divination" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_SPELLCASTING_DIVINATION">
+                <supports>YAG Esoteric Ki Spell School</supports>
+                <description>
+                    <p>You can choose spells from the Divination school of magic.</p>
+                </description>
+                <sheet display="false" />
+                <spellcasting name="Esoteric Ki" extend="true">
+                    <extend>Wizard, Divination</extend>
+                </spellcasting>
+            </element>
+            <element name="Enchantment" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_SPELLCASTING_ENCHANTMENT">
+                <supports>YAG Esoteric Ki Spell School</supports>
+                <description>
+                    <p>You can choose spells from the Enchantment school of magic.</p>
+                </description>
+                <sheet display="false" />
+                <spellcasting name="Esoteric Ki" extend="true">
+                    <extend>Wizard, Enchantment</extend>
+                </spellcasting>
+            </element>
+            <element name="Evocation" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_SPELLCASTING_EVOCATION">
+                <supports>YAG Esoteric Ki Spell School</supports>
+                <description>
+                    <p>You can choose spells from the Evocation school of magic.</p>
+                </description>
+                <sheet display="false" />
+                <spellcasting name="Esoteric Ki" extend="true">
+                    <extend>Wizard, Evocation</extend>
+                </spellcasting>
+            </element>
+            <element name="Illusion" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_SPELLCASTING_ILLUSION">
+                <supports>YAG Esoteric Ki Spell School</supports>
+                <description>
+                    <p>You can choose spells from the Illusion school of magic.</p>
+                </description>
+                <sheet display="false" />
+                <spellcasting name="Esoteric Ki" extend="true">
+                    <extend>Wizard, Illusion</extend>
+                </spellcasting>
+            </element>
+            <element name="Necromancy" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_SPELLCASTING_NECROMANCY">
+                <supports>YAG Esoteric Ki Spell School</supports>
+                <description>
+                    <p>You can choose spells from the Necromancy school of magic.</p>
+                </description>
+                <sheet display="false" />
+                <spellcasting name="Esoteric Ki" extend="true">
+                    <extend>Wizard, Necromancy</extend>
+                </spellcasting>
+            </element>
+            <element name="Transmutation" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_SPELLCASTING_TRANSMUTATION">
+                <supports>YAG Esoteric Ki Spell School</supports>
+                <description>
+                    <p>You can choose spells from the Transmutation school of magic.</p>
+                </description>
+                <sheet display="false" />
+                <spellcasting name="Esoteric Ki" extend="true">
+                    <extend>Wizard, Transmutation</extend>
+                </spellcasting>
+            </element>
+            <element name="Quantumurgy" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_SPELLCASTING_QUANTUMURGY">
+                <supports>YAG Esoteric Ki Spell School</supports>
+                <description>
+                    <p>You can choose spells from the Quantumurgy school of magic.</p>
+                </description>
+                <sheet display="false" />
+                <spellcasting name="Esoteric Ki" extend="true">
+                    <extend>Wizard, Quantumurgy</extend>
+                </spellcasting>
+            </element>
+        <element name="Replenishing Weave" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_REPLENISHING_WEAVE">
+            <description>
+                <p>Starting at 6th level, you learn how to sense magic around you. You can cast <em>detect magic</em> at will, without expending ki points to do so. Additionally, you gain the ability to draw in a thread of the weave to recover a portion of your ki. As an action, you can regain ki points equal to half your monk level, rounded up. You must finish a long rest before you can use this feature again.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can regain ki points equal to half your monk level, rounded up. Addtionally, you can cast detect magic at will.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" />
+            </rules>
+        </element>
+        <element name="Ultimate Spells" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_ULTIMATE_SPELLS">
+            <description>
+                <p>Starting at 11th level, you have learned how to attune to magic to perfectly cast spells. Choose two spells that you have learned via your Ki Casting feature. You can cast both of these spells once per long rest without expending ki points or requiring material components.</p>
+            </description>
+            <sheet>
+                <description>Choose two spells that you have learned via your Ki Casting feature. You can cast both of these spells once per long rest without expending ki points or requiring material components.</description>
+            </sheet>
+        </element>
+        <element name="Esoteric Being" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_ESOTERIC_KI_ESOTERIC_BEING">
+            <description>
+                <p>At 17th level, as an action, you can unleash the power of ki and magic, emitting strands of magic across your entire body. While in this state, you have resistance to all damage and any spell that you cast using your Ki Casting feature has its ki point cost reduced by 1 (minimum of 1). This form lasts for 1 minute or you become incapacitated.</p>
+            </description>
+            <sheet action="Action">
+                <description>You enter a form that lasts for 1 minute. While in this state, you have resistance to all damage and any spell that you cast using your Ki Casting feature has its ki point cost reduced by 1 (minimum of 1).</description>
+            </sheet>
+        </element>
+    
+</elements>

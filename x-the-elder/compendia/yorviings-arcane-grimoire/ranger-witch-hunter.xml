@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Witch Hunter Ranger Archetype</name>
+        <update version="0.0.1">
+            <file name="ranger-witch-hunter.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/yorviings-arcane-grimoire/ranger-witch-hunter.xml" />
+        </update>
+    </info>
+    
+    <element name="Witch Hunter" type="Archetype" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_RANGER_WITCH_HUNTER">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>You are a ranger who has devoted their life to rooting out witches and those who would wield magic for sinister and selfish means. As one who has trained in ways to both track and defend against these abhorrent spellcasters, a Witch Hunter is a master at fighting against witches and their magical techniques.</p>
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_WITCH_HUNTER_MAGIC" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_INQUISITORS_QUARRY" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_BONUS_PROFICIENCIES" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_IMPROVED_FAVORED_ENEMY" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_EXPERIENCED_HUNTER" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_DISPELLING_STRIKE" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_WITCH_HUNTERS_RESOLVE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_WITCH_HUNTER_MAGIC" level="3" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_INQUISITORS_QUARRY" level="3" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_BONUS_PROFICIENCIES" level="3" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_IMPROVED_FAVORED_ENEMY" level="3" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_EXPERIENCED_HUNTER" level="7" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_DISPELLING_STRIKE" level="11" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_WITCH_HUNTERS_RESOLVE" level="15" />
+        </rules>
+    </element>
+        <element name="Witch Hunter Magic" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_WITCH_HUNTER_MAGIC">
+            <description>
+                <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Witch Hunter Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+                <table>
+                    <thead>
+                        <tr><td>Ranger Level</td><td>Spell</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>detect magic</em></td></tr>
+                    <tr><td>5th</td><td><em>mind spike</em></td></tr>
+                    <tr><td>9th</td><td><em>counterspell</em></td></tr>
+                    <tr><td>13th</td><td><em>locate creature</em></td></tr>
+                    <tr><td>17th</td><td><em>hold monster</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" spellcasting="Ranger" known="true" level="3" />
+                <grant type="Spell" id="ID_XGTE_SPELL_MIND_SPIKE" spellcasting="Ranger" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_COUNTERSPELL" spellcasting="Ranger" known="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_LOCATE_CREATURE" spellcasting="Ranger" known="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" spellcasting="Ranger" known="true" level="17" />
+            </rules>
+        </element>
+        <element name="Inquisitor’s Quarry" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_INQUISITORS_QUARRY">
+            <description>
+                <p>Starting at 3rd level, you can mark a target as your main quarry, heightening your abilities against them. You can use a bonus action to designate a creature that you can see within 30 feet of you as your Inquisitor’s Quarry, which lasts for 1 minute. It ends early if the creature dies, you die, or you are incapacitated. Until this effect ends, the following conditions apply:</p>
+                <ul>
+                    <li>You gain a bonus to saving throws against spells from a creature affected by Inquisitor’s Quarry equal to your Wisdom modifier (minimum of 1).</li>
+                    <li>The first time each turn that you hit the target with a weapon attack, you can force the target to make a Wisdom saving throw. On a failed save, the target has disadvantage on the next spell attack that it makes.</li>
+                    <li>You cannot be frightened or possessed by the target while you are conscious.</li>
+                </ul>
+                <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses of it when you finish a long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{inquisitors-quarry:uses}}/Long Rest">
+                <description>You can use a bonus action to designate a creature that you can see within 30 feet of you as your Inquisitor’s Quarry, which lasts for 1 minute. It ends early if the creature dies, you die, or you are incapacitated. Until this effect ends, the following conditions apply: you gain a +{{inquisitors-quarry:uses}} bonus to saving throws against spells from the creature; the first time you hit, the creature must make a Wisdom saving throw or have disadvantage on the next spell attack it makes; and you cannot be frightened or possessed by the target while you are conscious.</description>
+            </sheet>
+            <rules>
+                <stat name="inquisitors-quarry:uses" value="1" bonus="base" />
+                <stat name="inquisitors-quarry:uses" value="wisdom:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Bonus Proficiencies" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_BONUS_PROFICIENCIES">
+            <description>
+                <p>At 3rd level, you become proficient in your choice of two of the following skills: Arcana, History, Nature, or Religion.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Skill Proficiency, Witch Hunter" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_RELIGION" number="2" />
+            </rules>
+        </element>
+        <element name="Improved Favored Enemy" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_IMPROVED_FAVORED_ENEMY">
+            <description>
+                <p>Starting at 3rd level, your dedication to hunting witches has given you greater knowledge about their methods. You gain humanoid as additional favored enemy, and it does not count against your total number of favored enemies.</p>
+                <p class="indent">Additionally, you are no longer bound to choose between two humanoid races, and can apply this favored enemy to any humanoid that has either the Spellcasting or Pact Magic feature.</p>
+            </description>
+            <sheet>
+                <description>You can apply favored enemy to any humanoid that has either the Spellcasting or Pact Magic feature.</description>
+            </sheet>
+            <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_RANGER_FAVORED_ENEMY_HUMANOIDS_1" level="3" />
+        </element>
+        <element name="Experienced Hunter" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_EXPERIENCED_HUNTER">
+            <description>
+                <p>By 7th level, your experiences have hardened your will and heightened your awareness. You have advantage on saving throws against being charmed, and you can no longer be surprised.</p>
+                <p class="indent">Additionally, you gain a bonus to initiative rolls equal to your Wisdom modifier (minimum of 1).</p>
+            </description>
+            <sheet>
+                <description>You have advantage on saving throws against being charmed, and you can no longer be surprised.</description>
+            </sheet>
+            <rules>
+                <stat name="experienced-hunter:initiative" value="1" bonus="base" />
+                <stat name="experienced-hunter:initiative" value="wisdom:modifier" bonus="base" />
+                <stat name="initiative" value="experienced-hunter:initiative" />
+            </rules>
+        </element>
+        <element name="Dispelling Strike" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_DISPELLING_STRIKE">
+            <description>
+                <p>At 11th level, you have learned how to render magical effects useless. Once per turn when you hit a creature that is under the effects of a spell or other magical effect with a weapon attack, you can make a Wisdom check. The DC equals 10 + the spell or magical effect’s level. On a successful check, any spell or magical effect affecting the creature ends.</p>
+                <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses of it when you finish a long rest.</p>
+            </description>
+            <sheet usage="{{inquisitors-quarry:uses}}/Long Rest">
+                <description>Once per turn when you hit a creature that is under the effects of a spell or other magical effect with a weapon attack, you can make a Wisdom check. The DC equals 10 + the spell or magical effect’s level. On a successful check, any spell or magical effect affecting the creature ends.</description>
+            </sheet>
+        </element>
+        <element name="Witch Hunter’s Resolve" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_WITCH_HUNTER_WITCH_HUNTERS_RESOLVE">
+            <description>
+                <p>At 15th level, your resolve and willpower pushes you to fight on. When a spell or other magical effect reduces you to 0 hit points but does not kill you outright, you can instead drop to a number of hit points equal to your ranger level, and until the end of your next turn, you have advantage on saving throws against spells and other magical effects.</p>
+                <p class="indent">Once you use this feature, you cannot do so again until you finish a long rest.</p>
+            </description>
+            <sheet>
+                <description>When a spell or other magical effect reduces you to 0 hit points but does not kill you outright, you can instead drop to {{level:ranger}} hit points, and until the end of your next turn, you have advantage on saving throws against spells and other magical effects.</description>
+            </sheet>
+        </element>
+</elements>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Yorviing's Arcane Grimoire Companions</name>
+        <update version="0.0.1">
+            <file name="companions.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/yorviings-arcane-grimoire/companions.xml" />
+        </update>
+    </info>
+    
+	<element name="Constructed Companion" type="Companion" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_CONSTRUCTED_COMPANION">
+        <supports>YAG Constructed Companion</supports>
+		<description />
+		<setters>
+			<set name="strength">14</set>
+			<set name="dexterity">11</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">3</set>
+			<set name="charisma">1</set>
+			<set name="ac">AC of the heavy armor you used to create this construct</set>
+			<set name="hp">Your wizard level plus your Intelligence modifier, multiplied by 5</set>
+			<set name="speed">25 ft.</set>
+			<set name="languages">Can speak, read, and write every language you speak</set>
+			<set name="skills"></set>
+			<set name="type">Construct</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge"></set>
+			<set name="actions">ID_YORVIING_YAG_COMPANION_ACTION_CONSTRUCTED_COMPANION_MULTIATTACK, ID_YORVIING_YAG_COMPANION_ACTION_CONSTRUCTED_COMPANION_SLAM, ID_YORVIING_YAG_COMPANION_ACTION_CONSTRUCTED_COMPANION_PROTECT_CREATOR</set>
+            <set name="traits">ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_DAMAGE_IMMUNITIES, ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_CONDITION_IMMUNITIES, ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_SENSES, ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_MIGHT_OF_THE_MASTER, ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_ANTIMAGIC_SUSCEPTIBILITY, ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_FALSE_APPEARANCE, ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_ABILITY_SCORE_IMPROVEMENT</set>
+		</setters>
+		<rules>
+			<stat name="companion:hp:max" value="0" bonus="base" />
+			<stat name="companion:speed" value="25" bonus="base" />
+		</rules>
+	</element>
+        <element name="Damage Immunities" type="Companion Trait" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_DAMAGE_IMMUNITIES">
+            <description>
+                <p>Poison, Psychic</p>
+            </description>
+            <sheet>
+                <description>Immune to poison and psychic damage.</description>
+            </sheet>
+        </element>
+        <element name="Condition Immunities" type="Companion Trait" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_CONDITION_IMMUNITIES">
+            <description>
+                <p>Blinded, Charmed, Deafened, Exhaustion, Frightened, Paralyzed, Petrified, Poisoned</p>
+            </description>
+            <sheet>
+                <description>Immune to the Blinded, Charmed, Deafened, Exhaustion, Frightened, Paralyzed, Petrified, and Poisoned conditions.</description>
+            </sheet>
+        </element>
+        <element name="Senses" type="Companion Trait" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_SENSES">
+            <description>
+                <p>Blindsight 60ft. (Blind beyond this radius), passive Perception 6</p>
+            </description>
+            <sheet>
+                <description>Blindsight 60ft. (Blind beyond this radius), passive Perception 6</description>
+            </sheet>
+        </element>
+        <element name="Might of the Master" type="Companion Trait" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_MIGHT_OF_THE_MASTER">
+            <description>
+                <p>+1 to hit, damage, and skill checks. This bonus increases by 1 each time your proficiency bonus increases.</p>
+            </description>
+            <sheet>
+                <description>+{{might-of-the-master:bonus}} to hit, damage and skill checks.</description>
+            </sheet>
+            <rules>
+                <stat name="might-of-the-master:bonus" value="1" level="2" />
+                <stat name="might-of-the-master:bonus" value="1" level="5" />
+                <stat name="might-of-the-master:bonus" value="1" level="9" />
+                <stat name="might-of-the-master:bonus" value="1" level="13" />
+                <stat name="might-of-the-master:bonus" value="1" level="17" />
+            </rules>
+        </element>
+        <element name="Antimagic Susceptibility" type="Companion Trait" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_ANTIMAGIC_SUSCEPTIBILITY">
+            <description>
+                <p>The constructed companion is incapacitated while in the area of an antimagic field. If targeted by <em>dispel magic</em>, the constructed companion must succeed on a Constitution saving throw against the caster’s spell save DC or fall unconscious for 1 minute.</p>
+            </description>
+            <sheet>
+                <description>The constructed companion is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the constructed companion must succeed on a Constitution saving throw against the caster’s spell save DC or fall unconscious for 1 minute.</description>
+            </sheet>
+        </element>
+        <element name="False Appearance" type="Companion Trait" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_FALSE_APPEARANCE">
+            <description>
+                <p>While the constructed companion remains motionless, it is indistinguishable from a normal suit of armor.</p>
+            </description>
+            <sheet>
+                <description>While the constructed companion remains motionless, it is indistinguishable from a normal suit of armor.</description>
+            </sheet>
+        </element>
+        <element name="Ability Score Improvement" type="Companion Trait" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_TRAIT_CONSTRUCTED_COMPANION_ABILITY_SCORE_IMPROVEMENT">
+            <description>
+                <p>Whenever you gain the Ability Score Improvement class feature, your companion's abilities also improve. Your companion can increase one ability score of your choice by 2, or it can increase two ability scores of your choice by 1. As normal, your companion can't increase an ability score above 20 using this feature unless its description specifies otherwise.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+        </element>
+            <element name="Ability Score Increase (Strength)" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_CONSTRUCTED_COMPANION_ASI STRENGTH">
+                <supports>YAG Constructed Companion ASI</supports>
+                <description>
+                    <p>Your constructed companion’s Strength increases by 1.</p>
+                </description>
+                <setters>
+                    <set name="allow duplicate">true</set>
+                </setters>
+                <rules>
+                    <stat name="companion:strength" value="1" alt="Ability Score Increase" />
+                </rules>
+            </element>
+            <element name="Ability Score Increase (Dexterity)" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_CONSTRUCTED_COMPANION_ASI DEXTERITY">
+                <supports>YAG Constructed Companion ASI</supports>
+                <description>
+                    <p>Your constructed companion’s Dexterity increases by 1.</p>
+                </description>
+                <setters>
+                    <set name="allow duplicate">true</set>
+                </setters>
+                <rules>
+                    <stat name="companion:dexterity" value="1" alt="Ability Score Increase" />
+                </rules>
+            </element>
+            <element name="Ability Score Increase (Constitution)" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_CONSTRUCTED_COMPANION_ASI CONSTITUTION">
+                <supports>YAG Constructed Companion ASI</supports>
+                <description>
+                    <p>Your constructed companion’s Constitution increases by 1.</p>
+                </description>
+                <setters>
+                    <set name="allow duplicate">true</set>
+                </setters>
+                <rules>
+                    <stat name="companion:constitution" value="1" alt="Ability Score Increase" />
+                </rules>
+            </element>
+            <element name="Ability Score Increase (Intelligence)" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_CONSTRUCTED_COMPANION_ASI INTELLIGENCE">
+                <supports>YAG Constructed Companion ASI</supports>
+                <description>
+                    <p>Your constructed companion’s Intelligence increases by 1.</p>
+                </description>
+                <setters>
+                    <set name="allow duplicate">true</set>
+                </setters>
+                <rules>
+                    <stat name="companion:intelligence" value="1" alt="Ability Score Increase" />
+                </rules>
+            </element>
+            <element name="Ability Score Increase (Wisdom)" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_CONSTRUCTED_COMPANION_ASI WISDOM">
+                <supports>YAG Constructed Companion ASI</supports>
+                <description>
+                    <p>Your constructed companion’s Wisdom increases by 1.</p>
+                </description>
+                <setters>
+                    <set name="allow duplicate">true</set>
+                </setters>
+                <rules>
+                    <stat name="companion:wisdom" value="1" alt="Ability Score Increase" />
+                </rules>
+            </element>
+            <element name="Ability Score Increase (Charisma)" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_CONSTRUCTED_COMPANION_ASI CHARISMA">
+                <supports>YAG Constructed Companion ASI</supports>
+                <description>
+                    <p>Your constructed companion’s Charisma increases by 1.</p>
+                </description>
+                <setters>
+                    <set name="allow duplicate">true</set>
+                </setters>
+                <rules>
+                    <stat name="companion:charisma" value="1" alt="Ability Score Increase" />
+                </rules>
+            </element>
+        <element name="Multiattack" type="Companion Action" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_ACTION_CONSTRUCTED_COMPANION_MULTIATTACK">
+            <requirements>[level:6]</requirements>
+            <description>
+                <p>The constructed companion makes two melee attacks. (Your constructed companion gains this feature when you reach 6th level)</p>
+            </description>
+            <sheet>
+                <description>The constructed companion makes two melee attacks.</description>
+            </sheet>
+        </element>
+        <element name="Slam" type="Companion Action" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_ACTION_CONSTRUCTED_COMPANION_SLAM">
+            <description>
+                <p>Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.</p>
+            </description>
+            <sheet>
+                <description>Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.</description>
+            </sheet>
+        </element>
+        <element name="Protect Creator" type="Companion Action" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_COMPANION_ACTION_CONSTRUCTED_COMPANION_PROTECT_CREATOR">
+            <description>
+                <p>If you are the target of a melee attack and your constructed companion is within 5 feet of the attacker, you can use your reaction to command it to respond, using its reaction to make a melee attack against the attacker.</p>
+            </description>
+            <sheet>
+                <description>If you are the target of a melee attack and your constructed companion is within 5 feet of the attacker, you can use your reaction to command it to respond, using its reaction to make a melee attack against the attacker.</description>
+            </sheet>
+        </element>
+        <!-- Armor types -->
+        <element name="Chain Mail" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_CONSTRUCTED_COMPANION_ARMOR_CHAIN_MAIL">
+            <supports>YAG Constructed Companion Armor</supports>
+            <description>
+                <p>Your constructed companion is made from a suit of Chain Mail, granting your companion an AC of 16.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="companion:ac" value="16" bonus="base" />
+            </rules>
+        </element>
+        <element name="Ring Mail" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_CONSTRUCTED_COMPANION_ARMOR_RING_MAIL">
+            <supports>YAG Constructed Companion Armor</supports>
+            <description>
+                <p>Your constructed companion is made from a suit of Ring Mail, granting your companion an AC of 14.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="companion:ac" value="14" bonus="base" />
+            </rules>
+        </element>
+        <element name="Splint Armor" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_CONSTRUCTED_COMPANION_ARMOR_SPLINT">
+            <supports>YAG Constructed Companion Armor</supports>
+            <description>
+                <p>Your constructed companion is made from a suit of Splint Armor, granting your companion an AC of 17.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="companion:ac" value="17" bonus="base" />
+            </rules>
+        </element>
+        <element name="Plate Armor" type="Archetype Feature" source="Yorviing's Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_CONSTRUCTED_COMPANION_ARMOR_PLATE">
+            <supports>YAG Constructed Companion Armor</supports>
+            <description>
+                <p>Your constructed companion is made from a suit of Plate Armor, granting your companion an AC of 18.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="companion:ac" value="18" bonus="base" />
+            </rules>
+        </element>
+
+</elements>

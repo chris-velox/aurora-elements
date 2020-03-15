@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Path of the Manastorm Primal Path</name>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-the-manastorm.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/yorviings-arcane-grimoire/barbarian-path-of-the-manastorm.xml" />
+        </update>
+    </info>
+    
+    <element name="Path of the Manastorm" type="Archetype" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_BARBARIAN_PATH_OF_THE_MANASTORM">
+        <supports>Primal Path</supports>
+        <description>
+            <p>The Path of the Manastorm is a path wherein warriors become infused with the magic and fury of a manastorm. These barbarians learn how to attune to magic and wield the might of the arcane in battle.</p>
+            <p class="indent">Thought to have been accidentally discovered during a wild manastorm that occurred a long time ago, the Path of the Manastorm is now sought after by those few who think they can brave the wild power of raw magic and live to harness its strength.</p>
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_BASTION_OF_THE_ARCANE" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_FURY_OF_THE_MANASTORM" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_ATTUNEMENT_OF_THE_MANA" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_PRESENCE_OF_THE_MAGIC" />
+            <div element="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_SURGE_OF_THE_MANASTORM" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_BASTION_OF_THE_ARCANE" level="3" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_FURY_OF_THE_MANASTORM" level="3" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_ATTUNEMENT_OF_THE_MANA" level="6" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_PRESENCE_OF_THE_MAGIC" level="10" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_SURGE_OF_THE_MANASTORM" level="14" />
+        </rules>
+    </element>
+        <element name="Bastion of the Arcane" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_BASTION_OF_THE_ARCANE">
+            <description>
+                <p>When you choose this path at 3rd level, you have gained an understanding of the arcane. You gain proficiency in the Arcana skill. Additionally, while you are raging, you have resistance to damage from spells.</p>
+            </description>
+            <sheet>
+                <description>While you are raging, you have resistance to damage from spells.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+            </rules>
+        </element>
+        <element name="Fury of the Manastorm" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_FURY_OF_THE_MANASTORM">
+            <description>
+                <p>At 3rd level, you can unleash a stormy magical aura while you rage. The aura extends 10 feet from you in every direction, but not through total cover.</p>
+                <p class="indent">Your aura has an effect that activates when you enter your rage, and you can activate the effect again on each of your turns as a bonus action.</p>
+                <p class="indent">When this effect is activated, all other creatures in your aura take 1d4 force damage each. The damage increases when you reach certain levels in this class, increasing to 2d4 at 5th level, 3d4 at 10th level, 4d4 at 15th level, and 5d4 at 20th level.</p>
+            </description>
+            <sheet>
+                <description>You can unleash a stormy magical aura that extends 10 feet from you in every direction, but not through total cover. Your aura has an effect that activates when you enter your rage, and you can activate the effect again on each of your turns as a bonus action. When this effect is activated, all other creatures in your aura take {{manastorm-fury:damage-dice}}d4 force damage each.</description>
+            </sheet>
+            <rules>
+                <stat name="manastorm-fury:damage-dice" value="1" level="3" />
+                <stat name="manastorm-fury:damage-dice" value="1" level="5" />
+                <stat name="manastorm-fury:damage-dice" value="1" level="10" />
+                <stat name="manastorm-fury:damage-dice" value="1" level="15" />
+                <stat name="manastorm-fury:damage-dice" value="1" level="20" />
+            </rules>
+        </element>
+        <element name="Attunement of the Mana" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_ATTUNEMENT_OF_THE_MANA">
+            <description>
+                <p>Beginning at 6th level, the mana storm inside you grants you further strength. You gain resistance to force damage.</p>
+                <p class="indent">In addition, immediately before you enter your rage, you can cast the <em>dispel magic</em> spell, targeting only yourself, as part of that bonus action. Constitution is your spellcasting ability for this effect.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>Immediately before you enter your rage, you can cast the dispel magic spell, targeting only yourself, as part of that bonus action. Constitution is your spellcasting ability for this effect.</description>
+            </sheet>
+            <spellcasting name="Barbarian" ability="Constitution" prepare="false">
+                <list>Barbarian</list>
+            </spellcasting>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FORCE" />
+                <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" spellcasting="Barbarian" known="true" />
+            </rules>
+        </element>
+        <element name="Presence of the Magic" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_PRESENCE_OF_THE_MAGIC">
+            <description>
+                <p>At 10th level, you can feel the presence of magic. You can cast the detect magic spell, but only as a ritual. When you do so, the spell does not require concentration, the range increases to within 60 feet of you, and you can use your bonus action to see faint auras of magic around creatures and objects, instead of an action.</p>
+            </description>
+            <sheet>
+                <description>You can cast the detect magic spell, but only as a ritual. When you do so, the spell does not require concentration, the range increases to within 60 feet of you, and you can use your bonus action to see faint auras of magic around creatures and objects.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" spellcasting="Barbarian" known="true" />
+            </rules>
+        </element>
+        <element name="Surge of the Manastorm" type="Archetype Feature" source="Yorviing’s Arcane Grimoire" id="ID_YORVIING_YAG_ARCHETYPE_FEATURE_MANASTORM_SURGE_OF_THE_MANASTORM">
+            <description>
+                <p>Starting at 14th level, you can unleash the full might of the manastorm. While you are raging, you can use your action to unleash a surge of magical energy within a 30-foot radius centered on you. Each creature within the area, other than you, must make a Constitution saving throw (DC 8 + your proficiency bonus + your Constitution modifier).</p>
+                <p class="indent">On a failed save, a creature takes force damage equal to your barbarian level, or half as much damage on a successful one. If a creature fails this saving throw while concentrating on a spell or magical effect, its concentration is broken.</p>
+            </description>
+            <sheet action="Action">
+                <description>While you are raging, you can unleash a surge of magical energy within a 30-foot radius centered on you. Each creature within the area, other than you, must make a Constitution saving throw (save DC {{spellcasting:dc}}). On a failed save, a creature takes {{level:barbarian}} force damage, or half as much damage on a successful one. If a creature fails this saving throw while concentrating on a spell or magical effect, its concentration is broken.</description>
+            </sheet>
+        </element>
+    
+</elements>
