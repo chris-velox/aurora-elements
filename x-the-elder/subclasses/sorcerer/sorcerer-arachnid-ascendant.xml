@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Arachnid Ascendant Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-arachnid-ascendant.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/sorcerer/sorcerer-arachnid-ascendant.xml" />
+        </update>
+    </info>
+    
+    <element name="Arachnid Ascendant" type="Source" source="Core" id="ID_RAINJUNKIE_GMBINDER_SOURCE_ARACHNID_ASCENDANT">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">AA</set>
+            <set name="url">https://www.gmbinder.com/share/-LA86xC2Tgk1FMtAyMAQ</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="RJ" url="https://www.reddit.com/user/Rain-Junkie/">u/Rain-Junkie</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20180417</set>
+        </setters>
+    </element>
+    
+    <element name="Arachnid Ascendant" type="Archetype" source="Arachnid Ascendant" id="ID_RJ_AA_ARCHETYPE_SORCERER_ARACHNID_ASCENDANT">
+        <supports>Sorcerous Origin, Tweaked Sorcerer</supports>
+        <description>
+            <p>Your magic is pulled from the mysterious and frenzied nature of spiders. Perhaps you were nearly killed by a powerful spider, or came into contact with the mysterious drow and their foul magic. No matter how you gained it, you can use this magic to both transform yourself into a powerful spider, and summon spiders to fight by your side.</p>
+            <h5 class="caption">ARACHNID ORIGIN SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Sorcerer Level</td><td>Spell</td></tr>
+                </thead>
+                <tr><td>1st</td><td><em>ray of sickness</em></td></tr>
+                <tr><td>3rd</td><td><em>web</em></td></tr>
+                <tr><td>5th</td><td><em>bestow curse</em></td></tr>
+                <tr><td>7th</td><td><em>giant insect</em></td></tr>
+                <tr><td>9th</td><td><em>insect plague</em></td></tr>
+                <tr><td>11th</td><td><em>eyebite</em></td></tr>
+            </table>
+            <div class="sidebar">
+                <p>The Arachnid Origin Spells are for use with u/SwordMeow's Tweaked Sorcerer, which is linked in the credit section. If you plan to play the PHB sorcerer, ignore the Arachnid Origin Spells.</p>
+            </div>
+            <div element="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_SPIDER_METAMORPHOSIS" />
+            <div element="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_ADVANCED_METAMORPHOSIS" />
+            <div element="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_FRENZIED_STRIKES" />
+            <div element="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_SKITTERING_SWARM" />
+            <div element="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_WEAVERS_WEB" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_SPIDER_METAMORPHOSIS" level="1" />
+            <grant type="Archetype Feature" id="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_ADVANCED_METAMORPHOSIS" level="6" />
+            <grant type="Archetype Feature" id="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_FRENZIED_STRIKES" level="6" />
+            <grant type="Archetype Feature" id="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_SKITTERING_SWARM" level="14" />
+            <grant type="Archetype Feature" id="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_WEAVERS_WEB" level="18" />
+            <grant type="Spell" id="ID_PHB_SPELL_RAY_OF_SICKNESS" spellcasting="Sorcerer" known="true" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_WEB" spellcasting="Sorcerer" known="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_BESTOW_CURSE" spellcasting="Sorcerer" known="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_GIANT_INSECT" spellcasting="Sorcerer" known="true" level="7" />
+            <grant type="Spell" id="ID_PHB_SPELL_INSECT_PLAGUE" spellcasting="Sorcerer" known="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_EYEBITE" spellcasting="Sorcerer" known="true" level="11" />
+        </rules>
+    </element>
+        <element name="Spider Metamorphosis" type="Archetype Feature" source="Arachnid Ascendant" id="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_SPIDER_METAMORPHOSIS">
+            <description>
+                <p>Starting when you choose this origin at 1st level, you're able to transform into a spider. As an action on your turn, you can undergo a transformation that turns you into a deadly spider. You can revert to your normal form earlier by using an action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.</p>
+                <p class="indent">While you are transformed, your body shifts to reflect a spider, and the following rules apply:</p>
+                <ul>
+                    <li>You retain all of your game statistics, but your size becomes Medium if it wasn't already. You also have advantage on saving throws against poison, and you have resistance against poison damage. Additionally, your AC can't be less than 16.</li>
+                    <li>When you transform, you gain temporary hit points equal to your sorcerer level + your Charisma modifier, which are lost when you revert back to your normal form.</li>
+                    <li>You can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your spider form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as eyebite, that you've already cast.</li>
+                    <li>When you take the Attack action on your turn, you can make a bite attack against a creature within 5 feet of you. Make a melee spell attack against a target. On a hit, the creature takes 1d10 piercing damage, and poison damage equal to your Charisma modifier.</li>
+                    <li>You retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. You also gain darkvision out to a range of 60 feet, if you don't have it already.</li>
+                    <li>Your equipment merges into your spider form, and has no effect until you leave the form.</li>
+                </ul>
+            </description>
+            <sheet action="Action">
+                <description>You can transform into a giant spider. While transformed, you gain {{spider-metamorphosis:temp-hp}} temporary hit points; your size becomes Medium; you have advantage on saving throws against poison; you have resistance to poison; you can make a bite attack for 1d10 piercing + {{charisma:modifier}} poison damage.</description>
+                <description level="6">You can transform into a giant spider. While transformed, you gain {{spider-metamorphosis:temp-hp}} temporary hit points; your size becomes Large; you have advantage on saving throws against poison; you have resistance to poison; you can make a bite attack for 1d10 piercing + {{charisma:modifier}} poison damage.</description>
+            </sheet>
+            <rules>
+                <stat name="spider-metamorphosis:temp-hp" value="level:sorcerer" />
+                <stat name="spider-metamorphosis:temp-hp" value="charisma:modifier" />
+            </rules>
+        </element>
+        <element name="Advanced Metamorphosis" type="Archetype Feature" source="Arachnid Ascendant" id="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_ADVANCED_METAMORPHOSIS">
+            <description>
+                <p>At 6th level, your spider form has advanced. Your size becomes large while you are transformed, and you gain a climbing speed equal to your walking speed. You can also climb difficult surfaces, including upside down on ceilings, without needing to make an ability check, and ignore movement restrictions caused by webbing.</p>
+            </description>
+            <sheet>
+                <description>While transformed into a spider, you gain a climb speed of {{speed}} feet and can climb difficult surfaces and ceilings; you ignore movement restrictions caused by webbing.</description>
+            </sheet>
+        </element>
+        <element name="Frenzied Strikes" type="Archetype Feature" source="Arachnid Ascendant" id="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_FRENZIED_STRIKES">
+            <description>
+                <p>Also at 6th level, when you make a bite attack in your spider form on your turn, you can make an additional bite attack as a bonus action.</p>
+                <p class="indent">Additionally, when you hit a creature with a bite attack in your spider form, you can spend up to 2 sorcery points, injecting them with deadly doses of venom. For each sorcery point you spend, the creature takes an additional 1d6 poison damage from the bite attack.</p>
+            </description>
+            <sheet>
+                <description>When you make a bite attack in your spider form on your turn, you can make an additional bite attack as a bonus action. Additionally, when you hit a creature with a bite attack in your spider form, you can spend up to 2 sorcery points, injecting them with deadly doses of venom. For each sorcery point you spend, the creature takes an additional 1d6 poison damage from the bite attack.</description>
+            </sheet>
+        </element>
+        <element name="Skittering Swarm" type="Archetype Feature" source="Arachnid Ascendant" id="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_SKITTERING_SWARM">
+            <description>
+                <p>At 14th level, your spellcasting fuels your skittering magic. When you cast a sorcerer spell of 1st level or higher, you can spend 1 sorcery point to gain a swarm charge. You can have a maximum number of swarm charges equal to your Charisma modifier, and they last until you finish a long rest.</p>
+                <p class="indent">When you transform into your spider form, you can expend any number of your swarm charges. For each charge you expend, a skittering spider appears in an empty space within 30 feet of you.</p>
+                <p class="indent">The summoned skittering spiders are friendly to you and your companions. They have their own turn directly after yours, and they obey any mental commands that you issue them (no action required by you). If you don't issue any commands to the summoned skittering spiders, they defend themselves from hostile creatures but otherwise takes no actions. You count as a skittering spider for the purpose of their Swarming Spiders feature.</p>
+                <p class="indent">Each summoned skittering spider disappears when it drops to 0 hit points or when you revert back to your normal form.</p>
+            </description>
+            <sheet>
+                <description>When you cast a sorcerer spell of 1st level or higher, you can spend 1 sorcery point to gain a swarm charge, up to {{charisma:modifier}}, which last until you finish a long rest. When you transform into your spider form, you can expend any number of your swarm charges. For each charge you expend, a skittering spider appears in an empty space within 30 feet of you.</description>
+            </sheet>
+        </element>
+        <element name="Weaver's Web" type="Archetype Feature" source="Arachnid Ascendant" id="ID_RJ_AA_ARCHETYPE_FEATURE_ARACHNID_ASCENDANT_WEAVERS_WEB">
+            <description>
+                <p>At 18th level, while in your spider form, you can ensare a creature. As an action on your turn, you can spend 3 sorcery points and attempt to ensnare a creature you can see within 5 feet of you, who must make a Constitution saving throw. On a failed save, the creature becomes paralyzed and has full cover, as it is cocooned inside your web.</p>
+                <p class="indent">At the end of each of its turns, the cocooned creature takes 2d6 poison damage and can attempt a Constitution saving throw to break free from the cocoon. On a success, the creature breaks free from the cocoon.</p>
+                <p class="indent">This cocoon lasts for 1 minute, and has a number of hit points equal to twice your sorcerer level + your Charisma modifier. If the cocoon is reduced to 0 hit points, the creature can break free from the cocoon.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can spend 3 sorcery points and attempt to ensnare a creature you can see within 5 feet of you, who must make a Constitution saving throw. On a failed save, the creature becomes paralyzed and has full cover, as it is cocooned inside your web. At the end of each of its turns, the cocooned creature takes 2d6 poison damage and can attempt a Constitution saving throw to break free from the cocoon. On a success, the creature breaks free from the cocoon. This cocoon lasts for 1 minute, and has {{weavers-web:cocoon-hp}} hit points.</description>
+            </sheet>
+            <rules>
+                <stat name="weavers-web:cocoon-hp" value="level:sorcerer" />
+                <stat name="weavers-web:cocoon-hp" value="level:sorcerer" />
+                <stat name="weavers-web:cocoon-hp" value="charisma:modifier" />
+            </rules>
+        </element>
+</elements>
