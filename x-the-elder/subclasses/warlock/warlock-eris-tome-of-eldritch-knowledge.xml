@@ -1,0 +1,1716 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Eris’ Tome of Eldritch Knowledge</name>
+        <update version="0.0.1">
+            <file name="warlock-eris-tome-of-eldritch-knowledge.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-eris-tome-of-eldritch-knowledge.xml" />
+        </update>
+    </info>
+    
+    <element name="Eris’ Tome of Eldritch Knowledge" type="Source" source="Core" id="ID_ENRARIC_RDDT_SOURCE_ERIS_TOME_OF_ELDRITCH_KNOWLEDGE">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">ETEK</set>
+            <set name="url">https://docs.google.com/document/d/1OEsKvxp57MXQg5vBVD92ImXVp6Q-y1a3K0M0kjCPxaE/edit</set>
+            <set name="image"></set>
+            <set name="author" url="https://docs.google.com/document/d/1X4IVKLcCeBDsd4Bm5wBKd-rJpMYq10JKUJCErjDSwZ0/edit">Enraric</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200325</set>
+        </setters>
+    </element>
+    
+    <element name="Pact of the Cloak" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_CLOAK">
+        <supports>Pact Boon</supports>
+        <description>
+            <p>When you select this boon, you may spend a short rest creating an eldritch bond with a cloak that you are touching for the entire time. When completed, the cloak automatically attaches to your body, and cannot be removed from your body by any creatures other than you. While this bond exists, you may use a bonus action to teleport up to 30 ft. in any direction. You may use that feature a number of times equal to your Charisma modifier (minimum 1), and all expended uses are restored after completing a short or long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="{{cloak-pact:uses}}/Short Rest">
+            <description>You may use a bonus action to teleport up to 30 ft. in any direction when you have bonded with a cloak (done during a short rest).</description>
+        </sheet>
+        <rules>
+            <stat name="cloak-pact:uses" value="1" bonus="base" />
+            <stat name="cloak-pact:uses" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Pact of the Doll" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_DOLL">
+        <supports>Pact Boon</supports>
+        <description>
+            <p>After selecting this pact boon, you gain access to a small, vaguely humanoid doll. As part of a short or long rest, you may spend an hour meditating to materialize a new one. You can only have one doll at once. While it is on your person, you may use a bonus action to designate a creature that you can see within 30 ft. of you. You gain the following benefits against that creature until the effect wears off:</p>
+            <ul>
+                <li>Upon a hit, your spell and weapon attacks deal an extra 1d8 psychic or necrotic damage to it (your choice).</li>
+                <li>It has disadvantage on saving throws against your spells.</li>
+                <li>It has disadvantage on attack rolls against you or your companions.</li>
+            </ul>
+            <p class="indent">The hex lasts for 1 day or until you dispel it as a bonus action. You may use this feature a number of times equal to your Charisma Modifier (minimum 1), and all expended uses are restored after completing a long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="{{doll-pact:uses}}/Short Rest">
+            <description>While you have your pact doll on your person, you may designate a creature that you can see within 30 ft. of you. You gain the following benefits against that creature for 1 day or until dispelled (bonus action): your spell and weapon attacks deal extra 1d8 psychic or necrotic damage; creature has disadvantage on saving throws against your spells; and creature has disadvantage on attack rolls against you or your companions.</description>
+        <rules>
+            <stat name="doll-pact:uses" value="1" bonus="base" />
+            <stat name="doll-pact:uses" value="charisma:modifier" bonus="base" />
+        </rules>
+        </sheet>
+    </element>
+    <element name="Pact of the Eye" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_EYE">
+        <supports>Pact Boon</supports>
+        <description>
+            <p>When you select this boon, one of your eyes is replaced by a new, otherworldly eye of your choice. You can choose the appearance of the eye, and can change its appearance during a short or long rest. While you have the eye, you cannot be blinded in that eye, and you have proficiency in two of the following skills of your choice: Arcana, Insight, Investigation, and Perception. Additionally, you can choose one of the proficiencies, and gain expertise in that skill.</p>
+        </description>
+        <sheet>
+            <description>While you have the eye, you cannot be blinded in that eye.</description>
+        </sheet>
+        <rules>
+            <select type="Proficiency" name="Skill Proficiency, Pact of the Eye" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_PERCEPTION" />
+            <select type="Class Feature" name="Expertise, Pact of the Eye" supports="ID_EXPERTISE_SKILL_ARCANA|ID_EXPERTISE_SKILL_INSIGHT|ID_EXPERTISE_SKILL_INVESTIGATION|ID_EXPERTISE_SKILL_PERCEPTION" />
+        </rules>
+    </element>
+    <element name="Pact of the Mark" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_MARK">
+        <supports>Pact Boon</supports>
+        <description>
+            <p>When you select this boon, you gain a special tattoo or mark from your patron. It can be made in their visage, or be a symbol that represents them. As a bonus action, you may use the mark to regain a warlock spell slot. You must take a long rest before being able to do so again.</p>
+        </description>
+        <sheet action="Bonus Action" usage="1/Long Rest">
+            <description>You may use the mark to regain a warlock spell slot.</description>
+        </sheet>
+    </element>
+    <element name="Pact of the Mask" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_MASK">
+        <supports>Pact Boon</supports>
+        <description>
+            <p>When you pick this pact boon, you gain a mask from your patron. The mask cannot be destroyed, and while it is on the same plane as you, you may use your bonus action to call it to you, instantly teleporting it onto your face. If you lose it, you can perform a ritual over the course of a short rest to get a new one. You can perform an hour-long ritual to give another magical mask the properties of your Pact Mask, in addition to the mask’s original properties. While you are wearing the mask, and a humanoid within 60 ft. of you that you can see is killed, you may use your reaction to steal its visage. While you have this creatures visage, you may use a bonus action to become that creature. While this is active, you are physically identical to it, your clothes become identical to the ones it was wearing when it died, you can perfectly mimic its voice, and you know everything about it except for its darkest secrets. The visage is non-illusionary, and you are actually physically changed by it. This effect lasts for 1 hour, or until you dispel it as a bonus action. After you have expended a visage, it is gone forever, and you cannot use this feature until you finish a long rest.</p>
+        </description>
+        <sheet action="Reaction" usage="1/Long Rest">
+            <description>While you are wearing the mask, and a humanoid within 60 ft. of you that you can see is killed, you may use your reaction to steal its visage. While you have this creatures visage, you may use a bonus action to become that creature. While this is active, you are physically identical to it, your clothes become identical to the ones it was wearing when it died, you can perfectly mimic its voice, and you know everything about it except for its darkest secrets. The visage is non-illusionary, and you are actually physically changed by it. This effect lasts for 1 hour, or until you dispel it as a bonus action. After you have expended a visage, it is gone forever.</description>
+        </sheet>
+    </element>
+    <element name="Pact of the Ring" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_RING">
+        <supports>Pact Boon</supports>
+        <description>
+            <p>When you select this boon, you gain a magical ring from your patron. The ring cannot be destroyed, and while it is on the same plane as you, you may use your bonus action to call it to you, instantly teleporting it onto your finger. If you lose it, you can perform a ritual over the course of a short rest to get a new one. You can perform an hour-long ritual to give another magical ring the properties of your Pact Ring, in addition to the ring’s original properties. While you have the ring on, you have a pool of points equal to 3 times your warlock level. As an action, you can touch a creature within 5 ft. of you and expend a number of points of your choice. That creature regains hit points equal to the amount of points spent. All of the ring’s points are restored upon the completion of a long rest.</p>
+        </description>
+        <sheet action="Action" usage="{{ring-pact:points-pool}} points/Long Rest">
+            <description>While you have the ring on, you can touch a creature within 5 ft. of you and expend a number of points of your choice. That creature regains hit points equal to the amount of points spent.</description>
+        </sheet>
+        <rules>
+            <stat name="ring-pact:points-pool" value="level:warlock" />
+            <stat name="ring-pact:points-pool" value="level:warlock" />
+            <stat name="ring-pact:points-pool" value="level:warlock" />
+        </rules>
+    </element>
+    <element name="Pact of the Tools" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_TOOLS">
+        <supports>Pact Boon</supports>
+        <description>
+            <p>When you select this boon, you gain a magical set of tools from your patron. The tools cannot be destroyed, and while they are on the same plane as you, you may use your bonus action to call them to you, instantly teleporting it into your hands. If you lose them, you can perform a ritual over the course of a short rest to get a new set. You can perform an hour-long ritual to give another magical set of tools the properties of your Pact Tools, in addition to the tools’ original properties. As part of a long rest, you can choose to change the form of your tools. While these tools are in your possession, you are proficient in them, you can use them as a spellcasting focus, and you can add your Charisma modifier to checks made with them.</p>
+        </description>
+        <sheet>
+            <description>While these tools are in your possession, you are proficient in them, you can use them as a spellcasting focus, and you can add your Charisma modifier to checks made with them.</description>
+        </sheet>
+    </element>
+
+  <!-- New Eldritch Invocations -->
+    <element name="Arcane Ink" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ARCANE_INK">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_MARK, [level:9]</requirements>
+        <prerequisite>Pact of the Mark, 9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Mark, 9th level</p>
+            <p>Your tattoo has granted you a secret of arcane knowledge. You learn one 1st-level spell from the warlock, sorcerer, or wizard spell list. It does not count against your total warlock spells. You can cast this spell at will, without requiring a spell slot or components.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Spell, Arcane Ink" spellcasting="Warlock" known="true" supports="(Warlock||Sorcerer||Wizard),1" />
+        </rules>
+    </element>
+    <element name="Arcane Technique" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ARCANE_TECHNIQUE">
+        <supports>Eldritch Invocation</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: None</p>
+            <p>You gain proficiency in 2 skills or tools of your choice.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Proficiency" name="Proficiency, Arcane Technique" number="2" supports="(Skill||Tool)" />
+        </rules>
+    </element>
+    <element name="Architect of Mechanus" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ARCHITECT_OF_MECHANUS">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:7]</requirements>
+        <prerequisite>7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 7th level</p>
+            <p>You can use a warlock spell slot to cast <em>fabricate</em>, without requiring components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_FABRICATE" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can use a warlock spell slot to cast fabricate, without requiring components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_FABRICATE" spellcasting="Warlock" known="true" />
+        </rules>
+    </element>
+    <element name="Armor of Cloth" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ARMOR_OF_CLOTH">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_CLOAK, [level:5]</requirements>
+        <prerequisite>Pact of the Cloak, 5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Cloak, 5th level</p>
+            <p>While you are wearing your Pact Cloak, your AC equals 12 + your Charisma modifier (minimum of +1). Additionally, when you fail a Strength, Dexterity, or Constitution saving throw while you are wearing your Pact Cloak, you may instead choose to succeed. You must complete a long rest before you use this feature again.</p>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>When you fail a Strength, Dexterity, or Constitution saving throw while you are wearing your Pact Cloak, you may instead choose to succeed.</description>
+        </sheet>
+        <rules>
+			<stat name="ac:armor of cloth:base" value="12" />
+			<stat name="ac:armor of cloth:charisma" value="charisma:modifier" bonus="base" />
+			<stat name="ac:armor of cloth:charisma" value="1" bonus="base" />
+			<stat name="ac:armor of cloth" value="ac:armor of cloth:base" />
+			<stat name="ac:armor of cloth" value="ac:armor of cloth:charisma" />
+			<stat name="ac:calculation" value="ac:armor of cloth" bonus="calculation" equipped="" alt="Armor of Cloth (Warlock)" />
+        </rules>
+    </element>
+    <element name="Arrows of Tiamat" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ARROWS_OF_TIAMAT">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can use a warlock spell slot to cast magic missile, and when you cast it in this way, you can cause it to deal acid, cold, fire, lightning, or poison damage, rather than force damage.</p>
+        </description>
+        <sheet>
+            <description>You can use a warlock spell slot to cast magic missile, and when you cast it in this way, you can cause it to deal acid, cold, fire, lightning, or poison damage, rather than force damage.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_MAGIC_MISSILE" spellcasting="Warlock" known="true" />
+        </rules>
+    </element>
+    <element name="Artificer’s Touch" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ARTIFICERS_TOUCH">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_TOOLS, [level:5]</requirements>
+        <prerequisite>Pact of the Tools, 5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Tools, 5th level</p>
+            <p>You learn the <em>mending</em> cantrip, and it does not count towards your total number of cantrips known. When you cast it, you can use it to restore the properties of magical items, and if you target a construct with it, the construct regains 1d6 hit points.</p>
+        </description>
+        <sheet>
+            <description>When you cast the mending cantrip, you can use it to restore the properties of magical items, and if you target a construct with it, the construct regains 1d6 hit points.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_MENDING" spellcasting="Warlock" known="true" />
+        </rules>
+    </element>
+    <element name="Baphomet’s Blessing" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_BAPHOMETS_BLESSING">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can perfectly recall any path you have travelled, and have advantage on checks made to navigate complex structures, such as mazes. Additionally, you are immune to the <em>maze</em> spell.</p>
+        </description>
+        <sheet>
+            <description>You can perfectly recall any path you have travelled, and have advantage on checks made to navigate complex structures, such as mazes. Additionally, you are immune to the maze spell.</description>
+        </sheet>
+    </element>
+    <element name="Beast Form" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_BEAST_FORM">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_MASK, [level:5]</requirements>
+        <prerequisite>Pact of the Mask, 5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Mask, 5th level</p>
+            <p>You can use your Pact Mask to steal the forms of beasts. When you are wearing your mask, and a beast within 60 ft. of you dies, you may use your reaction to steal its form. You adopt all of its characteristics, including STR, DEX, and CON scores, size, creature type, movement, special senses, actions, and special features. Your hit points and WIS, INT, and CHA scores do not change. Any gear you are wearing melts into your new body or falls to the ground. This effect lasts for an hour or until you dispel it as a bonus action, and doing this means that you cannot use it or the Pact of the Mask again until you finish a long rest.</p>
+        </description>
+        <sheet action="Reaction" usage="1/Long Rest">
+            <description>When you are wearing your mask, and a beast within 60 ft. of you dies, you may use your reaction to steal its form for up to 1 hour. You adopt all of its characteristics, including STR, DEX, and CON scores, size, creature type, movement, special senses, actions, and special features.</description>
+        </sheet>
+    </element>
+    <element name="Blade of Baator" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_BLADE_OF_BAATOR">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can use a warlock spell slot to cast flame blade, without requiring components.</p>
+        </description>
+        <sheet>
+            <description>You can use a warlock spell slot to cast <em>flame blade</em>, without requiring components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_FLAME_BLADE" spellcasting="Warlock" known="true" />
+        </rules>
+    </element>
+    <element name="Blanket of Darkness" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_BLANKET_OF_DARKNESS">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:15]</requirements>
+        <prerequisite>15th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 15th level</p>
+            <p>You can cast <em>darkness</em> at will, without expending a spell slot or components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_DARKNESS" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can cast darkness at will, without expending a spell slot or components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_DARKNESS" />
+        </rules>
+    </element>
+    <element name="Bleed Magic" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_BLEED_MAGIC">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:7]</requirements>
+        <prerequisite>7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 7th level</p>
+            <p>When you hit a creature with an attack, you can use your reaction and a warlock spell slot to cause that creature’s magical capabilities to be temporarily drained. That creature cannot cast spells, use magic items, or activate magical effects until the end of your next turn.</p>
+        </description>
+        <sheet action="Reaction" usage="Spell Slot">
+            <description>When you hit a creature with an attack, you can cause that creature’s magical capabilities to be temporarily drained. That creature cannot cast spells, use magic items, or activate magical effects until the end of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Blessing of the Chain Master" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_BLESSING_OF_THE_CHAIN_MASTER">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN, [level:5]</requirements>
+        <prerequisite>Pact of the Chain, 5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Chain, 5th level</p>
+            <p>Your bond with your familiar grows stronger. While you are within 15 ft. of the familiar created by your Pact Boon, you and your familiar gain one of the following benefits:</p>
+            <ul>
+                <li>You both have a +1 to your AC.</li>
+                <li>You both have 30 ft. of darkvision, which is added onto any other darkvision you had from other sources.</li>
+                <li>You both have advantage on saving throws against being charmed or frightened.</li>
+                <li>You both have a +1 to all attack and damage rolls you make.</li>
+                <li>You both have advantage on Perception and Stealth checks.</li>
+            </ul>
+            <p class="indent">When you complete a long rest, you can change the effect caused by this feature to a new effect.</p>
+        </description>
+        <sheet>
+            <description>While you are within 15 ft. of the familiar created by your Pact Boon, you and your familiar gain one of the following benefits: +1 AC; additional 30 ft. of darkvision; advantage on saving throws against being charmed or frightened; +1 to all attack and damage rolls; advantage on Perception and Stealth checks. You can change the effect after a long rest.</description>
+        </sheet>
+    </element>
+    <element name="Body of Juiblex" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_BODY_OF_JUIBLEX">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You have resistance to acid damage, and you can fit through spaces as narrow as 1 inch in diameter. Additionally, your unarmed attacks deal additional acid damage equal to your Charisma modifier (minimum of 1).</p>
+        </description>
+        <sheet>
+            <description>You can fit through spaces as narrow as 1 inch in diameter. Additionally, your unarmed attacks deal additional {{body-of-jubilex:acid-damage}} acid damage.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+            <stat name="body-of-jubilex:acid-damage" value="1" bonus="base" />
+            <stat name="body-of-jubilex:acid-damage" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Bolt of Limbo" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_BOLT_OF_LIMBO">
+        <supports>Eldritch Invocation</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: None</p>
+            <p>You can cast <em>chaos bolt</em> at will as a 1st-level spell, without expending components or spell slots.</p>
+            <div class="reference">
+                <div element="ID_GGTR_SPELL_CHAOS_BOLT" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can cast chaos bolt at will as a 1st-level spell, without expending components or spell slots.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_GGTR_SPELL_CHAOS_BOLT" />
+        </rules>
+    </element>
+    <element name="Book of the Dead" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_BOOK_OF_THE_DEAD">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME, [level:15]</requirements>
+        <prerequisite>Pact of the Tome, 15th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Tome, 15th level</p>
+            <p>Your Book of Shadows gains a new page overnight. While your Pact Tome is on your person, you can spend 1 minute writing the true name of a creature 10 times. This can only be the name of a specific individual rather than the name of a creature type, and the individual’s CR cannot be higher than your warlock level. After this ritual is complete, the creature must make a Constitution saving throw against your spell save DC. Upon a failure, the target is instantly killed, unable to be revived short of a <em>wish</em> spell. Upon a success, a creature takes 6d10 necrotic damage. You know whether the creature succeeded or failed after completing the ritual. Regardless of whether or not the creature fails, it is immune to this effect forever afterward. You must wait 7 days before using this feature again. If you run out of space on the new page, the Tome continuously regains new pages to use this feature with.</p>
+        </description>
+        <sheet>
+            <description>While your Pact Tome is on your person, you can spend 1 minute writing the true name of a creature 10 times. After this ritual is complete, the creature must make a Constitution saving throw against your spell save DC. Upon a failure, the target is instantly killed, unable to be revived short of a wish spell. Upon a success, a creature takes 6d10 necrotic damage. You know whether the creature succeeded or failed after completing the ritual.</description>
+        </sheet>
+    </element>
+    <element name="Bulwark of Mystra" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_BULWARK_OF_MYSTRA">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_BLADE_WARD</requirements>
+        <prerequisite>blade ward cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: blade ward cantrip</p>
+            <p>When you cast <em>blade ward</em>, you can cast it as a bonus action.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_BLADE_WARD" />
+            </div>
+        </description>
+        <sheet action="Bonus Action">
+            <description>When you cast blade ward, you can cast it as a bonus action.</description>
+        </sheet>
+    </element>
+    <element name="Call of the Wild" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_CALL_OF_THE_WILD">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can spend a warlock spell slot to cast <em>conjure animals</em>, without requiring components.</p>
+        </description>
+        <sheet>
+            <description>You can spend a warlock spell slot to cast conjure animals, without requiring components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CONJURE_ANIMALS" spellcasting="Warlock" />
+        </rules>
+    </element>
+    <element name="Deflect Elements" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_DEFLECT_ELEMENTS">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:9]</requirements>
+        <prerequisite>9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 9th level</p>
+            <p>When you are hit by a spell that deals acid, cold, fire, lightning, poison, or thunder damage, you can use your reaction to decrease that damage by 1d4 + your Charisma modifier. If this reduces the damage to 0, you can redirect the spell towards a creature within range using your spellcasting modifier or spell save DC as necessary. You may do this a number of times equal to your Charisma modifier (minimum of 1) before having to take a long rest.</p>
+        </description>
+        <sheet action="Reaction" usage="{{deflect-elements:uses}}/Long Rest">
+            <description>When you are hit by a spell that deals acid, cold, fire, lightning, poison, or thunder damage, you can use your reaction to decrease that damage by 1d4 + {{charisma:modifier}}. If this reduces the damage to 0, you can redirect the spell towards a creature within range using your spellcasting modifier or spell save DC as necessary.</description>
+        </sheet>
+        <rules>
+            <stat name="deflect-elements:uses" value="1" bonus="base" />
+            <stat name="deflect-elements:uses" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Celestial Command" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_CELESTIAL_COMMAND">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>As an action, you can spend a warlock spell slot to cause all fiends and undead creatures within 20 ft. of you to make a Wisdom saving throw. Upon a failure, a creature takes 2d8 radiant damage and is frightened of you for 1 minute. Upon a success, a creature takes half the radiant damage and isn’t frightened.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can spend a warlock spell slot to cause all fiends and undead creatures within 20 ft. of you to make a Wisdom saving throw. Upon a failure, a creature takes 2d8 radiant damage and is frightened of you for 1 minute. Upon a success, a creature takes half the radiant damage and isn’t frightened.</description>
+        </sheet>
+    </element>
+    <element name="Chilling Fury" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_CHILLING_FURY">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_CHILL_TOUCH</requirements>
+        <prerequisite>chill touch cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: chill touch cantrip</p>
+            <p>When you cast <em>chill touch</em>, you can cause it to deal additional necrotic damage equal to your Charisma modifier (minimum of 1).</p>
+        </description>
+        <sheet>
+            <description>When you cast chill touch, you can cause it to deal {{chilling-fury:damage}} additional necrotic damage.</description>
+        </sheet>
+        <rules>
+            <stat name="chilling-fury:damage" value="1" bonus="base" />
+            <stat name="chilling-fury:damage" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Cloaked Wraith" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_CLOAKED_WRAITH">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_CLOAK, [level:7]</requirements>
+        <prerequisite>Pact of the Cloak, 7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Cloak, 7th level</p>
+            <p>As a bonus action while you are wearing your Pact Cloak, you may use a warlock spell slot to gain a flying speed of 60 ft. for the next hour. While flying in this way, you can hover.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>While you are wearing your Pact Cloak, you may use a warlock spell slot to gain a flying speed of 60 ft. for the next hour. While flying in this way, you can hover.</description>
+        </sheet>
+    </element>
+    <element name="Curse of Babbling" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_CURSE_OF_BABBLING">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>As an action, you can force a creature that you can see within 30 ft. of you to make a Wisdom saving throw against your spell save DC. Upon a failure, that creature cannot speak coherently for the next minute, and upon a success, the creature is unaffected. While affected in this way, the target cannot provide verbal components for spells, and cannot be understood in any magical or nonmagical way. You can use this feature a number of times equal to your Charisma modifier (minimum of 1) before having to take a long rest.</p>
+        </description>
+        <sheet action="Action" usage="{{curse-of-babbling:uses}}/Long Rest">
+            <description>You can force a creature that you can see within 30 ft. of you to make a Wisdom saving throw against your spell save DC. Upon a failure, that creature cannot speak coherently for the next minute, and upon a success, the creature is unaffected. While affected in this way, the target cannot provide verbal components for spells, and cannot be understood in any magical or nonmagical way.</description>
+        </sheet>
+        <rules>
+            <stat name="curse-of-babbling:uses" value="1" bonus="base" />
+            <stat name="curse-of-babbling:uses" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Cursed Hunter" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_CURSED_HUNTER">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_DOLL, [level:5]</requirements>
+        <prerequisite>Pact of the Doll, 5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Doll, 5th level</p>
+            <p>While you have hexed a creature with your Pact Doll, or any other warlock feature that hexes, you are constantly aware of how far away it is from you, the direction they are in relative to you, and you a general idea of the area around them. This feature doesn’t function only if the target is on a different plane than you.</p>
+        </description>
+        <sheet>
+            <description>While you have hexed a creature with your Pact Doll, or any other warlock feature that hexes, you are constantly aware of how far away it is from you, the direction they are in relative to you, and you a general idea of the area around them. This feature doesn’t function only if the target is on a different plane than you.</description>
+        </sheet>
+    </element>
+    <element name="Deathly Touch" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_DEATHLY_TOUCH">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_CHILL_TOUCH</requirements>
+        <prerequisite>chill touch cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: chill touch cantrip</p>
+            <p>When you cast <em>chill touch</em>, you can reroll a number of damage die equal to your Charisma modifier (minimum of 1). You may use either roll, but you cannot reroll the same die twice.</p>
+        </description>
+        <sheet>
+            <description>When you cast chill touch, you can reroll up to {{deathly-touch:damage}} damage dice. You may use either roll, but you cannot reroll the same die twice.</description>
+        </sheet>
+        <rules>
+            <stat name="deathly-touch:damage" value="1" bonus="base" />
+            <stat name="deathly-touch:damage" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Dendallen’s Influence" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_DENDALLENS_INFLUENCE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can spend a warlock spell slot to cast <em>animate dead</em>, without requiring components.</p>
+        </description>
+        <sheet>
+            <description>You can spend a warlock spell slot to cast animate dead, without requiring components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" spellcasting="Warlock" />
+        </rules>
+    </element>
+    <element name="Double Casting" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_DOUBLE_CASTING">
+        <supports>Eldritch Invocation</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: None</p>
+            <p>When you cast a cantrip as an action, you can immediately use your bonus action to cast a cantrip, even if that cantrip’s casting time is an action.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>When you cast a cantrip as an action, you can immediately use your bonus action to cast a cantrip, even if that cantrip’s casting time is an action.</description>
+        </sheet>
+    </element>
+    <element name="Dreadbeard’s Curse" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_DREADBEARDS_CURSE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_HEX</requirements>
+        <prerequisite>hex spell</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: hex spell</p>
+            <p>When you cast <em>hex</em>, the extra damage is increased to 1d8 rather than 1d6.</p>
+        </description>
+        <sheet>
+            <description>When you cast hex, the extra damage is increased to 1d8 rather than 1d6.</description>
+        </sheet>
+    </element>
+    <element name="Dual Hand" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_DUAL_HAND">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_MAGE_HAND</requirements>
+        <prerequisite>mage hand cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: mage hand cantrip</p>
+            <p>When you cast mage hand, you can create 2 separate hands. They can both be controlled with the same action.</p>
+        </description>
+        <sheet>
+            <description>When you cast <em>mage hand</em>, you can create 2 separate hands. They can both be controlled with the same action.</description>
+        </sheet>
+    </element>
+    <element name="Eldritch Archer" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_ARCHER">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE, (ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_WEAPON||ID_WOTC_XGTE_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_WEAPON)</requirements>
+        <prerequisite>Pact of the Blade, Improved Pact Weapon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Blade, Improved Pact Weapon</p>
+            <p>When you summon a Pact Weapon in the form of a ranged weapon, it has the following benefits:</p>
+            <ul>
+                <li>Your Pact Weapon does not require ammunition, and can instead produce its own magical ammunition.</li>
+                <li>If your Pact Weapon has the thrown property, it returns to your hand after being thrown.</li>
+                <li>Ranged attack rolls with your Pact Weapon ignore quarter and half cover, and attacking at long range doesn’t impose disadvantage.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you summon a Pact Weapon in the form of a ranged weapon, it has the following benefits: it produces its own magical animation; if it is thrown, it returns to your hand; ranged attack rolls ignore quarter and half cover and long range doesn't impose disadvantage.</description>
+        </sheet>
+    </element>
+    <element name="Eldritch Archivist" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_ARCHIVIST">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME, [level:7]</requirements>
+        <prerequisite>Pact of the Tome, 7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Tome, 7th level</p>
+            <p>Choose two 1st-level spells and one 2nd-level spell from any class. You can cast them as if they were warlock spells, but they do not count against your Spells Known, and they do not expend spell slots. Instead, you can cast them each once before having to take a long rest.</p>
+        </description>
+        <sheet>
+            <description>You can cast each of your Eldritch Archivist spells once per long rest.</description>
+        </sheet>
+        <rules>
+            <select type="Spell" name="Spell, Eldritch Archivist" number="2" supports="1" />
+            <select type="Spell" name="Spell, Eldritch Archivist" number="1" supports="2" />
+        </rules>
+    </element>
+    <element name="Eldritch Skill" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_SKILL">
+        <supports>Eldritch Invocation</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: None</p>
+            <p>One ability score of your choice increases by 1, to a maximum of 20.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Ability Score Improvement" name="Eldritch Skill" />
+        </rules>
+    </element>
+    <element name="Elemental Blade" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ELEMENTAL_BLADE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE, [level:7]</requirements>
+        <prerequisite>Pact of the Blade, 7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Blade, 7th level</p>
+            <p>When you hit a creature with a weapon attack with your Pact Weapon, you can cause that attack to deal an extra 4d10 acid, cold, fire, force, lightning, poison, or thunder damage. You must complete a long rest before you use this feature again.</p>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>When you hit a creature with a weapon attack with your Pact Weapon, you can cause that attack to deal an extra 4d10 acid, cold, fire, force, lightning, poison, or thunder damage.</description>
+        </sheet>
+    </element>
+    <element name="Empowering Mark" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_EMPOWERING_MARK">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_MARK, [level:7]</requirements>
+        <prerequisite>Pact of the Mark, 7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Mark, 7th level</p>
+            <p>The next damaging spell you cast after using your Pact Mark deals maximum damage.</p>
+        </description>
+        <sheet>
+            <description>The next damaging spell you cast after using your Pact Mark deals maximum damage.</description>
+        </sheet>
+    </element>
+    <element name="Evelyn’s Kiss" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_EVELYNS_KISS">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>As an action, you target a friendly creature within touch range. That creature gains the following benefits:</p>
+            <ul>
+                <li>The creature heals hit points equal to your warlock level.</li>
+                <li>Any charmed or frightened conditions affecting the creature are removed. They have advantage on saving throws against those effects for 1 minute.</li>
+                <li>As long as the creature is within 30 ft. of you, both you and the creature have a +1 to your AC for 1 minute.</li>
+            </ul>
+            <p class="indent">You must complete a long rest before you can use this feature again.</p>
+        </description>
+        <sheet action="Action" usage="1/Long Rest">
+            <description>You target a friendly creature within touch range. That creature gains the following benefits: The creature heals {{level:warlock}} hit points. Any charmed or frightened conditions affecting the creature are removed. They have advantage on saving throws against those effects for 1 minute. As long as the creature is within 30 ft. of you, both you and the creature have a +1 to your AC for 1 minute.</description>
+        </sheet>
+    </element>
+    <element name="Expert Knowledge" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_EXPERT_KNOWLEDGE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+        <prerequisite>Pact of the Tome</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Tome</p>
+            <p>You gain expertise in 2 skills that you are proficient with. As a part of a long rest, you can change one of these skills out for a new skill that you are proficient with.</p>
+        </description>
+        <sheet>
+            <description>You gain expertise in 2 skills that you are proficient with. As a part of a long rest, you can change one of these skills out for a new skill that you are proficient with.</description>
+        </sheet>
+    </element>
+    <element name="Eye of the Future" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_EYE_OF_THE_FUTURE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_EYE, [level:9]</requirements>
+        <prerequisite>Pact of the Eye, 9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Eye, 9th level</p>
+            <p>As an action, you can cause yourself to automatically succeed the next saving throw you make until the start of your next turn. You must complete a long rest before you use this feature again.</p>
+        </description>
+        <sheet action="Action" usage="1/Long Rest">
+            <description>You can cause yourself to automatically succeed the next saving throw you make until the start of your next turn.</description>
+        </sheet>
+    </element>
+    <element name="Eyes of Yog-Sothoth" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_EYES_OF_YOG_SOTHOTH">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:15]</requirements>
+        <prerequisite>15th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 15th level</p>
+            <p>You can cast <em>detect thoughts</em> at will, without expending a spell slot or components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_DETECT_THOUGHTS" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can cast detect thoughts at will, without expending a spell slot or components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_DETECT_THOUGHTS" />
+        </rules>
+    </element>
+    <element name="Feast of Warriors" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_FEAST_OF_WARRIORS">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can use a warlock spell cast <em>create food and water</em>, without requiring components.</p>
+        </description>
+        <sheet>
+            <description>You can use a warlock spell cast create food and water, without requiring components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CREATE_FOOD_AND_WATER" spellcasting="Warlock" />
+        </rules>
+    </element>
+    <element name="Fewild’s Grace" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_FEWILDS_GRACE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:15]</requirements>
+        <prerequisite>15th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 15th level</p>
+            <p>You can cast <em>misty step</em> at will, without expending a spell slot or components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_MISTY_STEP" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can cast misty step at will, without expending a spell slot or components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" />
+        </rules>
+    </element>
+    <element name="Grasp of Oberon" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_GRASP_OF_OBERON">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can cast <em>entangle</em> at will, without expending a spell slot or components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_ENTANGLE" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can cast entangle at will, without expending a spell slot or components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ENTANGLE" />
+        </rules>
+    </element>
+    <element name="Grasp of Strahd" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_GRASP_OF_STRAHD">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_CHILL_TOUCH</requirements>
+        <prerequisite>chill touch cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: chill touch cantrip</p>
+            <p>When you cast <em>chill touch</em>, you can use your reaction to heal hit points equal to the damage dealt. You may use this feature a number of times equal to your Charisma modifier (minimum of 1).</p>
+        </description>
+        <sheet action="Reaction" usage="{{grasp-of-strahd:uses}}/Long Rest">
+            <description>When you cast chill touch, you can use your reaction to heal hit points equal to the damage dealt.</description>
+        </sheet>
+        <rules>
+            <stat name="grasp-of-strahd:uses" value="1" bonus="base" />
+            <stat name="grasp-of-strahd:uses" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Grip of Maglubiyet" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_GRIP_OF_MAGLUBIYET">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_MAGE_HAND</requirements>
+        <prerequisite>mage hand cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: mage hand cantrip</p>
+            <p>When you cast mage hand, you can use your action to cause your mage hand can make an attack roll with a One-Handed weapon it is holding. If you have more than one mage hand, you can use them both to hold a Two-Handed weapon, and use that weapon to attack. You use your spellcasting modifier for attack rolls made with these weapons. These hands cannot use additional magical properties of these weapons, unless the property is a bonus to attack and/or damage modifiers.</p>
+        </description>
+        <sheet action="Action">
+            <description>When you cast mage hand, you cause your mage hand can make an attack roll with a One-Handed weapon it is holding. If you have more than one mage hand, you can use them both to hold a Two-Handed weapon, and use that weapon to attack. You use your spellcasting modifier for attack rolls made with these weapons. These hands cannot use additional magical properties of these weapons, unless the property is a bonus to attack and/or damage modifiers.</description>
+        </sheet>
+    </element>
+    <element name="Guardian’s Hand" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_GUARDIANS_HAND">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_MAGE_HAND</requirements>
+        <prerequisite>mage hand cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: mage hand cantrip</p>
+            <p>When your mage hand is within 5 ft. of a creature, and the creature takes damage, you can use your reaction to cause the damage to be reduced by 2d6. You may use this feature a number of times equal to your Charisma modifier (minimum of 1).</p>
+        </description>
+        <sheet action="Reaction" usage="{{guardians-hand:uses}}/Short Rest">
+            <description>When your mage hand is within 5 ft. of a creature, and the creature takes damage, you can use your reaction to cause the damage to be reduced by 2d6.</description>
+        </sheet>
+        <rules>
+            <stat name="guardians-hand:uses" value="1" bonus="base" />
+            <stat name="guardians-hand:uses" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Hand of Life" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_HAND_OF_LIFE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_MAGE_HAND</requirements>
+        <prerequisite>mage hand cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: mage hand cantrip</p>
+            <p>When your mage hand is within 5 ft. of a friendly creature, you can use your action to spend a warlock spell slot and cause the creature to heal hit points equal to your warlock level.</p>
+        </description>
+        <sheet action="Action">
+            <description>When your mage hand is within 5 ft. of a friendly creature, you can use your action to spend a warlock spell slot and cause the creature to heal {{level:warlock}} hit points.</description>
+        </sheet>
+    </element>
+    <element name="Hand of Mephistopheles" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_HAND_OF_MEPHISTOPHELES">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_MAGE_HAND</requirements>
+        <prerequisite>mage hand cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: mage hand cantrip</p>
+            <p>When you cast <em>mage hand</em>, your mage hand can activate magic items.</p>
+        </description>
+        <sheet>
+            <description>When you cast mage hand, your mage hand can activate magic items.</description>
+        </sheet>
+    </element>
+    <element name="Hands of Vecna" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_HANDS_OF_VECNA">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_CHILL_TOUCH</requirements>
+        <prerequisite>chill touch cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: chill touch cantrip</p>
+            <p>When you cast <em>chill touch</em>, you can target two creatures instead of just one.</p>
+        </description>
+        <sheet>
+            <description>When you cast chill touch, you can target two creatures instead of just one.</description>
+        </sheet>
+    </element>
+    <element name="Hero’s Rebirth" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_HEROS_REBIRTH">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:12]</requirements>
+        <prerequisite>12th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 12th level</p>
+            <p>You can spend a warlock spell slot to cast <em>revivify</em>, without requiring components. When cast in this way, the spell requires concentration for 24 hours. If you lose concentration, the spell fails, and that creature can never be revived in this way by you again.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_REVIVIFY" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can spend a warlock spell slot to cast revivify, without requiring components. When cast in this way, the spell requires concentration for 24 hours. If you lose concentration, the spell fails, and that creature can never be revived in this way by you again.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_REVIVIFY" />
+        </rules>
+    </element>
+    <element name="Holy Blade" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_HOLY_BLADE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE, [level:12]</requirements>
+        <prerequisite>Pact of the Blade, 12th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Blade, 12th level</p>
+            <p>The first time on each of your turns when you hit a creature with your Pact Weapon, that creature takes 2d8 extra radiant or necrotic damage (your choice).</p>
+        </description>
+        <sheet>
+            <description>The first time on each of your turns when you hit a creature with your Pact Weapon, that creature takes 2d8 extra radiant or necrotic damage (your choice).</description>
+        </sheet>
+    </element>
+    <element name="Illithid’s Grasp" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ILLITHIDS_GRASP">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:9]</requirements>
+        <prerequisite>9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 9th level</p>
+            <p>You can use a warlock spell slot to cast telekinesis, without requiring components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_TELEKINESIS" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can use a warlock spell slot to cast telekinesis, without requiring components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_TELEKINESIS" />
+        </rules>
+    </element>
+    <element name="Imbue Arcana" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_IMBUE_ARCANA">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_TOOLS, [level:5]</requirements>
+        <prerequisite>Pact of the Tools, 5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Tools, 5th level</p>
+            <p>You can create temporary magical items using eldritch power. As an action, you can touch a nonmagical item to transform it into a Common or Uncommon magic item. The original item’s type must match up with the type of magic item (for example, a dagger can become a Dagger +1, or a cloak can become a Cloak of Elvenkind). The item keeps these magical properties for 1 hour. You must complete a long rest before using this feature again. When you reach 10th level, you can make Rare items, at 15th level you can make Very Rare items, and at 20th level you can make Legendary items.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can touch a nonmagical item to transform it into a Common or Uncommon magic item.</description>
+        </sheet>
+    </element>
+    <element name="Inspiring Touch" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_INSPIRING_TOUCH">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_RING, [level:7]</requirements>
+        <prerequisite>Pact of the Ring, 7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Ring, 7th level</p>
+            <p>As an action, you can touch a creature within 5 ft. of you and use up to 7 of your Pact Ring’s points. The next attack roll, saving throw, or ability check that the target makes has a bonus equal to the number of points expended.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can touch a creature within 5 ft. of you and use up to 7 of your Pact Ring’s points. The next attack roll, saving throw, or ability check that the target makes has a bonus equal to the number of points expended.</description>
+        </sheet>
+    </element>
+    <element name="Jotunn’s Form" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_JOTUNNS_FORM">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can use a warlock spell slot to cast <em>enlarge/reduce</em>, without requiring components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_ENLARGE_REDUCE" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can use a warlock spell slot to cast enlarge/reduce, without requiring components.</description>
+        </sheet>    
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ENLARGE_REDUCE" />
+        </rules>
+    </element>
+    <element name="Lolth’s Blessing" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_LOLTHS_BLESSING">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:15]</requirements>
+        <prerequisite>15th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 15th level</p>
+            <p>You can cast <em>web</em> at will, without expending a spell slot or components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_WEB" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can cast web at will, without expending a spell slot or components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_WEB" />
+        </rules>
+    </element>
+    <element name="Lunar Light" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_LUNAR_LIGHT">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:15]</requirements>
+        <prerequisite>15th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 15th level</p>
+            <p>You can cast <em>moonbeam</em> at will, without expending a spell slot or components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_MOONBEAM" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can cast moonbeam at will, without expending a spell slot or components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_MOONBEAM" />
+        </rules>
+    </element>
+    <element name="Luminescent Hand" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_LUMINESCENT_HAND">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_MAGE_HAND</requirements>
+        <prerequisite>mage hand cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: mage hand cantrip</p>
+            <p>When you cast <em>mage hand</em>, you can use a bonus action while it is active to cause the hand to emit a 5 ft. radius of bright light, which is surrounded by a further 5 ft. radius of dim light. If you have more than one mage hand, this effect can be applied to one or both of the hands. This feature has no effect if the hand is invisible.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>When you cast mage hand, you can use a bonus action while it is active to cause the hand to emit a 5 ft. radius of bright light, which is surrounded by a further 5 ft. radius of dim light. If you have more than one mage hand, this effect can be applied to one or both of the hands. This feature has no effect if the hand is invisible.</description>
+        </sheet>
+    </element>
+    <element name="Mariner’s Step" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_MARINERS_STEP">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can walk on liquid surfaces as if they were solid ground. If the liquid is harmful, such as lava or acid, you still take damage from it.</p>
+        </description>
+        <sheet>
+            <description>ou can walk on liquid surfaces as if they were solid ground. If the liquid is harmful, such as lava or acid, you still take damage from it.</description>
+        </sheet>
+    </element>
+    <element name="Mark of Modification" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_MARK_OF_MODIFICATION">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_MARK, [level:9]</requirements>
+        <prerequisite>Pact of the Mark, 9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Mark, 9th level</p>
+            <p>You gain an option from the sorcerer’s metamagic feature. You may use it once before having to take a long rest. As a part of a long rest, you can change the selected option.</p>
+        </description>
+        <sheet>
+            <description>You gain an option from the sorcerer’s metamagic feature. You may use it once before having to take a long rest. As a part of a long rest, you can change the selected option.</description>
+        </sheet>
+    </element>
+    <element name="Mark of Sacrifice" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_MARK_OF_SACRIFICE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_MARK, [level:12]</requirements>
+        <prerequisite>Pact of the Mark, 12th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Mark, 12th level</p>
+            <p>Whenever you kill a creature with a spell, roll a d20. On a 20, you regain the ability to use your Pact of the Mark.</p>
+        </description>
+        <sheet>
+            <description>Whenever you kill a creature with a spell, roll a d20. On a 20, you regain the ability to use your Pact of the Mark.</description>
+        </sheet>
+    </element>
+    <element name="Masquerade of Terror" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_MASQUERADE_OF_TERROR">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_MASK, [level:9]</requirements>
+        <prerequisite>Pact of the Mask, 9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Mask, 9th level</p>
+            <p>While you are wearing your Pact Mask, you may use your action to attempt to invoke ancient, primal terror in a foe by changing the form of your mask. Choose up to 10 creatures within 120 ft. of you that can see you. Each of these creatures must make a Wisdom saving throw against your Spell Save DC. Upon a failure, a creature takes 2d12 psychic damage and is frightened of you for 1 minute. On a success, the creature only takes half damage, and isn’t frightened. You may use this feature a number of times equal to your Charisma modifier (minimum of 1), before having to take a long rest.</p>
+        </description>
+        <sheet action="Action" usage="{{masquerade-of-terror:uses}}/Long Rest">
+            <description>Choose up to 10 creatures within 120 ft. of you that can see you. Each of these creatures must make a Wisdom saving throw against your Spell Save DC. Upon a failure, a creature takes 2d12 psychic damage and is frightened of you for 1 minute. On a success, the creature only takes half damage, and isn’t frightened.</description>
+        </sheet>
+        <rules>
+            <stat name="masquerade-of-terror:uses" value="1" bonus="base" />
+            <stat name="masquerade-of-terror:uses" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Mist of Dreams" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_MIST_OF_DREAMS">
+        <supports>Eldritch Invocation</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: None</p>
+            <p>You can cast <em>fog cloud</em> at will, without expending a spell slot or components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_FOG_CLOUD" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can cast fog cloud at will, without expending a spell slot or components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_FOG_CLOUD" />
+        </rules>
+    </element>
+    <element name="Necron’s Wrath" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_NECRONS_WRATH">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_CHILL_TOUCH</requirements>
+        <prerequisite>chill touch cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: chill touch cantrip</p>
+            <p>When you cast <em>chill touch</em>, you can cause a creature to make a Constitution saving throw with a DC equal to your spell save DC. Upon a failure, a creature is stunned until the end of its next turn, and upon a success, a creature is unaffected.</p>
+        </description>
+        <sheet>
+            <description>When you cast chill touch, you can cause a creature to make a Constitution saving throw with a DC equal to your spell save DC. Upon a failure, a creature is stunned until the end of its next turn, and upon a success, a creature is unaffected.</description>
+        </sheet>
+    </element>
+    <element name="Noxious Form" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_NOXIOUS_FORM">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:7]</requirements>
+        <prerequisite>7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 7th level</p>
+            <p>You can spend a warlock spell slot to cast <em>gaseous form</em>, without requiring components. When cast in this way, while you are occupying another creature’s space, it takes poison damage equal to your Charisma modifier (minimum of 1) at the start of each of their turns for as long as it or you remain there.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_GASEOUS_FORM" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can spend a warlock spell slot to cast gaseous form, without requiring components. When cast in this way, while you are occupying another creature’s space, it takes {{noxious-form:damage}} poison damage at the start of each of their turns for as long as it or you remain there.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_GASEOUS_FORM" />
+            <stat name="noxious-form:damage" value="1" bonus="base" />
+            <stat name="noxious-form:damage" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Overcharged Magic" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_OVERCHARGED_MAGIC">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_MARK, [level:5]</requirements>
+        <prerequisite>Pact of the Mark, 5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Mark, 5th level</p>
+            <p>The next spell attack roll you make after using your Pact Mark has advantage.</p>
+        </description>
+        <sheet>
+            <description>The next spell attack roll you make after using your Pact Mark has advantage.</description>
+        </sheet>
+    </element>
+    <element name="Pack Alpha" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_PACK_ALPHA">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN, [level:12]</requirements>
+        <prerequisite>Pact of the Chain, 12th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Chain, 12th level</p>
+            <p>You are able to summon more than one companion at once. When you cast <em>find familiar</em> with your Pact of the Chain, you can create up to 3 total familiars.</p>
+        </description>
+        <sheet>
+            <description>You are able to summon more than one companion at once. When you cast find familiar with your Pact of the Chain, you can create up to 3 total familiars.</description>
+        </sheet>
+    </element>
+    <element name="Panacea" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_PANACEA">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_RING</requirements>
+        <prerequisite>Pact of the Ring</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Ring</p>
+            <p>As an action, you can touch a creature within 5 ft. of you and use 3 of your Pact Ring’s points to remove one condition or disease affecting that creature.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can touch a creature within 5 ft. of you and use 3 of your Pact Ring’s points to remove one condition or disease affecting that creature.</description>
+        </sheet>
+    </element>
+    <element name="Phoenix Soul" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_PHOENIX_SOUL">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:7]</requirements>
+        <prerequisite>7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 7th level</p>
+            <p>As a reaction when you drop to 0 hit points, you can choose to drop to 1 hit point instead. Doing so causes all hostile creatures within 10 ft. of you to take 2d6 fire damage. You must complete a long rest before doing so again.</p>
+        </description>
+        <sheet action="Reaction" usage="1/Long Rest">
+            <description>When you drop to 0 hit points, you can choose to drop to 1 hit point instead. Doing so causes all hostile creatures within 10 ft. of you to take 2d6 fire damage.</description>
+        </sheet>
+    </element>
+    <element name="Piercing Blade" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_PIERCING_BLADE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE, [level:9]</requirements>
+        <prerequisite>Pact of the Blade, 9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Blade, 9th level</p>
+            <p>When you hit a creature with an attack with your Pact Weapon, you can spend a warlock spell slot to cause the creature’s AC to be reduced by 3 until the end of their next turn. Additionally, until the end of their next turn, damage dealt to them ignores resistance.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with an attack with your Pact Weapon, you can spend a warlock spell slot to cause the creature’s AC to be reduced by 3 until the end of their next turn. Additionally, until the end of their next turn, damage dealt to them ignores resistance.</description>
+        </sheet>
+    </element>
+    <element name="Plague of Vermin" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_PLAGUE_OF_VERMIN">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_XGTE_SPELL_INFESTATION</requirements>
+        <prerequisite>infestation cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: infestation cantrip</p>
+            <p>When you cast <em>infestation</em>, you can cause it to deal additional poison damage equal to your Charisma modifier (minimum of 1).</p>
+        </description>
+        <sheet>
+            <description>When you cast infestation, you can cause it to deal additional {{plague-of-vermin:damage}} poison damage.</description>
+        </sheet>
+        <rules>
+            <stat name="plague-of-vermin:damage" value="1" bonus="base" />
+            <stat name="plague-of-vermin:damage" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Potent Venom" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_POTENT_VENOM">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:12]</requirements>
+        <prerequisite>12th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 12th level</p>
+            <p>Your attacks and spells ignore resistance and immunity to poison damage.</p>
+        </description>
+        <sheet>
+            <description>Your attacks and spells ignore resistance and immunity to poison damage.</description>
+        </sheet>
+    </element>
+    <element name="Protector’s Sight" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_PROTECTORS_SIGHT">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_EYE, [level:5]</requirements>
+        <prerequisite>Pact of the Eye, 5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Eye, 5th level</p>
+            <p>You can cast <em>detect evil and good</em> and <em>detect poison and disease</em> at will, without expending a spell slot or components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_DETECT_EVIL_AND_GOOD" />
+                <div element="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can cast detect evil and good and detect poison and disease at will, without expending a spell slot or components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_DETECT_EVIL_AND_GOOD" />
+            <grant type="Spell" id="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE" />
+        </rules>
+    </element>
+    <element name="Psychic Hand" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_PSYCHIC_HAND">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_MAGE_HAND</requirements>
+        <prerequisite>mage hand cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: mage hand cantrip</p>
+            <p>When you cast mage hand, you can make the hand invisible. If you have more than one mage hand, this effect can be applied to one or both of the hands.</p>
+        </description>
+        <sheet>
+            <description>When you cast mage hand, you can make the hand invisible. If you have more than one mage hand, this effect can be applied to one or both of the hands.</description>
+        </sheet>
+    </element>
+    <element name="Puppet Loosely Strung" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_PUPPET_LOOSELY_STRUNG">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can cast <em>charm person</em> at will, without expending a spell slot or components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_CHARM_PERSON" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can cast charm person at will, without expending a spell slot or components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" />
+        </rules>
+    </element>
+    <element name="Reach of the All-Father" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_REACH_OF_THE_ALL_FATHER">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_MAGE_HAND</requirements>
+        <prerequisite>mage hand cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: mage hand cantrip</p>
+            <p>When you cast <em>mage hand</em>, your mage hand can lift up to 50 pounds.</p>
+        </description>
+        <sheet>
+            <description>When you cast mage hand, your mage hand can lift up to 50 pounds.</description>
+        </sheet>
+    </element>
+    <element name="Restore Vitality" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_RESTORE_VITALITY">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_RING, [level:12]</requirements>
+        <prerequisite>Pact of the Ring, 12th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Ring, 12th level</p>
+            <p>As an action, you can touch a dead creature that died within the past hour within 5 ft. of you and expend 30 of your Pact Ring’s points. The target is restored to life at 1 hit point, but is unconscious for 3d10 minutes.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can touch a dead creature that died within the past hour within 5 ft. of you and expend 30 of your Pact Ring’s points. The target is restored to life at 1 hit point, but is unconscious for 3d10 minutes.</description>
+        </sheet>
+    </element>
+    <element name="Ring of Sacrifice" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_RING_OF_SACRIFICE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_RING, [level:5]</requirements>
+        <prerequisite>Pact of the Ring, 5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Ring, 5th level</p>
+            <p>As a bonus action, you can choose to take 2d6 necrotic damage. Your Pact Ring regains a number of expended points equal to the damage dealt.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can choose to take 2d6 necrotic damage. Your Pact Ring regains a number of expended points equal to the damage dealt.</description>
+        </sheet>
+    </element>
+    <element name="Rubber Limbs" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_RUBBER_LIMBS">
+        <supports>Eldritch Invocation</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: None</p>
+            <p>Your reach for melee attacks is increased by 5 ft.</p>
+        </description>
+        <sheet>
+            <description>Your reach for melee attacks is increased by 5 ft.</description>
+        </sheet>
+    </element>
+    <element name="Savvy Attunement" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SAVVY_ATTUNEMENT">
+        <supports>Eldritch Invocation</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: None</p>
+            <p>You can attune to any magic items, ignoring race or class requirements.</p>
+        </description>
+        <sheet>
+            <description>You can attune to any magic items, ignoring race or class requirements.</description>
+        </sheet>
+    </element>
+    <element name="Sacred Blast" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SACRED_BLAST">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
+        <prerequisite>eldritch blast cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: eldritch blast cantrip</p>
+            <p>When you cast <em>eldritch blast</em>, you can cause it to deal radiant or necrotic damage (your choice) instead of force. If you fire more than one blast, you can choose the damage type for each individual blast.</p>
+        </description>
+        <sheet>
+            <description>When you cast eldritch blast, you can cause it to deal radiant or necrotic damage (your choice) instead of force. If you fire more than one blast, you can choose the damage type for each individual blast.</description>
+        </sheet>
+    </element>
+    <element name="Servant of Fraz-Urb’luu" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SERVANT_OF_FRAZ_URBLUU">
+        <supports>Eldritch Invocation</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: None</p>
+            <p>You can cast <em>unseen servant</em> at will, without expending components or spell slots, or having to cast it as a ritual. When cast in this way, it is not invisible, and it instead appears as an imp or quasit, and counts as a fiend. Otherwise, it has the same stats and capabilities as the servant.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_UNSEEN_SERVANT" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can cast unseen servant at will, without expending components or spell slots, or having to cast it as a ritual. When cast in this way, it is not invisible, and it instead appears as an imp or quasit, and counts as a fiend. Otherwise, it has the same stats and capabilities as the servant.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_UNSEEN_SERVANT" />
+        </rules>
+    </element>
+    <element name="Shape the Waves" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SHAPE_THE_WAVES">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:7]</requirements>
+        <prerequisite>7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 7th level</p>
+            <p>You can use a warlock spell slot to cast <em>control water</em>, without requiring components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_CONTROL_WATER" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can use a warlock spell slot to cast control water, without requiring components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CONTROL_WATER" spellcasting="Warlock" />
+        </rules>
+    </element>
+    <element name="Shield of Bahamut" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SHIELD_OF_BAHAMUT">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can use a warlock spell slot to cast <em>shield</em>, and when you cast it in this way, you can instead cast it in response to a creature within touch range being targeted by an attack. When cast in this way, the target gains the effects of the spell instead of you.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_SHIELD" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can use a warlock spell slot to cast shield, and when you cast it in this way, you can instead cast it in response to a creature within touch range being targeted by an attack. When cast in this way, the target gains the effects of the spell instead of you.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_SHIELD" spellcasting="Warlock" />
+        </rules>
+    </element>
+    <element name="Shielding Touch" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SHIELDING_TOUCH">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_RING, [level:9]</requirements>
+        <prerequisite>Pact of the Ring, 9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Ring, 9th level</p>
+            <p>As an action, you can touch a creature within 5 ft. of you and expend 9 of your Pact Ring’s points. The target gains resistance to one damage type of your choice for 1 minute.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can touch a creature within 5 ft. of you and expend 9 of your Pact Ring’s points. The target gains resistance to one damage type of your choice for 1 minute.</description>
+        </sheet>
+    </element>
+    <element name="Silver Tongue" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SILVER_TONGUE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_FRIENDS</requirements>
+        <prerequisite>friends cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: friends cantrip</p>
+            <p>When you cast <em>friends</em>, the target doesn’t realize what you did to them after the spell’s duration.</p>
+        </description>
+        <sheet>
+            <description>When you cast friends, the target doesn’t realize what you did to them after the spell’s duration.</description>
+        </sheet>
+    </element>
+    <element name="Skills of the Eldritch Warrior" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SKILLS_OF_THE_ELDRITCH_WARRIOR">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You gain proficiency in all weapons and armor.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+        </rules>
+    </element>
+    <element name="Sky Step" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SKY_STEP">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:12]</requirements>
+        <prerequisite>12th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 12th level</p>
+            <p>You have a flying speed equal to your movement speed.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="speed:fly" value="speed" bonus="base" />
+        </rules>
+    </element>
+    <element name="Soul of Storms" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SOUL_OF_STORMS">
+        <supports>Eldritch Invocation</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: None</p>
+            <p>Whenever you cast a spell that deals cold, lightning, or thunder damage, the spell deals extra damage equal to your Charisma modifier (minimum of 1)</p>
+        </description>
+        <sheet>
+            <description>Whenever you cast a spell that deals cold, lightning, or thunder damage, the spell deals an extra {{soul-of-storms:damage}} hit points damage.</description>
+        </sheet>
+        <rules>
+            <stat name="soul-of-storms:damage" value="1" bonus="base" />
+            <stat name="soul-of-storms:damage" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Spectral Sight" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SPECTRAL_SIGHT">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_EYE, [level:7]</requirements>
+        <prerequisite>Pact of the Eye, 7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Eye, 7th level</p>
+            <p>You can see invisible creatures. Additionally, you can see into the Ethereal Plane out to a radius of 60 ft.</p>
+        </description>
+        <sheet>
+            <description>You can see invisible creatures. Additionally, you can see into the Ethereal Plane out to a radius of 60 ft.</description>
+        </sheet>
+    </element>
+    <element name="Spectral Slip" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SPECTRAL_SLIP">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_CLOAK, [level:9]</requirements>
+        <prerequisite>Pact of the Cloak, 9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Cloak, 9th level</p>
+            <p>As a bonus action while you are wearing your Pact Cloak, you may take on the properties of a specter. You can see into the Ethereal Plane for a range of 30 ft, you have a flying speed of 30 ft., and you can move through solid objects as if they were difficult terrain, all for 1 minute. You can use this feature again upon completing a long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="1/Long Rest">
+            <description>While you are wearing your Pact Cloak, you may take on the properties of a specter. You can see into the Ethereal Plane for a range of 30 ft, you have a flying speed of 30 ft., and you can move through solid objects as if they were difficult terrain, all for 1 minute.</description>
+        </sheet>
+    </element>
+    <element name="Speed Demon" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SPEED_DEMON">
+        <supports>Eldritch Invocation</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: None</p>
+            <p>Your movement speed is increased by 10 ft.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="innate speed:misc" value="10" />
+        </rules>
+    </element>
+    <element name="Spellcrafting" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SPELLCRAFTING">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_TOOLS</requirements>
+        <prerequisite>Pact of the Tools</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Tools</p>
+            <p>Your tools have allowed you the ability to craft spells from scratch. When you cast a spell while your Pact Tools are on your person, you can ignore any and all components for that spell. You can use this feature a number of times equal to your Charisma modifier (minimum of 1).</p>
+        </description>
+        <sheet usage="{{spellcrafting:uses}}/Short Rest">
+            <description>When you cast a spell while your Pact Tools are on your person, you can ignore any and all components for that spell.</description>
+        </sheet>
+        <rules>
+            <stat name="spellcrafting:uses" value="1" bonus="base" />
+            <stat name="spellcrafting:uses" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Spiked Hide" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SPIKED_HIDE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>Whenever you are hit by a melee attack, the attacker takes 1d4 piercing damage.</p>
+        </description>
+        <sheet>
+            <description>Whenever you are hit by a melee attack, the attacker takes 1d4 piercing damage.</description>
+        </sheet>
+    </element>
+    <element name="Spores of Zuggtmoy" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SPORES_OF_ZUGGTMOY">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:9]</requirements>
+        <prerequisite>9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 9th level</p>
+            <p>When you hit a creature with an attack, you can spend a warlock spell slot to deal necrotic damage equal to your warlock level. If this attack reduces the creature to 0 hit points, and that creature is able to become undead, it rises as a zombie, which is controlled by you, and you can communicate telepathically with it. The zombie remains in your service for 1 hour, and after that hour has passed, the zombie dies, reduced to a pile of rotten flesh and bones.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with an attack, you can spend a warlock spell slot to deal {{level:warlock}} necrotic damage. If this attack reduces the creature to 0 hit points, and that creature is able to become undead, it rises as a zombie, which is controlled by you, and you can communicate telepathically with it. The zombie remains in your service for 1 hour, and after that hour has passed, the zombie dies, reduced to a pile of rotten flesh and bones.</description>
+        </sheet>
+    </element>
+    <element name="Strengthened Bond" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_STRENGTHENED_BOND">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN, [level:7]</requirements>
+        <prerequisite>Pact of the Chain, 7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Chain, 7th level</p>
+            <p>Your bond with your familiar grows stronger, allowing it to take more powerful forms. When you cast <em>find familiar</em> with your Pact of the Chain, you can create a creature of CR 1 or lower. When you reach 14th level in this class, you can summon a CR 2 creature, and you can summon a CR 3 creature at 20th level. The DM must approve of your selected creature before you summon it.</p>
+        </description>
+        <sheet>
+            <description>When you cast find familiar with your Pact of the Chain, you can create a creature of CR {{strengthened-bond:cr}} or lower. The DM must approve of your selected creature before you summon it.</description>
+        </sheet>
+        <rules>
+            <stat name="strengthened-bond:cr" value="1" level="7" />
+            <stat name="strengthened-bond:cr" value="1" level="14" />
+            <stat name="strengthened-bond:cr" value="1" level="20" />
+        </rules>
+    </element>
+    <element name="Strengthened Caster" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_STRENGTHENED_CASTER">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_MARK, [level:7]</requirements>
+        <prerequisite>Pact of the Mark, 7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Mark, 7th level</p>
+            <p>You have a +1 to your spell attack rolls and your spell save DC.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="spellcasting:dc" value="1" />
+            <stat name="spellcasting:attack" value="1" />
+        </rules>
+    </element>
+    <element name="Superior Vision" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SUPERIOR_VISION">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_EYE</requirements>
+        <prerequisite>Pact of the Eye</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Eye</p>
+            <p>You are immune to the blinded condition. Additionally, attack rolls you make are unaffected by quarter or half cover, as well as a target being lightly obscured.</p>
+        </description>
+        <sheet>
+            <description>You are immune to the blinded condition. Additionally, attack rolls you make are unaffected by quarter or half cover, as well as a target being lightly obscured.</description>
+        </sheet>
+    </element>
+    <element name="Sword of Tempus" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_SWORD_OF_TEMPUS">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_TRUE_STRIKE</requirements>
+        <prerequisite>true strike cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: true strike cantrip</p>
+            <p>When you cast <em>true strike</em>, you can cast it as a bonus action.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>When you cast true strike, you can cast it as a bonus action.</description>
+        </sheet>
+    </element>
+    <element name="Touch of Orcus" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_TOUCH_OF_ORCUS">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can use a warlock spell slot to cast <em>cure wounds</em>, without requiring components. When cast in this way, you can target undead creatures, and it has an effect on them.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_CURE_WOUNDS" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can use a warlock spell slot to cast cure wounds, without requiring components. When cast in this way, you can target undead creatures, and it has an effect on them.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" spellcasting="Warlock" />
+        </rules>
+    </element>
+    <element name="Transfer Visage" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_TRANSFER_VISAGE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_MASK, [level:7]</requirements>
+        <prerequisite>Pact of the Mask, 7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Mask, 7th level</p>
+            <p>While you possess a creature’s visage, you may use a bonus action to expend it and grant the form (in the same way as your Pact of the Mask feature, but not with the Beast Form feature) of that creature to a willing creature within 30 ft. of you. If the creature is not willing, it must make a Charisma saving throw against your spell save modifier. Upon a success, the creature is unaffected and the visage is lost. Upon a failure, however, the creature is transformed with the visage. Regardless of whether the creature consented or not, the transformation lasts for an hour, or until you dispel it as a bonus action.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>While you possess a creature’s visage, you may expend it and grant the form (in the same way as your Pact of the Mask feature, but not with the Beast Form feature) of that creature to a willing creature within 30 ft. of you. If the creature is not willing, it must make a Charisma saving throw against your spell save modifier. The transformation lasts for an hour, or until you dispel it as a bonus action.</description>
+        </sheet>
+    </element>
+    <element name="Twinned Blast" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_TWINNED_BLAST">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
+        <prerequisite>eldritch blast cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: eldritch blast cantrip</p>
+            <p>When you cast <em>eldritch blast</em>, you can spend a warlock spell slot to double the amount of beams it creates.</p>
+        </description>
+        <sheet>
+            <description>When you cast eldritch blast, you can spend a warlock spell slot to double the amount of beams it creates.</description>
+        </sheet>
+    </element>
+    <element name="Voice of Cthulhu" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_VOICE_OF_CTHULHU">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_PHB_SPELL_MESSAGE</requirements>
+        <prerequisite>message cantrip</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: message cantrip</p>
+            <p>When you cast message, you can cast it without any components. Additionally, you can target up to 3 creatures when you cast it.</p>
+        </description>
+        <sheet>
+            <description>When you cast message, you can cast it without any components. Additionally, you can target up to 3 creatures when you cast it.</description>
+        </sheet>
+    </element>
+    <element name="Voodoo Doll" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_VOODOO_DOLL">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_DOLL, [level:7]</requirements>
+        <prerequisite>Pact of the Doll, 7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Doll, 7th level</p>
+            <p>While you have hexed a creature with your Pact Doll, or any other warlock feature that hexes, you can attack your Pact Doll, and the damage (including damage type) transfers to the hexed target. The doll has AC and Saving Throws equal to the target’s, and a hit point total equal to 3 times your level in this class. If the doll loses all hit points, then it is destroyed, and you have to make a new one on your next rest.</p>
+        </description>
+        <sheet>
+            <description>While you have hexed a creature with your Pact Doll, or any other warlock feature that hexes, you can attack your Pact Doll, and the damage (including damage type) transfers to the hexed target. The doll has AC and Saving Throws equal to the target’s, and a hit point total equal to 3 times your level in this class. If the doll loses all hit points, then it is destroyed, and you have to make a new one on your next rest.</description>
+        </sheet>
+    </element>
+    <element name="Wall Walker" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_WALL_WALKER">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You have a climbing speed equal to your movement speed.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="speed:climb" value="speed" bonus="base" />
+        </rules>
+    </element>
+    <element name="Ward of Frost and Flame" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_WARD_OF_FROST_AND_FLAME">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:7]</requirements>
+        <prerequisite>7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 7th level</p>
+            <p>You can use a warlock spell slot to cast <em>fire shield</em>, without requiring components.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_FIRE_SHIELD" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can use a warlock spell slot to cast fire shield, without requiring components.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_FIRE_SHIELD" spellcasting="Warlock" />
+        </rules>
+    </element>
+    <element name="Warding Aegis" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_WARDING_AEGIS">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:7]</requirements>
+        <prerequisite>7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 7th level</p>
+            <p>When you take damage from an attack, you can use your reaction to decrease the damage by an amount equal to your warlock level + twice your Charisma modifier (minimum of +2). You must complete a long rest before using this feature again.</p>
+        </description>
+        <sheet action="Reaction" usage="1/Long Rest">
+            <description>When you take damage from an attack, you can use your reaction to decrease the damage by</description>
+        </sheet>
+        <rules>
+            <stat name="warding-aegis:damage" value="level:warlock" />
+            <stat name="warding-aegis:damage:charisma" value="charisma:modifier" />
+            <stat name="warding-aegis:damage:charisma" value="charisma:modifier" />
+            <stat name="warding-aegis:damage:bonus" value="2" bonus="base" />
+            <stat name="warding-aegis:damage:bonus" value="warding-aegis:damage:charisma" bonus="base" />
+            <stat name="warding-aegis:damage" value="warding-aegis:damage:bonus" />
+        </rules>
+    </element>
+    <element name="Warlord’s Step" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_WARLORDS_STEP">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE, [level:5]</requirements>
+        <prerequisite>Pact of the Blade, 5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Blade, 5th level</p>
+            <p>Immediately before or after making an attack with your Pact Weapon, you can teleport up to 15 ft. to an unoccupied space that you can see. You can use this feature a number of times equal to your Charisma modifier (minimum of 1) before having to take a long rest.</p>
+        </description>
+        <sheet usage="{{warlords-step:uses}}/Long Rest">
+            <description>Immediately before or after making an attack with your Pact Weapon, you can teleport up to 15 ft. to an unoccupied space that you can see.</description>
+        </sheet>
+        <rules>
+            <stat name="warlords-step:uses" value="1" bonus="base" />
+            <stat name="warlords-step:uses" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Wild’s Talent" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_WILDS_TALENT">
+        <supports>Eldritch Invocation</supports>
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: None</p>
+            <p>You can cast <em>goodberry</em> using a warlock spell slot. When cast in this way, each berry heals extra hit points equal to your Charisma modifier. You must complete a long rest before using this feature again.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_GOODBERRY" />
+            </div>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>You can cast goodberry using a warlock spell slot. When cast in this way, each berry heals {{charisma:modifier}} extra hit points.</description>
+        </sheet>
+        <grant type="Spell" id="ID_PHB_SPELL_GOODBERRY" spellcasting="Warlock" />
+    </element>
+    <element name="Witch Doctor" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_WITCH_DOCTOR">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_ENRARIC_ETEK_CLASS_FEATURE_PACT_OF_THE_DOLL, [level:9]</requirements>
+        <prerequisite>Pact of the Doll, 9th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: Pact of the Doll, 9th level</p>
+            <p>While you have hexed a creature with your Pact Doll, or any other warlock feature that hexes, you can use your action to learn things about the target. You learn all of the following:</p>
+            <ul>
+                <li>The target’s damage adjustments</li>
+                <li>Any conditions that are currently afflicting the target</li>
+                <li>The target’s CR or character level</li>
+                <li>The target’s creature type</li>
+                <li>Whether or not the target is capable of spellcasting</li>
+            </ul>
+            <p class="indent">You may use this feature once before having to take a long rest.</p>
+        </description>
+        <sheet>
+            <description>While you have hexed a creature with your Pact Doll, or any other warlock feature that hexes, you can use your action to learn things about the target.</description>
+        </sheet>
+    </element>
+    <element name="Word of Dreams" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_WORD_OF_DREAMS">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 5th level</p>
+            <p>You can use a warlock spell slot to cast <em>sleep</em>, and when you cast it in this way, you may add an additional amount of d8’s equal to your Charisma Modifier (minimum of 1).</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_SLEEP" />
+            </div>
+        </description>
+        <sheet>
+            <description>You can use a warlock spell slot to cast sleep, and when you cast it in this way, you may add an additional {{word-of-dreams:dice}} d8’s.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_SLEEP" spellcasting="Warlock" />
+            <stat name="word-of-dreams:dice" value="1" bonus="base" />
+            <stat name="word-of-dreams:dice" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Zaratan’s Stride" type="Class Feature" source="Eris’ Tome of Eldritch Knowledge" id="ID_ENRARIC_ETEK_CLASS_FEATURE_ELDRITCH_INVOCATION_ZARATANS_STRIDE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:7]</requirements>
+        <prerequisite>7th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisites: 7th level</p>
+            <p>You have a burrowing speed equal to your movement speed.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <stat name="speed:burrow" value="speed" bonus="base" />
+        </rules>
+    </element>
+
+</elements>
