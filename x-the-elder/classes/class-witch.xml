@@ -3,8 +3,7 @@
   <info>
     <name>Witch</name>
     <description>Witch by Zarieth.</description>
-    <author url="https://www.gmbinder.com/share/-L7fK9yKzbw1PUOM3iJi">Zarieth</author>
-    <update version="0.1.42">
+    <update version="0.1.45">
       <file name="class-witch.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-witch.xml" />
     </update>
   </info>
@@ -43,7 +42,7 @@
       <p>When deciding on the witch class, think about what led your character to tap into the spirit world. Maybe witchcraft is a tradition in the area, or your character comes from an area rife with a ghostly past. Superstition is also a good trigger for a fascination with spirits. What is your relationship with spirits? Is there a measure of mutual respect? Perhaps your character feels more like a servant to the spirit than the other way around, or maybe they possess the entitlement to dominate and extort spiritual beings.</p>
       <p class="indent">How did your character come to be an adventurer? It could be that he or she was a pariah in their community due to contact with the other side, cast out and forced to fend for him or herself. Perhaps your character is even haunted by a particular spirit and seeks away to control or be rid of it.</p>
       <h5>QUICK BUILD</h5>
-      <p>You can make a witch quickly by following these suggestions. First, Charisma should be your highest ability score, followed by Constitution. Second, select the Hermit background. Third, select the chill touch, guidance, and light cantrips along with the following 1st level spells: charm person, detect magic, healing word, and witch bolt.</p>
+      <p>You can make a witch quickly by following these suggestions. First, Charisma should be your highest ability score, followed by Constitution. Second, select the Hermit background. Third, select the chill touch, guidance, and light cantrips along with the following 1st level spells: <em>charm person</em>, <em>detect magic</em>, <em>healing word</em>, and <em>witch bolt</em>.</p>
       <h3>CLASS FEATURES</h3>
       <p>As a witch, you gain the following class features.</p>
       <h5>HIT POINTS</h5>
@@ -160,14 +159,10 @@
       <p>You can use an arcane focus as a spellcasting focus for your witch spells.</p>
     </description>
     <sheet display="false">
-      <description>You have the ability to cast spells.</description>
+      <description></description>
     </sheet>
-    <setters>
-      <set name="spellcastingClass">Witch</set>
-      <set name="spellcastingAbility">Charisma</set>
-    </setters>
     <spellcasting name="Witch" ability="Charisma" allowReplace="true">
-      <list>Spirit Witch</list>
+      <list>Zarieth Witch</list>
     </spellcasting>
     <rules>
       <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
@@ -214,7 +209,6 @@
   </element>
 
   <element name="Quickening" type="Class Feature" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_CLASS_FEATURE_WITCH_QUICKENING">
-    <requirements />
     <description>
       <p>At 1st level, you gain the ability to enter a trance known as the witch’s quickening. Entering the trance is a bonus action and allows you to see into the Ethereal Plane up to 60 feet for up to one minute. You also gain insight into the emotional energy surrounding you, letting you know if and what spiritual creatures are within 60 feet, as well as granting you advantage to Wisdom (Insight) checks for the duration. Finally, while in your quickening, if you cast a spell that deals necrotic damage you can substitute that damage with psychic damage instead. You may use this ability a number of times equal to your Charisma modifier. You regain any expended uses when you finish a long rest.</p>
     </description>
@@ -222,16 +216,15 @@
       <description>You can enter your witch’s quickening trance. You can see into the Ethereal Plane up to 60 feet for up to one minute. You also get advantage to Wisdom (Insight) checks. During the quickening, if you cast a spell that does necrotic damage, you can substitute psychic damage.</description>
     </sheet>
     <rules>
-      <stat name="quickening:count" value="1" />
-      <stat name="quickening:count" value="charisma:modifier" />
+      <stat name="quickening:count" value="1" bonus="base" />
+      <stat name="quickening:count" value="charisma:modifier" bonus="base" />
     </rules>
   </element>
 
   <element name="Witch Covenant" type="Class Feature" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_CLASS_FEATURE_WITCH_WITCH_COVENANT">
-    <requirements />
     <description>
       <p>At 2nd level you commit yourself to a spiritual philosophy known as a witch’s covenant: the Covenant of Blood, the Covenant of Charm, the Covenant of Ruin, the Covenant of Shadows, or the Covenant of Unity, detailed at the end of the class description. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level.</p>
-      <p>Additionally, you learn the <i>find familiar</i> spell and can cast it once without using a spell slot. You cannot do so again until you finish a long rest.</p>
+      <p class="indent">Additionally, you learn the <i>find familiar</i> spell and can cast it once without using a spell slot. You cannot do so again until you finish a long rest.</p>
     </description>
     <sheet usage="1/Long Rest">
       <description>Your choice of Covenant grants you special abilities. In addition, you can cast <i>find familiar</i> once per long rest without using a spell slot.</description>
@@ -243,13 +236,12 @@
   </element>
 
   <element name="Binding Rites" type="Class Feature" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_CLASS_FEATURE_WITCH_BINDING_RITES">
-    <requirements />
     <description>
       <p>At 2nd level you can bind spirits to your service. Binding a spirit is much like casting a ritual spell and takes 10 minutes of uninterrupted activity. During this time, the witch speaks the invocations required to summon the spirit forth and enacts the rite of binding depending on which philosophy the witch belongs to. A blood witch might utilize a bone fragment to bind the spirit, while a shadow witch might bargain with the summoned spirit, exchanging a secret for the spirit’s service.</p>
-      <p>When you choose a spirit to bind from the list at the end of this class description, you fill one of your available spell slots with the spirit. The spell slot used is no longer available for casting spells, and it remains unavailable for as long as the spirit filling it remains bound to you. The spirit is said to be of a level equal to the spell slot filled to bind it. Thus, a Spirit of Passion occupying a 6th level spell slot is a level 6 spirit. You cannot have more than one spirit with the same name bound at one time. You can have a number of spirits bound equal to the number in the class table.</p>
-      <p>Depending on the type of spirit, you gain certain benefits while the spirit remains bound and an additional effect when you release the spirit, as detailed in the Binding Rites section.</p>
-      <p>Releasing a spirit is a bonus action, although some spirits allow release as a reaction. Once a spirit has been released, it no longer provides its passive effect and the spell slot it occupied is considered expended.</p>
-      <p>A witch may exchange any spirit they have bound by performing the ritual as described above.</p>
+      <p class="indent">When you choose a spirit to bind from the list at the end of this class description, you fill one of your available spell slots with the spirit. The spell slot used is no longer available for casting spells, and it remains unavailable for as long as the spirit filling it remains bound to you. The spirit is said to be of a level equal to the spell slot filled to bind it. Thus, a Spirit of Passion occupying a 6th level spell slot is a level 6 spirit. You cannot have more than one spirit with the same name bound at one time. You can have a number of spirits bound equal to the number in the class table.</p>
+      <p class="indent">Depending on the type of spirit, you gain certain benefits while the spirit remains bound and an additional effect when you release the spirit, as detailed in the Binding Rites section.</p>
+      <p class="indent">Releasing a spirit is a bonus action, although some spirits allow release as a reaction. Once a spirit has been released, it no longer provides its passive effect and the spell slot it occupied is considered expended.</p>
+      <p class="indent">A witch may exchange any spirit they have bound by performing the ritual as described above.</p>
     </description>
     <sheet>
       <description level="2">You may bind up to 1 spirit into an unused spell slot. The spirit level is equal to the spell slot to which it is bound. The binding ritual takes 10 minutes. You can release a spirit as a bonus action.</description> 
@@ -259,7 +251,7 @@
       <description level="18">You may bind up to 5 spirits into unused spell slots. The spirit level is equal to the spell slot to which it is bound. The binding ritual takes 10 minutes. You can release a spirit as a bonus action.</description> 
     </sheet>
     <spellcasting name="Spirit Binding" ability="Charisma" prepare="false">
-      <list>Binding Rites</list>
+      <list known="true">Zarieth Witch Binding Rites</list>
     </spellcasting>
     <rules>
       <stat name="spirit binding:spellcasting:slots:1" value="1" level="2" />
@@ -267,30 +259,34 @@
       <stat name="spirit binding:spellcasting:slots:1" value="1" level="10" />
       <stat name="spirit binding:spellcasting:slots:1" value="1" level="14" />
       <stat name="spirit binding:spellcasting:slots:1" value="1" level="18" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_AGONY" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_DESIRE" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_EMPATHY" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_ENVY" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_FEAR" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_GENEROSITY" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_GUILT" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_HATE" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_HUNGER" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_PASSION" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_SERENITY" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_SLOTH" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_SORROW" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_TRUST" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_VALOR" spellcasting="Spirit Binding" known="true" level="2" />
-      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_WONDER" spellcasting="Spirit Binding" known="true" level="2" />
+			<stat name="spirit binding:spellcasting:prepare" value="1" level="2" />
+			<stat name="spirit binding:spellcasting:prepare" value="1" level="6" />
+			<stat name="spirit binding:spellcasting:prepare" value="1" level="10" />
+			<stat name="spirit binding:spellcasting:prepare" value="1" level="14" />
+			<stat name="spirit binding:spellcasting:prepare" value="1" level="18" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_AGONY" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_DESIRE" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_EMPATHY" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_ENVY" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_FEAR" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_GENEROSITY" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_GUILT" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_HATE" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_HUNGER" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_PASSION" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_SERENITY" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_SLOTH" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_SORROW" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_TRUST" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_VALOR" spellcasting="Spirit Binding" level="2" />
+      <grant type="Spell" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_WONDER" spellcasting="Spirit Binding" level="2" />
     </rules>
   </element>
 
   <element name="Spirit Ward" type="Class Feature" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_CLASS_FEATURE_WITCH_SPIRIT_WARD">
-    <requirements />
     <description>
       <p>At 3rd level, you learn a rite that offers protection against spirits who wish you or your allies harm. As an action, you can create a spirit ward with a radius of 30 feet, centered on your location. The ward lasts 1 minute and is stationary for the duration. While inside the ward, friendly creatures (yourself included) cannot be charmed, frightened, or possessed by undead and have resistance to all damage from incorporeal undead sources. Additionally, if a friendly creature is reduced to 0 hit points within the ward but is not killed outright, the creature becomes stable.</p>
-      <p>ou can use this feature 3 times. You regain expended uses when you finish a long rest. When you reach 9th level, you regain expended uses when you finish a short or long rest.</p>
+      <p class="indent">You can use this feature 3 times. You regain expended uses when you finish a long rest. When you reach 9th level, you regain expended uses when you finish a short or long rest.</p>
     </description>
     <sheet usage="3/Long Rest" action="Action">
       <description>You can create a stationary spirit ward with a radius of 30 feet that lasts one minute. While inside the ward you and friendly creatures cannot be charmed, frightened, or possessed by undead and you have resistance to all damage from incorporeal undead sources. Friendly creatures within the ward reduced to 0 hit points but not killed outright become stable.</description>
@@ -314,7 +310,6 @@
   </element>
 
   <element name="Spiritual Spellcasting" type="Class Feature" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_CLASS_FEATURE_WITCH_SPIRITUAL_SPELLCASTING">
-    <requirements />
     <description>
       <p>At 7th level you may call upon the spirits you have bound to help you cast your spells. You may dismiss a spirit as a bonus action to recover a spell slot of a level equal to that of the spirit’s. The release effect of the spirit you dismissed is not activated.</p>
     </description>
@@ -325,7 +320,6 @@
   </element>
   
   <element name="Channel Spell" type="Class Feature" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_CLASS_FEATURE_WITCH_CHANNEL_SPELL">
-    <requirements />
     <description>
       <p>Beginning at 11th level, damage you deal with spells of 1st level or higher ignore damage resistances of undead and creatures on the Ethereal Plane. In addition, any damage immunities of these creatures become resistances to your spells of 1st level or higher.</p>
     </description>
@@ -336,7 +330,6 @@
   </element>
 
   <element name="Strength of Spirit" type="Class Feature" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_CLASS_FEATURE_WITCH_STRENGTH_OF_SPIRIT">
-    <requirements />
     <description>
       <p>At 15th level, you learn to sap additional fortitude from the spirits you bind. When you finish a long rest, you gain temporary hit points equal to 5 times the highest-level spirit you have bound.</p>
     </description>
@@ -347,10 +340,9 @@
   </element>
 
   <element name="Familiar Spirit" type="Class Feature" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_CLASS_FEATURE_WITCH_FAMILIAR_SPIRIT">
-    <requirements />
     <description>
-      <p>At 18th level, when cast <i>find familiar</i> or if you already have a familiar, you can awaken spiritual energy within the animal as part of an additional ritual taking 10 minutes. Once complete, you choose one spirit from the list at the end of the class description. Its level is equal to your Charisma modifier.</p>
-      <p>Your familiar provides you with the spirit’s passive effect as long as your familiar is within 100 feet of you. If the familiar dies, the spirit you initially chose produces its release effect if you can see any valid targets within range of the familiar when it dies.</p>
+      <p>At 18th level, when you cast <i>find familiar</i> or if you already have a familiar, you can awaken spiritual energy within the animal as part of an additional ritual taking 10 minutes. Once complete, you choose one spirit from the list at the end of the class description. Its level is equal to your Charisma modifier.</p>
+      <p class="indent">Your familiar provides you with the spirit’s passive effect as long as your familiar is within 100 feet of you. If the familiar dies, the spirit you initially chose produces its release effect if you can see any valid targets within range of the familiar when it dies.</p>
     </description>
     <sheet>
       <description>You can bind a spirit to your familiar. The spirit’s level is {{familiar spirit:level}}. You gain the passive effect while your familiar is within 100 feet of you. If your familiar dies, the spirit is released and the release effect is triggered.</description>
@@ -361,10 +353,9 @@
   </element>
 
   <element name="Ghostly Step" type="Class Feature" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_CLASS_FEATURE_WITCH_GHOSTLY_STEP">
-    <requirements />
     <description>
       <p>At 20th level you gain the ability to enter the spirit realm as a bonus action by projecting part of yourself beyond the material plane. You and your belongings become invisible and incorporeal for up to 1 minute. You gain resistance to all damage from non-magical sources, and are immune to being grappled, paralyzed, petrified, poisoned, and restrained.</p>
-      <p>During this time, you may move your normal speed and may pass through solid objects. If you end your turn in an object, you are dealt 1d10 force damage. You may rematerialize in your present location as a bonus action. If you choose to maintain this form until the duration expires and you are in a location occupied by a creature or solid object, you are shunted to the nearest unoccupied space and take force damage equal to twice the number of feet you are moved as a result. Once you use this feature, you must finish a long rest before you can use it again.</p>
+      <p class="indent">During this time, you may move your normal speed and may pass through solid objects. If you end your turn in an object, you are dealt 1d10 force damage. You may rematerialize in your present location as a bonus action. If you choose to maintain this form until the duration expires and you are in a location occupied by a creature or solid object, you are shunted to the nearest unoccupied space and take force damage equal to twice the number of feet you are moved as a result. Once you use this feature, you must finish a long rest before you can use it again.</p>
     </description>
     <sheet usage="1/Long Rest" action="Bonus Action">
       <description>You and your belongings enter the spirit realm and become invisible and incorporeal for up to 1 minute. You gain resistance to all non-magical damage and are immune to being grappled, paralyzed, petrified, poisoned and restrained. You can move at your normal speed and pass through solid objects. If you end your turn in an object, you receive 1d10 force damage. You may rematerialize as a bonus action. If you are in the same space as a creature or solid object, you are shunted to the nearest unoccupied space and take force damage equal to twice the number of feet you are moved.</description>
@@ -820,528 +811,528 @@
 
   <!-- Witch Skills-->
   <append id="ID_PROFICIENCY_SKILL_ARCANA">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_ANIMALHANDLING">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_HISTORY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_INSIGHT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_MEDICINE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_NATURE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PROFICIENCY_SKILL_RELIGION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
 
 
   <!-- Witch Spell List -->
   <!-- Witch Cantrips-->
   <append id="ID_PHB_SPELL_BLADE_WARD">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CHILL_TOUCH">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DANCING_LIGHTS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FRIENDS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_GUIDANCE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_INFESTATION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LIGHT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MAGE_HAND">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MENDING">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MINOR_ILLUSION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_POISON_SPRAY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_RAY_OF_FROST">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_RESISTANCE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_THAUMATURGY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_TOLL_THE_DEAD">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_TRUE_STRIKE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
 
   <!-- Witch First Level Spells -->
   <append id="ID_PHB_SPELL_ANIMAL_FRIENDSHIP">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_CAUSE_FEAR">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_CEREMONY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_GGTR_SPELL_CHAOS_BOLT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CHARM_PERSON">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CURE_WOUNDS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DETECT_MAGIC">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DISGUISE_SELF">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FAERIE_FIRE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FIND_FAMILIAR">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HEALING_WORD">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HEX">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_ICE_KNIFE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LONGSTRIDER">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PURIFY_FOOD_AND_DRINK">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SPEAK_WITH_ANIMALS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_WITCH_BOLT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
 
   <!-- Witch Second Level Spells -->
   <append id="ID_XGTE_SPELL_AGANAZZARS_SCORCHER">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ALTER_SELF">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_AUGURY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CALM_EMOTIONS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CROWN_OF_MADNESS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DARKNESS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DARKVISION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ENHANCE_ABILITY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ENTHRALL">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_HEALING_SPIRIT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HOLD_PERSON">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LESSER_RESTORATION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LOCATE_ANIMALS_OR_PLANTS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LOCATE_OBJECT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_MIND_SPIKE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MISTY_STEP">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MOONBEAM">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_NYSTULS_MAGIC_AURA">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PHANTASMAL_FORCE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PROTECTION_FROM_POISON">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_RAY_OF_ENFEEBLEMENT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SEE_INVISIBILITY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SHADOW_BLADE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SUGGESTION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
 
   <!-- Witch Third Level Spells -->
   <append id="ID_PHB_SPELL_BESTOW_CURSE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CLAIRVOYANCE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONJURE_ANIMALS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DAYLIGHT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DISPEL_MAGIC">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_ENEMIES_ABOUND">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FEAR">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FLY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_LIFE_TRANSFERENCE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MAGIC_CIRCLE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MAJOR_IMAGE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_REMOVE_CURSE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SPEAK_WITH_DEAD">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SPIRIT_GUARDIANS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SUMMON_LESSER_DEMONS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_TINY_SERVANT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_TONGUES">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_VAMPIRIC_TOUCH">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_WATER_BREATHING">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_WATER_WALK">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
 
   <!-- Witch Fourth Level Spells -->
   <append id="ID_PHB_SPELL_BANISHMENT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_BLIGHT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_CHARM_MONSTER">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONFUSION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DEATH_WARD">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DIVINATION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DOMINATE_BEAST">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_GUARDIAN_OF_NATURE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HALLUCINATORY_TERRAIN">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LOCATE_CREATURE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_POLYMORPH">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SHADOW_OF_MOIL">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SUMMON_GREATER_DEMON">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_VIRTIOLIC_SPHERE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_WALL_OF_FIRE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
 
   <!-- Witch Fifth Level Spells -->
   <append id="ID_PHB_SPELL_ANIMATE_OBJECTS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ANTILIFE_SHELL">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_AWAKEN">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_COMMUNE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONTACT_OTHER_PLANE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONTAGION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_DANSE_MACABRE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DOMINATE_PERSON">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DREAM">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_ENERVATION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_GEAS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_GREATER_RESTORATION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HOLD_MONSTER">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_INSECT_PLAGUE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_LEGEND_LORE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MASS_CURE_WOUNDS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MODIFY_MEMORY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_NEGATIVE_ENERGY_FLOOD">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PLANAR_BINDING">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_REINCARNATE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SCRYING">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SYNAPTIC_STATIC">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_WRATH_OF_NATURE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
 
   <!-- Witch Sixth Level Spells -->
   <append id="ID_PHB_SPELL_CIRCLE_OF_DEATH">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONJURE_FEY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_CONTINGENCY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_EYEBITE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FIND_THE_PATH">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FORBIDDANCE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_HEAL">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MASS_SUGGESTION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_MENTAL_PRISON">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_PRIMORDIAL_WARD">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_SOUL_CAGE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SUNBEAM">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_TRUE_SEEING">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
 
   <!-- Witch Seventh Level Spells -->
   <append id="ID_XGTE_SPELL_CROWN_OF_STARS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ETHEREALNESS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FINGER_OF_DEATH">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MIRAGE_ARCANE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MORDENKAINENS_MAGNIFICENT_MANSION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_PLANE_SHIFT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_POWER_WORD_PAIN">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_REGENERATE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SEQUESTER">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SYMBOL">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
 
   <!-- Witch Eighth Level Spells-->
   <append id="ID_XGTE_SPELL_ABI_DALZIMS_HORRID_WILTING">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ANIMAL_SHAPES">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_ANTIPATHY_SYMPATHY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_DOMINATE_MONSTER">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FEEBLEMIND">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_MADDENING_DARKNESS">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_MIND_BLANK">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_POWER_WORD_STUN">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SUNBURST">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
 
   <!-- Witch Ninth Level Spells -->
   <append id="ID_PHB_SPELL_ASTRAL_PROJECTION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_FORESIGHT">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_INVULNERABILITY">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_MASS_POLYMORPH">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_XGTE_SPELL_PSYCHIC_SCREAM">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_SHAPECHANGE">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_TRUE_POLYMORPH">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
   <append id="ID_PHB_SPELL_TRUE_RESURRECTION">
-    <supports>Spirit Witch</supports>
+    <supports>Zarieth Witch</supports>
   </append>
 
   <element name="Spirit: Agony" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_AGONY">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>In the presence of a spirit of Agony, foes’ wounds continue to bleed and fires continue to burn. While Agony is bound, for every damage die you roll that shows a 1, you may treat the roll as the maximum possible number for that die for a number of dice up to the level of the spirit.</p>
       <p><strong><em>Release.</em></strong> You may release Agony as part of any attack or spell which deals damage. In addition to the damage, you may roll an extra number of equivalent dice equal to the level of the spirit. If the attack or spell uses more than one type of die, choose the largest. This extra damage is psychic damage. Additionally, all 1s are treated as the maximum value for each die.</p>
@@ -1363,7 +1354,7 @@
   </element>
 
   <element name="Spirit: Desire" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_DESIRE">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Desire impress your will onto others and enhance existing desires. Friendly and charmed creatures within 30 feet of you have disadvantage on Wisdom saving throws against your spells. Once an affected creature succeeds on a Wisdom saving throw against one of your spells, that creature is immune to this spirit’s passive effect for 24 hours.</p>
       <p><strong><em>Release.</em></strong> When you release this spirit as a bonus action, a number of creatures within 30 feet up to the spirit level become charmed if they fail a Wisdom saving throw against your spell save DC. This effect lasts one minute. The effect ends prematurely if you or your allies damage the creature. The spirit’s level also determines what kind of creatures can be charmed. At 3rd level and below, only humanoids and animals can be affected. At 4th level and above, all creatures can be affected.</p>
@@ -1385,7 +1376,7 @@
   </element>
 
   <element name="Spirit: Empathy" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_EMPATHY">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Empathy force your enemies to share your pain. While Empathy is bound, whenever you are dealt damage from a creature, you may use your reaction to deal the creature psychic damage equal half your witch level (rounded up) plus the level of this spirit.</p>
       <p><strong><em>Release.</em></strong> You can release Empathy as a reaction when you or an ally within 30 feet takes damage from a creature. The creature is dealt psychic damage equal to half the damage taken plus three times the spirit’s level.</p>
@@ -1407,7 +1398,7 @@
   </element>
 
   <element name="Spirit: Envy" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_ENVY">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Envy take from others what they covet for themselves – life. Whenever you deal damage to a hostile creature while Envy is bound, you regain the spirit’s level in hit points. You may only gain hit points this way once per turn.</p>
       <p><strong><em>Release.</em></strong> You may release Envy as a bonus action to grant yourself or an ally within 30 feet temporary hit points equal to 3 times the spirit level. As long as these temporary hit points remain, enemies within 30 feet of the ally have disadvantage on attack rolls against creatures other than the affected creature.</p>
@@ -1429,7 +1420,7 @@
   </element>
 
   <element name="Spirit: Fear" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_FEAR">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Fear bring nightmares to life. While Fear is bound, you gain proficiency in Charisma (Intimidation) checks, or add twice your proficiency bonus if you already are proficient. In addition, attacks made against you are at disadvantage. Once a foe has rolled against you with disadvantage and hits, it can no longer be affective by this passive ability for 24 hours.</p>
       <p><strong><em>Release.</em></strong> When Fear is released from its bonds as a bonus action, a number of creatures equal to the spirit level within 30 feet make a Wisdom save or be frightened of you for 1 minute. An affected creature must make a Wisdom saving throw at the start of each of its turns. On a successful save, the fear effect ends.</p>
@@ -1451,7 +1442,7 @@
   </element>
 
   <element name="Spirit: Generosity" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_GENEROSITY">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Generosity are always willing to make sacrifices for those who bind them with good intentions. Your spells that heal restore an additional 1d4 hit points per level of the spirit. If the spell heals more than one creature each creature is instead healed an extra number of hit points equal to the spirit level.</p>
       <p><strong><em>Release.</em></strong> You may release Generosity as a bonus action and gift the spirit to an ally within 30 feet. The spirit protects the ally, granting them temporary hit points equal to 5 times the spirit level. These temporary hit points last 10 minutes.</p>
@@ -1473,7 +1464,7 @@
   </element>
 
   <element name="Spirit: Guilt" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_GUILT">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Guilt cause your enemies hesitation in acts that would wrong you and your allies. While Guilt is bound, as a reaction when you or an ally within 30 feet are hit with an attack, you can raise the AC of the target creature by the level of the spirit. Hit or miss, the effect then ends.</p>
       <p><strong><em>Release.</em></strong> When you release Guilt from your power as a bonus action, a single target within 30 feet has disadvantage on attack rolls against you or an ally of your choice for a number of rounds equal to the level of the spirit released.</p>
@@ -1495,7 +1486,7 @@
   </element>
 
   <element name="Spirit: Hate" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_HATE">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Hate inspire a ferocity in you. When you are damaged by a creature, you gain advantage on attack rolls against that creature until the end of your next turn.</p>
       <p><strong><em>Release.</em></strong> When you are hit by an attack or spell, you can use your reaction to make an attack or cast a spell with a casting time of 1 action and an attack roll against the creature who struck you. The creature is dealt additional psychic damage equal to 1d6 per spirit level regardless of whether you hit.</p>
@@ -1517,7 +1508,7 @@
   </element>
 
   <element name="Spirit: Hunger" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_HUNGER">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Hunger both sustain their friends and deprive their enemies of energy. While Hunger is bound to you, you require no food or water to survive.</p>
       <p><strong><em>Release.</em></strong> You may release Hunger as a bonus action to impart one level of exhaustion on a number of creatures within 30 feet equal to the spirit’s level. The creature cannot be affected by a Spirit of Hunger again for 24 hours.</p>
@@ -1539,7 +1530,7 @@
   </element>
 
   <element name="Spirit: Passion" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_PASSION">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Passion give those who bind them the power to push themselves and others further in order to accomplish a task. When this spirit is bound you gain a number of bonus dice equal to the spirit level. These dice are d6s. You may choose to roll one of these dice and add the result to any attack roll, ability check or saving throw you make, or to any such roll an ally within 30 feet of you makes. You lose all remaining dice when you release Passion.</p>
       <p><strong><em>Release.</em></strong> You may release Passion as part of an attack roll, ability check, or saving throw. You make this roll with advantage. In addition all allies within 30 feet of you gain a d6 which they can add once to any attack roll, ability check, or saving throw made. After a number of rounds equal to the spirit’s level, this effect ends and unused dice are lost.</p>
@@ -1561,7 +1552,7 @@
   </element>
 
   <element name="Spirit: Serenity" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_SERENITY">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Serenity bring peace and clarity of thought to those who bind them. You require only half the time worth of sleep or rest as long as Serenity remains bound. You still require 8 hours to gain the full benefits of a long rest. Additionally, when you or an ally within 30 feet roll a Hit Die to regain hit points, you regain an additional amount equal to the spirit level.</p>
       <p><strong><em>Release.</em></strong> When you release Serenity from your power as a reaction when you would suffer from the following conditions, you may avoid being afflicted, or else end their effect as long as you retain your reaction: Blinded, Deafened, Frightened, Paralyzed, Poisoned, and Stunned.</p>
@@ -1583,7 +1574,7 @@
   </element>
 
   <element name="Spirit: Sloth" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_SLOTH">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Sloth inspire sluggishness and laziness of thought and action around you. While Sloth is bound, spaces within 10 feet of you count as difficult terrain for enemies. Additionally, creatures provoke opportunity attacks from you even if they take the disengage action.</p>
       <p><strong><em>Release.</em></strong> When Sloth is released as a bonus action, foes within 30 feet may either move or use their action (but not both) for a number of rounds equal to the spirit level.</p>
@@ -1605,7 +1596,7 @@
   </element>
 
   <element name="Spirit: Sorrow" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_SORROW">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>The failures of your enemies continue to haunt them in the presence of a spirit of Sorrow. While Sorrow is bound to you, enemies within 30 feet who fail a saving throw against a spell of 1st level or higher cast by you or an ally are dealt psychic damage equal to the spirit’s level.</p>
       <p><strong><em>Release.</em></strong> When Sorrow is released as a bonus action, choose a creature within 30 feet. That creature has disadvantage on its next saving throw, ability check, or attack roll. Should this roll fail, they are dealt 1d6 psychic damage and this spirit’s release effect triggers again on the same creature. Once this damage has been dealt a number of times equal to the spirit level, it is no longer renewed.</p>
@@ -1627,7 +1618,7 @@
   </element>
 
   <element name="Spirit: Trust" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_TRUST">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>While emboldened by a spirit of trust, you can help your allies through cooperative spellcasting, or protect them from harmful spellcasting effects from other allies. While Trust is bound, you can use your reaction to aid an ally within 30 feet to cast a spell, giving them advantage on an attack roll or ability check made with that spell. Alternatively, if that spell requires a saving throw, the spell save DC is increased by 1. Finally, you can also use your reaction to render a single ally within 30 feet immune to the harmful effects of any ally’s spells until your next turn.</p>
       <p><strong><em>Release.</em></strong> When trust is released as part of your Help action, you impart a bonus to the spell save DC of a single ally within 30 feet for the next spell they cast before your next turn. This bonus is equal to the level of this spirit. If the spell forces more than one creature to make a saving throw, only one creature is affected by the increased DC.</p>
@@ -1649,7 +1640,7 @@
   </element>
 
   <element name="Spirit: Valor" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_VALOR">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>Spirits of Valor give those who bind them the power to pull through with confidence against poor odds. While Valor is bound, you and allies within 5 feet of you have advantage on saves against being frightened. Additionally, when you have line of sight to a hostile creature, you may use an action to inspire an ally within 30 feet, granting them temporary hit points equal to the spirit’s level. These temporary hit points leave when the hostile creature leaves an ally’s line of sight.</p>
       <p><strong><em>Release.</em></strong> When you release this spirit as a bonus action, one creature per spirit level within 30 feet is no longer frightened and may immediately make a saving throw to end any other effect or condition afflicting them which would normally allow saving throws.</p>
@@ -1671,7 +1662,7 @@
   </element>
 
   <element name="Spirit: Wonder" type="Spell" source="Zarieth’s Witch" id="ID_ZARIETH_WITCH_WITCH_SPIRIT_WONDER">
-    <supports>Binding Rites</supports>
+    <supports>Zarieth Witch Binding Rites</supports>
     <description>
       <p>You radiate an aura of awe when a spirit of Wonder is bound to you. While Wonder is bound, you can use your reaction to impose disadvantage on Wisdom (Insight) checks against one creature within 30 feet for the round. You can also use your action to impose disadvantage on Wisdom (Perception) checks made by creatures within 30 feet make to notice anything other than you for the round.</p>
       <p><strong><em>Release.</em></strong> You may release Wonder from your power as a reaction when you hit a target with a an attack or spell or they fail a save against one of your spells. For a number of rounds equal to the spirit level, that creature must choose to either take an action or a move up to their speed, but not both, on each of their turns.</p>
