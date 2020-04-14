@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Undying Otherworldly Patron, Revised</name>
+        <update version="0.0.1">
+            <file name="warlock-the-undying-revised.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-the-undying-revised.xml" />
+        </update>
+    </info>
+    
+    <element name="The Undying, Revised" type="Source" source="Core" id="ID_ENRARIC_GM_BINDER_SOURCE_THE_UNDYING_REVISED">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">TUR</set>
+            <set name="url">https://www.gmbinder.com/share/-M29rEJG91ZAyUGaCNgK</set>
+            <set name="image"></set>
+            <set name="author" url="https://www.gmbinder.com/profile/enraric">u/Enraric</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200412</set>
+        </setters>
+    </element>
+    
+    <element name="The Undying" type="Archetype" source="The Undying, Revised" id="ID_ENRARIC_TUR_ARCHETYPE_WARLOCK_THE_UNDYING">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Death holds no sway over your patron, who has unlocked the secrets of everlasting life, although such a prize—like all power—comes at a price. Once mortal, the Undying has seen mortal lifetimes pass like the seasons, like the flicker of endless days and nights. It has the secrets of the ages to share, secrets of life and death. Beings of this sort include Vecna, Lord of the Hand and the Eye; the dread Iuz; the lich-queen Vol; the Undying Court of Aerenal; Vlaakith, lich-queen of the githyanki; and the deathless wizard Fistandantalus.</p>
+            <p class="indent">In the Realms, Undying patrons include Larloch the Shadow King, legendary master of Warlock's Crypt, and Gilgeam, the God-King of Unther.</p>
+            <div element="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST" />
+            <div element="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH" />
+            <div element="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_CORPSE_PUPPETEER" />
+            <div element="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE" />
+            <div element="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_IMMUNE_TO_THE_GRAVE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH" level="1" />
+            <grant type="Archetype Feature" id="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_CORPSE_PUPPETEER" level="6" />
+            <grant type="Archetype Feature" id="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE" level="10" />
+            <grant type="Archetype Feature" id="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_IMMUNE_TO_THE_GRAVE" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="The Undying, Revised" id="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Undying lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">Undying Expanded Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Wwarlock Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>false life, ray of sickness</em></td></tr>
+                    <tr><td>3rd</td><td><em>blindness/deafness, silence</em></td></tr>
+                    <tr><td>5th</td><td><em>bestow curse, speak with dead</em></td></tr>
+                    <tr><td>7th</td><td><em>aura of life, death ward</em></td></tr>
+                    <tr><td>9th</td><td><em>contagion, legend lore</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_FALSE_LIFE</extend>
+                <extend>ID_PHB_SPELL_RAY_OF_SICKNESS</extend>
+                <extend>ID_PHB_SPELL_BLINDNESS_DEAFNESS</extend>
+                <extend>ID_PHB_SPELL_SILENCE</extend>
+                <extend>ID_PHB_SPELL_BESTOW_CURSE</extend>
+                <extend>ID_PHB_SPELL_SPEAK_WITH_DEAD</extend>
+                <extend>ID_PHB_SPELL_AURA_OF_LIFE</extend>
+                <extend>ID_PHB_SPELL_DEATH_WARD</extend>
+                <extend>ID_PHB_SPELL_CONTAGION</extend>
+                <extend>ID_PHB_SPELL_LEGEND_LORE</extend>
+            </spellcasting>
+        </element>
+        <element name="Defy Death" type="Archetype Feature" source="The Undying, Revised" id="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH">
+            <description>
+                <p>Starting at 1st level, you can give yourself vitality when you cheat death. You can regain hit points equal to 1d8 + your Charisma modifier (minimum of 1 hit point) when you succeed on a death saving throw.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can regain 1d8 + {{defy-death:hp}} hit points when you succeed on a death saving throw.</description>
+            </sheet>
+            <rules>
+                <stat name="defy-death:hp" value="1" bonus="base" />
+                <stat name="defy-death:hp" value="charisma:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Corpse Puppeteer" type="Archetype Feature" source="The Undying, Revised" id="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_CORPSE_PUPPETEER">
+            <description>
+                <p>When you reach 6th level in this class, you gain the ability to control the dead.</p>
+                <p class="indent">As an action, you can turn a pile of bones or a corpse of a Small or Medium humanoid within 10 feet of you into a skeleton (if you chose bones) or a zombie (if you chose a corpse). The creature's hit point maximum is increased by an amount equal to your Warlock level, and it gains a bonus to its attack and damage rolls equal to your Charisma modifier.</p>
+                <p class="indent">You can use a bonus action to mentally command the creature you made with this feature, provided that creature is within 60 feet of you. If you have created multiple creatures using this feature, you can issue the same command to any or all of them using a single bonus action, provided each creature you issue the command to is within range. You can command the creature to do something specific, such as move to a specific location and / or take a specific action, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.</p>
+                <p class="indent">A creature created using this feature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain control of the creature for another 24 hours, you must use this feature on the creature again before the 24 hours ends.</p>
+                <p class="indent">You can use this feature a number of times equal to your half your Warlock level (rounded down), and regain all expended uses when you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="{{level:warlock:half}}/Long Rest">
+                <description>you can turn a pile of bones or a corpse of a Small or Medium humanoid within 10 feet of you into a skeleton (if you chose bones) or a zombie (if you chose a corpse). The creature's hit point maximum is increased by {{level:warlock}}, and it gains a {{charisma:modifier}} bonus to its attack and damage rolls.</description>
+            </sheet>
+        </element>
+        <element name="Undying Nature" type="Archetype Feature" source="The Undying, Revised" id="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE">
+            <description>
+                <p>By the time you reach 10th level in this class, your body has become resistant to the weaknesses of mortal flesh. You gain the following benefits:</p>
+                <ul>
+                    <li>You have advantage on saving throws against being poisoned, and you have resistance to poison damage.</li>
+                    <li>You don't need to eat, drink, or breathe.</li>
+                    <li>You are immune to disease.</li>
+                    <li>For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>You have advantage on saving throws against being poisoned. You don't need to eat, drink, or breathe. You are immune to disease. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged.</description>
+            </sheet>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+        </element>
+        <element name="Immune to the Grave" type="Archetype Feature" source="The Undying, Revised" id="ID_ENRARIC_TUR_ARCHETYPE_FEATURE_UNDYING_IMMUNE_TO_THE_GRAVE">
+            <description>
+                <p>By the time you reach 14th level in this class, you are so accustomed to walking the line between life and death that it is almost impossible for you to be forced across that line unwillingly. You have advantage on death saving throws, and cannot be killed instantly by massive damage.</p>
+                <p class="indent">Additionally, if you die, you can choose to come back to life. You can cast the <em>raise dead</em> spell on yourself from beyond the grave, requiring no components. Once you come back to life this way, you cannot do so again for 14 days.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on death saving throws, and cannot be killed instantly by massive damage. Additionally, if you die, you can choose to come back to life. You can cast the raise dead spell on yourself from beyond the grave, requiring no components. Once you come back to life this way, you cannot do so again for 14 days.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_RAISE_DEAD" />
+            </rules>
+        </element>
+
+</elements>
