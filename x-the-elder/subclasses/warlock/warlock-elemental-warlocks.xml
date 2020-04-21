@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Elemental Warlocks</name>
+        <update version="0.0.1">
+            <file name="warlock-elemental-warlocks.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-elemental-warlocks.xml" />
+        </update>
+    </info>
+    
+    <element name="The Elemental Warlocks" type="Source" source="Core" id="ID_TOMER_GMBINDER_SOURCE_THE_ELEMENTAL_WARLOCKS">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">TEW</set>
+            <set name="url">https://www.gmbinder.com/share/-M51S9QZPqfqt9UIUgEJ</set>
+            <set name="image">https://cdnb.artstation.com/p/assets/images/images/005/049/705/medium/kyu-hwan-lee-02-1019-02-ceremony.jpg?1488145381</set>
+            <set name="author" url="https://www.gmbinder.com/profile/tomer">u/tomosr</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200417</set>
+        </setters>
+    </element>
+
+    <element name="The Flame" type="Archetype" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_WARLOCK_THE_FLAME">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Your patron embodies the very flames of the Elemental Plane of Fire, they are warm, beautiful, and invariably dangerous. Your patron may be the embodiment of the burning flames of the Plane itself, a supernaturally powerful Efreeti, great Elder Elemental, or a Primordial a creature with god-like powers.</p>
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_EXPANDED_SPELL_LIST" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_ACOLYTE_OF_FLAME" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_FLAMES_BLESSINGS" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_QUICKED_FLAME" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_FIRE_INCARNATE" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_FIRESCAPE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_ACOLYTE_OF_FLAME" level="1" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_FLAMES_BLESSINGS" level="1" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_QUICKED_FLAME" level="6" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_FIRE_INCARNATE" level="10" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_FIRESCAPE" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Flame lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">THE FLAME EXPANDED SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>brand of fire, burning hands</em></td></tr>
+                    <tr><td>2nd</td><td><em>Aganazzar’s scorcher, flaming sphere</em></td></tr>
+                    <tr><td>3rd</td><td><em>fireball, daylight</em></td></tr>
+                    <tr><td>4th</td><td><em>conjure minor elemental, Korath’s breath</em></td></tr>
+                    <tr><td>5th</td><td><em>conjure elemental, flaming vortex</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_TOMER_TWSB_SPELL_BRAND_OF_FIRE</extend>
+                <extend>ID_PHB_SPELL_BURNING_HANDS</extend>
+                <extend>ID_XGTE_SPELL_AGANAZZARS_SCORCHER</extend>
+                <extend>ID_PHB_SPELL_FLAMING_SPHERE</extend>
+                <extend>ID_PHB_SPELL_FIREBALL</extend>
+                <extend>ID_PHB_SPELL_DAYLIGHT</extend>
+                <extend>ID_PHB_SPELL_CONJURE_MINOR_ELEMENTAL</extend>
+                <extend>ID_TOMER_TWSB_SPELL_KORATHS_BREATH</extend>
+                <extend>ID_PHB_SPELL_CONJURE_ELEMENTAL</extend>
+                <extend>ID_TOMER_TWSB_SPELL_FLAMING_VORTEX</extend>
+            </spellcasting>
+        </element>
+        <element name="Acolyte of Flame" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_ACOLYTE_OF_FLAME">
+            <description>
+                <p>Starting at 1st level, when you deal fire damage you can use a reaction you reroll any number of fire damage dice of your choice. You can use this feature a number of times equal to your proficiency bonus, until you finish a long or short rest.</p>
+            </description>
+            <sheet action="Reaction" usage="{{proficiency}}/Short Rest">
+                <description>When you deal fire damage you can reroll any number of fire damage dice of your choice.</description>
+            </sheet>
+        </element>
+        <element name="Flames’ Blessings" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_FLAMES_BLESSINGS">
+            <description>
+                <p>Also starting at 1st level, as a bonus action, you grant a creature resistance to fire damage until the end of your next turn. You can use this feature a number of times equal to your Charisma modifier, until you finish a long or short rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{charisma:modifier}}/Short Rest">
+                <description>You grant a creature resistance to fire damage until the end of your next turn.</description>
+            </sheet>
+        </element>
+        <element name="Quicked Flame" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_QUICKED_FLAME">
+            <description>
+                <p>Starting at 6th level, when you cast a spell which deals fire damage you can use your bonus action to cast the <em>firebolt</em> cantrip. You can use this feature equal to your Wisdom modifier, until you finish a long or short rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{wisdom:modifier}}/Short Rest">
+                <description>When you cast a spell which deals fire damage you can use your bonus action to cast the firebolt cantrip.</description>
+            </sheet>
+        </element>
+        <element name="Fire Incarnate" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_FIRE_INCARNATE">
+            <description>
+                <p>Starting at 10th level, you gain resistance to fire damage. Additionally, as a reaction, when you take damage, you erupt into flame causing all creatures within 15 feet to make a Dexterity saving throw, on a failed saving taking 2d10 fire damage, or half as much on a successful one.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When you take damage, you erupt into flame causing all creatures within 15 feet to make a Dexterity saving throw, on a failed saving taking 2d10 fire damage, or half as much on a successful one.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+            </rules>
+        </element>
+        <element name="Firescape" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_FLAME_FIRESCAPE">
+            <description>
+                <p>Starting at 14th level, when you hit a creature with an attack, you can use this feature to instantly transport the target to the Elemental Plane of Fire.</p>
+                <p class="indent">At the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target does not have resistance to fire damage or is otherwise immune to the effects of extreme heat, it takes 2d8 fire damage and must make a Constitution saving throw against your spell save DC or gain 1 point of exhaustion.</p>
+                <p class="indent">You use this feature equal to half you Warlock level (rounded down), until you finish a long or short rest.</p>
+            </description>
+            <sheet usage="{{level:warlock:half}}/Short Rest">
+                <description>When you hit a creature with an attack, you can instantly transport the target to the Elemental Plane of Fire. At the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target does not have resistance to fire damage or is otherwise immune to the effects of extreme heat, it takes 2d8 fire damage and must make a Constitution saving throw against your spell save DC or gain 1 point of exhaustion.</description>
+            </sheet>
+        </element>
+
+
+    <element name="The Ice" type="Archetype" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_WARLOCK_THE_ICE">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Your patron embodies the bitter cold of the Elemental Plane of water, they are harsh, cold, but malleable. Your patron may be the embodiment of the bitter frost of the Plane itself, a supernaturally powerful Marids, great Elder Elemental, or a Primordial a creature with god-like powers.</p>
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_EXPANDED_SPELL_LIST" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_ARMOUR_OF_ICE" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_LIGHT_AS_ICE" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_TOUCH_BY_FROST" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_ICE_SHIFT" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_FREEZING_WAVE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_ARMOUR_OF_ICE" level="1" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_LIGHT_AS_ICE" level="1" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_TOUCH_BY_FROST" level="6" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_ICE_SHIFT" level="10" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_FREEZING_WAVE" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Ice lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">THE ICE EXPANDED SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>create or destroy water, ice knife</em></td></tr>
+                    <tr><td>2nd</td><td><em>Carys’ hail, ice slick</em></td></tr>
+                    <tr><td>3rd</td><td><em>ice shroud, tidal wave</em></td></tr>
+                    <tr><td>4th</td><td><em>conjure minor elemental, ice storm</em></td></tr>
+                    <tr><td>5th</td><td><em>cone of cold, conjure elemental</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_CREATE_OR_DESTROY_WATER</extend>
+                <extend>ID_XGTE_SPELL_ICE_KNIFE</extend>
+                <extend>ID_TOMER_TWSB_SPELL_CARYS_HAIL</extend>
+                <extend>ID_TOMER_TWSB_SPELL_ICE_SLICK</extend>
+                <extend>ID_TOMER_TWSB_SPELL_ICE_SHROUD</extend>
+                <extend>ID_XGTE_SPELL_TIDAL_WAVE</extend>
+                <extend>ID_PHB_SPELL_CONJURE_MINOR_ELEMENTAL</extend>
+                <extend>ID_PHB_SPELL_ICE_STORM</extend>
+                <extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+                <extend>ID_PHB_SPELL_CONJURE_ELEMENTAL</extend>
+            </spellcasting>
+        </element>
+        <element name="Armour of Ice" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_ARMOUR_OF_ICE">
+            <description>
+                <p>Starting at 1st level, you learn the <em>armor of Agathys</em> spell. It counts as a warlock spell for you, but does not count against your number of spells known. Additionally, the casting time of Armor of Agathys becomes 1 bonus action for you.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can cast armor of Agathys as a bonus action.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_ARMOR_OF_AGATHYS" spellcasting="Warlock" known="true" />
+            </rules>
+        </element>
+        <element name="Light as Ice" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_LIGHT_AS_ICE">
+            <description>
+                <p>Also starting at 1st level, you are able to walk upon the surface of water as if it were difficult terrain. Additionally, difficult terrain caused by ice cannot cause you to slip and is not considered difficult terrain for you.</p>
+            </description>
+            <sheet>
+                <description>You are able to walk upon the surface of water as if it were difficult terrain. Additionally, difficult terrain caused by ice cannot cause you to slip and is not considered difficult terrain for you.</description>
+            </sheet>
+        </element>
+        <element name="Touch by Frost" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_TOUCH_BY_FROST">
+            <description>
+                <p>Starting at 6th level, to gain resistance to cold damage. You learn the <em>frostbite</em> cantrip. It counts as a warlock cantrip for you, but does not count against your number of cantrips known (if you already know the Frostbite cantrip choose another cantrip). Additionally, when you reduce a creature to 0 hit points you can cast the <em>frostbite</em> cantrip as a bonus action.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>When you reduce a creature to 0 hit points you can cast the frostbite cantrip as a bonus action.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+                <grant type="Spell" id="ID_XGTE_SPELL_FROSTBITE" spellcasting="Warlock" known="true" />
+            </rules>
+        </element>
+        <element name="Ice Shift" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_ICE_SHIFT">
+            <description>
+                <p>Starting at 10th level, when you are the target of a spell attack you can use your reaction to change the target of the spell to a creature within 30 feet of you that you can see. Additionally, if the spell deals damage the damage becomes cold damage.</p>
+                <p class="indent">Once you use this feature you cannot use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="1/Long Rest">
+                <description>When you are the target of a spell attack you can use your reaction to change the target of the spell to a creature within 30 feet of you that you can see. Additionally, if the spell deals damage the damage becomes cold damage.</description>
+            </sheet>
+        </element>
+        <element name="Freezing wave" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_ICE_FREEZING_WAVE">
+            <description>
+                <p>Starting at 14th level, as an action, you can choose a number of creatures equal to 1 + your Charisma modifier that you can see within 60 feet of you. Targets must make a Constitution saving throw against your warlock spell save DC. On a failed save the creature takes 8d6 cold damage and is Paralyzed as it is frozen in ice until the end of your next turn, on a successful one the creature takes half as much damage and is not Paralyzed.</p>
+            </description>
+            <sheet action="Action">
+                <description>You choose up to {{freezing-wave:creatures}} you can see within 60 feet. Targets must make a Constitution saving throw (save DC {{spellcasting:dc}}). On a failed save the creature takes 8d6 cold damage and is Paralyzed as it is frozen in ice until the end of your next turn, on a successful one the creature takes half as much damage and is not Paralyzed.</description>
+            </sheet>
+            <rules>
+                <stat name="freezing-wave:creatures" value="1" />
+                <stat name="freezing-wave:creatures" value="charisma:modifier" />
+            </rules>
+        </element>
+
+
+    <element name="The Stone" type="Archetype" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_WARLOCK_THE_STONE">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Your patron embodies the very Stone of the Elemental Plane of Earth, they are strong, enduring, and uncaring . Your patron may be the embodiment of the infinite stone of the Plane itself, a supernaturally powerful Dao, great Elder Elemental, or a Primordial a creature with god-like powers.</p>
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_EXPANDED_SPELL_LIST" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONE_TOUCHED" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONE_GLIDE" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONESKIN" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONES_ENDURANCE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONE_TOUCHED" level="1" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONE_GLIDE" level="6" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONESKIN" level="10" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONES_ENDURANCE" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Stone lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">THE STONE EXPANDED SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>earth tremor, grease</em></td></tr>
+                    <tr><td>2nd</td><td><em>dust devil, rock blast</em></td></tr>
+                    <tr><td>3rd</td><td><em>blinding dust, erupting earth</em></td></tr>
+                    <tr><td>4th</td><td><em>conjure minor elemental, stone shape</em></td></tr>
+                    <tr><td>5th</td><td><em>conjure elemental, Stammelford’s earth shatter</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_XGTE_SPELL_EARTH_TREMOR</extend>
+                <extend>ID_PHB_SPELL_GREASE</extend>
+                <extend>ID_XGTE_SPELL_DUST_DEVIL</extend>
+                <extend>ID_TOMER_TWSB_SPELL_ROCK_BLAST</extend>
+                <extend>ID_TOMER_TWSB_SPELL_BLINDING_DUST</extend>
+                <extend>ID_XGTE_SPELL_ERUPTING_EARTH</extend>
+                <extend>ID_PHB_SPELL_CONJURE_MINOR_ELEMENTAL</extend>
+                <extend>ID_PHB_SPELL_STONE_SHAPE</extend>
+                <extend>ID_PHB_SPELL_CONJURE_ELEMENTAL</extend>
+                <extend>ID_TOMER_TWSB_SPELL_STAMMELFORDS_EARTH_SHATTER</extend>
+            </spellcasting>
+        </element>
+        <element name="Stone Touched" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONE_TOUCHED">
+            <description>
+                <p>Starting at 1st level, while you are not wearing armor your AC becomes equal to 10 + your Charisma modifier. Additionally Your hit point maximum increases by half your charisma modifier (rounded up, minimum 1), and it increases by the same amount every time you gain a level.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="ac:stone touched:base" value="10" />
+                <stat name="ac:stone touched:charisma" value="charisma:modifier" />
+                <stat name="ac:stone touched" value="ac:stone touched:base" />
+                <stat name="ac:stone touched" value="ac:stone touched:charisma" />
+                <stat name="ac:calculation" value="ac:stone touched" bonus="calculation" equipped="[armor:none]" alt="Stone Touched (Warlock)" />
+                <stat name="hp" value="level" />
+                <stat name="hp" value="level" requirements="[charisma:modifier:3]" />
+                <stat name="hp" value="level" requirements="[charisma:modifier:5]" />
+                <stat name="hp" value="level" requirements="[charisma:modifier:7]" />
+                <stat name="hp" value="level" requirements="[charisma:modifier:9]" />
+            </rules>
+        </element>
+        <element name="Stone Glide" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONE_GLIDE">
+            <description>
+                <p>Starting at 6th level, as an action, your patron grants you its innate connection to the stone. For one minute you can burrow through nonmagical earth and stone. While doing so, you don’t disturb the material it moves through. Once you use this feature you cannot use it again until you have finished a short or long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Short Rest">
+                <description>For one minute you can burrow through nonmagical earth and stone. While doing so, you don’t disturb the material it moves through.</description>
+            </sheet>
+        </element>
+        <element name="Stoneskin" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONESKIN">
+            <description>
+                <p>Starting at 10th level, as a reaction before you would take damage, you can cast the <em>stoneskin</em> spell without material components. Additionally, while you are under the effects of the <em>stoneskin</em> spell your AC increases by 2.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>As a reaction before you would take damage, you can cast the stoneskin spell without material components. Additionally, while you are under the effects of the stoneskin spell your AC increases by 2.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_STONESKIN" />
+            </rules>
+        </element>
+        <element name="Stone’s Endurance" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STONE_STONES_ENDURANCE">
+            <description>
+                <p>Starting at 14th level, when you would be reduced to 0 hit points, you can instead drop to 1 hit point. When you choose to do so you gain temporary hit points equal to your Warlock level. Once you use this feature you cannot use it again until you have finished a short or long rest.</p>
+            </description>
+            <sheet>
+                <description>When you would be reduced to 0 hit points, you can instead drop to 1 hit point. When you choose to do so you gain {{level:warlock}} temporary hit points.</description>
+            </sheet>
+        </element>
+
+
+    <element name="The Storm" type="Archetype" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_WARLOCK_THE_STORM">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Your patron embodies the never ending storms of the Elemental Plane of Air, they are fast, harsh, and batter down all those in their path.Your patron may be the embodiment of the lightning and thunder that fills the Plane itself, a supernaturally powerful Djinni, great Elder Elemental, or a Primordial a creature with god-like powers.</p>
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_EXPANDED_SPELL_LIST" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_STORMBRINGER" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_THUNDEROUS_RESONANCE" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_LIGHTNING_JUMP" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_LIGHTNING_FLOWS_THROUGH_YOU" />
+            <div element="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_CHAIN_BURST" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_STORMBRINGER" level="1" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_THUNDEROUS_RESONANCE" level="1" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_LIGHTNING_JUMP" level="6" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_LIGHTNING_FLOWS_THROUGH_YOU" level="10" />
+            <grant type="Archetype Feature" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_CHAIN_BURST" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Storm lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">THE STORM EXPANDED SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>feather fall, thunderwave</em></td></tr>
+                    <tr><td>2nd</td><td><em>Bronwyn’s gust, static storm</em></td></tr>
+                    <tr><td>3rd</td><td><em>call lightning, thunder step</em></td></tr>
+                    <tr><td>4th</td><td><em>Alzur’s lightning, conjure minor elementals</em></td></tr>
+                    <tr><td>5th</td><td><em>conjure elemental, control winds</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_FEATHER_FALL</extend>
+                <extend>ID_PHB_SPELL_THUNDERWAVE</extend>
+                <extend>ID_TOMER_TWSB_SPELL_BRONWYNS_GUST</extend>
+                <extend>ID_TOMER_TWSB_SPELL_STATIC_STORM</extend>
+                <extend>ID_PHB_SPELL_CALL_LIGHTNING</extend>
+                <extend>ID_XGTE_SPELL_THUNDER_STEP</extend>
+                <extend>ID_TOMER_TWSB_SPELL_ALZURS_LIGHTNING</extend>
+                <extend>ID_PHB_SPELL_CONJURE_MINOR_ELEMENTALS</extend>
+                <extend>ID_PHB_SPELL_CONJURE_ELEMENTAL</extend>
+                <extend>ID_XGTE_SPELL_CONTROL_WINDS</extend>
+            </spellcasting>
+        </element>
+        <element name="Stormbringer" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_STORMBRINGER">
+            <description>
+                <p>Starting at 1st level, when you deal lightning or thunder damage, as a reaction you can choose to deal an additional 1d6 of the same kind of damage.</p>
+                <p class="indent">You can use this feature a number of times equal to your Charisma modifier, until you finish a long or short rest.</p>
+                <p class="indent">Starting at 6th level the damage increases to 2d6. Starting at 10th level the damage increases to 3d6. Starting at 14th you can use this feature an unlimited number of times.</p>
+            </description>
+            <sheet action="Reaction">
+                <description usage="{{charisma:modifier}}/Short Rest">When you deal lightning or thunder damage, as a reaction you can choose to deal an additional {{stormbringer:damage-dice}}d6 of the same kind of damage.</description>
+                <description level="14" usage="Ulimited">When you deal lightning or thunder damage, as a reaction you can choose to deal an additional {{stormbringer:damage-dice}}d6 of the same kind of damage.</description>
+            </sheet>
+            <rules>
+                <stat name="stormbringer:damage-dice" value="1" level="1" />
+                <stat name="stormbringer:damage-dice" value="1" level="6" />
+                <stat name="stormbringer:damage-dice" value="1" level="10" />
+            </rules>
+        </element>
+        <element name="Thunderous resonance" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_THUNDEROUS_RESONANCE">
+            <description>
+                <p>Also starting at 1st level, your patron infuses your voice with a thunderous roar. You can choose to add 1d6 and add the result to a Charisma check roll of your choice. You can use this feature a number of times equal to your proficiency bonus, until you have finished a short or long rest.</p>
+            </description>
+            <sheet usage="{{proficiency}}/Short Rest">
+                <description>You can choose to add 1d6 and add the result to a Charisma check roll of your choice.</description>
+            </sheet>
+        </element>
+        <element name="Lightning Jump" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_LIGHTNING_JUMP">
+            <description>
+                <p>Starting at 6th level, as an action your patron temporarily transforms you into lightning energy allowing you to teleport to an unoccupied within 45 feet of you that you can see. Each creature within 5 feet of your starting location and target destination must make a Dexterity saving throw taking 3d6 lightning damage on a failed save, or half as much on a successful one.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can teleport to an unoccupied within 45 feet of you that you can see. Each creature within 5 feet of your starting location and target destination must make a Dexterity saving throw taking 3d6 lightning damage on a failed save, or half as much on a successful one.</description>
+            </sheet>
+        </element>
+        <element name="Lightning flows through you" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_LIGHTNING_FLOWS_THROUGH_YOU">
+            <description>
+                <p>Starting at 10th level, you gain resistance to lightning and thunder damage. Additionally, when you take damage from a source you can see you can choose to use a reaction shock a number of creatures equal to 1+ your Charisma modifier (minimum 1) that you can see within 60 feet of you. Each creature must make Constitution saving throw equal to your spell save DC, on a failed save the creature is Stunned for 1 minute. The creature can repeat it’s saving throw at the end of its turn to end the effect of this feature.</p>
+                <p class="indent">Once you use this feature you cannot use it again until you have finished a short or long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="1/Short Rest">
+                <description>When you take damage from a source you can see you can choose up to {{lightning-flows:creatures}} creatures that you can see within 60 feet of you. Each creature must make Constitution saving throw (save DC {{spellcasting:dc}}), on a failed save the creature is Stunned for 1 minute. The creature can repeat it’s saving throw at the end of its turn to end the effect of this feature.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+                <stat name="lightning-flows:creatures" value="1" />
+                <stat name="lightning-flows:creatures" value="charisma:modifier" />
+            </rules>
+        </element>
+        <element name="Chain Burst" type="Archetype Feature" source="The Elemental Warlocks" id="ID_TOMER_TEW_ARCHETYPE_FEATURE_STORM_CHAIN_BURST">
+            <description>
+                <p>Starting at 14th level, when you reduce a creature to 0 hit points with lightning damage, you can use your bonus action to cause the creature to burst into lightning energy. Two bolts of lightning shoot out to two creatures of your choice that you can see within 30 feet of creature you reduced to 0 hit points. Two bolts then leap from that target to as many as four other targets, each of which must be within 60 feet of the creature you reduced to 0 hit points. Each creature must make a Dexterity saving throw against your Warlock spell save DC, taking 8d6 lightning damage on a failed save, or half as much on a successful one.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>When you reduce a creature to 0 hit points with lightning damage, you can use your bonus action to cause the creature to burst into lightning energy. Two bolts of lightning shoot out to two creatures of your choice that you can see within 30 feet of creature you reduced to 0 hit points. Two bolts then leap from that target to as many as four other targets, each of which must be within 60 feet of the creature you reduced to 0 hit points. Each creature must make a Dexterity saving throw (save DC {{spellcasting:dc}}), taking 8d6 lightning damage on a failed save, or half as much on a successful one.</description>
+            </sheet>
+        </element>
+
+
+</elements>
