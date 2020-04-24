@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of the Spheres</name>
+        <update version="0.0.1">
+            <file name="bard-college-of-the-spheres.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/musica-aeternam/bard-college-of-the-spheres.xml" />
+        </update>
+    </info>
+    
+    <element name="College of the Spheres" type="Archetype" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_BARD_COLLEGE_OF_THE_SPHERES">
+        <supports>Bard College</supports>
+        <description>
+            <p class="flavor">There is geometry in the humming of the strings, there is music in the spacing of the spheres.</p>
+            <p class="flavor" style="text-align:right">—Pythagoras</p>
+            <p>In ancient times, a select few scholars believed in a supreme order to the universe, guided by mathematical proportions and ratios. Once discovered, they began to see it everywhere: the Golden Ratio. Plants spiraled their leaves according to its divine pattern, and animals of the sea grew their shells in the same manner. Even the celestial bodies of the heavens, the planets themselves, danced through space on mathematically precise orbits. The relationships were all perfect, too perfect to be less than divine in origin.</p>
+            <p class="indent">These scholars soon lent their knowledge to architects and artists alike, to spread the beauty of this mathematical purity into our own creations. Music in particular lent itself to the task. In fact, the musical notes reflected the ratio so clearly that music was viewed as our link to this universal constant, a way for us to tap into the nature of the divine itself. Scholars began to experiment and imagined music all around them in nature. Even the planets sang in their orbits, a galactic music of the spheres.</p>
+            <p class="indent">Unfortunately, this knowledge was lost to antiquity. Those that did stumble upon it thought it to be of no use, just the useless pondering of the elder civilizations of our world.</p>
+            <p class="indent">The Bards of the College of the Spheres, however, know the truth. The secrets lived on, passed down from Bardic masters to their apprentices through the centuries. The knowledge was deemed to dangerous for most men to possess, once the final truths were revealed: Everything is the same. Nature. Magic. Man. The Gods. Everything is born out of the same supreme order. And music is the key we possess to unlock it all.</p>
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_BONUS_PROFICIENCIES" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_FLASH_OF_INSIGHT" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_ADDITIONAL_MAGICAL_SECRETS" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_DIABOLUS_IN_MUSICA" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_MUSICA_UNIVERSALIS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_BONUS_PROFICIENCIES" level="3" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_FLASH_OF_INSIGHT" level="3" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_ADDITIONAL_MAGICAL_SECRETS" level="6" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_DIABOLUS_IN_MUSICA" level="14" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_MUSICA_UNIVERSALIS" level="20" />
+        </rules>
+    </element>
+        <element name="Bonus Proficiencies" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_BONUS_PROFICIENCIES">
+            <description>
+                <p>The path to study the music of the spheres, as it is commonly known to the Bards who follow these teachings, is rigorously academic. Initiates to the College must spend countless hours reading dusty old tomes until the basic concepts are grasped.</p>
+                <p class="indent">At 3rd level, you gain proficiency in two lore skills of your choice: Arcana, History, Nature, or Religion. If you are already proficient in these skills, you may pick two other ones that reflect your intensive studying.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Skill Proficiency (College of the Spheres)" number="2" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_RELIGION" />
+            </rules>
+        </element>
+        <element name="Flash of Insight" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_FLASH_OF_INSIGHT">
+            <description>
+                <p>Also at 3rd level, your training allows you to enter a heightened mental state. As a bonus action, you can spend one Bardic Inspiration die to enter this state, which then lasts for 1 minute. At any time during the duration, you may choose to expend the Inspiration die to raise to the DC of a spell you cast by 1.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can spend one Bardic Inspiration die to enter a heightened mental state for 1 minute. At any time during the duration, you may choose to expend the Inspiration die to add raise to the DC of a spell you cast by 1.</description>
+            </sheet>
+        </element>
+        <element name="Additional Magical Secrets" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_ADDITIONAL_MAGICAL_SECRETS">
+            <description>
+                <p>At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you, but don’t count against the number of bard spells you know.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Spell (Additional Magic Secrets)" number="2" spellcasting="Bard" supports="$(spellcasting:slots)" />
+            </rules>
+        </element>
+        <element name="Diabolus in Musica" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_DIABOLUS_IN_MUSICA">
+            <description>
+                <p>You have unlocked the secrets of diabolic power through your studies and learned to apply its destructive properties to your own magic. Starting at 14th level, when you have used a Bardic Inspiration die to enter your heightened mental state, you may use the Inspiration die to add your Charisma modifier to the damage of one spell you cast, instead of increasing its save DC.</p>
+            </description>
+            <sheet>
+                <description>When you have used a Bardic Inspiration die to enter your heightened mental state, you may use the Inspiration die to add {{charisma:modifier}} to the damage of one spell you cast, instead of increasing its save DC.</description>
+            </sheet>
+        </element>
+        <element name="Musica Universalis (optional)" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSPHERES_MUSICA_UNIVERSALIS">
+            <description>
+                <p>At 20th level, you perceive the world around you in the simplicity of its mathematical forms at all times. Thus, you see your magic as being no different from that of Wizards, Clerics, Druids, or the Gods themselves. Magic is magic, is music, is mathematics. Once per long rest, you can lose an unused spell slot to spontaneously cast any spell of the same level or lower from any class’s spell list.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can lose an unused spell slot to spontaneously cast any spell of the same level or lower from any class’s spell list.</description>
+            </sheet>
+        </element>
+    
+</elements>

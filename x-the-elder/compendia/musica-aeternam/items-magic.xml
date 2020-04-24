@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Musica Aeternam Magic Items</name>
+        <update version="0.0.1">
+            <file name="items-magic.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/musica-aeternam/items-magic.xml" />
+        </update>
+    </info>
+    
+	<element name="Diplomat’s Immunity" type="Magic Item" source="Musica Aeternam" id="ID_DJM_MABH_MAGIC_ITEM_ARMOR_DIPLOMATS_IMMUNITY">
+		<description>
+			<p>The life of a diplomat isn’t for the faint of heart. You are tasked with taking an offer from your kingdom, often just a letter of terms but sometimes accompanied by a chest of gold and jewels, transporting it through most likely hostile territory, and then making sure the negotiations go smoothly. When things do turn sour, it is more often than not your head that the enemy wants to send back in a sack to make sure their rejection of the terms is clear.</p>
+            <p class="indent">Because of these risks, kingdoms with the wealth to do so often provide their top diplomats with special protective gear to ensure their safe return, hopefully free of unwanted sword or arrow holes.</p>
+            <p class="indent">This exquisitely crafted leather armor is one such example, which weighs only half as much as its traditional counterparts and is often covered with the intricately drawn heraldic symbols of the kingdom that commissioned it. While wearing it, you gain a bonus of +1 to your AC and +1 to all saving throws. Additionally, when you are targeted with an attack, you may use your reaction to cast sanctuary with a spell DC of 18. You must finish a short or long rest before you can use this ability again.</p>
+		</description>
+		<setters>
+			<set name="keywords">sanctuary</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="weight" lb="5">5 lb.</set>
+			<set name="type" addition="leather">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">Leather</set>
+			<set name="enhancement">1</set>
+		</setters>
+		<rules>
+			<stat name="strength:save:misc" value="1" />
+			<stat name="dexterity:save:misc" value="1" />
+			<stat name="constitution:save:misc" value="1" />
+			<stat name="intelligence:save:misc" value="1" />
+			<stat name="wisdom:save:misc" value="1" />
+			<stat name="charisma:save:misc" value="1" />
+            <grant type="Feat" id="ID_DJM_MABH_FEAT_DIPLOMATS_IMMUNITY_SANCTUARY" />
+		</rules>
+	</element>
+        <element name="Diplomat’s Immunity" type="Feat" source="Musica Aeternam" id="ID_DJM_MABH_FEAT_DIPLOMATS_IMMUNITY_SANCTUARY">
+            <description>
+                <p>While wearing Diplomat’s Immunity, when you are targeted with an attack, you may use your reaction to cast sanctuary with a spell DC of 18. You must finish a short or long rest before you can use this ability again.</p>
+            </description>
+            <sheet action="Reaction" usage="1/Short Rest">
+                <description>When you are targeted with an attack, you may use your reaction to cast sanctuary with a spell DC of 18.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" />
+            </rules>
+        </element>
+
+	<element name="Satchel of the Combat Medic" type="Magic Item" source="Musica Aeternam" id="ID_DJM_MABH_MAGIC_ITEM_SATCHEL_OF_THE_COMBAT_MEDIC">
+		<description>
+			<p>During times of war, men and women from all walks of life are conscripted to defend their homelands. Those that can fight are given a sword and sent to the front lines. Others that can’t still find work in the kitchens or supply caravans. Rogues are made into spies and Clerics man the field hospitals to tend to the wounded. It was discovered long ago, however, that those trained in the bardic arts had a knack unlike any others for healing among the chaos of the battlefield. Adept at basic healing spells, they also could muddle the minds of enemies around them and lift the spirits of their comrades, inspiring them to great deeds. Soon all bards were gathered into special units, where they were taught the basics of non-magical medicine as well, for when their own arcane power was depleted.</p>
+			<p class="indent">While most simply did the best they could, the legends around a few of the medics grew to almost unbelievable heights. On one fateful day, when a medic’s unit was ambushed high in a mountain pass and all hope seemed lost, she somehow kept every last one of her compatriots alive through an onslaught of arrows and spears and turned the battle in their favor. Years later, when she was in command of her nation’s medic corps and a student asked her about that day, she patted the healer’s kit on her belt and smiled. “Just remember the basics and you’ll be fine,” she said, though the student swore there was something else behind the twinkle in her eye.</p>
+			<p class="indent">This healer’s kit is a small, brown leather belt pouch has unlimited uses of standard bandages, salves and splints, though that is just a fraction of its power. It bestows its owner with advantage on all Wisdom (Medicine) checks and whenever they cast a healing spell, any 1 that is rolled is instead treated as a 2. In addition, they can cast the following spells: <em>lesser restoration</em>, <em>greater restoration</em>, <em>aura of purity</em>, <em>aura of vitality</em>, and <em>heal</em>. Once a spell has been cast, it can’t be cast again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">neck</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement" addition="by a character both proficient in the Medicine skill and able to cast at least one healing spell">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" />
+            <grant type="Spell" id="ID_PHB_SPELL_GREATER_RESTORATION" />
+            <grant type="Spell" id="ID_PHB_SPELL_AURA_OF_PURITY" />
+            <grant type="Spell" id="ID_PHB_SPELL_AURA_OF_VITALITY" />
+            <grant type="Spell" id="ID_PHB_SPELL_HEAL" />
+        </rules>
+	</element>
+
+	<element name="Singing Sword" type="Magic Item" source="Musica Aeternam" id="ID_DJM_MABH_MAGIC_ITEM_SINGING_SWORD">
+		<description>
+			<p>Tales of singing swords are popular throughout the taverns of Faerun, though there is often little truth behind these stories. On any given night, buy a round of drinks and at some point the singing sword is likely to emerge. In most stories, they sing constantly on their own when drawn and embolden their wielder. While this is not completely accurate, there is always some truth hidden at the core of any myth. In fact, the name singing sword comes from the very musical tones that rings out when the sword strikes a target. If a trained Bard strikes fast enough with one, they are able to find just the right rhythm to bring these notes to life and lift a melody high into the air. A true master will even be able to harmonize their own singing with that of the sword.</p>
+			<p class="indent">This +2 sword is blessed with speed and grants the wielder the Extra Attack feature (the ability to attack two times when you take the attack action). If you already have the Extra Attack feature from another source, such as the Bardic College of Valor, the sword enhances it to allow you to attack three times with your attack action, instead of two.</p>
+			<p class="indent">When you hit a target with the sword, the resulting tone alerts any creatures within 300 feet to your presence. However, if you succeed in hitting with the sword at least two times on your turn and then use your bonus action to impart Bardic Inspiration to an ally, you can blend the music of the two together to great effect. When your ally uses the inspiration die they can roll it twice and use the greater result. If you wish, you can use your action to strike your sword against a hard surface multiple times to create the tones, instead of attacking, and still imbue your inspiration with the extra potency.</p>
+		</description>
+		<setters>
+			<set name="keywords">sword</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="any sword">Weapon</set>
+			<set name="attunement" addition="by a bard">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">2</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
+		</setters>
+        <rules>
+            <grant type="Feat" id="ID_DJM_MABH_FEAT_EXTRA_ATTACK" />
+        </rules>
+	</element>
+        <element name="Singing Sword Extra Attack" type="Feat" source="Musica Aeternam" id="ID_DJM_MABH_FEAT_EXTRA_ATTACK">
+            <description>
+                <p>When wielding your singing sword, you can make one additional attack, whenever you take the Attack action on your turn.</p>
+            </description>
+            <sheet>
+                <description>When wielding your singing sword, you can make one additional attack, whenever you take the Attack action on your turn.</description>
+            </sheet>
+        </element>
+
+</elements>

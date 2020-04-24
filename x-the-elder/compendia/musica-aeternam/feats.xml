@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Musica Aeternam Feats</name>
+        <update version="0.0.1">
+            <file name="feats.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/musica-aeternam/feats.xml" />
+        </update>
+    </info>
+    
+    <element name="Arcane Visage" type="Feat" source="Musica Aeternam" id="ID_DJM_MABH_FEAT_ARCANE_VISAGE">
+        <requirements>[type:spell]</requirements>
+        <prerequisite>Can cast a 1st level arcane spell</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Can cast a 1st level arcane spell</p>
+            <p>In your desire to follow in the footsteps of the greatest of mages, you begin to emulate how they look and behave and bend your magic to aid in this task. You know there is subtle power in convincing the world you are greater than you actually are. You gain the following benefits:</p>
+            <ul>
+                <li>As an action, you can completely clean yourself of all dirt and grime, dry yourself and your clothes, style and color your hair, or shave or trim your facial or body hair.</li>
+                <li>As an action, you can conjure any article of clothing or jewelry from within 5 feet and have it appear on your body, instantly wearing it. If you were wearing a similar item, you can have it trade places with the first item during the same action. This does not allow you to don armor.</li>
+                <li>You can use magic items as if you were a wizard, ignoring the prerequisite if you could not otherwise do so.</li>
+            </ul>
+        </description>
+        <sheet action="Action">
+            <description>You can perform one of the following: completely clean yourself of all dirt, grim, dry yourself, clothes, etc; or you can conjure any article of clothing or jewelry from within 5 feet and have it appear on your body. You can use magic items as if you were a wizard.</description>
+        </sheet>
+    </element>
+    <element name="Battledancer" type="Feat" source="Musica Aeternam" id="ID_DJM_MABH_FEAT_BATTLEDANCER">
+        <requirements>ID_PROFICIENCY_SKILL_PERFORMANCE</requirements>
+        <prerequisite>Proficiency in Performance skill</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Proficiency in Performance skill</p>
+            <p>You have been trained in a rare combat style that combines the rhythmic precision of dance with the fury of melee combat.</p>
+            <p class="indent">You can use a bonus action to begin your dance, which lasts for 1 minute. You are not able to perform the battle dance if wearing medium or heavy armor, using a shield, or wielding a heavy weapon. While dancing, you gain the following benefits:</p>
+            <ul>
+                <li>You gain a bonus to melee weapon attacks equal to your Charisma modifier (minimum of +1).</li>
+                <li>Your walking speed increases by 10 feet.</li>
+                <li>You can use Dash or Disengage as a bonus action.</li>
+            </ul>
+            <p class="indent">Maintaining the battle dance is exhausting and you can only use this ability once per long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="1/Long Rest">
+            <description>You can begin your dance, which lasts for 1 minute. You gain a +{{battledancer:bonus}} bonus to melee weapon attacks. Your speed increases by 10 feet. You can use Dash or Disengage as a bonus action.</description>
+        </sheet>
+        <rules>
+            <stat name="battledancer:bonus" value="1" bonus="base" />
+            <stat name="battledancer:bonus" value="charisma:modifier" bonus="base" />
+        </rules>
+    </element>
+    <element name="Diplomat" type="Feat" source="Musica Aeternam" id="ID_DJM_MABH_FEAT_DIPLOMAT">
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p>You have served as a negotiator through many tricky situations and gain the following benefits:</p>
+            <ul>
+                <li>Increase your Charisma score by 1, to a maximum of 20.</li>
+                <li>You have advantage on Persuasion checks other than haggling over price.</li>
+                <li>You have a +5 bonus to your passive Wisdom (Insight) score.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have advantage on Persuasion checks other than haggling over price. You have a +5 bonus to your passive Insight score.</description>
+        </sheet>
+        <rules>
+            <stat name="charisma" value="1" />
+        </rules>
+    </element>
+    <element name="Melodic Casting" type="Feat" source="Musica Aeternam" id="ID_DJM_MABH_FEAT_MELODIC_CASTING">
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p>Through intense study and practice, you have figured out how to seamlessly blend magic into your performances. You gain the following benefits:</p>
+            <ul>
+                <li>You can cast spells while performing, incorporating the verbal and somatic components into your playing without disrupting the performance. If there is no obvious point of origin for a spell, it is unclear that you are the one that cast it.</li>
+                <li>You can use your Charisma modifier instead of Constitution for checks to maintain concentration while casting a spell.</li>
+                <li>You can use a musical instrument as your spell casting focus, if you were unable to do so before.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You can cast spells while performing, incorporating the verbal and somatic components into your playing without disrupting the performance. If there is no obvious point of origin for a spell, it is unclear that you are the one that cast it. You can use your Charisma modifier instead of Constitution for checks to maintain concentration while casting a spell. You can use a musical instrument as your spell casting focus.</description>
+        </sheet>
+    </element>
+    <element name="Virtuoso" type="Feat" source="Musica Aeternam" id="ID_DJM_MABH_FEAT_VIRTUOSO">
+        <requirements></requirements>
+        <prerequisite></prerequisite>
+        <description>
+            <p>You are often hailed as one of the most gifted performers of your generation and gain the following benefits:</p>
+            <ul>
+                <li>Increase your Charisma score by 1, to a maximum of 20.</li>
+                <li>You have advantage on Performance checks.</li>
+                <li>Wherever you perform, you attract the attention of local patrons of the arts and enjoy the notoriety of being a minor celebrity in these circles.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have advantage on Performance checks. Wherever you perform, you attract the attention of local patrons of the arts and enjoy the notoriety of being a minor celebrity in these circles.</description>
+        </sheet>
+        <rules>
+            <stat name="charisma" value="1" />
+        </rules>
+    </element>
+    
+</elements>

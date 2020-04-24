@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of the Silver Pen</name>
+        <update version="0.0.1">
+            <file name="bard-college-of-the-silver-pen.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/musica-aeternam/bard-college-of-the-silver-pen.xml" />
+        </update>
+    </info>
+    
+    <element name="College of the Silver Pen" type="Archetype" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_BARD_COLLEGE_OF_THE_SILVER_PEN">
+        <supports>Bard College</supports>
+        <description>
+            <p class="flavor">You without me can be nothing but silent. I without you can have nothing to say.</p>
+            <p class="flavor" style="text-align:right">—Cynddelw, Hendregadredd</p>
+            <p>One of the primary roles of a bard is that of chronicler, to immortalize the exploits of heroes and kings in song or poetry. For some Bards, however, merely recording these stories is not enough. They are often too boring, too normal. No one would sit in silence, in awe of stories such as these. Perhaps if the Bard applied his artistic touch to them, though, then they might stir the hearts of the audience.</p>
+            <p class="indent">When Bards of the Silver pen touch their quill to the parchment, magic flows from them into their very words. Then a curious thing happens. The events that these Bards record, and the men and women whose lives they preserve in their words, are changed by the way their tale is told. A hero may find himself more bold after hearing about his defeat of the black dragon that he never actually met. A queen may find compassion in her heart for prisoners, where there was none before, when told that she’s always done so in the past.</p>
+            <p class="indent">Words are powerful, as are those that write them down. We’ve all heard it before. History is written by the victors. The pen is mightier than the sword. But, how many pens can influence the fate of kingdoms with a few short lines?</p>
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_BONUS_PROFICIENCIES" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_CUTTING_WORDS" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_LASTING_PRAISE" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_CURSE_OF_100_TONGUES" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_JUMPING_OFF_THE_PAGE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_BONUS_PROFICIENCIES" level="3" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_CUTTING_WORDS" level="3" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_LASTING_PRAISE" level="6" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_CURSE_OF_100_TONGUES" level="14" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_JUMPING_OFF_THE_PAGE" level="20" />
+        </rules>
+    </element>
+        <element name="Bonus Proficiencies" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_BONUS_PROFICIENCIES">
+            <description>
+                <p>When you join the College of the Silver Pen at 3rd level, you gain proficiency in two skills from: Deception, Insight, or Persuasion. This represents your increased awareness of how words manipulate those around you. If you already are proficient in these skills, you may pick two other ones in their place.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+                <select type="Proficiency" name="Bonus Proficiencies (College of the Silver Pen)" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_PERSUASION" number="2" />
+            </rules>
+        </element>
+        <element name="Cutting Words" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_CUTTING_WORDS">
+            <description>
+                <p>Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the DM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being charmed.</p>
+            </description>
+            <sheet action="Reaction" usage="Bardic Inspiration">
+                <description>When a creature you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll.</description>
+            </sheet>
+        </element>
+        <element name="Lasting Praise" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_LASTING_PRAISE">
+            <description>
+                <p>By 6th level, the Bard understands how to enchant their own handwriting so that the their inspirations can live on in ink and paper. For the cost of 25 gold pieces in special inks, the Bard can inscribe a sheet of parchment with an inspirational poem. The magic of the inspiration persists on this scroll until a creature other than the Bard reads it, at which point they feel uplifted by its message. The creature receives a 1d8 Bardic Inspiration die following the standard rules, including the 10 minute duration, etc. Once read, the poem no longer holds any magic.</p>
+            </description>
+            <sheet>
+                <description>For the cost of 25 gold pieces in special inks, the Bard can inscribe a sheet of parchment with an inspirational poem. The magic of the inspiration persists on this scroll until a creature other than the Bard reads it, at which point they feel uplifted by its message. The creature receives a 1d8 Bardic Inspiration die following the standard rules, including the 10 minute duration, etc. Once read, the poem no longer holds any magic.</description>
+            </sheet>
+        </element>
+        <element name="Curse of 100 Tongues" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_CURSE_OF_100_TONGUES">
+            <description>
+                <p>At 14th level, the Bard is able to produce lasting, debilitating curses against those that have wronged them. The Bard must write out a poem cursing the name of their foe in detail, spending at least 1 minute to do so. The curse is then folded up and kept on the Bard’s person, close to their heart. The enemy named in the poem suffers a -1 penalty to all attacks, saving throws, and ability checks for 1 week, after which the magic fades. The power of the curse increases to -3 if a drop of target’s blood was mixed in with the ink used to write it down. The Bard can only have 1 curse active at any given time.</p>
+            </description>
+            <sheet>
+                <description>You write out a poem cursing the name of their foe in detail, spending at least 1 minute to do so. The enemy named in the poem suffers a -1 penalty to all attacks, saving throws, and ability checks for 1 week, after which the magic fades. The power of the curse increases to -3 if a drop of target’s blood was mixed in with the ink used to write it down. The Bard can only have 1 curse active at any given time.</description>
+            </sheet>
+        </element>
+        <element name="Jumping Off the Page (optional)" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSP_JUMPING_OFF_THE_PAGE">
+            <description>
+                <p>By 20th level, the Bard’s knack for embellishing scenes with new characters and plot twists spills over into reality. You can evoke your imagination and, with a few spoken words, improvise your own story as it is still happening. Once per long rest, you can cast one of the following spells without using a spell slot: <em>conjure animals</em>, <em>conjure celestial</em>, <em>conjure elemental</em>, <em>conjure fey</em>, or <em>conjure woodland beings</em>.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast one of the following spells without using a spell slot: conjure animals, conjure celestial, conjure elemental, conjure fey, or conjure woodland beings.</description>
+            </sheet>
+        </element>
+    
+</elements>

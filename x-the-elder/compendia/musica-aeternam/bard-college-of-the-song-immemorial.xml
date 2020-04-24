@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of the Song Immemorial</name>
+        <update version="0.0.1">
+            <file name="bard-college-of-the-song-immemorial.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/musica-aeternam/bard-college-of-the-song-immemorial.xml" />
+        </update>
+    </info>
+    
+    <element name="College of the Song Immemorial" type="Archetype" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_BARD_COLLEGE_OF_THE_SONG_IMMEMORIAL">
+        <supports>Bard College</supports>
+        <description>
+            <p class="flavor">When I hear music, I fear no danger. I am invulnerable. I see no foe. I am related to the earliest times, and to the latest.</p>
+            <p class="flavor" style="text-align: right;">—Henry David Thoreau</p>
+            <p>For some musicians, the joy of music is about the performance itself, connecting with an audience to share in this rare, ephemeral art form. For others it’s about being lost in the moment itself, closing your eyes and knowing nothing but the sounds that envelope you. The quest to find these little moments of pure musical perfection is what drives Bards of the College of Song Immemorial to practice for hours on end, day after day. If you ask them, though, the reward is worth a hundred times the effort they put in.</p>
+            <p class="indent">This devotion to their craft and mastery over the musical arts allows them to channel pure, unrestrained emotion through their instruments, resulting in melodies that resonate deeply with anyone who can hear them. Even the most battle hardened warrior would be hard pressed to resist and not stand in rapt attention to listen when these Bards begins to play.</p>
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_BORN_PERFORMER" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_PERSUASIVE_SONG" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_FASCINATING_RHYTHM" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_RAPTURE_OF_THE_SONG" />
+            <div element="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_STEALING_THE_LIMELIGHT" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_BORN_PERFORMER" level="3" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_PERSUASIVE_SONG" level="3" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_FASCINATING_RHYTHM" level="6" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_RAPTURE_OF_THE_SONG" level="14" />
+            <grant type="Archetype Feature" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_STEALING_THE_LIMELIGHT" level="20" />
+        </rules>
+    </element>
+        <element name="Born Performer" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_BORN_PERFORMER">
+            <description>
+                <p>At 3rd level, you gain proficiency in the Performance skill as well as with two musical instruments.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+                <select type="Proficiency" name="Musical Instrument (Born Performer)" number="2" supports="Musical Instrument" />
+            </rules>
+        </element>
+        <element name="Persuasive Song" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_PERSUASIVE_SONG">
+            <description>
+                <p>Also at 3rd level, your skillful musical performances can make the audience think more highly of you. While performing, you can expend a Bardic Inspiration die to adjust the attitude of one target NPC by one degree; from unfriendly to indifferent, indifferent to friendly, or friendly to helpful. Hostile NPCs can’t be influenced by this ability.</p>
+            </description>
+            <sheet usage="Bardic Inspiration">
+                <description>While performing, you can expend a Bardic Inspiration die to adjust the attitude of one target NPC by one degree; from unfriendly to indifferent, indifferent to friendly, or friendly to helpful. Hostile NPCs can’t be influenced by this ability.</description>
+            </sheet>
+        </element>
+        <element name="Fascinating Rhythm" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_FASCINATING_RHYTHM">
+            <description>
+                <p>At 6th level, your music begins to enchant the senses of any audience you play before. When performing, and by using a Bardic Inspiration die, you can attempt to charm any number of creatures within 30 feet of you. They must all be able to see and hear you perform. Each audience member makes a Wisdom save versus your spell DC and is charmed on a failed save.</p>
+                <p class="indent">This effect functions as per the <em>hypnotic pattern</em> spell. If you are playing on an <em>Instrument of the Bards</em> magic item, it confers disadvantage to their saves as if you were casting a <em>charm</em> spell. The charm effect lasts as long as you perform and for 1 minute afterwards.</p>
+            </description>
+            <sheet usage="Bardic Inspiration">
+                <description>When performing, and by using a Bardic Inspiration die, you can attempt to charm any number of creatures within 30 feet of you. They must all be able to see and hear you perform. Each audience member makes a Wisdom saving throw (save DC {{spellcasting:dc}}) and is charmed on a failed save. This effect functions as per the hypnotic pattern spell. If you are playing on an Instrument of the Bards magic item, it confers disadvantage to their saves as if you were casting a charm spell. The charm effect lasts as long as you perform and for 1 minute afterwards.</description>
+            </sheet>
+        </element>
+        <element name="Rapture of the Song" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_RAPTURE_OF_THE_SONG">
+            <description>
+                <p>Once you reach 14th level, you enter a state of musical ecstasy when inspiring others and are more resilient to anything going on around you. When you grant another creature a Bardic Inspiration die, you gain +1 AC, +1 Saves, and Damage Reduction 2/ until the start of your next turn.</p>
+            </description>
+            <sheet>
+                <description>When you grant another creature a Bardic Inspiration die, you gain +1 AC, +1 Saves, and Damage Reduction 2 until the start of your next turn.</description>
+            </sheet>
+        </element>
+        <element name="Stealing the Limelight (optional)" type="Archetype Feature" source="Musica Aeternam" id="ID_DJM_MABH_ARCHETYPE_FEATURE_COTSI_STEALING_THE_LIMELIGHT">
+            <description>
+                <p>Your music is so potent at 20th level that you can wrest control of a creature from the influence of another charm spell. When you encounter a charmed creature you can roll a Performance check versus the DC of the charm spell. If you succeed, you gain control of the charm spell and therefore control of the creature. This works with <em>charm person</em>, <em>suggestion</em>, <em>hypnotic pattern</em>, <em>dominate</em>, or any other charm spell. If the spell requires concentration, you must concentrate to keep the charm going. This ability is usable once per long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When you encounter a charmed creature you can roll a Performance check versus the DC of the charm spell. If you succeed, you gain control of the charm spell and therefore control of the creature. This works with charm person, suggestion, hypnotic pattern, dominate, or any other charm spell. If the spell requires concentration, you must concentrate to keep the charm going.</description>
+            </sheet>
+        </element>
+    
+</elements>
