@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>The Hunter Class version 1.2.5</name>
-        <update version="0.0.2">
+        <name>The Hunter Class version 1.2.6</name>
+        <update version="0.0.3">
             <file name="class-hunter.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-hunter.xml" />
         </update>
     </info>
@@ -26,9 +26,9 @@
         </setters>
     </element>
     
-    <element name="Hunter" type="Class" source="The Hunter" id="ID_AEYANA_HUNTER_CLASS_Hunter">
+    <element name="Hunter" type="Class" source="The Hunter" id="ID_AEYANA_HUNTER_CLASS_HUNTER">
         <description>
-            <p class="flavor">version [1.2.5]</p>
+            <p class="flavor">version [1.2.6]</p>
             <p>Rough and wild looking, a human stalks alone through the shadows of the trees, hunting a horde of goblins he knows are planning a raid on a nearby farm. Clutching a shortsword in each hand, he becomes a whirlwind of steel, cutting down one enemy after another.</p>
             <p class="indent">After tumbling away from a cone of freezing air, an elf finds her feet and draws back her bow to loose an arrow at the white dragon. Shrugging off the wave of fear that emanates from the dragon like the cold of its breath, she sends one arrow after another, sundering the dragon’s thick scales.</p>
             <p class="indent">Leaping back, a half-elf narrowly evades a grave blow from a towering stone giant, as its club leaves a large crater in the ground. With deft steps, he darts up the titan’s arm, longsword drawn as he rushes for the giant’s throat.</p>
@@ -70,6 +70,7 @@
                 <li>(a) two martial melee weapons or (b) a martial melee weapon and a shield</li>
                 <li>(a) a dungeoneer’s pack or (b) an explorer’s pack</li>
                 <li>A simple or martial ranged weapon and 20 pieces of ammunition</li>
+                <li>A component pouch</li>
             </ul>
             <p>Alternatively, you may start with 4d4 × 10 gp to buy your own equipment.</p>
             <!-- class table here -->
@@ -88,7 +89,7 @@
                     <tr><td>7th</td><td>+3</td><td class="left">Hunter’s Prey feature, Hunter’s Technique (2/rest)</td><td>4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
                     <tr><td>8th</td><td>+3</td><td class="left">Ability Score Improvement</td><td>4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
                     <tr><td>9th</td><td>+4</td><td class="left">–––</td><td>4</td><td>3</td><td>2</td><td>—</td><td>—</td></tr>
-                    <tr><td>10th</td><td>+4</td><td class="left">Cunning Action</td><td>4</td><td>3</td><td>2</td><td>—</td><td>—</td></tr>
+                    <tr><td>10th</td><td>+4</td><td class="left">Quick Reflexes</td><td>4</td><td>3</td><td>2</td><td>—</td><td>—</td></tr>
                     <tr><td>11th</td><td>+4</td><td class="left">Hunter’s Prey feature</td><td>4</td><td>3</td><td>3</td><td>—</td><td>—</td></tr>
                     <tr><td>12th</td><td>+4</td><td class="left">Ability Score Improvement</td><td>4</td><td>3</td><td>3</td><td>—</td><td>—</td></tr>
                     <tr><td>13th</td><td>+5</td><td class="left">–––</td><td>4</td><td>3</td><td>3</td><td>1</td><td>—</td></tr>
@@ -110,10 +111,30 @@
             <div element="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_ABILITY_SCORE_IMPROVEMENT" />
             <div element="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_EXTRA_ATTACK" />
             <div element="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_HUNTERS_GUARD" />
-            <div element="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_CUNNING_ACTION" />
+            <div element="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_QUICK_REFLEXES" />
             <div element="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_COUNTERATTACK" />
             <div element="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_FERAL_SENSES" />
             <div element="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_FOE_SLAYER" />
+            <h3>MULTICLASSING</h3>
+            <p>As Hunter is a homebrew class, it has the potential to open up unforeseen synergies and interactions when multiclassed.</p>
+            <h4>PREREQUISITES</h4>
+            <p>To qualify for a new class, you must meet the ability score prerequisites for both your current class and your new one, as shown in the Multiclassing Prerequisites table.</p>
+            <h5 class="caption">MULTICLASSING PREREQUISITES</h5>
+            <table>
+                <thead>
+                    <tr><td>Class</td><td>Ability Score Minimum</td></tr>
+                </thead>
+                <tr><td>Hunter</td><td>Dexterity 13 and Wisdom 13</td></tr>
+            </table>
+            <h4>PROFICIENCIES</h4>
+            <p>When you gain a level in a class other than your first, you only gain some of that class’s starting proficiencies, as shown in the Multiclassing Proficiencies table.</p>
+            <h5 class="caption">MULTICLASSING PROFICIENCIES</h5>
+            <table>
+                <thead>
+                    <tr><td>Class</td><td>Proficiencies Granted</td></tr>
+                </thead>
+                <tr><td>Hunter</td><td>Light armor, medium armor, shields, simple weapons, martial weapons, one skill from the class’s skill list</td></tr>
+            </table>
         </description>
         <setters>
             <set name="short">A more flexible replacement class for the standard ranger.</set>
@@ -126,9 +147,9 @@
             <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
             <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
             <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" />
-            <select type="Proficiency" id="Skill Proficiency, Hunter" number="3" supports="Aeyana Hunter" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" requirements="!ID_AEYANA_HUNTER_MULTICLASS_HUNTER" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" requirements="!ID_AEYANA_HUNTER_MULTICLASS_HUNTER" />
+            <select type="Proficiency" id="Skill Proficiency, Hunter" number="3" supports="Aeyana Hunter" requirements="!ID_AEYANA_HUNTER_MULTICLASS_HUNTER"/>
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_NATURAL_EXPLORER" level="1" />
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_SWIFT_RESPONSE" level="1" />
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_FIGHTING_STYLE" level="2" />
@@ -138,11 +159,22 @@
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_ABILITY_SCORE_IMPROVEMENT" level="4" />
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_EXTRA_ATTACK" level="5" />
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_HUNTERS_GUARD" level="6" />
-            <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_CUNNING_ACTION" level="10" />
+            <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_QUICK_REFLEXES" level="10" />
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_COUNTERATTACK" level="14" />
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_FERAL_SENSES" level="18" />
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_FOE_SLAYER" level="20" />
         </rules>
+        <multiclass id="ID_AEYANA_HUNTER_MULTICLASS_HUNTER">
+            <prerequisite>Dexterity 13 and Wisdom 13</prerequisite>
+            <requirements>[dex:13],[wis:13]</requirements>
+            <setters>
+                <set name="multiclass proficiencies">Light armor, medium armor, shields, simple weapons, martial weapons, one skill from the class’s skill list</set>
+            </setters>
+            <rules>
+                <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+                <select type="Proficiency" id="Skill Proficiency, Hunter" supports="Aeyana Hunter" />
+            </rules>
+        </multiclass>
     </element>
         <element name="Natural Explorer" type="Class Feature" source="The Hunter" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_NATURAL_EXPLORER">
             <description>
@@ -179,19 +211,20 @@
         <element name="Fighting Style" type="Class Feature" source="The Hunter" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_FIGHTING_STYLE">
             <description>
                 <p>At 2nd level, you adopt a particular style of fighting as your specialty. Choose one of the following options. You can’t take the same Fighting Style option more than once, even if you get to choose again.</p>
-                <h5>ARCHERY</h5>
-                <p>You gain a +2 bonus to attack rolls you make with ranged weapons.</p>
-                <h5>DEFENSE</h5>
-                <p>While you are wearing armor, you gain a +1 bonus to AC.</p>
-                <h5>DUELING</h5>
-                <p>When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.</p>
-                <h5>TWO-WEAPON FIGHTING</h5>
-                <p>When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.</p>
+                <div element="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_ARCHERY" />
+                <div element="ID_WOTC_UA20191104_CLASS_FEATURE_BLIND_FIGHTING" />
+                <div element="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DEFENSE" />
+                <div element="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DUELING" />
+                <div element="ID_WOTC_UA20191104_CLASS_FEATURE_THROWN_WEAPON_FIGHTING" />
+                <div element="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_TWOWEAPON_FIGHTING" />
+                <div element="ID_WOTC_UA20191104_CLASS_FEATURE_UNARMED_FIGHTING" />
+                <div element="ID_WOTC_UA20191104_CLASS_FEATURE_MARTIAL_VERSATILITY" />
             </description>
             <sheet display="false">
                 <description></description>
             </sheet>
             <rules>
+                <grant type="Class Feature" id="ID_WOTC_UA20191104_CLASS_FEATURE_MARTIAL_VERSATILITY" />
     			<select type="Class Feature" name="Fighting Style" supports="Fighting Style, Aeyana Hunter" level="2"/>
             </rules>
         </element>
@@ -256,7 +289,7 @@
         </element>
         <element name="Hunter’s Prey" type="Class Feature" source="The Hunter" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_HUNTERS_PREY">
             <description>
-                <p>At 3rd level, you choose a prey that you focus your hunt on: Blood Hunter, Bounty Hunter, Colossus Slayer, Demon Slayer, Dragon Slayer, Horde Breaker, Mage Hunter, Plane Keeper, and Ranger; all detailed at the end of the class description. Your choice grants you features at 3rd level and again at 7th, 11th, and 15th level.</p>
+                <p>At 3rd level, you choose a prey that you focus your hunt on: Blood Hunter, Bounty Hunter, Colossus Slayer, Demon Slayer, Dragon Slayer, Horde Breaker, Mage Hunter, Night Stalker, Plane Keeper, and Ranger; all detailed at the end of the class description. Your choice grants you features at 3rd level and again at 7th, 11th, and 15th level.</p>
                 <h5>PREY SPELLS</h5>
                 <p>Each prey has a list of associated spells. You gain access to those spells at the levels specified in the prey description. Once you gain access to a prey spell, you always have it prepared. Prey spells don’t count against the number of spells you can prepare each day.</p>
                 <p class="indent">If you gain a prey spell that doesn’t appear on the hunter spell list, the spell is nonetheless a hunter spell for you.</p>
@@ -319,12 +352,13 @@
                 <description>When the target of your Hunter’s Mark hits you or a creature within 5 feet of you with an attack, you can impose a 1d6 penalty on the attack roll, potentially causing it to miss. Additionally, whenever the target of your Hunter’s Mark forces you to make a saving throw and whenever you make an ability check to escape that target’s grapple, you can use your reaction to add 1d6 to your roll.</description>
             </sheet>
         </element>
-        <element name="Cunning Action" type="Class Feature" source="The Hunter" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_CUNNING_ACTION">
+        <element name="Quick Reflexes" type="Class Feature" source="The Hunter" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_QUICK_REFLEXES">
             <description>
                 <p>Starting at 10th level, your quick thinking and agility allows you to move and act quickly. You can take the Dash, Disengage, or Hide action as a bonus action on your turn.</p>
+                <p class="indent">Additionally, when you roll initiative and are not surprised, you can use your reaction to take the Hide action, move up to your speed, or make one weapon attack.</p>
             </description>
             <sheet action="Bonus Action">
-                <description>You can take the Dash, Disengage, or Hide action.</description>
+                <description>You can take the Dash, Disengage, or Hide action. Additionally, when you roll initiative and are not surprised, you can use your reaction to take the Hide action, move up to your speed, or make one weapon attack.</description>
             </sheet>
         </element>
         <element name="Counterattack" type="Class Feature" source="The Hunter" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_COUNTERATTACK">
@@ -468,13 +502,18 @@
                 <ul>
                     <li>You have resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons that aren’t silvered.</li>
                     <li>A creature that hits you with a melee attack while within 5 feet of you takes 1d6 necrotic damage.</li>
+                    <li>When you hit a creature with a weapon attack, you regain hit points equal to your Constitution modifier (minimum of 1 hit point) if you have taken any damage since the end of your last turn.</li>
                 </ul>
                 <p class="indent">This curse lasts for 1 minute. It ends early if you are knocked unconscious. You can also end this curse on your turn as a bonus action.</p>
                 <p class="indent">Once you use this feature, you must finish a long rest before you can use it again.</p>
             </description>
             <sheet action="Bonus Action" usage="1/Long Rest">
-                <description>For 1 minute, you have resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons that aren’t silvered, and a creature that hits you with a melee attack while within 5 feet of you takes 1d6 necrotic damage.</description>
+                <description>For 1 minute, you have resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons that aren’t silvered, and a creature that hits you with a melee attack while within 5 feet of you takes 1d6 necrotic damage. When you hit a creature with a weapon attack, you regain {{blood-curse:hp}} hit points if you have taken any damage since the end of your last turn.</description>
             </sheet>
+            <rules>
+                <stat name="blood-curse:hp" value="1" bonus="base" />
+                <stat name="blood-curse:hp" value="constitution:modifier" bonus="base" />
+            </rules>
         </element>
 
     <element name="Bounty Hunter" type="Archetype" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_HUNTER_BOUNTY_HUNTER">
@@ -699,11 +738,11 @@
         </element>
         <element name="Coordinated Strike" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_COLOSSUS_SLAYER_COORDINATED_STRIKE">
             <description>
-                <p>At 11th level, you learn to coordinate your attacks with your allies on your quarry. When you use your Hunter’s Mark, you can expend an additional use of your Hunter’s Mark to choose a friendly creature within 60 feet of you. That creature’s weapon attacks also deal an extra 1d6 damage of the weapon’s type to the marked target.</p>
+                <p>At 11th level, you learn to coordinate your attacks with your allies on your quarry. When you use your Hunter’s Mark, you can choose a friendly creature within 60 feet of you. That creature’s weapon attacks also deal an extra 1d6 damage of the weapon’s type to the marked target.</p>
                 <p class="indent">This effect ends if you fall unconscious, use your Hunter’s Mark on another creature, or dismiss it as a bonus action.</p>
             </description>
             <sheet>
-                <description>When you use your Hunter’s Mark, you can expend an additional use of your Hunter’s Mark to choose a friendly creature within 60 feet of you. That creature’s weapon attacks also deal an extra 1d6 damage of the weapon’s type to the marked target.</description>
+                <description>When you use your Hunter’s Mark, you can choose a friendly creature within 60 feet of you. That creature’s weapon attacks also deal an extra 1d6 damage of the weapon’s type to the marked target.</description>
             </sheet>
         </element>
         <element name="Become Immense" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_COLOSSUS_SLAYER_BECOME_IMMENSE">
@@ -827,10 +866,10 @@
         </element>
         <element name="Regeneration" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_DEMON_SLAYER_REGENERATION">
             <description>
-                <p>At 15th level, your dealings with the unholy has imparted supernatural healing upon yourself. At the start of each of your turns, you gain temporary hit points equal to your Wisdom modifier. You lose these temporary hit points if exposed to sunlight.</p>
+                <p>At 15th level, your dealings with the unholy has imparted supernatural healing upon yourself. At the start of each of your turns, you gain temporary hit points equal to 1d6 plus your Wisdom modifier if you are not standing in sunlight.</p>
             </description>
             <sheet>
-                <description>At the start of each of your turns, you gain {{wisdom:modifier}} temporary hit points. You lose these temporary hit points if exposed to sunlight.</description>
+                <description>At the start of each of your turns, you gain 1d6 + {{wisdom:modifier}} temporary hit points if you are not standing in sunlight.</description>
             </sheet>
         </element>
 
@@ -1408,10 +1447,10 @@
             </element>
             <element name="Hunter’s Technique: Flurry" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_RANGER_HT_FLURRY">
                 <description>
-                    <p>When you miss with a weapon attack, you can expend a use of your Hunter’s Technique to make another weapon attack as part of the same action.</p>
+                    <p>When you miss with a weapon attack, you can expend a use of your Hunter’s Technique to make two additional weapon attack as part of the same action.</p>
                 </description>
                 <sheet usage="Hunter’s Technique" alt="Flurry">
-                    <description>When you miss with a weapon attack, you can make another weapon attack as part of the same action.</description>
+                    <description>When you miss with a weapon attack, you can make two additional weapon attack as part of the same action.</description>
                 </sheet>
             </element>
         <element name="Breath of the Wild" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_RANGER_BREATH_OF_THE_WILD">
@@ -1458,6 +1497,133 @@
             </sheet>
         </element>
 
+    <element name="Night Stalker" type="Archetype" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_HUNTER_NIGHT_STALKER">
+        <supports>Aeyana Hunters Prey</supports>
+        <description>
+            <p>Night Stalkers are at home in the darkest places: deep under the surface, in gloomy alleyways, in primeval forests, and wherever else the light dims. Most folk enter such places with trepidation, but a Night Stalker ventures boldly into the darkness, seeking to ambush the threats of the deep such as umberhulks, goblins, kobolds and ilithids. Such hunters are often found in the Underdark, but they will go any place where monsters lurk in the shadows.</p>
+            <div element="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_PREY_SPELLS" />
+            <div element="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_HUNTERS_TECHNIQUE" />
+            <div element="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_UMBRAL_SENSES" />
+            <div element="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_CLOAK_OF_DARKNESS" />
+            <div element="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_SYMPHONY_OF_THE_NIGHT" />
+            <div element="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_SHADOW_CLONE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_PREY_SPELLS" level="3" />
+            <grant type="Archetype Feature" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_HUNTERS_TECHNIQUE" level="3" />
+            <grant type="Archetype Feature" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_UMBRAL_SENSES" level="3" />
+            <grant type="Archetype Feature" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_CLOAK_OF_DARKNESS" level="7" />
+            <grant type="Archetype Feature" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_SYMPHONY_OF_THE_NIGHT" level="11" />
+            <grant type="Archetype Feature" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_SHADOW_CLONE" level="15" />
+        </rules>
+    </element>
+        <element name="Prey Spells" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_PREY_SPELLS">
+            <description>
+                <p>You gain prey spells at the hunter levels listed.</p>
+                <h5 class="caption">Night Stalker Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Hunter Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>alarm, detect poison and disease</em></td></tr>
+                    <tr><td>5th</td><td><em>darkvision, invisibility</em></td></tr>
+                    <tr><td>9th</td><td><em>clairvoyance, nondetection</em></td></tr>
+                    <tr><td>13th</td><td><em>greater invisibility, locate creature</em></td></tr>
+                    <tr><td>17th</td><td><em>mislead, passwall</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_ALARM" spellcasting="Hunter" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE" spellcasting="Hunter" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_DARKVISION" spellcasting="Hunter" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_INVISIBILITY" spellcasting="Hunter" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_CLAIRVOYANCE" spellcasting="Hunter" prepared="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_NONDETECTION" spellcasting="Hunter" prepared="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_GREATER_INVISIBILITY" spellcasting="Hunter" prepared="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_LOCATE_CREATURE" spellcasting="Hunter" prepared="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_MISLEAD" spellcasting="Hunter" prepared="true" level="17" />
+                <grant type="Spell" id="ID_PHB_SPELL_PASSWALL" spellcasting="Hunter" prepared="true" level="17" />
+            </rules>
+        </element>
+        <element name="Hunter’s Technique" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_HUNTERS_TECHNIQUE">
+            <description>
+                <p>When you choose this prey at 3rd level, you gain the following two Hunter’s Technique options.</p>
+                <p class="indent"><strong><em>Deceive Senses.</em></strong> As an action, you can expend a use of your Hunter’s Technique to trick the senses of a creature. Choose a creature within 30 feet of you. The target must succeed on a Wisdom saving throw or be unable to perceive you with sight, smell, hearing, blindsight, or tremorsense for 1 minute. It can repeat this saving throw at the end of each of its turns, ending the effect on a success.</p>
+                <p class="indent"><strong><em>Dread Ambush.</em></strong> When you roll initiative and are not surprised, or as a bonus action on your turn, you can expend a use of your Hunter’s Technique to cloak yourself with umbral magic for 1 minute. Until you cast a spell, force a creature to make a saving throw, or make a weapon attack, you are invisible and your speed increases by 10 feet.</p>
+                <p class="indent">If this effect ends due to making a weapon attack against a creature, the attack deals additional psychic damage equal to your hunter level.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_HT_DECEIVE_SENSES" level="3" />
+                <grant type="Archetype Feature" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_HT_DREAD_AMBUSH" level="3" />
+            </rules>
+        </element>
+            <element name="Hunter’s Technique: Deceive Senses" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_HT_DECEIVE_SENSES">
+                <description>
+                    <p>As an action, you can expend a use of your Hunter’s Technique to trick the senses of a creature. Choose a creature within 30 feet of you. The target must succeed on a Wisdom saving throw or be unable to perceive you with sight, smell, hearing, blindsight, or tremorsense for 1 minute. It can repeat this saving throw at the end of each of its turns, ending the effect on a success.</p>
+                </description>
+                <sheet usage="Hunter’s Technique" alt="Deceived Senses" action="Action">
+                    <description>Choose a creature within 30 feet of you. The target must succeed on a Wisdom saving throw or be unable to perceive you with sight, smell, hearing, blindsight, or tremorsense for 1 minute. It can repeat this saving throw at the end of each of its turns, ending the effect on a success.</description>
+                </sheet>
+            </element>
+            <element name="Hunter’s Technique: Dread Ambush" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_HT_DREAD_AMBUSH">
+                <description>
+                    <p>When you roll initiative and are not surprised, or as a bonus action on your turn, you can expend a use of your Hunter’s Technique to cloak yourself with umbral magic for 1 minute. Until you cast a spell, force a creature to make a saving throw, or make a weapon attack, you are invisible and your speed increases by 10 feet.</p>
+                    <p class="indent">If this effect ends due to making a weapon attack against a creature, the attack deals additional psychic damage equal to your hunter level.</p>
+                </description>
+                <sheet usage="Hunter’s Technique" alt="Dread Ambush">
+                    <description>When you roll initiative and are not surprised, or as a bonus action on your turn, you can cloak yourself with umbral magic for 1 minute. Until you cast a spell, force a creature to make a saving throw, or make a weapon attack, you are invisible and your speed increases by 10 feet. If this effect ends due to making a weapon attack against a creature, the attack deals additional {{level:hunter}} psychic damage.</description>
+                </sheet>
+            </element>
+        <element name="Umbral Senses" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_UMBRAL_SENSES">
+            <description>
+                <p>At 3rd level, your experience with dimly lit environments has allowed you to detect things even in low light. Dim light doesn’t impose disadvantage on checks that rely on sight.</p>
+                <p class="indent">Additionally, being unable to see a creature doesn’t impose disadvantage on your attack rolls against it, provided the creature isn’t hidden from you.</p>
+            </description>
+            <sheet>
+                <description>Dim light doesn’t impose disadvantage on checks that rely on sight. Additionally, being unable to see a creature doesn’t impose disadvantage on your attack rolls against it, provided the creature isn’t hidden from you.</description>
+            </sheet>
+        </element>
+        <element name="Cloak of Darkness" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_CLOAK_OF_DARKNESS">
+            <description>
+                <p>Beginning at 7th level, you can empty your mind to hide your presence. While in dim light or darkness, you are immune to any effect that would sense your emotions or read your thoughts and have resistances to psychic damage.</p>
+                <p class="indent">Additionally, while you are in darkness, you are invisible to any creature that relies on darkvision to see you in that darkness.</p>
+            </description>
+            <sheet>
+                <description>While in dim light or darkness, you are immune to any effect that would sense your emotions or read your thoughts and have resistances to psychic damage. Additionally, while you are in darkness, you are invisible to any creature that relies on darkvision to see you in that darkness.</description>
+            </sheet>
+        </element>
+        <element name="Symphony of the Night" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_SYMPHONY_OF_THE_NIGHT">
+            <description>
+                <p>Starting at 11th level, you can sing to the shadows around you, twisting them to encircle you. As a bonus action on your turn, you can exude an aura of darkness in a 30-foot radius around you until the start of your next turn. Any bright light within the aura becomes dim light, and any dim light becomes darkness.</p>
+                <p class="indent">Additionally, whenever you hit a creature that is in dim light or darkness with a weapon attack, the creature takes an extra 1d8 psychic damage.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can exude an aura of darkness in a 30-foot radius around you until the start of your next turn. Any bright light within the aura becomes dim light, and any dim light becomes darkness. Additionally, whenever you hit a creature that is in dim light or darkness with a weapon attack, the creature takes an extra 1d8 psychic damage.</description>
+            </sheet>
+        </element>
+        <element name="Shadow Clone" type="Archetype Feature" source="The Hunter" id="ID_AEYANA_HUNTER_ARCHETYPE_FEATURE_NIGHT_STALKER_SHADOW_CLONE">
+            <description>
+                <p>At 15th level, you have learned methods to deceive your prey, striking both their body and mind. As an action while you are standing in dim light or darkness, you can create a shadowy replica of yourself, which appears in your space and lasts until you dismiss it as a bonus action or use this feature again. The replica is instantly destroyed if it is exposed to bright light, if it is subject to fire or radiant damage, or is targeted by any effect that dispels magic.</p>
+                <p class="indent">The replica’s appearance, weight, size, and smell are identical to yours, and produces sounds as you do. It has no thoughts, and creatures with truesight can perceive it as a shadowy mass and are immune to the replica’s attacks. The replica is immune to all damage and effects, but reacts realistically to being struck. It can occupy the spaces of other creatures. On your turn, you can mentally command the replica to move up to 30 feet in any direction (no action required), to a space you can see.</p>
+                <p class="indent">While the replica is in your space, creatures that don’t have truesight or see the replica for what it is have disadvantage on attacks made against you. When you take the Attack action on your turn, you can attack as if you were in the replica’s space, but you must use your own senses. If you do so, the attack deals psychic damage instead of its normal type.</p>
+                <p class="indent">If a creature within 30 feet of the replica uses its action to examine it, the creature can make an Intelligence (Investigation) check against your spell save DC. On a success, the creature can perceive the replica as a mass of shadowy darkness, becomes unaffected by this particular replica’s attacks, and has advantage on Intelligence (Investigation) checks made to examine all replicas created by you for the next 24 hours.</p>
+                <p class="indent">Once you use this feature, you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet action="Action" usage="1/Short Rest">
+                <description>While you are standing in dim light or darkness, you can create a shadowy replica of yourself, which appears in your space and lasts until you dismiss it as a bonus action or use this feature again. While the replica is in your space, creatures that don’t have truesight or see the replica for what it is have disadvantage on attacks made against you. When you take the Attack action on your turn, you can attack as if you were in the replica’s space, but you must use your own senses. If you do so, the attack deals psychic damage instead of its normal type.</description>
+            </sheet>
+        </element>
+
+
 
   <!-- Hunter Skills -->
     <append id="ID_PROFICIENCY_SKILL_ANIMALHANDLING">
@@ -1498,6 +1664,16 @@
     <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_TWOWEAPON_FIGHTING">
         <supports>Aeyana Hunter</supports>
     </append>
+    <!-- UA Fighting Styles -->
+    <append id="ID_WOTC_UA20191104_CLASS_FEATURE_BLIND_FIGHTING">
+        <supports>Aeyana Hunter</supports>
+    </append>    
+    <append id="ID_WOTC_UA20191104_CLASS_FEATURE_THROWN_WEAPON_FIGHTING">
+        <supports>Aeyana Hunter</supports>
+    </append>    
+    <append id="ID_WOTC_UA20191104_CLASS_FEATURE_UNARMED_FIGHTING">
+        <supports>Aeyana Hunter</supports>
+    </append>    
 
   <!-- Hunter Spell List -->
     <append id="ID_XGTE_SPELL_ABSORB_ELEMENTS">
@@ -1707,7 +1883,7 @@
         <supports>Aeyana Hunter</supports>
         <description>
             <p>You gain the service of a familiar, a spirit that takes an animal form you choose, of a beast with a challenge rating of 1/2 or lower. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a celestial, fey, or fiend (your choice) instead of a beast.</p>
-            <p class="indent">Your familiar acts independently of you, but it always obeys your commands. In combat, it rolls its own initiative and acts on its own turn. When it hits a creature with a weapon attack, it is considered as one of your own weapon attacks for the purposes of spells and effects such as Hunter’s Mark.</p>
+            <p class="indent">Your familiar acts independently of you, but it always obeys your commands. In combat, it rolls its own initiative and acts on its own turn. Your familiar can use your spell attack modifier in place of its own modifier for weapon attacks, and its natural weapons count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. When it hits a creature with a weapon attack, it is considered as one of your own weapon attacks for the purposes of spells and effects such as Hunter’s Mark.</p>
             <p class="indent">When the familiar drops to 0 hit points, it disappears, leaving behind no physical form. It reappears after you cast this spell again.</p>
             <p class="indent">While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as an action, you can see through your familiar’s eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses that the familiar has. During this time, you are deaf and blind with regard to your own senses.</p>
             <p class="indent">As an action, you can temporarily dismiss your familiar. It disappears into a pocket dimension where it awaits your summons. Alternatively, you can dismiss it forever. As an action while it is temporarily dismissed, you can cause it to reappear in any unoccupied space within 30 feet of you.</p>
@@ -1860,5 +2036,26 @@
             <set name="isConcentration">false</set>
         </setters>
     </element>
-
+    <element name="Junglerazer" type="Spell" source="The Hunter" id="ID_AEYANA_HUNTER_SPELL_Junglerazer">
+        <supports>Aeyana Hunter, Druid</supports>
+        <description>
+            <p>You send forth a blast of withering magic, forming a line 100 feet long and 10 feet wide from you in a direction you choose. Each beast, fey, or plant creature in the line must make a Constitution saving throw. A creature takes 4d10 necrotic damage on a failed save, or half as much damage on a successful one.</p>
+            <p class="indent">The spell destroys nonmagical plants and vegetation in the area, clearing away any such difficult terrain caused by them and reducing them to ash. Plants created by the entangle or plant growth spells in the area are also destroyed.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d10 and the length of the line increases by 20 feet for each slot level above 3rd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">Necromancy</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (100-foot line)</set>
+            <set name="duration">Instantaneous</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a pinch of ash from a burnt plant</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
 </elements>
