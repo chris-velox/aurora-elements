@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Void Otherworldly Patron</name>
+        <update version="0.0.1">
+            <file name="warlock-the-void.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-the-void.xml" />
+        </update>
+    </info>
+    
+    <element name="Otherworldly Patron: The Void" type="Source" source="Core" id="ID_CC_RDDTUA_SOURCE_THE_VOID">
+        <description>
+            <![CDATA[<p>Otherwordly Patron: The Void - Wield the power of absolute nothingness with this warlock subclass</p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">TVOP</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/Bn7zfBSoZ</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="CC" url="https://www.reddit.com/user/ChromosomeChorus/">u/ChromosomeChorus</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200425</set>
+        </setters>
+    </element>
+
+    <element name="The Void" type="Archetype" source="Otherworldly Patron: The Void" id="ID_CC_THE_VOID_ARCHETYPE_WARLOCK_THE_VOID">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Your patron is the void, the absolute nothingness, the complete absence of existance itself a concept so unintelligible no mortal mind can comprehend it. The minds of mortals although incapable of grasping it seem inexorably tied to it for the concept exists in our minds in spite of its impossibility, but it is no mere thought exercise. Such a thing is anathema to all of creation it distorts the flow of times and the laws of physics, its touch twists reality whenever the two come into contact creating horrors that blight existance things that should not be and yet are.</p>
+            <div element="ID_CC_THE_VOID_ARCHETYPE_FEATURE_EXPANDED_SPELL_LIST" />
+            <div element="ID_CC_THE_VOID_ARCHETYPE_FEATURE_TWISTED_LIFE" />
+            <div element="ID_CC_THE_VOID_ARCHETYPE_FEATURE_ONE_WITH_NOTHING" />
+            <div element="ID_CC_THE_VOID_ARCHETYPE_FEATURE_VOID_BEING" />
+            <div element="ID_CC_THE_VOID_ARCHETYPE_FEATURE_UNCANNY_MOTIONS" />
+            <div element="ID_CC_THE_VOID_ARCHETYPE_FEATURE_VOID_AURA" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_TWISTED_LIFE" level="1" />
+            <grant type="Archetype Feature" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_ONE_WITH_NOTHING" level="1" />
+            <grant type="Archetype Feature" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_VOID_BEING" level="6" />
+            <grant type="Archetype Feature" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_UNCANNY_MOTIONS" level="10" />
+            <grant type="Archetype Feature" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_VOID_AURA" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="Otherworldly Patron: The Void" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Void lets you choose from an expanded spell list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">VOID EXPANDED SPELL LIST</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>inflict wounds, magnify gravity</em></td></tr>
+                    <tr><td>2nd</td><td><em>blindness/deafness, phantasmal force</em></td></tr>
+                    <tr><td>3rd</td><td><em>blink, pulse wave</em></td></tr>
+                    <tr><td>4th</td><td><em>gravity sinkhole, phantasmal killer</em></td></tr>
+                    <tr><td>5th</td><td><em>antilife shell, temporal shunt</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_INFLICT_WOUNDS</extend>
+                <extend>ID_WOTC_EGTW_SPELL_MAGNIFY_GRAVITY</extend>
+                <extend>ID_PHB_SPELL_BLINDNESS_DEAFNESS</extend>
+                <extend>ID_PHB_SPELL_PHANTASMAL_FORCE</extend>
+                <extend>ID_PHB_SPELL_BLINK</extend>
+                <extend>ID_WOTC_EGTW_SPELL_PULSE_WAVE</extend>
+                <extend>ID_WOTC_EGTW_SPELL_GRAVITY_SINKHOLE</extend>
+                <extend>ID_PHB_SPELL_PHANTASMAL_KILLER</extend>
+                <extend>ID_PHB_SPELL_ANTILIFE_SHELL</extend>
+                <extend>ID_WOTC_EGTW_SPELL_TEMPORAL_SHUNT</extend>
+            </spellcasting>
+        </element>
+        <element name="Twisted Life" type="Archetype Feature" source="Otherworldly Patron: The Void" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_TWISTED_LIFE">
+            <description>
+                <p>At 1st level, you have been touched by the void and it has changed you both physically and mentally. You learn how to speak Deep Speech and your creature type becomes aberration in place of your original creature type.</p>
+            </description>
+            <sheet>
+                <description>Your creature type is aberration.</description>
+            </sheet>
+            <rules>
+                <grant type="Language" id="ID_LANGUAGE_DEEP_SPEECH" />
+            </rules>
+        </element>
+        <element name="One With Nothing" type="Archetype Feature" source="Otherworldly Patron: The Void" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_ONE_WITH_NOTHING">
+            <description>
+                <p>Also at 1st level, you skirt the edge of non-existance making it hard for creatures to become aware of you. If a creature has interacted with you for less than 1 hour in the past 24 hours, it has disadvantage on all Intelligence checks to recall information about you and on Wisdom (Perception) checks made to become aware of your presence.</p>
+            </description>
+            <sheet>
+                <description>If a creature has interacted with you for less than 1 hour in the past 24 hours, it has disadvantage on all Intelligence checks to recall information about you and on Perception checks made to become aware of your presence.</description>
+            </sheet>
+        </element>
+        <element name="Void Being" type="Archetype Feature" source="Otherworldly Patron: The Void" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_VOID_BEING">
+            <description>
+                <p>Starting at 6th level the void suffuses your being and reality slightly shifts around you. You gain resistance to cold damage. Additionally, you have a 15-foot aura of darkness around you which nonmagical light can't penetrate. All creatures within the aura have their speed halved and nonmagical light sources are snuffed out. You can summon and dismiss this aura as a bonus action, and creatures you choose can see and move normally within it.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can summon and dismiss a 15-foot radius aura of darkness around you which nonmagical light can't penetrate. All creatures within the aura have their speed halved and nonmagical light sources are snuffed out.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+            </rules>
+        </element>
+        <element name="Uncanny Motions" type="Archetype Feature" source="Otherworldly Patron: The Void" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_UNCANNY_MOTIONS">
+            <description>
+                <p>Beginning at 10th level, the laws of physics don't apply to your form. You gain a climbing speed equal to your walking speed and gain the ability to move up, down, and across vertical surfaces and upside down on ceilings, while leaving your hands free.</p>
+                <p class="indent">Additionally, when you move you can instead fall in any direction of your choice, including upwards in place of your regular movement. Once you choose a direction in which to fall, you can't do so again until you come into contact with a surface to stand on. You are immune to falling damage when you fall in this way. If you spend all of your movement and have not found a surface to stand on, you begin falling to the ground normally.</p>
+            </description>
+            <sheet>
+                <description>You have the ability to move up, down, and across vertical surfaces and upside down on ceilings, while leaving your hands free. Additionally, when you move you can instead fall in any direction of your choice, including upwards in place of your regular movement. Once you choose a direction in which to fall, you can't do so again until you come into contact with a surface to stand on. You are immune to falling damage when you fall in this way. If you spend all of your movement and have not found a surface to stand on, you begin falling to the ground normally.</description>
+            </sheet>
+            <rules>
+                <stat name="speed:climb" value="speed" bonus="base" />
+            </rules>
+        </element>
+        <element name="Void Aura" type="Archetype Feature" source="Otherworldly Patron: The Void" id="ID_CC_THE_VOID_ARCHETYPE_FEATURE_VOID_AURA">
+            <description>
+                <p>At 14th level you can manifest a fragment of the void. While the aura granted by your Void Being feature is active, you can use an Action to increase the range of the aura to 20 feet and have the darkness within it become absolute blackness that no light, magical or otherwise can illuminate. All creatures within the aura, except for the ones you choose, are blinded and deafened while inside the area and take 3d8 cold damage when they start their turns within it. These effects last for 1 minute or until you choose to end them (no action required). Once you use this feature you can't use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>While the aura granted by your Void Being feature is active, you can increase the range of the aura to 20 feet and have the darkness within it become absolute blackness that no light, magical or otherwise can illuminate. All creatures within the aura, except for the ones you choose, are blinded and deafened while inside the area and take 3d8 cold damage when they start their turns within it. These effects last for 1 minute or until you choose to end them (no action required).</description>
+            </sheet>
+        </element>
+    
+</elements>
