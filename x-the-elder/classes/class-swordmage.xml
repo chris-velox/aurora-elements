@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Swordmage Class v4.0</name>
-        <update version="0.0.1">
+        <name>Swordmage Class v4.1</name>
+        <update version="0.0.2">
             <file name="class-swordmage.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-swordmage.xml" />
         </update>
     </info>
@@ -13,7 +13,8 @@
         </description>
         <setters>
             <set name="abbreviation"></set>
-            <set name="url">https://drive.google.com/file/d/1yhPCvmRohuPCmD2l1KwnkzKjftGQ5z16/view</set>
+            <set name="url">https://drive.google.com/file/d/1J1bshfjrYiGjn_d8D3gD3hy3wTeE2k7v/view</set>
+            <!--v 4.0: set name="url">https://drive.google.com/file/d/1yhPCvmRohuPCmD2l1KwnkzKjftGQ5z16/view</set-->
             <set name="image"></set>
             <set name="author" abbreviation="FAN66" url="https://www.reddit.com/user/fanatic66/">u/fanatic66</set>
             <set name="official">false</set>
@@ -97,8 +98,8 @@
             <div element="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_ARCANE_WEAPON" />
             <div element="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_SPELLCASTING" />
             <div element="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_AEGIS" />
-            <div element="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_ENSPELL_BLADE" />
             <div element="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_FIGHTING_STYLE" />
+            <div element="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_GREATER_ARCANE_WEAPON" />
             <div element="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_SWORDMAGE_ARCHETYPE" />
             <div element="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_WEAPON_LORE" />
             <div element="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_ABILITY_SCORE_IMPROVEMENT" />
@@ -123,7 +124,6 @@
         <rules>
             <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
             <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
             <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
             <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
             <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" requirements="!ID_FAN66_SWORDMAGE_MULTICLASS_SWORDMAGE" />
@@ -132,8 +132,8 @@
             <grant type="Class Feature" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_ARCANE_WEAPON" level="1" />
             <grant type="Class Feature" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_SPELLCASTING" level="1" />
             <grant type="Class Feature" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_AEGIS" level="2" />
-            <grant type="Class Feature" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_ENSPELL_BLADE" level="2" />
             <grant type="Class Feature" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_FIGHTING_STYLE" level="2" />
+            <grant type="Class Feature" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_GREATER_ARCANE_WEAPON" level="3" />
             <grant type="Class Feature" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_SWORDMAGE_ARCHETYPE" level="3" />
             <grant type="Class Feature" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_WEAPON_LORE" level="3" />
             <grant type="Class Feature" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_ABILITY_SCORE_IMPROVEMENT" level="4" />
@@ -156,12 +156,15 @@
         <element name="Arcane Weapon" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_ARCANE_WEAPON">
             <description>
                 <p>At 1st level, you channel your arcane power through a chosen weapon. You can transform a melee weapon into your Arcane Weapon by by performing a special ritual while you hold the weapon. The ritual takes over the course of 1 hour, which can be done during a short rest.</p>
-                <p class="indent">Once you have bonded to your Arcane Weapon, it counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. You can't be disarmed of that weapon unless you are incapacitated. If it is on the same plane of existence, you can summon that weapon as an action on your turn, causing it to teleport instantly to your hand.</p>
+                <p class="indent">Once you are bonded to your Arcane Weapon, you can use it as a spellcasting focus for your swordmage spells. You can also channel abjuring magic through your Arcane Weapon to ward yourself. If you are wielding your Arcane Weapon in one hand, and your other hand is free of a weapon or shield, then you get a magical +1 bonus to your AC.</p>
                 <p class="indent">The weapon ceases being your Arcane Weapon if you die, if you perform the 1-hour ritual on a different melee weapon, or if you use a 1-hour ritual to break your bond to it.</p>
             </description>
             <sheet>
-                <description>You can transform a melee weapon into your Arcane Weapon by by performing a special ritual while you hold the weapon. The ritual takes over the course of 1 hour, which can be done during a short rest. It counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. You can't be disarmed of that weapon unless you are incapacitated. If it is on the same plane of existence, you can summon that weapon as an action on your turn, causing it to teleport instantly to your hand.</description>
+                <description>You can transform a melee weapon into your Arcane Weapon by by performing a special ritual while you hold the weapon. The ritual takes over the course of 1 hour, which can be done during a short rest. If you are wielding your Arcane Weapon in one hand, and your other hand is free of a weapon or shield, then you get a magical +1 bonus to your AC.</description>
             </sheet>
+            <rules>
+                
+            </rules>
         </element>
         <element name="Spellcasting" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_SPELLCASTING">
             <description>
@@ -169,7 +172,7 @@
                 <h5>SPELL SLOTS</h5>
                 <p>The Swordmage table shows how many spell slots you have to cast your swordmage spells of 1st level and higher. To cast one of these swordmage spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
                 <h5>SPELLS KNOWN OF 1ST LEVEL AND HIGHER</h5>
-                <p>Starting at 2nd level, you know two 1st-level spells of your choice from the swordmage spell list.</p>
+                <p>You know two 1st-level spells of your choice from the swordmage spell list.</p>
                 <p class="indent">The Spells Known column of the Swordmage table shows when you learn more swordmage spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.</p>
                 <p class="indent">Additionally, when you gain a level in this class, you can choose one of the swordmage spells you know and replace it with another spell from the swordmage spell list, which also must be of a level for which you have spell slots.</p>
                 <h5>SPELLCASTING ABILITY</h5>
@@ -193,7 +196,7 @@
                 <select type="Spell" name="Cantrip (Swordmage)" supports="Swordmage,0" number="2" level="1" spellcasting="Swordmage" known="true" />
                 <select type="Spell" name="Cantrip (Swordmage)" supports="Swordmage,0" level="10" spellcasting="Swordmage" known="true" />
                 <select type="Spell" name="Cantrip (Swordmage)" supports="Swordmage,0" level="14" spellcasting="Swordmage" known="true" />
-                <stat name="swordmage:spellcasting:slots:1" value="2" level="2" />
+                <stat name="swordmage:spellcasting:slots:1" value="2" level="1" />
                 <stat name="swordmage:spellcasting:slots:1" value="1" level="3" />
                 <stat name="swordmage:spellcasting:slots:1" value="1" level="5" />
                 <stat name="swordmage:spellcasting:slots:2" value="2" level="5" />
@@ -205,7 +208,8 @@
                 <stat name="swordmage:spellcasting:slots:4" value="1" level="17" />
                 <stat name="swordmage:spellcasting:slots:5" value="1" level="17" />
                 <stat name="swordmage:spellcasting:slots:5" value="1" level="19" />
-                <select type="Spell" name="Spellcasting (Swordmage)" supports="$(spellcasting:list),$(spellcasting:slots)" level="2" number="2" spellcasting="Swordmage"/>
+                <select type="Spell" name="Spellcasting (Swordmage)" supports="$(spellcasting:list),$(spellcasting:slots)" level="1" number="2" spellcasting="Swordmage"/>
+                <select type="Spell" name="Spellcasting (Swordmage)" supports="$(spellcasting:list),$(spellcasting:slots)" level="2" spellcasting="Swordmage" />
                 <select type="Spell" name="Spellcasting (Swordmage)" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" spellcasting="Swordmage" />
                 <select type="Spell" name="Spellcasting (Swordmage)" supports="$(spellcasting:list),$(spellcasting:slots)" level="5" spellcasting="Swordmage" />
                 <select type="Spell" name="Spellcasting (Swordmage)" supports="$(spellcasting:list),$(spellcasting:slots)" level="7" spellcasting="Swordmage" />
@@ -219,15 +223,15 @@
         </element>
         <element name="Aegis" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_AEGIS">
             <description>
-                <p>At 2nd level, you can use your Arcane Weapon to empower yourself with a magical dweomer called an Aegis. You can use a bonus action to activate your Aegis on yourself. The Aegis lasts for 1 minute or until you activate Aegis again or you end this effect on your turn as part of any other action. If you fall unconscious, your Aegis ends.</p>
+                <p>Starting at 2nd level, you can use your Arcane Weapon to empower yourself with a magical dweomer called an Aegis. You can use a bonus action to activate your Aegis on yourself. The Aegis lasts for 1 minute or until you activate Aegis again or you end this effect on your turn as part of any other action. If you fall unconscious, your Aegis ends.</p>
                 <p class="indent">You start off knowing the below Aegis types that you can pick from when you activate your Aegis:</p>
                 <ul>
-                    <li><strong>Aegis of Shielding:</strong> While this Aegis is active, you can magically shield yourself from danger. When you activate this Aegis, you gain 1d4 temporary hit points. On later turns, you can use your bonus action to also gain 1d4 temporary hit points. At higher levels of this class the temporary hit points gained increases to 2d4 at 6th level, 3d4 at 10th level, 4d4 at 14th level, and 5d4 at 18th level.</li>
-                    <li><strong>Aegis of Assault:</strong> While this Aegis is active, you can teleport around the battlefield. When you activate this Aegis, you can teleport up to 10 feet to an unoccupied space that you can see. On later turns, you can use your bonus action to also teleport the same distance. At higher levels of this class the teleportation distance increases to 15 feet at at 6th level, 20 feet at 10th level, 25 feet at 14th level, and 30 feet at 18th level.</li>
+                    <li><strong>Aegis of Shielding:</strong> While this Aegis is active, you can shield yourself from harm. When you take damage, you can use your reaction to reduce the damage taken by 1d6. At higher levels of this class, the damage reduction increases to 2d6 at 6th level, 3d6 at 10th level, 4d6 at 14th level, and 5d6 at 18th level.</li>
+                    <li><strong>Aegis of Assault:</strong> When you activate this Aegis, you can teleport up to 20 feet to an unoccupied space that you can see. On later turns, you can use your bonus action to teleport the same distance. After teleporting, the first melee weapon attack you make with your Arcane Weapon before the end of the turn deals an additional 2 force damage. At higher levels of this class, the additional damage and teleportation distance increase to 3 and 30 feet at 6th level, 4 and 40 feet at 10th level, 5 and 50 feet at 14th level, and 6 and 60 feet and at 18th level.</li>
                 </ul>
                 <p class="indent">Once you have used Aegis the number of times shown for your swordmage level in the Aegis Uses column of the Swordmage table, you must finish a long rest before you can use your Aegis again.</p>
             </description>
-            <sheet>
+            <sheet action="Bonus Action">
                 <description usage="{{aegis:uses}}/Long Rest">You can activate an Aegis. The Aegis lasts for 1 minute.</description>
                 <description usage="Unlimited">You can activate an Aegis. The Aegis lasts for 1 minute.</description>
             </sheet>
@@ -244,43 +248,40 @@
             <element name="Aegis of Shielding" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_AEGIS_OF_SHIELDING">
                 <compendium display="false" />
                 <description>
-                    <p>While this Aegis is active, you can magically shield yourself from danger. When you activate this Aegis, you gain 1d4 temporary hit points. On later turns, you can use your bonus action to also gain 1d4 temporary hit points. At higher levels of this class the temporary hit points gained increases to 2d4 at 6th level, 3d4 at 10th level, 4d4 at 14th level, and 5d4 at 18th level.</p>
+                    <p>While this Aegis is active, you can shield yourself from harm. When you take damage, you can use your reaction to reduce the damage taken by 1d6. At higher levels of this class, the damage reduction increases to 2d6 at 6th level, 3d6 at 10th level, 4d6 at 14th level, and 5d6 at 18th level.</p>
                 </description>
-                <sheet usage="Aegis" action="Bonus Action">
-                    <description>When you activate this Aegis, you gain {{aegis-of-shielding:temp-hp-dice}}d4 temporary hit points. On later turns, you can use your bonus action to also gain {{aegis-of-shielding:temp-hp-dice}}d4 temporary hit points.</description>
+                <sheet usage="Aegis" action="Reaction">
+                    <description>While this Aegis is active, you can shield yourself from harm. When you take damage, you can use your reaction to reduce the damage taken by {{aegis-of-shielding:reduction-dice}}d6.</description>
                 </sheet>
                 <rules>
-                    <stat name="aegis-of-shielding:temp-hp-dice" value="1" level="2" />
-                    <stat name="aegis-of-shielding:temp-hp-dice" value="1" level="6" />
-                    <stat name="aegis-of-shielding:temp-hp-dice" value="1" level="10" />
-                    <stat name="aegis-of-shielding:temp-hp-dice" value="1" level="14" />
-                    <stat name="aegis-of-shielding:temp-hp-dice" value="1" level="18" />
+                    <stat name="aegis-of-shielding:reduction-dice" value="1" level="2" />
+                    <stat name="aegis-of-shielding:reduction-dice" value="1" level="6" />
+                    <stat name="aegis-of-shielding:reduction-dice" value="1" level="10" />
+                    <stat name="aegis-of-shielding:reduction-dice" value="1" level="14" />
+                    <stat name="aegis-of-shielding:reduction-dice" value="1" level="18" />
                 </rules>
             </element>
             <element name="Aegis of Assault" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_AEGIS_OF_ASSAULT">
                 <compendium display="false" />
                 <description>
-                    <p>While this Aegis is active, you can teleport around the battlefield. When you activate this Aegis, you can teleport up to 10 feet to an unoccupied space that you can see. On later turns, you can use your bonus action to also teleport the same distance. At higher levels of this class the teleportation distance increases to 15 feet at at 6th level, 20 feet at 10th level, 25 feet at 14th level, and 30 feet at 18th level.</p>
+                    <p>When you activate this Aegis, you can teleport up to 20 feet to an unoccupied space that you can see. On later turns, you can use your bonus action to teleport the same distance. After teleporting, the first melee weapon attack you make with your Arcane Weapon before the end of the turn deals an additional 2 force damage. At higher levels of this class, the additional damage and teleportation distance increase to 3 and 30 feet at 6th level, 4 and 40 feet at 10th level, 5 and 50 feet at 14th level, and 6 and 60 feet and at 18th level.</p>
                 </description>
-                <sheet usage="Aegis" action="Bonus Action">
-                    <description>When you activate this Aegis, you can teleport up to {{aegis-of-assault:range}} feet to an unoccupied space that you can see. On later turns, you can use your bonus action to also teleport the same distance.</description>
+                <sheet usage="Aegis">
+                    <description>When you activate this Aegis, you can teleport up to {{aegis-of-assault:range}} feet to an unoccupied space that you can see. After teleporting, the first melee weapon attack you make with your Arcane Weapon before the end of the turn deals an additional {{aegis-of-assault:damage}} force damage.</description>
                 </sheet>
                 <rules>
-                    <stat name="aegis-of-assault:range" value="10" level="2" />
-                    <stat name="aegis-of-assault:range" value="5" level="6" />
-                    <stat name="aegis-of-assault:range" value="5" level="10" />
-                    <stat name="aegis-of-assault:range" value="5" level="14" />
-                    <stat name="aegis-of-assault:range" value="5" level="18" />
+                    <stat name="aegis-of-assault:range" value="20" level="2" />
+                    <stat name="aegis-of-assault:range" value="10" level="6" />
+                    <stat name="aegis-of-assault:range" value="10" level="10" />
+                    <stat name="aegis-of-assault:range" value="10" level="14" />
+                    <stat name="aegis-of-assault:range" value="10" level="18" />
+                    <stat name="aegis-of-assault:damage" value="2" level="2" />
+                    <stat name="aegis-of-assault:damage" value="1" level="6" />
+                    <stat name="aegis-of-assault:damage" value="1" level="10" />
+                    <stat name="aegis-of-assault:damage" value="1" level="14" />
+                    <stat name="aegis-of-assault:damage" value="1" level="18" />
                 </rules>
             </element>
-        <element name="Enspell Blade" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_ENSPELL_BLADE">
-            <description>
-                <p>Beginning at 2nd level, after casting a spell of 1st level or higher, you siphon the residual energy from the spell onto your Arcane Weapon. Until the end of your next turn, your next melee weapon attack that hits deals additional force damage. The extra damage is 1d6 for a 1st-level spell slot, plus 1d6 for each spell level higher than 1st, to a maximum of 4d6.</p>
-            </description>
-            <sheet>
-                <description>After casting a spell of 1st level or higher, you siphon the residual energy from the spell onto your Arcane Weapon. Until the end of your next turn, your next melee weapon attack that hits deals additional force damage. The extra damage is 1d6 for a 1st-level spell slot, plus 1d6 for each spell level higher than 1st, to a maximum of 4d6.</description>
-            </sheet>
-        </element>
         <element name="Fighting Style" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_FIGHTING_STYLE">
             <description>
                 <p>At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again.</p>
@@ -299,6 +300,15 @@
             <rules>
                 <select type="Class Feature" name="Fighting Style" supports="Fighting Style, Swordmage" />
             </rules>
+        </element>
+        <element name="Greater Arcane Weapon" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_GREATER_ARCANE_WEAPON">
+            <description>
+                <p>At 3rd level, your bond with your Arcane Weapon grows stronger. Your Arcane Weapon counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. You can't be disarmed of your Arcane Weapon unless you are incapacitated. If it is on the same plane of existence, you can summon your Arcane Weapon as an action on your turn, causing it to teleport instantly to your hand.</p>
+                <p>Through the process of empowering your Arcane Weapon, you have studied the lore of magical warfare. You have advantage on Intelligence checks to recall information on magical weapons and armor.</p>
+            </description>
+            <sheet>
+                <description>Your Arcane Weapon counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. You can't be disarmed of your Arcane Weapon unless you are incapacitated. If it is on the same plane of existence, you can summon your Arcane Weapon as an action on your turn, causing it to teleport instantly to your hand. You have advantage on Intelligence checks to recall information on magical weapons and armor.</description>
+            </sheet>
         </element>
         <element name="Swordmage Archetype" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_SWORDMAGE_ARCHETYPE">
             <description>
@@ -348,11 +358,11 @@
         </element>
         <element name="Flexible Aegis" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_FLEXIBLE_AEGIS">
             <description>
-                <p>When you reach 6th level, you can readily change your Aegis with your magic. If you have your Aegis activated, you can use your bonus action to switch your Aegis from one type to another. Switching your type of Aegis does not end your current Aegis.</p>
-                <p class="indent">After you cast a spell of 1st level or higher and have your Aegis activated, you can switch your Aegis type without using a bonus action.</p>
+                <p>When you reach 6th level, you can readily change your Aegis with your magic. Once your Aegis is activated, you can use your bonus action to switch your Aegis from one type to another. Alternately, when you cast a spell of 1st level or higher on your turn with your Aegis activated, you can switch your Aegis type as part of the same action used to cast the spell.</p>
+                <p class="indent">Switching Aegis type in this manner doesn't count as a new use of your Aegis, with the duration lasting 1 minute from when your Aegis was first activated.</p>
             </description>
             <sheet action="Bonus Action">
-                <description>If you have your Aegis activated, you can use your bonus action to switch your Aegis from one type to another. Switching your type of Aegis does not end your current Aegis. After you cast a spell of 1st level or higher and have your Aegis activated, you can switch your Aegis type without using a bonus action.</description>
+                <description>Once your Aegis is activated, you can use your bonus action to switch your Aegis from one type to another. Alternately, when you cast a spell of 1st level or higher on your turn with your Aegis activated, you can switch your Aegis type as part of the same action used to cast the spell.</description>
             </sheet>
         </element>
         <element name="Greater Blade Magic" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_GREATER_BLADE_MAGIC">
@@ -400,7 +410,7 @@
         <element name="Aegis Expansion" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_CRIMSON_KNIGHT_AEGIS_EXPANSION">
             <description>
                 <p>When you take this archetype at 3rd level, you gain a new type of Aegis:</p>
-                <p class="indent"><strong>Aegis of Blood:</strong> When you regain hit points or gain temporary hit points while this Aegis is active, you gain extra points equal to your Intelligence modifier (a minimum of 1).</p>
+                <p class="indent"><strong>Aegis of Blood:</strong> When you regain hit points or gain temporary hit points while this Aegis is active, you gain 2 extra points. At higher levels of this class, the extra points increase to 3 at 6th level, 4 at 10th level, 5 at 14th level, and 6 at 18th level.</p>
             </description>
             <sheet display="false">
                 <description></description>
@@ -412,14 +422,17 @@
             <element name="Aegis of Blood" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_AEGIS_OF_BLOOD">
                 <compendium display="false" />
                 <description>
-                    <p>When you regain hit points or gain temporary hit points while this Aegis is active, you gain extra points equal to your Intelligence modifier (a minimum of 1).</p>
+                    <p>When you regain hit points or gain temporary hit points while this Aegis is active, you gain 2 extra points. At higher levels of this class, the extra points increase to 3 at 6th level, 4 at 10th level, 5 at 14th level, and 6 at 18th level.</p>
                 </description>
                 <sheet usage="Aegis">
                     <description>When you regain hit points or gain temporary hit points while this Aegis is active, you gain {{aegis-of-blood:temp-hp}} extra points.</description>
                 </sheet>
                 <rules>
-                    <stat name="aegis-of-blood:temp-hp" value="1" bonus="base" />
-                    <stat name="aegis-of-blood:temp-hp" value="intelligence:modifier" bonus="base" />
+                    <stat name="aegis-of-blood:temp-hp" value="2" level="3" />
+                    <stat name="aegis-of-blood:temp-hp" value="1" level="6" />
+                    <stat name="aegis-of-blood:temp-hp" value="1" level="10" />
+                    <stat name="aegis-of-blood:temp-hp" value="1" level="14" />
+                    <stat name="aegis-of-blood:temp-hp" value="1" level="18" />
                 </rules>
             </element>
         <element name="Archetype Spells" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_CRIMSON_KNIGHT_ARCHETYPE_SPELLS">
@@ -544,7 +557,7 @@
                     </thead>
                     <tr><td>3rd</td><td><em>disguise self</em></td></tr>
                     <tr><td>5th</td><td><em>invisibility</em></td></tr>
-                    <tr><td>9th</td><td><em>major image</em></td></tr>
+                    <tr><td>9th</td><td><em>enemies abound</em></td></tr>
                     <tr><td>13th</td><td><em>greater invisibility</em></td></tr>
                     <tr><td>17th</td><td><em>dominate person</em></td></tr>
                 </table>
@@ -555,7 +568,7 @@
             <rules>
                 <grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" spellcasting="Swordmage" known="true" level="3" />
                 <grant type="Spell" id="ID_PHB_SPELL_INVISIBILITY" spellcasting="Swordmage" known="true" level="5" />
-                <grant type="Spell" id="ID_PHB_SPELL_MAJOR_IMAGE" spellcasting="Swordmage" known="true" level="9" />
+                <grant type="Spell" id="ID_XGTE_SPELL_ENEMIES_ABOUND" spellcasting="Swordmage" known="true" level="9" />
                 <grant type="Spell" id="ID_PHB_SPELL_GREATER_INVISIBILITY" spellcasting="Swordmage" known="true" level="13" />
                 <grant type="Spell" id="ID_PHB_SPELL_DOMINATE_PERSON" spellcasting="Swordmage" known="true" level="17" />
             </rules>
@@ -657,13 +670,14 @@
         <element name="Air Attunement" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_AIR_ATTUNEMENT">
             <description>
                 <p>You attune to the elemental plane of air. Your Elemental Attunement gives you a new type of Aegis and grants you additional spells.</p>
-                <p class="indent"><strong>Aegis of Elements:</strong> While this Aegis is active, your Arcane Weapon deals an extra 1d4 lightning damage. At higher levels of this class the extra damage increases to 1d6 at at 6th level, 1d8 at 10th level, 1d10 at 14th level, and 1d12 at 18th level. You learn the gust cantrip and gain archetype spells at the swordmage level listed below.</p>
+                <p class="indent"><strong>Aegis of Elements:</strong> While this Aegis is active, the first creature you hit on each of your turns with a melee weapon attack using your Arcane Weapon takes extra damage equal to 1d4 + half your swordmage level (rounded down).</p>
+                <p class="indent">You learn the <em>gust</em> cantrip and gain archetype spells at the swordmage level listed below.</p>
                 <h5 class="caption">AIR ELEMENTALIST SPELLS</h5>
                 <table>
                     <thead>
                         <tr><td>Swordmage Level</td><td>Spells</td></tr>
                     </thead>
-                    <tr><td>3rd</td><td><em>thunderwave</em></td></tr>
+                    <tr><td>3rd</td><td><em>thunderous smite</em></td></tr>
                     <tr><td>5th</td><td><em>warding wind</em></td></tr>
                     <tr><td>9th</td><td><em>lightning bolt</em></td></tr>
                     <tr><td>13th</td><td><em>storm sphere</em></td></tr>
@@ -676,7 +690,7 @@
             <rules>
                 <grant type="Archetype Feature" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_AEGIS_OF_ELEMENTS_AIR" />
                 <grant type="Spell" id="ID_XGTE_SPELL_GUST" spellcasting="Swordmage" known="true" level="3" />
-                <grant type="Spell" id="ID_PHB_SPELL_THUNDERWAVE" spellcasting="Swordmage" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_THUNDEROUS_SMITE" spellcasting="Swordmage" known="true" level="3" />
                 <grant type="Spell" id="ID_XGTE_SPELL_WARDING_WIND" spellcasting="Swordmage" known="true" level="5" />
                 <grant type="Spell" id="ID_PHB_SPELL_LIGHTNING_BOLT" spellcasting="Swordmage" known="true" level="9" />
                 <grant type="Spell" id="ID_XGTE_SPELL_STORM_SPHERE" spellcasting="Swordmage" known="true" level="13" />
@@ -686,24 +700,17 @@
             <element name="Aegis of the Elements" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_AEGIS_OF_ELEMENTS_AIR">
                 <compendium display="false" />
                 <description>
-                    <p>While this Aegis is active, your Arcane Weapon deals an extra 1d4 lightning damage. At higher levels of this class the extra damage increases to 1d6 at at 6th level, 1d8 at 10th level, 1d10 at 14th level, and 1d12 at 18th level.</p>
+                    <p>While this Aegis is active, the first creature you hit on each of your turns with a melee weapon attack using your Arcane Weapon takes extra lightning damage equal to 1d4 + half your swordmage level (rounded down).</p>
                 </description>
                 <sheet usage="Aegis">
-                    <description>While this Aegis is active, your Arcane Weapon deals an extra 1d{{aegis-of-elements:die-type}} lightning damage.</description>
+                    <description>While this Aegis is active, your Arcane Weapon deals an extra 1d4 + {{level:swordmage:half}} lightning damage.</description>
                 </sheet>
-                <rules>
-                    <stat name="aegis-of-elements:die-type" value="4" bonus="base" level="3" />
-                    <stat name="aegis-of-elements:die-type" value="6" bonus="base" level="6" />
-                    <stat name="aegis-of-elements:die-type" value="8" bonus="base" level="10" />
-                    <stat name="aegis-of-elements:die-type" value="10" bonus="base" level="14" />
-                    <stat name="aegis-of-elements:die-type" value="12" bonus="base" level="18" />
-                </rules>
             </element>
         <element name="Earth Attunement" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_EARTH_ATTUNEMENT">
             <description>
                 <p>You attune to the elemental plane of earth. Your Elemental Attunement enhances your Aegis abilities and grants you additional spells.</p>
-                <p class="indent"><strong>Aegis of Elements:</strong> While this Aegis is active, your Arcane Weapon deals an extra 1d4 damage. The extra damage matches the damage type of your Arcane Weapon. At higher levels of this class the extra damage increases to 1d6 at at 6th level, 1d8 at 10th level, 1d10 at 14th level, and 1d12 at 18th level.</p>
-                <p class="indent">You learn the mold earth cantrip and gain archetype spells at the swordmage level listed below.</p>
+                <p class="indent"><strong>Aegis of Elements:</strong> While this Aegis is active, the first creature you hit on each of your turns with a melee weapon attack using your Arcane Weapon takes extra damage equal to 1d4 + half your swordmage level (rounded down).</p>
+                <p class="indent">You learn the <em>mold earth</em> cantrip and gain archetype spells at the swordmage level listed below.</p>
                 <h5 class="caption">EARTH ELEMENTALIST SPELLS</h5>
                 <table>
                     <thead>
@@ -712,7 +719,7 @@
                     <tr><td>3rd</td><td><em>earth tremor</em></td></tr>
                     <tr><td>5th</td><td><em>maximilian's earthen grasp</em></td></tr>
                     <tr><td>9th</td><td><em>erupting earth</em></td></tr>
-                    <tr><td>13th</td><td><em>stone shape</em></td></tr>
+                    <tr><td>13th</td><td><em>quaking swordburst</em></td></tr>
                     <tr><td>17th</td><td><em>transmute rock</em></td></tr>
                 </table>
             </description>
@@ -725,30 +732,24 @@
                 <grant type="Spell" id="ID_XGTE_SPELL_EARTH_TREMOR" spellcasting="Swordmage" known="true" level="3" />
                 <grant type="Spell" id="ID_XGTE_SPELL_MAXIMILIANS_EARTHEN_GRASP" spellcasting="Swordmage" known="true" level="5" />
                 <grant type="Spell" id="ID_XGTE_SPELL_ERUPTING_EARTH" spellcasting="Swordmage" known="true" level="9" />
-                <grant type="Spell" id="ID_PHB_SPELL_STONE_SHAPE" spellcasting="Swordmage" known="true" level="13" />
+                <grant type="Spell" id="ID_FAN66_SWORDMAGE_SPELL_QUAKING_SWORDBURST" spellcasting="Swordmage" known="true" level="13" />
                 <grant type="Spell" id="ID_XGTE_SPELL_TRANSMUTE_ROCK" spellcasting="Swordmage" known="true" level="17" />
             </rules>
         </element>
             <element name="Aegis of the Elements" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_AEGIS_OF_ELEMENTS_EARTH">
                 <compendium display="false" />
                 <description>
-                    <p>While this Aegis is active, your Arcane Weapon deals an extra 1d4 damage. The extra damage matches the damage type of your Arcane Weapon. At higher levels of this class the extra damage increases to 1d6 at at 6th level, 1d8 at 10th level, 1d10 at 14th level, and 1d12 at 18th level.</p>
+                    <p>While this Aegis is active, the first creature you hit on each of your turns with a melee weapon attack using your Arcane Weapon takes extra damage equal to 1d4 + half your swordmage level (rounded down).</p>
                 </description>
                 <sheet>
-                    <description>While this Aegis is active, your Arcane Weapon deals an extra 1d{{aegis-of-elements:die-type}}  damage.</description>
+                    <description>While this Aegis is active, your Arcane Weapon deals an extra 1d4 + {{level:swordmage:half}}  damage.</description>
                 </sheet>
-                <rules>
-                    <stat name="aegis-of-elements:die-type" value="4" bonus="base" level="3" />
-                    <stat name="aegis-of-elements:die-type" value="6" bonus="base" level="6" />
-                    <stat name="aegis-of-elements:die-type" value="8" bonus="base" level="10" />
-                    <stat name="aegis-of-elements:die-type" value="10" bonus="base" level="14" />
-                    <stat name="aegis-of-elements:die-type" value="12" bonus="base" level="18" />
-                </rules>
             </element>
         <element name="Fire Attunement" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_FIRE_ATTUNEMENT">
             <description>
                 <p>You attune to the elemental plane of fire. Your Elemental Attunement enhances your Aegis abilities and grants you additional spells.</p>
-                <p class="indent"><strong>Aegis of Elements:</strong> While this Aegis is active, your Arcane Weapon deals an extra 1d4 fire damage. At higher levels of this class the extra damage increases to 1d6 at at 6th level, 1d8 at 10th level, 1d10 at 14th level, and 1d12 at 18th level. You learn the control flames cantrip and gain archetype spells at the swordmage level listed below.</p>
+                <p class="indent"><strong>Aegis of Elements:</strong> While this Aegis is active, the first creature you hit on each of your turns with a melee weapon attack using your Arcane Weapon takes extra fire damage equal to 1d4 + half your swordmage level (rounded down).</p>
+                <p class="indent">You learn the <em>control flames</em> cantrip and gain archetype spells at the swordmage level listed below.</p>
                 <h5 class="caption">FIRE ELEMENTALIST SPELLS</h5>
                 <table>
                     <thead>
@@ -756,8 +757,8 @@
                     </thead>
                     <tr><td>3rd</td><td><em>burning hands</em></td></tr>
                     <tr><td>5th</td><td><em>scorching ray</em></td></tr>
-                    <tr><td>9th</td><td><em>fireball</em></td></tr>
-                    <tr><td>13th</td><td><em>wall of fire</em></td></tr>
+                    <tr><td>9th</td><td><em>flaming swordburst</em></td></tr>
+                    <tr><td>13th</td><td><em>fiery charge</em></td></tr>
                     <tr><td>17th</td><td><em>immolation</em></td></tr>
                 </table>
             </description>
@@ -769,38 +770,31 @@
                 <grant type="Spell" id="ID_XGTE_SPELL_CONTROL_FLAMES" spellcasting="Swordmage" known="true" level="3" />
                 <grant type="Spell" id="ID_PHB_SPELL_BURNING_HANDS" spellcasting="Swordmage" known="true" level="3" />
                 <grant type="Spell" id="ID_PHB_SPELL_SCORCHING_RAY" spellcasting="Swordmage" known="true" level="5" />
-                <grant type="Spell" id="ID_PHB_SPELL_FIREBALL" spellcasting="Swordmage" known="true" level="9" />
-                <grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FIRE" spellcasting="Swordmage" known="true" level="13" />
+                <grant type="Spell" id="ID_FAN66_SWORDMAGE_SPELL_FLAMING_SWORDBURST" spellcasting="Swordmage" known="true" level="9" />
+                <grant type="Spell" id="ID_FAN66_SWORDMAGE_SPELL_FIERY_CHARGE" spellcasting="Swordmage" known="true" level="13" />
                 <grant type="Spell" id="ID_XGTE_SPELL_IMMOLATION" spellcasting="Swordmage" known="true" level="17" />
             </rules>
         </element>
             <element name="Aegis of the Elements" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_AEGIS_OF_ELEMENTS_FIRE">
                 <compendium display="false" />
                 <description>
-                    <p>While this Aegis is active, your Arcane Weapon deals an extra 1d4 fire damage. At higher levels of this class the extra damage increases to 1d6 at at 6th level, 1d8 at 10th level, 1d10 at 14th level, and 1d12 at 18th level.</p>
+                    <p>While this Aegis is active, the first creature you hit on each of your turns with a melee weapon attack using your Arcane Weapon takes extra fire damage equal to 1d4 + half your swordmage level (rounded down).</p>
                 </description>
                 <sheet>
-                    <description>While this Aegis is active, your Arcane Weapon deals an extra 1d{{aegis-of-elements:die-type}} fire damage.</description>
+                    <description>While this Aegis is active, your Arcane Weapon deals an extra 1d4 + {{level:swordmage:half}} fire damage.</description>
                 </sheet>
-                <rules>
-                    <stat name="aegis-of-elements:die-type" value="4" bonus="base" level="3" />
-                    <stat name="aegis-of-elements:die-type" value="6" bonus="base" level="6" />
-                    <stat name="aegis-of-elements:die-type" value="8" bonus="base" level="10" />
-                    <stat name="aegis-of-elements:die-type" value="10" bonus="base" level="14" />
-                    <stat name="aegis-of-elements:die-type" value="12" bonus="base" level="18" />
-                </rules>
             </element>
         <element name="Water Attunement" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_WATER_ATTUNEMENT">
             <description>
                 <p>You attune to the elemental plane of water. Your Elemental Attunement enhances your Aegis abilities and grants you additional spells.</p>
-                <p class="indent"><strong>Aegis of Elements:</strong> While this Aegis is active, your Arcane Weapon deals an extra 1d4 cold damage. At higher levels of this class the extra damage increases to 1d6 at at 6th level, 1d8 at 10th level, 1d10 at 14th level, and 1d12 at 18th level.</p>
-                <p class="indent">You learn the shape water cantrip and gain archetype spells at the swordmage level listed below.</p>
+                <p class="indent"><strong>Aegis of Elements:</strong> While this Aegis is active, the first creature you hit on each of your turns with a melee weapon attack using your Arcane Weapon takes extra cold damage equal to 1d4 + half your swordmage level (rounded down).</p>
+                <p class="indent">You learn the <em>shape water</em> cantrip and gain archetype spells at the swordmage level listed below.</p>
                 <h5 class="caption">WATER ELEMENTALIST SPELLS</h5>
                 <table>
                     <thead>
                         <tr><td>Swordmage Level</td><td>Spells</td></tr>
                     </thead>
-                    <tr><td>3rd</td><td><em>ice knife</em></td></tr>
+                    <tr><td>3rd</td><td><em>armor of Agathys</em></td></tr>
                     <tr><td>5th</td><td><em>misty step</em></td></tr>
                     <tr><td>9th</td><td><em>tidal wave</em></td></tr>
                     <tr><td>13th</td><td><em>watery sphere</em></td></tr>
@@ -813,7 +807,7 @@
             <rules>
                 <grant type="Archetype Feature" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_AEGIS_OF_ELEMENTS_WATER" />
                 <grant type="Spell" id="ID_XGTE_SPELL_SHAPE_WATER" spellcasting="Swordmage" known="true" level="3" />
-                <grant type="Spell" id="ID_XGTE_SPELL_ICE_KNIFE" spellcasting="Swordmage" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_ARMOR_OF_AGATHYS" spellcasting="Swordmage" known="true" level="3" />
                 <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" spellcasting="Swordmage" known="true" level="5" />
                 <grant type="Spell" id="ID_XGTE_SPELL_TIDAL_WAVE" spellcasting="Swordmage" known="true" level="9" />
                 <grant type="Spell" id="ID_XGTE_SPELL_WATERY_SPHERE" spellcasting="Swordmage" known="true" level="13" />
@@ -823,18 +817,11 @@
             <element name="Aegis of the Elements" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_AEGIS_OF_ELEMENTS_WATER">
                 <compendium display="false" />
                 <description>
-                    <p>While this Aegis is active, your Arcane Weapon deals an extra 1d4 cold damage. At higher levels of this class the extra damage increases to 1d6 at at 6th level, 1d8 at 10th level, 1d10 at 14th level, and 1d12 at 18th level.</p>
+                    <p>While this Aegis is active, the first creature you hit on each of your turns with a melee weapon attack using your Arcane Weapon takes extra cold damage equal to 1d4 + half your swordmage level (rounded down).</p>
                 </description>
                 <sheet>
-                    <description>While this Aegis is active, your Arcane Weapon deals an extra 1d{{aegis-of-elements:die-type}} cold damage.</description>
+                    <description>While this Aegis is active, your Arcane Weapon deals an extra 1d4 + {{level:swordmage:half}} cold damage.</description>
                 </sheet>
-                <rules>
-                    <stat name="aegis-of-elements:die-type" value="4" bonus="base" level="3" />
-                    <stat name="aegis-of-elements:die-type" value="6" bonus="base" level="6" />
-                    <stat name="aegis-of-elements:die-type" value="8" bonus="base" level="10" />
-                    <stat name="aegis-of-elements:die-type" value="10" bonus="base" level="14" />
-                    <stat name="aegis-of-elements:die-type" value="12" bonus="base" level="18" />
-                </rules>
             </element>
         <element name="Elemental Studies" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_ELEMENTAL_STUDIES">
             <description>
@@ -969,10 +956,10 @@
             <element name="Water" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_GREATER_PLANAR_AFFINITY_WATER">
                 <compendium display="false" />
                 <description>
-                    <p>As a reaction upon taking damage, you can temporarily assume a watery form. You reduce the damage by 4d6 plus your Intelligence modifier.</p>
+                    <p>When you activate your Aegis, you assume a watery form and create an aura of icy water around you in a 10-foot radius that lasts for the duration of your Aegis. All other creatures treat the area inside the aura as difficult terrain. You can also move through any enemy's space but can't willingly end your move there.</p>
                 </description>
-                <sheet action="Reaction">
-                    <description>Upon taking damage, you can temporarily assume a watery form. You reduce the damage by 4d6 + {{intelligence:modifier}}.</description>
+                <sheet>
+                    <description>When you activate your Aegis, you assume a watery form and create an aura of icy water around you in a 10-foot radius that lasts for the duration of your Aegis. All other creatures treat the area inside the aura as difficult terrain. You can also move through any enemy's space but can't willingly end your move there.</description>
                 </sheet>
             </element>
         <element name="Elemental Aspect" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_ELEMENTAL_ASPECT">
@@ -1049,7 +1036,7 @@
             <div element="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_VIGILANT_WATCH" />
             <div element="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_ARCHETYPE_SPELLS" />
             <div element="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_BULWARKING_MAGIC" />
-            <div element="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_GUARDIAN_WARD" />
+            <div element="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_DEFENSIVE_SWAP" />
             <div element="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_ULTIMATE_DEFENDER" />
         </description>
         <sheet display="false">
@@ -1060,7 +1047,7 @@
             <grant type="Archetype Feature" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_VIGILANT_WATCH" level="3" />
             <grant type="Archetype Feature" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_ARCHETYPE_SPELLS" level="3" />
             <grant type="Archetype Feature" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_BULWARKING_MAGIC" level="7" />
-            <grant type="Archetype Feature" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_GUARDIAN_WARD" level="15" />
+            <grant type="Archetype Feature" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_DEFENSIVE_SWAP" level="15" />
             <grant type="Archetype Feature" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_ULTIMATE_DEFENDER" level="20" />
         </rules>
     </element>
@@ -1079,18 +1066,11 @@
             <element name="Aegis of Protection" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_AEGIS_OF_PROTECTION">
                 <compendium display="false" />
                 <description>
-                    <p>While this Aegis is active, you ward others from harm. When you or another creature you can see within 30 feet of you takes damage, you can use your reaction to reduce the damage taken by 1d6. At higher levels of this class, the damage reduction increases to 2d6 at 6th level, 3d6 at 10th level, 4d6 at 14th level, and 5d6 at 18th level.</p>
+                    <p>When you activate this Aegis, you choose a friendly creature within 30 feet of you. While this Aegis is active, any bludgeoning, piercing or slashing damage the protected target takes is reduced by 2. On later turns, you can use your bonus action to switch your protected target to another friendly creature within 30 feet of you.</p>
                 </description>
-                <sheet usage="Aegis" action="Reaction">
-                    <description>When you or another creature you can see within 30 feet of you takes damage, you can reduce the damage taken by {{aegis-of-protection:damage-reduce}}d6.</description>
+                <sheet usage="Aegis" action="Bonus Action">
+                    <description>When you activate this Aegis, you choose a friendly creature within 30 feet of you. While this Aegis is active, any bludgeoning, piercing or slashing damage the protected target takes is reduced by 2. On later turns, you can use your bonus action to switch your protected target to another friendly creature within 30 feet of you.</description>
                 </sheet>
-                <rules>
-                    <stat name="aegis-of-protection:damage-reduce" value="1" level="3" />
-                    <stat name="aegis-of-protection:damage-reduce" value="1" level="6" />
-                    <stat name="aegis-of-protection:damage-reduce" value="1" level="10" />
-                    <stat name="aegis-of-protection:damage-reduce" value="1" level="14" />
-                    <stat name="aegis-of-protection:damage-reduce" value="1" level="18" />
-                </rules>
             </element>
         <element name="Vigilant Watch" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_VIGILANT_WATCH">
             <description>
@@ -1114,10 +1094,10 @@
                     <thead>
                         <tr><td>Swordmage Level</td><td>Spells</td></tr>
                     </thead>
-                    <tr><td>3rd</td><td><em>ensnaring pull (new spell)</em></td></tr>
+                    <tr><td>3rd</td><td><em>ensnaring pull</em></td></tr>
                     <tr><td>5th</td><td><em>warding bond</em></td></tr>
                     <tr><td>9th</td><td><em>life transference</em></td></tr>
-                    <tr><td>13th</td><td><em>dimensional vortex (new spell)</em></td></tr>
+                    <tr><td>13th</td><td><em>dimensional vortex</em></td></tr>
                     <tr><td>17th</td><td><em>wall of force</em></td></tr>
                 </table>
             </description>
@@ -1134,26 +1114,30 @@
         </element>
         <element name="Bulwarking Magic" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_BULWARKING_MAGIC">
             <description>
-                <p>Starting at 7th level, your magic wards allies from harm. When you target a friendly creatue with a spell of 1st level or higher or your Aegis of Protection, they gain temporary hit points. The temporary hit points equal your Intelligence modifier plus the spell level if you targeted the creature with a spell.</p>
+                <p>Starting at 7th level, your magic protects allies from harm. When you target a friendly creatue with a spell of 1st level or higher or your Aegis of Protection, they gain temporary hit points equal to 1d6 plus your Intelligence modifier (a minimum of 1).</p>
             </description>
             <sheet>
-                <description>When you target a friendly creatue with a spell of 1st level or higher or your Aegis of Protection, they gain {{intelligence:modifier}} plus the spell level temporary hit points.</description>
+                <description>When you target a friendly creatue with a spell of 1st level or higher or your Aegis of Protection, they gain 1d6 + {{bulwarking-magic:temp-hp}} temporary hit points.</description>
             </sheet>
+            <rules>
+                <stat name="bulwarking-magic:temp-hp" value="1" bonus="base" />
+                <stat name="bulwarking-magic:temp-hp" value="intelligence:modifier" bonus="base" />
+            </rules>
         </element>
-        <element name="Guardian Ward" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_GUARDIAN_WARD">
+        <element name="Defensive Swap" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_DEFENSIVE_SWAP">
             <description>
-                <p>Beginning at 15th level, you protect yourself and nearby allies from enemy magic. You and all friendly creatures within 15 feet of you have advantage on saving throws against spells and other magical effects.</p>
+                <p>At 15th level, you can quickly switch places with an ally to place them out of danger. While your Aegis of Protection is active, as part of your reaction to teleport to your protected target's attacker, you can teleport your protected target to your original location if they are willing.</p>
             </description>
             <sheet>
-                <description>You and all friendly creatures within 15 feet of you have advantage on saving throws against spells and other magical effects.</description>
+                <description>While your Aegis of Protection is active, as part of your reaction to teleport to your protected target's attacker, you can teleport your protected target to your original location if they are willing.</description>
             </sheet>
         </element>
         <element name="Ultimate Defender" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_ULTIMATE_DEFENDER">
             <description>
-                <p>When you reach 20th level, you can leap to your ally's aid. When you target a friendly creature with your Aegis of Protection, you can teleport to an unoccupied space adjacent to them. You can then make one attack with your Arcane Weapon against a creature within range. The attack deals extra force damage equal to your Intelligence modifier.</p>
+                <p>When you reach 20th level, you ward yourself and nearby allies from all danger. You can use your action to emanate abjuration magic in a 30-foot aura. You and all friendly creatures in the aura have advantage on saving throws against spells and other magical effects, and gain resistance to spell damage. Affected creatures also gain temporary hit points at the start of their turn equal to your Intelligence modifier (a minimum of 1). The aura ends after 1 minute or if you fall unconscious.</p>
             </description>
-            <sheet>
-                <description>When you target a friendly creature with your Aegis of Protection, you can teleport to an unoccupied space adjacent to them. You can then make one attack with your Arcane Weapon against a creature within range. The attack deals {{intelligence:modifier}} extra force damage.</description>
+            <sheet action="Action">
+                <description>You can emanate abjuration magic in a 30-foot aura. You and all friendly creatures in the aura have advantage on saving throws against spells and other magical effects, and gain resistance to spell damage. Affected creatures also gain {{bulwarking-magic:temp-hp}} temporary hit points at the start of their turn.</description>
             </sheet>
         </element>
 
@@ -1184,7 +1168,7 @@
         <element name="Aegis Expansion" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_INQUISITOR_AEGIS_EXPANSION">
             <description>
                 <p>When you take this archetype at 3rd level, you gain a new type of Aegis:</p>
-                <p class="indent"><strong>Aegis of Negation:</strong> While this Aegis is active, your ward yourself from harmful magic. When you make a saving throw against a spell or other magical effect, you can use your reaction to give yourself advantage on the saving throw.</p>
+                <p class="indent"><strong>Aegis of Negation:</strong> When you activate this Aegis, you mark a creature within 30 feet of you. While this Aegis is active, if you make a saving throw against a spell or magical effect from your marked target, you gain a magical +1 bonus to the saving throw.</p>
             </description>
             <sheet display="false">
                 <description></description>
@@ -1196,10 +1180,10 @@
             <element name="Aegis of Negation" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_AEGIS_OF_NEGATION">
                 <compendium display="false" />
                 <description>
-                    <p>While this Aegis is active, your ward yourself from harmful magic. When you make a saving throw against a spell or other magical effect, you can use your reaction to give yourself advantage on the saving throw.</p>
+                    <p>When you activate this Aegis, you mark a creature within 30 feet of you. While this Aegis is active, if you make a saving throw against a spell or magical effect from your marked target, you gain a magical +1 bonus to the saving throw.</p>
                 </description>
-                <sheet usage="Aegis" action="Reaction">
-                    <description>When you make a saving throw against a spell or other magical effect, you can give yourself advantage on the saving throw.</description>
+                <sheet usage="Aegis">
+                    <description>When you activate this Aegis, you mark a creature within 30 feet of you. While this Aegis is active, if you make a saving throw against a spell or magical effect from your marked target, you gain a magical +1 bonus to the saving throw.</description>
                 </sheet>
             </element>
         <element name="Archetype Spells" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_INQUISITOR_ARCHETYPE_SPELLS">
@@ -1277,7 +1261,7 @@
     <element name="Meteor Knight" type="Archetype" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_SWORDMAGE_METEOR_KNIGHT">
         <supports>Swordmage Archetype</supports>
         <description>
-            <p>Swordmages that become Meteor Knights study the esoteric magic of dunamancy, specifically concerning the manipulation of gravity. Fascinated by celestial bodies, these swordmages are like shooting stars in their fiery and destructive fighting style.</p>
+            <p>Swordmages that become Meteor Knights study the esoteric magic of dunamancy, specifically concerning the manipulation of gravity. Fascinated by celestial bodies, these swordmages channel the gravitational powers of the stars to keep foes in their orbit of destruction.</p>
             <div element="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_METEOR_KNIGHT_AEGIS_EXPANSION" />
             <div element="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_METEOR_KNIGHT_ARCHETYPE_SPELLS" />
             <div element="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_METEOR_KNIGHT_STUDENT_OF_THE_STARS" />
@@ -1328,9 +1312,9 @@
                     </thead>
                     <tr><td>3rd</td><td><em>magnify gravity</em></td></tr>
                     <tr><td>5th</td><td><em>immovable object</em></td></tr>
-                    <tr><td>9th</td><td><em>pulse wave</em></td></tr>
+                    <tr><td>9th</td><td><em>Melf's minute meteors</em></td></tr>
                     <tr><td>13th</td><td><em>gravity sinkhole</em></td></tr>
-                    <tr><td>17th</td><td><em>telekinesis</em></td></tr>
+                    <tr><td>17th</td><td><em>destructive wave (radiant only)</em></td></tr>
                 </table>
             </description>
             <sheet display="false">
@@ -1339,9 +1323,9 @@
             <rules>
                 <grant type="Spell" id="ID_WOTC_EGTW_SPELL_MAGNIFY_GRAVITY" spellcasting="Swordmage" known="true" level="3" />
                 <grant type="Spell" id="ID_WOTC_EGTW_SPELL_IMMOVABLE_OBJECT" spellcasting="Swordmage" known="true" level="5" />
-                <grant type="Spell" id="ID_WOTC_EGTW_SPELL_PULSE_WAVE" spellcasting="Swordmage" known="true" level="9" />
+                <grant type="Spell" id="ID_XGTE_SPELL_MELFS_MINUTE_METEORS" spellcasting="Swordmage" known="true" level="9" />
                 <grant type="Spell" id="ID_WOTC_EGTW_SPELL_GRAVITY_SINKHOLE" spellcasting="Swordmage" known="true" level="13" />
-                <grant type="Spell" id="ID_PHB_SPELL_TELEKINESIS" spellcasting="Swordmage" known="true" level="17" />
+                <grant type="Spell" id="ID_PHB_SPELL_DESTRUCTIVE_WAVE" spellcasting="Swordmage" known="true" level="17" />
             </rules>
         </element>
         <element name="Student of the Stars" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_METEOR_KNIGHT_STUDENT_OF_THE_STARS">
@@ -1358,10 +1342,10 @@
         </element>
         <element name="Defy Gravity" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_METEOR_KNIGHT_DEFY_GRAVITY">
             <description>
-                <p>Starting at 7th level, your magical powers of dunamancy let you exceed your physical limits. You gain proficiency in Strength saving throws. If you already have this proficiency, you instead gain proficiency in Dexterity saving throws. You also have advantage on Strength and Dexterity saving throws made against effects that would knock you prone.</p>
+                <p>Starting at 7th level, your magical powers of dunamancy let you exceed your physical limits. You gain proficiency in Strength saving throws. If you already have this proficiency, you instead gain proficiency in Dexterity saving throws. You also have advantage on Strength and Dexterity saving throws made against effects that would push you or knock you prone.</p>
             </description>
-            <sheet display="false">
-                <description></description>
+            <sheet>
+                <description>You have advantage on Strength and Dexterity saving throws made against effects that would push you or knock you prone.</description>
             </sheet>
             <rules>
                 <grant type="Archetype Feature" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_METEOR_KNIGHT_DEFY_GRAVITY_STRENGTH" requirements="!ID_PROFICIENCY_SAVINGTHROW_STRENGTH" />
@@ -1432,9 +1416,6 @@
         <supports>Swordmage</supports>
     </append>
     <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_GREAT_WEAPON_FIGHTING">
-        <supports>Swordmage</supports>
-    </append>
-    <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_PROTECTION">
         <supports>Swordmage</supports>
     </append>
 
@@ -1817,47 +1798,6 @@
             <set name="isConcentration">true</set>
         </setters>
     </element>
-    <element name="Weapon Storm" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_WEAPON_STORM">
-        <supports>Swordmage</supports>
-        <description>
-            <p>Empowering your blade with crackling electricity, you hold your weapon aloft as lightning strikes out at your surrounding foes. Any creature within the area must make a Dexterity saving throw. On a failed save, the creature takes 3d6 lightning damage and it can't take reactions until the start of its next turn. On a successful save, the creature takes half as much damage. The creature has disadvantage on the saving throw if they are wearing armor made of metal.</p>
-            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.</p>
-        </description>
-        <setters>
-            <set name="keywords"></set>
-            <set name="level">2</set>
-            <set name="school">evocation</set>
-            <set name="isRitual">false</set>
-            <set name="time">1 action</set>
-            <set name="range">Self (10-foot radius)</set>
-            <set name="hasVerbalComponent">true</set>
-            <set name="hasSomaticComponent">false</set>
-            <set name="hasMaterialComponent">true</set>
-            <set name="materialComponent">a weapon</set>
-            <set name="duration">Instantaneous</set>
-            <set name="isConcentration">false</set>
-        </setters>
-    </element>
-    <element name="Dimensional Charge" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_DIMENSIONAL_CHARGE">
-        <supports>Swordmage</supports>
-        <description>
-            <p>Your blade opens a rift in reality, and you leap through to attack your enemy. You can teleport up to 120 feet to an unoccupied space adjacent to a creature. You can then make one melee attack with a weapon against the creature. On a hit, the target suffers the attack's normal effects, and the attack deals an extra 3d8 force damage to the target.</p>
-        </description>
-        <setters>
-            <set name="keywords"></set>
-            <set name="level">3</set>
-            <set name="school">conjuration</set>
-            <set name="isRitual">false</set>
-            <set name="time">1 action</set>
-            <set name="range">5 ft</set>
-            <set name="hasVerbalComponent">true</set>
-            <set name="hasSomaticComponent">false</set>
-            <set name="hasMaterialComponent">true</set>
-            <set name="materialComponent">a weapon</set>
-            <set name="duration">1 round</set>
-            <set name="isConcentration">false</set>
-        </setters>
-    </element>
     <element name="Bleeding Blade" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_BLEEDING_BLADE">
         <supports>Swordmage</supports>
         <description>
@@ -1939,5 +1879,282 @@
             <set name="isConcentration">true</set>
         </setters>
     </element>
-
+    <element name="Corrosive Swordburst" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_CORROSIVE_SWORDBURST">
+        <supports>Swordmage</supports>
+        <description>
+            <p>You slam your blade into the ground and burning acid bursts forth around you. Any creature within the area must make a Dexterity saving throw. On a failed save, the creature takes 3d4 acid damage and another 1d4 acid damage at the end of its next turn. On a successful save, a creature takes half the initial damage and no damage at the end of its next turn.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, the initial damage increases by 2d4 for each slot level above 1st.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (10-foot radius)</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Predictive Strike" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_PREDICTIVE_STRIKE">
+        <supports>Swordmage</supports>
+        <description>
+            <p>You briefly glimpse into the future to see how your foe will react before they do. The next time you hit a creature with a weapon attack before this spell ends, you have advantage on the attack roll, and the attack deals an extra 1d6 force damage to the target.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">divination</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">Self</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Venomous Strike" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_VENOMOUS_STRIKE">
+        <supports>Swordmage</supports>
+        <description>
+            <p>The next time you hit a creature with a weapon attack before this spell ends, you coat your weapon with toxic poison, and the attack deals an extra 1d6 poison damage to the target. Additionally, the target must succeed on a Constitution saving throw or be poisoned until the spell ends. At the end of each of its turns, the target can make another Constitution saving throw. On a success, the spell ends on the target.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">evocation</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">Self</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Electrifying Swordburst" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_ELECTRIFYING_SWORDBURST">
+        <supports>Swordmage</supports>
+        <description>
+            <p>Empowering your blade with crackling electricity, you hold your weapon aloft as lightning strikes out at your surrounding foes. Any creature within the area must make a Dexterity saving throw. On a failed save, the creature takes 3d8 lightning damage and it can't take reactions until the start of its next turn. On a successful save, the creature takes half as much damage and can take reactions. The creature has disadvantage on the saving throw if they are wearing armor made of metal.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (10-foot radius)</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Withering Strike" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_WITHERING_STRIKE">
+        <supports>Swordmage</supports>
+        <description>
+            <p>The next time you hit a creature with a weapon attack before this spell ends, your weapon crackles with life draining energy, and the attack deals an extra 2d6 necrotic damage to the target. Additionally, the target must succeed on a Constitution saving throw or the target deals only half damage with weapon attacks that use Strength until the spell ends.</p>
+            <p class="indent">At the end of each of its turns, the target can make another Constitution saving throw. On a success, the spell ends on the target.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">necromancy</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">Self</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Blade Storm" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_BLADE_STORM">
+        <supports>Swordmage</supports>
+        <description>
+            <p>You swing your weapon creating magical duplicates that strike at all foes. Each creature you choose within the area must make a Dexterity saving throw. A creature takes 6d6 force damage on a failed save, or half as much damage on a successful one.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spellslot of 4th level or higher, the damage increases by 1d6 foreach slot level above 3rd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (30-foot cone)</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Dimensional Retaliation" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_DIMENSIONAL_RETALIATION">
+        <supports>Swordmage</supports>
+        <description>
+            <p>After being attack from afar, you teleport to the enemy for a surprise attack. You teleport to an unoccupied space within 5 feet of the creature that attacked you. You can then make one melee weapon attack against the creature. On a hit, the attack deals an additional 3d8 force damage.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">conjuration</set>
+            <set name="time">1 reaction, which you take when you take</set>
+            damage from a ranged attack within 60 ft of you
+            <set name="range">60 ft</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Flaming Swordburst" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_FLAMING_SWORDBURST">
+        <supports>Swordmage</supports>
+        <description>
+            <p>Raging fire bursts from your blade to engulf your foes in an inferno. Any creature within the area must make a Dexterity saving throw. On a failed save, the creature takes 4d8 fire damage and is burning. On a successful save, a creature takes half the damage and isn't burning. A creature that is burning takes 2d8 fire damage at the start of its turns. A creature can end the burning by using its action to pat out the flames.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the initial damage increases by 1d8 for each slot level above 3rd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (20-foot radius)</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Frigid Strike" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_FRIGID_STRIKE">
+        <supports>Swordmage</supports>
+        <description>
+            <p>The next time you hit a creature with a weapon attack before this spell ends, your weapon chills with elemental frost, and the attack deals an extra 3d8 cold damage to the target. Additionally, the target must succeed on a Constitution saving throw or be restrained until the spell ends.</p>
+            <p class="indent">At the end of each of its turns, the target can make another Constitution saving throw. On a success, the spell ends on the target.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">evocation</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">Self</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Fiery Charge" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_FIERY_CHARGE">
+        <supports>Swordmage</supports>
+        <description>
+            <p>You hurl your blade and it transforms into a line of roaring fire 5 feet wide that extends out from you to a creature within range. Each creature in the line excluding you and the target must make a Dexterity saving throw, taking 4d8 fire damage on a failed save, and half as much damage on a successful one. You then teleport to an unoccupied square within 5 feet of the target. The roaring flames transform back into your weapon and returns to your hand. You can then make one melee weapon attack against the target. On a hit, you deal an extra 4d8 fire damage.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot above 4th.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">4</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">120 ft</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Quaking Swordburst" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_QUAKING_SWORDBURST">
+        <supports>Swordmage</supports>
+        <description>
+            <p>You slam your weapon into the ground and seismic energy erupts from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. The area inside the aura is difficult terrain to everyone except you. When the aura appears, each creature of your choice that is within the aura's area must succeed on a Dexterity saving throw or be knocked prone. Each creature of your choice that starts their turn in the aura must also make the same Dexterity saving throw.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">4</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (30-foot radius)</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Nightmare Swordburst" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_NIGHTMARE_SWORDBURST">
+        <supports>Swordmage</supports>
+        <description>
+            <p>A powerful wave of terrifying visions burst from your blade as your foes see you as their worst nightmare. Each creature you choose within the area must make a Wisdom saving throw. On a failed save, the creature takes 6d8 psychic damage and is frightened of you for the spell's duration. On a successful save, a creature takes half the damage and isn't frightened.</p>
+            <p class="indent">At the end of each of its turns, a frightened creature repeats the saving throw and the creature is no longer frightened on a successful save.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">enchantment</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (30-foot radius)</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Concentration, up to 1 minutee</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Prismatic Blade" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_PRISMATIC_BLADE_">
+        <supports>Swordmage</supports>
+        <description>
+            <p>Your blade shimmers in multicolor light that entails destruction for your foes. Each time you hit a creature with a weapon attack before this spell ends, roll a d8 to determine which color affects it.</p>
+            <ol>
+                <li><strong>Red.</strong> The creature takes an additional 4d6 fire damage.</li>
+                <li><strong>Orange.</strong> The creature takes an additional 4d6 acid damage.</li>
+                <li><strong>Yellow.</strong> The creature takes an additional 4d6 lightning damage.</li>
+                <li><strong>Green.</strong> The creature takes an additional 4d6 poison damage.</li>
+                <li><strong>Blue.</strong> The creature takes an additional 4d6 cold damage.</li>
+                <li><strong>Indigo.</strong> The creature must make a Constistution saving throw or be restrained until the end of your next turn.</li>
+                <li><strong>Orange.</strong> The creature must make a Constitution saving throw be blinded until the end of your next turn.</li>
+                <li><strong>Special.</strong> The creature is affected by two colors. Roll twice more, rerolling any 8.</li>
+            </ol>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">evocation</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">Self</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a weapon</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
 </elements>
