@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Ember Knight Martial Archetype v.2</name>
+        <update version="0.0.1">
+            <file name="fighter-ember-knight-2.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/blazing-dawn-players-companion/fighter-ember-knight-2.xml" />
+        </update>
+    </info>
+    
+    <element name="Ember Knight v2" type="Archetype" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FIGHTER_EMBER_KNIGHT_2">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>An ember knight employs martial techniques combined with potent fire magic. While ember knights are often mistaken for the more common eldritch knights at first glance, the source of an ember knight’s magic comes from within, rather than from the study of magic. In this way they are comparable to sorcerers. While the potential to become an ember knight might be within someone from birth, this potential typically doesn’t manifest until that person has a few battles under their belt. This event is generally referred to as an ember knight’s “kindling,” where they first begin to wield their fiery powers.</p>
+            <p class="indent">Once an ember knight “kindles,” their skills become a sought after commodity. Their presence can inspire fear in their opponents, and awe in their onlookers, as their flying, molten blades sow death and destruction. These warriors can easily find employment in times of war, where their magical capabilities can be used to turn the tides of battle. Many become mercenaries, or even leaders of mercenary groups, and their services are often highly sought after. Anyone that employs an ember knight finds them to be worth their price.</p>
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_GIFTED_PYROMANCER" />
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_MOLTEN_BLADES" />
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_FLAMEBORN" />
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_MASTER_OF_BLADES" />
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_FIERY_SURGE" />
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_MASTER_PYROMANCER" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_GIFTED_PYROMANCER" level="3" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_MOLTEN_BLADES" level="3" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_FLAMEBORN" level="7" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_MASTER_OF_BLADES" level="10" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_FIERY_SURGE" level="15" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_MASTER_PYROMANCER" level="18" />
+        </rules>
+    </element>
+        <element name="Gifted Pyromancer" type="Archetype Feature" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_GIFTED_PYROMANCER">
+            <description>
+                <p>At 3rd level, you learn the <em>control flames</em> cantrip. Your spellcasting ability for this cantrip is Constitution, and you can choose to cast it as a bonus action, rather than an action.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can cast control flames, using Constitution for your spellcasting ability.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_XGTE_SPELL_CONTROL_FLAMES" />
+            </rules>
+        </element>
+        <element name="Molten Blades" type="Archetype Feature" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_MOLTEN_BLADES">
+            <description>
+                <p>Also at 3rd level, you can conjure magical blades of molten energy. This feature has 4 uses when you gain it, and the number of uses increases to 5 at 7th level and 6 at 15th level. You regain all expended uses when you finish a short or long rest.</p>
+                <p class="indent">As a bonus action, you can spend one or more of these uses to summon a molten blade for each use you spend. These blades last for up to 10 minutes after they’re summoned, and float around you for their duration.</p>
+                <p class="indent">As long as you have at least one of these blades summoned, you gain the following benefits:</p>
+                <ul>
+                    <li>The blades are considered martial melee weapons with which you are proficient. They have the finesse and reach properties, and deal 1d4 slashing + 1d4 fire damage on a hit. As the blades float, you do not need to hold them to attack with them, but attacks with them are otherwise made as normal.</li>
+                    <li>Once per round when you hit a creature with a weapon attack, you can deal 1d4 bonus fire damage to your target. This damage increases to 1d6 at 7th level, 1d8 at 10th level, 1d10 at 15th level, and 1d12 at 18th level.</li>
+                    <li>When a creature you can see within 30 feet of you misses you with an attack, you can use your reaction to command a blade to counterattack. Make a melee weapon attack with the blade against your attacker. This attack is as described in the first bullet point, except its reach is increased to 30 feet. After it counterattacks, the blade is destroyed.</li>
+                    <li>When a creature you can see within 30 feet of you hits you with an attack, you can use your reaction to command a blade to parry. Your AC is increased by 3 against that attack, potentially causing the attack to miss you. After it parries, the blade is destroyed.</li>
+                </ul>
+            </description>
+            <sheet action="Bonus Action" usage="{{molten-blades:uses}}/Short Rest">
+                <description>You can summon a molten blade for each use you spend. These blades last for up to 10 minutes after they’re summoned, and float around you for their duration. The blades are considered martial melee weapons with which you are proficient. They have the finesse and reach properties, and deal 1d4 slashing + 1d4 fire damage on a hit. As the blades float, you do not need to hold them to attack with them, but attacks with them are otherwise made as normal. Once per round when you hit a creature with a weapon attack, you can deal 1d{{molten-blades:die-type}} bonus fire damage to your target. When a creature you can see within 30 feet of you misses you with an attack, you can use your reaction to command a blade to counterattack. When a creature you can see within 30 feet of you hits you with an attack, you can use your reaction to command a blade to parry. Your AC is increased by 3 against that attack, potentially causing the attack to miss you. After a blade counterattacks or parries, the blade is destroyed.</description>
+            </sheet>
+            <rules>
+                <stat name="molten-blades:uses" value="4" level="3" />
+                <stat name="molten-blades:uses" value="1" level="7" />
+                <stat name="molten-blades:uses" value="1" level="15" />
+                <stat name="molten-blades:die-type" value="4" bonus="base" level="3" />
+                <stat name="molten-blades:die-type" value="6" bonus="base" level="7" />
+                <stat name="molten-blades:die-type" value="8" bonus="base" level="10" />
+                <stat name="molten-blades:die-type" value="10" bonus="base" level="15" />
+                <stat name="molten-blades:die-type" value="12" bonus="base" level="18" />
+            </rules>
+        </element>
+        <element name="Flameborn" type="Archetype Feature" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_FLAMEBORN">
+            <description>
+                <p>By 7th level, your body has become imbued with fire. You gain resistance to fire damage, and you gain darkvision out to a range of 60 feet. If you already have darkvision, its range instead increases by 60 feet. Your darkvision is unusual: everything you see in darkness is in a shade of red.</p>
+            </description>
+            <sheet>
+                <description>Your darkvision is unusual: everything you see in darkness is in a shade of red.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+                <grant type="Vision" id="ID_VISION_DARKVISION" />
+            </rules>
+        </element>
+        <element name="Master of Blades" type="Archetype Feature" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_MASTER_OF_BLADES">
+            <description>
+                <p>Starting at 10th level, you become more adept at counterattacking and parrying with the blades summoned by your Molten Blades feature. The features are improved as follows:</p>
+                <p class="indent"><strong><em>Counterattack.</em></strong> When you command a blade to counterattack, it deals 2d4 bonus fire damage to its target on a hit. Hit or miss, you can choose to detonate the blade in a fiery burst after its attack. Each creature within a 5-foot-radius around the target, other than the target, must succeed on a Dexterity saving throw with a DC of 8 + your proficiency bonus + your Constitution modifier or take 2d4 fire damage.</p>
+                <p class="indent"><strong><em>Parry.</em></strong> When you command a blade to parry, the initial AC bonus against the triggering attack is increased to 5, and you also gain a +3 bonus to your AC until the start of your next turn.</p>
+            </description>
+            <sheet>
+                <description>When you command a blade to counterattack, it deals 2d4 bonus fire damage to its target on a hit. Hit or miss, you can choose to detonate the blade in a fiery burst after its attack: Dexterity saving throw (save DC {{master-of-blades:save-dc}}) or take 2d4 fire damage. When you command a blade to parry, the initial AC bonus against the triggering attack is increased to 5, and you also gain a +3 bonus to your AC until the start of your next turn.</description>
+            </sheet>
+            <rules>
+                <stat name="master-of-blades:save-dc" value="8" />
+                <stat name="master-of-blades:save-dc" value="proficiency" />
+                <stat name="master-of-blades:save-dc" value="constitution:modifier" />
+            </rules>
+        </element>
+        <element name="Fiery Surge" type="Archetype Feature" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_FIERY_SURGE">
+            <description>
+                <p>Beginning at 15th level, your Action Surge becomes imbued with fire magic. When you use your Action Surge, your speed increases by 10 feet until the end of the turn. While this speed increase lasts, your movement doesn’t provoke opportunity attacks, and you can choose to leave behind a trail of fire where you step. The trail is 5 feet wide, follows your movement, and lasts until the start of your next turn. A creature other than you that enters the trail for the first time on a turn or ends its turn there takes fire damage equal to your fighter level.</p>
+            </description>
+            <sheet>
+                <description>When you use your Action Surge, your speed increases by 10 feet until the end of the turn. While this speed increase lasts, your movement doesn’t provoke opportunity attacks, and you can choose to leave behind a trail of fire where you step. The trail is 5 feet wide, and lasts until the start of your next turn. A creature other than you that enters the trail for the first time on a turn or ends its turn there takes {{level:fighter}} fire damage.</description>
+            </sheet>
+        </element>
+        <element name="Pyromancer Adept" type="Archetype Feature" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_EMBER_KNIGHT_2_MASTER_PYROMANCER">
+            <description>
+                <p>Starting at 18th level, you have become one with the fiery powers you control, allowing you to harness some of them at-will. You gain the following benefits while you are conscious.</p>
+                <ul>
+                    <li>You gain immunity to fire damage.</li>
+                    <li>At the end of each of your turns, you can choose to release a wave of fire that deals 2d4 fire damage to each creature of your choice within 5 feet of you.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>At the end of each of your turns, you can choose to release a wave of fire that deals 2d4 fire damage to each creature of your choice within 5 feet of you.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_FIRE" />
+            </rules>
+        </element>
+</elements>
