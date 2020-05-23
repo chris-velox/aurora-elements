@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of Worship</name>
+        <update version="0.0.1">
+            <file name="bard-college-of-worship.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/bard/bard-college-of-worship.xml" />
+        </update>
+    </info>
+    
+    <element name="College of Worship" type="Source" source="Core" id="ID_PEACHCOBBLERS_HOMEBREWERY_SOURCE_College of Worship">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">BCOW</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/_qSDyyANT</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="PC" url="https://www.reddit.com/user/Peach_Cobblers/">u/Peach_Cobblers</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200521</set>
+        </setters>
+    </element>
+    
+    <element name="College of Worship" type="Archetype" source="College of Worship" id="ID_PC_BCOW_ARCHETYPE_BARD_COLLEGE_OF_WORSHIP">
+        <supports>Bard College</supports>
+        <description>
+            <p>A bard may devote themself to a deity, drawing on divine power. These bards belong to Colleges of Worship, which are as diverse and numerous as the various faiths themselves.</p>
+            <p class="indent">Some Colleges of Worship are inclusive, representing alliances between allied gods and their worshippers. Others are secretive, excluding all except the most dedicated of bards for their particular god. The college may be structured and hierarchical, with clearly defined duties and expectations. Or it may be chaotic, merely a loosely affiliated group of bards connected by their faith.</p>
+            <p class="indent">The role a bard plays in service to their college varies greatly. Bards dedicated to justice may uplift noble causes with song and skill. Those who venerate knowledge may seek rare tomes or artifacts that have been lost for centuries. Worshippers of death gods may serve as dirgesingers, spreading sorrow and grief. Followers of nature gods may play music for animals, druids, and peoples of the wild.</p>
+            <p class="indent">Some bards may have started as choir singers in temples before seeking to sing of their faith far and wide. Some may act as agents or spies. Others may seek out new converts with music, parables, and tales of divine glory. Whatever their reasons or motives, bards in Colleges of Worship have heeded the call of their god, much like a paladin or cleric.</p>
+            <div element="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_BONUS_PROFICIENCIES" />
+            <div element="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_DIVINE_INSPIRATION" />
+            <div element="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_COLLEGE_SPELLS" />
+            <div element="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_HOLY_WORDS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_BONUS_PROFICIENCIES" level="3" />
+            <grant type="Archetype Feature" id="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_DIVINE_INSPIRATION" level="3" />
+            <grant type="Archetype Feature" id="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_COLLEGE_SPELLS" level="6" />
+            <grant type="Archetype Feature" id="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_HOLY_WORDS" level="14" />
+        </rules>
+    </element>
+        <element name="Bonus Proficiencies" type="Archetype Feature" source="College of Worship" id="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_BONUS_PROFICIENCIES">
+            <description>
+                <p>At the 3rd level, you gain proficiency in Religion. If you already have proficiency with Religion, your proficiency bonus for Religion checks is doubled instead. You also gain proficiencies with shields and medium armor. You may also use a holy symbol as a spellcasting focus.</p>
+            </description>
+            <sheet>
+                <description>You may use a holy symbol as a spellcasting focus.</description>
+            </sheet>
+            <rules>
+                <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_RELIGION" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+                <grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_HOLY_SYMBOL" />
+            </rules>
+        </element>
+        <element name="Divine Inspiration" type="Archetype Feature" source="College of Worship" id="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_DIVINE_INSPIRATION">
+            <description>
+                <p>At the 3rd level, a bard in the College of Worship gains three Divine Inspiration options.</p>
+                <p class="indent"><strong>Sacred Hymn:</strong> You can expend a die of bardic inspiration when casting a healing spell, intoning sacred words of your deity’s hym. You add the number rolled to the number of hit points gained for each target. You can use this for Song of Healing as well, but that die is not restored after the short rest in which you use Song of Healing.</p>
+                <p class="indent"><strong>Pslam of Power:</strong> You can expend a die of Bardic Inspiration when using a cantrip and invoke a Psalm of divine power. The number rolled for the die is added to the total damage for each target of the cantrip.</p>
+                <p class="indent"><strong>Elegy for the Departed:</strong> You can expend a die of bardic inspiration to sing a lamenting elegy. As an action, any undead within 30 feet of you must pass a Wisdom saving throw. Each creature that fails its saving throw takes radiant damage equal to the number rolled. Additionally, each creature that fails its saving throw has its movement speed reduced by 10 for one round.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_PC_BOW_ARCHETYPE_FEATURE_COW_DIVINE_INSPIRATION_SACRED_HYMN" />
+                <grant type="Archetype Feature" id="ID_PC_BOW_ARCHETYPE_FEATURE_COW_DIVINE_INSPIRATION_PSLAM_OF_POWER" />
+                <grant type="Archetype Feature" id="ID_PC_BOW_ARCHETYPE_FEATURE_COW_DIVINE_INSPIRATION_ELEGY_FOR_THE_DEPARTED" />
+            </rules>
+        </element>
+            <element name="Sacred Hymn" type="Archetype Feature" source="College of Worship" id="ID_PC_BOW_ARCHETYPE_FEATURE_COW_DIVINE_INSPIRATION_SACRED_HYMN">
+                <compendium display="false" />
+                <description>
+                    <p>You can expend a die of bardic inspiration when casting a healing spell, intoning sacred words of your deity’s hym. You add the number rolled to the number of hit points gained for each target. You can use this for Song of Healing as well, but that die is not restored after the short rest in which you use Song of Healing.</p>
+                </description>
+                <sheet usage="Bardic Inspiration">
+                    <description>You can expend a die of bardic inspiration when casting a healing spell, and add the number rolled to the number of hit points gained for each target. You can use this for Song of Healing as well, but that die is not restored after the short rest in which you use Song of Healing.</description>
+                </sheet>
+            </element>
+            <element name="Pslam of Power" type="Archetype Feature" source="College of Worship" id="ID_PC_BOW_ARCHETYPE_FEATURE_COW_DIVINE_INSPIRATION_PSLAM_OF_POWER">
+                <compendium display="false" />
+                <description>
+                    <p>You can expend a die of Bardic Inspiration when using a cantrip and invoke a Psalm of divine power. The number rolled for the die is added to the total damage for each target of the cantrip.</p>
+                </description>
+                <sheet usage="Bardic Inspiration">
+                    <description>You can expend a die of Bardic Inspiration when using a cantrip and add the number rolled to the total damage for each target of the cantrip.</description>
+                </sheet>
+            </element>
+            <element name="Elegy for the Departed" type="Archetype Feature" source="College of Worship" id="ID_PC_BOW_ARCHETYPE_FEATURE_COW_DIVINE_INSPIRATION_ELEGY_FOR_THE_DEPARTED">
+                <compendium display="false" />
+                <description>
+                    <p>You can expend a die of bardic inspiration to sing a lamenting elegy. As an action, any undead within 30 feet of you must pass a Wisdom saving throw. Each creature that fails its saving throw takes radiant damage equal to the number rolled. Additionally, each creature that fails its saving throw has its movement speed reduced by 10 for one round.</p>
+                </description>
+                <sheet action="Action" usage="Bardic Inspiration">
+                    <description>You can expend a die of bardic inspiration, and any undead within 30 feet of you must pass a Wisdom saving throw. Each creature that fails its saving throw takes radiant damage equal to the number rolled. Additionally, each creature that fails its saving throw has its movement speed reduced by 10 for one round.</description>
+                </sheet>
+            </element>
+        <element name="College Spells" type="Archetype Feature" source="College of Worship" id="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_COLLEGE_SPELLS">
+            <description>
+                <p>At the 6th level, choose a Divine Domain relevant to your bard’s deity of worship. You can choose two spells from the domain-specific spell table, which counts towards your total number of Spells Known. Like a paladin or cleric, your domain spells are considered prepared spells, as they come from your divine favor. During prayer, you can change the two domain spells that you know to different spells in the domain table when you finish a long rest. The domain spell must be at a spell slot level that you can already cast. Your domain spells are considered to be bard spells and use Charisma as your spellcasting ability.</p>
+            </description>
+            <sheet>
+                <description>You can choose two of the domain spells from your chosen Divine Domain. These spells are considered prepared and you can change the spells during a long rest. The domain spell must be at a spell slot level that you can already cast. Your domain spells are considered to be bard spells and use Charisma as your spellcasting ability.</description>
+            </sheet>
+        </element>
+        <element name="Holy Words" type="Archetype Feature" source="College of Worship" id="ID_PC_BCOW_ARCHETYPE_FEATURE_COW_HOLY_WORDS">
+            <description>
+                <p>At the 14th level, when casting your domain spells, or a spell originally from the Cleric or Paladin spell list from Magical Secrets, you may choose one of the following effects:</p>
+                <ul>
+                    <li>Add your Charisma modifier to the damage.</li>
+                    <li>Add your Charisma modifier to the amount healed.</li>
+                    <li>Double the duration of that spell, up to 24 hours.</li>
+                    <li>Increase the DC of the first saving throw made against that spell by 2.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>When casting your domain spells, or a spell originally from the Cleric or Paladin spell list from Magical Secrets, you may choose one of the following effects: Add your Charisma modifier to the damage. Add your Charisma modifier to the amount healed. Double the duration of that spell, up to 24 hours. Increase the DC of the first saving throw made against that spell by 2.</description>
+            </sheet>
+        </element>
+
+</elements>
