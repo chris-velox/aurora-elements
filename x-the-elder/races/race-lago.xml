@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Lago Race</name>
+        <update version="0.0.1">
+            <file name="race-lago.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/races/race-lago.xml" />
+        </update>
+    </info>
+    
+    <element name="The Lago Race" type="Source" source="Core" id="ID_PEACHCOBBLERS_HOMEBREWERY_SOURCE_The Lago Race">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation"></set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/k3X0t3EhU</set>
+            <set name="image"></set>
+            <set name="author" url="https://www.reddit.com/u/Peach_Cobblers">u/Peach_Cobblers</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200519</set>
+        </setters>
+    </element>
+    
+    <element name="Lago" type="Race" source="The Lago Race" id="ID_PEACHCOBBLERS_LAGO_RACE_LAGO">
+        <description>
+            <p>The Lago are a race of rabbit-like humanoids. They live in underground communities, clans, and sometimes even cities, called Warrens. Warrens are highly organized and communal societies, with strict rules for the common good. Lago get along well with other races, particularly gnomes, dwarves, and elves. They are loyal and dedicated allies, taking duty and honor seriously, and are quick to aid others against enemies like orcs, kobolds, drow, and goblins. However, they are also reserved and secretive. To be invited into a Warren as a guest is the highest honor that Lago can bestow upon outsiders.</p>
+            <p class="indent">Considered pessimistic by other races, Lago would argue that they simply believe in being prepared. They methodically plan for numerous potential dangers, and will patrol around Warrens for great distances. Due to their resourcefulness, Lago can live in all manner of climates and environments.</p>
+            <h4>A LAGO ADVENTURER</h4>
+            <p>For your backstory, consider why your Lago has left their Warren. Are they on a mission for the Warren? Do they long for freedom and independence? Have they been exiled? Will your Lago eventually return to the Warren or leave it forever?</p>
+            <h4>LAGO NAMES</h4>
+            <p>Lago names tend to be simple and nature-related. A Warren could be called River Den or Clover Hideout. Personal Names could be Songbird, Thistle, Marble, Walnut, or Icicle.</p>
+            <h4>Lago Traits</h4>
+            <p>As a lago, you gain the following racial traits:</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Wisdom and Dexterity Scores each increase by 1.</p>
+            <p class="indent"><strong><em>Age.</em></strong> Lago have slightly shorter lifespans than humans.</p>
+            <p class="indent"><strong><em>Alignment.</em></strong> Lago can be any alignment but are almost always Lawful, and almost always either Good or Neutral.</p>
+            <p class="indent"><strong><em>Size.</em></strong> Lago come in all shapes and sizes. They are between 4 and 6 feet tall and 50 to 180 pounds. Your size is Medium.</p>
+            <p class="indent"><strong><em>Speed.</em></strong> A natural sprinter, your speed is 35 feet.</p>
+            <p class="indent"><strong><em>Darkvision.</em></strong> You have darkvision up to 60 feet.</p>
+            <p class="indent"><strong><em>Jumping.</em></strong> Your long jump is up to 25 feet and your high jump is up to 15 feet, even without a running start.</p>
+            <p class="indent"><strong><em>Wary.</em></strong> You are proficient in the Perception skill.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You know Common and one other language of your choice. You can communicate simple ideas with other Lago using nose and ear movements and facial expressions.</p>
+        </description>
+        <sheet display="false" />
+        <setters>
+			<set name="names" type="name">Songbird, Thistle, Marble, Walnut, Icicle</set>
+			<set name="names" type="warren">River Den, Clover Hideout</set>
+			<set name="names-format">{{name}} {{warren}}</set>
+			<set name="height" modifier="2d6">4’0"</set>
+			<set name="weight" modifier="2d6">50 lb.</set>
+        </setters>
+        <rules>
+            <stat name="wisdom" value="1" />
+            <stat name="dexterity" value="1" />
+			<stat name="innate speed" value="35" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+            <grant type="Vision" id="ID_VISION_DARKVISION" />
+            <grant type="Racial Trait" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_JUMPING" />
+            <grant type="Racial Trait" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_WARY" />
+			<select type="Sub Race" name="Lago Subrace" supports="Lago" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <select type="Language" name="Language" />
+        </rules>
+    </element>
+        <element name="Jumping" type="Racial Trait" source="The Lago Race" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_JUMPING">
+            <description>
+                <p>Your long jump is up to 30 feet and your high jump is up to 15 feet, even without a running start.</p>
+            </description>
+            <sheet>
+                <description>Your long jump is up to 30 feet and your high jump is up to 15 feet, even without a running start.</description>
+            </sheet>
+        </element>
+        <element name="Wary" type="Racial Trait" source="The Lago Race" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_WARY">
+            <description>
+                <p>You are proficient in the Perception skill.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+            </rules>
+        </element>
+
+    <element name="Snow Lago" type="Sub Race" source="The Lago Race" id="ID_PEACHCOBBLERS_LAGO_SUBRACE_SNOW_LAGO">
+        <supports>Lago</supports>
+        <description>
+            <p>Snow Lago fur is usually white. They are proud, industrious, and hearty and live in cold climates. Bitter enemies of evil races like frost giants, ice trolls, and winter wolves they are used to fighting and combat.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Constitution increases by 1.</p>
+            <p class="indent"><strong><em>Winter Coat.</em></strong> Your thick fur means that you are unaffected by extreme cold, and when you aren’t wearing armor, your AC is 13 + your Dexterity modifier. You can use this AC if your armor would leave you with a lower AC. A shield’s benefits apply as normal while you use your natural armor.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Racial Trait" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_SNOW_LAGO_WINTER_COAT" />
+        </rules>
+    </element>
+        <element name="Winter Coat" type="Racial Trait" source="The Lago Race" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_SNOW_LAGO_WINTER_COAT">
+            <description>
+                <p>Your thick fur means that you are unaffected by extreme cold, and when you aren’t wearing armor, your AC is 13 + your Dexterity modifier. You can use this AC if your armor would leave you with a lower AC. A shield’s benefits apply as normal while you use your natural armor.</p>
+            </description>
+            <sheet>
+                <description>You are unaffected by extreme cold.</description>
+            </sheet>
+            <rules>
+                <stat name="ac:winter coat:base" value="13" />
+                <stat name="ac:winter coat:dexterity" value="dexterity:modifier" />
+                <stat name="ac:winter coat" value="ac:winter coat:base" />
+                <stat name="ac:winter coat" value="ac:winter coat:dexterity" />
+                <stat name="ac:calculation" value="ac:winter coat" bonus="calculation" equipped="[armor:none]" alt="Winter Coat (Snow Lago)" />
+            </rules>
+        </element>
+
+    <element name="Sand Lago" type="Sub Race" source="The Lago Race" id="ID_PEACHCOBBLERS_LAGO_SUBRACE_SAND_LAGO">
+        <supports>Lago</supports>
+        <description>
+            <p>Sand Lago fur is usually yellow, tan, or red. Even by Lago standards, they are mysterious. Legend has it that long ago they learned magic from sphinxes to survive in harsh deserts.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Intelligence increases by 1.</p>
+            <p class="indent"><strong><em>Desert Adapted.</em></strong> You are unaffected by extreme heat. You know the Mold Earth and Green Flame Blade cantrips. Your spellcasting ability for these cantrips is Intelligence.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Racial Trait" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_SAND_LAGO_DESERT_ADAPTED" />
+        </rules>
+    </element>
+        <element name="Desert Adapted" type="Racial Trait" source="The Lago Race" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_SAND_LAGO_DESERT_ADAPTED">
+            <description>
+                <p>You are unaffected by extreme heat. You know the mold earth and green flame blade cantrips. Your spellcasting ability for these cantrips is Intelligence.</p>
+            </description>
+            <sheet>
+                <description>You are unaffected by extreme heat. You know the mold earth and green flame blade cantrips. (Intelligence)</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_XGTE_SPELL_MOLD_EARTH" />
+                <grant type="Spell" id="ID_SCAG_SPELL_GREEN_FLAME_BLADE" />
+            </rules>
+        </element>
+
+    <element name="Star Lago" type="Sub Race" source="The Lago Race" id="ID_PEACHCOBBLERS_LAGO_SUBRACE_STAR_LAGO">
+        <supports>Lago</supports>
+        <description>
+            <p>Star Lago fur can be almost any color or pattern. Peaceful and friendly, they are the most common of Lago, making their Warrens in temperate places like woods or rolling hills.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Charisma increases by 1.</p>
+            <p class="indent"><strong><em>Bluff.</em></strong> As a Reaction, you can make a Charisma save against an enemy attack roll. If you roll higher than the attack roll, you successfully bluff that you were hit, and you take 0 damage. You may use Bluff a number of times equal to your Charisma modifier per long rest, with a minumum of 1 use.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="charisma" value="1" />
+            <grant type="Racial Trait" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_STAR_LAGO_BLUFF" />
+        </rules>
+    </element>
+        <element name="Bluff" type="Racial Trait" source="The Lago Race" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_STAR_LAGO_BLUFF">
+            <description>
+                <p>As a Reaction, you can make a Charisma save against an enemy attack roll. If you roll higher than the attack roll, you successfully bluff that you were hit, and you take 0 damage. You may use Bluff a number of times equal to your Charisma modifier per long rest, with a minumum of 1 use.</p>
+            </description>
+            <sheet action="Reaction" usage="{{bluff:uses}}/Long Rest">
+                <description>You can make a Charisma save against an enemy attack roll. If you roll higher than the attack roll, you successfully bluff that you were hit, and you take 0 damage.</description>
+            </sheet>
+            <rules>
+                <stat name="bluff:uses" value="1" bonus="base" />
+                <stat name="bluff:uses" value="charisma:modifier" bonus="base" />
+            </rules>
+        </element>
+
+    <element name="Stone Lago" type="Sub Race" source="The Lago Race" id="ID_PEACHCOBBLERS_LAGO_SUBRACE_STONE_LAGO">
+        <supports>Lago</supports>
+        <description>
+            <p>Stone Lago fur is usually brown, gray, or black. Serious, stubborn, and single-minded at times, their Warrens can be found inside tall mountains or at the bottom of deep valleys.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength increases by 1.</p>
+            <p class="indent"><strong><em>Kick Attack.</em></strong> Your unarmed strike is a Kick Attack which deals 1d6 + your Strength modifier in Bludgeoning damage. If you hit an enemy with a Kick Attack, once per long rest as a Reaction, you may jump off the enemy up to 10 feet away, without triggering an opportunity attack.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="strength" value="1" />
+            <grant type="Racial Trait" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_STONE_LAGO_KICK_ATTACK" />
+        </rules>
+    </element>
+        <element name="Kick Attack" type="Racial Trait" source="The Lago Race" id="ID_PEACHCOBBLERS_LAGO_RACIAL_TRAIT_STONE_LAGO_KICK_ATTACK">
+            <description>
+                <p>Your unarmed strike is a Kick Attack which deals 1d6 + your Strength modifier in Bludgeoning damage. If you hit an enemy with a Kick Attack, once per long rest as a Reaction, you may jump off the enemy up to 10 feet away, without triggering an opportunity attack.</p>
+            </description>
+            <sheet>
+                <description>Your unarmed strike is a Kick Attack which deals 1d6 + {{strength:modifier}} Bludgeoning damage. If you hit an enemy with a Kick Attack, once per long rest as a Reaction, you may jump off the enemy up to 10 feet away, without triggering an opportunity attack.</description>
+            </sheet>
+        </element>
+</elements>

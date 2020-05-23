@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Veditnal Race</name>
+        <update version="0.0.1">
+            <file name="race-veditnal.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/races/race-veditnal.xml" />
+        </update>
+    </info>
+    
+    <element name="The Veditnal Race" type="Source" source="Core" id="ID_STARLIGHTWALKER_GMBINDER_SOURCE_VEDIT_RACE">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation"></set>
+            <set name="url">https://www.gmbinder.com/share/-M7cqPcKPKjIp9avV-Py</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="SLW" url="https://www.gmbinder.com/profile/starlightwalker">starlightwalker</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200520</set>
+        </setters>
+    </element>
+    
+    <element name="Vedit" type="Race" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACE_VEDIT">
+        <description>
+            <p>A vedit is to drow what a genasi is to humans, a being touched by the power of the Elemental Planes. However, the faezress and the harsh realities of the Underdark have made the veditnal manifest in different ways than their genasi cousins, combining the inherent magic of the drow with elemental power.</p>
+            <h4>Vedit Traits</h4>
+            <p>As a vedit, you gain the following racial traits:</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Dexterity score increases by 1.</p>
+            <p class="indent"><strong><em>Age.</em></strong> Veditnal are uncommon and no one is sure how long one can live since most are slain before dying of old age, but most appear to have at least a standard elven lifespan. You matured at around 100 years old and may live upwards of 750 years.</p>
+            <p class="indent"><strong><em>Size.</em></strong> Veditnal, like drow, range from around 4.5 to 5.5 feet tall and have very slender builds. Women are usually taller than men. Your size is Medium.</p>
+            <p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+            <p class="indent"><strong><em>Fey Ancestry.</em></strong> You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</p>
+            <p class="indent"><strong><em>Drow Weapon Training.</em></strong> You have proficiency with rapiers, shortswords, and hand crossbows.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You know Common and Undercommon.</p>
+        </description>
+        <sheet display="false" />
+        <setters>
+			<set name="names" type="male">Adran, Aelar, Aramil, Arannis, Aust, Beiro, Berrian, Carric, Enialis, Erdan, Erevan, Galinndan, Hadarai, Heian, Himo, Immeral, Ivellios, Laucian, Mindartis, Paelias, Peren, Quarion, Riardon, Rolen, Soveliss, Thamior, Tharivol, Theren, Varis</set>
+			<set name="names" type="female">Adrie, Althaea, Anastrianna, Andraste, Antinua, Bethrynna, Birel, Caelynn, Drusilia, Enna, Felosial, Ielenia, Jelenneth, Keyleth, Leshanna, Lia, Meriele, Mialee, Naivara, Quelenna, Quillathe, Sariel, Shanairra, Shava, Silaqui, Theirastra, Thia, Vadania, Valanthe, Xanaphia</set>
+			<set name="names" type="child">Ara, Bryn, Del, Eryn, Faen, Innil. Lael, Mella, Naill, Naeris, Phann, Rael, Rinn, Sai, Syllin, Thia, Vall</set>
+			<set name="names" type="family">Amakiir, Amastacia, Galanodel, Holimion, Ilphelkiir, Liadon, Meliamne, Nai'lo, Siannodel, Xiloscient</set>
+			<set name="names-format">{{name}} {{family}}</set>
+			<set name="height" modifier="2d6">4'5"</set>
+			<set name="weight" modifier="1d6">75 lb.</set>
+        </setters>
+        <rules>
+			<stat name="dexterity" value="1" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_FEY_ANCESTRY" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_DROW_WEAPON_TRAINING" />
+			<select type="Sub Race" name="Vedit Subrace" supports="Vedit" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_UNDERCOMMON" />
+        </rules>
+    </element>
+        <element name="Fey Ancestry" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_FEY_ANCESTRY">
+            <description>
+                <p>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</description>
+            </sheet>
+        </element>
+        <element name="Drow Weapon Training" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_DROW_WEAPON_TRAINING">
+            <description>
+                <p>You have proficiency with rapiers, shortswords, and hand crossbows.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND" />
+            </rules>
+        </element>
+
+    <element name="Fire Vedit" type="Sub Race" source="The Veditnal Race" id="ID_SLW_VEDITNAL_SUB_RACE_VEDIT_FIRE">
+        <supports>Vedit</supports>
+        <description>
+            <p>Fire veditnal are not particularly common, the primary reason being simply that very few survive to adulthood. Many are killed at birth because fire is so harsh on drow eyes. Those who reach adolescence are unlikely to survive training or excursions into the Underdark wilds due to their flame manifestations making them easy targets in the dark. Most surviving fire veditnal burn with black or purple flames that aren’t visible in the dark or are easily dimmed, a side effect of exposure to the faezress. Their natural tendency towards anger and violence combined with their desperate fight for survival makes a fire vedit tougher than most, and as such they are prized by the drow as warrior. Their force of will allows them to rise quickly through the ranks to positions of power, where they rule with iron fists.</p>
+            <h4>Fire Vedit Traits</h4>
+            <p>As a fire vedit, you gain the following traits:</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength and Charisma scores both increase by 1.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Elven (Drow), Undercommon, and Primordial (Ignan).</p>
+            <p class="indent"><strong><em>Fire Resistance.</em></strong> You have resistance to fire damage.</p>
+            <p class="indent"><strong><em>Darkvision.</em></strong> Raised by your drow kin in the depths of the Underdark, your eyes are hardly hindered by darkness. You can see in dim light within 120 feet as if it were bright light, and in darkness as if it were dim light.</p>
+            <p class="indent"><strong><em>Aggressive.</em></strong> As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</p>
+            <p class="indent"><strong><em>Magical Inheritance.</em></strong> Both your drow and elemental ancestors are naturally magical beings. You know the produce flames cantrip. When you reach 3rd level, you can cast the faerie fire spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spell casting score for these abilities.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_FIRE_FIRE_RESISTANCE" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_FIRE_DARKVISION" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_FIRE_AGGRESSIVE" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_FIRE_MAGICAL_INHERITANCE" />
+        </rules>
+    </element>
+        <element name="Fire Resistance" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_FIRE_FIRE_RESISTANCE">
+            <description>
+                <p>You have resistance to fire damage.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+            </rules>
+        </element>
+        <element name="Darkvision" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_FIRE_DARKVISION">
+            <description>
+                <p>Raised by your drow kin in the depths of the Underdark, your eyes are hardly hindered by darkness. You can see in dim light within 120 feet as if it were bright light, and in darkness as if it were dim light.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <grant type="Vision" id="ID_VISION_SUPERIORDARKVISION" />
+            </rules>
+        </element>
+        <element name="Aggressive" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_FIRE_AGGRESSIVE">
+            <description>
+                <p>As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</description>
+            </sheet>
+        </element>
+        <element name="Magical Inheritance" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_FIRE_MAGICAL_INHERITANCE">
+            <description>
+                <p>Both your drow and elemental ancestors are naturally magical beings. You know the <em>produce flame</em> cantrip. When you reach 3rd level, you can cast the <em>faerie fire</em> spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the <em>darkness</em> spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spell casting score for these abilities.</p>
+            </description>
+            <sheet>
+                <description>You know the produce flames cantrip. (Charisma)</description>
+                <description level="3">You know the produce flame cantrip. You can cast faerie fire 1/long rest. (Charisma)</description>
+                <description level="5">You know the produce flame cantrip. You can cast faerie fire and darkness 1/long rest. (Charisma)</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_PRODUCE_FLAME" />
+                <grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_DARKNESS" level="5" />
+            </rules>
+        </element>
+
+
+    <element name="Water Vedit" type="Sub Race" source="The Veditnal Race" id="ID_SLW_VEDITNAL_SUB_RACE_VEDIT_WATER">
+        <supports>Vedit</supports>
+        <description>
+            <p>Water veditnal are somewhat less elemental than their kin, instead appearing something like the drow equivalent of a sea elf, having webbed digits and gills. Despite this, they are no less dangerous than other veditnal. While others rely on their magical tricks or physical force, a water vedit’s skill lies in clever use of her body’s adaptations. Water veditnal often work in pairs, with one luring an enemy into place so that another vedit can ambush them and drag them into the depths. Some are even able to turn their skin clear as glass, becoming functionally invisible, and many become highly resistant to poison, a very useful adaptation in the world of the drow.</p>
+            <h4>Water Vedit Traits</h4>
+            <p>As a water vedit, you gain the following traits:</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Constitution and Intelligence scores increase by 1.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Elven (Drow), Undercommon, and Primordial (Aquan).</p>
+            <p class="indent"><strong><em>Amphibious.</em></strong> You have a swimming speed of 30 feet, and you can breathe both air and water through your gills.</p>
+            <p class="indent"><strong><em>Bioluminescence.</em></strong> You can cause parts of your skin to glow with colorful light and shed dim light in a 5 foot radius, requiring no action and ending the effect at will.</p>
+            <p class="indent"><strong><em>Darkvision.</em></strong> The waters of the Underdark are no less dark or deadly than its dry tunnels. You can see in dim light within 120 feet as if it were bright light, and in darkness as if it were dim light. Your vision is tinged by your connections to the Elemental Plane of Water and the faezress. When using your darkvision living creatures within range radiate their own bioluminescence, giving you advantage on Perception checks to detect hidden creatures.</p>
+            <p class="indent"><strong><em>Magical Inheritance.</em></strong> Both your drow and elemental ancestors are naturally magical beings. You know the dancing lights and shape water cantrips. When you reach 3rd level, you can cast the create or destroy water spell once with this trait and regain the ability to do so when you finish a long rest.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_WATER_AMPHIBIOUS" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_WATER_BIOLUMINESCENCE" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_WATER_DARKVISION" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_WATER_MAGICAL_INHERITANCE" />
+        </rules>
+    </element>
+        <element name="Amphibious" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_WATER_AMPHIBIOUS">
+            <description>
+                <p>You have a swimming speed of 30 feet, and you can breathe both air and water through your gills.</p>
+            </description>
+            <sheet>
+                <description>You can breathe both air and water through your gills.</description>
+            </sheet>
+            <rules>
+                <stat name="innate speed:swim" value="30" bonus="base" />
+            </rules>
+        </element>
+        <element name="Bioluminescence" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_WATER_BIOLUMINESCENCE">
+            <description>
+                <p>You can cause parts of your skin to glow with colorful light and shed dim light in a 5 foot radius, requiring no action and ending the effect at will.</p>
+            </description>
+            <sheet>
+                <description>You can cause parts of your skin to glow with colorful light and shed dim light in a 5 foot radius, requiring no action and ending the effect at will.</description>
+            </sheet>
+        </element>
+        <element name="Darkvision" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_WATER_DARKVISION">
+            <description>
+                <p>The waters of the Underdark are no less dark or deadly than its dry tunnels. You can see in dim light within 120 feet as if it were bright light, and in darkness as if it were dim light. Your vision is tinged by your connections to the Elemental Plane of Water and the faezress. When using your darkvision living creatures within range radiate their own bioluminescence, giving you advantage on Perception checks to detect hidden creatures.</p>
+            </description>
+            <sheet>
+                <description>When using your darkvision living creatures within range radiate their own bioluminescence, giving you advantage on Perception checks to detect hidden creatures.</description>
+            </sheet>
+            <rules>
+                <grant type="Vision" id="ID_VISION_SUPERIORDARKVISION" />
+            </rules>
+        </element>
+        <element name="Magical Inheritance" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_WATER_MAGICAL_INHERITANCE">
+            <description>
+                <p>Both your drow and elemental ancestors are naturally magical beings. You know the <em>dancing lights</em> and <em>shape water</em> cantrips. When you reach 3rd level, you can cast the <em>create or destroy water</em> spell once with this trait and regain the ability to do so when you finish a long rest.</p>
+            </description>
+            <sheet>
+                <description>You know the dancing lights and shape water cantrips.</description>
+                <description level="3">You know the dancing lights and shape water cantrips. You can cast create or destroy water 1/long rest.</description>
+            </sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DANCING_LIGHTS" level="1" />
+			<grant type="Spell" id="ID_XGTE_SPELL_SHAPE_WATER" level="1" />
+			<grant type="Spell" id="ID_PHB_SPELL_CREATE_OR_DESTROY_WATER" level="3" />
+		</rules>
+        </element>
+
+
+    <element name="Air Vedit" type="Sub Race" source="The Veditnal Race" id="ID_SLW_VEDITNAL_SUB_RACE_VEDIT_AIR">
+        <supports>Vedit</supports>
+        <description>
+            <p>Air veditnal are the rarest of all vedit types due to the equal rarity of Elemental Air powers that exist in the the Underdark. The oppressive power of earth all around them and the constant stillness of the air generally drives most air veditnal mad, with only a lucky few who escape to the surface retaining their sanity in the long run. Those who remain are generally hermits living in the wilds, having gotten lost trying to find a way out, although some do manage to live in the massive caves that house drow cities. Air veditnal are often overwhelmed by their elemental nature as it attempts to counteract the conflicting energy that surrounds them, and they become wispy and ghostly with age, even their dark drow skin turning pale as porcelain.</p>
+            <h4>Air Vedit Traits</h4>
+            <p>As an air vedit, you gain the following traits:</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Dexterity and Charisma scores both increase by 1.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Elven (Drow), Undercommon, and Primordial (Auran).</p>
+            <p class="indent"><strong><em>Darkvision.</em></strong> The darkness of a deep cave is your natural environment. You can see in dim light within 120 feet as if it were bright light, and in darkness as if it were dim light.</p>
+            <p class="indent"><strong><em>Unending Breath.</em></strong> You can hold your breath indefinitely while you are not incapacitated.</p>
+            <p class="indent"><strong><em>Windflow.</em></strong> You move like the wind and can move through the space of any creature that is of a size larger than yours.</p>
+            <p class="indent"><strong><em>Magical Inheritance.</em></strong> Both your drow and elemental ancestors are naturally magical beings. You know the gust cantrip. When you reach 3rd level, you can cast the fog cloud spell once with this trait. When you reach 5th level, you can cast the levitate spell on yourself once with this trait, requiring no material components. When you reach 7th level, you can cast the stinking cloud spell once with this trait, requiring no material components. You regain the ability to cast all these spells this way when you finish a long rest. Wisdom is your spell casting score for these abilities.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_AIR_DARKVISION" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_AIR_UNENDING_BREATH" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_AIR_WINDFLOW" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_AIR_MAGICAL_INHERITANCE" />
+        </rules>
+    </element>
+        <element name="Darkvision" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_AIR_DARKVISION">
+            <description>
+                <p>The darkness of a deep cave is your natural environment. You can see in dim light within 120 feet as if it were bright light, and in darkness as if it were dim light.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Vision" id="ID_VISION_SUPERIORDARKVISION" />
+            </rules>
+        </element>
+        <element name="Unending Breath" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_AIR_UNENDING_BREATH">
+            <description>
+                <p>You can hold your breath indefinitely while you are not incapacitated.</p>
+            </description>
+            <sheet>
+                <description>You can hold your breath indefinitely while you are not incapacitated.</description>
+            </sheet>
+        </element>
+        <element name="Windflow" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_AIR_WINDFLOW">
+            <description>
+                <p>You move like the wind and can move through the space of any creature that is of a size larger than yours.</p>
+            </description>
+            <sheet>
+                <description>You can move through the space of any creature that is of a size larger than yours.</description>
+            </sheet>
+        </element>
+        <element name="Magical Inheritance" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_AIR_MAGICAL_INHERITANCE">
+            <description>
+                <p>Both your drow and elemental ancestors are naturally magical beings. You know the <em>gust</em> cantrip. When you reach 3rd level, you can cast the <em>fog cloud</em> spell once with this trait. When you reach 5th level, you can cast the <em>levitate</em> spell on yourself once with this trait, requiring no material components. When you reach 7th level, you can cast the <em>stinking cloud</em> spell once with this trait, requiring no material components. You regain the ability to cast all these spells this way when you finish a long rest. Wisdom is your spell casting score for these abilities.</p>
+            </description>
+            <sheet>
+                <description>You know the gust cantrip.</description>
+                <description level="3">You know the gust cantrip. You can cast fog cloud 1/long rest. (Wisdom)</description>
+                <description level="3">You know the gust cantrip. You can cast fog cloud and levitate 1/long rest. (Wisdom)</description>
+                <description level="3">You know the gust cantrip. You can cast fog cloud, levitate and stinking cloud 1/long rest. (Wisdom)</description>
+            </sheet>
+		<rules>
+			<grant type="Spell" id="ID_XGTE_SPELL_GUST" level="1" />
+			<grant type="Spell" id="ID_PHB_SPELL_FOG_CLOUD" level="3" />
+			<grant type="Spell" id="ID_PHB_SPELL_LEVITATE" level="5" />
+			<grant type="Spell" id="ID_PHB_SPELL_STINKING_CLOUD" level="7" />
+		</rules>
+        </element>
+
+
+    <element name="Earth Vedit" type="Sub Race" source="The Veditnal Race" id="ID_SLW_VEDITNAL_SUB_RACE_VEDIT_EARTH">
+        <supports>Vedit</supports>
+        <description>
+            <p>Earth veditnal are, unsurprisingly, the most common type of veditnal. While earth genasi are known for their strength and fortitude, an earth vedit is a master hunter, moving unseen through the caves of the Underdark with speed and skill that is rare even among other natives. Shadow is their friend, and they ignore the restrictions that cave walls impose on others. A earth vedit might hide within a stalagmite for hours to burst forth suddenly, or lead an enemy on a lengthy chase through the dark only to disappear, leaving them trapped in the lair of some beast. Their own homes are veritable fortresses of stone shrouded in impenetrable darkness. Earth veditnal form tight-knit enclaves within drow communities, and while other veditnal may not feel much kinship with other types, earth veditnal will welcome others in with little question. Attempts to take advantage of this extension of trust are not well received, and rare is the traitor who survives the repayment of their betrayal.</p>
+            <h4>Earth Vedit Traits</h4>
+            <p>As a earth vedit, you gain the following traits:</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Dexterity and Wisdom scores increases by 1.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Elven (Drow), Undercommon, and Primordial (Terran).</p>
+            <p class="indent"><strong><em>Darkvision.</em></strong> The darkness of a deep cave is your natural environment. You can see in dim light within 120 feet as if it were bright light,and in darkness as if it were dim light.</p>
+            <p class="indent">Your vision is enhanced by your connections to the Elemental Plane of Earth and the faezress. While within a field of magical darkness that you created, you can still see as if in dim light for 10 feet.</p>
+            <p class="indent"><strong><em>Earth Walk.</em></strong> You can move across difficult terrain made of earth or stone without expending extra movement.</p>
+            <p class="indent"><strong><em>Magical Inheritance.</em></strong> Both your drow and elemental ancestors are naturally magical beings. You know the infestation and mold earth cantrips. When you reach 3rd level, you can cast the pass without trace spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Wisdom is your spell casting score for these abilities.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_EARTH_DARKVISION" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_EARTH_EARTH_WALK" />
+            <grant type="Racial Trait" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_EARTH_MAGICAL_INHERITANCE" />
+        </rules>
+    </element>
+        <element name="Darkvision" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_EARTH_DARKVISION">
+            <description>
+                <p>The darkness of a deep cave is your natural environment. You can see in dim light within 120 feet as if it were bright light,and in darkness as if it were dim light.</p>
+                <p class="indent">Your vision is enhanced by your connections to the Elemental Plane of Earth and the faezress. While within a field of magical darkness that you created, you can still see as if in dim light for 10 feet.</p>
+            </description>
+            <sheet>
+                <description>Your vision is enhanced by your connections to the Elemental Plane of Earth and the faezress. While within a field of magical darkness that you created, you can still see as if in dim light for 10 feet.</description>
+            </sheet>
+            <rules>
+                <grant type="Vision" id="ID_VISION_SUPERIORDARKVISION" />
+            </rules>
+        </element>
+        <element name="Earth Walk" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_EARTH_EARTH_WALK">
+            <description>
+                <p>You can move across difficult terrain made of earth or stone without expending extra movement.</p>
+            </description>
+            <sheet>
+                <description>You can move across difficult terrain made of earth or stone without expending extra movement.</description>
+            </sheet>
+        </element>
+        <element name="Magical Inheritance" type="Racial Trait" source="The Veditnal Race" id="ID_SLW_VEDITNAL_RACIAL_TRAIT_VEDIT_EARTH_MAGICAL_INHERITANCE">
+            <description>
+                <p>Both your drow and elemental ancestors are naturally magical beings. You know the infestation and mold earth cantrips. When you reach 3rd level, you can cast the pass without trace spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Wisdom is your spell casting score for these abilities.</p>
+            </description>
+            <sheet>
+                <description>You know the infestation and mold earth cantrips.</description>
+                <description level="3">You know the infestation and mold earth cantrips. You can cast pass without trace 1/long rest. (Wisdom)</description>
+                <description level="5">You know the infestation and mold earth cantrips. You can cast pass without trace and darkness 1/long rest. (Wisdom)</description>
+            </sheet>
+            <rules>
+			<grant type="Spell" id="ID_XGTE_SPELL_INFESTATION" level="1" />
+			<grant type="Spell" id="ID_XGTE_SPELL_MOLD_EARTH" level="1" />
+			<grant type="Spell" id="ID_PHB_SPELL_PASS_WITHOUT_TRACE" level="3" />
+			<grant type="Spell" id="ID_PHB_SPELL_DARKNESS" level="5" />
+            </rules>
+        </element>
+
+  <!-- Vedit Racial Feats -->
+    <element name="Aquatic Body" type="Feat" source="The Veditnal Race" id="ID_SLW_VEDITNAL_FEAT_AQUATIC_BODY">
+        <requirements>[level:8],ID_SLW_VEDITNAL_SUB_RACE_VEDIT_WATER</requirements>
+        <prerequisite>Vedit (water), 8th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Vedit (water), 8th level</p>
+            <p>Your body has natural adaptations to the dangerous environment of the Underdark. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Constitution score by 1, to a maximum of 20.</li>
+                <li><strong>Dilution.</strong> You have advantage on saving throws against being poisoned and resistance to poison damage.</li>
+                <li><strong>Glass Skin.</strong> As a bonus action, you activate a natural defense mechanism and become invisible until the start of your next turn or until you attack, make a damage roll, or force someone to make a saving throw. This is a biological ability rather than a magical one, and as such cannot be dispelled or detected with divination magic. Once you use this trait, you can’t use it again until you finish a short or long rest.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have advantage on saving throws against being poisoned.</description>
+        </sheet>
+        <rules>
+            <stat name="constitution" value="1" />
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+            <grant type="Feat Feature" id="" />
+        </rules>
+    </element>
+        <element name="Glass Skin" type="Feat" source="The Veditnal Race" id="ID_SLW_VEDITNAL_FEAT_FEATURE_GLASS_SKIN">
+            <compendium display="false" />
+            <description>
+                <p>As a bonus action, you activate a natural defense mechanism and become invisible until the start of your next turn or until you attack, make a damage roll, or force someone to make a saving throw. This is a biological ability rather than a magical one, and as such cannot be dispelled or detected with divination magic. Once you use this trait, you can’t use it again until you finish a short or long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1/Short Rest">
+                <description>You become invisible until the start of your next turn or until you attack, make a damage roll, or force someone to make a saving throw. This is a biological ability rather than a magical one, and as such cannot be dispelled or detected with divination magic.</description>
+            </sheet>
+        </element>
+    <element name="Fiery Blood" type="Feat" source="The Veditnal Race" id="ID_SLW_VEDITNAL_FEAT_FIERY_BLOOD">
+        <requirements>ID_SLW_VEDITNAL_SUB_RACE_VEDIT_FIRE</requirements>
+        <prerequisite>Vedit (fire)</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Vedit (fire)</p>
+            <p>Your blood is fire, something your enemies learn to their dismay when they strike you. You gain the following benefits.</p>
+            <ul>
+                <li>Increase your Strength or Constitution score by 1, to a maximum of 20.</li>
+                <li>As a reaction when you are struck by a weapon attack, you can cause your spilled blood to ignite. All creatures within 10 feet of you must make a Dexterity saving throw or take 3d6 damage. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. The damage increases to 4d6 at 6th level, 5d6 at 11th level, and 5d6 at 16th level. Additionally, the terrain in a 5-foot radius centered on you becomes difficult terrain as your blood continues to burn for 1d4 rounds. Creatures that end their turn within the area take an additional 1d6 damage.</li>
+            </ul>
+        </description>
+        <sheet action="Reaction">
+            <description>When you are struck by a weapon attack, you can cause your spilled blood to ignite. All creatures within 10 feet of you must make a Dexterity saving throw (save DC {{fiery-blood:save-dc}}) or take {{fiery-blood:damage-dice}}d6 damage. Additionally, the terrain in a 5-foot radius centered on you becomes difficult terrain as your blood continues to burn for 1d4 rounds. Creatures that end their turn within the area take an additional 1d6 damage.</description>
+        </sheet>
+        <rules>
+            <stat name="fiery-blood:damage-dice" value="3" level="1" />
+            <stat name="fiery-blood:damage-dice" value="1" level="6" />
+            <stat name="fiery-blood:damage-dice" value="1" level="11" />
+            <stat name="fiery-blood:damage-dice" value="1" level="16" />
+            <stat name="fiery-blood:save-dc" value="8" />
+            <stat name="fiery-blood:save-dc" value="proficiency" />
+            <stat name="fiery-blood:save-dc" value="constitution:modifier" />
+			<select type="Ability Score Improvement" name="Ability Score Increase, Veditnal" supports="ID_INTERNAL_ASI_CONSTITUTION|ID_INTERNAL_ASI_STRENGTH" />
+        </rules>
+    </element>
+    <element name="Cavewalker" type="Feat" source="The Veditnal Race" id="ID_SLW_VEDITNAL_FEAT_CAVEWALKER">
+        <requirements>[level:8],ID_SLW_VEDITNAL_SUB_RACE_VEDIT_EARTH</requirements>
+        <prerequisite>Vedit (earth), 8th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Vedit (earth), 8th level</p>
+            <p>Your connection to the stone becomes deeper, allowing you to shape it to your will. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Dexterity or Constitution score by 1, to a maximum of 20.</li>
+                <li>You can cast the earth tremor, meld into stone, and stone shape spells once each with this trait, requiring no material components. When you cast meld into stone, you have 10 feet of blindsight beyond the surface of the stone. You regain the ability to cast these spells in this way when you finish a long rest.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You can cast the <em>earth tremor</em>, <em>meld into stone</em>, and <em>stone shape</em> spells 1/long rest each with this trait, requiring no material components. When you cast meld into stone, you have 10 feet of blindsight beyond the surface of the stone.</description>
+        </sheet>
+        <rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase, Veditnal" supports="ID_INTERNAL_ASI_CONSTITUTION|ID_INTERNAL_ASI_DEXTERITY" />
+            <grant type="Spell" id="ID_XGTE_SPELL_EARTH_TREMOR" />
+            <grant type="Spell" id="ID_PHB_SPELL_MELD_INTO_STONE" />
+            <grant type="Spell" id="ID_PHB_SPELL_STONE_SHAPE" />
+        </rules>
+    </element>
+    <element name="Insubstantial" type="Feat" source="The Veditnal Race" id="ID_SLW_VEDITNAL_FEAT_INSUBSTANTIAL">
+        <requirements>[level:8],ID_SLW_VEDITNAL_SUB_RACE_VEDIT_AIR</requirements>
+        <prerequisite>Vedit (air), 8th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Vedit (air), 8th level</p>
+            <p>As a bonus action, you can soften your form to move up to your walking speed through openings as small as a 1-inch square, When doing so each foot of movement costs 3 feet of speed. You may use this ability multiple times in a row, but if you run out of uses while still within a space that is smaller than your natural form, you are expelled to the nearest exit, taking 1d6 bludgeoning damage for every 5 feet you travel. You may use this ability a number of times equal to your proficiency modifier. You regain all uses when you finish a short or long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="{{proficiency}}/Short Rest">
+            <description>You can soften your form to move up to your walking speed through openings as small as a 1-inch square, When doing so each foot of movement costs 3 feet of speed. You may use this ability multiple times in a row, but if you run out of uses while still within a space that is smaller than your natural form, you are expelled to the nearest exit, taking 1d6 bludgeoning damage for every 5 feet you travel.</description>
+        </sheet>
+    </element>
+</elements>
