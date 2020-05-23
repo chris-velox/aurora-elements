@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Druid Circle of the Elements</name>
+        <update version="0.0.1">
+            <file name="druid-circle-of-the-elements.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/druid/druid-circle-of-the-elements.xml" />
+        </update>
+    </info>
+    
+    <element name="Circle of the Elements" type="Source" source="Core" id="ID_CYBERHAWK94_HOMEBREWERY_SOURCE_CIRCLE_OF_THE_ELEMENTS">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">DCOTE</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/BJMSLmW_H</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="CH94" url="https://www.reddit.com/u/Cyberhawk94">u/Cyberhawk94</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200118</set>
+        </setters>
+    </element>
+    
+    <element name="Circle of the Elements" type="Archetype" source="Circle of the Elements" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_DRUID_CIRCLE_OF_THE_ELEMENTS">
+        <supports>Druid Circle</supports>
+        <description>
+            <p>Druids of the Circle of the Elements are wielders of powerful and dangerous magics. This order recognizes that nature is not only the beasts and plants of the world, it is also the elemental forces that shape the world itself.</p>
+            <p class="indent">Tapping into magic drawn from the Elemental Planes of Fire, Water, Air, and Earth, these druids bring the raw uncontained fury of the elements to bear against their foes.</p>
+            <div element="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_ELEMENTAL_KNOWLEDGE" />
+            <div element="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_PRIMAL_CHANNELING" />
+            <div element="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_CIRCLE_SPELLS" />
+            <div element="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_REACTIVE_ABSORPTION" />
+            <div element="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_EMPOWERED_CHANNEL" />
+            <div element="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_ELEMENTAL_MASTERY" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_ELEMENTAL_KNOWLEDGE" level="2" />
+            <grant type="Archetype Feature" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_PRIMAL_CHANNELING" level="2" />
+            <grant type="Archetype Feature" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_CIRCLE_SPELLS" level="3" />
+            <grant type="Archetype Feature" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_REACTIVE_ABSORPTION" level="6" />
+            <grant type="Archetype Feature" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_EMPOWERED_CHANNEL" level="10" />
+            <grant type="Archetype Feature" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_ELEMENTAL_MASTERY" level="14" />
+        </rules>
+    </element>
+        <element name="Elemental Knowledge" type="Archetype Feature" source="Circle of the Elements" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_ELEMENTAL_KNOWLEDGE">
+            <description>
+                <p>When you choose this circle at 2nd level, you learn two cantrips of your choice that deal fire, cold, lightning, or thunder damage. They count as druid spells for you.</p>
+                <p class="indent">In addition, you can speak, read, and write Primordial.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Cantrip (Circle of the Elements)" supports="0" number="2" spellcasting="Druid" known="true" />
+                <grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
+            </rules>
+        </element>
+        <element name="Primal Channeling" type="Archetype Feature" source="Circle of the Elements" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_PRIMAL_CHANNELING">
+            <description>
+                <p>Also at 2nd level, when you use your Wild Shape feature, you can channel an element through yourself, rather than transforming.</p>
+                <p class="indent">As a bonus action, you gain temporary hit points equal to twice your Druid level, and must choose fire, water, air, or earth for an additional benefit. You may not channel the same element twice until you have completed a short rest.</p>
+                <p class="indent"><strong><em>Fire.</em></strong> Any spells you cast that deal fire damage deal additional damage equal to your Wisdom modifier. In addition, when you roll fire damage for a spell, you can reroll a number of the damage dice up to your Wisdom modifier (minimum of one). You take 1d4 fire damage for each die you choose to reroll.</p>
+                <p class="indent"><strong><em>Water.</em></strong> When you cast a spell of 1st level or higher that deals cold damage or conjures water (such as tidal wave), you regain a number of hit points equal to your Wisdom modifier.</p>
+                <p class="indent"><strong><em>Air.</em></strong> Your speed increases by 10 feet. In addition, anytime you move a creature against its will using a spell, that creature takes lightning damage equal to your Wisdom modifier.</p>
+                <p class="indent"><strong><em>Earth.</em></strong> Your AC increases by 2, and any spells you cast that deal bludgeoning damage deal additional damage equal to your Wisdom modifier.</p>
+                <p class="indent">These benefits last for 10 minutes, until you become incapacitiated, or until you use your Wild Shape again.</p>
+            </description>
+            <sheet action="Bonus Action" usage="Wild Shape">
+                <description>You gain {{primal-channeling:temp-hp}} temporary hit points. You must choose fire, water, air, or earth for an additional benefit. You may not channel the same element twice until you have completed a short rest. You gain benefits based on your choice.</description>
+            </sheet>
+            <rules>
+                <stat name="primal-channeling:temp-hp" value="level:druid" />
+                <stat name="primal-channeling:temp-hp" value="level:druid" />
+            </rules>
+        </element>
+        <element name="Circle Spells" type="Archetype Feature" source="Circle of the Elements" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_CIRCLE_SPELLS">
+            <description>
+                <p>The flow of the elements through you grants you access to certain spells. At 3rd, 5th, 7th, and 9th level you gain access to the spells listed for that level in the Circle of the Elements Spells table.</p>
+                <p class="indent">Once you gain access to one of these spells, you always have it prepared, and it doesn’t count against the number of spells you can prepare each day. If you gain access to a spell that doesn’t appear on the druid spell list, the spell is nonetheless a druid spell for you.</p>
+                <h5 class="caption">CIRCLE OF ELEMENTS SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Druid Level</td><td>Circle Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>Maximilian's earthen grasp, flaming sphere</em></td></tr>
+                    <tr><td>5th</td><td><em>lightning bolt, tidal wave</em></td></tr>
+                    <tr><td>7th</td><td><em>fire shield, storm sphere</em></td></tr>
+                    <tr><td>9th</td><td><em>cone of cold, maelstrom</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_XGTE_SPELL_MAXIMILIANS_EARTHEN_GRASP" spellcasting="Druid" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_FLAMING_SPHERE" spellcasting="Druid" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_LIGHTNING_BOLT" spellcasting="Druid" prepared="true" level="5" />
+                <grant type="Spell" id="ID_XGTE_SPELL_TIDAL_WAVE" spellcasting="Druid" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_FIRE_SHIELD" spellcasting="Druid" prepared="true" level="7" />
+                <grant type="Spell" id="ID_XGTE_SPELL_STORM_SPHERE" spellcasting="Druid" prepared="true" level="7" />
+                <grant type="Spell" id="ID_PHB_SPELL_CONE_OF_COLD" spellcasting="Druid" prepared="true" level="9" />
+                <grant type="Spell" id="ID_XGTE_SPELL_MAELSTROM" spellcasting="Druid" prepared="true" level="9" />
+            </rules>
+        </element>
+        <element name="Reactive Absorption" type="Archetype Feature" source="Circle of the Elements" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_REACTIVE_ABSORPTION">
+            <description>
+                <p>Beginning at 6th level, you can absorb incoming elemental energy, lessening its effect on you and storing it as a shield.</p>
+                <p class="indent">As a reaction to taking cold, fire, lightning, or thunder damage, you gain resistance to the triggering damage type until the start of your next turn. In addition, the first creature to hit you with a melee attack before the end of your next turn takes 2d6 damage of the triggering damage type.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>As a reaction to taking cold, fire, lightning, or thunder damage, you gain resistance to the triggering damage type until the start of your next turn. In addition, the first creature to hit you with a melee attack before the end of your next turn takes 2d6 damage of the triggering damage type.</description>
+            </sheet>
+        </element>
+        <element name="Empowered Channel" type="Archetype Feature" source="Circle of the Elements" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_EMPOWERED_CHANNEL">
+            <description>
+                <p>When you reach 10th level, your Primal Channel brings you more in sync with the elements.</p>
+                <p class="indent">You gain an additional effect based on the elemental type you are channeling:</p>
+                <p class="indent"><strong><em>Fire.</em></strong> You gain resistance to cold and fire damage.</p>
+                <p class="indent"><strong><em>Water.</em></strong> At the start of each of your turns, all creatures of your choice within 10 feet of you regain a number of hit points equal to your Wisdom modifier if they have no more than half of their hit points.</p>
+                <p class="indent"><strong><em>Air.</em></strong> Your speed increases by an additional 10 feet, and your movement does not provoke opportunity attacks.</p>
+                <p class="indent"><strong><em>Earth.</em></strong> The first time each round that you take bludgeoning, piercing, or slashing damage, the damage you take is reduced by your druid level.</p>
+            </description>
+            <sheet usage="Primal Channeling">
+                <description>You gain additional effects based on the element you channel.</description>
+            </sheet>
+        </element>
+        <element name="Elemental Mastery" type="Archetype Feature" source="Circle of the Elements" id="ID_CYBERHAWK94_DCOTE_ARCHETYPE_FEATURE_COTE_ELEMENTAL_MASTERY">
+            <description>
+                <p>At 14th level, you learn to manipulate multiple elements simultaneously, at great cost to yourself.</p>
+                <p class="indent">As a bonus action, you can expend two uses of Wild Shape at the same time to channel two elements, gaining all of the related benefits from your features. If you do so, when your channel ends you gain a point of exhaustion.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can expend two uses of Wild Shape at the same time to channel two elements, gaining all of the related benefits from your features. If you do so, when your channel ends you gain a point of exhaustion.</description>
+            </sheet>
+        </element>
+
+
+</elements>
