@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Twin Soul Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-twin-soul.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/sorcerer/sorcerer-twin-soul.xml" />
+        </update>
+    </info>
+    
+    <element name="Twin Soul Sorcerous Origin" type="Source" source="Core" id="ID_LUCRITIUS_GMBINDER_SOURCE_TWIN_SOUL">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">TSSE</set>
+            <set name="url">https://www.gmbinder.com/share/-M4Ze9V6y7jFZlorgAli</set>
+            <set name="image"></set>
+            <set name="author" url="https://www.gmbinder.com/profile/lucritius">Lucritius</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200516</set>
+        </setters>
+    </element>
+
+    <element name="Twin Soul" type="Archetype" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_ARCHETYPE_SORCERER_TWIN_SOUL">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>From birth, your soul has been linked to one specific extraplanar being, called an eidolon, and with that link sorcerous powers have awoken in you. This link might be the result of a pact your parents made with a powerful extraplanar being, a curse placed on you, or perhaps you’re the chosen of a specific deity.</p>
+            <p class="indent">In times of need, you have the ability to call your eidolon for help to fight at your side. Your eidolon may have its own mind and alignment, but yet remains fiercely loyal to you, as one of you would be powerless without the other.</p>
+            <div element="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_SUMMON_EIDOLON" />
+            <div element="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_EIDOLON_EVOLUTION" />
+            <div element="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_LIFE_LINK" />
+            <div element="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_INSEPERABLE" />
+            <div class="sidebar">
+                <p>While celestial, fey and fiend eidolons are the most common types of eidolon, there are many more types of creatures your sorcerer could be linked to. Your eidolon could be a creature from the shadowfell, or perhaps the ghost of a passed family member. You are encouraged to use these stat blocks as examples and invent your own types of eidolon!</p>
+            </div>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_SUMMON_EIDOLON" level="1" />
+            <grant type="Archetype Feature" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_EIDOLON_EVOLUTION" level="6" />
+            <grant type="Archetype Feature" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_LIFE_LINK" level="14" />
+            <grant type="Archetype Feature" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_INSEPERABLE" level="18" />
+        </rules>
+    </element>
+        <element name="Summon Eidolon" type="Archetype Feature" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_SUMMON_EIDOLON">
+            <description>
+                <p>At 1st level, you discover your connection to an extraplanar being known as an eidolon. Choose if your eidolon is of celestial, fiendish or fey in nature. The statistics for the different types of eidolons are listed below. The specific appearance of your eidolon is up to you: it can resemble a humanoid, a beast or have an even more exotic shape.</p>
+                <p class="indent">Your eidolon spends most of its time on its home plane. As an action, you can summon your eidolon and cause it to appear in an unoccupied space you can see within 30 feet of you. In combat, your eidolon takes its turn directly after yours. For your eidolon to use its powers, your link with it must be constantly maintained. The eidolon can move and take reactions on its own, but can only take the Dodge action on its turn, unless you use a bonus action on your turn to maintain the link and allow it to take its action (and possibly bonus action) as normal. Your eidolon must be within 100 feet of you in order to maintain your link with it. While your eidolon stays within that range, you can communicate telepathically with it. It can attune to magic items as normal, but it shares your attunement slots.</p>
+                <p class="indent">Your eidolon returns to its home plane after 1 hour, when it is reduced to 0 HP, or if you dismiss it as an action. When your eidolon is banished, it leaves behind all worn or carried equipment, except for magic items it is attuned to. The next time you summon your eidolon, it appears fully healed and cured of all conditions except for permanent conditions.</p>
+                <p class="indent">Once you summon your eidolon, you can’t do so again until you finish a long rest. Starting at 2nd level, you can spend 2 sorcery points to summon your eidolon even if you haven’t regained use of this feature yet.</p>
+            </description>
+            <sheet action="Action">
+                <description usage="1/Long Rest">You can summon your eidolon and cause it to appear in an unoccupied space you can see within 30 feet of you. In combat, your eidolon takes its turn directly after yours. Your eidolon returns to its home plane after 1 hour, when it is reduced to 0 HP, or if you dismiss it as an action.</description>
+                <description usage="1/Long Rest or 2 sorcery points">You can summon your eidolon and cause it to appear in an unoccupied space you can see within 30 feet of you. In combat, your eidolon takes its turn directly after yours. Your eidolon returns to its home plane after 1 hour, when it is reduced to 0 HP, or if you dismiss it as an action.</description>
+            </sheet>
+            <rules>
+                <select type="Companion" name="Eidolon Companion" supports="Twin Soul Eilodon" />
+            </rules>
+        </element>
+        <element name="Eidolon Evolution" type="Archetype Feature" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_EIDOLON_EVOLUTION">
+            <description>
+                <p>At 6th level, your eidolon grows more powerful. All of your eidolon’s attacks are considered magical. In addition, your eidolon gains one of the following benefits:</p>
+                <ul>
+                    <li>The eidolon gains a flying speed equal to its walking speed.</li>
+                    <li>Your eidolon learns two cantrips that are on the cleric or druid spell lists, and can cast these cantrips at will, using your level in this class as its spellcasting level.</li>
+                    <li>The eidolon gains proficiency in simple weapons, as well as light armor, medium armor and shields. In addition, its eidolon’s bond ability now applies to weapon attacks with weapons the eidolon is proficient with.</li>
+                    <li>Your eidolon gains a swimming speed equal to its walking speed, and can breathe underwater indefinitely.</li>
+                    <li>The eidolon grows to large size if it is medium, or to medium size if it is small. It can carry a rider of up to one size category smaller than it. In addition, the eidolon’s walking speed increases by 20 feet.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>All of your eidolon’s attacks are considered magical.</description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Eidolon Evolution" supports="Twin Soul Eidolon Evolution" />
+            </rules>
+        </element>
+            <element name="Flying Speed" type="Archetype Feature" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_EIDOLON_EVOLUTION_FLYING_SPEED">
+                <compendium display="false" />
+                <supports>Twin Soul Eidolon Evolution</supports>
+                <description>
+                    <p>The eidolon gains a flying speed equal to its walking speed.</p>
+                </description>
+                <sheet display="false" />
+                <rules>
+                    <stat name="companion:speed:fly" value="companion:speed" bonus="base" />
+                </rules>
+            </element>
+            <element name="Eidolon Cantrips" type="Archetype Feature" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_EIDOLON_EVOLUTION_CANTRIPS">
+                <compendium display="false" />
+                <supports>Twin Soul Eidolon Evolution</supports>
+                <description>
+                    <p>Your eidolon learns two cantrips that are on the cleric or druid spell lists, and can cast these cantrips at will, using your level in this class as its spellcasting level.</p>
+                </description>
+                <sheet>
+                    <description>Your eidolon can cast the two chosen eidolon cantrips at will, using your sorcerer level as its spellcasting level.</description>
+                </sheet>
+                <rules>
+                    <select type="Spell" name="Eidolon Cantrip" number="2" supports="(Druid||Cleric),0" />
+                </rules>
+            </element>
+            <element name="Weapons and Armor" type="Archetype Feature" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_EIDOLON_EVOLUTION_WEAPONS_AND_ARMOR">
+                <compendium display="false" />
+                <supports>Twin Soul Eidolon Evolution</supports>
+                <description>
+                    <p>The eidolon gains proficiency in simple weapons, as well as light armor, medium armor and shields. In addition, its eidolon’s bond ability now applies to weapon attacks with weapons the eidolon is proficient with.</p>
+                </description>
+                <sheet>
+                    <description>Your eidolon is proficient in simple weapons, light armor, medium armor, and shields. The eidolon’s bond ability applies to weapon attacks.</description>
+                </sheet>
+            </element>
+            <element name="Swimming Speed" type="Archetype Feature" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_EIDOLON_EVOLUTION_SWIMMING">
+                <compendium display="false" />
+                <supports>Twin Soul Eidolon Evolution</supports>
+                <description>
+                    <p>Your eidolon gains a swimming speed equal to its walking speed, and can breathe underwater indefinitely.</p>
+                </description>
+                <sheet display="false">
+                    <description></description>
+                </sheet>
+                <rules>
+                    <stat name="companion:speed:swim" value="companion:speed" bonus="base" />
+                </rules>
+            </element>
+            <element name="Increased Size" type="Archetype Feature" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_EIDOLON_EVOLUTION_INCREASED_SIZE">
+                <compendium display="false" />
+                <supports>Twin Soul Eidolon Evolution</supports>
+                <description>
+                    <p>The eidolon grows to large size if it is medium, or to medium size if it is small. It can carry a rider of up to one size category smaller than it. In addition, the eidolon’s walking speed increases by 20 feet.</p>
+                </description>
+                <sheet>
+                    <description>Your eidolon is one size larger. It can carry a rider of up to one size category smaller than it.</description>
+                </sheet>
+                <rules>
+                    <stat name="companion:speed" value="20" />
+                </rules>
+            </element>
+        <element name="Life Link" type="Archetype Feature" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_LIFE_LINK">
+            <description>
+                <p>By 14th level, you and your eidolon have grown more capable of protecting each other. When you or your eidolon takes damage from an attack or spell, you can use your reaction to distribute the damage taken freely between you and your eidolon. Both you and your eidolon must take at least 1 damage. Apply any damage resistances or vulnerabilities you may possess after you distribute the damage.</p>
+                <p class="indent">If your eidolon isn’t currently summoned, this ability instead invokes a ghostly image of your eidolon for a split second, halving the damage you take from the attack or spell.</p>
+                <p class="indent">Once you use this feature, you can’t do so again until you finish a long rest unless you spend 3 sorcery points to use it again.</p>
+            </description>
+            <sheet action="Reaction" usage="1/Long Rest or 3 sorcery points">
+                <description>When you or your eidolon takes damage from an attack or spell, you can use your reaction to distribute the damage taken freely between you and your eidolon. Both you and your eidolon must take at least 1 damage. Apply any damage resistances or vulnerabilities you may possess after you distribute the damage. If your eidolon isn’t currently summoned, this ability instead invokes a ghostly image of your eidolon for a split second, halving the damage you take from the attack or spell.</description>
+            </sheet>
+        </element>
+        <element name="Inseperable" type="Archetype Feature" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_ARCHETYPE_FEATURE_TWIN_SOUL_INSEPERABLE">
+            <description>
+                <p>When you reach 18th level, your bond with your eidolon defies the planar boundaries separating you. Your eidolon is no longer forced to return to its home plane 1 hour after its summoning, and can stay summoned until it is reduced to 0 hp or you dismiss it.</p>
+                <p class="indent">When you are incapacitated, you may immediately summon your eidolon if it isn’t already summoned (no action required). Your eidolon has advantage on attack rolls and can take any action it likes without requiring you to take a bonus action to maintain the link until you are no longer incapacitated.</p>
+            </description>
+            <sheet>
+                <description>Your eidolon is no longer forced to return to its home plane 1 hour after its summoning, and can stay summoned until it is reduced to 0 hp or you dismiss it. When you are incapacitated, you may immediately summon your eidolon if it isn’t already summoned (no action required). Your eidolon has advantage on attack rolls and can take any action it likes without requiring you to take a bonus action to maintain the link until you are no longer incapacitated.</description>
+            </sheet>
+        </element>
+
+
+    <!-- Example Eidolons -->
+	<element name="Celestial Eidolon" type="Companion" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_EIDOLON_CELESTIAL">
+        <supports>Twin Soul Eilodon</supports>
+		<description />
+		<setters>
+			<set name="strength">14</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">12</set>
+			<set name="ac">16 (natural armor)</set>
+			<set name="hp">0 (Equal to the celestial eidolon’s constitution modifier + your Charisma modifier + five times your level in this class)</set>
+			<set name="speed">30 ft.</set>
+			<set name="senses">darkvision 30 ft., passive Perception 14</set>
+			<set name="languages">Celestial, understands the languages you speak</set>
+			<set name="saves">Str +4, Wis +4</set>
+			<set name="skills">Athletics +4, Perception +4</set>
+			<set name="type">celestial</set>
+			<set name="size">Medium</set>
+			<set name="alignment">neutral good</set>
+			<set name="challenge">0</set>
+			<set name="damageResistances">radiant</set>
+			<set name="conditionImmunities">charmed, frightened</set>
+            <set name="traits">ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_EIDOLONS_BOND, ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_PROTECTIVE_STANCE</set>
+			<set name="actions">ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_MULTIATTACK, ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_RADIANT_SLAM, ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_HEALING_TOUCH</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="16" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+            <stat name="companion:hp:max" value="charisma:modifier" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+			<stat name="companion:speed" value="30" bonus="base" />
+            <stat name="companion:proficiency" value="proficiency" />
+			<stat name="companion:athletics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:strength:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:wisdom:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+            <stat name="companion:eidolon:attacks" value="two" inline="true" requirements="[level:sorcerer:6]" />
+            <stat name="companion:eidolon:attacks" value="three" inline="true" requirements="[level:sorcerer:14]" />
+            <stat name="protective-stance:ac-grant" value="15" bonus="base" />
+            <stat name="protective-stance:ac-grant" value="companion:proficiency" />
+            <stat name="protective-stance:ac-grant" value="-2" />
+            <stat name="radiant-slam:attack-bonus" value="2" bonus="base" />
+            <stat name="radiant-slam:attack-bonus" value="companion:proficiency" />
+            <stat name="radiant-slam:damage-bonus" value="radiant-slam:attack-bonus" bonus="base" />
+            <stat name="radiant-slam:damage-bonus" value="-2" />
+            <stat name="healing-touch:hp-mod" value="charisma:modifier" />
+		</rules>
+	</element>
+        <element name="Eidolon’s Bond" type="Companion Trait" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_EIDOLONS_BOND">
+            <description>
+                <p>The following numbers increase by 1 when your proficiency bonus increases by 1: The celestial eidolon’s skill and saving throw bonuses (above), the bonuses to hit and damage of its radiant slam attack, and the AC granted by its protective stance ability (below).</p>
+            </description>
+            <sheet display="false">
+                <description>The following numbers increase by 1 when your proficiency bonus increases by 1: The celestial eidolon’s skill and saving throw bonuses (above), the bonuses to hit and damage of its radiant slam attack, and the AC granted by its protective stance ability (below).</description>
+            </sheet>
+        </element>
+        <element name="Protective Stance" type="Companion Trait" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_PROTECTIVE_STANCE">
+            <description>
+                <p>As long as the celestial eidolon isn’t incapacitated, allied creatures within 5 feet of the celestial eidolon always have at least an AC of 15, regardless of what armor they are wearing.</p>
+            </description>
+            <sheet>
+                <description>As long as the celestial eidolon isn’t incapacitated, allied creatures within 5 feet of the celestial eidolon always have at least an AC of {{protective-stance:ac-grant}}, regardless of what armor they are wearing.</description>
+            </sheet>
+        </element>
+        <element name="Multiattack" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_MULTIATTACK">
+            <requirements>[level:sorcerer:6]</requirements>
+            <description>
+                <p>The celestial eidolon makes two attacks when you reach 6th level in this class, or three attacks when you reach 14th level.</p>
+            </description>
+            <sheet>
+                <description level="6">The celestial eidolon makes {{companion:eidolon:attacks}} attacks.</description>
+            </sheet>
+        </element>
+        <element name="Radiant Slam" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_RADIANT_SLAM">
+            <description>
+                <p>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1d6+2 radiant damage.</p>
+            </description>
+            <sheet>
+                <description>Melee Weapon Attack: +{{radiant-slam:attack-bonus}} to hit, reach 5 ft., one target. Hit: 1d6+{{radiant-slam:damage-bonus}} radiant damage.</description>
+            </sheet>
+        </element>
+        <element name="Healing Touch" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_HEALING_TOUCH">
+            <description>
+                <p>The celestial eidolon expends one of your spell slots and touches a willing creature. The creature regains hit points equal to 1d6 + your Charisma modifier, plus an additional 1d6 for each slot level above 1st.</p>
+            </description>
+            <sheet>
+                <description>The celestial eidolon expends one of your spell slots and touches a willing creature. The creature regains 1d6 + {{healing-touch:hp-mod}} hit points, plus an additional 1d6 for each slot level above 1st.</description>
+            </sheet>
+        </element>
+
+	<element name="Fiendish Eilodon" type="Companion" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_EIDOLON_FIEND">
+        <supports>Twin Soul Eilodon</supports>
+		<description />
+		<setters>
+			<set name="strength">16</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">14</set>
+			<set name="ac">14 (natural armor)</set>
+			<set name="hp">0 (Equal to the fiendish eidolon’s constitution modifier + your Charisma modifier + five times your level in this class)</set>
+			<set name="speed">40 ft.</set>
+			<set name="damageResistances">fire</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">poisoned</set>
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">Abyssal, Infernal, telepathy 60 ft.</set>
+			<set name="saves">Str +5, Con +3</set>
+			<set name="skills">Athletics +4, Intimidation +4</set>
+			<set name="type">fiend</set>
+			<set name="size">Medium</set>
+			<set name="alignment">neutral evil</set>
+			<set name="challenge">0</set>
+            <set name="traits">ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_EIDOLONS_BOND</set>
+			<set name="actions">ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_MULTIATTACK, ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_CLAWS, ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_FLAME_TOSS</set>
+            <set name="reactions">ID_LUCRITIUS_TSSE_COMPANION_REACTION_EIDOLON_FIENDISH_RAGE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+            <stat name="companion:hp:max" value="charisma:modifier" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+			<stat name="companion:speed" value="40" bonus="base" />
+            <stat name="companion:proficiency" value="proficiency" />
+			<stat name="companion:athletics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:intimidation:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:strength:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+            <stat name="companion:eidolon:attacks" value="two" inline="true" requirements="[level:sorcerer:6]" />
+            <stat name="companion:eidolon:attacks" value="three" inline="true" requirements="[level:sorcerer:14]" />
+            <stat name="claw:attack-bonus" value="companion:strength:modifier" bonus="base" />
+            <stat name="claw:attack-bonus" value="companion:proficiency" />
+            <stat name="claw:damage-bonus" value="claw:attack-bonus" bonus="base" />
+            <stat name="claw:damage-bonus" value="-2" />
+            <stat name="flame-toss:attack-bonus" value="companion:dexterity:modifier" bonus="base" />
+            <stat name="flame-toss:attack-bonus" value="companion:proficiency" />
+            <stat name="flame-toss:damage-bonus" value="flame-toss:attack-bonus" bonus="base" />
+            <stat name="flame-toss:damage-bonus" value="-2" />
+		</rules>
+	</element>
+        <element name="Eidolon’s Bond" type="Companion Trait" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_EIDOLONS_BOND">
+            <description>
+                <p>The following numbers increase by 1 when your proficiency bonus increases by 1: The fiendish eidolon’s skill and saving throw bonuses (above), and the bonuses to hit and damage of its claws and flame toss attacks (below).</p>
+            </description>
+            <sheet display="false">
+                <description>The following numbers increase by 1 when your proficiency bonus increases by 1: The fiendish eidolon’s skill and saving throw bonuses (above), and the bonuses to hit and damage of its claws and flame toss attacks (below).</description>
+            </sheet>
+        </element>
+        <element name="Multiattack" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_MULTIATTACK">
+            <requirements>[level:sorcerer:6]</requirements>
+            <description>
+                <p>The fiendish eidolon makes two attacks when you reach 6th level in this class, or three attacks when you reach 14th level.</p>
+            </description>
+            <sheet>
+                <description level="6">The fiendish eidolon makes {{companion:eidolon:attacks}} attacks.</description>
+            </sheet>
+        </element>
+        <element name="Claws" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_CLAWS">
+            <description>
+                <p>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1d8+3 slashing damage.</p>
+            </description>
+            <sheet>
+                <description>Melee Weapon Attack: +{{claw:attack-bonus}} to hit, reach 5 ft., one target. Hit: 1d8+{{claw:damage-bonus}} slashing damage.</description>
+            </sheet>
+        </element>
+        <element name="Flame Toss" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_FLAME_TOSS">
+            <description>
+                <p>Ranged Spell Attack: +4 to hit, range 60 ft., one target. Hit: 1d6+2 fire damage.</p>
+            </description>
+            <sheet>
+                <description>Ranged Spell Attack: +{{flame-toss:attack-bonus}} to hit, range 60 ft., one target. Hit: 1d6+{{flame-toss:damage-bonus}} fire damage.</description>
+            </sheet>
+        </element>
+        <element name="Fiendish Rage" type="Companion Reaction" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_REACTION_EIDOLON_FIENDISH_RAGE">
+            <description>
+                <p>The fiendish eidolon moves up to its speed and makes one attack when it reduces a hostile creature to 0 hit points.</p>
+            </description>
+            <sheet>
+                <description>The fiendish eidolon moves up to its speed and makes one attack when it reduces a hostile creature to 0 hit points.</description>
+            </sheet>
+        </element>
+
+	<element name="Fey Eidolon" type="Companion" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_EIDOLON_FEY">
+        <supports>Twin Soul Eilodon</supports>
+		<description />
+		<setters>
+			<set name="strength">10</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">14</set>
+			<set name="wisdom">8</set>
+			<set name="charisma">16</set>
+			<set name="ac">12</set>
+			<set name="hp">0 (Equal to the fey eidolon’s constitution modifier + your Charisma modifier + five times your level in this class)</set>
+			<set name="speed">30 ft.</set>
+			<set name="senses">darkvision 30 ft.</set>
+			<set name="conditionImmunities">charmed</set>
+			<set name="senses">darkvision 60 ft., passive Perception 9</set>
+			<set name="languages">Sylvan, understands the languages you speak</set>
+			<set name="saves">Dex +4, Con +5</set>
+			<set name="skills">Deception +5, Performance +5, Stealth +4</set>
+			<set name="type">fey</set>
+			<set name="size">Small</set>
+			<set name="alignment">chaotic neutral</set>
+			<set name="challenge">0</set>
+            <set name="traits">ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_EIDOLONS_BOND, ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_FEY_MAGIC</set>
+			<set name="actions">ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_MULTIATTACK, ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_FEY_STEP, ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_SWIFT_STRIKE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+            <stat name="companion:hp:max" value="charisma:modifier" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+			<stat name="companion:speed" value="30" bonus="base" />
+            <stat name="companion:proficiency" value="proficiency" />
+			<stat name="companion:deception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:performance:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+            <stat name="companion:eidolon:attacks" value="two" inline="true" requirements="[level:sorcerer:6]" />
+            <stat name="companion:eidolon:attacks" value="three" inline="true" requirements="[level:sorcerer:14]" />
+            <grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" requirements="[level:sorcerer:1]" />
+            <grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" requirements="[level:sorcerer:1]" />
+            <grant type="Spell" id="ID_PHB_SPELL_DARKNESS" requirements="[level:sorcerer:3]" />
+            <grant type="Spell" id="ID_PHB_SPELL_MAJOR_IMAGE" requirements="[level:sorcerer:5]" />
+            <stat name="swift-strike:attack-bonus" value="companion:dexterity:modifier" bonus="base" />
+            <stat name="swift-strike:attack-bonus" value="companion:proficiency" bonus="proficiency" />
+            <stat name="swift-strike:damage-bonus" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+        <element name="Eidolon’s Bond" type="Companion Trait" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_EIDOLONS_BOND">
+            <description>
+                <p>The following numbers increase by 1 when your proficiency bonus increases by 1: The fiendish eidolon’s skill and saving throw bonuses (above), and the bonuses to hit and damage of its swift strike attack (below).</p>
+            </description>
+            <sheet display="false">
+                <description>The following numbers increase by 1 when your proficiency bonus increases by 1: The fiendish eidolon’s skill and saving throw bonuses (above), and the bonuses to hit and damage of its swift strike attack (below).</description>
+            </sheet>
+        </element>
+        <element name="Fey Magic" type="Companion Trait" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_FEY_MAGIC">
+            <description>
+                <p>They fey eidolon knows the <em>faerie fire</em> and <em>charm person</em> spells, and can cast these spells using your spell slots. When you reach 3rd level in this class, the fey eidolon can cast <em>darkness</em> using this ability, and at 5th level it can cast <em>major image</em>.</p>
+            </description>
+            <sheet>
+                <description>They fey eidolon knows the faerie fire and charm person spells, and can cast these spells using your spell slots. When you reach 3rd level in this class, the fey eidolon can cast darkness using this ability, and at 5th level it can cast major image.</description>
+            </sheet>
+        </element>
+        <element name="Multiattack" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_MULTIATTACK">
+            <requirements>[level:sorcerer:6]</requirements>
+            <description>
+                <p>The fey eidolon makes two attacks when you reach 6th level in this class, or three attacks when you reach 14th level.</p>
+            </description>
+            <sheet>
+                <description level="6">The fey eidolon makes {{companion:eidolon:attacks}} attacks.</description>
+            </sheet>
+        </element>
+        <element name="Fey Step" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_FEY_STEP">
+            <description>
+                <p>Immediately after making an attack or casting a spell through its fey magic ability, the fey eidolon can teleport to an unoccupied space it can see within 30 ft. as a bonus action.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>Immediately after making an attack or casting a spell through its fey magic ability, the fey eidolon can teleport to an unoccupied space it can see within 30 ft. as a bonus action.</description>
+            </sheet>
+        </element>
+        <element name="Swift Strike" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_SWIFT_STRIKE">
+            <description>
+                <p>Melee Weapon Attack: +4 to hit, range 5 ft., one target. Hit: 1d4+2 piercing damage.</p>
+            </description>
+            <sheet>
+                <description>Melee Weapon Attack: +{{swift-strike:attack-bonus}} to hit, range 5 ft., one target. Hit: 1d4+{{swift-strike:damage-bonus}} piercing damage.</description>
+            </sheet>
+        </element>
+
+	<element name="Aberrant Eidolon" type="Companion" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_EIDOLON_ABERRANT">
+        <supports>Twin Soul Eilodon</supports>
+		<description />
+		<setters>
+			<set name="strength">16</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">14</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">8</set>
+			<set name="ac">14 (natural armor)</set>
+			<set name="hp">0 (Equal to the aberrant eidolon’s constitution modifier + your Charisma modifier + five times your level in this class)</set>
+			<set name="speed">30 ft.</set>
+			<set name="senses">darkvision 30 ft., passive Perception 10</set>
+			<set name="languages">Deep Speech, understands the languages you speak.</set>
+			<set name="saves">Str +5, Int +4</set>
+            <set name="immunities">psychic</set>
+			<set name="skills">Athletics +5</set>
+			<set name="type">aberration</set>
+			<set name="size">Medium</set>
+			<set name="alignment">neutral evil</set>
+			<set name="challenge">0</set>
+            <set name="traits">ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_EIDOLONS_BOND, ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_CONSTRICTION</set>
+			<set name="actions">ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_MULTIATTACK, ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_WRITHING_LIMBS, ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_PSYCHIC_THRUST</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+            <stat name="companion:hp:max" value="charisma:modifier" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+            <stat name="companion:hp:max" value="level:sorcerer" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:athletics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:strength:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:intelligence:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+            <stat name="companion:eidolon:attacks" value="two" inline="true" requirements="[level:sorcerer:6]" />
+            <stat name="companion:eidolon:attacks" value="three" inline="true" requirements="[level:sorcerer:14]" />
+            <stat name="writhing-limbs:attack-bonus" value="companion:strength:modifier" bonus="base" />
+            <stat name="writhing-limbs:attack-bonus" value="companion:proficiency" />
+            <stat name="writhing-limbs:damage-bonus" value="writhing-limbs:attack-bonus" bonus="base" />
+            <stat name="writhing-limbs:damage-bonus" value="-2" />
+            <stat name="psychic-thrust:save-dc" value="10" bonus="base" />
+            <stat name="psychic-thrust:save-dc" value="companion:proficiency" />
+		</rules>
+	</element>
+        <element name="Eidolon’s Bond" type="Companion Trait" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_EIDOLONS_BOND">
+            <description>
+                <p>The following numbers increase by 1 when your proficiency bonus increases by 1: The aberrant eidolon’s skill and saving throw bonuses (above), the bonuses to hit and damage of its writhing limbs attack, and the DC of its psychic thrust ability (below).</p>
+            </description>
+            <sheet display="false">
+                <description>The following numbers increase by 1 when your proficiency bonus increases by 1: The aberrant eidolon’s skill and saving throw bonuses (above), the bonuses to hit and damage of its writhing limbs attack, and the DC of its psychic thrust ability (below).</description>
+            </sheet>
+        </element>
+        <element name="Constriction" type="Companion Trait" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_TRAIT_EIDOLON_CONSTRICTION">
+            <description>
+                <p>The aberrant eidolon has advantage on attack rolls against creatures it has grappled.</p>
+            </description>
+            <sheet>
+                <description>The aberrant eidolon has advantage on attack rolls against creatures it has grappled.</description>
+            </sheet>
+        </element>
+        <element name="Multiattack" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_MULTIATTACK">
+            <requirements>[level:sorcerer:6]</requirements>
+            <description>
+                <p>The aberrant eidolon makes two attacks when you reach 6th level in this class, or three attacks when you reach 14th level.</p>
+            </description>
+            <sheet>
+                <description level="6">The aberrant eidolon makes {{companion:eidolon:attacks}} attacks.</description>
+            </sheet>
+        </element>
+        <element name="Writhing Limbs" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_WRITHING_LIMBS">
+            <description>
+                <p>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1d6+3 bludgeoning damage. On a hit, the aberrant eidolon can make an attempt to grapple the target as a bonus action.</p>
+            </description>
+            <sheet>
+                <description>Melee Weapon Attack: +{{writhing-limbs:attack-bonus}} to hit, reach 5 ft., one target. Hit: 1d6+{{writhing-limbs:damage-bonus}} bludgeoning damage. On a hit, the aberrant eidolon can make an attempt to grapple the target as a bonus action.</description>
+            </sheet>
+        </element>
+        <element name="Psychic Thrust" type="Companion Action" source="Twin Soul Sorcerous Origin" id="ID_LUCRITIUS_TSSE_COMPANION_ACTION_EIDOLON_PSYCHIC_THRUST">
+            <description>
+                <p>The aberrant eidolon expends one of your spell slots and overloads the mind of a creature it can see within 60 feet. The creature takes 2d6 psychic damage, plus an additional 1d6 damage for each slot level above 1st. The creature can halve the damage taken with a successful DC 12 Intelligence saving throw.</p>
+            </description>
+            <sheet>
+                <description>The aberrant eidolon expends one of your spell slots and overloads the mind of a creature it can see within 60 feet. The creature takes 2d6 psychic damage, plus an additional 1d6 damage for each slot level above 1st. The creature can halve the damage taken with a successful DC {{psychic-thrust:save-dc}} Intelligence saving throw.</description>
+            </sheet>
+        </element>
+
+</elements>
