@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Oath of Darkness Sacred Oath</name>
+        <update version="0.0.1">
+            <file name="paladin-oath-of-darkness.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/paladin/paladin-oath-of-darkness.xml" />
+        </update>
+    </info>
+    
+    <element name="Oath of Darkness" type="Source" source="Core" id="ID_DAYDREAMER_SENSEI_HOMEBREWERY_SOURCE_OATH_OF_DARKNESS">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">OODSO</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/gwcz6hggG</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="DDS" url="https://www.reddit.com/user/Daydreamer_Sensei/">u/Daydreamer_Sensei</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200520</set>
+        </setters>
+    </element>
+    
+    <element name="Oath of Darkness" type="Archetype" source="Oath of Darkness" id="ID_DDS_OODSO_ARCHETYPE_PALADIN_OATH_OF_DARKNESS">
+        <supports>Sacred Oath</supports>
+        <description>
+            <p>Paladins of the Oath of Darkness are often viewed as dark and sinister. Detached from society and the quarrels of mortals, they are a rare sight to behold and are seen as ill omens of impending destruction. However, most of those who follow the tenets of this oath do so to protect those who cannot fight against the uncanny, sacrificing the chance at a normal life to champion a greater cause. These paladins are sometimes called dusk knights, or ebonguard, and use the shadows to protect the world from the unearthly forces of evil.</p>
+            <div element="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_TENETS_OF_DARKNESS" />
+            <div element="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_OATH_SPELLS" />
+            <div element="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_CHANNEL_DIVINITY" />
+            <div element="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_AURA_OF_SHADOWS" />
+            <div element="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_STRIKE_IN_THE_DARK" />
+            <div element="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_DARKNESS_INCARNATE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_TENETS_OF_DARKNESS" level="3" />
+            <grant type="Archetype Feature" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_OATH_SPELLS" level="3" />
+            <grant type="Archetype Feature" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_CHANNEL_DIVINITY" level="3" />
+            <grant type="Archetype Feature" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_AURA_OF_SHADOWS" level="7" />
+            <grant type="Archetype Feature" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_STRIKE_IN_THE_DARK" level="15" />
+            <grant type="Archetype Feature" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_DARKNESS_INCARNATE" level="20" />
+        </rules>
+    </element>
+        <element name="Tenets of Darkness" type="Archetype Feature" source="Oath of Darkness" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_TENETS_OF_DARKNESS">
+            <description>
+                <p>The tenets of the Oath of Darkness vary by paladin, but all the tenets revolve around the realisation of the paladin’s inner dark self, and using that power to protect civilization from the shadows.</p>
+                <p class="indent"><strong><em>Protect the Innocent.</em></strong> Use the darkness to protect the souls of mortals.</p>
+                <p class="indent"><strong><em>Embrace the Darkness.</em></strong> You need to understand the darkness within you to be able to navigate the darkness of the world with merit.</p>
+                <p class="indent"><strong><em>Purge the Unholy.</em></strong> You are the barrier between this world and the next. Anything that wants to go against the natural order of things, must pass through your blade.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Oath Spells" type="Archetype Feature" source="Oath of Darkness" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_OATH_SPELLS">
+            <description>
+                <p>You gain oath spells at the paladin levels listed.</p>
+                <h5 class="caption"></h5>
+                <table>
+                    <thead>
+                        <tr><td>Paladin Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>bane, cause fear</em></td></tr>
+                    <tr><td>5th</td><td><em>darkness, shadow blade</em></td></tr>
+                    <tr><td>9th</td><td><em>nondetection, phantom steed</em></td></tr>
+                    <tr><td>13th</td><td><em>banishment, shadow of moil</em></td></tr>
+                    <tr><td>17th</td><td><em>antilife shell, hold monster</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_BANE" spellcasting="Paladin" prepared="true" level="3" />
+                <grant type="Spell" id="ID_XGTE_SPELL_CAUSE_FEAR" spellcasting="Paladin" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_DARKNESS" spellcasting="Paladin" prepared="true" level="5" />
+                <grant type="Spell" id="ID_XGTE_SPELL_SHADOW_BLADE" spellcasting="Paladin" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_NONDETECTION" spellcasting="Paladin" prepared="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_PHANTOM_STEED" spellcasting="Paladin" prepared="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_BANISHMENT" spellcasting="Paladin" prepared="true" level="13" />
+                <grant type="Spell" id="ID_XGTE_SPELL_SHADOW_OF_MOIL" spellcasting="Paladin" prepared="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_ANTILIFE_SHELL" spellcasting="Paladin" prepared="true" level="17" />
+                <grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" spellcasting="Paladin" prepared="true" level="17" />
+            </rules>
+        </element>
+        <element name="Channel Divinity" type="Archetype Feature" source="Oath of Darkness" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_CHANNEL_DIVINITY">
+            <description>
+                <p>When you take this oath at 3rd level, you gain the following two Channel Divinity options.</p>
+                <p class="indent"><strong><em>Darkness is my Domain.</em></strong> You can use your Channel divinity to increase your maneuverability in combat. As an action, you gain the following benefit for the next minute: While you are in dim light or darkness, you can use a bonus action to teleport up to 30 feet to an unoccupied space you can see that is also in dim light or darkness</p>
+                <p class="indent"><strong><em>Detect the Unseen.</em></strong> As an action, you can use your Channel Divinity feature to peer through the fabric of reality. For 1 minute, you gain true sight up to 30 feet.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_CD_DARKNESS_IS_MY_DOMAIN" />
+                <grant type="Archetype Feature" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_CD_DETECT_THE_UNSEEN" />
+            </rules>
+        </element>
+            <element name="Channel Divinity: Darkness is my Domain" type="Archetype Feature" source="Oath of Darkness" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_CD_DARKNESS_IS_MY_DOMAIN">
+                <compendium display="false" />
+                <description>
+                    <p>You can use your Channel divinity to increase your maneuverability in combat. As an action, you gain the following benefit for the next minute: While you are in dim light or darkness, you can use a bonus action to teleport up to 30 feet to an unoccupied space you can see that is also in dim light or darkness.</p>
+                </description>
+                <sheet usage="Channel Divinity" alt="Darkness is my Domain" action="Action">
+                    <description>You gain the following benefit for the next minute: While you are in dim light or darkness, you can use a bonus action to teleport up to 30 feet to an unoccupied space you can see that is also in dim light or darkness.</description>
+                </sheet>
+            </element>
+            <element name="Channel Divinity: Detect the Unseen" type="Archetype Feature" source="Oath of Darkness" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_CD_DETECT_THE_UNSEEN">
+                <compendium display="false" />
+                <description>
+                    <p>As an action, you can use your Channel Divinity feature to peer through the fabric of reality. For 1 minute, you gain true sight up to 30 feet.</p>
+                </description>
+                <sheet usage="Channel Divinity" alt="Detect the Unseen" action="Action">
+                    <description>For 1 minute, you gain true sight up to 30 feet.</description>
+                </sheet>
+            </element>
+        <element name="Aura of Shadows" type="Archetype Feature" source="Oath of Darkness" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_AURA_OF_SHADOWS">
+            <description>
+                <p>Beginning at 7th level, you emanate an aura of shadows that grip onto you and your allies, obscuring you against enemies. All ranged attacks against you and friendly creatures within 10 feet of you have disadvantage while you are not incapacitated.</p>
+                <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
+            </description>
+            <sheet>
+                <description>You emanate an aura of shadows that grip onto you and your allies, obscuring you against enemies. All ranged attacks against you and friendly creatures within {{aura-of-shadows:range}} feet of you have disadvantage while you are not incapacitated.</description>
+            </sheet>
+            <rules>
+                <stat name="aura-of-shadows:range" value="10" level="7" />
+                <stat name="aura-of-shadows:range" value="20" level="18" />
+            </rules>
+        </element>
+        <element name="Strike in the Dark" type="Archetype Feature" source="Oath of Darkness" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_STRIKE_IN_THE_DARK">
+            <description>
+                <p>Starting at 15th level, the darkness allies itself with you. Whenever you use your Darkness is my Domain Channel Divinity, you also gain the following benefit:</p>
+                <p class="indent">Immediately after you complete your teleportation, if you are adjacent to an enemy creature that is also in dim light or darkness, you can make one melee weapon attack against that enemy as part of the same bonus action.</p>
+            </description>
+            <sheet>
+                <description>Whenever you use your Darkness is my Domain Channel Divinity, immediately after you complete your teleportation, if you are adjacent to an enemy creature that is also in dim light or darkness, you can make one melee weapon attack against that enemy as part of the same bonus action.</description>
+            </sheet>
+        </element>
+        <element name="Darkness Incarnate" type="Archetype Feature" source="Oath of Darkness" id="ID_DDS_OODSO_ARCHETYPE_FEATURE_OOD_DARKNESS_INCARNATE">
+            <description>
+                <p>At 20th level, you gain the ability to embody the most pure form of darkness. As an action, you emit a pitch black aura, causing magical darkness to surround you in a 60-foot radius, gaining the following benefits for 1 minute:</p>
+                <ul>
+                    <li>Both you and friendly creatures can see through the magical darkness created by this feature.</li>
+                    <li>All hostile creatures that start their turn within the aura’s radius must succeed on a Wisdom saving throw or become frightened of you until the start of their next turn.</li>
+                    <li>Whenever you make a melee weapon attack against a creature frightened of you, you score a critical hit on a roll of 18-20 on the d20. If you score a critical hit against a creature frightened of you, the creature must succeed on a Constitution saving throw, or be instantly slain.</li>
+                </ul>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You emit a pitch black aura, causing magical darkness to surround you in a 60-foot radius, gaining the following benefits for 1 minute: Both you and friendly creatures can see through the magical darkness created by this feature. All hostile creatures that start their turn within the aura’s radius must succeed on a Wisdom saving throw or become frightened of you until the start of their next turn. Whenever you make a melee weapon attack against a creature frightened of you, you score a critical hit on a roll of 18-20 on the d20. If you score a critical hit against a creature frightened of you, the creature must succeed on a Constitution saving throw, or be instantly slain.</description>
+            </sheet>
+        </element>
+
+</elements>

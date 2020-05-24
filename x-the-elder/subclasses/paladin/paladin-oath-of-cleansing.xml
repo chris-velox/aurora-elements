@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Oath of Cleansing Sacred Oath</name>
+        <update version="0.0.1">
+            <file name="paladin-oath-of-cleansing.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/paladin/paladin-oath-of-cleansing.xml" />
+        </update>
+    </info>
+    
+    <element name="Oath of Cleansing" type="Source" source="Core" id="ID_ATB_HOMEBREWERY_SOURCE_OATH_OF_CLEANSING">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">OOCSO</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/3FdXYHNC8</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="ATB" url="https://www.reddit.com/u/AlucardTheBard">u/AlucardTheBard</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200520</set>
+        </setters>
+    </element>
+    
+    <element name="Oath of Cleansing" type="Archetype" source="Oath of Cleansing" id="ID_ATB_OOCSO_ARCHETYPE_PALADIN_OATH_OF_CLEANSING">
+        <supports>Sacred Oath</supports>
+        <description>
+            <p>The Oath of Cleansing is followed by those who are willing to burn their enemies and grow allies from the ashes that are left behind. Called the Ash Knights, these paladins burn those found unclean and raise from the ash those who they deem to be worthy making them one of the most infamous orders.</p>
+            <div element="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_TENETS_OF_THE_DEPTHS" />
+            <div element="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_OATH_SPELLS" />
+            <div element="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_CHANNEL_DIVINITY" />
+            <div element="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_AURA_OF_PURGING" />
+            <div element="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_BRAND_OF_PURITY" />
+            <div element="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_LORD_OF_EMBERS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_TENETS_OF_THE_DEPTHS" level="3" />
+            <grant type="Archetype Feature" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_OATH_SPELLS" level="3" />
+            <grant type="Archetype Feature" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_CHANNEL_DIVINITY" level="3" />
+            <grant type="Archetype Feature" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_AURA_OF_PURGING" level="7" />
+            <grant type="Archetype Feature" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_BRAND_OF_PURITY" level="15" />
+            <grant type="Archetype Feature" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_LORD_OF_EMBERS" level="20" />
+        </rules>
+    </element>
+        <element name="Tenets of the Depths" type="Archetype Feature" source="Oath of Cleansing" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_TENETS_OF_THE_DEPTHS">
+            <description>
+                <p><strong>Burn the Corrupted:</strong> Use your flames in order to purify what has become rotten or tainted by stagnation.</p>
+                <p><strong>Encourage Change:</strong> Like the ashes of a phoenix represent the past as well as the future of creation.</p>
+                <p><strong>Make Way for a Future:</strong> Your flames are for more than just burning down the old, but also to protect the new.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Oath Spells" type="Archetype Feature" source="Oath of Cleansing" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_OATH_SPELLS">
+            <description>
+                <p>You gain oath spells at the paladin levels listed.</p>
+                <table>
+                    <thead>
+                        <tr><td>Paladin Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>burning hands, purify food and drink</em></td></tr>
+                    <tr><td>5th</td><td><em>flaming sphere, heat metal</em></td></tr>
+                    <tr><td>9th</td><td><em>fireball, protection from energy</em></td></tr>
+                    <tr><td>13th</td><td><em>aura of purity, fire shield</em></td></tr>
+                    <tr><td>17th</td><td><em>greater restoration, immolation</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_BURNING_HANDS" spellcasting="Paladin" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_PURIFY_FOOD_AND_DRINK" spellcasting="Paladin" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_FLAMING_SPHERE" spellcasting="Paladin" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_HEAT_METAL" spellcasting="Paladin" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_FIREBALL" spellcasting="Paladin" prepared="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY" spellcasting="Paladin" prepared="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_AURA_OF_PURITY" spellcasting="Paladin" prepared="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_FIRE_SHIELD" spellcasting="Paladin" prepared="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_GREATER_RESTORATION" spellcasting="Paladin" prepared="true" level="17" />
+                <grant type="Spell" id="ID_XGTE_SPELL_IMMOLATION" spellcasting="Paladin" prepared="true" level="17" />
+            </rules>
+        </element>
+        <element name="Channel Divinity" type="Archetype Feature" source="Oath of Cleansing" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_CHANNEL_DIVINITY">
+            <description>
+                <p>When you take this Oath at 3rd level, you gain the two following channel divinity options.</p>
+                <p class="indent"><strong><em>Flame’s Judgement:</em></strong> As an action, you can call upon the flames of truth to exorcise the filth of a soul belonging to one creature within 30 ft of you. The target must make a Wisdom saving throw or suffer 2d10 + your paladin level in fire damage on a failed save and half as much on a successful save.</p>
+                <p class="indent"><strong><em>Pyre of Cleansing:</em></strong> You may use your channel divinity as an action and inspire health and growth in those around you. All allied creatures within 30ft of you are cured of any effect that would cause them to be blinded, deafened, paralyzed, or blinded.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_CD_FLAMES_JUDGEMENT" />
+                <grant type="Archetype Feature" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_CD_PYRE_OF_CLEANSING" />
+            </rules>
+        </element>
+            <element name="Channel Divinity: Flame’s Judgement" type="Archetype Feature" source="Oath of Cleansing" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_CD_FLAMES_JUDGEMENT">
+                <compendium display="false" />
+                <description>
+                    <p>As an action, you can call upon the flames of truth to exorcise the filth of a soul belonging to one creature within 30 ft of you. The target must make a Wisdom saving throw or suffer 2d10 + your paladin level in fire damage on a failed save and half as much on a successful save.</p>
+                </description>
+                <sheet usage="Channel Divinity" alt="Flame’s Judgement" action="Action">
+                    <description>You can call upon the flames of truth to exorcise the filth of a soul belonging to one creature within 30 ft of you. The target must make a Wisdom saving throw or suffer 2d10 + {{level:paladin}} in fire damage on a failed save and half as much on a successful save.</description>
+                </sheet>
+            </element>
+            <element name="Channel Divinity: Pyre of Cleansing" type="Archetype Feature" source="Oath of Cleansing" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_CD_PYRE_OF_CLEANSING">
+                <compendium display="false" />
+                <description>
+                    <p>You may use your channel divinity as an action and inspire health and growth in those around you. All allied creatures within 30ft of you are cured of any effect that would cause them to be blinded, deafened, paralyzed, or blinded.</p>
+                </description>
+                <sheet usage="Channel Divinity" alt="Pyre of Cleansing" action="Action">
+                    <description>All allied creatures within 30ft of you are cured of any effect that would cause them to be blinded, deafened, paralyzed, or blinded.</description>
+                </sheet>
+            </element>
+        <element name="Aura of Purging" type="Archetype Feature" source="Oath of Cleansing" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_AURA_OF_PURGING">
+            <description>
+                <p>Starting at 7th level, you exude an aura that allows allies to grow from the ashes you leave behind. Allies within your aura have advantage on saves against disease and poison. In addition, whenever you reduce an enemy to 0 hitpoints all allies within your aura regain hit points equal to your charisma modifer. At 18th level this range increases to 30 feet.</p>
+                <div class="sidebar">
+                    <h5 class="caption">BRAND OF PURITY</h5>
+                    <p>The earliest paladins of this oath were known to recieve brands marking them as "clean", making them immune to the scrutiny of similar orders. The meaning of this oath has transformed in the centuries since its creation, and as such now represents those who would stop at nothing to burn those found dirtied in the eyes of their faith.</p>
+                </div>
+            </description>
+            <sheet>
+                <description>Allies within {{aura-of-purging:range}} have advantage on saves against disease and poison. In addition, whenever you reduce an enemy to 0 hitpoints all allies within your aura regain {{charisma:modifier}} hit points.</description>
+            </sheet>
+            <rules>
+                <stat name="aura-of-purging:range" value="10" level="7" />
+                <stat name="aura-of-purging:range" value="20" level="18" />
+            </rules>
+        </element>
+        <element name="Brand of Purity" type="Archetype Feature" source="Oath of Cleansing" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_BRAND_OF_PURITY">
+            <description>
+                <p>Starting at level 15, you’re righteous fire burns away all that would pollute you. You are immune to poison.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" />
+            </rules>
+        </element>
+        <element name="Lord of Embers" type="Archetype Feature" source="Oath of Cleansing" id="ID_ATB_OOCSO_ARCHETYPE_FEATURE_OOC_LORD_OF_EMBERS">
+            <description>
+                <p>At 20th level, you can instil yourself with holy flame to cleanse those who are found to be unclean. As an action, you may undergo a transformation that provides the following benefits for 1 minute.</p>
+                <ul>
+                    <li>Fire damage you deal bypasses resistance.</li>
+                    <li>Once per turn when you deal damage to a creature, you regain hitpoints equal to the damage dealt.</li>
+                    <li>Your melee weapon attacks deal additional fire damage equal to your charisma modifier (minimum of 1).</li>
+                </ul>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You undergo a transformation that provides the following benefits for 1 minute. Fire damage you deal bypasses resistance. Once per turn when you deal damage to a creature, you regain hitpoints equal to the damage dealt. Your melee weapon attacks deal an additional {{lord-of-embers:damage}} fire damage.</description>
+            </sheet>
+            <rules>
+                <stat name="lord-of-embers:damage" value="1" bonus="base" />
+                <stat name="lord-of-embers:damage" value="charisma:modifier" bonus="base" />
+            </rules>
+        </element>
+
+
+</elements>
