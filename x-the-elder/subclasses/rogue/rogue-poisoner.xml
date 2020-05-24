@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Poisoner Roguish Archetype</name>
+        <update version="0.0.1">
+            <file name="rogue-poisoner.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/rogue/rogue-poisoner.xml" />
+        </update>
+    </info>
+    
+    <element name="Poisoner Roguish Archetype" type="Source" source="Core" id="ID_NEHUEN_GMBINDER_SOURCE_POISONER_ROGUISH_ARCHETYPE">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">PRA</set>
+            <set name="url">https://www.gmbinder.com/share/-M7otRgQjMh5i156ndO9</set>
+            <set name="image"></set>
+            <set name="author" url="https://www.gmbinder.com/profile/nehuen">Nehuen</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200522</set>
+        </setters>
+    </element>
+    
+    <element name="Poisoner" type="Archetype" source="Poisoner Roguish Archetype" id="ID_NEHUEN_PRA_ARCHETYPE_ROGUE_POISONER">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>The result of an intense study and a carefull and metodical practice, the Poisoner combines this elements to achieve mastery in the most silent way of killing: the poison.</p>
+            <p class="indent">Sometimes seen as cowards, the people dedicated to the understanding of venoms and intoxicating elixirs, must face death in their own laboratories, in every new attempt of creation and improvement.</p>
+            <p class="indent">Their crafty but swift hands made them able to hit with precision important centers on any creature anatomy. Experts in natural and unnatural toxins, the Poisoner use the fragility of a life form to induce a vast variety of affections, including paralysis, deafness and even death.</p>
+            <div element="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_POISON_CREATOR" />
+            <div element="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_GIFTED_USER" />
+            <div element="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_TOXIN_KNOWLEDGEABLE" />
+            <div element="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_EXPLOIT_THE_ENFEEBLEMENT" />
+            <div element="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_LETHAL_DOSE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_POISON_CREATOR" level="3" />
+            <grant type="Archetype Feature" id="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_GIFTED_USER" level="3" />
+            <grant type="Archetype Feature" id="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_TOXIN_KNOWLEDGEABLE" level="9" />
+            <grant type="Archetype Feature" id="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_EXPLOIT_THE_ENFEEBLEMENT" level="13" />
+            <grant type="Archetype Feature" id="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_LETHAL_DOSE" level="17" />
+        </rules>
+    </element>
+        <element name="Poison Creator" type="Archetype Feature" source="Poisoner Roguish Archetype" id="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_POISON_CREATOR">
+            <description>
+                <p>When you choose this archetype at 3rd level, you gain proficiency with poisoner's kit. Additionally, the gold and time you must spend for creating a poison is halved, and when you apply it, you may add your Intelligence modifier to one damage roll and ignore resistance to poison.</p>
+            </description>
+            <sheet>
+                <description>The gold and time you must spend for creating a poison is halved, and when you apply it, you may add your Intelligence modifier to one damage roll and ignore resistance to poison.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+            </rules>
+        </element>
+        <element name="Gifted User" type="Archetype Feature" source="Poisoner Roguish Archetype" id="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_GIFTED_USER">
+            <description>
+                <p>Starting at 3rd level, you can use your bonus action granted by your Cunning Action, to apply a vial of poison. When you do so, you can cote one slashing or piercing weapon, or up to five pieces of ammunition.</p>
+            </description>
+            <sheet usage="Cunning Action" action="Bonus Action">
+                <description>You can use your bonus action granted by your Cunning Action to apply a vial of poison. When you do so, you can cote one slashing or piercing weapon, or up to five pieces of ammunition.</description>
+            </sheet>
+        </element>
+        <element name="Toxin Knowledgeable" type="Archetype Feature" source="Poisoner Roguish Archetype" id="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_TOXIN_KNOWLEDGEABLE">
+            <description>
+                <p>At 9th level, your continuous exposure to chemicals makes you immune to poison. You also understand the effects it has on life forms. If you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about it:</p>
+                <ul>
+                    <li>Constitution modifier</li>
+                    <li>Whether it is affected by poison and the type of poison</li>
+                    <li>The location of the creature during the next hour, or until you use this feature again, provided the target remains within a mile of you.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>If you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about it: Constitution modifier; whether it is affected by poison and the type of poison; location of the creature during the next hour.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" />
+            </rules>
+        </element>
+        <element name="Exploit the Enfeeblement" type="Archetype Feature" source="Poisoner Roguish Archetype" id="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_EXPLOIT_THE_ENFEEBLEMENT">
+            <description>
+                <p>Beginning at 13th level, you learn to read the body and movements of creatures affected by poison. On your turn, you gain advantage on attack rolls against poisoned creatures, provided you haven't used your Sneak Attack this turn.</p>
+            </description>
+            <sheet>
+                <description>On your turn, you gain advantage on attack rolls against poisoned creatures, provided you haven't used your Sneak Attack this turn.</description>
+            </sheet>
+        </element>
+        <element name="Lethal Dose" type="Archetype Feature" source="Poisoner Roguish Archetype" id="ID_NEHUEN_PRA_ARCHETYPE_FEATURE_POISONER_LETHAL_DOSE">
+            <description>
+                <p>At 17th level, each time you use your Sneak Attack with a weapon with a poison you created, you may impose disadvantage on the first saving throw made by the target to resist it.</p>
+            </description>
+            <sheet>
+                <description>Each time you use your Sneak Attack with a weapon with a poison you created, you may impose disadvantage on the first saving throw made by the target to resist it.</description>
+            </sheet>
+        </element>
+
+</elements>

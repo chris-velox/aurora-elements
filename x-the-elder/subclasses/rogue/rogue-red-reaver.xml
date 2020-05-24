@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Red Reaver Roguish Archetype</name>
+        <update version="0.0.1">
+            <file name="rogue-red-reaver.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/compendium-of-sacred-mysteries-resurrection/rogue-red-reaver.xml" />
+        </update>
+    </info>
+    
+    <element name="Red Reaver" type="Archetype" source="The Compendium of Sacred Mysteries" id="ID_JONOMAN3000_COSMR_ARCHETYPE_ROGUE_RED_REAVER">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Some say that blood is the currency of the soul, describing it as the medium by which one may measure the value of a life. You subscribe to this ideology, training in the arts of bloodshed to reap a sanguine harvest. Blood is a tool, and one that can be used for good or for evil, just like any weapon. You learn to call upon the blood within your veins to dance like a shadow beyond the firelight, turning this precious ichor into a deadly instrument while waiting patiently for the right moment to strike. Benevolent orders often treat those like you as blessed by the divinities, for to wield blood grants the ability to heal and cure those who are afflicted by all manner of plague and poison, or to even reject death itself. The darker cults seek to train and indoctrinate red reavers like you as well, though often for cruel and malicious purpose. Your path is yours to choose. You need only follow the calling within the pulsing chambers of your heart.</p>
+            <div element="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_REAVERS_PALM" />
+            <div element="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_CRIMSON_SAINT" />
+            <div element="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_VITAL_HARUSPEX" />
+            <div element="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_SANGUINE_DANCE" />
+            <div element="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_BLOODSTAINED_SAVIOR" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_REAVERS_PALM" level="3" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_CRIMSON_SAINT" level="3" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_VITAL_HARUSPEX" level="9" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_SANGUINE_DANCE" level="13" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_BLOODSTAINED_SAVIOR" level="17" />
+        </rules>
+    </element>
+        <element name="Reaver’s Palm" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_REAVERS_PALM">
+            <description>
+                <p>At 3rd level, you learn to warp and twist your blood, driving it into your enemies to tear them apart from the inside. Treat your blood as a natural melee weapon with the light and finesse properties with which you can make melee weapon attacks, dealing 1d10 magical piercing damage.</p>
+                <p class="indent">When you reduce a creature to 0 hit points with an attack made using your blood, you can choose another creature within 10 feet of the first. The second creature must make a Dexterity saving throw (DC equal to 8 + your proficiency bonus + your Constitution modifier). If they fail, blood skewers forth from the fallen creature and strikes them, dealing magical piercing damage equal to the amount of damage left over after the inital target was reduced to 0 hit points. This process can repeat if the new creature is reduced to 0 hit points, reaching from the new victim and drawing from the same pool of excess damage until it is emptied.</p>
+            </description>
+            <sheet>
+                <description>Your blood as a natural melee weapon with the light and finesse properties with which you can make melee weapon attacks, dealing 1d10 magical piercing damage. When you reduce a creature to 0 hit points with an attack made using your blood, you can choose another creature within 10 feet of the first. The second creature must make a Dexterity saving throw (save DC {{reavers-palm:save-dc}}). If they fail, blood skewers forth from the fallen creature and strikes them, dealing magical piercing damage equal to the amount of damage left over after the inital target was reduced to 0 hit points. This process can repeat if the new creature is reduced to 0 hit points, reaching from the new victim and drawing from the same pool of excess damage until it is emptied.</description>
+            </sheet>
+            <rules>
+                <stat name="reavers-palm:save-dc" value="8" />
+                <stat name="reavers-palm:save-dc" value="proficiency" />
+                <stat name="reavers-palm:save-dc" value="constitution:modifier" />
+            </rules>
+        </element>
+        <element name="Crimson Saint" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_CRIMSON_SAINT">
+            <description>
+                <p>At 3rd level, your affinity for the ichor of life allows you to alleviate the suffering of others. You gain advantage on saving throws against poison and disease. When you use your Cunning Action feature to use a bonus action, you can also choose to touch a willing creature before the end of your turn. You draw one poison or disease from the creature, curing them and suffering the effects of the poison or disease yourself.</p>
+            </description>
+            <sheet>
+                <description>You gain advantage on saving throws against poison and disease. When you use your Cunning Action feature to use a bonus action, you can also choose to touch a willing creature before the end of your turn. You draw one poison or disease from the creature, curing them and suffering the effects of the poison or disease yourself.</description>
+            </sheet>
+        </element>
+        <element name="Vital Haruspex" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_VITAL_HARUSPEX">
+            <description>
+                <p>At 9th level, you learn to read the blood of others to discern their thoughts. You can cast <em>detect thoughts</em> at will while you are touching blood spilled from a living creature within the past hour and the creature is within 1 mile of you. When you cast the spell in this way, you can only focus your attention on the thoughts of that creature. Constitution is your spellcasting ability for this spell. Once you cast the spell, you can’t target the same creature again for 1 hour.</p>
+            </description>
+            <sheet>
+                <description>You can cast detect thoughts at will while you are touching blood spilled from a living creature within the past hour and the creature is within 1 mile of you. When you cast the spell in this way, you can only focus your attention on the thoughts of that creature. Constitution is your spellcasting ability for this spell. Once you cast the spell, you can’t target the same creature again for 1 hour.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DETECT_THOUGHTS" />
+            </rules>
+        </element>
+        <element name="Sanguine Dance" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_SANGUINE_DANCE">
+            <description>
+                <p>At 13th level, your control over the blood of others allows you to use it as a gateway. When you use your Cunning Action feature to Dash, you can choose one creature you can see within 5 feet of you and another creature whose space is within a range equal to your remaining walking speed. If the creature within 5 feet of you is unwilling, make a melee spell attack using Constitution as your spellcasting ability. If you hit, or if the target is willing, you dive harmlessly into their body and emerge safely from the other creature, exiting to a space of your choosing within 5 feet of the second creature.</p>
+                <p class="indent">When you enter or exit, you can use your action to do so explosively. Make a melee attack targeting either the creature of entry or creature of exit using your blood. If you reduce the target to 0 hit points, you can have the remaining excess damage be dealt to the other creature automatically.</p>
+            </description>
+            <sheet>
+                <description>When you use your Cunning Action feature to Dash, you can choose one creature you can see within 5 feet of you and another creature whose space is within a range equal to your remaining walking speed. If the creature within 5 feet of you is unwilling, make a melee spell attack using Constitution as your spellcasting ability. If you hit, or if the target is willing, you dive harmlessly into their body and emerge safely from the other creature, exiting to a space of your choosing within 5 feet of the second creature. When you enter or exit, you can use your action to do so explosively. Make a melee attack targeting either the creature of entry or creature of exit using your blood. If you reduce the target to 0 hit points, you can have the remaining excess damage be dealt to the other creature automatically.</description>
+            </sheet>
+        </element>
+        <element name="Bloodstained Savior" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_JONOMAN3000_COSMR_ARCHETYPE_FEATURE_RED_REAVER_BLOODSTAINED_SAVIOR">
+            <description>
+                <p>At 17th level, your learn to control the souls of others using their blood. You can cast <em>revivify</em> at will without using material components. When you cast the spell in this way, you gain one level of exhaustion.</p>
+                <p class="indent">Also, you do not need to meet any of the normal prerequisites to use your Sneak Attack so long as the attack is made using your blood and the target is a creature below its hit point maximum.</p>
+            </description>
+            <sheet>
+                <description>You can cast revivify at will without using material components. When you cast the spell in this way, you gain one level of exhaustion. Also, you do not need to meet any of the normal prerequisites to use your Sneak Attack so long as the attack is made using your blood and the target is a creature below its hit point maximum.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_REVIVIFY" />
+            </rules>
+        </element>
+    
+</elements>
