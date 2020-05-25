@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Elemental Mastery Arcane Tradition</name>
+        <update version="0.0.1">
+            <file name="wizard-elemental-mastery.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/wizard/wizard-elemental-mastery.xml" />
+        </update>
+    </info>
+    
+    <element name="Elemental Mastery Arcane Tradition" type="Source" source="Core" id="ID_XYRLIAN_GMBINDER_SOURCE_Elemental Mastery Arcane Tradition">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">EMAT</set>
+            <set name="url">https://www.gmbinder.com/share/-LyiqGP4iEPFx5rHg9Bc</set>
+            <set name="image"></set>
+            <set name="author" url="https://www.gmbinder.com/profile/xyrlian">Xyrlian</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200525</set>
+        </setters>
+    </element>
+    
+    <element name="Elemental Mastery" type="Archetype" source="Elemental Mastery Arcane Tradition" id="ID_XYRLIAN_EMAT_ARCHETYPE_WIZARD_ELEMENTAL_MASTERY">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>Wizards of the tradition of Elemental Mastery focus their study on magic that creates powerful elemental effects such as bitter cold, searing flame, rolling thunder, crackling lightning, and burning acid. Elementalists blend principles of transmutation and evocation, focusing on the relationship between the elements and shaping them in more varied ways.</p>
+            <div element="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_KNOWLEDGE_OF_THE_ELEMENTS" />
+            <div element="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_CONTROL" />
+            <div element="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_RESISTANCE" />
+            <div element="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_ATTUNEMENT" />
+            <div element="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_EMBODIMENT" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_KNOWLEDGE_OF_THE_ELEMENTS" level="2" />
+            <grant type="Archetype Feature" id="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_CONTROL" level="2" />
+            <grant type="Archetype Feature" id="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_RESISTANCE" level="6" />
+            <grant type="Archetype Feature" id="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_ATTUNEMENT" level="10" />
+            <grant type="Archetype Feature" id="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_EMBODIMENT" level="14" />
+        </rules>
+    </element>
+        <element name="Knowledge of the Elements" type="Archetype Feature" source="Elemental Mastery Arcane Tradition" id="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_KNOWLEDGE_OF_THE_ELEMENTS">
+            <description>
+                <p>When you choose this arcane tradition at 2nd level, you learn to speak, read, and write Primordial if you don't already know the language.</p>
+                <p class="indent">Additionally, whenever you make an Intelligence (History) check related to elementals or the elemental planes, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</p>
+            </description>
+            <sheet>
+                <description>Whenever you make a History check related to elementals or the elemental planes, you are considered proficient in the History skill and add {{kote:proficiency-bonus}} to the check.</description>
+            </sheet>
+            <rules>
+                <grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
+                <stat name="kote:proficiency-bonus" value="proficiency" />
+                <stat name="kote:proficiency-bonus" value="proficiency" />
+            </rules>
+        </element>
+        <element name="Elemental Control" type="Archetype Feature" source="Elemental Mastery Arcane Tradition" id="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_CONTROL">
+            <description>
+                <p>When you choose this arcane tradition at 2nd level, you gain the <em>control flames</em>, <em>gust</em>, <em>mold earth</em>, and <em>shape water</em> cantrips if you don't already know them.</p>
+                <p class="indent">When you cast a spell with a spell slot that deals acid, cold, fire, lightning, or thunder damage, you can substitute the damage type with one other type from that list (you can change only one damage type per casting of a spell).</p>
+            </description>
+            <sheet>
+                <description>When you cast a spell with a spell slot that deals acid, cold, fire, lightning, or thunder damage, you can substitute the damage type with one other type from that list (you can change only one damage type per casting of a spell).</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_XGTE_SPELL_CONTROL_FLAMES" spellcasting="Wizard" known="true" />
+                <grant type="Spell" id="ID_XGTE_SPELL_GUST" spellcasting="Wizard" known="true" />
+                <grant type="Spell" id="ID_XGTE_SPELL_MOLD_EARTH" spellcasting="Wizard" known="true" />
+                <grant type="Spell" id="ID_XGTE_SPELL_SHAPE_WATER" spellcasting="Wizard" known="true" />
+            </rules>
+        </element>
+        <element name="Elemental Resistance" type="Archetype Feature" source="Elemental Mastery Arcane Tradition" id="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_RESISTANCE">
+            <description>
+                <p>At 6th level, you can choose acid, cold, fire, lightning, or thunder damage when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature.</p>
+                <p class="indent">Additionally, whenever a creature within 30 feet of you takes damage of your chosen type, you can use your reaction to give them resistance to the triggering damage.</p>
+                <p class="indent">You can use this ability a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="{{elemental-resistance:uses}}/Long Rest">
+                <description>You can choose acid, cold, fire, lightning, or thunder damage when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Additionally, whenever a creature within 30 feet of you takes damage of your chosen type, you can use your reaction to give them resistance to the triggering damage.</description>
+            </sheet>
+            <rules>
+                <stat name="elemental-resistance:uses" value="1" bonus="base" />
+                <stat name="elemental-resistance:uses" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Elemental Attunement" type="Archetype Feature" source="Elemental Mastery Arcane Tradition" id="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_ATTUNEMENT">
+            <description>
+                <p>At 10th level, you gain an additional benefit determined by the damage type of your Elemental Resistance feature:</p>
+                <table>
+                    <thead>
+                        <tr><td>Damage Type</td><td>Benefit</td></tr>
+                    </thead>
+                    <tr><td>Acid</td><td>You can breathe water and have a swim speed equal to your walking speed.</td></tr>
+                    <tr><td>Cold</td><td>You ignore all difficult terrain created by spells or magicial effects</td></tr>
+                    <tr><td>Fire</td><td>You cannot be set on fire, and you can see normally in darkness, both magical and nonmagical, to a distance of 30 feet.</td></tr>
+                    <tr><td>Lightning</td><td>You cannot be blinded by spells or magical effects</td></tr>
+                    <tr><td>Thunder</td><td>You cannot be deafened, and you are immune to spells and magical effects that prevent you from speaking, such as the <em>silence</em> spell</td></tr>
+                </table>
+            </description>
+            <sheet>
+                <description>You gain an additional benefit determined by the damage type of your Elemental Resistance feature</description>
+            </sheet>
+        </element>
+        <element name="Elemental Embodiment" type="Archetype Feature" source="Elemental Mastery Arcane Tradition" id="ID_XYRLIAN_EMAT_ARCHETYPE_FEATURE_ELEMENTAL_MASTERY_ELEMENTAL_EMBODIMENT">
+            <description>
+                <p>At 14th level, you attain the ability to become one with the elements. As an action, you can cast one of the following spells without expending a spell slot or requiring concentration: investiture of flame, investiture of ice, investiture of stone or investiture of wind.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can cast one of the following spells without expending a spell slot or requiring concentration: <em>investiture of flame</em>, <em>investiture of ice</em>, <em>investiture of stone</em> or <em>investiture of wind</em>.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_XGTE_SPELL_INVESTITURE_OF_FLAME" />
+                <grant type="Spell" id="ID_XGTE_SPELL_INVESTITURE_OF_ICE" />
+                <grant type="Spell" id="ID_XGTE_SPELL_INVESTITURE_OF_STONE" />
+                <grant type="Spell" id="ID_XGTE_SPELL_INVESTITURE_OF_WIND" />
+            </rules>
+        </element>
+
+</elements>
