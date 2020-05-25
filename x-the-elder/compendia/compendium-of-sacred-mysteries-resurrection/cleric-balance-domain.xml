@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Balance Divine Domain</name>
+        <update version="0.0.1">
+            <file name="cleric-balance-domain.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/compendium-of-sacred-mysteries-resurrection/cleric-balance-domain.xml" />
+        </update>
+    </info>
+    
+    <element name="Balance Domain" type="Archetype" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_CLERIC_BALANCE_DOMAIN">
+        <supports>Divine Domain</supports>
+        <description>
+            <p>For every light, there is a shadow equally dark. The divine powers are opposed in equal force by the foul things that lurk beyond the radiant grace of the sun, and it is in this balance between the forces of chaos, law, good, and evil that the mortal races can live and thrive. Such is the order of things, and thus, that balance must be protected. Ma’at, Tefnut, Shamash, Obatala, Rao, Cindor, Nemesis, and Adrestia, as well as other gods of justice, balance, equilibrium, vengeance, and peace may hold sway over the domain of balance. Your task, as an arbiter of these ancient gods, is to maintain the balance of the cosmic order by quelling what threats are within your power. Bring ruin where it is needed, and salvation where there is none to be found.</p>
+            <h5 class="caption">BALANCE DOMAIN SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Cleric Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><em>cure wounds, inflict wounds</em></td></tr>
+                <tr><td>3rd</td><td><em>shatter, silence</em></td></tr>
+                <tr><td>5th</td><td><em>beacon of hope, fear</em></td></tr>
+                <tr><td>7th</td><td><em>blight, death ward</em></td></tr>
+                <tr><td>9th</td><td><em>cone of cold, flame strike</em></td></tr>
+            </table>
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_BONUS_CANTRIPS" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_MYSTIC_INVERSION" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_CD_WEIGH_THE_SCALES" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_HARMONY_IN_UNITY" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_POTENT_SPELLCASTING" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_BALANCE_OF_POWER" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" spellcasting="Cleric" prepared="true" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" spellcasting="Cleric" prepared="true" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_SHATTER" spellcasting="Cleric" prepared="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_SILENCE" spellcasting="Cleric" prepared="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_BEACON_OF_HOPE" spellcasting="Cleric" prepared="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_FEAR" spellcasting="Cleric" prepared="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_BLIGHT" spellcasting="Cleric" prepared="true" level="7" />
+            <grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" spellcasting="Cleric" prepared="true" level="7" />
+            <grant type="Spell" id="ID_PHB_SPELL_CONE_OF_COLD" spellcasting="Cleric" prepared="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_FLAME_STRIKE" spellcasting="Cleric" prepared="true" level="9" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_BONUS_CANTRIPS" level="1" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_MYSTIC_INVERSION" level="1" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_CD_WEIGH_THE_SCALES" level="2" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_HARMONY_IN_UNITY" level="6" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_POTENT_SPELLCASTING" level="8" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_BALANCE_OF_POWER" level="17" />
+        </rules>
+    </element>
+        <element name="Bonus Cantrips" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_BONUS_CANTRIPS">
+            <description>
+                <p>When you select this domain at 1st level, you learn the <em>acid spalsh</em> and <em>mending</em> cantrips if you do not already know them, and they count as cleric cantrips for you.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_ACID_SPLASH" spellcasting="Cleric" known="true" />
+                <grant type="Spell" id="ID_PHB_SPELL_MENDING" spellcasting="Cleric" known="true" />
+            </rules>
+        </element>
+        <element name="Mystic Inversion" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_MYSTIC_INVERSION">
+            <description>
+                <p>At 1st level, you learn to call forth spells that bring balance to the magical energies you unleash. Whenever you cast a spell that deals damage, you can choose to change one or more damage types from that spell to a different damage type, according to the following table, by switching the damage type to its opposite. For example, when you cast flame strike, you can change the fire damage to cold damage, the radiant damage to necrotic damage, or both.</p>
+                <h5 class="caption">DAMAGE TYPE INVERSION TABLE</h5>
+                <table>
+                    <tr><td>Fire</td><td>Cold</td></tr>
+                    <tr><td>Lightning</td><td>Acid</td></tr>
+                    <tr><td>Psychic</td><td>Poison</td></tr>
+                    <tr><td>Necrotic</td><td>Radiant</td></tr>
+                    <tr><td>Slashing/Piercing</td><td>Thunder</td></tr>
+                    <tr><td>Bludgeoning</td><td>Force</td></tr>
+                </table>
+            </description>
+            <sheet>
+                <description>Whenever you cast a spell that deals damage, you can choose to change one or more damage types from that spell to a different damage type, according to the damage type inversion table.</description>
+            </sheet>
+        </element>
+        <element name="Channel Divinity: Weigh the Scales" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_CD_WEIGH_THE_SCALES">
+            <description>
+                <p>At 2nd level, you can use your action and your Channel Divinity feature to impose equilibrium, refusing to allow the whims of causality to define you. For one minute or until you choose to end this effect as a bonus action, you can’t gain advantage or suffer disadvantage on any roll, and you can reroll any damage dice that result in a 1, but only once per die.</p>
+            </description>
+            <sheet action="Action" usage="Channel Divinity" alt="Weigh the Scales">
+                <description>For one minute or until you choose to end this effect as a bonus action, you can’t gain advantage or suffer disadvantage on any roll, and you can reroll any damage dice that result in a 1, but only once per die.</description>
+            </sheet>
+        </element>
+        <element name="Harmony in Unity" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_HARMONY_IN_UNITY">
+            <description>
+                <p>At 6th level, your divine calling allows you to correct what has been disrupted. The first time a spell that you have cast causes a creature to regain hit points, that creature’s next attack deals an additional 1d6 force damage.</p>
+            </description>
+            <sheet>
+                <description>The first time a spell that you have cast causes a creature to regain hit points, that creature’s next attack deals an additional 1d6 force damage.</description>
+            </sheet>
+        </element>
+        <element name="Potent Spellcasting" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_POTENT_SPELLCASTING">
+            <description>
+                <p>Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip.</p>
+            </description>
+            <sheet>
+                <description>You add {{wisdom:modifier}} to the damage you deal with any cleric cantrip.</description>
+            </sheet>
+        </element>
+        <element name="Balance of Power" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_BALANCE_BALANCE_OF_POWER">
+            <description>
+                <p>At 17th level, your devotion to the cosmic order allows you to see the truth: there is no magic beyond the reach of the divine. All spells on the sorcerer spell list are added to the cleric spell list for you.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Cleric" extend="true">
+                <extend>Sorcerer</extend>
+            </spellcasting>
+        </element>
+
+</elements>
