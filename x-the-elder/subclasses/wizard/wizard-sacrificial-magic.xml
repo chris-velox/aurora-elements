@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Sacrificial Magic Arcane Tradition</name>
+        <update version="0.0.1">
+            <file name="wizard-sacrificial-magic.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/wizard/wizard-sacrificial-magic.xml" />
+        </update>
+    </info>
+    
+    <element name="Sacrificial Magic Arcane Tradition" type="Source" source="Core" id="ID_LUCIEN_HOMEBREWERY_SOURCE_Sacrificial Magic Arcane Tradition">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SMAT</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/mbjBzpcqt</set>
+            <set name="image"></set>
+            <set name="author" url="https://www.reddit.com/u/Lucien">Lucien</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200526</set>
+        </setters>
+    </element>
+    
+    <element name="Sacrificial Magic" type="Archetype" source="Sacrifical Magic Arcane Tradition" id="ID_LUCIEN_SMAT_ARCHETYPE_WIZARD_SACRIFICIAL_MAGIC">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>Wizards from the School of Sacrifice, called Sacrificers, are those who have learned to draw power from the blood of the creatures they slay. This is an art called ritual sacrifice, learned from studying ancient cultures long dead.</p>
+            <p class="indent">Most people note the gratuitous bloodshed the School of Sacrifice encourages with disgust. You understand that the great power found deep in the crimson of death is necessary to put an end to the problems of the world.</p>
+            <div element="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_RITUAL_SACRIFICE" />
+            <div element="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_SACRIFICIAL_SPELLS" />
+            <div element="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_BLOOD_BATH" />
+            <div element="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_QUICKENED_SACRIFICE" />
+            <div element="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_ENHANCED_SACRIFICIAL_SPELLCASTING" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_RITUAL_SACRIFICE" level="2" />
+            <grant type="Archetype Feature" id="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_SACRIFICIAL_SPELLS" level="2" />
+            <grant type="Archetype Feature" id="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_BLOOD_BATH" level="6" />
+            <grant type="Archetype Feature" id="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_QUICKENED_SACRIFICE" level="10" />
+            <grant type="Archetype Feature" id="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_ENHANCED_SACRIFICIAL_SPELLCASTING" level="14" />
+        </rules>
+    </element>
+        <element name="Ritual Sacrifice" type="Archetype Feature" source="Sacrificial Magic Arcane Tradition" id="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_RITUAL_SACRIFICE">
+            <description>
+                <p>Beginning when you select this school at 2nd level, you learn to perform a Ritual Sacrifice. Using a dagger, you may perform this ritual on a creature that has blood and has been dead for no longer than 1 minute. This ritual takes 1 minute, during which you can take no other actions, and requires concentration as if you were casting a spell.</p>
+                <p class="indent">At 2nd level, you can perform this ritual once. At 6th level, you can perform it twice. At 10th level, you can perform it three times. You regain all uses after completing a long rest.</p>
+            </description>
+            <sheet usage="{{ritual-sacrifice:uses}}/Long Rest">
+                <description>Using a dagger, you may perform this ritual on a creature that has blood and has been dead for no longer than 1 minute. This ritual takes 1 minute, during which you can take no other actions, and requires concentration as if you were casting a spell.</description>
+            </sheet>
+            <rules>
+                <stat name="ritual-sacrifice:uses" value="1" level="2" />
+                <stat name="ritual-sacrifice:uses" value="1" level="6" />
+                <stat name="ritual-sacrifice:uses" value="1" level="10" />
+            </rules>
+        </element>
+        <element name="Sacrificial Spells" type="Archetype Feature" source="Sacrificial Magic Arcane Tradition" id="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_SACRIFICIAL_SPELLS">
+            <description>
+                <p>After completing a Ritual Sacrifice, you gain a Sacrifical Spell. You may choose this spell from the Warlock spell list. The spell can be no higher than 5th level, and must be for a level that you can cast. In addition, the Sacrificial Spell’s level can be no higher than half of the sacrificed creature’s CR, rounded down. These spells count as Wizard spells for you.</p>
+                <p class="indent">You may decide to prepare the Sacrificial Spell at a higher casting level than it’s original level, but must follow the same level restriction. You cannot have multiple instances of the same spell prepared at the same time.</p>
+                <p class="indent">When you cast a Sacrificial Spell, it is cast at its prepared level and does not expend a spell slot. Instead, you simply lose the ability to cast the spell. You lose all Sacrificial Spells after a long rest.</p>
+            </description>
+            <sheet>
+                <description>After completing a Ritual Sacrifice, you gain a Sacrifical Spell. You may choose this spell from the Warlock spell list. The spell can be no higher than 5th level, and must be for a level that you can cast. In addition, the Sacrificial Spell’s level can be no higher than half of the sacrificed creature’s CR, rounded down. These spells count as Wizard spells for you. When you cast a Sacrificial Spell, it is cast at its prepared level and does not expend a spell slot. Instead, you simply lose the ability to cast the spell.</description>
+            </sheet>
+        </element>
+        <element name="Blood Bath" type="Archetype Feature" source="Sacrificial Magic Arcane Tradition" id="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_BLOOD_BATH">
+            <description>
+                <p>Starting at 6th level, you may bathe in the blood of your sacrifice. When you complete a Ritual Sacrifice, you may choose to roll an amount of d6s equal to half your Wizard level, rounded down, and gain that amount of hit points. Additionally, when you gain hit points this way, you gain a +2 bonus to AC until you take a short or long rest. You can use this feature once, and regain its use after completing a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When you complete a Ritual Sacrifice, you may choose to roll {{level:wizard:half}}d6s and gain that amount of hit points. Additionally, when you gain hit points this way, you gain a +2 bonus to AC until you take a short or long rest.</description>
+            </sheet>
+        </element>
+        <element name="Quickened Sacrifice" type="Archetype Feature" source="Sacrificial Magic Arcane Tradition" id="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_QUICKENED_SACRIFICE">
+            <description>
+                <p>Starting at 10th level, you can perform a Ritual Sacrifice with great speed. If you begin a Ritual Sacrifice as an action, the ritual will be completed at the beginning of your next turn. All other restrictions of Ritual Sacrifice still apply.</p>
+            </description>
+            <sheet>
+                <description>If you begin a Ritual Sacrifice as an action, the ritual will be completed at the beginning of your next turn. All other restrictions of Ritual Sacrifice still apply.</description>
+            </sheet>
+        </element>
+        <element name="Enhanced Sacrificial Spellcasting" type="Archetype Feature" source="Sacrificial Magic Arcane Tradition" id="ID_LUCIEN_SMAT_ARCHETYPE_FEATURE_SACRIFICIAL_MAGIC_ENHANCED_SACRIFICIAL_SPELLCASTING">
+            <description>
+                <p>Starting at 14th level, your Sacrificial Spells are brimming with power. You have advantage on attack rolls made with Sacrificial Spells, and creatures have disadvantage on saving throws imposed by your Sacrificial Spells.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on attack rolls made with Sacrificial Spells, and creatures have disadvantage on saving throws imposed by your Sacrificial Spells.</description>
+            </sheet>
+        </element>
+</elements>
