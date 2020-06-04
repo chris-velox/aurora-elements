@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Druid Subclasses</name>
+        <update version="0.0.1">
+            <file name="druid-subclasses-druid.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/druid/druid-subclasses-druid.xml" />
+        </update>
+    </info>
+    
+    <element name="Subclasses: Druid" type="Source" source="Core" id="ID_GMBINDER_SOURCE_Subclasses: Druid">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SCD</set>
+            <set name="url">https://www.gmbinder.com/share/-M2VwyNX9jOSzfh0NLP2</set>
+            <set name="image"></set>
+            <set name="author"></set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200118</set>
+        </setters>
+    </element>
+    
+    <element name="Circle of the Animal Spirit" type="Archetype" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_DRUID_CIRCLE_OF_THE_ANIMAL_SPIRIT">
+        <supports>Druid Circle</supports>
+        <description>
+            <p>The essence of beasts or their natural domains can manifest themselves as spiritual energy. Druids of the Circle of the Animal Spirit work to connect with these spirits and act as their guardians and agents.</p>
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_SPIRIT_ANIMAL" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_MANIFEST_SPIRIT" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_ROAMING_SPIRIT" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_SYMBIOSIS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_SPIRIT_ANIMAL" level="2" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_MANIFEST_SPIRIT" level="6" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_ROAMING_SPIRIT" level="10" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_SYMBIOSIS" level="14" />
+        </rules>
+    </element>
+        <element name="Spirit Animal" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_SPIRIT_ANIMAL">
+            <description>
+                <p>When you choose this circle at the 2nd level, you gain a connection with an animal that becomes your spirit animal. Choose one beast with a challenge rating of 1 or lower. You can Wild Shape into this beast. When you Wild Shape into this beast, you can stay in beast shape a number of hours equal to your Druid level, and this beast shape gains temporary hit points equal to your Druid level.</p>
+            </description>
+            <sheet>
+                <description>Choose one beast with a challenge rating of 1 or lower. You can Wild Shape into this beast. When you Wild Shape into this beast, you can stay in beast shape a up to {{level:druid}} hours, and this beast shape gains {{level:druid}} temporary hit points.</description>
+            </sheet>
+        </element>
+        <element name="Manifest Spirit" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_MANIFEST_SPIRIT">
+            <description>
+                <p>Starting at 6th level, your spirit animal can take form. As an action, you can conjure your spirit animal expending one use of Wild Shape. It gains temporary hit points equal to your druid level. The beast can be partially translucent or opaque and of any color you choose.</p>
+                <p class="indent">The beast is friendly to you and your companions for the duration. Roll initiative for the beast, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you). If you don’t issue any commands to the beast, it defends itself from hostile creatures but otherwise takes no actions. The beast’s attacks count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
+                <p class="indent">It disappears when it drops to 0 hit points, when you take a short rest or long rest, when you are more than 60 feet away from it, when a number of hours has passed equal to half your druid level (rounded down), when you use this feature again, or when it is dismissed as an action.</p>
+            </description>
+            <sheet action="Action" usage="Wild Shape">
+                <description>You can conjure your spirit animal for up to {{level:druid:half}} hours. It gains {{level:druid}} temporary hit points. Roll initiative for the beast, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you). If you don’t issue any commands to the beast, it defends itself from hostile creatures but otherwise takes no actions. The beast’s attacks count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</description>
+            </sheet>
+        </element>
+        <element name="Roaming Spirit" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_ROAMING_SPIRIT">
+            <description>
+                <p>Starting at 10th level, your Spirit Animal can enter the ethereal plane. As an action, you can allow your Spirit Animal to become under the effects of the etherealness spell for 1 hour or until you lose your concentration (as if you were concentrating on a spell). While in the Ethereal Plane in this way, your Spirit Animal has a speed of 500 feet, and there is no limit to the distance it can be away from you.</p>
+                <p class="indent">For the duration, you can communicate with your Spirit Animal telepathically, and can use your action to see through the your Spirit Animal’s eyes, hear what it hears, and speak through it in your own voice, even if it is normally incapable of speech, and continue to do so until you use your action to return to your normal senses. While perceiving through your Spirit Animal’s senses, you gain the benefits of any special senses possessed by that creature, though you are blinded and deafened to your own surroundings.</p>
+                <p class="indent">If you end the effect early, you may return your Spirit Animal into the Material Plane for 1 minute. During this minute, you may still communicate telepathically and see, hear, and speak through it. After the minute, it disappears if it is further than 60 feet away from you.</p>
+                <p class="indent">Once you use this feature, you must finish a long rest before you can use it again.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can allow your Spirit Animal to become under the effects of the etherealness spell for 1 hour or until you lose your concentration. While in the Ethereal Plane in this way, your Spirit Animal has a speed of 500 feet, and there is no limit to the distance it can be away from you. For the duration, you can communicate with your Spirit Animal telepathically, and can use your action to see through the your Spirit Animal’s eyes, hear what it hears, and speak through it in your own voice, even if it is normally incapable of speech, and continue to do so until you use your action to return to your normal senses. While perceiving through your Spirit Animal’s senses, you gain the benefits of any special senses possessed by that creature, though you are blinded and deafened to your own surroundings.</description>
+            </sheet>
+        </element>
+        <element name="Symbiosis" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTAS_SYMBIOSIS">
+            <description>
+                <p>Starting at 14th level, when your Spirit Animal is present and you are in your Spirit Animal Wild Shape, your energies boost each other in battle. You both have advantage on attack rolls and saving throws. Also, you and your Spirit Animal can teleport, swapping places, as an action if you are within 60 feet of each other.</p>
+            </description>
+            <sheet>
+                <description>When your Spirit Animal is present and you are in your Spirit Animal Wild Shape, you both have advantage on attack rolls and saving throws. Also, you and your Spirit Animal can teleport, swapping places, as an action if you are within 60 feet of each other.</description>
+            </sheet>
+        </element>
+
+
+    <element name="Circle of Decay" type="Archetype" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_DRUID_CIRCLE_OF_DECAY">
+        <supports>Druid Circle</supports>
+        <description>
+            <p>The natural world is one of decay and infestation. Bacteria, beasts, and plants feast on dead flesh for growth and nourishment. Druids of the Circle of Decay embrace this side of life and focus on weakening foes to allow scavengers to flourish.</p>
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_DECAYING_TOUCH" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_SWARM" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_PESTILENCE" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_LIFE_CYCLE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_DECAYING_TOUCH" level="2" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_SWARM" level="6" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_PESTILENCE" level="10" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_LIFE_CYCLE" level="14" />
+        </rules>
+    </element>
+        <element name="Decaying Touch" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_DECAYING_TOUCH">
+            <description>
+                <p>When you choose this circle at 2nd level, your body begins to produce natural toxins. Whenever you hit a creature with a weapon attack, you deal an additional 1d6 necrotic or poison damage (your choice when making the attack).</p>
+                <p class="indent">This damage increases by 1d6 when you reach 6th level (2d6), 10th level (3d6), and 14th level (4d6).</p>
+            </description>
+            <sheet>
+                <description>Whenever you hit a creature with a weapon attack, you deal an additional {{decaying-touch:damage-dice}}d6 necrotic or poison damage (your choice).</description>
+            </sheet>
+            <rules>
+                <stat name="decaying-touch:damage-dice" value="1" level="2" />
+                <stat name="decaying-touch:damage-dice" value="1" level="6" />
+                <stat name="decaying-touch:damage-dice" value="1" level="10" />
+                <stat name="decaying-touch:damage-dice" value="1" level="14" />
+            </rules>
+        </element>
+        <element name="Swarm" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_SWARM">
+            <description>
+                <p>Starting at 6th level, you can command the creatures of decay. As an action, you unleash a swarm of insects in a 30 foot cone originating from you. Each creature in the cone must make a Constitution saving throw against your druid spell save DC. A creature takes 2d6 piercing and 2d6 necrotic damage on a failed save, or half as much damage on a successful one.</p>
+                <p class="indent">If there is a dead creature in this cone after the spell is cast, the insects remain over the body for 1 hour. Any creature that starts its turn or moves within the insects’ space must make a Constitution saving throw. A creature takes 1d6 piercing and 1d6 necrotic damage on a failed save, or half as much damage on a successful one.</p>
+                <p class="indent">Once you use this feature, you must finish a long rest before you can use it again.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You unleash a swarm of insects in a 30 foot cone originating from you. Each creature in the cone must make a Constitution saving throw against your druid spell save DC. A creature takes 2d6 piercing and 2d6 necrotic damage on a failed save, or half as much damage on a successful one. If there is a dead creature in this cone after the spell is cast, the insects remain over the body for 1 hour. Any creature that starts its turn or moves within the insects’ space must make a Constitution saving throw. A creature takes 1d6 piercing and 1d6 necrotic damage on a failed save, or half as much damage on a successful one.</description>
+            </sheet>
+        </element>
+        <element name="Pestilence" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_PESTILENCE">
+            <description>
+                <p>Starting at 10th level, your toxins can inflict disease on your foes. When you deal necrotic or poison damage to a creature, you may have it make a Constitution saving throw against your druid spell save DC. On a failed save, the target is poisoned, cannot take reactions, and has its movement speed reduced by half. At the end of each of its turns, the target can make another Constitution saving throw. On a success, these effects end.</p>
+                <p class="indent">Once you use this feature, you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>When you deal necrotic or poison damage to a creature, you may have it make a Constitution saving throw against your druid spell save DC. On a failed save, the target is poisoned, cannot take reactions, and has its movement speed reduced by half. At the end of each of its turns, the target can make another Constitution saving throw. On a success, these effects end.</description>
+            </sheet>
+        </element>
+        <element name="Life Cycle" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COD_LIFE_CYCLE">
+            <description>
+                <p>Starting at 14th level, you turn a creature’s death into life. When you reduce a creature to 0 hit points, you gain temporary hit points equal to your your druid level.</p>
+            </description>
+            <sheet>
+                <description>When you reduce a creature to 0 hit points, you gain {{level:druid}} temporary hit points.</description>
+            </sheet>
+        </element>
+
+
+    <element name="Circle of Inner Nature" type="Archetype" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_DRUID_CIRCLE_OF_INNER_NATURE">
+        <supports>Druid Circle</supports>
+        <description>
+            <p>The inner planes are full of creatures with a deep connection to nature or have some bestial essence to them. Druids of this circle form a connection to dragons, elementals, fey, plants, and monstrosities for having these properties. They use this connection to enhance their Wild Shape ability beyond that of just beasts.</p>
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_MONSTER_SHAPE" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_MONSTROUS_UNDERSTANDING" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_IMPROVED_MONSTER_SHAPE" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_METAMORPHOSIS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_MONSTER_SHAPE" level="2" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_MONSTROUS_UNDERSTANDING" level="6" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_IMPROVED_MONSTER_SHAPE" level="10" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_METAMORPHOSIS" level="14" />
+        </rules>
+    </element>
+        <element name="Monster Shape" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_MONSTER_SHAPE">
+            <description>
+                <p>When choosing this circle at 2nd level, instead of beasts, you Wild Shape into creatures of these types: dragons, elementals, fey, monstrosities, and plants. The other restrictions of the Beast Shapes Table and Wild Shape still apply.</p>
+            </description>
+            <sheet usage="Wild Shape">
+                <description>Instead of beasts, you Wild Shape into creatures of these types: dragons, elementals, fey, monstrosities, and plants. The other restrictions of the Beast Shapes Table and Wild Shape still apply.</description>
+            </sheet>
+        </element>
+        <element name="Monstrous Understanding" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_MONSTROUS_UNDERSTANDING">
+            <description>
+                <p>When you reach 6th level, you can communicate with plants as if you shared a language while you are in a plant Wild Shape. Also, you have advantage on Intelligence checks to recall information about dragons, elementals, fey, monstrosities, or plants and Charisma checks when interacting with them.</p>
+            </description>
+            <sheet>
+                <description>You can communicate with plants as if you shared a language while you are in a plant Wild Shape. Also, you have advantage on Intelligence checks to recall information about dragons, elementals, fey, monstrosities, or plants and Charisma checks when interacting with them.</description>
+            </sheet>
+        </element>
+        <element name="Improved Monster Shape" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_IMPROVED_MONSTER_SHAPE">
+            <description>
+                <p>Starting at 10th level, you can expend two uses of Wild Shape at the same time to transform into a dragon, fey, plant, elemental, or monstrosity at a challenge rating as high as your druid level divided by 4 (rounded down).</p>
+            </description>
+            <sheet usage="Wild Shape">
+                <description>You can expend two uses of Wild Shape at the same time to transform into a dragon, fey, plant, elemental, or monstrosity at a challenge rating of {{improved-monster-shape:cr}}.</description>
+            </sheet>
+            <rules>
+                <stat name="improved-monster-shape:cr" value="1" level="4" />
+                <stat name="improved-monster-shape:cr" value="1" level="8" />
+                <stat name="improved-monster-shape:cr" value="1" level="12" />
+                <stat name="improved-monster-shape:cr" value="1" level="16" />
+                <stat name="improved-monster-shape:cr" value="1" level="20" />
+           </rules>
+        </element>
+        <element name="Metamorphosis" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COIN_METAMORPHOSIS">
+            <description>
+                <p>Starting at 14th level, your transformations have begun to blend into your natural form. Your appearance often gains elements of these transformations (grass like quality to your hair, sharpened fingernails or teeth, patches of scales on the skin, pointed ears and feathered eyebrows, a voice that becomes more airy or crackles like a fire, etc.). As a result, you gain the the following traits:</p>
+                <ul>
+                    <li>You gain small dragon wings that do not grant you flight but aid in any aerial adventures. As long as you are not incapacitated, you take no damage from falling, and your long jump and high jump distances are doubled.</li>
+                    <li>Your skin becomes like bark making your AC when you aren’t wearing armor is 16.</li>
+                    <li>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</li>
+                    <li>You gain the following cantrips: <em>control flames</em>, <em>gust</em>, <em>mold earth</em>, <em>shape water</em>.</li>
+                    <li>Your hands become clawlike. Your unarmed strikes now deal slashing damage equal to 1d8 plus your Strength modifier.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>Your appearance often gains elements of these transformations (grass like quality to your hair, sharpened fingernails or teeth, patches of scales on the skin, pointed ears and feathered eyebrows, a voice that becomes more airy or crackles like a fire, etc.). As long as you are not incapacitated, you take no damage from falling, and your long jump and high jump distances are doubled. You have advantage on saving throws against being charmed, and magic can’t put you to sleep. Your unarmed strikes now deal slashing damage equal to 1d8 plus your Strength modifier.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_XGTE_SPELL_CONTROL_FLAMES" spellcasting="Druid" known="true" />
+                <grant type="Spell" id="ID_XGTE_SPELL_GUST" spellcasting="Druid" known="true" />
+                <grant type="Spell" id="ID_XGTE_SPELL_MOLD_EARTH" spellcasting="Druid" known="true" />
+                <grant type="Spell" id="ID_XGTE_SPELL_SHAPE_WATER" spellcasting="Druid" known="true" />
+                <stat name="ac:metamorphosis:base" value="16" />
+                <stat name="ac:calculation" value="ac:metamorphosis" bonus="calculation" equipped="[armor:none]" alt="Metamorphosis (Druid)" />
+            </rules>
+        </element>
+
+
+    <element name="Circle of the Predator" type="Archetype" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_DRUID_CIRCLE_OF_THE_PREDATOR">
+        <supports>Druid Circle</supports>
+        <description>
+            <p>In the animal kingdom there are predators and prey. While prey are more suited to defense and hiding, the predator excels in the hunt and the kill. Druids who are a part of the circle of the Predator hone their skills in combat particularly in their use of Wild Shape.</p>
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_PREDATOR_STRIKES" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_WILD_ATTACK" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_PACK_LEADER" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_HONED_SENSES" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_FLEEING_PREY" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_CORNERED_ANIMAL" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_PREDATOR_STRIKES" level="2" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_WILD_ATTACK" level="2" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_PACK_LEADER" level="6" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_HONED_SENSES" level="6" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_FLEEING_PREY" level="10" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_CORNERED_ANIMAL" level="14" />
+        </rules>
+    </element>
+        <element name="Predator Strikes" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_PREDATOR_STRIKES">
+            <description>
+                <p>When you choose this circle at 2nd level, you hone your skills in combat and slaying. You have a pool d10s equal to your druid level. Whenever you deal damage with a weapon attack, you may spend a number of those dice equal to your proficiency bonus or less and add them to the damage roll.</p>
+                <p class="indent">You regain all expended dice when you finish a long rest. Alternatively as a bonus action, you can expend one spell slot and regain a number of dice equal to the level of spell slot expended.</p>
+            </description>
+            <sheet usage="{{level:druid}} d10s/Long Rest">
+                <description>You have a pool of {{level:druid}} d10s. Whenever you deal damage with a weapon attack, you may spend up to {{proficiency}} dice from the pool and add them to the damage roll. As a bonus action, you can expend one spell slot and regain a number of dice equal to the level of spell slot expended.</description>
+            </sheet>
+        </element>
+        <element name="Wild Attack" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_WILD_ATTACK">
+            <description>
+                <p>Also at 2nd level, when you enter Wild Shape you may make a single attack as a bonus action.</p>
+            </description>
+            <sheet usage="Wild Shape" action="Bonus Action">
+                <description>When you enter Wild Shape you may make a single attack as a bonus action.</description>
+            </sheet>
+        </element>
+        <element name="Pack Leader" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_PACK_LEADER">
+            <description>
+                <p>At 6th level, other beasts will recognize you as the dominant creature in the social order. If you damage a beast while in Wild Shape, it must make Wisdom saving throw. If its challenge rating is higher than your Wild Shape’s, it has advantage on this saving throw. On a failure, it becomes charmed by you. While charmed, you can use your action to command it. It follows the order as best it can. It may make another Wisdom saving throw each time you are damaged. On a success, it is no longer charmed by you. If you exit Wild Shape, the effect immediately ends.</p>
+                <p class="indent">Once the effect ends, or if the beast succeeds on a saving throw against this effect, you can’t use this feature on that beast again for 24 hours.</p>
+            </description>
+            <sheet>
+                <description>If you damage a beast while in Wild Shape, it must make Wisdom saving throw. If its challenge rating is higher than your Wild Shape’s, it has advantage on this saving throw. On a failure, it becomes charmed by you. While charmed, you can use your action to command it. It follows the order as best it can. It may make another Wisdom saving throw each time you are damaged. On a success, it is no longer charmed by you. If you exit Wild Shape, the effect immediately ends. Once the effect ends, or if the beast succeeds on a saving throw against this effect, you can’t use this feature on that beast again for 24 hours.</description>
+            </sheet>
+        </element>
+        <element name="Honed Senses" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_HONED_SENSES">
+            <description>
+                <p>Also at 6th level, while in your Wild Shape you have advantage on Wisdom (Survival) checks to track and Charisma (Intimidate) checks.</p>
+            </description>
+            <sheet>
+                <description>While in your Wild Shape you have advantage on Survival checks to track and Intimidate checks.</description>
+            </sheet>
+        </element>
+        <element name="Fleeing Prey" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_FLEEING_PREY">
+            <description>
+                <p>At 10th level, a fleeing creature triggers your predatory instincts. When a hostile creature that you can see moves at least 10 feet away from you, you may use your reaction to immediately move up to your movement speed to the creature, if you can, and make single melee weapon attack against the creature if it is within your reach. This movement does not provoke opportunity attacks. On a successful attack, the target must succeed on a Strength saving throw (DC equal to 8 + your proficiency bonus + your Strength modifier or Dexterity modifier (your choice)) or be knocked prone.</p>
+            </description>
+            <sheet>
+                <description>When a hostile creature that you can see moves at least 10 feet away from you, you may use your reaction to immediately move up to your movement speed to the creature, if you can, and make single melee weapon attack against the creature if it is within your reach. This movement does not provoke opportunity attacks. On a successful attack, the target must succeed on a Strength saving throw (DC {{fleeing-prey:save-dc}}) or be knocked prone.</description>
+            </sheet>
+            <rules>
+                <stat name="fleeing-prey:save-dc" value="8" />
+                <stat name="fleeing-prey:save-dc" value="proficiency" />
+                <stat name="fleeing-prey:save-dc:ability" value="strength:modifier" bonus="ability" />
+                <stat name="fleeing-prey:save-dc:ability" value="dexterity:modifier" bonus="ability" />
+                <stat name="fleeing-prey:save-dc" value="fleeing-prey:save-dc:ability" />
+            </rules>
+        </element>
+        <element name="Cornered Animal" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTP_CORNERED_ANIMAL">
+            <description>
+                <p>Starting at 14th level, you can keep fighting as a beast despite grievous wounds. If you drop to 0 hit points while in Wild Shape, you can make a DC 10 Wisdom saving throw. If you succeed, you drop to 1 hit point instead.</p>
+                <p class="indent">Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10.</p>
+            </description>
+            <sheet>
+                <description>If you drop to 0 hit points while in Wild Shape, you can make a DC 10 Wisdom saving throw. If you succeed, you drop to 1 hit point instead. Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10.</description>
+            </sheet>
+        </element>
+
+
+    <element name="Circle of Sweetness" type="Archetype" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_DRUID_CIRCLE_OF_SWEETNESS">
+        <supports>Druid Circle</supports>
+        <description>
+            <p>Nature provides a bevy of sweet treats from fruits and honey to vanilla beans and beets to sugarcane an licorice. Druids of the Circle of Sweetness not only seek to propagate such delicious delights, but to embody the ideal of them - to be sweet and kind grow these traits throughout the world.</p>
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_NATURALLY_SWEET" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_TOO_PRECIOUS" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_SUGAR_RUSH" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_SOOTHING_SWEETNESS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_NATURALLY_SWEET" level="2" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_TOO_PRECIOUS" level="6" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_SUGAR_RUSH" level="10" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_SOOTHING_SWEETNESS" level="14" />
+        </rules>
+    </element>
+        <element name="Naturally Sweet" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_NATURALLY_SWEET">
+            <description>
+                <p>When you choose this circle at 2nd level, you develop an amiable attitude. You gain proficiency with the Persuasion skill.</p>
+                <p class="indent">In addition, you can conjure sugary fare that can help friends and hurt foes. As an action, choose one of the type of naturally sweet foods below to manifest. If an effect requires a saving throw, the DC equals your druid spell save DC.</p>
+                <p class="indent">Once you use this ability, you can’t use it again until you finish a short or long rest.</p>
+                <p class="indent"><strong><em>Juicy.</em></strong> You conjure an extremely juicy, sweet fruit, such as a pear or peach, and squeeze it shooting a line of juice 30 feet long and 5 feet wide out from you in a direction you choose. Each hostile creature within the line must succeed on a Constitution saving throw or become blinded for 1 minute or until a creature spends an action wiping the juices from its eyes.</p>
+                <p class="indent">Each friendly creature within the line of sweet juice becomes slippery and gains a 5 foot bonus to its movement speed and may take the Disengage action as a bonus action. These benefits last for 1 minute.</p>
+                <p class="indent"><strong><em>Minty.</em></strong> You chew a cool, sweet leaf, such as peppermint or spearmint, and breathe out a 15-foot cone extending from you. Each hostile creature within the cone must make a Constitution saving throw taking 3d6 cold damage on a failure, or half as much on a success.</p>
+                <p class="indent">Each friendly creature within the cone gains temporary hit points equal to half your druid level plus your Wisdom modifier and has resistance to fire damage while it has these temporary hit points. The temporary hit points disappear after 1 minute.</p>
+                <p class="indent"><strong><em>Stalky.</em></strong> Choose a 10-foot square area of ground starting from a point within 30 feet of you. Sweet, thin, hard plants, such as sugarcane or cinnamon trees, grow in the space and remain there for 1 minute. When a hostile creature moves into or within the area, it takes 1d4 bludgeoning damage for every 5 feet it travels.</p>
+                <p class="indent">A friendly creature (including you) has half cover while in the area or if the area is in between it and the source of the attack or spell.</p>
+                <p class="indent"><strong><em>Sticky.</em></strong> Pick a point within 30 feet of you. A 20-foot radius sphere of sticky, sweet substance, such as honey or maple sap, originates on that point. Each creature in the sphere is coated in the sticky substance for 1 minute. A hostile creature must make a Dexterity saving throw at the beginning of each of its turn for the duration. On a failure, its movement speed is halved until the start of its next turn.</p>
+                <p class="indent">A friendly creature (including you) gains a climbing speed equal to its walking speed and has advantage on ability checks and saving throws to resist being pushed, pulled, or knocked prone for the duration.</p>
+            </description>
+            <sheet action="Action" usage="1/Short Rest">
+                <description>Choose one of the type of naturally sweet foods below to manifest: Juicy, Minty, Stalky, or Sticky. If an effect requires a saving throw, the DC equals your druid spell save DC.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+            </rules>
+        </element>
+        <element name="Too Precious" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_TOO_PRECIOUS">
+            <description>
+                <p>At 6th level, you are able to become an extremely adorable and sweet beast. While you are in your Wild Shape, you can attempt to charm a creature of your choice within 10 feet of you as an action. The target must succeed on a Wisdom saving throw against your druid spell save DC or be charmed by you until your Wild Shape ends. If you or your companions are fighting the target or the target is aware you are in Wild Shape, it automatically succeeds this saving throw. The charm ends early if you or your companions do anything harmful to it. The charmed creature regards you as the sweetest most precious thing ever, adopts you as its pet, and will do whatever it can to protect you from harm.</p>
+                <p class="indent">If the creature succeeds on its saving throw or if the charm ends as a result of you or your companions doing anything harmful to it, you can’t use this feature on that creature again for 24 hours.</p>
+            </description>
+            <sheet action="Action">
+                <description>While you are in your Wild Shape, you can attempt to charm a creature of your choice within 10 feet. The target must succeed on a Wisdom saving throw against your druid spell save DC or be charmed by you until your Wild Shape ends. If you or your companions are fighting the target or the target is aware you are in Wild Shape, it automatically succeeds this saving throw. The charm ends early if you or your companions do anything harmful to it. The charmed creature regards you as the sweetest most precious thing ever, adopts you as its pet, and will do whatever it can to protect you from harm.</description>
+            </sheet>
+        </element>
+        <element name="Sugar Rush" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_SUGAR_RUSH">
+            <description>
+                <p>At 10th level, you can harness the dense caloric energy of sugar. The <em>haste</em> spell is a druid spell for you, you always have it prepared, and it doesn’t count against the number spells you can prepare each day. You can cast haste without expending a spell slot targeting only yourself.</p>
+                <p class="indent">Once you cast haste in this way, you can’t do so again until you finish a short or long rest, though you can still cast it normally using an available spell slot.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>You can cast haste without expending a spell slot targeting only yourself. Once you cast haste in this way, you can still cast it normally using an available spell slot.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_HASTE" spellcasting="Druid" prepared="true" />
+            </rules>
+        </element>
+        <element name="Soothing Sweetness" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COS_SOOTHING_SWEETNESS">
+            <description>
+                <p>At 14th level, you can unleash a wave of healing sweetness as an action. Each creature within a 30 foot radius of you, other than you, regains hit points equal to 4d6 plus your Wisdom modifier. If a hostile creature regains hit points in this way, it is immediately charmed by you for 1 minute. The charm ends early if you do anything harmful to it.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>Each creature within a 30 foot radius of you, other than you, regains 4d6 + {{wisdom:modifier}} hit points. If a hostile creature regains hit points in this way, it is immediately charmed by you for 1 minute. The charm ends early if you do anything harmful to it.</description>
+            </sheet>
+        </element>
+
+
+    <element name="Circle of the Wild" type="Archetype" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_DRUID_CIRCLE_OF_THE_WILD">
+        <supports>Druid Circle</supports>
+        <description>
+            <p>The wilds of nature are untamed. Circle of the Wild druids respect nature at its most feral. They tap into the raging temperament of animals during their Wild Shapes.</p>
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_BESTIAL_RAGE" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_PACK_LEADER" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_BEAST_PROFICIENCY" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_BLOODLUST" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_RELENTLESS_RAGE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_BESTIAL_RAGE" level="2" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_PACK_LEADER" level="6" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_BEAST_PROFICIENCY" level="6" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_BLOODLUST" level="10" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_RELENTLESS_RAGE" level="14" />
+        </rules>
+    </element>
+        <element name="Bestial Rage" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_BESTIAL_RAGE">
+            <description>
+                <p>At 2nd level, when you use your Wild Shape you, can go into a rage (see <em>Player’s Handbook</em> pg. 48) as part of the action or at any point of your Wild Shape as a bonus action. Your rage ends when exiting Wild Shape, and the rage damage and number of rages are based on your druid level as opposed to barbarian level, otherwise all other rules of rage apply.</p>
+                <p class="indent">If you receive a critical hit or surprise attack, you must use your reaction (if you have one) to Wild Shape and rage (assuming you are not already). You cannot end your Wild Shape or rage voluntarily when entering this way.</p>
+            </description>
+            <sheet>
+                <description>When you use your Wild Shape you, can go into a rage (see <em>Player’s Handbook</em> pg. 48) as part of the action or at any point of your Wild Shape as a bonus action. Your rage ends when exiting Wild Shape, and the rage damage and number of rages are based on your druid level as opposed to barbarian level, otherwise all other rules of rage apply.</description>
+            </sheet>
+        </element>
+            <element name="Rage" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_BESTIAL_RAGE_RAGE">
+                <description>
+                    <p>In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren’t wearing heavy armor:</p>
+                    <ul>
+                        <li>You have advantage on Strength checks and Strength saving throws.</li>
+                        <li>When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a druid, as shown in the Rage Damage column of the Barbarian table.</li>
+                        <li>You have resistance to bludgeoning, piercing, and slashing damage.</li>
+                    </ul>
+                    <p>If you are able to cast spells, you can’t cast them or concentrate on them while raging.</p>
+                    <p class="indent">Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven’t attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.</p>
+                    <p class="indent">Once you have raged the number of times for your druid level, you must finish a long rest before you can rage again.</p>
+                </description>
+                <sheet action="Bonus Action">
+                    <description usage="{{bestial rage:count}}/Long Rest">Advantage on Strength checks and Strength Saves. 
+                    A +{{bestial rage:damage}} to damage rolls with strength melee weapon attacks. 
+                    You have resistance to bludgeoning, piercing, and slashing damage. </description>
+                    <description usage="Unlimited" level="20">Advantage on Strength checks and Strength Saves. 
+                    A +{{bestial rage:damage}} to damage rolls with strength melee weapon attacks. 
+                    You have resistance to bludgeoning, piercing, and slashing damage.</description>
+                </sheet>
+                <rules>
+                    <stat name="bestial rage:count" value="2" level="1" />
+                    <stat name="bestial rage:count" value="1" level="3" />
+                    <stat name="bestial rage:count" value="1" level="6" />
+                    <stat name="bestial rage:count" value="1" level="12" />
+                    <stat name="bestial rage:count" value="1" level="17" />
+                    <stat name="bestial rage:count" value="93" level="20" />
+                    <stat name="bestial rage:damage" value="2" level="1" />
+                    <stat name="bestial rage:damage" value="1" level="9" />
+                    <stat name="bestial rage:damage" value="1" level="16" />
+                </rules>
+            </element>
+        <element name="Pack Leader" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_PACK_LEADER">
+            <description>
+                <p>Starting at 6th level, you can attempt to dominate other beasts. While raging if you damage a beast, it must succeed on a Wisdom saving throw against your druid spell save DC or become charmed by you. If its challenge rating is higher than your Wild Shape’s, it has advantage on this saving throw. While charmed, you can use your action to verbally command what it will do on its next turn. It follows the order as best it can.</p>
+                <p class="indent">Each time you take damage, the target can make another Wisdom saving throw. On a success, it is no longer charmed by you. If you exit Wild Shape, the effect immediately ends. Once the effect ends, or if the beast succeeds on a saving throw against this effect, you can’t use this feature on that beast again for 24 hours.</p>
+            </description>
+            <sheet>
+                <description>While raging if you damage a beast, it must succeed on a Wisdom saving throw against your druid spell save DC or become charmed by you. If its challenge rating is higher than your Wild Shape’s, it has advantage on this saving throw. While charmed, you can use your action to verbally command what it will do on its next turn. It follows the order as best it can. Each time you take damage, the target can make another Wisdom saving throw. On a success, it is no longer charmed by you. If you exit Wild Shape, the effect immediately ends. Once the effect ends, or if the beast succeeds on a saving throw against this effect, you can’t use this feature on that beast again for 24 hours.</description>
+            </sheet>
+        </element>
+        <element name="Beast Proficiency" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_BEAST_PROFICIENCY">
+            <description>
+                <p>When you reach 6th level, your Wild Shape taps into your primal senses. When making Animal Handling, Insight, or Perception checks while in Wild Shape, you add your proficiency bonus for these skills even if you or the beast are not normally proficient.</p>
+            </description>
+            <sheet>
+                <description>When making Animal Handling, Insight, or Perception checks while in Wild Shape, you add your proficiency bonus for these skills even if you or the beast are not normally proficient.</description>
+            </sheet>
+        </element>
+        <element name="Bloodlust" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_BLOODLUST">
+            <description>
+                <p>Starting at 10th level, your anger gives you singular focus. While raging, when you damage or are damaged by a creature, all attacks against that creature are at advantage and any attacks against another creature are at disadvantage as long as the first creature lives and you are raging.</p>
+            </description>
+            <sheet>
+                <description>While raging, when you damage or are damaged by a creature, all attacks against that creature are at advantage and any attacks against another creature are at disadvantage as long as the first creature lives and you are raging.</description>
+            </sheet>
+        </element>
+        <element name="Relentless Rage" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COTW_RELENTLESS_RAGE">
+            <description>
+                <p>Starting at 14th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you’re raging and don’t die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead.</p>
+                <p class="indent">Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10.</p>
+            </description>
+            <sheet>
+                <description>If you drop to 0 hit points while you’re raging and don’t die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead. Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10.</description>
+            </sheet>
+        </element>
+
+
+    <element name="Circle of Cataclysm" type="Archetype" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_DRUID_CIRCLE_OF_CATACLYSM">
+        <supports>Druid Circle</supports>
+        <description>
+            <p>The Circle of Cataclysm preaches nature’s destructive qualities. Typhoons, tsunamis, wildfires, earthquakes, floods, the natural world is rife with means to destroy environments. But the flood brings nutrients to the river banks, and the wildfire allows plants to germinate, spread, and grow. This is what the Circle of Cataclysm holds to heart; the notion of destruction to foster new growth. They can be found creating smaller cataclysms among farms, forests, and cities. But the ultimate goal is to have the whole world be almost utterly destroyed, so it can begin to grow again anew.</p>
+            <div class="sidebar">
+                <h5 class="caption">VILLAINOUS CLASS OPTIONS</h5>
+                <p>This subclass is from a series of subclasses based on the Villainous Class Options on pg. 96 of the <em>Dungeon Master’s Guide.</em></p>
+                <p class="indent">You can find more Villainous Class Options here.</p>
+            </div>
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_CATACLYSM_SPELLS" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_BONUS_CANTRIP" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_HARBINGER" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_DEMOLITION" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_RENEWAL" />
+            <div element="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_CATACLYSM" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_CATACLYSM_SPELLS" level="2" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_BONUS_CANTRIP" level="2" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_HARBINGER" level="2" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_DEMOLITION" level="6" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_RENEWAL" level="10" />
+            <grant type="Archetype Feature" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_CATACLYSM" level="14" />
+        </rules>
+    </element>
+        <element name="Cataclysm Spells" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_CATACLYSM_SPELLS">
+            <description>
+                <p>Your devotion to mass destruction or pandemonium grants you the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to cataclysm spells to further your apocalyptic objectives.</p>
+                <p class="indent">Once you gain access to a cataclysm spell, you always have it prepared, and it doesn’t count against the number of spells you can prepare each day. If you gain access to a spell that doesn’t appear on the druid spell list, the spell is nonetheless a druid spell for you.</p>
+                <h5 class="caption">CATACLYSM SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Druid Level</td><td>Spell</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>darkness, gust of wind</em></td></tr>
+                    <tr><td>5th</td><td><em>erupting earth, Melf’s minute meteors</em></td></tr>
+                    <tr><td>7th</td><td><em>confusion, storm sphere</em></td></tr>
+                    <tr><td>9th</td><td><em>cloudkill, insect plague</em></td></tr>
+                </table>
+                <div class="sidebar">
+                    <h5 class="caption">Variant: Alternative Spells</h5>
+                    <p>For players who do not have access to <em>Elemental Evil Player’s Companion</em>, the cataclysm spells <em>erupting earth</em>, <em>Melf’s minute meteors</em>, and <em>storm sphere</em> can be replaced with <em>sleet storm</em>, <em>fireball</em>, and <em>control water</em> respectively.</p>
+                </div>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DARKNESS" spellcasting="Druid" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_GUST_OF_WIND" spellcasting="Druid" prepared="true" level="3" />
+                <grant type="Spell" id="ID_XGTE_SPELL_ERUPTING_EARTH" spellcasting="Druid" prepared="true" level="5" />
+                <grant type="Spell" id="ID_XGTE_SPELL_MELFS_MINUTE_METEORS" spellcasting="Druid" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_CONFUSION" spellcasting="Druid" prepared="true" level="7" />
+                <grant type="Spell" id="ID_XGTE_SPELL_STORM_SPHERE" spellcasting="Druid" prepared="true" level="7" />
+                <grant type="Spell" id="ID_PHB_SPELL_CLOUDKILL" spellcasting="Druid" prepared="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_INSECT_PLAGUE" spellcasting="Druid" prepared="true" level="9" />
+            </rules>
+        </element>
+        <element name="Bonus Cantrip" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_BONUS_CANTRIP">
+            <description>
+                <p>When you choose this circle at 2nd level, you learn one additional druid cantrip of your choice.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Cantrip (Circle of Cataclysm)" supports="Druid,0" spellcasting="Druid" known="true" />
+            </rules>
+        </element>
+        <element name="Harbinger" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_HARBINGER">
+            <description>
+                <p>At 2nd level, you announce the arrival of great destruction. When you cast a spell with an area of effect that allows a creature to succeed on a saving throw to reduce damage, you may grant creatures advantage on the saving throws and double the size of the area of effect.</p>
+            </description>
+            <sheet>
+                <description>When you cast a spell with an area of effect that allows a creature to succeed on a saving throw to reduce damage, you may grant creatures advantage on the saving throws and double the size of the area of effect.</description>
+            </sheet>
+        </element>
+        <element name="Demolition" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_DEMOLITION">
+            <description>
+                <p>Starting at 6th level, your destruction becomes more effective against unnatural makings. You and your spells deal double damage to objects and structures. Additionally, when a spell you cast ignites a flammable object, the ignited object’s fire fills a 5-foot cube.</p>
+            </description>
+            <sheet>
+                <description>You and your spells deal double damage to objects and structures. Additionally, when a spell you cast ignites a flammable object, the ignited object’s fire fills a 5-foot cube.</description>
+            </sheet>
+        </element>
+        <element name="Renewal" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_RENEWAL">
+            <description>
+                <p>At 10th level, the blood and corpse of a creature can germinate new plant life under your service. If you reduce a creature to 0 hit points on your turn, you may have an awakened tree sprout from the ground. Roll initiative for the awakened tree, which has its own turns and obeys your verbal commands.</p>
+                <p class="indent">The awakened tree remains in your service until the end of your next long rest, at which point it turns into a tree.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>If you reduce a creature to 0 hit points on your turn, you may have an awakened tree sprout from the ground. Roll initiative for the awakened tree, which has its own turns and obeys your verbal commands. The awakened tree remains in your service until the end of your next long rest, at which point it turns into a tree.</description>
+            </sheet>
+        </element>
+        <element name="Cataclysm" type="Archetype Feature" source="Subclasses: Druid" id="ID_GMBINDER_SCD_ARCHETYPE_FEATURE_COC_CATACLYSM">
+            <description>
+                <p>At 14th level, you can choose the form of destruction you wish to rain down around you. As an action, you bring forth the cataclysm of your choice from one of the options below. Any save required will be against your druid spell save DC. Once you use this feature, you cannot use it again until you finish a long rest.</p>
+                <p class="indent"><strong><em>Flood.</em></strong> Water bursts from the ground within 15 feet of you in a 10 feet long 10 feet high and 5 feet thick wall and travels 5 feet in a direction of your choice. On your subsequent turns, the flood moves 10 feet in the same direction. Each creature of size Large or smaller in an area the flood occupies must succeed on a Strength saving throw or become restrained by the flood. The flood carries any restrained creatures with it when it moves as well as any objects not being worn or carried and puts out any fire or flame in the area. A creature restrained by the flood can use an action on its turn to make a Strength saving throw ending the condition on a success. The flood continues for 1 minute before receding.</p>
+                <p class="indent"><strong><em>Ice Age.</em></strong> You surround yourself with frigid air and wind in a 120 foot radius for 1 minute. Each creature other than you that begins its turn within the radius or moves into the radius for the first time on its turn must succeed on a Constitution saving throw or take cold damage equal to 1d10 plus your Wisdom modifier.</p>
+                <p class="indent"><strong><em>Tectonic Shift.</em></strong> A fault line bursts in 5 foot by 30 foot line within 30 feet of you. The opening is 5d10 feet deep. Each creature on that line must make a Dexterity saving throw. On a failure, the creature falls into the opening. A creature that successfully saves moves with the fault line’s edge as it opens. Each creature within 5 feet of the line when it opens must succeed a Dexterity saving throw or fall prone.</p>
+                <p class="indent"><strong><em>Wildfire.</em></strong> Choose a creature or flammable object within 60 feet. If it is a creature, it must make a Constitution saving throw. On a failure or if it is a flammable object, it is on fire. At the beginning of its turn if a creature or object is on fire as a result of this feature (objects are on initiative count 20), it takes 1d10 fire damage, any flammable object within 10 feet of it is now on fire, and any creature within 10 feet of it must succeed a Constitution saving throw or become on fire. The creatures and objects remain on fire until a creature uses an action to put the fire out.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You bring forth the cataclysm of your choice from one of the following options: Flood, Ice Age, Tectonic Shift, or Wildfire. Any save required will be against your druid spell save DC. Once you
+                
+                 use this feature, you cannot use it again until you finish a long rest.</description>
+            </sheet>
+        </element>
+
+
+</elements>

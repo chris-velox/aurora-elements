@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Grave Keeper Ranger Conclave</name>
+        <update version="0.0.1">
+            <file name="ranger-grave-keeper-conclave.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/ranger/ranger-grave-keeper-conclave.xml" />
+        </update>
+    </info>
+    
+    <element name="Grave Keeper Ranger Conclave" type="Source" source="Core" id="ID_KINGSTARMAN_GMBINDER_SOURCE_Grave Keeper Ranger Conclave">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">GKRC</set>
+            <set name="url">https://www.gmbinder.com/share/-M6lhURAM7ND3J_wAKk7</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="KSM" url="https://www.gmbinder.com/profile/kingstarman">kingstarman</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200525</set>
+        </setters>
+    </element>
+    
+    <element name="Grave Keeper Conclave" type="Archetype" source="Grave Keeper Ranger Conclave" id="ID_KSM_GKRC_ARCHETYPE_RANGER_GRAVE_KEEPER_CONCLAVE">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <div element="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_CONCLAVE_SPELLS_CANTRIP" />
+            <div element="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_GUARDIANS_OF_THE_GRAVE" />
+            <div element="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_GRAVEYARD_SHIFT_WORKER" />
+            <div element="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_COMPANION_OF_THE_DEAD" />
+            <div element="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_COMBAT_FEATURE" />
+            <div element="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_PAY_YOUR_DEBTS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_CONCLAVE_SPELLS_CANTRIP" level="3" />
+            <grant type="Archetype Feature" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_GUARDIANS_OF_THE_GRAVE" level="3" />
+            <grant type="Archetype Feature" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_GRAVEYARD_SHIFT_WORKER" level="3" />
+            <grant type="Archetype Feature" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_COMPANION_OF_THE_DEAD" level="7" />
+            <grant type="Archetype Feature" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_COMBAT_FEATURE" level="11" />
+            <grant type="Archetype Feature" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_PAY_YOUR_DEBTS" level="15" />
+        </rules>
+    </element>
+        <element name="Conclave Spells &amp; Cantrip" type="Archetype Feature" source="Grave Keeper Ranger Conclave" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_CONCLAVE_SPELLS_CANTRIP">
+            <description>
+                <p>Starting at 3rd level, you learn the Protruding Bone cantrip and you learn an additional spell when you reach certain levels in this class, as shown in the Grave Keeper Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+                <h5 class="caption">GRAVE KEEPER SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Ranger Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>inflict wounds</em></td></tr>
+                    <tr><td>5th</td><td><em>gentle repose</em></td></tr>
+                    <tr><td>9th</td><td><em>speak with dead</em></td></tr>
+                    <tr><td>11th</td><td><em>Mordenkainen’s faithful hound</em></td></tr>
+                    <tr><td>15th</td><td><em>negative energy flood</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" spellcasting="Ranger" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_GENTLE_REPOSE" spellcasting="Ranger" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" spellcasting="Ranger" known="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_MORDENKAINENS_FAITHFUL_HOUND" spellcasting="Ranger" known="true" level="11" />
+                <grant type="Spell" id="ID_XGTE_SPELL_NEGATIVE_ENERGY_FLOOD" spellcasting="Ranger" known="true" level="15" />
+            </rules>
+        </element>
+        <element name="Guardians of the Grave" type="Archetype Feature" source="Grave Keeper Ranger Conclave" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_GUARDIANS_OF_THE_GRAVE">
+            <description>
+                <p>At 3rd level, you work so closely to the dead you have developed a knack for bringing them back to help you. You can perform a ritual over the corpse of 1 hour to call the soul of one creature to reanimate a humanoid or a beast of CR 1/2 or lower. You can choose either a corpse or a skeletons of medium or smaller creatures within 10ft. You create a skeletal or Zombified version of that creature. That creature type becomes undead and uses the zombie or skeleton stat block if it was humanoid or uses the creatures stat block if it was a beast. These creatures have the following benefits;</p>
+                <ul>
+                    <li>In combat, your undead share your initiative count, but takes their turn immediately after yours. As a bonus action, you can command your undead to take the actions in its stat block or the Dash, Disengage, Help, Hide or Search action.</li>
+                    <li>Zombies and Skeletons made with this feature have bonus hit points equal to your Ranger level.</li>
+                </ul>
+                <p class="indent">You must perform this ritual at the dawn of each day to prolong the dead you have raised. You can raise a beast of CR 1 at 7th level and you can raise an additional undead at 11th level.</p>
+            </description>
+            <sheet>
+                <description>You can perform a ritual over the corpse of 1 hour to call the soul of one creature to reanimate a humanoid or a beast of CR 1/2 or lower. You can choose either a corpse or a skeletons of medium or smaller creatures within 10ft. You create a skeletal or Zombified version of that creature. You must perform this ritual at the dawn of each day to prolong the dead you have raised.</description>
+                <description level="7">You can perform a ritual over the corpse of 1 hour to call the soul of one creature to reanimate a humanoid or a beast of CR 1/2 or lower. You can choose either a corpse or a skeletons of medium or smaller creatures within 10ft. You create a skeletal or Zombified version of that creature. You must perform this ritual at the dawn of each day to prolong the dead you have raised.</description>
+                <description level="11">You can perform a ritual over the corpse of 1 hour to call the soul of one creature to reanimate a humanoid or a beast of CR 1/2 or lower. You can choose either a corpse or a skeletons of medium or smaller creatures within 10ft. You create a skeletal or Zombified version of that creature. You can raise an additional undead with another 1 hour ritual. You must perform this ritual at the dawn of each day to prolong the dead you have raised.</description>
+            </sheet>
+        </element>
+        <element name="Graveyard Shift Worker" type="Archetype Feature" source="Grave Keeper Ranger Conclave" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_GRAVEYARD_SHIFT_WORKER">
+            <description>
+                <p>Additionally, at 3rd level, you have become accustomed to operating in the darkness. You gain superior darkvision up to 60ft if you do not already have so. Additionally, you can make Intelligence (Investigation) check with advantage when attempting to determine the cause of death of a creature.</p>
+            </description>
+            <sheet>
+                <description>You can make Investigation check with advantage when attempting to determine the cause of death of a creature.</description>
+            </sheet>
+            <rules>
+                <grant type="Vision" id="ID_VISION_SUPERIORDARKVISION" />
+            </rules>
+        </element>
+        <element name="Companion of the Dead" type="Archetype Feature" source="Grave Keeper Ranger Conclave" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_COMPANION_OF_THE_DEAD">
+            <description>
+                <p>At 7th level, when you cast a necromancy spell with a range of touch, one of your raised undead can deliver the spell as if it had cast the spell. Your raised undead must be within 100 feet of you, and it must use its reaction to deliver the spell when you cast it. If the spell requires an attack roll, you use your spell attack modifier for the roll. Additionally, as a bonus action, you can see through the eyes of one of your undead. When speaking to undead you have raised, you can communicate with them as if your under the effects of the <em>speak with dead</em> spell.</p>
+            </description>
+            <sheet>
+                <description>when you cast a necromancy spell with a range of touch, one of your raised undead can deliver the spell as if it had cast the spell. Your raised undead must be within 100 feet of you, and it must use its reaction to deliver the spell when you cast it. If the spell requires an attack roll, you use your spell attack modifier for the roll. Additionally, as a bonus action, you can see through the eyes of one of your undead. When speaking to undead you have raised, you can communicate with them as if your under the effects of the speak with dead spell.</description>
+            </sheet>
+        </element>
+        <element name="Combat Feature" type="Archetype Feature" source="Grave Keeper Ranger Conclave" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_COMBAT_FEATURE">
+            <description>
+                <p>At 11th level, you have become more experienced controlling and maneuvering undead in combat. You can use the following maneuvers a number of times equal to your Wisdom modifier. You regain all uses of this feature after completing a long rest.</p>
+                <ul>
+                    <li>When 2 of your raised undead are within 5ft of a creature you can make your next weapon attack have advantage against that creature.</li>
+                    <li>As an action, you can channel foul magic into your undead to strengthen them. Till your next turn the undead you control deal an additional 2d6 Necrotic damage.</li>
+                    <li>When a creature reduces one of the undead you control to 0 hit points as a reaction, that undead bursts with foul magic. All creatures within 15ft must make a Dexterity saving throw against your spell save DC or take 4d6 Necrotic damage or half as much on a successful save.</li>
+                </ul>
+            </description>
+            <sheet usage="{{wisdom:modifier}}/Long Rest">
+                <description>You can use the following maneuvers: When 2 of your raised undead are within 5ft of a creature you can make your next weapon attack have advantage against that creature. As an action, you can channel foul magic into your undead to strengthen them. Till your next turn the undead you control deal an additional 2d6 Necrotic damage. When a creature reduces one of the undead you control to 0 hit points as a reaction, that undead bursts with foul magic. All creatures within 15ft must make a Dexterity saving throw against your spell save DC or take 4d6 Necrotic damage or half as much on a successful save.</description>
+            </sheet>
+        </element>
+        <element name="Pay your Debts" type="Archetype Feature" source="Grave Keeper Ranger Conclave" id="ID_KSM_GKRC_ARCHETYPE_FEATURE_GRAVE_KEEPER_PAY_YOUR_DEBTS">
+            <description>
+                <p>At 15th level, as a reaction, when a creature makes a weapon attack against you or an ally within 5ft of your undead you can redirect the attack towards that undead. If the attack misses, that undead can make an opportunity attack against that creature.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When a creature makes a weapon attack against you or an ally within 5ft of your undead you can redirect the attack towards that undead. If the attack misses, that undead can make an opportunity attack against that creature.</description>
+            </sheet>
+        </element>
+
+    <element name="Protruding Bone" type="Spell" source="Grave Keeper Rangrer Conclave" id="ID_KSM_GKRC_SPELL_PROTRUDING_BONE">
+        <supports>Warlock, Wizard, Druid</supports>
+        <description>
+            <p>You channel foul magic to cause your bones to snap and protrude from your skin to strike your foes. Make a melee spell attack against one creature within 10 feet of you. On a hit, the target takes 1d10 Necrotic damage. After you make the attack, your bones return back to normal. The spell’s damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">0</set>
+            <set name="school">Necromancy</set>
+            <set name="time">1 action</set>
+            <set name="range">10ft</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+</elements>
