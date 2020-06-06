@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Mistborn Class</name>
-        <update version="0.0.1">
+        <name>Mistborn Class v1.2</name>
+        <update version="0.0.2">
             <file name="class-mistborn.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-mistborn.xml" />
         </update>
     </info>
@@ -54,7 +54,7 @@
             </ul>
             <h5 class="caption">PROFICIENCIES</h5>
             <ul class="unstyled mb">
-                <li><strong>Armor:</strong> None</li>
+                <li><strong>Armor:</strong> Light and medium armor</li>
                 <li><strong>Weapons:</strong> Simple weapons, short sword, rapier, longsword, battleaxe</li>
                 <li><strong>Tools:</strong> Alchemist’s Supplies</li>
             </ul>
@@ -66,12 +66,13 @@
             <p>You start with the following equipment, in addition to the equipment granted by your background:</p>
             <ul>
                 <li>(a) two glass daggers or (b) an obsidian battle axe</li>
+                <li>(a) leather armor, (b) chain shirt, or (c) 10 gp</li>
                 <li>(a) a burglar’s pack or (b) an explorer’s pack</li>
                 <li>a mistcloak, alchemist’s supplies, a hammer and 10 pitons, and a bag of (1000) ball bearings</li>
                 <li></li>
             </ul>
             <h5 class="caption">Starting Equipment</h5>
-            <p>When you create a mistborn, you can start with 2d4 x 10 gp instead of receiving the equipment from your class and background.</p>
+            <p>When you create a mistborn, you can start with 4d4 x 10 gp instead of receiving the equipment from your class and background.</p>
             <!-- class table here -->
             <h5 class="caption">THE MISTBORN</h5>
             <table class="class-features">
@@ -100,6 +101,7 @@
                 <tr><td>20th</td><td>+6</td><td class="left">Hero of Ages</td><td>120 ft.</td><td>12</td><td>+5</td></tr>
             </table>
             <div element="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_ALLOMANCY" />
+            <div element="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_DETECT_METAL" />
             <div element="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_ANCHORING" />
             <div element="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_MISTRIDER" />
             <div element="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_FLARE" />
@@ -129,6 +131,8 @@
         </setters>
         <sheet display="false" />
         <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
             <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGSWORD"  requirements="!ID_LEUKU_MISTBORN_MULTICLASS_MISTBORN" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER"  requirements="!ID_LEUKU_MISTBORN_MULTICLASS_MISTBORN" />
@@ -138,6 +142,7 @@
             <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" requirements="!ID_LEUKU_MISTBORN_MULTICLASS_MISTBORN" />
             <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH"  requirements="!ID_LEUKU_MISTBORN_MULTICLASS_MISTBORN" />
             <grant type="Class Feature" id="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_ALLOMANCY" level="1" />
+            <grant type="Class Feature" id="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_DETECT_METAL" level="1" />
             <grant type="Class Feature" id="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_ANCHORING" level="1" />
             <grant type="Class Feature" id="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_MISTRIDER" level="2" />
             <grant type="Class Feature" id="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_FLARE" level="3" />
@@ -253,6 +258,15 @@
                 <grant type="Spell" id="ID_LEUKU_MISTBORN_TALENT_SURVIVOR" level="16" spellcasting="Mistborn" known="true" prepared="false" />
                 <grant type="Spell" id="ID_LEUKU_MISTBORN_TALENT_ATIUM" level="17" spellcasting="Mistborn" known="true" prepared="false" />
             </rules>
+        </element>
+        <element name="Detect Metal" type="Class Feature" source="The Mistborn Class" id="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_DETECT_METAL">
+            <description>
+                <p>As an Action, you can identify the location of all metals within your allomantic range. If the metals are of different shapes, sizes, and compositions, you can differentiate between them. This detection is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.</p>
+                <p class="indent">You can use this ability a number of times equal to your Allomantic Ability Modifier. You regain expended uses at the end of a long rest.</p>
+            </description>
+            <sheet action="Action" usage="{{allomancy:modifier}}/Long Rest">
+                <description>You can identify the location of all metals within your allomantic range. If the metals are of different shapes, sizes, and compositions, you can differentiate between them. This detection is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.</description>
+            </sheet>
         </element>
         <element name="Anchoring" type="Class Feature" source="The Mistborn Class" id="ID_LEUKU_MISTBORN_CLASS_FEATURE_MISTBORN_ANCHORING">
             <description>
@@ -509,6 +523,57 @@
                 <li><strong>Fear.</strong> If the creature is charmed, the condition ends, and it must succeed on a Wisdom saving throw or else become frightened of you.</li>
             </ul>
             <p>Zinc remains flared until the end of your next turn, or until your concentration is broken, whichever comes first.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">Mistborn Talent</set>
+            <set name="time">1 Action</set>
+            <set name="range">Allomantic Range</set>
+            <set name="duration">Concentration</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Seeker" type="Spell" source="The Mistborn Class" id="ID_LEUKU_MISTBORN_TALENT_SEEKER">
+        <supports>Mistborn Talent</supports>
+        <description>
+            <p class="flavor">Prerequisite: 3rd level</p>
+            <p>You can suppress the presence of magic around you. You gain the following allomantic power:</p>
+            <h5 class="caption">BRONZEPUSH</h5>
+            <p>As an action, you can create a 30 ft. radius around you. Active magical effects, such as the ward placed by an alarm spell, within the aura become detectable to you. This detection comes in the form of rhythmic pulses that only you can hear, and become steadier and louder the closer you get to its source. This lasts for as long as you maintain concentration. You can end this ability on any of your turns, no action required.</p>
+            <h5>BRONZEFLARE</h5>
+            <p>When you activate your bronzepush, or as a Bonus Action while your bronzepush is active, you can choose to flare your bronze. While flared, the aura's radius increases to 60 ft., and you can also detect magical objects and creatures, even if they do not have any active magical effects ongoing. This lasts until the end of your next turn, or until you lose concentration, whichever comes first.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">Mistborn Talent</set>
+            <set name="time">1 Action</set>
+            <set name="range">Allomantic Range</set>
+            <set name="duration">Concentration</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Smoker" type="Spell" source="The Mistborn Class" id="ID_LEUKU_MISTBORN_TALENT_SMOKER">
+        <supports>Mistborn Talent</supports>
+        <description>
+            <p class="flavor">Prerequisite: 3rd level</p>
+            <p>You can suppress the presence of magic around you. You gain the following allomantic power:</p>
+            <h5 class="caption">COPPERPULL</h5>
+            <p>As an action, you can create a 10 ft. radius aura around you. Spells, such as detect magic, see invisiblity, and alarm, and abilities that can detect the presence of magic or magically detect the presence of creatures will fail to detect anything within the aura. In addition, you have advantage on saving throws against and to end the charmed and frightened condition. This lasts for as long as you maintain concentration. You can end this ability on any of your turns, no action required.</p>
+            <h5>COPPERFLARE</h5>
+            <p>When you activate your copperpull, or as a Bonus Action while your copperpull is active, you can choose to flare your copper. While flared, the aura's radius increases to 30 ft., and you can choose to end the charmed or frightened condition on yourself. Copper remains flared for 1 minute, or until you lose concentration, whichever comes first.</p>
+            <p class="indent">At 10th level, when you gain the duralumin feature, using duralumin on copperflare increases the maximum duration to 1 hour instead of 1 minute.</p>
         </description>
         <setters>
             <set name="keywords"></set>
