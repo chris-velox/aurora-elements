@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>The Hunter Class version 1.2.6</name>
-        <update version="0.0.3">
+        <update version="0.0.4">
             <file name="class-hunter.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-hunter.xml" />
         </update>
     </info>
@@ -57,7 +57,7 @@
             <ul class="unstyled mb">
                 <li><strong>Armor:</strong> Light armor, medium armor, shields</li>
                 <li><strong>Weapons:</strong> Simple weapons, martial weapons</li>
-                <li><strong>Tools:</strong> None</li>
+                <li><strong>Tools:</strong> Trapper’s Kit</li>
             </ul>
             <ul class="unstyled">
                 <li><strong>Saving Throws:</strong> Strength, Dexterity</li>
@@ -147,9 +147,10 @@
             <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
             <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
             <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TRAPPERS_KIT" />
             <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" requirements="!ID_AEYANA_HUNTER_MULTICLASS_HUNTER" />
             <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" requirements="!ID_AEYANA_HUNTER_MULTICLASS_HUNTER" />
-            <select type="Proficiency" id="Skill Proficiency, Hunter" number="3" supports="Aeyana Hunter" requirements="!ID_AEYANA_HUNTER_MULTICLASS_HUNTER"/>
+            <select type="Proficiency" id="Skill Proficiency, Hunter" number="3" supports="Hunter" requirements="!ID_AEYANA_HUNTER_MULTICLASS_HUNTER"/>
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_NATURAL_EXPLORER" level="1" />
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_SWIFT_RESPONSE" level="1" />
             <grant type="Class Feature" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_FIGHTING_STYLE" level="2" />
@@ -168,11 +169,11 @@
             <prerequisite>Dexterity 13 and Wisdom 13</prerequisite>
             <requirements>[dex:13],[wis:13]</requirements>
             <setters>
-                <set name="multiclass proficiencies">Light armor, medium armor, shields, simple weapons, martial weapons, one skill from the class’s skill list</set>
+                <set name="multiclass proficiencies">Light armor, medium armor, shields, simple weapons, martial weapons, trapper’s kit, one skill from the class’s skill list</set>
             </setters>
             <rules>
                 <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
-                <select type="Proficiency" id="Skill Proficiency, Hunter" supports="Aeyana Hunter" />
+                <select type="Proficiency" id="Skill Proficiency, Hunter" supports="Hunter" />
             </rules>
         </multiclass>
     </element>
@@ -225,7 +226,7 @@
             </sheet>
             <rules>
                 <grant type="Class Feature" id="ID_WOTC_UA20191104_CLASS_FEATURE_MARTIAL_VERSATILITY" />
-    			<select type="Class Feature" name="Fighting Style" supports="Fighting Style, Aeyana Hunter" level="2"/>
+    			<select type="Class Feature" name="Fighting Style" supports="Fighting Style, Hunter" level="2"/>
             </rules>
         </element>
         <element name="Hunter’s Mark" type="Class Feature" source="The Hunter" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_HUNTERS_MARK">
@@ -263,7 +264,7 @@
                 <p>You can cast a hunter spell as a ritual if that spell has the ritual tag and you have the spell prepared.</p>
             </description>
             <spellcasting name="Hunter" ability="Wisdom" prepare="true">
-                <list known="true">Aeyana Hunter</list>
+                <list known="true">Hunter</list>
             </spellcasting>
             <sheet display="false">
                 <description></description>
@@ -314,7 +315,7 @@
                 <stat name="hunters-technique:save-dc:ability-mod" value="strength:modifier" bonus="base" />
                 <stat name="hunters-technique:save-dc:ability-mod" value="dexterity:modifier" bonus="base" />
                 <stat name="hunters-technique:save-dc" value="hunters-technique:save-dc:ability-mod" />
-                <select type="Archetype" name="Hunter’s Prey" supports="Aeyana Hunters Prey" />
+                <select type="Archetype" name="Hunter’s Prey" supports="Hunters Prey" />
             </rules>
         </element>
         <element name="Ability Score Improvement" type="Class Feature" source="The Hunter" id="ID_AEYANA_HUNTER_CLASS_FEATURE_HUNTER_ABILITY_SCORE_IMPROVEMENT">
@@ -1627,260 +1628,260 @@
 
   <!-- Hunter Skills -->
     <append id="ID_PROFICIENCY_SKILL_ANIMALHANDLING">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PROFICIENCY_SKILL_ATHLETICS">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PROFICIENCY_SKILL_INSIGHT">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PROFICIENCY_SKILL_INVESTIGATION">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PROFICIENCY_SKILL_NATURE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PROFICIENCY_SKILL_PERCEPTION">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PROFICIENCY_SKILL_STEALTH">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PROFICIENCY_SKILL_SURVIVAL">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
 
   <!-- Hunter Fighting Styles -->
     <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_ARCHERY">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DEFENSE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DUELING">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_TWOWEAPON_FIGHTING">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <!-- UA Fighting Styles -->
     <append id="ID_WOTC_UA20191104_CLASS_FEATURE_BLIND_FIGHTING">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>    
     <append id="ID_WOTC_UA20191104_CLASS_FEATURE_THROWN_WEAPON_FIGHTING">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>    
     <append id="ID_WOTC_UA20191104_CLASS_FEATURE_UNARMED_FIGHTING">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>    
 
   <!-- Hunter Spell List -->
     <append id="ID_XGTE_SPELL_ABSORB_ELEMENTS">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_ALARM">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_ANIMAL_FRIENDSHIP">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_XGTE_SPELL_BEAST_BOND">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_CURE_WOUNDS">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_DETECT_MAGIC">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_DETECT_POISON_AND_DISEASE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_ENSNARING_STRIKE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_ENTANGLE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_FIND_FAMILIAR">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_FOG_CLOUD">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_GOODBERRY">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_HAIL_OF_THORNS">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_JUMP">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_LONGSTRIDER">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_PURIFY_FOOD_AND_DRINK">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_XGTE_SPELL_SNARE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_SPEAK_WITH_ANIMALS">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_XGTE_SPELL_ZEPHYR_STRIKE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_ANIMAL_MESSENGER">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_BARKSKIN">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_BEAST_SENSE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_CORDON_OF_ARROWS">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_DARKVISION">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_XGTE_SPELL_EARTHBIND">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_LESSER_RESTORATION">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_LOCATE_ANIMALS_OR_PLANTS">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_LOCATE_OBJECT">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_MELFS_ACID_ARROW">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_MOONBEAM">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_PASS_WITHOUT_TRACE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_PROTECTION_FROM_POISON">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_XGTE_SPELL_SKYWRITE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_SILENCE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_SPIDER_CLIMB">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_SPIKE_GROWTH">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_CONJURE_ANIMALS">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_CONJURE_BARRAGE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_DAYLIGHT">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_ELEMENTAL_WEAPON">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_FEIGN_DEATH">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_XGTE_SPELL_FLAME_ARROWS">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_LIGHTNING_ARROW">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_NONDETECTION">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_PLANT_GROWTH">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_SPEAK_WITH_PLANTS">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_WATER_BREATHING">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_WATER_WALK">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_WIND_WALL">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_CHARM_MONSTER">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_CONJURE_WOODLAND_BEINGS">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_DOMINATE_BEAST">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_GIANT_INSECT">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_GRASPING_VINE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_XGTE_SPELL_GUARDIAN_OF_NATURE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_LOCATE_CREATURE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_STONESKIN">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_AWAKEN">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_COMMUNE_WITH_NATURE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_CONJURE_VOLLEY">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_HOLD_MONSTER">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_XGTE_SPELL_STEEL_WIND_STRIKE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_SWIFT_QUIVER">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_PHB_SPELL_TREE_STRIDE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
     <append id="ID_XGTE_SPELL_WRATH_OF_NATURE">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
     </append>
 
   <!-- Hunter-specific Spells -->
     <element name="Find Greater Familiar" type="Spell" source="The Hunter" id="ID_AEYANA_HUNTER_SPELL_FIND_GREATER_FAMILIAR">
-        <supports>Aeyana Hunter</supports>
+        <supports>Hunter</supports>
         <description>
             <p>You gain the service of a familiar, a spirit that takes an animal form you choose, of a beast with a challenge rating of 1/2 or lower. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a celestial, fey, or fiend (your choice) instead of a beast.</p>
             <p class="indent">Your familiar acts independently of you, but it always obeys your commands. In combat, it rolls its own initiative and acts on its own turn. Your familiar can use your spell attack modifier in place of its own modifier for weapon attacks, and its natural weapons count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. When it hits a creature with a weapon attack, it is considered as one of your own weapon attacks for the purposes of spells and effects such as Hunter’s Mark.</p>
@@ -1906,8 +1907,8 @@
             <set name="isConcentration">false</set>
         </setters>
     </element>
-    <element name="Howling Wind" type="Spell" source="The Hunter" id="ID_AEYANA_HUNTER_SPELL_HOWLING_WIND">
-        <supports>Aeyana Hunter, Druid</supports>
+<!--    <element name="Howling Wind" type="Spell" source="The Hunter" id="ID_AEYANA_HUNTER_SPELL_HOWLING_WIND">
+        <supports>Hunter, Druid</supports>
         <description>
             <p>You summon an elemental spirit of wind that takes on the form of a wolf and appears in unoccupied space you can see within range. The elemental uses a wolf’s statistics, except that it is an elemental instead of a beast, has resistance to bludgeoning, piercing, and slashing damage, has a fly speed of 60 feet, and its movement doesn’t provoke opportunity attacks. Additionally, creatures within 10 feet of the elemental are deafened.</p>
             <p class="indent">The elemental is friendly to you and your companions, and acts on your initiative. When you cast the spell, you can command the elemental to move up to its speed and make an attack, using your spell attack modifier and spell save DC instead of its own attack bonus and save DC. Until the spell ends, you can use a bonus action to command the elemental again. If you don’t issue any commands to it, the elemental takes the Dodge action.</p>
@@ -1931,7 +1932,7 @@
         </setters>
     </element>
     <element name="Mark of the Leech" type="Spell" source="The Hunter" id="ID_AEYANA_HUNTER_SPELL_MARK_OF_THE_LEECH">
-        <supports>Aeyana Hunter, Druid</supports>
+        <supports>Hunter, Druid</supports>
         <description>
             <p>You choose a creature you can see within range and mark it with draining energy. Until the spell ends, each time the target regains hit points, it takes necrotic damage equal to half the hit points it regained, and you gain temporary hit points equal to the necrotic damage taken and become aware of its location.</p>
             <p class="indent">If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature that you can see within the spell’s range.</p>
@@ -1952,7 +1953,7 @@
         </setters>
     </element>
     <element name="Mark of the Prey" type="Spell" source="The Hunter" id="ID_AEYANA_HUNTER_SPELL_MARK_OF_THE_PREY">
-        <supports>Aeyana Hunter, Druid</supports>
+        <supports>Hunter, Druid</supports>
         <description>
             <p>You choose a creature you can see within range and mark it as prey for beasts of the wild. Until the spell ends, each beast that starts its turn within 120 feet of the target becomes aware of its location and is hostile to the target, regarding it as prey to be hunted.</p>
             <p class="indent">If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature that you can see within the spell’s range.</p>
@@ -1973,7 +1974,7 @@
         </setters>
     </element>
     <element name="Mark of the Storm" type="Spell" source="The Hunter" id="ID_AEYANA_HUNTER_SPELL_MARK_OF_THE_STORM">
-        <supports>Aeyana Hunter, Druid</supports>
+        <supports>Hunter, Druid</supports>
         <description>
             <p>You choose a creature you can see within range and mark it as a lightning rod for the wrath of the storm. Until the spell ends, dark storm clouds form in the shape of a cylinder that is 10 feet tall with a 30-foot radius, centered on a point at least 300 feet above the target. When you cast the spell and every hour that passes before the spell ends, the target must succeed on a Dexterity saving throw, taking 1d12 lightning damage on a failed save, or half as much damage on a success. Until the spell ends, you can use a bonus action on your turn to call down lightning in this way again if you can see the target.</p>
             <p class="indent">If the target goes indoors or has cover from above, the lightning will instead strike the structure directly above the target.</p>
@@ -1995,7 +1996,7 @@
         </setters>
     </element>
     <element name="Mark of the Wild" type="Spell" source="The Hunter" id="ID_AEYANA_HUNTER_SPELL_MARK_OF_THE_WILD">
-        <supports>Aeyana Hunter, Druid</supports>
+        <supports>Hunter, Druid</supports>
         <description>
             <p>You choose a creature you can see within range and mark it with verdant energy. Until the spell ends, any fertile soil near the target grows with vines and plants, becoming difficult terrain for it. These plants recede back into the ground after the target moves away. Additionally, if the target spends at least 1 minute in the same space of fertile soil, it becomes restrained by sprouting vines. A creature restrained by the vines can use its action to make a Strength check against your spell save DC. On a success, it frees itself. The vines can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).</p>
             <p class="indent">If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature that you can see within the spell’s range.</p>
@@ -2016,7 +2017,7 @@
         </setters>
     </element>
     <element name="Survey Terrain" type="Spell" source="The Hunter" id="ID_AEYANA_HUNTER_SPELL_SURVEY_TERRAIN">
-        <supports>Aeyana Hunter, Druid, Wizard</supports>
+        <supports>Hunter, Druid, Wizard</supports>
         <description>
             <p>You create a mental image of the terrain in a location you choose within range. The area of this spell consists of up to three 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. You become aware of any creatures, objects that bear magic, and the layout and any mechanical intricacies within the area.</p>
             <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, you create an additional 10-foot cube for each slot level above 2nd.</p>
@@ -2036,8 +2037,8 @@
             <set name="isConcentration">false</set>
         </setters>
     </element>
-    <element name="Junglerazer" type="Spell" source="The Hunter" id="ID_AEYANA_HUNTER_SPELL_Junglerazer">
-        <supports>Aeyana Hunter, Druid</supports>
+    <element name="Junglerazer" type="Spell" source="The Hunter" id="ID_AEYANA_HUNTER_SPELL_JUNGLERAZER">
+        <supports>Hunter, Druid</supports>
         <description>
             <p>You send forth a blast of withering magic, forming a line 100 feet long and 10 feet wide from you in a direction you choose. Each beast, fey, or plant creature in the line must make a Constitution saving throw. A creature takes 4d10 necrotic damage on a failed save, or half as much damage on a successful one.</p>
             <p class="indent">The spell destroys nonmagical plants and vegetation in the area, clearing away any such difficult terrain caused by them and reducing them to ash. Plants created by the entangle or plant growth spells in the area are also destroyed.</p>
@@ -2058,4 +2059,5 @@
             <set name="isRitual">false</set>
         </setters>
     </element>
+-->
 </elements>
