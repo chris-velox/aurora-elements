@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Hunter’s Journal Spells</name>
+        <update version="0.0.1">
+            <file name="spells.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/x-the-elder/compendia/the-hunters-journal/spells.xml" />
+        </update>
+    </info>
+    
+    <element name="Birdsong" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_BIRDSONG">
+        <supports>Bard, Druid, Hunter</supports>
+        <description>
+            <p>You whistle a tune which contains a short message of twenty-five words or less, magically encoded into the form of a birdsong audible to all creatures within range. Any creatures you designate when you cast the spell are able to understand the meaning of the message. For the duration, each bird that hears the song will sing it once, audible out to 300 feet.</p>
+            <p class="indent">A creature that hears the song can attempt to identify the song as magical with a successful Intelligence (Investigation) check against your spell save DC. On a success, it recognizes the song as magically created, but does not understand the meaning of the message.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">enchantment</set>
+            <set name="time">1 action</set>
+            <set name="range">300 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">1 hour</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Boreal Winds" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_BOREAL_WINDS">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>Until the spell ends, a vortex of strong frigid winds swirls in a 30-foot-radius centered on a point within range. When the winds begin, each creature within the area must succeed on a Constitution saving throw or take 4d8 cold damage and suffer the first stage of this spell’s effects for the duration. A creature must also make this saving thrown when it enters the spell’s area for the first time on a turn or ends its turn there, taking the cold damage again and increasing the effect by one stage on a failed save, up to a maximum of stage 3.</p>
+            <p class="indent">A creature that is immune to cold damage automatically succeeds on saving throws against this spell. If a creature affected by this spell takes fire damage, the effects of this spell end for it.</p>
+            <p class="indent">A creature killed by this spell becomes a frozen statue until it thaws.</p>
+            <table>
+                <thead>
+                    <tr><td>Stage</td><td>Effect</td></tr>
+                </thead>
+                <tr><td>1</td><td>The target’s movement speed is reduced by 10 feet until the spell ends. It can repeat the saving throw if it ends its turn outside of the spell’s area, ending the effect on a success.</td></tr>
+                <tr><td>2</td><td>The target is restrained until the spell ends. It can repeat the saving throw if it ends its turn outside of the spell’s area, reducing the effect to stage 1 on a success.</td></tr>
+                <tr><td>3</td><td>The target is paralyzed as it turns to ice. This effect ends after one hour in temperatures above freezing (above 32 degrees Fahrenheit), or after 1 minute in hot temperatures (above 85 degrees Fahrenheit). Otherwise, it lasts until the target takes fire damage or is thawed out gently with an open flame over the course of 1 minute.</td></tr>
+            </table>    
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">evocation</set>
+            <set name="time">1 action</set>
+            <set name="range">150 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Chrysalis" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_CHRYSALIS">
+        <supports>Artificer, Druid, Hunter, Sorcerer</supports>
+        <description>
+            <p>You weave a cocoon around yourself from silk rope, protecting you from harm. The cocoon must be suspended at least 3 feet above the ground. The cocoon is a Large object with an AC of 10 and 5 hit points. It grants you full cover from effects that originate outside of it, and the atmosphere inside it is comfortable and dry, regardless of the weather outside. The cocoon is opaque from the outside, of any color you choose, but is transparent from the inside. Spells and other magical effects can’t extend through the cocoon or be cast through it. You can’t leave the cocooon until the spell ends. If the cocoon is reduced to 0 hit points, the spell ends and the spell’s material component is destroyed.</p>
+            <p class="indent">When the spell ends, you gain a number of temporary hit points equal to the cocoon’s remaining hit points.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, the cocoon’s hit points increase by 5 for each slot level above 1st. While you have at least 20 temporary hit points from this spell, you have a pair of ether- eal butterfly wings, which grant you a flying speed of 40 feet.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 minute</set>
+            <set name="range">Self</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">50 feet of silk rope worth at least 10 gp</set>
+            <set name="duration">8 hours</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Climbing Ivy" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_CLIMBING_IVY">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>Choose a point you can see within range. A cluster of vines sprouts from the point, covering a 10-foot square surface. As an action on each of your turns before the spell ends, you can command the vines to spread to a 10-foot square adjacent to them, where each square must have at least one edge adjacent to the edge of another square. The vines are able to spread to any horizontal or vertical surfaces, and can climb walls and cliff. A creature can climb these vines without needing to make an ability check. Once you have commanded the vines to cover ten 10-foot squares, they cease to spread any further. The vines wither away when the spell ends.</p>
+            <p class="indent">The vines also secrete an irritating poison. When you cast the spell, you can designate any number of creatures you can see to be unaffected by this poison. When an affected creature starts its turn in contact with the ivy or makes contact with it for the first time on its turn, it must succeed on a Constitution saving throw or become poisoned until the start of its next turn as it is overtaken by an itching sensation.</p>
+            <p class="indent">The vines are flammable. Any 10-foot square of vines exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, both the number of 10-foot squares you initially create and the maximum number of 10-foot squares you can command the vines to cover increase by 1 for each slot level above 3rd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a piece of vine charcoal</set>
+            <set name="duration">Concentration, up to 1 hour</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Conjure Cage" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_CONJURE_CAGE">
+        <supports>Artificer, Hunter, Wizard</supports>
+        <description>
+            <p>You conjure an iron cage, which forms around a 10-foot cube of your choice within range. Each Large, Medium, or Small creature within the area must make a Dexterity saving throw. On a failed save, a target becomes trapped within the cage. On a success, the target is pushed to an unoccupied space of the creature’s choice within 5 feet of the area. If no unoccupied space is within range, the target becomes trapped in the cage as if it had failed the save. Tiny creatures can freely move through the cage’s bars or mesh.</p>
+            <p class="indent">The cage is a Large object with an AC of 19, 50 hit points, and immunity to poison and psychic damage. Once the cage is reduced to 0 hit points, it vanishes. The cage imposes half cover on any attacks that pass through it.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, the cage’s hit points increases by 25 for each slot level above 4th.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">4</set>
+            <set name="school">conjuration</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a tiny iron box</set>
+            <set name="duration">Concentration, up to 1 hour</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Douse for Water" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_DOUSE_FOR_WATER">
+        <supports>Cleric, Druid, Hunter, Wizard</supports>
+        <description>
+            <p>You sense the the direction to the nearest body of water that contains at least 100 gallons of water within range. If no such body of water exists, you instead sense the direction to the nearest body of water that contains at least 10 gallons of water. If no such body of water exists, the spell fails.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">diviniation</set>
+            <set name="time">1 action</set>
+            <set name="range">10 miles</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a forked branch</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Emblem of Air" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_EMBLEM_OF_AIR">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>You surround a willing creature within range with energy from the elemental plane of air. The creature gains 10 temporary hit points for the duration. While the creature has these temporary hit points, it gains the following benefits:</p>
+            <ul>
+                <li>It has resistance to lightning and thunder damage.</li>
+                <li>Its movement speed is doubled, and it doesn’t provoke opportunity attacks.</li>
+                <li>It can move through a space as narrow as 1 inch wide without squeezing.</li>
+                <li>As an action, the creature can expend a number of temporary hit points to create a whirlwind around it. Each creature within 5 feet of it must succeed on a Strength saving throw or be flung 10 feet away from the creature for every 3 temporary hit points expended. If a flung target strikes an object, such as a wall or floor, it takes 1d6 bludgeoning damage for every 10 feet it was thrown.</li>
+            </ul>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the temporary hit points increase by 5 for each slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">1 hour</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Emblem of Earth" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_EMBLEM_OF_EARTH">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>You surround a willing creature within range with energy from the elemental plane of earth. The creature gains 10 temporary hit points for the duration. While the creature has these temporary hit points, it gains the following benefits:</p>
+            <ul>
+                <li>It has resistance to resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks.</li>
+                <li>It deals double damage to objects and structures.</li>
+                <li>Its weight increases by a factor of ten.</li>
+                <li>As a reaction when it is hit by an attack or it fails a Strength, Dexterity, or Constitution saving throw, the creature can expend a number of temporary hit points to surround itself with stone armor. Roll 1d6 for every 3 temporary hit points expended. The creature gains a bonus to AC equal to the total against the triggering attack, possibly causing it to miss, or gains a bonus equal to the total to the triggering saving throw.</li>
+            </ul>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the temporary hit points increase by 5 for each slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">1 hour</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Emblem of Fire" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_EMBLEM_OF_FIRE">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>You surround a willing creature within range with energy from the elemental plane of fire. The creature gains 10 temporary hit points for the duration. While the creature has these temporary hit points, it gains the following benefits:</p>
+            <ul>
+                <li>It has resistance to cold and fire damage.</li>
+                <li>Its natural weapons and unarmed strikes deal fire damage instead of their normal type.</li>
+                <li>It sheds bright light in a 10-foot radius and dim light for an additional 10 feet.</li>
+                <li>It can move through a space as narrow as 1 inch wide without squeezing.</li>
+                <li>As an action, the creature can expend a number of temporary hit points to shoot a mote of fire at a point it can see within 30 feet of it. Each creature within 5 feet of the point must make a Dexterity saving throw. A creature takes 1d6 fire damage for every 3 temporary hit points expended on a failed save, or half as much damage on a successful one.</li>
+            </ul>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the temporary hit points increase by 5 for each slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">1 hour</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Emblem of Water" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_EMBLEM_OF_WATER">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>You surround a willing creature within range with energy from the elemental plane of water. The creature gains 10 temporary hit points for the duration. While the creature has these temporary hit points, it gains the following benefits:</p>
+            <ul>
+                <li>It has resistance to acid and fire damage.</li>
+                <li>It can breathe underwater.</li>
+                <li>It gains a swimming speed of 30 feet.</li>
+                <li>It can move through a space as narrow as 1 inch wide without squeezing.</li>
+                <li>As an action, the creature can expend a number of temporary hit points to touch a creature and restore hit points to it. The target regains 1d6 hit points for every 3 temporary hit points expended. This has no effect on undead or constructs.</li>
+            </ul>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the temporary hit points increase by 5 for each slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">1 hour</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Form Barricade" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_FORM_BARRICADE">
+        <supports>Artificer, Hunter</supports>
+        <description>
+            <p>You shape dirt, ice, or wood into up to three spiked barricades in unoccupied spaces that you can see within range. Each barricade is a Medium object with an AC of 15 and 10 hit points, and requires 20 pounds of materials to create. A creature can attempt to move or leap over a barricade with a Strength (Athletics) or Dexterity (Acrobatics) check against your spell save DC, taking 2d6 piercing damage on a failure.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, the number of barricades you can create increases by 1 for each slot level above 1st.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">transmutation (ritual)</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Fortify Wood" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_FORTIFY_WOOD">
+        <supports>Artificer, Druid, Hunter</supports>
+        <description>
+            <p>You touch a wooden object of Medium size or smaller or a section of wood no more than 5 feet in any dimension and imbue it with the strength of iron. If the object is a weapon or suit of armor, it becomes an ironwood object of the same shape, and behaves as if it were made of steel. Otherwise, its AC becomes 19 and it gains resistance to fire damage.</p>
+            <p class="indent">Objects made from ironwood can’t be targeted by spells that target metal objects, such as heat metal.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 hour</set>
+            <set name="range">Touch</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">exotic oils worth at least 50 gp, which the spell consumes</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Glacial Arrow" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_GLACIAL_ARROW">
+        <supports>Hunter</supports>
+        <description>
+            <p>The next time you make a ranged weapon attack during the spell’s duration, the weapon’s ammunition, or the weapon itself if it’s a thrown weapon, transforms into a shard of ice. Make the attack roll as normal. The target takes 2d6 cold damage instead of the weapon’s normal damage on a hit, and is restrained until the end of your next turn.</p>
+            <p class="indent">Hit or miss, the ice shard freezes its surroundings as it travels, forming a line 5 feet wide that extends from you to the target. Each creature in the line excluding you must make a Constitution saving throw, taking 2d6 cold damage on a failed save, or half as much damage on a success.</p>
+            <p class="indent">The ice shard also freezes water in the line, which can be used as a bridge and lasts for 1 minute, until it takes damage, or until it supports more than 200 pounds.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the damage for both effects of the spell increases by 1d6 for each slot level above 3rd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">evocation</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">Self</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">one piece of ammunition or a thrown weapon</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Howling Wind" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_HOWLING_WIND">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>You summon an elemental spirit of wind that takes on the form of a wolf and appears in unoccupied space you can see within range. The elemental uses a wolf’s statistics, except that it is an elemental instead of a beast, has resistance to bludgeoning, piercing, and slashing damage, has a fly speed of 60 feet, and its movement doesn’t provoke opportunity attacks. Additionally, creatures within 10 feet of the elemental are deafened.</p>
+            <p class="indent">The elemental is friendly to you and your companions, and acts on your initiative. When you cast the spell, you can command the elemental to move up to its speed and make an attack, using your spell attack modifier and spell save DC instead of its own attack bonus and save DC. Until the spell ends, you can use a bonus action to command the elemental again. If you don’t issue any commands to it, the elemental takes the Dodge action.</p>
+            <p class="indent">A summoned creature disappears when it drops to 0 hit points or when the spell ends.</p>
+            <p class="indent">The DM has the creature’s statistics.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a slot of 4th level or higher, you conjure another elemental for every two slot levels above 2nd. Each additional elemental appears in an unoccupied space you can see within range, and you can command all elementals conjured by this spell as part of the same bonus action.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">conjuration</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Junglerazer" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_JUNGLERAZER">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>You send forth a blast of withering magic, forming a line 100 feet long and 10 feet wide from you in a direction you choose. Each beast, fey, or plant creature in the line must make a Constitution saving throw. A creature takes 4d10 necrotic damage on a failed save, or half as much damage on a successful one.</p>
+            <p class="indent">The spell destroys nonmagical plants and vegetation in the area, clearing away any such difficult terrain caused by them and reducing them to ash. Plants in the area created by spells such as entangle or plant growth are also destroyed.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d10 and the length of the line increases by 20 feet for each slot level above 3rd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">necromancy</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (100 foot line)</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a pinch of ash from a burnt plant</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Light the Way" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_LIGHT_THE_WAY">
+        <supports>Cleric, Druid, Hunter, Wizard</supports>
+        <description>
+            <p>A beacon of bright light forms in a 600-foot-tall cylinder with a 5-foot radius, centered on a point you can see. When you cast the spell, you can choose for the beacon to be only visible to certain creatures or types of creatures of your choice. For example, you can choose to have the beacon only be visible to bears, or only to any number of specific bears you know.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">illusion</set>
+            <set name="time">1 action</set>
+            <set name="range">Sight</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">8 hours</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Mark of the Leech" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_MARK_OF_THE_LEECH">
+        <supports>Druid, Hunter, Wizard</supports>
+        <description>
+            <p>You choose a creature you can see within range and mark it with draining energy. Until the spell ends, each time the target regains hit points, it takes necrotic damage equal to half the hit points it regained, and you gain temporary hit points equal to the necrotic damage taken and become aware of its location.</p>
+            <p class="indent">If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature that you can see within the spell’s range.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level, you can maintain your concentration on the spell for up to 24 hours. When you cast this spell using a spell slot of 4th level, you can maintain your concentration on the spell for up to 3 days. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 10 days.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">necromancy</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">90 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a leech</set>
+            <set name="duration">Concentration, up to 8 hours</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Mark of the Prey" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_MARK_OF_THE_PREY">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>You choose a creature you can see within range and mark it as prey for beasts of the wild. Until the spell ends, each beast that starts its turn within 120 feet of the target becomes aware of its location and must succeed on a Wisdom saving throw or become hostile towards the target, regarding it as prey to be hunted.</p>
+            <p class="indent">If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature that you can see within the spell’s range.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level, you can maintain your concentration on the spell for up to 24 hours. When you cast this spell using a spell slot of 4th level, you can maintain your concentration on the spell for up to 3 days. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 10 days.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">enchantment</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">90 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a drop of rabbit’s blood</set>
+            <set name="duration">Concentration, up to 8 hours</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Mark of the Storm" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_MARK_OF_THE_STORM">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>You choose a creature you can see within range and mark it as a lightning rod for the wrath of the storm. Until the spell ends, dark storm clouds form in the shape of a cylinder that is 10 feet tall with a 30-foot radius, centered on a point at least 300 feet above the target. When you cast the spell and every hour that passes before the spell ends, the target must succeed on a Dexterity saving throw or take 1d12 lightning damage. Until the spell ends, you can use a bonus action on your turn to call down lightning in this way again if you can see the target.</p>
+            <p class="indent">If the target goes indoors or has cover from above, the lightning will instead strike the structure directly above the target.</p>
+            <p class="indent">If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature that you can see within the spell’s range.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level, you can maintain your concentration on the spell for up to 24 hours. When you cast this spell using a spell slot of 4th level, you can maintain your concentration on the spell for up to 3 days. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 10 days.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">conjuration</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">90 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a piece of iron</set>
+            <set name="duration">Concentration, up to 8 hours</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Mark of the Wild" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_MARK_OF_THE_WILD">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>You choose a creature you can see within range and mark it with verdant energy. Until the spell ends, any plants or fertile soil within 5 feet of the target grows with vines and shrubs at the start of each of the target’s turns, with each 5-foot square becoming difficult terrain until a creature moves through it. Additionally, if the target spends at least 1 minute in the same space of fertile soil, it becomes restrained by sprouting vines. A creature restrained by the vines can use its action to make a Strength check against your spell save DC. On a success, it frees itself. The vines can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).</p>
+            <p class="indent">If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature that you can see within the spell’s range.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level, you can maintain your concentration on the spell for up to 24 hours. When you cast this spell using a spell slot of 4th level, you can maintain your concentration on the spell for up to 3 days. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 10 days.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">transmutation</set>
+            <set name="time">1 bonus action</set>
+            <set name="range">90 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a grape</set>
+            <set name="duration">Concentration, up to 8 hours</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Survey Terrain" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_SURVEY_TERRAIN">
+        <supports>Druid, Hunter, Wizard</supports>
+        <description>
+            <p>You create a mental image of the terrain in a location you choose within range. The area of this spell consists of up to three 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. You become aware of any creatures, objects that bear magic, and the layout and any mechanical intricacies within the area.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, you create an additional 10-foot cube for each slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">divination</set>
+            <set name="time">1 minute</set>
+            <set name="range">60 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a crystal</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Untamed Ferocity" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_UNTAMED_FEROCITY">
+        <supports>Druid, Hunter</supports>
+        <description>
+            <p>Choose a creature with an Intelligence of 5 or less of that you can see within range to becomes charmed by you for the duration. If the target is unwilling, it must succeed on a Wisdom saving throw to avoid the spell.</p>
+            <p class="indent">While the target is charmed in this way, it foams at the mouth and makes its weapon attacks at advantage, but attack rolls against it have advantage. Additionally, a charmed target’s natural weapons count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
+            <p class="indent">A charmed target can make a Wisdom saving throw at the end of each of its turns, ending the effect on a success.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, you can affect one additional creature for each slot level above 2nd.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">2</set>
+            <set name="school">enchantment</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">1 minute</set>
+            <set name="isConcentration">false</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+    <element name="Warden’s Domain" type="Spell" source="The Hunter’s Journal" id="ID_AEYANA_THJ_SPELL_WARDENS_DOMAIN">
+        <supports>Hunter</supports>
+        <description>
+            <p>You encircle a plot of land and lay claim to it as your domain. For the duration, the spell invisibly marks the area within 30 feet of you. When the spell ends, either because your concentration is broken or because you decided to end it, the area that has been marked by the spell becomes bound to you for 24 hours. Any area that is fully encircled by the marked area also becomes bound to you.</p>
+            <p class="indent">While you are within the bound area, a mental alarm alerts you with a ping in your mind whenever a creature enters or exits the bound area, and you can use an action to name a creature, learning the distance and direction to it if it is within the area.</p>
+            <p class="indent">If you use this spell to mark the same area every day for 30 days, it remains marked until it is dispelled.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">abjuration</set>
+            <set name="time">1 action</set>
+            <set name="range">Self</set>
+            <set name="hasVerbalComponent">false</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">Concentration, up to 8 hours</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+
+</elements>

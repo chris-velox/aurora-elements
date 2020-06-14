@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Witchguard Ranger Conclave</name>
+        <update version="0.0.1">
+            <file name="ranger-witchguard.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/ranger/ranger-witchguard.xml" />
+        </update>
+    </info>
+    
+    <element name="Ranger Conclave: Witchguard" type="Source" source="Core" id="ID_RSQUARED_GMBINDER_SOURCE_WITCHGUARD">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">RCWG</set>
+            <set name="url">https://www.gmbinder.com/share/-Lo6LebHRmJigtIzXYUy</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="RS" url="https://www.gmbinder.com/profile/rsquared">rquared</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">2020605</set>
+        </setters>
+    </element>
+    
+    <element name="Witchguard" type="Archetype" source="Ranger Conclave: Witchguard" id="ID_RS_RCWG_ARCHETYPE_RANGER_WITCHGUARD">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Witchguards are the sworn defenders of the witches of the wilds, protectors of hags and maidens alike. Although witches are often immensely powerful in their craft, even they cannot defend against every attack. Witchguards dedicate themselves to protecting their charges, and in return gain a measure of magical power. Each witchguard forms a mystical bond with a single witch that is severable only in death.</p>
+            <p class="indent">Despite the name, a witchguard can bond with and protect many kinds of spellcaster, not just a witch. Such guardians are sometimes known as "warders."</p>
+            <p class="indent"></p>
+            <div element="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WITCHERY" />
+            <div element="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WITCHGUARDS_BOND" />
+            <div element="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WARDER_TRAINING" />
+            <div element="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_PATRONS_GIFT" />
+            <div element="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WAR_MAGIC" />
+            <div element="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_SPELLSHIELD_BOND" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WITCHERY" level="3" />
+            <grant type="Archetype Feature" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WITCHGUARDS_BOND" level="3" />
+            <grant type="Archetype Feature" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WARDER_TRAINING" level="3" />
+            <grant type="Archetype Feature" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_PATRONS_GIFT" level="7" />
+            <grant type="Archetype Feature" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WAR_MAGIC" level="11" />
+            <grant type="Archetype Feature" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_SPELLSHIELD_BOND" level="15" />
+        </rules>
+    </element>
+        <element name="Witchery" type="Archetype Feature" source="Ranger Conclave: Witchguard" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WITCHERY">
+            <description>
+                <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Witchery Spells table. This spell counts as a ranger spell for you, but doesn’t count against the number of ranger spells you know.</p>
+                <h5 class="caption">WITCHERY SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Ranger Level</td><td>Spell</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>sanctuary</em></td></tr>
+                    <tr><td>5th</td><td><em>warding bond</em></td></tr>
+                    <tr><td>9th</td><td><em>dispel magic</em></td></tr>
+                    <tr><td>13th</td><td><em>death ward</em></td></tr>
+                    <tr><td>17th</td><td><em>Rary's telepathic bond</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" spellcasting="Ranger" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_WARDING_BOND" spellcasting="Ranger" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" spellcasting="Ranger" known="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" spellcasting="Ranger" known="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_RARYS_TELEPATHIC_BOND" spellcasting="Ranger" known="true" level="17" />
+            </rules>
+        </element>
+        <element name="Witchguard’s Bond" type="Archetype Feature" source="Ranger Conclave: Witchguard" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WITCHGUARDS_BOND">
+            <description>
+                <p>At 3rd level, you are sworn to protect your witch with your own life. Choose a willing humanoid as your ward. A ward must have the Spellcasting or Pact Magic feature and cannot have any hit dice larger than d8s when bonded. If your ward is killed, you cannot cast your Witchery spells until your ward is revived or you choose a new ward, which you can do by means of an eight-hour bonding ritual.</p>
+                <p class="indent">If you and your ward are on the same plane of existence and your ward is not dead, you sense your ward through the bond. You are always aware of the current hit points of and any conditions affecting your ward. As an action, you can know the relative direction and general distance of your ward from you. Your ward can sense your hit points, conditions, and location through the bond, in the same manner as you do.</p>
+            </description>
+            <sheet>
+                <description>Choose a willing humanoid as your ward. A ward must have the Spellcasting or Pact Magic feature and cannot have any hit dice larger than d8s when bonded. If your ward is killed, you cannot cast your Witchery spells until your ward is revived or you choose a new ward, which you can do by means of an eight-hour bonding ritual. If you and your ward are on the same plane of existence and your ward is not dead, you sense your ward through the bond. You are always aware of the current hit points of and any conditions affecting your ward. As an action, you can know the relative direction and general distance of your ward from you. Your ward can sense your hit points, conditions, and location through the bond, in the same manner as you do.</description>
+            </sheet>
+        </element>
+        <element name="Warder Training" type="Archetype Feature" source="Ranger Conclave: Witchguard" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WARDER_TRAINING">
+            <description>
+                <p>At 3rd level, you are trained to eliminate threats to your witch, and you gain the following benefits:</p>
+                <p class="indent">You gain proficiency with heavy armor, and you ignore disadvantage on Dexterity (Stealth) checks imposed by light or medium armor.</p>
+                <p class="indent">If you are within 15 feet of your ward when your ward casts a spell, you can use your reaction to make one melee weapon attack. This range increases to 30 feet at level 11 and 60 feet at level 15.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>You ignore disadvantage on Dexterity (Stealth) checks imposed by light or medium armor. If you are within {{warder-training:range}} feet of your ward when your ward casts a spell, you can use your reaction to make one melee weapon attack.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+                <stat name="warder-training:range" value="15" level="3" />
+                <stat name="warder-training:range" value="15" level="11" />
+                <stat name="warder-training:range" value="30" level="15" />
+            </rules>
+        </element>
+        <element name="Patron’s Gift" type="Archetype Feature" source="Ranger Conclave: Witchguard" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_PATRONS_GIFT">
+            <description>
+                <p>Starting at 7th level, the bond grants you a measure of your ward’s magical power. You learn two cantrips of your choice from the wizard spell list, which count as ranger spells for you.</p>
+                <p class="indent">Choose one spell from your ward’s class spell list and add it to your spells known. If your ward has more than one class, choose from one list of your ward’s highest class level. This spell must be of a level you can cast and counts as a ranger spell for you, but doesn’t count against the number of ranger spells you know. You have access to this spell while your ward is not incapacitated or dead. You can exchange this spell at the end of a long rest for another spell from your ward’s spell list, which must also be of a level you can cast.</p>
+            </description>
+            <sheet>
+                <description>You have access to your Patron’s Gift spell while your ward is not incapacitated or dead. You can exchange this spell at the end of a long rest for another spell from your ward’s spell list, which must also be of a level you can cast.</description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Cantrip (Patron’s Gift)" supports="Wizard,0" spellcasting="Ranger" known="true" />
+                <select type="Spell" name="Spellcasting (Patron’s Gift)" supports="$(spellcasting:slots)" spellcasting="Ranger" known="true" />
+            </rules>
+        </element>
+        <element name="War Magic" type="Archetype Feature" source="Ranger Conclave: Witchguard" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_WAR_MAGIC">
+            <description>
+                <p>Beginning at 11th level, when you use your action to cast a cantrip, you can make one weapon attack as a bonus action.</p>
+            </description>
+            <sheet>
+                <description>When you use your action to cast a cantrip, you can make one weapon attack as a bonus action.</description>
+            </sheet>
+        </element>
+        <element name="Spellshield Bond" type="Archetype Feature" source="Ranger Conclave: Witchguard" id="ID_RS_RCWG_ARCHETYPE_FEATURE_WITCHGUARD_SPELLSHIELD_BOND">
+            <description>
+                <p>At 15th level, the bond you share shields you against hostile spellcraft invading your mind. When you are subject to an effect that forces you to make a Charisma, Intelligence, or Wisdom saving throw, you have advantage on your first saving throw against that effect.</p>
+            </description>
+            <sheet>
+                <description>When you are subject to an effect that forces you to make a Charisma, Intelligence, or Wisdom saving throw, you have advantage on your first saving throw against that effect.</description>
+            </sheet>
+        </element>
+
+</elements>

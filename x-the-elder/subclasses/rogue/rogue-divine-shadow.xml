@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Divine Shadow Roguish Archetype</name>
+        <update version="0.0.1">
+            <file name="rogue-divine-shadow.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/rogue/rogue-divine-shadow.xml" />
+        </update>
+    </info>
+    
+    <element name="Roguish Archetype: Divine Shadow" type="Source" source="Core" id="ID_MAOSTYLE_GMBINDER_SOURCE_Roguish Archetype: Divine Shadow">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">RADS</set>
+            <set name="url">https://www.gmbinder.com/share/-M8NjzDc4-MlM4Kx9FYK</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="MS" url="https://www.gmbinder.com/profile/maostyle">MaoStyle</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200605</set>
+        </setters>
+    </element>
+    
+    <element name="Divine Shadow" type="Archetype" source="Roguish Archetype: Divine Shadow" id="ID_MS_RADS_ARCHETYPE_ROGUE_DIVINE_SHADOW">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Some Deities inspire their followers to use underhanded methods to bring order or chaos in the world, Divine Shadows are just that, inquisitors of gods channeling their divine power to either silently cull out heretics or to just bring a glimmer of hope from the shadows.</p>
+            <div element="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_RELIGIOUS_ADEPT" />
+            <div element="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_HALLOWED_EDGE" />
+            <div element="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_CELESTIAL_BODY" />
+            <div element="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_RADIANT_INTERCEPTION" />
+            <div element="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_PURIFYING_CHAINS" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_RELIGIOUS_ADEPT" level="3" />
+            <grant type="Archetype Feature" id="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_HALLOWED_EDGE" level="3" />
+            <grant type="Archetype Feature" id="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_CELESTIAL_BODY" level="9" />
+            <grant type="Archetype Feature" id="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_RADIANT_INTERCEPTION" level="13" />
+            <grant type="Archetype Feature" id="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_PURIFYING_CHAINS" level="17" />
+        </rules>
+    </element>
+        <element name="Religious Adept" type="Archetype Feature" source="Roguish Archetype: Divine Shadow" id="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_RELIGIOUS_ADEPT">
+            <description>
+                <p>When you choose this archetype at 3rd level, you get a holy symbol and you know the <em>thaumaturgy</em> cantrip. In addition, you gain Proficiency in Religion, and whenever you make a check regarding information for evil religious sects, undead, fiends and celestials you have advantage to the roll.</p>
+            </description>
+            <sheet>
+                <description>Whenever you make a check regarding information for evil religious sects, undead, fiends and celestials you have advantage to the roll.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_HOLY_SYMBOL" />
+                <grant type="Spell" id="ID_PHB_SPELL_THAUMATURGY" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+            </rules>
+        </element>
+        <element name="Hallowed Edge" type="Archetype Feature" source="Roguish Archetype: Divine Shadow" id="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_HALLOWED_EDGE">
+            <description>
+                <p>Starting at 3rd level, As a bonus action you can put your holy symbol close to your weapon in order to bless it with celestial might. For 1 minute your weapon pulses with a faint radiant glow giving you the ability to add extra radiant damage equal to half your Rogue level (rounded up) whenever you hit a creature with a Sneak Attack.</p>
+                <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{hallowed-edge:uses}}/Long Rest">
+                <description>You bless your weapon for 1 minute using your holy symbol. You add {{level:rogue:half}} radiant damage whenver you hit a creature with a Sneak Attack.</description>
+            </sheet>
+            <rules>
+                <stat name="hallowed-edge:uses" value="1" bonus="base" />
+                <stat name="hallowed-edge:uses" value="wisdom:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Celestial Body" type="Archetype Feature" source="Roguish Archetype: Divine Shadow" id="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_CELESTIAL_BODY">
+            <description>
+                <p>At 9th level, Your connection to your deity grows stronger giving you the following traits.</p>
+                <ul>
+                    <li>You are immune to disease and poison.</li>
+                    <li>You are resistant to radiant damage.</li>
+                    <li>You learn the spell <em>detect evil and good</em> and you can cast it at will.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>You are immune to disease and poison. You can cast detect evil and good at will.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+                <grant type="Spell" id="ID_PHB_SPELL_DETECT_EVIL_AND_GOOD" />
+            </rules>
+        </element>
+        <element name="Radiant Interception" type="Archetype Feature" source="Roguish Archetype: Divine Shadow" id="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_RADIANT_INTERCEPTION">
+            <description>
+                <p>Starting at 13th level, When a creature you can see attempts to hit an ally within 30 feet of you, you can use your reaction to blind them with divine light and give them disadvantage on the attack.</p>
+            </description>
+            <sheet action="Reaction">
+                <description> When a creature you can see attempts to hit an ally within 30 feet of you, you can use your reaction to blind them with divine light and give them disadvantage on the attack.</description>
+            </sheet>
+        </element>
+        <element name="Purifying Chains" type="Archetype Feature" source="Roguish Archetype: Divine Shadow" id="ID_MS_RADS_ARCHETYPE_FEATURE_DIVINE_SHADOW_PURIFYING_CHAINS">
+            <description>
+                <p>Beginning at 17th level, You can use your action to make a weapon attack blessed with divine light. The attack deals your normal weapon damage, plus an extra 4d12 radiant damage on hit. In Addition, it forces every creature of your choice within 30 feet of the initial target to make a Dexterity saving throw (DC equal to 10 + your proficiency bonus + your Wisdom modifier) as radiant chains start emerging from its wound attempting to bind and restrain them. On a failed save the creatures become restrained until the end of your next turn. On a successful save the creatures are unaffected. (if the target is undead or fiend it has disadvantage on the saving throw).</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can use your action to make a weapon attack blessed with divine light. The attack deals your normal weapon damage, plus an extra 4d12 radiant damage on hit. In Addition, it forces every creature of your choice within 30 feet of the initial target to make a Dexterity saving throw (DC {{purifying-chains:save-dc}}) as radiant chains start emerging from its wound attempting to bind and restrain them. On a failed save the creatures become restrained until the end of your next turn. On a successful save the creatures are unaffected. (if the target is undead or fiend it has disadvantage on the saving throw).</description>
+            </sheet>
+            <rules>
+                <stat name="purifying-chains:save-dc" value="10" />
+                <stat name="purifying-chains:save-dc" value="proficiency" />
+                <stat name="purifying-chains:save-dc" value="wisdom:modifier" />
+            </rules>
+        </element>
+
+</elements>
