@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Split Soul Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-split-soul.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/sorcerer/sorcerer-split-soul.xml" />
+        </update>
+    </info>
+    
+    <element name="Split Soul Sorcerous Origin" type="Source" source="Core" id="ID_FPB_GMBINDER_SOURCE_Split Soul Sorcerous Origin">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SSSO</set>
+            <set name="url">https://www.gmbinder.com/share/-M9obus75DFzWrMY85sp</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="FPB" url="https://www.reddit.com/user/flashpointbrews">u/flashpointbrews</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200620</set>
+        </setters>
+    </element>
+    
+    <element name="Split Soul" type="Archetype" source="Split Soul Sorcerous Origin" id="ID_FPB_SSSO_ARCHETYPE_SORCERER_SPLIT_SOUL">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>Your innate magic comes from a magical incident that split your soul. While many would die from such an incident, you survived by imprinting your soul fragment on that of a tiny beast nearby, and now the two of you share a rare and powerful bond.</p>
+            <p class="indent">For some Split Soul Sorcerers, this bond is a burden exacerbated by a rebellious creature angered by the bond. For others, the familiar becomes a beloved companion without whom, the sorcerer feels incomplete. Regardless of the relationship, Split Soul Sorcerers feel a need to remain nearby their bonded familiars and doing so provides them both unique power.</p>
+            <div element="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_DUAL_ANATOMY" />
+            <div element="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_DEATH_SWAP" />
+            <div element="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_SHARD_GUARDIAN" />
+            <div element="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_EPHEMERAL_EXCHANGE" />
+            <div element="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_UNION_PHASE" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_DUAL_ANATOMY" level="1" />
+            <grant type="Archetype Feature" id="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_DEATH_SWAP" level="1" />
+            <grant type="Archetype Feature" id="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_SHARD_GUARDIAN" level="6" />
+            <grant type="Archetype Feature" id="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_EPHEMERAL_EXCHANGE" level="14" />
+            <grant type="Archetype Feature" id="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_UNION_PHASE" level="18" />
+        </rules>
+    </element>
+        <element name="Dual Anatomy" type="Archetype Feature" source="Split Soul Sorcerous Origin" id="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_DUAL_ANATOMY">
+            <description>
+                <p>Your soul splits and latches onto a Tiny CR 0 beast of your choice. You learn the <em>find familiar</em> spell, but it doesn’t count against your number of sorcerer spells known, and for you, it doesn’t require material components.</p>
+                <p class="indent">Your familiar has the beast creature type and hit points equal to twice your sorcerer level. In addition, when you cast a spell with a range other than self, the spell can originate from your familiar without using your familiar’s reaction.</p>
+            </description>
+            <sheet>
+                <description>Your soul splits and latches onto a Tiny CR 0 beast. Your familiar has the beast creature type and {{dual-anatomy:hp}} hit points. When you cast a spell with a range other than self, the spell can originate from your familiar without using your familiar’s reaction.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_FIND_FAMILIAR" spellcasting="Sorcerer" known="true" />
+                <stat name="dual-anatomy:hp" value="level:sorcerer" />
+                <stat name="dual-anatomy:hp" value="level:sorcerer" />
+            </rules>
+        </element>
+        <element name="Death Swap" type="Archetype Feature" source="Split Soul Sorcerous Origin" id="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_DEATH_SWAP">
+            <description>
+                <p>Starting at 1st level, if you would be reduced to 0 hit points but not killed outright while you and your familiar are on the same plane of existence, you can drop to 1 hit point instead. If you do so, your familiar drops to 0 hit points instead, and you can’t cast <em>find familiar</em> again until you complete a short or long rest.</p>
+            </description>
+            <sheet>
+                <description>If you would be reduced to 0 hit points but not killed outright while you and your familiar are on the same plane of existence, you can drop to 1 hit point instead. If you do so, your familiar drops to 0 hit points instead, and you can’t cast find familiar again until you complete a short or long rest.</description>
+            </sheet>
+        </element>
+        <element name="Shard Guardian" type="Archetype Feature" source="Split Soul Sorcerous Origin" id="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_SHARD_GUARDIAN">
+            <description>
+                <p>At 6th level, you learn to split the soul fragment residing within your familiar. As an action, you can spend 3 sorcery points to divide your familiar and cast <em>spirit guardians</em>. It counts as a sorcerer spell for you when cast in this way, and your familiar is considered dismissed until the spell ends.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can spend 3 sorcery points to divide your familiar and cast spirit guardians. It counts as a sorcerer spell for you when cast in this way, and your familiar is considered dismissed until the spell ends.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_SPIRIT_GUARDIANS" />
+            </rules>
+        </element>
+        <element name="Ephemeral Exchange" type="Archetype Feature" source="Split Soul Sorcerous Origin" id="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_EPHEMERAL_EXCHANGE">
+            <description>
+                <p>Starting at 14th level, you learn to magically transpose your soul with its fragment. While your familiar is within 60 feet of you, you can use a bonus action to teleport to the space your familiar occupies, swapping places.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>While your familiar is within 60 feet of you, you can teleport to the space your familiar occupies, swapping places.</description>
+            </sheet>
+        </element>
+        <element name="Union Phase" type="Archetype Feature" source="Split Soul Sorcerous Origin" id="ID_FPB_SSSO_ARCHETYPE_FEATURE_SPLIT_SOUL_UNION_PHASE">
+            <description>
+                <p>At 18th level, you learn how to reunite your soul for a short time. As an action, you can absorb your familiar into you for 1 minute so long as it isn’t dismissed. While united in this way, you and and your familiar occupy the same space, and you gain the following benefits:</p>
+                <ul>
+                    <li>Your walking speed increases by 10 feet, and you gain a flying speed equal to your walking speed.</li>
+                    <li>You gain temporary hit points equal to your sorcerer level + your Charisma modifier.</li>
+                    <li>Once during the duration, if you fail a Constitution saving throw, you can choose to succeed instead.</li>
+                </ul>
+                <p>Once you use this feature, you can’t do so again until you finish a long rest or you expend 6 sorcery points to use it again.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest or 6 sorcery points">
+                <description>You can absorb your familiar into you for 1 minute so long as it isn’t dismissed. While united in this way, you and and your familiar occupy the same space, and you gain the following benefits: Your walking speed increases by 10 feet, and you gain a flying speed of {{union-phase:speed}}. You gain {{union-phase:temp-hp}}. Once during the duration, if you fail a Constitution saving throw, you can choose to succeed instead.</description>
+            </sheet>
+            <rules>
+                <stat name="union-phase:speed" value="speed" />
+                <stat name="union-phase:speed" value="10" />
+                <stat name="union-phase:temp-hp" value="level:sorcerer" />
+                <stat name="union-phase:temp-hp" value="charisma:modifier" />
+            </rules>
+        </element>
+</elements>

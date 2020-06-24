@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Human Cultural Feats</name>
+        <update version="0.0.1">
+            <file name="feats-human-cultural-feats.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/options/feats-human-cultural-feats.xml" />
+        </update>
+    </info>
+    
+    <element name="Human Cultural Feats" type="Source" source="Core" id="ID_XYRLIAN_GMBINDER_SOURCE_Human Cultural Feats">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">HCF</set>
+            <set name="url">https://www.gmbinder.com/share/-M6ljIe80PkuqKM8VPE5</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="WOTC" url="https://www.gmbinder.com/profile/xyrlian">Xyrlian</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200621</set>
+        </setters>
+    </element>
+
+    <element name="Frontier Culture" type="Feat" source="Human Cultural Feats" id="ID_XYRLIAN_HCF_FEAT_FRONTIER_CULTURE">
+        <requirements>ID_RACE_HUMAN</requirements>
+        <prerequisite>Human</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Human</p>
+            <p>You were brought up on the edges of civilization, spending most of your time in the woodlands. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Dexterity or Wisdom score by 1, to a maximum of 20.</li>
+                <li>You gain proficiency with one of the following skills of your choice: Animal Handling, Nature, Perception, Stealth, or Survival.</li>
+                <li>Whenever you make an Wisdom (Survival) check to track beasts, you are considered proficient in the Survival skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.</li>
+                <li>Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Whenever you make a Survival check to track beasts, you are considered proficient and add +{{frontier-culture:proficiency}} bonus to the check, instead of your normal proficiency bonus. Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts.</description>
+        </sheet>
+        <rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Frontier Culture)" supports="ID_PHB_FEAT_ASI_WISDOM|ID_PHB_FEAT_ASI_DEXTERITY" />
+            <select type="Proficiency" name="Skill Proficiency, Frontier Culture" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_STEALTH|ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <stat name="frontier-culture:proficiency" value="proficiency" />
+            <stat name="frontier-culture:proficiency" value="proficiency" />
+        </rules>
+    </element>
+    <element name="Mariner Culture" type="Feat" source="Human Cultural Feats" id="ID_XYRLIAN_HCF_FEAT_MARINER_CULTURE">
+        <requirements>ID_RACE_HUMAN</requirements>
+        <prerequisite>Human</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Human</p>
+            <p>You’re from a seafaring people, and are at home among the wind and waves. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength, Constitution, or Wisdom score by 1, to a maximum of 20.</li>
+                <li>You have a swim speed equal to your walking speed.</li>
+                <li>You gain proficiency in Navigator’s Tools and Vehicles (water). You have advantage on any ability check to operate or maintain water vehicles that uses either of these proficiencies.</li>
+                <li>You gain proficiency with the light crossbow, trident, scimitar, and net.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have advantage on any ability check to operate or maintain water vehicles that uses either your Navigator’s tools or Vehicles (water) proficiency.</description>
+        </sheet>
+        <rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Mariner Culture)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_WISDOM" />
+            <stat name="speed:swim" value="speed" bonus="base" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_TRIDENT" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_LIGHT" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_NET" />
+        </rules>
+    </element>
+    <element name="Martial Culture" type="Feat" source="Human Cultural Feats" id="ID_XYRLIAN_HCF_FEAT_MARTIAL_CULTURE">
+        <requirements>ID_RACE_HUMAN</requirements>
+        <prerequisite>Human</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Human</p>
+            <p>You were raised in a society dedicated to the arts of war. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Dexterity or Strength score by 1, to a maximum of 20.</li>
+                <li>You gain proficiency in light and medium armor.</li>
+                <li>You gain proficiency in two martial weapons of your choice.</li>
+                <li>You gain proficiency with the artisan’s tools of your choice: carpenter’s tools, cook’s utensils, leatherworker’s tools, smith’s tools.</li>
+            </ul>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Martial Culture)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+            <select type="Proficiency" name="Weapon Proficiency (Martial Culture)" supports="Weapon, Martial" number="2" />
+            <select type="Proficiency" name="Tool Proficiency (Marital Culture)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS|ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+        </rules>
+    </element>
+
+</elements>
