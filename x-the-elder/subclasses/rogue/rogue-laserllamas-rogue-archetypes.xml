@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>LaserLlama’s Roguish Archetypes</name>
+        <update version="0.0.1">
+            <file name="rogue-laserllamas-rogue-archetypes.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/rogue/rogue-laserllamas-rogue-archetypes.xml" />
+        </update>
+    </info>
+    
+    <element name="LaserLlama’s Roguish Archetypes" type="Source" source="Core" id="ID_LASERLLAMA_GMBINDER_SOURCE_LASERLLAMAS_ROGUISH_ARCHETYPES">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">LLRA</set>
+            <set name="url">https://www.gmbinder.com/share/-M0ncGWa5j9oDFwilwPl</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="LL" url="https://www.reddit.com/u/laserllama">u/laserllama</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200626</set>
+        </setters>
+    </element>
+
+    <element name="Daredevil" type="Archetype" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_ROGUE_DAREDEVIL">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Where most people avoid danger, there are some that seek it out at every opportunity. Daredevils are those that relish the change to risk their lives, either by attempting dangerous stunts or putting themselves in harms way. From young ages, daredevils would rather be maneuvering through treetops or leaping from roof to roof. Daredevils have a knack for avoiding what for most would be certain death.</p>
+            <p class="indent">As a daredevil, what is it that drives you to perform these airborne feats of acrobatics? Is it a drive to push yourself to your absolute limits? The fame and attention it brings? Or just the adrenaline rush of risking life and limb?</p>
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_HIGH_FLYING" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_NATURAL_ACROBAT" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_SLOW_FALL" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_DEATH_FROM_ABOVE" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_AIRBORNE_STRIKES" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_HIGH_FLYING" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_NATURAL_ACROBAT" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_SLOW_FALL" level="9" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_DEATH_FROM_ABOVE" level="13" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_AIRBORNE_STRIKES" level="17" />
+        </rules>
+    </element>
+        <element name="High-Flying" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_HIGH_FLYING">
+            <description>
+                <p>At 3rd level, you’ve honed your body in such a way that when you leap from rooftop to rooftop, you almost appear to by flying. You gain a climbing speed equal to your movement speed. Also, if you have a 10 ft. running start you can long jump a number of feet equal to your Rogue level + your Dexterity Score.</p>
+                <p class="indent">Your standing high jump is equal to 3 + your Dexterity modifier, and if you have a 10 ft. running start, your high jump is equal to 3 + your Rogue level + your Dexterity modifier.</p>
+            </description>
+            <sheet>
+                <description>If you have a 10 ft. running start you can long jump {{high-flying:long-jump}} feet. Your standing high jump is {{high-flying:standing-high-jump}} feet, and if you have a 10 ft. running start, your high jump is {{high-flying:running-high-jump}} feet.</description>
+            </sheet>
+            <rules>
+                <stat name="speed:climb" value="speed" bonus="base" />
+                <stat name="high-flying:long-jump" value="level:rogue" />
+                <stat name="high-flying:long-jump" value="dexterity" />
+                <stat name="high-flying:standing-high-jump" value="3" />
+                <stat name="high-flying:standing-high-jump" value="dexterity:modifier" />
+                <stat name="high-flying:running-high-jump" value="3" />
+                <stat name="high-flying:running-high-jump" value="dexterity:modifier" />
+                <stat name="high-flying:running-high-jump" value="level:rogue" />
+            </rules>
+        </element>
+        <element name="Natural Acrobat" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_NATURAL_ACROBAT">
+            <description>
+                <p>As a Daredevil you never feel quite comfortable unless you are dangling from perilous heights. At 3rd level you gain proficiency in the Acrobatics skill, and you can add double your proficiency bonus to any Dexterity (Acrobatics) skill check you make to climb, maneuver yourself, or hold on to things while not touching the ground.</p>
+                <p class="indent">If you already have proficiency in Acrobatics, you instead gain proficiency in your choice of Athletics or Stealth.</p>
+            </description>
+            <sheet>
+                <description>You can add double your proficiency bonus to any Acrobatics skill check you make to climb, maneuver yourself, or hold on to things while not touching the ground.</description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Skill Proficiency, Daredevil" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_STEALTH" default="ID_PROFICIENCY_SKILL_ACROBATICS" />
+            </rules>
+        </element>
+        <element name="Slow Fall" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_SLOW_FALL">
+            <description>
+                <p>Your unfortunate experience falling from heights has made you an expert in landing without hurting yourself. Starting at 9th level you can use your reaction to reduce any falling damage you take by an amount equal to five times your Rogue level.</p>
+                <p class="indent">If you manage to land on something that breaks your fall, like a wagon full of hay or a river, you take no damage from the fall.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>You can reduce any falling damage you take by {{slow-fall:damage-reduction}} points.</description>
+            </sheet>
+            <rules>
+                <stat name="slow-fall:damage-reduction" value="level:rogue" />
+                <stat name="slow-fall:damage-reduction" value="level:rogue" />
+                <stat name="slow-fall:damage-reduction" value="level:rogue" />
+                <stat name="slow-fall:damage-reduction" value="level:rogue" />
+                <stat name="slow-fall:damage-reduction" value="level:rogue" />
+            </rules>
+        </element>
+        <element name="Death From Above" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_DEATH_FROM_ABOVE">
+            <description>
+                <p>At 13th level, you can use your maneuverability and momentum to turn your body into a projectile. If you move through the air and end your movement by landing on top of, or next to, an enemy creature you can strike the creature and attempt to knock them prone.</p>
+                <p class="indent">The creature must make a Strength saving throw, the save DC is equal to 8 + your proficiency bonus + your Dexterity modifier. On a failure, you strike the creature and they are knocked prone. This strike qualifies for your Sneak Attack even if you do not meet the other requirements. On a successful save this ability has no effect on the creature.</p>
+            </description>
+            <sheet>
+                <description>If you move through the air and end your movement by landing on top of, or next to, an enemy creature you can strike the creature and attempt to knock them prone. The creature must make a Strength saving throw (save DC {{death-from-above:save-dc}}). On a failure, you strike the creature and they are knocked prone. This strike qualifies for your Sneak Attack even if you do not meet the other requirements. On a successful save this ability has no effect on the creature.</description>
+            </sheet>
+            <rules>
+                <stat name="death-from-above:save-dc" value="8" />
+                <stat name="death-from-above:save-dc" value="proficiency" />
+                <stat name="death-from-above:save-dc" value="dexterity:modifier" />
+            </rules>
+        </element>
+        <element name="Airborne Strikes" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_AIRBORNE_STRIKES">
+            <description>
+                <p>At 17th level, you can maneuver yourself while airborne to strike at your enemies in unexpected ways. You have advantage on any attack roll you make while airborne.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on any attack roll you make while airborne.</description>
+            </sheet>
+        </element>
+
+
+    <element name="Magpie" type="Archetype" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_ROGUE_MAGPIE">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>The ways of Druidic Circles are closely guarded and only taught to a select few acolytes chosen to become the next generation Druids and Rangers. However, sometimes secrets are stolen from Circles of Druids, Archfey, or ancient spirits of the forest. Those that seize these powers for themselves are known as Magpies.</p>
+            <p class="indent">How did you come to have the powers of a Magpie? Were your powers bestowed upon you be a rogue Druid? Did you steal these secrets from a powerful Archfey that wronged you? How will you use the abilities</p>
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_LIMITED_WILD_SHAPE" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_SPELLCASTING" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_HEIGHTENED_FORMS" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_CIRCLE_SECRETS" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_THOUSAND_FORMS" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_LIMITED_WILD_SHAPE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_SPELLCASTING" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_HEIGHTENED_FORMS" level="9" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_CIRCLE_SECRETS" level="13" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_THOUSAND_FORMS" level="17" />
+        </rules>
+    </element>
+        <element name="Limited Wild Shape" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_LIMITED_WILD_SHAPE">
+            <description>
+                <p>At 3rd level, the power that you’ve taken as your own allows you to steal the forms of natural creatures. As a bonus action on your turn you can magically assume the form of a beast that you have physically touched before. Your Rogue level determines the beasts you can transform into, as shown in the Beast Shapes table below.</p>
+                <h5 class="caption">BEAST SHAPES</h5>
+                <table>
+                    <thead>
+                        <tr><td>Level</td><td>Max CR</td><td>Limitations</td><td>Example</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td>0</td><td>No Flying or Swimming Speed</td><td>Badger</td></tr>
+                    <tr><td>6th</td><td>1/4</td><td>No Flying Speed</td><td>Octopus</td></tr>
+                    <tr><td>9th</td><td>1/2</td><td>—</td><td>Hawk</td></tr>
+                </table>
+                <p class="indent">You can stay Wild Shaped for up to one hour, you then revert to your normal form. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die. While transformed you follow all the rules of Wild Shape on page 67 of the <em>Player’s Handbook</em>.</p>
+                <p class="indent">You can use this ability once, and you regain the expended use when you finish a short or long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1/Short Rest">
+                <description>You can magically assume the form of a beast that you have physically touched before for 1 hour. Your Rogue level determines the beasts you can transform into, as shown in the Beast Shapes table. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Spellcasting" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_SPELLCASTING">
+            <description>
+                <p>At 3rd level you’ve stolen the ability to cast spells much as Druids and Rangers do. See chapter 10 of the Player’s Handbook for the general rules of spellcasting, and chapter 11 for the Druid spell list.</p>
+                <h5 class="caption">MAGPIE SPELLCASTING</h5>
+                <table class="class-features">
+                    <thead>
+                        <tr><td class="col-10">Rogue Level</td><td class="col-10">Spells Known</td><td>1st</td><td>2nd</td><td>3rd</td><td>4th</td></tr>
+                    </thead>
+                    <tr><td> 3rd</td><td>3</td><td>2</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td> 4th</td><td>4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td> 5th</td><td>4</td><td>3</td><td>─</td><td>—</td><td>—</td></tr>
+                    <tr><td> 6th</td><td>4</td><td>3</td><td>─</td><td>—</td><td>—</td></tr>
+                    <tr><td> 7th</td><td>5</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+                    <tr><td> 8th</td><td>6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+                    <tr><td> 9th</td><td>6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+                    <tr><td>10th</td><td>7</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+                    <tr><td>11th</td><td>8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+                    <tr><td>12th</td><td>8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+                    <tr><td>13th</td><td>9</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+                    <tr><td>14th</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+                    <tr><td>15th</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+                    <tr><td>16th</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+                    <tr><td>17th</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+                    <tr><td>18th</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+                    <tr><td>19th</td><td>12</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+                    <tr><td>20th</td><td>13</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+                </table>
+                <p class="indent"><strong><em>Spell Slots.</em></strong> The Magpie Spellcasting table shows how many spell slots you have to cast your spells of 1st-level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest. For example, if you know the 1st-level spell animal friendship and have a 1st-level and a 2nd-level spell slot available, you can cast animal friendship using either slot.</p>
+                <p class="indent"><strong><em>Spells Known of 1st-Level and Higher.</em></strong> You know three 1st-level spells of your choice from the Druid spell list. The Spells Known column of the Magpie Spellcasting table shows when you learn more Druid spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 5th level in this class, you can learn one new spell of 1st or 2nd level.</p>
+                <p class="indent">Additionally, when you gain a level in this class, you can choose one of the Druid spells you know and replace it with another spell from the Druid spell list, which also must be of a level for which you have spell slots.</p>
+                <p class="indent"><strong><em>Spellcasting Ability.</em></strong> Wisdom is your spellcasting ability for your Druid spells, since your stolen magic relies on you connection to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. You use your Wisdom modifier when setting the saving throw DC for a Druid spell you cast and when making an attack roll with one.</p>
+                <p style="text-align: center"><strong>Spell save DC</strong> = 8 + your proficiency bonus + your Wisdom modifier</p>
+                <p style="text-align: center"><strong>Spell attack modifier</strong> = your proficiency bonus + your Wisdom modifier</p>
+            </description>
+            <spellcasting name="Magpie" ability="Wisdom" prepare="false" allowReplace="true">
+                <list>Druid</list>
+            </spellcasting>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="magpie:spellcasting:slots:1" value="2" level="3" />
+                <stat name="magpie:spellcasting:slots:1" value="1" level="4" />
+                <stat name="magpie:spellcasting:slots:1" value="1" level="7" />
+                <stat name="magpie:spellcasting:slots:2" value="2" level="7" />
+                <stat name="magpie:spellcasting:slots:2" value="1" level="10" />
+                <stat name="magpie:spellcasting:slots:3" value="2" level="13" />
+                <stat name="magpie:spellcasting:slots:3" value="1" level="16" />
+                <stat name="magpie:spellcasting:slots:4" value="1" level="19" />
+                <select type="Spell" name="Spell (Magpie)" supports="$(spellcasting:list), $(spellcasting:slots)" number="3" level="3" spellcasting="Magpie"/>
+                <select type="Spell" name="Spell (Magpie)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" spellcasting="Magpie"/>
+                <select type="Spell" name="Spell (Magpie)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" spellcasting="Magpie"/>
+                <select type="Spell" name="Spell (Magpie)" supports="$(spellcasting:list), $(spellcasting:slots)" level="8" spellcasting="Magpie"/>
+                <select type="Spell" name="Spell (Magpie)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" spellcasting="Magpie"/>
+                <select type="Spell" name="Spell (Magpie)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" spellcasting="Magpie"/>
+                <select type="Spell" name="Spell (Magpie)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" spellcasting="Magpie"/>
+                <select type="Spell" name="Spell (Magpie)" supports="$(spellcasting:list), $(spellcasting:slots)" level="14" spellcasting="Magpie"/>
+                <select type="Spell" name="Spell (Magpie)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" spellcasting="Magpie"/>
+                <select type="Spell" name="Spell (Magpie)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" spellcasting="Magpie"/>
+                <select type="Spell" name="Spell (Magpie)" supports="$(spellcasting:list), $(spellcasting:slots)" level="20" spellcasting="Magpie"/>
+            </rules>
+        </element>
+        <element name="Heightened Forms" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_HEIGHTENED_FORMS">
+            <description>
+                <p>By 9th level you have adjusted to the movements and attacks of your beast shapes. Your natural weapons while Wild Shaped count as magical finesse attacks for the purposes of your Sneak Attack and overcoming non-magical resistance.</p>
+                <p class="indent">Also, your time spent in beast form has heightened the senses of your humanoid form. You have advantage on Wisdom (Perception) checks that rely on hearing and smell.</p>
+            </description>
+            <sheet>
+                <description>Your natural weapons while Wild Shaped count as magical finesse attacks for the purposes of your Sneak Attack and overcoming non-magical resistance. You have advantage on Perception checks that rely on hearing and smell.</description>
+            </sheet>
+        </element>
+        <element name="Circle Secrets" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_CIRCLE_SECRETS">
+            <description>
+                <p>At 13th level your affinity for nature magic has changed your being and allows you to understand more Druidic secrets. You know Druidic, the secret language of Druids. You can speak the language and use it to leave hidden messages. You and others who know this language always notice such messages. You also count as a Druid for the purposes of magic item requirements.</p>
+                <p class="indent">Other creatures also recognize you as a friend of nature. When a beast, plant, or fey forces you to make a saving throw you have advantage on the roll.</p>
+            </description>
+            <sheet>
+                <description>You count as a Druid for the purposes of magic item requirements. Other creatures also recognize you as a friend of nature. When a beast, plant, or fey forces you to make a saving throw you have advantage on the roll.</description>
+            </sheet>
+            <rules>
+                <grant type="Language" id="ID_LANGUAGE_DRUIDIC" />
+            </rules>
+        </element>
+        <element name="Thousand Forms" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_THOUSAND_FORMS">
+            <description>
+                <p>By 17th level, you have mastered the use of nature magic, and you can use it to alter your physical form in more subtle ways. You can cast the <em>alter self</em> spell at will.</p>
+            </description>
+            <sheet>
+                <description>You can cast the alter self spell at will.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_ALTER_SELF" />
+            </rules>
+        </element>
+
+
+    <element name="Justicar" type="Archetype" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_ROGUE_JUSTICAR">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>Where there is divine worship there are rules and laws, and for every organized religion there are those they consider heretics. Justicars are the secret hands of the church, operating in the shadows to snuff out heresy, dissent, and any that would work against the will of their god. They excel at neutralizing threats to their church. Often unacknowledged or flat out condemned by the magisterium, Justicars operate with ruthless dedication to see the will of their god enacted upon the world.</p>
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_SPELLCASTING" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ZEALOTS_EYE" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_CONSECRATED_STRIKES" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_DIVINE_JUDGEMENT" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ANOINTED_INQUISITOR" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_SPELLCASTING" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ZEALOTS_EYE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_CONSECRATED_STRIKES" level="9" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_DIVINE_JUDGEMENT" level="13" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ANOINTED_INQUISITOR" level="17" />
+        </rules>
+    </element>
+        <element name="Spellcasting" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_SPELLCASTING">
+            <description>
+                <p>Starting at 3rd level your faith grants you the ability to cast spells. See chapter 10 of the Player’s Handbook for the rules of spellcasting, and chapter 11 for the Paladin spell list.</p>
+                <h5 class="caption">JUSTICAR SPELLCASTING</h5>
+                <table class="class-features">
+                    <thead>
+                        <tr><td class="col-10">Rogue Level</td><td class="col-10">Spells Known</td><td>1st</td><td>2nd</td><td>3rd</td><td>4th</td></tr>
+                    </thead>
+                    <tr><td> 3rd</td><td>3</td><td>2</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td> 4th</td><td>4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td> 5th</td><td>4</td><td>3</td><td>─</td><td>—</td><td>—</td></tr>
+                    <tr><td> 6th</td><td>4</td><td>3</td><td>─</td><td>—</td><td>—</td></tr>
+                    <tr><td> 7th</td><td>5</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+                    <tr><td> 8th</td><td>6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+                    <tr><td> 9th</td><td>6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+                    <tr><td>10th</td><td>7</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+                    <tr><td>11th</td><td>8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+                    <tr><td>12th</td><td>8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+                    <tr><td>13th</td><td>9</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+                    <tr><td>14th</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+                    <tr><td>15th</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+                    <tr><td>16th</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+                    <tr><td>17th</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+                    <tr><td>18th</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+                    <tr><td>19th</td><td>12</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+                    <tr><td>20th</td><td>13</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+                </table>
+                <p class="indent"><strong><em>Spell Slots.</em></strong> The Justicar Spellcasting table shows how many spell slots you have to cast your spells of 1st-level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest. For example, if you know the spell wrathful smite and have a 1st-level and a 2nd-level spell slot available, you can cast wrathful smite using either slot.</p>
+                <p class="indent"><strong><em>Spells Known of 1st-Level and Higher.</em></strong> You know three 1st-level spells of your choice from the Paladin spell list. The Spells Known column of the Magpie Spellcasting table shows when you learn more Paladin spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 5th level in this class, you can learn one new spell of 1st or 2nd level.</p>
+                <p class="indent">Additionally, when you gain a level in this class, you can choose one of the Paladin spells you know and replace it with another spell from the Paladin spell list, which also must be of a level for which you have spell slots.</p>
+                <p class="indent"><strong><em>Spellcasting Ability.</em></strong> Charisma is your spellcasting ability for your Paladin spells, since your power comes from your belief. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a Paladin spell you cast and when making an attack roll with one.</p>
+                <p style="text-align: center"><strong>Spell save DC</strong> = 8 + your proficiency bonus + your Charisma modifier</p>
+                <p style="text-align: center"><strong>Spell attack modifier</strong> = your proficiency bonus + your Charisma modifier</p>
+            </description>
+            <spellcasting name="Justicar" ability="Charisma" prepare="false" allowReplace="true">
+                <list>Paladin</list>
+            </spellcasting>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="justicar:spellcasting:slots:1" value="2" level="3" />
+                <stat name="justicar:spellcasting:slots:1" value="1" level="4" />
+                <stat name="justicar:spellcasting:slots:1" value="1" level="7" />
+                <stat name="justicar:spellcasting:slots:2" value="2" level="7" />
+                <stat name="justicar:spellcasting:slots:2" value="1" level="10" />
+                <stat name="justicar:spellcasting:slots:3" value="2" level="13" />
+                <stat name="justicar:spellcasting:slots:3" value="1" level="16" />
+                <stat name="justicar:spellcasting:slots:4" value="1" level="19" />
+                <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="3" number="3" spellcasting="Justicar" />
+                <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" spellcasting="Justicar"/>
+                <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" spellcasting="Justicar"/>
+                <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="8" spellcasting="Justicar"/>
+                <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" spellcasting="Justicar"/>
+                <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" spellcasting="Justicar"/>
+                <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" spellcasting="Justicar"/>
+                <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="14" spellcasting="Justicar"/>
+                <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" spellcasting="Justicar"/>
+                <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" spellcasting="Justicar"/>
+                <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="20" spellcasting="Justicar"/>
+            </rules>
+        </element>
+        <element name="Zealot’s Eye" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ZEALOTS_EYE">
+            <description>
+                <p>At 3rd level you can use an action you can open your awareness to detect celestials, fiends, and undead. Until the end of your next turn, you know the location of any of those creatures within 60 ft. of you that are not hidden by divination magic. You know the creature type of any being whose presence you sense, but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated.</p>
+                <p class="indent">Once you use this ability you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet action="Action" usage="1/Short Rest">
+                <description>Until the end of your next turn, you know the location of any of celestials, fiends, or undead within 60 ft. of you that are not hidden by divination magic. You know the creature type of any being whose presence you sense, but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated.</description>
+            </sheet>
+        </element>
+        <element name="Consecrated Strikes" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_CONSECRATED_STRIKES">
+            <description>
+                <p>At 9th level, you god allows your weapon strikes undercut a creature’s resistance to your spells. When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</description>
+            </sheet>
+        </element>
+        <element name="Divine Judgement" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_DIVINE_JUDGEMENT">
+            <description>
+                <p>At 13th level you strikes are blessed by your deity that you may destroy unbelievers with greater ease. As a bonus action on your turn, you can grant yourself advantage on an attack roll against a an enemy creature.</p>
+                <p class="indent">You can use this ability a number of times equal to your Charisma modifier, and you regain all expended uses at the end of a long rest.</p>
+            </description>
+            <sheet usage="{{charisma:modifier}}/Long Rest" action="Bonus Action">
+                <description>You can grant yourself advantage on an attack roll against a an enemy creature.</description>
+            </sheet>
+        </element>
+        <element name="Anointed Inquisitor" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ANOINTED_INQUISITOR">
+            <description>
+                <p>At 17th level, your god has anointed you as their divine hand, a direct representative of their desires in the world. They grant you a boon of protection against magic that would hinder you from carrying out their will. Whenever you are forced to make a saving throw, you gain a bonus to the saving throw equal to your Charisma modifier. You must be conscious to gain this bonus.</p>
+            </description>
+            <sheet>
+                <description>Whenever you are forced to make a saving throw, you gain a +{{charisma:modifier}} bonus to the saving throw. You must be conscious to gain this bonus.</description>
+            </sheet>
+        </element>
+
+
+    <element name="Saboteur" type="Archetype" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_ROGUE_SABOTEUR">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>In secret workshops and arcane laboratories throughout the realms, there has been a breakthrough in alchemical science. A small few have discovered a specific mixture of mundane substances that explode with massive force when ignited. Those who specialize in the creation of this substance, known as smokepowder, are called saboteurs.</p>
+            <p class="indent">Saboteurs may specialize in many things; demolition, siege warfare, or entertainment. They are a rare, solitary, type of person with an inquisitive mind, and a natural aptitude for alchemy. Because of their rare talents, they are either seen as great assets on the battlefield, or terrible foes.</p>
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_BONUS_PROFICIENCIES" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_ADVANCED_ALCHEMY" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_ARCANE_FUSE" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_MASTER_SABOTEUR" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_BONUS_PROFICIENCIES" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_ADVANCED_ALCHEMY" level="9" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_ARCANE_FUSE" level="13" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_MASTER_SABOTEUR" level="17" />
+        </rules>
+    </element>
+    <element name="Bonus Proficiencies" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_BONUS_PROFICIENCIES">
+        <description>
+            <p>As a Saboteur you have an in-depth knowledge of alchemical powders and concoctions, and how they interact when when mixed together. At 3rd level you gain proficiency with alchemist’s supplies and can add double your proficiency bonus to any check that uses them.</p>
+        </description>
+        <sheet>
+            <description>You can add double your proficiency bonus to any check that uses your alchemist’s supplies.</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+        </rules>
+    </element>
+    <element name="Explosives" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES">
+        <description>
+            <p>At 3rd level you dedicate yourself to the extremely dangerous study of creating explosive substances.</p>
+            <p class="indent"><strong><em>Smokepowder.</em></strong> At the end of each long rest, as long as you have access to your alchemist’s supplies, you create a number of pounds of smokepowder equal to the amount indicated in the Explosives table below. You then use your smokepowder to prepare explosives for the day, choosing from the list below. Any smokepowder not used to prepare an explosive becomes inert and unusable. For example, at level three you create 2 pounds of smokepowder at the end of a long rest, and use it to prepare one hand bomb.</p>
+            <p class="indent"><strong><em>Explosives.</em></strong> The Explosives table shows how many pounds of smokepowder you have to prepare explosives at the end of each long rest. To prepare one of the explosives you use the number of pounds of smokepowder that are indicated in the explosive’s description. You can prepare any amount or combination of explosives as long as you meet the level prerequisite and have enough smokepowder. Both are indicated in the description for each explosive. All explosives are detailed at the end of this subclass description.</p>
+            <p class="indent"><strong><em>Sneak Attack.</em></strong> Certain explosives can trigger your sneak attack bonus as long as they only effect one enemy creature and all other conditions for sneak attack are met.</p>
+            <p class="indent"><strong><em>Explosive Save DC.</em></strong> The creation of explosives is a delicate art that requires extensive alchemical knowledge. When calculating the spell save DC for explosives you use your Intelligence modifier.</p>
+            <p style="text-align: center;"><strong>Explosive save DC</strong> = 8 + your proficiency bonus + your Intelligence modifier</p>
+            <h5 class="caption">EXPLOSIVES</h5>
+            <table>
+                <thead>
+                    <tr><td>Rogue Level</td><td>Smokepowder lbs.</td></tr>
+                </thead>
+                <tr><td>3rd</td><td>2</td></tr>
+                <tr><td>4th</td><td>4</td></tr>
+                <tr><td>5th</td><td>6</td></tr>
+                <tr><td>6th</td><td>8</td></tr>
+                <tr><td>7th</td><td>10</td></tr>
+                <tr><td>8th</td><td>12</td></tr>
+                <tr><td>9th</td><td>14</td></tr>
+                <tr><td>10th</td><td>16</td></tr>
+                <tr><td>11th</td><td>18</td></tr>
+                <tr><td>12th</td><td>20</td></tr>
+                <tr><td>13th</td><td>22</td></tr>
+                <tr><td>14th</td><td>24</td></tr>
+                <tr><td>15th</td><td>26</td></tr>
+                <tr><td>16th</td><td>28</td></tr>
+                <tr><td>17th</td><td>30</td></tr>
+                <tr><td>18th</td><td>32</td></tr>
+                <tr><td>19th</td><td>34</td></tr>
+                <tr><td>20th</td><td>36</td></tr>
+            </table>
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL3" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL7" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL13" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL19" />
+        </description>
+        <sheet>
+            <description>At the end of each long rest, as long as you have access to your alchemist’s supplies, you create {{smokepowder:weight}} pounds of smokepowder and you can create a number of explosives based on the amount of powder you have. Your explosive save DC is {{explosive:save-dc}}.</description>
+        </sheet>
+        <rules>
+            <stat name="smokepowder:weight:base" value="level:rogue" />
+            <stat name="smokepowder:weight:base" value="level:rogue" />
+            <stat name="smokepowder:weight" value="smokepowder:weight:base" />
+            <stat name="smokepowder:weight" value="-4" />
+            <stat name="explosive:save-dc" value="8" />
+            <stat name="explosive:save-dc" value="proficiency" />
+            <stat name="explosive:save-dc" value="intelligence:modifier" />
+            <grant type="Architect Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL3" level="3"/>
+            <grant type="Architect Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL7" level="7"/>
+            <grant type="Architect Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL13" level="13"/>
+            <grant type="Architect Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL19" level="19"/>
+        </rules>
+    </element>
+    <element name="Advanced Alchemy" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_ADVANCED_ALCHEMY">
+        <description>
+            <p>At 9th level, your mastery of alchemical explosives allows you to alter your explosives in the following ways:</p>
+            <p class="indent"><strong><em>Appearance.</em></strong> You may alter the outward appearance of your explosives. When unlit, a creature must succeed on a successful Intelligence (Investigation) against your Explosive save DC to recognize them as explosives.</p>
+            <p class="indent"><strong><em>Damage Type.</em></strong> You may change the damage type of any explosive you craft to bludgeoning, piercing, fire, thunder, or lightning. This choice must be made when you craft your explosives at the end of a long rest.</p>
+        </description>
+        <sheet>
+            <description>You may alter the outward appearance of your explosives. When unlit, a creature must succeed on a successful Intelligence (Investigation) against your Explosive save DC to recognize them as explosives. You may also change the damage type of any explosive you craft to bludgeoning, piercing, fire, thunder, or lightning. This choice must be made when you craft your explosives at the end of a long rest.</description>
+        </sheet>
+    </element>
+    <element name="Arcane Fuse" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_ARCANE_FUSE">
+        <description>
+            <p>When you reach 13th level, you can set your explosives to detonate remotely. As an action, you can place your explosive on the ground, and as long as it does not move, you can set it to detonate when one of the following conditions are met:</p>
+            <p class="indent"><strong><em>Arcane Detonation.</em></strong> You create a rudimentary arcane remote to trigger the explosive from range. You can trigger the explosive as an action as long as you are within 100 ft.</p>
+            <p class="indent"><strong><em>Arcane Trigger.</em></strong> You set your explosive to detonate when an enemy creature comes within range of 10 ft. or lower.</p>
+        </description>
+        <sheet action="Action">
+            <description>You can place your explosive on the ground, and as long as it does not move, you can set it to detonate when one of the following conditions are met: You create a rudimentary arcane remote to trigger the explosive from range. You can trigger the explosive as an action as long as you are within 100 ft. Or, you set your explosive to detonate when an enemy creature comes within range of 10 ft. or lower.</description>
+        </sheet>
+    </element>
+    <element name="Master Saboteur" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_MASTER_SABOTEUR">
+        <description>
+            <p>At 17th level, if you begin combat with no explosives remaining, you can quickly create one explosive of your choice that requires 5 lbs or less of smokepowder.</p>
+        </description>
+        <sheet>
+            <description>If you begin combat with no explosives remaining, you can quickly create one explosive of your choice that requires 5 lbs or less of smokepowder.</description>
+        </sheet>
+    </element>
+
+  <!-- Explosives -->
+    <element name="Explosives, 3rd Level" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL3">
+        <description>
+            <h5>Hand Bomb</h5>
+            <p class="flavor">Prerequisites: 2 lbs of smokepowder</p>
+            <p>As an action you can ignite the explosive and throw it up to 60 ft. at an enemy creature. They must make a Dexterity saving throw. On a failed save they take 2d10 fire damage, and half as much on a success.</p>
+            <p class="indent">At 7th, 13th, and 19th level the damage increases by 1d10, and requires an additional pound of smokepowder to create.</p>
+            <h5>Demolition Bomb</h5>
+            <p class="flavor">Prerequisites: 2 lbs of smokepowder</p>
+            <p>As an action you can ignite and throw the explosive. This bomb has the same effect as casting earth tremor. It does maximum damage to structures.</p>
+            <h5>Grease Bomb</h5>
+            <p class="flavor">Prerequisites: 2 lbs of smokepowder</p>
+            <p>As an action you can ignite and throw the explosive. This bomb has the same effect as casting grease.</p>
+            <h5>Smoke Bomb</h5>
+            <p class="flavor">Prerequisites: 2 lbs of smokepowder</p>
+            <p>As an action you can ignite and throw the explosive. This bomb has the same effect as casting fog cloud.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Explosvies, 7th Level" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL7">
+        <description>
+            <h5>Flare</h5>
+            <p class="flavor">Prerequisites: 3 lbs of smokepowder, 7th level</p>
+            <p>As an action you can ignite and throw the explosive. This explosive has the same effect as casting pyrotechnics.</p>
+            <h5>Sensory Bomb</h5>
+            <p class="flavor">Prerequisites: 3 lbs of smokepowder, 7th level</p>
+            <p>As an action you can ignite and throw the explosive. This bomb has the same effect as casting blindness/deafness.</p>
+            <h5>Sticky Bomb</h5>
+            <p class="flavor">Prerequisites: 3 lbs of smokepowder, 7th level</p>
+            <p>As an action you can ignite and throw the explosive. This bomb has the same effect as casting web.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Explosvies, 13th Level" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL13">
+        <description>
+            <h5>Demolition Charge</h5>
+            <p class="flavor">Prerequisites: 5 lbs of smokepowder, 13th level</p>
+            <p>As an action you can ignite and throw the explosive. This bomb has the same effect as casting erupting earth. It does maximum damage to structures</p>
+            <h5>Incendiary Charge</h5>
+            <p class="flavor">Prerequisites: 5 lbs of smokepowder, 13th level</p>
+            <p>As an action you can ignite and throw the explosive. This charge has the same effect as casting fireball.</p>
+            <h5>Noxious Charge</h5>
+            <p class="flavor">Prerequisites: 5 lbs of smokepowder, 13th level</p>
+            <p>As an action you can ignite and throw the explosive. This charge has the same effect as casting stinking cloud.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+    <element name="Explosvies, 19th Level" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_SABOTEUR_EXPLOSIVES_LEVEL19">
+        <description>
+            <h5>Acidic Charge</h5>
+            <p class="flavor">Prerequisites: 6 lbs of smokepowder, 19th level</p>
+            <p>As an action you can ignite and throw the explosive. This charge has the same effect as casting vitriolic sphere.</p>
+            <h5>Arcane Charge</h5>
+            <p class="flavor">Prerequisites: 6 lbs of smokepowder, 19th level</p>
+            <p>As an action you can ignite and throw the explosive. This charge has the same effect casting banishment.</p>
+            <h5>Eldritch Charge</h5>
+            <p class="flavor">Prerequisites: 6 lbs of smokepowder, 19th level</p>
+            <p>As an action you can ignite and throw the explosive. This charge has the same effect as casting sickening radiance.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+    </element>
+</elements>
