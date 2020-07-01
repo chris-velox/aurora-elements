@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Curse-Bearer Patron</name>
+        <update version="0.0.1">
+            <file name="warlock-curse-bearer.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/warlock-curse-bearer.xml" />
+        </update>
+    </info>
+    
+    <element name="The Curse-Bearer" type="Source" source="Core" id="ID_KS_CBOP_SOURCE_THE_CURSE_BEARER">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">CBOP</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/2H-PkZax</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="KS" url="https://www.reddit.com/user/Ken_Silverwood/">u/Ken_Silverwood</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200118</set>
+        </setters>
+    </element>
+
+    <element name="The Curse-Bearer" type="Archetype" source="The Curse-Bearer" id="ID_KS_CBOP_ARCHETYPE_WARLOCK_CURSE_BEARER">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>You have made a pact with a mysterious godly spirit which has been cursed, but can still retain a little bit of its power to be granted to their devoted followers— It can be manifested as an cursed fiend trapped in an evil sword, or sealed evil god in his prison plane, or Good Allignment God that been casted away after betrayed by other god. Example of famous patron from Curse Bearer could be Tharizdun or Vecna. Any fiend that been sealed, or any betrayer god that seek revenge is a good example. In exchange for your devotion, your patron grant you power to deliver deadly curse onto your enemy. This patron also grant protection to his devout followers to ensure that their followers can finish their task.</p>
+            <p class="indent">The power granted by your patron didn't come without price. In exchange for that power, the follower of Curse-Bearer patron must obey his patron order, most of the patron have goals to free themself from the curse they bear. Some of them might seek revenge to the one who curse/imprison them at the first place.</p>
+            <div element="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_EXPANDED_SPELL_LIST" />
+            <div element="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_CURSE_BRINGER" />
+            <div element="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_INHERENT_SCOURGE" />
+            <div element="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_CURSED_BEYOND_GRAVE" />
+            <div element="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_BALEFUL_ANATHEMA" />
+            <div element="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_MASTER_OF_DAMNATION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_CURSE_BRINGER" level="1" />
+            <grant type="Archetype Feature" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_INHERENT_SCOURGE" level="1" />
+            <grant type="Archetype Feature" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_CURSED_BEYOND_GRAVE" level="6" />
+            <grant type="Archetype Feature" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_BALEFUL_ANATHEMA" level="10" />
+            <grant type="Archetype Feature" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_MASTER_OF_DAMNATION" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="The Curse-Bearer" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Curse-Bearer lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">CURSE-BEARER EXPANDED SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>dissonant whisper, sleep</em></td></tr>
+                    <tr><td>2nd</td><td><em>spiritual weapon, phantasmal force</em></td></tr>
+                    <tr><td>3rd</td><td><em>slow, blink</em></td></tr>
+                    <tr><td>4th</td><td><em>confusion, phantasmal killer</em></td></tr>
+                    <tr><td>5th</td><td><em>dispel evil and good, dominate person</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_DISSONANT_WHISPER</extend>
+                <extend>ID_PHB_SPELL_SLEEP</extend>
+                <extend>ID_PHB_SPELL_SPIRITUAL_WEAPON</extend>
+                <extend>ID_PHB_SPELL_PHANTASMAL_FORCE</extend>
+                <extend>ID_PHB_SPELL_SLOW</extend>
+                <extend>ID_PHB_SPELL_BLINK</extend>
+                <extend>ID_PHB_SPELL_CONFUSION</extend>
+                <extend>ID_PHB_SPELL_PHANTASMAL_KILLER</extend>
+                <extend>ID_PHB_SPELL_DISPEL_EVIL_AND_GOOD</extend>
+                <extend>ID_PHB_SPELL_DOMINATE_PERSON</extend>
+            </spellcasting>
+        </element>
+        <element name="Curse-Bringer" type="Archetype Feature" source="The Curse-Bearer" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_CURSE_BRINGER">
+            <description>
+                <p>Starting at 1st level, you gain the ability to place a baleful curse on someone. As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. The curse ends early if the target dies, you die, or you are incapacitated. Until the curse ends, you gain the following benefits:</p>
+                <ul>
+                    <li>Your attacks and spells deals an extra 1d4 necrotic damage to the cursed target.</li>
+                    <li>Any attack roll you make against the cursed target is a critical hit on a roll of 19 or 20 on the d20.</li>
+                    <li>The cursed target can't benefit from being invisible.</li>
+                </ul>
+                <p class="indent">The necrotic damage dice increase into 1d6 at 5th level, 1d8 at 9th level, 1d10 at 13th level, and 1d12 at 17th level. You can't use this feature again until you finish a short or long rest. </p>
+            </description>
+            <sheet action="Bonus Action" usage="1/Short Rest">
+                <description>Choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. The curse ends early if the target dies, you die, or you are incapacitated. Until the curse ends, you gain the following benefits: Your attacks and spells deals an extra 1d{{curse-bringer:die-type}} necrotic damage to the cursed target. Any attack roll you make against the cursed target is a critical hit on a roll of 19 or 20 on the d20. The cursed target can't benefit from being invisible.</description>
+            </sheet>
+            <rules>
+                <stat name="curse-bringer:die-type" value="4" bonus="base" level="1" />
+                <stat name="curse-bringer:die-type" value="6" bonus="base" level="5" />
+                <stat name="curse-bringer:die-type" value="8" bonus="base" level="9" />
+                <stat name="curse-bringer:die-type" value="10" bonus="base" level="13" />
+                <stat name="curse-bringer:die-type" value="12" bonus="base" level="7" />
+            </rules>
+        </element>
+        <element name="Inherent Scourge" type="Archetype Feature" source="The Curse-Bearer" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_INHERENT_SCOURGE">
+            <description>
+                <p>Your patron grants you an innate power to inflict a curse to your enemies. At 1st level, you learn <em>hex</em> spell. At 5th level, you learn <em>bestow curse</em> spell. Spells learned from this feature count as Warlock spells for you but don't count against the number of Warlock spells you know.</p>
+                <p class="indent">Any hostile creature under the effect of your Curse-Bringer feature, or under the effect of your spells with duration more than instant, will be considered as your Cursed-Target for the purpose of activating your other class feature.</p>
+            </description>
+            <sheet>
+                <description>Any hostile creature under the effect of your Curse-Bringer feature, or under the effect of your spells with duration more than instant, will be considered as your Cursed-Target for the purpose of activating your other class feature.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_HEX" spellcasting="Warlock" known="true" level="1" />
+                <grant type="Spell" id="ID_PHB_SPELL_BESTOW_CURSE" spellcasting="Warlock" known="true" level="5" />
+            </rules>
+        </element>
+        <element name="Cursed beyond Grave" type="Archetype Feature" source="The Curse-Bearer" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_CURSED_BEYOND_GRAVE">
+            <description>
+                <p>Your curse power lingers beyond even the mortal realm. At 6th level, you don't need to concentrate when casting <em>hex</em> spell. Instead the spell will linger until the duration is over, or being removed by <em>remove curse</em> spell or similar feature. Additionally, you can cast Speak with dead spell to your Cursed-Target within 10 minutes after it dies without expending spell slot, and the target is compelled to give you a truthful answer.</p>
+            </description>
+            <sheet>
+                <description>You don't need to concentrate when casting Hex spell. Instead the spell will linger until the duration is over, or being removed by Remove Curse spell or similar feature. You can cast <em>speak with dead</em> spell to your Cursed-Target within 10 minutes after it dies without expending spell slot, and the target is compelled to give you a truthful answer.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" />
+            </rules>
+        </element>
+        <element name="Baleful Anathema" type="Archetype Feature" source="The Curse-Bearer" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_BALEFUL_ANATHEMA">
+            <description>
+                <p>Starting at 10th level, your curse was strong enough to enfeeble your enemies magical power against you. You gain a bonus saving throw against your cursed target's spells or other magical effects equal to your Charisma modifier.</p>
+            </description>
+            <sheet>
+                <description>You gain a +{{charisma:modifier}} bonus saving throw against your cursed target's spells or other magical effects.</description>
+            </sheet>
+        </element>
+        <element name="Master of Damnation" type="Archetype Feature" source="The Curse-Bearer" id="ID_KS_CBOP_ARCHETYPE_FEATURE_CURSE_BEARER_MASTER_OF_DAMNATION">
+            <description>
+                <p>You gain mastery over the control of your curse. Starting at 14th level, you can double the range and duration of your Curse-Bringer feature. If your Cursed-Target dies, you regain the use of your Curse-Bringer feature. Additionally, you ignore any necrotic damage resistance from your Cursed-Target, and you treat their necrotic damage immunity as a resistance instead.</p>
+            </description>
+            <sheet>
+                <description>You can double the range and duration of your Curse-Bringer feature. If your Cursed-Target dies, you regain the use of your Curse-Bringer feature. Additionally, you ignore any necrotic damage resistance from your Cursed-Target, and you treat their necrotic damage immunity as a resistance instead.</description>
+            </sheet>
+        </element>
+
+    <element name="Potent Malediction" type="Class Feature" source="The Curse-Bearer" id="ID_KS_CBOP_CLASS_FEATURE_ELDRITCH_INVOCATION_POTENT_MALEDICTION">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Curse-Bearer Patron</prerequisite>
+        <requirements>ID_KS_CBOP_ARCHETYPE_WARLOCK_CURSE_BEARER</requirements>
+        <description>
+            <p>When you roll a 1 or 2 on a damage die for <em>Curse-Bringer</em>, <em>hex</em>, or <em>bestow curse</em>, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2.</p>
+        </description>
+        <sheet display="false">
+            <description>When you roll a 1 or 2 on a damage die for Curse-Bringer, hex, or bestow curse, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2.</description>
+        </sheet>
+    </element>
+    <element name="Sanguine Curse" type="Class Feature" source="The Curse-Bearer" id="ID_KS_CBOP_CLASS_FEATURE_ELDRITCH_INVOCATION_SANGUINE_CURSE">
+        <supports>Eldritch Invocation</supports>
+        <prerequisite>Curse-Bearer Patron, Vampiric-Touch Spell</prerequisite>
+        <requirements>ID_KS_CBOP_ARCHETYPE_WARLOCK_CURSE_BEARER,ID_PHB_SPELL_VAMPIRIC_TOUCH</requirements>
+        <description>
+            <p>When attacking a Cursed-Target with your vampiric touch spell, you may add your charisma modifier for the damage dealt. You also count any of your bonus damage from <em>Curse-Bringer</em> feature, <em>hex</em>, or <em>bestow curse</em> for the amount of health regained from the attack. </p>
+        </description>
+        <sheet display="false">
+            <description>When attacking a Cursed-Target with your vampiric touch spell, you may add {{charisma:modifier}} to the damage dealt. You also count any of your bonus damage from Curse-Bringer feature, hex, and bestow curse for the amount of health regained from the attack.</description>
+        </sheet>
+    </element>
+    
+</elements>
