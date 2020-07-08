@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Swordmage Class v4.2</name>
-        <update version="0.0.5">
+        <name>Swordmage Class v4.3</name>
+        <update version="0.0.6">
             <file name="class-swordmage.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-swordmage.xml" />
         </update>
     </info>
@@ -269,16 +269,16 @@
             <element name="Aegis of Assault" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_AEGIS_OF_ASSAULT">
                 <compendium display="false" />
                 <description>
-                    <p>When you activate this Aegis, you can teleport up to 15 feet to an unoccupied space that you can see. On later turns while this Aegis is active, you can use your bonus action to teleport the same distance. After teleporting with this Aegis, the first melee weapon attack you make with your Arcane Weapon before the end of the turn deals an additional 1d4 force damage. At higher levels of this class, the additional damage and teleportation distance increase to 1d6 and 30 feet at 6th level, 1d8 and 45 feet at 11th level, and 1d10 and 60 feet at 17th level.</p>
+                    <p>When you activate this Aegis, you can teleport up to 15 feet to an unoccupied space that you can see. On later turns while this Aegis is active, you can use your bonus action to teleport the same distance. After teleporting with this Aegis, the first melee weapon attack you make with your Arcane Weapon before the end of the turn deals an additional 1d4 force damage. At higher levels of this class, the additional damage and teleportation distance increase to 1d6 and 20 feet at 6th level, 1d8 and 25 feet at 11th level, and 1d10 and 30 feet at 17th level.</p>
                 </description>
                 <sheet usage="Aegis">
                     <description>When you activate this Aegis, you can teleport up to {{aegis-of-assault:range}} feet to an unoccupied space that you can see. After teleporting, the first melee weapon attack you make with your Arcane Weapon before the end of the turn deals an additional 1d{{aegis-of-assault:damage}} force damage.</description>
                 </sheet>
                 <rules>
                     <stat name="aegis-of-assault:range" value="15" level="2" />
-                    <stat name="aegis-of-assault:range" value="15" level="6" />
-                    <stat name="aegis-of-assault:range" value="15" level="10" />
-                    <stat name="aegis-of-assault:range" value="15" level="17" />
+                    <stat name="aegis-of-assault:range" value="5" level="6" />
+                    <stat name="aegis-of-assault:range" value="5" level="10" />
+                    <stat name="aegis-of-assault:range" value="5" level="17" />
                     <stat name="aegis-of-assault:damage" value="4" bonus="base" level="2" />
                     <stat name="aegis-of-assault:damage" value="6" bonus="base" level="6" />
                     <stat name="aegis-of-assault:damage" value="8" bonus="base" level="10" />
@@ -1090,11 +1090,11 @@
             <element name="Aegis of Protection" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_AEGIS_OF_PROTECTION">
                 <compendium display="false" />
                 <description>
-                    <p>When you activate this Aegis, you mark another creature within 30 feet of you. While this Aegis is active, if you see a creature within 30 feet of you atttack your marked ally with a melee attack, you can teleport to an unoccupied space within 5 feet of the attacker. You can then make one melee weapon attack with your Arcane Weapon against the attacker.</p>
+                    <p>When you activate this Aegis, you mark another creature within 30 feet of you. While this Aegis is active, if you see a creature within 30 feet of you atttack your marked ally with a melee attack, you can use your reaction teleport to an unoccupied space within 5 feet of the attacker. You can then make one melee weapon attack with your Arcane Weapon against the attacker.</p>
                     <p class="indent">On later turns, you can use your bonus action to switch your mark to another creature within 30 feet of you.</p>
                 </description>
-                <sheet usage="Aegis" action="Bonus Action">
-                    <description>You mark another creature within 30 feet of you. While this Aegis is active, if you see a creature within 30 feet of you atttack your marked ally with a melee attack, you can teleport to an unoccupied space within 5 feet of the attacker. You can then make one melee weapon attack with your Arcane Weapon against the attacker.
+                <sheet usage="Aegis" action="Reaction">
+                    <description>You mark another creature within 30 feet of you. While this Aegis is active, if you see a creature within 30 feet of you atttack your marked ally with a melee attack, you can use your reaction teleport to an unoccupied space within 5 feet of the attacker. You can then make one melee weapon attack with your Arcane Weapon against the attacker.
                     On later turns, you can use your bonus action to switch your mark to another creature within 30 feet of you.</description>
                 </sheet>
             </element>
@@ -1206,15 +1206,18 @@
             <element name="Aegis of Negation" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_AEGIS_OF_NEGATION">
                 <compendium display="false" />
                 <description>
-                    <p>When you activate this Aegis, you mark a creature within 30 feet of you to ward yourself from their magic. While this Aegis is active, you have advantage on saving throws against spells and other magical spells from the marked target.</p>
-                    <p class="indent">When you see your marked target take damage and make a Constitution saving throw to maintain concentration on a spell within 30 feet of you, you can use your reaction to impose disadvantage on the saving throw.</p>
-                    <p class="indent">On later turns, you can use your bonus action to switch your marked target to another creature within 30 feet of you.</p>
+                    <p>When you activate this Aegis, you shield yourself from harmful magic. When you make a saving throw against a spell or other magical effect, you can use your reaction to give yourself advantage on the saving throw.</p>
+                    <p class="indent">If you succeed on the saving throw, you siphon off the incoming magic to empower your blade. Your next melee weapon attack with your Arcane Weapon before the end of your next turn deals an additional 1d4 force damage. At higher levels of this class, the extra damage increases to 1d6 at 6th level, 1d8 at 11th level, and 1d10 at 17th level.</p>
                 </description>
-                <sheet usage="Aegis">
-                    <description>When you activate this Aegis, you mark a creature within 30 feet of you. While this Aegis is active, you have advantage on saving throws against spells and other magical spells from the marked target.
-                    When you see your marked target take damage and make a Constitution saving throw to maintain concentration on a spell within 30 feet of you, you can use your reaction to impose disadvantage on the saving throw.
-                    On later turns, you can use your bonus action to switch your marked target to another creature within 30 feet of you.</description>
+                <sheet usage="Aegis" action="Reaction">
+                    <description>When you activate this Aegis, you shield yourself from harmful magic. When you make a saving throw against a spell or other magical effect, you can use your reaction to give yourself advantage on the saving throw.If you succeed on the saving throw, you siphon off the incoming magic to empower your blade. Your next melee weapon attack with your Arcane Weapon before the end of your next turn deals an additional 1d{{aegis-of-negation:damage}} force damage.</description>
                 </sheet>
+                <rules>
+                    <stat name="aegis-of-negation:damage" value="4" bonus="base" level="2" />
+                    <stat name="aegis-of-negation:damage" value="6" bonus="base" level="6" />
+                    <stat name="aegis-of-negation:damage" value="8" bonus="base" level="10" />
+                    <stat name="aegis-of-negation:damage" value="10" bonus="base" level="17" />
+                </rules>
             </element>
         <element name="Archetype Spells" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_INQUISITOR_ARCHETYPE_SPELLS">
             <description>
@@ -1470,6 +1473,18 @@
         <supports>Swordmage</supports>
     </append>
     <append id="ID_WOTC_UA20191104_CLASS_FEATURE_FIGHTING_STYLE_SUPERIOR_TECHNIQUE">
+        <supports>Swordmage</supports>
+    </append>
+    <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_TWOWEAPON_FIGHTING">
+        <supports>Swordmage</supports>
+    </append>
+    <append id="ID_RSQUARED_BLACKGUARD_CLASS_FEATURE_BLACKGUARD_FIGHTINGSTYLE_REPRISAL">
+        <supports>Swordmage</supports>
+    </append>
+    <append id="ID_DEVIKYN_GM_BINDER_CLASS_FEATURE_FIGHTING_STYLE_TWO_WEAPON_FIGHTING">
+        <supports>Swordmage</supports>
+    </append>
+    <append id="ID_FUBR_TWC_CLASS_FEATURE_FIGHTINGSTYLE_FLEXIBILITY">
         <supports>Swordmage</supports>
     </append>
 
