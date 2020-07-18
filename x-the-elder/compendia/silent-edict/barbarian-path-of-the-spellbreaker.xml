@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Primal Path of the Spellbreaker</name>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-the-spellbreaker.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/silent-edict/barbarian-path-of-the-spellbreaker.xml" />
+        </update>
+    </info>
+    
+    <element name="Path of the Spellbreaker" type="Archetype" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_PATH_OF_THE_SPELLBREAKER">
+        <supports>Primal Path</supports>
+        <description>
+            <p></p>
+            <p class="indent"></p>
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_POTS_FLESH_OF_THE_SPELLBREAKER" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_POTS_SPELLBREAKER" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_POTS_BANE_OF_MAGES" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_POTS_VOICE_OF_THE_SPELLBREAKER" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_POTS_FLESH_OF_THE_SPELLBREAKER" level="3" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_POTS_SPELLBREAKER" level="6" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_POTS_BANE_OF_MAGES" level="10" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_POTS_VOICE_OF_THE_SPELLBREAKER" level="14" />
+        </rules>
+    </element>
+		<element name="Flesh of the Spellbreaker" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_POTS_FLESH_OF_THE_SPELLBREAKER">
+			<description>
+				<p>Starting when you choose this path at 3rd level, you can shield yourself from magic when you rage. If you do so, for the duration of your rage you have resistance to all magical damage. You can use this feature a number of times equal to your Constituition modifier. When you finish a long rest, you regain all expended uses.</p>
+			</description>
+			<sheet usage="{{constitution:modifier}}/Long Rest">
+				<description>For the duration of your rage you have resistance to all magical damage.</description>
+			</sheet>
+		</element>
+		<element name="Spellbreaker" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_POTS_SPELLBREAKER">
+			<description>
+				<p>At 6th level, you have the ability to dispel magic with your attacks.</p>
+				<p class="indent">In place of an attack or as an action you can dispel a magical effect as per the <em>dispel magic</em> spell. Constituion is your spellcasting modifier for this ability.</p>
+				<p class="indent">You can use this feature a number of times equal to your Constituition modifier. You can use this feature only once per turn. When you finish a long rest, you regain all expended uses.</p>
+			</description>
+			<sheet usage="{{constitution:modifier}}/Long Rest">
+				<description>In place of an attack or as an action you can dispel a magical effect as per the dispel magic spell. (Constituion) You can use this feature only once per turn.</description>
+			</sheet>
+			<rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" />
+			</rules>
+		</element>
+		<element name="Bane of Mages" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_POTS_BANE_OF_MAGES">
+			<description>
+				<p>At 10th level, when a magic effects misses you or you save against it you can redirect it's energy. Any creature within 10 feet of you must make a strength saving throw equal to 8 + your proficiency bonus + your Constituion modifier. A creature takes 2d8 force damage and knocked prone on a failed save. On a successful save, the creature takes half as much damage and isn't knocked prone.</p>
+				<p class="indent">You must finish a long rest before you can use this feature again.</p>
+			</description>
+			<sheet usage="1/Long Rest">
+				<description>When a magic effects misses you or you save against it you can redirect it's energy. Any creature within 10 feet of you must make a Strength saving throw (save DC {{bane-of-mages:save-dc}}). A creature takes 2d8 force damage and knocked prone on a failed save. On a successful save, the creature takes half as much damage and isn't knocked prone.</description>
+			</sheet>
+			<rules>
+                <stat name="bane-of-mages:save-dc" value="8" />
+                <stat name="bane-of-mages:save-dc" value="proficiency" />
+                <stat name="bane-of-mages:save-dc" value="constitution:modifier" />
+			</rules>
+		</element>
+		<element name="Voice of the Spellbreaker" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_POTS_VOICE_OF_THE_SPELLBREAKER">
+			<description>
+				<p>At 14th level, your voice becomes piercing.</p>
+				<p class="indent">When a creature that you can see within 60 feet of you casts a spell or uses a magical effect you can use your reaction to pierce it's ears with your voice.</p>
+				<p class="indent">It must make a Constituion saving throw. The DC equals 8 + your proficiency bonus + your Constituion modifier. If the creature fails its saving throw the spell or magical effect fails and the creature takes psychic damage equal to two times your Constituion modifier. On a successful save the creature's spellcast is unaffected and take half damage.</p>
+			</description>
+			<sheet action="Reaction">
+				<description>When a creature that you can see within 60 feet of you casts a spell or uses a magical effect you can force it to make a Constituion saving throw (save DC {{bane-of-mages:save-dc}}). If the creature fails its saving throw the spell or magical effect fails and the creature takes {{spellbreaker-voice:damage}} psychic damage. On a successful save the creature's spellcast is unaffected and take half damage.</description>
+			</sheet>
+			<rules>
+                <stat name="spellbreaker-voice:damage" value="constitution:modifier" />
+                <stat name="spellbreaker-voice:damage" value="constitution:modifier" />
+			</rules>
+		</element>
+    
+</elements>
