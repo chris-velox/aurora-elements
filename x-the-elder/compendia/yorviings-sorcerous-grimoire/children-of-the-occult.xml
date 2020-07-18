@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>Yorviing’s Sorcerous Grimoire: Children of the Occult</name>
-        <update version="0.0.1">
+        <update version="0.0.2">
             <file name="children-of-the-occult.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/yorviings-sorcerous-grimoire/children-of-the-occult.xml" />
         </update>
     </info>
@@ -244,7 +244,7 @@
                 <p class="indent">You have also learned to shoot sharp pieces of bones from your body. As a bonus action, you can spend 3 sorcery points to fire bone shards towards creatures of your choice equal to your Charisma modifier that you can see within 30 feet of you, dealing magical piercing damage equal to half your sorcerer level + your Charisma modifier. Creatures hit by these bone shards must make a Strength saving throw or be knocked prone by the bones until the beginning of their next turn.</p>
             </description>
             <sheet action="Bonus Action" usage="3 Sorcery Points">
-                <description>You can spend 3 sorcery points to fire bone shards towards {{charisma:modifier}} creatures of your choice that you can see within 30 feet of you, dealing {{piercing-bones:damage}} points magical piercing damage. Creatures hit by these bone shards must make a Strength saving throw (save DC {{spellcasting:dc}}) or be knocked prone by the bones until the beginning of their next turn.</description>
+                <description>You can spend 3 sorcery points to fire bone shards towards {{charisma:modifier}} creatures of your choice that you can see within 30 feet of you, dealing {{piercing-bones:damage}} points magical piercing damage. Creatures hit by these bone shards must make a Strength saving throw (save DC {{spellcasting:dc:cha}}) or be knocked prone by the bones until the beginning of their next turn.</description>
             </sheet>
             <rules>
                 <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_SLASHING" />
@@ -258,7 +258,7 @@
                 <p>Starting at 14th level, when you are hit with a melee attack, you can use your reaction to hit a vital spot on the attacker. The attacker must make a Constitution saving throw against your sorcerer spell save DC. On a failed save, at the start of each of the attackers turns, the target loses hit points equal to half your sorcerer level due to blood loss. You can only effect one creature at a time, and this effect lasts a number of rounds equal to half your Charisma modifier rounded down or until the target hits 0 hit points.</p>
             </description>
             <sheet action="Reaction">
-                <description>When you are hit with a melee attack, you can use your reaction to hit a vital spot on the attacker. The attacker must make a Constitution saving throw (save DC {{spellcasting:dc}}). On a failed save, at the start of each of the attackers turns, the target loses {{level:sorcerer:half}} hit points due to blood loss. You can only effect one creature at a time, and this effect lasts a number of rounds equal to half your Charisma modifier rounded down or until the target hits 0 hit points.</description>
+                <description>When you are hit with a melee attack, you can use your reaction to hit a vital spot on the attacker. The attacker must make a Constitution saving throw (save DC {{spellcasting:dc:cha}}). On a failed save, at the start of each of the attackers turns, the target loses {{level:sorcerer:half}} hit points due to blood loss. You can only effect one creature at a time, and this effect lasts a number of rounds equal to half your Charisma modifier rounded down or until the target hits 0 hit points.</description>
             </sheet>
         </element>
         <element name="Osseous Form" type="Archetype Feature" source="Children of the Occult" id="ID_YORVIING_COTO_ARCHETYPE_FEATURE_BONE_MAGIC_OSSEOUS_FORM">
@@ -393,7 +393,7 @@
                 <p class="indent">Additionally, you can channel the wailing moans of fright towards your enemies. As an action, you can release a mournful wail, provided that you are not in sunlight. This wail has no effect on constructs and undead. All other creatures within 20 feet of you that can hear you must make a Constitution saving throw against your spell save DC. On a failure, a creature is stunned until the beginning of its next turn and takes psychic damage equal to your sorcerer level, while creatures who succeed on the saving throw are frightened until the beginning of their next turn and take psychic damage equal to half your sorcerer level. Once you have used this feature, you cannot do so again until you finish a long rest.</p>
             </description>
             <sheet action="Action" usage="1/Long Rest">
-                <description>You have immunity to the frightened and petrified conditions. As an action, you can release a mournful wail, provided that you are not in sunlight. This wail has no effect on constructs and undead. All other creatures within 20 feet of you that can hear you must make a Constitution saving throw (save DC {{spellcasting:dc}}). On a failure, a creature is stunned until the beginning of its next turn and takes {{level:sorcerer}} psychic damage, while creatures who succeed on the saving throw are frightened until the beginning of their next turn and take {{level:sorcerer:half}} psychic damage.</description>
+                <description>You have immunity to the frightened and petrified conditions. As an action, you can release a mournful wail, provided that you are not in sunlight. This wail has no effect on constructs and undead. All other creatures within 20 feet of you that can hear you must make a Constitution saving throw (save DC {{spellcasting:dc:cha}}). On a failure, a creature is stunned until the beginning of its next turn and takes {{level:sorcerer}} psychic damage, while creatures who succeed on the saving throw are frightened until the beginning of their next turn and take {{level:sorcerer:half}} psychic damage.</description>
             </sheet>
         </element>
         <element name="Ghostly Possession" type="Archetype Feature" source="Children of the Occult" id="ID_YORVIING_COTO_ARCHETYPE_FEATURE_ETHEREAL_SPIRIT_GHOSTLY_POSSESSION">
@@ -402,7 +402,7 @@
                 <p class="indent">Additionally, you are able to possess other creatures, taking control of their bodies. As an action, you can spend 5 sorcery points to possess a target. Choose one humanoid that you can see within 10 feet of you. This target must succeed on a Charisma saving throw against your spell save DC or become possessed by you; you then disappear, and the target is incapacitated and loses control of its body. You now control the body but this effect doesn’t deprive the target of awareness. You can’t be targeted by any attack, spell, or other effect, except ones that turn undead, and you retain your alignment, Intelligence, Wisdom, Charisma, and immunity to being charmed and frightened . You otherwise use the possessed target’s statistics, however you do not gain access to the target’s knowledge, class features, or proficiencies. This possession lasts until the target’s body drops to 0 hit points, you end this effect as a bonus action, or you are turned or forced out by an effect like the dispel evil and good spell. When the possession ends, you reappear in an unoccupied space within 5 feet of the body. The target is immune to this possession for 24 hours after succeeding on the saving throw or after the possession ends.</p>
             </description>
             <sheet action="Action" usage="5 Sorcery Points">
-                <description>You no longer require air, food, drink, or sleep. As an action, you can spend 5 sorcery points to possess a target. Choose one humanoid that you can see within 10 feet of you. This target must succeed on a Charisma saving throw (save DC {{spellcasting:dc}}) or become possessed by you.</description>
+                <description>You no longer require air, food, drink, or sleep. As an action, you can spend 5 sorcery points to possess a target. Choose one humanoid that you can see within 10 feet of you. This target must succeed on a Charisma saving throw (save DC {{spellcasting:dc:cha}}) or become possessed by you.</description>
             </sheet>
         </element>
 
