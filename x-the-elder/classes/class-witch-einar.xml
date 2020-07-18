@@ -3,7 +3,7 @@
     <info>
         <name>Witch</name>
         <description>EinarTheRed’s Witch updated by EinarTheRed</description>
-        <update version="0.0.4">
+        <update version="0.0.5">
             <file name="class-witch-einar.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-witch-einar.xml" />
         </update>
     </info>
@@ -317,6 +317,10 @@
             <rules>
                 <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
 
+                <stat name="spellcasting:ability-string" inline="true" value="Wisdom" />
+                <stat name="spellcasting:ability-modifier" value="wisdom:modifier" />
+                <stat name="spellcasting:saving-throw-dc" value="spellcasting:dc:wis" />
+
                 <stat name="witch:spellcasting:slots:1" value="2" level="1" />
                 <stat name="witch:spellcasting:slots:1" value="1" level="2" />
                 <stat name="witch:spellcasting:slots:1" value="1" level="3" />
@@ -371,6 +375,10 @@
             </spellcasting>
             <rules>
                 <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
+
+                <stat name="spellcasting:ability-string" inline="true" value="Intelligence" />
+                <stat name="spellcasting:ability-modifier" value="intelligence:modifier" />
+                <stat name="spellcasting:saving-throw-dc" value="spellcasting:dc:int" />
 
                 <stat name="witch:spellcasting:slots:1" value="2" level="1" />
                 <stat name="witch:spellcasting:slots:1" value="1" level="2" />
@@ -427,6 +435,10 @@
             <rules>
                 <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
 
+                <stat name="spellcasting:ability-string" inline="true" value="Charisma" />
+                <stat name="spellcasting:ability-modifier" value="charisma:modifier" />
+                <stat name="spellcasting:saving-throw-dc" value="spellcasting:dc:cha" />
+
                 <stat name="witch:spellcasting:slots:1" value="2" level="1" />
                 <stat name="witch:spellcasting:slots:1" value="1" level="2" />
                 <stat name="witch:spellcasting:slots:1" value="1" level="3" />
@@ -473,11 +485,11 @@
             <p class="indent">Until the beginning of your next turn, when the selected ally casts a spell, you can choose one of the effects below to occur. Once an effect occurs, this feature cannot be used again until the beginning of your next turn.</p>
             <ul>
                 <li>If the ally’s spell requires an attack roll, they may make the first attack roll at advantage.</li>
-                <li>If the ally’s spell requires a DC saving throw, the one creature targeted by the spell has the DC increased by an amount equal to half your Wisdom modifier (rounded down, minimum 1).</li>
-                <li>If the ally’s spell includes a damage roll, then they may maximize a number of dice equal to half your Wisdom modifier (rounded down, minimum 1).</li>
-                <li>If the ally’s spell has a maximum range to choose a target creature or target point, the range is increased by an additional number of feet equal to 10 times your Wisdom modifier (rounded down, minimum 1).</li>
+                <li>If the ally’s spell requires a DC saving throw, the one creature targeted by the spell has the DC increased by an amount equal to half your spellcasting ability modifier (rounded down, minimum 1).</li>
+                <li>If the ally’s spell includes a damage roll, then they may maximize a number of dice equal to half your spellcasting ability modifier (rounded down, minimum 1).</li>
+                <li>If the ally’s spell has a maximum range to choose a target creature or target point, the range is increased by an additional number of feet equal to 10 times your spellcasting ability modifier (rounded down, minimum 1).</li>
                 <li>If the ally’s spell requires concentration, you can both make a DC 15 concentration check. If you both succeed, you begin concentrating on the spell instead of the target. The spell then uses your spellcasting ability and DC instead of the ally’s. The ally can refuse to do so; if they do, then select a different effect to occur.</li>
-                <li>If the ally’s spell requires concentration, until the beginning of your next turn they have a bonus to concentration checks for that spell, equal to half your Wisdom modifier (rounded down, minimum 1).</li>
+                <li>If the ally’s spell requires concentration, until the beginning of your next turn they have a bonus to concentration checks for that spell, equal to half your spellcasting modifier (rounded down, minimum 1).</li>
             </ul>
         </description>
         <sheet action="Action">
@@ -487,14 +499,14 @@
     <element name="Quickening" type="Class Feature" source="EinarTheRed’s Witch" id="ID_EINARTHERED_WITCH_CLASS_FEATURE_WITCH_QUICKENING">
         <description>
             <p>At 1st level, you gain the ability to enter a trance known as the witch’s quickening, letting you see beyond the borders of the material world. Entering the trance is a bonus action and allows you to see into the Ethereal Plane up to 60 feet for up to one minute. You also gain insight into the emotional energy surrounding you, letting you know if and what spirits are bound within 60 feet, as well as granting you advantage to Wisdom (Insight) checks. While in your quickening, if you cast a spell that deals necrotic damage you can substitute that damage with psychic damage instead. The quickening requires concentration for the duration and may be maintained for up to a minute.</p>
-            <p class="indent">You can use this ability a number of times equal to 1 + your Wisdom modifier. When you finish a long rest, you regain all expended uses.</p>
+            <p class="indent">You can use this ability a number of times equal to 1 + your spellcasting ability modifier. When you finish a long rest, you regain all expended uses.</p>
         </description>
         <sheet usage="{{quickening:count}}/Long Rest" action="Bonus Action">
             <description>You can enter your witch’s quickening trance. You can see into the Ethereal Plane up to 60 feet for up to one minute. You also get advantage to Insight checks. During the quickening, if you cast a spell that does necrotic damage, you can substitute psychic damage. The quickening requires concentration for the duration and may be maintained for up to a minute.</description>
         </sheet>
         <rules>
             <stat name="quickening:count" value="1" />
-            <stat name="quickening:count" value="wisdom:modifier" />
+            <stat name="quickening:count" value="spellcasting:ability-modifier" />
         </rules>
     </element>
 
@@ -696,7 +708,7 @@
 
     <element name="Familiar Spirit" type="Class Feature" source="EinarTheRed’s Witch" id="ID_EINARTHERED_WITCH_CLASS_FEATURE_WITCH_FAMILIAR_SPIRIT">
         <description>
-            <p>At 18th level, when cast <em>find familiar</em> or if you already have a familiar, you can awaken spiritual energy within the animal as part of an additional ritual taking 10 minutes. Once complete, you choose one spirit from the list at the end of the class description. Its level is equal to your Wisdom modifier.</p>
+            <p>At 18th level, when cast <em>find familiar</em> or if you already have a familiar, you can awaken spiritual energy within the animal as part of an additional ritual taking 10 minutes. Once complete, you choose one spirit from the list at the end of the class description. Its level is equal to your spellcasting ability modifier.</p>
             <p class="indent">Your familiar provides you with the spirit’s passive effect as long as your familiar is within 100 feet of you. If the familiar dies, the spirit you initially chose produces its release effect if you can see any valid targets within range of the familiar when it dies.</p>
             <p class="indent">Additionally, if your familiar is the sole target of an effect that deals damage while it Bound with a spirit and within 100 feet of you can choose to take that damage instead.</p>
         </description>
@@ -704,7 +716,7 @@
             <description>You can bind a spirit to your familiar. The spirit’s level is {{familiar spirit:level}}. You gain the passive effect while your familiar is within 100 feet of you. If your familiar dies, the spirit is released and the release effect is triggered. If your familiar is the sole target of an effect that deals damage while it Bound with a spirit and within 100 feet of you can choose to take that damage instead.</description>
         </sheet>
         <rules>
-            <stat name="familiar spirit:level" value="wisdom:modifier" />
+            <stat name="familiar spirit:level" value="spellcasting:ability-modifier" />
         </rules>
     </element>
 
@@ -891,7 +903,7 @@
                 <p class="indent">You may attempt to peer into the heart of a creature once per long rest.</p>
             </description>
             <sheet usage="1/Long Rest" action="Action">
-                <description>You may force a target within 60 feet of you to make a Wisdom saving throw against your spell save DC (save DC = {{spellcasting:dc}}). If it fails, you gain insight into its emotional state and something influencing this state. The target is not aware of the intrustion. Constructs and creatures immune to charm are not affected.</description>
+                <description>You may force a target within 60 feet of you to make a Wisdom saving throw against your spell save DC (save DC = {{spellcasting:saving-throw-dc}}). If it fails, you gain insight into its emotional state and something influencing this state. The target is not aware of the intrustion. Constructs and creatures immune to charm are not affected.</description>
             </sheet>
         </element>
         <element name="Of One Heart" type="Archetype Feature" source="EinarTheRed’s Witch" id="ID_EINARTHERED_WITCH_ARCHETYPE_COC_OF_ONE_HEART">
@@ -1199,7 +1211,7 @@
                 <p>At 6th level, hostile targets that are affected by any of your spirits’ release effects must make a Constitution saving throw or be blinded for a number of rounds equal to the level of the spirit released. This ability cannot affect creatures who do not use light to see.</p>
             </description>
             <sheet>
-                <description>Creatures affected by your spirits’ release effects must make a Constitution saving throw (save DC {{spellcasting:dc}}) or be blinded by one round per level of spirit released.  This ability cannot affect creatures who do not use light to see.</description>
+                <description>Creatures affected by your spirits’ release effects must make a Constitution saving throw (save DC {{spellcasting:saving-throw-dc}}) or be blinded by one round per level of spirit released.  This ability cannot affect creatures who do not use light to see.</description>
             </sheet>
         </element>
         <element name="Spirits in the Shadows" type="Archetype Feature" source="EinarTheRed’s Witch" id="ID_EINARTHERED_WITCH_ARCHETYPE_COS_SPIRITS_IN_THE_SHADOWS">
