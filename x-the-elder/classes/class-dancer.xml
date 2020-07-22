@@ -3,7 +3,7 @@
     <info>
         <name>Dancer</name>
         <author url="https://www.dmsguild.com/product/205334/The-Dancer-5e-Class">Johnny Tek</author>
-        <update version="0.1.7">
+        <update version="0.1.8">
             <file name="class-dancer.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-dancer.xml" />
         </update>
     </info>
@@ -145,8 +145,12 @@
             <p>When you dance, you are able to attune yourself to the Flow of magic and move to the intuitive directions of its currents. You add your Wisdom modifier (minimum +1) to Charisma (Performance) checks made when you dance.</p>
         </description>
         <sheet>
-            <description>You add your Wisdom modifier (minimum +1) to Charisma (Performance) checks made when you dance.</description>
+            <description>You add +{{flow-trance:bonus}} to Performance checks made when you dance.</description>
         </sheet>
+        <rules>
+          <stat name="flow-trance:bonus" value="1" bonus="base" />
+          <stat name="flow-trance:bonus" value="wisdom:modifier" bonus="base" />
+        </rules>
     </element>
 
     <element name="Unarmored Defense" type="Class Feature" source="DM’s Guild" id="ID_DMGUILD_CLASS_FEATURE_DANCER_UNARMORED_DEFENSE">
@@ -252,8 +256,8 @@
             <p class="indent">You can expend 1 flow point to gain advantage on a Strength (Athletics) check, Dexterity (Acrobatics) check, or Charisma (Performance) check (made to dance).</p>
             <p class="indent">You regain all expended flow points at the end of a short rest or long rest.</p>
         </description>
-        <sheet>
-            <description>You have {{flow-points}} flow points. You can spend 1 flow point to move and additional distance equal to half your movement speed or gain advantage on a Strength (Athletics), Dexterity (Acrobatics) or Charisma (Performance) check.</description>
+        <sheet usage="{{flow-points}} Flow Points/Short Rest">
+            <description>You have {{flow-points}} flow points. You can spend 1 flow point to move and additional distance equal to half your movement speed or gain advantage on a Athletics, Acrobatics or Performance check.</description>
         </sheet>
         <rules>
             <stat name="flow-points" value="level:dancer" />
@@ -265,7 +269,7 @@
             <p>When you reach 3rd level, you begin exploring a style of magical dance that either suits your individual aesthetic or is passed on to you from a teacher. You choose an Eldritch Rhythm from which to gain features for your dancer class advancement.</p>
             <p class="indent">Your choice grants you features at 3rd level and again at 6th, 11th, 14th, and 20th level.</p>
         </description>
-        <sheet />
+        <sheet display="false"/>
         <rules>
             <select type="Archetype" name="Eldritch Rhythm" supports="Eldritch Rhythm" />
         </rules>
@@ -332,7 +336,7 @@
             <div element="ID_DM_GUILD_ARCHETYPE_ROTBD_EXTRA_ATTACK" />
             <div element="ID_DM_GUILD_ARCHETYPE_ROTBD_DEATH_DANCER" />
         </description>
-        <sheet>
+        <sheet display="false">
             <description></description>
         </sheet>
         <rules>
@@ -363,8 +367,8 @@
             <p>At 3rd level, you can channel the Flow to guide your weapon swings with increased ferocity. When you use the Attack action, you can use a bonus action to make a melee weapon attack. If you are wielding two weapons, you can instead use this feature to make one attack each with both of your weapons on an opportunity attack.</p>
             <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
         </description>
-        <sheet action="Bonus Action" usage="{{whirling-flurry:count}}">
-            <description></description>
+        <sheet action="Bonus Action" usage="{{whirling-flurry:count}}/Long Rest">
+            <description>When you use the Attack action, you can use a bonus action to make a melee weapon attack. If you are wielding two weapons, you can instead use this feature to make one attack each with both of your weapons on an opportunity attack.</description>
         </sheet>
         <rules>
             <stat name="whirling-flurry:count" value="1" bonus="whirling flurry"/>
@@ -376,7 +380,7 @@
         <description>
             <p>At 6th level, your connection to the Flow can guide you out of harm’s way at the last moment. You can expend 2 flow points as a reaction to gain a +4 bonus to AC against an attack made against you after the attack roll is made.</p>
         </description>
-        <sheet action="Reaction">
+        <sheet action="Reaction" usage="2 Flow">
             <description>You can expend 2 flow points as a reaction to gain a +4 bonus to AC against an attack made against you after the attack roll is made.</description>
         </sheet>
     </element>
@@ -392,11 +396,14 @@
 
     <element name="Extra Attack" type="Archetype Feature" source="DM’s Guild" id="ID_DM_GUILD_ARCHETYPE_ROTBD_EXTRA_ATTACK">
         <description>
-            <p>At 14th level, when you use the Attack action, you can make a third attack as part of the action. You can choose the same or different target for the second attack.</p>
+            <p>At 14th level, when you use the Attack action, you can make a third attack as part of the action. You can choose the same or different target for the third attack.</p>
         </description>
         <sheet>
-            <description></description>
+            <description>When you use the Attack action, you can make a third attack as part of the action.</description>
         </sheet>
+        <rules>
+            <stat name="extra attack:count" value="3" level="14" bonus="extra attack" />
+        </rules>
     </element>
 
     <element name="Death Dancer" type="Archetype Feature" source="DM’s Guild" id="ID_DM_GUILD_ARCHETYPE_ROTBD_DEATH_DANCER">
@@ -408,8 +415,7 @@
             <description>A normal hit against a creature with the attack granted by Whirling Flurry is turned into a critical hit.</description>
         </sheet>
         <rules>
-            <stat name="whirling-flurry:count" bonus="whirling flurry" />
-            <stat name="whirling-flurry:count" bonus="whirling flurry" />
+            <stat name="whirling-flurry:count" value="2" bonus="death-dancer" />
         </rules>
     </element>
 
@@ -713,6 +719,36 @@
     </append>
     <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_TWOWEAPON_FIGHTING">
         <supports>Dancer</supports>
+    </append>
+    <append id="ID_WOTC_UA_CLASS_FEATURE_FIGHTINGSTYLE_MARINER">
+      <supports>Dancer</supports>
+    </append>
+    <append id="ID_SWORDMEOW_ATAVIST_CLASS_FEATURE_ATAVIST_FIGHTING_STYLE_THROWING">
+      <supports>Dancer</supports>
+    </append>
+    <append id="ID_VDP_VARIANT_FIGHTER_CLASS_FEATURE_FIGHTING_STYLE_MANEUVERS_RANGER_PALADIN">
+      <supports>Dancer</supports>
+    </append>
+    <append id="ID_DEVIKYN_GM_BINDER_CLASS_FEATURE_FIGHTING_STYLE_SWITCH_FIGHTING">
+      <supports>Dancer</supports>
+    </append>
+    <append id="ID_DEVIKYN_GM_BINDER_CLASS_FEATURE_FIGHTING_STYLE_THROWING">
+      <supports>Dancer</supports>
+    </append>
+    <append id="ID_FUBR_TWC_CLASS_FEATURE_FIGHTINGSTYLE_FLEXIBILITY">
+      <supports>Dancer</supports>
+    </append>
+    <append id="ID_WOTC_UA20191104_CLASS_FEATURE_FIGHTING_STYLE_BLIND_FIGHTING">
+      <supports>Dancer</supports>
+    </append>
+    <append id="ID_WOTC_UA20191104_CLASS_FEATURE_FIGHTING_STYLE_INTERCEPTION">
+      <supports>Dancer</supports>
+    </append>
+    <append id="ID_WOTC_UA20191104_CLASS_FEATURE_FIGHTING_STYLE_THROWN_WEAPON_FIGHTING">
+      <supports>Dancer</supports>
+    </append>
+    <append id="ID_WOTC_UA20191104_CLASS_FEATURE_FIGHTING_STYLE_UNARMED_FIGHTING">
+      <supports>Dancer</supports>
     </append>
 
   <!-- Dancer Spell List -->
