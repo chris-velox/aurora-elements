@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Spellcleaver Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="fighter-spellcleaver.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/silent-edict/fighter-spellcleaver.xml" />
+        </update>
+    </info>
+    
+    <element name="Spellcleaver" type="Archetype" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FIGHTER_SPELLCLEAVER">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Unlike many of your Silent Edict brothers and sisters you will not use magic to destroy magic. Instead using your hatred of magic to combat it.</p>
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_NEGATIVE_ENERGY" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_INTENSIFYING_HATRED" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_DISTURBING_BLOWS" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_CYCLE_OF_HATRED" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_RECYCLED_MAGIC" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_NEGATIVE_ENERGY" level="3" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_INTENSIFYING_HATRED" level="7" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_DISTURBING_BLOWS" level="10" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_CYCLE_OF_HATRED" level="15" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_RECYCLED_MAGIC" level="18" />
+        </rules>
+    </element>
+        <element name="Negative Energy" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_NEGATIVE_ENERGY">
+            <description>
+                <p>When you choose this archetype at 3rd level, you learn to channel your intense hatred into energy.</p>
+                <p class="indent">You gain a pool of enmity equal to your fighter level x 5</p>
+                <p class="indent">As an action or by forgoing an attack when you make the attack action, a you can spend 5 x the level of the spell of these points to end a magical effect on yourself or another creature within 30 feet.</p>
+                <h5 class="caption">AURA OF ENMITY</h5>
+                <p>Alternatively as an action, or by forgoing an attack, you can spend a number of points of a maximum equal to twice your Fighter level into an aura around youself with a radius of 10 feet that lasts until your next turn. Whenever you or an ally makes a saving throw you can subtract points from this aura and add them to the roll. You can wait until after it rolls to add the points, but must decide before the DM says whether the roll succeeds or fails.</p>
+            </description>
+            <sheet>
+                <description>You have a pool of {{negative-energy:enmity-pool}} enmity. As an action, or in place of an attack, you can spend 5 x the level of a spell to end its magical effect on yourself or another creature within 30 feet.</description>
+            </sheet>
+            <rules>
+                <stat name="negative-energy:enmity-pool" value="level:fighter" />
+                <stat name="negative-energy:enmity-pool" value="level:fighter" />
+                <stat name="negative-energy:enmity-pool" value="level:fighter" />
+                <stat name="negative-energy:enmity-pool" value="level:fighter" />
+                <stat name="negative-energy:enmity-pool" value="level:fighter" />
+                <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_AURA_OF_ENMITY" level="3" />
+            </rules>
+        </element>
+        <element name="Aura of Enmity" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_AURA_OF_ENMITY">
+            <compendium display="false" />
+            <description>
+                <p>Alternatively as an action or by forgoing an attack you can spend a number of points of a maximum equal to twice your Fighter level into an aura around youself with a radius of 10 feet that lasts until your next turn. Whenever you or an ally makes a saving throw you can subtract points from this aura and add them to the roll. You can wait until after it rolls to add the points, but must decide before the DM says whether the roll succeeds or fails.</p>
+            </description>
+            <sheet>
+                <description>As an action or in place of an attack, you can spend up to {{aura-of-enmity:limit}} enmity into a {{aura-of-enmity:range}}-foot radius aura around you that lasts until your next turn. Whenever you or an ally makes a saving throw you can subtract points from this aura and add them to the roll. You can wait until after it rolls to add the points, but must decide before the DM says whether the roll succeeds or fails.</description>
+            </sheet>
+            <rules>
+                <stat name="aura-of-enmity:limit" value="level:fighter" />
+                <stat name="aura-of-enmity:limit" value="level:fighter" />
+                <stat name="aura-of-enmity:range" value="10" level="3" />
+            </rules>
+        </element>
+        <element name="Intensifying Hatred" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_INTENSIFYING_HATRED">
+            <description>
+                <p>At 7th level, the range of your aura doubles to 20 feet. In additional you may increase the duration of your Aura to 1 minute. If you take damage while your aura is up you must make a concentration check as if you were concentrating on a spell.</p>
+            </description>
+            <sheet>
+                <description>You may increase the duration of your Aura to 1 minute. If you take damage while your aura is up you must make a concentration check as if you were concentrating on a spell.</description>
+            </sheet>
+            <rules>
+                <stat name="aura-of-enmity:range" value="10" level="7" />
+            </rules>
+        </element>
+        <element name="Disturbing Blows" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_DISTURBING_BLOWS">
+            <description>
+                <p>At 10th level, you can channel your Enmity into your attacks. When you make your first attack on your turn, you can decide to spend enmity points equal to your number of attacks x 5. Until the end of your turn your weapon attacks score a critical hit on a roll of 19 or 20 OR give disadvantage on concentration effects when they hit. You may choose before you make each attack.</p>
+            </description>
+            <sheet>
+                <description>When you make your first attack on your turn, you can decide to spend up to {{disturbing-blows:limit}}enmity points. Until the end of your turn your weapon attacks score a critical hit on a roll of 19 or 20 OR give disadvantage on concentration effects when they hit. You may choose before you make each attack.</description>
+            </sheet>
+            <rules>
+                <stat name="disturbing-blows:limit" value="extra-attack:count" />
+                <stat name="disturbing-blows:limit" value="extra-attack:count" />
+                <stat name="disturbing-blows:limit" value="extra-attack:count" />
+                <stat name="disturbing-blows:limit" value="extra-attack:count" />
+                <stat name="disturbing-blows:limit" value="extra-attack:count" />
+            </rules>
+        </element>
+        <element name="Cycle of Hatred" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_CYCLE_OF_HATRED">
+            <description>
+                <p>At 15th level, when an Aura of Enmity ends you regain all points of unused Enmity. If it is a result of a failed concentration check you only regain half.</p>
+            </description>
+            <sheet>
+                <description>When an Aura of Enmity ends you regain all points of unused Enmity. If it is a result of a failed concentration check you only regain half.</description>
+            </sheet>
+        </element>
+        <element name="Recycled Magic" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SPELLCLEAVER_RECYCLED_MAGIC">
+            <description>
+                <p>At 18th level, when you take damage that is magical in nature you can use your reaction to reduce that damage by your weapon’s damage die + your fighter level. When you reduce magical damage in this way you gain Enmity equal to half the damage reduction. Enmity gained in this way lasts until your next rest.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When you take damage that is magical in nature you can reduce that damage by your weapon’s damage die + {{level:fighter}}. When you reduce magical damage in this way you gain Enmity equal to half the damage reduction. Enmity gained in this way lasts until your next rest.</description>
+            </sheet>
+        </element>
+    
+</elements>

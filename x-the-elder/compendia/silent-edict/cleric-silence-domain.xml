@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Silence Divine Domain</name>
+        <update version="0.0.1">
+            <file name="cleric-silence-domain.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/silent-edict/cleric-silence-domain.xml" />
+        </update>
+    </info>
+    
+    <element name="Silence Domain" type="Archetype" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_CLERIC_SILENCE_DOMAIN">
+        <supports>Divine Domain</supports>
+        <description>
+            <p><h5 class="caption">DOMAIN SPELLS</h5></p>
+            <table>
+                <thead>
+                    <tr><td>Cleric Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><em>bless, detect magic</em></td></tr>
+                <tr><td>3rd</td><td><em>lesser restoration, silence</em></td></tr>
+                <tr><td>5th</td><td><em>counterspell, dispel magic</em></td></tr>
+                <tr><td>7th</td><td><em>freedom of movement, divination</em></td></tr>
+                <tr><td>9th</td><td><em>greater restoration, seeming</em></td></tr>
+            </table>
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_ARCANE_THEURGY" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_HUSHED_AND_BOUN" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_CD_CONTROL_THE_FLO" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_FEEDBACK" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_POTENT_SPELLCASTIN" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_DIVINE_THEURGY" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_BLESS" spellcasting="Cleric" prepared="true" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" spellcasting="Cleric" prepared="true" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" spellcasting="Cleric" prepared="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_SILENCE" spellcasting="Cleric" prepared="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_COUNTERSPELL" spellcasting="Cleric" prepared="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" spellcasting="Cleric" prepared="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" spellcasting="Cleric" prepared="true" level="7" />
+            <grant type="Spell" id="ID_PHB_SPELL_DIVINATION" spellcasting="Cleric" prepared="true" level="7" />
+            <grant type="Spell" id="ID_PHB_SPELL_GREATER_RESTORATION" spellcasting="Cleric" prepared="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_SEEMING" spellcasting="Cleric" prepared="true" level="9" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_ARCANE_THEURGY" level="1" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_HUSHED_AND_BOUN" level="1" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_CD_CONTROL_THE_FLO" level="2" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_FEEDBACK" level="6" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_POTENT_SPELLCASTIN" level="8" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_DIVINE_THEURGY" level="14" />
+        </rules>
+    </element>
+        <element name="Arcane Theurgy" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_ARCANE_THEURGY">
+            <description>
+                <p>At 1st level, you learn the <em>resistance</em> cantrip, which doesn’t count against the number of cleric cantrips you know. For you, it has a range of 30 feet, and you can cast it as a bonus action.</p>
+                <p class="indent">In addition you gain proficiency in the Arcana skill.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_RG_SE_SPELL_RESISTANCE" spellcasting="Cleric" known="true" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+            </rules>
+        </element>
+        <element name="Hushed and Bound" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_HUSHED_AND_BOUN">
+            <description>
+                <p>Also starting at 1st level, you can cast spells without either somatic or verbal components. You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
+            </description>
+            <sheet usage="{{hushed-and-bound:uses}}/Long Rest">
+                <description>You can cast spells without either somatic or verbal components.</description>
+            </sheet>
+            <rules>
+                <stat name="hushed-and-bound:uses" value="1" bonus="base" />
+                <stat name="hushed-and-bound:uses" value="wisdom:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Channel Divinity: Control the Flow" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_CD_CONTROL_THE_FLO">
+            <description>
+                <p>Starting at 2nd level, you can use your Channel Divinity to interrupt the flow of the weave.</p>
+                <p class="indent">You can use your Channel Divinity to end the concentration of a creature within 90 feet. The creature must make a concentration check equal to your spell save DC. Alternatively you may dispel a magical effect or spell from an ally.</p>
+            </description>
+            <sheet usage="Channel Divinity">
+                <description>You can end the concentration of a creature within 90 feet. The creature must make a concentration check (save DC {{spellcasting:dc:wis}}). Alternatively you may dispel a magical effect or spell from an ally.</description>
+            </sheet>
+        </element>
+        <element name="Feedback" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_FEEDBACK">
+            <description>
+                <p>Starting at 6th level, whenever you would interrupt, remove or dispel a magical effect from a creature they take force damage equal 1d6 + your Wisdom modifier. This damage increases to 2d6 at 12th level and 3d6 at 18th level.</p>
+            </description>
+            <sheet>
+                <description>Whenever you would interrupt, remove or dispel a magical effect from a creature they take {{feedback:damage-dice}}d6 + {{wisdom:modifier}} force damage.</description>
+            </sheet>
+            <rules>
+                <stat name="feedback:damage-dice" value="1" level="6" />
+                <stat name="feedback:damage-dice" value="1" level="12" />
+                <stat name="feedback:damage-dice" value="1" level="18" />
+            </rules>
+        </element>
+        <element name="Potent Spellcasting" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_POTENT_SPELLCASTIN">
+            <description>
+                <p>Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip.</p>
+            </description>
+            <sheet>
+                <description>You add +{{wisdom:modifier}} to the damage you deal with any cleric cantrip.</description>
+            </sheet>
+        </element>
+        <element name="Divine Theurgy" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SILENCE_DOMAIN_DIVINE_THEURGY">
+            <description>
+                <p>Your ability to shield others from magic greatly increases.</p>
+                <p class="indent">You can now cast the <em>resistance</em> cantrip as a reaction to an ally or yourself being made to make a saving throw.</p>
+                <p class="indent">In addition when you cast the <em>resistance</em> cantrip the number of targets increases to an amount equal to your Wisdom modifier. You can do this a number of times equal to your Wisdom modifier. When cast this way it no longer requires concentration.</p>
+            </description>
+            <sheet  usage="{{hushed-and-bound:uses}}/Long Rest">
+                <description>You can cast resistance as a reaction on up to {{wisdom:modifier}} targets. When cast this way it no longer requires concentration.</description>
+            </sheet>
+        </element>
+
+    <element name="Resistance" type="Spell" source="Silent Edict" id="ID_RG_SE_SPELL_RESISTANCE">
+        <supports></supports>
+        <requirements>ID_RG_SE_ARCHETYPE_CLERIC_SILENCE_DOMAIN</requirements>
+        <description>
+            <p>You choose one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after the saving throw. The spell then ends.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">0</set>
+            <set name="school">Abjuration</set>
+            <set name="time">1 bonus action</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">a miniature cloak</set>
+            <set name="isConcentration">true</set>
+            <set name="isRitual">false</set>
+        </setters>
+    </element>
+   
+</elements>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Way of God’s Hand Monastic Tradition</name>
+        <update version="0.0.1">
+            <file name="monk-way-of-gods-hand.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/compendium-of-sacred-mysteries-resurrection/monk-way-of-gods-hand.xml" />
+        </update>
+    </info>
+    
+    <element name="Way of God’s Hand" type="Archetype" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_MONK_WAY_OF_GODS_HAND">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>Mortal life is a creation of the divine powers, molded and shaped from the nothingness beyond. Thus, within all mortal creatures, there is the smallest spark of divinity. The true path to spiritual ascendancy comes from the pursuit of that infinite divine potency, and so the lessons of this journey have been passed down from incarnation to incarnation. You have devoted yourself to cultivating this divine spark, pushing your body beyond its mortal limitations. However, as a mortal, the freedom of choice you possess allows you to turn this spark towards whatever ends you wish, for celestials are just as susceptible to the might of the divine as the fiends below. Undead, deprived of the spark of divinity, are equally beneath you. No matter your adversary, any foe will find itself reduced to dust by your heavenly hand.</p>
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_DIVINE_PALM" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_DELIVER_UNTO_EARTH" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_THE_TEMPLE_WITHIN" />
+            <div element="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_RISE_UNTO_HEAVEN" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_DIVINE_PALM" level="3" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_DELIVER_UNTO_EARTH" level="6" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_THE_TEMPLE_WITHIN" level="11" />
+            <grant type="Archetype Feature" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_RISE_UNTO_HEAVEN" level="17" />
+        </rules>
+    </element>
+        <element name="Divine Palm" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_DIVINE_PALM">
+            <description>
+                <p>Starting at 3rd level, you can focus the divine spark within your body into your hand. While you aren’t wearing armor or wielding a shield, you can use your action to make a special unarmed strike, called a Heavenly Strike. A Heavenly Strike deals radiant damage and has a damage die equal to three of your Martial Arts dice. This attack ignores resistance to radiant damage.</p>
+                <p class="indent">When you gain the Extra Attack feature, your Heavenly Strike instead has a damage die equal to five of your Martial Arts dice.</p>
+                <p class="indent">Additionally, when you hit an object or a celestial, fiend, or undead creature with an unarmed strike, your attack deals extra radiant damage equal to your Martial Arts die.</p>
+            </description>
+            <sheet action="Action">
+                <description>While you aren’t wearing armor or wielding a shield, you can make a special unarmed strike, that deals {{divine-palm:dice-count}}d{{martial arts:dice}} radiant damage. This attack ignores resistance to radiant damage. When you hit an object or a celestial, fiend, or undead creature with an unarmed strike, your attack deals an extra 1d{{martial arts:dice}} radiant damage</description>
+            </sheet>
+            <rules>
+                <stat name="divine-palm:dice-count" value="3" bonus="dice" level="3" />
+                <stat name="divine-palm:dice-count" value="5" bonus="dice" level="5" />
+            </rules>
+        </element>
+        <element name="Deliver Unto Earth" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_DELIVER_UNTO_EARTH">
+            <description>
+                <p>At 6th level, the spark within you grows stronger. When you hit a Large or smaller creature with a Heavenly Strike, you can expend 1 ki point and attempt to grasp your target. The creature must make a Strength saving throw or become grappled by you (escape DC = your ki save DC). A celestial, fiend or undead creature has disadvantage on this saving throw. If you grapple a creature in this way, you can throw it horizontally a distance up to half your movement speed as part of the same action.</p>
+            </description>
+            <sheet usage="1 Ki">
+                <description>When you hit a Large or smaller creature with a Heavenly Strike, you can expend 1 ki point and attempt to grasp your target. The creature must make a Strength saving throw or become grappled by you (escape DC = your ki save DC). A celestial, fiend or undead creature has disadvantage on this saving throw. If you grapple a creature in this way, you can throw it horizontally a distance up to half your movement speed as part of the same action.</description>
+            </sheet>
+        </element>
+        <element name="The Temple Within" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_THE_TEMPLE_WITHIN">
+            <description>
+                <p>Starting at 11th level, your body can’t be harmed while your divine spark burns brightly. As an action, you can enter a sacred meditation. Until your sacred meditation is over, you have resistance to all damage and all attacks against you have disadvantage.</p>
+                <p class="indent">While you’re in sacred meditation, your speed is 0 and can’t increase, you can’t take reactions, and the only action you can take is a bonus action to end this meditation. You can use this feature during a short or long rest, and any time that you spend using it is considered sleep.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can enter a sacred meditation. Until your sacred meditation is over, you have resistance to all damage and all attacks against you have disadvantage. While you’re in sacred meditation, your speed is 0 and can’t increase, you can’t take reactions, and the only action you can take is a bonus action to end this meditation. You can use this feature during a short or long rest, and any time that you spend using it is considered sleep.</description>
+            </sheet>
+        </element>
+        <element name="Rise Unto Heaven" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_GFP_COSMR_ARCHETYPE_FEATURE_WOGH_RISE_UNTO_HEAVEN">
+            <description>
+                <p>Starting at 17th level, you can cause the divine energy within your body to overflow freely. You can spend 5 ki points as a bonus action to enter a divine state for 1 minute. While you’re in this divine state, your Heavenly Strike has a damage die equal to nine of your Martial Arts dice, a Heavenly Strike deals maximum damage instead of rolling against an object or a celestial, fiend, or undead creature, and you can use your Deliver Unto Earth feature to throw the target a distance up to your movement speed in any direction.</p>
+            </description>
+            <sheet usage="5 Ki" action="Bonus Action">
+                <description>You can enter a divine state for 1 minute. While you’re in this divine state, your Heavenly Strike does 9d{{martial arts:dice}}, a Heavenly Strike deals maximum damage instead of rolling against an object or a celestial, fiend, or undead creature, and you can use your Deliver Unto Earth feature to throw the target a distance up to your movement speed in any direction.</description>
+            </sheet>
+        </element>
+    
+</elements>

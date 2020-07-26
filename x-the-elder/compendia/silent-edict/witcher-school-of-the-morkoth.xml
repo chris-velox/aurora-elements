@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Witcher School of the Morkoth</name>
+        <update version="0.0.1">
+            <file name="witcher-school-of-the-morkoth.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/silent-edict/witcher-school-of-the-morkoth.xml" />
+        </update>
+    </info>
+    
+    <element name="School of the Morkoth" type="Archetype" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_WITCHER_SCHOOL_OF_THE_MORKOTH">
+        <supports>Witcher School</supports>
+        <description>
+            <p>As part of your Trial to undergo mutations your flesh was infused with Clarified Lead. This infusion allows you to reduce the effects of magic on you and even redirect it.</p>
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_CLARIFIED_FOCUS" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_FOCUS_SIPHON" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_SPELL_REFLECTION" />
+            <div element="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_CLARIFIED_SPELL_REFLECTION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_CLARIFIED_FOCUS" level="3" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_FOCUS_SIPHON" level="7" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_SPELL_REFLECTION" level="10" />
+            <grant type="Archetype Feature" id="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_CLARIFIED_SPELL_REFLECTION" level="14" />
+        </rules>
+    </element>
+        <element name="Clarified Focus" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_CLARIFIED_FOCUS">
+            <description>
+                <p>At 3rd level, you reduce the damage of magical effects including damage from magical weapons by an amount equal to your current focus. Additionally as a reaction when making a saving throw against a magical effect you can spend 2 focus to give yourself advantage.</p>
+            </description>
+            <sheet>
+                <description>You reduce the damage of magical effects including damage from magical weapons by an amount equal to your current focus. Additionally as a reaction when making a saving throw against a magical effect you can spend 2 focus to give yourself advantage.</description>
+            </sheet>
+        </element>
+        <element name="Focus Siphon" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_FOCUS_SIPHON">
+            <description>
+                <p>At 7th level, whenever you take damage from a magical source you immediately gain a focus point.</p>
+            </description>
+            <sheet>
+                <description>Whenever you take damage from a magical source you immediately gain a focus point.</description>
+            </sheet>
+        </element>
+        <element name="Spell Reflection" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_SPELL_REFLECTION">
+            <description>
+                <p>Whenever you make a successful saving throw against a spell, or a spell attack misses you, you can use your reaction to spend 3 focus points and choose another creature (including the spellcaster) you can see within 60 feet. The spell targets the chosen creature instead of you. If the spell forced a saving throw, the chosen creature makes its own save vs the original caster’s DC. If the spell was an attack, the attack roll is rerolled against the chosen creature by the original caster.</p>
+            </description>
+            <sheet action="Reaction" usage="3 Focus">
+                <description>Whenever you make a successful saving throw against a spell, or a spell attack misses you, you can choose another creature (including the spellcaster) you can see within 60 feet. The spell targets the chosen creature instead of you. If the spell forced a saving throw, the chosen creature makes its own save vs the original caster’s DC. If the spell was an attack, the attack roll is rerolled against the chosen creature by the original caster.</description>
+            </sheet>
+        </element>
+        <element name="Clarified Spell Reflection" type="Archetype Feature" source="Silent Edict" id="ID_RG_SE_ARCHETYPE_FEATURE_SOTM_CLARIFIED_SPELL_REFLECTION">
+            <description>
+                <p>At 14th level, whenever you would use your spell reflection trait you can instead choose to store the spell until your next short or long rest up to a maximum level of your Wisdom mofifier. When casting the spell using spell reflection you can spend 2 extra focus points to do maximum damage if it has a damage roll or give the creature disadvantage on the saving thow.</p>
+            </description>
+            <sheet>
+                <description>Whenever you would use your spell reflection trait you can instead choose to store the spell until your next short or long rest. You can store up to {{wisdom:modifer}} spells. When casting the spell using spell reflection you can spend 2 extra focus points to do maximum damage if it has a damage roll or give the creature disadvantage on the saving thow.</description>
+            </sheet>
+        </element>
+    
+</elements>
