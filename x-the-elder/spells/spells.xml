@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>D&amp;D Beyond Homebrew Spells</name>
-        <update version="0.0.6">
+        <update version="0.0.7">
             <file name="spells.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/spells/spells.xml" />
         </update>
     </info>
@@ -83,14 +83,14 @@
         <description>
             <p>Touching a willing beast or familiar and gently whispering words of power, you make it grow to incredible proportions. It gains the following benefits while the spell lasts.</p>
             <ul>
-                <li>The touched creature become Gargantuan. If there isn't enough room for it to increase size, it makes a Strength (Athletics) check to break through the surrounding material. It otherwise attains the maximum possible size in the space available.</li>
+                <li>The touched creature become Gargantuan. If there isn’t enough room for it to increase size, it makes a Strength (Athletics) check to break through the surrounding material. It otherwise attains the maximum possible size in the space available.</li>
                 <li>Its current and maximum hit points increase to 200.</li>
                 <li>Its Strength and Constitution scores increase to 26.</li>
                 <li>It can take the Attack action.</li>
                 <li>Its reach becomes 15 feet.</li>
                 <li>If it already has an attack, that attack now deals 34 (4d12 + 8) damage.</li>
-                <li>Whether or not it originally had an attack, it can perform a bite attack that deals 34 (4d12 + 8) piercing damage. If the target is a creature, it is grappled (escape DC 20). Until this grapple ends, the target is restrained, and the familiar can't bite another target.</li>
-                <li>As an action, the familiar can make one bite attack against a Large or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the familiar, and it takes 28 (8d6) acid damage at the start of each of the familiar's turns. If the familiar takes 30 damage or more on a single turn from a creature inside it, the familiar must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the familiar.</li>
+                <li>Whether or not it originally had an attack, it can perform a bite attack that deals 34 (4d12 + 8) piercing damage. If the target is a creature, it is grappled (escape DC 20). Until this grapple ends, the target is restrained, and the familiar can’t bite another target.</li>
+                <li>As an action, the familiar can make one bite attack against a Large or smaller creature it is grappling. If the attack hits, the target takes the bite’s damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the familiar, and it takes 28 (8d6) acid damage at the start of each of the familiar’s turns. If the familiar takes 30 damage or more on a single turn from a creature inside it, the familiar must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the familiar.</li>
                 <li>It has advantage on Strength checks and Strength saving throws.</li>
                 <li>It adds your proficiency bonus to its attack rolls, Strength checks, AC, and saving throws.</li>
                 <li>Its attacks deal double damage against objects and structures and count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</li>
@@ -114,6 +114,31 @@
             <set name="materialComponent">a willing beast or familiar</set>
             <set name="isConcentration">false</set>
             <set name="isRitual">false</set>
+        </setters>
+    </element>
+
+    <element name="Reality Marble" type="Spell" source="Gannoh2" id="ID_GANNOH2_GMB_SPELL_REALITY_MARBLE">
+        <supports>Bard, Cleric, Druid, Sorcerer, Warlock, Wizard</supports>
+        <description>
+            <p>You draw all creatures within 100 feet of you into a plane of your own creation. This is accompanied by a dramatic but harmless phenomenon such a flash of light or what appears to be a surge of fire.</p>
+            <p class="indent">The space is infinite in size, has normal air and gravity, and is devoid of life other than plants. It could be a naturalistic landscape such as a grassy field, a desert, or icy tundra. It could also include features such as innumerable swords scattered across the space or a massive temple complex. Regardless, you cannot create the space with enough precision to give yourself a tactical advantage. For example, if you created a desert space, you could not designate certain areas as quicksand.</p>
+            <p class="indent">The space has a general theme, so it could not be part snowy mountains and part lush jungle. The space may include streams and ponds, but not large rivers or bodies of water. It can be unpleasantly hot or cold, but not sufficiently so as to cause immediate harm. Any structures or items in the space can be used and interacted with, but disappear once the spell ends. The items are mundane and cannot include valuable material components.</p>
+            <p class="indent">In addition to creating the plane, you can rearrange the location of the creatures drawn into it. You can place each creature in any unoccupied space of your choice within 300 feet of you (but not midair).</p>
+            <p class="indent">The spell can be ended early if the caster spends an action to do so. The spell also ends if the caster leaves the space via Plane Shift or falls to 0 hit points. Once the spell ends, all creatures in the plane return to the same space they originally were in.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">9</set>
+            <set name="school">Conjuration</set>
+            <set name="isRitual">false</set>
+            <set name="time">1 action</set>
+            <set name="range">100 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">10 minutes</set>
+            <set name="isConcentration">false</set>
         </setters>
     </element>
 </elements>
