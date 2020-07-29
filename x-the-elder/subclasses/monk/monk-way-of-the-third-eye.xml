@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Way of the Third Eye Monastic Tradition</name>
+        <update version="0.0.1">
+            <file name="monk-way-of-the-third-eye.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/monk/monk-way-of-the-third-eye.xml" />
+        </update>
+    </info>
+    
+    <element name="Way of the Third Eye" type="Source" source="Core" id="ID_GIRR6652_HOMEBREWERY_SOURCE_WAY_OF_THE_THIRD_EYE">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">WOTTE</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/hKE6HLenY</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="G6652" url="https://www.reddit.com/u/Girr6652">u/Girr6652</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200725</set>
+        </setters>
+    </element>
+
+    <element name="Way of the Third Eye" type="Archetype" source="Way of the Third Eye" id="ID_GIRR6652_WOTTE_ARCHETYPE_MONK_WAY_OF_THE_THIRD_EYE">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>Monks that choose to walk the Way of the Third Eye are stripped of their eyesight, as they believe that this is the only way to perceive the world free form illusion and to become truly enlightened. They then undergo a series of trials which push each of their senses to their absolute limit. It is through these trials that they learn to better understand and focus their Ki through their other senses. Not all who attempt these trials are successful and many lose far more than their eyesight as a result.</p>
+            <p class="indent">Heightened senses, quicker reaction time, and more precise movements are just some of the common attributes shared by these monks. Some are even able to sense the magical energy of the universe flowing around them. Despite this fact many still doubt these monks, however they have proven time and time again that they see far more than their advisories think.</p>
+            <div element="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_BLINDED" />
+            <div element="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_DAMPEN_SENSES" />
+            <div element="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_GREATER_PATIENCE" />
+            <div element="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_KI_SENSE" />
+            <div element="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_AWAKEN_THE_THIRD_EYE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_BLINDED" level="3" />
+            <grant type="Archetype Feature" id="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_DAMPEN_SENSES" level="3" />
+            <grant type="Archetype Feature" id="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_GREATER_PATIENCE" level="6" />
+            <grant type="Archetype Feature" id="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_KI_SENSE" level="11" />
+            <grant type="Archetype Feature" id="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_AWAKEN_THE_THIRD_EYE" level="17" />
+        </rules>
+    </element>
+        <element name="Blinded" type="Archetype Feature" source="Way of the Third Eye" id="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_BLINDED">
+            <description>
+                <p>Upon choosing this tradition at 3rd level, you permanently have the blinded condition, however you do not suffer disadvantage on attack rolls and attacks made against you are not made with advantage. You also gain the following:</p>
+                <ul>
+                    <li>You have blindsight in a 15 foot radius around you and tremorsense in a 30 foot radius around you.</li>
+                    <li>As a bonus action you can make a loud noise, such as tapping a staff on a wall or clicking your tongue, to use echolocation. Doing this increases your tremorsense radius by 15 feet for one round. If there is an outside source of loud noise in the area, such as a waterfall or people talking, you also gain this benefit.</li>
+                    <li>You gain advantage on Wisdom (Perception) checks that rely on hearing and smelling and on Wisdom (Insight) checks against creatures with a heartbeat.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>You permanently have the blinded condition, however you do not suffer disadvantage on attack rolls and attacks made against you are not made with advantage. You also gain the following: blindsight in a 15 foot radius around you and tremorsense in a 30 foot radius around you. As a bonus action you can make a loud noise, such as tapping a staff on a wall or clicking your tongue, to use echolocation. You gain advantage on Perception checks that rely on hearing and smelling and on Insight checks against creatures with a heartbeat.</description>
+            </sheet>
+            <rules>
+                <grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+            </rules>
+        </element>
+        <element name="Dampen Senses" type="Archetype Feature" source="Way of the Third Eye" id="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_DAMPEN_SENSES">
+            <description>
+                <p>Also at 3rd level, you can target pressure points that dampen or numb your enemy’s senses and reaction time.</p>
+                <p class="indent">Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, you can impose one of the following effects on that target:</p>
+                <ul>
+                    <li>It must make a Strength saving throw or drop one item of your choice that it is holding.</li>
+                    <li>It must make a Constitution saving throw or it cannot speak until the end of its next turn.</li>
+                    <li>It can’t take reactions until the end of your next turn.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, you can impose one of the following effects on that target: Strength save or drop one item; Constitution save or it cannot speak until the end of its next turn; or it can’t take reactions until the end of your next turn.</description>
+            </sheet>
+        </element>
+        <element name="Greater Patience" type="Archetype Feature" source="Way of the Third Eye" id="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_GREATER_PATIENCE">
+            <description>
+                <p>At 6th level, you have become accustomed to waiting for your foes to come to you. You can make an opportunity attack when a creature moves into your reach as well as when they leave it.</p>
+                <p class="indent">Additionally, whenever you damage a creature with an opportunity attack you deal additional damage equal to a roll of your Martial Arts die.</p>
+            </description>
+            <sheet>
+                <description>You can make an opportunity attack when a creature moves into your reach as well as when they leave it. Additionally, whenever you damage a creature with an opportunity attack you deal 1d{{martial arts:dice}} additional damage.</description>
+            </sheet>
+        </element>
+        <element name="Ki Sense" type="Archetype Feature" source="Way of the Third Eye" id="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_KI_SENSE">
+            <description>
+                <p>Starting at 11th level, you can sense the Ki in all living things around you. You know the general direction of any living creature within a 30 foot radius of you despite any cover between you and it and any nonmagical effort it has made to hide or conceal itself.</p>
+                <p class="indent">You can also sense plants such as trees and grass, allowing you to move in terrains like forest or jungle without much impediment.</p>
+            </description>
+            <sheet>
+                <description>You know the general direction of any living creature within a 30 foot radius of you despite any cover between you and it and any nonmagical effort it has made to hide or conceal itself. You can also sense plants such as trees and grass, allowing you to move in terrains like forest or jungle without much impediment.</description>
+            </sheet>
+        </element>
+        <element name="Awaken the Third Eye" type="Archetype Feature" source="Way of the Third Eye" id="ID_GIRR6652_WOTTE_ARCHETYPE_FEATURE_WOTTE_AWAKEN_THE_THIRD_EYE">
+            <description>
+                <p>At 17th level, your third eye is fully awakened allowing you to sense magic as it flows through the air around you.</p>
+                <p class="indent">Once per turn when you are targeted by a spell or other magical effect that would deal damage to you, you may spend 2 Ki points to give yourself resistance to the damage type dealt until the start of your next turn. If the spell or effect deals multiple damage types, you may choose which one you gain resistance to.</p>
+                <p class="indent">Additionally, you may spend 3 Ki points to cast <em>true seeing</em> on yourself without providing material components.</p>
+                <p class="indent">You can cast <em>true seeing</em> in this way only once per short or long rest.</p>
+            </description>
+            <sheet>
+                <description>Once per turn when you are targeted by a spell or other magical effect that would deal damage to you, you may spend 2 Ki points to give yourself resistance to the damage type dealt until the start of your next turn. You may spend 3 Ki points to cast true seeing on yourself without providing material components once per short rest.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_TRUE_SEEING" />
+            </rules>
+        </element>
+
+</elements>
