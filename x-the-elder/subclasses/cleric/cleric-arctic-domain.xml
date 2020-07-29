@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Arctic Divine Domain</name>
+        <update version="0.0.1">
+            <file name="cleric-arctic-domain.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/cleric/cleric-arctic-domain.xml" />
+        </update>
+    </info>
+    
+    <element name="Arctic Domain" type="Source" source="Core" id="ID_DEPRESSEDMONKEY3_HOMEBREWERY_SOURCE_Arctic Domain">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">ADDD</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/9mCLG3usy</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="DM3" url="https://www.reddit.com/user/Depressed_monkey3/">u/Depressed_monkey3</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200727</set>
+        </setters>
+    </element>
+
+    <element name="Arctic Domain" type="Archetype" source="Arctic Domain" id="ID_DM3_ADDD_ARCHETYPE_CLERIC_ARCTIC_DOMAIN">
+        <supports>Divine Domain</supports>
+        <description>
+            <p>An arrow flies through the air, silence, the noise of frost breaking. The enemy recoils in fear, the allied soldier laughs and jumps back into the fray. The cleric keeps chanting as another layer of ice surrounds his allies, protecting them from harm.</p>
+            <p class="indent">Cleric of the Arctic domain channel the power of the unyielding winter. Where many fear the bite of the arctic, they embrace it and use it to protect their loved ones.</p>
+            <h5 class="caption">ARCTIC DOMAIN SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Cleric level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><em>ice knife, absorb elements</em></td></tr>
+                <tr><td>3rd</td><td><em>Snilloc’s snowball swarm, warding bond</em></td></tr>
+                <tr><td>5th</td><td><em>sleet storm, Leomund’s tiny hut</em></td></tr>
+                <tr><td>7th</td><td><em>ice storm, death ward</em></td></tr>
+                <tr><td>9th</td><td><em>cone of cold, circle of power</em></td></tr>
+            </table>
+            <div element="ID_DM3_ADDD_ARCHETYPE_FEATURE_WINTERS_PROTECTION" />
+            <div element="ID_DM3_ADDD_ARCHETYPE_FEATURE_BONUS_PROFICIENCY" />
+            <div element="ID_DM3_ADDD_ARCHETYPE_FEATURE_CD_ICE_PRISON" />
+            <div element="ID_DM3_ADDD_ARCHETYPE_FEATURE_GLACIAL_SOUL" />
+            <div element="ID_DM3_ADDD_ARCHETYPE_FEATURE_POTENT_SPELLCASTING" />
+            <div element="ID_DM3_ADDD_ARCHETYPE_FEATURE_HERALD_OF_THE_ARCTIC" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Spell" id="ID_XGTE_SPELL_ICE_KNIFE" spellcasting="Cleric" prepared="true" level="1" />
+            <grant type="Spell" id="ID_XGTE_SPELL_ABSORB_ELEMENTS" spellcasting="Cleric" prepared="true" level="1" />
+            <grant type="Spell" id="ID_XGTE_SPELL_SNILLOCS_SNOWBALL_SWARM" spellcasting="Cleric" prepared="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_WARDING_BOND" spellcasting="Cleric" prepared="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_SLEET_STORM" spellcasting="Cleric" prepared="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_LEOMUNDS_TINY_HUT" spellcasting="Cleric" prepared="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" spellcasting="Cleric" prepared="true" level="7" />
+            <grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" spellcasting="Cleric" prepared="true" level="7" />
+            <grant type="Spell" id="ID_PHB_SPELL_CONE_OF_COLD" spellcasting="Cleric" prepared="true" level="9" />
+            <grant type="Spell" id="ID_PHB_SPELL_CIRCLE_OF_POWER" spellcasting="Cleric" prepared="true" level="9" />
+            <grant type="Archetype Feature" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_WINTERS_PROTECTION" level="1" />
+            <grant type="Archetype Feature" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_BONUS_PROFICIENCY" level="1" />
+            <grant type="Archetype Feature" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_CD_ICE_PRISON" level="2" />
+            <grant type="Archetype Feature" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_GLACIAL_SOUL" level="6" />
+            <grant type="Archetype Feature" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_POTENT_SPELLCASTING" level="8" />
+            <grant type="Archetype Feature" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_HERALD_OF_THE_ARCTIC" level="17" />
+        </rules>
+    </element>
+        <element name="Winter’s Protection" type="Archetype Feature" source="Arctic Domain" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_WINTERS_PROTECTION">
+            <description>
+                <p>At level 1, you know the <em>armor of Agathys</em> spell, it becomes a cleric spell for you, it doesn’t count against the number of spells you can prepare each day and you always have it prepared.</p>
+                <p class="indent">When you cast this spell using a cleric spell slot, the spell slot level is always treated as one higher and the range becomes touch instead of self.</p>
+            </description>
+            <sheet>
+                <description>When you cast armor of Agathys using a cleric spell slot, the spell slot level is always treated as one higher and the range becomes touch instead of self.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_ARMOR_OF_AGATHYS" spellcasting="Cleric" prepared="true" level="1" />
+            </rules>
+        </element>
+        <element name="Bonus Proficiency" type="Archetype Feature" source="Arctic Domain" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_BONUS_PROFICIENCY">
+            <description>
+                <p>Also at 1st level, you gain proficiency with heavy armor.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+            </rules>
+        </element>
+        <element name="Channel Divinity: Ice Prison" type="Archetype Feature" source="Arctic Domain" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_CD_ICE_PRISON">
+            <description>
+                <p>Starting at 2nd level, you can brandish your holy symbol, facing a creature you can see within 30 feet of you. It must make a Strength saving throw or the ice forming around it will encase it for 1 minute.</p>
+                <p class="indent">While encased in this way a creature is incapacitated and its speed becomes 0, it is also immune to all damage while trapped. At the end of each of its turn it can try to repeat the Strength saving throw contested by your spell save DC, breaking free of the ice on a success.</p>
+            </description>
+            <sheet action="Action" usage="Channel Divinity">
+                <description>You force a creature you can see within 30 feet to make a Strength saving throw (save DC {{spellcasting:dc:wis}}) or be encased in ice for 1 minute.</description>
+            </sheet>
+        </element>
+        <element name="Glacial Soul" type="Archetype Feature" source="Arctic Domain" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_GLACIAL_SOUL">
+            <description>
+                <p>At 6th level, the divine ice shines through you:</p>
+                <ul>
+                    <li>When you deal cold damage to a creature, you can also reduce its movement speed by 10 feet until the start of your next turn.</li>
+                    <li>You gain resistance to cold damage.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>When you deal cold damage to a creature, you can also reduce its movement speed by 10 feet until the start of your next turn.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+            </rules>
+        </element>
+        <element name="Potent Spellcasting" type="Archetype Feature" source="Arctic Domain" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_POTENT_SPELLCASTING">
+            <description>
+                <p>Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip.</p>
+            </description>
+            <sheet>
+                <description>You add +{{wisdom:modifier}} to the damage you deal with any cleric cantrip.</description>
+            </sheet>
+        </element>
+        <element name="Herald of the Arctic" type="Archetype Feature" source="Arctic Domain" id="ID_DM3_ADDD_ARCHETYPE_FEATURE_HERALD_OF_THE_ARCTIC">
+            <description>
+                <p>Starting at 17th level, your blessed affinity with the cold is unmatched:</p>
+                <ul>
+                    <li>You gain immunity to cold damage</li>
+                    <li>You can use your action to activate an aura of blizzard in a 30-foot radius around you that lasts for 1 minute, or until you dismiss it using another action. You and your allies within that radius are considered heavily obscured to others.</li>
+                </ul>
+            </description>
+            <sheet action="Action">
+                <description>You can an aura of blizzard in a 30-foot radius around you that lasts for 1 minute, or until you dismiss it using another action. You and your allies within that radius are considered heavily obscured to others.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_COLD" />
+            </rules>
+        </element>
+
+
+</elements>
