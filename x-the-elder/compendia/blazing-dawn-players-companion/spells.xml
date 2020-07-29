@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>Blazing Dawn Player’s Companion Spells</name>
-        <update version="0.0.5">
+        <update version="0.0.6">
             <file name="spells.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/blazing-dawn-players-companion/spells.xml" />
         </update>
     </info>
@@ -120,7 +120,7 @@
     <element name="Boil" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_BOIL">
         <supports>Druid, Sorcerer, Wizard</supports>
         <description>
-            <p>You cause the area of a 40-foot cube within range to instantly increase in temperature. This temperature increase lasts for the duration. When the area appears, each creature in it must make a Constitution saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there.</p>
+            <p>You cause the area of a 40-foot cube within range to instantly increase in temperature. This temperature increase lasts for the duration. When the area appears, each creature in it must make a Constitution saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell’s area for the first time on a turn or ends its turn there.</p>
             <p class="indent">This spell has additional effects when overlapping with areas of water. Being underwater does not confer resistance against the fire damage dealt by this spell. Also, any underwater areas within the spell’s area start bubbling furiously, turning those areas into difficult terrain and causing them to be heavily obscured.</p>
             <p class="indent">Above water, however, this spell can be difficult to see. A creature that starts its turn within 60 feet of the area and can see the area must make a Wisdom (Perception) check to notice the heat haze caused by this spell, and therefore notice the spell’s effect. The DC for this check equals your spell save DC.</p>
             <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.</p>
@@ -443,7 +443,8 @@
         <supports>Druid, Sorcerer, Warlock, Wizard</supports>
         <description>
             <p>Molten lava begins to burst out of a point on the ground that you can see within range, creating a 1-foot thick layer of lava on the ground that fills a 30-foot radius area centered on that point. The lava spreads around corners, and is difficult terrain.</p>
-            <p class="indent">When a creature enters the spell's area for the first time on a turn or starts its turn there, that creature must make a Dexterity saving throw. A creature takes 10d6 fire damage on a failed save, or half as much damage on a successful one. The lava also damages objects in its area, and ignites flammable objects that aren’t being worn or carried.</p>
+            <p class="indent">When a creature enters the spell's area for the first time on a turn or starts its turn there, that creature must make a Dexterity saving throw. On a failed save, a creature takes 10d6 fire damage, and is ignited for the duration. On a successful save, a creature takes half as much damage and is not ignited. The lava also damages objects in its area, and ignites flammable objects that aren’t being worn or carried.</p>
+            <p class="indent">An ignited creature suffers no additional effect while it remains in the lava. However, if an ignited creature starts its turn outside of the lava, it takes 2d6 fire damage as it continues to burn. To end this effect, the ignited creature or another creature within 5 feet of it can use an action to douse the flames.</p>
             <p class="indent">At the start of each of your turns, the lava spreads out further, increasing the radius of the area by 10 feet. The lava spreading into a creature’s space does not damage that creature until it starts its turn in the lava.</p>
             <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 8th level or higher, the damage increases by 1d6 for each slot level above 7th.</p>
         </description>
@@ -476,8 +477,8 @@
             <set name="range">Touch</set>
             <set name="hasVerbalComponent">true</set>
             <set name="hasSomaticComponent">true</set>
-            <set name="hasMaterialComponent">false</set>
-            <set name="materialComponent">component</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">two days worth of rations, worth at least 1 gp in total, which the spell consumes</set>
             <set name="duration">8 hours</set>
             <set name="isConcentration">false</set>
         </setters>
@@ -485,7 +486,7 @@
     <element name="Fire Bombs" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_FIRE_BOMBS">
         <supports>Artificer, Sorcerer, Wizard</supports>
         <description>
-            <p>You conjure three fiery orbs and hurl them at targets within range. You can hurl them at one target or several. For each orb hurled at a creature, that creature can make a Dexterity saving throw to avoid the orb. On a failed save, the orb sticks to that creature for the duration. On a successful save, the orb falls, sticking to the ground in that creature’s space. As an action, a creature can remove an orb from itself and let it fall to the ground.</p>
+            <p>You conjure three fist-sized fiery orbs and hurl them at targets within range. You can hurl them at one target or several. For each orb hurled at a creature, that creature can make a Dexterity saving throw to avoid the orb. On a failed save, the orb sticks to that creature for the duration. On a successful save, the orb falls, sticking to the ground in that creature’s space. As an action, a creature can remove an orb from itself and let it fall to the ground. Each orb sheds dim light in a 5-foot radius.</p>
             <p class="indent">As a bonus action, you can cause one of the unexploded orbs to explode. Each creature within 10 feet of the orb must make a Dexterity saving throw, taking 2d4 fire damage on a failed save or half as much damage on a successful one. A creature stuck by the exploding orb automatically fails this saving throw.</p>
             <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, you conjure and throw an additional orb for each slot level above 2nd. If you use a spell of 4th level or higher, you can explode 2 orbs with a single bonus action. This increases to 3 with a 6th level slot, and 4 with an 8th level slot.</p>
         </description>
@@ -508,7 +509,8 @@
         <supports>Sorcerer, Wizard</supports>
         <description>
             <p>The ground in a 150-foot-square centered on a point within range cracks and churns, turning the ground in that area into difficult terrain until cleared. Each 5-foot-square portion of the area requires at least 1 minute to clear by hand.</p>
-            <p class="indent">When you cast this spell and at the start of each of your turns for as long as this spell lasts, choose up to five 5-foot-square portions of this difficult terrain. From each square chosen, a 5-foot-wide, 300-foot-long line of fire is expelled perpendicular to the ground. Each creature within a line must make a Dexterity saving throw. A creature takes 6d12 fire damage on a failed save, or half as much damage on a successful one. Each of these lines then become filled with dark, toxic smoke until the start of your next turn, heavily obscuring the areas. A creature that enters the smoke for the first time on a turn or ends its turn there must succeed on a Constitution saving throw or become poisoned until the end of its next turn.</p>
+            <p class="indent">When you cast this spell and at the start of each of your turns for as long as this spell lasts, choose up to four 5-foot-square portions of this difficult terrain. From each square chosen, a 5-foot-wide, 300-foot-long line of fire is expelled vertically from the ground. Each creature within a line must make a Dexterity saving throw. A creature takes 7d10 fire damage on a failed save, or half as much damage on a successful one. If a creature would be in the area of multiple lines, it only makes one saving throw. The damage roll of that saving throw is increased by 1d10 for each line the creature is in beyond the first.</p>
+            <p class="indent">Each of these lines then become filled with dark, toxic smoke until the start of your next turn, heavily obscuring the areas. A creature that enters the smoke for the first time on a turn or ends its turn there must succeed on a Constitution saving throw or become poisoned until the end of its next turn.</p>
             <p class="indent">Any line of fire that goes its full distance without stopping on a solid surface explodes in a blast of scintillating colors. These blasts emit thunderous booms audible out to 1000 feet.</p>
         </description>
         <setters>
@@ -555,7 +557,8 @@
         <description>
             <p>Radiant energy is expelled from you in a burst of intense light. Each creature within 10 feet of you must make a Strength saving throw. On a failed save, a creature takes 6d8 radiant damage and is pushed up to 10 feet away from you. On a successful save, a creature takes half as much damage and is not pushed.</p>
             <p class="indent">Then, the light settles into a 10-foot-radius ring that moves with you, centered on you, for the duration. Whenever a creature willingly attempts to enter or leave the ring, you can attempt to block it from passing through the ring (no action required). That creature must make a Strength saving throw. On a failed save, it is unable to willingly attempt to pass through the ring for the duration of the current turn. On a successful save, it is able to pass through the ring at-will for the duration of the current turn.</p>
-            <p class="indent">When a creature ends its turn within the ring, you can choose to deal 3d8 radiant damage to it. For the duration, you shed bright light in a 10-foot radius and dim light 10 feet beyond that.</p>
+            <p class="indent">When a creature ends its turn within the ring, you can choose to deal 3d8 radiant damage to it.</p>
+            <p class="indent">The area within the ring is bright light and it sheds dim light for an additional 10 feet.</p>
             <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, both the initial damage and the damage dealt at the end of a creature’s turn increases by 1d8 for each slot level above 5th.</p>
         </description>
         <setters>
@@ -576,7 +579,7 @@
     <element name="Hand of Helios" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_HAND_OF_HELIOS">
         <supports>Bard, Cleric, Sorcerer</supports>
         <description>
-            <p>You form radiant energy into a vaguely hand-shaped form that sweeps forward along a 5-foot-wide line that is up to 20 feet long. The line emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 2d6 radiant damage on a failed save, or half as much damage on a successful one. The furthest creature in the line must also make a Strength saving throw, as the hand attempts to grasp and throw it rather than merely passing through it. On a failed save, it takes 1d6 radiant damage and is thrown up to 15 feet in a horizontal direction of your choice.</p>
+            <p>You form radiant energy into a vaguely hand-shaped form that sweeps forward along a 5-foot-wide line that is up to 20 feet long. The line emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 2d6 radiant damage on a failed save, or half as much damage on a successful one. One creature within the line must also make a Strength saving throw, as the hand attempts to grasp and throw it rather than merely passing through it. On a failed save, it takes 1d6 radiant damage and is thrown up to 10 feet in a horizontal direction of your choice.</p>
             <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 2nd level or higher, the damage dealt on a failed Dexterity saving throw increases by 1d6 for each slot level above 1st.</p>
         </description>
         <setters>
@@ -597,7 +600,7 @@
     <element name="Holy Rain" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_HOLY_RAIN">
         <supports>Cleric, Druid, Paladin</supports>
         <description>
-            <p>Until the spell ends, a light rain falls in a 60-foot-tall cylinder with a 30-foot radius centered on a point you choose within range. The area is lightly obscured, and exposed flames within the area are doused.</p>
+            <p>Until the spell ends, a light rain falls in a 60-foot-tall cylinder with a 30-foot radius centered on a point you choose within range. The area is dim light, and exposed flames within the area are doused.</p>
             <p class="indent">This rain is holy water. An undead or fiend that starts its turn within the area or enters it for the first time on a turn must make a Constitution saving throw, taking 3d6 radiant damage on a failed save or half as much damage on a successful one.</p>
             <p class="indent">The rain also has healing properties. Any corpse within this area can’t become undead, and any nonhostile, living creature within the area that starts its turn with 0 hit points is stabilized. A nonhostile creature that remains within the area regains 1d4 hit points for every 10 minutes it remains there.</p>
             <p class="indent">Lastly, if you maintain your concentration on this spell for its whole duration, plants within the area become enriched. For the next 10 days, these plants grow twice as fast.</p>
@@ -642,7 +645,7 @@
     <element name="Jono’s Cozy Shack" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_JONOS_COZY_SHACK">
         <supports>Artificer, Wizard</supports>
         <description>
-            <p>The model cabin that serves as the material component of this spell magically expands by a factor of 24, until it becomes the size of a real cabin. The full-size cabin must fit on a square area of ground within range that is no larger than 20 feet on a side. Any creatures within the area are harmlessly pushed out of it as the cabin expands.</p>
+            <p>The model cabin that serves as the material component of this spell magically expands by a factor of 24, until it becomes the size of a real cabin. The full-size cabin must fit on a square area of ground within range that is no larger than 30 feet on a side. Any creatures within the area are harmlessly pushed out of it as the cabin expands.</p>
             <p class="indent">The cabin shares the layout of the model used as its material component, which must fit within a 10-inch cube. The model is constructed before the spell is cast. Its walls must make up an enclosed single story area, with one or two doors and up to four windows. The walls are constructed with miniature wooden logs, and are composed of 5-inch tall, 2.5-inch wide panels that are half an inch thick. As the cabin expands by a factor of 24, the walls of the full size cabin are therefore composed of 10-foot tall, 5-foot wide panels that are 1 foot thick. It also has an accordingly sized roof (with attic space) and wooden flooring.</p>
             <p class="indent">By default, the cabin is unfurnished. 1/24th scale furnishings can be added to the model before the spell is cast. Though these model furnishings require far less raw materials than their full size counterparts, the magical process used to bind them to the cabin makes up for the difference, causing them to cost the same amount as their full size versions. As many furnishings as can fit inside the model can be added.</p>
             <p class="indent">When the spell ends, any creatures within the cabin are harmlessly ejected, as are any objects that were not a part of the original model. The objects that were a part of the original model are moved back to their original positions within the model, though they are not restored to their original conditions. Objects that were damaged or broken remain so in the model.</p>
@@ -666,10 +669,12 @@
     <element name="Jono’s Fiery Portal" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_JONOS_FIERY_PORTAL">
         <supports>Bard, Sorcerer, Wizard</supports>
         <description>
-            <p>As you cast this spell, you burn an intricate series of runic marks onto a 10-foot square surface that you can see within range, creating a runic pattern the fills the square. These runic marks last for the duration, unless they are dispelled or the surface they are on is destroyed.</p>
-            <p class="indent">If you have two or more of these patterns active at once, you can use your action to touch one of the patterns, causing the marks of that pattern as well as another active pattern of your choice on the same plane of existence to slowly burn away. After 1 minute, the patterns fully burn away, and both 10-foot square surfaces become connected portals surrounded by a ring of fire. These portals remain open for 1 minute. Any creature that enters a portal instantly appears within 5 feet of the opposite portal or in the nearest unoccupied space if that space is occupied.</p>
-            <p class="indent">When the portals open, you can allow any number of creatures you select to safely move between the portals. If any other creature enters a portal, it takes 4d8 fire damage as it passes through it. The portals can also be seen through. If one of the portals is dispelled while the portals are open, both portals close.</p>
-            <p class="indent">When the portals close, the spell ends for each portal. At Higher Levels. When you cast this spell using a spell slot of 6th level or higher, the fire damage increases by 1d8 and the spell’s duration increases by 10 days for each slot level above 5th.</p>
+            <p>As you cast this spell, you burn a series of runic marks onto a 10-foot square surface that you can see within range, creating a runic pattern that fills the square and lasts for the duration, unless they are dispelled or the surface they are on is destroyed.</p>
+            <p class="indent">If you have two or more of these patterns active at once, you can use your action to touch one of the patterns, causing the marks of that pattern as well as another active pattern of your choice on the same plane of existence to slowly burn away. After 1 minute, the patterns fully burn away, and both 10-foot square surfaces become connected portals surrounded by a ring of fire. These portals remain open for 1 minute. Any creature or object that enters a portal instantly appears within 5 feet of the opposite portal or in the nearest unoccupied space if that space is occupied, conserving its momentum as it passes through.</p>
+            <p class="indent">When the portals open, you can allow any number of creatures you select to safely move between the portals. If any other creature enters a portal, it takes 4d8 fire damage as it passes through it. The portals can also be seen through.</p>
+            <p class="indent">If one of the portals is dispelled, both portals close.</p>
+            <p class="indent">When the portals close, the spell ends for each portal.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, the fire damage increases by 1d8 and the spell’s duration increases by 10 days for each slot level above 5th.</p>
         </description>
         <setters>
             <set name="keywords"></set>
@@ -687,7 +692,7 @@
         </setters>
     </element>
     <element name="Jono’s Secret Campfire" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_JONOS_SECRET_CAMPFIRE">
-        <supports>Sorcerer, Wizard</supports>
+        <supports>Ranger, Sorcerer, Wizard</supports>
         <description>
             <p>You create a magical, silver-flamed campfire on an area of ground that you can see within range. Until the spell ends, the campfire fills a 5-foot cube in that area. The fire sheds no smoke, but outside of that and its silver flames it has all the same properties as a nonmagical fire.</p>
             <p class="indent">For the duration, a 15-foot radius area around the fire is concealed by an illusion. When viewed from outside the area, this illusion causes the area to appear as it did before this spell was cast, thereby concealing new creatures and objects that enter the area. The area is also filled with bright light, which does not extend outside of it.</p>
@@ -712,8 +717,8 @@
     <element name="Judgment" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_JUDGMENT">
         <supports>Cleric</supports>
         <description>
-            <p>Your hand momentarily flashes with light as you try to touch a creature. Make a melee spell attack against the target. You have advantage on the attack roll if the target attacked a creature other than you on its last turn. On a hit, the target takes 1d8 radiant damage, and it begins to shimmer faintly until the start of your next turn. If the target attacks a creature other than you before then, it immediately takes 1d6 radiant damage and the spell ends.</p>
-            <p class="indent">This spell’s damage increases by one die when you reach 5th level (2d8 and 2d6), 11th level (3d8 and 3d6), and 17th level (4d8 and 4d6)</p>
+            <p>Your hand momentarily flashes with light as you try to touch a creature. Make a melee spell attack against the target. You have advantage on the attack roll if the target attacked a creature other than you on its last turn. On a hit, the target takes 1d6 radiant damage, and it begins to shimmer faintly until the start of your next turn. If the target attacks a creature other than you before then, it immediately takes 1d6 radiant damage and the spell ends.</p>
+            <p class="indent">This spell’s damage increases by one die when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)</p>
         </description>
         <setters>
             <set name="keywords"></set>
@@ -733,8 +738,8 @@
     <element name="Lava Coils" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_LAVA_COILS">
         <supports>Sorcerer, Warlock, Wizard</supports>
         <description>
-            <p>You conjure coiling tendrils of lava around up to two creatures of your choice that you can see within range. Each target must make a Dexterity saving throw. On a failed save, a creature takes 5d6 fire damage and is restrained. At the start of your next turn, the restrain ends and the target takes another 5d6 fire damage. On a successful save, a creature takes the same initial damage but is not restrained nor damaged again.</p>
-            <p class="indent">If a creature dies while restrained by the spell or from this spell’s damage, its body is burned and absorbed into the lava, along with everything it is wearing and carrying other than magic items. The creature can be restored to life only by means of a true resurrection or a wish spell. The lava then falls to the ground, creating a 1-foot thick layer that fills a square area on the ground with sides of the same length as the sides of the deceased creature’s space. The lava pool lasts for 1 minute. A creature that starts its turn within a lava pool must make a Dexterity saving throw, taking 5d6 fire damage on a failed save or half as much damage on a successful one.</p>
+            <p>You conjure coiling tendrils of lava around up to two creatures of your choice that you can see within range. Each target takes 5d6 fire damage, and must succeed on a Dexterity saving throw or become restrained until the start of your next turn. When the restrain ends, a target takes another 5d6 fire damage.</p>
+            <p class="indent">If a creature dies while restrained by the spell or from this spell’s damage, its body is burned and absorbed into the lava, along with everything it is wearing and carrying other than magic items. The creature can be restored to life only by means of a true resurrection or a wish spell. The lava then falls to the ground, creating a 1-foot thick layer that fills a square area on the ground with sides of the same length as the sides of the deceased creature’s space. The lava pool lasts for 1 minute. A creature that starts its turn within a lava pool or enters it for the first time on a turn must make a Dexterity saving throw, taking 5d6 fire damage on a failed save or half as much damage on a successful one.</p>
             <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 7th level or higher, you can target an additional creature for each slot level above 6th.</p>
         </description>
         <setters>
@@ -756,10 +761,9 @@
         <supports>Ranger</supports>
         <description>
             <p>You call upon radiant magic, and imbue it into your quiver. For the duration, your quiver produces an endless supply of radiant arrows or crossbow bolts that you can use for any weapon you wield that requires those ammunitions.</p>
-            <p class="indent">When you attack with this ammunition, your attacks are made at advantage, have triple their normal range, and their damage type becomes radiant. Also, once per turn when you hit a creature with this ammunition, you can force it to make a Constitution saving throw.</p>
-            <p class="indent">On a failed save, it takes 1d8 radiant damage and is blinded until the start of your next turn.</p>
+            <p class="indent">When you attack with this ammunition, your attacks deal 1d8 additional radiant damage on a hit, have triple their normal range, and their damage type becomes radiant. Also, once per turn when you hit a creature with this ammunition, you can force it to make a Constitution saving throw. On a failed save, it is blinded until the start of your next turn, and its speed is halved for the same duration</p>
             <p class="indent">If the quiver leaves your possession, the spell ends.</p>
-            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, the radiant damage dealt on a failed save increases by 1d8 for each slot level above 4th.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a 5th level spell slot, the bonus radiant damage becomes 1d12.</p>
         </description>
         <setters>
             <set name="keywords"></set>
@@ -829,9 +833,11 @@
     <element name="Mend Wounds" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_MEND_WOUNDS">
         <supports>Bard, Cleric, Druid, Ranger, Paladin</supports>
         <description>
-			<p>You imbue a creature that you can see within range with positive energy. That creature regains hit points equal to 1d4 + your spellcasting ability modifier, and the number of hit points it has after this healing becomes this spell’s healing threshold. At the start of each of the creature’s turns, it regains 1d4 hit points. This healing cannot bring the creature above this spell’s healing threshold, meaning this healing is only effective against damage dealt after the spell was cast. If the creature is reduced to 0 hit points during the duration, you must roll a d20. On a roll of 10 or lower, the spell ends.</p>
-			<p class="indent">This spell has no effect on undead or constructs.</p>
-			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the initial healing increases by 2d4 for each slot level above 2nd.</p>
+            <p>You imbue a creature that you can see within range with positive energy. That creature regains hit points equal to 1d4 + your spellcasting ability modifier, and the number of hit points it has after this healing becomes this spell’s healing threshold for the duration of the spell.</p>
+            <p class="indent">At the start of each of the creature’s turns, it regains 1d4 hit points. This healing cannot bring the creature above this spell’s healing threshold, meaning this healing is only effective against damage dealt after the spell was cast.</p>
+            <p class="indent">If the creature is reduced to 0 hit points during the duration, you must roll a d20. On a roll of 10 or lower, the spell ends.</p>
+            <p class="indent">This spell has no effect on undead or constructs.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the initial healing increases by 2d4 for each slot level above 2nd.</p>
         </description>
         <setters>
             <set name="keywords"></set>
@@ -873,10 +879,10 @@
     <element name="Mirror Shield" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_MIRROR_SHIELD">
         <supports>Paladin</supports>
         <description>
-			<p>You transmute your shield, strengthening it and causing its front to take on a mirror-like luster. Until the spell ends, your shield grants a +1 bonus to your AC while you wield it.</p>
-			<p class="indent">Also when you cast this spell, you must choose one of the following damage types: acid, cold, fire, lightning, or thunder. When you would take damage of the choose type while the spell lasts, you can use your reaction to gain resistance to that instance of damage, and cause the shield to reflect a bolt of radiant energy at the creature that damaged you if you can see it and it is within 60 feet of you. That creature must succeed on a Dexterity saving throw or take 1d8 radiant damage.</p>
-			<p class="indent">If the shield leaves your possession, the spell ends.</p>
-			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.</p>
+            <p>You transmute your shield, strengthening it and causing its front to take on a mirror-like luster. If the shield isn’t magical already, it grants a +1 bonus to AC while you wield it. This bonus is in addition to the shield’s normal bonus to AC.</p>
+            <p class="indent">Also when you cast this spell, you must choose one of the following damage types: acid, cold, fire, lightning, or thunder. When you would take damage of the choose type while the spell lasts, you can use your reaction to gain resistance to that instance of damage, and cause the shield to reflect a bolt of radiant energy at the creature that damaged you if you can see it and it is within 60 feet of you. That creature must succeed on a Dexterity saving throw or take 1d8 radiant damage. You can reflect this bolt even if the triggering damage causes you to lose concentration.</p>
+            <p class="indent">If the shield leaves your possession, the spell ends.</p>
+            <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.</p>
         </description>
         <setters>
             <set name="keywords"></set>
@@ -897,7 +903,7 @@
         <supports>Bard, Cleric, Wizard</supports>
         <description>
             <p>After spending the casting time inscribing magical runes into the the nonmagical silvered melee weapon, you touch the diamond to its hilt. The diamond is absorbed into the weapon, transforming it into a magic weapon with a +1 bonus to attack rolls and damage rolls for the spell’s duration.</p>
-            <p class="indent">The weapon also becomes especially effective against creatures whose resistance to bludgeoning, piercing, and slashing damage is counteracted by silvered weapons. Against such a creature, the weapon deals an additional 1d8 radiant damage on a hit. Additionally, the weapon has 40 charges, which can be expended in the following ways by the weapon’s wielder:</p>
+            <p class="indent">The weapon also becomes especially effective against creatures whose resistance to bludgeoning, piercing, and slashing damage is counteracted by silvered weapons. Against such a creature, the weapon deals an additional 1d8 radiant damage on a hit. Additionally, the weapon has 16 charges, which can be expended in the following ways by the weapon’s wielder:</p>
             <ul>
                 <li>As a bonus action, the weapon’s wielder can expend up to 5 charges. Until the end of the turn, the wielder can make ranged weapon attacks by shooting bolts of moonlight from the weapon’s tip. These ranged weapon attacks have a range of 30 times the number of charges spent. They deal the same damage as the weapon’s melee attacks, but their damage type is radiant.</li>
                 <li>When the weapon hits a creature, its wielder can expend 5 charges to attempt to silence that creature. The creature must succeed on a Charisma saving throw or be unable to speak until the end of the wielder’s next turn.</li>
@@ -924,7 +930,7 @@
         </setters>
     </element>
     <element name="Navigator’s Map" type="Spell" source="Blazing Dawn Player’s Companion" id="ID_JONOMAN3000_BDPC_SPELL_NAVIGATORS_MAP">
-        <supports>Cleric, Druid, Ranger, Wizard</supports>
+        <supports>Artificer, Cleric, Druid, Ranger, Wizard</supports>
         <description>
             <p>As you cast this spell, you imbue divination magic into the map and golden pin used as this spell’s material components. While the spell lasts, the map displays your current location as a golden point of light. If you are outside the map’s boundaries when you cast the spell, the spell fails. Similarly, the spell ends if you ever leave the map’s boundaries during the duration.</p>
             <p class="indent">While the spell lasts, you can stick the golden pin anywhere on the map. As long as the pin is stuck in the map, a golden line marks the most direct route between your current location and the location marked by the pin. This route is conceived using only the information available on the map. When you place the pin, you can mentally choose what information the route should take into account. For example, you could choose to have it prioritize roads, avoid mountains, and avoid water if you are traveling on land. Alternatively, you could have it avoid land if you are traveling by boat. The route suggested by the spell is only as good as the map you’re using. If the map is wrong or overly simplistic, the route could end up being wrong as well. You can place the pin as many times as you’d like over the duration.</p>
@@ -1015,7 +1021,7 @@
             <set name="hasMaterialComponent">false</set>
             <set name="materialComponent">component</set>
             <set name="duration">1 round</set>
-            <set name="isConcentration">false</set>
+            <set name="isConcentration">true</set>
         </setters>
     </element>
 </elements>
