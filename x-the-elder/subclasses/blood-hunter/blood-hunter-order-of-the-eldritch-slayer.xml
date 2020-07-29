@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Blood Hunter Order of the Eldritch Slayer</name>
+        <update version="0.0.1">
+            <file name="blood-hunter-order-of-the-eldritch-slayer.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/blood-hunter/blood-hunter-order-of-the-eldritch-slayer.xml" />
+        </update>
+    </info>
+    
+    <element name="Order of the Eldritch Slayer" type="Source" source="Core" id="ID_NET_HOMEBREWERY_SOURCE_ORDER_OF_THE_ELDRITCH_SLAYER">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">OOTES</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/O4JvQYu7p</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="NET" url="https://www.reddit.com/user/NorthEastText/">u/NorthEastText</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200719</set>
+        </setters>
+    </element>
+
+    <element name="Order of the Eldritch Slayer" type="Archetype" source="Order of the Eldritch Slayer" id="ID_NET_OOTES_ARCHETYPE_BLOOD_HUNTER_ORDER_OF_THE_ELDRITCH_SLAYER">
+        <supports>Blood Hunter Order v2</supports>
+        <description>
+            <p>Blood Hunters who join the Order of the Eldritch Slayers seek to learn about the vast unknown and how to counter the great evils that lie on the far realm and beyond. They specifically hone their combat capabilities in order to keep such abberations and outer worldly beings out of mortal coil. Eldritch Slayers may however want to simply study the great unknowns and learn more about its mysteries and secrets rather than destroy such entities. These mystified Bloodhunters are exceptionally rare and seem eerily alien to common folk as they gain more unatural characteristics.</p>
+            <div element="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_OTHERWORLDLY_KNOWLEDGE" />
+            <div element="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_ABERRANT_STRIKES" />
+            <div element="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_PHRENIC_DEFENSES" />
+            <div element="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_BRAND_OF_THE_DEVOURER" />
+            <div element="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_ILLICT_MIND" />
+            <div element="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_BLOOD_CURSE_OF_THE_UNFATHOMABLE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_OTHERWORLDLY_KNOWLEDGE" level="3" />
+            <grant type="Archetype Feature" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_ABERRANT_STRIKES" level="3" />
+            <grant type="Archetype Feature" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_PHRENIC_DEFENSES" level="7" />
+            <grant type="Archetype Feature" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_BRAND_OF_THE_DEVOURER" level="11" />
+            <grant type="Archetype Feature" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_ILLICT_MIND" level="15" />
+            <grant type="Archetype Feature" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_BLOOD_CURSE_OF_THE_UNFATHOMABLE" level="18" />
+        </rules>
+    </element>
+        <element name="Otherworldly Knowledge" type="Archetype Feature" source="Order of the Eldritch Slayer" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_OTHERWORLDLY_KNOWLEDGE">
+            <description>
+                <p>Your seclusive order has taught you additional skills in order to be able to fight various alien entities effectively. Your Hunter’s Bane feature know gives you advantage on Wisdom (Survival) checks to track Aberrations or Monstrosities as well as on Intelligence ability checks to recall information about them. Additionally, you learn to speak, read, and write Deep Speech.</p>
+            </description>
+            <sheet>
+                <description>Your Hunter’s Bane feature know gives you advantage on Survival checks to track Aberrations or Monstrosities as well as on Intelligence ability checks to recall information about them.</description>
+            </sheet>
+            <rules>
+                <grant type="Language" id="ID_LANGUAGE_DEEP_SPEECH" />
+            </rules>
+        </element>
+        <element name="Aberrant Strikes" type="Archetype Feature" source="Order of the Eldritch Slayer" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_ABERRANT_STRIKES">
+            <description>
+                <p>At 3rd level, your attacks become fueled with alien energy. Once per turn during an attack you can deal an extra 1d6 psychic damage and force the creature to make a wisdom saving throw against your Hemocraft Save DC. On a fail the creature becomes Frightened. The damage increases to 2d6 at 11th level.</p>
+                <p class="indent">You can use this ability a number of times equal to your Intelligence modifier and regain all uses on a long rest.</p>
+            </description>
+            <sheet usage="{{intelligence:modifier}}/Long Rest">
+                <description>Once per turn during an attack you can deal an extra {{aberrant-strikes:dice-count}}d6 psychic damage and force the creature to make a wisdom saving throw against your Hemocraft Save DC. On a fail the creature becomes Frightened.</description>
+            </sheet>
+            <rules>
+                <stat name="aberrant-strikes:dice-count" value="1" level="3" />
+                <stat name="aberrant-strikes:dice-count" value="2" level="11" />
+            </rules>
+        </element>
+        <element name="Phrenic Defenses" type="Archetype Feature" source="Order of the Eldritch Slayer" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_PHRENIC_DEFENSES">
+            <description>
+                <p>Your mind has been honed to better resist otherworldly temptations. Starting at 7th level, your thoughts can’t be read by telepathy or other means unless you allow it. Additionally you gain proficiency in Wisdom saving throws.</p>
+            </description>
+            <sheet>
+                <description>Your thoughts can’t be read by telepathy or other means unless you allow it.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" />
+            </rules>
+        </element>
+        <element name="Brand of the Devourer" type="Archetype Feature" source="Order of the Eldritch Slayer" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_BRAND_OF_THE_DEVOURER">
+            <description>
+                <p>Beginning at 11th level your Brand of Castigation now begins to slowly eat away at ones personality and mental aptitude. While a creature is branded by you and it makes a Intelligence, Charisma or Wisdom saving throw you can use your reaction to impose disadvantage on that role and give yourself advantage on the next Intelligence, Charisma or Wisdom you make before the end of the creatures next turn.</p>
+            </description>
+            <sheet>
+                <description>While a creature is branded by you and it makes a Intelligence, Charisma or Wisdom saving throw you can use your reaction to impose disadvantage on that role and give yourself advantage on the next Intelligence, Charisma or Wisdom you make before the end of the creatures next turn.</description>
+            </sheet>
+        </element>
+        <element name="Illict Mind" type="Archetype Feature" source="Order of the Eldritch Slayer" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_ILLICT_MIND">
+            <description>
+                <p>Starting at 15th level, your brain has become strange and alien like allowing you to probe into others minds. You are always under the effect of the <em>detect thoughts</em> spell.</p>
+            </description>
+            <sheet>
+                <description>You are always under the effect of the detect thoughts spell.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DETECT_THOUGHTS" />
+            </rules>
+        </element>
+        <element name="Blood Curse of the Unfathomable" type="Archetype Feature" source="Order of the Eldritch Slayer" id="ID_NET_OOTES_ARCHETYPE_FEATURE_OOTES_BLOOD_CURSE_OF_THE_UNFATHOMABLE">
+            <description>
+                <p>Your ultimate knowledge of the unkown and how to defeat it has taught you inscrutable secrets. At 18th level, You gain the Blood Curse of the Unfathomable for your Blood Maledict feature. This does not count against your blood curses known.</p>
+                <h5>BLOOD CURSE OF THE UNFATHOMABLE</h5>
+                <p>As an action, you choose a creature within 30 feet of you to witness the eldritch horrors of the far realm. They must make a Wisdom saving throw. On a fail, they suffer 6d6 psychic damage as their brain fails to comprahend the sight of it, and half as much on a successful save.</p>
+                <p class="indent"><strong><em>Amplify.</em></strong> The creature additionally suffers from one level of Exhaustion if they failed the save, as their body is incapable of handling the strange laws of time in the far realm.</p>
+            </description>
+            <sheet usage="Blood Maledict" action="Action">
+                <description>You choose a creature within 30 feet. They must make a Wisdom saving throw. On a fail, they suffer 6d6 psychic damage, and half as much on a successful save.</description>
+            </sheet>
+        </element>
+    
+</elements>

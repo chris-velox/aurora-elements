@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Sea Dweller Otherworldly Patron</name>
+        <update version="0.0.1">
+            <file name="warlock-sea-dweller-patron.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-sea-dweller-patron.xml" />
+        </update>
+    </info>
+    
+    <element name="Sea Dweller Patron" type="Source" source="Core" id="ID_JIMSETRAN_GMBINDER_SOURCE_SEA_DWELLER_PATRON">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SDP</set>
+            <set name="url">https://www.gmbinder.com/share/-MBcCu0aVn67HjQz3fNW</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="JT" url="https://www.gmbinder.com/profile/jimsetran">JimseTran</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200726</set>
+        </setters>
+    </element>
+
+    <element name="The Sea Dweller" type="Archetype" source="Sea Dweller Patron" id="ID_JT_SDP_ARCHETYPE_WARLOCK_SEA_DWELLER">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>You have been saved from drowning by a powerful sea creature lurking in the deep oceans. To keep your life, you have made a pact with the creature, making it your patron. You serve the powerful sea creature as its loyal servant, promising to complete any missions your patron gives you and gaining the ability to conjure and manipulate water to your advantage in battle.</p>
+            <p class="indent">Through this pact, you have also been cursed to be forced to transform into a merfolk version of yourself whenever you are submerged in water, however. The curse has forced you to be more careful when near a body of water to prevent a sudden revealing of your merfolken form to other people.</p>
+            <h4>EXPANDED SPELL LIST</h4>
+            <p>The sea dweller lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+            <h5 class="caption">EXPANDED SPELL LIST</h5>
+            <table>
+                <thead>
+                    <tr><td>Spell Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><em>create and destroy water, fog cloud</em></td></tr>
+                <tr><td>2nd</td><td><em>silence, calm emotions</em></td></tr>
+                <tr><td>3rd</td><td><em>tidal wave<sup>XGtE</sup>, wall of water<sup>XGtE</sup></em></td></tr>
+                <tr><td>4th</td><td><em>control water, watery sphere<sup>XGtE</sup></em></td></tr>
+                <tr><td>5th</td><td><em>maelstrom<sup>XGtE</sup>, commune with nature</em></td></tr>
+            </table>
+            <div element="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_AQUATIC_FIGHTER" />
+            <div element="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_MERFOLKEN_CURSE" />
+            <div element="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_SLIPSTREAM" />
+            <div element="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_CLEANSING_WATERS" />
+            <div element="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_LIQUID_METAMORPHOSIS" />
+        </description>
+        <sheet display="false" />
+        <spellcasting name="Warlock" extend="true">
+            <extend>ID_PHB_SPELL_CREATE_AND_DESTROY_WATER</extend>
+            <extend>ID_PHB_SPELL_FOG_CLOUD</extend>
+            <extend>ID_PHB_SPELL_SILENCE</extend>
+            <extend>ID_PHB_SPELL_CALM_EMOTIONS</extend>
+            <extend>ID_XGTE_SPELL_TIDAL_WAVE</extend>
+            <extend>ID_XGTE_SPELL_WALL_OF_WATER</extend>
+            <extend>ID_PHB_SPELL_CONTROL_WATER</extend>
+            <extend>ID_XGTE_SPELL_WATERY_SPHERE</extend>
+            <extend>ID_XGTE_SPELL_MAELSTROM</extend>
+            <extend>ID_PHB_SPELL_COMMUNE_WITH_NATURE</extend>
+        </spellcasting>
+        <rules>
+            <grant type="Archetype Feature" id="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_AQUATIC_FIGHTER" level="1" />
+            <grant type="Archetype Feature" id="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_MERFOLKEN_CURSE" level="1" />
+            <grant type="Archetype Feature" id="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_SLIPSTREAM" level="6" />
+            <grant type="Archetype Feature" id="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_CLEANSING_WATERS" level="10" />
+            <grant type="Archetype Feature" id="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_LIQUID_METAMORPHOSIS" level="14" />
+        </rules>
+    </element>
+        <element name="Aquatic Fighter" type="Archetype Feature" source="Sea Dweller Patron" id="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_AQUATIC_FIGHTER">
+            <description>
+                <p>Beginning at 1st level, you gain proficiency in medium armor along with tridents.</p>
+                <p class="indent">In addition, when you deal damage to a creature, you can conjure a wave of water that splashes the target. The creature must then make a Dexterity saving throw against your spell save DC, taking bludgeoning damage equal to 1d6 + half your Warlock level, rounded down, and knocking it prone on a failed save.</p>
+                <p class="indent">You can use this feature twice. You regain any expended uses when you finish a short or long rest.</p>
+            </description>
+            <sheet usage="2/Short Rest">
+                <description>When you deal damage to a creature, you can conjure a wave of water that splashes the target. The creature must then make a Dexterity saving throw against your spell save DC, taking bludgeoning damage equal to 1d6 + half your Warlock level, rounded down, and knocking it prone on a failed save.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_TRIDENT" />
+            </rules>
+        </element>
+        <element name="Merfolken Curse" type="Archetype Feature" source="Sea Dweller Patron" id="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_MERFOLKEN_CURSE">
+            <description>
+                <p>At 1st level, the curse of the merfolk amplifies and takes hold of you. You gain the ability to speak Aquan.</p>
+                <p class="indent">When you are submerged in water, you transform into a merfolken version of yourself. The transformation takes one minute and if interrupted, you will revert to your normal form. You keep wearing any equipment if possible; any equipment that your merfolken form cannot wear will fall to the ground. While in merfolk form, you gain the following benefits:</p>
+                <ul>
+                    <li>You can breathe both air and water.</li>
+                    <li>Your walking speed is reduced to 10 feet, but you gain a 40 ft. swimming speed.</li>
+                    <li>When you use your Aquatic Fighter feature, your speed is increased by 10 feet until the start of your next turn.</li>
+                    <li>If your armor normally imposes disadvantage on Dexterity (Stealth) checks, it doesn’t while you are underwater.</li>
+                    <li>While underwater, a ranged weapon attack does not automatically miss a target beyond the weapon’s normal range.</li>
+                </ul>
+                <p class="indent">When you are no longer fully submerged, you transform over 1 minute to your normal form, losing these benefits.</p>
+            </description>
+            <sheet>
+                <description>When you are submerged in water, you transform into a merfolken version of yourself. The transformation takes one minute and if interrupted, you will revert to your normal form. When you are no longer fully submerged, you transform over 1 minute to your normal form, losing these benefits.</description>
+            </sheet>
+            <rules>
+                <grant type="Language" id="ID_MM_LANGUAGE_AQUAN" />
+            </rules>
+        </element>
+        <element name="Slipstream" type="Archetype Feature" source="Sea Dweller Patron" id="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_SLIPSTREAM">
+            <description>
+                <p>At 6th level, you gain the ability to swiftly propel yourself with a stream of water. As a bonus action, you propel yourself to 15 feet in any direction to an unoccupied space. While you move in this way, opportunity attacks have disadvantage on you. While underwater, the range increases to 30 feet.</p>
+                <p class="indent">You can do this a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses after a long rest.</p>
+            </description>
+            <sheet usage="{{slipstream:uses}}/Long Rest" action="Bonus Action">
+                <description>You propel yourself to 15 feet in any direction to an unoccupied space. While you move in this way, opportunity attacks have disadvantage on you. While underwater, the range increases to 30 feet.</description>
+            </sheet>
+            <rules>
+                <stat name="slipstream:uses" value="1" bonus="base" />
+                <stat name="slipstream:uses" value="charisma:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Cleansing Waters" type="Archetype Feature" source="Sea Dweller Patron" id="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_CLEANSING_WATERS">
+            <description>
+                <p>At 10th level, you have resistance to fire damage.</p>
+                <p class="indent">In addition, you can as a bonus action cover yourself in a sphere of clear water for the next minute. The next time you are inflicted by a condition, the sphere of water absorbs the condition, preventing it from applying to you. If you are inflicted by more than one condition at the same time, you choose which to prevent. Any other effects still apply to you. You cannot prevent the unconscious condition from being applied as a result of being reduced to 0 hit points. The sphere disappears after removing a single condition.</p>
+                <p class="indent">After using this feature, you cannot use it again until your next short or long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1/Short Rest">
+                <description>You can as cover yourself in a sphere of clear water for the next minute. The next time you are inflicted by a condition, the sphere of water absorbs the condition, preventing it from applying to you.  The sphere disappears after removing a single condition.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+            </rules>
+        </element>
+        <element name="Liquid Metamorphosis" type="Archetype Feature" source="Sea Dweller Patron" id="ID_JT_SDP_ARCHETYPE_FEATURE_SEA_DWELLER_LIQUID_METAMORPHOSIS">
+            <description>
+                <p>At 14th level, the merfolken side becomes a more controlled part of you. As a bonus action, you can transform into an empowered sea creature. For the next 10 minutes, you transform into a merfolken version of yourself, even if you are not submerged in water. In addition, you gain the following features:</p>
+                <ul>
+                    <li>You keep your regular walking speed.</li>
+                    <li>Any bludgeoning damage you deal counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</li>
+                    <li>You can move through any creature regardless of size, and your movement does not provoke opportunity attacks. When you move through a creature for the first time in a turn, you deal 3d6 bludgeoning damage to it.</li>
+                    <li>You have advantage on ability checks and saving throws made to escape a grapple or being restrained.</li>
+                    <li>The range of the Slipstream feature is doubled.</li>
+                </ul>
+                <p class="indent">After using this feature, you cannot use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1/Long Rest">
+                <description>You can transform into an empowered sea creature. For the next 10 minutes, you transform into a merfolken version of yourself, even if you are not submerged in water.</description>
+            </sheet>
+        </element>
+    
+</elements>
