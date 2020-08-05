@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Witch Hunter Ranger Archetype</name>
-        <update version="0.0.11">
+        <name>Witch Hunter Ranger Archetype v4.1</name>
+        <update version="0.0.12">
             <file name="ranger-witch-hunter.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/ranger/ranger-witch-hunter.xml" />
         </update>
     </info>
@@ -65,7 +65,7 @@
     </element>
         <element name="Holy Arsenal" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_HOLY_ARSENAL">
             <description>
-                <p>At 3rd level, you are adept at making use of different weaponry to purge the unholy in efficient ways. Once per turn, when attacking with a crossbow or a firearm, you may add your Wisdom modifier to the damage. This bonus damage is radiant damage.</p>
+                <p>At 3rd level, you are adept at making use of different weaponry to purge the unholy in efficient ways. Once per turn, when attacking with a crossbow or a firearm, you may add your Wisdom modifier to the damage. This bonus damage is radiant damage. You also learn the cantrip <i>sacred flame</i>.</p>
                 <p class="indent">Additionally, choose an option that compliments your arsenal.</p>
                 <p class="indent"><strong>Assorted.</strong> If you have a melee weapon in one hand, being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls.</p>
                 <p class="indent"><strong>Distant.</strong> Attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls.</p>
@@ -77,6 +77,7 @@
             </sheet>
             <rules>
                 <select type="Archetype Feature" name="Holy Arsenal Option" supports="Witch Hunter Holy Arsenal Option" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" spellcasting="Ranger" known="true" />
             </rules>
         </element>
             <element name="Holy Arsenal: Assorted" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_HOLY_ARSENAL_ASSORTED">
@@ -139,63 +140,23 @@
         </element>
         <element name="Battle Sanctuary" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_BATTLE_SANCTUARY">
             <description>
-                <p>At 11th level, your pantheon’s powers can’t go unnoticed around you. You may use one of the following features by speaking a phrase.</p>
-                <p class="indent"><strong>Primed for Cleansing.</strong> Until the end of your turn, your bonus radiant damage from holy arsenal is doubled, and can be triggered an additional time.</p>
-                <p class="indent"><strong>Curse Monsters.</strong> As an action, select up to three creatures that can hear you and are within 30 feet of you to make a Charisma saving throw against your spell save DC. If a creature fails, that creature takes 3d4 psychic damage, and must use its reaction to move 10 feet away from you.</p>
-                <p class="indent"><strong>Decline the Heresy.</strong> As a reaction when you or a creature within 60 feet gain a charmed or frightened condition, you remove that condition from yourself or the creature.</p>
-                <p class="indent"><strong>Stop the Devious.</strong> As a reaction when a creature moves within 60 feet of you, the creature must make a Wisdom saving throw against your spell save DC. If the creature fails, its movement speed is reduced to 0, and attacks against the creature can’t suffer disadvantage, until its next turn.</p>
-                <p class="indent">You can use this feature an amount equal to your Wisdom modifier (minimum of 1). The uses reset after you finish a long rest.</p>
+                <p>At 11th level, you can punish those in motion.</p>
+                <p class="indent">As a reaction when a creature willingly moves within 120 feet of you, the creature must make a Charisma saving throw against your spell save DC. If the creature fails, it will take radiant damage equal to your Wisdom modifier for every 5 feet it willingly moves.</p>
+                <p class="indent">The creature can repeat the saving throw at the start of each of its turns, ending the effect on itself on a successful save.</p>
+                <p class="indent">You can use this feature once per short rest.</p>
             </description>
-            <sheet usage="{{battle-sanctuary:uses}}/Long Rest">
-                <description>You may use one of the following features:</description>
+            <sheet usage="1/Short Rest" action="Reaction">
+                <description>When a creature willingly moves within 120 feet of you, the creature must make a Charisma saving throw against your spell save DC. If the creature fails, it will take {{wisdom:modifier}} radiant damage for every 5 feet it willingly moves. The creature can repeat the saving throw at the start of each of its turns, ending the effect on itself on a successful save.</description>
             </sheet>
             <rules>
-                <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_PRIMED_FOR_CLEANSING" level="11" />
-                <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_CURSE_MONSTERS" level="11" />
-                <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_DECLINE_THE_HERESY" level="11" />
-                <grant type="Archetype Feature" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_STOP_THE_DEVIOUS" level="11" />
-                <stat name="battle-sanctuary:uses" value="1" bonus="base" />
-                <stat name="battle-sanctuary:uses" value="wisdom:modifier" bonus="base" />
             </rules>
         </element>
-            <element name="Battle Sanctuary: Primed for Cleansing" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_PRIMED_FOR_CLEANSING">
-                <description>
-                    <p>Until the end of your turn, your bonus radiant damage from holy arsenal is doubled, and can be triggered an additional time.</p>
-                </description>
-                <sheet alt="Primed for Cleansing" usage="Battle Sanctuary">
-                    <description>Until the end of your turn, your bonus radiant damage from holy arsenal is doubled, and can be triggered an additional time.</description>
-                </sheet>
-            </element>
-            <element name="Battle Sanctuary: Curse Monsters" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_CURSE_MONSTERS">
-                <description>
-                    <p>As an action, select up to three creatures that can hear you and are within 30 feet of you to make a Charisma saving throw against your spell save DC. If a creature fails, that creature takes 3d4 psychic damage, and must use its reaction to move 10 feet away from you.</p>
-                </description>
-                <sheet alt="Curse Monsters" usage="Battle Sanctuary" action="Action">
-                    <description>Select up to three creatures that can hear you and are within 30 feet of you to make a Charisma saving throw against your spell save DC. If a creature fails, that creature takes 3d4 psychic damage, and must use its reaction to move 10 feet away from you.</description>
-                </sheet>
-            </element>
-            <element name="Battle Sanctuary: Decline the Heresy" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_DECLINE_THE_HERESY">
-                <description>
-                    <p>As a reaction when you or a creature within 60 feet gain a charmed or frightened condition, you remove that condition from yourself or the creature.</p>
-                </description>
-                <sheet alt="Decline the Heresy" usage="Battle Sanctuary" action="Reaction">
-                    <description>As a reaction when you or a creature within 60 feet gain a charmed or frightened condition, you remove that condition from yourself or the creature.</description>
-                </sheet>
-            </element>
-            <element name="Battle Sanctuary: Stop the Devious" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_BATTLE_SANCTUARY_STOP_THE_DEVIOUS">
-                <description>
-                    <p>As a reaction when a creature moves within 60 feet of you, the creature must make a Wisdom saving throw against your spell save DC. If the creature fails, its movement speed is reduced to 0, and attacks against the creature can’t suffer disadvantage, until its next turn.</p>
-                </description>
-                <sheet alt="Stop the Devious" usage="Battle Sanctuary" action="Reaction">
-                    <description>As a reaction when a creature moves within 60 feet of you, the creature must make a Wisdom saving throw against your spell save DC. If the creature fails, its movement speed is reduced to 0, and attacks against the creature can’t suffer disadvantage, until its next turn.</description>
-                </sheet>
-            </element>
         <element name="Expect the Unexpected" type="Archetype Feature" source="Ranger Archetype: Witch Hunter" id="ID_JOLLER_WITCH_HUNTER_ARCHETYPE_FEATURE_WITCH_HUNTER_EXPECT_THE_UNEXPECTED">
             <description>
-                <p>When you reach 15th level, your intuition tells you when things turn grim. At the beginning of combat, you can treat your initiative roll as a 20, and on your first turn in combat you have advantage on your attack rolls and enemies have disadvantage against saving throws you trigger.</p>
+                <p>Beginning at 15th level, you know how to ignore hostile influences. As a reaction when you or a creature within 60 feet gain a charmed and frightened condition, you remove that condition from yourself or the creature. This can only be used on the same turn as the condition was applied.</p>
             </description>
-            <sheet>
-                <description>At the beginning of combat, you can treat your initiative roll as a 20, and on your first turn in combat you have advantage on your attack rolls and enemies have disadvantage against saving throws you trigger.</description>
+            <sheet action="Reaction">
+                <description>When you or a creature within 60 feet gain a charmed and frightened condition, you remove that condition from yourself or the creature. This can only be used on the same turn as the condition was applied.</description>
             </sheet>
         </element>
 
