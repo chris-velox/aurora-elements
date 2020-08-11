@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Spirit Blossom Conclave Ranger Archetype</name>
+        <update version="0.0.1">
+            <file name="ranger-spirit-blossom-conclave.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/ranger-spirit-blossom-conclave.xml" />
+        </update>
+    </info>
+    
+    <element name="Spirit Blossom Conclave" type="Source" source="Core" id="ID_RAINJUNKIE_GMBINDER_SOURCE_Spirit Blossom Conclave">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SBC</set>
+            <set name="url">https://www.gmbinder.com/share/-MCmSt2Aq52e59tk2kmd</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="RJ" url="https://www.gmbinder.com/profile/rain-junkie">Rain-Junkie</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200809</set>
+        </setters>
+    </element>
+
+    <element name="Spirit Blossom Conclave" type="Archetype" source="Spirit Blossom Conclave" id="ID_RJ_SBC_ARCHETYPE_RANGER_SPIRIT_BLOSSOM_CONCLAVE">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Rangers of the Spirit Blossom Conclave are cunning beings who channel dangerous fey magic. Unlike Fey Wanderers, who act as a bridge between the Feywild and the Material Plane, these rangers use their magic to fulfill their own goals, causing dangerous growths of fey plants to consume their foes, which they then aggitate, causing a blast of psychic energy.</p>
+            <div element="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_CONCLAVE_SPELLS" />
+            <div element="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_BURSTING_BLOOM" />
+            <div element="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_CUNNING_WILL" />
+            <div element="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_WHIMSICAL_STRIDE" />
+            <div element="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_VIOLENT_BLOOM" />
+            <div element="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_HIDDEN_PRESENCE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_CONCLAVE_SPELLS" level="3" />
+            <grant type="Archetype Feature" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_BURSTING_BLOOM" level="3" />
+            <grant type="Archetype Feature" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_CUNNING_WILL" level="3" />
+            <grant type="Archetype Feature" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_WHIMSICAL_STRIDE" level="7" />
+            <grant type="Archetype Feature" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_VIOLENT_BLOOM" level="11" />
+            <grant type="Archetype Feature" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_HIDDEN_PRESENCE" level="15" />
+        </rules>
+    </element>
+        <element name="Conclave Spells" type="Archetype Feature" source="Spirit Blossom Conclave" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_CONCLAVE_SPELLS">
+            <description>
+                <p>You gain conclave spells at the ranger levels listed.</p>
+                <h5 class="caption">SPIRIT BLOSSOM CONCLAVE</h5>
+                <table>
+                    <thead>
+                        <tr><td>Ranger Level</td><td>Spell</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>charm person</em></td></tr>
+                    <tr><td>5th</td><td><em>misty step</em></td></tr>
+                    <tr><td>9th</td><td><em>hypnotic pattern</em></td></tr>
+                    <tr><td>13th</td><td><em>charm monster</em></td></tr>
+                    <tr><td>17th</td><td><em>far step</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" spellcasting="Ranger" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" spellcasting="Ranger" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_HYPNOTIC_PATTERN" spellcasting="Ranger" known="true" level="9" />
+                <grant type="Spell" id="ID_XGTE_SPELL_CHARM_MONSTER" spellcasting="Ranger" known="true" level="13" />
+                <grant type="Spell" id="ID_XGTE_SPELL_FAR_STEP" spellcasting="Ranger" known="true" level="17" />
+            </rules>
+        </element>
+        <element name="Bursting Bloom" type="Archetype Feature" source="Spirit Blossom Conclave" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_BURSTING_BLOOM">
+            <description>
+                <p>At 3rd level, your attacks are infused with spiritual energy, allowing you to strike down your foes. When you hit a creature with a weapon attack on your turn, you can place a bloom mark on it, marking it for 1 minute or until you place a bloom mark on another creature. If you place a bloom mark on a creature that is already marked, you place an additional mark, up to a maximum of 3. When you hit a creature that has 3 bloom marks, you can consume all the bloom marks instead of marking it. If you do so, the attack deals an extra 3d10 psychic damage.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with a weapon attack on your turn, you can place a bloom mark on it, marking it for 1 minute or until you place a bloom mark on another creature. If you place a bloom mark on a creature that is already marked, you place an additional mark, up to a maximum of 3. When you hit a creature that has 3 bloom marks, you can consume all the bloom marks instead of marking it. If you do so, the attack deals an extra 3d10 psychic damage.</description>
+            </sheet>
+        </element>
+        <element name="Cunning Will" type="Archetype Feature" source="Spirit Blossom Conclave" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_CUNNING_WILL">
+            <description>
+                <p>Also at 3rd level, your experience with the fey has guarded your mind and sharpened your tongue. You have advantage on saving throws against being charmed or frightened.</p>
+                <p class="indent">In addition, you gain proficiency in one of the following skills of your choice: Deception, Performance, or Persuasion.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on saving throws against being charmed or frightened.</description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Skill Proficiency, Cunning Will" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION" />
+            </rules>
+        </element>
+        <element name="Whimsical Stride" type="Archetype Feature" source="Spirit Blossom Conclave" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_WHIMSICAL_STRIDE">
+            <description>
+                <p>At 7th level, your steps can't be hindered, and your stride can't be stopped. You can't be knocked prone while you're concious, and you ignore non-magical difficult terrain. Additionally, you can move across any liquid surface—such as water, acid, mud, snow, quicksand, or lava—as if it were solid ground (crossing molten lava can still cause you to take damage from the heat).</p>
+            </description>
+            <sheet>
+                <description>You can't be knocked prone while you're concious, and you ignore non-magical difficult terrain. Additionally, you can move across any liquid surface as if it were solid ground.</description>
+            </sheet>
+        </element>
+        <element name="Violent Bloom" type="Archetype Feature" source="Spirit Blossom Conclave" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_VIOLENT_BLOOM">
+            <description>
+                <p>At 11th level, whenever you attack a creature and consume all of its bloom marks, you can choose one of the following additional effects:</p>
+                <ul>
+                    <li>Up to two creatures within 10 feet of the target take 1d10 psychic damage.</li>
+                    <li>Until the start of your next turn, the target's speed is reduced by half and it can't take reactions.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>Whenever you attack a creature and consume all of its bloom marks, you can choose one of the following additional effects: up to two creatures within 10 feet of the target take 1d10 psychic damage; or, until the start of your next turn, the target's speed is reduced by half and it can't take reactions.</description>
+            </sheet>
+        </element>
+        <element name="Hidden Presence" type="Archetype Feature" source="Spirit Blossom Conclave" id="ID_RJ_SBC_ARCHETYPE_FEATURE_SPIRIT_BLOSSOM_HIDDEN_PRESENCE">
+            <description>
+                <p>At 15th level, you can become invisible any time you move. If you break up your movement on your turn to take an action, you aren't invisible while you perform that action, but regain your invisibility when you resume moving.</p>
+            </description>
+            <sheet>
+                <description>You can become invisible any time you move. If you break up your movement on your turn to take an action, you aren't invisible while you perform that action, but regain your invisibility when you resume moving.</description>
+            </sheet>
+        </element>
+
+</elements>
