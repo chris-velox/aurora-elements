@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Reckless Arcana Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-reckless-arcana.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/sorcerer/sorcerer-reckless-arcana.xml" />
+        </update>
+    </info>
+    
+    <element name="Reckless Arcana" type="Source" source="Core" id="ID_CHEFJEFF24_HOMEBREWERY_SOURCE_Reckless Arcana">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">RASO</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/AID8eCRq-</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="CJ24" url="https://www.reddit.com/user/chefjeff24/">u/chefjeff24</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200722</set>
+        </setters>
+    </element>
+    
+    <element name="Reckless Arcana" type="Archetype" source="Reckless Arcana" id="ID_CJ24_RASO_ARCHETYPE_SORCERER_RECKLESS_ARCANA">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>Your magic comes from somewhere viscerally powerful and volatile. Perhaps you were involved in a violent arcane accident or dimensional rift, and unfiltered magical energy suffused your body, or perhaps you practice macabre rituals of sacrificing your flesh and blood to harness the arcane. In any case, you have tapped into violent and dangerous magic within yourself, and you use your body as a floodgate to control it. This magic is nearly as dangerous to yourself as it is to your enemies. Sorcerers with power so unhinged often lead lives just as volatile, and often perish at young ages in violent accidents or fiery self-sacrifice.</p>
+            <p class="indent">This magic takes a toll on you and alters you physically. When you gain sorcerer abilities, you can roll for or choose a quirk on the table below that has developed alongside your powers.</p>
+            <h5 class="caption">RECKLESS SORCERER QUIRKS</h5>
+            <table>
+                <thead>
+                    <tr><td>d6</td><td>Feature</td></tr>
+                </thead>
+                <tr><td>1</td><td>You are unnaturally desensitized to pain.</td></tr>
+                <tr><td>2</td><td>While casting a spell, you become fatigued or sore, briefly lose vision, or feel a burning pain.</td></tr>
+                <tr><td>3</td><td>Your clothes or equipment all eventually become burned, scarred, or otherwise marked.</td></tr>
+                <tr><td>4</td><td>You have an odd magical physical characteristic. For example, you could have hair that writhes like flames, black blood that sizzles when spilled, or cloudy eyes that swirl like mist.</td></tr>
+                <tr><td>5</td><td>Before casting especially powerful spells, you cut yourself harmlessly and the spell absorbs the blood</td></tr>
+                <tr><td>6</td><td>Your body is covered in tattoos, birthmarks, or scars that glow or move when using magic.</td></tr>
+            </table>
+            <div element="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_VITAL_EXPENDITURE" />
+            <div element="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_RECKLESS_AMPLIFICATION" />
+            <div element="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_ARCANE_SYPHON" />
+            <div element="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_UNBRIDLED_METAMAGIC" />
+            <div element="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_MANIACS_TOLL" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_VITAL_EXPENDITURE" level="1" />
+            <grant type="Archetype Feature" id="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_RECKLESS_AMPLIFICATION" level="1" />
+            <grant type="Archetype Feature" id="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_ARCANE_SYPHON" level="6" />
+            <grant type="Archetype Feature" id="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_UNBRIDLED_METAMAGIC" level="14" />
+            <grant type="Archetype Feature" id="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_MANIACS_TOLL" level="18" />
+        </rules>
+    </element>
+        <element name="Vital Expenditure" type="Archetype Feature" source="Reckless Arcana" id="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_VITAL_EXPENDITURE">
+            <description>
+                <p>As part of an ability check, attack roll, or saving throw you make, or using your reaction when a creature within 60 feet of you attacks you, you can roll a d6 to affect the roll. You take unreducible necrotic damage equal to the number rolled and choose whether to increase or decrease the target roll by the same number.</p>
+                <p class="indent">You may only use this feature a number of times equal to your Constitution modifier (a minimum of once), and regain all uses after a short rest.</p>
+            </description>
+            <sheet usage="{{vital-expenditure:uses}}/Short Rest">
+                <description>As part of an ability check, attack roll, or saving throw you make, or using your reaction when a creature within 60 feet of you attacks you, you can roll a d6 to affect the roll. You take unreducible necrotic damage equal to the number rolled and choose whether to increase or decrease the target roll by the same number.</description>
+            </sheet>
+            <rules>
+                <stat name="vital-expenditure:uses" value="1" bonus="base" />
+                <stat name="vital-expenditure:uses" value="constitution:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Reckless Amplification" type="Archetype Feature" source="Reckless Arcana" id="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_RECKLESS_AMPLIFICATION">
+            <description>
+                <p>Starting at 1st level, you can sacrifice your vitality to boost the power of your spells. When you cast a spell, you can choose to reroll the damage dice. When you do so, you take unreducible necrotic damage equal to the smaller of the die's rolls, and the spell deals damage equal to the higher number rolled. You can reroll a number of dice equal to your proficiency bonus in a single spell, but each die can only be rerolled once.</p>
+            </description>
+            <sheet>
+                <description>When you cast a spell, you can choose to reroll up to {{proficiency}} damage dice. When you do so, you take unreducible necrotic damage equal to the smaller of the die's rolls, and the spell deals damage equal to the higher number rolled.</description>
+            </sheet>
+        </element>
+        <element name="Arcane Syphon" type="Archetype Feature" source="Reckless Arcana" id="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_ARCANE_SYPHON">
+            <description>
+                <p>Upon reaching 6th level, you can burn your own life force to refuel your sorcerous power. As a bonus action, you can draw on your life force to refuel your arcane power. You regain a number of sorcery points of your choosing, but take necrotic damage for each one. Each point you choose to regain deals damage equal to 1d6 + your charisma modifier. This damage increases by +1 for each subsequent point you regain after the first.</p>
+                <p class="indent">This damage cannot be reduced in any way and decreases your hit point maximum, making it impossible to heal. If this damage reduces your hit point maximum to 0, you fall unconscious and remain unconscious for 1d6 hours, after which you regain 1 hit point.</p>
+                <p class="indent">You may use this feature a number of times equal to half your sorcerer level. After a long rest, you regain all uses of this feature, your hit point maximum is restored, and the damage resets to 1d6 + your charisma modifier.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{level:sorcerer:half}}/Long Rest">
+                <description>You regain a number of sorcery points of your choosing, but take necrotic damage for each one. Each point you choose to regain deals 1d6 + {{charisma:modifier}} damage. This damage increases by +1 for each subsequent point you regain after the first. This damage cannot be reduced in any way and decreases your hit point maximum, making it impossible to heal. If this damage reduces your hit point maximum to 0, you fall unconscious and remain unconscious for 1d6 hours, after which you regain 1 hit point.</description>
+            </sheet>
+        </element>
+        <element name="Unbridled Metamagic" type="Archetype Feature" source="Reckless Arcana" id="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_UNBRIDLED_METAMAGIC">
+            <description>
+                <p>At 14th level, you've honed the connection to your raw magical energy and can channel sorcerous powers you would typically be unable to handle. You can use any metamagic option on the sorcerer list at double the sorcery point cost if you do not already know it.</p>
+                <p class="indent">Additionally as part of your metamagic, if you have sufficient spell slots you may cast a spell from the Sorcerer spell list you do not know. Doing so costs a number of sorcery points equal to the spells level plus 1.</p>
+            </description>
+            <sheet>
+                <description>You can use any metamagic option on the sorcerer list at double the sorcery point cost if you do not already know it. Additionally as part of your metamagic, if you have sufficient spell slots you may cast a spell from the Sorcerer spell list you do not know. Doing so costs a number of sorcery points equal to the spells level plus 1.</description>
+            </sheet>
+        </element>
+        <element name="Maniac’s Toll" type="Archetype Feature" source="Reckless Arcana" id="ID_CJ24_RASO_ARCHETYPE_FEATURE_RECKLESS_ARCANA_MANIACS_TOLL">
+            <description>
+                <p>Starting at 18th level, when threatened with death you can release a final surge of arcane energy to delay your demise. If you take damage that reduces you to 0 hit points, you can use your reaction to delay falling unconscious and interrupt the current turn. You can immediately take an extra turn, during which taking damage causes death saving throw failures as normal and you cannot receive healing. When the extra turn ends, you fall unconcious and instantly fail one death save, then the interrupted turn continues as normal.</p>
+                <p class="indent">Should you survive, you cannot use this feature again until you complete a long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="1/Long Rest">
+                <description>If you take damage that reduces you to 0 hit points, you can immediately take an extra turn, during which taking damage causes death saving throw failures as normal and you cannot receive healing. When the extra turn ends, you fall unconcious and instantly fail one death save, then the interrupted turn continues as normal.</description>
+            </sheet>
+        </element>
+
+
+</elements>
