@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Templar Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="fighter-templar-2.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/fighter/fighter-templar-2.xml" />
+        </update>
+    </info>
+    
+    <element name="The Templar" type="Source" source="Core" id="ID_UMBRA_GMBINDER_SOURCE_THE_TEMPLAR">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">TEMPLAR</set>
+            <set name="url">https://www.gmbinder.com/share/-MCqnxbqPMpmlSWs7EqA</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="UMBRA" url="https://www.gmbinder.com/profile/umbra">Umbra</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200817</set>
+        </setters>
+    </element>
+    
+    <element name="Templar" type="Archetype" source="The Templar" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FIGHTER_TEMPLAR">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>The Templar is a fighter under the servitude of a god or deity. Similar to a Paladin, these Fighters have the ability to cast holy spells and invoke their god’s wrath upon any who appose them.</p>
+            <p class="indent">This Archetype serves as a more holy alternative to the Eldritch Knight. Sometimes you want to play a holy knight or healing warrior without being forced into being a Paladin.</p>
+            <div element="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_SPELLCASTING" />
+            <div element="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_CHANNEL_DIVINITY" />
+            <div element="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_WAR_PRIEST" />
+            <div element="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_HOLY_STRIKE" />
+            <div element="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_DIVINE_REJUVENATION" />
+            <div element="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_IMPROVED_WAR_PRIEST" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_SPELLCASTING" level="3" />
+            <grant type="Archetype Feature" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_CHANNEL_DIVINITY" level="3" />
+            <grant type="Archetype Feature" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_WAR_PRIEST" level="7" />
+            <grant type="Archetype Feature" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_HOLY_STRIKE" level="10" />
+            <grant type="Archetype Feature" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_DIVINE_REJUVENATION" level="15" />
+            <grant type="Archetype Feature" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_IMPROVED_WAR_PRIEST" level="18" />
+        </rules>
+    </element>
+        <element name="Spellcasting" type="Archetype Feature" source="The Templar" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_SPELLCASTING">
+            <description>
+                <p>When you reach 3rd level, you augment your martial prowess with the ability to cast spells. See Spells Rules for the general rules of spellcasting and the Spells Listing for the cleric spell list.</p>
+                <h5>CANTRIPS</h5>
+                <p>You learn two cantrips of your choice from the cleric spell list. You learn an additional cleric cantrip of your choice at 10th level.</p>
+                <h5>SPELL SLOTS</h5>
+                <p>The Templar Spellcasting table shows how many spell slots you have to cast your cleric spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
+                <p class="indent">For example, if you know the 1st-level spell shield and have a 1st-level and a 2nd-level spell slot available, you can cast shield using either slot.</p>
+                <h5>SPELLS KNOWN OF 1ST-LEVEL AND HIGHER</h5>
+                <p>You know three 1st-level cleric spells of your choice, two of which you must choose from the abjuration and evocation spells on the cleric spell list.</p>
+                <p class="indent">The Spells Known column of the Templar Spellcasting table shows when you learn more cleric spells of 1st level or higher. Each of these spells must be an abjuration or evocation spell of your choice, and must be of a level for which you have spell slots. For instance, when you reach 7th level in this class, you can learn one new spell of 1st or 2nd level.</p>
+                <p class="indent">The spells you learn at 8th, 14th, and 20th level can come from any school of magic.</p>
+                <p class="indent">Whenever you gain a level in this class, you can replace one of the cleric spells you know with another spell of your choice from the cleric spell list. The new spell must be of a level for which you have spell slots, and it must be an abjuration or evocation spell, unless you’re replacing the spell you gained at 3rd, 8th, 14th, or 20th level from any school of magic.</p>
+                <h5>SPELLCASTING ABILITY</h5>
+                <p>Wisdom is your spellcasting ability for your cleric spells, since you learn your spells through study and memorization. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.</p>
+                <p style="text-align: center;"><b>Spell save DC</b> = 8 + your proficiency bonus + your Wisdom modifier</p>
+                <p style="text-align: center;"><b>Spell attack modifier</b> = your proficiency bonus + your Wisdom modifier</p>
+                <h5 class="caption">TEMPLAR SPELLCASTING</h5>
+                <table>
+                    <thead>
+                        <tr><td>Fighter Level</td><td>Cantrips Known</td><td>Spells Known</td><td>1st</td><td>2nd</td><td>3rd</td><td>4th</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td>2</td><td>3</td><td>2</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr><td>4th</td><td>2</td><td>4</td><td>3</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr><td>5th</td><td>2</td><td>4</td><td>3</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr><td>6th</td><td>2</td><td>4</td><td>3</td><td>-</td><td>-</td><td>-</td></tr>
+                    <tr><td>7th</td><td>2</td><td>5</td><td>4</td><td>2</td><td>-</td><td>-</td></tr>
+                    <tr><td>8th</td><td>2</td><td>6</td><td>4</td><td>2</td><td>-</td><td>-</td></tr>
+                    <tr><td>9th</td><td>2</td><td>6</td><td>4</td><td>2</td><td>-</td><td>-</td></tr>
+                    <tr><td>10th</td><td>3</td><td>7</td><td>4</td><td>3</td><td>-</td><td>-</td></tr>
+                    <tr><td>11th</td><td>3</td><td>8</td><td>4</td><td>3</td><td>-</td><td>-</td></tr>
+                    <tr><td>12th</td><td>3</td><td>8</td><td>4</td><td>3</td><td>-</td><td>-</td></tr>
+                    <tr><td>13th</td><td>3</td><td>9</td><td>4</td><td>3</td><td>2</td><td>-</td></tr>
+                    <tr><td>14th</td><td>3</td><td>10</td><td>4</td><td>3</td><td>2</td><td>-</td></tr>
+                    <tr><td>15th</td><td>3</td><td>10</td><td>4</td><td>3</td><td>2</td><td>-</td></tr>
+                    <tr><td>16th</td><td>3</td><td>11</td><td>4</td><td>3</td><td>3</td><td>-</td></tr>
+                    <tr><td>17th</td><td>3</td><td>11</td><td>4</td><td>3</td><td>3</td><td>-</td></tr>
+                    <tr><td>18th</td><td>3</td><td>11</td><td>4</td><td>3</td><td>3</td><td>-</td></tr>
+                    <tr><td>19th</td><td>3</td><td>12</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+                    <tr><td>20th</td><td>3</td><td>12</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+                </table>
+            </description>
+            <spellcasting name="Templar" ability="Wisdom" prepare="false">
+                <list>Cleric,(Abjuration||Evocation)</list>
+            </spellcasting>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="templar:spellcasting:slots:1" value="2" level="3" />
+                <stat name="templar:spellcasting:slots:1" value="1" level="4" />
+                <stat name="templar:spellcasting:slots:1" value="1" level="7" />
+                <stat name="templar:spellcasting:slots:2" value="2" level="7" />
+                <stat name="templar:spellcasting:slots:2" value="1" level="10" />
+                <stat name="templar:spellcasting:slots:3" value="2" level="13" />
+                <stat name="templar:spellcasting:slots:3" value="1" level="16" />
+                <stat name="templar:spellcasting:slots:4" value="1" level="19" />
+                <select type="Spell" name="Cantrip (Templar)" spellcasting="Templar" number="2" supports="Cleric,0" level="3" known="true" />
+                <select type="Spell" name="Cantrip (Templar)" spellcasting="Templar" supports="Cleric,0" level="10" known="true" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" number="2" supports="$(spellcasting:list),1" known="true" level="3" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" supports="Cleric,1" known="true" level="3" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" supports="$(spellcasting:list),$(spellcasting:slots)" known="true" level="4" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" supports="$(spellcasting:list),$(spellcasting:slots)" known="true" level="7" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" supports="(Cleric||$(spellcasting:list)),$(spellcasting:slots)" known="true" level="8" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" supports="$(spellcasting:list),$(spellcasting:slots)" known="true" level="10" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" supports="$(spellcasting:list),$(spellcasting:slots)" known="true" level="11" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" supports="$(spellcasting:list),$(spellcasting:slots)" known="true" level="13" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" supports="(Cleric||$(spellcasting:list)),$(spellcasting:slots)" known="true" level="14" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" supports="$(spellcasting:list),$(spellcasting:slots)" known="true" level="16" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" supports="$(spellcasting:list),$(spellcasting:slots)" known="true" level="19" />
+                <select type="Spell" name="Spell (Templar)" spellcasting="Templar" supports="(Cleric||$(spellcasting:list)),$(spellcasting:slots)" known="true" level="20" />
+            </rules>
+        </element>
+        <element name="Channel Divinity" type="Archetype Feature" source="The Templar" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_CHANNEL_DIVINITY">
+            <description>
+                <p>When you choose this Archetype at 3rd level, choose one Divine Domain from the Cleric class. You gain that Domain’s Channel Divinity feature, detailed under the Cleric class. Once you use this ability, you cannot do so again until you finish a long rest. If a Channel Divinity feature would refer to your Cleric level, it instead uses your Fighter level.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Templar Divine Domain" supports="Templar Divine Domain" level="3" />
+            </rules>
+        </element>
+        <element name="War Priest" type="Archetype Feature" source="The Templar" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_WAR_PRIEST">
+            <description>
+                <p>Beginning at 7th level, when you use your action to cast a cantrip, you can make one weapon attack as a bonus action.</p>
+            </description>
+            <sheet>
+                <description>When you use your action to cast a cantrip, you can make one weapon attack as a bonus action.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Holy Strike" type="Archetype Feature" source="The Templar" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_HOLY_STRIKE">
+            <description>
+                <p>At 10th level, you learn how to make your weapon strikes undercut a creature’s resistance to your spells. When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Divine Rejuvenation" type="Archetype Feature" source="The Templar" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_DIVINE_REJUVENATION">
+            <description>
+                <p>At 15th level, whenever you use your Second Wind, choose a number of creatures equal to your Wisdom modifier within 30 feet. Those creatures regain hit points equal to your level.</p>
+            </description>
+            <sheet>
+                <description>Whenever you use your Second Wind, choose up to {{wisdom:modifier}} creatures within 30 feet. Those creatures regain {{level:fighter}} hit points.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Improved War Priest" type="Archetype Feature" source="The Templar" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_IMPROVED_WAR_PRIEST">
+            <description>
+                <p>Starting at 18th level, when you use your action to cast a spell, you can make one weapon attack as a bonus action.</p>
+            </description>
+            <sheet>
+                <description>When you use your action to cast a spell, you can make one weapon attack as a bonus action.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+  <!-- Channel Divinity Options -->
+    <element name="Divine Domain: Turn Undead" type="Archetype Feature" source="Player’s Handbook" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_DIVINE_DOMAIN_CD_TURN_UNDEAD">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.</p>
+			<p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
+		</description>
+		<sheet alt="Turn Undead" action="Action" usage="Channel Divinity">
+			<description>Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.
+				A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</description>
+		</sheet>
+	</element>
+
+	<element name="Death Domain: Touch of Death" type="Archetype Feature" source="Dungeon Master’s Guide" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_DEATH_DOMAIN_CD_TOUCH_OF_DEATH">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, the cleric can use Channel Divinity to destroy another creature’s life force by touch. When the cleric hits a creature with a melee attack, the cleric can use Channel Divinity to deal extra necrotic damage to the target. The damage equals 5 + twice his or her cleric level.</p>
+		</description>
+		<sheet alt="Touch of Death" usage="Channel Divinity">
+			<description>Use channel divinity when you hit a creature with a melee attack to deal {{ touch of death:necrotic damage }} extra necrotic damage.</description>
+		</sheet>
+		<rules>
+			<stat name="touch of death:necrotic damage" value="5" />
+			<stat name="touch of death:necrotic damage" value="level:fighter" />
+			<stat name="touch of death:necrotic damage" value="level:fighter" />
+		</rules>
+    </element>
+    <element name="Life Domain: Preserve Life" type="Archetype Feature" source="Player’s Handbook" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_LIFE_DOMAIN_CD_PRESERVE_LIFE">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to heal the badly injured.</p>
+			<p class="indent">As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can’t use this feature on an undead or a construct.</p>
+		</description>
+		<sheet alt="Preserve Life" action="Action" usage="Channel Divinity">
+			<description>You present your holy symbol and evoke healing energy that can restore {{preserve life:hp}} hp. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hp maximum. You can’t use this feature on an undead or a construct.</description>
+		</sheet>
+		<rules>
+			<stat name="preserve life:hp" value="level:fighter" />
+			<stat name="preserve life:hp" value="level:fighter" />
+			<stat name="preserve life:hp" value="level:fighter" />
+			<stat name="preserve life:hp" value="level:fighter" />
+			<stat name="preserve life:hp" value="level:fighter" />
+		</rules>
+	</element>
+    <element name="Knowledge Domain: Knowledge of the Ages" type="Archetype Feature" source="Player’s Handbook" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_KNOWLEDGE_DOMAIN_CD_KNOWLEDGE_OF_THE_AGES">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool.</p>
+		</description>
+		<sheet alt="Knowledge of the Ages" action="Action" usage="Channel Divinity">
+			<description>You choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool.</description>
+		</sheet>
+	</element>
+	<element name="Light Domain: Radiance of the Dawn" type="Archetype Feature" source="Player’s Handbook" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_LIGHT_DOMAIN_CD_RADIANCE_OF_THE_DAWN">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to harness sunlight, banishing darkness and dealing radiant damage to your foes.</p>
+			<p class="indent">As an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 2d10 + your cleric level on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected.</p>
+		</description>
+		<sheet alt="Radiance of the Dawn" action="Action" usage="Channel Divinity">
+			<description>You present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes 2d10+{{level:fighter}} radiant damage on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected.</description>
+		</sheet>
+	</element>
+	<element name="Nature Domain: Charm Animals and Plants" type="Archetype Feature" source="Player’s Handbook" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_NATURE_DOMAIN_CD_CHARM_ANIMALS_AND_PLANTS">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to charm animals and plants.</p>
+			<p class="indent">As an action, you present your holy symbol and invoke the name of your deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate.</p>
+		</description>
+		<sheet alt="Charm Animals and Plants" action="Action" usage="Channel Divinity">
+			<description>You present your holy symbol and invoke the name of your deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate.</description>
+		</sheet>
+	</element>
+	<element name="Tempest Domain: Destructive Wrath" type="Archetype Feature" source="Player’s Handbook" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_TEMPEST_DOMAIN_CD_DESTRUCTIVE_WRATH">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to wield the power of the storm with unchecked ferocity.</p>
+			<p class="indent">When you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling.</p>
+		</description>
+		<sheet alt="Destructive Wrath" action="Action" usage="Channel Divinity">
+			<description>When you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling.</description>
+		</sheet>
+	</element>
+	<element name="Trickery Domain: Invoke Duplicity" type="Archetype Feature" source="Player’s Handbook" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to create an illusory duplicate of yourself. As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell).</p>
+			<p class="indent">The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.</p>
+			<p class="indent">For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target.</p>
+		</description>
+		<sheet alt="Invoke Duplicity" action="Action" usage="Channel Divinity">
+			<description>You create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration.
+			The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.
+			For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target.</description>
+		</sheet>
+	</element>
+	<element name="War Domain: Guided Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_WAR_DOMAIN_CD_GUIDED_STRIKE">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses.</p>
+		</description>
+		<sheet alt="Guided Strike" usage="Channel Divinity">
+			<description>When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll.</description>
+		</sheet>
+	</element>
+    <element name="Order Domain: Order’s Demand" type="Archetype Feature" source="Guildmasters’ Guide to Ravnica" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_ORDER_DOMAIN_CD_ORDERS_DEMAND">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to exert an intimidating presence over others.</p>
+			<p class="indent">As an action, you present your holy symbol, and each creature of your choice that can see or hear you within 30 feet of you must succeed on a Wisdom saving throw or be charmed by you until the end of your next turn or until the charmed creature takes any damage. You can also cause any of the charmed creatures to drop what they are holding when they fail the saving throw.</p>
+        </description>
+        <sheet alt="Order’s Demand" action="Action" usage="Channel Divinity">
+            <description>You present your holy symbol, and each creature of your choice that can see or hear you within 30 feet of you must succeed on a Wisdom saving throw or be charmed by you until the end of your next turn or until the charmed creature takes any damage. You can also cause any of the charmed creatures to drop what they are holding when they fail the saving throw.</description>
+        </sheet>
+    </element>	
+	<element name="Arcana Domain: Arcane Abjuration" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_ARCANA_DOMAIN_CD_ARCANE_ABJURATION">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to abjure otherworldly creatures.</p>
+			<p class="indent">As an action, you present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.</p>
+			<p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly end its move in a space within 30 feet of you. It also can’t take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
+			<p class="indent">After you reach 5th level, when a creature fails its saving throw against your Arcane Abjuration feature, the creature is banished for 1 minute (as in the banishment spell, no concentration required) if it isn’t on its plane of origin and its challenge rating is at or below a certain threshold, as shown on the Arcane Banishment table.</p>
+			<h5>ARCANE BANISHMENT</h5>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Banishes Creatures of CR ...</td></tr>
+				</thead>
+				<tr><td>5th</td><td>1/2 or lower</td></tr>
+				<tr><td>8th</td><td>1 or lower</td></tr>
+				<tr><td>11th</td><td>2 or lower</td></tr>
+				<tr><td>14th</td><td>3 or lower</td></tr>
+				<tr><td>17th</td><td>4 or lower</td></tr>
+			</table>
+		</description>
+		<sheet alt="Arcane Abjuration" action="Action" usage="Channel Divinity">
+			<description>You present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.
+		A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly end its move in a space within 30 feet of you. It also can’t take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</description>
+			<description level="5">You present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.
+		A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly end its move in a space within 30 feet of you. It also can’t take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.
+		When a creature fails its saving throw against your Arcane Abjuration feature, the creature is banished for 1 minute (as in the banishment spell, no concentration required) if it isn’t on its plane of origin and its challenge rating is {{arcane abjuration:cr}}.</description>
+		</sheet>
+		<rules>
+			<stat inline="true" name="arcane abjuration:cr" value="1/2 or lower" level="5"/>
+			<stat inline="true" name="arcane abjuration:cr" value="1 or lower" level="8"/>
+			<stat inline="true" name="arcane abjuration:cr" value="2 or lower" level="11"/>
+			<stat inline="true" name="arcane abjuration:cr" value="3 or lower" level="14"/>
+			<stat inline="true" name="arcane abjuration:cr" value="4 or lower" level="17"/>
+		</rules>
+	</element>
+    <element name="Forge Domain: Artisan’s Blessing" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_FORGE_DOMAIN_CD_ARTISANS_BLESSING">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to create simple items.</p>
+            <p class="indent">You conduct an hour-long ritual that crafts a nonmagical item that must include some metal: a simple or martial weapon, a suit of armor, ten pieces of ammunition, a set of tools, or another metal object (see chapter 5, “Equipment,” in the Player’s Handbook for examples of these items). The creation is completed at the end of the hour, coalescing in an unoccupied space of your choice on a surface within 5 feet of you.</p>
+            <p class="indent">The thing you create can be something that is worth no more than 100 gp. As part of this ritual, you must lay out metal, which can include coins, with a value equal to the creation. The metal irretrievably coalesces and transforms into the creation at the ritual’s end, magically forming even nonmetal parts of the creation.</p>
+            <p class="indent">The ritual can create a duplicate of a nonmagical item that contains metal, such as a key, if you possess the original during the ritual.</p>
+        </description>
+        <sheet alt="Artisan’s Blessing" usage="Channel Divinity">
+            <description>You conduct an hour-long ritual that crafts a nonmagical item that must include some metal.
+            The thing you create can be something that is worth no more than 100 gp. As part of this ritual, you must lay out metal, which can include coins, with a value equal to the creation. The metal irretrievably coalesces and transforms into the creation at the ritual’s end, magically forming even nonmetal parts of the creation.
+            The ritual can create a duplicate of a nonmagical item that contains metal, such as a key, if you possess the original during the ritual.</description>
+        </sheet>
+        <rules />
+    </element> 
+    <element name="Grave Domain: Path to the Grave" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_GRAVE_DOMAIN_CD_PATH_TO_THE_GRAVE">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to mark another creature’s life force for termination.</p>
+            <p class="indent">As an action, you choose one creature you can see within 30 feet of you, cursing it until the end of your next turn. The next time you or an ally of yours hits the cursed creature with an attack, the creature has vulnerability to all of that attack’s damage, and then the curse ends.</p>
+        </description>
+        <sheet alt="Path to the Grave" action="Action" usage="Channel Divinity">
+            <description>Choose one creature you can see within 30ft, and curse it until the end of your next turn. The next time you or an ally of yours hits the cursed creature with an attack, the creature has vulnerability to all of that attack’s damage, and then the curse ends.</description>
+        </sheet>
+    </element>
+    <element name="Prophecy Domain: Prophetic Trance" type="Archetype Feature" source="Odyssey of the Dragonlords" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_PROPHECY_DOMAIN_CD_PROPHETIC_TRANCE">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to enter a prophetic trance. As an action, you inhale hallucinatory vapors and enter a trance-like state for 10 minutes. Roll two d20s and record the numbers rolled. You can replace any attack roll, saving throw, or ability check made by you or a creature that you can see with one of these prophecy rolls. You must choose to do so before the roll is made. Each prophecy roll can be used only once. You lose the prophecy rolls when your trance ends.</p>
+        </description>
+        <sheet alt="Prophetic Trance" usage="Channel Divinity">
+            <description>As an action, you inhale hallucinatory vapors and enter a trance-like state for 10 minutes. Roll two d20s and record the numbers rolled. You can replace any attack roll, saving throw, or ability check made by you or a creature that you can see with one of these prophecy rolls. You must choose to do so before the roll is made. Each prophecy roll can be used only once. You lose the prophecy rolls when your trance ends.</description>
+        </sheet>
+    </element>
+    <element name="Blood Domain: Blood Puppet" type="Archetype Feature" source="Critical Role: Tal’Dorei Campaign Setting" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_BLOOD_DOMAIN_CD_BLOOD_PUPPET">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to briefly control a creature’s actions against their will. As an action, you target a Large or smaller creature that has blood within 60 feet of you. That creature must succeed on a Constitution saving throw against your spell save DC or immediately move up to half of their movement in any direction of your choice and make a single weapon attack against a creature of your choice within range. Dead or unconscious creatures automatically fail their saving throw. At 8th level, you can target a Huge or smaller creature.</p>
+        </description>
+        <sheet alt="Blood Puppet" action="Action" usage="Channel Divinity">
+            <description>You target a Large or smaller creature that has blood within 60 feet of you. That creature must succeed on a DC{{spellcasting:dc:wis}} Constitution saving throw or immediately move up to half of their movement in any direction of your choice and make a single weapon attack against a creature of your choice within range. Dead or unconscious creatures automatically fail their saving throw.</description>
+            <description level="8">You target a Huge or smaller creature that has blood within 60 feet of you. That creature must succeed on a DC{{spellcasting:dc:wis}} Constitution saving throw or immediately move up to half of their movement in any direction of your choice and make a single weapon attack against a creature of your choice within range. Dead or unconscious creatures automatically fail their saving throw.</description>
+        </sheet>
+    </element>
+	<element name="Story Domain: Overwhelming Fantasia" type="Archetype Feature" source="Eberron: Heroes of the Planes" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_STORY_DOMAIN_CD_OVERWHELMING_FANTASIA">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>At 3rd level, you can use your Channel Divinity to draw a creature’s mind into a mythical tale from which it cannot escape.</p>
+			<p class="indent">As an action, you can target a creature within 30 feet of you that can hear you and force it to make a Wisdom saving throw. On a failed save, the creature is charmed or frightened (your choice) of you and up to 5 other creatures you choose for 1 hour. The creature can repeat this saving throw whenever it takes damage, ending the effect on a success.</p>
+			<p class="indent">Creature with truesight are immune to this effect.</p>
+		</description>
+		<sheet alt="Overwhelming Fantasia" action="Action" usage="Channel Divinity">
+			<description>You can target a creature within 30 feet of you that can hear you and force it to make a Wisdom saving throw. On a failed save, the creature is charmed or frightened of you and up to 5 other creatures you choose for 1 hour. The creature can repeat this saving throw whenever it takes damage, ending the effect on a success.
+			Creature with truesight are immune to this effect.</description>
+		</sheet>
+	</element>
+	<element name="Soul Gatherer Domain: Draw Upon Host" type="Archetype Feature" source="Heroes of Hell" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_SOUL_GATHERER_DOMAIN_CD_DRAW_UPON_HOST">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>At 3rd level you may use a bonus action to expend your Channel Divinity, drawing upon the host of gathered souls to augment you. For 1 minute you may generate one of the following effects, and you may end the ability at any time as a free action;</p>
+			<ul>
+				<li><strong>Spectral Arms</strong> – you generate arms of force that act with your natural strength and dexterity but are invulnerable to harm. You gain a reach of 10 feet and may use any weapons, tools or skills normally </li>
+				<li><strong>Concealing Ectoplasm</strong> – you are surrounded by swirling ectoplasmic ghosts. You gain a +2 to AC against all attacks that rely on sight to target you.</li>
+				<li><strong>Uplifting Spirits</strong> – your host gathers around you, gripping and lifting at your command. You gain a fly speed equal to your speed.</li>
+				<li><strong>Intimidating Display</strong> – Your host swirls aggressively, darting forth with spectral claws outstretched. You gain advantage to Charisma (Intimidation) checks.</li>
+			</ul>
+		</description>
+		<sheet alt="Draw Upon Host" action="Bonus Action" usage="Channel Divinity">
+			<description>Expend your Channel Divinity, drawing upon the host of gathered souls to augment you. For 1 minute you may generate one of the following effects, and you may end the ability at any time as a free action;
+			Spectral Arms – you generate arms of force that act with your natural strength and dexterity but are invulnerable to harm. You gain a reach of 10 feet and may use any weapons, tools or skills normally 
+			Concealing Ectoplasm – you are surrounded by swirling ectoplasmic ghosts. You gain a +2 to AC against all attacks that rely on sight to target you.
+			Uplifting Spirits – your host gathers around you, gripping and lifting at your command. You gain a fly speed equal to your speed.
+			Intimidating Display – Your host swirls aggressively, darting forth with spectral claws outstretched. You gain advantage to Intimidation checks.</description>
+		</sheet>
+	</element>
+	<element name="Cavern Domain: Stone Sight" type="Archetype Feature" source="Mirt’s Undermountain Survival Guide" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_CAVERN_DOMAIN_CD_STONE_SIGHT">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity as a bonus action to gain 30 ft. of blindsight for 1 minute. You must be underground and in contact with earth or stone in order to use this ability.</p>
+		</description>
+		<sheet alt="Stone Sight" action="Bonus Action" usage="Channel Divinity">
+			<description>Gain 30 ft. of blindsight for 1 minute. You must be underground and in contact with earth or stone in order to use this ability.</description>
+		</sheet>
+	</element>
+	<element name="Plague Domain: Mist of Disease" type="Archetype Feature" source="The Great Dale" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_PLAGUE_DOMAIN_CD_MIST_OF_DISEASE">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>At 3rd level, a flow of death and decay exudes from you as you present your holy symbol. As an action, you can use your Channel Divinity to make a 10-foot cube of mist appear centered on a point within 30 feet of you. Any creature standing within the mist immediately starts having a coughing fit and must make a Constitution saving throw. The creature takes necrotic damage equal to 2d10 + your cleric level on a failed save, and half as much damage on a successful one. In addition, if it fails the saving throw, it must use its reaction to step out of the mist by the safest, most direct route, as it attempts to stagger away from the deadly gas. If there is no room for it to get out, it will remain in the mist even if it failed the save.</p>
+			<p class="indent">The mist disperses at the end of your turn. Constructs are unaffected by the mist.</p>
+		</description>
+		<sheet alt="Mist of Disease" action="Action" usage="Channel Divinity">
+			<description>You can use your Channel Divinity to make a 10-foot cube of mist appear centered on a point within 30 feet of you. Any creature standing within the mist immediately starts having a coughing fit and must make a Constitution save. The creature takes 2d10+{{level:fighter}} necrotic damage on a failed save, and half as much damage on a successful one. In addition, if it fails the saving throw, it must use its reaction to step out of the mist by the safest, most direct route, as it attempts to stagger away from the deadly gas. If there is no room for it to get out, it will remain in the mist even if it failed the save.
+			The mist disperses at the end of your turn. Constructs are unaffected by the mist.</description>
+		</sheet>
+	</element>
+	<element name="Entropy Domain: Arcane Disruption" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_ENTROPY_DOMAIN_CD_ARCANE_DISRUPTION">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to disrupt the flow of magic in your vicinity.</p>
+			<p class="indent">As an action, you conjure an aura of disruptive energy that radiates from you in a 15-foot radius. The aura lasts until the end of your next turn, and moves with you, centered on you. While inside the aura, any creature that attempts to cast a spell must first succeed on a Constitution saving throw. If they fail the save, their spell fails to cast and the spell slot is wasted.</p>
+		</description>
+		<sheet alt="Arcane Disruption" action="Action" usage="Channel Divinity">
+			<description>You conjure an aura of disruptive energy that radiates from you in a 15-foot radius. The aura lasts until the end of your next turn, and moves with you, centered on you. While inside the aura, any creature that attempts to cast a spell must first succeed on a Constitution saving throw. If they fail the save, their spell fails to cast and the spell slot is wasted.</description>
+		</sheet>
+	</element>
+	<element name="Survival Domain: Encourage the Troops" type="Archetype Feature" source="Xanathar’s Lost Notes to Everything Else" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_SURVIVAL_DOMAIN_CD_ENCOURAGE_THE_TROOPS">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to bolster the fighting abilities of your allies.</p>
+			<p class="indent">As an action, you present your holy symbol and invoke the survival instincts of your deity. Each allied creature that can see you gains advantage on their next melee or ranged weapon attack before the start of your next turn. If their attack hits, the allied creature also regains hit points equal to your cleric level.</p>
+		</description>
+		<sheet alt="Encourage the Troops" usage="Channel Divinity">
+			<description>As an action, you present your holy symbol and invoke the survival instincts of your deity. Each allied creature that can see you gains advantage on their next melee or ranged weapon attack before the start of your next turn. If their attack hits, the allied creature also regains {{level:fighter}} hit points.</description>
+		</sheet>
+	</element>
+	<element name="Clockwork Domain: Construct Mastery" type="Archetype Feature" source="Deep Magic: Clockwork" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_CLOCKWORK_DOMAIN_CD_CONSTRUCT_MASTERY">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to bring constructs under your control. As an action, you can compel one construct you can see within 30 feet of you to make a Wisdom saving throw against your cleric spell save DC. If the saving throw fails, the construct becomes friendly to you and obeys your commands for 1 minute or until it takes damage from you or one of your allies. If the saving throw fails by 5 or more, the duration is extended to 1 hour, until you use this ability again, or until the construct takes damage from you or one of your allies. When the efect ends, the construct is aware it was magically controlled by you.</p>
+		</description>
+		<sheet alt="Construct Mastery" action="Action" usage="Channel Divinity">
+			<description>You can compel one construct you can see within 30 feet of you to make a Wisdom saving throw against your cleric spell save DC. If the saving throw fails, the construct becomes friendly to you and obeys your commands for 1 minute or until it takes damage from you or one of your allies. If the saving throw fails by 5 or more, the duration is extended to 1 hour, until you use this ability again, or until the construct takes damage from you or one of your allies. When the efect ends, the construct is aware it was magically controlled by you.</description>
+		</sheet>
+	</element>
+	<element name="Time Domain: Time’s Embrace" type="Archetype Feature" source="Deep Magic: Time Magic" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_TIME_DOMAIN_CD_TIMES_EMBRACE">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can react quickly to dangerous situations. When you are surprised at the beginning of an encounter, you can use your Channel Divinity to not be surprised. When you need to make a Dexterity saving throw, you can use your Channel Divinity to make the saving throw with advantage.</p>
+		</description>
+		<sheet alt="Time’s Embrace" usage="Channel Divinity">
+			<description>When you are surprised at the beginning of an encounter, you can use your Channel Divinity to not be surprised. When you need to make a Dexterity saving throw, you can use your Channel Divinity to make the saving throw with advantage.</description>
+		</sheet>
+	</element>
+	<element name="Winter Domain: Snow Walker" type="Archetype Feature" source="Deep Magic: Winter Magic" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_WINTER_DOMAIN_CD_SNOW_WALKER">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to grant yourself the ability to walk on the surface of snow, ignoring any movement penalties it would normally cause. Ice supports your weight no matter how thin the ice is, and you can travel on it as if you’re wearing ice skates. You still leave tracks on snow and ice.</p>
+			<p class="indent">Additionally, in snowy environments, your vision is not impaired by snow and you have advantage on Dexterity (Stealth) checks to hide.</p>
+		</description>
+		<sheet alt="Snow Walker" usage="Channel Divinity">
+			<description>Grant yourself the ability to walk on the surface of snow, ignoring any movement penalties it would normally cause. Ice supports your weight no matter how thin the ice is, and you can travel on it as if you’re wearing ice skates. You still leave tracks on snow and ice.
+			Additionally, in snowy environments, your vision is not impaired by snow and you have advantage on Stealth checks to hide.</description>
+		</sheet>
+	</element>
+	<element name="City Domain: Spirits of the City" type="Archetype Feature" source="Unearthed Arcana: Modern Magic" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_CITY_DOMAIN_CD_SPIRITS_OF_THE_CITY">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p>Starting at 3rd level, you can use your Channel Divinity to call on the city for aid. As an action, you present your holy symbol, and any city utility within 30 feet of you either works perfectly or shuts down entirely for 1 minute (your choice).</p>
+			<p class="indent">Additionally, each hostile creature within 30 feet of you must make a Charisma saving throw. On a failed save, the creature is knocked prone or restrained (your choice) by hazards such as entangling wires, high-pressure water erupting from fire hydrants, pavement collapsing to unseen potholes, and so on. A restrained creature can escape by making a successful Strength (Athletics) or Dexterity (Acrobatics) check against your spell DC.</p>
+			<p class="indent">This effect is entirely local and affects only utilities within 30 feet of you. Determination of what utilities are available within range and how the physical effects of those utilities manifest are left to DM.</p>
+		</description>
+		<sheet alt="Spirits of the City" usage="Channel Divinity">
+			<description>As an action, you present your holy symbol, and any city utility within 30 feet of you either works perfectly or shuts down entirely for 1 minute (your choice). Additionally, each hostile creature within 30 feet of you must make a Charisma saving throw. On a failed save, the creature is knocked prone or restrained (your choice). A restrained creature can escape by making a successful Athletics or Acrobatics check against your spell DC{{spellcasting:dc:wis}}.</description>
+		</sheet>
+	</element>
+        <element name="Protection Domain: Radiant Defense" type="Archetype Feature" source="Unearthed Arcana: Cleric: Divine Domains" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_PROTECTION_DOMAIN_CD_RADIANT_DEFENSE">
+            <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to cloak your allies in radiant armor.</p>
+            <p class="indent">As an action, you channel blessed energy into an ally that you can see within 30 feet of you. The first time that ally is hit by an attack within the next minute, the attacker takes radiant damage equal to 2d10 + your cleric level.</p>
+        </description>
+        <sheet action="Action">
+            <description>Choose an ally within 30ft, that you can see. The next time that ally is hit by an attack within 1 minute, the attacker takes 2d10+{{level:fighter}} radiant damage.</description>
+        </sheet>
+        <rules />
+    </element> 
+    <element name="Order Domain: Order’s Demand" type="Archetype Feature" source="Unearthed Arcana: Order Domain" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_ORDER_DOMAIN_CD_ORDERS_DEMAND">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to exert an intimidating presence over others.</p>
+            <p class="indent">As an action, you present your holy symbol, and each creature of your choice that can see or hear you within 30 feet of you must succeed on a Wisdom saving throw or be charmed by you until the end of your next turn or until the charmed creature takes any damage. You can also cause any of the charmed creatures to fall prone when they fail the saving throw.</p>
+        </description>
+        <sheet alt="Order’s Demand" action="Action" usage="Channel Divinity">
+            <description>You present your holy symbol, and each creature of your choice that can see or hear you within 30 feet of you must succeed on a Wisdom saving throw or be charmed by you until the end of your next turn or until the charmed creature takes any damage. You can also cause any of the charmed creatures to fall prone when they fail the saving throw.</description>
+        </sheet>
+        <rules />
+    </element>
+	<element name="Twilight Domain: Twilight Sanctuary" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_TWILIGHT_DOMAIN_CD_TWILIGHT_SANCTUARY">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p><em>2nd-level Twilight Domain feature</em></p>
+			<p>You can use your Channel Divinity to refresh your allies with soothing twilight.</p>
+			<p class="indent">As an action, you present your holy symbol, and a sphere of twilight emanates from you. The sphere is centered on you, has a 30-foot radius, and is filled with dim light. The sphere moves with you, and it lasts for 1 minute or until you are incapacitated or die. Whenever a creature (including you) ends its turn in the sphere, you can grant that creature one of these benefits:</p>
+			<ul>
+				<li>Give it 1d8 temporary hit points.</li>
+				<li>End one effect causing it to be charmed or frightened.</li>
+			</ul>
+		</description>
+		<sheet alt="Twilight Sanctuary" action="Action" usage="Channel Divinity">
+			<description>You present your holy symbol, and a sphere of twilight emanates from you. The sphere is centered on you, has a 30-foot radius, and is filled with dim light. The sphere moves with you, and it lasts for 1 minute or until you are incapacitated or die. Whenever a creature ends its turn in the sphere, you can grant that creature one of these benefits:
+			Give it 1d8 temporary hit points.
+			End one effect causing it to be charmed or frightened.</description>
+		</sheet>
+	</element>
+	<element name="Unity Domain: Shared Burden" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 2" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_UNITY_DOMAIN_CD_SHARED_BURDEN">
+        <supports>Templar Divine Domain</supports>
+		<description>
+			<p><em>2nd-level Unity Domain feature</em></p>
+			<p>You can use your Channel Divinity to protect your allies through the strength of your shared bonds.</p>
+			<p class="indent">When a creature you can see within 30 feet of you takes damage, you can use your reaction to choose a number of other willing creatures you can see, up to a number of creatures equal to your Wisdom modifier (minimum of one creature). Distribute the damage taken between the original target and the chosen creatures. Each creature must take at least 1 damage. Apply any damage resistance or vulnerability of the creatures involved after you distribute the damage.</p>
+		</description>
+		<sheet alt="Shared Burden" action="Reaction" usage="Channel Divinity">
+			<description>When a creature you can see within 30 feet of you takes damage, you can choose up to {{shared burden:creatures}} other willing creatures you can see. Distribute the damage taken between the original target and the chosen creatures. Each creature must take at least 1 damage. Apply any damage resistance or vulnerability of the creatures involved after you distribute the damage.</description>
+		</sheet>
+		<rules>
+			<stat name="shared burden:creatures" value="1" bonus="base" />
+			<stat name="shared burden:creatures" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+    <element name="Ambition Domain: Invoke Duplicity" type="Archetype Feature" source="Plane Shift: Amonkhet" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_AMBITION_DOMAIN_CD_INVOKE_DUPLICITY">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to create an illusory duplicate of yourself.</p>
+            <p class="indent">As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.</p>
+            <p class="indent">For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target.</p>
+        </description>
+        <sheet alt="Invoke Duplicity" action="Action" usage="Channel Divinity">
+            <description>Summon an illusion of you for 1 min. As a bonus action you can move this illusion 30 ft up to a range of 120 ft. You can cast spells as if you’re on the illusions space and if you’re within 5 ft of your illusion you have advatange on attack rolls against any creatures that can see both you and your illusion.</description>
+            <description level="17">Summon up to four illusions of you for 1 min. As a bonus action you can move any number of illusion 30 ft up to a range of 120 ft. You can cast spells as if you’re on the illusions space and if you’re within 5 ft of any of your illusion you have advatange on attack rolls against any creatures that can see both you and your illusions.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Solidarity Domain: Preserve Life" type="Archetype Feature" source="Plane Shift: Amonkhet" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_SOLIDARITY_DOMAIN_CD_PRESERVE_LIFE">
+        <supports>Templar Divine Domain</supports>
+        <description>
+        <p>Starting at 3rd level, you can use your Channel Divinity to heal the badly injured.</p>
+        <p class="indent">As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can’t use this feature on an undead or a construct.</p>
+        </description>
+        <sheet alt="Preserve Life" action="Action" usage="Channel Divinity">
+        	<description>You present your holy symbol and evoke healing energy that can restore {{preserve life:hp}} hit points. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can’t use this feature on an undead or a construct.</description>
+        </sheet>
+        <rules>
+			<stat name="preserve life:hp" value="level:fighter" />
+			<stat name="preserve life:hp" value="level:fighter" />
+			<stat name="preserve life:hp" value="level:fighter" />
+			<stat name="preserve life:hp" value="level:fighter" />
+			<stat name="preserve life:hp" value="level:fighter" />
+        </rules>
+    </element>
+    <element name="Strength Domain: Feat of Strength" type="Archetype Feature" source="Plane Shift: Amonkhet" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_STRENGTH_DOMAIN_CD_FEAT_OF_STRENGTH">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>At 3rd level, you can use your Channel Divinity to enhance your physical might. When you make an attack roll, ability check, or saving throw using Strength, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the roll succeeds or fails. </p>
+        </description>
+        <sheet alt="Feat of Strength" usage="Channel Divinity">
+            <description>When you make an attack roll/Ability check/saving throw with strength you can use add 10 to the roll before the result is revealed.</description>
+        </sheet>
+    </element>
+    <element name="Zeal Domain: Consuming Fervor" type="Archetype Feature" source="Plane Shift: Amonkhet" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_ZEAL_DOMAIN_CD_CONSUMING_FERVOR">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to channel your zeal into unchecked ferocity.</p>
+            <p class="indent">When you roll fire or thunder damage, you can use your Channel Divinity to deal maximum damage instead of rolling.</p>
+        </description>
+        <sheet alt="Consuming Fervor" usage="Channel Divinity">
+            <description>When you roll fire or thunder damage, you can use your Channel Divinity to deal maximum damage instead of rolling.</description>
+        </sheet>
+        <rules />
+    </element>
+    <element name="Sky Domain: Updraft" type="Archetype Feature" source="All the Lights in the Sky are Stars" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_SKY_DOMAIN_CD_UPDRAFT">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to create a powerful blast of wind. As an action, you present your holy symbol and invoke the name of your deity. Choose a Large or smaller creature within 60 feet of you. The target must make a Strength saving throw or be blown upwards 30 feet. A target can choose to automatically fail this saving throw. If the target doesn’t have a hover or fly speed, it immediately falls afterwards, taking fall damage and landing prone.</p>
+        </description>
+        <sheet usage="Channel Divinity" alt="Updraft" action="Action">
+            <description>Choose a Large or smaller creature within 60 feet of you. The target must make a Strength saving throw or be blown upwards 30 feet. A target can choose to automatically fail this saving throw. If the target doesn’t have a hover or fly speed, it immediately falls afterwards, taking fall damage and landing prone.</description>
+        </sheet>
+    </element>
+    <element name="Madness Domain: Sow Madness" type="Archetype Feature" source="Beyond the Stars" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_MADNESS_DOMAIN_CD_SOW_MADNESS">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to shatter the minds of other creatures. As an action, choose a creature that you can see within 60 feet of you, and they must make a Intelligence Saving Throw. On a failure, the creature takes 3d10 + your Cleric level psychic damage and must roll for a random affliction of madness from the Short-Term Madness on pg.259 of the <em>Dungeon Master’s Guide</em>. This form of madness lasts for 1d10 minutes, which they must roll for when the madness effect takes hold.</p>
+        </description>
+        <sheet alt="Sow Madness" usage="Channel Divinity" action="Action">
+            <description>Choose a creature that you can see within 60 feet of you, and they must make a Intelligence Saving Throw. On a failure, the creature takes 3d10 + {{level:fighter}} psychic damage and must roll for a random affliction of madness from the Short-Term Madness on pg.259 of the DMG. This form of madness lasts for 1d10 minutes, which they must roll for when the madness effect takes hold.</description>
+        </sheet>
+    </element>
+        <element name="Artistry Domain: Bring to Life" type="Archetype Feature" source="Blazing Dawn Player’s Companion" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_ARTISTRY_DOMAIN_CD_BRING_TO_LIFE">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Beginning at 3rd level, you can use your Channel Divinity to create real creatures and objects from artwork.</p>
+                <p class="indent">During a minute-long ritual, you touch a piece of artwork and cause a single object or creature depicted within that piece to be conjured at an unoccupied location within 30 feet of you, in a perfectly realistic form. To be an eligible target, the real version of a selected creature or object must fit within a 10-foot cube, and, if its a creature, must be of CR 0. A conjured creature can be of any creature type, is friendly to you, and obeys your commands. Anything conjured with this Channel Divinity lasts for up to 1 hour. You can dismiss the conjured creature or object by using a bonus action on your turn.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Bring to Life" action="{{bring-to-life:action}}">
+                <description>You touch a piece of artwork and cause a single object or creature depicted within that piece to be conjured at an unoccupied location within 30 feet of you, in a perfectly realistic form. The real version of the object or creature must fit within a 10-foot cube. A creature must be {{bring-to-life:cr}}.</description>
+            </sheet>
+            <rules>
+                <stat name="bring-to-life:action" inline="true" value="1 minute ritual" level="2" />
+                <stat name="bring-to-life:action" inline="true" value="Action" level="17" />
+                <stat name="bring-to-life:cr" inline="true" value="of CR 0" level="2" />
+                <stat name="bring-to-life:cr" inline="true" value="up to CR 2" level="17" />
+            </rules>
+        </element>
+        <element name="Courage Domain: Rally Spirits" type="Archetype Feature" source="Blazing Dawn Player’s Companion" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_COURAGE_DOMAIN_CD_RALLY_SPIRITS">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you can use your Channel Divinity to rally your allies, imbuing them with courage and valor.</p>
+                <p class="indent">As a action, you present your holy symbol, and select up to two allied creatures that you can see within 60 feet of you. For each creature selected, you can choose to either grant it temporary hit points equal to your Wisdom modifier + your cleric level, or, if it is afflicted by the charmed or frightened condition, end one of those conditions for it.</p>
+            </description>
+            <sheet usage="Channel Divinity" action="Action" alt="Rally Spirits">
+                <description>You present your holy symbol, and select up to two allied creatures that you can see within 60 feet of you. For each creature selected, you can choose to either grant it {{rally-spirits:temp-hp}} temporary hit points, or, if it is afflicted by the charmed or frightened condition, end one of those conditions for it.</description>
+            </sheet>
+            <rules>
+                <stat name="rally-spirits:temp-hp" value="wisdom:modifier" />
+                <stat name="rally-spirits:temp-hp" value="level:fighter" />
+            </rules>
+        </element>
+        <element name="Elemental Domain: Elemental Avatar" type="Archetype Feature" source="Blazing Dawn Player’s Companion" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_ELEMENTAL_DOMAIN_CD_ELEMENTAL_AVATAR">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you can use your Channel Divinity to summon the four elements to your command.</p>
+                <p class="indent">As an action, you present your holy symbol, causing elemental energies to begin swirling around you. For the next minute, you can use a bonus action on each of your turns to make a ranged spell attack against a creature you can see within 60 feet of you. That creature takes 1d6 + your Wisdom modifier bludgeoning, cold, fire, or lightning damage (your choice) on a hit.</p>
+                <p class="indent">This Channel Divinity ends early if you are incapacitated, or if you use a different Channel Divinity option.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Elemental Avatar" action="{{elemental-avatar:action}}">
+                <description>You present your holy symbol. For the next minute, you can use a bonus action on each of your turns to make a ranged spell attack against a creature you can see within 60 feet of you. That creature takes 1d6 + {{wisdom:modifier}} bludgeoning, cold, fire, or lightning damage (your choice) on a hit.</description>
+                <description level="17">You present your holy symbol. For the next minute, you can use a bonus action on each of your turns, including the turn on which you activate it, to make two ranged spell attacks against a creature you can see within 60 feet of you. That creature takes 1d6 + {{wisdom:modifier}} bludgeoning, cold, fire, or lightning damage (your choice) on a hit.</description>
+            </sheet>
+            <rules>
+                <stat name="elemental-avatar:action" inline="true" value="Action" level="2" />
+                <stat name="elemental-avatar:action" inline="true" value="Bonus Action" level="17" />
+            </rules>
+        </element>
+        <element name="Hunt Domain: Prized Quarry" type="Archetype Feature" source="Blazing Dawn Player’s Companion" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_HUNT_DOMAIN_CD_PRIZED_QUARRY">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Beginning at 3rd level, you can magically reward a creature for their successful kill. When a creature within 120 feet of you is reduced to 0 hit points, you can use your reaction and expend a use of your Channel Divinity to reward the creature that reduced it to 0 hit points. That creature regains a number of hit points equal to your Wisdom modifier + your Cleric level, and can immediately use its reaction to move up to its speed without provoking opportunity attacks. An undead or construct cannot be healed by this feature.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Prized Quarry" action="Reaction">
+                <description>When a creature within 120 feet of you is reduced to 0 hit points, you can expend a use of your Channel Divinity to reward the creature that reduced it to 0 hit points. That creature regains {{prized-quarry:hp}} hit points, and can immediately use its reaction to move up to its speed without provoking opportunity attacks. An undead or construct cannot be healed by this feature.</description>
+            </sheet>
+            <rules>
+                <stat name="prized-quarry:hp" value="wisdom:modifier" />
+                <stat name="prized-quarry:hp" value="level:fighter" />
+            </rules>
+        </element>
+        <element name="Justice Domain: Reveal Injustice" type="Archetype Feature" source="Blazing Dawn Player’s Companion" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_JUSTICE_DOMAIN_CD_REVEAL_INJUSTICE">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you can use your Channel Divinity to assist you in investigating deaths.</p>
+                <p class="indent">By performing a minute-long ritual on the remains of a creature that has been dead for no more than 7 days and hasn’t been targeted by this feature before, you can learn its cause of death. If the creature was killed by another creature, you can also learn details about the creature’s killer by making a Wisdom (Insight) check with a DC equal to the killer’s passive Charisma (Deception) score. You automatically fail this check if the killer is protected from divination magic, such as through the nondetection spell. On a success, you learn the killer’s creature type, and the distance and direction to their location as of the completion of the ritual. On a failed check, the killer knows that divination magic was attempted on it, but it doesn’t know its source.</p>
+                <p class="indent">The DM might allow you to use this feature to investigate events other than deaths. For example, scenes of a recent robbery or evidence of an assault might be viable targets for this Channel Divinity, at your DM’s discretion. In these cases, you would discover information about the main perpetrator of that event, rather than a “killer.”</p>
+            </description>
+            <sheet usage="Channel Divinity" action="1 minute ritual" alt="Reveal Injustice">
+                <description>By performing a minute-long ritual on the remains of a creature that has been dead for no more than 7 days and hasn’t been targeted by this feature before, you can learn its cause of death.</description>
+            </sheet>
+        </element>
+        <element name="Balance Domain: Weigh the Scales" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_BALANCE_DOMAIN_CD_WEIGH_THE_SCALES">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>At 3rd level, you can use your action and your Channel Divinity feature to impose equilibrium, refusing to allow the whims of causality to define you. For one minute or until you choose to end this effect as a bonus action, you can’t gain advantage or suffer disadvantage on any roll, and you can reroll any damage dice that result in a 1, but only once per die.</p>
+            </description>
+            <sheet action="Action" usage="Channel Divinity" alt="Weigh the Scales">
+                <description>For one minute or until you choose to end this effect as a bonus action, you can’t gain advantage or suffer disadvantage on any roll, and you can reroll any damage dice that result in a 1, but only once per die.</description>
+            </sheet>
+        </element>
+        <element name="Metal Domain: Overkill" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_METAL_DOMAIN_CD_OVERKILL">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>At 3rd level, when you or a creature you can see deals damage to a creature with a weapon attack, you can use your reaction and your Channel Divinity to transmute the victim’s essence into blades of starsteel that lance outward before vanishing. The target immediately takes additional magical piercing damage equal to 1d8 + your cleric level. If this causes the creature to die, its corpse detonates in a thunderous spray of blood and steel. Hostile creatures within 15 feet of the corpse must make a Dexterity saving throw against your cleric spell save DC. If a creature fails, it takes magical piercing damage equal to 1d8 + twice your cleric level, or half as much damage on a success. If this damage kills another creature that is Small or larger, that creature also explodes, repeating the effect until no more creatures die.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Overkill" action="Reaction">
+                <description>When you or a creature you can see deals damage to a creature with a weapon attack, you can use your reaction to transmute the victim’s essence into blades of starsteel that lance outward before vanishing. The target immediately takes additional magical 1d8 + {{level:fighter}} piercing damage.  If this causes the creature to die, hostile creatures within 15 feet of the corpse must make a Dexterity saving throw against your cleric spell save DC. If a creature fails, it takes 1d8 + {{cd-overkill:damage-bonus}} magical piercing damage, or half as much damage on a success. If this damage kills another creature that is Small or larger, that creature also explodes, repeating the effect until no more creatures die.</description>
+            </sheet>
+            <rules>
+                <stat name="cd-overkill:damage-bonus" value="level:fighter" />
+                <stat name="cd-overkill:damage-bonus" value="level:fighter" />
+            </rules>
+        </element>
+        <element name="Moonlight Domain: Lunar Cycle" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_MOONLIGHT_DOMAIN_CD_LUNAR_CYCLE">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>At 3rd level, you learn to unleash the cleansing light of your deity in a series of furious, radiant strikes, by using your action and your Channel Divinity. When you do, you perform the Wax phase listed below. After performing a phase, you can perform the next phase in the series on your subsequent turn by using your action. If you do not, or if you’ve performed all four phases, the cycle ends.</p>
+                <ul>
+                    <li>Wax. You unleash a cleaving crescent blast of radiant energy in a line up to 30 feet long and 5 feet wide, ending with a burst in a 10-foot radius sphere at the end of the line. Creatures within the area must make a Dexterity saving throw. If a creature fails, it takes radiant damage equal to 1d10 + your cleric level, or half as much damage on a success.</li>
+                    <li>Full. You shield yourself with moonlight, gaining temporary hit points equal to your cleric level that last for one minute. If damage from a creature causes you to lose any of these temporary hit points, that creature takes radiant damage equal to the temporary hit points lost.</li>
+                    <li>Wane. You teleport up to 30 feet in a burst of moonlight to a location you can see within 5 feet of another creature, and can immediately cast a cleric cantrip targeting that creature as part of the same action.</li>
+                    <li>Eclipse. You call down a scorching blast of radiant energy. Each hostile creature within 15 feet of you must make a Charisma saving throw. If a creature fails, it takes radiant damage equal to 1d10 + twice your cleric level, or half as much damage on a success.</li>
+                </ul>
+            </description>
+            <sheet action="Action" usage="Channel Divinity" alt="Lunar Cycle">
+                <description>You perform the Wax phase of Lunar Cycle listed. After performing a phase, you can perform the next phase (Wax -> Full -> Wane -> Eclipse) on your subsequent turn using your action.</description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_GFR_COSMR_ARCHETYPE_FEATURE_CD_LUNAR_CYCLE_WAX" />
+                <grant type="Archetype Feature" id="ID_GFR_COSMR_ARCHETYPE_FEATURE_CD_LUNAR_CYCLE_FULL" />
+                <grant type="Archetype Feature" id="ID_GFR_COSMR_ARCHETYPE_FEATURE_CD_LUNAR_CYCLE_WANE" />
+                <grant type="Archetype Feature" id="ID_GFR_COSMR_ARCHETYPE_FEATURE_CD_LUNAR_CYCLE_ECLIPSE" />
+            </rules>
+        </element>
+        <element name="Witchcraft Domain: Vile Brew" type="Archetype Feature" source="The Compendium of Sacred Mysteries" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_WITCHCRAFT_DOMAIN_CD_VILE_BREW">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>At 3rd level, you can use your Channel Divinity as an action to conjure a potion of strange power. As part of this action, you cast a cleric spell of your choice that you have prepared that has a casting time of 1 action and doesn’t have a range of Self, which has no effect and is stored within the potion. A creature can use its action to consume the potion. When it does, the spell takes effect with the creature as the target, or as the point of origin if the spell targets an area. The potion retains potency until you finish a short or long rest, after which it has no effect.</p>
+            </description>
+            <sheet alt="Vile Brew" usage="Channel Divinity" action="Action">
+                <description>You can conjure a potion of strange power. As part of this action, you cast a cleric spell of your choice that you have prepared that has a casting time of 1 action and doesn’t have a range of Self, which has no effect and is stored within the potion. A creature can use its action to consume the potion. When it does, the spell takes effect with the creature as the target, or as the point of origin if the spell targets an area. The potion retains potency until you finish a short or long rest, after which it has no effect.</description>
+            </sheet>
+        </element>
+    <element name="Night Domain: Midnight Gloom" type="Archetype Feature" source="Dark Arts Player’s Companion" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_NIGHT_DOMAIN_CD_MIDNIGHT_GLOOM">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to harness the black gloom of midnight, banishing light and draining the life of your foes.</p>
+            <p class="indent">As an action, you present your holy symbol and all lights within 30 feet of you, magical or non-magical, are instantly put out. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes necrotic damage equal to 2d6 + your cleric level on a failed saving throw, and loses any darkvision they have for 1 minute. On a successful save, they take half as much damage and suffer no other effects. A creature can repeat this saving throw at the start of each of its turns, regaining their darkvision on a success.</p>
+        </description>
+        <sheet action="Action" usage="Channel Divinity" alt="Midnight Gloom">
+            <description>You present your holy symbol and all lights within 30 feet of you, magical or non-magical, are instantly put out. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw (save DC {{spellcasting:dc:wis}}). A creature takes necrotic damage equal to 2d6 + {{level:fighter}} on a failed saving throw, and loses any darkvision they have for 1 minute. On a successful save, they take half as much damage and suffer no other effects. A creature can repeat this saving throw at the start of each of its turns, regaining their darkvision on a success.</description>
+        </sheet>
+    </element>
+    <element name="Mind Domain: Deity’s Mantle" type="Archetype Feature" source="The Renewed Psionic" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_MIND_DOMAIN_CD_DEITYS_MANTLE">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>At 3rd level, you can use your Channel Divinity to create a psionic mantle around yourself, infused with your prayers that beseech your deity for aid.</p>
+            <p class="indent">As an action, you don a mantle of flowing, intangible psionic energy for 10 minutes. This mantle grants one of the following benefits of your choice when you use this Channel Divinity option:</p>
+            <ul>
+                <li>You have advantage on saving throws against effects imposed by celestials, fiends, and fey.</li>
+                <li>You have a +5 bonus to Strength and Dexterity checks you make.</li>
+                <li>You can communicate telepathically with up to 5 willing allies of your choice while you are on the same plane of existence. Chosen allies understand your telepathic speech and can telepathically reply in a way you understand.</li>
+                <li>Your weapon attacks become magical and deal psychic damage instead of their normal damage type.</li>
+                <li>You gain temporary hit points equal to 5 + two per each of your cleric levels, which last until this effect ends.</li>
+            </ul>
+        </description>
+        <sheet alt="Deity’s Mantle" usage="Channel Divinity" action="Action">
+            <description>You don a mantle of flowing, intangible psionic energy for 10 minutes. Choose one of the following benefits:
+            You have advantage on saving throws against effects imposed by celestials, fiends, and fey.
+            You have a +5 bonus to Strength and Dexterity checks you make.
+            You can communicate telepathically with up to 5 willing allies of your choice while you are on the same plane of existence. Chosen allies understand your telepathic speech and can telepathically reply in a way you understand.
+            Your weapon attacks become magical and deal psychic damage instead of their normal damage type.
+            You {{deitys-mantle:temp-hp}} gain temporary hit points which last until this effect ends.</description>
+        </sheet>
+        <rules>
+            <stat name="deitys-mantle:temp-hp" value="level:fighter" />
+            <stat name="deitys-mantle:temp-hp" value="level:fighter" />
+            <stat name="deitys-mantle:temp-hp" value="5" />
+        </rules>
+    </element>
+    <element name="Judgement Domain: Invoke Judgement" type="Archetype Feature" source="Compendium 1: Civilization" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_JUDGEMENT_DOMAIN_CD_INVOKE_JUDGEMENT">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, as an action you can present your holy symbol and invoke judgment upon your enemies. You crush a target within 60 feet under the weight of their sins. The target makes a Wisdom saving throw. On failure, the creature is knocked prone and their movement speed is dropped to zero for 1 minute. The creature can repeat their saving throw at the end of each of their turns. They make this save disadvantage if they have dealt damage since the start of their turn.</p>
+            <p class="indent">You can apply the bonus damage of Sacred Judgement when dealing damage with a Cleric spell to a creature you have Invoked Judgement on regardless if they have damaged another creature. This persists for 1 minute regardless of their save.</p>
+        </description>
+        <sheet usage="Channel Divinity" alt="Invoke Judgement" action="Action">
+            <description>You can present your holy symbol and invoke judgment upon your enemies. The target makes a Wisdom saving throw (save DC {{spellcasting:dc:wis}}). On failure, the creature is knocked prone and their movement speed is dropped to zero for 1 minute. The creature can repeat their saving throw at the end of each of their turns. They make this save disadvantage if they have dealt damage since the start of their turn. You can apply the bonus damage of Sacred Judgement when dealing damage with a Cleric spell to a creature you have Invoked Judgement on regardless if they have damaged another creature. This persists for 1 minute regardless of their save.</description>
+        </sheet>
+    </element>
+        <element name="Civilization Domain: Flagbearer" type="Archetype Feature" source="Rule of Law" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_CIVILIZATION_DOMAIN_CD_FLAGBEARER">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you carry the flag of your civilization wherever you go, exerting and expanding the influence of your culture in any environment.</p>
+                <p class="indent">As an action, you can use your Channel Divinity to conjure a Divine Banner in an unoccupied space within 5 feet of you. The Divine Banner is attached to the ground and can’t be moved without being destroyed. The Divine Banner bears the flag of your nation, religion, or personal heraldry. The Divine Banner is a 10-foot-tall medium object, with hitpoints equal to four times your cleric level, and AC equal to your cleric spell save DC. If you summon a Divine Banner while you already have one active, the first banner is destroyed.</p>
+                <p class="indent">When you place a Divine Banner, you choose one of the following options. Unless otherwise specified, the Divine Banner lasts for 10 minutes, or until dispelled as an action.</p>
+                <p class="indent"><strong><em>Hallowed Ground.</em></strong> Friendly creatures within 15 feet of the Divine Banner gain the effects of a bless spell. Undead within 30 feet have disadvantage on saving throws against any effect that turns undead.</p>
+                <p class="indent"><strong><em>Rally Point.</em></strong> All friendly creatures that can see the Divine Banner can move up to their speed towards it as a bonus action, and opportunity attacks provoked by this movement have disadvantage.</p>
+                <p class="indent"><strong><em>Resilience.</em></strong> All friendly creatures within 30 feet of the Divine Banner have advantage on saving throws that they are proficient with.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Flagbearer" action="Action">
+                <description>You can use your Channel Divinity to conjure a Divine Banner in an unoccupied space within 5 feet of you. The Divine Banner is attached to the ground and can’t be moved without being destroyed. When you place a Divine Banner, you choose one of the following options: Hallowed Ground, Rally Point, or Resilience. Unless otherwise specified, the Divine Banner lasts for 10 minutes, or until dispelled as an action.</description>
+            </sheet>
+        </element>
+        <element name="Travel Domain: Traveling Companion" type="Archetype Feature" source="Rule of Law" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_TRAVEL_DOMAIN_CD_TRAVELING_COMPANION">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you can use your Channel Divinity to share beneficial magic with a traveling companion.</p>
+                <p class="indent">When you cast a spell targeting a single friendly creature, you can use your Channel Divinity to target a second friendly creature (including yourself) in range with the same spell. To be eligible, a spell must be incapable of targeting more than one creature at the spell’s current level.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Traveling Companion">
+                <description>When you cast a spell targeting a single friendly creature, you can use your Channel Divinity to target a second friendly creature (including yourself) in range with the same spell. To be eligible, a spell must be incapable of targeting more than one creature at the spell’s current level.</description>
+            </sheet>
+        </element>
+        <element name="Silence Domain: Control the Flow" type="Archetype Feature" source="Silent Edict" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_SILENCE_DOMAIN_CD_CONTROL_THE_FLOW">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you can use your Channel Divinity to interrupt the flow of the weave.</p>
+                <p class="indent">You can use your Channel Divinity to end the concentration of a creature within 90 feet. The creature must make a concentration check equal to your spell save DC. Alternatively you may dispel a magical effect or spell from an ally.</p>
+            </description>
+            <sheet usage="Channel Divinity">
+                <description>You can end the concentration of a creature within 90 feet. The creature must make a concentration check (save DC {{spellcasting:dc:wis}}). Alternatively you may dispel a magical effect or spell from an ally.</description>
+            </sheet>
+        </element>
+    <element name="Toxin Domain: Fangs of Steel" type="Archetype Feature" source="The Warrior’s Codex" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_TOXIN_DOMAIN_CD_FANGS_OF_STEEL">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>At 3rd level, you can use a bonus action to coat a weapon you’re holding with the ichor of your god with a use of your Channel Divinity. For the next minute or until you are incapacitated, the target of successful melee attacks you make with that weapon must make a Constitution saving throw against your spell save DC or be poisoned for the next minute. The creature repeats the saving throw at the end of each of its turns, ending the poison on itself and becoming immune to Fangs of Steel for the next 24 hours on a success.</p>
+            <p class="indent">Alternatively, you can use this feature to deal an extra 1d8 acid damage with attacks you make with that melee weapon. This effect ends after one minute or until you are incapacitated.</p>
+        </description>
+        <sheet usage="Channel Divinity" alt="Fangs of Steel" action="Bonus Action">
+            <description>You can use a bonus action to coat a weapon you’re holding with the ichor of your god with a use of your Channel Divinity. For the next minute or until you are incapacitated, the target of successful melee attacks you make with that weapon must make a Constitution saving (save DC {{spellcasting:dc:wis}}) or be poisoned for the next minute. The creature repeats the saving throw at the end of each of its turns, ending the poison on itself and becoming immune to Fangs of Steel for the next 24 hours on a success. Alternatively, you can use this feature to deal an extra 1d8 acid damage with attacks you make with that melee weapon.</description>
+        </sheet>
+    </element>
+        <element name="Arctic Domain: Ice Prison" type="Archetype Feature" source="Arctic Domain" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_ARCTIC_DOMAIN_CD_ICE_PRISON">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you can brandish your holy symbol, facing a creature you can see within 30 feet of you. It must make a Strength saving throw or the ice forming around it will encase it for 1 minute.</p>
+                <p class="indent">While encased in this way a creature is incapacitated and its speed becomes 0, it is also immune to all damage while trapped. At the end of each of its turn it can try to repeat the Strength saving throw contested by your spell save DC, breaking free of the ice on a success.</p>
+            </description>
+            <sheet action="Action" usage="Channel Divinity">
+                <description>You force a creature you can see within 30 feet to make a Strength saving throw (save DC {{spellcasting:dc:wis}}) or be encased in ice for 1 minute.</description>
+            </sheet>
+        </element>
+    <element name="Beauty Domain: Blinding Beauty" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_BEAUTY_DOMAIN_CD_BLINDING_BEAUTY">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to take on a form so beautiful that mortal eyes cannot withstand.</p>
+            <p class="indent">As an action. you present your holy symbol, and each creature of your choice that can see you within 30 feet of you must succeed on a Wisdom saving throw or be blinded until the end of your next turn. You can also cause any of the blinded creatures to drop what they are holding when they fail the saving throw.</p>
+        </description>
+        <sheet action="Action" alt="Blinding Beauty" usage="Channel Divinity">
+            <description>You present your holy symbol, and each creature of your choice that can see you within 30 feet of you must succeed on a Wisdom saving throw or be blinded until the end of your next turn. You can also cause any of the blinded creatures to drop what they are holding when they fail the saving throw.</description>
+        </sheet>
+    </element>    
+        <element name="Gambler’s Domain: On a Roll" type="Archetype Feature" source="Gambler’s Domain" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_GAMBLERS_DOMAIN_CD_ON_A_ROLL">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, when you hit a creature with a weapon or spell attack, you can use Channel Divinity to repeat your attack roll against that creature. If the new attack roll hits, add one additional damage die of the weapon or spell’s type to your damage roll and repeat the attack roll again. You can make a number of additional attack rolls equal to your Wisdom modifier, adding an additional damage die for each successive hit.</p>
+            </description>
+            <sheet usage="Channel Divinity" >
+                <description>When you hit a creature with a weapon or spell attack, you can use Channel Divinity to repeat your attack roll against that creature. If the new attack roll hits, add one additional damage die of the weapon or spell’s type to your damage roll and repeat the attack roll again. You can make up to {{wisdom:modifier}} additional attack rolls, adding an additional damage die for each successive hit.</description>
+            </sheet>
+        </element>
+        <element name="Hearth Domain: Restful Sojourn" type="Archetype Feature" source="LaserLlama’s Divine Domains" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_HEARTH_DOMAIN_CD_RESTFUL_SOJOURN">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you gain this additional channel Divinity option. As an action, you may cast <em>Leomund’s tiny hut</em>, without expending a spell slot or material components. Any creature that spends hit die while inside the hut may roll the die twice and keep the higher of the two rolls.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Restful Sojourn" action="Action">
+                <description>You may cast leomund’s tiny hut, without expending a spell slot or material components. Any creature that spends hit die while inside the hut may roll the die twice and keep the higher of the two rolls.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_LEOMUNDS_TINY_HUT" />
+            </rules>
+        </element>
+        <element name="Love Domain: Impulsive Infatuation" type="Archetype Feature" source="LaserLlama’s Divine Domains" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_LOVE_DOMAIN_CD_IMPULSIVE_INFATUATION">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you can use your Channel Divinity to overwhelm a creature with a flash of intense admiration for you, driving them to rash action in your defense.</p>
+                <p class="indent">As an action, you present your holy symbol and choose one creature you can see within 30 ft. They must make a Wisdom saving throw. On a failure, the creature is charmed by you until the start of your next turn, and it must immediately use its reaction to make a weapon attack against a target you designate. If there are no valid targets, it uses its reaction to admire you.</p>
+            </description>
+            <sheet alt="Impulsive Infatuation" action="Action" usage="Channel Divinity">
+                <description>You choose one creature you can see within 30 ft. They must make a Wisdom saving throw. On a failure, the creature is charmed by you until the start of your next turn, and it must immediately use its reaction to make a weapon attack against a target you designate. If there are no valid targets, it uses its reaction to admire you.</description>
+            </sheet>
+        </element>
+        <element name="Luck Domain: Stroke of Luck" type="Archetype Feature" source="LaserLlama’s Divine Domains" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_LUCK_DOMAIN_CD_STROKE_OF_LUCK">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level you gain this Channel Divinity option. As a reaction, when a friendly creature within 30 ft. of you is forced to make a saving throw, you can use this Channel Divinity to give them advantage on the roll.</p>
+            </description>
+            <sheet alt="Stroke of Luck" action="Reaction" usage="Channel Divinity">
+                <description>When a friendly creature within 30 ft. of you is forced to make a saving throw, you can use this Channel Divinity to give them advantage on the roll.</description>
+            </sheet>
+        </element>
+        <element name="Poverty Domain: Guardian’s Shield" type="Archetype Feature" source="LaserLlama’s Divine Domains" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_POVERTY_DOMAIN_CD_GUARDIANS_SHIELD">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>At 3rd level you gain the following Channel Divinity option. When a creature within 30 ft. of you takes damage you can use this Channel Divinity to magically take the damage yourself. As a reaction you gain resistance to all damage and take the damage from the attack as if you had been the target. Once you take the damage, any resistances you gained from this ability immediately end.</p>
+            </description>
+            <sheet alt="Guardian’s Shield" usage="Channel Divinity" action="Reaction">
+                <description>When a creature within 30 ft. of you takes damage you can use this Channel Divinity to magically take the damage yourself. As a reaction you gain resistance to all damage and take the damage from the attack as if you had been the target. Once you take the damage, any resistances you gained from this ability immediately end.</description>
+            </sheet>
+        </element>
+            <element name="Shadow Domain: Inspire Terror" type="Archetype Feature" source="LaserLlama’s Divine Domains" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_SHADOW_DOMAIN_CD_INSPIRE_TERROR">
+                <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level you gain this Channel Divinity option. As an action, you hold aloft your holy symbol and force each creature of your choice that you can see within 30 ft. of you to make a Wisdom saving throw. On a failed save, a creature becomes frightened of you for 1 minute. The frightened creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success.</p>
+                <p class="indent">The creature has disadvantage on the saving throw if they are in darkness.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Inspire Terror" action="Action">
+                <description>You force each creature of your choice that you can see within 30 ft. of you to make a Wisdom saving throw. On a failed save, a creature becomes frightened of you for 1 minute. The frightened creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success. The creature has disadvantage on the saving throw if they are in darkness.</description>
+            </sheet>
+        </element>
+    <element name="Wealth Domain: Distilled Wealth" type="Archetype Feature" source="LaserLlama’s Divine Domains" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_WEALTH_DOMAIN_CD_DISTILLED_WEALTH">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level you can channel the power of your god to make your wealth easier to transport and trade. As an action, you can evoke this Channel Divinity and touch one non-magical object of size Large or smaller. The object is turned into a precious gemstone, no larger than your fist. The gemstone has the same worth as the object you transformed. As an action you can crush the gemstone and the original object appears in an empty space within 5 ft. of you.</p>
+        </description>
+        <sheet usage="Channel Divinity" action="Action" alt="Distilled Wealth">
+            <description>You can touch one non-magical object of size Large or smaller and turn it into a precious gemstone, no larger than your fist. The gemstone has the same worth as the object you transformed. As an action you can crush the gemstone and the original object appears in an empty space within 5 ft. of you.</description>
+        </sheet>
+    </element>
+    <element name="Night Domain: Sunless Senses" type="Archetype Feature" source="r/Unearthed Arcana" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_NIGHT_DOMAIN_CD_SUNLESS_SENSES">
+        <supports>Templar Divine Domain</supports>
+        <description>
+            <p>Starting at 3rd level, you can use your Channel Divinity to gain the senses of the deadliest predators of the dark.</p>
+            <p class="indent">As an action, you invoke your holy symbol and gain the ability of echolocation, granting you blindsight out to a range of 60 feet. This effect lasts for one minute, and while active you can perceive your surroundings without relying on sight. This effect will not function while you are subject to the deafened condition.</p>
+        </description>
+        <sheet action="Action" usage="Channel Divinity" alt="Sunless Senses">
+            <description>You invoke your holy symbol and gain the ability of echolocation, granting you blindsight out to a range of 60 feet. This effect lasts for one minute, and while active you can perceive your surroundings without relying on sight. This effect will not function while you are subject to the deafened condition.</description>
+        </sheet>
+    </element>
+        <element name="Pestilence Domain: Epidemic" type="Archetype Feature" source="Pestilence Divine Domain" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_PESTILENCE_DOMAIN_CD_EPIDEMIC">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you can use your Channel Divinity to create a contagious condition.</p>
+                <p class="indent">As an action, you can use your Channel Divinity to infect a creature you can see within 30 feet of you. That creature must succeed on a Constitution saving throw or be poisoned until the end of its next turn. At the start of an afflicted target’s next turn, any creature within 10 feet of it must make a Constitution saving throw or be subject to the same effects.</p>
+                <p class="indent">Once the effect ends for a creature or if a creature succeeds on the initial saving throw, it is immune to this effect for 24 hours. You can designate any number of creatures you can see to be immune to this effect.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Epidemic" action="Action">
+                <description>You can infect a creature you can see within 30 feet of you. That creature must succeed on a Constitution saving throw or be poisoned until the end of its next turn. At the start of an afflicted target’s next turn, any creature within 10 feet of it must make a Constitution saving throw or be subject to the same effects.</description>
+            </sheet>
+        </element>
+        <element name="Psionics Domain: Eschew Components" type="Archetype Feature" source="Psionics Domain" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_PSIONICS_DOMAIN_CD_ESCHEW_COMPONENTS">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you can invoke your alien god to cast a spell using only the power of your mind. When you cast a cleric spell, you can use your Channel Divinity to cast it without any verbal, somatic, or material components that do not have a listed cost.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Eschew Components">
+                <description>When you cast a cleric spell, you can use your Channel Divinity to cast it without any verbal, somatic, or material components that do not have a listed cost.</description>
+            </sheet>
+        </element>
+        <element name="Winter Domain: Winter’s Bite" type="Archetype Feature" source="The Winter Domain" id="ID_UMBRA_TEMPLAR_ARCHETYPE_FEATURE_TEMPLAR_WINTER_DOMAIN_CD_WINTERS_BITE">
+            <supports>Templar Divine Domain</supports>
+            <description>
+                <p>Starting at 3rd level, you can summon the spirit of winter to savage enemies who get too close.</p>
+                <p class="indent">As an action, you present your holy symbol and call upon a squall of wind and snow to surround you for 1 minute. Any hostile creature who ends their turn within 10 feet of you, or are within 10 feet when you activate this ability, must make a Constitution saving throw. On a failed save, a creature takes 1d6 + your cleric level cold damage and is slowed as if hit by your Bitter Cold ability. On a successful save, a creature takes half as much damage and isn’t slowed.</p>
+            </description>
+            <sheet usage="Channel Divinity" alt="Winter’s Bite" action="Action">
+                <description>You call upon a squall of wind and snow to surround you for 1 minute. Any hostile creature who ends their turn within 10 feet of you, or are within 10 feet when you activate this ability, must make a Constitution saving throw. On a failed save, a creature takes 1d6 + {{level:fighter}} cold damage and is slowed as if hit by your Bitter Cold ability. On a successful save, a creature takes half as much damage and isn’t slowed.</description>
+            </sheet>
+        </element>
+
+
+</elements>
