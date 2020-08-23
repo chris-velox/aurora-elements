@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Druid Circle of the Harvest</name>
+        <update version="0.0.1">
+            <file name="druid-circle-of-the-harvest-2.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/druid-circle-of-the-harvest-2.xml" />
+        </update>
+    </info>
+    
+    <element name="Circle of the Harvest 2" type="Source" source="Core" id="ID_BEARDIFY_HOMEBREWERY_SOURCE_Circle of the Harvest 2">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">COTH2</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/S2ebGinft</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="BEARDIFY" url="https://www.reddit.com/u/beardify">u/beardify</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20208022</set>
+        </setters>
+    </element>
+
+	<element name="Circle of the Harvest" type="Archetype" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_ARCHETYPE_DRUID_CIRCLE_OF_THE_HARVEST">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>Druids of the Circle of the Harvest are sowers and reapers. They believe that in order for life to flourish, it must be culled when it becomes overgrown or rotten. These druids see little difference between taking a life and trimming a plant, or saving a life and planting a seed. As a harvest druid, it is all part of your hallowed duty to preserve the balance of nature.</p>
+			<div element="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_HARVESTER_OF_SORROW" />
+			<div element="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_REAPER_FORM" />
+			<div element="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_BOUNTIFUL_CROP" />
+			<div element="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_FEAR_THE_REAPER" />
+			<div element="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_ALL_HALLOWS_EVE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_HARVESTER_OF_SORROW" level="2" />
+			<grant type="Archetype Feature" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_REAPER_FORM" level="2" />
+			<grant type="Archetype Feature" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_BOUNTIFUL_CROP" level="6" />
+			<grant type="Archetype Feature" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_FEAR_THE_REAPER" level="10" />
+			<grant type="Archetype Feature" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_ALL_HALLOWS_EVE" level="14" />
+		</rules>
+	</element>
+		<element name="Harvester of Sorrow" type="Archetype Feature" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_HARVESTER_OF_SORROW">
+			<description>
+				<p>Starting at 2nd level, your cricle grants you a scythe--a symbol of your sacred purpose. Your scythe is a martial melee weapon with the two-handed and reach properties that deals 1d10 slashing damage on a hit. You are proficient with it and it can serve as a spellcasting focus for your druid spells.</p>
+				<p class="indent">If your scythe is lost or destroyed, you can perform a 1-hour ritual to retrieve it.</p>
+			</description>
+			<sheet>
+				<description>You can use a scythe as your spellcasting focus.</description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_BEARDIFY_COTH2_PROFICIENCY_WEAPON_PROFICIENCY_SCYTHE" />
+			</rules>
+		</element>
+		<element name="Reaper Form" type="Archetype Feature" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_REAPER_FORM">
+			<description>
+				<p>Also at 2nd level, you can use your bonus action and expend one use of your Wild Shape to assume reaper form. When you do, you gain the following benefits for 10 minutes or until you are incapacitated:</p>
+				<ul>
+					<li><b>Twilight Veil.</b> Shadows envelop you like a hooded cloak. Bright light or darkness within 10 feet of you becomes dim light. When you or a creature within 10 feet of you is the target of an attack, you can use your reaction to shift these shadows, imposing disadvantage on the attack roll.</li>
+					<li><b>Dread Culling.</b> Attacks with your scythe are considered magical, and you can use your Wisdom modifier for attack and damage rolls with it. The first creature you hit with your scythe on each of your turns takes extra necrotic damage equal to 1d6 + half your druid level, and you or one creature within 30 feet of you gains temporary hit points equal to the extra damage dealt.</li>
+				</ul>
+			</description>
+			<sheet usage="Wild Shape" action="Bonus Action">
+				<description>You can assume reaper form for 10 minutes. </description>
+			</sheet>
+			<rules>
+                <grant type="Archetype Feature" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_REAPER_FORM_TWILIGHT_VEIL" />
+                <grant type="Archetype Feature" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_REAPER_FORM_DREAD_CULLING" />
+			</rules>
+		</element>
+			<element name="Twilight Veil" type="Archetype Feature" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_REAPER_FORM_TWILIGHT_VEIL">
+                <compendium display="false" />
+				<description>
+					<p>Shadows envelop you like a hooded cloak. Bright light or darkness within 10 feet of you becomes dim light. When you or a creature within 10 feet of you is the target of an attack, you can use your reaction to shift these shadows, imposing disadvantage on the attack roll.</p>
+				</description>
+				<sheet usage="Reaper Form" action="Reaction">
+					<description>Shadows envelop you like a hooded cloak. Bright light or darkness within 10 feet of you becomes dim light. When you or a creature within 10 feet of you is the target of an attack, you can use your reaction to shift these shadows, imposing disadvantage on the attack roll.</description>
+				</sheet>
+				<rules>
+				</rules>
+			</element>
+			<element name="Dread Culling" type="Archetype Feature" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_REAPER_FORM_DREAD_CULLING">
+                <compendium display="false" />
+				<description>
+					<p>Attacks with your scythe are considered magical, and you can use your Wisdom modifier for attack and damage rolls with it. The first creature you hit with your scythe on each of your turns takes extra necrotic damage equal to 1d6 + half your druid level, and you or one creature within 30 feet of you gains temporary hit points equal to the extra damage dealt.</p>
+				</description>
+				<sheet usage="Reaper Form">
+					<description>Attacks with your scythe are considered magical, and you can use your Wisdom modifier for attack and damage rolls with it. The first creature you hit with your scythe on each of your turns takes 1d6 + {{level:druid:half}} extra necrotic, and you or one creature within 30 feet of you gains temporary hit points equal to the extra damage dealt.</description>
+				</sheet>
+				<rules>
+				</rules>
+			</element>
+		<element name="Bountiful Crop" type="Archetype Feature" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_BOUNTIFUL_CROP">
+			<description>
+				<p>At 6th level, you can cast a special version of the following spells once per day, without using a spell slot or components:</p>
+				<ul>
+					<li><b>Create Food and Water.</b> You conjure a hearty and delicious meal. Up to 5 creatures that partake of it gain temporary hit points equal to half your druid level.</li>
+					<li><b>Animate Dead.</b> You cast this spell at the highest level you are capable of casting. You can only cast it at night.</li>
+				</ul>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Spell" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_BOUNTIFUL_CROP_CREATE_FOOD" />
+                <grant type="Spell" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_BOUNTIFUL_CROP_ANIMATE_DEAD" />
+			</rules>
+		</element>
+			<element name="Create Food and Water" type="Archetype Feature" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_BOUNTIFUL_CROP_CREATE_FOOD">
+                <compendium display="false" />
+				<description>
+					<p>You can cast <i>create food and water</i> to conjure a hearty and delicious meal. Up to 5 creatures that partake of it gain temporary hit points equal to half your druid level.</p>
+				</description>
+				<sheet usage="1/day">
+					<description>You can cast create food and water. Up to 5 creatures that partake of it gain {{level:druid:half}} temporary hit points.</description>
+				</sheet>
+				<rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_CREATE_FOOD_AND_WATER" />
+				</rules>
+			</element>
+			<element name="Animate Dead" type="Archetype Feature" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_BOUNTIFUL_CROP_ANIMATE_DEAD">
+                <compendium display="false" />
+				<description>
+					<p>You cast <i>animate dead</i> at the highest level you are capable of casting. You can only cast it at night.</p>
+				</description>
+				<sheet usage="1/day">
+					<description>You cast animate dead at the highest level you are capable of casting. You can only cast it at night.</description>
+				</sheet>
+				<rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" />
+				</rules>
+			</element>
+		<element name="Fear the Reaper" type="Archetype Feature" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_FEAR_THE_REAPER">
+			<description>
+				<p>By 10th level, your reaper transformation terrifies your foes. When you assume reaper form, each hostile creature within 30 feet of you must succeed on a Wisdom saving throw or be frightened of you. A creature can repeat its saving throw at the end of each of its turns, ending the effect on a success.</p>
+				<p class="indent">You also gain resistance to cold, radiant, and necrotic damage while in reaper form.</p>
+			</description>
+			<sheet usage="Reaper Form">
+				<description>When you assume reaper form, each hostile creature within 30 feet of you must succeed on a Wisdom saving throw or be frightened of you. A creature can repeat its saving throw at the end of each of its turns, ending the effect on a success. You also have resistance to cold, radiant, and necrotic damage while in reaper form.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="All Hallow’s Eve" type="Archetype Feature" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_ARCHETYPE_FEATURE_COTH_ALL_HALLOWS_EVE">
+			<description>
+				<p>At 14th level, you can cast cast <i>conjure woodland beings</i> at the highest level you can cast, without expending a spell slot or material components. When you do, you can choose to summon undead or scarecrows instead of fey creatures.</p>
+				<p class="indent">You cannot use this feature while in direct sunlight, and you must finish a long rest before using it again.</p>
+			</description>
+			<sheet usage="1/Long Rest">
+				<description>You can cast cast conjure woodland beings at the highest level you can cast, without expending a spell slot or material components. When you do, you can choose to summon undead or scarecrows instead of fey creatures. You cannot use this feature while in direct sunlight.</description>
+			</sheet>
+			<rules>
+                <grant type="Spell" id="ID_PHB_SPELL_CONJURE_WOODLAND_BEINGS" />
+			</rules>
+		</element>
+
+	<element name="Scythe" type="Weapon" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_WEAPON_SCYTHE">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING,  ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<description>
+			<p></p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">5</set>
+			<set name="weight" lb="7">7 lb.</set>
+			<set name="slot">twohand</set>
+			<set name="damage" type="slashing">1d10</set>
+			<set name="proficiency">ID_BEARDIFY_COTH2_PROFICIENCY_WEAPON_PROFICIENCY_SCYTHE</set>
+		</setters>
+	</element>
+        <element name="Weapon Proficiency (Scythe)" type="Proficiency" source="Circle of the Harvest 2" id="ID_BEARDIFY_COTH2_PROFICIENCY_WEAPON_PROFICIENCY_SCYTHE">
+            <supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING,  ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+            <sheet alt="Scythe" />
+        </element>
+
+</elements>
