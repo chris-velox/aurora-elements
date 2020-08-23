@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of Elegy</name>
+        <update version="0.0.1">
+            <file name="bard-college-of-elegy.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/bard/bard-college-of-elegy.xml" />
+        </update>
+    </info>
+    
+    <element name="College of Elegy" type="Source" source="Core" id="ID_NOTTHESMOOZE_GMBINDER_SOURCE_COLLEGE_OF_ELEGY">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">BCOE</set>
+            <set name="url">https://www.gmbinder.com/share/-LsDnFYbkYMV7sH3I0Sx</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="NTS" url="https://www.gmbinder.com/profile/notthesmoooze">NotTheSmooze</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200819</set>
+        </setters>
+    </element>
+
+    <element name="College of Elegy" type="Archetype" source="College of Elegy" id="ID_NTS_BCOE_ARCHETYPE_BARD_COLLEGE_OF_ELEGY">
+        <supports>Bard College</supports>
+        <description>
+            <p>The College of Elegy teaches a precious lesson: immortality is everywhere. Immortality is in every moment your deeds are remembered. Immortality is every life changed by your own. Immortality is stories. These bards have a grim duty to keep the dead alive by sharing their tales, calling ectoplasmic energy into the shape of echoes resembling the departed.</p>
+            <div element="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_GRAVE_SIGHT" />
+            <div element="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_LAST_DANCE" />
+            <div element="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_FUNERAL_RITES" />
+            <div element="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_REQUIEM" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_GRAVE_SIGHT" level="3" />
+            <grant type="Archetype Feature" id="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_LAST_DANCE" level="3" />
+            <grant type="Archetype Feature" id="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_FUNERAL_RITES" level="6" />
+            <grant type="Archetype Feature" id="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_REQUIEM" level="14" />
+        </rules>
+    </element>
+        <element name="Grave Sight" type="Archetype Feature" source="College of Elegy" id="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_GRAVE_SIGHT">
+            <description>
+                <p>Starting at 3rd level, you can bear witness to a dead creature’s last breaths. If you touch a corpse and spend 1 minute in a meditative trance, you gain a vision of the last moments of its life. The corpse must have a brain or a skull. You experience the vision from the dead creature’s perspective, gaining perfect recall of everything it saw or did in the moments before its death.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>If you touch a corpse and spend 1 minute in a meditative trance, you gain a vision of the last moments of its life.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Last Dance" type="Archetype Feature" source="College of Elegy" id="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_LAST_DANCE">
+            <description>
+                <p>When you join the College of Elegy at 3rd level, you learn to use performance to inspire even the restless dead.</p>
+                <p class="indent">As a bonus action, or as a reaction when a creature you can see within 60 feet of you dies, you can expend one use of your Bardic Inspiration to summon an echo (see the echo stat block), which appears in an unoccupied space you can see within 60 feet of you. An echo is friendly to you and your companions and obeys your commands, and often resembles a ghostly imitation of a creature who died nearby.</p>
+                <p class="indent">In combat, an echo takes its turn on your initiative. When you summon an echo, and as a bonus action on each of your turns, you can command one echo you control to take one of the actions in its stat block or the Dash, Disengage, Help, Hide, or Search action. If you don’t command an echo, that echo takes the Dodge action. An echo can move and use its reaction without your command.</p>
+                <p class="indent">An echo disappears after 1 hour, if it is reduced to 0 hit points, or if you banish it (no action required).</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>s a bonus action, or as a reaction when a creature you can see within 60 feet of you dies, you can expend one use of your Bardic Inspiration to summon an echo (see the echo stat block), which appears in an unoccupied space you can see within 60 feet of you.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Funeral Rites" type="Archetype Feature" source="College of Elegy" id="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_FUNERAL_RITES">
+            <description>
+                <p>At 6th level, you learn the <i>speak with dead</i> spell and two other necromancy spells of of your choice from any class. Each spell must be of a level for which you have spell slots, or a cantrip. The chosen spells count as bard spells for you but don’t count against the number of spells you know.</p>
+                <p class="indent">Additionally, you can cast <i>speak with dead</i> as a ritual.</p>
+            </description>
+            <sheet>
+                <description>You can cast speak with dead as a ritual.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" level="3" />
+                <select type="Spell" name="Spell (Funeral Rites)" supports="Necromancy,$(spellcasting:slots)" spellcasting="Bard" known="true" />
+            </rules>
+        </element>
+        <element name="Requiem" type="Archetype Feature" source="College of Elegy" id="ID_NTS_BCOE_ARCHETYPE_FEATURE_COLLEGE_OF_ELEGY_REQUIEM">
+            <description>
+                <p>Starting at 14th level, you can spend 1 minute calling on the echo of a legend. The legend uses the statistics of a gladiator (<i>Monster Manual,</i> p. 346), though its type is undead, it is friendly to you and your companions, and it obeys your commands.</p>
+                <p class="indent">Alternatively, you can speak the name of a dead creature with which you are familiar, briefly returning it to life for one last goodbye. If the creature is willing, it returns to life with all its hit points in the form of a undead spirit. Other than its type, a spirit uses the dead creature’s statistics, has its memories, and has any equipment other than artifacts or sentient items the dead creature carried when it died. The spirit is free to act as it chooses.</p>
+                <p class="indent">The creature you summon appears in an unoccupied space you can see within 30 feet of you. The creature and all of its equipment vanish after 10 minutes, if it is reduced to 0 hit points, or if you use an action to banish it.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest. After calling a dead creature’s name, their echo fades, and you can’t call on that creature again.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can spend 1 minute calling on the echo of a legend. The legend uses the statistics of a gladiator (<i>Monster Manual,</i> p. 346), though its type is undead, it is friendly to you and your companions, and it obeys your commands. It fades after 10 minutes.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+
+</elements>
