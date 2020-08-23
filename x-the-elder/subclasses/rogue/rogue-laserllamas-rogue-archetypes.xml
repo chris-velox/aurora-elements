@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>LaserLlama’s Roguish Archetypes</name>
-        <update version="0.0.1">
+        <update version="0.0.2">
             <file name="rogue-laserllamas-rogue-archetypes.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/rogue/rogue-laserllamas-rogue-archetypes.xml" />
         </update>
     </info>
@@ -29,77 +29,49 @@
     <element name="Daredevil" type="Archetype" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_ROGUE_DAREDEVIL">
         <supports>Roguish Archetype</supports>
         <description>
-            <p>Where most people avoid danger, there are some that seek it out at every opportunity. Daredevils are those that relish the change to risk their lives, either by attempting dangerous stunts or putting themselves in harms way. From young ages, daredevils would rather be maneuvering through treetops or leaping from roof to roof. Daredevils have a knack for avoiding what for most would be certain death.</p>
-            <p class="indent">As a daredevil, what is it that drives you to perform these airborne feats of acrobatics? Is it a drive to push yourself to your absolute limits? The fame and attention it brings? Or just the adrenaline rush of risking life and limb?</p>
-            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_HIGH_FLYING" />
-            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_NATURAL_ACROBAT" />
-            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_SLOW_FALL" />
+            <p>While most ordinary people do their best to avoid danger and minimize risk, there are those that seek it out. Known as Daredevils, these are the rare few who relish the feeling of near-death experiences, and live for the heart-pounding excitement of defying death.</p>
+            <p class="indent">Daredevils often go out of their way to put their lives on the line and will justify anything that sends adrenaline coursing through their veins. They would rather leap from rooftop to rooftop then walk the streets, swing from tree to tree then ride in a wagon. Due to their way of life Daredevils develop a knack for avoiding, what for most would be, certain death.</p>
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_AERIALIST" />
             <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_DEATH_FROM_ABOVE" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_SLOW_FALL" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_DEFY_DEATH" />
             <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_AIRBORNE_STRIKES" />
         </description>
         <sheet display="false" />
         <rules>
-            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_HIGH_FLYING" level="3" />
-            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_NATURAL_ACROBAT" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_AERIALIST" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_DEATH_FROM_ABOVE" level="3" />
             <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_SLOW_FALL" level="9" />
-            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_DEATH_FROM_ABOVE" level="13" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_DEFY_DEATH" level="9" />
             <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_AIRBORNE_STRIKES" level="17" />
         </rules>
     </element>
-        <element name="High-Flying" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_HIGH_FLYING">
+        <element name="Aerialist" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_AERIALIST">
             <description>
-                <p>At 3rd level, you’ve honed your body in such a way that when you leap from rooftop to rooftop, you almost appear to by flying. You gain a climbing speed equal to your movement speed. Also, if you have a 10 ft. running start you can long jump a number of feet equal to your Rogue level + your Dexterity Score.</p>
-                <p class="indent">Your standing high jump is equal to 3 + your Dexterity modifier, and if you have a 10 ft. running start, your high jump is equal to 3 + your Rogue level + your Dexterity modifier.</p>
+                <p>You’ve honed your body in such a way that when you leap through the air, you appear to by flying to all but the most potent observers. When you adopt this archetype at 3rd level you gain a climbing speed equal to your movement speed.</p>
+                <p class="indent">Additionally, you can use your Dexterity score in place of Strength when calculating your long or high jump distance.</p>
             </description>
             <sheet>
-                <description>If you have a 10 ft. running start you can long jump {{high-flying:long-jump}} feet. Your standing high jump is {{high-flying:standing-high-jump}} feet, and if you have a 10 ft. running start, your high jump is {{high-flying:running-high-jump}} feet.</description>
+                <description>You can use your Dexterity score in place of Strength when calculating your long or high jump distance.</description>
             </sheet>
             <rules>
                 <stat name="speed:climb" value="speed" bonus="base" />
-                <stat name="high-flying:long-jump" value="level:rogue" />
+                <!--<stat name="high-flying:long-jump" value="level:rogue" />
                 <stat name="high-flying:long-jump" value="dexterity" />
                 <stat name="high-flying:standing-high-jump" value="3" />
                 <stat name="high-flying:standing-high-jump" value="dexterity:modifier" />
                 <stat name="high-flying:running-high-jump" value="3" />
                 <stat name="high-flying:running-high-jump" value="dexterity:modifier" />
-                <stat name="high-flying:running-high-jump" value="level:rogue" />
-            </rules>
-        </element>
-        <element name="Natural Acrobat" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_NATURAL_ACROBAT">
-            <description>
-                <p>As a Daredevil you never feel quite comfortable unless you are dangling from perilous heights. At 3rd level you gain proficiency in the Acrobatics skill, and you can add double your proficiency bonus to any Dexterity (Acrobatics) skill check you make to climb, maneuver yourself, or hold on to things while not touching the ground.</p>
-                <p class="indent">If you already have proficiency in Acrobatics, you instead gain proficiency in your choice of Athletics or Stealth.</p>
-            </description>
-            <sheet>
-                <description>You can add double your proficiency bonus to any Acrobatics skill check you make to climb, maneuver yourself, or hold on to things while not touching the ground.</description>
-            </sheet>
-            <rules>
-                <select type="Proficiency" name="Skill Proficiency, Daredevil" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_STEALTH" default="ID_PROFICIENCY_SKILL_ACROBATICS" />
-            </rules>
-        </element>
-        <element name="Slow Fall" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_SLOW_FALL">
-            <description>
-                <p>Your unfortunate experience falling from heights has made you an expert in landing without hurting yourself. Starting at 9th level you can use your reaction to reduce any falling damage you take by an amount equal to five times your Rogue level.</p>
-                <p class="indent">If you manage to land on something that breaks your fall, like a wagon full of hay or a river, you take no damage from the fall.</p>
-            </description>
-            <sheet action="Reaction">
-                <description>You can reduce any falling damage you take by {{slow-fall:damage-reduction}} points.</description>
-            </sheet>
-            <rules>
-                <stat name="slow-fall:damage-reduction" value="level:rogue" />
-                <stat name="slow-fall:damage-reduction" value="level:rogue" />
-                <stat name="slow-fall:damage-reduction" value="level:rogue" />
-                <stat name="slow-fall:damage-reduction" value="level:rogue" />
-                <stat name="slow-fall:damage-reduction" value="level:rogue" />
+                <stat name="high-flying:running-high-jump" value="level:rogue" />-->
             </rules>
         </element>
         <element name="Death From Above" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_DEATH_FROM_ABOVE">
             <description>
-                <p>At 13th level, you can use your maneuverability and momentum to turn your body into a projectile. If you move through the air and end your movement by landing on top of, or next to, an enemy creature you can strike the creature and attempt to knock them prone.</p>
-                <p class="indent">The creature must make a Strength saving throw, the save DC is equal to 8 + your proficiency bonus + your Dexterity modifier. On a failure, you strike the creature and they are knocked prone. This strike qualifies for your Sneak Attack even if you do not meet the other requirements. On a successful save this ability has no effect on the creature.</p>
+                <p>Starting at 3rd level, you can use your maneuverability and momentum to turn your body into a projectile. If you move at least 10 feet through the air and end your movement within 5 feet of an enemy creature you can use your action to make a special attack.</p>
+                <p class="indent">The creature must make a Strength saving throw, the save DC is equal to 8 + your proficiency bonus + your Dexterity modifier. On a failed save, you strike the creature and if they are Large or smaller they are knocked prone. Your Sneak Attack can be used with this special attack even if you do not meet the normal requirements for Sneak Attack. On a successful save this ability has no effect on the creature.</p>
             </description>
-            <sheet>
-                <description>If you move through the air and end your movement by landing on top of, or next to, an enemy creature you can strike the creature and attempt to knock them prone. The creature must make a Strength saving throw (save DC {{death-from-above:save-dc}}). On a failure, you strike the creature and they are knocked prone. This strike qualifies for your Sneak Attack even if you do not meet the other requirements. On a successful save this ability has no effect on the creature.</description>
+            <sheet action="Action">
+                <description>If you move at least 10 feet through the air and end your movement within 5 feet of an enemy creature, you can use your action to make a special attack. The creature must make a Strength saving throw (save DC {{death-from-above:save-dc}}). On a failure, you strike the creature and if they are Large or smaller, they are knocked prone. Your Sneak Attack can be used with this special attack even if you do not meet the normal requirements for Sneak Attack. On a successful save this ability has no effect on the creature.</description>
             </sheet>
             <rules>
                 <stat name="death-from-above:save-dc" value="8" />
@@ -107,12 +79,40 @@
                 <stat name="death-from-above:save-dc" value="dexterity:modifier" />
             </rules>
         </element>
+        <element name="Slow Fall" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_SLOW_FALL">
+            <description>
+                <p>Beginning at 9th level, your experience falling from heights has made you an expert in landing without hurting yourself. While falling, you can use your reaction to reduce any falling damage you take by an amount equal to five times your Rogue level.</p>
+                <p class="indent">If you manage to land on something soft that breaks your fall, like a wagon full of hay, you take no damage from the fall.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>You can reduce any falling damage you take by {{slow-fall:damage-reduction}} points. If you manage to land on something soft that breaks your fall, like a wagon full of hay, you take no damage from the fall.</description>
+            </sheet>
+            <rules>
+                <stat name="slow-fall:damage-reduction" value="level:rogue" />
+                <stat name="slow-fall:damage-reduction" value="level:rogue" />
+                <stat name="slow-fall:damage-reduction" value="level:rogue" />
+                <stat name="slow-fall:damage-reduction" value="level:rogue" />
+                <stat name="slow-fall:damage-reduction" value="level:rogue" />
+            </rules>
+        </element>
+        <element name="Defy Death" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_DEFY_DEATH">
+            <description>
+                <p>Your Daredevil lifestyle has been cause for many near-death experiences, any you’ve gained an unfortunate familiarity with death. Starting at 13th level, when you are forced to make death saving throws, you can choose to have advantage on the rolls until you either stabilize, die, or regain hit points.</p>
+                <p class="indent">Once you use this ability you must complete a short or long rest before you can use it again.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>When you are forced to make death saving throws, you can choose to have advantage on the rolls until you either stabilize, die, or regain hit points.</description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Skill Proficiency, Daredevil" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_STEALTH" default="ID_PROFICIENCY_SKILL_ACROBATICS" />
+            </rules>
+        </element>
         <element name="Airborne Strikes" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_DAREDEVIL_AIRBORNE_STRIKES">
             <description>
-                <p>At 17th level, you can maneuver yourself while airborne to strike at your enemies in unexpected ways. You have advantage on any attack roll you make while airborne.</p>
+                <p>At 17th level, you can maneuver yourself while airborne to strike at your enemies in unexpected ways. You have advantage on any attack roll you make while you are at least 5 feet off the ground.</p>
             </description>
             <sheet>
-                <description>You have advantage on any attack roll you make while airborne.</description>
+                <description>You have advantage on any attack roll you make while you are at least 5 feet off the ground.</description>
             </sheet>
         </element>
 
@@ -120,9 +120,9 @@
     <element name="Magpie" type="Archetype" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_ROGUE_MAGPIE">
         <supports>Roguish Archetype</supports>
         <description>
-            <p>The ways of Druidic Circles are closely guarded and only taught to a select few acolytes chosen to become the next generation Druids and Rangers. However, sometimes secrets are stolen from Circles of Druids, Archfey, or ancient spirits of the forest. Those that seize these powers for themselves are known as Magpies.</p>
-            <p class="indent">How did you come to have the powers of a Magpie? Were your powers bestowed upon you be a rogue Druid? Did you steal these secrets from a powerful Archfey that wronged you? How will you use the abilities</p>
-            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_LIMITED_WILD_SHAPE" />
+            <p>The secret ways of druidic magic are closely guarded and only taught only those chosen to become the next generation druidic guardians. However, even the most well guarded secrets can be stolen. Those that have learned the practice of druidic magic outside of its ordained circles are named after most notorious thief of the animal kingdom, the Magpie.</p>
+            <p class="indent">While most Magpies are known for acquiring their abilities through nefarious means; like tricking an Archfey or training under an exiled druid, some are selected by druidic circles to carry out specialized missions. How did you come to wield the ancient magic of the forest?</p>
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_WILD_SHAPE" />
             <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_SPELLCASTING" />
             <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_HEIGHTENED_FORMS" />
             <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_CIRCLE_SECRETS" />
@@ -130,16 +130,16 @@
         </description>
         <sheet display="false" />
         <rules>
-            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_LIMITED_WILD_SHAPE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_WILD_SHAPE" level="3" />
             <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_SPELLCASTING" level="3" />
             <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_HEIGHTENED_FORMS" level="9" />
             <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_CIRCLE_SECRETS" level="13" />
             <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_THOUSAND_FORMS" level="17" />
         </rules>
     </element>
-        <element name="Limited Wild Shape" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_LIMITED_WILD_SHAPE">
+        <element name="Wild Shape" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_WILD_SHAPE">
             <description>
-                <p>At 3rd level, the power that you’ve taken as your own allows you to steal the forms of natural creatures. As a bonus action on your turn you can magically assume the form of a beast that you have physically touched before. Your Rogue level determines the beasts you can transform into, as shown in the Beast Shapes table below.</p>
+                <p>Starting at 3rd level, the abilities you have acquired allow you to steal the forms of natural creatures. As a bonus action on your turn you can magically assume the form of a beast that you have physically touched before. Your Rogue level determines the beasts you can transform into, as shown in the Beast Shapes table below.</p>
                 <h5 class="caption">BEAST SHAPES</h5>
                 <table>
                     <thead>
@@ -153,7 +153,9 @@
                 <p class="indent">You can use this ability once, and you regain the expended use when you finish a short or long rest.</p>
             </description>
             <sheet action="Bonus Action" usage="1/Short Rest">
-                <description>You can magically assume the form of a beast that you have physically touched before for 1 hour. Your Rogue level determines the beasts you can transform into, as shown in the Beast Shapes table. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.</description>
+                <description>You can magically assume the form of a CR 0 beast with no flying or swimming speed that you have physically touched before for 1 hour. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.</description>
+                <description level="6" >You can magically assume the form of a CR 1/4 beast with no flying speed that you have physically touched before for 1 hour. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.</description>
+                <description level="9" >You can magically assume the form of a CR 1/2 beast that you have physically touched before for 1 hour. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.</description>
             </sheet>
             <rules>
             </rules>
@@ -222,20 +224,20 @@
         </element>
         <element name="Heightened Forms" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_HEIGHTENED_FORMS">
             <description>
-                <p>By 9th level you have adjusted to the movements and attacks of your beast shapes. Your natural weapons while Wild Shaped count as magical finesse attacks for the purposes of your Sneak Attack and overcoming non-magical resistance.</p>
-                <p class="indent">Also, your time spent in beast form has heightened the senses of your humanoid form. You have advantage on Wisdom (Perception) checks that rely on hearing and smell.</p>
+                <p>Beginning at 9th level you have adjusted to the movements and attacks of your beast shapes. Your natural weapons while Wild Shaped count magical for the purposes of overcoming non-magical resistance.</p>
+                <p class="indent">You also gain an additional way to use your Sneak Attack; your natrual weapons allow you to use your Sneak Attack while Wild Shaped. All the other rules for Sneak Attack still apply to you.</p>
             </description>
             <sheet>
-                <description>Your natural weapons while Wild Shaped count as magical finesse attacks for the purposes of your Sneak Attack and overcoming non-magical resistance. You have advantage on Perception checks that rely on hearing and smell.</description>
+                <description>Your natural weapons while Wild Shaped count as magical attacks for overcoming non-magical resistance. Your natrual weapons allow you to use your Sneak Attack while Wild Shaped. All the other rules for Sneak Attack still apply to you.</description>
             </sheet>
         </element>
         <element name="Circle Secrets" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_CIRCLE_SECRETS">
             <description>
-                <p>At 13th level your affinity for nature magic has changed your being and allows you to understand more Druidic secrets. You know Druidic, the secret language of Druids. You can speak the language and use it to leave hidden messages. You and others who know this language always notice such messages. You also count as a Druid for the purposes of magic item requirements.</p>
-                <p class="indent">Other creatures also recognize you as a friend of nature. When a beast, plant, or fey forces you to make a saving throw you have advantage on the roll.</p>
+                <p>Starting at 13th level your affinity for nature magic has changed your being and allows you to understand more druidic secrets. You know Druidic, the secret language of Druids. You can speak the language and use it to leave hidden messages. You and others who know this language always notice such messages. You also count as a Druid for the purposes of magic item requirements.</p>
+                <p class="indent">Additionally, your time spent in Wild Shape has enhanced your senses. You have advantage on Wisdom (Perception) checks that rely on hearing or smell.</p>
             </description>
             <sheet>
-                <description>You count as a Druid for the purposes of magic item requirements. Other creatures also recognize you as a friend of nature. When a beast, plant, or fey forces you to make a saving throw you have advantage on the roll.</description>
+                <description>You count as a Druid for the purposes of magic item requirements. You have advantage on Perception checks that rely on hearing or smell.</description>
             </sheet>
             <rules>
                 <grant type="Language" id="ID_LANGUAGE_DRUIDIC" />
@@ -243,7 +245,10 @@
         </element>
         <element name="Thousand Forms" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_MAGPIE_THOUSAND_FORMS">
             <description>
-                <p>By 17th level, you have mastered the use of nature magic, and you can use it to alter your physical form in more subtle ways. You can cast the <em>alter self</em> spell at will.</p>
+                <p>Upon reaching 17th level, your mastery over the use of nature magic allows you to alter your physical form in subtle ways in order to suit your needs. You can cast the <em>alter self</em> spell at will without expending a spell slot.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_ALTER_SELF" />
+                </div>
             </description>
             <sheet>
                 <description>You can cast the alter self spell at will.</description>
@@ -257,9 +262,10 @@
     <element name="Justicar" type="Archetype" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_ROGUE_JUSTICAR">
         <supports>Roguish Archetype</supports>
         <description>
-            <p>Where there is divine worship there are rules and laws, and for every organized religion there are those they consider heretics. Justicars are the secret hands of the church, operating in the shadows to snuff out heresy, dissent, and any that would work against the will of their god. They excel at neutralizing threats to their church. Often unacknowledged or flat out condemned by the magisterium, Justicars operate with ruthless dedication to see the will of their god enacted upon the world.</p>
+            <p>While most gods have Clerics, Paladins, and priests sworn to their service, only the most ruthless gods employ those known as Justicars. These rare servants of the divine seek to impose the will of their god through any means necessary.</p>
+            <p class="indent">Sometimes self-appointed, Justicars often operate from the shadows, working to snuff out heresy and dissent wherever it is present. Most temples condemn the work of these divine hunters, and some even flat-out deny that they exist. However, denial and condemnation do not cause a Justicar to waver. They are driven by a fanatical belief that their actions are justified, no matter the cost, and they are only beholden to the words directly from the mouth of their god.</p>
             <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_SPELLCASTING" />
-            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ZEALOTS_EYE" />
+            <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_INQUISITORS_EYE" />
             <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_CONSECRATED_STRIKES" />
             <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_DIVINE_JUDGEMENT" />
             <div element="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ANOINTED_INQUISITOR" />
@@ -267,7 +273,7 @@
         <sheet display="false" />
         <rules>
             <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_SPELLCASTING" level="3" />
-            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ZEALOTS_EYE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_INQUISITORS_EYE" level="3" />
             <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_CONSECRATED_STRIKES" level="9" />
             <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_DIVINE_JUDGEMENT" level="13" />
             <grant type="Archetype Feature" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ANOINTED_INQUISITOR" level="17" />
@@ -335,18 +341,18 @@
                 <select type="Spell" name="Spell (Justicar)" supports="$(spellcasting:list), $(spellcasting:slots)" level="20" spellcasting="Justicar"/>
             </rules>
         </element>
-        <element name="Zealot’s Eye" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ZEALOTS_EYE">
+        <element name="Inquisitor’s Eye" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_INQUISITORS_EYE">
             <description>
-                <p>At 3rd level you can use an action you can open your awareness to detect celestials, fiends, and undead. Until the end of your next turn, you know the location of any of those creatures within 60 ft. of you that are not hidden by divination magic. You know the creature type of any being whose presence you sense, but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated.</p>
+                <p>Staring at 3rd level you can use an action to open your awareness to detect celestials, fiends, and undead. Until the end of your next turn, you know the location of any of those creatures that are within 60 feet of you, that are not hidden from divination magic. You know the creature type of any being whose presence you sense, but not its identity.</p>
                 <p class="indent">Once you use this ability you must finish a short or long rest before you can use it again.</p>
             </description>
             <sheet action="Action" usage="1/Short Rest">
-                <description>Until the end of your next turn, you know the location of any of celestials, fiends, or undead within 60 ft. of you that are not hidden by divination magic. You know the creature type of any being whose presence you sense, but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated.</description>
+                <description>Until the end of your next turn, you know the location of any of celestials, fiends, or undead within 60 ft. of you that are not hidden by divination magic. You know the creature type of any being whose presence you sense, but not its identity.</description>
             </sheet>
         </element>
         <element name="Consecrated Strikes" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_CONSECRATED_STRIKES">
             <description>
-                <p>At 9th level, you god allows your weapon strikes undercut a creature’s resistance to your spells. When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</p>
+                <p>Beginning at 9th level, you god allows your weapon strikes to undercut a creature’s resistance to your spells. When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</p>
             </description>
             <sheet>
                 <description>When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</description>
@@ -354,16 +360,16 @@
         </element>
         <element name="Divine Judgement" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_DIVINE_JUDGEMENT">
             <description>
-                <p>At 13th level you strikes are blessed by your deity that you may destroy unbelievers with greater ease. As a bonus action on your turn, you can grant yourself advantage on an attack roll against a an enemy creature.</p>
+                <p>Upon reaching 13th level you strikes are blessed by your deity so that you may destroy any unbelievers with greater ease. As a bonus action on your turn, you can grant yourself advantage on an attack roll against an enemy creature that you can see within 30 feet.</p>
                 <p class="indent">You can use this ability a number of times equal to your Charisma modifier, and you regain all expended uses at the end of a long rest.</p>
             </description>
             <sheet usage="{{charisma:modifier}}/Long Rest" action="Bonus Action">
-                <description>You can grant yourself advantage on an attack roll against a an enemy creature.</description>
+                <description>You can grant yourself advantage on an attack roll against a an enemy creature that you can see within 30 feet.</description>
             </sheet>
         </element>
         <element name="Anointed Inquisitor" type="Archetype Feature" source="LaserLlama’s Roguish Archetypes" id="ID_LL_LLRA_ARCHETYPE_FEATURE_JUSTICAR_ANOINTED_INQUISITOR">
             <description>
-                <p>At 17th level, your god has anointed you as their divine hand, a direct representative of their desires in the world. They grant you a boon of protection against magic that would hinder you from carrying out their will. Whenever you are forced to make a saving throw, you gain a bonus to the saving throw equal to your Charisma modifier. You must be conscious to gain this bonus.</p>
+                <p>Starting at 17th level, the power of your belief grants you a boon of protection against magic that would hinder you from carrying the will of your god. Whenever you are forced to make a saving throw, you gain a bonus to the saving throw equal to your Charisma modifier.</p>
             </description>
             <sheet>
                 <description>Whenever you are forced to make a saving throw, you gain a +{{charisma:modifier}} bonus to the saving throw. You must be conscious to gain this bonus.</description>
