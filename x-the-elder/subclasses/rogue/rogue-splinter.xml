@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Splinter Roguish Archetype</name>
+        <update version="0.0.1">
+            <file name="rogue-splinter.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/rogue/rogue-splinter.xml" />
+        </update>
+    </info>
+    
+    <element name="The Splinter" type="Source" source="Core" id="ID_IDBN_GMBINDER_SOURCE_THE_SPLINTER">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SPLINTER</set>
+            <set name="url">https://www.gmbinder.com/share/-M8rzdrbnY_r6U8shT_e</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="IDBN" url="https://www.gmbinder.com/profile/idbn">IDBN</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200819</set>
+        </setters>
+    </element>
+
+	<element name="The Splinter" type="Archetype" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_ROGUE_SPLINTER">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p>All rogues split their focus, an uncountable number of things demanding their attention at all times. The weight of the pins in the tumbler? Was that sound just the branches in the wind or is someone approaching the door? Is that a scratch or an arcane glyph inscribed as a magical trap? All of these things and more are always on their mind as they carry out their skulduggery. Some rogues take this split focus farther than others creating a splinter of their mind and power separate from their own. These rogues quickly discover there are certain advantages to a split mind, not the least of which is a strange form of psionics.</p>
+			<p class="indent">Splitters are often cagy folks, always looking over their shoulder. The process of creating a splinter is often driven by some deep paranoia or trauma that constantly runs in the back of your mind. What drove you to splinter your self? Are you consumed by fear and regret from running away from a spurned lover or a cult? Or did some event in your past shatter your mind for you?</p>
+			<div element="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SPLIT_SELF" />
+			<div element="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SPLIT_SECOND" />
+			<div element="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_DOUBLE_TROUBLE" />
+			<div element="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_TROUBLE_DOUBLE" />
+			<div element="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SECOND_SPLIT" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SPLIT_SELF" level="3" />
+			<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SPLIT_SECOND" level="3" />
+			<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_DOUBLE_TROUBLE" level="9" />
+			<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_TROUBLE_DOUBLE" level="13" />
+			<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SECOND_SPLIT" level="17" />
+		</rules>
+	</element>
+		<element name="Split/Self" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SPLIT_SELF">
+			<description>
+				<p>You have successfully created a splinter of your mind that is separately aware and uses your own senses. This splinter may be expended to use a number of effects. Your splinter dissipates and returns to you at the beginning of your turn so that you may use it again. While you have not expended your splinter and you are conscious, you can not be surprised.</p>
+			</description>
+			<sheet usage="{{splinter:uses}}/Turn">
+				<description>You many expend your splinter for a number of effects. Your splinter dissipates and returns to you at the beginning of your turn so that you may use it again. While you have not expended your splinter and you are conscious, you can not be surprised.</description>
+			</sheet>
+			<rules>
+                <stat name="splinter:uses" value="1" level="3" />
+			</rules>
+		</element>
+		<element name="Split/Second" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SPLIT_SECOND">
+			<description>
+				<p>For a split second your freshly awakened psionic powers allow you to manifest your splinter in the world around you. Your splinter may be used in the following ways:</p>
+				<p class="indent"><b><i>Flash Step:</i></b> You may use a bonus action to expend your splinter and teleport 15 feet, seamlessly manifesting your splinter in the space you left. The splinter may count as an adjacent enemy for the use of your Sneak Attack Feature.</p>
+				<p class="indent"><b><i>After Image:</i></b> When you move you may expend your splinter to increase your walking movement by 10 feet. Your splinter manifests behind you, mirroring your movements.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+				<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SPLIT_SECOND_FLASH_STEP" level="3" />
+				<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SPLIT_SECOND_AFTER_IMAGE" level="3" />
+			</rules>
+		</element>
+			<element name="Flash Step" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SPLIT_SECOND_FLASH_STEP">
+				<description>
+					<p>You may use a bonus action to expend your splinter and teleport 15 feet, seamlessly manifesting your splinter in the space you left. The splinter may count as an adjacent enemy for the use of your Sneak Attack Feature.</p>
+				</description>
+				<sheet action="Bonus Action" usage="Splinter">
+					<description>You may use a bonus action to expend your splinter and teleport 15 feet, seamlessly manifesting your splinter in the space you left. The splinter may count as an adjacent enemy for the use of your Sneak Attack Feature.</description>
+				</sheet>
+			</element>
+			<element name="After Image" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SPLIT_SECOND_AFTER_IMAGE">
+				<description>
+					<p>When you move you may expend your splinter to increase your walking movement by 10 feet. Your splinter manifests behind you, mirroring your movements.</p>
+				</description>
+				<sheet usage="Splinter">
+					<description>When you move you may expend your splinter to increase your walking movement by 10 feet. Your splinter manifests behind you, mirroring your movements.</description>
+				</sheet>
+			</element>
+		<element name="Double/Trouble" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_DOUBLE_TROUBLE">
+			<description>
+				<p>Your psionics grow in power, letting you manifest your splinters faster than before and even give them the ability to interact with their environment. You gain the following new ways to use your splinter:</p>
+				<p class="indent"><b><i>Doppel Dodge:</i></b> When you use your Uncanny Dodge feature you may expend your splinter to further reduce the damage you would take by an amount equal to your Rogue Level, then teleport 5 feet to a space you can see.</p>
+				<p class="indent"><b><i>Doppel Jump:</i></b> When you are jumping you may expend your splinter to manifest it near you to assist you, you may add 2 times your dexterity modifier to the distance of a running jump or high jump. This additional distance does not cost movement.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+				<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_DOUBLE_TROUBLE_DOPPEL_DODGE" level="9" />
+				<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_DOUBLE_TROUBLE_DOPPEL_JUMP" level="9" />
+			</rules>
+		</element>
+			<element name="Doppel Dodge" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_DOUBLE_TROUBLE_DOPPEL_DODGE">
+				<description>
+					<p>When you use your Uncanny Dodge feature you may expend your splinter to further reduce the damage you would take by an amount equal to your Rogue Level, then teleport 5 feet to a space you can see.</p>
+				</description>
+				<sheet usage="Splinter">
+					<description>When you use your Uncanny Dodge feature you may expend your splinter to further reduce the damage you would take by {{level:rogue}}, then teleport 5 feet to a space you can see.</description>
+				</sheet>
+			</element>
+			<element name="Doppel Jump" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_DOUBLE_TROUBLE_DOPPEL_JUMP">
+				<description>
+					<p>When you are jumping you may expend your splinter to manifest it near you to assist you, you may add 2 times your dexterity modifier to the distance of a running jump or high jump. This additional distance does not cost movement.</p>
+				</description>
+				<sheet usage="Splinter">
+					<description>When you are jumping you may expend your splinter to manifest it near you to assist you, you may add {{doppel-jump:bonus}} to the distance of a running jump or high jump. This additional distance does not cost movement.</description>
+				</sheet>
+				<rules>
+                    <stat name="doppel-jump:bonus" value="dexterity:modifier" />
+                    <stat name="doppel-jump:bonus" value="dexterity:modifier" />
+				</rules>
+			</element>
+		<element name="Trouble/Double" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_TROUBLE_DOUBLE">
+			<description>
+				<p>At 13th level your splinter becomes powerful enough to think and act on its own, at least in a limited capacity. You gain the following new ways to use your splinter:</p>
+				<p class="indent"><b><i>Substitute:</i></b> You may use an action to expend your splinter and teleport 30 feet to a place you can see or describe, your splinter remains in the place you left repeating some simple task (Like eating, pretending to listen, or following an ally down a street), this splinter lasts for up to 10 minutes until it is damaged, or until you use a bonus action to dismiss it. You do not regain use of your splinter until the splinter dissipates.</p>
+				<p class="indent"><b><i>Extra Hands and Eyes:</i></b> You may use a bonus action to expend your splinter and manifest it in an unoccupied space within 5 feet of you. It immediately takes the Search or Interact with Object action. You telepathically gain any information that your splinter learns.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+				<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_TROUBLE_DOUBLE_SUBSTITUTE" level="13" />
+				<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_TROUBLE_DOUBLE_EXTRA_HANDS_AND_EYES" level="13" />
+			</rules>
+		</element>
+			<element name="Substitute" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_TROUBLE_DOUBLE_SUBSTITUTE">
+				<description>
+					<p>You may use an action to expend your splinter and teleport 30 feet to a place you can see or describe, your splinter remains in the place you left repeating some simple task (Like eating, pretending to listen, or following an ally down a street), this splinter lasts for up to 10 minutes until it is damaged, or until you use a bonus action to dismiss it. You do not regain use of your splinter until the splinter dissipates.</p>
+				</description>
+				<sheet action="Action" usage="Splinter">
+					<description>You may expend your splinter and teleport 30 feet to a place you can see or describe, your splinter remains in the place you left repeating some simple task, this splinter lasts for up to 10 minutes until it is damaged, or until you use a bonus action to dismiss it. You do not regain use of your splinter until the splinter dissipates.</description>
+				</sheet>
+			</element>
+			<element name="Extra Hands and Eyes" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_TROUBLE_DOUBLE_EXTRA_HANDS_AND_EYES">
+				<description>
+					<p>You may use a bonus action to expend your splinter and manifest it in an unoccupied space within 5 feet of you. It immediately takes the Search or Interact with Object action. You telepathically gain any information that your splinter learns.</p>
+				</description>
+				<sheet action="Bonus Action" usage="Splinter">
+					<description>You may expend your splinter and manifest it in an unoccupied space within 5 feet of you. It immediately takes the Search or Interact with Object action. You telepathically gain any information that your splinter learns.</description>
+				</sheet>
+			</element>
+		<element name="Second/Split" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SECOND_SPLIT">
+			<description>
+				<p>So adept is your mind at splitting itself now you can split it a second time. You gain an additional splinter that may be spent on your regular options. Additionally, you gain two new options for your splinter:</p>
+				<p class="indent"><b><i>Double Strike:</i></b> When you would deal sneak attack damage you may expend a splinter to add 2d6 to your sneak attack damage.</p>
+				<p class="indent"><b><i>Second Thought:</i></b> You may expend your splinter to use a reaction, even if you have already used a reaction this round.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <stat name="splinter:uses" value="1" level="17" />
+				<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SECOND_SPLIT_DOUBLE_STRIKE" level="17" />
+				<grant type="Archetype Feature" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SECOND_SPLIT_SECOND_THOUGHT" level="17" />
+			</rules>
+		</element>
+			<element name="Double Strike" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SECOND_SPLIT_DOUBLE_STRIKE">
+				<description>
+					<p>When you would deal sneak attack damage you may expend a splinter to add 2d6 to your sneak attack damage.</p>
+				</description>
+				<sheet usage="Splinter">
+					<description>When you would deal sneak attack damage you may expend a splinter to add 2d6 to your sneak attack damage.</description>
+				</sheet>
+			</element>
+			<element name="Second Thought" type="Archetype Feature" source="The Splinter" id="ID_IDBN_SPLINTER_ARCHETYPE_FEATURE_SPLINTER_SECOND_SPLIT_SECOND_THOUGHT">
+				<description>
+					<p>You may expend your splinter to use a reaction, even if you have already used a reaction this round.</p>
+				</description>
+				<sheet usage="Splinter">
+					<description>You may expend your splinter to use a reaction, even if you have already used a reaction this round.</description>
+				</sheet>
+			</element>
+
+</elements>
