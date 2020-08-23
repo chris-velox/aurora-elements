@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>D&amp;D Beyond Homebrew Spells</name>
-        <update version="0.0.7">
+        <update version="0.0.9">
             <file name="spells.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/spells/spells.xml" />
         </update>
     </info>
@@ -133,6 +133,62 @@
             <set name="isRitual">false</set>
             <set name="time">1 action</set>
             <set name="range">100 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">10 minutes</set>
+            <set name="isConcentration">false</set>
+        </setters>
+    </element>
+
+    <element name="Legend" type="Spell" source="Homebrewery" id="ID_HOMEBREWERY_SPELL_LEGEND">
+        <!-- https://homebrewery.naturalcrit.com/share/P9opZxK-S -->
+        <supports>Wizard, Bard</supports>
+        <description>
+            <p>By means of this spell, you warp the fabric of reality to create a legendary truth about your subject, imbuing them with the qualities of a mythic hero. Select one creature within range and create a legend surrounding either the resilience, guile, or ferocity of your target. As you cast the spell, the legend is read aloud and consumed, becoming part of the narrative weave which drives and shapes this universe. Depending on the legend, the target gains one of the following effects for the spell’s duration:</p>
+            <p class="indent"><b><i>Legendary Physcial Resistance (3/Day).</i></b> If the target fails a Strength, Dexterity, or Constitution saving throw, it can choose to succeed instead.</p>
+            <p class="indent"><b><i>Legendary Mental Resistance (3/Day).</i></b> If the target fails an Intelligence, Wisdom, or Charisma saving throw, it can choose to succeed instead.</p>
+            <p class="indent"><b><i>Legendary Actions.</i></b> The target can take 2 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature’s turn. The target regains spent legendary actions at the start of its turn.</p>
+            <ul>
+                <li><i>Move.</i> The target moves up to its speed without provoking opportunity attacks.</li>
+                <li><i>Attack.</i> The target makes a melee or ranged attack.</li>
+                <li><i>Cast.</i> The target casts a spell it already knows, using spell slots as usual. The spell cannot take longer than 1 action to cast. If the spell is not a cantrip, the casting costs two legendary actions.</li>
+            </ul>
+            <p class="indent">Casting this spell on the same target every day for a year makes this effect permanent. The effects of this spell may only be removed by a wish spell. A target may only benefit from one casting of this spell while the spell’s effects are active.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">9</set>
+            <set name="school">abjuration</set>
+            <set name="isRitual">false</set>
+            <set name="time">10 minutes</set>
+            <set name="range">Touch</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">A scroll or record detailing the legendary accomplishments of the target, which the spell consumes</set>
+            <set name="duration">1 day</set>
+            <set name="isConcentration">false</set>
+        </setters>
+    </element>
+
+    <element name="Speak with Objects" type="Spell" source="Homebrewery" id="ID_HOMEBREWERY_SPELL_SPEAK_WITH_OBJECTS">
+        <!-- https://homebrewery.naturalcrit.com/share/YyoLuAot9 -->
+        <supports>Artificer, Bard, Wizard</supports>
+        <description>
+            <p>You imbue objects within 30 feet of you with limited sentience and animation. You can question objects within 30 feet of you about events in the spell’s area within the past day, gathering information on who has used the object, creature’s passing through, or other nearby happenings.</p>
+            <p class="indent">You can also manipulate objects in the area. When you cast this spell, and as your action each round for the duration, you can move one Small or smaller object up to 30 feet in any direction, but not beyond the range of the spell.</p>
+            <p class="indent">Objects might also be able to perform tasks on your behalf, at the DM’s discretion. You might convince a lock to open itself, a trap to not spring, or even a catapult to fire prematurely.</p>
+            <p class="indent">This spell has no effect on objects that are being worn or carried by creatures (other than yourself). If a magical object is in the area, you can communicate with it, but you gain no magical ability to influence it.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">3</set>
+            <set name="school">Divination</set>
+            <set name="isRitual">false</set>
+            <set name="time">1 action</set>
+            <set name="range">Self (30ft radius)</set>
             <set name="hasVerbalComponent">true</set>
             <set name="hasSomaticComponent">true</set>
             <set name="hasMaterialComponent">false</set>
