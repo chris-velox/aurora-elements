@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Revised Combat Rules and Feats</name>
+        <update version="0.0.1">
+            <file name="options-revised-combat-rules-feats.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/options/options-revised-combat-rules-feats.xml" />
+        </update>
+    </info>
+    
+    <element name="Revised Combat Rules and Options" type="Source" source="Core" id="ID_DRACODRUID_GMBINDER_SOURCE_REVISED_COMBAT_RULES_AND_OPTIONS">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">RCRF</set>
+            <set name="url">https://www.gmbinder.com/share/-M8PpnSOmUsjqn1OLqAA</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="DD" url="https://www.gmbinder.com/profile/dracodruid">dracodruid</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200814</set>
+        </setters>
+    </element>
+
+    <element name="Dual-Wielding" type="Class Feature" source="Revised Combat Rules and Options" id="ID_DD_RCRF_CLASS_FEATURE_FIGHTING_STYLE_DUALWIELDING">
+        <supports>Fighting Style, Fighter, Paladin, Ranger</supports>
+        <description>
+            <p class="flavor">former <b>Two-Weapon Fighting</b></p>
+            <p>You can engage in two-weapon fighting as long as the one-handed melee weapons you are wielding aren’t heavy.</p>
+            <p class="indent">In addition, you can draw or stow an additional weapon on each of your turns.</p>
+        </description>
+        <sheet>
+            <description>You can engage in two-weapon fighting as long as the one-handed melee weapons you are wielding aren’t heavy. In addition, you can draw or stow an additional weapon on each of your turns.</description>
+        </sheet>
+    </element>
+    <element name="Great Weapons" type="Class Feature" source="Revised Combat Rules and Options" id="ID_DD_RCRF_CLASS_FEATURE_FIGHTING_STYLE_GREAT_WEAPONS">
+        <supports>Fighting Style, Fighter, Paladin, Ranger</supports>
+        <description>
+            <p class="flavor">former <b>Great Weapon Fighting</b></p>
+            <p>Whenever you roll damage for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the weapon’s damage dice, but you must use the new roll. The weapon must have the two-handed or versatile property for you to gain this benefit.</p>
+        </description>
+        <sheet>
+            <description>Whenever you roll damage for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the weapon’s damage dice, but you must use the new roll. The weapon must have the two-handed or versatile property for you to gain this benefit.</description>
+        </sheet>
+    </element>
+    <element name="Light Weapons" type="Class Feature" source="Revised Combat Rules and Options" id="ID_DD_RCRF_CLASS_FEATURE_FIGHTING_STYLE_LIGHT_WEAPONS">
+        <supports>Fighting Style, Fighter, Paladin, Ranger</supports>
+        <description>
+            <p>You can draw a weapon that has the light property as part of the attack you make with the weapon. In addition, when you hit with an attack using a light weapon, you gain a +1 bonus to the damage roll.</p>
+        </description>
+        <sheet>
+            <description>You can draw a weapon that has the light property as part of the attack you make with the weapon. In addition, when you hit with an attack using a light weapon, you gain a +1 bonus to the damage roll.</description>
+        </sheet>
+    </element>
+    <element name="Protection" type="Class Feature" source="Revised Combat Rules and Options" id="ID_DD_RCRF_CLASS_FEATURE_FIGHTING_STYLE_PROTECTION">
+        <supports>Fighting Style, Fighter, Paladin, Ranger</supports>
+        <description>
+            <p>On your turn, you can mark one creature you can see as your ward. As long as you are wielding a shield and your ward is within 5 feet of you, it may add your shield’s AC bonus to its armor class.</p>
+        </description>
+        <sheet>
+            <description>On your turn, you can mark one creature you can see as your ward. As long as you are wielding a shield and your ward is within 5 feet of you, it may add your shield’s AC bonus to its armor class.</description>
+        </sheet>
+    </element>
+
+
+    <element name="Brawling Master" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_BRAWLING_MASTER">
+        <requirements>[str:13]</requirements>
+        <prerequisite>Strength 13 or higher</prerequisite>
+        <description>
+            <p class="flavor">former <b>Tavern Brawler</b></p>
+            <p class="flavor">Prerequisite: Strength 13 or higher</p>
+            <p>Accustomed to rough-and-tumble fighting using whatever weapons happen to be at hand, you gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength, Dexterity, or Constitution score by 1, to a maximum of 20.</li>
+                <li>You can roll a d4 in place of the normal damage of your unarmed strike. This die changes as you gain levels, as shown in the Martial Arts column of the Monk table. (Use your character level as your monk level)</li>
+                <li>You can use your unarmed strikes to engage in two-weapon fighting.</li>
+                <li>You are proficient with improvised weapons.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Your unarmed strikes do 1d{{brawling-master:die-type}} damage. You can use your unarmed strikes to engage in two-weapon fighting. You are proficient with improvised weapons.</description>
+        </sheet>
+        <rules>
+			<select type="Ability Score Improvement" name="Brawling Master" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_CONSTITUTION" />
+			<stat name="brawling-master:die-type" value="4" bonus="martial arts" />
+			<stat name="brawling-master:die-type" value="6" bonus="martial arts" level="5" />
+			<stat name="brawling-master:die-type" value="8" bonus="martial arts" level="11" />
+			<stat name="brawling-master:die-type" value="10" bonus="martial arts" level="17" />
+            <grant type="Proficiency" id="ID_DD_RCRF_PROFICIENCY_WEAPON_IMPROVISED" />
+        </rules>
+    </element>
+        <element name="Weapon Proficiency (Improvised Weapons)" type="Proficiency" source="Revised Combat Rules and Options" id="ID_DD_RCRF_PROFICIENCY_WEAPON_IMPROVISED">
+            <supports>Weapon, Melee, Ranged, ID_INTERNAL_DAMAGE_TYPE_PIERCING,ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING,ID_INTERNAL_DAMAGE_TYPE_SLASHING</supports>
+            <sheet alt="Improvised Weapons" />
+        </element>
+    <element name="Cavalry Master" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_CAVALRY_MASTER">
+        <description>
+            <p class="flavor">former <b>Mounted Combatant</b></p>
+            <p>You are a dangerous foe to face while mounted. While you are mounted and aren’t incapacitated, you gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength or Dexterity score by 1, to a maximum of 20.</li>
+                <li>You have advantage on melee attack rolls against any unmounted creature that is smaller than your mount.</li>
+                <li>You may command a mount you are controlling to take the Attack action or any action listed under its stat block.</li>
+                <li>You can force an attack targeted at you or your mount to target the other instead.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have advantage on melee attack rolls against any unmounted creature that is smaller than your mount. You may command a mount you are controlling to take the Attack action or any action listed under its stat block. You can force an attack targeted at you or your mount to target the other instead.</description>
+        </sheet>
+        <rules>
+			<select type="Ability Score Improvement" name="Cavalry Master" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
+        </rules>
+    </element>
+    <element name="Crossbow Expert" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_CROSSBOW_EXPERT">
+        <requirements>[dex:13]</requirements>
+        <prerequisite>Dexterity 13 or higher</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Dexterity 13 or higher</p>
+            <p>Thanks to extensive practice with the crossbow, you gain the following benefits:</p>
+            <ul>
+                <li>You gain the Archery Fighting Style or increase your Dexterity score by 1, to a maximum of 20.</li>
+                <li>Being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls.</li>
+                <li>You ignore the loading quality of ranged weapons that you are proficient with.</li>
+                <li>You can use a loaded hand crossbows to engage in two-weapon fighting.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls. You ignore the loading quality of ranged weapons that you are proficient with. You can use a loaded hand crossbows to engage in two-weapon fighting.</description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Crossbow Expert" supports="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_ARCHERY|ID_DD_RCRF_CLASS_FEATURE_INCREASE_DEXTERITY" />
+        </rules>
+    </element>
+        <element name="Increase Dexterity" type="Class Feature" source="Revised Combat Rules and Options" id="ID_DD_RCRF_CLASS_FEATURE_INCREASE_DEXTERITY">
+            <compendium display="false" />
+            <description />
+            <sheet display="false" />
+            <rules>
+                <stat name="dexterity" value="1" />
+            </rules>
+        </element>
+    <element name="Dual-Wielding Master" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_DUAL_WIELDING_MASTER">
+        <requirements>([str:13]||[dex:13])</requirements>
+        <prerequisite>Strength or Dexterity 13 or higher</prerequisite>
+        <description>
+            <p class="flavor">former <b>Dual Wielder</b></p>
+            <p class="flavor">Prerequisite: Strength or Dexterity 13 or higher</p>
+            <p>You have mastered fighting with two weapons, gaining the following benefits:</p>
+            <ul>
+                <li>You gain the Dual-Wielding or Light Weapons Fighting Style, or increase your Strength or Dexterity score by 1, to a maximum of 20.</li>
+                <li>While engaged in two-weapon fighting you can choose one option for each of your attacks (instead of only once per turn), but you must choose the option before making the attack roll.</li>
+                <li>You can also choose the following new options:</li>
+            </ul>
+            <p class="indent"><b>Parry.</b> You gain a +1 AC bonus against melee attacks. This bonus lasts until the beginning of your next turn. It ends early if you no longer engage in two-weapon fighting. (Multiple uses of the Parry option stack.)</p>
+            <p class="indent"><b>Rend.</b> When you hit with a weapon attack, you may roll all damage dice of the weapon in your other hand and add it to the damage. Damage dice include the weapon’s base damage dice or dice gained from magical properties such as Flame Tongue or from spells such as holy weapon. You don’t add any static modifiers of the weapon in your other hand.</p>
+        </description>
+        <sheet>
+            <description>While engaged in two-weapon fighting you can choose one option for each of your attacks (instead of only once per turn), but you must choose the option before making the attack roll.</description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Dual-Wielding Master" supports="ID_DD_RCRF_CLASS_FEATURE_FIGHTING_STYLE_DUALWIELDING|ID_DD_RCRF_CLASS_FEATURE_FIGHTING_STYLE_LIGHT_WEAPONS|ID_DD_RCRF_CLASS_FEATURE_INCREASE_DEXTERITY|ID_DD_RCRF_CLASS_FEATURE_INCREASE_STRENGTH" />
+            <grant type="Feat Feature" id="ID_DD_RCRF_FEAT_FEATURE_DUALWIELDING_MASTER_PARRY" />
+            <grant type="Feat Feature" id="ID_DD_RCRF_FEAT_FEATURE_DUALWIELDING_MASTER_REND" />
+        </rules>
+    </element>
+        <element name="Increase Strenght" type="Class Feature" source="Revised Combat Rules and Options" id="ID_DD_RCRF_CLASS_FEATURE_INCREASE_STRENGTH">
+            <compendium display="false" />
+            <description />
+            <sheet display="false" />
+            <rules>
+                <stat name="strength" value="1" />
+            </rules>
+        </element>
+        <element name="Parry" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_FEATURE_DUALWIELDING_MASTER_PARRY">
+            <compendium display="false" />
+            <description>
+                <p>You gain a +1 AC bonus against melee attacks. This bonus lasts until the beginning of your next turn. It ends early if you no longer engage in two-weapon fighting. (Multiple uses of the Parry option stack.)</p>
+            </description>
+            <sheet usage="Attack Option">
+                <description>You gain a +1 AC bonus against melee attacks. This bonus lasts until the beginning of your next turn. It ends early if you no longer engage in two-weapon fighting. (Multiple uses of the Parry option stack.)</description>
+            </sheet>
+        </element>
+        <element name="Rend" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_FEATURE_DUALWIELDING_MASTER_REND">
+            <compendium display="false" />
+            <description>
+                <p>When you hit with a weapon attack, you may roll all damage dice of the weapon in your other hand and add it to the damage. Damage dice include the weapon’s base damage dice or dice gained from magical properties such as Flame Tongue or from spells such as holy weapon. You don’t add any static modifiers of the weapon in your other hand.</p>
+            </description>
+            <sheet usage="Attack Option">
+                <description>When you hit with a weapon attack, you may roll all damage dice of the weapon in your other hand and add it to the damage. Damage dice include the weapon’s base damage dice or dice gained from magical properties such as Flame Tongue or from spells such as holy weapon. You don’t add any static modifiers of the weapon in your other hand.</description>
+            </sheet>
+        </element>
+    <element name="Grappler" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_GRAPPLER">
+        <requirements>[str:13]</requirements>
+        <prerequisite>Strength 13 or higher</prerequisite>
+    <p class="flavor">Prerequisite: Strength 13 or higher</p>
+        <description>
+            <p>You’ve developed the skills necessary to hold your own in close-quarters grappling. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength score by 1, to a maximum of 20.</li>
+                <li>If you have at least one hand free, you can use a bonus action to attempt to grapple a creature.</li>
+                <li>If you have both hands free, you have advantage on Strength (Athletics) checks made to initiate or escape a grapple.</li>
+                <li>You have advantage on attack rolls against creatures you are grappling.</li>
+            </ul>
+        </description>
+        <sheet action="Bonus Action">
+            <description>If you have at least one hand free, you can use a bonus action to attempt to grapple a creature. If you have both hands free, you have advantage on Athletics checks made to initiate or escape a grapple. You have advantage on attack rolls against creatures you are grappling.</description>
+        </sheet>
+        <rules>
+            <stat name="strength" value="1" />
+        </rules>
+    </element>
+    <element name="Heavy Armor Master" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_HEAVY_ARMOR_MASTER">
+        <requirements>ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR</requirements>
+        <prerequisite>Proficiency with medium armor</prerequisite>
+        <description>
+            <p class="flavor">former <b>Heavily Armored and Heavy Armor Master</b></p>
+            <p class="flavor">Prerequisite: Proficiency with medium armor</p>
+            <p>You have trained to master the use of heavy armor, gaining the following benefits:</p>
+            <ul>
+                <li>You gain proficiency with heavy armor. If you already are proficient with heavy armor, increase your Strength or Constitution score by 1, to a maximum of 20.</li>
+                <li>You can ignore the Strength requirement of heavy armor.</li>
+                <li>While you are wearing heavy armor, bludgeoning, piercing, and slashing damage that you take is reduced by 3.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You can ignore the Strength requirement of heavy armor. While you are wearing heavy armor, bludgeoning, piercing, and slashing damage that you take is reduced by 3.</description>
+        </sheet>
+        <rules>
+            <grant type="Feat Feature" id="ID_DD_RCRF_FEAT_FEATURE_HEAVY_ARMOR_PROFICIENCY" requirements="!ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+            <grant type="Feat Feature" id="ID_DD_RCRF_FEAT_FEATURE_HEAVY_ARMOR_MASTER_ASI" requirements="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR,!ID_DD_RCRF_FEAT_FEATURE_HEAVY_ARMOR_PROFICIENCY" />
+        </rules>
+    </element>
+        <element name="Heavy Armor Proficiency" type="Feat Feature" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_FEATURE_HEAVY_ARMOR_MASTER_PROFICIENCY">
+            <compendium display="false" />
+            <description />
+            <sheet display="false" />
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+            </rules>
+        </element>
+        <element name="Ability Score Improvement" type="Feat Feature" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_FEATURE_HEAVY_ARMOR_MASTER_ASI">
+            <compendium display="false" />
+            <description />
+            <sheet display="false" />
+            <rules>
+                <select type="Ability Score Improvement" name="Heavy Armor Master" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION" />
+            </rules>
+        </element>
+    <element name="Heavy Weapon Master" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_HEAVY_WEAPON_MASTER">
+        <requirements>[str:13]</requirements>
+        <prerequisite>Strength 13 or higher</prerequisite>
+        <description>
+            <p class="flavor">former <b>Great Weapon Master</b></p>
+            <p class="flavor">Prerequisite: Strength 13 or higher</p>
+            <p>You’ve learned to put the weight of your weapon to your advantage, letting its momentum empower your strikes. You gain the following benefits:</p>
+            <ul>
+                <li>You gain the Great Weapons Fighting Style or increase your Strength score by 1, to a maximum of 20.</li>
+                <li>When you score a critical hit with a heavy weapon, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit. Alternatively, you can immediately attempt to shove the target.</li>
+                <li>When you reduce a creature to 0 hit points by using a heavy weapon, you can assign any excess damage to another creature within 5 feet of your original target and within your weapon’s reach.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you score a critical hit with a heavy weapon, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit. Alternatively, you can immediately attempt to shove the target. When you reduce a creature to 0 hit points by using a heavy weapon, you can assign any excess damage to another creature within 5 feet of your original target and within your weapon’s reach.</description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Heavy Weapon Master" supports="ID_DD_RCRF_CLASS_FEATURE_FIGHTING_STYLE_GREAT_WEAPONS|ID_DD_RCRF_CLASS_FEATURE_INCREASE_STRENGTH" />
+        </rules>
+    </element>
+    <element name="Light Armor Master" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_LIGHT_ARMOR_MASTER">
+        <requirements>[dex:13]</requirements>
+        <prerequisite>Dexterity 13 or higher</prerequisite>
+        <description>
+            <p class="flavor">former <b>Lightly Armored</b> and <b>Mobile</b></p>
+            <p class="flavor">Prerequisite: Dexterity 13 or higher</p>
+            <p>You have trained to master the speed and agility of light armor. You gain the following benefits:</p>
+            <ul>
+                <li>You gain proficiency with light armor. If you already are proficient with light armor, increase your Dexterity score by 1, to a maximum of 20.</li>
+                <li>Your speed increases by 10 feet.</li>
+                <li>When you use the Dash action, difficult terrain doesn’t cost you extra movement on that turn.</li>
+                <li>When you hit a creature with a melee attack, you don’t provoke opportunity attacks from that creature for the rest of the turn.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you use the Dash action, difficult terrain doesn’t cost you extra movement on that turn. When you hit a creature with a melee attack, you don’t provoke opportunity attacks from that creature for the rest of the turn.</description>
+        </sheet>
+        <rules>
+            <grant type="Feat Feature" id="ID_DD_RCRF_FEAT_FEATURE_LIGHT_ARMOR_MASTER_PROFICIENCY" requirements="!ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+            <grant type="Class Feature" id="ID_DD_RCRF_CLASS_FEATURE_INCREASE_DEXTERITY" requirements="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR,!ID_DD_RCRF_FEAT_FEATURE_LIGHT_ARMOR_MASTER_PROFICIENCY"/>
+            <stat name="speed" value="10" bonus="light-armor-master" />
+        </rules>
+    </element>
+        <element name="Light Armor Proficiency" type="Feat Feature" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_FEATURE_LIGHT_ARMOR_MASTER_PROFICIENCY">
+            <compendium display="false" />
+            <description />
+            <sheet display="false" />
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+            </rules>
+        </element>
+    <element name="Light Weapon Master" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_LIGHT_WEAPON_MASTER">
+        <requirements>[dex:13]</requirements>
+        <prerequisite>Dexterity 13 or higher</prerequisite>
+        <description>
+            <p class="flavor">former <b>Defensive Duelist</b></p>
+            <p class="flavor">Prerequisite: Dexterity 13 or higher</p>
+            <p>You’ve learned to use swift weapons to great effect. You gain the following benefits:</p>
+            <ul>
+                <li>You gain the Light Weapons Fighting Style or increase your Dexterity score by 1, to a maximum of 20.</li>
+                <li>When you wield a light weapon that you are proficient with, it also gains the finesse property.</li>
+                <li>When you are wielding a finesse weapon with which you are proficient, you can use your reaction to gain an AC bonus against melee attacks equal to half your proficiency bonus (round up) until the beginning of your next turn.</li>
+            </ul>
+        </description>
+        <sheet action="Reaction">
+            <description>When you wield a light weapon that you are proficient with, it also gains the finesse property. When you are wielding a finesse weapon with which you are proficient, you can use your reaction to gain an AC bonus against melee attacks equal to half your proficiency bonus (round up) until the beginning of your next turn.</description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Light Weapon Master" supports="ID_DD_RCRF_CLASS_FEATURE_FIGHTING_STYLE_LIGHT_WEAPONS|ID_DD_RCRF_CLASS_FEATURE_INCREASE_DEXTERITY" />
+        </rules>
+    </element>
+    <element name="Mage Slayer" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_MAGE_SLAYER">
+        <description>
+            <p>You have practiced techniques useful in close combat against spellcasters, gaining the following benefits:</p>
+            <ul>
+                <li>When a creature within 20 feet of you casts a spell, you can use your reaction to make a weapon attack against that creature (provided the creature is within reach of your attack). If the attack hits, you impose disadvantage on the spell’s attack roll, or the targets of the spell gain advantage on any saving throw they must make to withstand the spell, in addition to the attack’s normal effects.</li>
+                <li>When you damage a creature that is concentrating on a spell, that creature has disadvantage on the saving throw it makes to maintain its concentration.</li>
+            </ul>
+        </description>
+        <sheet action="Reaction">
+            <description>When a creature within 20 feet of you casts a spell, you can use your reaction to make a weapon attack against that creature (provided the creature is within reach of your attack). If the attack hits, you impose disadvantage on the spell’s attack roll, or the targets of the spell gain advantage on any saving throw they must make to withstand the spell, in addition to the attack’s normal effects. When you damage a creature that is concentrating on a spell, that creature has disadvantage on the saving throw it makes to maintain its concentration.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Medium Armor Master" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_MEDIUM_ARMOR_MASTER">
+        <requirements>ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR</requirements>
+        <prerequisite>Proficiency with light armor</prerequisite>
+        <description>
+            <p class="flavor">former <b>Medium Armor Master and Moderately Armored</b></p>
+            <p class="flavor">Prerequisite: Proficiency with light armor</p>
+            <p>You have trained to master the versatility granted by medium armor, gaining the following benefits:</p>
+            <ul>
+                <li>You gain proficiency with medium armor and shields. If you already are proficient with medium armor, increase your Strength or Dexterity score by 1, to a maximum of 20.</li>
+                <li>While wearing medium armor, you gain a +1 bonus to AC.</li>
+                <li>Wearing medium armor doesn’t impose disadvantage on your Dexterity (Stealth) checks.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Wearing medium armor doesn’t impose disadvantage on your Stealth checks.</description>
+        </sheet>
+        <rules>
+            <stat name="ac:misc" value="1" equipped="[armor:medium]" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+            <grant type="Feat Feature" id="ID_DD_RCRF_FEAT_FEATURE_MEDIUM_ARMOR_MASTER_PROFICIENCY" requirements="!ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+            <grant type="Feat Feature" id="ID_DD_RCRF_CLASS_FEATURE_INCREASE_STRENGTH_OR_DEXTERITY" requirements="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR,!ID_DD_RCRF_FEAT_FEATURE_MEDIUM_ARMOR_MASTER_PROFICIENCY"/>
+        </rules>
+    </element>
+        <element name="Medium Armor Proficiency" type="Feat Feature" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_FEATURE_MEDIUM_ARMOR_MASTER_PROFICIENCY">
+            <compendium display="false" />
+            <description />
+            <sheet display="false" />
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+            </rules>
+        </element>
+        <element name="Increase Strength or Dexterity" type="Feat Feature" source="Revised Combat Rules and Options" id="ID_DD_RCRF_CLASS_FEATURE_INCREASE_STRENGTH_OR_DEXTERITY">
+            <compendium display="false" />
+            <description />
+            <sheet display="false" />
+            <rules>
+                <select type="Ability Score Improvement" name="Cavalry Master" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
+            </rules>
+        </element>
+    <element name="Polearm Master" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_POLEARM_MASTER">
+        <requirements>([str:13]||[dex:13])</requirements>
+        <prerequisite>Strength or Dexterity 13 or higher</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Strength or Dexterity 13 or higher</p>
+            <p>You have learned how to use a polearms’ length to its full potential. You gain the following benefits:</p>
+            <ul>
+                <li>You gain the Dueling or Great Weapons Fighting Style, or increase your Strength or Dexterity score by 1, to a maximum of 20.</li>
+                <li>When you wield a quarterstaff, spear, or trident, the weapon gains the reach property.</li>
+                <li>While wielding a reach weapon with both hands, you can treat the other end of your weapon as a club, and use it to engage in two-weapon fighting against targets within 5 feet of you.</li>
+                <li>While wielding a reach weapon, other creatures provoke an opportunity attack from you when they enter your reach.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you wield a quarterstaff, spear, or trident, the weapon gains the reach property. While wielding a reach weapon with both hands, you can treat the other end of your weapon as a club, and use it to engage in two-weapon fighting against targets within 5 feet of you. While wielding a reach weapon, other creatures provoke an opportunity attack from you when they enter your reach.</description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Dual-Wielding Master" supports="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DUELING|ID_DD_RCRF_CLASS_FEATURE_FIGHTING_STYLE_GREAT_WEAPONS|ID_DD_RCRF_CLASS_FEATURE_INCREASE_DEXTERITY|ID_DD_RCRF_CLASS_FEATURE_INCREASE_STRENGTH" />
+        </rules>
+    </element>
+    <element name="Savage Charger" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_SAVAGE_CHARGER">
+        <requirements>[str:13]</requirements>
+        <prerequisite>Strength 13 or higher</prerequisite>
+        <description>
+            <p class="flavor">former <b>Charger and Savage Attacker</b></p>
+            <p class="flavor">Prerequisite: Strength 13 or higher</p>
+            <p>You know how to use your own momentum to overpower your opponents. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength score by 1, to a maximum of 20.</li>
+                <li>When you use your action to Dash, you can use a bonus action to make one melee weapon attack or to shove a creature.</li>
+                <li>If you move at least 10 feet in a straight line towards your target immediately before making a melee weapon attack, you may reroll that attack’s damage. Alternatively, you may instead reroll your Strength (Athletics) check, if you choose to shove your target with that attack. Either way, you may use the higher total.</li>
+            </ul>
+        </description>
+        <sheet action="Bonus Action">
+            <description>When you use your action to Dash, you can use a bonus action to make one melee weapon attack or to shove a creature. If you move at least 10 feet in a straight line towards your target immediately before making a melee weapon attack, you may reroll that attack’s damage. Alternatively, you may instead reroll your Athletics check, if you choose to shove your target with that attack. Either way, you may use the higher total.</description>
+        </sheet>
+        <rules>
+            <stat name="strength" value="1" />
+        </rules>
+    </element>
+    <element name="Sentinel" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_SENTINEL">
+        <description>
+            <p>You have mastered techniques to take advantage of every drop in any enemy’s guard, gaining the following benefits:</p>
+            <ul>
+                <li>In combat, you get a special reaction that you can take once every round. You can use this special reaction only to make an opportunity attack, and you can’t use it on the same turn that you take another reaction.</li>
+                <li>Creatures provoke opportunity attacks from you even if they take the Disengage action.</li>
+                <li>When you hit a creature with an opportunity attack, the creature’s speed is halved for the rest of the turn.</li>
+                <li>When a creature within 5 feet of you makes an attack against a target other than you, you can use your reaction to impose disadvantage on the attack.</li>
+            </ul>
+        </description>
+        <sheet action="Reaction">
+            <description>In combat, you get a special reaction that you can take once every round. You can use this special reaction only to make an opportunity attack, and you can’t use it on the same turn that you take another reaction. Creatures provoke opportunity attacks from you even if they take the Disengage action. When you hit a creature with an opportunity attack, the creature’s speed is halved for the rest of the turn. When a creature within 5 feet of you makes an attack against a target other than you, you can use your reaction to impose disadvantage on the attack.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Sharpshooter" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_SHARPSHOOTER">
+        <requirements>[dex:13]</requirements>
+        <prerequisite>Dexterity 13 or higher</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Dexterity 13 or higher</p>
+            <p>You have mastered ranged weapons and can make shots that others find impossible. You gain the following benefits:</p>
+            <ul>
+                <li>You gain the Archery Fighting Style or increase your Dexterity score by 1, to a maximum of 20.</li>
+                <li>Attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls.</li>
+                <li>Your ranged weapon attacks ignore half cover and three-quarters cover.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls. Your ranged weapon attacks ignore half cover and three-quarters cover.</description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Sharpshooter" supports="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_ARCHERY|ID_DD_RCRF_CLASS_FEATURE_INCREASE_DEXTERITY" />
+        </rules>
+    </element>
+    <element name="Shield Master" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_SHIELD_MASTER">
+        <requirements>[str:13]</requirements>
+        <prerequisite>Strength 13 or higher</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Strength 13 or higher</p>
+            <p>You use shields not just for protection but also for offense. You gain the following benefits while you are wielding a shield:</p>
+            <ul>
+                <li>You gain the Protection Fighting Style or increase your Strength score by 1, to a maximum of 20.</li>
+                <li>You can treat your shield as a club and you can use it to engage in two-weapon fighting. If you attack with your shield, you don’t lose it’s AC bonus.</li>
+                <li>You can add your shield’s AC bonus to the damage it deals, and to your Strength (Athletics) check when you shove a creature.</li>
+                <li>If you aren’t incapacitated, you can add your shield’s AC bonus to any Dexterity saving throw you make against a spell or other harmful effect that targets only you.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You can treat your shield as a club and you can use it to engage in two-weapon fighting. If you attack with your shield, you don’t lose it’s AC bonus. You can add your shield’s AC bonus to the damage it deals, and to your Strength (Athletics) check when you shove a creature. If you aren’t incapacitated, you can add your shield’s AC bonus to any Dexterity saving throw you make against a spell or other harmful effect that targets only you.</description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Shield Master" supports="ID_DD_RCRF_CLASS_FEATURE_FIGHTING_STYLE_PROTECTION|ID_DD_RCRF_CLASS_FEATURE_INCREASE_STRENGTH" />
+        </rules>
+    </element>
+    <element name="Weapon Adept" type="Feat" source="Revised Combat Rules and Options" id="ID_DD_RCRF_FEAT_WEAPON_ADEPT">
+        <description>
+            <p class="flavor">former <b>Martial Adept and Weapon Master</b></p>
+            <p>You have practiced extensively with a variety of weapons, allowing you to perform special combat maneuvers. You gain the following benefits:</p>
+            <ul>
+                <li>You gain proficiency with all simple and martial weapons. If you already are proficient with one or more martial weapons, you may instead choose any one Fighting Style, or increase your Strength or Dexterity score by 1, to a maximum of 20.</li>
+                <li>You learn two maneuvers of your choice from among those available to the Battle Master archetype in the fighter class. If a maneuver you use requires your target to make a saving throw to resist the maneuver’s effects, the saving throw DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).</li>
+                <li>If you already have superiority dice, you gain one more; otherwise, you have two superiority dice, which are d6s. These dice are used to fuel your maneuvers. You regain your expended superiority dice when you finish a short or long rest.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+
+</elements>
