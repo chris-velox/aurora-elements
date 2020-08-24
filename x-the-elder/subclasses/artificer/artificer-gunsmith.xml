@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Gunsmith Artificer Specialist</name>
+        <update version="0.0.1">
+            <file name="artificer-gunsmith.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/artificer/artificer-gunsmith.xml" />
+        </update>
+    </info>
+
+    <element name="Artificer Specialist - The Gunsmith" type="Source" source="Core" id="ID_CADUKOTAKA_GMBINDER_SOURCE_ARTIFICER_GUNSMITH">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">GSAS</set>
+            <set name="url">https://www.gmbinder.com/share/-M7swEE7JQU_NO4rHGYP</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="CK" url="https://www.gmbinder.com/profile/cadukotaka">CaduKotaka</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200816</set>
+        </setters>
+    </element>
+    
+    <element name="Gunsmith" type="Archetype" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_ARCHETYPE_ARTIFICER_GUNSMITH">
+        <supports>Artificer Specialist</supports>
+        <!--<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>-->
+        <description>
+            <p>Experimenting with a new alchemical component on your workshop, you discover the deadly capabilities of gunpowder. And finally, after years perfecting your tinkering abilities, you’re able to create and deftly wield the first firearms.</p>
+            <p class="indent">This Artificer Specialist focuses on dealing a lot of damage with your new inventions, using your artificer knowledge to improve your weapons with infusions, while complementing your abilities with a little bit of magic.</p>
+            <div element="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_GUNSMITHS_SPELLS" />
+            <div element="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_TOOL_PROFICIENCY" />
+            <div element="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_MARTIAL_TRAINING" />
+            <div element="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_EXTRA_ATTACK" />
+            <div element="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_IMPROVED_FIREARM" />
+            <div element="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_QUICKDRAW" />
+            <div element="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_BULLSEYE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_GUNSMITHS_SPELLS" level="3" />
+            <grant type="Archetype Feature" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_TOOL_PROFICIENCY" level="3" />
+            <grant type="Archetype Feature" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_MARTIAL_TRAINING" level="3" />
+            <grant type="Archetype Feature" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_EXTRA_ATTACK" level="5" />
+            <grant type="Archetype Feature" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_IMPROVED_FIREARM" level="5" />
+            <grant type="Archetype Feature" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_QUICKDRAW" level="9" />
+            <grant type="Archetype Feature" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_BULLSEYE" level="15" />
+        </rules>
+    </element>
+        <element name="Gunsmith’s Spells" type="Archetype Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_GUNSMITHS_SPELLS">
+            <description>
+                <p>Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Gunsmith Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
+                <table>
+                    <thead>
+                        <tr><td>Gunsmith Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>zephyr strike, faerie fire</em></td></tr>
+                    <tr><td>5th</td><td><em>cordon of arrows, misty step</em></td></tr>
+                    <tr><td>9th</td><td><em>conjure barrage, flame arrows</em></td></tr>
+                    <tr><td>13th</td><td><em>gravity sinkhole, greater invisibility</em></td></tr>
+                    <tr><td>17th</td><td><em>conjure volley, swift quiver</em></td></tr>
+                </table>
+                <p class="indent">Any spell effects that apply to arrows or quivers also apply to your bullets and firearms, even with the Repeating Shot Infusion.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_XGTE_SPELL_ZEPHYR_STRIKE" spellcasting="Artificer" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" spellcasting="Artificer" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_CORDON_OF_ARROWS" spellcasting="Artificer" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" spellcasting="Artificer" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_CONJURE_BARRAGE" spellcasting="Artificer" known="true" level="9" />
+                <grant type="Spell" id="ID_XGTE_SPELL_FLAME_ARROWS" spellcasting="Artificer" known="true" level="9" />
+                <grant type="Spell" id="ID_WOTC_EGTW_SPELL_GRAVITY_SINKHOLE" spellcasting="Artificer" known="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_GREATER_INVISIBILITY" spellcasting="Artificer" known="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_CONJURE_VOLLEY" spellcasting="Artificer" known="true" level="17" />
+                <grant type="Spell" id="ID_PHB_SPELL_SWIFT_QUIVER" spellcasting="Artificer" known="true" level="17" />
+            </rules>
+        </element>
+        <element name="Tool Proficiency" type="Archetype Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_TOOL_PROFICIENCY">
+            <description>
+                <p>When you adopt this specialization at 3rd level, you gain proficiency with smith’s tools. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Tool Proficiency, Gunsmith" supports="Artisan tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" level="3" />
+            </rules>
+        </element>
+        <element name="Martial Training" type="Archetype Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_MARTIAL_TRAINING">
+            <description>
+                <p>At 3rd level, you acquire the training necessary to effectively arm yourself for battle. You gain proficiency with martial weapons and choose a Fighting Style. You can’t take the same Fighting Style option more than once, even if you get to choose again.</p>
+                <h5>ARCHERY</h5>
+                <p>You gain a +2 bonus to attack rolls you make with ranged weapons.</p>
+                <h5>DEFENSE</h5>
+                <p>While you are wearing armor, you gain a +1 bonus to AC.</p>
+                <h5>DUELING</h5>
+                <p>When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.</p>
+                <h5>GREAT FIREPOWER</h5>
+                <p>When you roll a 1 or 2 on a damage die for an attack you make with a two-handed firearm, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2.</p>
+                <h5>RAPID FIRE</h5>
+                <p>When you use the Attack action and attack with a pistol, you can use a bonus action to fire one more shot with the same pistol.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Class Feature" name="Fighting Style, Gunsmith" supports="Fighting Style, Gunsmith Artificer" level="3" />
+            </rules>
+        </element>
+        <element name="Extra Attack" type="Archetype Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_EXTRA_ATTACK">
+            <description>
+                <p>Starting at 5th level, you can attack twice, rather than once, whenever you take the Attack action on your turn.</p>
+            </description>
+            <sheet>
+                <description>You can attack twice, rather than once, whenever you take the Attack action on your turn.</description>
+            </sheet>
+            <rules>
+                <stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
+            </rules>
+        </element>
+        <element name="Improved Firearm" type="Archetype Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_IMPROVED_FIREARM">
+            <description>
+                <p>Also at 5th level, you can improve your weapons better than ever. You can have up to two infusions on a firearm at the same time. Three at 9th level, and four at 15th level.</p>
+            </description>
+            <sheet>
+                <description level="5">You can have up to two infusions on a firearm at the same time.</description>
+                <description level="9">You can have up to three infusions on a firearm at the same time.</description>
+                <description level="15">You can have up to four infusions on a firearm at the same time.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Quickdraw" type="Archetype Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_QUICKDRAW">
+            <description>
+                <p>At 9th level, you can add your Intelligence modifier to initiative checks. Additionally, immediately after initiative is rolled, you can use your reaction to draw a firearm and make one attack with it against a creature in range.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>Immediately after initiative is rolled, you can use your reaction to draw a firearm and make one attack with it against a creature in range.</description>
+            </sheet>
+            <rules>
+                <stat name="initiative" value="intelligence:modifier" />
+            </rules>
+        </element>
+        <element name="Bullseye" type="Archetype Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_ARCHETYPE_FEATURE_GUNSMITH_BULLSEYE">
+            <description>
+                <p>At 15th level, you become even more deadly with a firearm. As a bonus action, you steady your aim and concentrate. When you do so, roll your next attack with advantage. If the attack hits, double the damage.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You steady your aim and concentrate. When you do so, roll your next attack with advantage. If the attack hits, double the damage.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+  <!-- Gunsmith Fighting Styles -->
+    <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_ARCHERY">
+        <supports>Gunsmith Artificer</supports>
+    </append>
+    <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DEFENSE">
+        <supports>Gunsmith Artificer</supports>
+    </append>
+    <append id="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DUELING">
+        <supports>Gunsmith Artificer</supports>
+    </append>
+	<element name="Great Firepower" type="Class Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_CLASS_FEATURE_FIGHTINGSTYLE_GREAT_FIREPOWER">
+		<supports>Fighting Style, Gunsmith Artificer</supports>
+        <requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
+		<description>
+			<p>When you roll a 1 or 2 on a damage die for an attack you make with a two-handed firearm, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2.</p>
+		</description>
+		<sheet>
+			<description>When you roll a 1 or 2 on a damage die for an attack you make with a two-handed firearm, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2.</description>
+		</sheet>
+	</element>
+    <element name="Two-Weapon Fighting" type="Class Feature" source="Martial Mastery" id="ID_CK_GSAS_CLASS_FEATURE_FIGHTING_STYLE_RAPID_FIRE">
+        <supports>Fighting Style, Gunsmith Artificer</supports>
+        <requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
+        <description>
+            <p>When you use the Attack action and attack with a pistol, you can use a bonus action to fire one more shot with the same pistol.</p>
+        </description>
+        <sheet>
+            <description>When you use the Attack action and attack with a pistol, you can use a bonus action to fire one more shot with the same pistol.</description>
+        </sheet>
+    </element>
+
+  <!-- New Infusions -->
+	<element name="Explosive Shot" type="Class Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_CLASS_FEATURE_ARTIFICER_INFUSION_EXPLOSIVE_SHOT">
+		<supports>Artificer Infusion</supports>
+        <requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
+        <prerequisite></prerequisite>
+		<description>
+            <p>Once per turn, when you damage a creature with a firearm attack, you can cause the bullet to explode violently. The creature hit by your attack suffers an extra 1d6 fire damage. This damage increases at 5th (2d6), 11th (3d6), and 17th (4d6) level.</p>
+		</description>
+		<sheet>
+			<description>Once per turn, when you damage a creature with a firearm attack, the creature hit by your attack suffers an extra {{explosive-shot:damage-dice}}d6 fire damage.</description>
+		</sheet>
+        <rules>
+            <stat name="explosive-shot:damage-dice" value="1" level="1" />
+            <stat name="explosive-shot:damage-dice" value="1" level="5" />
+            <stat name="explosive-shot:damage-dice" value="1" level="11" />
+            <stat name="explosive-shot:damage-dice" value="1" level="17" />
+        </rules>
+	</element>
+	<element name="Psychic Disturbance" type="Class Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_CLASS_FEATURE_ARTIFICER_INFUSION_PSYCHIC_DISTURBANCE">
+		<supports>Artificer Infusion</supports>
+        <requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
+        <prerequisite></prerequisite>
+		<description>
+            <p>Once per turn, when you damage a creature with a firearm attack, you can cause the bullet to emit a psychic disturbance as it hits the target. The creature hit by your attack suffers an extra 1d4 psychic damage and makes it’s next attack with disadvantage. This damage increases at 5th (2d4), 11th (3d4), and 17th (4d4) level.</p>
+		</description>
+		<sheet>
+			<description>Once per turn, when you damage a creature with a firearm attack, the creature hit by your attack suffers an extra {{psychic-disturbance}}d4 psychic damage and makes it’s next attack with disadvantage.</description>
+		</sheet>
+        <rules>
+            <stat name="psychic-disturbance:damage-dice" value="1" level="1" />
+            <stat name="psychic-disturbance:damage-dice" value="1" level="5" />
+            <stat name="psychic-disturbance:damage-dice" value="1" level="11" />
+            <stat name="psychic-disturbance:damage-dice" value="1" level="17" />
+        </rules>
+	</element>
+	<element name="Arcane Charge" type="Class Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_CLASS_FEATURE_ARTIFICER_INFUSION_ARCANE_CHARGE">
+		<supports>Artificer Infusion</supports>
+        <requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
+        <prerequisite></prerequisite>
+		<description>
+            <p>Once per turn, when you damage a creature with a firearm attack, you can cause the bullet to emit an arcane charge as it hits the target. The creature hit by your attack suffers an extra 1d4 force damage and makes it’s concentration check with disadvantage. This damage increases at 5th (2d4), 11th (3d4), and 17th (4d4) level.</p>
+		</description>
+		<sheet>
+			<description>Once per turn, when you damage a creature with a firearm attack, the creature hit by your attack suffers an extra {{arcane-charge:damage-dice}}d4 force damage and makes it’s concentration check with disadvantage.</description>
+		</sheet>
+        <rules>
+            <stat name="arcane-charge:damage-dice" value="1" level="1" />
+            <stat name="arcane-charge:damage-dice" value="1" level="5" />
+            <stat name="arcane-charge:damage-dice" value="1" level="11" />
+            <stat name="arcane-charge:damage-dice" value="1" level="17" />
+        </rules>
+	</element>
+	<element name="Ricocheting Bullets" type="Class Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_CLASS_FEATURE_ARTIFICER_INFUSION_RICOCHETING_BULLETS">
+		<supports>Artificer Infusion</supports>
+        <requirements>ID_WOTC_DMG_OPTION_FIREARMS,[level:6]</requirements>
+        <prerequisite>6th level</prerequisite>
+		<description>
+            <p class="flavor">Prerequisite: 6th level</p>
+            <p>Your bullets ricochet, possibly turning a miss into a hit. When you miss with an attack from you firearm, and there’s an enemy creature within 15ft of the original target, you may roll another attack with disadvantage, if this second attack would hit the adjacent creature, it does.</p>
+		</description>
+		<sheet>
+			<description>When you miss with an attack from you firearm, and there’s an enemy creature within 15ft of the original target, you may roll another attack with disadvantage, if this second attack would hit the adjacent creature, it does.</description>
+		</sheet>
+	</element>
+	<element name="Potent Blast" type="Class Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_CLASS_FEATURE_ARTIFICER_INFUSION_POTENT_BLAST">
+		<supports>Artificer Infusion</supports>
+        <requirements>ID_WOTC_DMG_OPTION_FIREARMS,[level:6]</requirements>
+        <prerequisite>6th level</prerequisite>
+		<description>
+            <p class="flavor">Prerequisite: 6th level</p>
+            <p>Your firearm has the option to fire a more potent shot. Once per turn, you can increase your firearm’s potency before you shoot. When you do so, double the weapons range. Additionally, the weapon creates a burst of thunderous sound that can be heard up to 100 feet away. Each creature within 5ft must make a Constitution saving throw or take 1d6 thunder damage. This damage increases at 11th (2d6), and 17th (3d6) level.</p>
+		</description>
+		<sheet>
+			<description>Once per turn, you can increase your firearm’s potency before you shoot. When you do so, double the weapons range. Additionally, the weapon creates a burst of thunderous sound that can be heard up to 100 feet away. Each creature within 5ft must make a Constitution saving throw or take {{potent-blast:damage-dice}}d6 thunder damage.</description>
+		</sheet>
+        <rules>
+            <stat name="potent-blast:damage-dice" value="1" level="6" />
+            <stat name="potent-blast:damage-dice" value="1" level="11" />
+            <stat name="potent-blast:damage-dice" value="1" level="17" />
+        </rules>
+	</element>
+	<element name="Seeking Bullets" type="Class Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_CLASS_FEATURE_ARTIFICER_INFUSION_SEEKING_BULLETS">
+		<supports>Artificer Infusion</supports>
+        <requirements>ID_WOTC_DMG_OPTION_FIREARMS,[level:6]</requirements>
+        <prerequisite>6th level</prerequisite>
+		<description>
+            <p class="flavor">Prerequisite: 6th level</p>
+            <p>Using your magical knowledge, you learn how to create seeking bullets. As a bonus action, you can activate your seeking bullets. When you do so, all of the attacks you make on this turn from that firearm hit the target automatically, as long as it’s within range. Once you use this ability, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet usage="1/Short Rest" action="Bonus Action">
+			<description>You can activate your seeking bullets. All of the attacks you make on this turn from that firearm hit the target automatically, as long as it’s within range.</description>
+		</sheet>
+	</element>
+	<element name="Superior Firearm" type="Class Feature" source="Artificer Specialist - The Gunsmith" id="ID_CK_GSAS_CLASS_FEATURE_ARTIFICER_INFUSION_SUPERIOR_FIREARM">
+		<supports>Artificer Infusion</supports>
+        <requirements>ID_WOTC_DMG_OPTION_FIREARMS,[level:10]</requirements>
+        <prerequisite>10th level</prerequisite>
+		<description>
+            <p class="flavor">Prerequisite: 10th level</p>
+            <p>You improve you firearms destructive potential. When you hit a creature with your firearm, the creature takes extra force damage equal to your Intelligence modifier.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with your firearm, the creature takes an extra {{intelligence:modifier}} force damage.</description>
+		</sheet>
+	</element>
+
+</elements>
