@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Dragon Knight Garden Practice</name>
+        <update version="0.0.1">
+            <file name="dragon-knight-garden-practice.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/dragon-knight/dragon-knight-garden-practice.xml" />
+        </update>
+    </info>
+    
+    <element name="Garden Practice" type="Source" source="Core" id="ID_RAINJUNKIE_GMBINDER_SOURCE_Garden Practice">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">DKGP</set>
+            <set name="url">https://www.gmbinder.com/share/-Lb_VvQ3_mntmKmrdt5-</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="RJ" url="https://www.gmbinder.com/profile/rain-junkie">Rain-Junkie</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200904</set>
+        </setters>
+    </element>
+
+    <element name="Garden Practice" type="Archetype" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_DRAGONKNIGHT_GARDEN_PRACTICE">
+        <supports>Dragon Knight Practice</supports>
+        <description>
+            <p>Some dragons wage war, and others hoard treasure. Few, however, learn to cultivate and nurture the earth, becoming one with it. Dragon knights of the Garden Practice live simple lives with their dragons, and only heed the call of adventure if something precious to them is at stake.</p>
+            <div element="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_DRACONIC_FLORA" />
+            <div element="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SEASONAL_MAGIC" />
+            <div element="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_GARDENS_SHEILD" />
+            <div element="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SEASONS_GREETINGS" />
+            <div element="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_BETWEEN_THE_SEASONS" />
+            <div element="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_GARDENS_GRACE" />
+            <div element="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_ADVANCED_SEASONAL_MAGIC" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_DRACONIC_FLORA" level="3" />
+            <grant type="Archetype Feature" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SEASONAL_MAGIC" level="3" />
+            <grant type="Archetype Feature" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_GARDENS_SHEILD" level="3" />
+            <grant type="Archetype Feature" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SEASONS_GREETINGS" level="7" />
+            <grant type="Archetype Feature" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_BETWEEN_THE_SEASONS" level="10" />
+            <grant type="Archetype Feature" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_GARDENS_GRACE" level="15" />
+            <grant type="Archetype Feature" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_ADVANCED_SEASONAL_MAGIC" level="18" />
+        </rules>
+    </element>
+        <element name="Draconic Flora" type="Archetype Feature" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_DRACONIC_FLORA">
+            <description>
+                <p>At 3rd level, the draconic nature of your companion shifts to better reflect nature. Your dragon gains proficiency in the Nature skill, and your dragon also no longer needs to eat or drink. Instead, it gains sustenance for staying on the ground for at least 4 hours a day. Finally, you and your dragon can cast <i>druidcraft</i>.</p>
+                <p class="indent">Your dragon also physically shifts to reflect this change, and its scales change colour to look like vibrant leaves, with flowers that bloom throughout.</p>
+            </description>
+            <sheet>
+                <description>Your dragon also no longer needs to eat or drink. Instead, it gains sustenance for staying on the ground for at least 4 hours a day. You and your dragon can cast druidcraft.</description>
+            </sheet>
+            <rules>
+                <stat name="companion:nature:proficiency" value="companion:proficiency" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_DRUIDCRAFT" />
+            </rules>
+        </element>
+        <element name="Seasonal Magic" type="Archetype Feature" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SEASONAL_MAGIC">
+            <description>
+                <p>Also at 3rd level, your dragon’s plant like nature allows it to attune to the seasons, granting the two of you benefits through the bond you share. When you finish a long rest, you choose one of the following seasons: Summer, Autumn, Winter, or Spring. Each season grants you benefits detailed in later features.</p>
+                <p class="indent">You gain access to the seasonal spells appropriate to the season you’re attuned to. You can cast one of the seasonal spells you have access to once, and regain the ability to do so when you finish a short or long rest. You gain a second use of this feature at 5th level, a third use at 11th level. Casting a spell 3rd or 4th level seasonal spell expends two uses of this feature.</p>
+                <p class="indent">When you reach certain Dragon Knight levels, you gain new seasonal spells, as shown in each of the spell tables.</p>
+                <p class="indent">Finally, you use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a seasonal spell you cast and when making an attack roll with one.</p>
+                <p style="text-align: center;"><b>Spell Save DC</b> = 8 + your proficiency bonus + your Charisma modifier</p>
+                <p style="text-align: center;"><b>Spell attack modifier</b> = your proficiency bonus + your Charisma modifier</p>
+                <div element="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SUMMER_SEASONAL_SPELLS" />
+                <div element="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_AUTUMN_SEASONAL_SPELLS" />
+                <div element="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_WINTER_SEASONAL_SPELLS" />
+                <div element="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SPRING_SEASONAL_SPELLS" />
+            </description>
+            <sheet usage="{{seasonal-magic:uses}}/Short Rest">
+                <description>When you finish a long rest, you can attune to one of the four seasons. You can cast one of your seasonal spells. Casting a spell 3rd or 4th level seasonal spell expends two uses of this feature.</description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SUMMER_SEASONAL_SPELLS" level="3" />
+                <grant type="Archetype Feature" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_AUTUMN_SEASONAL_SPELLS" level="3" />
+                <grant type="Archetype Feature" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_WINTER_SEASONAL_SPELLS" level="3" />
+                <grant type="Archetype Feature" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SPRING_SEASONAL_SPELLS" level="3" />
+                <stat name="seasonal-magic:uses" value="1" level="3" />
+                <stat name="seasonal-magic:uses" value="1" level="5" />
+                <stat name="seasonal-magic:uses" value="1" level="11" />
+            </rules>
+        </element>
+            <element name="Summer Seasonal Spells" type="Archetype Feature" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SUMMER_SEASONAL_SPELLS">
+                <compendium display="false" />
+                <description>
+                    <table>
+                        <thead>
+                            <tr><td>Dragon Knight</td><td>level	Spell</td></tr>
+                        </thead>
+                        <tr><td>3rd</td><td><em>burning hands, hellish rebuke</em></td></tr>
+                        <tr><td>7th</td><td><em>blur, scorching ray</em></td></tr>
+                        <tr><td>13th</td><td><em>daylight, fireball</em></td></tr>
+                        <tr><td>19th</td><td><em>fire shield, wall of fire</em></td></tr>
+                    </table>
+                </description>
+                <spellcasting name="Summer Seasonal Spells" ability="Charisma" prepare="false">
+                    <list>Garden Practice</list>
+                </spellcasting>
+                <sheet display="false">
+                    <description></description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_BURNING_HANDS" spellcasting="Summer Seasonal Spells" known="true" level="3" />
+                    <grant type="Spell" id="ID_PHB_SPELL_HELLISH_REBUKE" spellcasting="Summer Seasonal Spells" known="true" level="3" />
+                    <grant type="Spell" id="ID_PHB_SPELL_BLUR" spellcasting="Summer Seasonal Spells" known="true" level="7" />
+                    <grant type="Spell" id="ID_PHB_SPELL_SCORCHING_RAY" spellcasting="Summer Seasonal Spells" known="true" level="7" />
+                    <grant type="Spell" id="ID_PHB_SPELL_DAYLIGHT" spellcasting="Summer Seasonal Spells" known="true" level="13" />
+                    <grant type="Spell" id="ID_PHB_SPELL_FIREBALL" spellcasting="Summer Seasonal Spells" known="true" level="13" />
+                    <grant type="Spell" id="ID_PHB_SPELL_FIRE_SHIELD" spellcasting="Summer Seasonal Spells" known="true" level="19" />
+                    <grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FIRE" spellcasting="Summer Seasonal Spells" known="true" level="19" />
+                </rules>
+            </element>
+            <element name="Autumn Seasonal Spells" type="Archetype Feature" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_AUTUMN_SEASONAL_SPELLS">
+                <compendium display="false" />
+                <description>
+                    <table>
+                        <thead>
+                            <tr><td>Dragon Knight</td><td>level	Spell</td></tr>
+                        </thead>
+                        <tr><td>3rd</td><td><em>fog cloud, longstrider</em></td></tr>
+                        <tr><td>7th</td><td><em>gust of wind, warding wind</em></td></tr>
+                        <tr><td>13th</td><td><em>feign death, haste</em></td></tr>
+                        <tr><td>19th</td><td><em>freedom of movement, giant insect</em></td></tr>
+                    </table>
+                </description>
+                <spellcasting name="Autumn Seasonal Spells" ability="Charisma" prepare="false">
+                    <list>Garden Practice</list>
+                </spellcasting>
+                <sheet display="false">
+                    <description></description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_FOG_CLOUD" spellcasting="Autumn Seasonal Spells" known="true" level="3" />
+                    <grant type="Spell" id="ID_PHB_SPELL_LONGSTRIDER" spellcasting="Autumn Seasonal Spells" known="true" level="3" />
+                    <grant type="Spell" id="ID_PHB_SPELL_GUST_OF_WIND" spellcasting="Autumn Seasonal Spells" known="true" level="7" />
+                    <grant type="Spell" id="ID_XGTE_SPELL_WARDING_WIND" spellcasting="Autumn Seasonal Spells" known="true" level="7" />
+                    <grant type="Spell" id="ID_PHB_SPELL_FEIGN_DEATH" spellcasting="Autumn Seasonal Spells" known="true" level="13" />
+                    <grant type="Spell" id="ID_PHB_SPELL_HASTE" spellcasting="Autumn Seasonal Spells" known="true" level="13" />
+                    <grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" spellcasting="Autumn Seasonal Spells" known="true" level="19" />
+                    <grant type="Spell" id="ID_PHB_SPELL_GIANT_INSECT" spellcasting="Autumn Seasonal Spells" known="true" level="19" />
+                </rules>
+            </element>
+            <element name="Winter Seasonal Spells" type="Archetype Feature" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_WINTER_SEASONAL_SPELLS">
+                <compendium display="false" />
+                <description>
+                    <table>
+                        <thead>
+                            <tr><td>Dragon Knight</td><td>level	Spell</td></tr>
+                        </thead>
+                        <tr><td>3rd</td><td><em>ice knife, inflict wounds</em></td></tr>
+                        <tr><td>7th</td><td><em>darkvision, pass without trace</em></td></tr>
+                        <tr><td>13th</td><td><em>sleet storm, slow</em></td></tr>
+                        <tr><td>19th</td><td><em>blight, storm sphere</em></td></tr>
+                    </table>
+                </description>
+                <spellcasting name="Winter Seasonal Spells" ability="Charisma" prepare="false">
+                    <list>Garden Practice</list>
+                </spellcasting>
+                <sheet display="false">
+                    <description></description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_XGTE_SPELL_ICE_KNIFE" spellcasting="Winter Seasonal Spells" known="true" level="3" />
+                    <grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" spellcasting="Winter Seasonal Spells" known="true" level="3" />
+                    <grant type="Spell" id="ID_PHB_SPELL_DARKVISION" spellcasting="Winter Seasonal Spells" known="true" level="7" />
+                    <grant type="Spell" id="ID_PHB_SPELL_PASS_WITHOUT_TRACE" spellcasting="Winter Seasonal Spells" known="true" level="7" />
+                    <grant type="Spell" id="ID_PHB_SPELL_SLEET_STORM" spellcasting="Winter Seasonal Spells" known="true" level="13" />
+                    <grant type="Spell" id="ID_PHB_SPELL_SLOW" spellcasting="Winter Seasonal Spells" known="true" level="13" />
+                    <grant type="Spell" id="ID_PHB_SPELL_BLIGHT" spellcasting="Winter Seasonal Spells" known="true" level="19" />
+                    <grant type="Spell" id="ID_XGTE_SPELL_STORM_SPHERE" spellcasting="Winter Seasonal Spells" known="true" level="19" />
+                </rules>
+            </element>
+            <element name="Spring Seasonal Spells" type="Archetype Feature" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SPRING_SEASONAL_SPELLS">
+                <compendium display="false" />
+                <description>
+                    <table>
+                        <thead>
+                            <tr><td>Dragon Knight</td><td>level	Spell</td></tr>
+                        </thead>
+                        <tr><td>3rd</td><td><em>charm person, entangle</em></td></tr>
+                        <tr><td>7th</td><td><em>lesser restoration, spike growth</em></td></tr>
+                        <tr><td>13th</td><td><em>plant growth, hypnotic pattern</em></td></tr>
+                        <tr><td>19th</td><td><em>grasping vine, polymorph</em></td></tr>
+                    </table>
+                </description>
+                <spellcasting name="Spring Seasonal Spells" ability="Charisma" prepare="false">
+                    <list>Garden Practice</list>
+                </spellcasting>
+                <sheet display="false">
+                    <description></description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" spellcasting="Spring Seasonal Spells" known="true" level="3" />
+                    <grant type="Spell" id="ID_PHB_SPELL_ENTANGLE" spellcasting="Spring Seasonal Spells" known="true" level="3" />
+                    <grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" spellcasting="Spring Seasonal Spells" known="true" level="7" />
+                    <grant type="Spell" id="ID_PHB_SPELL_SPIKE_GROWTH" spellcasting="Spring Seasonal Spells" known="true" level="7" />
+                    <grant type="Spell" id="ID_PHB_SPELL_PLANT_GROWTH" spellcasting="Spring Seasonal Spells" known="true" level="13" />
+                    <grant type="Spell" id="ID_PHB_SPELL_HYPNOTIC_PATTERN" spellcasting="Spring Seasonal Spells" known="true" level="13" />
+                    <grant type="Spell" id="ID_PHB_SPELL_GRASPING_VINE" spellcasting="Spring Seasonal Spells" known="true" level="19" />
+                    <grant type="Spell" id="ID_PHB_SPELL_POLYMORPH" spellcasting="Spring Seasonal Spells" known="true" level="19" />
+                </rules>
+            </element>
+        <element name="Garden’s Sheild" type="Archetype Feature" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_GARDENS_SHEILD">
+            <description>
+                <p>Starting at 3rd level, when you cast one of your seasonal spells using your Seasonal Magic feature, you or your dragon (your choice) gains temporary hit points equal to 1d4 + your Charisma modifier, which last for 1 hour.</p>
+                <p class="indent">The number of dice you roll increases by 1d4 when you reach 7th level (2d4), 13th level (3d4), and 19th level (4d4).</p>
+            </description>
+            <sheet>
+                <description>When you cast one of your seasonal spells using your Seasonal Magic feature, you or your dragon (your choice) gains {{gardens-shield:temp-dice}}d4 + {{charisma:modifier}} temporary hit points.</description>
+            </sheet>
+            <rules>
+                <stat name="gardens-shield:temp-dice" value="1" level="3" />
+                <stat name="gardens-shield:temp-dice" value="1" level="7" />
+                <stat name="gardens-shield:temp-dice" value="1" level="13" />
+                <stat name="gardens-shield:temp-dice" value="1" level="19" />
+            </rules>
+        </element>
+        <element name="Season’s Greetings" type="Archetype Feature" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_SEASONS_GREETINGS">
+            <description>
+                <p>At 7th level, your dragon’s breath weapon gains an additional benefit, depending on the season you’re currently attuned to.</p>
+                <p class="indent"><b>Summer.</b> Creatures that fail their saving throw against your dragon’s breath weapon have disadvantage on the next attack roll or ability check they make before the end of their next turn.</p>
+                <p class="indent"><b>Autumn.</b> Creatures that fail their saving throw against your dragon’s breath weapon are pushed 15 feet directly away from your dragon.</p>
+                <p class="indent"><b>Winter.</b> Creatures that fail their saving throw against your dragon’s breath weapon have their movement speed reduced by 10 feet until the end of their next turn.</p>
+                <p class="indent"><b>Spring.</b> Creatures that fail their saving throw against your dragon’s breath weapon are charmed by your dragon until the start of your next turn.</p>
+            </description>
+            <sheet>
+                <description>Your dragon’s breath weapon gains an additional benefit, depending on the season you’re currently attuned to.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Between the Seasons" type="Archetype Feature" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_BETWEEN_THE_SEASONS">
+            <description>
+                <p>At 10th level, you can manipulate your magic to reach out into other seasons. As an action, you can cast any 1st level spell with a casting time of 1 action you would acquire from your Seasonal Magic without expending a use of the feature. The spell you cast doesn’t need to be from the season you’re currently attuned too.</p>
+                <p class="indent">Once you use this feature, you can’t do so again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can cast any 1st level spell with a casting time of 1 action you would acquire from your Seasonal Magic without expending a use of the feature. The spell you cast doesn’t need to be from the season you’re currently attuned too.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Garden’s Grace" type="Archetype Feature" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_GARDENS_GRACE">
+            <description>
+                <p>Starting at 15th level, when you expend both uses of your Seasonal Magic to cast a 3rd or 4th level seasonal spell, you and your dragon both gain temporary hit points equal to the amount rolled.</p>
+            </description>
+            <sheet>
+                <description>When you expend both uses of your Seasonal Magic to cast a 3rd or 4th level seasonal spell, you and your dragon both gain temporary hit points equal to the amount rolled.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Advanced Seasonal Magic" type="Archetype Feature" source="Garden Practice" id="ID_RJ_DKGP_ARCHETYPE_FEATURE_GARDEN_ADVANCED_SEASONAL_MAGIC">
+            <description>
+                <p>At 18th level, when you cast a spell using your Seasonal Magic, your dragon can use its reaction to make a claw attack.</p>
+            </description>
+            <sheet>
+                <description>When you cast a spell using your Seasonal Magic, your dragon can use its reaction to make a claw attack.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
