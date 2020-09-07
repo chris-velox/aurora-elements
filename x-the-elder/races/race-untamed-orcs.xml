@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Untamed Orcs</name>
+        <update version="0.0.1">
+            <file name="race-untamed-orcs.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/races/race-untamed-orcs.xml" />
+        </update>
+    </info>
+    
+    <element name="Untamed Orcs" type="Source" source="Core" id="ID_DRACODRUID_GMBINDER_SOURCE_UNTAMED_ORCS">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">UO</set>
+            <set name="url">https://www.gmbinder.com/share/-LIapOM3cNnB_kBJk_cn</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="DD" url="https://www.gmbinder.com/profile/dracodruid">dracodruid</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200904</set>
+        </setters>
+    </element>
+    
+    <element name="Orc" type="Race" source="Untamed Orcs" id="ID_DD_UO_RACE_UNTAMED_ORCS">
+        <description>
+            <p>Stuck between honor and savagery, orcs are a complicated and mostly misunderstood race that always lingers on the edge between noble barbarians and wild savages. Orc society is tribal by nature, rich with traditions, honorable, yet wild and untamed. They see the world for what it is: dangerous and wild, where only the strongest can survive. As such, orcs are focused on strength and survival, not to destroy, but to survive as an individual and as a race. They have seen civilizations rise and fall, but the orcs remain.</p>
+            <p class="indent">Orc ethics may still vary greatly from tribe to tribe. Some are roaming the lands, taking what they need from whoever has it, others live by a strong code of honor and only fight worthy opponents, and even others tend to isolate themselves from other races by living in the harshest of lands as a test of their will and endurance.</p>
+            <h4>Orc Traits</h4>
+            <p>Your orc character has the following racial traits.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength and Constitution scores each increase by 1.</p>
+            <p class="indent"><strong><em>Age.</em></strong> Orcs reach adulthood at age 13 and live up to 70 years.</p>
+            <p class="indent"><strong><em>Alignment.</em></strong> As varied as the orc tribes are their ethics and morals. However, most orcs have in common, that they see the world as a harsh and deadly place in which only the strongest are fit to survive. Therefore, most orcs are either neutral or evil, as helping the weak and unfortunate would mean disturbing the natural order.</p>
+            <p class="indent"><strong><em>Size.</em></strong> Orcs are usually over 6 feet tall and weigh between 230 and 280 pounds. Your size is Medium.</p>
+            <p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+            <p class="indent"><strong><em>Strong-Willed.</em></strong> You have advantage on saving throws against being charmed and frightened.</p>
+            <p class="indent"><strong><em>Survivor.</em></strong> You gain proficiency in the Survival skill.</p>
+            <p class="indent"><strong><em>Toughness.</em></strong> Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common and Orc.</p>
+            <p class="indent"><strong><em>Subrace.</em></strong> Three subraces of orcs are found among the worlds of the multiverse: black orcs, red orcs and grey orcs. These subraces usually form separated tribes, but several mixed tribes are known to exist. Choose one of these subraces.</p>
+        </description>
+        <setters>
+            <set name="names" type="male">male</set>
+            <set name="names" type="female">female</set>
+            <set name="names-format">{{name}}</set>
+			<set name="height" modifier="2d12">5’10"</set>
+			<set name="weight" modifier="2d12">220 lb.</set>
+        </setters>
+        <sheet display="false" />
+        <rules>
+            <stat name="strength" value="1" />
+            <stat name="constitution" value="1" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <stat name="innate speed" value="30" bonus="base" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <stat name="hp" value="level" />
+            <grant type="Racial Trait" id="ID_DD_UO_RACIAL_TRAIT_UNTAMED_ORC_STRONG_WILLED" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_ORC" />
+            <select type="Sub Race" name="Orc Subrace" supports="Untamed Orc Subrace" />
+        </rules>
+    </element>
+        <element name="Strong-Willed" type="Racial Trait" source="Untamed Orcs" id="ID_DD_UO_RACIAL_TRAIT_UNTAMED_ORC_STRONG_WILLED">
+            <description>
+                <p>You have advantage on saving throws against being charmed and frightened.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on saving throws against being charmed and frightened.</description>
+            </sheet>
+        </element>
+
+    <element name="Black Orc" type="Sub Race" source="Untamed Orcs" id="ID_DD_UO_SUBRACE_UNTAMED_ORC_BLACK_ORC">
+        <supports>Untamed Orc Subrace</supports>
+        <description>
+            <p>Black orcs are bigger and sturdier than their orc cousins. They are known for great feats of strength and endurance. Black orcs are usually driven by a strong sense of honor, seeking worthy or dangerous opponents to test themselves.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength score increases by 1.</p>
+            <p class="indent"><strong><em>Powerful Build.</em></strong> You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+            <p class="indent"><strong><em>Relentless Endurance.</em></strong> When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Racial Trait" id="ID_DD_UO_RACIAL_TRAIT_BLACK_ORC_POWERFUL_BUILD" />
+            <grant type="Racial Trait" id="ID_DD_UO_RACIAL_TRAIT_BLACK_ORC_RELENTLESS_ENDURANCE" />
+        </rules>
+    </element>
+        <element name="Powerful Build" type="Racial Trait" source="Untamed Orcs" id="ID_DD_UO_RACIAL_TRAIT_BLACK_ORC_POWERFUL_BUILD">
+            <description>
+                <p>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+            </description>
+            <sheet>
+                <description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
+            </sheet>
+        </element>
+        <element name="Relentless Endurance" type="Racial Trait" source="Untamed Orcs" id="ID_DD_UO_RACIAL_TRAIT_BLACK_ORC_RELENTLESS_ENDURANCE">
+            <description>
+                <p>When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead.</description>
+            </sheet>
+        </element>
+
+    <element name="Red Orc" type="Sub Race" source="Untamed Orcs" id="ID_DD_UO_SUBRACE_UNTAMED_ORC_RED_ORC">
+        <supports>Untamed Orc Subrace</supports>
+        <description>
+            <p>Red orcs tend to be slightly smaller and scrawnier than their other orc cousins. Yet, they are known to be fierce and capable warriors and often roam the lands, raiding villages and cities along their way.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Dexterity score increases by 1.</p>
+            <p class="indent"><strong><em>Aggressive.</em></strong> As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</p>
+            <p class="indent"><strong><em>Savage Attacks.</em></strong> When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Racial Trait" id="ID_DD_UO_RACIAL_TRAIT_RED_ORC_AGGRESSIVE" />
+            <grant type="Racial Trait" id="ID_DD_UO_RACIAL_TRAIT_RED_ORC_SAVAGE_ATTACKS" />
+        </rules>
+    </element>
+        <element name="Aggressive" type="Racial Trait" source="Untamed Orcs" id="ID_DD_UO_RACIAL_TRAIT_RED_ORC_AGGRESSIVE">
+            <description>
+                <p>As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</description>
+            </sheet>
+        </element>
+        <element name="Savage Attacks" type="Racial Trait" source="Untamed Orcs" id="ID_DD_UO_RACIAL_TRAIT_RED_ORC_SAVAGE_ATTACKS">
+            <description>
+                <p>When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.</p>
+            </description>
+            <sheet>
+                <description>When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.</description>
+            </sheet>
+        </element>
+
+    <element name="Grey Orc" type="Sub Race" source="Untamed Orcs" id="ID_DD_UO_SUBRACE_UNTAMED_ORC_GREY_ORC">
+        <supports>Untamed Orc Subrace</supports>
+        <description>
+            <p>Grey orcs are often more spiritual, reclusive, and cunning than their orc cousins, preferring keen tactics and ambushes over direct confrontation. They can be trusted advisors as well as dangerous assassins.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Wisdom score increases by 1.</p>
+            <p class="indent"><strong><em>Ambusher.</em></strong> In the first round of a combat, you have advantage on attack rolls against any creature that hasn’t taken any actions yet.</p>
+            <p class="indent"><strong><em>Hardened Soul.</em></strong> You have advantage on Charisma saving throws.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Racial Trait" id="ID_DD_UO_RACIAL_TRAIT_GREY_ORC_AMBUSHER" />
+            <grant type="Racial Trait" id="ID_DD_UO_RACIAL_TRAIT_GREY_ORC_HARDENED_SOUL" />
+        </rules>
+    </element>
+        <element name="Ambusher" type="Racial Trait" source="Untamed Orcs" id="ID_DD_UO_RACIAL_TRAIT_GREY_ORC_AMBUSHER">
+            <description>
+                <p>In the first round of a combat, you have advantage on attack rolls against any creature that hasn’t taken any actions yet.</p>
+            </description>
+            <sheet>
+                <description>In the first round of a combat, you have advantage on attack rolls against any creature that hasn’t taken any actions yet.</description>
+            </sheet>
+        </element>
+        <element name="Hardened Soul" type="Racial Trait" source="Untamed Orcs" id="ID_DD_UO_RACIAL_TRAIT_GREY_ORC_HARDENED_SOUL">
+            <description>
+                <p>You have advantage on Charisma saving throws.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on Charisma saving throws.</description>
+            </sheet>
+        </element>
+
+</elements>
