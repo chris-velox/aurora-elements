@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Knight-Enchanter Arcane Tradition</name>
+        <update version="0.0.1">
+            <file name="wizard-knight-enchanter.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/wizard/wizard-knight-enchanter.xml" />
+        </update>
+    </info>
+    
+    <element name="Arcane Tradition: Knight-Enchanter" type="Source" source="Core" id="ID_RICODYN_ATKE_SOURCE_Arcane Tradition: Knight-Enchanter">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">ATKE</set>
+            <set name="url">https://www.gmbinder.com/share/-LV4G2rbMp9zPipUAQgX</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="RICODYN" url="https://www.gmbinder.com/profile/ricodyn">Ricodyn</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200906</set>
+        </setters>
+    </element>
+
+    <element name="Knight-Enchanter" type="Archetype" source="Arcane Tradition: Knight-Enchanter" id="ID_RICODYN_ATKE_ARCHETYPE_WIZARD_KNIGHT_ENCHANTER">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>Knight-Enchanters are part of a select group of wizards that enter the front line of battle wielding a weapon summoned from thin air. Said to have originated from elite guardsman serving ancient elven nobles, the tradition of the Knight-Enchanters is now taught to wizards of many different backgrounds. While traditionalists still prefer the solid blade of magic reminiscent of elven swords, some recent practitioners have been seen wielding spectral axes and maces instead.</p>
+            <p class="indent">Combining abjuration, conjuration and transmutation magic, these wizards use their martial and magical prowess to protect themselves and damage their foes. On the field, in the battle, they command.</p>
+            <div element="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_ARCANE_WARRIOR" />
+            <div element="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_SPECTRAL_BLADE" />
+            <div element="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_COMBAT_CLARITY" />
+            <div element="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_WEAVE_SHROUD" />
+            <div element="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_AMPLIFIED_BLADE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_ARCANE_WARRIOR" level="2" />
+            <grant type="Archetype Feature" id="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_SPECTRAL_BLADE" level="2" />
+            <grant type="Archetype Feature" id="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_COMBAT_CLARITY" level="6" />
+            <grant type="Archetype Feature" id="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_WEAVE_SHROUD" level="10" />
+            <grant type="Archetype Feature" id="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_AMPLIFIED_BLADE" level="14" />
+        </rules>
+    </element>
+        <element name="Arcane Warrior" type="Archetype Feature" source="Arcane Tradition: Knight-Enchanter" id="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_ARCANE_WARRIOR">
+            <description>
+                <p>When you adopt this tradition at 2nd level, you acquire the training necessary to effectively arm yourself for battle. You gain proficiency with light and medium armor.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+            </rules>
+        </element>
+        <element name="Spectral Blade" type="Archetype Feature" source="Arcane Tradition: Knight-Enchanter" id="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_SPECTRAL_BLADE">
+            <description>
+                <p>Starting at 2nd level, you learn to create and wield the chosen weapon of the Knight-Enchanters, the spectral blade. Without effort, you are able to conjure a blade of pure magic from a bladeless hilt. The blade vanishes when you let go of the hilt, conjure another blade or whenever you choose to (no action required).</p>
+                <p class="indent">For you, the spectral blade is a martial melee weapon that you are proficient with and deals 1d8 force damage on a hit. Additionally, when you make an attack with this weapon, you can use your Intelligence modifier, instead of Strength, for the attack and damage rolls.</p>
+                <p class="indent">When you hit a creature with your spectral blade you can use your reaction to capture strands of released magic and form a barrier around you. You gain temporary hit points equal to your wizard level, or twice as much if the attack is a critical hit, for 1 minute.</p>
+            </description>
+            <sheet>
+                <description>Without effort, you are able to conjure a blade of pure magic from a bladeless hilt. The spectral blade is a martial melee weapon that you are proficient with and deals 1d8 force damage on a hit. Additionally, when you make an attack with this weapon, you can use your Intelligence modifier, instead of Strength, for the attack and damage rolls. When you hit a creature with your spectral blade you can use your reaction to gain {{level:wizard}} temporary hit points equal, or twice as much if the attack is a critical hit, for 1 minute.</description>
+            </sheet>
+        </element>
+        <element name="Combat Clarity" type="Archetype Feature" source="Arcane Tradition: Knight-Enchanter" id="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_COMBAT_CLARITY">
+            <description>
+                <p>Starting at 6th level, the rhythm of alternating spells and strikes gives you increased clarity in the thick of battle. When you use your action to cast a spell, you gain advantage on the first attack roll you make with your spectral blade on your next turn.</p>
+            </description>
+            <sheet>
+                <description>When you use your action to cast a spell, you gain advantage on the first attack roll you make with your spectral blade on your next turn.</description>
+            </sheet>
+        </element>
+        <element name="Weave Shroud" type="Archetype Feature" source="Arcane Tradition: Knight-Enchanter" id="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_WEAVE_SHROUD">
+            <description>
+                <p>Beginning at 10th level, you can briefly shroud yourself with the very fabric of magic plucked from the Weave. You can use a bonus action to expend one spell slot to turn yourself incorporeal until the end of your turn. It ends early if you attack a creature or cast a spell.</p>
+                <p class="indent">While your Weave Shroud is active, you gain the following benefits:</p>
+                <ul>
+                    <li>You are immune to all damage except psychic damage.</li>
+                    <li>Your movement doesn't provoke opportunity attacks.</li>
+                    <li>You can pass through objects and creatures while moving but can’t willingly end your movement in their spaces.</li>
+                    <li>Your walking speed increases by 10 feet for each spell level higher than 1st, to a maximum increase of 40.</li>
+                </ul>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can expend one spell slot to turn yourself incorporeal until the end of your turn. It ends early if you attack a creature or cast a spell.</description>
+            </sheet>
+        </element>
+        <element name="Amplified Blade" type="Archetype Feature" source="Arcane Tradition: Knight-Enchanter" id="ID_RICODYN_ATKE_ARCHETYPE_FEATURE_KNIGHT_ENCHANGER_AMPLIFIED_BLADE">
+            <description>
+                <p>Starting at 14th level, you are able to charge your spectral blade using your magic, unleashing it when you strike an enemy. After you use your action to cast a spell, you use traces of the spell's magic to amplify your spectral blade. When you hit a creature with your spectral blade while it is amplified, you can consume the stored energy to roll a number of additional weapon damage dice equal to half the level of the spell (rounded up), or one if the spell was a cantrip.</p>
+                <p class="indent">Additionally, using your Weave Shroud feature also amplifies your spectral blade as if you cast a spell of the level of the spell slot you expended.</p>
+                <p class="indent">The stored energy subsides after 1 minute, or when your spectral blade is dismissed. If the blade is still amplified from a previously cast spell after you cast a new spell, only the amplification from the spell with the highest level remains.</p>
+            </description>
+            <sheet>
+                <description>After you use your action to cast a spell, you use traces of the spell's magic to amplify your spectral blade. When you hit a creature with your spectral blade while it is amplified, you can consume the stored energy to roll a number of additional weapon damage dice equal to half the level of the spell (rounded up), or one if the spell was a cantrip. Additionally, using your Weave Shroud feature also amplifies your spectral blade as if you cast a spell of the level of the spell slot you expended. </description>
+            </sheet>
+        </element>
+    
+</elements>
