@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Slayer Variant Fighter Archetype</name>
+        <update version="0.0.1">
+            <file name="variant-fighter-slayer.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/variant-fighter/variant-fighter-slayer.xml" />
+        </update>
+    </info>
+    
+    <element name="Slayer Archetype for Variant Fighter" type="Source" source="Core" id="ID_SARGEBRIAR_HOMEBREWERY_SOURCE_Slayer Archetype for Variant Fighter">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SAVF</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/BJbUXRTis-</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="SB" url="https://www.reddit.com/user/SargeBriar/">u/SargeBriar</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20171002</set>
+        </setters>
+    </element>
+
+    <element name="Slayer" type="Archetype" source="Slayer Archetype for Variant Fighter" id="ID_SB_SAVF_ARCHETYPE_VARIANT_FIGHTER_SLAYER">
+        <supports><supports>Variant Martial Archetype</supports></supports>
+        <description>
+            <p>"Tempered by the fires of the Abyss, his iron will remained steadfast through the gateways that prey upon the weak. For he alone was the Abyssal Walker, the Unchained Predator, who sought retribution in all quarters, dark and light, fire and ice, in the beginning and the end, and he hunted our slaves with barbarous cruelty; for he passed through the divides as none but demon had before."</p>
+            <p class="indent">- Tablet discovered in the Swallowed Void, 66th layer of the Abyss, abandoned for reasons unknown</p>
+            <p class="indent">The archetypal Slayer has suffered a terrible wrong, a grievous slight, some injustice so great that they seek retribution the only way they know how: through blade and blood. Defined by their ruthless determination, unshakeable will and vicious brutality, Slayers reject the powers offered by oath, god, and primal fury as they throw themselves into situations few others could survive in pursuit of their vengeance - and the final doom of their enemies.</p>
+            <div element="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_IMPLACABLE_ADVANCE" />
+            <div element="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_UNTO_THE_CRUEL" />
+            <div element="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_BLOODIED_BUT_UNBOWED" />
+            <div element="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_INTO_THE_JAWS_OF_DEATH" />
+            <div element="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_INTO_THE_MOUTH_OF_HELL" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_IMPLACABLE_ADVANCE" level="3" />
+            <grant type="Archetype Feature" id="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_UNTO_THE_CRUEL" level="7" />
+            <grant type="Archetype Feature" id="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_BLOODIED_BUT_UNBOWED" level="10" />
+            <grant type="Archetype Feature" id="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_INTO_THE_JAWS_OF_DEATH" level="15" />
+            <grant type="Archetype Feature" id="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_INTO_THE_MOUTH_OF_HELL" level="18" />
+        </rules>
+    </element>
+        <element name="Implacable Advance" type="Archetype Feature" source="Slayer Archetype for Variant Fighter" id="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_IMPLACABLE_ADVANCE">
+            <description>
+                <p>Starting at 3rd level, your grim steadfastness and martial prowess can help you succeed against impossible odds. As a bonus action, you gain advantage on your next attack roll, and gain resistance to bludgeoning, piercing and slashing damage until the end of your next turn. You can use this feature three times, and you regain these uses when you finish a short or long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="3/Short Rest">
+                <description>You gain advantage on your next attack roll, and gain resistance to bludgeoning, piercing and slashing damage until the end of your next turn.</description>
+            </sheet>
+        </element>
+        <element name="Unto the Cruel" type="Archetype Feature" source="Slayer Archetype for Variant Fighter" id="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_UNTO_THE_CRUEL">
+            <description>
+                <p>At 7th level, you gain proficiency in the Intimidation skill. When you make a Charisma (Intimidation) check against a creature that has witnessed you maim, torture, or use the Glory Kill or Executioner's Salute maneuvers, you add double your proficiency bonus to the check.</p>
+            </description>
+            <sheet>
+                <description>When you make a Intimidation check against a creature that has witnessed you maim, torture, or use the Glory Kill or Executioner's Salute maneuvers, you add double your proficiency bonus to the check.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+            </rules>
+        </element>
+        <element name="Bloodied, but Unbowed" type="Archetype Feature" source="Slayer Archetype for Variant Fighter" id="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_BLOODIED_BUT_UNBOWED">
+            <description>
+                <p>Starting at 10th level, when you fail a saving throw caused by a creature, you can choose to resurge triumphant despite your initial defeat. If you do, you have advantage on the next saving throw that creature causes you to make within the next minute. You can use this feature a number of times equal to your Constitution modifier (minimum of 1), and you regain these uses when you finish a long rest.</p>
+            </description>
+            <sheet usage="{{bloodied-unbowed:uses}}/Long Rest">
+                <description>When you fail a saving throw caused by a creature, you can choose to resurge triumphant despite your initial defeat. If you do, you have advantage on the next saving throw that creature causes you to make within the next minute.</description>
+            </sheet>
+            <rules>
+                <stat name="bloodied-unbowed:uses" value="1" bonus="base" />
+                <stat name="bloodied-unbowed:uses" value="constitution:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Into the Jaws of Death" type="Archetype Feature" source="Slayer Archetype for Variant Fighter" id="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_INTO_THE_JAWS_OF_DEATH">
+            <description>
+                <p>At 15th level, you have slain terrors that would make the bravest men weep, and you no longer fear them - nor anything else. You gain immunity to the frightened condition. Additionally, when you use your Action Surge feature, your courage inspires nearby allies; any ally within 30 feet of you that is currently frightened can repeat their saving throw immediately, ending the effect on a success.</p>
+            </description>
+            <sheet>
+                <description>You have immunity to the frightened condition. Additionally, when you use your Action Surge feature, your courage inspires nearby allies; any ally within 30 feet of you that is currently frightened can repeat their saving throw immediately, ending the effect on a success.</description>
+            </sheet>
+        </element>
+        <element name="Into the Mouth of Hell" type="Archetype Feature" source="Slayer Archetype for Variant Fighter" id="ID_SB_SAVF_ARCHETYPE_FEATURE_SLAYER_INTO_THE_MOUTH_OF_HELL">
+            <description>
+                <p>At 18th level, your unstoppable tenacity could carry you into the depths of the Abyss itself. When you use your Implacable Advance feature, you gain resistance to all damage.</p>
+            </description>
+            <sheet>
+                <description>When you use your Implacable Advance feature, you gain resistance to all damage.</description>
+            </sheet>
+        </element>
+
+        <element name="Glory Kill" type="Class Feature" source="Slayer Archetype for Variant Fighter" id="ID_SB_SAVF_CLASS_FEATURE_SLAYER_MANEUVER_GLORY_KILL">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_SB_SAVF_ARCHETYPE_VARIANT_FIGHTER_SLAYER</requirements>
+            <prerequisite>Slayer archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Slayer archetype</p>
+                <p>When you reduce a creature within your reach to 0 hit points, you can use your reaction to violently dispatch them and reinvigorate yourself, gaining temporary hit points equal to 1d4 + your Constitution modifier.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> You additionally regain hit points equal to 1d4 + your Constitution modifier.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When you reduce a creature within your reach to 0 hit points, you can use your reaction to violently dispatch them and reinvigorate yourself, gaining 1d4 + {{constitution:modifier}} temporary hit. Superiority. You regain an additional 1d4 + {{constitution:modifier}} hit points.</description>
+            </sheet>
+        </element>
+        <element name="Executioner's Salute" type="Class Feature" source="Slayer Archetype for Variant Fighter" id="ID_SB_SAVF_CLASS_FEATURE_SLAYER_MANEUVER_EXECUTIONERS_SALUTE">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_SB_SAVF_ARCHETYPE_VARIANT_FIGHTER_SLAYER</requirements>
+            <prerequisite>Slayer archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Slayer archetype</p>
+                <p>When you reduce a creature within your reach to 0 hit points, you can use your reaction to perform a grisly execution and present a trophy to another creature within 30 feet that can see you. The target must make a Wisdom saving throw. On a failed save, it is frightened of you until the start of your next turn.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> While the target is frightened, its speed is reduced by half, and attack rolls made against it have advantage.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When you reduce a creature within your reach to 0 hit points, you can perform a grisly execution and present a trophy to another creature within 30 feet that can see you. The target must make a Wisdom saving throw. On a failed save, it is frightened of you until the start of your next turn. Superiority. While the target is frightened, its speed is reduced by half, and attack rolls made against it have advantage.</description>
+            </sheet>
+        </element>
+        <element name="Daunting Presence" type="Class Feature" source="Slayer Archetype for Variant Fighter" id="ID_SB_SAVF_CLASS_FEATURE_SLAYER_MANEUVER_DAUNTING_PRESENCE">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_SB_SAVF_ARCHETYPE_VARIANT_FIGHTER_SLAYER</requirements>
+            <prerequisite>Slayer archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Slayer archetype</p>
+                <p>When you would make a Charisma (Intimidation) or Charisma (Persuasion) check, you can use your Strength modifier instead of your Charisma modifier.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> You can also gain advantage on any Intimidation or Persuasion check you make.</p>
+            </description>
+            <sheet>
+                <description>When you would make a Intimidation or Persuasion check, you can use your Strength modifier instead of your Charisma modifier. Superiority. You can also gain advantage on any Intimidation or Persuasion check you make.</description>
+            </sheet>
+        </element>
+        <element name="Ruthless Grip" type="Class Feature" source="Slayer Archetype for Variant Fighter" id="ID_SB_SAVF_CLASS_FEATURE_SLAYER_MANEUVER_RUTHLESS_GRIP">
+            <supports>Variant Fighter Maneuver</supports>
+            <requirements>ID_SB_SAVF_ARCHETYPE_VARIANT_FIGHTER_SLAYER</requirements>
+            <prerequisite>Slayer archetype</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Slayer archetype</p>
+                <p>When you hit a creature with an unarmed strike, you can attempt to brutally seize and maneuver it to your liking. If the creature is no more than one size larger than you, you can move it to any unoccupied space within 5 feet of you.</p>
+                <p class="indent"><strong><em>Superiority.</em></strong> Your unarmed strike deals 1d8 + your Strength modifier in damage, and you can move the creature to any unoccupied space within 10 feet of you.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with an unarmed strike, you can attempt to brutally seize and maneuver it to your liking. If the creature is no more than one size larger than you, you can move it to any unoccupied space within 5 feet of you. Superiority. Your unarmed strike deals 1d8 + {{strength:modifier}} in damage, and you can move the creature to any unoccupied space within 10 feet of you.</description>
+            </sheet>
+        </element>
+
+</elements>
