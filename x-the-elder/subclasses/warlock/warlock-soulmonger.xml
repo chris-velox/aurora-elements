@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Soulmonger Patron</name>
+        <update version="0.0.1">
+            <file name="warlock-soulmonger.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-soulmonger.xml" />
+        </update>
+    </info>
+    
+    <element name="The Soulmonger Patron" type="Source" source="Core" id="ID_DRACODRUID_GMBINDER_SOURCE_THE_SOULMONGER_PATRON">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">TSP</set>
+            <set name="url">https://www.gmbinder.com/share/-LrmjW0_4ZSZ1KNRHiTf</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="DD" url="https://www.gmbinder.com/profile/dracodruid">dracodruid</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200904</set>
+        </setters>
+    </element>
+
+    <element name="The Soulmonger" type="Archetype" source="The Soulmonger Patron" id="ID_DD_TSP_ARCHETYPE_WARLOCK_SOULMONGER">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p class="flavor">This is replacing the Hexblade from XGtE</p>
+            <p>You have made your pact with a powerful entity from the Shadowfell, that is hungering for the souls of the living and both you and your patron grow stronger as you consume the life essence of your victims.</p>
+            <div element="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_EXPANDED_SPELL_LIST" />
+            <div element="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_RESILIENT_SOUL" />
+            <div element="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_SOULMONGERS_MARK" />
+            <div element="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_ACCURSED_SPECTER" />
+            <div element="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_ARMOR_OF_SOULS" />
+            <div element="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_MASTER_OF_SOULS" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_RESILIENT_SOUL" level="1" />
+            <grant type="Archetype Feature" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_SOULMONGERS_MARK" level="1" />
+            <grant type="Archetype Feature" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_ACCURSED_SPECTER" level="6" />
+            <grant type="Archetype Feature" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_ARMOR_OF_SOULS" level="10" />
+            <grant type="Archetype Feature" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_MASTER_OF_SOULS" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="The Soulmonger Patron" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Soulmonger lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">SOULMONGER EXPANDED SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>false life, inflict wounds</em></td></tr>
+                    <tr><td>2nd</td><td><em>blindness/deafness, phantasmal force</em></td></tr>
+                    <tr><td>3rd</td><td><em>animate dead, bestow curse</em></td></tr>
+                    <tr><td>4th</td><td><em>death ward, phantasmal killer</em></td></tr>
+                    <tr><td>5th</td><td><em>antilife shell, dominate person</em></td></tr>
+                </table>
+            </description>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_FALSE_LIFE</extend>
+                <extend>ID_PHB_SPELL_INFLICT_WOUNDS</extend>
+                <extend>ID_PHB_SPELL_BLINDNESS_DEAFNESS</extend>
+                <extend>ID_PHB_SPELL_PHANTASMAL_FORCE</extend>
+                <extend>ID_PHB_SPELL_ANIMATE_DEAD</extend>
+                <extend>ID_PHB_SPELL_BESTOW_CURSE</extend>
+                <extend>ID_PHB_SPELL_DEATH_WARD</extend>
+                <extend>ID_PHB_SPELL_PHANTASMAL_KILLER</extend>
+                <extend>ID_PHB_SPELL_ANTILIFE_SHELL</extend>
+                <extend>ID_PHB_SPELL_DOMINATE_PERSON</extend>
+            </spellcasting>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Resilient Soul" type="Archetype Feature" source="The Soulmonger Patron" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_RESILIENT_SOUL">
+            <description>
+                <p>At 1st level, you have learned to resist the Soulmonger’s pull on your soul and how to cling to the threads of your life.</p>
+                <p class="indent">You may add your Charisma modifier to your death saving throws.</p>
+                <p class="indent">In addition, the time period for resurrection spells targeting you is doubled (e.g. revivify could be cast within 2 minutes of your demise, instead of just 1 minute).</p>
+            </description>
+            <sheet>
+                <description>You may add {{charisma:modifier}} to your death saving throws. In addition, the time period for resurrection spells targeting you is doubled.</description>
+            </sheet>
+        </element>
+        <element name="Soulmonger’s Mark" type="Archetype Feature" source="The Soulmonger Patron" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_SOULMONGERS_MARK">
+            <description>
+                <p>Starting at 1st level, you gain the ability to place a baleful curse on someone.</p>
+                <p class="indent">As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. The curse ends early if the target dies, you die, or you are incapacitated. Until the curse ends, you gain the following benefits:</p>
+                <ul>
+                    <li>Any attack roll you make against the cursed target is a critical hit on a roll of 19 or 20 on the d20.</li>
+                    <li>You gain a bonus to damage rolls against the cursed target. The bonus is considered necrotic damage and equals your proficiency bonus.</li>
+                    <li>If the cursed target dies, you regain hit points equal to the target’s maximum hit dice plus it’s Charisma modifier (minimum 1 hit point).</li>
+                </ul>
+                <p class="indent">You can’t use this feature again until you finish a short or long rest.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>Choose one creature you can see within 30 feet of you. The target is cursed for up to 1 minute. Any attack roll you make against the cursed target is a critical hit on a roll of 19 or 20 on the d20. You gain a + {{proficiency}} bonus to damage rolls against the cursed target. The bonus is considered necrotic damage. If the cursed target dies, you regain hit points equal to the target’s maximum hit dice plus it’s Charisma modifier (minimum 1 hit point).</description>
+            </sheet>
+        </element>
+        <element name="Accursed Specter" type="Archetype Feature" source="The Soulmonger Patron" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_ACCURSED_SPECTER">
+            <description>
+                <p>Starting at 6th level, you can curse the soul of a person you slay, temporarily binding it to your service. When the creature cursed by your Soulmonger’s Mark dies, you can cause its spirit to rise from its corpse as a specter, the statistics for which are in the Monster Manual.</p>
+                <p class="indent">When the specter appears, it gains temporary hit points equal to half your warlock level. The specter takes its turn on your initiative. It obeys your verbal commands, and it gains a special bonus to its attack rolls equal to your Charisma modifier (minimum +0).</p>
+                <p class="indent">The specter remains in your service until the end of your next long rest, at which point it vanishes to the afterlife – or maybe not.</p>
+                <p class="indent">Once you bind a specter with this feature, you can’t do so again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When the creature cursed by your Soulmonger’s Mark dies, you can cause its spirit to rise from its corpse as a specter. When the specter appears, it gains {{level:warlock}} temporary hit points. The specter takes its turn on your initiative. It obeys your verbal commands, and it gains a +{{charisma:modifier}} bonus to its attack rolls.</description>
+            </sheet>
+        </element>
+        <element name="Armor of Souls" type="Archetype Feature" source="The Soulmonger Patron" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_ARMOR_OF_SOULS">
+            <description>
+                <p>At 10th level, you learn to use the power of your victim’s soul to protect you. When the creature cursed by your Soulmonger’s Mark dies, you may choose to gain a bonus to your AC equal to the creature’s Charisma modifier (minimum +1). This bonus lasts until you finish a short or long rest, or until you use this feature again.</p>
+            </description>
+            <sheet>
+                <description>When the creature cursed by your Soulmonger’s Mark dies, you may choose to gain a bonus to your AC equal to the creature’s Charisma modifier (minimum +1). This bonus lasts until you finish a short or long rest, or until you use this feature again.</description>
+            </sheet>
+        </element>
+        <element name="Master of Souls" type="Archetype Feature" source="The Soulmonger Patron" id="ID_DD_TSP_ARCHETYPE_FEATURE_SOULMONGER_MASTER_OF_SOULS">
+            <description>
+                <p>Starting at 14th level, you can spread your Soulmonger’s Mark from a slain creature to another creature. When the creature cursed by your Soulmonger’s Mark dies, you can apply the curse to a different creature you can see within 30 feet of you, provided you aren’t incapacitated.</p>
+                <p class="indent">When you apply the curse in this way, you don’t regain hit points from the death of the previously cursed creature.</p>
+            </description>
+            <sheet>
+                <description>You can spread your Soulmonger’s Mark from a slain creature to another creature. When the creature cursed by your Soulmonger’s Mark dies, you can apply the curse to a different creature you can see within 30 feet of you, provided you aren’t incapacitated. When you apply the curse in this way, you don’t regain hit points from the death of the previously cursed creature.</description>
+            </sheet>
+        </element>
+
+</elements>
