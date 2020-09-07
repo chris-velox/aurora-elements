@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Shaman Spiritualities</name>
+        <update version="0.0.1">
+            <file name="shaman-spiritualities.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/shaman/shaman-spiritualities.xml" />
+        </update>
+    </info>
+    
+    <element name="Shaman Spiritualities" type="Source" source="Core" id="ID_PAGEOFSWORDS_GMBINDER_SOURCE_SHAMAN_SPIRITUALITIES">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SS</set>
+            <set name="url">https://www.gmbinder.com/share/-MG0Nvcllo1SNs0sXDwy</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="POS" url="https://www.gmbinder.com/profile/pageofswords">PageOfSwords</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200831</set>
+        </setters>
+    </element>
+
+    <element name="Soul-Eater" type="Archetype" source="Shaman Spiritualities" id="ID_POS_SS_ARCHETYPE_">
+        <supports>Shaman Spirituality</supports>
+        <description>
+            <p>Soul-Eaters are those shamans who gain the ability to recognize the essence of life, known as a soul, within those around them and utilize their power for their own. They devour souls for nutrients and strength to be used in combat.</p>
+            <div element="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_SOUL_EATER_SPELLS" />
+            <div element="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_SOUL_TASTE" />
+            <div element="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_SOUL_INJURY" />
+            <div element="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_BOASTING_SOUL" />
+            <div element="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_IMPROVED_SOUL_TASTE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_SOUL_EATER_SPELLS" level="3" />
+            <grant type="Archetype Feature" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_SOUL_TASTE" level="3" />
+            <grant type="Archetype Feature" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_SOUL_INJURY" level="6" />
+            <grant type="Archetype Feature" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_BOASTING_SOUL" level="10" />
+            <grant type="Archetype Feature" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_IMPROVED_SOUL_TASTE" level="14" />
+        </rules>
+    </element>
+        <element name="Soul-Eater Spells" type="Archetype Feature" source="Shaman Spiritualities" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_SOUL_EATER_SPELLS">
+            <description>
+                <table>
+                    <thead>
+                        <tr><td>Shaman Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>hypnotic pattern, mind spike</em></td></tr>
+                    <tr><td>5th</td><td><em>fear, vampiric touch</em></td></tr>
+                    <tr><td>7th</td><td><em>banishment, confusion</em></td></tr>
+                    <tr><td>9th</td><td><em>creation, dominate person</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_HYPNOTIC_PATTERN" spellcasting="Shaman" known="true" level="3" />
+                <grant type="Spell" id="ID_XGTE_SPELL_MIND_SPIKE" spellcasting="Shaman" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_FEAR" spellcasting="Shaman" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_VAMPIRIC_TOUCH" spellcasting="Shaman" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_BANISHMENT" spellcasting="Shaman" known="true" level="7" />
+                <grant type="Spell" id="ID_PHB_SPELL_CONFUSION" spellcasting="Shaman" known="true" level="7" />
+                <grant type="Spell" id="ID_PHB_SPELL_CREATION" spellcasting="Shaman" known="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_DOMINATE_PERSON" spellcasting="Shaman" known="true" level="9" />
+            </rules>
+        </element>
+        <element name="Soul Taste" type="Archetype Feature" source="Shaman Spiritualities" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_SOUL_TASTE">
+            <description>
+                <p>Beginning at 3rd level, different souls provide different flavors or tastes. Whenever you kill or land a critical hit against a creature or a creature rolls a 1 on a spell's saving throw you gain certain abilities by devouring their soul called flavors. You can only have one flavor active at a time and they only last for 1 minute.</p>
+                <p class="indent"><b><i>Aberration.</i></b> You gain telepathy a number of feet equal to 10 x the aberration's CR.</p>
+                <p class="indent"><b><i>Beasts, Humanoids, and Plants.</i></b> You gain temporary hit points equal to 2 x the beast, humanoid, or plant's CR.</p>
+                <p class="indent"><b><i>Celestial.</i></b> You gain resistance to radiant damage.</p>
+                <p class="indent"><b><i>Construct.</i></b> You advantage on saving throws against the exhausted and poisoned condition.</p>
+                <p class="indent"><b><i>Dragon.</i></b> You gain a flying speed of 30 feet.</p>
+                <p class="indent"><b><i>Elemental and Monstrosity.</i></b> You are no longer recognized as a humanoid by magic.</p>
+                <p class="indent"><b><i>Fey.</i></b> You have advantage on saving throws against the frightened and charmed condition.</p>
+                <p class="indent"><b><i>Fiend.</i></b> You gain resistance to fire damage.</p>
+                <p class="indent"><b><i>Giant.</i></b> Your strength increases by your wisdom modifier.</p>
+                <p class="indent"><b><i>Ooze.</i></b> You can fit in spaces up to 1 inch wide.</p>
+                <p class="indent"><b><i>Undead.</i></b> You gain resistance to necrotic damage.</p>
+            </description>
+            <sheet>
+                <description>Whenever you kill or land a critical hit against a creature or a creature rolls a 1 on a spell's saving throw you gain certain abilities by devouring their soul called flavors. You can only have one flavor active at a time and they only last for 1 minute.</description>
+                <description level="14">Whenever you kill or land a critical hit against a creature or a creature rolls a 1 on a spell's saving throw you gain certain abilities by devouring their soul called flavors. You can only have multiple flavors active at a time and they last for 10 minutes.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Soul Injury" type="Archetype Feature" source="Shaman Spiritualities" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_SOUL_INJURY">
+            <description>
+                <p>At 6th level, when you land a critical hit on a creature or they roll a 1 on a saving throw their soul is partially ripped from their body. They must make a Wisdom saving throw against your spell save DC and on a failure they are stunned until the end of their next turn and you gain temporary hit points equal to their Constitution modifier</p>
+            </description>
+            <sheet>
+                <description>When you land a critical hit on a creature or they roll a 1 on a saving throw, they must make a Wisdom saving throw against your spell save DC or be stunned until the end of their next turn. You gain temporary hit points equal to their Constitution modifier</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Boasting Soul" type="Archetype Feature" source="Shaman Spiritualities" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_BOASTING_SOUL">
+            <description>
+                <p>At 10th level, your soul has grown in size and power and can resist more fatal attacks. You gain proficiency in Constitution saving throws. If you already have this proficiency, you instead gain proficiency in Strength saving throws.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_BOASTING_SOUL_CON_SAVES" requirements="!ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" />
+                <grant type="Archetype Feature" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_BOASTING_SOUL_STR_SAVES" requirements="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION,!ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_BOASTING_SOUL_CON_SAVES" />
+            </rules>
+        </element>
+            <element name="Save" type="Archetype Feature" source="Shaman Spiritualities" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_BOASTING_SOUL_CON_SAVES">
+                <compendium display="false" />
+                <description />
+                <sheet display="false" />
+                <rules>
+                    <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" />
+                </rules>
+            </element>
+            <element name="Save" type="Archetype Feature" source="Shaman Spiritualities" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_BOASTING_SOUL_STR_SAVES">
+                <compendium display="false" />
+                <description />
+                <sheet display="false" />
+                <rules>
+                    <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" />
+                </rules>
+            </element>
+        <element name="Improved Soul Taste" type="Archetype Feature" source="Shaman Spiritualities" id="ID_POS_SS_ARCHETYPE_FEATURE_SOUL_EATER_IMPROVED_SOUL_TASTE">
+            <description>
+                <p>At 14th level, you are so adept at using the souls of those you've killed that all thoses around you can sense them within you. All your Flavors now last for 10 minutes and you can have multiple different flavors active at a time.</p>
+                <p class="indent">Also, immediately after you acquire a new soul flavor, all enemies within 60 feet of you and are the same creature type as the one you collected must make a Wisdom saving throw against your spell save DC. On a failure, they are frightened of you for 1 minute and take 3d6 psychic damage. On a success they take half damage and aren't frightened. You can do this a number of number of times equal to your Wisdom modifier (minimum of 1) and you regain all expended uses when you finish a long rest.</p>
+            </description>
+            <sheet usage="{{improved-soul-taste:uses}}/Long Rest">
+                <description>Immediately after you acquire a new soul flavor, all enemies within 60 feet of you of the same creature type as the one you collected must make a Wisdom saving throw (DC {{spellcasting:dc:wis}}. or be frightened of you for 1 minute and take 3d6 psychic damage. On a success they take half damage and aren't frightened.</description>
+            </sheet>
+            <rules>
+                <stat name="improved-soul-taste:uses" value="1" bonus="base" />
+                <stat name="improved-soul-taste:uses" value="wisdom:modifier" bonus="base" />
+            </rules>
+        </element>
+
+</elements>
