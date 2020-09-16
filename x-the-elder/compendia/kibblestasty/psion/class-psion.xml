@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>KibblesTasty’s Psion Class</name>
-        <update version="0.0.1">
+        <update version="0.0.3">
             <file name="class-psion.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/kibblestasty/psion/class-psion.xml" />
         </update>
     </info>
@@ -87,6 +87,13 @@
             <div element="ID_KT_PSION_CLASS_FEATURE_PSION_INNATE_PSIONICS" />
             <div element="ID_KT_PSION_CLASS_FEATURE_PSION_THIRD_DISCIPLINE" />
             <div element="ID_KT_PSION_CLASS_FEATURE_PSION_ASCENSION" />
+            <h2>MULTICLASSING</h2>
+            <p>Should you want to multiclass into Psion, the prerequisites and proficiencies are listed below:</p>
+            <ul>
+                <li>Prerequisite: 13 Intelligence</li>
+                <li>Proficiencies gained: Psionics</li>
+            </ul>
+            <p class="indent">Psionic powers can be weird, strange, and rare. Your DM may place additional restrictions or requirements into multiclassing into Psionic classes.</p>
         </description>
         <setters>
             <set name="hd">d6</set>
@@ -98,6 +105,7 @@
             <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_KT_PSION_MULTICLASS_PSION" />
             <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_KT_PSION_MULTICLASS_PSION" />
             <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" requirements="!ID_KT_PSION_MULTICLASS_PSION" />
+            <grant type="Proficency" id="ID_KT_PSION_PROFICIENCY_SKILL_PSIONICS" />
             <select type="Proficiency" name="Skill Proficiency, Psion" number="2" supports="Skill,Kibbles Psion" requirements="!ID_KT_PSION_MULTICLASS_PSION" />
             <grant type="Class Feature" id="ID_KT_PSION_CLASS_FEATURE_PSION_PSIONIC_ARCHETYPE" level="1" />
             <grant type="Class Feature" id="ID_KT_PSION_CLASS_FEATURE_PSION_PSIONICS" level="1" />
@@ -113,7 +121,7 @@
             <prerequisite>Intelligence 13</prerequisite>
             <requirements>[int:13]</requirements>
             <setters>
-                <set name="multiclass proficiencies">None</set>
+                <set name="multiclass proficiencies">Psionics</set>
             </setters>
             <rules>
                 <grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
@@ -315,16 +323,12 @@
         </element>
         <element name="Full Awakening" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_FULL_AWAKENING">
             <description>
-                <p>Starting at 14th level, you can briefly fully awaken your expanded mind to true comprehension. As a bonus action, you can expend 3 Psi Points to gain the effect of <em>foresight</em> until the start of your next turn.</p>
-                <div class="reference">
-                    <div element="ID_PHB_SPELL_FORESIGHT" />
-                </div>
+                <p>Starting at 14th level, you can briefly fully awaken your expanded mind to true comprehension. As a bonus action, you can expend 2 Psi Points to gain advantage on all saving throws and attack rolls until the start of your next turn.</p>
             </description>
-            <sheet action="Bonus Action" usage="3 Psi Points">
-                <description>You can expend 3 Psi Points to gain the effect of foresight until the start of your next turn.</description>
+            <sheet action="Bonus Action" usage="2 Psi Points">
+                <description>You can expend 2 Psi Points to gain advantage on all saving throws and attack rolls until the start of your next turn.</description>
             </sheet>
             <rules>
-                <grant type="Spell" id="ID_PHB_SPELL_FORESIGHT" />
             </rules>
         </element>
 
@@ -339,7 +343,7 @@
             <div element="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_RAMPAGING_POWER" />
             <div element="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_EMPOWERED_PSIONICS" />
             <div element="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_UNCONTROLLABLE_MIND" />
-            <div element="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_CRUSHING_POWER" />
+            <div element="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_UNSTOPPABLE_RAMPAGE" />
         </description>
         <sheet display="false">
             <description></description>
@@ -350,7 +354,7 @@
             <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_RAMPAGING_POWER" level="3" />
             <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_EMPOWERED_PSIONICS" level="6" />
             <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_UNCONTROLLABLE_MIND" level="10" />
-            <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_CRUSHING_POWER" level="14" />
+            <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_UNSTOPPABLE_RAMPAGE" level="14" />
         </rules>
     </element>
         <element name="Unshackled Power" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_UNSHACKLED_POWER">
@@ -380,10 +384,10 @@
         </element>
         <element name="Rampaging Power" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_RAMPAGING_POWER">
             <description>
-                <p>Starting at 3rd level, you gain a d4 rampage die. Once per turn during your turn when make a damage roll, you can add this rampage die to the damage roll. If you dealt damage during your last turn, your rampage die becomes a d6, increasing with each subsequent turn you deal damage by one step, up to a d12; if you did not deal damage during your last turn, it becomes a d4 once more.</p>
+                <p>Starting at 3rd level, you gain a d4 rampage die. Once per turn during your turn when you make a damage roll, you can add this rampage die to the damage roll. If you dealt damage during your last turn, your rampage die becomes a d6, increasing with each subsequent turn you deal damage by one step, up to a d12; if you did not deal damage during your last turn or become incapacitated, it becomes a d4 once more. If a maintain a continuous d12 rampage die for more than one minute, you gain a level of exhaustion.</p>
             </description>
             <sheet>
-                <description>You gain a d4 rampage die. Once per turn during your turn when make a damage roll, you can add this rampage die to the damage roll. If you dealt damage during your last turn, your rampage die becomes a d6, increasing with each subsequent turn you deal damage by one step, up to a d12; if you did not deal damage during your last turn, it becomes a d4 once more.</description>
+                <description>You gain a d4 rampage die. Once per turn during your turn when you make a damage roll, you can add this rampage die to the damage roll. If you dealt damage during your last turn, your rampage die increases one step each turn, up to a d12; if you did not deal damage during your last turn or become incapacitated, it decreases. If a maintain a continuous d12 rampage die for more than one minute, you gain a level of exhaustion.</description>
             </sheet>
         </element>
         <element name="Empowered Psionics" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_EMPOWERED_PSIONICS">
@@ -396,18 +400,18 @@
         </element>
         <element name="Uncontrollable Mind" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_UNCONTROLLABLE_MIND">
             <description>
-                <p>Starting at 10th level, the strength of your rampaging mind is such that others’ attempts to control it are futile. You gain immunity to charm, fear, and effects that would control your mind while your rampage die is a d6 or more.</p>
+                <p>Starting at 10th level, the strength of your rampaging mind is such that others’ attempts to control it are futile. You gain immunity to charm, fear, and effects that would control your mind while your rampage die is a d8 or more.</p>
             </description>
             <sheet>
-                <description>You gain immunity to charm, fear, and effects that would control your mind while your rampage die is a d6 or more.</description>
+                <description>You gain immunity to charm, fear, and effects that would control your mind while your rampage die is a d8 or more.</description>
             </sheet>
         </element>
-        <element name="Crushing Power" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_CRUSHING_POWER">
+        <element name="Unstoppable Rampage" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_UNLEASHED_UNSTOPPABLE_RAMPAGE">
             <description>
-                <p>Starting at 14th level, as a bonus action you can expend 1 Psi Points to exert crushing force and buffeting winds around yourself in a radius of 15 feet until the start of your next turn. Creatures that enter the area for the first time or start their turn in it must make a Strength saving throw. On failure, you can make move them 5 feet in any direction, or make them fall prone.</p>
+                <p>Starting at 14th level, when an attack reduces you to zero hit points, you can roll your rampage die. If your roll + your Constitution modifier is higher than the excess damage you took, you are instead reduced to one hit point. You can expend 2 psi points to roll an additional rampage die, adding it to the result.</p>
             </description>
-            <sheet action="Bonus Action" usage="1 Psi Point">
-                <description>You can expend 1 Psi Points to exert crushing force and buffeting winds around yourself in a radius of 15 feet until the start of your next turn. Creatures that enter the area for the first time or start their turn in it must make a Strength saving throw. On failure, you can make move them 5 feet in any direction, or make them fall prone.</description>
+            <sheet action="Bonus Action" usage="2 Psi Points">
+                <description>Starting at 14th level, when an attack reduces you to 0 hit points, you can roll your rampage die. If your roll + {{constitution:modifier}} is higher than the excess damage you took, you are instead reduced to 1 hit point. You can expend 2 psi points to roll an additional rampage die, adding it to the result.</description>
             </sheet>
         </element>
 
@@ -457,18 +461,18 @@
         </element>
         <element name="Balance of Power" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_TRANSCENDED_BALANCE_OF_POWER">
             <description>
-                <p>Starting at 3rd level, every time you grant a creature temporary hit points, you can add the hit points granted to a stored pool. The maximum value of the pool is your psion level. The next time you deal damage, you can expend the pool to add damage equal to the stored value. This stored damage is lost if not spent within 1 minute.</p>
+                <p>Starting at 3rd level, when you use a psionic ability (power or spell) to restore hit points or grant temporary hit points, you can add the hit points granted to a stored pool. The maximum value of the pool is your psion level, and any points beyond the maximum are lost. The next time you make a damage roll, you can expend the pool to add damage equal to the stored value to one target effected by the damage roll. This stored damage is lost if not spent within 1 minute.</p>
             </description>
             <sheet>
-                <description>Every time you grant a creature temporary hit points, you can add the hit points granted to a stored pool. The maximum value of the pool is {{level:psion}}. The next time you deal damage, you can expend the pool to add damage equal to the stored value. This stored damage is lost if not spent within 1 minute.</description>
+                <description>When you use a psionic ability (power or spell) to restore hit points or grant temporary hit points, you can add the hit points granted to a stored pool, to a maximum of {{level:psion}} and any points beyond the maximum are lost. The next time you make a damage roll, you can expend the pool to add damage equal to the stored value to one target effected by the damage roll. This stored damage is lost if not spent within 1 minute.</description>
             </sheet>
         </element>
         <element name="Perfected Enhancement" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_TRANSCENDED_PERFECTED_ENHANCEMENT">
             <description>
-                <p>Starting at 6th level, when you grant temporary hit points with a psionic power you can add half your Intelligence modifier (rounded down) to the temporary hit points gained by one creature.</p>
+                <p>Starting at 6th level, when you grant temporary hit points with a psionic power you can add half your Intelligence modifier (rounded up) to the temporary hit points gained by one creature.</p>
             </description>
             <sheet>
-                <description>When you grant temporary hit points with a psionic power you can add half your Intelligence modifier (rounded down) to the temporary hit points gained by one creature.</description>
+                <description>When you grant temporary hit points with a psionic power you can add half your Intelligence modifier (rounded up) to the temporary hit points gained by one creature.</description>
             </sheet>
         </element>
         <element name="Mental Control" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_TRANSCENDED_MENTAL_CONTROL">
@@ -597,25 +601,17 @@
 
   <!-- Feats -->
     <element name="Psionic Mind" type="Feat" source="Kibbles’ Psion" id="ID_KT_PSION_FEAT_PSIONIC_MIND">
-        <requirements>(ID_KT_PSION_CLASS_FEATURE_PSION_PSIONICS||ID_KT_PSION__FEAT_PSIONIC_ADEPT)</requirements>
+        <requirements>ID_INTERNAL_GRANT_KT_PSIONIC_DISCIPLINE</requirements>
         <prerequisite>The ability to use at least one Psionic Discipline</prerequisite>
         <description>
             <p class="flavor">Prerequisite: The ability to use at least one Psionic Discipline</p>
-            <p>You tap deeper into your psionic potential drawing out a new talent. You gain the following benefits:</p>
-            <ul>
-                <li>Your Intelligence, Wisdom, or Charisma score increases by 1.</li>
-                <li>You can select a psionic talent from the Psion class psionic talent list. You cannot select a talent you already know, or one that requires a level restriction, even if you are already of that level.</li>
-            </ul>
-            <p class="indent">You can take this feat multiple times, selecting a different talent each time.</p>
+            <p>You tap deeper into your psionic potential drawing out a new talent. You can select a psionic talent from the Psion class psionic talent list. You cannot select a talent you already know, or one that requires a level restriction, even if you are already of that level.</p>
         </description>
-        <setters>
-            <set name="allow duplicate">true</set>
-        </setters>
         <sheet display="false">
             <description></description>
         </sheet>
         <rules>
-            <select type="Ability Score Improvement" name="Psionic Mind" supports="Ability Score Improvement,(Intelligence||Wisdom||Charisma)" />
+                <select type="Class Feature" name="Psionic Talent" supports="Kibbles Psionic Talent,!Level Minimum" />
         </rules>
     </element>
     <element name="Psionic Adept" type="Feat" source="Kibbles’ Psion" id="ID_KT_PSION_FEAT_PSIONIC_ADEPT">
@@ -630,37 +626,70 @@
         </sheet>
         <rules>
             <stat name="psi:points" value="1" />
+            <grant type="Grants" id="ID_INTERNAL_GRANT_KT_PSIONIC_DISCIPLINE" />
             <select type="Class Feature" name="Psionic Discipline (Psionic Adept)" supports="Kibbles Psionic Discipline" />
         </rules>
     </element>
     <element name="Inner Power" type="Feat" source="Kibbles’ Psion" id="ID_KT_PSION_FEAT_INNER_POWER_PSI">
-        <requirements>[psi:points:1],!ID_KT_PSION_FEAT_INNER_POWER_KI</requirements>
+        <requirements>[psi:points:1],![ki:points:1]</requirements>
         <prerequisite>At least 1 psi or ki point</prerequisite>
         <description>
             <p class="flavor">Prerequisite: At least 1 psi or ki point</p>
             <p>Your body is powered by the inner powers that course through it. Your maximum psi or ki points (if you have both, your choice of which) increases by one.</p>
-            <p class="indent">At the end of your turn after spending one or more psi or ki points during your turn, you heal for 1 hit point as the power revitalizes your body.</p>
+            <p class="indent">At the end of your turn after spending one or more psi or ki points during your turn, you heal for a number of hit points equal to the psi or ki points spent, up to a maximum of your Constitution modifier (minimum 1).</p>
         </description>
         <sheet>
-            <description>At the end of your turn after spending one or more psi or ki points during your turn, you heal for 1 hit point as the power revitalizes your body.</description>
+            <description>At the end of your turn after spending one or more psi or ki points during your turn, you heal for a number of hit points equal to the psi or ki points spent, up to a maximum {{inner-power:hp}}.</description>
         </sheet>
         <rules>
             <stat name="psi:points" value="1" />
+            <stat name="inner-power:hp" value="1" bonus="base" />
+            <stat name="inner-power:hp" value="constitution:modifier" bonus="base" />
         </rules>
     </element>
     <element name="Inner Power" type="Feat" source="Kibbles’ Psion" id="ID_KT_PSION_FEAT_INNER_POWER_KI">
-        <requirements>[ki:points:1],!ID_KT_PSION_FEAT_INNER_POWER_PSI</requirements>
+        <requirements>[ki:points:1],![psi:points:1]</requirements>
         <prerequisite>At least 1 psi or ki point</prerequisite>
         <description>
             <p class="flavor">Prerequisite: At least 1 psi or ki point</p>
             <p>Your body is powered by the inner powers that course through it. Your maximum psi or ki points (if you have both, your choice of which) increases by one.</p>
-            <p class="indent">At the end of your turn after spending one or more psi or ki points during your turn, you heal for 1 hit point as the power revitalizes your body.</p>
+            <p class="indent">At the end of your turn after spending one or more psi or ki points during your turn, you heal for a number of hit points equal to the psi or ki points spent, up to a maximum of your Constitution modifier (minimum 1).</p>
         </description>
         <sheet>
-            <description>At the end of your turn after spending one or more psi or ki points during your turn, you heal for 1 hit point as the power revitalizes your body.</description>
+            <description>At the end of your turn after spending one or more psi or ki points during your turn, you heal for a number of hit points equal to the psi or ki points spent, up to a maximum {{inner-power:hp}}.</description>
         </sheet>
         <rules>
             <stat name="ki:points" value="1" />
+            <stat name="inner-power:hp" value="1" bonus="base" />
+            <stat name="inner-power:hp" value="constitution:modifier" bonus="base" />
         </rules>
     </element>
+    <element name="War Psion" type="Feat" source="Kibbles’ Psion" id="ID_KT_PSION_FEAT_WAR_PSION">
+        <requirements>ID_INTERNAL_GRANT_KT_PSIONIC_DISCIPLINE</requirements>
+        <description>
+            <p class="flavor">Prerequisite: The ability to use at least one Psionic Discipline</p>
+            <p class="indent">You have mastered utilizing psionics in the midst of combat, learning techniques that grant you the following benefits:</p>
+            <ul>
+                <li>You have advantage on Constitution saving throws that you make to maintain your concentration on a psionic ability when you take damage.</li>
+                <li>You can perform the somatic components of psionic abilities even when you have weapons or a shield in one or both hands.</li>
+                <li>When a hostile creature’s movement provokes an opportunity attack from you, you can use your reaction to use a psionic discipline power or spell targeting the creature, rather than making an opportunity attack. The spell must have a casting time of 1 action and must target only that creature.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You have advantage on Constitution saving throws that you make to maintain your concentration on a psionic ability when you take damage. You can perform the somatic components of psionic abilities even when you have weapons or a shield in one or both hands. When a hostile creature’s movement provokes an opportunity attack from you, you can use your reaction to use a psionic discipline power or spell targeting the creature, rather than making an opportunity attack. The spell must have a casting time of 1 action and must target only that creature.</description>
+        </sheet>
+    </element>
+
+    <element name="Psionic Discipline" type="Grants" source="Internal" id="ID_INTERNAL_GRANT_KT_PSIONIC_DISCIPLINE" />
+
+    <element name="Psioncis" type="Proficiency" source="Kibbles’ Psion" id="ID_KT_PSION_PROFICIENCY_SKILL_PSIONICS">
+        <supports>Skill,Psion</supports>
+        <description>
+            <p>Psionics a new Intelligence based skill that serves to understand things of a Psionic nature as Arcana might understand things of an arcane nature. It is a skill to help you identify Psionic objects, phenomena and creatures.</p>
+        </description>
+        <sheet>
+            <description>You can {{proficiency}} to any check you make to identify Psionic objects, phenomena and creatures.</description>
+        </sheet>
+    </element>
+
 </elements>
