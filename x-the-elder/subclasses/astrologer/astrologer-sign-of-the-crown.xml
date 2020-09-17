@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Sign of the Crown Astral Sign</name>
+        <update version="0.0.1">
+            <file name="astrologer-sign-of-the-crown.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/astrologer/astrologer-sign-of-the-crown.xml" />
+        </update>
+    </info>
+    
+    <element name="Sign of the Crown" type="Source" source="Core" id="ID_BUNNYGEONMASTER_RDDT_SOURCE_SIGN_OF_THE_CROWN">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SOTC</set>
+            <set name="url">https://drive.google.com/file/d/11qLrlkX2zgx337uVICQVr-PCMyiDxRep/view</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="BM" url="https://www.reddit.com/user/BunnygeonMaster/">u/BunnygeonMaster</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200914</set>
+        </setters>
+    </element>
+
+    <element name="Sign of the Crown" type="Archetype" source="Sign of the Crown" id="ID_BM_SOTC_ARCHETYPE_ASTROLOGER_SIGN_OF_THE_CROWN">
+        <supports>Astrologer Astral Sign</supports>
+        <description>
+            <p>The Sign of the Crown depicts a brilliant, royal diadem, and it represents leadership. Astrologers affiliated with this sign are natural commanders who inspire their cohorts, defend their position, and strike fear into their enemies’ hearts.</p>
+            <h5 class="caption">SIGN OF THE CROWN SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Astrologer Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><em>zealous accusation</em></td></tr>
+                <tr><td>3rd</td><td><em>warding bond</em></td></tr>
+                <tr><td>5th</td><td><em>beacon of hope</em></td></tr>
+                <tr><td>7th</td><td><em>overwhelm</em></td></tr>
+                <tr><td>9th</td><td><em>vigorous surge</em></td></tr>
+            </table>
+            <div element="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_BONUS_PROFICIENCY" />
+            <div element="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_CROWN_OF_LEADERSHIP" />
+            <div element="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_SOVEREIGN_TERRITORY" />
+            <div element="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_HOLD_THE_LINE" />
+            <div element="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_ARIADNES_EDICT" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_BONUS_PROFICIENCY" level="1" />
+            <grant type="Archetype Feature" id="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_CROWN_OF_LEADERSHIP" level="1" />
+            <grant type="Archetype Feature" id="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_SOVEREIGN_TERRITORY" level="6" />
+            <grant type="Archetype Feature" id="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_HOLD_THE_LINE" level="10" />
+            <grant type="Archetype Feature" id="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_ARIADNES_EDICT" level="14" />
+            <grant type="Spell" id="ID_BM_SOTC_SPELL_ZEALOUS_ACCUSATION" spellcasting="Astrologer" known="true" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_WARDING_BOND" spellcasting="Astrologer" known="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_BEACON_OF_HOPE" spellcasting="Astrologer" known="true" level="5" />
+            <grant type="Spell" id="ID_BM_SOTC_SPELL_OVERWHELM" spellcasting="Astrologer" known="true" level="7" />
+            <grant type="Spell" id="ID_BM_SOTC_SPELL_VIGOROUS_SURGE" spellcasting="Astrologer" known="true" level="9" />
+        </rules>
+    </element>
+        <element name="Bonus Proficiency" type="Archetype Feature" source="Sign of the Crown" id="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_BONUS_PROFICIENCY">
+            <description>
+                <p>At 1st level, you gain proficiency in medium armor and in the Persuasion skill.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+            </rules>
+        </element>
+        <element name="Crown of Leadership" type="Archetype Feature" source="Sign of the Crown" id="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_CROWN_OF_LEADERSHIP">
+            <description>
+                <p>At 1st level, the Sign of the Crown grants you the power to mystically inspire your allies to swift maneuvers and firm endurance. As a bonus action, you can issue a command to a friendly creature other than yourself that is within 30 feet of you and can see or hear you. It gains temporary hit points equal to 1d6 + half your astrologer level (rounded up), and it can use its reaction to move up to half its speed without provoking opportunity attacks.</p>
+                <p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum once), and you regain expended uses when you finish a long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{crown-of-leadership:uses}}/Long Rest">
+                <description>You can issue a command to a friendly creature other than yourself that is within 30 feet of you and can see or hear you. It gains 1d6 + {{level:astrologer:half:up}} temporary hit points, and it can use its reaction to move up to half its speed without provoking opportunity attacks.</description>
+            </sheet>
+            <rules>
+                <stat name="crown-of-leadership:uses" value="1" bonus="base" />
+                <stat name="crown-of-leadership:uses" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Sovereign Territory" type="Archetype Feature" source="Sign of the Crown" id="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_SOVEREIGN_TERRITORY">
+            <description>
+                <p>Starting at 6th level, while you have temporary hit points from your Fixed Star feature, the area within 10 feet of you is difficult terrain for hostile creatures.</p>
+            </description>
+            <sheet>
+                <description>While you have temporary hit points from your Fixed Star feature, the area within 10 feet of you is difficult terrain for hostile creatures.</description>
+            </sheet>
+        </element>
+        <element name="Hold the Line" type="Archetype Feature" source="Sign of the Crown" id="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_HOLD_THE_LINE">
+            <description>
+                <p>Beginning at 10th level, the Crown fortifies you against the tides of battle. While you have temporary hit points from your Fixed Star feature, you gain resistance to bludgeoning, piercing, and slashing damage.</p>
+            </description>
+            <sheet>
+                <description>While you have temporary hit points from your Fixed Star feature, you gain resistance to bludgeoning, piercing, and slashing damage.</description>
+            </sheet>
+        </element>
+        <element name="Ariadne’s Edict" type="Archetype Feature" source="Sign of the Crown" id="ID_BM_SOTC_ARCHETYPE_FEATURE_CROWN_ARIADNES_EDICT">
+            <description>
+                <p>At 14th level, the stars bestow upon you the cosmic right of rule, and your very voice reverberates with that authority. You can choose for your voice to be up to three times louder than normal whenever you say anything.</p>
+                <p class="indent">Additionally, as an action you can issue a thunderous decree, ordering your foes to halt. This is is audible for 500 feet, and each creature of your choice within 30 feet of you that can hear you must make a Wisdom saving throw against your astrologer spell save DC. On a failed save, a creature takes 5d12 thunder damage and must stand at attention. Until the end of its next turn, its movement speed becomes 0, and it is incapacitated. On a successful save, a creature takes half as much damage and experiences no other effect.</p>
+                <p class="indent">Once you issue this decree, you must finish a long rest before you can do so again.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can issue a thunderous decree, ordering your foes to halt. This is is audible for 500 feet, and each creature of your choice within 30 feet of you that can hear you must make a Wisdom saving throw against your astrologer spell save DC. On a failed save, a creature takes 5d12 thunder damage and must stand at attention. Until the end of its next turn, its movement speed becomes 0, and it is incapacitated. On a successful save, a creature takes half as much damage and experiences no other effect. Additionally, you can choose for your voice to be up to three times louder than normal whenever you say anything.</description>
+            </sheet>
+        </element>
+
+    <element name="Zealous Accusation" type="Spell" source="Sign of the Crown" id="ID_BM_SOTC_SPELL_ZEALOUS_ACCUSATION">
+        <supports>Paladin</supports>
+        <description>
+            <p>You point at one humanoid within range and condemn its actions, ordering it to yield. It must succeed on a Wisdom saving throw or be forced to stand at attention for the duration. An affected creature's movement speed becomes 0, and it can't make weapon attacks for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">1</set>
+            <set name="school">enchantment</set>
+            <set name="isRitual">false</set>
+            <set name="time">1 action</set>
+            <set name="range">60 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="isConcentration">true</set>
+        </setters>
+    </element>
+    <element name="Overwhelm" type="Spell" source="Sign of the Crown" id="ID_BM_SOTC_SPELL_OVERWHELM">
+        <supports>Bard, Paladin, Sorcerer, Wizard</supports>
+        <description>
+            <p>You make yourself seem mighty and awe-inspiring to certain creatures, filling them with reverential terror. Each creature in a 10-foot cube within range must make a Charisma saving throw. A target automatically succeeds on this saving throw if it can't see you. On a failed save, a target must kneel, becoming prone, and it can't stand for the duration. A creature affected by this spell can repeat the saving throw at the end of each of its turns, ending the effect on a success.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">4</set>
+            <set name="school">enchantment</set>
+            <set name="isRitual">false</set>
+            <set name="time">1 action</set>
+            <set name="range">60 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">true</set>
+            <set name="hasMaterialComponent">true</set>
+            <set name="materialComponent">an hand crafted from iron</set>
+            <set name="duration">Concentration, up to 1 minute</set>
+            <set name="isConcentration">true</set>
+        </setters>
+    </element>
+    <element name="Vigorous Surge" type="Spell" source="Sign of the Crown" id="ID_BM_SOTC_SPELL_VIGOROUS_SURGE">
+        <supports>Bard</supports>
+        <description>
+            <p>You magically invigorate your comrades with a stirring command. Each allied creature within range can use its reaction to make a single weapon attack or cast a single cantrip. If a creature's attack or cantrip deals damage, it deals an extra 2d6 damage. Each creature also gains temporary hit points equal to your spellcasting ability modifier.</p>
+        </description>
+        <setters>
+            <set name="keywords"></set>
+            <set name="level">5</set>
+            <set name="school">enchantment</set>
+            <set name="isRitual">false</set>
+            <set name="time">1 action</set>
+            <set name="range">30 feet</set>
+            <set name="hasVerbalComponent">true</set>
+            <set name="hasSomaticComponent">false</set>
+            <set name="hasMaterialComponent">false</set>
+            <set name="materialComponent">component</set>
+            <set name="duration">Instantaneous</set>
+            <set name="isConcentration">false</set>
+        </setters>
+    </element>
+
+</elements>

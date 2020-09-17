@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Sign of the Scorpion Astral Sign</name>
+        <update version="0.0.1">
+            <file name="astrologer-sign-of-the-scorpion.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/astrologer/astrologer-sign-of-the-scorpion.xml" />
+        </update>
+    </info>
+    
+    <element name="Sign of the Scorpion" type="Source" source="Core" id="ID_NOTTHESMOOZE_GMBINDER_SOURCE_Sign of the Scorpion">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SOTS</set>
+            <set name="url">https://www.gmbinder.com/share/-MGDmZk8jqh1HuPT63j2</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="NTS" url="https://www.gmbinder.com/profile/notthesmoooze">NotTheSmooze</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200914</set>
+        </setters>
+    </element>
+
+    <element name="Sign of the Scorpion" type="Archetype" source="Sign of the Scorpion" id="ID_NTS_SOTS_ARCHETYPE_ASTROLOGER_SIGN_OF_THE_SCORPION">
+        <supports></supports>
+        <description>
+            <p>The Sign of the Scorpion, depicting a scorpion poised to sting, represents cunning. An astrologer connected to this sign is able to command a swarm of spies, create terrible poisons, and strike with unexpected power and deadliness.</p>
+            <h5 class="caption">SIGN OF THE SCORPION SPELLS</h5>
+            <table>
+                <thead>
+                    <tr><td>Astrologer Level</td><td>Spells</td></tr>
+                </thead>
+                <tr><td>1st</td><td><em>wrathful smite</em></td></tr>
+                <tr><td>3rd</td><td><em>pass without trace</em></td></tr>
+                <tr><td>5th</td><td><em>blinding smite</em></td></tr>
+                <tr><td>7th</td><td><em>giant insect</em></td></tr>
+                <tr><td>9th</td><td><em>insect plague</em></td></tr>
+            </table>
+            <div element="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_BONUS_PROFICIENCIES" />
+            <div element="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_EARTH_ALIGNMENT" />
+            <div element="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_SCORPIONS_CUNNING" />
+            <div element="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_INTOXICATING_STING" />
+            <div element="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_TOXIC_BLOOD" />
+            <div element="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_HEART_OF_THE_SCORPION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_BONUS_PROFICIENCIES" level="1" />
+            <grant type="Archetype Feature" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_EARTH_ALIGNMENT" level="1" />
+            <grant type="Archetype Feature" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_SCORPIONS_CUNNING" level="1" />
+            <grant type="Archetype Feature" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_INTOXICATING_STING" level="6" />
+            <grant type="Archetype Feature" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_TOXIC_BLOOD" level="10" />
+            <grant type="Archetype Feature" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_HEART_OF_THE_SCORPION" level="14" />
+            <grant type="Spell" id="ID_PHB_SPELL_WRATHFUL_SMITE" spellcasting="Astrologer" known="true" level="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_PASS_WITHOUT_TRACE" spellcasting="Astrologer" known="true" level="3" />
+            <grant type="Spell" id="ID_PHB_SPELL_BLINDING_SMITE" spellcasting="Astrologer" known="true" level="5" />
+            <grant type="Spell" id="ID_PHB_SPELL_GIANT_INSECT" spellcasting="Astrologer" known="true" level="7" />
+            <grant type="Spell" id="ID_PHB_SPELL_INSECT_PLAGUE" spellcasting="Astrologer" known="true" level="9" />
+        </rules>
+    </element>
+        <element name="Bonus Proficiencies" type="Archetype Feature" source="Sign of the Scorpion" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_BONUS_PROFICIENCIES">
+            <description>
+                <p>When you choose this sign at 1st level, you gain proficiency with martial weapons, the poisoner's kit, and the Stealth skill.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+            </rules>
+        </element>
+        <element name="Earth Alignment" type="Archetype Feature" source="Sign of the Scorpion" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_EARTH_ALIGNMENT">
+            <description>
+                <p>At 1st level, you gain an additional Cosmic Alignment option.</p>
+                <p class="indent"><b>Earth Alignment.</b> Make a weapon attack. On a hit, you can end a Cosmic Ritual and spend a number of star points up to the maximum number you can spend to cast a spell. For each star point you spend, you deal an extra 1d8 radiant damage to the target, to a maximum of 6d8.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Scorpion's Cunning" type="Archetype Feature" source="Sign of the Scorpion" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_SCORPIONS_CUNNING">
+            <description>
+                <p>At 1st level, you gain the ability to create a scorpion (MM 337) in your empty hand as an action. Your scorpions are friendly to you and your companions, and obey your commands.</p>
+                <p class="indent">In combat, any scorpion you create takes its turn on your initiative. While within 500 feet of any of your scorpions, you can use the senses of any of those scorpions, in addition to your own senses. A scorpion disappears when you finish a long rest. It disappears early if it is reduced to 0 hit points, or if you choose to dismiss it (no action required).</p>
+                <p class="indent">Beginning when you reach 10th level, you can use the senses of your scorpions while within 1 mile of them.</p>
+                <p class="indent">You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain any expended uses when you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="{{scorpions-cunning:uses}}/Long Rest">
+                <description>You can create a scorpion in your empty hand. Your scorpions are friendly to you and your companions, and obey your commands. any scorpion you create takes its turn on your initiative. While within 500 feet of any of your scorpions, you can use the senses of any of those scorpions, in addition to your own senses. A scorpion disappears when you finish a long rest.</description>
+                <description level="10">You can create a scorpion in your empty hand. Your scorpions are friendly to you and your companions, and obey your commands. any scorpion you create takes its turn on your initiative. While within 1 mile of any of your scorpions, you can use the senses of any of those scorpions, in addition to your own senses. A scorpion disappears when you finish a long rest.</description>
+            </sheet>
+            <rules>
+                <stat name="scorpions-cunning:uses" value="1" bonus="base" />
+                <stat name="scorpions-cunning:uses" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Intoxicating Sting" type="Archetype Feature" source="Sign of the Scorpion" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_INTOXICATING_STING">
+            <description>
+                <p>Starting at 6th level, when a creature within 5 feet of you hits you with a melee attack, you can use your reaction to create a spectral tail and sting the attacker. Make a melee spell attack. On a hit, the attacker has disadvantage on any further attack rolls against you until the end of the turn, and takes poison damage equal to your Intelligence modifier (minimum of 1).</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When a creature within 5 feet of you hits you with a melee attack, you can create a spectral tail and sting the attacker. Make a melee spell attack. On a hit, the attacker has disadvantage on any further attack rolls against you until the end of the turn, and takes {{scorpions-cunning:uses}} poison damage.</description>
+            </sheet>
+        </element>
+        <element name="Toxic Blood" type="Archetype Feature" source="Sign of the Scorpion" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_TOXIC_BLOOD">
+            <description>
+                <p>At 10th level, your blood turns to venom. You are immune to poison damage, and you can't be poisoned.</p>
+            </description>
+            <sheet>
+                <description>You can't be poisoned.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" />
+            </rules>
+        </element>
+        <element name="Heart of the Scorpion" type="Archetype Feature" source="Sign of the Scorpion" id="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_HEART_OF_THE_SCORPION">
+            <description>
+                <p>Starting at 14th level, you can call down poison from the heart of the scorpion. When a scorpion you control hits with its sting, or when you hit a creature with Intoxicating Sting, you can lace the attack with poison from the scorpion's heart.</p>
+                <p class="indent">The target must make a Constitution saving throw against your astrologer spell save DC, taking 10d8 poison damage on a failed save, or half as much on a successful one. On a failed save, the target is also poisoned for 1 hour. Poison from the heart ignores resistance to poison damage, and if it reduces the target to 50 hit points or fewer, the target dies.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When a scorpion you control hits with its sting, or when you hit a creature with Intoxicating Sting, the target must make a Constitution saving throw (DC {{spellcasting:dc:int}}) or take 10d8 poison damage on a failed save, or half as much on a successful one. On a failed save, the target is also poisoned for 1 hour. Poison from the heart ignores resistance to poison damage, and if it reduces the target to 50 hit points or fewer, the target dies.</description>
+            </sheet>
+        </element>
+
+    <append id="ID_CD_ASTROLOGER_CLASS_FEATURE_ASTROLOGER_COSMIC_ALIGNMENT">
+        <rules>
+            <grant type="Class Feature" id="ID_CD_ASTROLOGER_CLASS_FEATURE_ASTROLOGER_COSMIC_ALIGNMENT_EARTH" level="1" requirements="ID_NTS_SOTS_ARCHETYPE_FEATURE_SCORPION_EARTH_ALIGNMENT" />
+        </rules>
+    </append>
+    
+</elements>
