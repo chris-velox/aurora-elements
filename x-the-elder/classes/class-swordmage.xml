@@ -68,10 +68,9 @@
             <h5 class="caption">EQUIPMENT</h5>
             <p>You start with the following equipment, in addition to the equipment granted by your background:</p>
             <ul>
-                <li>(a) a martial weapon and a shield or (b) two martial weapons</li>
+                <li>(a) two martial weapons or (b) a longbow and a quiver of 20 arrows</li>
                 <li>(a) a scholar’s pack or (b) an explorer’s pack</li>
                 <li>(a) scale mail or (b) leather armor</li>
-                <li></li>
             </ul>
         <!-- class table here -->
             <h5 class="caption">THE SWORDMAGE</h5>
@@ -259,8 +258,9 @@
         <element name="Arcane Step" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_ARCANE_STEP">
             <compendium display="false" />
             <description>
-                <p>Starting at 2nd level, you can teleport around the battlefield. You have a number of teleportation charges that replenish when you take a long rest. Your teleportation charges equal your swordmage level x 3.</p>
-                <p class="indent">As a bonus action, you can draw power from the charges to expend one charge to teleport up to 5 feet to an unoccupied space that you can see. You can expend additional charges to increase the teleportation range by up to 5 more feet per additional charge expended, up to the maximum amount of charges remaining.</p>
+                <p>Starting at 2nd level, you gain a pool of charges you can expend to teleport around the battlefield.</p>
+                <p class="indent">As a bonus action, you may expend any number of available charges to teleport to an unoccupied space that you can see. You can teleport up to 5ft per charge expended in this manner.</p>
+                <p class="indent">The number of charges in this pool is equal to your swordmage level x 3. These charges replenish on a long rest.</p>
             </description>
             <sheet action="Bonus Action" usage="{{arcane-step:charges}} charges/Long Rest">
                 <description>You draw power from the pool to teleport a 5 feet per charge spent, up to the maximum amount remaining in your pool, to an unoccupied space that you can see.</description>
@@ -283,9 +283,9 @@
                     <thead>
                         <tr><td>Spell School</td><td>Damage Type</td></tr>
                     </thead>
-                    <tr><td>Abjuration, Conjuration or Transmutation</td><td>force</td></tr>
+                    <tr><td>Abjuration or Transmutation</td><td>force</td></tr>
                     <tr><td>Divination, Enchantment, or Illusion</td><td>psychic</td></tr>
-                    <tr><td>Evocation</td><td>a type the spell dealt, or force damage if the spell didn’t deal damage</td></tr>
+                    <tr><td>Conjuration or Evocation</td><td>a type the spell dealt, or force damage if the spell didn’t deal damage</td></tr>
                     <tr><td>Necromancy</td><td>necrotic</td></tr>
                 </table>
             </description>
@@ -405,14 +405,14 @@
         </element>-->
         <element name="Battle Awareness" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_BATTLE_AWARENESS">
             <description>
-                <p>When you reach 10th level, you are ready to leap into battle at a moment’s notice. You gain a bonus to your initiative rolls equal to your Intelligence modifier (minimum of one).</p>
-                <p class="indent">At the start of your first turn of each combat, before you take any actions, and if you aren’t surprised, you can teleport up to your Arcane Leap range to an unoccupied space you can see.</p>
+                <p>When you reach 10th level, you are ready to leap into battle at a moment’s notice. You gain a bonus to your initiative rolls equal to your Intelligence modifier.</p>
+                <p class="indent">At the start of your first turn of each combat, before you take any actions, and if you aren’t surprised, you can teleport up to 30 feet to an unoccupied space you can see.</p>
             </description>
             <sheet>
-                <description>At the start of your first turn of each combat, before you take any actions, and if you aren’t surprised, you can teleport up to {{arcane-leap:range}} to an unoccupied space you can see.</description>
+                <description>At the start of your first turn of each combat, before you take any actions, and if you aren’t surprised, you can teleport up to 30 feet to an unoccupied space you can see.</description>
             </sheet>
             <rules>
-                <stat name="initiative" value="pierce-defenses:uses" level="10" />
+                <stat name="initiative" value="intelligence:modifier" level="10" />
             </rules>
         </element>
         <element name="Greater Blade Magic" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_GREATER_BLADE_MAGIC">
@@ -425,11 +425,11 @@
         </element>
         <element name="Spell Parry" type="Class Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_CLASS_FEATURE_SWORDMAGE_SPELL_PARRY">
             <description>
-                <p>By 14th level, you can thwart harmful magic with your weapon. When you see a creature within 60 feet of you target you and only you with a spell, you can make a weapon attack roll against the creature's spell DC. On a success, the creature's spell fails and has no effect.</p>
+                <p>By 14th level, you can thwart harmful magic with your weapon. When you see a creature within 60 feet of you target you and only you with a spell, you can make a weapon attack roll against the creature’s spell save DC. On a success, the creature’s spell fails and has no effect.</p>
                 <p class="indent">You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain expended uses when you finish a long rest.</p>
             </description>
             <sheet usage="{{spell-parry:uses}}/Long Rest">
-                <description>When you see a creature within 60 feet of you target you and only you with a spell, you can make a weapon attack roll against the creature's spell DC. On a success, the creature's spell fails and has no effect.</description>
+                <description>When you see a creature within 60 feet of you target you and only you with a spell, you can make a weapon attack roll against the creature’s spell DC. On a success, the creature’s spell fails and has no effect.</description>
             </sheet>
             <rules>
                 <stat name="spell-parry:uses" value="1" bonus="base" />
@@ -902,10 +902,10 @@
             <element name="Planar Affinity: Water" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_PLANAR_AFFINITY_WATER">
                 <compendium display="false" />
                 <description>
-                    <p>You gain a swim speed equal to your walking speed, and can breathe underwater. When you damage a creature with a spell that's not a cantrip, you can pull or push the creature up to 10 feet.</p>
+                    <p>You gain a swim speed equal to your walking speed, and can breathe underwater. When you damage a creature with a spell that’s not a cantrip, you can pull or push the creature up to 10 feet.</p>
                 </description>
                 <sheet>
-                    <description>You can breathe underwater. When you damage a creature with a spell that's not a cantrip, you can pull or push the creature up to 10 feet.</description>
+                    <description>You can breathe underwater. When you damage a creature with a spell that’s not a cantrip, you can pull or push the creature up to 10 feet.</description>
                 </sheet>
                 <rules>
                     <stat name="speed:swim" value="speed" bonus="base" />
@@ -917,7 +917,7 @@
                 <ul>
                     <li><strong>Air:</strong> While your Aegis is active, and when you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.</li>
                     <li><strong>Earth:</strong> When you activate your Aegis, you gain the toughness of mountains. You gain temporary hit points equal to your Swordmage level plus your Intelligence modifier (minimum of 1).</li>
-                    <li><strong>Fire:</strong> While your Aegis is active, you ignore other creature's resistance to fire damage, and you treat immunity to fire damage as resistance.</li>
+                    <li><strong>Fire:</strong> While your Aegis is active, you ignore other creature’s resistance to fire damage, and you treat immunity to fire damage as resistance.</li>
                     <li><strong>Water:</strong> While your Aegis is active, when you hit a creature of a large or smaller size with a melee weapon attack, they must succeed on a Strength saving throw against your swordmage spell save DC or be knocked prone.</li>
                 </ul>
             </description>
@@ -957,10 +957,10 @@
             <element name="Greater Planar Affinity: Fire" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELEMENTALIST_GREATER_PLANAR_AFFINITY_FIRE">
                 <compendium display="false" />
                 <description>
-                    <p>While your Aegis is active, you ignore other creature's resistance to fire damage, and you treat immunity to fire damage as resistance.</p>
+                    <p>While your Aegis is active, you ignore other creature’s resistance to fire damage, and you treat immunity to fire damage as resistance.</p>
                 </description>
                 <sheet usage="While Aegis Active">
-                    <description>You ignore other creature's resistance to fire damage, and you treat immunity to fire damage as resistance.</description>
+                    <description>You ignore other creature’s resistance to fire damage, and you treat immunity to fire damage as resistance.</description>
                 </sheet>
                 <rules>
                 </rules>
@@ -1119,11 +1119,11 @@
         </element>
         <element name="Defensive Rotation" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_GUARDIAN_DEFENSIVE_ROTATION">
             <description>
-                <p>Starting at 7th level, you can teleport allies out of danger. As a bonus action, you can teleport a willing creature that you can see within 60 feet of you to an unoccupied space up to 60 feet away. You can optionally teleport to the creature's original space as part of this same bonus action.</p>
-                <p class="indent">Once you use this feature, you can't use it again until after a short or long rest.</p>
+                <p>Starting at 7th level, you can teleport allies out of danger. As a bonus action, you can teleport a willing creature that you can see within 60 feet of you to an unoccupied space up to 60 feet away. You can optionally teleport to the creature’s original space as part of this same bonus action.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until after a short or long rest.</p>
             </description>
             <sheet action="Bonus Action" usage="1/Short Rest">
-                <description>You can teleport a willing creature that you can see within 60 feet of you to an unoccupied space up to 60 feet away. You can optionally teleport to the creature's original space as part of this same bonus action.</description>
+                <description>You can teleport a willing creature that you can see within 60 feet of you to an unoccupied space up to 60 feet away. You can optionally teleport to the creature’s original space as part of this same bonus action.</description>
             </sheet>
             <rules>
                 <stat name="bulwarking-magic:temp-hp" value="1" bonus="base" />
@@ -1289,7 +1289,7 @@
         <element name="Aegis" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_METEOR_KNIGHT_AEGIS">
             <description>
                 <p>When you take this archetype at 3rd level, you gain the following Aegis option:</p>
-                <p class="indent"><strong>Aegis of Gravity:</strong> As a bonus action, you can activate this Aegis to infuse yourself with the strength of the stars. For the duration of this Aegis, you gain advantage on Strength (Athletics) and Dexterity (Acrobatics) checks. Also, when a creature within 30 feet of you that you can see moves, you can use your reaction to force the creature to make a Strength saving throw against your spell save DC. On a failure, the creature's speed drops to 0 for the rest of the turn. This stops any movement they may have been taking. Your Aegis lasts for 1 minute, ending early if you fall unconscious or die.</p>
+                <p class="indent"><strong>Aegis of Gravity:</strong> As a bonus action, you can activate this Aegis to infuse yourself with the strength of the stars. For the duration of this Aegis, you gain advantage on Strength (Athletics) and Dexterity (Acrobatics) checks. Also, when a creature within 30 feet of you that you can see moves, you can use your reaction to force the creature to make a Strength saving throw against your spell save DC. On a failure, the creature’s speed drops to 0 for the rest of the turn. This stops any movement they may have been taking. Your Aegis lasts for 1 minute, ending early if you fall unconscious or die.</p>
             </description>
             <sheet action="Bonus Action" alt="Aegis of Gravity">
                 <description>You can activate this Aegis for 1 minute. you gain advantage on Athletics and Acrobatics checks. When a creature within 30 feet of you that you can see moves, you can use your reaction to force the creature to make a Strength saving throw against your spell save DC. On a failure, the creature’s speed drops to 0 for the rest of the turn. This stops any movement they may have been taking.</description>
@@ -1432,8 +1432,8 @@
         </element>
         <element name="Divining Arrow" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELDRITCH_SNIPER_DIVINING_ARROW">
             <description>
-                <p>Starting at 7th level, you can rapidly shoot an ethereal arrow to to reveal hidden enemies. As a bonus action, you shoot a ranged weapon to an unoccupied space within 120 feet from you. Everything within 30 feet of the space is visible to all, even through solid matter, for 1 minute. Solid objects within that radius appear transparent and don't prevent light from passing through them. The vision can penetrate 1 foot of stone, 1 inch of common metal, or up to 3 feet of wood or dirt. Thicker substances block the vision, as does a thin sheet of lead.</p>
-                <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+                <p>Starting at 7th level, you can rapidly shoot an ethereal arrow to to reveal hidden enemies. As a bonus action, you shoot a ranged weapon to an unoccupied space within 120 feet from you. Everything within 30 feet of the space is visible to all, even through solid matter, for 1 minute. Solid objects within that radius appear transparent and don’t prevent light from passing through them. The vision can penetrate 1 foot of stone, 1 inch of common metal, or up to 3 feet of wood or dirt. Thicker substances block the vision, as does a thin sheet of lead.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
             </description>
             <sheet>
                 <description></description>
@@ -1449,7 +1449,7 @@
                 <p class="indent">Freezing Arrow: The creature takes 4d8 cold damage and must succeed on a Consistution saving throw against your spell save DC or be restrained for 1 minute. At the end of each of its turns, the target can make another Constitution saving throw. On a success, the target is no longer restrained.</p>
                 <p class="indent">Storm Arrow: The creature takes 4d8 lightning damage and you can choose any creatures within 15 feet of the original target. Those creatures must succeed on a Dexterity saving throw against your spell save DC or take 4d8 lightning damage. On a success, they take half damage.</p>
                 <p class="indent">Thundering Arrow: The creature takes 4d8 thunder damage. The target and all creatures within 20 feet of it must succeed on a Strength saving throw against your spell save DC or be knocked prone.</p>
-                <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
             </description>
             <sheet>
                 <description></description>
@@ -1460,7 +1460,7 @@
         <element name="Death Arrow" type="Archetype Feature" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_ARCHETYPE_FEATURE_ELDRITCH_SNIPER_DEATH_ARROW">
             <description>
                 <p>At 20th level, when you hit a creature with a ranged weapon attack, you can infuse the attack with deadly necromancy. The target must make a Consitution saving throw against your spell save DC. On a failure, the target takes 8d10 necrotic damage and half as much on a success. Additionally, if this attack reduces the target to 50 hit points of fewer, the target dies.</p>
-                <p class="indent">Once you use this feature, you can't use it again until you finish a long rest.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
             </description>
             <sheet>
                 <description></description>
@@ -1520,10 +1520,16 @@
     <append id="ID_PHB_SPELL_BLADE_WARD">
         <supports>Swordmage</supports>
     </append>
+    <append id="ID_SCAG_SPELL_BOOMING_BLADE">
+        <supports>Swordmage</supports>
+    </append>
     <append id="ID_PHB_SPELL_FIRE_BOLT">
         <supports>Swordmage</supports>
     </append>
     <append id="ID_XGTE_SPELL_FROSTBITE">
+        <supports>Swordmage</supports>
+    </append>
+    <append id="ID_SCAG_SPELL_GREEN_FLAME_BLADE">
         <supports>Swordmage</supports>
     </append>
     <append id="ID_PHB_SPELL_LIGHT">
@@ -1720,7 +1726,7 @@
     <element name="Arcing Weapon" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_ARCING_WEAPON">
         <supports>Swordmage</supports>
         <description>
-            <p>Deadly electricty covers your blade thats arcs from one foe to another. As part of the action used to cast this spell, you must make an attack with a weapon against one creature within your weapon's range, otherwise the spell fails. On a hit, the target suffers the attack's normal effects, and you can choose a creature within 15 feet of the target. The second target takes lightning damage equal to your Intelligence modifier.</p>
+            <p>Deadly electricty covers your blade thats arcs from one foe to another. As part of the action used to cast this spell, you must make an attack with a weapon against one creature within your weapon’s range, otherwise the spell fails. On a hit, the target suffers the attack’s normal effects, and you can choose a creature within 15 feet of the target. The second target takes lightning damage equal to your Intelligence modifier.</p>
             <p class="indent">At 5th level, the attack deals extra lightning damage to the first target equal to 1d8 for a melee weapon or 1d6 for a ranged weapon. The damage roll increases to 2d8 or 2d6 at 11th level, and 3d8 or 3d6 at 17th level.</p>
         </description>
         <setters>
@@ -1741,7 +1747,7 @@
     <element name="Burning Weapon" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_BURNING_WEAPON">
         <supports>Swordmage</supports>
         <description>
-            <p>Your weapon crackles with hot flames as you strike down your foe to burn through their defenses. As part of the action used to cast this spell, you must make an attack with a weapon against one creature within your weapon's range, otherwise the spell fails. On a hit, the target suffers the attack's normal effects, and the target's defenses are weakened until the start of your next turn. The next attack against the target before then, adds a d4 to the attack roll, and the spell ends.</p>
+            <p>Your weapon crackles with hot flames as you strike down your foe to burn through their defenses. As part of the action used to cast this spell, you must make an attack with a weapon against one creature within your weapon’s range, otherwise the spell fails. On a hit, the target suffers the attack’s normal effects, and the target’s defenses are weakened until the start of your next turn. The next attack against the target before then, adds a d4 to the attack roll, and the spell ends.</p>
             <p class="indent">At 5th level, the attack deals extra fire damage to the target equal to 1d8 for a melee weapon or 1d6 for a ranged weapon. The damage roll increases to 2d8 or 2d6 at 11th level, and 3d8 or 3d6 at 17th level.</p>
         </description>
         <setters>
@@ -1762,7 +1768,7 @@
     <element name="Freezing Weapon" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_FREEZING_WEAPON">
         <supports>Swordmage</supports>
         <description>
-            <p>As part of the action used to cast this spell, you must make an attack with a weapon against one creature within your weapon's range, otherwise the spell fails. On a hit, the target suffers the attack's normal effects, and your weapon covers the target in frost. The creature subtracts a d4 from their next attack roll.</p>
+            <p>As part of the action used to cast this spell, you must make an attack with a weapon against one creature within your weapon’s range, otherwise the spell fails. On a hit, the target suffers the attack’s normal effects, and your weapon covers the target in frost. The creature subtracts a d4 from their next attack roll.</p>
             <p class="indent">At 5th level, the attack deals extra cold damage to the target equal to 1d8 for a melee weapon or 1d6 for a ranged weapon. The damage roll increases to 2d8 or 2d6 at 11th level, and 3d8 or 3d6 at 17th level.</p>
         </description>
         <setters>
@@ -1783,7 +1789,7 @@
     <element name="Mind Weapon" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_MIND_WEAPON">
         <supports>Swordmage</supports>
         <description>
-            <p>As part of the action used to cast this spell, you must make an attack with a weapon against one creature within your weapon's range, otherwise the spell fails. On a hit, the target suffers the attack's normal effects, and psychic energy assaults their mind. The creature subtracts a d4 from their next saving throw.</p>
+            <p>As part of the action used to cast this spell, you must make an attack with a weapon against one creature within your weapon’s range, otherwise the spell fails. On a hit, the target suffers the attack’s normal effects, and psychic energy assaults their mind. The creature subtracts a d4 from their next saving throw.</p>
             <p class="indent">At 5th level, the attack deals extra psychic damage to the target equal to 1d8 for a melee weapon or 1d6 for a ranged weapon. The damage roll increases to 2d8 or 2d6 at 11th level, and 3d8 or 3d6 at 17th level.</p>
         </description>
         <setters>
@@ -1804,7 +1810,7 @@
     <element name="Mountain Weapon" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_MOUNTAIN_WEAPON">
         <supports>Swordmage</supports>
         <description>
-            <p>As part of the action used to cast this spell, you must make an attack with a weapon against one creature within the spell's range, otherwise the spell fails. On a hit, the target suffers the attack's normal effects, and they are blasted by earthen elements. If the creature is of a large or smaller size, you can push the creature back up to 5 feet.</p>
+            <p>As part of the action used to cast this spell, you must make an attack with a weapon against one creature within the spell’s range, otherwise the spell fails. On a hit, the target suffers the attack’s normal effects, and they are blasted by earthen elements. If the creature is of a large or smaller size, you can push the creature back up to 5 feet.</p>
             <p class="indent">At 5th level, the attack deals extra bludgeoning damage to the target equal to 1d8 for a melee weapon or 1d6 for a ranged weapon. The damage roll increases to 2d8 or 2d6 at 11th level, and 3d8 or 3d6 at 17th level.</p>
         </description>
         <setters>
@@ -1825,7 +1831,7 @@
     <element name="Protective Blade" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_PROTECTIVE_BLADE">
         <supports>Swordmage</supports>
         <description>
-			<p>As part of the action used to cast this spell, you must make a melee attack with a weapon against one creature within the spell's range, otherwise the spell fails. On a hit, the target suffers the attack's normal effects, and it becomes sheathed in abjuring energy until the start of your next turn. If the target willingly attacks a creature other than you before then, the attack is made with disadvantage, and the spell ends.</p>
+			<p>As part of the action used to cast this spell, you must make a melee attack with a weapon against one creature within the spell’s range, otherwise the spell fails. On a hit, the target suffers the attack’s normal effects, and it becomes sheathed in abjuring energy until the start of your next turn. If the target willingly attacks a creature other than you before then, the attack is made with disadvantage, and the spell ends.</p>
 			<p class="indent">At 5th level, the melee attack deals an extra 1d8 force damage to the target. The damage roll increases by 1d8 at 11th level and 17th level.</p>
         </description>
         <setters>
@@ -1845,7 +1851,7 @@
     <element name="Vampiric Weapon" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_VAMPIRIC_WEAPON">
         <supports>Swordmage</supports>
         <description>
-            <p>As part of the action used to cast this spell, you must make an attack with a weapon against one creature within the spell's range, otherwise the spell fails. On a hit, the target suffers the attack's normal effects, and you sap their life force. You gain temporary hit points equal to your spellcasting modifier. The temporary hit points disappear at the start of your next turn.</p>
+            <p>As part of the action used to cast this spell, you must make an attack with a weapon against one creature within the spell’s range, otherwise the spell fails. On a hit, the target suffers the attack’s normal effects, and you sap their life force. You gain temporary hit points equal to your spellcasting modifier. The temporary hit points disappear at the start of your next turn.</p>
             <p class="indent">At 5th level, the attack deals extra necrotic damage to the target equal to 1d8 for a melee weapon or 1d6 for a ranged weapon. The damage roll increases to 2d8 or 2d6 at 11th level, and 3d8 or 3d6 at 17th level.</p>
         </description>
         <setters>
@@ -1948,7 +1954,7 @@
     <element name="Electrifying Swordburst" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_ELECTRIFYING_SWORDBURST">
         <supports>Swordmage</supports>
         <description>
-            <p>Empowering your blade with crackling electricity, you hold your weapon aloft as lightning strikes out at your surrounding foes. Each creature within range, other than you, must make a Dexterity saving throw. On a failed save, the creature takes 3d8 lightning damage and it can't take reactions until the start of its next turn. On a successful save, the creature takes half as much damage and can take reactions. The creature has disadvantage on the saving throw if they are wearing armor made of metal.</p>
+            <p>Empowering your blade with crackling electricity, you hold your weapon aloft as lightning strikes out at your surrounding foes. Each creature within range, other than you, must make a Dexterity saving throw. On a failed save, the creature takes 3d8 lightning damage and it can’t take reactions until the start of its next turn. On a successful save, the creature takes half as much damage and can take reactions. The creature has disadvantage on the saving throw if they are wearing armor made of metal.</p>
             <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.</p>
         </description>
         <setters>
@@ -2070,7 +2076,7 @@
     <element name="Flaming Swordburst" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_FLAMING_SWORDBURST">
         <supports>Swordmage</supports>
         <description>
-            <p>Raging fire bursts from your blade to engulf your foes in an inferno. Each creature within range, other than you, must make a Dexterity saving throw. On a failed save, the creature takes 4d6 fire damage and is burning. On a successful save, a creature takes half the damage and isn't burning. While a target is burning, it takes 2d6 fire damage at the start of its turn. At the end of each of its turns, the target can make another Dexterity saving throw. On a success, the burning ends on the target.</p>
+            <p>Raging fire bursts from your blade to engulf your foes in an inferno. Each creature within range, other than you, must make a Dexterity saving throw. On a failed save, the creature takes 4d6 fire damage and is burning. On a successful save, a creature takes half the damage and isn’t burning. While a target is burning, it takes 2d6 fire damage at the start of its turn. At the end of each of its turns, the target can make another Dexterity saving throw. On a success, the burning ends on the target.</p>
             <p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, the initial damage increases by 1d6 for each slot level above 3rd.</p>
         </description>
         <setters>
@@ -2175,7 +2181,7 @@
         <supports>Swordmage</supports>
         <description>
             <p>You slam your weapon into the ground and seismic energy erupts from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. The area inside the aura is difficult terrain to everyone except you.</p>
-            <p class="indent">When the aura appears, each creature of your choice that is within the aura's area must succeed on a Dexterity saving throw or be knocked prone. Each creature of your choice that starts their turn in the aura must also make the same Dexterity saving throw.</p>
+            <p class="indent">When the aura appears, each creature of your choice that is within the aura’s area must succeed on a Dexterity saving throw or be knocked prone. Each creature of your choice that starts their turn in the aura must also make the same Dexterity saving throw.</p>
         </description>
         <setters>
             <set name="keywords"></set>
@@ -2195,7 +2201,7 @@
     <element name="Nightmare Swordburst" type="Spell" source="The Swordmage Class" id="ID_FAN66_SWORDMAGE_SPELL_NIGHTMARE_SWORDBURST">
         <supports>Swordmage</supports>
         <description>
-            <p>A powerful wave of terrifying visions burst from your blade as your foes see you as their worst nightmare. Each creature you choose within the area must make a Wisdom saving throw. On a failed save, the creature takes 4d10 psychic damage and is frightened of you for the spell's duration. On a successful save, a creature takes half the damage and isn't frightened.</p>
+            <p>A powerful wave of terrifying visions burst from your blade as your foes see you as their worst nightmare. Each creature you choose within the area must make a Wisdom saving throw. On a failed save, the creature takes 4d10 psychic damage and is frightened of you for the spell’s duration. On a successful save, a creature takes half the damage and isn’t frightened.</p>
             <p class="indent">At the end of each of its turns, a frightened creature repeats the saving throw and the creature is no longer frightened on a successful save.</p>
         </description>
         <setters>
