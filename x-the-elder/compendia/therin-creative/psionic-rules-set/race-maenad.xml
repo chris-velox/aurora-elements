@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Maenad Race</name>
+        <update version="0.0.1">
+            <file name="race-maenad.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/therin-creative/psionic-rules-set/race-maenad.xml" />
+        </update>
+    </info>
+    
+    <element name="Maenad" type="Race" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACE_MAENAD">
+        <description>
+            <p>Maenads are a race of graceful people who temper their wild emotional nature. They practice calmness and are reserved, preferring to be direct but inobtrusive.</p>
+            <h5>RADIANT AND GRACEFUL</h5>
+            <p>Maenads are tall and graceful humanoids that look similar to humans and half-elves. However, they possess lustrous skins that sparkles as if dusted in light-giving crystals and hair made of cords of luminescent strands. Maenads appear bright in the dark, lighting up the area around them when their skin and hair go uncovered.</p>
+            <p class="indent">Maenads average over 6 feet tall and weight an average of 200 pounds. Females are only slightly smaller than males. They have wiry builds and graceful features, leading some to compare them to elves. Maenad eyes appear as solid blocks of blue, green, or violet light due to their luminescent quality.</p>
+            <h5>EMOTIONAL YET RESERVED</h5>
+            <p>Maenads appear tranquil and calm to most onlookers, but are naturally extremely emotional. They have learned to restrain their primal nature to such a degree that outsiders believe them to be emotionally stunted or cold. When maenads become emotional, often from duress, their skin and hair fluctuate between darker and brighter hues at rapid speed.</p>
+            <p class="indent">Maenads choose to be restrained and discreet, often forgoing the spotlight. They prefer minimalist communication, not speaking a sentence when a word would suffice, or simply gesturing when a word isn’t required. When living among others, maenads must practice discipline and focus, lest the fury of their turbulent emotions erupts.</p>
+            <h5>MAENAD NAMES</h5>
+            <p>Maenad names are given and used much like human names. Every maenad has at least a given name and a family name.</p>
+            <p class="indent"><b>Male Names:</b> Alberik, Alrik, Basilius, Erland, Gunnar, Isak, Ragnor, Rurik, Tor</p>
+            <p class="indent"><b>Female Names:</b> Agaton, Annalina, Blenda, Eleonora, Gala, Lena, Malin, Ragnara, Vedis</p>
+            <p class="indent"><b>Family Names:</b> Coebelliantus, Hjalmar, Kolbjorn, Perchnosius, Torborn, Valborg, Valentin, Xaljorn</p>
+            <h4>MAENAD TRAITS</h4>
+            <p>Your maenad character has a number of traits from its emotional nature and luminescent properties.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Wisdom score increases by 2, and your Charisma score increases by 1.</p>
+            <p class="indent"><strong><em>Age.</em></strong> Maenads mature around the same rate as a human, but can live twice as long.</p>
+            <p class="indent"><strong><em>Alignment.</em></strong> Practicing discipline and restraint, maenads are often lawful, but those who indulge their natural emotional whims gravitate toward chaos. Maenads living in civilization prefer orderly ones, but also prefer that considerations for individuals be given full deference.</p>
+            <p class="indent"><strong><em>Size.</em></strong> Maenads are tall at 6 and a half feet tall and weigh around 200 pounds. Your size is Medium.</p>
+            <p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+            <p class="indent"><strong><em>Bioluminescence.</em></strong> Your skin and hair shed bright light up to 10 feet from your and dim light up to 30 feet from you. You can suppress this light by taking a bonus action. This lasts until you take another bonus action to restore your luminescence or are rendered unconscious.</p>
+            <p class="indent"><strong><em>Light Sight.</em></strong> You can see up to 30 feet from you while in darkness as if in dim light, even when suppressing your Bioluminescence trait. Your eyes glow faintly while viewing in darkness, but not enough for unaware creatures to take notice.</p>
+            <p class="indent"><strong><em>Overdrive.</em></strong> Once per day you can use your action to psionically shout, hitting each creature you choose within 10 feet of you. The creature must make a Constitution saving throw. The save DC is equal to 8 + your Wisdom modifier + your proficiency bonus. If you have a power or spell save DC, use that instead if it is higher. A creature takes 2d6 thunder damage on a failed save, or half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.</p>
+            <p class="indent"><strong><em>Outburst.</em></strong> Once per day you can increase your Strength by 2 for a number of rounds equal to your Wisdom bonus (minimum one round). While your Strength is increased in this way, you have the psionic focus condition.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common and Maenad. The Maenad script is roughly based on Elven.</p>
+        </description>
+        <sheet display="false" />
+        <setters>
+            <set name="names" type="male">Alberik, Alrik, Basilius, Erland, Gunnar, Isak, Ragnor, Rurik, Tor</set>
+            <set name="names" type="female">Agaton, Annalina, Blenda, Eleonora, Gala, Lena, Malin, Ragnara, Vedis</set>
+            <set name="names" type="surname">Coebelliantus, Hjalmar, Kolbjorn, Perchnosius, Torborn, Valborg, Valentin, Xaljorn</set>
+            <set name="names-format">{{name}} {{surname}}</set>
+            <set name="height" modifier="2d10">4'8"</set>
+            <set name="weight" modifier="2d4">110 lb.</set>
+        </setters>
+        <rules>
+            <stat name="wisdom" value="2" />
+            <stat name="charisma" value="1" />
+            <stat name="innate speed" value="30" bonus="base"/>
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_MAENAD" />
+            <grant type="Racial Trait" id="ID_TC_PRS_RACIAL_TRAIT_MAENAD_BIOLUMINESCENCE" />
+            <grant type="Racial Trait" id="ID_TC_PRS_RACIAL_TRAIT_MAENAD_LIGHT_SIGHT" />
+            <grant type="Racial Trait" id="ID_TC_PRS_RACIAL_TRAIT_MAENAD_OVERDRIVE" />
+            <grant type="Racial Trait" id="ID_TC_PRS_RACIAL_TRAIT_MAENAD_OUTBURST" />
+        </rules>
+    </element>
+        <element name="Bioluminescence" type="Racial Trait" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACIAL_TRAIT_MAENAD_BIOLUMINESCENCE">
+            <description>
+                <p>Your skin and hair shed bright light up to 10 feet from your and dim light up to 30 feet from you. You can suppress this light by taking a bonus action. This lasts until you take another bonus action to restore your luminescence or are rendered unconscious.</p>
+            </description>
+            <sheet>
+                <description>Your skin and hair shed bright light up to 10 feet from your and dim light up to 30 feet from you. You can suppress this light by taking a bonus action. This lasts until you take another bonus action to restore your luminescence or are rendered unconscious.</description>
+            </sheet>
+        </element>
+        <element name="Light Sight" type="Racial Trait" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACIAL_TRAIT_MAENAD_LIGHT_SIGHT">
+            <description>
+                <p>You can see up to 30 feet from you while in darkness as if in dim light, even when suppressing your Bioluminescence trait. Your eyes glow faintly while viewing in darkness, but not enough for unaware creatures to take notice.</p>
+            </description>
+            <sheet>
+                <description>You can see up to 30 feet from you while in darkness as if in dim light, even when suppressing your Bioluminescence trait. Your eyes glow faintly while viewing in darkness, but not enough for unaware creatures to take notice.</description>
+            </sheet>
+        </element>
+        <element name="Overdrive" type="Racial Trait" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACIAL_TRAIT_MAENAD_OVERDRIVE">
+            <description>
+                <p>Once per day you can use your action to psionically shout, hitting each creature you choose within 10 feet of you. The creature must make a Constitution saving throw. The save DC is equal to 8 + your Wisdom modifier + your proficiency bonus. If you have a power or spell save DC, use that instead if it is higher. A creature takes 2d6 thunder damage on a failed save, or half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.</p>
+            </description>
+            <sheet usage="1/day" action="Action">
+                <description>You can psionically shout, hitting each creature you choose within 10 feet of you. The creature must make a Constitution saving throw. The save DC is {{overdrive:save-dc}}. If you have a power or spell save DC, use that instead if it is higher. A creature takes {{overdrive:damage-dice}}d6 thunder damage on a failed save, or half as much damage on a successful one.</description>
+            </sheet>
+            <rules>
+                <stat name="overdrive:save-dc" value="8" />
+                <stat name="overdrive:save-dc" value="wisdom:modifier" />
+                <stat name="overdrive:save-dc" value="proficiency" />
+                <stat name="overdrive:damage-dice" value="2" level="1"/>
+                <stat name="overdrive:damage-dice" value="1" level="6"/>
+                <stat name="overdrive:damage-dice" value="1" level="11"/>
+                <stat name="overdrive:damage-dice" value="1" level="16"/>
+            </rules>
+        </element>
+        <element name="Outburst" type="Racial Trait" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACIAL_TRAIT_MAENAD_OUTBURST">
+            <description>
+                <p>Once per day you can increase your Strength by 2 for a number of rounds equal to your Wisdom bonus (minimum one round). While your Strength is increased in this way, you have the psionic focus condition.</p>
+            </description>
+            <sheet usage="1/day">
+                <description>Once per day you can increase your Strength by 2 for a {{outburst:duration}} rounds. While your Strength is increased in this way, you have the psionic focus condition.</description>
+            </sheet>
+            <rules>
+                <stat name="outburst:duration" value="1" bonus="base" />
+                <stat name="outburst:duration" value="wisdom:modifier" bonus="base" />
+            </rules>
+        </element>
+
+	<element name="Maenad" type="Language" source="Player’s Handbook" id="ID_LANGUAGE_MAENAD">
+		<supports>Exotic</supports>
+		<description>
+			<p>Typically spoken by maenads.</p>
+		</description>
+		<setters>
+			<set name="standard">true</set>
+			<set name="speakers">Maenad</set>
+			<set name="script">Elvish</set>
+		</setters>
+	</element>
+
+</elements>

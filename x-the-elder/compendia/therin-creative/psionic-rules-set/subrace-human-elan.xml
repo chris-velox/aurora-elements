@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Elan Human Subrace</name>
+        <update version="0.0.1">
+            <file name="subrace-human-elan.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/therin-creative/psionic-rules-set/subrace-human-elan.xml" />
+        </update>
+    </info>
+    
+    <element name="Elan" type="Race Variant" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACE_VARIANT_ELAN">
+        <supports>Human</supports>
+        <description>
+            <p>Elans aren’t born, they’re made. Prospective elans are selected from a pool of applicants and screened by a council comprised of the most esteemed elan of a society. Those selected undergo a special psionic process and emerge as elan.</p>
+            <p class="indent">Due to their selectiveness, elans are often of above average appearance and posses physical traits matching the whims of the elan council. Different societies may prefer certain superficial traits to others. Elans are especially long-lived, living for centuries by making routine use of their Repletion trait.</p>
+            <p class="indent">Elans organize themselves into societies, often secret, that are run by an elite council. Each society has its own norms and customs, which are kept only amongst members of that society. When among outsiders, elans tend to take on traditional customs.</p>
+            <p class="indent"></p>
+            <h4>ELAN TRAITS</h4>
+            <p>As an elan, you share the same traits as a human, except for the Ability Score Increase trait.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> You don’t gain the normal human ability score increase. Instead, you get a +2 bonus to Intelligence, Wisdom, or Charisma. You may not use the human variant rule. Whichever ability you increase is your manifesting ability for your elan power.</p>
+            <p class="indent"><strong><em>Naturally Psionic.</em></strong> You know one psionic power from the following: accelerated healing, adaptability, energy storm, kinetic barrier, mislead, precognition, psychic domination, or remote sight. You have 2 power points to manifest this power and can spend power points up to half your character level on a single power. If you have a manifesting ability from a class, you may use your extra 2 power points to manifest your class powers, but follow your class rules for spending power points when you do so.</p>
+            <p class="indent"><strong><em>Resistance.</em></strong> While you have the psionic focus condition, you can use your reaction when you are the target of an effect that requires you to make a Wisdom or Charisma saving throw to make that save with a +2 bonus.</p>
+            <p class="indent"><strong><em>Resilience.</em></strong> While you have the psionic focus condition, you can use your reaction when you take damage to reduce that damage by 2. You can expend 1 power point to increase this amount by 1 point per power point expended. If you can manifest psionic powers by using spell slots, you instead, increase this amount by 2 points per spell slot level expended.</p>
+            <p class="indent"><strong><em>Repletion.</em></strong> You can sustain yourself without food or drink for 24 hours by expending 2 power points (or a 1st-level spell slot if you can use spell slots to manifest powers). You can expend your power points from your Naturally Psionic trait to feed this ability.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Racial Trait" id="ID_TC_PRS_RACIAL_TRAIT_ELAN_NATURALLY_PSIONIC" />
+            <grant type="Racial Trait" id="ID_TC_PRS_RACIAL_TRAIT_ELAN_RESISTANCE" />
+            <grant type="Racial Trait" id="ID_TC_PRS_RACIAL_TRAIT_ELAN_RESILIENCE" />
+            <grant type="Racial Trait" id="ID_TC_PRS_RACIAL_TRAIT_ELAN_REPLETION" />
+            <select type="Racial Trait" name="Manifesting Ability" supports="ID_TC_PRS_RACIAL_TRAIT_ELAN_INTELLIGENCE|ID_TC_PRS_RACIAL_TRAIT_ELAN_WISDOM|ID_TC_PRS_RACIAL_TRAIT_ELAN_CHARISMA" />
+        </rules>
+    </element>
+        <element name="Intelligence" type="Racial Trait" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACIAL_TRAIT_ELAN_INTELLIGENCE">
+            <compendium display="false" />
+            <description>
+                <p>Intelligence is your manifesting ability.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Elan" ability="Intelligence" prepare="false" allowReplace="false">
+                <list>TC Elan</list>
+            </spellcasting>
+            <rules>
+                <stat name="intelligence" value="2" />
+                <stat name="spellcasting:dc:elan" value="spellcasting:dc:int" />
+            </rules>
+        </element>
+        <element name="Wisdom" type="Racial Trait" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACIAL_TRAIT_ELAN_WISDOM">
+            <compendium display="false" />
+            <description>
+                <p>Wisdom is your manifesting ability.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Elan" ability="Wisdom" prepare="false" allowReplace="false">
+                <list>TC Elan</list>
+            </spellcasting>
+            <rules>
+                <stat name="wisdom" value="2" />
+                <stat name="spellcasting:dc:elan" value="spellcasting:dc:wis" />
+            </rules>
+        </element>
+        <element name="Charisma" type="Racial Trait" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACIAL_TRAIT_ELAN_CHARISMA">
+            <compendium display="false" />
+            <description>
+                <p>Charisma is your manifesting ability.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Elan" ability="Charisma" prepare="false" allowReplace="false">
+                <list>TC Elan</list>
+            </spellcasting>
+            <rules>
+                <stat name="charisma" value="2" />
+                <stat name="spellcasting:dc:elan" value="spellcasting:dc:cha" />
+            </rules>
+        </element>
+        <element name="Naturally Psionic" type="Racial Trait" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACIAL_TRAIT_ELAN_NATURALLY_PSIONIC">
+            <description>
+                <p>You know one psionic power from the following: accelerated healing, adaptability, energy storm, kinetic barrier, mislead, precognition, psychic domination, or remote sight. You have 2 power points to manifest this power and can spend power points up to half your character level on a single power. If you have a manifesting ability from a class, you may use your extra 2 power points to manifest your class powers, but follow your class rules for spending power points when you do so.</p>
+            </description>
+            <sheet>
+                <description>You have 2 power points to manifest this power and can spend up to {{level:half}} power points on a single power. You power DC is {{spellcasting:dc:elan}}.</description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Psionic Power, Elan" supports="TC Psionic Power, TC Elan" spellcasting="Elan" />
+            </rules>
+        </element>
+        <element name="Resistance" type="Racial Trait" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACIAL_TRAIT_ELAN_RESISTANCE">
+            <description>
+                <p>While you have the psionic focus condition, you can use your reaction when you are the target of an effect that requires you to make a Wisdom or Charisma saving throw to make that save with a +2 bonus.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>While you have the psionic focus condition, you can use your reaction when you are the target of an effect that requires you to make a Wisdom or Charisma saving throw to make that save with a +2 bonus.</description>
+            </sheet>
+        </element>
+        <element name="Resilience" type="Racial Trait" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACIAL_TRAIT_ELAN_RESILIENCE">
+            <description>
+                <p>While you have the psionic focus condition, you can use your reaction when you take damage to reduce that damage by 2. You can expend 1 power point to increase this amount by 1 point per power point expended. If you can manifest psionic powers by using spell slots, you instead, increase this amount by 2 points per spell slot level expended.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>While you have the psionic focus condition, you can use your reaction when you take damage to reduce that damage by 2. You can expend 1 power point to increase this amount by 1 point per power point expended. If you can manifest psionic powers by using spell slots, you instead, increase this amount by 2 points per spell slot level expended.</description>
+            </sheet>
+        </element>
+        <element name="Repletion" type="Racial Trait" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_RACIAL_TRAIT_ELAN_REPLETION">
+            <description>
+                <p>You can sustain yourself without food or drink for 24 hours by expending 2 power points (or a 1st-level spell slot if you can use spell slots to manifest powers). You can expend your power points from your Naturally Psionic trait to feed this ability.</p>
+            </description>
+            <sheet>
+                <description>You can sustain yourself without food or drink for 24 hours by expending 2 power points (or a 1st-level spell slot if you can use spell slots to manifest powers). You can expend your power points from your Naturally Psionic trait to feed this ability.</description>
+            </sheet>
+        </element>
+
+  <!-- Elan Psionic Powers List -->
+    <append id="ID_TC_PRS_PSIONIC_POWER_ACCELERATED_HEALING">
+        <supports>TC Elan</supports>
+    </append>
+    <append id="ID_TC_PRS_PSIONIC_POWER_ADAPTABILITY">
+        <supports>TC Elan</supports>
+    </append>
+    <append id="ID_TC_PRS_PSIONIC_POWER_ENERGY_STORM">
+        <supports>TC Elan</supports>
+    </append>
+    <append id="ID_TC_PRS_PSIONIC_POWER_KINETIC_BARRIER">
+        <supports>TC Elan</supports>
+    </append>
+    <append id="ID_TC_PRS_PSIONIC_POWER_MISLEAD">
+        <supports>TC Elan</supports>
+    </append>
+    <append id="ID_TC_PRS_PSIONIC_POWER_PRECOGNITION">
+        <supports>TC Elan</supports>
+    </append>
+    <append id="ID_TC_PRS_PSIONIC_POWER_PSYCHIC_DOMINATION">
+        <supports>TC Elan</supports>
+    </append>
+    <append id="ID_TC_PRS_PSIONIC_POWER_REMOTE_SIGHT">
+        <supports>TC Elan</supports>
+    </append>
+
+</elements>

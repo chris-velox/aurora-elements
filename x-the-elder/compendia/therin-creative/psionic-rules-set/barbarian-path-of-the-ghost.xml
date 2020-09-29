@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Primal Path of the Ghost</name>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-the-ghost.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/therin-creative/psionic-rules-set/barbarian-path-of-the-ghost.xml" />
+        </update>
+    </info>
+    
+    <element name="Path of the Ghost" type="Archetype" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_BARBARIAN_PATH_OF_THE_GHOST">
+        <supports>Primal Path</supports>
+        <description>
+            <p>Perhaps tragedy or a black heart shaped a barbarian of the Path of Ghost, forging it into a remorseless, purposeful killer. Such a barbarian takes on a frightening visage to terrify its target before striking a quick and deadly blow. Rage is more than just anger, it is psychically empowered hatred, focused only on destroying the barbarian’s enemies.</p>
+            <h5 class="caption">PATH OF THE GHOST FEATURES</h5>
+            <table>
+                <thead>
+                    <tr><td>Barbarian Level</td><td>Feature</td></tr>
+                </thead>
+                <tr><td>3rd</td><td><em>Focused Fury, Ghost Step (1 use), Sudden Strike (1d6)</em></td></tr>
+                <tr><td>6th</td><td><em>Frightful Attack, Ghost Step (2 uses), Sudden Strike (2d6)</em></td></tr>
+                <tr><td>10th</td><td><em>Ghost Sight, Ghost Step (3 uses, Ethereal), Sudden Strike (3d6)</em></td></tr>
+                <tr><td>14th</td><td><em>Frightful Cleave, Ghost Step (4 uses), Sudden Strike (4d6)</em></td></tr>
+            </table>
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_FOCUSED_FURY" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_GHOST_STEP" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_SUDDEN_STRIKE" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_FRIGHTFUL_ATTACK" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_GHOST_SIGHT" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_FRIGHTFUL_CLEAVE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_FOCUSED_FURY" level="3" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_GHOST_STEP" level="3" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_SUDDEN_STRIKE" level="3" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_FRIGHTFUL_ATTACK" level="6" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_GHOST_SIGHT" level="10" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_FRIGHTFUL_CLEAVE" level="14" />
+        </rules>
+    </element>
+        <element name="Focused Fury" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_FOCUSED_FURY">
+            <description>
+                <p>At 3rd level, when you use your Rage feature, you have psionic focus, so long as you maintain concentration. While you have psionic focus, you can concentrate (to maintain it) and are able to manifest psionic powers and use psychic class features.</p>
+                <p class="indent">If your concentration is broken, you revert to your Rage feature’s normal rules. If you can manifest a power that can be maintained, you can’t maintain it without ending your rage. You can’t cast spells during rage through this feature.</p>
+                <p class="indent"><b><i>Manifesting Ability.</i></b> Charisma is your manifesting ability for your Path of the Ghost psychic features.</p>
+                <p class="indent">You use your Charisma modifier when setting the saving throw DC for a psychic ability you manifest and when making an attack roll.</p>
+                <p style="text-align: center;"><b>Power save DC</b> = 8 + your proficiency bonus + your Charisma modifier</p>
+                <p style="text-align: center;"><b>Power attack modifier</b> = your proficiency bonus + your Charisma modifier</p>
+            </description>
+            <sheet>
+                <description>When you use your Rage feature, you have psionic focus, so long as you maintain concentration. While you have psionic focus, you can concentrate and are able to manifest psionic powers and use psychic class features.</description>
+            </sheet>
+        </element>
+        <element name="Ghost Step" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_GHOST_STEP">
+            <description>
+                <p>At 3rd level, you can take a bonus action to become invisible until the start of your next turn. You can take this action on the same turn you enter a rage using the same bonus action.</p>
+                <p class="indent">When you first gain this feature at 3rd level, you can use it once. You gain additional uses at 6th level (2 times), 10th level (3 times), and 14th level (4 times). You regain all uses of this feature after completing a long rest.</p>
+                <p class="indent">At 10th level, you can choose to enter the Ethereal Plane instead of becoming invisible.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{ghost-step:uses}}/Long Rest">
+                <description>You can become invisible until the start of your next turn. You can take this action on the same turn you enter a rage using the same bonus action.</description>
+                <description level="10">You can become invisible or enter the Ethereal Plane until the start of your next turn. You can take this action on the same turn you enter a rage using the same bonus action.</description>
+            </sheet>
+            <rules>
+                <stat name="ghost-step:uses" value="1" level="3" />
+                <stat name="ghost-step:uses" value="1" level="6" />
+                <stat name="ghost-step:uses" value="1" level="10" />
+                <stat name="ghost-step:uses" value="1" level="14" />
+            </rules>
+        </element>
+        <element name="Sudden Strike" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_SUDDEN_STRIKE">
+            <description>
+                <p>At 3rd level, while raging, you can catch a foe off guard and deliver a devastating blow. Once per turn, you can deal an extra 1d6 weapon damage to one creature you hit with a melee weapon attack if you have advantage on the attack roll.</p>
+                <p class="indent">The amount of extra damage increases as you gain levels in this class as shown on the Path of the Ghost table.</p>
+            </description>
+            <sheet>
+                <description>While raging, once per turn, you can deal an extra {{sudden-strike:damage-dice}}d6 weapon damage to one creature you hit with a melee weapon attack if you have advantage on the attack roll.</description>
+            </sheet>
+            <rules>
+                <stat name="sudden-strike:damage-dice" value="1" level="3" />
+                <stat name="sudden-strike:damage-dice" value="1" level="6" />
+                <stat name="sudden-strike:damage-dice" value="1" level="10" />
+                <stat name="sudden-strike:damage-dice" value="1" level="14" />
+            </rules>
+        </element>
+        <element name="Frightful Attack" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_FRIGHTFUL_ATTACK">
+            <description>
+                <p>Beginning at 6th level, you can panic onlookers and even frighten your victim to death by dealing damage with your Sudden Strike feature. Once per rage, but no more than five times per day, when you hit with an attack that would deal damage from your Sudden Strike feature, you can designate the sudden strike attack as a frightful attack. You transform your sudden strike extra damage to psychic damage. If you deal psychic damage to your target, it must make a Wisdom saving throw against your power save DC. If the save is failed, the target takes psychic damage equal to twice your barbarian level. If successful, the creature is unsettled, suffering a −2 penalty on attack rolls and ability checks, until the end of its next turn. Creatures immune to fear or with a challenge rating higher than your barbarian level automatically succeed their Wisdom save against your frightful attack.</p>
+                <p class="indent">In addition, each creature within 30 feet that sees the frightful attack, excluding the victim, you, and your allies, must make a Wisdom saving throw against your power save DC. If the save is failed, the creature is frightened for a number of rounds equal to your Charisma bonus (minimum 1). If the save is successful, the creature is unsettled until the end of its next turn.</p>
+            </description>
+            <sheet usage="5/day">
+                <description>When you hit with an attack that would deal damage from your Sudden Strike feature, you can designate the sudden strike attack as a frightful attack. You transform your sudden strike extra damage to psychic damage. If you deal psychic damage to your target, it must make a Wisdom saving throw against your power save DC. If the save is failed, the target takes {{frightful-attack:damage}} psychic damage. Each creature within 30 feet that sees the frightful attack, excluding the victim, you, and your allies, must make a Wisdom saving throw against your power save DC. If the save is failed, the creature is frightened for {{frightful-attack:duration}} rounds.</description>
+            </sheet>
+            <rules>
+                <stat name="frightful-attack:damage" value="level:barbarian" />
+                <stat name="frightful-attack:damage" value="level:barbarian" />
+                <stat name="frightful-attack:duration" value="1" bonus="base"/>
+                <stat name="frightful-attack:duration" value="charisma:modifier" bonus="base"/>
+            </rules>
+        </element>
+        <element name="Ghost Sight" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_GHOST_SIGHT">
+            <description>
+                <p>Starting at 10th level, whenever you have psionic focus, you can see ethereal and invisible creatures and objects as easily as you see visible creatures and objects within 60 feet of you.</p>
+            </description>
+            <sheet>
+                <description>Whenever you have psionic focus, you can see ethereal and invisible creatures and objects as easily as you see visible creatures and objects within 60 feet of you.</description>
+            </sheet>
+        </element>
+        <element name="Frightful Cleave" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_PATH_OF_THE_GHOST_FRIGHTFUL_CLEAVE">
+            <description>
+                <p>Beginning at 14th level, once per turn, whenever you drop a creature to 0 hit points with your Frightful Attack feature you siphon the terror from your victim and transform it into a spiritual weapon attack. You may make an immediate melee power attack against a foe within reach of your weapon. This attack is made with advantage and is a frightful attack.</p>
+            </description>
+            <sheet>
+                <description>Once per turn, whenever you drop a creature to 0 hit points with your Frightful Attack feature you may make an immediate melee power attack against a foe within reach of your weapon. This attack is made with advantage and is a frightful attack.</description>
+            </sheet>
+        </element>
+    
+</elements>

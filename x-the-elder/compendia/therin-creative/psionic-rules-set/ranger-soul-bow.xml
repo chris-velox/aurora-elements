@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Soul Bow Ranger Archetype</name>
+        <update version="0.0.1">
+            <file name="ranger-soul-bow.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/therin-creative/psionic-rules-set/ranger-soul-bow.xml" />
+        </update>
+    </info>
+    
+    <element name="Soul Bow" type="Archetype" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_RANGER_SOUL_BOW">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Soul bows are rangers that have learned to hone their thought into psychic energy. They tend to be focused and calm individuals.</p>
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_SOUL_BOW_MAGIC" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_SOUL_ARROWS" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_PHASE_ARROW" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_FOCUSED_ARCHER" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_PSIONIC_COMBAT" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_ECHO_OF_SOULS" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_DETERMINATION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_SOUL_BOW_MAGIC" level="3" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_SOUL_ARROWS" level="3" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_PHASE_ARROW" level="7" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_FOCUSED_ARCHER" level="7" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_PSIONIC_COMBAT" level="11" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_ECHO_OF_SOULS" level="11" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_DETERMINATION" level="15" />
+        </rules>
+    </element>
+        <element name="Soul Bow Magic" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_SOUL_BOW_MAGIC">
+            <description>
+                <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Soul Bow Spells table. The spell counts as a ranger spell for you, but it doesn’t count against the number of ranger spells you know.</p>
+                <h5 class="caption">SOUL BOW SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Ranger Level</td><td>Spell</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>magic missile</em></td></tr>
+                    <tr><td>5th</td><td><em>misty step</em></td></tr>
+                    <tr><td>9th</td><td><em>nondetection</em></td></tr>
+                    <tr><td>13th</td><td><em>greater invisibility</em></td></tr>
+                    <tr><td>17th</td><td><em>telekinesis</em></td></tr>
+                </table>
+                <p class="indent">Additionally, you can cast your ranger spells without breaking concentration on mind blade granted by this class.</p>
+            </description>
+            <sheet>
+                <description>You can cast your ranger spells without breaking concentration on mind blade granted by this class.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_MAGIC_MISSILE" spellcasting="Ranger" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" spellcasting="Ranger" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_NONDETECTION" spellcasting="Ranger" known="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_GREATER_INVISIBILITY" spellcasting="Ranger" known="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_TELEKINESIS" spellcasting="Ranger" known="true" level="17" />
+            </rules>
+        </element>
+        <element name="Soul Arrows" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_SOUL_ARROWS">
+            <description>
+                <p>At 3rd level, you gain the <i>mind blade</i> power and can imbue a ranged weapon with <i>mind blade</i> at no power point cost. Your <i>mind blade</i> power can be manifested using a bonus action.</p>
+                <p class="indent">Additionally, you can make ranged attacks with your <i>mind blade</i> by creating arrow-like psionic manifestations. You can substitute these ranged attacks for any attack you make, including reactions provided you maintain <i>mind blade</i>. You make a ranged weapon attack when using these projectiles with a range of 100/400 ft.</p>
+                <p class="indent"><b><i>Manifesting Ability.</i></b> Wisdom is your manifesting ability for your powers.</p>
+                <p class="indent">You use Wisdom whenever a power refers to your manifesting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a power you manifest and when making an attack roll.</p>
+                <p style="text-align: center;"><b>Power save DC</b> = 8 + your proficiency bonus + your Wisdom modifier</p>
+                <p style="text-align: center;"><b>Power attack modifier</b> = your proficiency bonus + your Wisdom modifier</p>
+            </description>
+            <sheet>
+                <description>You gain the mind blade power (Wisdom) and can imbue a ranged weapon with mind blade at no power point cost. Your mind blade power can be manifested using a bonus action. dditionally, you can make ranged attacks with your mind blade by creating arrow-like psionic manifestations. You can substitute these ranged attacks for any attack you make, including reactions provided you maintain mind blade. You make a ranged weapon attack when using these projectiles with a range of 100/400 ft.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_TC_PRS_PSIONIC_POWER_MIND_BLADE" />
+            </rules>
+        </element>
+        <element name="Phase Arrow" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_PHASE_ARROW">
+            <description>
+                <p>When you reach 7th level, you can make a special attack action to fire a phase arrow as a ranged weapon attack with a range of 400 feet. The phase arrow can be from a regular ranged weapon or your mind blade. Your phase arrow travels straight to your target, passing through any nonmagical barrier in its way, negating cover. Your phase arrow's attack roll is never made with disadvantage. You don’t need to see your target if you are aware it exists and where it’s located.</p>
+            </description>
+            <sheet>
+                <description>You can make a special attack action to fire a phase arrow as a ranged weapon attack with a range of 400 feet. The phase arrow can be from a regular ranged weapon or your mind blade. Your phase arrow travels straight to your target, passing through any nonmagical barrier in its way, negating cover. Your phase arrow's attack roll is never made with disadvantage. You don’t need to see your target if you are aware it exists and where it’s located.</description>
+            </sheet>
+        </element>
+        <element name="Focused Archer" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_FOCUSED_ARCHER">
+            <description>
+                <p>Starting at 7th level, when you attack with your mind blade or a ranged weapon imbued with your mind blade power, attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls, and you don’t suffer disadvantage when making ranged weapon attacks with your mind blade or ranged weapons imbued with your mind blade power when a foe is within 5 feet of you.</p>
+            </description>
+            <sheet>
+                <description>When you attack with your mind blade or a ranged weapon imbued with your mind blade power, attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls, and you don’t suffer disadvantage when making ranged weapon attacks with your mind blade or ranged weapons imbued with your mind blade power when a foe is within 5 feet of you.</description>
+            </sheet>
+        </element>
+        <element name="Psionic Combat" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_PSIONIC_COMBAT">
+            <description>
+                <p>Upon reaching 11th level, you learn special maneuvers that are fueled by special dice called focus dice. These maneuvers are psionic in nature.</p>
+                <p class="indent"><b><i>Maneuvers.</i></b> You learn three maneuvers of your choice, which are detailed at the end of the class description. Many maneuvers enhance an attack in some way. You can only use one maneuver per attack.</p>
+                <p class="indent"><b><i>Focus Dice.</i></b> You have four focus dice, which are d8s. A focus die is expended when you use it. You regain all your expended focus dice when you finish a short or long rest.</p>
+                <p class="indent"><b><i>Saving Throws.</i></b> Maneuvers that require saving throws use your power save DC.</p>
+            </description>
+            <sheet usage="4 Focus Dice/Short Rest">
+                <description>You have 4 focus dice, which are d8s, to fuel your maneuvers. You regain all expended focus dice when you finish a short rest. Maneuver save DC is {{spellcasting:dc:wis}}.</description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Soul Bow Maneuver" supports="TC Soul Bow Maneuver" number="3" />
+            </rules>
+        </element>
+        <element name="Echo of Souls" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_ECHO_OF_SOULS">
+            <description>
+                <p>Starting at 11th level, when you hit with a ranged weapon attack with your mind blade or a ranged weapon imbued with your mind blade, you can empower your attack to deal bonus psychic damage. Your attack deals an extra 1d6 psychic damage for every 50 feet your target is away from you, up to a maximum of 5d6 against a target 250 feet or more away from you. Until the end of its next turn, the target’s AC is reduced by 1 for every extra die of damage it takes from this feature.</p>
+                <p class="indent">You can use this feature a number of times equal to one fourth your ranger level. You regain all uses after completing a long rest.</p>
+            </description>
+            <sheet usage="{{echo-of-souls:uses}}/Long Rest">
+                <description>When you hit with a ranged weapon attack with your mind blade or a ranged weapon imbued with your mind blade, you can empower your attack to deal bonus psychic damage. Your attack deals an extra 1d6 psychic damage for every 50 feet your target is away from you, up to a maximum of 5d6 against a target 250 feet or more away from you. Until the end of its next turn, the target’s AC is reduced by 1 for every extra die of damage it takes from this feature.</description>
+            </sheet>
+            <rules>
+                <stat name="echo-of-souls:uses" value="2" level="11" />
+                <stat name="echo-of-souls:uses" value="1" level="15" />
+                <stat name="echo-of-souls:uses" value="1" level="20" />
+            </rules>
+        </element>
+        <element name="Determination" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_DETERMINATION">
+            <description>
+                <p>Starting at 15th level, when you roll initiative and have no focus dice remaining, you regain one focus die.</p>
+            </description>
+            <sheet>
+                <description>When you roll initiative and have no focus dice remaining, you regain one focus die.</description>
+            </sheet>
+        </element>
+
+  <!-- Soul Bow Maneuvers -->
+    <element name="Blast Back" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_MANEUVER_BLAST_BACK">
+        <supports>TC Soul Bow Maneuver</supports>
+        <description>
+            <p>When you hit a creature with a ranged weapon attack, you can expend one focus die to increase your weapon damage by 1d8. If the target is Large sized or smaller, it must make a Strength saving throw. If the save is failed, the target is pushed 10 feet away from you.</p>
+        </description>
+        <sheet usage="Soul Bow Maneuver">
+            <description>When you hit a creature with a ranged weapon attack, you can expend one focus die to increase your weapon damage by 1d8. If the target is Large sized or smaller, it must make a Strength saving throw or be pushed 10 feet away from you.</description>
+        </sheet>
+    </element>
+    <element name="Detonation" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_MANEUVER_DETONATION">
+        <supports>TC Soul Bow Maneuver</supports>
+        <description>
+            <p>When you hit a creature with a ranged weapon attack, you can expend one focus die to cause an explosion of psychic energy at the start of its next turn. Each creature within 10 feet of your target must make a Dexterity saving throw. If the save is failed, the creature takes 1d8 + your Wisdom modifier force damage. Your target makes its saving throw with disadvantage.</p>
+        </description>
+        <sheet usage="Soul Bow Maneuver">
+            <description>When you hit a creature with a ranged weapon attack, you can expend one focus die to cause an explosion of psychic energy at the start of its next turn. Each creature within 10 feet of your target must make a Dexterity saving throw. If the save is failed, the creature takes 1d8 + {{wisdom:modifier}} force damage. Your target makes its saving throw with disadvantage.</description>
+        </sheet>
+    </element>
+    <element name="Fate Chain" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_MANEUVER_FATE_CHAIN">
+        <supports>TC Soul Bow Maneuver</supports>
+        <description>
+            <p>When you hit with a ranged weapon attack, you can expend one focus die to curse the target. It must make a Charisma saving throw. If the save is failed, the creature suffers a penalty of 1d8 on your choice of either its attack rolls or saving throws until the end of its next turn.</p>
+        </description>
+        <sheet usage="Soul Bow Maneuver">
+            <description>When you hit with a ranged weapon attack, you can expend one focus die to curse the target. It must make a Charisma saving throw. If the save is failed, the creature suffers a penalty of 1d8 on your choice of either its attack rolls or saving throws until the end of its next turn.</description>
+        </sheet>
+    </element>
+    <element name="Pierce Mind" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_MANEUVER_PIERCE_MIND">
+        <supports>TC Soul Bow Maneuver</supports>
+        <description>
+            <p>You can expend a focus die to transform a range weapon attack into a psychic attack. You make a ranged power attack and deal psychic damage in place of your normal weapon damage type(s) and add an additional 1d8 psychic damage.</p>
+        </description>
+        <sheet usage="Soul Bow Maneuver">
+            <description>You can expend a focus die to transform a range weapon attack into a psychic attack. You make a ranged power attack and deal psychic damage in place of your normal weapon damage type(s) and add an additional 1d8 psychic damage.</description>
+        </sheet>
+    </element>
+    <element name="Psionic Leap" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_MANEUVER_PSIONIC_LEAP">
+        <supports>TC Soul Bow Maneuver</supports>
+        <description>
+            <p>When you are attacked, you can expend one focus die to add 1d8 to your AC against that attack and leap 10 feet in any direction. This movement doesn't provoke opportunity attacks.</p>
+        </description>
+        <sheet usage="Soul Bow Maneuver">
+            <description>When you are attacked, you can expend one focus die to add 1d8 to your AC against that attack and leap 10 feet in any direction. This movement doesn't provoke opportunity attacks.</description>
+        </sheet>
+    </element>
+    <element name="Psionic Mines" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_MANEUVER_PSIONIC_MINES">
+        <supports>TC Soul Bow Maneuver</supports>
+        <description>
+            <p>You can expend a focus die to take a special action that creates a psionic minefield in a 20-foot radius circle. Each creature attempting to cross the field must make a Wisdom saving throw. If the save is failed, the creature takes 1d8 psychic damage and can’t move until its next turn. If the save is successful, the creature only takes half damage. You minefield will persist up to 10 minutes.</p>
+        </description>
+        <sheet usage="Soul Bow Maneuver">
+            <description>You can expend a focus die to take a special action that creates a psionic minefield in a 20-foot radius circle. Each creature attempting to cross the field must make a Wisdom saving throw. If the save is failed, the creature takes 1d8 psychic damage and can’t move until its next turn. If the save is successful, the creature only takes half damage. You minefield will persist up to 10 minutes.</description>
+        </sheet>
+    </element>
+    <element name="Ricochet" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_MANEUVER_RICOCHET">
+        <supports>TC Soul Bow Maneuver</supports>
+        <description>
+            <p>When you miss with a ranged weapon attack, you can expend a focus die to make a new attack against another target in range. You make a ranged power attack and add 1d8 to your new attack roll and inflict 1d8 additional weapon damage.</p>
+        </description>
+        <sheet usage="Soul Bow Maneuver">
+            <description>When you miss with a ranged weapon attack, you can expend a focus die to make a new attack against another target in range. You make a ranged power attack and add 1d8 to your new attack roll and inflict 1d8 additional weapon damage.</description>
+        </sheet>
+    </element>
+    <element name="Wave Shot" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_MANEUVER_WAVE_SHOT">
+        <supports>TC Soul Bow Maneuver</supports>
+        <description>
+            <p>You can expend one focus die to transform one ranged weapon attack into a cone of telekinetic force 30 feet long originating from you. You can make an attack roll against each creature caught in this area you choose. Each creature hit takes 1d8 + your Wisdom modifier bludgeoning damage.</p>
+        </description>
+        <sheet usage="Soul Bow Maneuver">
+            <description>You can expend one focus die to transform one ranged weapon attack into a cone of telekinetic force 30 feet long originating from you. You can make an attack roll against each creature caught in this area you choose. Each creature hit takes 1d8 + {{wisdom:modifier}} bludgeoning damage.</description>
+        </sheet>
+    </element>
+    <element name="Zen Archery" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_SOUL_BOW_MANEUVER_ZEN_ARCHERY">
+        <supports>TC Soul Bow Maneuver</supports>
+        <description>
+            <p>When you hit with a ranged weapon attack, you can expend one focus die to deal an additional 1d8 force damage. Additionally, you score a critical hit on a 19 or 20.</p>
+        </description>
+        <sheet usage="Soul Bow Maneuver">
+            <description>When you hit with a ranged weapon attack, you can expend one focus die to deal an additional 1d8 force damage. Additionally, you score a critical hit on a 19 or 20.</description>
+        </sheet>
+    </element>
+    
+</elements>

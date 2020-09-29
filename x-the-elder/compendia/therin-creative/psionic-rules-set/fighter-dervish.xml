@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Dervish Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="fighter-dervish.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/therin-creative/psionic-rules-set/fighter-dervish.xml" />
+        </update>
+    </info>
+    
+    <element name="Dervish" type="Archetype" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FIGHTER_DERVISH">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>A dervish fighter is one who pursues the art of dance to such a degree that every motion is fluid. You can focus on the moment to moment graces of the dance while fighting, weaving in attacks as you move.</p>
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_DERVISH_DANCE" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_FLUID_MOTION" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_UNARMORED_DEFENSE" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_RAPID_STRIKES" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_SLASHING_WINDS" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_MOVEMENT_MASTERY" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_THOUSAND_CUTS" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_DERVISH_DANCE" level="3" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_FLUID_MOTION" level="3" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_UNARMORED_DEFENSE" level="3" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_RAPID_STRIKES" level="7" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_SLASHING_WINDS" level="10" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_MOVEMENT_MASTERY" level="15" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_THOUSAND_CUTS" level="18" />
+        </rules>
+    </element>
+        <element name="Dervish Dance" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_DERVISH_DANCE">
+            <description>
+                <p>At 3rd level, you can enter a psychic dance, allowing you to move and attack in a fluid, seemingly random fashion. So long as you are wearing no armor or light armor and don’t wield a shield, you can enter a focused state that requires concentration to maintain on your turn. This state lasts for 1 + your Charisma bonus rounds (minimum 1) without risk of psychic strain. If you attempt to perform the Dervish Dance for longer duration, treat it as a power for purposes of psychic strain. If you already suffer psychic strain, you can’t activate this feature.</p>
+                <p class="indent">While you dance, when you take the Attack action with a melee weapon, you can make an additional attack that stacks with the Extra Attack feature provided your move at least 5 feet between each attack you make. You can’t return to a space you just exited (though you can return to that space later during your attack. Each attack made during your dance gains a +1 bonus on attack and damage rolls. This bonus improves to +2 at 10th level and to +3 at 18th level.</p>
+                <p class="indent">If you don’t move at least 5 feet during your turn, your dance ends.</p>
+                <p class="indent">Once you enter your Dervish Dance, you must complete a short or long rest to use it again.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>So long as you are wearing no armor or light armor and don’t wield a shield, you can enter a focused state that requires concentration to maintain. This state lasts {{dancing-dervish:duration}} rounds without risk of psychic strain. If you attempt to perform the Dervish Dance for longer duration, treat it as a power for purposes of psychic strain. If you already suffer psychic strain, you can’t activate this feature. While you dance, when you take the Attack action with a melee weapon, you can make an additional attack that stacks with the Extra Attack feature provided your move at least 5 feet between each attack you make. Each attack is made at +{{dervish-dance:bonus}} attack and damage.</description>
+            </sheet>
+            <rules>
+                <stat name="dervish-dance:duration" value="1" />
+                <stat name="dervish-dance:duration" value="charisma:modifier" />
+                <stat name="dervish-dance:bonus" value="1" level="3" />
+                <stat name="dervish-dance:bonus" value="1" level="10" />
+                <stat name="dervish-dance:bonus" value="1" level="18" />
+            </rules>
+        </element>
+        <element name="Fluid Motion" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_FLUID_MOTION">
+            <description>
+                <p>At 3rd level, you gain proficiency in Performance. When you dance to entertain, you make a Dexterity (Performance) check.</p>
+                <p class="indent">When you make a concentration check to maintain your Dervish Dance feature, you add your bonus from Strength (Athletics) or Dexterity (Acrobatics) to your Constitution saving throw.</p>
+            </description>
+            <sheet>
+                <description>When you make a concentration check to maintain your Dervish Dance feature, you add your bonus from Athletics or Acrobatics to your Constitution saving throw. When you dance to entertain, you make a Performance check.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+            </rules>
+        </element>
+        <element name="Unarmored Defense" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_UNARMORED_DEFENSE">
+            <description>
+                <p>At 3rd level, while you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Charisma modifier. If you cast a spell or manifest a psionic power (except your dervish features) you lose this bonus until the start of your next turn. You also lose this bonus when you are restrained or incapacitated.</p>
+            </description>
+            <sheet>
+                <description>While you are wearing no armor and not wielding a shield, your AC equals {{ac:calculation}}. If you cast a spell or manifest a psionic power (except your dervish features) you lose this bonus until the start of your next turn. You also lose this bonus when you are restrained or incapacitated.</description>
+            </sheet>
+            <rules>
+                <stat name="ac:unarmored defense dervish:base" value="10" />
+                <stat name="ac:unarmored defense dervish:dexterity" value="dexterity:modifier" />
+                <stat name="ac:unarmored defense dervish:charisma" value="charisma:modifier" />
+                <stat name="ac:unarmored defense dervish" value="ac:unarmored defense dervish:base" />
+                <stat name="ac:unarmored defense dervish" value="ac:unarmored defense dervish:dexterity" />
+                <stat name="ac:unarmored defense dervish" value="ac:unarmored defense dervish:charisma" />
+                <stat name="ac:calculation" value="ac:unarmored defense dervish" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Unarmored Defense (Dervish)" />
+            </rules>
+        </element>
+        <element name="Rapid Strikes" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_RAPID_STRIKES">
+            <description>
+                <p>Starting at 7th level, while you are wearing light or no armor, you increase your movement speed by 5 feet and have advantage on any ability check made to dance, jump, tumble, or move gracefully. At 15th level, you increase this bonus by 5 feet (10 feet), and again at 18th level (15 feet).</p>
+            </description>
+            <sheet>
+                <description>Your speed increases by {{dervish:unarmored movement}} feet while you are not wearing armor or wielding a shield. You have advantage on any ability check made to dance, jump, tumble, or move gracefully.</description>
+            </sheet>
+            <rules>
+                <stat name="dervish:unarmored movement" value="5" bonus="unarmored movement" level="7" />
+                <stat name="dervish:unarmored movement" value="10" bonus="unarmored movement" level="15" />
+                <stat name="dervish:unarmored movement" value="15" bonus="unarmored movement" level="18" />
+
+                <stat name="innate speed:misc" value="dervish:unarmored movement" bonus="unarmored movement" equipped="[armor:none],[shield:none]" requirements="[innate speed:1]" />
+                <stat name="innate speed:climb:misc" value="dervish:unarmored movement" bonus="unarmored movement" equipped="[armor:none],[shield:none]" requirements="[innate speed:climb:1]" />
+                <stat name="innate speed:fly:misc" value="dervish:unarmored movement" bonus="unarmored movement" equipped="[armor:none],[shield:none]" requirements="[innate speed:fly:1]" />
+                <stat name="innate speed:swim:misc" value="dervish:unarmored movement" bonus="unarmored movement" equipped="[armor:none],[shield:none]" requirements="[innate speed:swim:1]" />
+                <stat name="innate speed:burrow:misc" value="dervish:unarmored movement" bonus="unarmored movement" equipped="[armor:none],[shield:none]" requirements="[innate speed:burrow:1]" />
+            </rules>
+        </element>
+        <element name="Slashing Winds" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_SLASHING_WINDS">
+            <description>
+                <p>When you reach 10th level, your Dervish Dance feature improves.</p>
+                <ul>
+                    <li>You can make a 2nd additional attack with the Attack action during your dance.</li>
+                    <li>If you are dual wielding weapons with the finesse property, when you use your bonus action to attack with your other weapon, you can make two attacks with it instead of one. These attacks don’t have to be against the same target and follow the attack and movement rules of your Dervish Dance feature.</li>
+                    <li>Each time you hit a different foe during your dance, you increase your AC by 1 to a maximum bonus of 4. This bonus last until the start of your next turn.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>During your Dervish Dance: You can make a 2nd additional attack with the Attack action during your dance. If you are dual wielding weapons with the finesse property, when you use your bonus action to attack with your other weapon, you can make two attacks with it instead of one. These attacks don’t have to be against the same target and follow the attack and movement rules of your Dervish Dance feature. Each time you hit a different foe during your dance, you increase your AC by 1 to a maximum bonus of 4. This bonus last until the start of your next turn.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Movement Mastery" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_MOVEMENT_MASTERY">
+            <description>
+                <p>Starting at 15th level, you are no longer hindered by difficult terrain while using your dervish dance.</p>
+                <p class="indent">Whenever you roll less than 8 on an ability check regarding graceful movement such as dancing, tumbling, or jumping, you treat that roll as an 8.</p>
+            </description>
+            <sheet>
+                <description>You are no longer hindered by difficult terrain while using your dervish dance. Whenever you roll less than 8 on an ability check regarding graceful movement such as dancing, tumbling, or jumping, you treat that roll as an 8.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Thousand Cuts" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_DERVISH_THOUSAND_CUTS">
+            <description>
+                <p>When you reach 18th level, when you roll initiative and you have already used your Dervish Dance feature, you regain its use. You can do this once per Charisma bonus (minimum 1). You regain all uses of this feature when you finish a long rest.</p>
+            </description>
+            <sheet usage="{{thousand-cuts:uses}}/Long Rest">
+                <description>When you roll initiative and you have already used your Dervish Dance feature, you regain its use.</description>
+            </sheet>
+            <rules>
+                <stat name="thousand-cuts:uses" value="1" bonus="base"/>
+                <stat name="thousand-cuts:uses" value="charisma:modifer" bonus="base"/>
+            </rules>
+        </element>
+    
+</elements>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Therin Creative’s Psionic Options</name>
+        <update version="0.0.1">
+            <file name="options.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/therin-creative/psionic-rules-set/options.xml" />
+        </update>
+    </info>
+    
+	<element name="Fortune Telling Tools" type="Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ITEM_TOOL_FORTUNE_TELLING_TOOLS">
+		<description>
+			<p>Often used by charlatans and entertainers, fortune telling tools are said to be able to divine the future. Whether true or not, these can prove an amusing diversion for all parties involved.</p>
+			<p class="indent"><strong><em>Components.</em></strong> Fortune telling tools include a dowsing rod, a small crystal ball, a pack of tarot cards, and various small bones, often from a bird.</p>
+			<p class="indent"><strong><em>Arcana, Esoteric, Religion.</em></strong> When you study magic or psychic phenomena pertaining to omens or destiny, you can use your fortuneteller’s tools to make a reading to better understand it.</p>
+			<p class="indent"><strong><em>Performance.</em></strong> You can entertain other by reading omens and interpreting tarot cards or bones.</p>
+			<p class="indent"><strong><em>Survival.</em></strong> When attempting to locate a source of water, your ability to use a dowsing rod helps point you in the right direction.</p>
+			<p class="indent"><strong><em>Divine the Future.</em></strong> One per day you can grant another creature or yourself a reading. Once within the next 24 hours, when making an ability check or saving throw with disadvantage, the recipient of your reading can chose to disregard that disadvantage.</p>
+			<h5>FORTUNE TELLING TOOLS</h5>
+			<table>
+				<thead>
+					<tr><td>Activity</td><td class="col-10">DC</td></tr>
+				</thead>
+				<tr><td>Interpret an omen</td><td>10</td></tr>
+				<tr><td>Gain insight into a client’s personality</td><td>15</td></tr>
+				<tr><td>Gain the trust of a client by leading them to fill in the blanks of a reading</td><td>15</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Tools</set>
+			<set name="cost" currency="gp">8</set>
+			<set name="weight" lb="6">6 lbs.</set>
+			<set name="type">Tool</set>
+			<set name="proficiency">ID_TC_PRS_PROFICIENCY_TOOL_PROFICIENCY_FORTUNE_TELLING_TOOLS</set>
+		</setters>
+	</element>
+	<element name="Tool Proficiency (Fortune Telling Tools)" type="Proficiency" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_PROFICIENCY_TOOL_PROFICIENCY_FORTUNE_TELLING_TOOLS">
+		<supports>Tool</supports>
+		<sheet alt="Fortune Telling Tools" />
+	</element>
+
+    <element name="Esoteric" type="Proficiency" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_PROFICIENCY_SKILL_ESOTERIC">
+        <supports>Skill, TC Psion, TC Wilder, TC Psychic Warrior</supports>
+        <description>
+            <p>Your Intelligence (Esoteric) check measures your ability to recall lore about psionics, psychic phenomena, hauntings, spirituality, spirits, and psychology.</p>
+        </description>
+        <sheet>
+            <description>Your Intelligence (Esoteric) check measures your ability to recall lore about psionics, psychic phenomena, hauntings, spirituality, spirits, and psychology.</description>
+        </sheet>
+        <rules>
+            <stat name="esoteric:bonus" value="proficiency" />
+            <stat name="esoteric:bonus" value="intelligence:modifier" />
+        </rules>
+    </element>
+
+    <element name="Boomerang" type="Feat" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_FEAT_BOOMERANG">
+        <description>
+            <p>Using minor telekinesis, you are able to manipulate weapons and objects you throw. You gain the following benefits.</p>
+            <ul>
+                <li>Increase your Dexterity score by 1, to a maximum of 20.</li>
+                <li>When you miss with a thrown weapon or object, or with ammunition no heavier than 3 lbs., you may use your reaction to return the item to your hand.</li>
+                <li>You may use your bonus action to telekinetically attune to a held weapon with the thrown property. So long as you maintain concentration, the weapon will automatically return to your hand after making an attack. You can maintain concentration up to 1 minute before being subjected to psychic strain.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you miss with a thrown weapon or object, or with ammunition no heavier than 3 lbs., you may use your reaction to return the item to your hand. You may use your bonus action to telekinetically attune to a held weapon with the thrown property. So long as you maintain concentration, the weapon will automatically return to your hand after making an attack. You can maintain concentration up to 1 minute before being subjected to psychic strain.</description>
+        </sheet>
+        <rules>
+            <stat name="dexterity" value="1"/>
+        </rules>
+    </element>
+    <element name="Combat Focus" type="Feat" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_FEAT_COMBAT_FOCUS">
+        <description>
+            <p>You have learned to focus your ki in battle, gaining the following benefits:</p>
+            <ul>
+                <li>Increase your Constitution, Intelligence, Wisdom, or Charisma by 1, to a maximum of 20.</li>
+                <li>By using a bonus action, you can designate one target you can see. You gain a +1 bonus on each attack roll made against this target and are under the psionic focus condition until the start of your next turn. You can choose to maintain this effect by concentrating, extending its benefits up to 1 minute before being subject to psychic strain.</li>
+            </ul>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can designate one target you can see. You gain a +1 bonus on each attack roll made against this target and are under the psionic focus condition until the start of your next turn. You can choose to maintain this effect by concentrating, extending its benefits up to 1 minute before being subject to psychic strain.</description>
+        </sheet>
+        <rules>
+			<select type="Ability Score Improvement" name="Athlete" supports="ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_WISDOM|ID_PHB_FEAT_ASI_CHARISMA" />
+        </rules>
+    </element>
+    <element name="Psychic Prodigy" type="Feat" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_FEAT_PSYCHIC_PRODIGY">
+        <description>
+            <p>Choose a discipline: clairsentience, psychokinesis, psychometabolism, psychoportation, or telepathy. You gain one power from this discipline of your choice.</p>
+            <p class="indent">In addition, using this feat, you have 2 power points which you can use to augment this power. You regain these power points when you finish a long rest.</p>
+            <p class="indent">You use Intelligence as your manifesting ability for this power.</p>
+        </description>
+        <sheet>
+            <description></description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+
+    <element name="Aurasight" type="Vision" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_VISION_AURASIGHT">
+        <description>
+            <p>You are able to see psychic energy as a soft glow. You can detect a spiritfont and know what type it is and what emotion it is if it’s a psychic impression. You can see if a creature has the psionic focus condition.</p>
+            <p class="indent">You can perceive an aura in normal and magical darkness. You can perceive each spirit within your field of vision through its aura.</p>
+        </description>
+        <sheet>
+            <description>ou are able to see psychic energy as a soft glow. You can detect a spiritfont and know what type it is and what emotion it is if it’s a psychic impression. You can see if a creature has the psionic focus condition. You can perceive an aura in normal and magical darkness. You can perceive each spirit within your field of vision through its aura.</description>
+        </sheet>
+    </element>
+
+</elements>

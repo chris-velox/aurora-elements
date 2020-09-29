@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Cerebromancer Arcane Tradition</name>
+        <update version="0.0.1">
+            <file name="wizard-cerebromancer.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/therin-creative/psionic-rules-set/wizard-cerebromancer.xml" />
+        </update>
+    </info>
+    
+    <element name="Cerebromancer" type="Archetype" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_WIZARD_CEREBROMANCER">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>The school of cerebromancy is a school of wizardry that seeks to expand the mind and use the Weave to manifest psychic energies. Cerebromancers make study of the psionic arts, having a greater understanding of how they operate and how to manipulate them. Through the course of these studies, they learn a few psionic powers that they can evoke through the craft of their magic.</p>
+            <h5 class="caption">CEREBROMANCER FEATURES</h5>
+            <table>
+                <thead>
+                    <tr><td>Wizard Level</td><td>Feature</td><td>Powers Known</td></tr>
+                </thead>
+                <tr><td>2nd</td><td>Psychic Arcana, Psychic Studies</td><td>1</td></tr>
+                <tr><td>3rd</td><td></td><td>1</td></tr>
+                <tr><td>4th</td><td></td><td>1</td></tr>
+                <tr><td>5th</td><td></td><td>2</td></tr>
+                <tr><td>6th</td><td>Resilient Ego</td><td>2</td></tr>
+                <tr><td>7th</td><td></td><td>2</td></tr>
+                <tr><td>8th</td><td></td><td>3</td></tr>
+                <tr><td>9th</td><td></td><td>3</td></tr>
+                <tr><td>10th</td><td>Unleashed Mind</td><td>3</td></tr>
+                <tr><td>11th</td><td></td><td>3</td></tr>
+                <tr><td>12th</td><td></td><td>4</td></tr>
+                <tr><td>13th</td><td></td><td>4</td></tr>
+                <tr><td>14th</td><td>Myriad Contemplation</td><td>4</td></tr>
+                <tr><td>15th</td><td></td><td>4</td></tr>
+                <tr><td>16th</td><td></td><td>5</td></tr>
+                <tr><td>17th</td><td></td><td>5</td></tr>
+                <tr><td>18th</td><td></td><td>5</td></tr>
+                <tr><td>19th</td><td></td><td>5</td></tr>
+                <tr><td>20th</td><td></td><td>6</td></tr>
+            </table>
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_PSYCHIC_ARCANA" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_PSYCHIC_STUDIES" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_RESILIENT_EGO" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_UNLEASHED_MIND" />
+            <div element="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_MYRIAD_COMTEMPLATION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_PSYCHIC_ARCANA" level="2" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_PSYCHIC_STUDIES" level="2" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_RESILIENT_EGO" level="6" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_UNLEASHED_MIND" level="10" />
+            <grant type="Archetype Feature" id="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_MYRIAD_COMTEMPLATION" level="14" />
+        </rules>
+    </element>
+        <element name="Psychic Arcana" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_PSYCHIC_ARCANA">
+            <description>
+                <p>Starting at 2nd level, you can manifest psionic powers using your spell slots. Only powers you know from this class can be manifested with your spell slots. If you know powers from a manifester class, you can’t manifest those powers by using a spell slot unless you have a class feature that expressly permits you to.</p>
+                <p class="indent">You can include your known powers from this class for your Spell Mastery feature. A 1st-level spell would have 2 power points of augmentation, and a 2nd-level spell would have 4 power points of augmentation applied. Also you can choose powers from your known powers from this class to use with your Signature Spells feature, having 6 power points worth of augments.</p>
+                <p class="indent"><b><i>Powers Known.</i></b> You know one power of your choice from the psion power list.</p>
+                <p class="indent">The Powers Known column of the Cerebromancer Features table shows when you learn more psion powers of your choice. Unlike spell casting classes, you may not replace powers when you gain levels in this class.</p>
+                <p class="indent">You prepare your powers as you would a wizard spell.</p>
+                <p class="indent"><b><i>Power Points.</i></b> To manifest a power, you must expend a spell slot. You gain 2 power points to augment that power per spell slot level used to manifest the power. Any unused power points are lost. You can’t spend more power points than your wizard level.</p>
+                <p class="indent"><b><i>Manifesting Ability.</i></b> Intelligence is your manifesting ability for your powers.</p>
+                <p class="indent">You use Intelligence whenever a power refers to your manifesting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a psion power you manifest and when making an attack roll.</p>
+                <p style="text-align: center;"><b>Power save DC</b> = 8 + your proficiency bonus + your Intelligence modifier</p>
+                <p style="text-align: center;"><b>Power attack modifier</b> = your proficiency bonus + your Intelligence modifier</p>
+            </description>
+            <sheet>
+                <description>You can manifest psionic powers using your spell slots. To manifest a power, you must expend a spell slot. You gain 2 power points to augment that power per spell slot level used to manifest the power. Any unused power points are lost. You can’t spend more than {{level:wizard}} power points.</description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Psionic Power, Cerebromancer" supports="TC Psionic Power" prepared="true" allowReplace="false" level="2" />
+                <select type="Spell" name="Psionic Power, Cerebromancer" supports="TC Psionic Power" prepared="true" allowReplace="false" level="5" />
+                <select type="Spell" name="Psionic Power, Cerebromancer" supports="TC Psionic Power" prepared="true" allowReplace="false" level="8" />
+                <select type="Spell" name="Psionic Power, Cerebromancer" supports="TC Psionic Power" prepared="true" allowReplace="false" level="12" />
+                <select type="Spell" name="Psionic Power, Cerebromancer" supports="TC Psionic Power" prepared="true" allowReplace="false" level="16" />
+                <select type="Spell" name="Psionic Power, Cerebromancer" supports="TC Psionic Power" prepared="true" allowReplace="false" level="20" />
+            </rules>
+        </element>
+        <element name="Psychic Studies" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_PSYCHIC_STUDIES">
+            <description>
+                <p>You gain the Esoteric proficiency if you don’t already have it.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_TC_PRS_PROFICIENCY_SKILL_ESOTERIC" />
+            </rules>
+        </element>
+        <element name="Resilient Ego" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_RESILIENT_EGO">
+            <description>
+                <p>When you reach 6th level, you become proficient with Charisma saving throws.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
+            </rules>
+        </element>
+        <element name="Unleashed Mind" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_UNLEASHED_MIND">
+            <description>
+                <p>Upon reaching 10th level, when you cast a spell using a higher level spell slot than required, you can activate one of your powers using a bonus action even if that power normally requires an action to manifest. The power must be a power you gained from this class and can’t be manifest with power points or spell levels.</p>
+            </description>
+            <sheet>
+                <description>When you cast a spell using a higher level spell slot than required, you can activate one of your powers using a bonus action even if that power normally requires an action to manifest. The power must be a power you gained from this class and can’t be manifest with power points or spell levels.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Myriad Comtemplation" type="Archetype Feature" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_ARCHETYPE_FEATURE_CEREBROMANCER_MYRIAD_COMTEMPLATION">
+            <description>
+                <p>Upon reaching 14th level, you can maintain one power and one spell at the same time, provided both share the same target (or point of origin) and are granted by this class. When you make a Constitution saving throw to maintain concentration, you only make one roll. If that roll fails, you lose concentration on both the spell and the power.</p>
+                <p class="indent">If a power allows you to change target or move the point of origin, but the spell does not, you must lose concentration on the spell to move the target of the power. If you don’t possess the necessary actions to move both the spell and the power during the same turn, you must lose concentration on one or you fail to move the target or point of origin.</p>
+            </description>
+            <sheet>
+                <description>You can maintain one power and one spell at the same time, provided both share the same target (or point of origin) and are granted by this class. When you make a Constitution saving throw to maintain concentration, you only make one roll. If that roll fails, you lose concentration on both the spell and the power.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+    
+</elements>

@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Psychic Items</name>
+        <update version="0.0.1">
+            <file name="items.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/therin-creative/psionic-rules-set/items.xml" />
+        </update>
+    </info>
+    
+    <element name="Armor of Aversion" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_ARMOR_OF_AVERSION">
+        <description>
+            <p>While you wear this psychic armor, you can use your action to activate its power. It has 3 charges. Each creature you choose within 10 feet of you must make a DC 13 Wisdom saving throw. If the save is failed, the creature will refuse to be within 30 feet of you for 1 minute. On its turn a creature less than 30 feet from you must use its movement to withdraw at least 30 feet from you before it can take its action. If its movement is insufficient, it must take the Dash action if able to escape at least 30 feet away from you. If the creature is incapable of withdrawing, it will act normally. The creature makes a new saving throw at the end of each of its turns. The armor regains all charges daily at dawn.</p>
+        </description>
+        <setters>
+            <set name="category">Magic Armor</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">body</set>
+            <set name="type" addition="any">Armor</set>
+            <set name="rarity">uncommon</set>
+            <set name="attunement">true</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+            <set name="charges">3</set>
+        </setters>
+    </element>
+    <element name="Arrow of Returning" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_ARROW_OF_RETURNING">
+        <description>
+            <p>This +2 arrow, when fired, will return to its wielder’s hand at the end of its turn. Only one of these arrows can be attuned at a time.</p>
+        </description>
+        <setters>
+            <set name="category">Ammunition</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type" addition="arrow">Weapon</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+            <set name="enhancement">2</set>
+			<set name="stackable">true</set>
+        </setters>
+    </element>
+    <element name="Axe of Kinesis" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_AXE_OF_KINESIS">
+        <description>
+            <p>When you hit a target with this +1 axe, you can take a bonus action to deal an additional 1d8 (2d8 on a critical hit) bludgeoning damage to your target.</p>
+        </description>
+        <setters>
+			<set name="keywords">any axe</set>
+            <set name="category">Magic Weapon</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot"></set>
+            <set name="type" addition="any axe">Weapon</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+            <set name="enhancement">1</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_AXES</set>
+			<set name="name-format">{{parent}} of Kinesis</set>
+        </setters>
+    </element>
+    <element name="Band of Brothers" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_BAND_OF_BROTHERS">
+        <description>
+            <p>This ring always appears in a set of at least two but no more than five rings. When attuned by at least two creatures, each attuned creature has its mind linked to the others so long as they are on the same plane of existence. While linked, you and each linked creatures can send a telepathic message to each member of the link you choose by taking a bonus action. Members must share a common language to understand messages.</p>
+            <p class="indent">Each linked creature also gains the Hive Mind trait. Hive Mind grants each member of the link a +1 bonus on its first attack roll against a target another member has damaged until the start of its next turn.</p>
+            <p class="indent">Each day, each ring has 3 power points to spend to allow its user to manifest <i>mindlink</i>. Each creature wearing a ring from the same set receives the benefit and no other creature can be added. When augmented power effects end, the ring returns to granting its normal function. Each ring regains all its power points daily at dawn.</p>
+        </description>
+        <setters>
+            <set name="category">Ring</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">ring</set>
+            <set name="type">Ring</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+            <set name="charges">3</set>
+        </setters>
+    </element>
+    <element name="Barrier Shield" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_BARRIER_SHIELD">
+        <description>
+            <p>By taking s bonus action, this shield generates a psychokinetic field that gives you resistance to acid, bludgeoning, fire, piercing, slashing, and thunder damage. You can dismiss the force barrier using a bonus action. The barrier takes the same damage that you do and can prevent up to 100 points of damage before it falls. If the barrier is hit by disintegrate or similar effect, it loses all its hit points and falls. Once the barrier has fallen, it can’t be generated again until the next dawn.</p>
+        </description>
+        <setters>
+			<set name="keywords">shield</set>
+            <set name="category">Magic Armor</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type" addition="shield">Armor</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+			<set name="name-format">Barrier {{parent}}</set>
+        </setters>
+    </element>
+    <element name="Boots of Buoyancy" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_BOOTS_OF_BUOYANCY">
+        <description>
+            <p>While wearing these psychic boots, you can concentrate to allow you to walk on liquid surfaces as if they are solid ground. If you lose concentration while on a liquid surface, you will sink. These boots won’t protect you from hazards from the surfaces you walk, such as molten lava. You can safely maintain concentration for 10 minutes, after which you gain the psychic strain condition for at least 1 minute.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">feet</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">uncommon</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Boots of Stomping" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_BOOTS_OF_STOMPING">
+        <description>
+            <p>While wearing these psychic boots, you can stomp the ground with them once per day by using your action, causing a tremor that splits the ground. Each creature on a solid surface in a path 30 feet long that is 5 feet wide must make a DC 12 Dexterity saving throw. If the save is failed, the creature takes 2d6 bludgeoning damage and is knocked prone. If the save is successful, the creature only takes half damage. You must wait until the next dawn to use these boots again.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">feet</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">uncommon</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Bounding Shield" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_BOUNDING_SHIELD">
+        <description>
+            <p>While holding this shield you have a +1 bonus to AC. Once per round, when you make a melee weapon attack, you can, instead, throw the shield at a target within 30 feet of you by making a melee weapon attack. You are proficient with this attack and the shield counts as a magical weapon. The shield does 1d8+2 bludgeoning damage. If you make the attack on your turn, you can take a bonus action to have the shield bounce off your first target and attack another target within 30 feet of it. In any event, your shield returns to you immediately after making its last attack.</p>
+        </description>
+        <setters>
+			<set name="keywords">shield</set>
+            <set name="category">Magic Armor</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type" addition="shield">Armor</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+            <set name="enhancement">1</set>
+			<set name="name-format">Bounding {{parent}}</set>
+        </setters>
+    </element>
+    <element name="Cloak of Charisma" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_CLOAK_OF_CHARISMA">
+        <description>
+            <p>Your Charisma score is 19 while you wear this cloak. It has no effect if your Charisma is 19 or higher without it.</p>
+        </description>
+        <setters>
+            <set name="keywords">cloak, charisma</set>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">shoulders</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">uncommon</set>
+            <set name="attunement">true</set>
+        </setters>
+        <rules>
+            <stat name="charisma:score:set" value="19" bonus="base" />
+        </rules>
+    </element>
+    <element name="Crystal Anchor" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_CRYSTAL_ANCHOR">
+        <description>
+            <p>When thrown, this crystalline anchor emits psychic interference within a 10-foot radius sphere. Power attack rolls made by and against a creature within this area are made with disadvantage. Saving throws against psychic powers made by creatures within the area are made with advantage. The anchor will continue emitting until removed from the ground. Once retrieved, the anchor won’t work again until the next dawn.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">very rare</set>
+        </setters>
+    </element>
+    <element name="Demon-wrought Arrow" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_DEMON_WROUGHT_ARROW">
+        <description>
+            <p>This fiendish arrow functions as an arrow of returning. However, it is cursed to harm creatures loved by the wielder. Whenever it is fired and a creature close to its wielder is within range and has fewer hit points than its maximum damage, it will change its trajectory to strike that creature. The wielder’s attack roll is applied against the new target, and if the arrow hits, the creature takes normal weapon damage and must make a Constitution saving throw. If the save is failed, it takes an additional 6d10 weapon. On a successful saving throw it takes half the additional damage.</p>
+            <p class="indent">A creature slain by this arrow when its curse triggers can’t be revived except by true resurrection or wish. If more than one creature meets the criteria for the curse to apply, it always chooses the closest relationship.</p>
+        </description>
+        <setters>
+            <set name="category">Ammunition</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type" addition="arrow">Weapon</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+            <set name="stackable">true</set>
+        </setters>
+    </element>
+    <element name="Diadem of Object Reading" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_DIADEM_OF_OBJECT_READING">
+        <description>
+            <p>While wearing this crown, you can discern the past of an object you can hold in your hands. For every minute you concentrate on the object, you perceive one hour into its past, starting with the most recent hour. You can concentrate up to 1 hour per Wisdom bonus you possess (minimum 1 hour).</p>
+            <p class="indent">While perceiving an object’s past, you can see and hear from the object’s perspective up to 60 feet. You are treated as having blindsight when doing so.</p>
+            <p class="indent">You can attempt to look into a specific timeframe of an object’s history by making an Intelligence (Investigation) check with a DC based on how far in the past the events occurred.</p>
+            <table>
+                <thead>
+                    <tr><td>DC</td><td>Timeframe</td></tr>
+                </thead>
+                <tr><td>12</td><td>Up to 1 year ago</td></tr>
+                <tr><td>16</td><td>Up to 10 years ago</td></tr>
+                <tr><td>20</td><td>Up to 100 years ago</td></tr>
+                <tr><td>24</td><td>No limit</td></tr>
+            </table>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">head</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">uncommon</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Dorje" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_DORJE">
+        <description>
+            <p>A dorje is a slender crystal that contains a single power and a power point reserve. If the power is on your class list, it can be used to manifest its power. Otherwise, the dorje is beyond your understanding. Manifesting a power through a dorje requires the same manifestation time as the power does normally.</p>
+            <p class="indent">If you attempt to spend more power points than you can normally spend on your powers, you must make an ability check using your manifester ability to determine whether you can manifest it successfully. The DC equals 10 + one half the power point cost. On a failed check, the power points are deducted from the dorje’s reserve with no other effect.</p>
+            <p class="indent">Each power consumes 1 + augmentation cost power points from its reserve. Once a dorje’s power point reserve is reduced to 0, it crumbles to dust. Each dorje has a maximum amount it can spend to augment and empower its powers.</p>
+            <h5 class="caption">DORJE</h5>
+            <table>
+                <thead>
+                    <tr><td>Maximum Power Point Expenditure</td><td>Power Point Reserve</td><td>Rarity</td><td>Save DC</td><td>Attack Bonus</td></tr>
+                </thead>
+                <tr><td>1</td><td>1d4</td><td>Common</td><td>13</td><td>+5</td></tr>
+                <tr><td>2</td><td>2d4</td><td>Common</td><td>13</td><td>+5</td></tr>
+                <tr><td>4</td><td>2 + 2d4</td><td>Uncommon</td><td>13</td><td>+5</td></tr>
+                <tr><td>6</td><td>4 + 2d4</td><td>Uncommon</td><td>15</td><td>+7</td></tr>
+                <tr><td>8</td><td>6 + 2d6</td><td>Rare</td><td>15</td><td>+7</td></tr>
+                <tr><td>10</td><td>8 + 2d6</td><td>Rare</td><td>17</td><td>+9</td></tr>
+                <tr><td>12</td><td>9 + 3d6</td><td>Very rare</td><td>17</td><td>+9</td></tr>
+                <tr><td>14</td><td>11 + 3d8</td><td>Very rare</td><td>18</td><td>+10</td></tr>
+                <tr><td>16</td><td>12 + 4d8</td><td>Very rare</td><td>18</td><td>+10</td></tr>
+                <tr><td>18</td><td>13 + 5d8</td><td>Legendary</td><td>19</td><td>+11</td></tr>
+            </table>
+        </description>
+        <setters>
+            <set name="category">Dorje</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Dorje</set>
+            <set name="rarity">varies</set>
+        </setters>
+    </element>
+    <element name="Flailing Flail" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_FLAILING_FLAIL">
+        <description>
+            <p>You gain a +1 bonus on attack and damage rolls with this psychic weapon. Whenever you hit with this weapon, you may take a bonus action to make an extra attack. This extra attack is made with advantage, and if it hits deals an additional die of damage.</p>
+        </description>
+        <setters>
+            <set name="keywords">any flail</set>
+            <set name="category">Magic Weapon</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type" addition="any flail">Weapon</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+            <set name="enhancement">1</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_FLAILS</set>
+        </setters>
+    </element>
+    <element name="Force Bolt" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_FORCE_BOLT">
+        <description>
+            <p>These are usually found in a batch of 2d4 bolts. This bolt deals an additional 1d6 (2d6 on a critical hit) force damage. Once it hits, the bolt is no longer psychic.</p>
+        </description>
+        <setters>
+            <set name="category">Magic Weapon</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type" addition="bolt">Weapon</set>
+            <set name="rarity">uncommon</set>
+            <set name="attunement">true</set>
+            <set name="stackable">true</set>
+        </setters>
+    </element>
+    <element name="Force Shield" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_FORCE_SHIELD">
+        <description>
+            <p>This item appears as an ornate bracer that can be worn over a gauntlet. By using a bonus action and a mental command, you can cause a shield of force to emanate from the bracer, allowing you to wield it as a +1 shield. You can use your bonus action to dismiss the shield, and return it to a bracer.</p>
+            <p class="indent">Additionally, while wielding this shield when you are targeted by magic missile, you can use your reaction to negate the damage from the spell. If you are targeted by disintegrate or a similar effect, you can use your reaction to block the effect, but your shield will revert to a bracer and can’t be called upon again until the next dawn.</p>
+        </description>
+        <setters>
+			<set name="keywords">shield</set>
+            <set name="category">Magic Armor</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot"></set>
+            <set name="type" addition="shield">Armor</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+        </setters>
+    </element>
+    <element name="Gloves of Dexterity" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_GLOVES_OF_DEXTERITY">
+        <description>
+            <p>Your Dexterity score is 19 while you wear these gloves. It has no effect if your Dexterity is 19 or higher without it.</p>
+        </description>
+        <setters>
+            <set name="keywords">gloves, dexterity</set>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">hands</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+        </setters>
+        <rules>
+            <stat name="dexterity:score:set" value="19" bonus="base" />
+        </rules>
+    </element>
+    <element name="Haunted Doll" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_HAUNTED_DOLL">
+        <description>
+            <p>This item appears as a child’s doll made of cloth or porcelain. The doll is haunted by an Intensity 20 haunting that is dormant when first obtained. When carried for at least an hour by a creature, the creature must make a Charisma saving throw. If the save is failed, the creature becomes possessive of the doll and will not willingly part with it, except if it knows a child to which it can give the doll. Children make their Charisma saving throw with disadvantage.</p>
+            <p class="indent">Once the doll is placed in a location where a creature lives within 50 feet of it, it will awaken every night at midnight and remain awake until morning’s light. The haunting will become hostile if a creature attempts to remove the doll or attempts to suppress it.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">rare</set>
+        </setters>
+    </element>
+    <element name="Ioun Stone, Aura Sense" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_IOUN_STONE_AURA_SENSE">
+        <description>
+            <p>You can sense auras while concentrating to do so. You can perceive spiritfonts and the emotional state of each creature within 60 feet of you that you can see. A creature must make a DC 12 Charisma saving throw. If the save succeeds, you can’t determine its emotional state. While concentrating on this ability, you have the psionic focus condition.</p>
+            <p class="indent">An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+            <p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Ioun Stone, Bladed" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_IOUN_STONE_BLADED">
+        <description>
+            <p>When you are attacked by a melee weapon attack, you can use your reaction to make a melee power attack against your attacker. If you don’t have a manifesting ability, Intelligence is your manifesting ability for this attack. You deal 1d8 slashing damage to your target and add half the damage to your AC against the attack which triggered your reaction.</p>
+            <p class="indent">An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+            <p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Ioun Stone, Deflection" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_IOUN_STONE_DEFLECTION">
+        <description>
+            <p>When you are hit by a ranged weapon, power, or spell attack, you can use your reaction to reduce the damage dealt by 10 + 2d8.</p>
+            <p class="indent">An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+            <p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">legendary</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Ioun Stone, Glowing" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_IOUN_STONE">
+        <description>
+            <p>When you concentrate, this stone glows, illuminating up to 30 feet in bright light and an equal distance of dim light beyond that. While concentrating on this ability, you have the psionic focus condition.</p>
+            <p class="indent">An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+            <p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Ioun Stone, Power Reserve" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_IOUN_STONE_POWER_RESERVE">
+        <description>
+            <p>This stone grants you an additional 7 power points. The power points refresh daily at dawn.</p>
+            <p class="indent">An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+            <p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">legendary</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Lens of Revelation" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_LENS_OF_REVELATION">
+        <description>
+            <p>When you wear these glasses, you can see in all directions. An attacker gains no benefit from having an ally within 5 feet of you and you have advantage on Wisdom (Perception) checks to see within 30 feet of you.</p>
+            <p class="indent">You can take a bonus action to concentrate to grant you blindsight up to 60 feet. While concentrating to do so you have the psionic focus condition.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">head</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Living Tattoo, Amber Hornets" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_LIVING_TATTOO_AMBER_HORNETS">
+        <description>
+            <p>This yellow tattoo is of a trio of hornets. When awakened, it transforms into three dire wasps.</p>
+            <p class="indent">When etched into your skin, this psychic ink appears as a beast with a certain color. The tattoo will cover an arm, leg, or half your torso.</p>
+            <p class="indent">By using your action, you can awaken the creature inked on your skin, and the tattoo will come to life, sliding from your skin and transforming into a creature. It will appear in the nearest unoccupied space adjacent to you.</p>
+            <p class="indent">The creature acts on your turn, and is controlled by your will. So long as you aren’t incapacitated, it will act as you mentally command. It will continue to exist for 10 minutes, until you use an action to recall it, or it is reduced to 0 hit points. When the creature is reduced to 0 hit points, it immediately returns to you, appearing as a faded tattoo. The creature regains all lost hit points daily at dawn. While the creature is awake, you have the psionic focus condition, but don’t have to concentrate to maintain it.</p>
+            <p class="indent">A living tattoo is a construct that has resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons and immunity to poison and psychic damage, otherwise it has statistics identical to a normal creature. See the bestiary for statistics to run the creature.</p>
+        </description>
+        <setters>
+            <set name="keywords">tattoo</set>
+            <set name="category">Tattoo</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Tattoo</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Living Tattoo, Mauve Serpent" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_LIVING_TATTOO_MAUVE_SERPENT">
+        <description>
+            <p>This violet tattoo is of a coiled serpent, ready to strike. When awakened it transforms into a dire viper.</p>
+            <p class="indent">When etched into your skin, this psychic ink appears as a beast with a certain color. The tattoo will cover an arm, leg, or half your torso.</p>
+            <p class="indent">By using your action, you can awaken the creature inked on your skin, and the tattoo will come to life, sliding from your skin and transforming into a creature. It will appear in the nearest unoccupied space adjacent to you.</p>
+            <p class="indent">The creature acts on your turn, and is controlled by your will. So long as you aren’t incapacitated, it will act as you mentally command. It will continue to exist for 10 minutes, until you use an action to recall it, or it is reduced to 0 hit points. When the creature is reduced to 0 hit points, it immediately returns to you, appearing as a faded tattoo. The creature regains all lost hit points daily at dawn. While the creature is awake, you have the psionic focus condition, but don’t have to concentrate to maintain it.</p>
+            <p class="indent">A living tattoo is a construct that has resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons and immunity to poison and psychic damage, otherwise it has statistics identical to a normal creature. See the bestiary for statistics to run the creature.</p>
+        </description>
+        <setters>
+            <set name="keywords">tattoo</set>
+            <set name="category">Tattoo</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Tattoo</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Living Tattoo, Ebony Turtle" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_LIVING_TATTOO_EBONY_TURTLE">
+        <description>
+            <p>This black tattoo is of a massive turtle. When awakened it transforms into a dire snapping turtle.</p>
+            <p class="indent">When etched into your skin, this psychic ink appears as a beast with a certain color. The tattoo will cover an arm, leg, or half your torso.</p>
+            <p class="indent">By using your action, you can awaken the creature inked on your skin, and the tattoo will come to life, sliding from your skin and transforming into a creature. It will appear in the nearest unoccupied space adjacent to you.</p>
+            <p class="indent">The creature acts on your turn, and is controlled by your will. So long as you aren’t incapacitated, it will act as you mentally command. It will continue to exist for 10 minutes, until you use an action to recall it, or it is reduced to 0 hit points. When the creature is reduced to 0 hit points, it immediately returns to you, appearing as a faded tattoo. The creature regains all lost hit points daily at dawn. While the creature is awake, you have the psionic focus condition, but don’t have to concentrate to maintain it.</p>
+            <p class="indent">A living tattoo is a construct that has resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons and immunity to poison and psychic damage, otherwise it has statistics identical to a normal creature. See the bestiary for statistics to run the creature.</p>
+        </description>
+        <setters>
+            <set name="keywords">tattoo</set>
+            <set name="category">Tattoo</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Tattoo</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Living Tattoo, Emerald Mantis" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_LIVING_TATTOO_EMERALD_MANTIS">
+        <description>
+            <p>This green tattoo is of a praying mantis. When awakened it transforms into a dire mantis.</p>
+            <p class="indent">When etched into your skin, this psychic ink appears as a beast with a certain color. The tattoo will cover an arm, leg, or half your torso.</p>
+            <p class="indent">By using your action, you can awaken the creature inked on your skin, and the tattoo will come to life, sliding from your skin and transforming into a creature. It will appear in the nearest unoccupied space adjacent to you.</p>
+            <p class="indent">The creature acts on your turn, and is controlled by your will. So long as you aren’t incapacitated, it will act as you mentally command. It will continue to exist for 10 minutes, until you use an action to recall it, or it is reduced to 0 hit points. When the creature is reduced to 0 hit points, it immediately returns to you, appearing as a faded tattoo. The creature regains all lost hit points daily at dawn. While the creature is awake, you have the psionic focus condition, but don’t have to concentrate to maintain it.</p>
+            <p class="indent">A living tattoo is a construct that has resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons and immunity to poison and psychic damage, otherwise it has statistics identical to a normal creature. See the bestiary for statistics to run the creature.</p>
+        </description>
+        <setters>
+            <set name="keywords">tattoo</set>
+            <set name="category">Tattoo</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Tattoo</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Living Tattoo, Azure Long" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_LIVING_TATTOO_AZURE_LONG">
+        <description>
+            <p>This blue tattoo is of a wingless dragon. When awakened, it transforms into a sacred serpent.</p>
+            <p class="indent">When etched into your skin, this psychic ink appears as a beast with a certain color. The tattoo will cover an arm, leg, or half your torso.</p>
+            <p class="indent">By using your action, you can awaken the creature inked on your skin, and the tattoo will come to life, sliding from your skin and transforming into a creature. It will appear in the nearest unoccupied space adjacent to you.</p>
+            <p class="indent">The creature acts on your turn, and is controlled by your will. So long as you aren’t incapacitated, it will act as you mentally command. It will continue to exist for 10 minutes, until you use an action to recall it, or it is reduced to 0 hit points. When the creature is reduced to 0 hit points, it immediately returns to you, appearing as a faded tattoo. The creature regains all lost hit points daily at dawn. While the creature is awake, you have the psionic focus condition, but don’t have to concentrate to maintain it.</p>
+            <p class="indent">A living tattoo is a construct that has resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons and immunity to poison and psychic damage, otherwise it has statistics identical to a normal creature. See the bestiary for statistics to run the creature.</p>
+        </description>
+        <setters>
+            <set name="keywords">tattoo</set>
+            <set name="category">Tattoo</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Tattoo</set>
+            <set name="rarity">legendary</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Living Tattoo, Russet Ape" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_LIVING_TATTOO_RUSSET_APE">
+        <description>
+            <p>This brown tattoo is of a great ape with its arms raised in anger. When awakened, it transforms into a dire ape.</p>
+            <p class="indent">When etched into your skin, this psychic ink appears as a beast with a certain color. The tattoo will cover an arm, leg, or half your torso.</p>
+            <p class="indent">By using your action, you can awaken the creature inked on your skin, and the tattoo will come to life, sliding from your skin and transforming into a creature. It will appear in the nearest unoccupied space adjacent to you.</p>
+            <p class="indent">The creature acts on your turn, and is controlled by your will. So long as you aren’t incapacitated, it will act as you mentally command. It will continue to exist for 10 minutes, until you use an action to recall it, or it is reduced to 0 hit points. When the creature is reduced to 0 hit points, it immediately returns to you, appearing as a faded tattoo. The creature regains all lost hit points daily at dawn. While the creature is awake, you have the psionic focus condition, but don’t have to concentrate to maintain it.</p>
+            <p class="indent">A living tattoo is a construct that has resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons and immunity to poison and psychic damage, otherwise it has statistics identical to a normal creature. See the bestiary for statistics to run the creature.</p>
+        </description>
+        <setters>
+            <set name="keywords">tattoo</set>
+            <set name="category">Tattoo</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Tattoo</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Living Tattoo, Satin Tiger" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_LIVING_TATTOO_SATIN_TIGER">
+        <description>
+            <p>This white tattoo is of a regal tiger. When awakened it transforms into a sacred tiger.</p>
+            <p class="indent">When etched into your skin, this psychic ink appears as a beast with a certain color. The tattoo will cover an arm, leg, or half your torso.</p>
+            <p class="indent">By using your action, you can awaken the creature inked on your skin, and the tattoo will come to life, sliding from your skin and transforming into a creature. It will appear in the nearest unoccupied space adjacent to you.</p>
+            <p class="indent">The creature acts on your turn, and is controlled by your will. So long as you aren’t incapacitated, it will act as you mentally command. It will continue to exist for 10 minutes, until you use an action to recall it, or it is reduced to 0 hit points. When the creature is reduced to 0 hit points, it immediately returns to you, appearing as a faded tattoo. The creature regains all lost hit points daily at dawn. While the creature is awake, you have the psionic focus condition, but don’t have to concentrate to maintain it.</p>
+            <p class="indent">A living tattoo is a construct that has resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons and immunity to poison and psychic damage, otherwise it has statistics identical to a normal creature. See the bestiary for statistics to run the creature.</p>
+        </description>
+        <setters>
+            <set name="keywords">tattoo</set>
+            <set name="category">Tattoo</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Tattoo</set>
+            <set name="rarity">legendary</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Living Tattoo, Vermillion Hawk" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_LIVING_TATTOO_VERMILLION_HAWK">
+        <description>
+            <p>This red tattoo is of a fiery hawk swooping to grab it prey. When awakened it transforms into a sacred fire bird.</p>
+            <p class="indent">When etched into your skin, this psychic ink appears as a beast with a certain color. The tattoo will cover an arm, leg, or half your torso.</p>
+            <p class="indent">By using your action, you can awaken the creature inked on your skin, and the tattoo will come to life, sliding from your skin and transforming into a creature. It will appear in the nearest unoccupied space adjacent to you.</p>
+            <p class="indent">The creature acts on your turn, and is controlled by your will. So long as you aren’t incapacitated, it will act as you mentally command. It will continue to exist for 10 minutes, until you use an action to recall it, or it is reduced to 0 hit points. When the creature is reduced to 0 hit points, it immediately returns to you, appearing as a faded tattoo. The creature regains all lost hit points daily at dawn. While the creature is awake, you have the psionic focus condition, but don’t have to concentrate to maintain it.</p>
+        </description>
+        <setters>
+            <set name="keywords">tattoo</set>
+            <set name="category">Tattoo</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Tattoo</set>
+            <set name="rarity">legendary</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Martial Master Spear" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_MARTIAL_MASTER_SPEAR">
+        <description>
+            <p>You gain a +2 bonus on attack and damage rolls while wielding this psychic weapon. When you hit a target with this weapon, you can choose to deal bludgeoning damage instead of piercing damage.</p>
+            <p class="indent">You gain three martial dice, which are a d8. The spear regains all martial dice daily at dawn. You can spend one die to perform one of the following maneuvers:</p>
+            <p class="indent">Demon Dive. You throw your spear at a foe up to 15 feet away, adding 1d8 to your attack roll. If you hit, your foe is pushed 5 feet and you automatically move into its former space. This movement doesn’t draw opportunity attacks. If the throw misses, the spear returns to you.</p>
+            <p class="indent">Exchange. When you are attacked by a melee weapon attack from a foe within 5 feet of you, you add 1d8 to your AC against that attack. If the attack misses, you swap places with the attacker.</p>
+            <p class="indent">Rapid Thrust. You attack with disadvantage, but if you hit you deal an additional 2d8 piercing damage.</p>
+            <p class="indent">Sweep. A creature hit by this weapon must make a Strength (Athletics) or Dexterity (Acrobatics) check against a DC equal to 8 + your Strength modifier + your proficiency bonus + 1d8. If the check is failed, the creature takes weapon damage + 1d8 bludgeoning damage and is knocked prone.</p>
+            <p class="indent">Vault Kick. When you hit, your target must make a Strength (Athletics) or Dexterity (Acrobatics) check against a DC equal to 8 + your Strength modifier + your proficiency bonus + 1d8. If the check is failed, the creature takes weapon damage + 1d8 bludgeoning damage and is pushed 10 feet away from you.</p>
+        </description>
+        <setters>
+            <set name="keywords">spear</set>
+            <set name="category">Magic Weapon</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type" addition="spear">Weapon</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+            <set name="enhancement">2</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SPEARS</set>
+        </setters>
+    </element>
+    <element name="Mind Armor" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_MIND_ARMOR">
+        <description>
+            <p>While wearing this armor you gain a +5 bonus to AC against telepathic attacks and abilities that deal psychic damage. You also gain a +5 bonus on saving throws against telepathic powers and abilities and enchantment spells and abilities.</p>
+        </description>
+        <setters>
+            <set name="category">Magic Armor</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">body</set>
+            <set name="type" addition="padded">Armor</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Mind Armor, {{parent}}</set>
+        </setters>
+    </element>
+    <element name="Mirror of Displacement" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_MIRROR_OF_DISPLACEMENT">
+        <description>
+            <p>You can use your action to hold this mirror up to another creature within 40 feet of you. The creature must make a DC 16 Dexterity saving throw or be relocated to another space within 40 feet of you. The new space must be on a solid surface.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot"></set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Periapt of Wisdom" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_PERIAPT_OF_WISDOM">
+        <description>
+            <p>Your Wisdom score is 19 while you wear this pendant. It has no effect if your Wisdom is 19 or higher without it.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">neck</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+        </setters>
+        <rules>
+            <stat name="wisdom:score:set" value="19" bonus="base"/>
+        </rules>
+    </element>
+    <element name="Psicrown" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_PSICROWN">
+        <description>
+            <p>This crown can store psionic powers, holding an augmented power until the attuned wearer uses them. The crown can store up to 9 power points of powers at a time. When found, it contains 1d10 – 1 power points worth of stored powers chosen by the DM.</p>
+            <p class="indent">Any creature can manifest a power with 1 to 9 power points of augmentations into the crown by touching it as the power is manifest. The power has no effect except being stored in the crown. If the crown can’t hold the power, the power points are expended without effect. A power must be augmented to be stored in the crown.</p>
+            <p class="indent">While wearing this crown, you can manifest any power stored in it with the augmentations used in the original manifestation. The power uses the power save DC, power attack bonus, and manifesting ability of the original manifester, but otherwise treated as if you manifested the power. The manifested power used from the crown is no longer stored in it, freeing up space.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">head</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Psi-Leech" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_PSI_LEECH">
+        <description>
+            <p>You gain a +1 on hit and damage rolls with this psychic weapon. When you hit a creature that has the psionic focus condition, you deal an additional 1d10 force damage. This force damage can’t be regained until the creature completes a long rest or benefits from lesser restoration or remove curse.</p>
+        </description>
+        <setters>
+			<set name="keywords">dagger</set>
+            <set name="category">Magic Weapon</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot"></set>
+            <set name="type" addition="dagger">Weapon</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+            <set name="enhancement">1</set>
+			<set name="weapon">Dagger</set>
+        </setters>
+    </element>
+    <element name="Psychoactive Skin, Chameleon" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_PSYCHOACTIVE_SKIN_CHAMELEON">
+        <description>
+            <p>This appears as a fist-sized globule of ectoplasm until attuned to a creature of Medium size or smaller. Once attuned, it bonds with the flesh of its user. By using an action, the skin can be activated, and expands to cover the creature and its worn items as a second skin. By using another action, the skin can be retracted.</p>
+            <p class="indent">While active, the wearer can breathe and detect its surroundings as normal. The psychoactive skin rolls away from parts of the body when the wearer needs to access its inventory or perform normal functions such as eating. Only one skin can be attuned at a time.</p>
+            <p class="indent">While active, this skin changes in response to its environment giving its wearer nearly perfect camouflage. You have advantage on Dexterity (Stealth) checks to be hidden and treat each roll below 12 as a 12 when motionless.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot"></set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Psychoactive Skin, Eldritch" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_PSYCHOACTIVE_SKIN_ELDRITCH">
+        <description>
+            <p>This appears as a fist-sized globule of ectoplasm until attuned to a creature of Medium size or smaller. Once attuned, it bonds with the flesh of its user. By using an action, the skin can be activated, and expands to cover the creature and its worn items as a second skin. By using another action, the skin can be retracted.</p>
+            <p class="indent">While active, the wearer can breathe and detect its surroundings as normal. The psychoactive skin rolls away from parts of the body when the wearer needs to access its inventory or perform normal functions such as eating. Only one skin can be attuned at a time.</p>
+            <p class="indent">While active, this skin reveals hundreds of eyes and tiny slithering tentacles. Each creature that is with 10 feet of you when you activate this skin or which ends its turn within 10 feet of you while it remains active must make a DC 15 Intelligence saving throw. If the save is failed the creature is frightened for 1 minute and is at disadvantage on attack rolls so long as it remains within 30 feet of you as long as it remains frightened.</p>
+            <p class="indent">While active, you can take a bonus action to use the eyes on the skin to see in all directions until the start of your next turn. When you do so, you have a +2 bonus on Wisdom (Perception) checks that rely on sight, and foes gain no benefit from having an ally within 5 feet of you.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot"></set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">legendary</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Psychoactive Skin, Hardened" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_PSYCHOACTIVE_SKIN_HARDENED">
+        <description>
+            <p>This appears as a fist-sized globule of ectoplasm until attuned to a creature of Medium size or smaller. Once attuned, it bonds with the flesh of its user. By using an action, the skin can be activated, and expands to cover the creature and its worn items as a second skin. By using another action, the skin can be retracted.</p>
+            <p class="indent">While active, the wearer can breathe and detect its surroundings as normal. The psychoactive skin rolls away from parts of the body when the wearer needs to access its inventory or perform normal functions such as eating. Only one skin can be attuned at a time.</p>
+            <p class="indent">When you activate this skin, it surrounds you in biomorphic armor taking on a unique style based on the skin, such as rock, steel, or wood. You have AC equal to 14 + your Constitution modifier if it is greater than your current AC.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot"></set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Psychoactive Skin, Monstrous" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_PSYCHOACTIVE_SKIN_MONSTROUS">
+        <description>
+            <p>This appears as a fist-sized globule of ectoplasm until attuned to a creature of Medium size or smaller. Once attuned, it bonds with the flesh of its user. By using an action, the skin can be activated, and expands to cover the creature and its worn items as a second skin. By using another action, the skin can be retracted.</p>
+            <p class="indent">While active, the wearer can breathe and detect its surroundings as normal. The psychoactive skin rolls away from parts of the body when the wearer needs to access its inventory or perform normal functions such as eating. Only one skin can be attuned at a time.</p>
+            <p class="indent">While active, this skin enshrouds you in dark fibers. You have advantage on Strength checks and saving throws. You can lift three times your normal lift weight and jump five times your normal jump distance. You take half damage from falling and no damage from a fall less than 50 feet. When you take fall damage, including from psychokinetic slams, you make a Dexterity check against a DC 10. If successful, you don’t fall prone. If you take no fall damage, you are never knocked prone from falling.</p>
+            <p class="indent">When you make an unarmed attack, you deal 1d6 damage if you don’t already deal more. Whenever you deal enough damage to a creature within 5 feet of you to reduce it to fewer hit points than your Strength score, you can automatically grapple it if you choose. If you choose to throw a creature grappled in this manner, you push them twice the normal distance.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot"></set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">rarity varies</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Psychoactive Skin, Proteus" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_PSYCHOACTIVE_SKIN_PROTEUS">
+        <description>
+            <p>This appears as a fist-sized globule of ectoplasm until attuned to a creature of Medium size or smaller. Once attuned, it bonds with the flesh of its user. By using an action, the skin can be activated, and expands to cover the creature and its worn items as a second skin. By using another action, the skin can be retracted.</p>
+            <p class="indent">While active, the wearer can breathe and detect its surroundings as normal. The psychoactive skin rolls away from parts of the body when the wearer needs to access its inventory or perform normal functions such as eating. Only one skin can be attuned at a time.</p>
+            <p class="indent">While active, you gain the ability to change your appearance. By using an action, you can change your appearance to another creature of the same size as you, including any worn attire and gear. The appearance is completely cosmetic, and any gear so created isn’t functional. You may also alter your voice to match the visual form. When used as a disguise, you have advantage on any check to deceive that relies on sight.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot"></set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Ribbon of Severence" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_RIBBON_OF_SEVERENCE">
+        <description>
+            <p>This red velvet ribbon is worn around the neck. When attuned and worn, its wearer must make a DC 18 Wisdom saving throw. If the save is failed, the wearer’s head is severed from its body, but the wearer isn’t slain.</p>
+            <p class="indent">Once its head has been removed, the wearer can place any head on its severed neck and affix it with the ribbon. The head must be from a creature of the same size as the attuned creature. On wearing another head, the user can use its action to probe the memories of the new head.</p>
+            <p class="indent">Severed heads, including the creature’s own head, will rot and decay as normal when not attached to the body with the ribbon. While wearing the ribbon and a head, the creature can’t be beheaded by any means except untying the ribbon.</p>
+            <p class="indent">If the creature has no head, it is can continue to see and hear through the last head it possessed for up to one hour, after which time it is blinded and deafened until it attaches a new head.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">neck</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">legendary</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Ringing Mace" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_RINGING_MACE">
+        <description>
+            <p>You gain a +2 bonus on attack and damage rolls with this psychic weapon. When you hit a creature, it must make a DC 12 Wisdom saving throw or be deafened until the end of its next turn. When you hit a creature concentrating on a spell, power, or other ability, its concentration DC is increased by 10 and it makes its Constitution save with disadvantage. If a psychic power or ability is disrupted, the creature is affected by synaptic static until the end of its next turn.</p>
+        </description>
+        <setters>
+            <set name="keywords">mace</set>
+            <set name="category">Magic Weapon</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type" addition="mace">Weapon</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+            <set name="enhancement">2</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_MACES</set>
+        </setters>
+    </element>
+    <element name="Rod of the Depths" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_ROD_OF_THE_DEPTHS">
+        <description>
+            <p>This rod is topped with a writhing mass of tentacles. You can strike a creature with the rod by making a melee weapon attack. The rod counts as a club for proficiency but does no damage. Instead, a creature hit by the rod is ensnared as the tentacles detach and wrap around the target. An ensnared creature is restrained for 1 minute. Another creature can use its action to attempt to remove the tentacles, but must succeed a DC 15 Strength check.</p>
+            <p class="indent">If the ensnared creature is in water, it will sink 30 feet each round unless held aloft by magical or psychic means. Each round, it will suffocate unless it can breathe in water. Once used, the rod can’t be used again until the next dawn.</p>
+        </description>
+        <setters>
+            <set name="category">Rods</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">onehand</set>
+            <set name="type">Rod</set>
+            <set name="rarity">rare</set>
+        </setters>
+    </element>
+    <element name="Sextant of Calming" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_SEXTANT_OF_CALMING">
+        <description>
+            <p>This navigation tool grants advantage on tool proficiency checks made with it while in the open sea.</p>
+            <p class="indent">Three times each day, when the user is within the area of a rain, sleet, snow, hail, or lightning storm, including spells and powers that duplicate a storm, it can take a reaction to create a cylinder with a 20-foot radius that is 20 feet tall centered on it that suppresses the storm and any effect of the storm. The cylinder lasts for 1 hour and requires concentration to maintain.</p>
+            <p class="indent">The user can expend additional uses during activation to double the size of the cylinder (40-foot radius and 40 feet tall for 2 uses or 80-foot radius and 80 feet tall for all 3 uses. The sextant regains all uses daily at dawn.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">very rare</set>
+        </setters>
+    </element>
+    <element name="Shadow Dust" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_SHADOW_DUST">
+        <description>
+            <p>When this dust is thrown against a surface, wall, or unattended object of Large size or smaller, it transforms the consistency of the target to shadow, allowing a creature to pass through it for 10 minutes. Only a 10-foot cube section of a wall or surface will be affected. Attended objects aren’t affected. When the effect ends, any creature or object within its space is safely moved to the nearest unoccupied space.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">uncommon</set>
+        </setters>
+    </element>
+    <element name="Shoes of Safefall" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_SHOES_OF_SAFEFALL">
+        <description>
+            <p>While wearing this pair of shoes, when you fall from a height greater than 30 feet, your descent slows and you safely land. When falling 30 feet or less, any damage from falling you take is halved.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">feet</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">uncommon</set>
+        </setters>
+    </element>
+    <element name="Shroud of Flames" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_SHROUD_OF_FLAMES">
+        <description>
+            <p>While wearing this cloak, you can use a bonus action to wreathe yourself in flames for 1 minute. Each creature with 5 feet of you at the start of its turn must make a Constitution saving throw. If the save is failed, it takes 2d8 fire damage. If the save succeeds the creature takes half damage.</p>
+            <p class="indent">While wreathed in the flames, you have resistance to cold and fire damage and are immune to the flames from the shroud. Additionally, each melee weapon attack you make while wreathed in flames deals an additional 1d8 fire damage. After using this item, it can’t be used again until the next dawn.</p>
+        </description>
+        <setters>
+            <set name="keywords">cloak</set>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">shoulders</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Spirit Sieve" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_SPIRIT_SIEVE">
+        <description>
+            <p>This item appears as a floating orb about one foot in diameter. When a psionic power is manifested targeting a creature within its space or an area including its space, the manifester must make an ability check using its manifesting ability against a DC of 15. If failed, the spirit sieve absorbs the psionic power, causing it to have no effect. Only three powers can be absorb until the next dawn. Each time it absorbs a power, it glows, increasing intensity with each additional power. For each power absorbed, it sheds dim light in a 5-foot radius. The light fades upon the next dawn.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">very rare</set>
+        </setters>
+    </element>
+    <element name="Storm Glaive" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_STORM_GLAIVE">
+        <description>
+            <p>You can use your bonus action to have this weapon cackle with electricity for 1 minute or until you use your bonus action to dismiss it. You deal an additional 1d12 lightning damage on a hit with it.</p>
+            <p class="indent">Once per hour, you can use your action to spin the glaive in a continuous circle, creating a tempest in a 5-foot radius. Each creature within the tempest must make a DC 16 Strength saving throw. If the save is failed, the creature is pushed 30 feet away from you and tossed in the air 10 feet. It will fall, taking 1d6 fall damage and is knocked prone. If a creature is flung into a wall or other solid obstruction, it takes 1d6 bludgeoning damage per 10 feet it can't be pushed.</p>
+        </description>
+        <setters>
+            <set name="keywords">glaive</set>
+            <set name="category">Magic Weapon</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type" addition="glaive">Weapon</set>
+            <set name="rarity">legendary</set>
+            <set name="attunement">true</set>
+            <set name="weapon">Glaive</set>
+        </setters>
+    </element>
+    <element name="The Bulwark" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_THE_BULWARK">
+        <description>
+            <p>This massive shield grants you half cover. You can use your action to duck behind the shield, granting you full cover. When you are attacked by a melee weapon attack, you can use your reaction to create a psychokinetic thrust. The creature must make a DC 14 Strength saving throw. If the save is failed, the creature is pushed 10 feet and knocked prone and its attack deals no damage. When you use this function more than once each dawn, you suffer a level of exhaustion.</p>
+        </description>
+        <setters>
+			<set name="keywords">shield</set>
+            <set name="category">Magic Armor</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type" addition="shield">Armor</set>
+            <set name="rarity">legendary</set>
+            <set name="attunement">true</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+        </setters>
+    </element>
+    <element name="Third Eye" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_THIRD_EYE">
+        <description>
+            <p>This circlet allows you to use your action to gain enhanced visual detection for 1 minute. It has three uses. You can see up to 120 feet in magical and nonmagical darkness, sense auras and spiritfonts, detect magical and psychic effects, perceive into the Ethereal Plane, and are aware of secret and concealed doors hidden by both mundane and supernatural means. You are also immune to blindness and gaze attacks while using this item. The circlet regains all uses daily at dawn.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous item</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="slot">head</set>
+            <set name="type">Wondrous item</set>
+            <set name="rarity">very rare</set>
+            <set name="attunement">true</set>
+        </setters>
+    </element>
+    <element name="Vial of Ectoplasm" type="Magic Item" source="Therin Creative’s Psionic Rules Set" id="ID_TC_PRS_MAGIC_ITEM_VIAL_OF_ECTOPLASM">
+        <description>
+            <p>This metal decanter contains ectoplasm from the Astral Plane. When rubbed over a weapon or armor, it becomes a psychic item for 1 hour. Weapons gain a +1 bonus on attack and damage rolls. Armors and shield gain a +1 bonus to AC. If the item is already magical or psychic and has a bonus of +1 or better, the ectoplasm has no effect.</p>
+        </description>
+        <setters>
+            <set name="category">Potion</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="type">Potion</set>
+            <set name="rarity">uncommon</set>
+        </setters>
+    </element>
+    
+</elements>
