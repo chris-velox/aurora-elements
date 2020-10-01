@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Arcane Hierophant Arcane Tradition</name>
+        <update version="0.0.1">
+            <file name="wizard-arcane-hierophant.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/therin-creative/wizard-arcane-hierophant.xml" />
+        </update>
+    </info>
+    
+    <element name="Wizard: Arcane Hierophant" type="Source" source="Core" id="ID_TC_WAH_SOURCE_WIZARD_ARCANE_HIEROPHANT">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">WAH</set>
+            <set name="url">https://www.gmbinder.com/share/-MGok7aCeoPTYth_kQda</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="TC" url="https://www.gmbinder.com/profile/therin">Therin Creative</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20201001</set>
+        </setters>
+    </element>
+
+    <element name="Arcane Hierophant" type="Archetype" source="Wizard: Arcane Hierophant" id="ID_TC_WAH_ARCHETYPE_WIZARD_ARCANE_HIEROPHANT">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>The arcane hierophant is a devotee of nature and traffics in the same circles as druids. The wizards study natural lore and magic. They often prefer elemental and nature spells to other spells, but will leverage the tools they possess to protect the wilds.</p>
+            <div element="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_DRUIDIC_MAGIC" />
+            <div element="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_NATURAL_LORE" />
+            <div element="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_SAVANT_OF_NATURE" />
+            <div element="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_CHANNEL_PLANT" />
+            <div element="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_WILL_OF_NATURE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_DRUIDIC_MAGIC" level="2" />
+            <grant type="Archetype Feature" id="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_NATURAL_LORE" level="2" />
+            <grant type="Archetype Feature" id="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_SAVANT_OF_NATURE" level="6" />
+            <grant type="Archetype Feature" id="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_CHANNEL_PLANT" level="10" />
+            <grant type="Archetype Feature" id="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_WILL_OF_NATURE" level="14" />
+        </rules>
+    </element>
+        <element name="Druidic Magic" type="Archetype Feature" source="Wizard: Arcane Hierophant" id="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_DRUIDIC_MAGIC">
+            <description>
+                <p>Starting at 2nd level, you may add two 1st-level druid spells to your spellbook, as well as two cantrips from the druid spell list, one of which must be druidcraft if you don’t already know it. Additionally, you can add druid spells to your spellbook the same way you learn new wizard spells. Any time you gain new wizard spells from class features, you can add spells from the druid list in place of a wizard spell. Spells from the druid list in your spellbook, as well as the cantrips added from this feature, count as wizard spells for you.</p>
+                <p class="indent">If your Wisdom modifier is higher than your Intelligence modifier, you can use Wisdom as your spellcasting ability in place of Intelligence for your wizard spells and features.</p>
+                <p class="indent">You can also prepare an additional number of spells equal to your Wisdom bonus (minimum of 1). The additional spells must be spells in your spellbook from the druid list.</p>
+            </description>
+            <spellcasting name="Wizard" extend="true">
+                <extend>Druid</extend>
+            </spellcasting>
+            <sheet>
+                <description>If your Wisdom modifier is higher than your Intelligence modifier, you can use Wisdom as your spellcasting ability in place of Intelligence for your wizard spells and features. {{arcane-heirophant:prepare}} of the spells you can prepare must be from the druid spell list.</description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Spellbook (Arcane Hierophant)" spellcasting="Wizard" known="true" supports="Druid,1" number="2" level="2" />
+                <select type="Spell" name="Cantrip (Arcane Hierophant)" spellcasting="Wizard" known="true" supports="Druid,0" number="2" level="2" />
+                <stat name="arcane-heirophant:prepare" value="1" bonus="base" />
+                <stat name="arcane-heirophant:prepare" value="wisdom:modifier" bonus="base" />
+                <stat name="wizard:spellcasting:prepare" value="arcane-heirophant:prepare" />
+            </rules>
+        </element>
+        <element name="Natural Lore" type="Archetype Feature" source="Wizard: Arcane Hierophant" id="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_NATURAL_LORE">
+            <description>
+                <p>At 2nd level when you take this tradition, you gain proficiency in Nature and learn Druidic.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+                <grant type="Language" id="ID_LANGUAGE_DRUIDIC" />
+            </rules>
+        </element>
+        <element name="Savant of Nature" type="Archetype Feature" source="Wizard: Arcane Hierophant" id="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_SAVANT_OF_NATURE">
+            <description>
+                <p>When you reach 6th level, your knowledge and familiarity with the natural world is significant. You gain expertise in one of the following skills provided you are already proficient: Animal Handling, Nature, or Survival.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Class Feature" name="Skill Expertise, Savant of Nature" supports="ID_EXPERTISE_SKILL_ANIMALHANDLING|ID_EXPERTISE_SKILL_NATURE|ID_EXPERTISE_SKILL_SURVIVAL" />
+            </rules>
+        </element>
+        <element name="Channel Plant" type="Archetype Feature" source="Wizard: Arcane Hierophant" id="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_CHANNEL_PLANT">
+            <description>
+                <p>Upon reaching 10th level, once per rest, you can take an action to establish a magical conduit between yourself and a plant or a patch of plants, such as grass, occupying a space no larger than a 10-foot square that is not a creature. This conduit lasts for 1 hour or so long as you remain within 200 feet of it, during which time you can sense the surroundings of the plant in lieu of your own by taking an action. You can regain your normal sensation during your turn when you choose. The plant is treated as having blindsight with a range of 30 feet.</p>
+                <p class="indent">So long as this conduit remains, you can use it to cast certain spells. By taking a bonus action, when you cast a spell with a casting time of 1 action which originates from you, you can have it originate from the plant. You may also cast a spell with a range of touch and have it held by the plant. Whenever a target touches the plant, you can use your reaction to trigger the spell.</p>
+                <p class="indent">You can use this feature again after completing a long or short rest.</p>
+            </description>
+            <sheet usage="1/Short Rest" action="Action">
+                <description>You can establish a magical conduit between yourself and a plant or a patch of plants that lasts for 1 hour or so long as you remain within 200 feet of it, during which time you can sense the surroundings of the plant in lieu of your own by taking an action. You can regain your normal sensation during your turn when you choose. The plant is treated as having blindsight with a range of 30 feet. When you cast a spell with a casting time of 1 action which originates from you, you can have it originate from the plant. You may also cast a spell with a range of touch and have it held by the plant. Whenever a target touches the plant, you can use your reaction to trigger the spell.</description>
+            </sheet>
+        </element>
+        <element name="Will of Nature" type="Archetype Feature" source="Wizard: Arcane Hierophant" id="ID_TC_WAH_ARCHETYPE_FEATURE_ARCANE_HIEROPHANT_WILL_OF_NATURE">
+            <description>
+                <p>Upon reaching 14th level, while you concentrate on a wizard spell, you can use your action to transfer that concentration to a creature or plant you control or have a conduit with. This can include any creature summoned or conjured by one of your spells which you control, a familiar, or a beast companion from another class’s feature, as well as a plant you have conduit with via your Channel Plant feature.</p>
+                <p class="indent">A creature uses its own Constitution saving throw when making a check to continue concentration, while a plant automatically fails. If the creature is dismissed, reduced to 0 hit points, incapacitated, or dispelled, the concentrated spell effect is lost.</p>
+                <p class="indent">After transferring concentration, you can cast a new spell requiring concentration without ending the transferred spell. You can only transfer concentration on a spell once every 10 minutes and no more than a number of times equal to your Intelligence modifier (minimum once). You regain all uses of this feature when you complete a long rest.</p>
+            </description>
+            <sheet usage="{{will-of-nature:uses}}/Long Rest">
+                <description>While you concentrate on a wizard spell, you can use your action to transfer that concentration to a creature or plant you control or have a conduit with. After transferring concentration, you can cast a new spell requiring concentration without ending the transferred spell. You can only transfer concentration on a spell once every 10 minutes.</description>
+            </sheet>
+            <rules>
+                <stat name="will-of-nature:uses" value="1" bonus="base" />
+                <stat name="will-of-nature:uses" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+
+</elements>
