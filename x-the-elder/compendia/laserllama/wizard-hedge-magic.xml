@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Hedge Magic Arcane Tradition</name>
+        <update version="0.0.2">
+            <file name="wizard-hedge-magic.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/laserllama/wizard-hedge-magic.xml" />
+        </update>
+    </info>
+    
+    <element name="Hedge Magic" type="Source" source="Core" id="ID_LASERLLAMA_RDDT_SOURCE_HEDGE_MAGIC">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation"></set>
+            <set name="url">https://drive.google.com/file/d/1TXXq-7A6yzjYbHivWqqNN2r0sQOjUArF/view</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="LL" url="https://www.reddit.com/u/LaserLlama">u/LaserLlama</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200118</set>
+        </setters>
+    </element>
+    
+    <element name="Hedge Magic" type="Archetype" source="Hedge Magic" id="ID_LL_HEDGE_MAGIC_ARCHETYPE_Hedge Magic">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>While almost all wizards study in formal schools, or under the tutelage of a wise master, some wizards reject traditional arcane schooling and strike out into the world to learn by doing. These rare wizards who hone their craft out in the wilds are referred to as Hedge Wizards.</p>
+            <p class="indent">As a hedge wizard, rather then pursue the great heights of arcane magic, you focus on mastering the fundementals, basic cantrips and low level spells. Though their methods are frowned upon by formal wizard schools, any archmage worthy of his station will reluctantly recognize that hedge wizards are the true masters of low level magic.</p>
+            <div element="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_CANTRIP_SAVANT" />
+            <div element="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_PROCRASTINATOR" />
+            <div element="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_ON_THE_FLY" />
+            <div element="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_HARDY_MAGIC" />
+            <div element="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_FUNDAMENTAL_MASTERY" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_CANTRIP_SAVANT" level="2" />
+            <grant type="Archetype Feature" id="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_PROCRASTINATOR" level="2" />
+            <grant type="Archetype Feature" id="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_ON_THE_FLY" level="6" />
+            <grant type="Archetype Feature" id="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_HARDY_MAGIC" level="10" />
+            <grant type="Archetype Feature" id="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_FUNDAMENTAL_MASTERY" level="14" />
+        </rules>
+    </element>
+        <element name="Cantrip Savant" type="Archetype Feature" source="Hedge Magic" id="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_CANTRIP_SAVANT">
+            <description>
+                <p>As a Hedge Wizard, you’ve chosen to focus your efforts on the ‘lower magics’. Beginning at 2nd level when you adopt this tradition, you learn an additional cantrip from the wizard spell list. This cantrip doesn’t count against your number of cantrips known.</p>
+                <p class="indent">Additionally, your familiarity with the "lower magics" has granted you a certain flexibility not available to other arcane practitioners. When you finish a long rest you may switch the cantrip you learned from this feature out for another cantrip from the Wizard spell list.</p>
+            </description>
+            <sheet>
+                <description>When you finish a long rest you may switch the cantrip you learned from this feature out for another cantrip from the Wizard spell list.</description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Cantrip (Cantrip Savant)" supports="Wizard,0" spellcasting="Wizard" known="true" level="2" />
+            </rules>
+        </element>
+        <element name="Procrastinator" type="Archetype Feature" source="Hedge Magic" id="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_PROCRASTINATOR">
+            <description>
+                <p>Starting at 2nd level, your refusal to follow wizarding norms has finally paid off. The time it takes to copy any Wizard spell into your spellbook is halved.</p>
+            </description>
+            <sheet>
+                <description>The time it takes to copy any Wizard spell into your spellbook is halved.</description>
+            </sheet>
+        </element>
+        <element name="On the Fly" type="Archetype Feature" source="Hedge Magic" id="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_ON_THE_FLY">
+            <description>
+                <p>At 6th level, your mastery of the fundementals of wizardry is second to none. You gain the ability to adjust your prepared spells on the fly. During the course of a short rest, you may change any 1st level spell you have prepared for a different 1st level spell. Once you use this ability, you must complete a long rest before you can use it again.</p>
+                <p class="indent">At 11th level this ability includes both 1st and 2nd level spells you have prepared, and at 16th level you can change any spell of 3rd level or lower and prepare a different spell of the same level or lower.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>During the course of a short rest, you may change any 1st level spell you have prepared for a different 1st level spell.</description>
+                <description level="11">During the course of a short rest, you may change any 1st and 2nd level spell you have prepared for a different 1st and 2nd level spell.</description>
+                <description level="16">During the course of a short rest, you may change any 1st, 2nd and 3rd level spell you have prepared for a different 3rd level or lower spell.</description>
+            </sheet>
+        </element>
+        <element name="Hardy Magic" type="Archetype Feature" source="Hedge Magic" id="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_HARDY_MAGIC">
+            <description>
+                <p>By 10th level, your time spent learning on the road rather than in a traditional school has made you hardier then most wizards. When you are forced to make a concentration saving throw for a spell cast with a 2nd level spell slot or lower, you have advantage on the saving throw.</p>
+                <p class="indent">Beginning at 13th level, this feature applies to spells cast with a 3rd level spell slot or lower, and at 17th level it applies to spells cast with a 4th level spell slot or lower.</p>
+            </description>
+            <sheet>
+                <description>When you are forced to make a concentration saving throw for a spell cast with a 2nd level spell slot or lower, you have advantage on the saving throw.</description>
+                <description level="13">When you are forced to make a concentration saving throw for a spell cast with a 3rd level spell slot or lower, you have advantage on the saving throw.</description>
+                <description level="17">When you are forced to make a concentration saving throw for a spell cast with a 4th level spell slot or lower, you have advantage on the saving throw.</description>
+            </sheet>
+        </element>
+        <element name="Fundamental Mastery" type="Archetype Feature" source="Hedge Magic" id="ID_LL_HEDGE_MAGIC_ARCHETYPE_FEATURE_HEDGE_MAGIC_FUNDAMENTAL_MASTERY">
+            <description>
+                <p>Starting at 14th level, when you cast a spell that consumes a 3rd level spell slot or lower, and that spell misses its target, fails to take effect, or is counterspelled, you can choose to immediately regain the spell slot used to cast it. When you have used this feature a number of times equal to your intelligence modifier, you must complete a long rest before you can use it again.</p>
+            </description>
+            <sheet usage="{{intelligence:modifier}}/Long Rest">
+                <description>When you cast a spell that consumes a 3rd level spell slot or lower, and that spell misses its target, fails to take effect, or is counterspelled, you can choose to immediately regain the spell slot used to cast it.</description>
+            </sheet>
+        </element>
+
+</elements>
