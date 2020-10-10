@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Sniper Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="fighter-sniper.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/rain-junkie/fighter-sniper.xml" />
+        </update>
+    </info>
+
+    <element name="Sniper Martial Archetype" type="Source" source="Core" id="ID_RAINJUNKIE_GMBINDER_SOURCE_Sniper Martial Archetype">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SMA</set>
+            <set name="url">https://www.gmbinder.com/share/-M78_o-fAB5tsPWRPkGm</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="RJ" url="https://www.gmbinder.com/profile/rain-junkie">Rain-Junkie</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20201004</set>
+        </setters>
+    </element>    
+    <element name="Sniper" type="Archetype" source="Sniper Martial Archetype" id="ID_RJ_SMA_ARCHETYPE_FIGHTER_SNIPER">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>The archetypal Sniper uses distance to gain the upper hand in battle. Firing shots from afar, with dangerous traps to protect their flanks or cover an escape route, each of the sniper’s shots is precise, calculated, and deadly. With a bow or crossbow in hand, nothing can hope to hide from them.</p>
+            <div element="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_FOCUSED_AIM" />
+            <div element="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_TRAPPER" />
+            <div element="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_ACROBAT" />
+            <div element="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_LYING_IN_WAIT" />
+            <div element="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_QUICKSHOT" />
+            <div element="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_SNIPERS_NEST" />
+            <div element="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_LETHALITY" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_FOCUSED_AIM" level="3" />
+            <grant type="Archetype Feature" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_TRAPPER" level="3" />
+            <grant type="Archetype Feature" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_ACROBAT" level="7" />
+            <grant type="Archetype Feature" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_LYING_IN_WAIT" level="7" />
+            <grant type="Archetype Feature" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_QUICKSHOT" level="10" />
+            <grant type="Archetype Feature" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_SNIPERS_NEST" level="15" />
+            <grant type="Archetype Feature" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_LETHALITY" level="18" />
+        </rules>
+    </element>
+        <element name="Focused Aim" type="Archetype Feature" source="Sniper Martial Archetype" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_FOCUSED_AIM">
+            <description>
+                <p>Starting at 3rd level, you can fire a single deadly shot. As an action on your turn, you can take aim at a creature you can see that’s within your weapon’s range. At the start of your next turn, you can release your shot, making an attack roll against the target, providing you can still see them and they’re still within your weapons range. This attack has advantage if the creature is within your weapon’s normal range.</p>
+                <p class="indent">On a hit, the creature takes your weapon’s normal damage, plus additional damage equal to 2d10 + your fighter level. This damage increases to 4d10 at 5th level, 6d10 at 11th level, and 8d10 at 20th level.</p>
+                <p class="indent">If you attack a creature other than the target or the target is reduced to 0 hit points before you’re able to shoot, this effect ends without consuming a use of this feature.</p>
+                <p class="indent">Once you use this feature, you must finish a short or long rest before you can use it again. You can use this feature twice between rests at 10th level, and three times between rests at 17th level. You can only take aim once per turn.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+        </element>
+        <element name="Trapper" type="Archetype Feature" source="Sniper Martial Archetype" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_TRAPPER">
+            <description>
+                <p>Also at 3rd level, you can place traps that lets you get the edge on your foes, and protect your flank. As a bonus action, you can set a visible trap in an unoccupied space on the ground within 5 feet of you, which lasts for 1 minute. At the start of your next turn, the trap arms, turning invisible except to creatures of your choice, and whenever a hostile creature moves within 5 feet of the trap’s space, or starts its turn there, the trap triggers an effect of your choice, which you choose when you set the trap:</p>
+                <p class="indent"><b>Fire Trap.</b> Creatures within 5 feet of the trap’s space when it’s triggered take fire damage equal to 2d6 + half your fighter level.</p>
+                <p class="indent"><b>Smoke Trap.</b> When the trap is triggered, a 15-foot cube centered on the trap becomes heavily obscured to creatures other than you until the start of your next turn.</p>
+                <p class="indent"><b>Snare Trap.</b> Creatures within 5 feet of the trap’s space when it’s triggered have their movement speed reduced to 0 until the start of your next turn.</p>
+                <p class="indent">Before a trap has armed, a creature can use its action to disable to trap that it’s within 5 feet of, causing it to vanish before it can be triggered. You can also disable an unarmed or armed trap you’re within 5 feet of on your turn (no action required). You have three uses of this feature, and regain all uses when you finish a long rest.</p>
+            </description>
+            <sheet usage="3/Long Rest" action="Bonus Action">
+                <description>You can set a visible trap in an unoccupied space on the ground within 5 feet of you, which lasts for 1 minute. At the start of your next turn, the trap arms, turning invisible except to creatures of your choice, and whenever a hostile creature moves within 5 feet of the trap’s space, or starts its turn there, the trap triggers an effect of your choice.</description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_TRAPPER_FIRE_TRAP" level="3" />
+                <grant type="Archetype Feature" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_TRAPPER_SMOKE_TRAP" level="3" />
+                <grant type="Archetype Feature" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_TRAPPER_SNARE_TRAP" level="3" />
+            </rules>
+        </element>
+            <element name="Fire Trap" type="Archetype Feature" source="Sniper Martial Archetype" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_TRAPPER_FIRE_TRAP">
+                <compendium display="false" />
+                <description>
+                    <p>Creatures within 5 feet of the trap’s space when it’s triggered take fire damage equal to 2d6 + half your fighter level.</p>
+                </description>
+                <sheet usage="Trapper">
+                    <description>Creatures within 5 feet of the trap’s space when it’s triggered take 2d6 + {{level:fighter:half}} fire damage.</description>
+                </sheet>
+            </element>
+            <element name="Smoke Trap" type="Archetype Feature" source="Sniper Martial Archetype" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_TRAPPER_SMOKE_TRAP">
+                <compendium display="false" />
+                <description>
+                    <p>When the trap is triggered, a 15-foot cube centered on the trap becomes heavily obscured to creatures other than you until the start of your next turn.</p>
+                </description>
+                <sheet usage="Trapper">
+                    <description>When the trap is triggered, a 15-foot cube centered on the trap becomes heavily obscured to creatures other than you until the start of your next turn.</description>
+                </sheet>
+            </element>
+            <element name="Snare Trap" type="Archetype Feature" source="Sniper Martial Archetype" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_TRAPPER_SNARE_TRAP">
+                <compendium display="false" />
+                <description>
+                    <p>Creatures within 5 feet of the trap’s space when it’s triggered have their movement speed reduced to 0 until the start of your next turn.</p>
+                </description>
+                <sheet usage="Trapper">
+                    <description>Creatures within 5 feet of the trap’s space when it’s triggered have their movement speed reduced to 0 until the start of your next turn.</description>
+                </sheet>
+            </element>
+        <element name="Acrobat" type="Archetype Feature" source="Sniper Martial Archetype" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_ACROBAT">
+            <description>
+                <p>At 7th level, you become especially agile. Whenever you would make an Athletics check to climb or jump, you can make an Acrobatics check instead.</p>
+            </description>
+            <sheet>
+                <description>Whenever you would make an Athletics check to climb or jump, you can make an Acrobatics check instead.</description>
+            </sheet>
+        </element>
+        <element name="Lying in Wait" type="Archetype Feature" source="Sniper Martial Archetype" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_LYING_IN_WAIT">
+            <description>
+                <p>Also at 7th level, you gain proficiency in the Stealth skill. Additionally, being prone doesn’t cause disadvantage on your ranged attack rolls.</p>
+            </description>
+            <sheet>
+                <description>Being prone doesn’t cause disadvantage on your ranged attack rolls.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+            </rules>
+        </element>
+        <element name="Quickshot" type="Archetype Feature" source="Sniper Martial Archetype" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_QUICKSHOT">
+            <description>
+                <p>At 10th level, you can quickly fire at those that stumble into your traps. Whenever a trap is triggered, you can use your reaction to make a ranged weapon attack against the creature that triggered it, provided you can see them.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>Whenever a trap is triggered, you can make a ranged weapon attack against the creature that triggered it, provided you can see them.</description>
+            </sheet>
+        </element>
+        <element name="Sniper’s Nest" type="Archetype Feature" source="Sniper Martial Archetype" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_SNIPERS_NEST">
+            <description>
+                <p>At 15th level, you can set more dangerous traps. You can choose two effects when you set a trap, causing both to go off when a creature triggers the trap. Additionally, if you roll initative and have no uses of your Trapper feature, you regain one use.</p>
+            </description>
+            <sheet>
+                <description>You can choose two effects when you set a trap, causing both to go off when a creature triggers the trap. Additionally, if you roll initative and have no uses of your Trapper feature, you regain one use.</description>
+            </sheet>
+        </element>
+        <element name="Lethality" type="Archetype Feature" source="Sniper Martial Archetype" id="ID_RJ_SMA_ARCHETYPE_FEATURE_SNIPER_LETHALITY">
+            <description>
+                <p>At 18th level, you can kill creatures where they stand. When you hit a creature with your Focused Aim feature, you can expend a use of your Action Surge to deal twice as much damage.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When you hit a creature with your Focused Aim feature, you can expend a use of your Action Surge to deal twice as much damage.</description>
+            </sheet>
+        </element>
+    
+
+</elements>
