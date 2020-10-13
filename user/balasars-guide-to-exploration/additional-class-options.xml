@@ -3,43 +3,777 @@
     <info>
         <name>Balasar’s Guide to Exploration</name>
         <update version="0.0.2">
-            <file name="cleric-faith-mentor.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/cleric-faith-mentor.xml" />
+            <file name="additional-class-options.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/balasars-guide-to-exploration/additional-class-options.xml" />
         </update>
     </info>
-    
+
+    <append id="ID_WOTC_PHB_CLASS_BARBARIAN">
+        <description>
+            <p class="flavor">"Generally, your kind can barely grunt a single syllable, but you? Your brain matches your brawn, perhaps exceeds it."</p>
+            <p>One who is seen as an outsider to society, a person of great rage and passion. Barbarians may seem like the stereotypical near-nude warriors, cut from the cloth of pure muscle and a brute presence.</p>
+            <p class="indent">Thankfully, not all barbarians are created equal, there are those that practice worship to the undead deities, called to forever fight in tremendous wars after death, or those that are nomadic and gathering food for their family.</p>
+            <p class="indent">No matter the path they walk, barbarians become overwhelmed with intense emotions during the heat of battle. Whether this is the passion of battle, the fury of spilt blood, or the love of hunt as sport, the result is the same - their endurance cannot be overcome, forging a supernatural strength that is not normally seen. This boost is temporary, and often described as a rage.</p>
+            <p class="indent">Another fun fact! I once had an acquaintance that was obsessed with having a "great death" before they reached old age. But the hilarious part about it is that no matter what, no one was powerful enough to defeat him! He would go into a rage, looking for a death that he could not obtain!</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_BARBARIAN_CAUSE_OF_INFURIATION" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_BARBARIAN_TRIBE_SOCIETAL_STATUS" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_BARBARIAN_WARRING_FACTION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_BARBARIAN_CAUSE_OF_INFURIATION" />
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_BARBARIAN_TRIBE_SOCIETAL_STATUS" />
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_BARBARIAN_WARRING_FACTION" />
+        </rules>
+    </append>
+        <element name="Feature: Cause of Infuriation" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_BARBARIAN_CAUSE_OF_INFURIATION">
+            <description>
+                <p class="indent">Barbarians have a terrifying fury that hides deep within them. The anger that they harness can turn the tides in a battle, but can also be a hinderance. While all barbarian's rage is different from one another, there are some things that may just push them over the edge.</p>
+                <p class="indent">Tapping into their rage enhances their ability, furthering their strength. An event that occurs may automatically trigger their rage without meaning to.</p>
+                <p class="indent">Use the Cause of Infuriation table to find out what might set off their inner anger.</p>
+                <h5 class="caption">CAUSE OF INFURIATION</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Event</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>Seeing an animal being abused</td></tr>
+                    <tr><td>2</td><td>Losing a bet or gamble</td></tr>
+                    <tr><td>3</td><td>Being ridiculed or called weak</td></tr>
+                    <tr><td>4</td><td>Not understanding a complex concept right away</td></tr>
+                    <tr><td>5</td><td>Not having respect for nature, or being wasteful</td></tr>
+                    <tr><td>6</td><td>Societies that eat meat, or do not eat meat at all</td></tr>
+                </table>
+            </description>
+            <sheet alt="Cause of Infuriation" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Cause of Infuriation (Barbarian)">
+                    <item id="1">Seeing an animal being abused</item>
+                    <item id="2">Losing a bet or gamble</item>
+                    <item id="3">Being ridiculed or called weak</item>
+                    <item id="4">Not understanding a complex concept right away</item>
+                    <item id="5">Not having respect for nature, or being wasteful</item>
+                    <item id="6">Societies that eat meat, or do not eat meat at all</item>
+                </select>
+            </rules>
+        </element>
+        <element name="Feature: Tribe Societal Status" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_BARBARIAN_TRIBE_SOCIETAL_STATUS">
+            <description>
+                <p class="indent">Barbarians are known to come from tribes, with a structure of power. War chiefs can be mighty leaders for their people, while gatherers may be lower in society. You can use this thought to tell where your character was in their tribe. Were they a powerful survivor of war, or did they stay with the tribe as a shaman?</p>
+                <p class="indent">Use the Tribe Societal Status table for more details.</p>
+                <h5 class="caption">TRIBE SOCIETAL STATUS</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Status</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>Child or sibling of the war chief, next in line to rule</td></tr>
+                    <tr><td>2</td><td>A hunter of the war chief</td></tr>
+                    <tr><td>3</td><td>Retired tribesmen that survived a great battle</td></tr>
+                    <tr><td>4</td><td>Secondhand to the tribe shaman</td></tr>
+                    <tr><td>5</td><td>Normal tribesmen that has not went to battle</td></tr>
+                    <tr><td>6</td><td>A gatherer of fruit and vegetables in a hunter-based society</td></tr>
+                </table>
+            </description>
+            <sheet alt="Tribe Societal Status" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Tribe Societal Status (Barbarian)">
+                    <item id="1">Child or sibling of the war chief, next in line to rule</item>
+                    <item id="2">A hunter of the war chief</item>
+                    <item id="3">Retired tribesmen that survived a great battle</item>
+                    <item id="4">Secondhand to the tribe shaman</item>
+                    <item id="5">Normal tribesmen that has not went to battle</item>
+                    <item id="6">A gatherer of fruit and vegetables in a hunter-based society</item>
+                </select>
+            </rules>
+        </element>
+        <element name="Feature: Warring Faction" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_BARBARIAN_WARRING_FACTION">
+            <description>
+                <p class="indent">Tribes of barbarians often have conflict with others. Whether these conflicts derive from another tribe that has spanned centuries, or if it is monsters, that is up to you. Blood spilled from these battles have their memories told through oral traditions.</p>
+                <p class="indent">These rivals could involve a get together of nearby tribes that have contests of strength and physical prowess, who fight for the title of king. A nearby settlement of drow could be coming up at night and ambushing your tribe taking captives. Anything could be a warring faction, which keeps the tension high.</p>
+                <p class="indent">Use the Warring Faction table for more details.</p>
+                <h5 class="caption">WARRING FACTION</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Faction</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>1d4+1 nearby tribes have an annual battle ceremony for tribe chief</td></tr>
+                    <tr><td>2</td><td>An orc campsite has been conducting raids and setting fire to your encampment</td></tr>
+                    <tr><td>3</td><td>Goblins, hobgoblins, and bugbears pillage the campsite every now and then, only trying to take supplies</td></tr>
+                    <tr><td>4</td><td>A bloody feud between your tribe and another has battles over the right to the throne, due to two founding brothers that argued long ago</td></tr>
+                    <tr><td>5</td><td>A large city such as Waterdeep or Baldur's Gate sends their troops monthly to try and take control of your tribe</td></tr>
+                    <tr><td>6</td><td>An internal conflict arises between two or more descendants for the title of chief</td></tr>
+                </table>
+            </description>
+            <sheet alt="Warring Faction" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Warring Faction (Barbarian)">
+                    <item id="1">1d4+1 nearby tribes have an annual battle ceremony for tribe chief</item>
+                    <item id="2">An orc campsite has been conducting raids and setting fire to your encampment</item>
+                    <item id="3">Goblins, hobgoblins, and bugbears pillage the campsite every now and then, only trying to take supplies</item>
+                    <item id="4">A bloody feud between your tribe and another has battles over the right to the throne, due to two founding brothers that argued long ago</item>
+                    <item id="5">A large city such as Waterdeep or Baulder's Gate sends their troops monthly to try and take control of your tribe</item>
+                    <item id="6">An internal conflict arises between two or more descendants for the title of chief</item>
+                </select>
+            </rules>
+        </element>
+
+    <append id="ID_WOTC_PHB_CLASS_BARD">
+        <description>
+            <p><p class="flavor">"Until I heard the musical rendition, the Tale of Shava had not entirely clicked with me. Keep playing, minstrel!"</p></p>
+            <p>There is more to a bard than just reciting poetry and strumming their lute. In fact, bards seem to unravel the hidden mysteries of lore and history with every lyric, bringing the tale to life.</p>
+            <p class="indent">Bards are often the performers that keep history alive, passing that knowledge to those who pass by. Knowledge, they realize, is often dark, dreadful, and lacking the audience's emotional attachment. Bards who perform try to captivate their listeners with flamboyant stage performances: swallowing fire, creating origami with the wind, or juggling swords.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_BARD_FAILED_PERFORMANCES" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_BARD_BARDIC_MUSE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_BARD_FAILED_PERFORMANCES" />
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_BARD_BARDIC_MUSE" />
+        </rules>
+    </append>
+        <element name="Feature: Failed Performances" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_BARD_FAILED_PERFORMANCES">
+            <description>
+                <p class="indent">Every performer has something that no matter how much they try, they cannot succeed at. Some may pursue their entire life into this one thing, trying to get the satisfaction of accomplishment. This is known as your failed performance.</p>
+                <p class="indent">Was this act harmful and has left your scared to try it again? Was it embarrassing, trying to do it in a crowd?</p>
+                <p class="indent">Use the Failed Performances table for more details.</p>
+                <h5 class="caption">FAILED PERFORMANCE</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Event</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>You once fell 20' from a tripwire</td></tr>
+                    <tr><td>2</td><td>You attempted to swallow a sword, but started to choke</td></tr>
+                    <tr><td>3</td><td>You recited poetry in front of a crowd, and was laughed at when you became too emotional</td></tr>
+                    <tr><td>4</td><td>Your tent caught flame when practicing how to spit fire</td></tr>
+                    <tr><td>5</td><td>You cannot juggle at all, and have an irrational fear of it</td></tr>
+                    <tr><td>6</td><td>You get speechless when talking in front of crowds</td></tr>
+                </table>
+            </description>
+            <sheet alt="Failed Performances" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Failed Performances (Bard)">
+                    <item id="1">You once fell 20' from a tripwire</item>
+                    <item id="2">You attempted to swallow a sword, but started to choke</item>
+                    <item id="3">You recited poetry in front of a crowd, and was laughed at when you became too emotional</item>
+                    <item id="4">Your tent caught flame when practicing how to spit fire</item>
+                    <item id="5">You cannot juggle at all, and have an irrational fear of it</item>
+                    <item id="6">You get speechless when talking in front of crowds</item>
+                </select>
+            </rules>
+        </element>
+        <element name="Feature: Bardic Muse" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_BARD_BARDIC_MUSE">
+            <description>
+                <p class="indent">Every artist has an inspiration for their craft. It could be from a long-lost love, the overwhelming sense of danger, or even the awe-inspiring beauty of nature. Wherever there is emotion, there is someone who will capture the feeling.</p>
+                <p class="indent">Use the Bardic Muse table for more details.</p>
+                <h5 class="caption">BARDIC MUSE</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Inspiration</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>You had travelled the high seas, and was caught off guard by stunning storm clouds</td></tr>
+                    <tr><td>2</td><td>You had two loves in your life: a barmaid in a large city, and the thrill of adventure. Adventure won, but you will never forget them</td></tr>
+                    <tr><td>3</td><td>A mighty war occurred, and you were witness to it</td></tr>
+                    <tr><td>4</td><td>Dramatic conflict plagues a city, and you stir the muck with your performances</td></tr>
+                    <tr><td>5</td><td>You climbed the Spine of the World, and were awestruck with the sight</td></tr>
+                    <tr><td>6</td><td>You see emotion in daily life between people and the world. You attempt to capture this bond</td></tr>
+                </table>
+            </description>
+            <sheet alt="Bardic Muse" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Bardic Muse  (Bard)">
+                    <item id="1">You had travelled the high seas, and was caught off guard by stunning storm clouds</item>
+                    <item id="2">You had two loves in your life: a barmaid in a large city, and the thrill of adventure. Adventure won, but you will never forget them</item>
+                    <item id="3">A mighty war occurred, and you were witness to it</item>
+                    <item id="4">Dramatic conflict plagues a city, and you stir the muck with your performances</item>
+                    <item id="5">You climbed the Spine of the World, and were awestruck with the sight</item>
+                    <item id="6">You see emotion in daily life between people and the world. You attempt to capture this bond</item>
+                </select>
+            </rules>
+        </element>
+
+
     <append id="ID_WOTC_PHB_CLASS_CLERIC">
         <description>
             <p class="flavor">"You think its easy receiving your power from the Gods? I thought you wizards were intelligent!"</p>
             <p>Many go about their days without being affected directly by a deity. Due to this, not everyone sees how a cleric must be, feeling the ever-present touch of a divine being.</p>
             <p class="indent">To be a cleric is not just to be devout to a deity. Where a cleric is touched by a deity and feels their ever-present touch, a cultist is one who reveres a deity is if they have divine power.</p>
             <p class="indent">Does a person become a cleric because their normal lives already embody the qualities of that deity? Or does a cleric start to reflect those qualities after a divine experience? Ultimately, that is up to you, dear adventurer.</p>
-            <h4>FAITH</h4>
-            <p>A cleric’s faith is what drives them to pursue divinity. Their magic comes from their faith, granted by the worship of their deity. Over the course of their life, there might be events that shake their faith down to the core. This could provide an interesting arc of events to take place. Although some clerics stray from the light of their deity, most do come back with a newfound strength.</p>
-            <p class="indent">How strong is the faith of your cleric? Do they believe everything their deity has done to be in good attentions, even with obvious flaws? Do they lack the fundamental beliefs that their deity holds?</p>
-            <p class="indent">Use the Faith table for more information.</p>
-            <h4>MENTOR</h4>
-            <p>Often times, temples have high priests that teach young acolytes the ways of worship. The bond of an apprentice, a mentor, and a divine spirit helps make the foundation for a priest to show their signs of being a cleric.</p>
-            <p class="indent">Mentors come in many shapes and forms, or possibly deceased and obtained sainthood. It is up to you and your organization of what your mentor is, who they were, and their outcome.</p>
-            <p class="indent">Use the Mentor table for further information.</p>
+            <div element="ID_DN_BGTE_BACKGROUND_FEATURE_CLERIC_FAITH" />
+            <div element="ID_DN_BGTE_BACKGROUND_FEATURE_CLERIC_MENTOR" />
         </description>
         <rules>
-            <select type="List" name="Faith (Cleric)">
-                <item id="1">I lack the blatant oversight of their faults. I still choose to worship</item>
-                <item id="2">My deity has done some wrongs, but they have done more good. I wish to spread more good in their name</item>
-                <item id="3">The deity I worship has not provided any evidence that they exist in the world. I want to create miracles for them so others will worship too</item>
-                <item id="4">My deity has only done good - or I choose to ignore the bad. I follow blindly</item>
-                <item id="5">I only commune and pray to my deity when it is beneficial to me</item>
-                <item id="6">I do not believe my deity exists, but am still granted divine magic for a reason unknown to me</item>
-            </select>
-            <select type="List" name="Mentor (Cleric)">
-                <item id="1">My mentor was the holy symbol of my deity, such as a flaming sword for Tempus</item>
-                <item id="2">The mentor was burned at the stake in a village for protesting a crime. They became a saint for the church</item>
-                <item id="3">Unknown to me, my mentor was a celestial in disguise</item>
-                <item id="4">My mentor was a normal humanoid, seeking to create quality clerics, such as myself</item>
-                <item id="5">An ethereal spirit wanders the temple halls, and guided me to my path</item>
-                <item id="6">My temple does not allow mentors. Instead, I taught myself. You should not rely on others to find your faith</item>
-            </select>
+            <grant type="Background Feature" id="ID_DN_BGTE_BACKGROUND_FEATURE_CLERIC_FAITH" />
+            <grant type="Background Feature" id="ID_DN_BGTE_BACKGROUND_FEATURE_CLERIC_MENTOR" />
         </rules>
     </append>
-    
+        <element name="Feature: Faith" type="Background Feature" source="Balasar’s Guide to Exploration" id="ID_DN_BGTE_BACKGROUND_FEATURE_CLERIC_FAITH">
+            <description>
+                <p>A cleric’s faith is what drives them to pursue divinity. Their magic comes from their faith, granted by the worship of their deity. Over the course of their life, there might be events that shake their faith down to the core. This could provide an interesting arc of events to take place. Although some clerics stray from the light of their deity, most do come back with a newfound strength.</p>
+                <p class="indent">How strong is the faith of your cleric? Do they believe everything their deity has done to be in good attentions, even with obvious flaws? Do they lack the fundamental beliefs that their deity holds?</p>
+                <p class="indent">Use the Faith table for more information.</p>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Faith (Cleric)</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>I lack the blatant oversight of their faults. I still choose to worship</td></tr>
+                    <tr><td>2</td><td>My deity has done some wrongs, but they have done more good. I wish to spread more good in their name</td></tr>
+                    <tr><td>3</td><td>The deity I worship has not provided any evidence that they exist in the world. I want to create miracles for them so others will worship too</td></tr>
+                    <tr><td>4</td><td>My deity has only done good - or I choose to ignore the bad. I follow blindly</td></tr>
+                    <tr><td>5</td><td>I only commune and pray to my deity when it is beneficial to me</td></tr>
+                    <tr><td>6</td><td>I do not believe my deity exists, but am still granted divine magic for a reason unknown to me</td></tr>
+                </table>
+            </description>
+            <sheet alt="Faith" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Faith (Cleric)">
+                    <item id="1">I lack the blatant oversight of their faults. I still choose to worship</item>
+                    <item id="2">My deity has done some wrongs, but they have done more good. I wish to spread more good in their name</item>
+                    <item id="3">The deity I worship has not provided any evidence that they exist in the world. I want to create miracles for them so others will worship too</item>
+                    <item id="4">My deity has only done good - or I choose to ignore the bad. I follow blindly</item>
+                    <item id="5">I only commune and pray to my deity when it is beneficial to me</item>
+                    <item id="6">I do not believe my deity exists, but am still granted divine magic for a reason unknown to me</item>
+                </select>
+            </rules>
+        </element>
+        <element name="Feature: Mentor" type="Background Feature" source="Balasar’s Guide to Exploration" id="ID_DN_BGTE_BACKGROUND_FEATURE_CLERIC_MENTOR">
+            <description>
+                <p>Often times, temples have high priests that teach young acolytes the ways of worship. The bond of an apprentice, a mentor, and a divine spirit helps make the foundation for a priest to show their signs of being a cleric.</p>
+                <p class="indent">Mentors come in many shapes and forms, or possibly deceased and obtained sainthood. It is up to you and your organization of what your mentor is, who they were, and their outcome.</p>
+                <p class="indent">Use the Mentor table for further information.</p>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Mentor (Cleric)</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>My mentor was the holy symbol of my deity, such as a flaming sword for Tempus</td></tr>
+                    <tr><td>2</td><td>The mentor was burned at the stake in a village for protesting a crime. They became a saint for the church</td></tr>
+                    <tr><td>3</td><td>Unknown to me, my mentor was a celestial in disguise</td></tr>
+                    <tr><td>4</td><td>My mentor was a normal humanoid, seeking to create quality clerics, such as myself</td></tr>
+                    <tr><td>5</td><td>An ethereal spirit wanders the temple halls, and guided me to my path</td></tr>
+                    <tr><td>6</td><td>My temple does not allow mentors. Instead, I taught myself. You should not rely on others to find your faith</td></tr>
+                </table>
+            </description>
+            <sheet alt="Mentor">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Mentor (Cleric)">
+                    <item id="1">My mentor was the holy symbol of my deity, such as a flaming sword for Tempus</item>
+                    <item id="2">The mentor was burned at the stake in a village for protesting a crime. They became a saint for the church</item>
+                    <item id="3">Unknown to me, my mentor was a celestial in disguise</item>
+                    <item id="4">My mentor was a normal humanoid, seeking to create quality clerics, such as myself</item>
+                    <item id="5">An ethereal spirit wanders the temple halls, and guided me to my path</item>
+                    <item id="6">My temple does not allow mentors. Instead, I taught myself. You should not rely on others to find your faith</item>
+                </select>
+            </rules>
+        </element>
+
+    <append id="ID_WOTC_PHB_CLASS_DRUID">
+        <description>
+            <p class="flavor">"Nature shall consume all, as it was before. This is how it will be, and how it has always been."</p>
+            <p>Often the caretakers of the forests, coasts and mountains, druids are the voice of the natural world. Those that become druids seem to gravitate towards certain areas outside of civilization.</p>
+            <p class="indent">It seems like sages and hermits are frequently mistaken as druids due to their consistent studying, but do not get them confused. Druids have a connection so deeply rooted into nature itself that they embody the magic that flows through every leaf, river and gust of air.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_DRUID_BIOME_HOME" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_DRUID_BIOME_HOME" />
+        </rules>
+    </append>
+        <element name="Feature: Biome Home" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_DRUID_BIOME_HOME">
+            <description>
+                <p class="indent">Druids can come from anywhere. Examples of this are the icy mountains of the far north called the Spine of the World, the coast of the Trackless Sea, or the blistering deserts of Anauroch.</p>
+                <p class="indent">Each biome has a train of thought tied to them about nature. Where does your druid come from? How does this affect them?</p>
+                <p class="indent">Use the Biome table for more details.</p>
+                <h5 class="caption">BIOME</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Terrain</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>I grew up in the hot desert of Anauroch, and keep a similar heated personality</td></tr>
+                    <tr><td>2</td><td>I was raised near the Grandfather Tree, and know that patience is key to everything</td></tr>
+                    <tr><td>3</td><td>Living in the Evermoors, the swamp showed me that you must persist</td></tr>
+                    <tr><td>4</td><td>From the Trackless Sea, I learned to move with the everchanging events</td></tr>
+                    <tr><td>5</td><td>Near the Spine of the World, I was taught to be sturdy</td></tr>
+                    <tr><td>6</td><td>The Serpent Hills showed me to stay true to my path</td></tr>
+                </table>
+            </description>
+            <sheet alt="Biome Home" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Biome Home (Druid)">
+                    <item id="1">I grew up in the hot desert of Anauroch, and keep a similar heated personality</item>
+                    <item id="2">I was raised near the Grandfather Tree, and know that patience is key to everything</item>
+                    <item id="3">Living in the Evermoors, the swamp showed me that you must persist</item>
+                    <item id="4">From the Trackless Sea, I learned to move with the everchanging events</item>
+                    <item id="5">Near the Spine of the World, I was taught to be sturdy</item>
+                    <item id="6">The Serpent Hills showed me to stay true to my path</item>
+                </select>
+            </rules>
+        </element>
+
+    <append id="ID_WOTC_PHB_CLASS_FIGHTER">
+        <description>
+            <p class="flavor">"Can we cut out the chit-chat already? My blade hasn't been tested today, and I'm getting a little antsy."</p>
+            <p>When the thought of an adventurer comes to mind, it is often a fighter with a charred shield from a recent red dragon encounter. Classically trained in martial fighting, they are an expert in all things combat related. Most fighters will vary in their tactics and styles.</p>
+            <p class="indent">One can specialize in fighting with a morningstar and plate mail, or another that picks off threats across the battlefield with their crossbow.</p>
+            <p class="indent">Much like a paladin or knight, their reward does not come from materialistic items. No, their reward is knowing that they bested an enemy, and the renown of their name.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_FIGHTER_WEAPON_OF_CHOICE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_FIGHTER_RIVAL_CHAMPION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_FIGHTER_WEAPON_OF_CHOICE" />
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_FIGHTER_RIVAL_CHAMPION" />
+        </rules>
+    </append>
+        <element name="Feature: Weapon of Choice" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_FIGHTER_WEAPON_OF_CHOICE">
+            <description>
+                <p class="indent">While fighters may have a certain fighting style or a signature style, most fighters are at home with a type of weapon. It could be the first weapon they were every trained with, or that it was the one that was most comfortable with. Needless to say, if a fighter picks up their choice weapon, it will not be pleasant.</p>
+                <p class="indent">Use the Weapon of Choice table for more details.</p>
+                <h5 class="caption">WEAPON OF CHOICE</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Weapon</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>I prefer the feeling of a sharp blade in my hand</td></tr>
+                    <tr><td>2</td><td>There is nothing better than hearing bones snap under my hammer</td></tr>
+                    <tr><td>3</td><td>Keeping distance with longer weapon gives me more space to play with</td></tr>
+                    <tr><td>4</td><td>I do not have to worry about getting hurt if I can kill them with my bow</td></tr>
+                    <tr><td>5</td><td>My accuracy with throwing axes and spears is unrivaled</td></tr>
+                    <tr><td>6</td><td>The ordinary man might think a shield isn't a weapon. I call them fools</td></tr>
+                </table>
+            </description>
+            <sheet alt="Weapon of Choice" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Weapon of Choice (Fighter)">
+                    <item id="1">I prefer the feeling of a sharp blade in my hand</item>
+                    <item id="2">There is nothing better than hearing bones snap under my hammer</item>
+                    <item id="3">Keeping distance with longer weapon gives me more space to play with</item>
+                    <item id="4">I do not have to worry about getting hurt if I can kill them with my bow</item>
+                    <item id="5">My accuracy with throwing axes and spears is unrivaled</item>
+                    <item id="6">The ordinary man might think a shield isn't a weapon. I call them fools</item>
+                </select>
+            </rules>
+        </element>
+        <element name="Feature: Rival Champion" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_FIGHTER_RIVAL_CHAMPION">
+            <description>
+                <p class="indent">It is rare to see a fighter without an antagonistic opponent. Often, the battle for glory will lead two opposing forces to meet. From there, the conflict will ensue, with the champion declared.</p>
+                <p class="indent">Simply put, no matter where you are, a fighter wants fame. The arena is a show where people come all around in order to see them fight. Those on the battlefield seek glory and renown of their prowess. There will be opportunities to claim it, but out of the hands of another. This is your rival.</p>
+                <p class="indent">Use the Rival Champion table for more details.</p>
+                <h5 class="caption">RIVAL CHAMPION</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Rival</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>On the battlefield, you both struct blow for blow. No one died in this encounter</td></tr>
+                    <tr><td>2</td><td>You won in the arena, although it was close. They swear revenge</td></tr>
+                    <tr><td>3</td><td>While in the arena, your rival cheated and won, but wasn't caught</td></tr>
+                    <tr><td>4</td><td>Your childhood best friend competes with you to get the best stories of victory</td></tr>
+                    <tr><td>5</td><td>You have been challenged publicly by a rival you do not know, awaiting the battle</td></tr>
+                    <tr><td>6</td><td>A bully from your childhood keeps showing up, challenging you</td></tr>
+                </table>
+            </description>
+            <sheet alt="Rival Champion" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Rival Champion (Fighter)">
+                    <item id="1">On the battlefield, you both struct blow for blow. No one died in this encounter</item>
+                    <item id="2">You won in the arena, although it was close. They swear revenge</item>
+                    <item id="3">While in the arena, your rival cheated and won, but wasn't caught</item>
+                    <item id="4">Your childhood best friend competes with you to get the best stories of victory</item>
+                    <item id="5">You have been challenged publicly by a rival you do not know, awaiting the battle</item>
+                    <item id="6">A bully from your childhood keeps showing up, challenging you</item>
+                </select>
+            </rules>
+        </element>
+
+    <append id="ID_WOTC_PHB_CLASS_MONK">
+        <description>
+            <p class="flavor">"You may take their vow of silence as an acceptance of defeat. Be wary, as your demise will come swiftly by their hands alone."</p>
+            <p>Just as a wizard studying the weave of magic to understand the universe, so too does a monk study the body and mind to understand themselves.</p>
+            <p class="indent">Focused on inner mastery, their search may not be fulfilled by their current location. Due to this, some may travel far and wide for this self-knowledge.</p>
+            <p class="indent">Where their destination lay, they do not know but as long as a monk knows their perfection is elsewhere, they cannot be stopped.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_MONK_MONASTIC_OATHS" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_MONK_MONASTIC_OATHS" />
+        </rules>
+    </append>
+        <element name="Feature: Monastic Oaths" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_MONK_MONASTIC_OATHS">
+            <description>
+                <p class="indent">Some monks take oaths to show dedication to their perfection. Monks will hold this oath to not only a traditional pinnacle, but also a personally trial. An oath might be monastery wide, or taught to a select few monks that reside there.</p>
+                <p class="indent">Breaking an oath is only allowable in certain circumstances, as long as they repent for their actions and accept the consequences afterwards. Some may do so with vigorous training that breaks the body, or by meditation.</p>
+                <p class="indent">You can find the oaths in the Monastic Oaths table, and the atonements in the Monastic Atonements table.</p>
+                <h5 class="caption">MONASTIC OATHS</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Oath</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>I keep an oath of silence, unable to verbally communicate</td></tr>
+                    <tr><td>2</td><td>I must abstain from alcohol or addictive substances</td></tr>
+                    <tr><td>3</td><td>Harming another living creature is something I must not do</td></tr>
+                    <tr><td>4</td><td>Helping others is a requirement, I cannot ignore others</td></tr>
+                    <tr><td>5</td><td>Meditation is the key to perfection, I must spend any downtime I have doing so</td></tr>
+                    <tr><td>6</td><td>My word is my bond, I must keep all promises to the fullest extent</td></tr>
+                </table>
+                <h5 class="caption">MONASTIC ATONEMENT</h5>
+                <table>
+                    <thead>
+                        <tr><td>d4</td><td>Atonement</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>I will endure rigorous physical punishment from my superiors</td></tr>
+                    <tr><td>2</td><td>I cannot move forward until I have corrected what I wronged</td></tr>
+                    <tr><td>3</td><td>I must spend an entire day in meditation</td></tr>
+                    <tr><td>4</td><td>I refuse to eat for 3 days</td></tr>
+                </table>
+            </description>
+            <sheet alt="Monastic Oaths" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Monastic Oaths (Monk)">
+                    <item id="1">I keep an oath of silence, unable to verbally communicate</item>
+                    <item id="2">I must abstain from alcohol or addictive substances</item>
+                    <item id="3">Harming another living creature is something I must not do</item>
+                    <item id="4">Helping others is a requirement, I cannot ignore others</item>
+                    <item id="5">Meditation is the key to perfection, I must spend any downtime I have doing so</item>
+                    <item id="6">My word is my bond, I must keep all promises to the fullest extent</item>
+                </select>
+                <select type="List" name="Monastic Atonement (Monk)">
+                    <item id="1">I will endure rigorous physical punishment from my superiors</item>
+                    <item id="2">I cannot move forward until I have corrected what I wronged</item>
+                    <item id="3">I must spend an entire day in meditation</item>
+                    <item id="4">I refuse to eat for 3 days</item>
+                </select>
+            </rules>
+        </element>
+
+    <append id="ID_WOTC_PHB_CLASS_PALADIN">
+        <description>
+            <p class="flavor">"You stand before me, hated by all and dishonored by only yourself. If it were not for my oaths, my blade would have cut you down ages ago."</p>
+            <p>The swearing of an oath and taking its ideals- called tenants, should not be treated lightly. This vow is taken up because of a higher calling, not necessarily due to a deity.</p>
+            <p class="indent">Some paladins devote themselves to a specific cause, like during a massive war. Others protect values and ideas, particularly justice. No matter what their reason is, a paladin must be willing to lay their life down for it.</p>
+            <p class="indent">If their vows are broken by not adhering to their sworn tenants, a paladin may lose their power, or worse.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_PALADIN_OATH_ATONEMENT" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_PALADIN_OATH_ATONEMENT" />
+        </rules>
+    </append>
+        <element name="Feature: Oath Atonement" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_PALADIN_OATH_ATONEMENT">
+            <description>
+                <p class="indent">Just like the monk, paladins keep an oath that is sacred to them called tenants. Breaking a tenant without atoning right away can lead to a paladin becoming an Oathbreaker paladin, found in the Dungeon Master's Guide, or losing their power altogether. Atoning can come in many fashions, but some of the most popular choices can be found here.</p>
+                <p class="indent">Use the Oath Atonement table for more details.</p>
+                <h5 class="caption">OATH ATONEMENT</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Atonement</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>I must donate my time to a local church or temple of my choice</td></tr>
+                    <tr><td>2</td><td>I must donate 100 gp for every day I do not atone after the incident</td></tr>
+                    <tr><td>3</td><td>I must pray for the next 24 hours</td></tr>
+                    <tr><td>4</td><td>Fasting for as long as I can will help me atone</td></tr>
+                    <tr><td>5</td><td>I must help as many people as I can around me</td></tr>
+                    <tr><td>6</td><td>I must undergo a similar rite of passage as I did to become a paladin</td></tr>
+                </table>
+            </description>
+            <sheet alt="Oath Atonement" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Oath Atonement (Paladin)">
+                    <item id="1">I must donate my time to a local church or temple of my choice</item>
+                    <item id="2">I must donate 100 gp for every day I do not atone after the incident</item>
+                    <item id="3">I must pray for the next 24 hours</item>
+                    <item id="4">Fasting for as long as I can will help me atone</item>
+                    <item id="5">I must help as many people as I can around me</item>
+                    <item id="6">I must undergo a similar rite of passage as I did to become a paladin</item>
+                </select>
+            </rules>
+        </element>
+
+    <append id="ID_WOTC_PHB_CLASS_RANGER">
+        <description>
+            <p class="flavor">"Just because I spend my time outside the walls, do not think I do not love where I came from. I have laid down my life countless times for it, whether you know it or not."</p>
+            <p>Rangers are often on the edge of society, hanging onto the frills of the walls, keeping an eye open. A majority of people in society do not understand the risk that many rangers take on, and it all goes unrewarded.</p>
+            <p class="indent">The threats that lie outside of the walls are untamed, persistent in their destruction, and as such, so too must the ranger to protect the innocent.</p>
+            <p class="indent">However, some do not act as selfless as they've been described. Instead, they will end evil only to protect themselves. If others benefit from it too, then so be it.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_RANGER_MENTOR" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_RANGER_FAVORED_ENEMY" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_RANGER_MENTOR" />
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_RANGER_FAVORED_ENEMY" />
+        </rules>
+    </append>
+        <element name="Feature: Mentor" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_RANGER_MENTOR">
+            <description>
+                <p class="indent">Although rangers live on the border of civilization and the wilderness, often times they will be taught from a mentor. This mentor teaches them not only to be reliant on the land, but also how to approach the situation. The rangers can learn the finer workings of magic through their mentor.</p>
+                <p class="indent">Use the Mentor table for more details.</p>
+                <h5 class="caption">MENTOR</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Mentor</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>I was taught by an ancient dyrad in a long forgotten grove</td></tr>
+                    <tr><td>2</td><td>A spirit manifested itself in front of me while I was lost</td></tr>
+                    <tr><td>3</td><td>An unknown figure taught me the ways of survival and tracking</td></tr>
+                    <tr><td>4</td><td>I learned from observing creatures in the wilderness</td></tr>
+                    <tr><td>5</td><td>I met my mentor in a large city, such as Waterdeep</td></tr>
+                    <tr><td>6</td><td>I learned through trial and error, without a mentor</td></tr>
+                </table>
+            </description>
+            <sheet alt="Mentor" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Mentor (Ranger)">
+                    <item id="1">I was taught by an ancient dyrad in a long forgotten grove</item>
+                    <item id="2">A spirit manifested itself in front of me while I was lost</item>
+                    <item id="3">An unknown figure taught me the ways of survival and tracking</item>
+                    <item id="4">I learned from observing creatures in the wilderness</item>
+                    <item id="5">I met my mentor in a large city, such as Waterdeep</item>
+                    <item id="6">I learned through trial and error, without a mentor</item>
+                </select>
+            </rules>
+        </element>
+        <element name="Feature: Favored Enemy" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_RANGER_FAVORED_ENEMY">
+            <description>
+                <p class="indent">Rangers are known to be the defenders of civilization, even though the spend a majority of their time outside of it. No fame or recognition comes from their duty. In doing this, rangers often have a specific reason as to why they choose to do it. This in turn more likely than not matches their favored enemy.</p>
+                <p class="indent">A favored enemy is a specific type of monster that plagues the world, be it the material plane or others. They may destroy cities, decimate lives, or haunt others. The ranger steps in to eliminate the threats, or reduce it so that it is not as harmful.</p>
+                <p class="indent">Use the Favored Enemy table for more details.</p>
+                <h5 class="caption">FAVORED ENEMY</h5>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Enemy</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>When I was younger, someone close to me had traded their soul to a fiend</td></tr>
+                    <tr><td>2</td><td>Swarms of undead ravaged my hometown. I survived, only because I ran away</td></tr>
+                    <tr><td>3</td><td>I witnessed the destruction of giants. I wasn't strong enough to defend my family</td></tr>
+                    <tr><td>4</td><td>A friendly spirit was trapped, unable to move on. I helped them through it and wish to help others</td></tr>
+                    <tr><td>5</td><td>The elementals that manifest in our world can run rampant, I only want to calm them</td></tr>
+                    <tr><td>6</td><td>A solar or deva had controlled a town. The people under them lived well and comfortable, but had no freedom of choice</td></tr>
+                </table>
+            </description>
+            <sheet alt="Favored Enemy" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Favored Enemy (Ranger)">
+                    <item id="1">When I was younger, someone close to me had traded their soul to a fiend</item>
+                    <item id="2">Swarms of undead ravaged my hometown. I survived, only because I ran away</item>
+                    <item id="3">I witnessed the destruction of giants. I wasn't strong enough to defend my family</item>
+                    <item id="4">A friendly spirit was trapped, unable to move on. I helped them through it and wish to help others</item>
+                    <item id="5">The elementals that manifest in our world can run rampant, I only want to calm them</item>
+                    <item id="6">A solar or deva had controlled a town. The people under them lived well and comfortable, but had no freedom of choice</item>
+                </select>
+            </rules>
+        </element>
+
+    <append id="ID_WOTC_PHB_CLASS_ROGUE">
+        <description>
+            <p class="flavor">"I do not take riches for myself, what monster do you think I am? No, no. I take enough to live off of, and give the rest to those less fortunate."</p>
+            <p>As technical with their tools as a fighter is with their weapons, a rogue is crafty and well aware of their movements. As such, their train of thought often comes to a quick exit: Where might treasure lay? Where would a trap be placed? This makes the rogue an excellent source of human psychology.</p>
+            <p class="indent">On top of this, deceit is often one of the many tools a rogue will keep up their sleeve, like a wizard carries their spellbook. Due to this, the rogue is a handy asset to have around you, as they can easily infiltrate known criminal areas by disguising themselves, break into high security locations, and help carefully navigate the party safely while in a dank, dusty tomb.</p>
+        </description>
+        <sheet display="false" />
+    </append>
+
+    <append id="ID_WOTC_PHB_CLASS_SORCERER">
+        <description>
+            <p class="flavor">"When you are born with the ability to cast magic, you do not need to carry around useless items: spellbooks or symbols of the divine."</p>
+            <p>Compared to others that cast magic, sorcerers may have it the easiest. Where others either rigorously study, offer a part of themselves, or revere a higher power, sorcerer's come in with an innate ability to cast magic.</p>
+            <p class="indent">Oddly, not all sorcerers obtain their power the same way. Some sorcerers are born into it, resembling a pact of protection between two races. Others can stumble into it by chance, when the powers that make the multiverse beckon them.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_SORCERER_SOCIETAL_VIEW" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_SORCERER_SOCIETAL_VIEW" />
+        </rules>
+    </append>
+        <element name="Feature: Societal View" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_SORCERER_SOCIETAL_VIEW">
+            <description>
+                <p class="indent">Sorcerers come in many forms and fashions. Regardless of how you came to be, the world around you may view you differently compared to other locations. When you obtained your powers, did your village or city see you as a blessing? Or when your powers manifested, was it a curse, and had you cast out?</p>
+                <p class="indent">See the Societal View table for more information.</p>
+                <h5 class="caption">SOCIETAL VIEW</h5>
+                <table>
+                    <thead>
+                        <tr><td>d4</td><td>View</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>When I was born, the village saw me a blessing</td></tr>
+                    <tr><td>2</td><td>I was seen as a monster for my magic</td></tr>
+                    <tr><td>3</td><td>Although it was uncommon like mine to appear, I was treated normally</td></tr>
+                    <tr><td>4</td><td>I am just one of many beings like this in my village</td></tr>
+                </table>
+            </description>
+            <sheet alt="Societal View" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Societal View (Sorcerer)">
+                    <item id="1">When I was born, the village saw me a blessing</item>
+                    <item id="2">I was seen as a monster for my magic</item>
+                    <item id="3">Although it was uncommon like mine to appear, I was treated normally</item>
+                    <item id="4">I am just one of many beings like this in my village</item>
+                </select>
+            </rules>
+        </element>
+
+    <append id="ID_WOTC_PHB_CLASS_WARLOCK">
+        <description>
+            <p class="flavor">"Why stay blind and ignorant to a world full of power, when everyday it beckons to be taken?"</p>
+            <p>Magic is hidden away, being too powerful for the weak minded. Warlocks attempt to discover these dark rituals, bringing their origins to fruition. As their hunger for hidden information grows, so too does their craving of selfdestruction.</p>
+            <p class="indent">Where a wizard would find a clear sign of danger and stay away, a warlock would risk life, limb, and sanity for a glimpse. Those around them would say it is madness consuming them, where they would retort that it is courage.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_WARLOCK_PATRON_COMMUNICATION" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_WARLOCK_PATRONAGE_RITUAL" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_WARLOCK_PATRON_COMMUNICATION" />
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_WARLOCK_PATRONAGE_RITUAL" />
+        </rules>
+    </append>
+        <element name="Feature: Patron Communication" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_WARLOCK_PATRON_COMMUNICATION">
+            <description>
+                <p class="indent">Patrons of warlocks will sometimes communicate with them in interesting ways. Whenever your patron asks of you to do something, when does it occur? Does it even happen? Is it obtrusive thoughts?</p>
+                <p class="indent">See the Patron Communication table for ideas.</p>
+                <h5 class="caption">PATRON COMMUNICATION</h5>
+                <table>
+                    <thead>
+                        <tr><td>d4</td><td>Communication</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>Whenever I try to hold a conversation with someone, my patron's voice floods my thoughts. It is hard to pay attention to others because of this</td></tr>
+                    <tr><td>2</td><td>I only hear my patron in my dreams. It is either blissful dreams, or haunting nightmares.</td></tr>
+                    <tr><td>3</td><td>Altogether, my patron ignores me, even in my times of need.</td></tr>
+                    <tr><td>4</td><td>My patron doesn't communicate with their voice. Instead, their message is left everywhere I go. It is up to me to discover its true meaning</td></tr>
+                </table>
+            </description>
+            <sheet alt="Patron Communication" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Patron Communication (Warlock)">
+                    <item id="1">Whenever I try to hold a conversation with someone, my patron's voice floods my thoughts. It is hard to pay attention to others because of this</item>
+                    <item id="2">I only hear my patron in my dreams. It is either blissful dreams, or haunting nightmares.</item>
+                    <item id="3">Altogether, my patron ignores me, even in my times of need.</item>
+                    <item id="4">My patron doesn't communicate with their voice. Instead, their message is left everywhere I go. It is up to me to discover its true meaning</item>
+                </select>
+            </rules>
+        </element>
+        <element name="Feature: Patronage Ritual" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_WARLOCK_PATRONAGE_RITUAL">
+            <description>
+                <p class="indent">How did your warlock get their powers? What sorts of binding magic had to happen? Did your plea for someone to answer you in your time of need? Did you find an ancient book containing the ritual of patronage? Was you patron passed down from your family tree, communicating with all members of your family? However it may have happened, you can get ideas here.</p>
+                <p class="indent">See the Patronage Ritual for more details.</p>
+                <h5 class="caption">PATRONAGE RITUAL</h5>
+                <table>
+                    <thead>
+                        <tr><td>d4</td><td>Ritual</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>I performed a ritual in a black book I found long ago. As long as I follow the ritual correctly, my patron cannot get out of the contract</td></tr>
+                    <tr><td>2</td><td>My patron came to me as a child. I thought they were a ghost of a loved one, but they have been in contact with my family for generations</td></tr>
+                    <tr><td>3</td><td>In my time of need, I cried for help. My patron offered the help I needed, but I didn't know the exact details of what was required</td></tr>
+                    <tr><td>4</td><td>Details of my patron came from a strange gentleman on the streets. It turns out that the stranger was the patron he told me about</td></tr>
+                </table>
+            </description>
+            <sheet alt="Patronage Ritual" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Patronage Ritual (Warlock)">
+                    <item id="1">I performed a ritual in a black book I found long ago. As long as I follow the ritual correctly, my patron cannot get out of the contract</item>
+                    <item id="2">My patron came to me as a child. I thought they were a ghost of a loved one, but they have been in contact with my family for generations</item>
+                    <item id="3">In my time of need, I cried for help. My patron offered the help I needed, but I didn't know the exact details of what was required</item>
+                    <item id="4">Details of my patron came from a strange gentleman on the streets. It turns out that the stranger was the patron he told me about</item>
+                </select>
+            </rules>
+        </element>
+
+    <append id="ID_WOTC_PHB_CLASS_WIZARD">
+        <description>
+            <p class="flavor">"Knowledge comes with responsibility. Do you have the ability to do what is right or will you be consumed by the evil that closely follows?"</p>
+            <p>Where sorcerers innately cast magic, wizards are the ones who consistently practice what they do, taking notes on their research. Because of this, their scribbles make up their spellbook.</p>
+            <p class="indent">It is said that very few wizards actually existed until recently. That seems very hard to believe at first because there are still small numbers of them that currently exist. Guilds, such as the Arcane Brotherhood, came together to compile a list of all the known spells that are recommended, helping forge other wizards in their studies.</p>
+            <p class="indent">Unfortunately, the length of study that occurs is immense, and wizards lose the most precious resource available to them: time. Most recognize this, but few take the transformation into powerful undead creatures that live forever.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_WIZARD_ARCANE_FOCUS" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_WIZARD_SPELLCASTING_STYLE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_WIZARD_ARCANE_FOCUS" />
+            <grant type="Background Feature" id="ID_author_source_ARCHETYPE_FEATURE_WIZARD_SPELLCASTING_STYLE" />
+        </rules>
+    </append>
+        <element name="Feature: Arcane Focus" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_WIZARD_ARCANE_FOCUS">
+            <description>
+                <p class="indent">Wizards use an object to help concentrate and cast the spells. This item is called an arcane focus. Where did they get their focus? Was it passed down from an older wizard to you? Did you go out and purchase it on a whim? Were you drawn to it?</p>
+                <p class="indent">Use the Arcane Focus table to get more information.</p>
+                <h5 class="caption">ARCANE FOCUS</h5>
+                <table>
+                    <thead>
+                        <tr><td>d4</td><td>Focus</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>I received my arcane focus from my mentor as a gift</td></tr>
+                    <tr><td>2</td><td>I purchased the arcane focus after losing my last one</td></tr>
+                    <tr><td>3</td><td>My arcane focus is an heirloom from my family</td></tr>
+                    <tr><td>4</td><td>I found it at a strange travelling merchant cart</td></tr>
+                </table>
+            </description>
+            <sheet alt="Arcane Focus" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Arcane Focus (Wizard)">
+                    <item id="1">I received my arcane focus from my mentor as a gift</item>
+                    <item id="2">I purchased the arcane focus after losing my last one</item>
+                    <item id="3">My arcane focus is an heirloom from my family</item>
+                    <item id="4">I found it at a strange travelling merchant cart</item>
+                </select>
+            </rules>
+        </element>
+        <element name="Feature: Spellcasting Style" type="Background Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_WIZARD_SPELLCASTING_STYLE">
+            <description>
+                <p class="indent">Wizards study various spells in order to get an understanding of the basic concepts. They will spend hours doing so, pouring over ancient tomes, scribbling notes. Each wizard makes the spells they know their own, in some sort of fashion. How do you perform the spells?</p>
+                <p class="indent">Use the Spellcasting Style table below for inspiration.</p>
+                <h5 class="caption">SPELLCASTING STYLE</h5>
+                <table>
+                    <thead>
+                        <tr><td>d4</td><td>Style</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>Whenever I cast a spell that requires verbal components, I tend to shout them in excitement</td></tr>
+                    <tr><td>2</td><td>If there is a visual aspect to a spell, I try to make it over the top and flashy</td></tr>
+                    <tr><td>3</td><td>I fling my arms wildly whenever a spell requires a somatic component</td></tr>
+                    <tr><td>4</td><td>I make up complex somatic or verbal components to spells in the moment, even if they are not required to cast the spell</td></tr>
+                </table>
+            </description>
+            <sheet alt="Spellcasting Style" display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="List" name="Spellcasting Style (Wizard)">
+                    <item id="1">Whenever I cast a spell that requires verbal components, I tend to shout them in excitement</item>
+                    <item id="2">If there is a visual aspect to a spell, I try to make it over the top and flashy</item>
+                    <item id="3">I fling my arms wildly whenever a spell requires a somatic component</item>
+                    <item id="4">I make up complex somatic or verbal components to spells in the moment, even if they are not required to cast the spell</item>
+                </select>
+            </rules>
+        </element>
+
+
 </elements>
