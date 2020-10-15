@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Oath of the Fallen Sacred Oath</name>
+        <update version="0.0.1">
+            <file name="paladin-oath-of-the-fallen.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/paladin/paladin-oath-of-the-fallen.xml" />
+        </update>
+    </info>
+    
+    <element name="Oath of the Fallen" type="Source" source="Core" id="ID_DICEGARDENRM_SOURCE_Oath of the Fallen">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">OOTF</set>
+            <set name="url">https://www.gmbinder.com/share/-MImVuOR9FoPZ6ML6F4f</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="DGRM" url="https://www.gmbinder.com/profile/dicegardenrm">DiceGardenRM</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20201014</set>
+        </setters>
+    </element>    
+
+    <element name="Oath of the Fallen" type="Archetype" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_PALADIN_OATH_OF_THE_FALLEN">
+        <supports>Sacred Oath</supports>
+        <description>
+            <p>This particular oath is more so a curse than a traditional oath that a paladin is sworn into. For a paladin to be of this oath means that they have committed great acts of evil or heresy and died before they could make amends for their actions. This can result in dark powers trapping the soul of the paladin within their dead body until they make up for their past deeds, or forever remain a wicked soul.</p>
+            <div element="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_OATH_SPELLS" />
+            <div element="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CHANNEL_DIVINITY" />
+            <div element="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CURSE_OF_THE_FALLEN" />
+            <div element="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_AURA_OF_THE_UNDEAD_MARSHALL" />
+            <div element="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_HELLFIRE_ORB" />
+            <div element="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_DEATH_KNIGHT" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_OATH_SPELLS" level="3" />
+            <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CHANNEL_DIVINITY" level="3" />
+            <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CURSE_OF_THE_FALLEN" level="3" />
+            <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_AURA_OF_THE_UNDEAD_MARSHALL" level="7" />
+            <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_HELLFIRE_ORB" level="15" />
+            <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_DEATH_KNIGHT" level="20" />
+        </rules>
+    </element>
+        <element name="Oath Spells" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_OATH_SPELLS">
+            <description>
+                <p>You gain oath spells at the paladin levels listed in the Oath of the Fallen Spells table.</p>
+                <h5 class="caption">OATH OF THE FALLEN SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Paladin Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>bane, false life</em></td></tr>
+                    <tr><td>5th</td><td><em>hold person, magic weapon</em></td></tr>
+                    <tr><td>9th</td><td><em>animate dead, phantom steed</em></td></tr>
+                    <tr><td>13th</td><td><em>banishment, staggering smite</em></td></tr>
+                    <tr><td>17th</td><td><em>dance macabre, destructive wave (necrotic)</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_BANE" spellcasting="Paladin" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_FALSE_LIFE" spellcasting="Paladin" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_HOLD_PERSON" spellcasting="Paladin" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_MAGIC_WEAPON" spellcasting="Paladin" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" spellcasting="Paladin" prepared="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_PHANTOM_STEED" spellcasting="Paladin" prepared="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_BANISHMENT" spellcasting="Paladin" prepared="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_STAGGERING_SMITE" spellcasting="Paladin" prepared="true" level="13" />
+                <grant type="Spell" id="ID_XGTE_SPELL_DANCE_MACABRE" spellcasting="Paladin" prepared="true" level="17" />
+                <grant type="Spell" id="ID_PHB_SPELL_DESTRUCTIVE_WAVE" spellcasting="Paladin" prepared="true" level="17" />
+            </rules>
+        </element>
+        <element name="Channel Divinity" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CHANNEL_DIVINITY">
+            <description>
+                <p>When you take this oath at 3rd level, you gain the following two Channel Divinity options.</p>
+                <p class="indent"><b><i>Raise Dead.</i></b> You can use your Channel Divinity to animate one corpse or skeleton with necrotic magic, animating it under your control until they are destroyed. Undead under your command cannot have their hit points restored. Undead raised through this feature will take their turn immediately after yours in the initiative order. You determine how they will act on their turn by issuing telepathic commands to them as a free action. The amount of skeletons or zombies you can have under your control through this feature must not exceed your proficiency bonus. If you animate a skeleton or corpse, the oldest skeleton or corspe will rot away.</p>
+                <p class="indent"><b><i>Curse the Holy.</i></b> You can use your Channel Divinity to force a creature you can see, up to 60 feet away, to make a Wisdom saving throw against your spell save DC. On a failed saving throw, you learn the creatures true alignment and on a successful saving throw, nothing happens. If you learn that a creatures true alginment is any good alignment through this feature, that creature makes attack rolls and saving throws to resist your effects as though it is under the bane spell for the next minute. You also have advantage on weapon attacks against that creature for the next minute.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CD_RAISE_DEAD" level="3" />
+                <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CD_CURSE_THE_HOLY" level="3" />
+            </rules>
+        </element>
+            <element name="Channel Divinity: Raise Dead" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CD_RAISE_DEAD">
+                <compendium display="false" />
+                <description>
+                    <p>You can use your Channel Divinity to animate one corpse or skeleton with necrotic magic, animating it under your control until they are destroyed. Undead under your command cannot have their hit points restored. Undead raised through this feature will take their turn immediately after yours in the initiative order. You determine how they will act on their turn by issuing telepathic commands to them as a free action. The amount of skeletons or zombies you can have under your control through this feature must not exceed your proficiency bonus. If you animate a skeleton or corpse, the oldest skeleton or corspe will rot away.</p>
+                </description>
+                <sheet alt="Raise Dead" usage="Channel Divinity">
+                    <description>You can animate one corpse or skeleton with necrotic magic, animating it under your control until they are destroyed. Undead raised through this feature will take their turn immediately after yours in the initiative order. You determine how they will act on their turn by issuing telepathic commands to them as a free action. You can animiate up to {{proficiency}} corpses this way.</description>
+                </sheet>
+            </element>
+            <element name="Channel Divinity: Curse the Holy" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CD_CURSE_THE_HOLY">
+                <compendium display="false" />
+                <description>
+                    <p>You can use your Channel Divinity to force a creature you can see, up to 60 feet away, to make a Wisdom saving throw against your spell save DC. On a failed saving throw, you learn the creatures true alignment and on a successful saving throw, nothing happens. If you learn that a creatures true alginment is any good alignment through this feature, that creature makes attack rolls and saving throws to resist your effects as though it is under the bane spell for the next minute. You also have advantage on weapon attacks against that creature for the next minute.</p>
+                </description>
+                <sheet alt="Curse the Holy" usage="Channel Divinity">
+                    <description>You force a creature you can see, up to 60 feet away, to make a Wisdom saving throw (DC{{spellcasting:dc:cha}}). On a failed saving throw, you learn the creatures true alignment. If you learn that a creatures true alginment is any good alignment through this feature, that creature makes attack rolls and saving throws to resist your effects as though it is under the bane spell for the next minute. You also have advantage on weapon attacks against that creature for the next minute.</description>
+                </sheet>
+            </element>
+        <element name="Curse of the Fallen" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CURSE_OF_THE_FALLEN">
+            <description>
+                <p>Finally at 3rd level, your fallen status causes your divine smites and the extra damage from your improved divine smite feature to deal nectrotic damage instead of radiant damage.</p>
+                <p class="indent">Additionally, your undead nature means you no longer need air, food, or drink. You will gain the benefits of a long rest by remaining in an inactive state for 6 hours. While in this state, you remain conscious and are aware of your surroundings.</p>
+            </description>
+            <sheet>
+                <description>Your fallen status causes your divine smites and the extra damage from your improved divine smite feature to deal nectrotic damage instead of radiant damage. Additionally, your undead nature means you no longer need air, food, or drink. You will gain the benefits of a long rest by remaining in an inactive state for 6 hours. While in this state, you remain conscious and are aware of your surroundings.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Aura of the Undead Marshall" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_AURA_OF_THE_UNDEAD_MARSHALL">
+            <description>
+                <p>At 7th level, the cursed magic that prevents your soul from escaping your undead form will now serve to empower other undead under your control. You and Undead creatures under your command that are within 10 feet of you have advantage on saving throws against features that turn undead. If one of your undead within 10 feet of you would be reduced to 0 hit points, you can roll a d6. If you roll a 5-6, the undead gets up with 1 hit point. If a zombie under your control is reduced to 0 hit points while in your aura, you choose whether to use the zombie's undead fortitude feature or your aura feature when determining if it gets back up from being reduced to 0 hit points.</p>
+                <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
+            </description>
+            <sheet>
+                <description>You and Undead creatures under your command that are within {{undead-marshall:range}} feet of you have advantage on saving throws against features that turn undead. If one of your undead within {{undead-marshall:range}} feet of you would be reduced to 0 hit points, you can roll a d6. If you roll a 5-6, the undead gets up with 1 hit point. If a zombie under your control is reduced to 0 hit points while in your aura, you choose whether to use the zombie's undead fortitude feature or your aura feature when determining if it gets back up from being reduced to 0 hit points.</description>
+            </sheet>
+            <rules>
+                <stat name="undead-marshall:range" value="10" level="7" />
+                <stat name="undead-marshall:range" value="20" level="18" />
+            </rules>
+        </element>
+        <element name="Hellfire Orb" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_HELLFIRE_ORB">
+            <description>
+                <p>At 15th level, you can hurl a magical ball of fire that explodes at a point you can see up to 120 feet away. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw against your spell save DC. The sphere spreads around corners. A creature take 6d6 fire damage and 6d6 necrotic damage on a failed save, or half as much damage on a successful one. You must finish a long rest before you can use this feature again.</p>
+            </description>
+            <sheet usage="1/Long Rest" action="Action">
+                <description>You can hurl a magical ball of fire that explodes at a point you can see up to 120 feet away. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw (DC {{spellcasting:dc:cha}}). A creature take 6d6 fire damage and 6d6 necrotic damage on a failed save, or half as much damage on a successful one.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Death Knight" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_DEATH_KNIGHT">
+            <description>
+                <p>At 20th level, you can channel the cursed magic within, embodying the death knight. As a bonus action, you gain the following benefits for 1 minute:</p>
+                <ul>
+                    <li>You have advantage on saving throws against spells and other magical effects.</li>
+                    <li>You gain resistance to necrotic and poison damage and advantage on saving throws against the exhuastion, frightened, and poisoned conditions.</li>
+                    <li>Undead creatures under your command gain a bonus to their AC, attack, and damage rolls equal to your Charisma modifier (minimum of +1).</li>
+                </ul>
+                <p class="indent">Once you use this feature, you can't do so again until you finish a long rest.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You gain the following benefits for 1 minute: advantage on saving throws against spells and other magical effects; resistance to necrotic and poison damage and advantage on saving throws against the exhuastion, frightened, and poisoned conditions; and Undead creatures under your command gain a +{{death-knight:bonus}} bonus to their AC, attack, and damage rolls.</description>
+            </sheet>
+            <rules>
+                <stat name="death-knight:bonus" value="1" bonus="base" />
+                <stat name="death-knight:bonus" value="charisma:modifier" bonus="base" />
+            </rules>
+        </element>
+
+</elements>
