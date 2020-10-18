@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Gnosticism Arcane Tradition</name>
+        <update version="0.0.1">
+            <file name="wizard-gnosticism.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/yorviings-yvarra/wizard-gnosticism.xml" />
+        </update>
+    </info>
+    
+    <element name="Gnosticism" type="Archetype" source="Yorviing’s Yvarra" id="ID_YORVIING_YY_ARCHETYPE_WIZARD_GNOSTICISM">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p></p>
+            <p class="indent">Most arcane schools employ established structures, philosophical leanings, and certain rules regarding magic operations. However, there are some wizards who view these rules and guidelines as arbitrary. These wizards are often students of the occult, philosophy, and unorthodox practices and religions. Sometimes called chaos magicians, gnostics, or sigilists, these wizards believe most wizards’ magic only works because they know it should and conversely argue that intellectual belief alone is strong enough to manifest desire into reality. This unusual approach to magic, akin to a philosophy or arcane spiritualism, is called gnosticism.</p>
+            <p class="indent">Followers of this tradition inscribe meaningless sigils, a personal gibberish script that represents the practitioner’s desire, and empower them with arcane energy to transform the desires written in their sigils into reality. In addition, they learn to enter an altered state of consciousness, wherein thoughts are filtered to maintain focus and increase arcane effectiveness. These wizards consult on the paranormal, unconventional phenomena, and the decryption of arcane runes and sigils, and in battle, they wield magic in ways that few wizards ever deem possible.</p>
+            <div element="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_SIGIL_SAVANT" />
+            <div element="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_GNOSTIC_STATE" />
+            <div element="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_UNORTHODOX_ARCANA" />
+            <div element="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_ESOTERIC_RESOLVE" />
+            <div element="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_APOTHEOSIS" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_SIGIL_SAVANT" level="2" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_GNOSTIC_STATE" level="2" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_UNORTHODOX_ARCANA" level="6" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_ESOTERIC_RESOLVE" level="10" />
+            <grant type="Archetype Feature" id="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_APOTHEOSIS" level="14" />
+        </rules>
+    </element>
+        <element name="Sigil Savant" type="Archetype Feature" source="Yorviing’s Yvarra" id="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_SIGIL_SAVANT">
+            <description>
+                <p>Starting at 2nd level when you take up this tradition, you learn how to write arcane scripts and designs, called sigils, which are used to cast spells. You gain proficiency in calligrapher’s supplies, and you can use a symbol written in ink on parchment, wood, or skin in ink as a spellcasting focus for your wizard spells.</p>
+            </description>
+            <sheet>
+                <description>You can use a symbol written in ink on parchment, wood, or skin in ink as a spellcasting focus for your wizard spells.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+            </rules>
+        </element>
+        <element name="Gnostic State" type="Archetype Feature" source="Yorviing’s Yvarra" id="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_GNOSTIC_STATE">
+            <description>
+                <p>Beginning at 2nd level, you have learned how to enter an altered form of consciousness that grants focus and enhanced magical knowledge, known as your Gnostic State.</p>
+                <p class="indent">You can use a bonus action to enter your Gnostic State, which lasts for 1 minute. It ends early if you are incapacitated, though you can dismiss your Gnostic State at any time you choose (no action required).</p>
+                <p class="indent">While in your Gnostic State, you gain the following benefits:</p>
+                <ul>
+                    <li>You can add your Intelligence modifier to saving throws made to maintain concentration on spells.</li>
+                    <li>You have advantage on Intelligence (Arcana) and Intelligence (Religion) checks.</li>
+                    <li>Once per Gnostic State, you can cast any spell in your spellbook, even if you don’t have it prepared. You write out a sigil as part of casting this spell, and you cast it without any verbal or material components, though the casting time of the spell remains the same. Once you have cast a spell in this way, your Gnostic State ends.</li>
+                </ul>
+                <p class="indent">You can use this feature twice. You regain all expended uses of it when you finish a short or long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="2/Short Rest">
+                <description>You can enter your Gnostic State, which lasts for 1 minute. You add {{intelligence:modifier}} to concentration checks. You have advantage on Arcana and Religion checks. Once per Gnostic State, you can cast any spell in your spellbook, even if you don’t have it prepared. You write out a sigil as part of casting this spell, and you cast it without any verbal or material components, though the casting time of the spell remains the same. Once you have cast a spell in this way, your Gnostic State ends.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Unorthodox Arcana" type="Archetype Feature" source="Yorviing’s Yvarra" id="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_UNORTHODOX_ARCANA">
+            <description>
+                <p>By 6th level, your ability to use sigils to produce desired magical effects extends beyond the structures of normal wizardry. At the end of a long rest, choose one spell of 1st level or higher from any class, including this one. The spell you choose must be of a level you can cast. The chosen spell counts as wizard spell for you, is considered prepared until you finish your next long rest or until you cast the spell, and does not count toward the total number of spells that you can prepare. You can cast the spell once using a wizard spell slot of the spell’s level or higher. You write out a sigil as part of casting any spell prepared via this feature, and you cast it without any verbal or material components. If the material components for the spell requires a material component which has a gold value, you must provide the material component.</p>
+                <p class="indent">At the end of a long rest, if the spell you prepared via this feature that is not cast it is lost.</p>
+            </description>
+            <sheet>
+                <description>At the end of a long rest, choose one spell of 1st level or higher from any class. The spell must be of a level you can cast. The chosen spell counts as wizard spell for you, is considered prepared until you finish your next long rest or until you cast the spell, and does not count toward the total number of spells that you can prepare.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Esoteric Resolve" type="Archetype Feature" source="Yorviing’s Yvarra" id="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_ESOTERIC_RESOLVE">
+            <description>
+                <p>At 10th level, your ability to focus allows you to better ignore hindrances from the outside world. You are immune to magic that allows other creatures to read your thoughts or telepathically communicate with you unless you allow it, and when you make an Intelligence or Wisdom saving throw while you are in your Gnostic State, you can treat a d20 roll of 9 or lower as a 10.</p>
+            </description>
+            <sheet>
+                <description>You are immune to magic that allows other creatures to read your thoughts or telepathically communicate with you unless you allow it, and when you make an Intelligence or Wisdom saving throw while you are in your Gnostic State, you can treat a d20 roll of 9 or lower as a 10.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Apotheosis" type="Archetype Feature" source="Yorviing’s Yvarra" id="ID_YORVIING_YY_ARCHETYPE_FEATURE_GNOSTICISM_APOTHEOSIS">
+            <description>
+                <p>By 14th level, you have finally mastered the art of achieving gnosis. While in your Gnostic State, your concentration can’t be broken as a result of taking damage.</p>
+            </description>
+            <sheet>
+                <description>While in your Gnostic State, your concentration can’t be broken as a result of taking damage.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    
+</elements>
