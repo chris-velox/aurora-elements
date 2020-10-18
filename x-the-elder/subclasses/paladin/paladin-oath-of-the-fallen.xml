@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Oath of the Fallen Sacred Oath</name>
-        <update version="0.0.2">
+        <name>Oath of the Fallen Sacred Oath v1.1</name>
+        <update version="0.0.3">
             <file name="paladin-oath-of-the-fallen.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/paladin/paladin-oath-of-the-fallen.xml" />
         </update>
     </info>
@@ -41,9 +41,9 @@
         <rules>
             <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_OATH_SPELLS" level="3" />
             <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CHANNEL_DIVINITY" level="3" />
-            <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CURSE_OF_THE_FALLEN" level="3" />
+            <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CURSE_OF_UNDEATH" level="3" />
             <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_AURA_OF_THE_UNDEAD_MARSHALL" level="7" />
-            <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_HELLFIRE_ORB" level="15" />
+            <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_UNDEAD_RESISTANCES" level="15" />
             <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_DEATH_KNIGHT" level="20" />
         </rules>
     </element>
@@ -82,14 +82,15 @@
             <description>
                 <p>When you take this oath at 3rd level, you gain the following two Channel Divinity options.</p>
                 <p class="indent"><b><i>Raise Dead.</i></b> You can use your Channel Divinity to animate one corpse or skeleton with necrotic magic, animating it under your control until they are destroyed. Undead under your command cannot have their hit points restored. Undead raised through this feature will take their turn immediately after yours in the initiative order. You determine how they will act on their turn by issuing telepathic commands to them as a free action. The amount of skeletons or zombies you can have under your control through this feature must not exceed your proficiency bonus. If you animate a skeleton or corpse, the oldest skeleton or corspe will rot away.</p>
-                <p class="indent"><b><i>Curse the Holy.</i></b> You can use your Channel Divinity to force a creature you can see, up to 60 feet away, to make a Wisdom saving throw against your spell save DC. On a failed saving throw, you learn the creatures true alignment and on a successful saving throw, nothing happens. If you learn that a creatures true alginment is any good alignment through this feature, that creature makes attack rolls and saving throws to resist your effects as though it is under the bane spell for the next minute. You also have advantage on weapon attacks against that creature for the next minute.</p>
+                <p class="indent"><b><i>Hellfire Orb.</i></b> As an action, you can use your Channel Divinity and a paladin spell slot of 1st level or higher to hurl a magical ball of fire that explodes at a point you can see up to 120 feet away. Each creature in a 20-foot radius sphere centered on that point must make a Dexterity saving throw against your spell save DC. The sphere spreads around corners. A creature takes 2d6 fire damage and 2d6 necrotic damage on a failed saving throw, or half as much on a successful one. The amount of damage the hellfire orb does increases by 1d6 fire damage and 1d6 necrotic damage for each slot level above 1st.</p>
+                <!--<p class="indent"><b><i>Curse the Holy.</i></b> You can use your Channel Divinity to force a creature you can see, up to 60 feet away, to make a Wisdom saving throw against your spell save DC. On a failed saving throw, you learn the creatures true alignment and on a successful saving throw, nothing happens. If you learn that a creatures true alginment is any good alignment through this feature, that creature makes attack rolls and saving throws to resist your effects as though it is under the bane spell for the next minute. You also have advantage on weapon attacks against that creature for the next minute.</p>-->
             </description>
             <sheet display="false">
                 <description></description>
             </sheet>
             <rules>
                 <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CD_RAISE_DEAD" level="3" />
-                <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CD_CURSE_THE_HOLY" level="3" />
+                <grant type="Archetype Feature" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CD_HELLFIRE_ORB" level="3" />
             </rules>
         </element>
             <element name="Channel Divinity: Raise Dead" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CD_RAISE_DEAD">
@@ -101,7 +102,16 @@
                     <description>You can animate one corpse or skeleton with necrotic magic, animating it under your control until they are destroyed. Undead raised through this feature will take their turn immediately after yours in the initiative order. You determine how they will act on their turn by issuing telepathic commands to them as a free action. You can animiate up to {{proficiency}} corpses this way.</description>
                 </sheet>
             </element>
-            <element name="Channel Divinity: Curse the Holy" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CD_CURSE_THE_HOLY">
+            <element name="Channel Divinity: Hellfire Orb" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CD_HELLFIRE_ORB">
+                <compendium display="false" />
+                <description>
+                    <p>As an action, you can use your Channel Divinity and a paladin spell slot of 1st level or higher to hurl a magical ball of fire that explodes at a point you can see up to 120 feet away. Each creature in a 20-foot radius sphere centered on that point must make a Dexterity saving throw against your spell save DC. The sphere spreads around corners. A creature takes 2d6 fire damage and 2d6 necrotic damage on a failed saving throw, or half as much on a successful one. The amount of damage the hellfire orb does increases by 1d6 fire damage and 1d6 necrotic damage for each slot level above 1st.</p>
+                </description>
+                <sheet alt="Hellfire Orb" usage="Channel Divinity" action="Action">
+                    <description>You can expend a spell slot of 1st level or higher to hurl a magical ball of fire that explodes at a point you can see up to 120 feet away. Each creature in a 20-foot radius sphere centered on that point must make a Dexterity saving throw (DC {{spellcasting:dc:cha}}). A creature takes 2d6 fire damage and 2d6 necrotic damage on a failed saving throw, or half as much on a successful one. The amount of damage the hellfire orb does increases by 1d6 fire damage and 1d6 necrotic damage for each slot level above 1st.</description>
+                </sheet>
+            </element>
+            <!--<element name="Channel Divinity: Curse the Holy" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CD_CURSE_THE_HOLY">
                 <compendium display="false" />
                 <description>
                     <p>You can use your Channel Divinity to force a creature you can see, up to 60 feet away, to make a Wisdom saving throw against your spell save DC. On a failed saving throw, you learn the creatures true alignment and on a successful saving throw, nothing happens. If you learn that a creatures true alginment is any good alignment through this feature, that creature makes attack rolls and saving throws to resist your effects as though it is under the bane spell for the next minute. You also have advantage on weapon attacks against that creature for the next minute.</p>
@@ -113,6 +123,17 @@
         <element name="Curse of the Fallen" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CURSE_OF_THE_FALLEN">
             <description>
                 <p>Finally at 3rd level, your fallen status causes your divine smites and the extra damage from your improved divine smite feature to deal nectrotic damage instead of radiant damage.</p>
+                <p class="indent">Additionally, your undead nature means you no longer need air, food, or drink. You will gain the benefits of a long rest by remaining in an inactive state for 6 hours. While in this state, you remain conscious and are aware of your surroundings.</p>
+            </description>
+            <sheet>
+                <description>Your fallen status causes your divine smites and the extra damage from your improved divine smite feature to deal nectrotic damage instead of radiant damage. Additionally, your undead nature means you no longer need air, food, or drink. You will gain the benefits of a long rest by remaining in an inactive state for 6 hours. While in this state, you remain conscious and are aware of your surroundings.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>-->
+        <element name="Curse of Undeath" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_CURSE_OF_UNDEATH">
+            <description>
+                <p>Also at 3rd level, your fallen status causes your divine smites and the extra damage from your improved divine smite feature to deal nectrotic damage instead of radiant damage.</p>
                 <p class="indent">Additionally, your undead nature means you no longer need air, food, or drink. You will gain the benefits of a long rest by remaining in an inactive state for 6 hours. While in this state, you remain conscious and are aware of your surroundings.</p>
             </description>
             <sheet>
@@ -134,7 +155,7 @@
                 <stat name="undead-marshall:range" value="20" level="18" />
             </rules>
         </element>
-        <element name="Hellfire Orb" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_HELLFIRE_ORB">
+        <!--<element name="Hellfire Orb" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_HELLFIRE_ORB">
             <description>
                 <p>At 15th level, you can hurl a magical ball of fire that explodes at a point you can see up to 120 feet away. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw against your spell save DC. The sphere spreads around corners. A creature take 6d6 fire damage and 6d6 necrotic damage on a failed save, or half as much damage on a successful one. You must finish a long rest before you can use this feature again.</p>
             </description>
@@ -142,6 +163,18 @@
                 <description>You can hurl a magical ball of fire that explodes at a point you can see up to 120 feet away. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw (DC {{spellcasting:dc:cha}}). A creature take 6d6 fire damage and 6d6 necrotic damage on a failed save, or half as much damage on a successful one.</description>
             </sheet>
             <rules>
+            </rules>
+        </element>-->
+        <element name="Undead Resistances" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_UNDEAD_RESISTANCES">
+            <description>
+                <p>At 15th level, you gain advantage on saving throws against the exhaustion and poison conditions and resistance to necrotic and poison damage. You also gain advantage on death saving throws.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on saving throws against the exhaustion and poison conditions. You also have advantage on death saving throws.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
             </rules>
         </element>
         <element name="Death Knight" type="Archetype Feature" source="Oath of the Fallen" id="ID_DGRM_OOTF_ARCHETYPE_FEATURE_OOTF_DEATH_KNIGHT">
