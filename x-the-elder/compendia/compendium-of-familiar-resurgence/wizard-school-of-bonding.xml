@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>School of Bonding Arcane Tradition</name>
+        <update version="0.0.1">
+            <file name="wizard-school-of-bonding.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/compendium-of-familiar-resurgence/wizard-school-of-bonding.xml" />
+        </update>
+    </info>
+    
+    <element name="School of Bonding" type="Archetype" source="Compendium of Familiar Resurgence" id="ID_L009_COFR_ARCHETYPE_">
+        <supports>Arcane Tradition</supports>
+        <description>
+            <p>Where some wizards follow the maddening pursuit of godlike power, other wizards focus on the smaller things in life, and find happiness in bonding with a familiar they take under their wing. Consider the kind of relationship your wizard would have with their familiar, and their reason for focusing their studies on such creatures.</p>
+            <div element="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_TRUE_BOND" />
+            <div element="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_ARCANE_BOND" />
+            <div element="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_ANIMUS_BOND" />
+            <div element="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_BOND_OF_THE_AGES" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_TRUE_BOND" level="2" />
+            <grant type="Archetype Feature" id="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_ARCANE_BOND" level="6" />
+            <grant type="Archetype Feature" id="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_ANIMUS_BOND" level="10" />
+            <grant type="Archetype Feature" id="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_BOND_OF_THE_AGES" level="14" />
+        </rules>
+    </element>
+        <element name="True Bond" type="Archetype Feature" source="Compendium of Familiar Resurgence" id="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_TRUE_BOND">
+            <description>
+                <p>At 2nd level, you have learned how to strengthen the bond you create with your familiar. You add the <i>find familiar</i> spell to your spellbook, if it is not already there, and you always have it prepared. This spell does not count against the number of wizard spells you can prepare. Your familiar also gains the following benefits (If you are ever able to summon multiple familiars, only one familiar can benefit from these class features):</p>
+                <ul>
+                    <li>When you cast find familiar, your familiar appears with a bonus to its hit point maximum equal to twice your wizard level, and has as many hitdice to spend on short rests as your level.</li>
+                    <li>You can use an action to cause your familiar to adopt a new form, as if you had cast <i>find familiar</i> again. You can do so a number of times equal to your Intelligence modifier (minimum of 1) before you have to complete a long rest to do so again.</li>
+                    <li>You can telepathically communicate with your familiar out to 1 mile.</li>
+                    <li>You can temporarily dismiss and summon your familiar as a bonus action instead of an action if it still has hit points remaining.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>Your familiar gains the following benefits: Your familiar has an addition {{true-bond:bonus-hp}} hit points and {{level:wizard}} hit dice to spend during a short rest. You can use an action to cause your familiar to adopt a new form ({{true-bond:uses}}/Long Rest). You can telepathically communicate with your familiar out to 1 mile. You can temporarily dismiss and summon your familiar as a bonus action instead of an action if it still has hit points remaining.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_FIND_FAMILIAR" spellcasting="Wizard" prepared="true" level="2" />
+                <stat name="true-bond:bonus-hp" value="level:wizard" />
+                <stat name="true-bond:bonus-hp" value="level:wizard" />
+                <stat name="true-bond:uses" value="1" bonus="base" />
+                <stat name="true-bond:uses" value="intelligence:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Arcane Bond" type="Archetype Feature" source="Compendium of Familiar Resurgence" id="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_ARCANE_BOND">
+            <description>
+                <p>At 6th level you can let your magic flow more potently through your familiar. You can now deliver spells with your familiar that have a range of 5 feet or greater. You must cast the spell, and the familiar can use its reaction to deliver it as if it had cast the spell. Your familiar must be within 30 feet of you.</p>
+            </description>
+            <sheet>
+                <description>You can now deliver spells with your familiar that have a range of 5 feet or greater. You must cast the spell, and the familiar can use its reaction to deliver it as if it had cast the spell. Your familiar must be within 30 feet of you.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Animus Bond" type="Archetype Feature" source="Compendium of Familiar Resurgence" id="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_ANIMUS_BOND">
+            <description>
+                <p>At 10th level, you and your familiar have come to understand each other's lifeforce more deeply. As a bonus action, you can dismiss your familiar, but instead of temporarily dismissing it to a pocket plane, you merge its animating force with yours. You gain a number of temporary hit points equal to its remaining hit points, which last until you complete a long rest. If these temporary hit points are reduced to 0, you have to cast find familiar again to summon your familiar. Otherwise, you can use an action to channel your familiar's magical energy back into its material form. The familiar returns with a number of hit points equal to the number of temporary hit points that remained.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can dismiss your familiar, but instead of temporarily dismissing it to a pocket plane, you merge its animating force with yours. You gain a number of temporary hit points equal to its remaining hit points, which last until you complete a long rest. If these temporary hit points are reduced to 0, you have to cast find familiar again to summon your familiar. Otherwise, you can use an action to channel your familiar's magical energy back into its material form. The familiar returns with a number of hit points equal to the number of temporary hit points that remained.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Bond of the Ages" type="Archetype Feature" source="Compendium of Familiar Resurgence" id="ID_L009_COFR_ARCHETYPE_FEATURE_BONDING_BOND_OF_THE_AGES">
+            <description>
+                <p>At 14th level, you and your familiar have reached a unique bond. Choose two 1st-level spells and one 2nd-level spell with a range of self that you have scribed in your spellbook. Your familiar can cast each of these spells innately once per day. When you reach 17th level, you can select an additional 2nd-level spell and one 3rd-level spell, and when you reach 20th level you can select an additional 4th level spell. Each time you gain a level in this class, you can swap out one of these spells for your familiar with another one of the same level that has a range of self.</p>
+                <p class="indent">Additionally, at 20th level, when you die, your soul enters your familiar if it is free and willing. While you inhabit your familiar you can assume control of its actions and speak through it. You can cast any spells your familiar could cast, but you do not have access to your own game statistics. You can remain in your familiar until you find means of resurrection or your familiar dies. If your familiar drops to 0 hit points while you inhabit it, it falls unconscious and makes death saving throws.</p>
+            </description>
+            <sheet>
+                <description>Choose two 1st-level spells and one 2nd-level spell with a range of self that you have scribed in your spellbook. Your familiar can cast each of these spells innately once per day.</description>
+                <description level="17">Choose two 1st-level spells, two 2nd-level spells, and one 3rd-level spell with a range of self that you have scribed in your spellbook. Your familiar can cast each of these spells innately once per day.</description>
+                <description level="20">Choose two 1st-level spells, two 2nd-level spells, one 3rd-level spell, and one 4th-level spell with a range of self that you have scribed in your spellbook. Your familiar can cast each of these spells innately once per day. Additionally, when you die, your soul enters your familiar if it is free and willing. You can assume control of its actions and speak through it, cast any spells your familiar could cast, but you do not have access to your own game statistics.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    
+</elements>
