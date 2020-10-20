@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Falconer Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="fighter-falconer.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/fighter/fighter-falconer.xml" />
+        </update>
+    </info>
+    
+    <element name="Falconer Martial Archetype" type="Source" source="Core" id="ID_NOTTHESMOOZE_GMBINDER_SOURCE_Falconer Martial Archetype">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">FMA</set>
+            <set name="url">https://www.gmbinder.com/share/-MI5-2tUS87Wa1Qq_uzd</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="NTS" url="https://www.gmbinder.com/profile/notthesmoooze">NotTheSmooze</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20201018</set>
+        </setters>
+    </element>
+
+    <element name="Falconer" type="Archetype" source="Falconer Martial Archetype" id="ID_NTS_FMA_ARCHETYPE_FIGHTER_FALCONER">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>The Falconer is a fighter that forms a bond with a trained bird of prey. Falconers and their partners use teamwork and simple magic to support each other and fight side-by-side.</p>
+            <p class="indent">Not every Falconer partners with a falcon: many use other birds, such as hawks or owls. Some even bond with stranger beasts, like ravens, gulls, or parrots, adopting the traditions of the first Falconers with the birds of their native homelands.</p>
+            <div element="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_TRAINED_FALCON" />
+            <div element="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_BIRD_OF_PREY" />
+            <div element="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_HARRIER" />
+            <div element="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_FALCONS_EYE" />
+            <div element="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_TAILWIND" />
+            <div element="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_FALCONS_DIVE" />
+            <div element="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_BIRD_OF_WAR" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_TRAINED_FALCON" level="3" />
+            <grant type="Archetype Feature" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_BIRD_OF_PREY" level="3" />
+            <grant type="Archetype Feature" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_HARRIER" level="7" />
+            <grant type="Archetype Feature" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_FALCONS_EYE" level="7" />
+            <grant type="Archetype Feature" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_TAILWIND" level="10" />
+            <grant type="Archetype Feature" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_FALCONS_DIVE" level="15" />
+            <grant type="Archetype Feature" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_BIRD_OF_WAR" level="18" />
+        </rules>
+    </element>
+        <element name="Trained Falcon" type="Archetype Feature" source="Falconer Martial Archetype" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_TRAINED_FALCON">
+            <description>
+                <p>At 3rd level, you gain the companionship of a trained falcon (see the trained falcon stat block). The falcon is friendly to you and your companions, and it obeys your commands.</p>
+                <p class="indent">In combat, your falcon shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you use a bonus action on your turn to command it to use the Attack action with its talons attack, or the Dash, Disengage, Help, Hide, or Search action.</p>
+                <p class="indent">When your falcon is reduced to 0 hit points, it makes death saving throws as a player character would. When your falcon finishes a short or long rest, it regains all its hit points. If you lose your falcon, you can obtain another one by spending 8 hours bonding with a similar beast that isn’t hostile to you. You can’t have more than one trained falcon at a time.</p>
+            </description>
+            <sheet>
+                <description>You gain the companionship of a trained falcon (see the trained falcon stat block). The falcon is friendly to you and your companions, and it obeys your commands.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Bird of Prey" type="Archetype Feature" source="Falconer Martial Archetype" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_BIRD_OF_PREY">
+            <description>
+                <p>Starting at 3rd level, when you hit a creature with an attack, you can mark it as prey for your falcon until the start of your next turn. The first time your falcon hits a marked creature with an attack on its turn, it deals an extra 1d4 damage.</p>
+                <p class="indent">This extra damage increases by 1d4 when you reach 7th level in this class, and again at 15th level and 18th level.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with an attack, you can mark it as prey for your falcon until the start of your next turn. The first time your falcon hits a marked creature with an attack on its turn, it deals an extra {{bird-of-prey:damage-dice}}d4 damage.</description>
+            </sheet>
+            <rules>
+                <stat name="bird-of-prey:damage-dice" value="1" level="3" />
+                <stat name="bird-of-prey:damage-dice" value="1" level="7" />
+                <stat name="bird-of-prey:damage-dice" value="1" level="15" />
+            </rules>
+        </element>
+        <element name="Harrier" type="Archetype Feature" source="Falconer Martial Archetype" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_HARRIER">
+            <description>
+                <p>Starting at 7th level, your falcon harries your enemies. When your falcon hits a creature with its talons, the target can’t take reactions until the start of your next turn.</p>
+            </description>
+            <sheet>
+                <description>When your falcon hits a creature with its talons, the target can’t take reactions until the start of your next turn.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Falcon’s Eye" type="Archetype Feature" source="Falconer Martial Archetype" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_FALCONS_EYE">
+            <description>
+                <p>Also at 7th level, you gain the <i>beast sense</i> spell, and you can cast it on your falcon at will, without expending a spell slot.</p>
+            </description>
+            <sheet>
+                <description>You can cast beast sense on your falcon at will, without expending a spell slot.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_BEAST_SENSE" />
+            </rules>
+        </element>
+        <element name="Tailwind" type="Archetype Feature" source="Falconer Martial Archetype" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_TAILWIND">
+            <description>
+                <p>Starting at 10th level, when you use your Second Wind while your falcon can see or hear you, your falcon gains temporary hit points equal to 1d10 + your fighter level, and it can use its reaction to move up to half its speed.</p>
+            </description>
+            <sheet>
+                <description>When you use your Second Wind while your falcon can see or hear you, your falcon gains 1d10 + {{level:fighter}} temporary hit points, and it can use its reaction to move up to half its speed.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Falcon’s Dive" type="Archetype Feature" source="Falconer Martial Archetype" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_FALCONS_DIVE">
+            <description>
+                <p>Starting at 15th level, you and your falcon can escape certain area effects, such as a black dragon’s acid breath or a wall of fire spell. When you or your falcon are subjected to an effect that allows you to make a Dexterity saving throw to take half as much damage, you and your falcon take no damage on a successful saving throw, and only half damage on a failure.</p>
+            </description>
+            <sheet>
+                <description>When you or your falcon are subjected to an effect that allows you to make a Dexterity saving throw to take half as much damage, you and your falcon take no damage on a successful saving throw, and only half damage on a failure.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Bird of War" type="Archetype Feature" source="Falconer Martial Archetype" id="ID_NTS_FMA_ARCHETYPE_FEATURE_FALCONER_BIRD_OF_WAR">
+            <description>
+                <p>Starting at 18th level, your falcon can attack twice, instead of once, when it uses its talons on its turn. If your falcon makes both attacks against different targets, it can use your Bird of Prey feature to deal extra damage to both targets.</p>
+            </description>
+            <sheet>
+                <description>Your falcon can attack twice, instead of once, when it uses its talons on its turn. If your falcon makes both attacks against different targets, it can use your Bird of Prey feature to deal extra damage to both targets.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+
+</elements>
