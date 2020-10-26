@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Serpent Soul Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-serpent-soul.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/sorcerer/sorcerer-serpent-soul.xml" />
+        </update>
+    </info>
+    
+    <element name="Sorcerous Origin: Serpent Soul" type="Source" source="Core" id="ID_AQUALISK_GMBINDER_SOURCE_SORCEROUS_ORIGIN_SERPENT_SOUL">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SSSO</set>
+            <set name="url">https://www.gmbinder.com/share/-LyyzN7MxE1H4CmIBlV4</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="AL" url="https://www.reddit.com/user/Aqualisk/">u/Aqualisk</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200527</set>
+        </setters>
+    </element>
+
+    <element name="Serpent Soul" type="Archetype" source="Sorcerous Origin: Serpent Soul" id="ID_AL_SSSO_ARCHETYPE_SORCERER_SERPENT_SOUL">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <h5>CAUGHT IN THE COILS</h5>
+            <p>Your spirit is infused with serpent blood and your innate magic flows from a poisonous well within you. You might trace your lineage to that of the Yuan-Ti, Naga, or other serpents. Or perhaps you are one of those entities yourself.</p>
+            <p class="indent">Your presence affects the very air around you, filling it with a strange malaise. Your lifeforce is bolstered when others are inflicted with venom and an esoteric kinship with snakes allows you to temporarily summon them or their essence to aid you.</p>
+            <div element="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_VENOMOUS_MAGIC" />
+            <div element="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_SERPENT_SPAWN" />
+            <div element="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_CAUSTIC_VITALITY" />
+            <div element="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_POISONOUS_PARAGON" />
+            <div element="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_OPHIDIAN_ASPECT" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_VENOMOUS_MAGIC" level="1" />
+            <grant type="Archetype Feature" id="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_SERPENT_SPAWN" level="1" />
+            <grant type="Archetype Feature" id="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_CAUSTIC_VITALITY" level="6" />
+            <grant type="Archetype Feature" id="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_POISONOUS_PARAGON" level="14" />
+            <grant type="Archetype Feature" id="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_OPHIDIAN_ASPECT" level="18" />
+        </rules>
+    </element>
+        <element name="Venomous Magic" type="Archetype Feature" source="Sorcerous Origin: Serpent Soul" id="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_VENOMOUS_MAGIC">
+            <description>
+                <p>Your innate connection to the magical flow of poison has infected your magic. Whenever you cast a sorcerer cantrip that deals damage you may change its damage type to poison or acid damage. In addition, you gain resistance to poison damage.</p>
+            </description>
+            <sheet>
+                <description>Whenever you cast a sorcerer cantrip that deals damage you may change its damage type to poison or acid damage.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+            </rules>
+        </element>
+        <element name="Serpent Spawn" type="Archetype Feature" source="Sorcerous Origin: Serpent Soul" id="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_SERPENT_SPAWN">
+            <description>
+                <p>Starting at 1st level, your magic can also call snakes from the ground to attack your foes. As bonus action, you unleash a swarm of snakes or a cloud miasma. Choose a creature that you can see within 30 feet of you that must make a Constitution saving throw against your spell save DC or take 1d4 + your Charisma modifier poison or acid damage. You can use this feature a number of times equal to your Charisma modifier (Minimum 1). You regain all uses after completing a short or long rest.</p>
+                <p class="indent">At certain levels the damage of this ability increases. The damage increases to 2d4 at 6th level, 3d4 at 14th level, and 4d4 at 18th level.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{serpent-spawn:uses}}/Short Rest">
+                <description>Choose a creature that you can see within 30 feet of you to make a Constitution saving throw (DC {{spellcasting:dc:cha}}) or take {{serpent-spawn:damage-dice}}d4 + {{charisma:modifier}} poison or acid damage.</description>
+            </sheet>
+            <rules>
+                <stat name="serpent-spawn:damage-dice" value="1" level="1" />
+                <stat name="serpent-spawn:damage-dice" value="1" level="6" />
+                <stat name="serpent-spawn:damage-dice" value="1" level="14" />
+                <stat name="serpent-spawn:damage-dice" value="1" level="18" />
+                <stat name="serpent-spawn:uses" value="1" bonus="base" />
+                <stat name="serpent-spawn:uses" value="charisma:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Caustic Vitality" type="Archetype Feature" source="Sorcerous Origin: Serpent Soul" id="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_CAUSTIC_VITALITY">
+            <description>
+                <p>Beginning at 6th level, as others wither under the effects of poison, you draw strength from their suffering. When a creature within 30 feet of you takes poison or acid damage, you can use your reaction to gain temporary hit points equal to half damage taken. You may use this ability twice and regain all uses of this ability after completing a short or long rest.</p>
+                <p class="indent">In addition, you can speak telepathically to snakes or serpentine creatures within 30 feet of you. You can only communicate simple thoughts and emotions to creatures that do not share a language with you.</p>
+            </description>
+            <sheet action="Reaction" usage="2/Short Rest">
+                <description>When a creature within 30 feet of you takes poison or acid damage, you gain temporary hit points equal to half damage taken. In addition, you can speak telepathically to snakes or serpentine creatures within 30 feet of you. You can only communicate simple thoughts and emotions to creatures that do not share a language with you.</description>
+            </sheet>
+        </element>
+        <element name="Poisonous Paragon" type="Archetype Feature" source="Sorcerous Origin: Serpent Soul" id="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_POISONOUS_PARAGON">
+            <description>
+                <p>Starting at 14th level, you have embraced your serpentine lineage and it provides you with immunity to poison damage and the poisoned condition. Also, whenever an attack or spell from a hostile creature would deal poison damage to you, you can use your reaction to infuse yourself with its virulence and add 2d4 poison or acid damage to the next damaging spell you cast before the end of your next turn.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>Also, whenever an attack or spell from a hostile creature would deal poison damage to you, you infuse yourself with its virulence and add 2d4 poison or acid damage to the next damaging spell you cast before the end of your next turn.. You are immune to the poisoned condition. </description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" />
+            </rules>
+        </element>
+        <element name="Ophidian Aspect" type="Archetype Feature" source="Sorcerous Origin: Serpent Soul" id="ID_AL_SSSO_ARCHETYPE_FEATURE_SERPENT_SOUL_OPHIDIAN_ASPECT">
+            <description>
+                <p>Starting at 18th level, you can awaken the full power of your poisonous heritage. As a bonus action you can spend 6 sorcery points to assume the form of a snake abomination, a twisted creature of many serpent heads, as many tails, and clawed limbs for 1 minute. While in this form your Serpent Spawn ability activates for free at the end of each your turns (no action required by you). In addition, creatures that fail the saving throw are poisoned until the end of their next turn. Creatures normally immune to the poisoned condition can be still be poisoned by this ability. While transformed, when using your Caustic Vitality ability, it grants temporary hit points equal to the full damage taken instead of half. This transformation ends early if you die or you dismiss it as a bonus action.</p>
+            </description>
+            <sheet action="Bonus Action" usage="6 Sorcery Points">
+                <description>You assume the form of a snake abomination for up to 1 minute. While in this form your Serpent Spawn ability activates for free at the end of each your turns (no action required by you). In addition, creatures that fail the saving throw are poisoned until the end of their next turn. Creatures normally immune to the poisoned condition can be still be poisoned by this ability. While transformed, when using your Caustic Vitality ability, it grants temporary hit points equal to the full damage taken instead of half.</description>
+            </sheet>
+        </element>
+
+    
+</elements>
