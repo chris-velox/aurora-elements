@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Warlord Extended Tactics</name>
+        <update version="0.0.1">
+            <file name="warlord-extended-tactics.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/kibblestasty/warlord-extended-tactics.xml" />
+        </update>
+    </info>
+    
+    <element name="Warlod Extended Tactics" type="Source" source="Core" id="ID_KIBBLESTASTY_GMBINDER_SOURCE_Warlod Extended Tactics">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">WET</set>
+            <set name="url">https://www.gmbinder.com/share/-M5jFV5mDxXYWp46Mt5s</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="KT" url="https://www.gmbinder.com/profile/kibblestasty">KibblesTasty</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20201028</set>
+        </setters>
+    </element>
+
+    <element name="Spellweaver's Presence" type="Archetype" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_WARLORD_SPELLWEAVERS_PRESENCE">
+        <supports>Warlord Presence</supports>
+        <description>
+            <p>A Spellweaver is a magically adept individual who holds great mechnical knowledge of magic and its tactical applications, but frequently lacks - or at least doesn't focus on - the raw power arcane power that a Wizard or Sorcerer might. A deft touch to manipulate magic, pulling and warping the spells of others, shrouding their allies with abjuration and illusion, their touch is subtle and effective.</p>
+            <p class="indent">A careless observe may take their efforts as less, but a wise one realizes the danger of their manipulations can far outweigh a flashy fireball when it comes to shifting the tides of war.</p>
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_ARCANE_PROFICIENCY" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_ENCHANTERS_SHROUD" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_SPELL_MANIPULATION" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_SHIELD_AND_SHROUDING" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_CONTESTED_MAGIC" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_MIRROR_ALLY" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_INDEPENDENT_ARCANA" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_MIRROR_ARMY" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_ARCANE_PROFICIENCY" level="1" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_ENCHANTERS_SHROUD" level="1" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_SPELL_MANIPULATION" level="3" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_SHIELD_AND_SHROUDING" level="3" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_CONTESTED_MAGIC" level="7" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_MIRROR_ALLY" level="11" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_INDEPENDENT_ARCANA" level="15" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_MIRROR_ARMY" level="18" />
+        </rules>
+    </element>
+        <element name="Arcane Proficiency" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_ARCANE_PROFICIENCY">
+            <description>
+                <p>Starting at 1st level when you take this Presence, you gain proficiency in the Arcana skill, and learn two cantrips of your choice from the Wizard or Bard spell list from the abjuration, enchantment, or illusion schools. These are Warlord spells for you.</p>
+                <h5>SPELLCASTING ABILITY</h5>
+                <p class="indent">Intelligence is your spellcasting ability for your spells, since you learn your spells. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a spell you cast and when making an attack roll with one.</p>
+                <p style="text-align: center;"><b>Spell save DC</b> = 8 + your proficiency bonus + your Intelligence modifier</p>
+                <p style="text-align: center;"><b>Spell attack modifier</b> = your proficiency bonus + your Intelligence modifier</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <spellcasting name="Spellweaver" ability="Intelligence" prepare="false">
+                <list>(Wizard||Bard),(Abjuration||Enchantment||Illusion)</list>
+            </spellcasting>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+                <select type="Spell" name="Cantrip (Spellweaver)" spellcasting="Spellweaver" supports="$(spellcasting:list),0" number="2" known="true" level="1" />
+            </rules>
+        </element>
+        <element name="Enchanter's Shroud" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_ENCHANTERS_SHROUD">
+            <description>
+                <p>Additionally at 1st level, when you roll initiative you wrap an allied creature in an arcane enchantment, making the target creature invisible for a number of rounds equal to your Intelligence modifier, or until the target creature attacks, makes a damage roll, or forces someone to make a saving throw.</p>
+            </description>
+            <sheet>
+                <description>When you roll initiative you make an allied creature invisible for {{intelligence:modifier}} rounds, or until the target creature attacks, makes a damage roll, or forces someone to make a saving throw.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Spell Manipulation" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_SPELL_MANIPULATION">
+            <description>
+                <p>Starting at 3rd level, you gain the ability to use your magic to subtly influence the battlefield, tweaking and modifying spells and attacks with your magic. You learn three of the following options, gaining an additional option at 6th and 14th level.</p>
+                <h5>ARCANE SURGE</h5>
+                <p>As a reaction to an ally casting a spell, you can expend one leadership die adding it to or subtracting it from one attack roll or damage roll of that spell.</p>
+                <h5>ILLUSORY DISTRACTION</h5>
+                <p>As a reaction to a creature being the target of an attack, you can expend one Leadership Die to cause an illusory distraction. Roll the leadership die and subtract it from the attack roll.</p>
+                <h5>PULL SPELL</h5>
+                <p>As a reaction to a spell targeting an ally within 30 feet or a radius that includes you, you can make the spell target you. For a radius this places the center of the radius on you.</p>
+                <h5>REDIRECTION</h5>
+                <p>You can redirect a ranged weapon or spell attack that has missed its target. As a reaction to a missed attack you can expend one Leadership Die to reroll the attack against another creature within 30 feet of the target, in the case of a leveled spell, redirecting the spell in this fashion requires a number of Leadership Dice equal to the spell's level.</p>
+                <h5>TWEAK AREA</h5>
+                <p>As reaction to an allies casting a spell with an area of effect, you can expend warp the shape of their spell. You can exclude a creature within the effect or include a creature not in the effect but adjacent to the spell from being affected by the spell, spending one leadership die for each creature excluded or included.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Spell Manipulation" supports="Spellweaver Spell Manipulation" number="3" level="3" />
+                <select type="Archetype Feature" name="Spell Manipulation" supports="Spellweaver Spell Manipulation" level="6" />
+                <select type="Archetype Feature" name="Spell Manipulation" supports="Spellweaver Spell Manipulation" level="14" />
+            </rules>
+        </element>
+            <element name="Arcane Surge" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_SPELL_MANIPULATION_ARCANE_SURGE">
+                <compendium display="false" />
+                <supports>Spellweaver Spell Manipulation</supports>
+                <description>
+                    <p>As a reaction to an ally casting a spell, you can expend one leadership die adding it to or subtracting it from one attack roll or damage roll of that spell.</p>
+                </description>
+                <sheet action="Reaction" usage="Leadership Die">
+                    <description>As a reaction to an ally casting a spell, you can expend one leadership die adding it to or subtracting it from one attack roll or damage roll of that spell.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Illusory Distraction" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_SPELL_MANIPULATION_ILLUSORY_DISTRACTION">
+                <compendium display="false" />
+                <supports>Spellweaver Spell Manipulation</supports>
+                <description>
+                    <p>As a reaction to a creature being the target of an attack, you can expend one Leadership Die to cause an illusory distraction. Roll the leadership die and subtract it from the attack roll.</p>
+                </description>
+                <sheet action="Reaction" usage="Leadership Die">
+                    <description>As a reaction to a creature being the target of an attack, you can expend one Leadership Die to cause an illusory distraction. Roll the leadership die and subtract it from the attack roll.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Pull Spell" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_SPELL_MANIPULATION_PULL_SPELL">
+                <compendium display="false" />
+                <supports>Spellweaver Spell Manipulation</supports>
+                <description>
+                    <p>As a reaction to a spell targeting an ally within 30 feet or a radius that includes you, you can make the spell target you. For a radius this places the center of the radius on you.</p>
+                </description>
+                <sheet action="Reaction">
+                    <description>As a reaction to a spell targeting an ally within 30 feet or a radius that includes you, you can make the spell target you. For a radius this places the center of the radius on you.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Redirection" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_SPELL_MANIPULATION_REDIRECTION">
+                <compendium display="false" />
+                <supports>Spellweaver Spell Manipulation</supports>
+                <description>
+                    <p>You can redirect a ranged weapon or spell attack that has missed its target. As a reaction to a missed attack you can expend one Leadership Die to reroll the attack against another creature within 30 feet of the target, in the case of a leveled spell, redirecting the spell in this fashion requires a number of Leadership Dice equal to the spell's level.</p>
+                </description>
+                <sheet action="Reaction" usage="1+ Leadership Dice">
+                    <description>As a reaction to a missed attack you can expend one Leadership Die to reroll the attack against another creature within 30 feet of the target, in the case of a leveled spell, redirecting the spell in this fashion requires a number of Leadership Dice equal to the spell's level.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Tweak Area" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_SPELL_MANIPULATION_TWEAK_AREA">
+                <compendium display="false" />
+                <supports>Spellweaver Spell Manipulation</supports>
+                <description>
+                    <p>As reaction to an ally's casting a spell with an area of effect, you can expend warp the shape of their spell. You can exclude a creature within the effect or include a creature not in the effect but adjacent to the spell from being affected by the spell, spending one leadership die for each creature excluded or included.</p>
+                </description>
+                <sheet action="Reaction" usage="Leadership Die">
+                    <description>As reaction to an ally's casting a spell with an area of effect, you can expend warp the shape of their spell. You can exclude a creature within the effect or include a creature not in the effect but adjacent to the spell from being affected by the spell, spending one leadership die for each creature excluded or included.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+        <element name="Shield and Shrouding" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_SHIELD_AND_SHROUDING">
+            <description>
+                <p>Additionally at 3rd level, your proficiency with magic gives the ability to cast magic of limited scope to shroud and protect your allies. You know two 1st-level wizard spells of your choice, which must be from the abjuration or illusion schools on the Wizard spell list. These are Warlord spells for you. You can cast these spell by expending leadership dice equal to the level of the spell.</p>
+            </description>
+            <sheet>
+                <description>You can cast your Spellweaver spells by expending leadership dice equal to the level of the spell.</description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Spell (Spellweaver)" supports="(Wizard,(Abjuration||Illusion)),1" spellcasting="Spellweaver" number="2" level="3" />
+            </rules>
+        </element>
+        <element name="Contested Magic" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_CONTESTED_MAGIC">
+            <description>
+                <p>Starting at 7th level, you can use your Spell Manipulation effects that only work on allied spells on all spells. When you use them on a non-allied spell, they cost an extra Leadership Die.</p>
+            </description>
+            <sheet>
+                <description>You can use your Spell Manipulation effects that only work on allied spells on all spells. When you use them on a non-allied spell, they cost an extra Leadership Die.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Mirror Ally" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_MIRROR_ALLY">
+            <description>
+                <p>Starting 11th, once per turn when you grant an attack with Battlefield Presence, you can summon an illusory copy of the allied creature that works as a single copy of mirror image. This illusory copy lasts until the start of your next turn, until it is destroyed by an attack, or until the copied creature makes an attack. If the copied creature deals damage, the illusory version deals 1d6 force damage imitating the attack.</p>
+                <p class="indent">When you create an illusory copy, you can expend a leadership die to make it not disappear until it is destroyed or the start of your next turn (continuing to do damage on additional mirrored attacks).</p>
+            </description>
+            <sheet>
+                <description>Once per turn when you grant an attack with Battlefield Presence, you can summon an illusory copy of the allied creature that works as a single copy of mirror image. This illusory copy lasts until the start of your next turn, until it is destroyed by an attack, or until the copied creature makes an attack. If the copied creature deals damage, the illusory version deals 1d6 force damage imitating the attack. When you create an illusory copy, you can expend a leadership die to make it not disappear until it is destroyed or the start of your next turn (continuing to do damage on additional mirrored attacks).</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Independent Arcana" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_INDEPENDENT_ARCANA">
+            <description>
+                <p>Starting 15th level, you can select three addition spells of your choice of 3rd-level or lower, which must be from the abjuration or illusion schools on the Wizard spell list. These are Warlord spells for you. You can cast these spells by expending leadership dice equal to the level of the spell.</p>
+                <p class="indent">When you cast a spell with a range of self, you can target an ally within 30 feet with that spell instead.</p>
+            </description>
+            <sheet>
+                <description>When you cast a spell with a range of self, you can target an ally within 30 feet with that spell instead.</description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Spell (Spellweaver)" supports="(Wizard,(Abjuration||Illusion)),(1||2||3)" spellcasting="Spellweaver" number="3" level="15" />
+            </rules>
+        </element>
+        <element name="Mirror Army" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_SPELLWEAVERS_MIRROR_ARMY">
+            <description>
+                <p>Starting 18th level, as an action you can apply Mirrored Ally to creatures up to Intelligence modifier within 60 feet.</p>
+                <p class="indent">Once you use this ability, you cannot use it again until you complete a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can apply Mirrored Ally to up to {{intelligence:modifier}} creatures within 60 feet.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="Gifted's Presence" type="Archetype" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_WARLORD_GIFTEDS_PRESENCE">
+        <supports>Warlord Presence</supports>
+        <description>
+            <p>A Gifted is a unique Warlord who's presence stems from their 'gift' of Psionic powers. Like any Psion, the root of their power may vary, and it can come in several different expressions, but in all cases they leverage the unique gifts to wield an mysterious and effective presence that aids their allies immeasurable.</p>
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_PSIONIC_DISCIPLINE" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_PSIONIC_BATTLEFIELD_PRESENCE" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_GIFTED_LEADER" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_BATTLE_MIND" />
+            <div element="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_PERFECT_CONVERGENCE" />
+            <div class="sidebar">
+                <h5 class="caption">PSION INTEGRATION</h5>
+                <p>The following Warlord Presence is made for use with the Psion class (also made by me); you do not need to use the full Psion class to use this, but you do need to use the Psionic system included with it for the abilities here to make sense, as this refers to those disciplines in building its features, much like the various magical branches refer to magic abilities of those Warlords.</p>
+                <p class="indent">I am aware that not everyone wants Homebrew that refers to Homebrew, and thusly this will remain in the expanded options as something that exists for those that want it.</p>
+            </div>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT" level="1" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_PSIONIC_DISCIPLINE" level="3" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_PSIONIC_BATTLEFIELD_PRESENCE" level="7" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_GIFTED_LEADER" level="11" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_BATTLE_MIND" level="15" />
+            <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_PERFECT_CONVERGENCE" level="18" />
+        </rules>
+    </element>
+        <element name="The Gift" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT">
+            <description>
+                <p>Starting at 1st level when you take this Presence, you must first select your psionic gift from the following options. Your gift will impact several of your features.</p>
+                <h5>ENHNANCEMENT</h5>
+                <p>You can bring out the inner strengh of yourself and others. You gain proficiency in Athletics and gain access to the Enhancing Skill psionic power.</p>
+                <h5>PRECONGNITION</h5>
+                <p>You can see flashes of the future. You gain proficiency in Perception and gain access to the Prescience psionic power.</p>
+                <h5>TELEPATHY</h5>
+                <p>Other minds are an open book to you. You gain proficiency in Insight skill and gain access to the Telepathic Communication psionic power.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+            <element name="Enhnancement" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT_ENHNANCEMENT">
+                <compendium display="false" />
+                <description>
+                    <p>You can bring out the inner strengh of yourself and others. You gain proficiency in Athletics and gain access to the Enhancing Skill psionic power.</p>
+                    <p class="indent"><b>Enhancing Skill.</b> Whenever you make a skill check using Strength or Dexterity, you can add 1d4 to the result.</p>>
+                </description>
+                <sheet alt="Enhancing Skill">
+                    <description>Whenever you make a skill check using Strength or Dexterity, you can add 1d4 to the result.</description>
+                </sheet>
+                <rules>
+                    <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+                </rules>
+            </element>
+            <element name="Precongnition" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT_PRECONGNITION">
+                <compendium display="false" />
+                <description>
+                    <p>You can see flashes of the future. You gain proficiency in Perception and gain access to the Prescience psionic power.</p>
+                    <p><b>Prescience.</b> Your eyes wander to events before they happen. You can add your proficiency to Perception and initiative rolls; if you already are able to add your proficiency to Perception, you can add twice your proficiency.</p>
+                    <p class="indent">If you concentrate on your keeping an eye on the future (as if concentrating on a spell), you can use your Intelligence modifier when making Perception (instead of Wisdom) or Initiative (instead of Dexterity) ability checks, and make Intelligence saving throws in place of Dexterity saving throws.</p>
+                </description>
+                <sheet alt="Prescience">
+                    <description>If you concentrate on your keeping an eye on the future (as if concentrating on a spell), you can use your Intelligence modifier when making Perception or Initiative ability checks, and make Intelligence saving throws in place of Dexterity saving throws.</description>
+                </sheet>
+                <rules>
+                    <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+                </rules>
+            </element>
+            <element name="Telepathy" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT_TELEPATHY">
+                <compendium display="false" />
+                <description>
+                    <p>Other minds are an open book to you. You gain proficiency in Insight skill and gain access to the Telepathic Communication psionic power.</p>
+                    <p><b>Telepathic Communication.</b> When you gain this feature, you can communicate telepathically with any creature you can see within 30 feet of you. You don’t need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language.</p>
+                </description>
+                <sheet alt="Telepathic Communication">
+                    <description>You can communicate telepathically with any creature you can see within 30 feet of you. You don’t need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language. You can duplicate the effects of spells by spending Psi Points as indicated in the Alternate Effects table. If a spell can be cast at a higher level, you can spend an additional psi point to cast it at that higher level.</description>
+                </sheet>
+                <rules>
+                    <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+                </rules>
+            </element>
+        <element name="Psionic Discipline" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_PSIONIC_DISCIPLINE">
+            <description>
+                <p>Starting at 3rd, your gift evolves to a full expression of your powers. You gain the access to the full Discipline (including alternate effect spells) associated with your Gift (Enhancement, Precognition, or Telepathy).</p>
+                <p class="indent">You can use Leadership Dice as Psi Points, with a limit of 1 Leadership Die. This limit increases to 2 Leadership Dice at level 5, 3 Leadership Dice at level 9, 4 Leadership Dice at level 14, and 5 Leadership Dice at level 17.</p>
+                <p class="indent">Your Psionic Ability modifier is Intelligence.</p>
+                <p style="text-align: center;"><b>Psionic Ability save DC</b> = 8 + your proficiency bonus + your Intelligence modifier</p>
+                <p style="text-align: center;"><b>Psionic Ability attack modifier</b> = your proficiency bonus + your Intelligence modifier</p>
+            </description>
+            <sheet usage="{{psi:points}} Psi Points/Short Rest">
+                <description>You can expend up to {{psi:limit}} Psi Points at one time.</description>
+            </sheet>
+            <spellcasting name="Gifted Warlord" ability="Intelligence" prepare="false">
+                <list>Gifted Warlord</list>
+            </spellcasting>
+            <rules>
+                <stat name="psi:points" value="leadership-dice:count" />
+                <stat name="psi:limit" value="1" level="3" />
+                <stat name="psi:limit" value="1" level="5" />
+                <stat name="psi:limit" value="1" level="9" />
+                <stat name="psi:limit" value="1" level="14" />
+                <stat name="psi:limit" value="1" level="17" />
+                <grant type="Class Feature" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_ENHANCEMENT_DISCIPLINE" requirements="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT_ENHNANCEMENT" level="3" />
+                <grant type="Class Feature" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_DISCIPLINE_PRECOGNITION" requirements="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT_PRECONGNITION" level="3" />
+                <grant type="Class Feature" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TELEPATHY_DISCIPLINE" requirements="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT_TELEPATHY" level="3" />
+            </rules>
+        </element>
+        <element name="Psionic Battlefield Presence" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_PSIONIC_BATTLEFIELD_PRESENCE">
+            <description>
+                <p>Starting at 7th level, when you use your action on a Psionic Disicpline Power, you can grant one attack from Battlefield Presence as part of the same action.</p>
+            </description>
+            <sheet>
+                <description>When you use your action on a Psionic Disicpline Power, you can grant one attack from Battlefield Presence as part of the same action.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Gifted Leader" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_GIFTED_LEADER">
+            <description>
+                <p>Starting at 11th level, your gift and talent as a leader work in perfect harmony, each emphasizing the other. When you spend one or more Leadership Dice on a psionic discipline power, you gain one special Leadership Die that you can only spend on Rallying Mark, Overwhelming Mark, or Helpful Word. This die expires if unspent at the end of your next turn; you can only have one of these special Leadership Dice at a time.</p>
+                <p class="indent">Additionally, when you spend a Leadership Die on the power of your Psionic Discipline, the first die you spend counts as two Psi Points for the purposes of the Power.</p>
+            </description>
+            <sheet>
+                <description>When you spend one or more Leadership Dice on a psionic discipline power, you gain one special Leadership Die that you can only spend on Rallying Mark, Overwhelming Mark, or Helpful Word. This die expires if unspent at the end of your next turn; you can only have one of these special Leadership Dice at a time. Additionally, when you spend a Leadership Die on the power of your Psionic Discipline, the first die you spend counts as two Psi Points for the purposes of the Power.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Battle Mind" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_BATTLE_MIND">
+            <description>
+                <p>Starting at 15th level, the battle around you becomes part of you, and you become part of it, connected by your Psionic power. You gain one of the following benefits based on your gift.</p>
+                <h5>ENHANCEMENT</h5>
+                <p>You can feel the strengthen within your allies, and bolster it when it fails. When an ally within 60 feet fails a Strength or Constitution Saving throw, you can allow them to pass instead.</p>
+                <h5>PRECOGNITION</h5>
+                <p>Your foresee what will misfortunate will befall your allies before it happens. When an ally within 60 feet fails a Dexterity or Charisma saving throw, you can allow them to pass instead.</p>
+                <h5>TELEPATHY</h5>
+                <p>You are with your allies in their mind, giving them a second chance. When an ally within 60 feet fails a Wisdom or Intelligence saving throw, you can allow them to pass instead.</p>
+                <p class="indent">If you are rolling a Saving Throw against the same effect you cause an ally to pass their save for, you gain advantage on your Saving Throw. Once you use the power granted by this feature, you cannot use it again until you complete a long rest.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_BATTLE_MIND_ENHANCEMENT" requirements="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT_ENHNANCEMENT" level="15" />
+                <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_BATTLE_MIND_PRECOGNITION" requirements="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT_PRECONGNITION" level="15" />
+                <grant type="Archetype Feature" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_BATTLE_MIND_TELEPATHY" requirements="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_THE_GIFT_TELEPATHY" level="15" />
+            </rules>
+        </element>
+            <element name="Enhancement" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_BATTLE_MIND_ENHANCEMENT">
+                <compendium display="false" />
+                <description>
+                    <p>You can feel the strengthen within your allies, and bolster it when it fails. When an ally within 60 feet fails a Strength or Constitution Saving throw, you can allow them to pass instead.</p>
+                    <p class="indent">If you are rolling a Saving Throw against the same effect you cause an ally to pass their save for, you gain advantage on your Saving Throw. Once you use the power granted by this feature, you cannot use it again until you complete a long rest.</p>
+                </description>
+                <sheet usage="1/Long Rest">
+                    <description>When an ally within 60 feet fails a Strength or Constitution Saving throw, you can allow them to pass instead. If you are rolling a Saving Throw against the same effect you cause an ally to pass their save for, you gain advantage on your Saving Throw.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Precognition" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_BATTLE_MIND_PRECOGNITION">
+                <compendium display="false" />
+                <description>
+                    <p>Your foresee what will misfortunate will befall your allies before it happens. When an ally within 60 feet fails a Dexterity or Charisma saving throw, you can allow them to pass instead.</p>
+                    <p class="indent">If you are rolling a Saving Throw against the same effect you cause an ally to pass their save for, you gain advantage on your Saving Throw. Once you use the power granted by this feature, you cannot use it again until you complete a long rest.</p>
+                </description>
+                <sheet usage="1/Long Rest">
+                    <description>When an ally within 60 feet fails a Dexterity or Charisma saving throw, you can allow them to pass instead. If you are rolling a Saving Throw against the same effect you cause an ally to pass their save for, you gain advantage on your Saving Throw.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Telepathy" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_BATTLE_MIND_TELEPATHY">
+                <compendium display="false" />
+                <description>
+                    <p>You are with your allies in their mind, giving them a second chance. When an ally within 60 feet fails a Wisdom or Intelligence saving throw, you can allow them to pass instead.</p>
+                    <p class="indent">If you are rolling a Saving Throw against the same effect you cause an ally to pass their save for, you gain advantage on your Saving Throw. Once you use the power granted by this feature, you cannot use it again until you complete a long rest.</p>
+                </description>
+                <sheet usage="1/Long Rest">
+                    <description>When an ally within 60 feet fails a Wisdom or Intelligence saving throw, you can allow them to pass instead. If you are rolling a Saving Throw against the same effect you cause an ally to pass their save for, you gain advantage on your Saving Throw.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+        <element name="Perfect Convergence" type="Archetype Feature" source="Warlod Extended Tactics" id="ID_KT_WET_ARCHETYPE_FEATURE_GIFTEDS_PERFECT_CONVERGENCE">
+            <description>
+                <p>Starting at 18th level, you can use your powers in perfect synchronization with the influence of your presence. You can use Battlefield Presence to grant one attack even when casting a spell from the Alternate Effects of your Psionic Discipline.</p>
+                <p class="indent">Additionally, when you spend a Leadership Die on the power of Psionic Discipline, the first die you spend counts as three Psi Points for the purposes of the Power.</p>
+            </description>
+            <sheet>
+                <description>You can use Battlefield Presence to grant one attack even when casting a spell from the Alternate Effects of your Psionic Discipline. Additionally, when you spend a Leadership Die on the power of Psionic Discipline, the first die you spend counts as three Psi Points for the purposes of the Power.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
