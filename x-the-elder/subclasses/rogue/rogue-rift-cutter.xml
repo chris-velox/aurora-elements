@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Rift Cutter Roguish Archetype</name>
+        <update version="0.0.1">
+            <file name="rogue-rift-cutter.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/rogue/rogue-rift-cutter.xml" />
+        </update>
+    </info>
+    
+    <element name="Roguish Archetype: Rift Cutter" type="Source" source="Core" id="ID_THECOMMUNISTMANATEE_GMBINDER_SOURCE_RIFT_CUTTER">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">RCRA</set>
+            <set name="url">https://www.gmbinder.com/share/-MIPPd_0VumA6krG8E4M</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="TCM" url="https://www.gmbinder.com/profile/thecommunistmanatee">TheCommunistManatee</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">false</set>
+            <set name="league">false</set>
+            <set name="release">20200118</set>
+        </setters>
+    </element>
+
+    <element name="Rift Cutter" type="Archetype" source="Roguish Archetype: Rift Cutter" id="ID_TCM_RCRA_ARCHETYPE_ROGUE_RIFT_CUTTER">
+        <supports></supports>
+        <description>
+            <p>The Rift Cutter uses their knowledge of teleportation magic to slip through the weave and appear unexpectedly, often in places that they're not supposed to be. You specialise in distorting the weave with magic which lets you appear behind targets or within vaults before dissapearing as quickly as you'd arrived.</p>
+            <div element="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_RIFT_CUTTING" />
+            <div element="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_READING_THE_WEAVE" />
+            <div element="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_JAGGED_PORTAL" />
+            <div element="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_TELEPORTATION_ADEPT" />
+            <div element="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_RIFT_MASTERY" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_RIFT_CUTTING" level="3" />
+            <grant type="Archetype Feature" id="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_READING_THE_WEAVE" level="3" />
+            <grant type="Archetype Feature" id="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_JAGGED_PORTAL" level="9" />
+            <grant type="Archetype Feature" id="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_TELEPORTATION_ADEPT" level="13" />
+            <grant type="Archetype Feature" id="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_RIFT_MASTERY" level="17" />
+        </rules>
+    </element>
+        <element name="Rift-cutting" type="Archetype Feature" source="Roguish Archetype: Rift Cutter" id="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_RIFT_CUTTING">
+            <description>
+                <p>Starting at 3rd level, you may forgo your movement on your turn to instead teleport a distance no greater than your movement speed to an unoccupied space that you can see. The first time in an encounter that you use this ability to move to a space is next to a hostile creature you gain advantage on any attack rolls made against that creature this turn. You can use Cutting a Rift a number of times equal to your proficiency bonus + your Intelligence modifier. You regain all expended uses after completing a long rest.</p>
+            </description>
+            <sheet usage="{{rift-cutting:uses}}/Long Rest">
+                <description>You may forgo your movement on your turn to instead teleport up to {{speed}} feet to an unoccupied space that you can see. The first time in an encounter that you use this ability to move to a space is next to a hostile creature you gain advantage on any attack rolls made against that creature this turn.</description>
+                <description level="17" usage="Unlimited">You may forgo your movement on your turn to instead teleport up to {{speed}} feet to an unoccupied space that you can see. The first time in an encounter that you use this ability to move to a space is next to a hostile creature you gain advantage on any attack rolls made against that creature this turn.</description>
+            </sheet>
+            <rules>
+                <stat name="rift-cutting:uses" value="proficiency" />
+                <stat name="rift-cutting:uses" value="intelligence:modifier" />
+            </rules>
+        </element>
+        <element name="Reading the Weave" type="Archetype Feature" source="Roguish Archetype: Rift Cutter" id="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_READING_THE_WEAVE">
+            <description>
+                <p>When you choose this archetype at 3rd level you gain proficiency in Arcana if you don't already have it.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+            </rules>
+        </element>
+        <element name="Jagged Portal" type="Archetype Feature" source="Roguish Archetype: Rift Cutter" id="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_JAGGED_PORTAL">
+            <description>
+                <p>Starting at 9th level when you use rift-cutting you may choose to leave behind a portal allowing creatures and objects to move between them. The portals function as if you had cast the Arcane Gate spell with the first opening where you started rift-cutting, and the second where you finished. The portals last for one minute before disappearing back into the weave. You may only have one set of portals open at any time.</p>
+            </description>
+            <sheet>
+                <description>When you use rift-cutting you may choose to leave behind a portal allowing creatures and objects to move between them. The portals last for one minute before disappearing back into the weave. You may only have one set of portals open at any time.</description>
+            </sheet>
+        </element>
+        <element name="Teleportation Adept" type="Archetype Feature" source="Roguish Archetype: Rift Cutter" id="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_TELEPORTATION_ADEPT">
+            <description>
+                <p>Starting at 13th level you can cast <i>teleport</i> once per long rest.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_TELEPORT" />
+                </div>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast teleport once.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_TELEPORT" />
+            </rules>
+        </element>
+        <element name="Rift Mastery" type="Archetype Feature" source="Roguish Archetype: Rift Cutter" id="ID_TCM_RCRA_ARCHETYPE_FEATURE_RIFT_CUTTER_RIFT_MASTERY">
+            <description>
+                <p>Starting at 17th level once per long rest you can use an action to create an extradimensional space accessed through a portal you create on a flat solid surface that you can see within 60 feet. The portal is large enough to allow Large creatures to pass through unhindered. When opened, the portal leads to a space that appears to be an empty room 30 feet in each dimension, made of wood or stone. You may choose to close the portal using a bonus action.</p>
+                <p class="indent">After 8 hours any creatures or objects within the space are ejected into the space where the portal was originally created. Alternatively at any point within those 8 hours you can use a bonus action to create another portal within 60ft of you depositing the contents of the extradimensional space wherever the portal has been created. You may choose to have any creature exiting the rift take a DC 15 Constitution saving throw. On a failed save, the creature takes 5d10 force damage. On a successful save, the creature takes half as much damage.</p>
+                <p class="indent">In addition you may use rift-cutting an unlimited number of times.</p>
+            </description>
+            <sheet usage="1/Long Rest" action="Action">
+                <description>You create an extradimensional space accessed through a portal you create on a flat solid surface that you can see within 60 feet.</description>
+            </sheet>
+        </element>
+
+</elements>
