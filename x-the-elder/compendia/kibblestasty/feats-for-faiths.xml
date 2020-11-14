@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Feats for Faiths</name>
+        <update version="0.0.1">
+            <file name="feats-for-faiths.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/kibblestasty/feats-for-faiths.xml" />
+        </update>
+    </info>
+    
+    <element name="Feats for Faiths" type="Source" source="Core" id="ID_KIBBLESTASTY_GMBINDER_SOURCE_FEATS_FOR_FAITHS">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">FFF</set>
+            <set name="url">https://www.gmbinder.com/share/-MKcHO7VNmO7B2qI0Bdc</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="KT" url="https://www.gmbinder.com/profile/kibblestasty">KibblesTasty</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20201112</set>
+        </setters>
+    </element>
+    
+    <element name="Chromatic Gift" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_CHROMATIC_GIFT">
+        <prerequisite>Follower of Tiamat</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Tiamat</p>
+            <p class="indent">Your devotion to the chromatic queen is richly rewarded. When you make a damage roll, you change the damage type to one of her chromatic colors - acid, cold, fire, lightning or poison. You can do this a number of times equal to your Proficiency bonus, regaining all uses when you complete a long rest.</p>
+            <p class="indent">On one of those uses, you can inflict one of the following conditions on one target creature affected by the damage roll:</p>
+            <ul>
+                <li><b>Acid:</b> The target’s defenses are eroded, all attack rolls against that target add 1d4 while the condition lasts.</li>
+                <li><b>Cold:</b> The target is frozen, their movement speed is reduced by 10 feet while the condition lasts.</li>
+                <li><b>Fire:</b> The target catches fire, burning. They take 1d6 fire damage at the start of their turns while the condition lasts.</li>
+                <li><b>Lightning:</b> The target is shocked, unable to take reactions while the condition lasts.</li>
+                <li><b>Poison:</b> The target creature becomes poisoned.</li>
+            </ul>
+            <p class="indent">These conditions last 1 minute, and the target makes a DC 10 + your proficiency bonus Constitution saving throw at the end of each of their turns, ending the effect on a success.</p>
+        </description>
+        <sheet usage="{{proficiency}}/Long Rest">
+            <description>When you make a damage roll, you change the damage type to one of her chromatic colors - acid, cold, fire, lightning or poison. On one of those uses, you can inflict one of the following conditions for 1 minute on one target creature affected by the damage roll. The target can make a Constitution saving throw (DC {{chromatic-gift:dc}}) at the end of each turn to end the effect.</description>
+        </sheet>
+        <rules>
+            <stat name="chromatic-gift:dc" value="10" />
+            <stat name="chromatic-gift:dc" value="proficiency" />
+        </rules>
+    </element>
+    <element name="Platinum Aspect" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_PLATINUM_ASPECT">
+        <prerequisite>Follower of Bahamut</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Bahamut</p>
+            <p class="indent">Your service to the platinum dragon gives a deep well of inner strength and a forceful presence that cannot be easily denied. Increase your Strength or Charisma by 1, to a maximum of 20.</p>
+            <p class="indent">Additionally, as bonus action, you can gain one aspect of Bahumut’s Justice, selecting one of the following effects:</p>
+            <ul>
+                <li><b>Wings of Justice:</b> You gain ethereal dragon wings, giving you flying speed equal to your walking speed until the end of your turn.</li>
+                <li><b>Breath of Justice:</b> You emit a blast of radiant energy. Creatures in a line 30 feet long and 5 feet wide emitting from you must make a Dexterity Saving throw (DC 10 + your Strength or Charisma [your choice] + your proficiency bonus). On failure, creatures take a number of d6 equal to your proficiency bonus radiant damage.</li>
+                <li><b>Eyes of Justice:</b> Your eyes glow radiant platinum, giving you 30 feet of truesight until the end of your turn.</li>
+            </ul>
+            <p class="indent">Once you activate a draconic aspect, you cannot do so again until you complete a long rest.</p>
+        </description>
+        <sheet action="Bonus Action" usage="1/Long Rest">
+            <description>You gain one aspect of Bahamut’s Justice: Wings, Breath or Eyes.</description>
+        </sheet>
+        <rules>
+			<select type="Ability Score Improvement" name="Platinum Aspect" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CHARISMA" />
+        </rules>
+    </element>
+    <element name="Steadfast Traveler" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_STEADFAST_TRAVELER">
+        <prerequisite>Follower of Marthammor Duin</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Marthammor Duin</p>
+            <p class="indent">Your faith in Marthammor Duin gives a drive and curiosity that drives you to go beyond and press further.</p>
+            <ul>
+                <li>If your base walking speed movement speed is less than 30 feet, it becomes 30 feet, and you have advantage on Constitution saves against Exhaustion.</li>
+                <li>You can cast <i>augury</i> as an action without expending a spell slot as long as the question asked relates to a path, trail, or route, and only the consequences of taking it. The normal restrictions of using augury multiple times a day still applies.</li>
+                <li>Little can stop you: as a bonus action you can gain temporary hit points equal to your proficiency bonus and be under the effect of freedom of movement until the end of your turn. Once you do this, you must complete a short or long rest before you use this feature again.</li>
+            </ul>
+        </description>
+        <sheet action="Action">
+            <description>You can cast augury without expending a spell slot as long as the question asked relates to a path, trail, or route, and only the consequences of taking it. You always have advantage on Constitution saves against Exhaustion.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_AUGURY" />
+            <grant type="Feat Feature" id="ID_KT_FFF_FEAT_FEATURE_LITTLE_CAN_STOP_YOU" />
+        </rules>
+    </element>
+        <element name="Little can stop you" type="Feat Feature" source="Feats for Faiths" id="ID_KT_FFF_FEAT_FEATURE_LITTLE_CAN_STOP_YOU">
+            <compendium display="false" />
+            <description>
+                <p>As a bonus action you can gain temporary hit points equal to your proficiency bonus and be under the effect of <i>freedom of movement</i> until the end of your turn. Once you do this, you must complete a short or long rest before you use this feature again.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1/Short Rest">
+                <description>You can gain {{proficiency}} temporary hit points and are under the effect of freedom of movement until the end of your turn.</description>
+            </sheet>
+        </element>
+    <element name="Relentless Mind" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_RELENTLESS_MIND">
+        <prerequisite>Follower of Gond</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Gond</p>
+            <p class="indent">Gond demands only creativity and intellectual diligence of his followers, to create in thought and deed ceaselessly, to find a new way to solve each problem. In your faith you have honed your mind to a relentless engine.</p>
+            <ul>
+                <li>Increase your Intelligence by 1, to a maximum of 20.</li>
+                <li><b>Improvisation:</b> When you would make an ability check involving a tool, you can instead use another tool of your choice that you have in your possession, but make the check with disadvantage. There’s always a way it works out, no matter how absurd the substitution may seem on the surface of it.</li>
+                <li><b>Quick Mind:</b> You can make any Intelligence ability check that would normally take an action as a bonus action.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you would make an ability check involving a tool, you can instead use another tool of your choice that you have in your possession, but make the check with disadvantage. You can make any Intelligence ability check that would normally take an action as a bonus action.</description>
+        </sheet>
+        <rules>
+            <stat name="intelligence" value="1" />
+        </rules>
+    </element>
+    <element name="Graceful Dancer" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_GRACEFUL_DANCER">
+        <prerequisite>Follower of Eilistraee</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Eilistraee</p>
+            <p class="indent">Your each step is an expression of your faith, graceful and flowing, as if about to burst into dance at any moment, your movements take on a bewildering elegance that makes others seem plodding in comparison.</p>
+            <ul>
+                <li>You gain proficiency in Performance. If you already have proficiency, when you make a Performance check related to dancing, you can add double your Proficiency bonus to the ability check.</li>
+                <li>You gain the ability to take a Dancer’s Step as a bonus action. You can move up to 5 feet, and select one additional effect: (a) Your Dancer’s Step movement does not provoke opportunity attacks, (b) the next attack from one creature within 5 feet of where you end the Dancer’s Step against you before the start of your next turn has disadvantage against you, or (c) You can make one melee weapon attack with a melee weapon that has the light property after your Dancer’s Step movement as part of the same action.</li>
+            </ul>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can take a Dancer’s Step, moving up to 5 feet and selecting one additional effect. No opportunity attacks, next attack from a creature within 5 feet has disadvantage, or you can make one attack with a light melee weapon.</description>
+        </sheet>
+        <rules>
+            <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_ARCANA" />
+        </rules>
+    </element>
+    <element name="The Voices" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_THE_VOICES">
+        <prerequisite>"Follower" of Tharizdun</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: "Follower" of Tharizdun</p>
+            <p class="indent">In the mad voices you hear, you find a certain solace. A guidance to greater truths and power of ancient reckoning and unspeaking nature.</p>
+            <p class="indent">At the end of a long rest, you can choose how much you attempt to suppress the madness your god has granted you. You can roll a number of times equal to your Proficiency bonus on the Indefinite Madness table, gaining that madness until the end of your next long rest. The number of times you roll is the number of times you can use the following feature:</p>
+            <p class="indent"><b>Guidance of the Voices:</b> As a bonus action or as a reaction to making a saving throw, you can begin to listen to the voices in your head. Roll on the Long Term Madness table, suffering the rolled result for 1 minute, but gaining the effects of <i>bless</i> on attack rolls and saving throws and <i>guidance</i> on ability checks (these effects last for the duration and do not require concentration). Once per turn on your turn for the duration, when you roll a d4 for <i>bless</i> or <i>guidance</i>, you can gain temporary hit points equal to the roll.</p>
+            <p class="indent">For the duration of Guidance of the Voices, you can suppress this madness as an action, ending all of its effects. You can take this action even if you would otherwise be unable to take actions (such as being incapacitated or unconscious).</p>
+        </description>
+        <sheet>
+            <description>At the end of a long rest, you can roll {{proficiency}} times on the Indefinite Madness table, gaining that madness until the end of your next long rest. For the duration of Guidance of the Voices, you can suppress this madness as an action, ending all of its effects. You can take this action even if you would otherwise be unable to take actions (such as being incapacitated or unconscious).</description>
+        </sheet>
+        <rules>
+            <grant type="Feat Feature" id="ID_KT_FFF_FEAT_FEATURE_GUIDANCE_OF_THE_VOICES" />
+        </rules>
+    </element>
+        <element name="Guidance of the Voices" type="Feat Feature" source="Feats for Faiths" id="ID_KT_FFF_FEAT_FEATURE_GUIDANCE_OF_THE_VOICES">
+            <compendium display="false" />
+            <description>
+                <p>As a bonus action or as a reaction to making a saving throw, you can begin to listen to the voices in your head. Roll on the Long Term Madness table, suffering the rolled result for 1 minute, but gaining the effects of <i>bless</i> on attack rolls and saving throws and <i>guidance</i> on ability checks (these effects last for the duration and do not require concentration). Once per turn on your turn for the duration, when you roll a d4 for <i>bless</i> or <i>guidance</i>, you can gain temporary hit points equal to the roll.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>As a bonus action or as a reaction to making a saving throw, you can begin to listen to the voices in your head. Roll on the Long Term Madness table, suffering the rolled result for 1 minute, but gaining the effects of bless on attack rolls and saving throws and guidance on ability checks (these effects last for the duration and do not require concentration). Once per turn on your turn for the duration, when you roll a d4 for bless or guidance, you can gain temporary hit points equal to the roll.</description>
+            </sheet>
+        </element>
+    <element name="Golden Rules" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_GOLDEN_RULES">
+        <prerequisite>Follower of Waukeen</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Waukeen</p>
+            <p class="indent">You live for the thrill of commerce and the Coinmaiden is your best friend and god alike. She shares with you the tricks (and rules) of the trade. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Wisdom or Charisma by 1, to a maximum of 20.</li>
+                <li>You learn the identify spell and can cast it as a ritual without requiring material components. When you cast identify, you also learn the rough value of an item as one of its properties.</li>
+                <li>You gain advantage on Wisdom (Insight) checks to detect lies against creatures you or your allies have not lied to in the last 24 hours. You gain advantage on Charisma (Persuasion) checks against characters you have caught lying to you in the last 24 hours.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You can cast identify as a ritual without requiring material components. When you cast identify, you also learn the rough value of an item as one of its properties. You have advantage on Insight checks to detect lies against creatures you or your allies have not lied to in the last 24 hours. You gain advantage on Persuasion checks against characters you have caught lying to you in the last 24 hours.</description>
+        </sheet>
+        <rules>
+			<select type="Ability Score Improvement" name="Golden Rules" supports="ID_PHB_FEAT_ASI_WISDOM|ID_PHB_FEAT_ASI_CHARISMA" />
+        </rules>
+    </element>
+    <element name="Herald of Winter" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_HERALD_OF_WINTER">
+        <prerequisite>Follower of Auril</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Auril</p>
+            <p class="indent">Your faith and worship of the frost maiden has let an icy cold into your soul, denying you warmth, but numbing the effects of cold and making you one with endless blizzards of ice. You gain the following benefits and abilities:</p>
+            <ul>
+                <li>You gain resistance to cold damage, and are naturally acclimated to extremely cold environments, and can move across and climb icy surfaces without needing to make an ability check.</li>
+                <li><b>Iceborn Endurance:</b> As a reaction to taking damage, you can partially freeze yourself, numbing the pain and partially nullifying the effect. You gain resistance all damage beside fire damage until the end of your next turn, but for the duration you are slowed, as if under the effect of the slow spell due to being partially frozen.</li>
+                <li><b>Freezing Presence:</b> As an action, you can emit an aura of freezing cold. All water within 10-feet (provided that there are no creatures in it) freezes. The water unfreezes in 1 minute. Additionally, the area becomes difficult terrain for all creatures of your choice until the start of your next turn.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You are naturally acclimated to extremely cold environments, and can move across and climb icy surfaces without needing to make an ability check.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+            <grant type="Feat Feature" id="ID_KT_FFF_FEAT_FEATURE_ICEBORN_ENDURANCE" />
+            <grant type="Feat Feature" id="ID_KT_FFF_FEAT_FEATURE_FREEZING_PRESENCE" />
+        </rules>
+    </element>
+        <element name="Iceborn Endurance" type="Feat Feature" source="Feats for Faiths" id="ID_KT_FFF_FEAT_FEATURE_ICEBORN_ENDURANCE">
+            <description>
+                <p>As a reaction to taking damage, you can partially freeze yourself, numbing the pain and partially nullifying the effect. You gain resistance all damage beside fire damage until the end of your next turn, but for the duration you are slowed, as if under the effect of the slow spell due to being partially frozen.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>You can partially freeze yourself, numbing the pain and partially nullifying the effect. You gain resistance all damage beside fire damage until the end of your next turn, but for the duration you are slowed, as if under the effect of the slow spell due to being partially frozen.</description>
+            </sheet>
+        </element>
+        <element name="Freezing Presence" type="Feat Feature" source="Feats for Faiths" id="ID_KT_FFF_FEAT_FEATURE_FREEZING_PRESENCE">
+            <description>
+                <p>As an action, you can emit an aura of freezing cold. All water within 10-feet (provided that there are no creatures in it) freezes. The water unfreezes in 1 minute. Additionally, the area becomes difficult terrain for all creatures of your choice until the start of your next turn.</p>
+            </description>
+            <sheet action="Action">
+                <description>ou can emit an aura of freezing cold. All water within 10-feet (provided that there are no creatures in it) freezes. The water unfreezes in 1 minute. Additionally, the area becomes difficult terrain for all creatures of your choice until the start of your next turn.</description>
+            </sheet>
+        </element>
+    <element name="Purity of Fire" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_PURITY_OF_FIRE">
+        <prerequisite>Follower of Kossuth</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Kossuth</p>
+            <p class="indent">Your devotion to the Lord of Flames has granted you a share of his dominion of fire. Fire is judgement. Fire is purity.</p>
+            <ul>
+                <li>You learn the cantrips <i>burn</i> and <i>create bonfire</i>.</li>
+                <li>You can cast <i>burn</i> targeting yourself or an allied creature. When you do so, it always cast as if you are a 1st level caster, but additional grants the effect of <i>lesser restoration</i>.</li>
+                <li>When you are concentrating on <i>create bonfire</i> you can cast it again without ending concentration on it, having up to two instances of it at the same time, ending one of them if you cast it again (a third time).</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You can cast burn targeting yourself or an allied creature. When you do so, it always cast as if you are a 1st level caster, but additional grants the effect of lesser restoration. When you are concentrating on create bonfire you can cast it again without ending concentration on it, having up to two instances of it at the same time, ending one of them if you cast it again (a third time).</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_KT_KTOC_SPELL_BURN" />
+            <grant type="Spell" id="ID_XGTE_SPELL_CREATE_BONFIRE" />
+        </rules>
+    </element>
+    <element name="Chosen of Magic" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_CHOSEN_OF_MAGIC">
+        <prerequisite>Follower of Mystra</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Mystra</p>
+            <p class="indent">Your faith grants you great insight into magic, giving you a special privilege with it as if magic itself favors you.</p>
+            <ul>
+                <li>When someone attempts to dispel or counterspell your magic, if they are required to make a roll for it succeed, the DC is increased by your spell casting modifier.</li>
+                <li>When you make a saving throw against a spell or other magical effect, you can gain advantage on the roll. Once you use this trait, you can’t use it again until you finish a short or long rest.</li>
+                <li>When you expend a spell slot, roll a d20. On a 20, you regain a spell slot of a level lower than expended spell slot, up to a maximum level equal to your proficiency bonus, and a minimum level of 1. You can regain a total number of spell slot levels equal to your proficiency bonus this way until you cannot regain further spell slots until you complete a long rest.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When someone attempts to dispel or counterspell your magic, if they are required to make a roll for it succeed, the DC is increased by your spellcasting modifier. When you make a saving throw against a spell or other magical effect, you can gain advantage on the roll. Once you use this trait, you can’t use it again until you finish a short or long rest. When you expend a spell slot, roll a d20. On a 20, you regain a spell slot of a level lower than expended spell slot, up to a maximum level of {{proficiency}}. You can regain a total of {{proficiency}} spell slot levels per long rest.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Conviction of Justice" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_CONVICTION_OF_JUSTICE">
+        <prerequisite>Follower of Tyr</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Tyr</p>
+            <p class="indent">Your faith is a stalwart bastion of righteous purpose, few can stand before you when evil rises your ire. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength, Constitution, or Charisma by 1, to a maximum of 20.</li>
+                <li>You learn the spell <i>divine favor</i> which you can cast once without expending a spell slot. When you are under the effect of <i>divine favor</i>, your movement speed is increased by 5 feet. You regain the ability to cast this spell in this way when you finish a long rest.</li>
+                <li>As an action, you can focus your righteous fervor, infusing a weapon you are holding with your divine purpose. For 1 minute, when you make a damage roll for that weapon, you reroll any 1 on the die (continuing to reroll it until it is no longer a 1 if necessary). If you have another feature that allows you to reroll a 1 on the damage die (such as the Great Weapon Fighting Fighting Style), you can instead maximize the die. Once you use this action, you cannot use it again until you complete a long rest.</li>
+            </ul>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>You can cast divine favor once without expending a spell slot. When you are under the effect of divine favor, your movement speed is increased by 5 feet.</description>
+        </sheet>
+        <rules>
+			<select type="Ability Score Improvement" name="Conviction of Justice" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+            <grant type="Spell" id="ID_PHB_SPELL_DIVINE_FAVOR" />
+            <grant type="Feat Feature" id="ID_KT_FFF_FEAT_FEATURE_RIGHTEOUS_FERVOR" />
+        </rules>
+    </element>
+        <element name="Righteous Ferver" type="Feat Feature" source="Feats for Faiths" id="ID_KT_FFF_FEAT_FEATURE_RIGHTEOUS_FERVOR">
+            <compendium display="false" />
+            <description>
+                <p>As an action, you can focus your righteous fervor, infusing a weapon you are holding with your divine purpose. For 1 minute, when you make a damage roll for that weapon, you reroll any 1 on the die (continuing to reroll it until it is no longer a 1 if necessary). If you have another feature that allows you to reroll a 1 on the damage die (such as the Great Weapon Fighting Fighting Style), you can instead maximize the die. Once you use this action, you cannot use it again until you complete a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You infuse a weapon you are holding. For 1 minute, when you make a damage roll for that weapon, you reroll any 1 on the die (continuing to reroll it until it is no longer a 1 if necessary). If you have another feature that allows you to reroll a 1 on the damage die, you can instead maximize the die.</description>
+            </sheet>
+        </element>
+    <element name="Fiery Spirit of Passion" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_FIERY_SPIRIT_OF_PASSION">
+        <prerequisite>Follower of Sune</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Sune</p>
+            <p class="indent">Your faith blooms, giving you a fierce devotion, beauty and free spirited passion. You gain fiery and irrepressible strength of soul and a breath catching grace of form. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Charisma by 1, to a maximum of 20.</li>
+                <li>You share a deep bond with your companions, driving them forward with your fiery passion and spirit. When you and at least one allied creature within 20 feet make a saving throw against the Frightened condition at the same time, they can use your saving throw instead of theirs if yours is higher. A creature can only replace their roll with yours once, and must complete a long rest before they can do so again.</li>
+                <li>You can draw upon your faith to unleash the magnetic fiery soul within you with the effect of the spell <i>enthrall</i>, which you can cast once without expending a spell slot. When you cast it in this way, the spell does not require verbal or somatic components. You regain the ability to cast this spell in this way when you finish a long rest. Charisma is your spellcasting ability for this spell.</li>
+            </ul>
+            <p class="indent">When you cast <i>enthrall</i> using this feat, in addition to the normal effects of <i>enthrall</i>, it additionally gains the effect of <i>sanctuary</i> and you gain advantage on all Persuasion and Performance ability checks on creatures that failed their saving throw for the duration. All effects end if you break the effects of <i>sanctuary</i> by making an attack or casting a spell.</p>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>You can cast enthrall once without using a spell slot (Charisma). When you cast it in this way, the spell does not require verbal or somatic components.
+            When you and at least one allied creature within 20 feet make a saving throw against the Frightened condition at the same time, they can use your saving throw instead of theirs if yours is higher. A creature can only replace their roll with yours once, and must complete a long rest before they can do so again.</description>
+        </sheet>
+        <rules>
+            <stat name="charisma" value="1" />
+            <grant type="Spell" id="ID_PHB_SPELL_ENTHRALL" />
+        </rules>
+    </element>
+    <element name="Hope of Dawn" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_HOPE_OF_DAWN">
+        <prerequisite>Follower of Lathander</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Lathander</p>
+            <p class="indent">Your faith shines forth like the inviting warmth of dawn, bringing hope and confidence to all around you. You gain a pool of d6s equal to your Proficiency bonus that you and allies can draw upon to turn the tide against the darkness.</p>
+            <p class="indent">When you or an ally within 30 feet make a saving throw, you can expend a d6 to add to the save. You can do so after the roll, but before the outcome is determined. If the roll is added to an ally’s roll, if you are rolling a save against the same effect, you also add the d6 to your save. The is doubled to a d12 when being used to save against the Frightened condition.</p>
+            <p class="indent">You can additionally use these dice in the following ways:</p>
+            <ul>
+                <li>Expend 1 die to cast light.</li>
+                <li>Expend 3 dice to cast daylight.</li>
+            </ul>
+            <p class="indent">You regain all expended dice from this feature when you complete a long rest.</p>
+        </description>
+        <sheet>
+            <description>You have a pool of {{proficiency}} d6s per long rest. When you or an ally within 30 feet make a saving throw, you can expend a d6 to add to the save. You can do so after the roll, but before the outcome is determined. If the roll is added to an ally’s roll, if you are rolling a save against the same effect, you also add the d6 to your save. The is doubled to a d12 when being used to save against the Frightened condition. You can expend 1 die to cast light, or 3 dice to cast daylight.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_LIGHT" />
+            <grant type="Spell" id="ID_PHB_SPELL_DAYLIGHT" />
+        </rules>
+    </element>
+    <element name="Relentless Protector" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_RELENTLESS_PROTECTOR">
+        <prerequisite>Follower of Helm</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Helm</p>
+            <p class="indent">Your faith guides you to shield others from harm, throwing yourself into harm’s way with relentless dedication to keep those around you from harm. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Strength or Constitution by 1, to a maximum of 20.</li>
+                <li>You gain the Protection Fighting Style. If you already know the Protection Fighting Style, you can learn another Fighting Style of your choice from the Fighter Fighting Styles.</li>
+                <li>You can use the Protection Fighting Style reaction when not using a shield, however, when you do so, if the higher of the attackers attack rolls with disadvantage would hit you, you take the damage instead of the creature you are protecting rather than the attacking missing.</li>
+                <li>When you use the reaction granted by the Protection Fighting Style, you can use it while a creature is within 15 feet of you, moving to a spot within 5 feet of them immediately as part of the reaction. Additionally, if the target is still hit by the attack, you grant them resistance to the damage taken, but take damage equal to the damage they take (after resistance). The damage you take from this cannot be reduced in any way.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You can use the Protection Fighting Style reaction when not using a shield, however, when you do so, if the higher of the attackers attack rolls with disadvantage would hit you, you take the damage instead of the creature you are protecting rather than the attacking missing. When you use the reaction granted by the Protection Fighting Style, you can use it while a creature is within 15 feet of you, moving to a spot within 5 feet of them immediately as part of the reaction. Additionally, if the target is still hit by the attack, you grant them resistance to the damage taken, but take damage equal to the damage they take (after resistance). The damage you take from this cannot be reduced in any way.</description>
+        </sheet>
+        <rules>
+			<select type="Ability Score Improvement" name="Relentless Protector" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION" />
+            <select type="Class Feature" name="Fighting Style, Relentless Protector" supports="Fighting Style" default="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_PROTECTION" />
+        </rules>
+    </element>
+    <element name="Selfless Martyr" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_SELFLESS_MARTYR">
+        <prerequisite>Follower Ilmater</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower Ilmater</p>
+            <p class="indent">Your faith helps you persevere through anything, taking the suffering of others onto yourself and offering relief to those that need it most. You gain the following benefits:</p>
+            <ul>
+                <li>Increase your Constitution by 1, to a maximum of 20.</li>
+                <li>As an action, you can touch a creature that is Blinded, Charmed, Deafened, Frightened , Paralyzed, , Petrified Poisoned, Stunned or suffering from one or more levels of Exhaustion, and immediately end that condition on the target creature, but suffer that condition yourself (as it affected the target creature) yourself. When relieving Exhaustion this way, you take only 1 level at a time. If that condition has a save against its ongoing effect, you can immediately make a save against the effect to end it as part of taking the condition onto yourself. You can do this a number of times equal to your Proficiency bonus, and regain all uses when you complete a long rest.</li>
+                <li>Additionally, you can use the above feature on a creature that is unconscious due to having zero hit points, when you do so, you can expend a hit die taking damage equal to the roll and granting the target creature hit points equal to the damage taken.</li>
+            </ul>
+            <p class="indent">Each time you take on the suffering of another creature with this feat, you gain temporary hit points equal to your Proficiency bonus.</p>
+        </description>
+        <sheet action="Action" usage="{{proficiency}}/Long Rest">
+            <description>You can touch a creature that is Blinded, Charmed, Deafened, Frightened , Paralyzed, , Petrified Poisoned, Stunned or suffering from one or more levels of Exhaustion, and immediately end that condition on the target creature, but suffer that condition yourself (as it affected the target creature) yourself. When relieving Exhaustion this way, you take only 1 level at a time. Additionally, you can use the above feature on a creature that is unconscious due to having zero hit points, when you do so, you can expend a hit die taking damage equal to the roll and granting the target creature hit points equal to the damage taken.</description>
+        </sheet>
+        <rules>
+            <stat name="constitution" value="1" />
+        </rules>
+    </element>
+    <element name="Serenity of the Night" type="Feat" source="Feats for Faiths" id="ID_KT_FFF_FEAT_SERENITY_OF_THE_NIGHT">
+        <prerequisite>Follower of Selune</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Follower of Selune</p>
+            <p class="indent">Your faith grants you a deep wisdom and serenity, you feel a special to connection to your faith, particular in the moonlight. You gain the following benefits:</p>
+            <ul>
+                <li>You gain Darkvision of 60 feet. If you already have Darkvision, Darkness within that range is softly illuminated to your gaze as if bathed in moonlight, allowing you to see in dim light as bright light.</li>
+                <li>You learn the spell guidance. You can cast this spell in a special way as a bonus action without verbal or somatic components a number of times equal to your Proficiency bonus. You regain all uses of it when you complete a long rest.</li>
+                <li>As an action, you can offer a prayer of guidance and protection, shrouding you a nimbus of moonlight until the end of your next turn. For the duration you shed bright light for 10 feet and dim light for another 20 feet. For that duration, creatures within the radius of light cannot gain advantage on attacks against you, and you and allied creatures within the bright light are under the effect of protection from good and evil. Once you do use this action, you cannot do so again until you complete a long rest.</li>
+            </ul>
+        </description>
+        <sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+            <description>You can cast guidance without verbal or somatic components.</description>
+        </sheet>
+        <rules>
+            <grant type="Vision" id="ID_VISION_DARKVISION" />
+            <grant type="Spell" id="ID_PHB_SPELL_GUIDANCE" />
+            <grant type="Feat Feature" id="ID_KT_FFF_FEAT_FEATURE_PRAYER_OF_THE_NIGHT" />
+        </rules>
+    </element>
+        <element name="Prayer of the Night" type="Feat Feature" source="Feats for Faiths" id="ID_KT_FFF_FEAT_FEATURE_PRAYER_OF_THE_NIGHT">
+            <compendium display="false" />
+            <description>
+                <p>As an action, you can offer a prayer of guidance and protection, shrouding you a nimbus of moonlight until the end of your next turn. For the duration you shed bright light for 10 feet and dim light for another 20 feet. For that duration, creatures within the radius of light cannot gain advantage on attacks against you, and you and allied creatures within the bright light are under the effect of protection from good and evil. Once you do use this action, you cannot do so again until you complete a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can offer a prayer of guidance and protection, shrouding you a nimbus of moonlight until the end of your next turn. For the duration you shed bright light for 10 feet and dim light for another 20 feet. For that duration, creatures within the radius of light cannot gain advantage on attacks against you, and you and allied creatures within the bright light are under the effect of protection from good and evil.</description>
+            </sheet>
+        </element>
+
+</elements>
