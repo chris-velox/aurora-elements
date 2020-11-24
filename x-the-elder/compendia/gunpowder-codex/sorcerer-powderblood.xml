@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Powderblood Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-powderblood.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/gunpowder-codex/sorcerer-powderblood.xml" />
+        </update>
+    </info>
+    
+	<element name="Powderblood" type="Archetype" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_SORCERER_POWDERBLOOD">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>While many sorcerers draw their power from some ancient, revered, or mystical source, Powderbloods draw theirs from an unfortunate accident that occurred at some point in their lives. All at some time experienced a disastrous miscalculation when working with black powder, and the resulting explosion blended with latent magical forces to imbue them with innate magic and understanding of gunpowder. Rare and often eccentric, powderbloods are nonetheless a formidable force on the battlefield.</p>
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_PROFICIENCY" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_GUNSMITH" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_POWDER_MAGIC" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_EXPLOSIVE_BLOOD" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_EXTRA_ATTACK" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_METABLOOD" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_GUNMAGE" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_BLACK_POWDER_APOTHEOSIS" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_PROFICIENCY" level="1" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_GUNSMITH" level="1" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_POWDER_MAGIC" level="1" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_EXPLOSIVE_BLOOD" level="1" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_EXTRA_ATTACK" level="6" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_METABLOOD" level="6" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_GUNMAGE" level="14" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_BLACK_POWDER_APOTHEOSIS" level="18" />
+		</rules>
+	</element>
+		<element name="Proficiency" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_PROFICIENCY">
+			<description>
+				<p>Starting when you choose this origin at 1st level, you gain proficiency with advanced firearms.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_FRL_GPC_PROFICIENCY_WEAPON_ADVANCED_FIREARMS" />
+			</rules>
+		</element>
+		<element name="Gunsmith" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_GUNSMITH">
+			<description>
+				<p>Upon choosing this origin at 1st level, you gain proficiency with Tinker’s Tools. You may use them to craft ammunition, repair damaged firearms, or even draft and create new ones (DM’s discretion). Some extremely intricate and experimental firearms are only available through crafting.</p>
+			</description>
+			<sheet>
+				<description>You may use Tinker’s Tools to craft ammunition, repair damaged firearms, or even draft and create new ones.</description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+			</rules>
+		</element>
+		<element name="Powder Magic" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_POWDER_MAGIC">
+			<description>
+				<p>Your affinity for gunpowder gives you the option to learn some non-sorcerer spells. When your Spellcasting feature lets you learn a sorcerer spell of 1st level or higher, you can select the spell from the following list of spells, in addition to the sorcerer spell list. You must otherwise obey all the restrictions for selecting the spell, and it becomes a sorcerer spell for you.</p>
+				<table>
+					<thead>
+						<tr><td>Spell Level</td><td>Spell</td></tr>
+					</thead>
+					<tr><td>1st</td><td><em>faerie fire, hail of thorns, hellish rebuke</em></td></tr>
+					<tr><td>2nd</td><td><em>continual flame, flaming sphere, bullet scry</em></td></tr>
+					<tr><td>3rd</td><td><em>elemental weapon, conjure barrage</em></td></tr>
+					<tr><td>4th</td><td><em>elemental bane</em></td></tr>
+				</table>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+            <spellcasting name="Sorcerer" extend="true">
+                <extend>ID_PHB_SPELL_FAERIE_FIRE</extend>
+                <extend>ID_PHB_SPELL_HAIL_OF_THORNS</extend>
+                <extend>ID_PHB_SPELL_HELLISH_REBUKE</extend>
+                <extend>ID_PHB_SPELL_CONTINUAL_FLAME</extend>
+                <extend>ID_PHB_SPELL_FLAMING_SPHERE</extend>
+                <extend>ID_FRL_GPC_SPELL_BULLET_SCRY</extend>
+                <extend>ID_PHB_SPELL_ELEMENTAL_WEAPON</extend>
+                <extend>ID_PHB_SPELL_CONJURE_BARRAGE</extend>
+                <extend>ID_XGTE_SPELL_ELEMENTAL_BANE</extend>
+            </spellcasting>
+			<rules>
+			</rules>
+		</element>
+		<element name="Explosive Blood" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_EXPLOSIVE_BLOOD">
+			<description>
+				<p>At 1st level, you have learned to tap into the powder within your blood to create a powerful explosion around you. As an action, you may cause flames to burst from you, damaging anyone within 10 feet of you. All creatures and objects within that area, except for those in your space, take 2d8 fire damage, or half as much on a successful Dexterity saving throw.</p>
+				<p class="indent">This ability’s damage increases by 2d8 when you reach 5th level (4d8), 11th level (6d8), and 17th level (8d8).</p>
+				<p class="indent">You may use this ability a number of times equal to half your Charisma modifier (minimum of once), and you regain all expended uses after a long rest.</p>
+			</description>
+			<sheet action="Action">
+				<description>You may cause flames to burst from you, damaging anyone within 10 feet of you. All creatures and objects within that area, except for those in your space, take {{explosive-blood:damage-dice}}d8 fire damage, or half as much on a successful Dexterity saving throw.</description>
+			</sheet>
+			<rules>
+                <stat name="explosive-blood:damage-dice" value="2" level="1" />
+                <stat name="explosive-blood:damage-dice" value="2" level="5" />
+                <stat name="explosive-blood:damage-dice" value="2" level="11" />
+                <stat name="explosive-blood:damage-dice" value="2" level="17" />
+			</rules>
+		</element>
+		<element name="Extra Attack" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_EXTRA_ATTACK">
+			<description>
+				<p>Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+			</description>
+			<sheet>
+				<description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+			</sheet>
+			<rules>
+                <stat name="extra attack:count" value="2" level="6" bonus="extra attack" />
+			</rules>
+		</element>
+		<element name="Metablood" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_METABLOOD">
+			<description>
+				<p>At 6th level, you gain new options for spending sorcery points, as follows:</p>
+				<ul>
+					<li>You may spend 1 sorcery point when you use your Explosive Blood ability to increase its damage by 2d8. You may do this only once per use of the ability.</li>
+					<li>You may spend sorcery points to increase the radius of your Explosive Blood ability by 5 feet per point spent, to a maximum radius of 30 feet.</li>
+					<li>If an attack roll you make with a firearm would cause it to misfire, you may spend 1 sorcery point to ignore the misfire. The attack still misses, but your weapon is unaffected.</li>
+					<li>When making an attack roll with a firearm, you may spend 1 sorcery point to ignore disadvantage imposed by long range.</li>
+				</ul>
+			</description>
+			<sheet>
+				<description>You may spend 1 sorcery point when you use your Explosive Blood ability to increase its damage by 2d8. You may do this only once per use of the ability. You may spend sorcery points to increase the radius of your Explosive Blood ability by 5 feet per point spent, to a maximum radius of 30 feet. If an attack roll you make with a firearm would cause it to misfire, you may spend 1 sorcery point to ignore the misfire. The attack still misses, but your weapon is unaffected. When making an attack roll with a firearm, you may spend 1 sorcery point to ignore disadvantage imposed by long range.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Gunmage" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_GUNMAGE">
+			<description>
+				<p>At 14th level, the black powder coursing through your veins enables you to blend the arcane arts with flint and steel to deadly effect. If you use an action to cast a spell on your turn, you may use your bonus action to make a single firearm attack.</p>
+			</description>
+			<sheet>
+				<description>If you use an action to cast a spell on your turn, you may use your bonus action to make a single firearm attack.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Black Powder Apotheosis" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_POWDERBLOOD_BLACK_POWDER_APOTHEOSIS">
+			<description>
+				<p>By 18th level, your innate skill with firearms has reached its apex. Whenever you score a critical hit with a firearm, you regain 1 sorcery point.</p>
+			</description>
+			<sheet>
+				<description>Whenever you score a critical hit with a firearm, you regain 1 sorcery point.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+
+    
+</elements>

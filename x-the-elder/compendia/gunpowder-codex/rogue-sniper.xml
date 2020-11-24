@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Sniper Rogueish Archetype</name>
+        <update version="0.0.1">
+            <file name="rogue-sniper.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/gunpowder-codex/rogue-sniper.xml" />
+        </update>
+    </info>
+    
+	<element name="Sniper" type="Archetype" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_ROGUE_SNIPER">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p>Not everyone who wields a gun prefers to do openly. Some prefer to attack from a distance and stay hidden whenever possible, maximizing the power of a single shot. These rogues are snipers, superb marksmen able to put a bullet in their target from hundreds of feet away and get away with it.</p>
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_PROFICIENCIES" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_GUNSMITH" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_COMBAT_SUPERIORITY" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_IMPROVED_COMBAT_SUPERIORITY" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_HIDDEN_SHOOTER" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_SNIPERS_MARK" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_KILLSHOT" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_RELENTLESS" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_PROFICIENCIES" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_GUNSMITH" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_COMBAT_SUPERIORITY" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_IMPROVED_COMBAT_SUPERIORITY" level="9" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_HIDDEN_SHOOTER" level="9" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_SNIPERS_MARK" level="13" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_KILLSHOT" level="17" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_RELENTLESS" level="17" />
+		</rules>
+	</element>
+		<element name="Proficiencies" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_PROFICIENCIES">
+			<description>
+				<p>Starting when you choose this archetype at 3rd level, you gain proficiency with advanced firearms. In addition, you gain proficiency in the Perception skill. If you are already proficient in it, you instead double your proficiency bonus when making Perception checks.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_FRL_GPC_PROFICIENCY_WEAPON_ADVANCED_FIREARMS" />
+                <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_PERCEPTION" />
+			</rules>
+		</element>
+		<element name="Gunsmith" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_GUNSMITH">
+			<description>
+				<p>Upon choosing this archetype at 3rd level, you gain proficiency with Tinker’s Tools. You may use them to craft ammunition, repair damaged firearms, or even draft and create new ones (DM’s discretion). Some extremely intricate and experimental firearms are only available through crafting.</p>
+			</description>
+			<sheet>
+				<description>You may use Tinker’s Tools to craft ammunition, repair damaged firearms, or even draft and create new ones.</description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+			</rules>
+		</element>
+		<element name="Combat Superiority" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_COMBAT_SUPERIORITY">
+			<description>
+				<p>At 3rd level, you gain a set of combat abilities, referred to as maneuvers, which are fueled by special dice called superiority dice.</p>
+				<p class="indent"><b>Superiority Dice.</b> You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all your expended superiority dice when you finish a short or long rest.</p>
+				<p class="indent">You gain another superiority die at 7th level and one more at 15th level.</p>
+				<p class="indent"><b>Maneuvers.</b> You spend your superiority dice on your maneuvers. You can use more than one maneuver per turn, but no more than one maneuver per attack.</p>
+				<p class="indent"><b>Saving Throws.</b> Some of your maneuvers require your target to make a saving throw to resist the maneuver’s effects. The saving throw DC is calculated as follows:</p>
+				<p style="text-align: center;"><b>Maneuver save DC</b> = 8 + your proficiency bonus + your Dexterity modifier</p>
+				<p class="indent">You know the following maneuvers:</p>
+				<p class="indent"><b>Disarming Attack.</b> When you hit a creature with a firearm attack, you can expend one superiority die to attempt to disarm the target, forcing it to drop one item of your choice that it’s holding. You add the superiority die to the attack’s damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet.</p>
+				<p class="indent"><b>Marksman Shot.</b> When you make an attack with a two-handed firearm against a creature, you can expend one superiority die. This grants you advantage on your attack roll. If you hit, you may roll your superiority die and add the result to the damage of the attack.</p>
+				<p class="indent"><b>Knockdown.</b> When you hit a creature with a firearm attack, you can expend one superiority die to attempt to knock the target down. Roll the die, and add it to the attack’s damage roll. If the target is Large or smaller, it must also succeed on a Strength saving throw or be knocked prone.</p>
+			</description>
+			<sheet>
+				<description>You have {{superiority-dice:count}} superiority dice (d{{superiority-dice:type}}s). Your maneuver save DC is {{maneuver:save-dc}}.</description>
+			</sheet>
+			<rules>
+                <stat name="superiority-dice:count" value="4" level="3" />
+                <stat name="superiority-dice:count" value="1" level="7" />
+                <stat name="superiority-dice:count" value="1" level="15" />
+                <stat name="superiority-dice:type" value="8" bonus="base" level="3" />
+                <stat name="superiority-dice:type" value="10" bonus="base" level="9" />
+                <stat name="superiority-dice:type" value="12" bonus="base" level="17" />
+                <stat name="maneuver:save-dc" value="8" />
+                <stat name="maneuver:save-dc" value="proficiency" />
+                <stat name="maneuver:save-dc" value="dexterity:modifier" />
+                <grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_COMBAT_SUPERIORITY_DISARMING_ATTACK" level="3" />
+                <grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_COMBAT_SUPERIORITY_MARKSMAN_SHOT" level="3" />
+                <grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_COMBAT_SUPERIORITY_KNOCKDOWN" level="3" />
+			</rules>
+		</element>
+            <element name="Disarming Attack" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_COMBAT_SUPERIORITY_DISARMING_ATTACK">
+                <description>
+                    <p>When you hit a creature with a firearm attack, you can expend one superiority die to attempt to disarm the target, forcing it to drop one item of your choice that it’s holding. You add the superiority die to the attack’s damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet.</p>
+                </description>
+                <sheet>
+                    <description>When you hit a creature with a firearm attack, you can expend one superiority die to attempt to disarm the target, forcing it to drop one item of your choice that it’s holding. You add the superiority die to the attack’s damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet.</description>
+                </sheet>
+            </element>
+            <element name="Marksman Shot" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_COMBAT_SUPERIORITY_MARKSMAN_SHOT">
+                <description>
+                    <p>When you make an attack with a two-handed firearm against a creature, you can expend one superiority die. This grants you advantage on your attack roll. If you hit, you may roll your superiority die and add the result to the damage of the attack.</p>
+                </description>
+                <sheet>
+                    <description>When you make an attack with a two-handed firearm against a creature, you can expend one superiority die. This grants you advantage on your attack roll. If you hit, you may roll your superiority die and add the result to the damage of the attack.</description>
+                </sheet>
+            </element>
+            <element name="Knockdown" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_COMBAT_SUPERIORITY_KNOCKDOWN">
+                <description>
+                    <p>When you hit a creature with a firearm attack, you can expend one superiority die to attempt to knock the target down. Roll the die, and add it to the attack’s damage roll. If the target is Large or smaller, it must also succeed on a Strength saving throw or be knocked prone.</p>
+                </description>
+                <sheet>
+                    <description>When you hit a creature with a firearm attack, you can expend one superiority die to attempt to knock the target down. Roll the die, and add it to the attack’s damage roll. If the target is Large or smaller, it must also succeed on a Strength saving throw or be knocked prone.</description>
+                </sheet>
+            </element>
+		<element name="Improved Combat Superiority" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_IMPROVED_COMBAT_SUPERIORITY">
+			<description>
+				<p>At 9th level, your superiority dice turn into d10s. At 17th level, they turn into d12s.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+		</element>
+		<element name="Hidden Shooter" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_HIDDEN_SHOOTER">
+			<description>
+				<p>At 9th level, you have become expert at staying hidden even after firing. If you were hidden before attacking, any enemy that is 60 feet or further from you has disadvantage on any Perception checks made to spot you until the beginning of your next turn.</p>
+			</description>
+			<sheet>
+				<description>If you were hidden before attacking, any enemy that is 60 feet or further from you has disadvantage on any Perception checks made to spot you until the beginning of your next turn.</description>
+			</sheet>
+		</element>
+		<element name="Sniper’s Mark" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_SNIPERS_MARK">
+			<description>
+				<p>At 13th level, you are adept in targeting your enemies. You can innately cast the spell hunter’s mark at 3rd level, the spell’s range for you is 300 feet. You may use this feature once per short or long rest.</p>
+                <div element="ID_PHB_SPELL_HUNTERS_MARK" />
+			</description>
+			<sheet usage="1/Short Rest">
+				<description>You can innately cast the spell hunter’s mark at 3rd level, the spell’s range for you is 300 feet.</description>
+			</sheet>
+			<rules>
+                <grant type="Spell" id="ID_PHB_SPELL_HUNTERS_MARK" />
+			</rules>
+		</element>
+		<element name="Killshot" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_KILLSHOT">
+			<description>
+				<p>By 17th level, you have become a master marksman and can put a bullet straight into a killzone. You can spend 1 superiority die before making an attack roll to attempt a kill shot. On a hit, any target with 100 hit points or fewer must make a Constitution save. The DC is equal to your rogue level. On a failed save, the target dies immediately; on a successful save, the attack deals normal damage plus the result of your superiority die. Once you use this ability, you cannot use it again until you finish a short or long rest.</p>
+				<p class="indent">Any creature that is immune to critical hits is unaffected by this ability.</p>
+			</description>
+			<sheet usage="1/Short Rest">
+				<description>You can spend 1 superiority die before making an attack roll to attempt a kill shot. On a hit, any target with 100 hit points or fewer must make a Constitution save (DC {{level:rogue}}). On a failed save, the target dies immediately; on a successful save, the attack deals normal damage plus the result of your superiority die.</description>
+			</sheet>
+		</element>
+		<element name="Relentless" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_SNIPER_RELENTLESS">
+			<description>
+				<p>Starting at 17th level, when you roll initiative and have no superiority dice remaining, you regain one superiority die.</p>
+			</description>
+			<sheet>
+				<description>When you roll initiative and have no superiority dice remaining, you regain one superiority die.</description>
+			</sheet>
+		</element>
+
+    
+</elements>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Path of the Gunrager Primal Path</name>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-the-gunrager.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/gunpowder-codex/barbarian-path-of-the-gunrager.xml" />
+        </update>
+    </info>
+    
+	<element name="Path of the Gunrager" type="Archetype" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_BARBARIAN_PATH_OF_THE_GUNRAGER">
+		<supports>Primal Path</supports>
+		<description>
+			<p>Although some barbarians are baffled by the technology of firearms, others see these new weapons as tools to enhance their abilities to a new level. Specialists with big two-handed guns, these barbarians are called gunragers, and for good reason. They charge through the battlefield with abandon, unleashing lead on all who stand in their way and sowing fear in their wake.</p>
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_PROFICIENCY" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_GUNSMITH" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_GUNNERS_RAGE" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_STALWART_DEFENSE" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_STARTLING_KILL" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_STEELSKINNED" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_DOMINO_SHOT" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_PROFICIENCY" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_GUNSMITH" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_GUNNERS_RAGE" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_STALWART_DEFENSE" level="6" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_STARTLING_KILL" level="10" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_STEELSKINNED" level="14" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_DOMINO_SHOT" level="14" />
+		</rules>
+	</element>
+		<element name="Proficiency" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_PROFICIENCY">
+			<description>
+				<p>Starting when you choose this primal path at 3rd level, you gain proficiency with advanced firearms.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_FRL_GPC_PROFICIENCY_WEAPON_ADVANCED_FIREARMS" />
+			</rules>
+		</element>
+		<element name="Gunsmith" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_GUNSMITH">
+			<description>
+				<p>Upon choosing this primal path at 3rd level, you gain proficiency with Tinker’s Tools. You may use them to craft ammunition, repair damaged firearms, or even draft and create new ones (DM’s discretion). Some extremely intricate and experimental firearms are only available through crafting.</p>
+			</description>
+			<sheet>
+				<description>You may use Tinker’s Tools to craft ammunition, repair damaged firearms, or even draft and create new ones.</description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+			</rules>
+		</element>
+		<element name="Gunner’s Rage" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_GUNNERS_RAGE">
+			<description>
+				<p>Starting when you choose this path at 3rd level, you can channel your anger to deadly effect when fighting with a two-handed firearm by entering a gunner’s rage. If you do so, for the duration of your rage you can use the butt of your firearm make a single melee weapon attack as a bonus action on each of your turns after this one. A successful attack with the butt of a two-handed firearm deals 1d8 bludgeoning damage plus your Strength modifier. Additionally, you don’t make attack rolls at disadvantage when discharging your firearm at point-blank range (5 feet or less).</p>
+			</description>
+			<sheet usage="Rage">
+				<description>While raging, you can use the butt of your firearm make a single melee weapon attack as a bonus action on each of your turns after this one. A successful attack with the butt of a two-handed firearm deals 1d8 + {{strength:modifier}} bludgeoning damage. Additionally, you don’t make attack rolls at disadvantage when discharging your firearm at point-blank range (5 feet or less).</description>
+			</sheet>
+		</element>
+		<element name="Stalwart Defense" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_STALWART_DEFENSE">
+			<description>
+				<p>Beginning at 6th level, you may use your reaction to turn a critical hit against you into a normal hit while raging. You may use this feature once, and regain expended uses after a short rest. At Level 10, you gain a second use of Stalwart Defense, and at Level 14 you gain a third use.</p>
+			</description>
+			<sheet action="Reaction" usage="{{stalwart-defense:uses}}/Short Rest">
+				<description>While raging, you may turn a critical hit against you into a normal hit while raging.</description>
+			</sheet>
+			<rules>
+                <stat name="stalwart-defense:uses" value="1" level="6" />
+                <stat name="stalwart-defense:uses" value="1" level="10" />
+                <stat name="stalwart-defense:uses" value="1" level="14" />
+			</rules>
+		</element>
+		<element name="Startling Kill" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_STARTLING_KILL">
+			<description>
+				<p>At 10th level, you are adept at using your firearm to instill fear in others. Whenever you reduce a creature to 0 hit points, you may attempt a Charisma (Intimidate) check with advantage as a free action.</p>
+			</description>
+			<sheet>
+				<description>Whenever you reduce a creature to 0 hit points, you may attempt a Intimidate check with advantage as a free action.</description>
+			</sheet>
+		</element>
+		<element name="Steelskinned" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_STEELSKINNED">
+			<description>
+				<p>Gunragers are notoriously hard to take down. Starting at 14th level, you may use your reaction to add your Constitution modifier (minimum +1) as a bonus to your AC until the end of your next turn. You may use this ability twice, and regain all expended uses when you finish a long rest.</p>
+			</description>
+			<sheet action="Reaction" usage="2/Long Rest">
+				<description>You may add your {{constitution:modifier}} as a bonus to your AC until the end of your next turn.</description>
+			</sheet>
+		</element>
+		<element name="Domino Shot" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_GUNRAGER_DOMINO_SHOT">
+			<description>
+				<p>Starting at 14th level, you may use your attack action to attempt a domino shot. You discharge your firearm, using only a single bullet, but you may make attack rolls against every creature in range in a 60 ft. line. Disadvantage from your weapon’s range categories do not apply to this ability, but the maximum range of your weapon still applies. Make attack rolls in order, from the nearest to the furthest target. Should any attack roll miss, the progress of your domino shot is halted. You may use this ability twice. You regain expended uses of it when you finish a long rest.</p>
+			</description>
+			<sheet usage="2/Long Rest">
+				<description>You may use your attack action to attempt a domino shot. You discharge your firearm, using only a single bullet, but you may make attack rolls against every creature in range in a 60 ft. line. Disadvantage from your weapon’s range categories do not apply to this ability, but the maximum range of your weapon still applies. Make attack rolls in order, from the nearest to the furthest target. Should any attack roll miss, the progress of your domino shot is halted.</description>
+			</sheet>
+		</element>
+
+</elements>

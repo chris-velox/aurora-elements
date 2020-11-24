@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Dragoon Ranger Archetype</name>
+        <update version="0.0.1">
+            <file name="ranger-dragoon.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/gunpowder-codex/ranger-dragoon.xml" />
+        </update>
+    </info>
+    
+	<element name="Dragoon" type="Archetype" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_RANGER_DRAGOON">
+		<supports>Ranger Archetype</supports>
+		<description>
+			<p>At the unusual crossroads between horsemanship, marksmanship, and wilderness expertise stand dragoons, rangers that are trained in firearms and move quickly across wide stretches of land. Most begin their careers in armies or large mercenary companies, but most welcome their skills no matter their source. In militaries, they often act as scouts or form flanking forces in combat; in smaller adventuring parties they are well-suited to hit and run tactics and exploration.</p>
+			<div class="sidebar">
+				<h5 class="caption">Revised Ranger</h5>
+				<p>If you’re using the revised ranger, you can use this subclass with it if you make one addition: give it the Extra Attack feature.</p>
+				<p class="indent">Extra Attack. Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+			</div>
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_PROFICIENCIES" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_GUNSMITH" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_DRAGOON_MAGIC" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_RECONNAISSANCE" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_RIDE_BY_ATTACK" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_TERRAIN_AWARENESS" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_EARTHEN_ASSAULT" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_PROFICIENCIES" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_GUNSMITH" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_DRAGOON_MAGIC" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_RECONNAISSANCE" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_RIDE_BY_ATTACK" level="7" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_TERRAIN_AWARENESS" level="11" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_EARTHEN_ASSAULT" level="15" />
+		</rules>
+	</element>
+		<element name="Proficiencies" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_PROFICIENCIES">
+			<description>
+				<p>Starting when you choose this archetype at 3rd level, you gain proficiency with advanced firearms.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_FRL_GPC_PROFICIENCY_WEAPON_ADVANCED_FIREARMS" />
+			</rules>
+		</element>
+		<element name="Gunsmith" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_GUNSMITH">
+			<description>
+				<p>Upon choosing this archetype at 3rd level, you gain proficiency with Tinker’s Tools. You may use them to craft ammunition, repair damaged firearms, or even draft and create new ones (DM’s discretion). Some extremely intricate and experimental firearms are only available through crafting.</p>
+			</description>
+			<sheet>
+				<description>You may use Tinker’s Tools to craft ammunition, repair damaged firearms, or even draft and create new ones.</description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+			</rules>
+		</element>
+		<element name="Dragoon Magic" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_DRAGOON_MAGIC">
+			<description>
+				<p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Dragoon Spells table. The spell counts as a ranger spell for you, and it doesn’t count against the number of ranger spells you know.</p>
+				<h5 class="caption">DRAGOON SPELLS</h5>
+				<table>
+					<thead>
+						<tr><td>Ranger Level</td><td>Spells</td></tr>
+					</thead>
+					<tr><td>3rd</td><td><em>longstrider</em></td></tr>
+					<tr><td>5th</td><td><em>find steed</em></td></tr>
+					<tr><td>9th</td><td><em>lightning arrow</em></td></tr>
+					<tr><td>13th</td><td><em>carven rifle1</em></td></tr>
+					<tr><td>17th</td><td><em>tree stride</em></td></tr>
+				</table>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Spell" id="ID_PHB_SPELL_LONGSTRIDER" spellcasting="Ranger" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_FIND_STEED" spellcasting="Ranger" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_LIGHTNING_ARROW" spellcasting="Ranger" known="true" level="9" />
+                <grant type="Spell" id="ID_FRL_GPC_SPELL_CARVEN_RIFLE" spellcasting="Ranger" known="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_TREE_STRIDE" spellcasting="Ranger" known="true" level="17" />
+			</rules>
+		</element>
+		<element name="Reconnaissance" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_RECONNAISSANCE">
+			<description>
+				<p>At 3rd level, you gain the ability to grant allies an edge in combat by studying the battlefield beforehand and giving a report to your companions. Choose an area with a 50-foot radius you can see within 500 feet; if you are in an elevated position or otherwise have a better view, this range may be extended at the DM’s discretion.</p>
+				<p class="indent">By studying this area for at least 1 minute, you are able to glean some basic tactical information about it, such as where roots or rubble make footing tricky, or where hanging vines might obstruct movement. If your allies are with you, you may point these things out as you see them; otherwise you must spend 1 additional minute relaying this information to them in person later.</p>
+				<p class="indent">You and any allies who hear this information gain the following benefits the first time you enter combat in the chosen area within the next hour:</p>
+				<ul>
+					<li>You have advantage on initiative checks within the chosen area.</li>
+					<li>You may ignore difficult terrain within the chosen area for the duration of the encounter. Difficult terrain created by spells or other magical effects still affects you.</li>
+					<li>When attacking, you treat all cover within the area as reduced by one step: total cover is treated as three-quarters cover, three-quarters cover is treated as half cover, and half cover is ignored.</li>
+				</ul>
+			</description>
+			<sheet>
+				<description>Choose an area with a 50-foot radius you can see. By studying this area for at least 1 minute, you gain the following benefits: You have advantage on initiative checks within the chosen area. You may ignore difficult terrain within the chosen area for the duration of the encounter. Difficult terrain created by spells or other magical effects still affects you. When attacking, you treat all cover within the area as reduced by one step: total cover is treated as three-quarters cover, three-quarters cover is treated as half cover, and half cover is ignored.</description>
+				<description level="15">Choose an area with a 50-foot radius you can see. By studying this area for at least 2 rounds, you gain the following benefits: You have advantage on initiative checks within the chosen area. You may ignore difficult terrain within the chosen area for the duration of the encounter. Difficult terrain created by spells or other magical effects still affects you. When attacking, you treat all cover within the area as reduced by one step: total cover is treated as three-quarters cover, three-quarters cover is treated as half cover, and half cover is ignored.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Ride-By Attack" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_RIDE_BY_ATTACK">
+			<description>
+				<p>By 7th level, your cavalry training enables you to make hit-and-run attacks on the battlefield. During your turn, if you are mounted and make a weapon attack against a creature, that creature can’t make opportunity attacks against you for the rest of your turn.</p>
+			</description>
+			<sheet>
+				<description>During your turn, if you are mounted and make a weapon attack against a creature, that creature can’t make opportunity attacks against you for the rest of your turn.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Terrain Awareness" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_TERRAIN_AWARENESS">
+			<description>
+				<p>At 11th level, you have become increasingly aware of all the nuances of terrain and environment in the chosen area of your Reconnaissance ability, and can use this knowledge to help your companions. While within that area, you may use your reaction to grant one ally within 15 feet of you (who is also within the chosen area) advantage on one attack roll, saving throw, or ability check. You may use this ability once, and regain spent uses after a short or long rest.</p>
+				<p class="indent">At 18th level, the range of this ability increases to 30 feet, and it may be used twice between rests.</p>
+			</description>
+			<sheet action="Reaction" usage="{{terrain-awareness:uses}}/Short Rest">
+				<description>In the chosen area of your Reconnaissance feature, you can grant one ally within {{terrain-awareness:range}} feet of you (who is also within the chosen area) advantage on one attack roll, saving throw, or ability check.</description>
+			</sheet>
+			<rules>
+                <stat name="terrain-awareness:range" value="15" level="11" />
+                <stat name="terrain-awareness:range" value="15" level="18" />
+                <stat name="terrain-awareness:uses" value="1" level="11" />
+                <stat name="terrain-awareness:uses" value="1" level="18" />
+			</rules>
+		</element>
+		<element name="Earthen Assault" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_DRAGOON_EARTHEN_ASSAULT">
+			<description>
+				<p>At 15th level, you gain a magical connection to the land within the chosen area of your Reconnaissance ability. Both time requirements for Reconnaissance are reduced to two rounds (12 seconds) each to complete as the ground willingly reveals its secrets to you.</p>
+				<p class="indent">Additionally, once per turn you may use your bonus action to command the environment to attack one creature within the chosen area, as long as you are also within the area. The form this attack takes depends on the environment, and is up to the DM. A thorny vine might strike out, pebbles or a boulder may fling themselves at an enemy, or water may rise up and freeze itself onto the target. Although the DM decides the type of damage based on the attack, this attack uses your spell attack modifier for its attack roll and deals damage equal to 2d8 + your Wisdom modifier.</p>
+			</description>
+			<sheet action="Bonus Action">
+				<description>Once per turn you may command the environment to attack one creature within the area of your Reconnaissance ability, as long as you are also within the area.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+
+    
+</elements>

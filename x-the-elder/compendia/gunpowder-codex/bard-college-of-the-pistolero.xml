@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of the Pistolero</name>
+        <update version="0.0.1">
+            <file name="bard-college-of-the-pistolero.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/gunpowder-codex/bard-college-of-the-pistolero.xml" />
+        </update>
+    </info>
+    
+	<element name="College of the Pistolero" type="Archetype" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_BARD_COLLEGE_OF_THE_PISTOLERO">
+		<supports>Bard College</supports>
+		<description>
+			<p>Although most bards tell tales of heroes wielding more traditional swords, some prefer to sing ballads about dashing gunslingers, and some even take the time to master the art themselves. These bards are known as pistoleros, simultaneous masters of the arcane, song, and one-handed firearms. Stylish and skillful, these bards are eager to display their fancy moves.</p>
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PROFICIENCY" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_GUNSMITH" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PISTOLEROS_PANACHE" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_EXTRA_ATTACK" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_GRAZE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PROFICIENCY" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_GUNSMITH" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PISTOLEROS_PANACHE" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_EXTRA_ATTACK" level="6" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_GRAZE" level="14" />
+		</rules>
+	</element>
+		<element name="Proficiency" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PROFICIENCY">
+			<description>
+				<p>Starting when you choose this bardic college at 3rd level, you gain proficiency with all one-handed firearms.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_FRL_GPC_PROFICIENCY_WEAPON_ADVANCED_FIREARMS" />
+			</rules>
+		</element>
+		<element name="Gunsmith" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_GUNSMITH">
+			<description>
+				<p>Upon choosing this bardic college at 3rd level, you gain proficiency with Tinker’s Tools. You may use them to craft ammunition, repair damaged firearms, or even draft and create new ones (DM’s discretion). Some extremely intricate and experimental firearms are only available through crafting.</p>
+			</description>
+			<sheet>
+				<description>You may use Tinker’s Tools to craft ammunition, repair damaged firearms, or even draft and create new ones.</description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+			</rules>
+		</element>
+		<element name="Pistolero’s Panache" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PISTOLEROS_PANACHE">
+			<description>
+				<p>At 3rd level, you are supremely deft in handling your guns. When you use the Attack action on your turn and attack with a one-handed firearm, you may attempt one of the following tricks.</p>
+				<p class="indent"><b>Dodger’s Panache.</b> Your experience as a traveling pistolero has made you more adept at staying out of harm’s way. As a bonus action, spend one use of Bardic Inspiration, rolling a Bardic Inspiration die and applying the number rolled as a bonus to your next Strength, Dexterity, or Constitution saving throw.</p>
+				<p class="indent"><b>Gun Flourish.</b> You spin your firearm around in a brilliant display of dexterity. As a bonus action, you expend one use of Bardic Inspiration, rolling a Bardic Inspiration die and applying the number rolled as a bonus to one Charisma ability check made within the next minute. If you do not make a Charisma ability check within a minute, the inspiration is wasted.</p>
+				<p class="indent"><b>Trigger Panache.</b> Roll a Bardic Inspiration die and apply the number rolled as a bonus to the next ranged attack roll you make with a one-handed firearm this turn. If the target of the attack is an unattended, inanimate object, the bonus equals double the die roll.</p>
+			</description>
+			<sheet>
+				<description>When you use the Attack action on your turn and attack with a one-handed firearm, you may attempt one of the following tricks:</description>
+			</sheet>
+			<rules>
+                <grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PISTOLEROS_PANACHE_DODGERS_PANACHE" level="3" />
+                <grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PISTOLEROS_PANACHE_GUN_FLOURISH" level="3" />
+                <grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PISTOLEROS_PANACHE_TRIGGER_PANACHE" level="3" />
+			</rules>
+		</element>
+            <element name="Dodger’s Panache" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PISTOLEROS_PANACHE_DODGERS_PANACHE">
+                <description>
+                    <p>Your experience as a traveling pistolero has made you more adept at staying out of harm’s way. As a bonus action, spend one use of Bardic Inspiration, rolling a Bardic Inspiration die and applying the number rolled as a bonus to your next Strength, Dexterity, or Constitution saving throw.</p>
+                </description>
+                <sheet usage="Pistolero’s Panache" action="Bonus Action">
+                    <description>You spend one use of Bardic Inspiration, rolling a Bardic Inspiration die and applying the number rolled as a bonus to your next Strength, Dexterity, or Constitution saving throw.</description>
+                </sheet>
+            </element>
+            <element name="Gun Flourish" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PISTOLEROS_PANACHE_GUN_FLOURISH">
+                <description>
+                    <p>You spin your firearm around in a brilliant display of dexterity. As a bonus action, you expend one use of Bardic Inspiration, rolling a Bardic Inspiration die and applying the number rolled as a bonus to one Charisma ability check made within the next minute. If you do not make a Charisma ability check within a minute, the inspiration is wasted.</p>
+                </description>
+                <sheet usage="Pistolero’s Panache" action="Bonus Action">
+                    <description>You expend one use of Bardic Inspiration, rolling a Bardic Inspiration die and applying the number rolled as a bonus to one Charisma ability check made within the next minute.</description>
+                </sheet>
+            </element>
+            <element name="Trigger Panache" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_PISTOLEROS_PANACHE_TRIGGER_PANACHE">
+                <description>
+                    <p>Roll a Bardic Inspiration die and apply the number rolled as a bonus to the next ranged attack roll you make with a one-handed firearm this turn. If the target of the attack is an unattended, inanimate object, the bonus equals double the die roll.</p>
+                </description>
+                <sheet usage="Pistolero’s Panache">
+                    <description>Roll a Bardic Inspiration die and apply the number rolled as a bonus to the next ranged attack roll you make with a one-handed firearm this turn. If the target of the attack is an unattended, inanimate object, the bonus equals double the die roll.</description>
+                </sheet>
+            </element>
+		<element name="Extra Attack" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_EXTRA_ATTACK">
+			<description>
+				<p>Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+			</description>
+			<sheet>
+				<description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+			</sheet>
+			<rules>
+                <stat name="extra attack:count" value="2" level="6" bonus="extra attack" />
+			</rules>
+		</element>
+		<element name="Graze" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_PISTOLERO_GRAZE">
+			<description>
+				<p>Beginning at 14th level, you have mastered marksmanship with one-handed firearms. When you miss an attack using a one-handed firearm, you graze your target and still deal a small amount of damage equal to your Dexterity modifier. A critical failure or misfire still results in a complete miss, and no damage is done. You may use this feature only once per turn.</p>
+			</description>
+			<sheet>
+				<description>When you miss an attack using a one-handed firearm, you graze your target and still deal {{dexterity:modifier}} damage. A critical failure or misfire still results in a complete miss, and no damage is done. You may use this feature only once per turn.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+
+    
+</elements>

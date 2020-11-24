@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Druid Circle of Thunder</name>
+        <update version="0.0.1">
+            <file name="druid-circle-of-thunder.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/gunpowder-codex/druid-circle-of-thunder.xml" />
+        </update>
+    </info>
+    
+	<element name="Circle of Thunder" type="Archetype" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_DRUID_CIRCLE_OF_THUNDER">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>The Circle of Thunder is a relatively recent cabal of druids, founded a mere century ago, but is steadily increasing in numbers. As technology progresses and firearms become more common, some druids have felt keenly left behind. Some, fearing obsolescence, have turned to the Circle of Thunder to remain relevant on the battlefield. Others, less concerned with their place in the outside world, nonetheless acknowledge that integrating some aspects of firearm technology into their natural magic can aid them in defending the places most important to them.</p>
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_BONUS_CANTRIP" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_WOODLAND_STRIDE" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_CIRCLE_SPELLS" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_FOREST_AFFINITY" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_ARBOREAL_AEGIS" />
+			<div element="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_NATURES_SHIELD" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_BONUS_CANTRIP" level="2" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_WOODLAND_STRIDE" level="2" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_CIRCLE_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_FOREST_AFFINITY" level="6" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_ARBOREAL_AEGIS" level="10" />
+			<grant type="Archetype Feature" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_NATURES_SHIELD" level="14" />
+		</rules>
+	</element>
+		<element name="Bonus Cantrip" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_BONUS_CANTRIP">
+			<description>
+				<p>When you choose this circle at 2nd level, you learn the forest thunder cantrip (described on page 24).</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Spell" id="ID_FRL_GPC_SPELL_FOREST_THUNDER" spellcasting="Druid" known="true" level="2" />
+			</rules>
+		</element>
+		<element name="Woodland Stride" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_WOODLAND_STRIDE">
+			<description>
+				<p>Your affinity for the wooded places of the world makes you particularly adept at moving through wooded terrain. Starting at 2nd level, if you are in wooded terrain, you may take a bonus action on each of your turns in combat to use either the Dash or Hide actions.</p>
+			</description>
+			<sheet>
+				<description>If you are in wooded terrain, you may take a bonus action on each of your turns in combat to use either the Dash or Hide actions.</description>
+			</sheet>
+		</element>
+	<element name="Circle Spells" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_CIRCLE_SPELLS">
+			<description>
+				<p>Your magical connection with the forest and careful study of firearms gives you the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells related to the discipline of Thunder.</p>
+				<p class="indent">Once you gain access to a circle spell, you always have it prepared, and it doesn’t count against the number of spells you can prepare each day. If you gain access to a spell that doesn’t appear on the druid spell list, it is nonetheless a druid spell for you.</p>
+				<h5 class="caption">CIRCLE SPELLS</h5>
+				<table>
+					<thead>
+						<tr><td>Druid Level</td><td>Spells</td></tr>
+					</thead>
+					<tr><td>3rd</td><td><em>arboreal blast, dust devil</em></td></tr>
+					<tr><td>5th</td><td><em>sequoia six-shooter, plant growth</em></td></tr>
+					<tr><td>7th</td><td><em>carven rifle, grasping vine</em></td></tr>
+					<tr><td>9th</td><td><em>branching shot1, commune with nature</em></td></tr>
+				</table>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Spell" id="ID_FRL_GPC_SPELL_ARBOREAL_BLAST" spellcasting="Druid" prepared="true" level="3" />
+                <grant type="Spell" id="ID_XGTE_SPELL_DUST_DEVIL" spellcasting="Druid" prepared="true" level="3" />
+                <grant type="Spell" id="ID_FRL_GPC_SPELL_SEQUOIA_SIX_SHOOTER" spellcasting="Druid" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_PLANT_GROWTH" spellcasting="Druid" prepared="true" level="5" />
+                <grant type="Spell" id="ID_FRL_GPC_SPELL_CARVEN_RIFLE" spellcasting="Druid" prepared="true" level="7" />
+                <grant type="Spell" id="ID_PHB_SPELL_GRASPING_VINE" spellcasting="Druid" prepared="true" level="7" />
+                <grant type="Spell" id="ID_FRL_GPC_SPELL_BRANCHING_SHOT" spellcasting="Druid" prepared="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_COMMUNE_WITH_NATURE" spellcasting="Druid" prepared="true" level="9" />
+			</rules>
+		</element>
+		<element name="Forest Affinity" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_FOREST_AFFINITY">
+			<description>
+				<p>Upon reaching 6th level, your growing attunement to the ways of the forest allows you to cast <i>speak with plants</i> twice, even if it is not among your prepared spells for the day. You regain expended uses of this ability when you finish a long rest.</p>
+			</description>
+			<sheet usage="2/Long Rest">
+				<description>You can cast speak with plants, even if it is not among your prepared spells for the day.</description>
+			</sheet>
+			<rules>
+                <grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_PLANTS" />
+			</rules>
+		</element>
+		<element name="Arboreal Aegis" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_ARBOREAL_AEGIS">
+			<description>
+				<p>When you reach 10th level, you gain resistance to thunder and non-magical piercing damage.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PIERCING" />
+			</rules>
+		</element>
+		<element name="Nature’s Shield" type="Archetype Feature" source="The Gunpowder Codex" id="ID_FRL_GPC_ARCHETYPE_FEATURE_THUNDER_NATURES_SHIELD">
+			<description>
+				<p>At 14th level, when you use a spell or cantrip to create a wooden firearm, a latticed cage of bracken briefly grows from the ground and surrounds you protectively. You gain half cover in all directions until the beginning of your next turn, and the cage does not interfere with attacks or spellcasting. You can easily break out of the cage if you choose, but you lose its protective bonus if you do so or leave the space where it formed. You must be within five feet of solid ground for this cage to form (normally, this means standing on the ground, but at the DM’s discretion it could activate if you were flying within 5 feet of a cliff face, or swimming in very shallow water).</p>
+			</description>
+			<sheet>
+				<description>When you use a spell or cantrip to create a wooden firearm, a latticed cage of bracken briefly grows from the ground and surrounds you protectively. You gain half cover in all directions until the beginning of your next turn, and the cage does not interfere with attacks or spellcasting. You can easily break out of the cage if you choose, but you lose its protective bonus if you do so or leave the space where it formed. You must be within five feet of solid ground for this cage to form.</description>
+			</sheet>
+		</element>
+    
+</elements>
