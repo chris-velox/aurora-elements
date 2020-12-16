@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Cryomancy Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-cryomancy.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/frostbladestorm/complete-guide-to-sanctum/sorcerer-cryomancy.xml" />
+        </update>
+    </info>
+    
+    <element name="Cryomancy" type="Archetype" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_SORCERER_CRYOMANCY">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>Your ancestors have practiced cryomancy: the art of manipulating water droplets in the environment and freezing them to create ice. This power may have been gifted to you by an ice primordial, or perhaps it was gained through forbidden knowledge. Whatever the case, ice runs through your veins.</p>
+            <p class="indent">Cryomancers find themselves working alongside other magical casters: particularly warlocks and wizards who seek to increase their power. Their magic may make them cold hearted, choosing logic over emotion. Or perhaps their nature has made them more emotional, a feat to distance themselves from the traditional image of a cryomancer.</p>
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_CREEPING_FROST" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_GLACIAL_STEPS" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_FROZEN_SOUL" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_CRYOSTASIS" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_PERMAFROST" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_CREEPING_FROST" level="1" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_GLACIAL_STEPS" level="1" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_FROZEN_SOUL" level="6" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_CRYOSTASIS" level="14" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_PERMAFROST" level="18" />
+        </rules>
+    </element>
+        <element name="Creeping Frost" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_CREEPING_FROST">
+            <description>
+                <p>Beginning at 1st level, your freezing spells chill your targets to the bone. When you deal cold damage with a sorcerer spell of 1st level or higher, you reduce the creatures speed by 10 feet. A spell that already reduces the targets speed increases the reduction by this amount. This feature can stack multiple times. This effect lasts for 1 minute after the final instance of cold damage, until the target takes fire damage, or until an effect would restore the creatures speed.</p>
+            </description>
+            <sheet>
+                <description>When you deal cold damage with a sorcerer spell of 1st level or higher, you reduce the creatures speed by 10 feet. A spell that already reduces the targets speed increases the reduction by this amount. This feature can stack multiple times. This effect lasts for 1 minute after the final instance of cold damage, until the target takes fire damage, or until an effect would restore the creatures speed.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Glacial Steps" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_GLACIAL_STEPS">
+            <description>
+                <p>At 1st level, you can cause the ground to freeze where you walk. For the next minute, every 5-foot square you exit becomes glazed in ice and is treated as difficult terrain. Non-magical flames in the spaces you walk over are extinguished. Any water that you move through freezes and becomes solid ice that can support the weight of a Large or smaller creature. The ice caused by this feature lasts for 10 minutes, melting when it expires.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a long rest or you cast a spell of 1st level or higher that deals cold damage.</p>
+            </description>
+            <sheet>
+                <description>For the next minute, every 5-foot square you exit becomes glazed in ice and is treated as difficult terrain. Non-magical flames in the spaces you walk over are extinguished. Any water that you move through freezes and becomes solid ice that can support the weight of a Large or smaller creature. The ice caused by this feature lasts for 10 minutes, melting when it expires. You can't use it again until you finish a long rest or you cast a spell of 1st level or higher that deals cold damage.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Frozen Soul" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_FROZEN_SOUL">
+            <description>
+                <p>When you reach 6th level, you gain resistance to cold damage. In addition, you are unaffected by difficult terrain created by ice or snow.</p>
+            </description>
+            <sheet>
+                <description>You are unaffected by difficult terrain created by ice or snow.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+            </rules>
+        </element>
+        <element name="Cryostasis" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_CRYOSTASIS">
+            <description>
+                <p>At 14th level, as a reaction you can expend two sorcery points and encase yourself in ice, which melts at the beginning of your next turn. You gain temporary hit points equal to three times your Sorcerer level, which take as much of the triggering damage as possible. Immediately after you take damage, you gain vulnerability to fire damage, your speed is reduced to 0, and you are incapacitated. These effects, including any remaining temporary hit points, all end when the ice melts.</p>
+            </description>
+            <sheet action="Reaction" usage="2 sorcery points">
+                <description>You encase yourself in ice until the beginning of your next turn. You gain {{cryostasis:temp-hp}} temporary hit points, which take as much of the triggering damage as possible. Immediately after you take damage, you gain vulnerability to fire damage, your speed is reduced to 0, and you are incapacitated. These effects, including any remaining temporary hit points, all end when the ice melts.</description>
+            </sheet>
+            <rules>
+                <stat name="cryostasis:temp-hp" value="level:sorcerer" />
+                <stat name="cryostasis:temp-hp" value="level:sorcerer" />
+                <stat name="cryostasis:temp-hp" value="level:sorcerer" />
+            </rules>
+        </element>
+        <element name="Permafrost" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_CRYOMANCY_PERMAFROST">
+            <description>
+                <p>Beginning at 18th level, your ice magic bites at the core of your targets. When you reduce a creatures speed with your Creeping Frost feature, the creature must succeed a Constitution saving throw or gain a level of exhaustion. Regardless of whether this is a success or a failure, the target becomes immune to this feature for the next 10 minutes.</p>
+            </description>
+            <sheet>
+                <description>When you reduce a creatures speed with your Creeping Frost feature, the creature must succeed a Constitution saving throw (DC {{spellcasting:dc:cha}}) or gain a level of exhaustion. Regardless of whether this is a success or a failure, the target becomes immune to this feature for the next 10 minutes.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+    
+</elements>

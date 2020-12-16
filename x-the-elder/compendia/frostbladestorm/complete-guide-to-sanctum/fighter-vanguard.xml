@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Vanguard Fighter Archetype</name>
+        <update version="0.0.1">
+            <file name="fighter-vanguard.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/frostbladestorm/complete-guide-to-sanctum/fighter-vanguard.xml" />
+        </update>
+    </info>
+    
+    <element name="Vanguard" type="Archetype" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FIGHTER_VANGUARD">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>The Vanguard believes in an eye for an eye: in retaliation against those who have wronged them. Vanguard's have attuned themselves to this principle, enduring the relentless aggression of the enemy and striking back with their own strength. A Vanguard isn't just a normal warrior, but one that seizes every opportunity, embracing their awareness and striking when an opening presents itself.</p>
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_BATTLE_SENSE" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_ESCAPE_GUARD" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_RETALIATION" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_OPPORTUNISTIC" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_DOMINATING_PRESENCE" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_VIGILANCE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_BATTLE_SENSE" level="3" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_ESCAPE_GUARD" level="3" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_RETALIATION" level="7" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_OPPORTUNISTIC" level="10" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_DOMINATING_PRESENCE" level="15" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_VIGILANCE" level="18" />
+        </rules>
+    </element>
+        <element name="Battle Sense" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_BATTLE_SENSE">
+            <description>
+                <p>At 3rd level, your body has a sixth sense for danger. You gain a bonus to your initiative equal to your Constitution modifier.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="initiative" value="constitution:modifier" />
+            </rules>
+        </element>
+        <element name="Escape Guard" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_ESCAPE_GUARD">
+            <description>
+                <p>Beginning at 3rd level, allies do not provoke opportunity attacks from creatures within 5 feet of you.</p>
+                <p class="indent">The range of this effect increases by 5 feet at 10th level (10 feet) and 15th level (15 feet).</p>
+            </description>
+            <sheet>
+                <description>Allies do not provoke opportunity attacks from creatures within {{escape-guard:range}} feet of you.</description>
+            </sheet>
+            <rules>
+                <stat name="escape-guard:range" value="5" level="3" />
+                <stat name="escape-guard:range" value="5" level="10" />
+                <stat name="escape-guard:range" value="5" level="15" />
+            </rules>
+        </element>
+        <element name="Retaliation" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_RETALIATION">
+            <description>
+                <p>At 7th level, when a weapon attack is made against you and it misses, you can use your reaction to make a weapon attack against the attacker.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When a weapon attack is made against you and it misses, you can use your reaction to make a weapon attack against the attacker.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Opportunistic" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_OPPORTUNISTIC">
+            <description>
+                <p>When you reach 10th level, if a creature that has taken the Disengage action passes within your reach, you can make an opportunity attack against them with disadvantage.</p>
+            </description>
+            <sheet>
+                <description>If a creature that has taken the Disengage action passes within your reach, you can make an opportunity attack against them with disadvantage.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Dominating Presence" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_DOMINATING_PRESENCE">
+            <description>
+                <p>When you reach 15th level, your presence on the battlefield demands attention. While you aren't incapacitated, creatures within 15 feet of you cannot have advantage on attack rolls against creatures other than you.</p>
+            </description>
+            <sheet>
+                <description>While you aren't incapacitated, creatures within 15 feet of you cannot have advantage on attack rolls against creatures other than you.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Vigilance" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_VANGUARD_VIGILANCE">
+            <description>
+                <p>Finally, at 18th level you become an unrelenting force. In combat, you gain a number of special reactions equal to your Constitution modifier (minimum 1). You can take these special reactions once on any creature's turn, except your turn. You can use this special reaction only to make an attack with your Retaliation feature, and you can't use it on the same turn that you take your normal reaction.</p>
+                <p class="indent">You regain any expended special reactions at the beginning of your turn.</p>
+            </description>
+            <sheet>
+                <description>In combat, you gain {{con-mod:min-one}} special reactions. You can take these special reactions once on any creature's turn, except your turn. You can use this special reaction only to make an attack with your Retaliation feature, and you can't use it on the same turn that you take your normal reaction.</description>
+            </sheet>
+            <rules>
+                <stat name="con-mod:min-one" value="1" bonus="base" />
+                <stat name="con-mod:min-one" value="constitution:modifier" bonus="base" />
+            </rules>
+        </element>
+    
+</elements>

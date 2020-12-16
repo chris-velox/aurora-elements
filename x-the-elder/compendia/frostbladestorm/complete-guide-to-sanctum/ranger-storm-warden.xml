@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Storm Warden Ranger Archetype</name>
+        <update version="0.0.1">
+            <file name="ranger-storm-warden.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/frostbladestorm/complete-guide-to-sanctum/ranger-storm-warden.xml" />
+        </update>
+    </info>
+    
+    <element name="Storm Warden" type="Archetype" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_RANGER_STORM_WARDEN">
+        <supports>Ranger Archetype</supports>
+        <description>
+            <p>Storm wardens understand the wrath of nature better than anyone. They harness the power of unpredictability through storms, warping air currents around themselves to empower their own abilities and manipulate the world they walk. Rangers that follow this path know how quickly the world can change and how powerful a storm of all kinds can be.</p>
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_STORM_WARDEN_MAGIC" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_STORM_WEAPON" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_FORECAST" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_RUSHING_WIND" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_STORMSKIN" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_TEMPEST_WEAPON" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_LIGHTNING_ROD" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_STORM_WARDEN_MAGIC" level="3" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_STORM_WEAPON" level="3" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_FORECAST" level="3" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_RUSHING_WIND" level="7" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_STORMSKIN" level="7" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_TEMPEST_WEAPON" level="11" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_LIGHTNING_ROD" level="15" />
+        </rules>
+    </element>
+        <element name="Storm Warden Magic" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_STORM_WARDEN_MAGIC">
+            <description>
+                <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Storm Warden Spells table. The spell counts as a ranger spell for you, but it doesn't count against the number of ranger spells you know.</p>
+                <h5 class="caption">STORM WARDEN SPELLS</h5>
+                <table>
+                    <thead>
+                        <tr><td>Ranger Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>feather fall</em></td></tr>
+                    <tr><td>5th</td><td><em>gust of wind</em></td></tr>
+                    <tr><td>9th</td><td><em>lightning bolt</em></td></tr>
+                    <tr><td>13th</td><td><em>storm sphere</em></td></tr>
+                    <tr><td>17th</td><td><em>control winds</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_FEATHER_FALL" spellcasting="Ranger" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_GUST_OF_WIND" spellcasting="Ranger" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_LIGHTNING_BOLT" spellcasting="Ranger" known="true" level="9" />
+                <grant type="Spell" id="ID_XGTE_SPELL_STORM_SPHERE" spellcasting="Ranger" known="true" level="13" />
+                <grant type="Spell" id="ID_XGTE_SPELL_CONTROL_WINDS" spellcasting="Ranger" known="true" level="17" />
+            </rules>
+        </element>
+        <element name="Storm Weapon" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_STORM_WEAPON">
+            <description>
+                <p>At 3rd level, you have learned to channel the power of lightning into a particular weapon. Whenever you finish a long rest, you can touch one weapon that you are proficient with. This weapon becomes your storm weapon. When you attack with your storm weapon, you gain the following benefits:</p>
+                <ul>
+                    <li>All damage dealt by a weapon attack with your storm weapon becomes lightning damage.</li>
+                    <li>When you roll a 20 on your attack roll, the target must make a Constitution saving throw, becoming stunned on a failure until the beginning of your next turn.</li>
+                    <li>Once on each of your turns, when you hit with the attack roll, you can push the creature up to 10 feet away from you in a straight line.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>Whenever you finish a long rest, you can touch one weapon that you are proficient with. This weapon becomes your storm weapon. When you attack with your storm weapon, all damage becomes lightning damage. When you roll a 20 on your attack roll, the target must make a Constitution saving throw (DC {{spellcasting:dc:wis}}), becoming stunned on a failure until the beginning of your next turn. Once on each of your turns, when you hit with the attack roll, you can push the creature up to 10 feet away from you in a straight line.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Forecast" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_FORECAST">
+            <description>
+                <p>Also at 3rd level, you can spend 1 minute to accurately predict any non-magical changes in the weather for the next 24 hours at your location.</p>
+            </description>
+            <sheet>
+                <description>You can spend 1 minute to accurately predict any non-magical changes in the weather for the next 24 hours at your location.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Rushing Wind" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_RUSHING_WIND">
+            <description>
+                <p>At 7th level, you can temporarily channel air currents into your movement. As a bonus action, until the end of your turn your speed increases by 15 feet, your jump height and distance are tripled, and you don’t take fall damage.</p>
+                <p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a short or long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{wis-mod:min-one}}/Short Rest">
+                <description>Until the end of your turn your speed increases by 15 feet, your jump height and distance are tripled, and you don’t take fall damage.</description>
+            </sheet>
+            <rules>
+                <stat name="wis-mod:min-one" value="1" bonus="base" />
+                <stat name="wis-mod:min-one" value="wisdom:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Stormskin" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_STORMSKIN">
+            <description>
+                <p>Also at 7th level, you gain resistance to lightning and thunder damage.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+            </rules>
+        </element>
+        <element name="Tempest Weapon" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_TEMPEST_WEAPON">
+            <description>
+                <p>Beginning at 11th level, your storm weapon channels powerful static in the air to bolster itself. When you attack with your storm weapon, you ignore resistance to lightning damage, and you treat immunity to lightning damage as resistance.</p>
+                <p class="indent">In addition, you have advantage on attack rolls with your storm weapon if the target is wearing armour made of metal.</p>
+            </description>
+            <sheet>
+                <description>When you attack with your storm weapon, you ignore resistance to lightning damage, and you treat immunity to lightning damage as resistance. In addition, you have advantage on attack rolls with your storm weapon if the target is wearing armour made of metal.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Lightning Rod" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_STORM_WARDEN_LIGHTNING_ROD">
+            <description>
+                <p>When you reach 15th level, you gain immunity to lightning and thunder damage. In addition, when you would take lightning damage, you gain temporary hit points equal to half the damage you would have taken without immunity or resistance.</p>
+            </description>
+            <sheet>
+                <description>When you would take lightning damage, you gain temporary hit points equal to half the damage you would have taken without immunity or resistance.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_LIGHTNING" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_THUNDER" />
+            </rules>
+        </element>
+    
+</elements>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Scion Sorcerous Origin</name>
+        <update version="0.0.1">
+            <file name="sorcerer-scion.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/frostbladestorm/complete-guide-to-sanctum/sorcerer-scion.xml" />
+        </update>
+    </info>
+    
+    <element name="Scion" type="Archetype" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_SORCERER_SCION">
+        <supports>Sorcerous Origin</supports>
+        <description>
+            <p>There are those who are blessed with the powers of Mother Nature: her children, the true guardians of the natural order. These Scions as they have been named are beings directly connected with nature, having the capacity to channel the ferocity of primal magic and command the natural order in a way no one else can.</p>
+            <p class="indent">Scions are found amongst all the races, however those who have spent time in the wilds learn to respect these watchful guardians, beings of pure natural energy that help preserve the balance and keep the world the way the Mother wishes.</p>
+            <p class="indent">As a scion, you have found yourself intrinsically connected to the natural world, born with or inherited the power to command the primal magic with your metamagical abilities. Perhaps you trace your ancestry through a long list of scions, or maybe you were exposed to fey magic causing you to wield the same power. Regardless of how you came about your power, few can command it the way that you can.</p>
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_DRUIDIC_MAGIC" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_BRIAR_WARD" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_NATURALIST" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_CHLOROPHYLL" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_SHEPHERD_OF_THE_FOREST" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_DRUIDIC_MAGIC" level="1" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_BRIAR_WARD" level="1" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_NATURALIST" level="6" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_CHLOROPHYLL" level="14" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_SHEPHERD_OF_THE_FOREST" level="18" />
+        </rules>
+    </element>
+        <element name="Druidic Magic" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_DRUIDIC_MAGIC">
+            <description>
+                <p>Your link to the natural world allows you to learn spells normally associated with the Druid class. When your Spellcasting feature lets you learn a sorcerer cantrip or a sorcerer spell of 1st level or higher, you can choose the new spell from the druid spell list or the sorcerer spell list. You must otherwise obey all the restrictions for selecting the spell, and it becomes a sorcerer spell for you.</p>
+                <p class="indent">In addition, you learn to speak druidic.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Sorcerer" extend="true">
+                <extend>Druid</extend>
+            </spellcasting>
+            <rules>
+                <grant type="Language" id="ID_LANGUAGE_DRUIDIC" />
+            </rules>
+        </element>
+        <element name="Briar Ward" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_BRIAR_WARD">
+            <description>
+                <p>Starting at 1st level, you can command nature to defend you. When you cast a spell of 1st level or higher, you can create a vine that extends from your body.</p>
+                <p class="indent">As a bonus action while the vine is active, you can attempt to shove a creature within 30 feet. Make a spell attack contested by the target’s Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). If you win the contest, you can choose one of the following: knock the target prone, push it 5 feet away from you, or pull it 5 feet towards you.</p>
+                <p class="indent">The vine lasts until you use it, dismiss it as a bonus action or you fall unconscious.</p>
+            </description>
+            <sheet>
+                <description>When you cast a spell of 1st level or higher, you can create a vine that extends from your body. As a bonus action while the vine is active, you can attempt to shove a creature within 30 feet. Make a spell attack contested by the target’s Athletics or Acrobatics check. If you win the contest, you can choose one of the following: knock the target prone, push it 5 feet away from you, or pull it 5 feet towards you. The vine lasts until you use it, dismiss it as a bonus action or you fall unconscious.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Naturalist" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_NATURALIST">
+            <description>
+                <p>At 6th level, you have an affinity with the natural world few can match. You gain the following benefits:</p>
+                <ul>
+                    <li>You gain a climbing speed equal to your speed.</li>
+                    <li>You ignore difficult terrain created by plants or similar organic material, both magical and nonmagical.</li>
+                    <li>You can pass through nonmagical plants without taking damage from them if they have thorns, spines, or a similar hazard.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>You ignore difficult terrain created by plants or similar organic material, both magical and nonmagical. You can pass through nonmagical plants without taking damage from them if they have thorns, spines, or a similar hazard.</description>
+            </sheet>
+            <rules>
+                <stat name="speed:climb" value="speed" bonus="base" />
+            </rules>
+        </element>
+        <element name="Chlorophyll" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_CHLOROPHYLL">
+            <description>
+                <p>Beginning at 14th level, you can temporarily bolster your regenerative abilities. As an action, you can spend any number of sorcery points to regain a number of hit points equal to your Charisma modifier + the number of sorcery points you expend (minimum 1 hit point).</p>
+                <p class="indent">Once you use this feature, you cannot do so again for 10 minutes.</p>
+            </description>
+            <sheet action="Action" usage="1/10 minutes">
+                <description>You can spend any number of sorcery points to regain a number of hit points equal to {{charisma:modifier}} + the number of sorcery points you expend (minimum 1 hit point).</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Shepherd of the Forest" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_SCION_SHEPHERD_OF_THE_FOREST">
+            <description>
+                <p>Upon reaching 18th level, you have fully realised your connection to the natural world, making them hesitant to attack you. When a beast or plant creature attacks you, that creature must make a Wisdom saving throw against your sorcerer spell save DC. On a failed save, the creature must choose a different target, or the attack automatically misses. On a successful save, the creature is immune to this effect for 24 hours. The creature is aware of this effect before it makes its attack against you.</p>
+                <p class="indent">In addition, for every 10 years that pass, your body ages only 1 year.</p>
+            </description>
+            <sheet>
+                <description>When a beast or plant creature attacks you, that creature must make a Wisdom saving throw (DC {{spellcasting:dc:cha}}. On a failed save, the creature must choose a different target, or the attack automatically misses. On a successful save, the creature is immune to this effect for 24 hours. The creature is aware of this effect before it makes its attack against you. In addition, for every 10 years that pass, your body ages only 1 year.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+    
+</elements>

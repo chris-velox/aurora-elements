@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name></name>
+        <update version="0.0.1">
+            <file name="warlock-the-scourge.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/frostbladestorm/complete-guide-to-sanctum/warlock-the-scourge.xml" />
+        </update>
+    </info>
+    
+    <element name="The Scourge" type="Archetype" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_WARLOCK_THE_SCOURGE">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>You have sworn a pact with a patron of pestilence. This may be a powerful demon who commands plagues, a sentient disease that has inhabited your body, or a deity of plague, decay, or rot. Such beings aim to spread their influence over as many as possible, crippling society with their afflictions. Maybe your patron aims to use the contagion to the worlds benefit, clearing out the weak in place of the strong. Whatever the case, you are a tool to be used.</p>
+            <p class="indent">Your exposure to the infections you wield may have influenced your appearance. Perhaps you have decayed skin, diseased postules, rashes, or a sickly aura around you. Maybe you have complete control over the sickness that you command, giving you a flawless vigour.</p>
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_EXPANDED_SPELL_LIST" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_AFFLICTION" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_ANTIGEN" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_NECROSIS" />
+            <div element="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_PLAGUE_CHAMPION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_AFFLICTION" level="1" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_ANTIGEN" level="6" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_NECROSIS" level="10" />
+            <grant type="Archetype Feature" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_PLAGUE_CHAMPION" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Scourge lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>detect poison and disease, ray of sickness</em></td></tr>
+                    <tr><td>2nd</td><td><em>blindness/deafness, web</em></td></tr>
+                    <tr><td>3rd</td><td><em>life transference, stinking cloud</em></td></tr>
+                    <tr><td>4th</td><td><em>giant insect, vitriolic sphere</em></td></tr>
+                    <tr><td>5th</td><td><em>contagion, insect plague</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_DETECT_POISON_AND_DISEASE</extend>
+                <extend>ID_PHB_SPELL_RAY_OF_SICKNESS</extend>
+                <extend>ID_PHB_SPELL_BLINDNESS_DEAFNESS</extend>
+                <extend>ID_PHB_SPELL_WEB</extend>
+                <extend>ID_XGTE_SPELL_LIFE_TRANSFERENCE</extend>
+                <extend>ID_PHB_SPELL_STINKING_CLOUD</extend>
+                <extend>ID_PHB_SPELL_GIANT_INSECT</extend>
+                <extend>ID_XGTE_SPELL_VITRIOLIC_SPHERE</extend>
+                <extend>ID_PHB_SPELL_CONTAGION</extend>
+                <extend>ID_PHB_SPELL_INSECT_PLAGUE</extend>
+            </spellcasting>
+            <rules>
+            </rules>
+        </element>
+        <element name="Affliction" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_AFFLICTION">
+            <description>
+                <p>Beginning at 1st level, your patron has blessed you with the power of disease. As a bonus action, you can target a creature within 15 feet and attempt to apply an affliction. the target must succeed a Constitution saving throw against your warlock spell save DC. Creatures immune to disease or already under the influence of an affliction automatically succeed this saving throw. On a failure, the target is marked with an affliction.</p>
+                <p class="indent">Choose one of the following effects to apply:</p>
+                <ul>
+                    <li><b>Arthralgic:</b> the target has disadvantage on Strength and Dexterity ability checks and saving throws.</li>
+                    <li><b>Fatigued:</b> the target has disadvantage on weapon attacks they make.</li>
+                    <li><b>Hemorrhagic:</b> when the target takes damage for the first time since the end of their last turn, they take slashing damage equal to your warlock level.</li>
+                    <li><b>Lethargic:</b> the target's speed is halved and they have disadvantage on Constitution saving throws.</li>
+                    <li><b>Nauseous:</b> the target can use an action or a bonus action, but not both.</li>
+                    <li><b>Neurologic:</b> the target has disadvantage on Intelligence and Wisdom ability checks and saving throws.</li>
+                    <li><b>Pruritic:</b> the target has disadvantage on Charisma ability checks and saving throws.</li>
+                </ul>
+                <p class="indent">An affliction lasts for 10 minutes. A <i>lesser restoration</i> spell or similar magic ends this effect.</p>
+                <p class="indent">You can successfully apply an affliction a number of times equal to your Charisma modifier (minimum 1). You regain all expended uses when you finish a short or long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{cha-mod:min-one}}/Short Rest">
+                <description>You can target a creature within 15 feet and attempt to apply an affliction. the target must succeed a Constitution saving throw (DC {{spellcasting:dc:cha}}). On a failure, the target is marked with an affliction for 10 minutes.</description>
+                <description level="14">You can target a creature within 15 feet and attempt to apply an affliction. the target must succeed a Constitution saving throw (DC {{spellcasting:dc:cha}}). On a failure, the target is marked with two afflictions for 1 hour.</description>
+            </sheet>
+            <rules>
+                <stat name="cha-mod:min-one" value="1" bonus="base" />
+                <stat name="cha-mod:min-one" value="charisma:modifier" bonus="base" />
+            </rules>
+        </element>
+        <element name="Antigen" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_ANTIGEN">
+            <description>
+                <p>Starting at 6th level, you have adapted to working with toxins. You have advantage on saving throws against being poisoned and you are immune to disease.</p>
+            </description>
+            <sheet>
+                <description>You have advantage on saving throws against being poisoned and you are immune to disease.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Necrosis" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_NECROSIS">
+            <description>
+                <p>Beginning at 10th level, a creature cannot benefit from magical healing while under the effects of your affliction feature.</p>
+            </description>
+            <sheet>
+                <description>A creature cannot benefit from magical healing while under the effects of your affliction feature.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Plague Champion" type="Archetype Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_ARCHETYPE_FEATURE_THE_SCOURGE_PLAGUE_CHAMPION">
+            <description>
+                <p>At 14th level, your patron has blessed you with absolute control over your plague. Afflictions you apply last for an hour, and when you successfully apply an affliction, you can choose two effects instead of one.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <!-- New Pact Boon -->
+        <element name="Pact of the Key" type="Class Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_KEY">
+            <supports>Pact Boon</supports>
+            <description>
+                <p>Your patron has granted you access to a pocket realm they created. You gain a key of a design resembling that of your patron. You can use this key as a spellcasting focus for your warlock spells. While you are holding your key, you can spend 1 minute channeling energy into the key to construct a 10 foot tall and 5 foot wide doorway in an unoccupied space adjacent to you. You must have a free hand to construct this doorway, and if you are interrupted you must start the construction again. Once the doorway opens, it remains open until all creatures have exited the realm. A creature can attempt to enter the realm by succeeding a Charisma saving throw with a DC equal to your spell save DC. Creatures you designate automatically succeed on this saving throw. A creature can see clearly for 15 feet through the other side of the doorway before it fades into a blur.</p>
+                <p class="indent">The environment inside this pocket realm is no larger than a 100-foot cube. The atmosphere is clean, fresh, and warm. The first time you create this pocket realm it is outfitted with a bed, a couch, a dresser, a mirror, a light source, a water source, and an icon of your patron. The doorway location on the other side of the realm is selected when you create the doorway.</p>
+                <p class="indent">If you lose your key, you can perform a 1-hour ceremony to receive a replacement from your patron. This can be performed during a short or long rest, and it destroys the previous key. The key fades when you die.</p>
+                <p class="indent">Once you successfully summon the doorway, you cannot do so again until the doorway closes.</p>
+            </description>
+            <sheet>
+                <description>While you are holding your key, you can spend 1 minute channeling energy into the key to construct a 10 foot tall and 5 foot wide doorway in an unoccupied space adjacent to you.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <!-- New Eldritch Invocations -->
+        <element name="Improved Realm" type="Class Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_REALM">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:9],ID_FBS_CGTS_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_KEY</requirements>
+            <prerequisite>9th level, Pact of the Key feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 9th level, Pact of the Key feature</p>
+                <p class="indent">The size of your pocket realm is now a maximum of a 300-foot cube. In addition, a creature that attempts to enter your realm makes their saving throw with disadvantage.</p>
+            </description>
+            <sheet>
+                <description>The size of your pocket realm is now a maximum of a 300-foot cube. In addition, a creature that attempts to enter your realm makes their saving throw with disadvantage.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Lockdown" type="Class Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_CLASS_FEATURE_ELDRITCH_INVOCATION_LOCKDOWN">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:5],ID_FBS_CGTS_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_KEY</requirements>
+            <prerequisite>5th level, Pact of the Key feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 5th level, Pact of the Key feature</p>
+                <p class="indent">You can cast <i>arcane lock</i> at will, without expending a spell slot. When arcane lock is cast this way, you must be holding your key and the spell has a range of touch.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_ARCANE_LOCK" />
+                </div>
+            </description>
+            <sheet>
+                <description>You can cast arcane lock at will, without expending a spell slot. When arcane lock is cast this way, you must be holding your key and the spell has a range of touch.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_ARCANE_LOCK" />
+            </rules>
+        </element>
+        <element name="Open Sesame" type="Class Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_CLASS_FEATURE_ELDRITCH_INVOCATION_OPEN_SESAME">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_FBS_CGTS_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_KEY</requirements>
+            <prerequisite>Pact of the Key feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Key feature</p>
+                <p class="indent">As an action, you can use your pact key to open an object such as a door, box, chest, set of manacles, padlock, or another mundane object that is locked. If the object has multiple locks, only one of them is unlocked.</p>
+                <p class="indent">You can use this invocation a number of times equal to your Charisma modifier. You regain all expended uses when you finish a short rest.</p>
+            </description>
+            <sheet action="Action" usage="{{charisma:modifier}}/Short Rest">
+                <description>You can use your pact key to open an object such as a door, box, chest, set of manacles, padlock, or another mundane object that is locked. If the object has multiple locks, only one of them is unlocked.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Planeswalker" type="Class Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_CLASS_FEATURE_ELDRITCH_INVOCATION_PLANESWALKER">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:15],ID_FBS_CGTS_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_KEY</requirements>
+            <prerequisite>15th level, Pact of the Key feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 15th level, Pact of the Key feature</p>
+                <p class="indent">You can cast <i>plane shift</i> once without expending a spell slot. You cannot do so again until you finish a long rest.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_PLANE_SHIFT" />
+                </div>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast plane shift without expending a spell slot.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_PLANE_SHIFT" />
+            </rules>
+        </element>
+        <element name="Vault of Secrets" type="Class Feature" source="Complete Guide to Sanctum" id="ID_FBS_CGTS_CLASS_FEATURE_ELDRITCH_INVOCATION_VAULT_OF_SECRETS">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_FBS_CGTS_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_KEY</requirements>
+            <prerequisite>Pact of the Key feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Key feature</p>
+                <p class="indent">As an action you can create a minor gateway with the key and reach inside it, retrieving a single item no bigger than a 5-foot cube.</p>
+                <p class="indent">You can use this action a number of times equal to your Charisma modifier. You regain all expended uses when you finish a short rest.</p>
+            </description>
+            <sheet action="Action" usage="{{charisma:modifier}}/Short Rest">
+                <description>You can create a minor gateway with the key and reach inside it, retrieving a single item no bigger than a 5-foot cube.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
