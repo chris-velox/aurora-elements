@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Archivist Revised Artificer Specialization</name>
+        <update version="0.0.1">
+            <file name="artificer-archivist-revised.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/artificer/artificer-archivist-revised.xml" />
+        </update>
+    </info>
+    
+    <element name="Archivist Revised" type="Source" source="Core" id="ID_CHIMERICWILDER_GMBINDER_SOURCE_Archivist Revised">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">AR</set>
+            <set name="url">https://www.gmbinder.com/share/-LtRHpyCBGu33TchsAAB</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="CW" url="https://www.reddit.com/user/chimericWilder/">u/chimericWilder</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20191113</set>
+        </setters>
+    </element>
+
+	<element name="Archivist Revised" type="Archetype" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_ARTIFICER_ARCHIVIST_REVISED">
+		<supports>Artificer Specialist</supports>
+		<description>
+			<p>This is a homebrew variant of the archivist that adapts it for use with the Eberron: Rising from the Last War artificer.</p>
+			<p class="indent">What are the best ways to store vast amounts of information? That question has occupied chroniclers and librarians for centuries. Scrolls and books were the finest information-storing methods for a long time, but the first Archivists imagined something greater: storing information in a real or an artificial mind. What library could match a mental archive capable of accessing information in seconds? As they work towards this goal, Archivists have become masters of storing knowledge and creating artificial intelligences fueled by magic. These techniques have yet to be perfected and institutionalized, and of all artificers, archivists are on the cutting edge of arcane science.</p>
+			<div element="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_TOOLS_OF_THE_TRADE" />
+			<div element="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ARCHIVIST_SPELLS" />
+			<div element="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ARTIFICIAL_MIND" />
+			<div element="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_HELPFUL_MIND" />
+			<div element="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_FABRICATED_FOCUS" />
+			<div element="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_MIND_NETWORK" />
+			<div element="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ASCENDED_MIND" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_TOOLS_OF_THE_TRADE" level="3" />
+			<grant type="Archetype Feature" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ARCHIVIST_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ARTIFICIAL_MIND" level="3" />
+			<grant type="Archetype Feature" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_HELPFUL_MIND" level="3" />
+			<grant type="Archetype Feature" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_FABRICATED_FOCUS" level="5" />
+			<grant type="Archetype Feature" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_MIND_NETWORK" level="9" />
+			<grant type="Archetype Feature" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ASCENDED_MIND" level="15" />
+		</rules>
+	</element>
+		<element name="Tools of the Trade" type="Archetype Feature" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_TOOLS_OF_THE_TRADE">
+			<description>
+				<p>When you adopt this specialization at 3rd level, you gain proficiency with calligrapher’s supplies. If you already have this proficiency, you gain proficiency with one other type of artisan's tools of your choice.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <select type="Proficiency" name="Tools of the Trade, Archivist" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+			</rules>
+		</element>
+		<element name="Archivist Spells" type="Archetype Feature" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ARCHIVIST_SPELLS">
+			<description>
+				<p>Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Archivist Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
+				<h5 class="caption">ARCHIVIST SPELLS</h5>
+				<table>
+					<thead>
+						<tr><td>Artificer Level</td><td>Spell</td></tr>
+					</thead>
+					<tr><td>3rd</td><td><em>comprehend languages, shield</em></td></tr>
+					<tr><td>5th</td><td><em>branding smite, detect thoughts</em></td></tr>
+					<tr><td>9th</td><td><em>sending, spirit guardians</em></td></tr>
+					<tr><td>13th</td><td><em>death ward, locate creature</em></td></tr>
+					<tr><td>17th</td><td><em>legend lore, modify memory</em></td></tr>
+				</table>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Spell" id="ID_PHB_SPELL_COMPREHEND_LANGUAGES" spellcasting="Artificer" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_SHIELD" spellcasting="Artificer" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_BRANDING_SMITE" spellcasting="Artificer" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_DETECT_THOUGHTS" spellcasting="Artificer" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_SENDING" spellcasting="Artificer" known="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_SPIRIT_GUARDIANS" spellcasting="Artificer" known="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" spellcasting="Artificer" known="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_LOCATE_CREATURE" spellcasting="Artificer" known="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_LEGEND_LORE" spellcasting="Artificer" known="true" level="17" />
+                <grant type="Spell" id="ID_PHB_SPELL_MODIFY_MEMORY" spellcasting="Artificer" known="true" level="17" />
+			</rules>
+		</element>
+		<element name="Artificial Mind" type="Archetype Feature" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ARTIFICIAL_MIND">
+			<description>
+				<p>At 3rd level, you discover how to awaken a mind inside an object. Whenever you finish a long rest and your calligrapher’s supplies are with you, you can magically rouse a keen mind within a Tiny, nonmagical object on which you write mystical symbols. The object is a magic item while the mind is inside it, and you can use it as a spellcasting focus. If you already have an artificial mind from this feature, the first one immediately dissipates.</p>
+				<p class="indent">The magic item has the following properties.</p>
+				<p class="indent"><b>Telepathic Advisor.</b> The artificial mind telepathically supplies you with advice and information about certain topics: while the item is on your person, you have proficiency in two skills specific to the mind; see the Artificial Mind table for more details.</p>
+				<p class="indent"><b>Manifest Mind.</b> As a bonus action while the item is on your person, you can cause the mind to manifest as a Tiny spectral presence, hovering in the space of yourself or a creature that is friendly to you and which is within up to 30 feet of you. The spectral mind accompanies the friendly target, and follows it as it moves, providing them with benefits. The presence is intangible and invulnerable, and it sheds dim light in a 10-foot radius.</p>
+				<p class="indent">While manifested, the spectral mind can hear and see, and it has darkvision with a range of 60 feet. As an action, you can hear and see using the mind’s senses, instead of your own, until your concentration ends (as if concentrating on a spell).</p>
+				<p class="indent">As a bonus action, you can cause the spectral mind to hover up to 30 feet to a space that you or it can see. It can pass through creatures but not objects. The spectral mind stops manifesting if you end your turn while the mind is on a space that is not occupied by a friendly creature, if it is ever more than 300 feet away from its magic item, or if you dismiss it as a bonus action.</p>
+				<h5 class="caption">ARTIFICIAL MINDS</h5>
+				<table>
+                    <thead>
+                        <tr><td>Main Material</td><td>Skill Proficiencies</td><td>Suggested Appearance</td></tr>
+                    </thead>
+                    <tr><td>Animal {parchment, leather, bone}</td><td>Animal Handling, Insight, Medicine, Perception, Survival</td><td>A beast or a humanoid visage with antlers</td></tr>
+                    <tr><td>Mineral {glass, stone, metal}</td><td>Deception, Intimidation, Performance, Persuasion</td><td>A robotic or golem-like face</td></tr>
+                    <tr><td>Plant {paper, wood}</td><td>Arcana, History, Investigation, Nature, Religion</td><td>A bespectacled visage or a treant</td></tr>
+				</table>
+			</description>
+			<sheet>
+				<description>Whenever you finish a long rest and your calligrapher’s supplies are with you, you can magically rouse a keen mind within a Tiny, nonmagical object on which you write mystical symbols. The item gains the Telepathic Advisor and Manifest Mind properties.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Helpful Mind" type="Archetype Feature" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_HELPFUL_MIND">
+			<description>
+				<p>At 3rd level, while your mind is accompanying another creature you can use an action to imbue that creature with an effect depending on which mind you have active at the moment. All effects lasts for a minute or until the mind leaves them. When you use this feature, choose between one of the following:</p>
+				<ul>
+					<li>If your manifested mind is animal-based, the target gains advantage on your choice of either Strength, Intelligence, or Charisma saving throws</li>
+					<li>If your manifested mind is mineral-based, the creature gains temporary hit points equal to your Intelligence modifier at the start of each of its turns. When the effect ends, the target loses any remaining temporary hit points from this feature</li>
+					<li>If your manifested mind is plant-based, the target gains advantage in one of the skills which the mind grants via Telepathic Advisor</li>
+					<li>With any manifested mind, you can imbue arcane energy into one simple or martial weapon the target is holding, and choose one damage type: acid, cold, fire, lightning, poison, or thunder. The first time the target deals damage with the weapon on a turn, they deal an extra 1d6 damage of the chosen type to any target hit with the weapon. As a bonus action, you can change the damage type, choosing from the options above.</li>
+				</ul>
+				<p class="indent">You can use this feature twice, and must finish a long rest before you can use it again. At 15th level, you can use this feature three times.</p>
+			</description>
+			<sheet action="Action" usage="{{helpful-mind:uses}}/Long Rest">
+				<description>While your mind is accompanying another creature you can imbue that creature with an effect depending on which mind you have active at the moment.</description>
+			</sheet>
+			<rules>
+                <stat name="helpful-mind:uses" value="2" level="3" />
+                <stat name="helpful-mind:uses" value="1" level="15" />
+			</rules>
+		</element>
+		<element name="Fabricated Focus" type="Archetype Feature" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_FABRICATED_FOCUS">
+			<description>
+				<p>At 5th level, when you cast an artificer spell, you can cast it as if you were in the spectral mind’s space, instead of your own, using its senses. When you do, you can choose to cast a spell with a range of self on the target that your artificial mind is accompanying. For all intents and purposes, you are the caster of the spell, but you can choose to have effects of the spell target the creature your artificial mind is accompanying instead of you. You can use this effect a number of times per day equal to your Intelligence modifier (at least once), and you regain all expended uses when you finish a long rest.</p>
+			</description>
+			<sheet usage="{{int-mod:min-one}}/Long Rest">
+				<description>When you cast an artificer spell, you can cast it as if you were in the spectral mind’s space, instead of your own, using its senses. When you do, you can choose to cast a spell with a range of self on the target that your artificial mind is accompanying.</description>
+			</sheet>
+			<rules>
+                <stat name="int-mod:min-one" value="1" bonus="base" />
+                <stat name="int-mod:min-one" value="intelligence:modifier" bonus="base" />
+			</rules>
+		</element>
+		<element name="Mind Network" type="Archetype Feature" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_MIND_NETWORK">
+			<description>
+				<p>At 9th level, you’ve learned how to use your artifices to access minds, both to communicate and to help.</p>
+				<p class="indent"><b>Magical Telephony.</b> While you have your Artificial Mind item on your person, you can communicate telepathically with anyone carrying an item bearing one of your artificer infusions, as the mind transmits your thoughts to each other. That person can also communicate telepathically with you as long as they have the item. This two-way communication can even cross planar boundaries.</p>
+				<p class="indent"><b>Enhanced Mind.</b> The benefits of your Helpful Mind improve.</p>
+				<ul>
+					<li>If your manifested mind is animal-based, the target gains advantage on your choice of either Constitution, Dexterity, Wisdom, Strength, Intelligence, or Charisma saving throws</li>
+					<li>If your manifested mind is mineral-based, the creature gains temporary hit points equal to twice your Intelligence modifier at the start of each of its turns. When the effect ends, the target loses any remaining temporary hit points from this feature</li>
+					<li>If your manifested mind is plant-based, the target gains advantage in one skill of your choice which is associated with its material.</li>
+					<li>With any manifested mind, you can imbue arcane energy into one simple or martial weapon the target is holding, and choose one damage type: acid, cold, fire, lightning, poison, or thunder. The first time the target deals damage with the weapon on a turn, they deal an extra 2d6 damage of the chosen type to any target hit with the weapon. If the weapon isn’t magical, it becomes a magic weapon for the spell’s duration. As a bonus action, you can change the damage type, choosing from the options above.</li>
+				</ul>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Archetype Feature" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_MIND_NETWORK_MAGICAL_TELEPHONY" level="9" />
+                <grant type="Archetype Feature" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_MIND_NETWORK_ENHANCED_MIND" level="9" />
+			</rules>
+		</element>
+            <element name="Magical Telephony" type="Archetype Feature" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_MIND_NETWORK_MAGICAL_TELEPHONY">
+                <compendium display="false" />
+                <description>
+                    <p>While you have your Artificial Mind item on your person, you can communicate telepathically with anyone carrying an item bearing one of your artificer infusions, as the mind transmits your thoughts to each other. That person can also communicate telepathically with you as long as they have the item. This two-way communication can even cross planar boundaries.</p>
+                </description>
+                <sheet>
+                    <description>While you have your Artificial Mind item on your person, you can communicate telepathically with anyone carrying an item bearing one of your artificer infusions, as the mind transmits your thoughts to each other. That person can also communicate telepathically with you as long as they have the item. This two-way communication can even cross planar boundaries.</description>
+                </sheet>
+            </element>
+            <element name="" type="Archetype Feature" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_MIND_NETWORK_ENHANCED_MIND">
+                <compendium display="false" />
+                <description>
+                    <p>The benefits of your Helpful Mind improve.</p>
+                    <ul>
+                        <li>If your manifested mind is animal-based, the target gains advantage on your choice of either Constitution, Dexterity, Wisdom, Strength, Intelligence, or Charisma saving throws</li>
+                        <li>If your manifested mind is mineral-based, the creature gains temporary hit points equal to twice your Intelligence modifier at the start of each of its turns. When the effect ends, the target loses any remaining temporary hit points from this feature</li>
+                        <li>If your manifested mind is plant-based, the target gains advantage in one skill of your choice which is associated with its material.</li>
+                        <li>With any manifested mind, you can imbue arcane energy into one simple or martial weapon the target is holding, and choose one damage type: acid, cold, fire, lightning, poison, or thunder. The first time the target deals damage with the weapon on a turn, they deal an extra 2d6 damage of the chosen type to any target hit with the weapon. If the weapon isn’t magical, it becomes a magic weapon for the spell’s duration. As a bonus action, you can change the damage type, choosing from the options above.</li>
+                    </ul>
+                </description>
+                <sheet>
+                    <description>The benefits of your Helpful Mind improve, based on what type of mind you have created. With any manifested mind, you can imbue arcane energy into one simple or martial weapon the target is holding, and choose one damage type: acid, cold, fire, lightning, poison, or thunder. The first time the target deals damage with the weapon on a turn, they deal an extra 2d6 damage of the chosen type to any target hit with the weapon. If the weapon isn’t magical, it becomes a magic weapon for the spell’s duration. As a bonus action, you can change the damage type, choosing from the options above.</description>
+                </sheet>
+            </element>
+		<element name="Ascended Mind" type="Archetype Feature" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ASCENDED_MIND">
+			<description>
+				<p>Starting at 15th level, your powers expand. You gain the following benefits.</p>
+				<p class="indent">Infoportation. As an action while your Artificial Mind magic item is on your person, you cause the mind to turn you into pure information, teleporting you to the unoccupied space nearest to the spectral mind or to an item bearing one of your artificer infusions, where you physically reappear.</p>
+				<p class="indent">You can teleport in this way once for free and must finish a long rest before doing so again. You can also use this special ability by expending a spell slot of 2nd level or higher.</p>
+				<p class="indent">Choir of Consciousness. The restrictions on your Helpful Mind are lifted. When you use your Helpful Mind, you can choose from any effect, regardless of which mind is awakened.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Archetype Feature" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ASCENDED_MIND_INFOPORTATION" level="15" />
+                <grant type="Archetype Feature" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ASCENDED_MIND_CHOIR_OF_CONSCIOUSNESS" level="15" />
+			</rules>
+		</element>
+            <element name="Infoportation" type="Archetype Feature" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ASCENDED_MIND_INFOPORTATION">
+                <compendium display="false" />
+                <description>
+                    <p>As an action while your Artificial Mind magic item is on your person, you cause the mind to turn you into pure information, teleporting you to the unoccupied space nearest to the spectral mind or to an item bearing one of your artificer infusions, where you physically reappear.</p>
+                    <p class="indent">You can teleport in this way once for free and must finish a long rest before doing so again. You can also use this special ability by expending a spell slot of 2nd level or higher.</p>
+                </description>
+                <sheet action="Action" usage="1/Long Rest">
+                    <description>While your Artificial Mind magic item is on your person, you cause the mind to turn you into pure information, teleporting you to the unoccupied space nearest to the spectral mind or to an item bearing one of your artificer infusions, where you physically reappear. You can teleport in this way once for free and must finish a long rest before doing so again. You can also use this special ability by expending a spell slot of 2nd level or higher.</description>
+                </sheet>
+            </element>
+            <element name="Choir of Consciousness" type="Archetype Feature" source="Archivist Revised" id="ID_CW_AR_ARCHETYPE_FEATURE_ARCHIVIST_REVISED_ASCENDED_MIND_CHOIR_OF_CONSCIOUSNESS">
+                <compendium display="false" />
+                <description>
+                    <p>The restrictions on your Helpful Mind are lifted. When you use your Helpful Mind, you can choose from any effect, regardless of which mind is awakened.</p>
+                </description>
+                <sheet>
+                    <description>The restrictions on your Helpful Mind are lifted. When you use your Helpful Mind, you can choose from any effect, regardless of which mind is awakened.</description>
+                </sheet>
+            </element>
+    
+</elements>
