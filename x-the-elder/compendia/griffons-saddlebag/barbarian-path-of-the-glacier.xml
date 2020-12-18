@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Path of the Glacier Primal Path</name>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-the-glacier.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/griffons-saddlebag/barbarian-path-of-the-glacier.xml" />
+        </update>
+    </info>
+    
+	<element name="Path of the Glacier" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_BARBARIAN_PATH_OF_THE_GLACIER">
+		<supports></supports>
+		<description>
+			<p>Born from the frigid and daunting Everglacier, barbarians who follow Path of the Glacier have learned to harbor the resolute stillness, patience, and unwavering determination and destruction of the icy landscape. These warriors transform their bodies into powerful moving bunkers that are as difficult to take down as they are to escape from.</p>
+			<p class="indent">Barbarians that follow this path are often trained hunters who enjoy the patient stalking of prey. They thrive on the peril they impose on their fleeing targets, and take special pride in their slow-and-steady approach.</p>
+			<div element="ID_author_source_ARCHETYPE_FEATURE_GLACIER_PERMAFROST" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_GLACIER_FROSTBITE" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_GLACIER_COLD_FORTRESS" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_GLACIER_DEEP_SLEEP" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_GLACIER_AVALANCHE_STOMP" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GLACIER_PERMAFROST" level="3" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GLACIER_FROSTBITE" level="3" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GLACIER_COLD_FORTRESS" level="6" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GLACIER_DEEP_SLEEP" level="10" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GLACIER_AVALANCHE_STOMP" level="14" />
+		</rules>
+	</element>
+		<element name="Permafrost" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GLACIER_PERMAFROST">
+			<description>
+				<p>Starting when you choose this path at 3rd level, your skin becomes icy and tough to the touch. You gain resistance to cold damage, and while you’re not wearing any armor, you gain a +1 bonus to your AC.</p>
+				<p class="indent">In addition, your rage is a cold and patient well of power. When your rage would end early due to you either not attacking or taking damage, you can choose to maintain it instead. You can use this feature a number of times equal to your Constitution modifier (minimum of 1). You regain all expended uses when you finish a long rest.</p>
+			</description>
+			<sheet usage="{{con-mod:min-one}}/Long Rest">
+				<description>When your rage would end early due to you either not attacking or taking damage, you can choose to maintain it instead.</description>
+			</sheet>
+			<rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+                <stat name="ac:misc" value="1" requirements="[armor:none]" />
+                <stat name="con-mod:min-one" value="1" bonus="base" />
+                <stat name="con-mod:min-one" value="constitution:modifier" bonus="base" />
+			</rules>
+		</element>
+		<element name="Frostbite" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GLACIER_FROSTBITE">
+			<description>
+				<p>Also at 3rd level, you can unleash the unforgiving cold inside of you with your attacks. Once on each of your turns while you’re raging, you can release a burst of sheer cold when you hit a target with a melee weapon attack. When you do, that target takes an extra 1d6 cold damage from the attack. This damage increases when you reach certain levels in this class, increasing to 2d6 cold damage at 10th level and 3d6 at 14th level.</p>
+				<p class="indent">When a creature takes cold damage in this way, its movement speed is reduced by 10 feet until the start of your next turn.</p>
+			</description>
+			<sheet>
+				<description>Once on each of your turns while you’re raging, when you hit a target with a melee weapon attack, that target takes an extra {{frostbite:damage-dice}} d6 cold damage from the attack.</description>
+			</sheet>
+			<rules>
+                <stat name="frostbite:damage-dice" value="1" level="3" />
+                <stat name="frostbite:damage-dice" value="1" level="10" />
+                <stat name="frostbite:damage-dice" value="1" level="14" />
+			</rules>
+		</element>
+		<element name="Cold Fortress" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GLACIER_COLD_FORTRESS">
+			<description>
+				<p>By 6th level, you learn to further channel the icy resilience within you. When you enter a rage and are not wearing any armor, your skin becomes shielded by a protective layer of frost. This frost grants you a number of temporary hit points equal to 1d12 + your Constitution modifier that last for 1 hour.</p>
+				<p class="indent">You can use a bonus action on your following turns while you’re raging to expend a Hit Die to gain these temporary hit points again. When you do, the number of temporary hit points you gain is equal to the maximum roll of the expended Hit Die + your Constitution modifier.</p>
+			</description>
+			<sheet>
+				<description>When you enter a rage and are not wearing any armor, your skin becomes shielded by a protective layer of frost. This frost grants you 1d12 + {{constitution:modifier}} temporary hit points that last for 1 hour. You can use a bonus action on your following turns while you’re raging to expend a Hit Die to gain these temporary hit points again. When you do, the number of temporary hit points you gain is equal to the maximum roll of the expended Hit Die + {{constitution:modifier}}.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Deep Sleep" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GLACIER_DEEP_SLEEP">
+			<description>
+				<p>At 10th level, you can choose to enter a deep state of hibernation when you take a long rest. While resting in this way, you’re cold to the touch and appear dead to all outward inspection and to spells used to determine your status. Noise and other distractions fail to wake you.</p>
+				<p class="indent">You awake from this rest after 6 hours or when you take damage or a creature uses its action to slap you awake. If you finish a continuous 6 hours of sleep in this way, you gain the benefits of finishing a long rest, and you regain all expended Hit Dice.</p>
+			</description>
+			<sheet>
+				<description>You can choose to enter a deep state of hibernation when you take a long rest. If you finish a continuous 6 hours of sleep in this way, you gain the benefits of finishing a long rest, and you regain all expended Hit Dice.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Avalanche Stomp" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GLACIER_AVALANCHE_STOMP">
+			<description>
+				<p>At 14th level, you become as mighty as an unstoppable glacier. As an action, you can stomp the ground to send out a magical tremor. All creatures of your choice within 15 feet of you must make a Dexterity saving throw (DC 8 + your proficiency bonus + your Strength modifier). On a failed save, a creature takes bludgeoning damage equal to 3d6 + your Strength modifier and is knocked prone. If you use this feature while you’re raging, your rage is maintained until the end of your next turn.</p>
+			</description>
+			<sheet action="Action">
+				<description>All creatures of your choice within 15 feet of you must make a Dexterity saving throw (DC {{avalanche-stomp:save-dc}}) or take 3d6 + {{strength:modifier}} bludgeoning damage and be knocked prone. If you use this feature while you’re raging, your rage is maintained until the end of your next turn.</description>
+			</sheet>
+			<rules>
+                <stat name="avalanche-stomp:save-dc" value="8" />
+                <stat name="avalanche-stomp:save-dc" value="proficiency" />
+                <stat name="avalanche-stomp:save-dc" value="strength:modifier" />
+			</rules>
+		</element>
+    
+</elements>

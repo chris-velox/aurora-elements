@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Runetagger Roguish Archetype</name>
+        <update version="0.0.1">
+            <file name="rogue-runetagger.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/griffons-saddlebag/rogue-runetagger.xml" />
+        </update>
+    </info>
+    
+	<element name="Runetagger" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_ROGUE_RUNETAGGER">
+		<supports></supports>
+		<description>
+			<p>You concentrate your efforts on perfecting your art, developing special marks to claim and cripple your targets. Rebel leaders, artists, spies, and other members of the political underworld might belong to this archetype. Originally a tactic for subterfuge and assassination for denizens of the festerwood, those who employ these powerful works of art are famously difficult to pin down. The magical marks left behind become a calling card for any tagger, and as their strength and notoriety grow from their deeds, so too does their renown for their artwork.</p>
+			<div element="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_IMPRESSIONIST" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_RUNES" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_ESCAPE_ARTIST" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_RESOURCEFUL" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_LEAD_PAINT" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_IMPRESSIONIST" level="3" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_RUNES" level="3" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_ESCAPE_ARTIST" level="9" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_RESOURCEFUL" level="13" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_LEAD_PAINT" level="17" />
+		</rules>
+	</element>
+		<element name="Impressionist" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_IMPRESSIONIST">
+			<description>
+				<p>Starting at 3rd level, you’re never without your brushes. You gain proficiency in calligrapher’s supplies and painter’s supplies. Your proficiency bonus is doubled whenever you make an ability check that uses either of these tools.</p>
+				<p class="indent">In addition, whenever you finish making a mark or rune with ink or paint, you can imbue it with the effects of the <i>message</i> spell. When you do, the mark is visibly magical and casts dim light in a 5-foot radius. A creature that touches the glowing mark telepathically hears the message you imbued in it. Once a message is heard, the magic fades from the mark.</p>
+				<p class="indent">You always have at least one paint or calligraphy brush on your person and either create or purchase inks and pigments as part of your downtime activities. You can improvise these tools over the course of 10 minutes, assembling them from objects in your environment.</p>
+			</description>
+			<sheet>
+				<description>Your proficiency bonus is doubled when using your calligrapher’s supplies and painter’s supplies. In addition, whenever you finish making a mark or rune with ink or paint, you can imbue it with the effects of the message spell. When you do, the mark is visibly magical and casts dim light in a 5-foot radius. A creature that touches the glowing mark telepathically hears the message you imbued in it. Once a message is heard, the magic fades from the mark.</description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_PAINTERS_SUPPLIES" />
+                <stat name="calligraphers supplies:proficiency" value="proficiency" bonus="double" />
+                <stat name="painters supplies:proficiency" value="proficiency" bonus="double" />
+                <grant type="Spell" id="ID_PHB_SPELL_MESSAGE" />
+			</rules>
+		</element>
+		<element name="Runes" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_RUNES">
+			<description>
+				<p>When you choose this archetype at 3rd level, you gain four rune points to fuel various magical effects using your brushes. When you hit a creature with a melee weapon attack, you can spend 1 rune point to quickly mark a target with a magical rune using a brush. These runes, whether magical or nonmagical, remain on a marked creature for 1 minute or until a creature uses its action to wipe it off. You regain all of your expended rune points when you finish a short or long rest.</p>
+				<p class="indent">When you mark a creature with a rune, you can choose to leave one of the following runes:</p>
+				<p class="indent">Cryos. The creature can’t take reactions until the start of your next turn. The rune’s magic fades at the start of your next turn.</p>
+				<p class="indent">Hexxus. The creature is cursed with a magical, weakening rune. While a creature is marked with the rune, you can use your reaction when it makes an attack roll or ability check to activate it, reducing the total of the attack roll or ability check by 1d6. You must be within 60 feet and be able to see the creature in order to use this reaction. You can choose to activate the rune after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails. Once this rune has been activated, its magic fades.</p>
+				<p class="indent">Locus. The next attack against the marked creature is made with advantage, and if that attack hits, it deals an extra 1d6 acid damage. Hit or miss, the rune’s magic fades after the next attack is made against the marked creature.</p>
+			</description>
+			<sheet usage="4 rune points/Short Rest">
+				<description>You have 4 rune points to fuel various magical effects using your brushes. When you hit a creature with a melee weapon attack, you can spend 1 rune point to quickly mark a target with a magical rune using a brush. These runes, whether magical or nonmagical, remain on a marked creature for 1 minute or until a creature uses its action to wipe it off. When you mark a creature with a rune, you can choose to leave one of the following runes: Cryos, Hexxus, or Locus.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Escape Artist" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_ESCAPE_ARTIST">
+			<description>
+				<p>At 9th level you become slippery and evasive, capable of worming out of even the tightest holds. You have advantage on ability checks and saving throws made to escape from and resist being grappled or restrained, and when you are grappled or restrained, you can attempt to escape as a bonus action.</p>
+				<p class="indent">In addition, you gain a new way to use your rune points. When you’re next to a wall or similar surface, you can use a bonus action to spend 1 rune point to place a rune on it using ink or paint. When you do, you become invisible until you move or take an action or a reaction.</p>
+			</description>
+			<sheet>
+				<description>You have advantage on ability checks and saving throws made to escape from and resist being grappled or restrained, and when you are grappled or restrained, you can attempt to escape as a bonus action. In addition, when you’re next to a wall or similar surface, you can use a bonus action to spend 1 rune point to place a rune on it using ink or paint. When you do, you become invisible until you move or take an action or a reaction.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Resourceful" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_RESOURCEFUL">
+			<description>
+				<p>When you reach 13th level, your mastery over the arts is lauded by friends and feared by foes. When you have no rune points remaining, you gain 1 rune point when you score a critical hit against a creature and when you roll initiative.</p>
+			</description>
+			<sheet>
+				<description>When you have no rune points remaining, you gain 1 rune point when you score a critical hit against a creature and when you roll initiative.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Lead Paint" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_RUNETAGGER_LEAD_PAINT">
+			<description>
+				<p>By 17th level, you’re able to apply more ink or paint whenever you leave a rune and use it to expose weak points in a target’s defense and guide your strikes. You can use your Sneak Attack against any creature that has a rune on it. When you do, that creature takes an extra 2d6 damage from the attack.</p>
+			</description>
+			<sheet>
+				<description>You can use your Sneak Attack against any creature that has a rune on it. When you do, that creature takes an extra 2d6 damage from the attack.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+    
+</elements>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Bard College of Dance</name>
+        <update version="0.0.1">
+            <file name="bard-college-of-dance.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/griffons-saddlebag/bard-college-of-dance.xml" />
+        </update>
+    </info>
+    
+	<element name="College of Dance" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_BARD_COLLEGE_OF_DANCE">
+		<supports></supports>
+		<description>
+			<p>Bards of the College of Dance tell stories and perform music without making a sound, choosing to instead move with feylike grace and magic to evade harm and inspire others. These dances originate from the festerwood, whose radiant spores and light made for miraculous performances and deadly hazards. These bards can be found anywhere from the local tavern to the highest levels of theater moving crowds to tears as quickly as rebellion. At every turn, they inspire others to be brave, move, and join in.</p>
+			<div element="ID_author_source_ARCHETYPE_FEATURE_DANCE_FAST_MOVEMENT" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_DANCE_INSPIRATIONAL_DANCE" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_DANCE_ENTRANCING_MOVEMENT" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_DANCE_ENDLESS_DANCE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_DANCE_FAST_MOVEMENT" level="3" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_DANCE_INSPIRATIONAL_DANCE" level="3" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_DANCE_ENTRANCING_MOVEMENT" level="6" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_DANCE_ENDLESS_DANCE" level="14" />
+		</rules>
+	</element>
+		<element name="Fast movement" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_DANCE_FAST_MOVEMENT">
+			<description>
+				<p>When you join the College of Dance at 3rd level, your walking speed increases by 10 feet. At 6th and 14th level, your walking speed increases by an extra 5 feet.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <stat name="speed:misc" value="10" level="3" />
+                <stat name="speed:misc" value="5" level="6" />
+                <stat name="speed:misc" value="5" level="14" />
+			</rules>
+		</element>
+		<element name="Inspirational Dance" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_DANCE_INSPIRATIONAL_DANCE">
+			<description>
+				<p>Also at 3rd level, you learn how to use the universal language of dance. As a bonus action, you can expend one of your uses of Bardic Inspiration to dance and reinvigorate a creature other than you who can see you. When you do, roll a Bardic Inspiration die. That creature gains temporary hit points equal to the number rolled plus your Charisma modifier (minimum of 1). When a creature gains temporary hit points in this way, it can immediately use its reaction to move up to its speed without provoking opportunity attacks or take the Dodge action.</p>
+			</description>
+			<sheet action="Bonus Action">
+				<description>You can expend one of your uses of Bardic Inspiration to dance and reinvigorate a creature other than you who can see you. When you do, roll a Bardic Inspiration die. That creature gains temporary hit points equal to the number rolled + {{cha-mod:min-one}}. When a creature gains temporary hit points in this way, it can immediately use its reaction to move up to its speed without provoking opportunity attacks or take the Dodge action.</description>
+			</sheet>
+			<rules>
+                <stat name="cha-mod:min-one" value="1" bonus="base" />
+                <stat name="cha-mod:min-one" value="charisma:modifier" bonus="base" />
+			</rules>
+		</element>
+		<element name="Entrancing Movement" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_DANCE_ENTRANCING_MOVEMENT">
+			<description>
+				<p>At 6th level, your movements become so graceful that even the most cold-hearted enemies are filled with remorse for having stopped your dance. Whenever a creature hits you with an opportunity attack, that creature takes psychic damage equal to your Charisma modifier + half your bard level.</p>
+				<p class="indent">In addition, you can use an action to cast <i>charm person</i> without expending a spell slot by weaving the incantation with your dance. When cast in this way, the target doesn’t have advantage on the saving throw if you’re currently fighting it. When you reach 14th level, you can choose to cast <i>Otto’s irresistible dance</i> in this way instead. Once you use this feature to cast a spell, you can’t do so again until you finish a long rest.</p>
+			</description>
+			<sheet action="Action" usage="1/Long Rest">
+				<description>Whenever a creature hits you with an opportunity attack, that creature takes {{entrancing-movement:damage}} psychic damage. In addition, you can use an action to cast charm person without expending a spell slot by weaving the incantation with your dance. When cast in this way, the target doesn’t have advantage on the saving throw if you’re currently fighting it.</description>
+				<description level="14">Whenever a creature hits you with an opportunity attack, that creature takes {{entrancing-movement:damage}} psychic damage. In addition, you can use an action to cast charm person or Otto’s irresistible dance without expending a spell slot by weaving the incantation with your dance. When cast in this way, the target doesn’t have advantage on the saving throw if you’re currently fighting it.</description>
+			</sheet>
+			<rules>
+                <stat name="entrancing-movement:damage" value="charisma:modifier" />
+                <stat name="entrancing-movement:damage" value="level:bard:half" />
+                <grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" level="6" />
+                <grant type="Spell" id="ID_PHB_SPELL_OTTOS_IRRESISTIBLE_DANCE" level="14" />
+			</rules>
+		</element>
+		<element name="Endless Dance" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_DANCE_ENDLESS_DANCE">
+			<description>
+				<p>By 14th level, your dance has become so invigorating that it can inspire an ally to attack. A creature that gains temporary hit points from your Inspirational Dance can choose to use its reaction to make one weapon attack.</p>
+				<p class="indent">In addition, your endless dancing allows you to more easily avoid being hit. You can use a bonus action to take the Dodge action, and whenever you use a bonus action to expend a Bardic Inspiration die, you can take the Dodge action as part of that bonus action.</p>
+			</description>
+			<sheet action="Bonus Action">
+				<description>A creature that gains temporary hit points from your Inspirational Dance can choose to use its reaction to make one weapon attack. In addition, you can use a bonus action to take the Dodge action, and whenever you use a bonus action to expend a Bardic Inspiration die, you can take the Dodge action as part of that bonus action.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+    
+</elements>

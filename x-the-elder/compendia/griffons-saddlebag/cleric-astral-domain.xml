@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Astral Domain Divine Domain</name>
+        <update version="0.0.1">
+            <file name="cleric-astral-domain.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/griffons-saddlebag/cleric-astral-domain.xml" />
+        </update>
+    </info>
+    
+	<element name="Astral Domain" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_CLERIC_ASTRAL_DOMAIN">
+		<supports></supports>
+		<description>
+			<p>Gods of the Astral Plane are as lost to time and space as the realm they reign over. The Astral Plane fills the gaps between the planes of existence and is an important, balancing force in the cosmic ecosystem of the multiverse. Practitioners of this domain see the absence of anything as something, and consider the Astral Plane as the ultimate destination of all things. These acolytes follow the ultimate path to their destination, and help shepherd others along their way in a grand mission of entropy. Clerics of the astral domain are chaotic by nature, but typically choose to destroy evil where they find it and hasten its inevitable journey to the Astral Plane.</p>
+			<div element="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_DOMAIN_SPELLS" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_BONUS_CANTRIP" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_PLANAR_REACH" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_CD_CREATE_VOID" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_CD_SPATIAL_EXCHANGE" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_POTENT_SPELLCASTING" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_SUPREME_SWITCHING" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_DOMAIN_SPELLS" level="1" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_BONUS_CANTRIP" level="1" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_PLANAR_REACH" level="1" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_CD_CREATE_VOID" level="2" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_CD_SPATIAL_EXCHANGE" level="6" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_POTENT_SPELLCASTING" level="8" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_SUPREME_SWITCHING" level="17" />
+		</rules>
+	</element>
+		<element name="Domain Spells" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_DOMAIN_SPELLS">
+			<description>
+				<p>You gain domain spells at the cleric levels listed in the Astral Domain Spells table. See the Divine Domain class feature for how domain spells work.</p>
+				<h5 class="caption">ASTRAL DOMAIN SPELLS</h5>
+				<table>
+					<thead>
+						<tr><td>Cleric Level</td><td>Spells</td></tr>
+					</thead>
+					<tr><td>1st</td><td><em>guiding bolt, longstrider</em></td></tr>
+					<tr><td>3rd</td><td><em>blur, invisibility</em></td></tr>
+					<tr><td>5th</td><td><em>blink, slow</em></td></tr>
+					<tr><td>7th</td><td><em>banishment, dimension door</em></td></tr>
+					<tr><td>9th</td><td><em>teleportation circle, wall of force</em></td></tr>
+				</table>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Spell" id="ID_PBH_SPELL_GUIDING_BOLT" spellcasting="Cleric" prepared="true" level="1" />
+                <grant type="Spell" id="ID_PBH_SPELL_LONGSTRIDER" spellcasting="Cleric" prepared="true" level="1" />
+                <grant type="Spell" id="ID_PBH_SPELL_BLUR" spellcasting="Cleric" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PBH_SPELL_INVISIBILITY" spellcasting="Cleric" prepared="true" level="3" />
+                <grant type="Spell" id="ID_PBH_SPELL_BLINK" spellcasting="Cleric" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PBH_SPELL_SLOW" spellcasting="Cleric" prepared="true" level="5" />
+                <grant type="Spell" id="ID_PBH_SPELL_BANISHMENT" spellcasting="Cleric" prepared="true" level="7" />
+                <grant type="Spell" id="ID_PBH_SPELL_DIMENSION_DOOR" spellcasting="Cleric" prepared="true" level="7" />
+                <grant type="Spell" id="ID_PBH_SPELL_TELEPORTATION_CIRCLE" spellcasting="Cleric" prepared="true" level="9" />
+                <grant type="Spell" id="ID_PBH_SPELL_WALL_OF_FORCE" spellcasting="Cleric" prepared="true" level="9" />
+			</rules>
+		</element>
+		<element name="Bonus cantrip" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_BONUS_CANTRIP">
+			<description>
+				<p>When you choose this domain at 1st level, you gain the guidance cantrip if you don’t already know it.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Spell" id="ID_PHB_SPELL_GUIDANCE" spellcasting="Cleric" known="true" level="1" />
+			</rules>
+		</element>
+		<element name="Planar Reach" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_PLANAR_REACH">
+			<description>
+				<p>At 1st level, you can create and reach through brief holes in the fabric of reality. When you cast a spell that has a range of touch, you can target a creature within 30 feet of you that you can see instead. You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
+			</description>
+			<sheet usage="{{wis-mod:min-one}}/Long Rest">
+				<description>When you cast a spell that has a range of touch, you can target a creature within 30 feet of you that you can see instead.</description>
+			</sheet>
+			<rules>
+                <stat name="wis-mod:min-one" value="1" bonus="base" />
+                <stat name="wis-mod:min-one" value="wisdom:modifier" bonus="base" />
+			</rules>
+		</element>
+		<element name="Channel Divinity: Create Void" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_CD_CREATE_VOID">
+			<description>
+				<p>Starting at 2nd level, you can use your Channel Divinity to create a brief tear in the planar fabric that leads to the Astral Plane. As a bonus action, you can point your finger at a point you can see within 60 feet to create a planar tear. The tear is minuscule, but creates a powerful vacuum that forces each creature within 15 feet of the point to make a Dexterity saving throw. On a failed save, a creature takes force damage equal to 2d10 + half your cleric level and is pulled up to 15 feet toward the point. On a succesful save, a creature takes half as much force damage and is not pulled. The tear vanishes immediately after drawing in any nearby creatures.</p>
+			</description>
+			<sheet alt="Create Void" usage="Channel Divinity" action="Bonus Action">
+				<description>You can point your finger at a point you can see within 60 feet to create a planar tear that creates a powerful vacuum that forces each creature within 15 feet of the point to make a Dexterity saving throw (DC {{spellcasting:dc:wis}}). On a failed save, a creature takes 2d10 + {{level:cleric:half}} force damage and is pulled up to 15 feet toward the point. On a succesful save, a creature takes half as much force damage and is not pulled. The tear vanishes immediately after drawing in any nearby creatures.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Channel Divinity: Spatial Exchange" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_CD_SPATIAL_EXCHANGE">
+			<description>
+				<p>By 6th level, you can use your Channel Divinity to distort the fabric of reality. As an action, you teleport up to 30 feet away to an unoccupied space you can see. Alternatively, you can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, you both teleport, swapping places.</p>
+			</description>
+			<sheet alt="Spatial Exchange" usage="Channel Divinity" action="Action">
+				<description>You teleport up to 30 feet away to an unoccupied space you can see. Alternatively, you can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, you both teleport, swapping places.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Potent Spellcasting" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_POTENT_SPELLCASTING">
+			<description>
+				<p>Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip.</p>
+			</description>
+			<sheet>
+				<description>You add {{wisdom:modifier}} to the damage you deal with any cleric cantrip.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Supreme Switching" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ASTRAL_SUPREME_SWITCHING">
+			<description>
+				<p>At 17th level, you can choose to target a hostile creature when you use your Spatial Exchange feature. When you do, that creature must make a Charisma saving throw against your cleric spell save DC. On a failure, it switches places with you. On a success, neither you nor the creature are moved by your Channel Divinity.</p>
+				<p class="indent">In addition, your comfort slipping through planes allows you to do more while you move between them. Whenever you successfully swap places with another creature using your Spatial Exchange feature, you can cast a spell of 5th level or lower with a range of touch as part of that action. The spell must have a casting time of 1 action, and you must target the creature you’re switching places with. The spell completes as you and the other creature switch places.</p>
+			</description>
+			<sheet>
+				<description>You can target a hostile creature when you use your Spatial Exchange feature. When you do, that creature must make a Charisma saving throw (DC {{spellcasting:dc:wis}}). On a failure, it switches places with you. On a success, neither you nor the creature are moved by your Channel Divinity. Whenever you successfully swap places with another creature using your Spatial Exchange feature, you can cast a spell of 5th level or lower with a range of touch as part of that action. The spell must have a casting time of 1 action, and you must target the creature you’re switching places with. The spell completes as you and the other creature switch places.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+    
+</elements>

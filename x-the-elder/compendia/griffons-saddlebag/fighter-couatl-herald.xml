@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Couatl Herald Martial Archetype</name>
+        <update version="0.0.1">
+            <file name="fighter-couatl-herald.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/griffons-saddlebag/fighter-couatl-herald.xml" />
+        </update>
+    </info>
+    
+	<element name="Couatl Herald" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_FIGHTER_COUATL_HERALD">
+		<supports></supports>
+		<description>
+			<p>The Couatl Heralds were, or are, martial warriors whose intention was to neutralize threats without always resorting to deadly force. These combatants were a beloved symbol of peace in the once great city of Hearth, whose terrible destruction has been all but entirely lost to history. Perhaps you come from a long line of sequestered heralds who had escaped the city before its collapse, or maybe you found the age-old journals of one of the city’s training officers. Regardless of how you come across this knowledge, training, and virtue, a true Couatl Herald defends the lives of all: regardless of their transgressions.</p>
+			<div element="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_AGENT_OF_MERCY" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_ONE_OF_THE_PEOPLE" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_PEACEBRINGER" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_CALM_MIND" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_PARAGON" />
+			<div element="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_HERALDIC_ENFORCER" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_AGENT_OF_MERCY" level="3" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_ONE_OF_THE_PEOPLE" level="3" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_PEACEBRINGER" level="7" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_CALM_MIND" level="10" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_PARAGON" level="15" />
+			<grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_HERALDIC_ENFORCER" level="18" />
+		</rules>
+	</element>
+		<element name="Agent of Mercy" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_AGENT_OF_MERCY">
+			<description>
+				<p>When you choose this archetype at 3rd level, you understand that not every villain needs a bloody ending. You gain three motes of positive magic that can be used to fuel your interactions with other creatures. These motes are called mercy dice, which are d6s. You regain all of your expended mercy dice when you finish a short or long rest, and you regain 1 expended mercy die when you reduce a hostile creature to 0 hit points and choose to knock it out instead of killing it outright.</p>
+				<p class="indent">Whenever you make a Wisdom (Insight) check or Charisma check, you can choose to roll one or more of these dice and add the number rolled to the ability check. You can wait until after you roll the d20 before deciding to use a mercy die, but must decide before the DM says whether the roll succeeds or fails. Alternatively, you can roll a mercy die as a bonus action to gain temporary hit points equal to your Charisma modifier + the number you rolled on the die.</p>
+				<p class="indent">You keep a mercy die until it’s used or until you kill an unconscious creature you had already spared. When you reach 10th level, your mercy dice turn into d8s, and at 15th level, they become d10s.</p>
+				<p class="indent">In addition, your carefully placed strikes allow you to knock a creature out with either melee or ranged attacks.</p>
+			</description>
+			<sheet>
+				<description>You can have up to {{mercy-dice:pool}} d{{mercy-dice:die-type}} mercy dice. Whenever you make a Insight check or Charisma check, you can choose to roll one or more of these dice and add the number rolled to the ability check. Alternatively, you can roll a mercy die as a bonus action to gain temporary hit points equal to {{charisma:modifier}} + the number you rolled on the die. You regain 1 expended mercy dice on a short or long rest, or when you reduce a hostile creature to 0 hit points and choose to knock it out instead of killing it outright.</description>
+			</sheet>
+			<rules>
+                <stat name="mercy-dice:die-type" value="6" bonus="base" level="3" />
+                <stat name="mercy-dice:die-type" value="8" bonus="base" level="10" />
+                <stat name="mercy-dice:die-type" value="10" bonus="base" level="15" />
+                <stta name="mercy-dice:pool" value="3" level="3" />
+			</rules>
+		</element>
+		<element name="One of the People" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_ONE_OF_THE_PEOPLE">
+			<description>
+				<p>At 3rd level, you gain proficiency in the Persuasion and Insight skills.</p>
+			</description>
+			<sheet display="false">
+				<description></description>
+			</sheet>
+			<rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			</rules>
+		</element>
+		<element name="Peacebringer" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_PEACEBRINGER">
+			<description>
+				<p>Starting at 7th level, your weapon attacks count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. In addition, you can use an action to cast the <i>calm emotions</i> spell, without expending a spell slot. The saving throw DC for the spell equals 8 + your proficiency bonus + your Charisma modifier. Once you cast this spell, you can’t cast it again until you finish a short or long rest.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_CALM_EMOTIONS" />
+                </div>
+			</description>
+			<sheet usage="1/Short Rest" action="Action">
+				<description>Your weapon attacks count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. In addition, you can use an action to cast the calm emotions spell, without expending a spell slot (DC {{peacebringer:save-dc}}).</description>
+			</sheet>
+			<rules>
+                <stat name="peacebringer:save-dc" value="8" />
+                <stat name="peacebringer:save-dc" value="proficiency" />
+                <stat name="peacebringer:save-dc" value="charisma:modifier" />
+                <grant type="Spell" id="ID_PHB_SPELL_CALM_EMOTIONS" level="7" />
+			</rules>
+		</element>
+		<element name="Calm Mind" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_CALM_MIND">
+			<description>
+				<p>By 10th level, you gain an additional way to regain mercy dice. When you successfully persuade a creature to stand down or deescalate an otherwise violent situation, you regain 1 mercy die. If multiple creatures are persuaded in this way, you regain 1 mercy die for each affected creature.</p>
+				<p class="indent">In addition, your mind is guarded against outside forces that would seek to sway your dedication. You can’t be charmed or frightened.</p>
+			</description>
+			<sheet>
+				<description>When you successfully persuade a creature to stand down or deescalate an otherwise violent situation, you regain 1 mercy die. If multiple creatures are persuaded in this way, you regain 1 mercy die for each affected creature.
+                You can’t be charmed or frightened.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+		<element name="Paragon" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_PARAGON">
+			<description>
+				<p>Starting at 15th level, you can have up to five mercy dice at a time. You’ve also learned how to lead your allies using magic words of empowerment. As a bonus action, you can command a creature you can see within 30 feet of you, spending a mercy die. When you do, roll the die. If the creature can hear you, it gains temporary hit points equal to your Charisma modifier + the number you rolled on the mercy die and can immediately use its reaction to move up to half its speed and make one weapon attack.</p>
+				<p class="indent">If a weapon attack made in this way reduces a creature to 0 hit points, that creature is magically knocked unconscious instead of killed outright by the attack.</p>
+			</description>
+			<sheet action="Bonus Action">
+				<description>you can command a creature you can see within 30 feet of you, spending a mercy die. When you do, roll the die. If the creature can hear you, it gains temporary hit points equal to {{charisma:modifier}} + the number you rolled on the mercy die and can immediately use its reaction to move up to half its speed and make one weapon attack. If a weapon attack made in this way reduces a creature to 0 hit points, that creature is magically knocked unconscious instead of killed outright by the attack.</description>
+			</sheet>
+			<rules>
+                <stta name="mercy-dice:pool" value="2" level="15" />
+			</rules>
+		</element>
+		<element name="Heraldic Enforcer" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COUATL_HERALD_HERALDIC_ENFORCER">
+			<description>
+				<p>At 18th level, your training has taught you to strike with the magic and force of a mighty couatl. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d10 force damage to the target. When you deal this force damage, you can choose to spend a mercy die to add an additional 1d10 force damage to the attack.</p>
+				<p class="indent">In addition, if you choose to knock a creature out instead of killing it outright when you reduce it to 0 hit points, the target remains unconscious for 8 hours or until a creature friendly to you uses an action to shake it awake, even if the target regains hit points.</p>
+			</description>
+			<sheet>
+				<description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d10 force damage to the target. When you deal this force damage, you can choose to spend a mercy die to add an additional 1d10 force damage to the attack. In addition, if you choose to knock a creature out instead of killing it outright when you reduce it to 0 hit points, the target remains unconscious for 8 hours or until a creature friendly to you uses an action to shake it awake, even if the target regains hit points.</description>
+			</sheet>
+			<rules>
+			</rules>
+		</element>
+    
+</elements>
