@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Magic and Science Backgrounds</name>
+        <update version="0.0.1">
+            <file name="magic-and-science-backgrounds.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/magic-and-science-backgrounds.xml" />
+        </update>
+    </info>
+    
+    <element name="Architect" type="Background" source="source" id="ID_author_source_BACKGROUND_ARCHITECT">
+        <description>
+            <p>You have spent your life studying and designing buildings and other structures. They are both an artform and a science to you, and their variety of style and function astounds you. Perhaps, as you have grown, you've also seen the value of architecture as a well paying profession--especially if you cut corners.</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> History, Investigation</li>
+                <li><strong>Tool Proficiencies:</strong> Choose one from: carpenter's, mason's, or cartographer's (mapping buildings and dungeons only).</li>
+                <li><strong>Languages:</strong> One of your choice</li>
+                <li><strong>Equipment:</strong> A set of tools you are proficient with, plans for a grandiose building you designed, fine clothes, a scholars pack, and a pouch with 15 gold.</li>
+            </ul>
+            <div element="ID_author_source_BACKGROUND_FEATURE_ARCHITECT_FORTRESS_BUILDER" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+        </description>
+        <setters>
+            <set name="short">History, Investigation, 1 Tool, 1 Language</set>
+        </setters>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+            <select type="Proficiency" name="Tool Proficiency, Architect" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_MASONS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_CARTOGRAPHERS_TOOLS" />
+            <select type="Language" name="Language, Architect" />
+            <grant type="Background Feature" id="ID_author_source_BACKGROUND_FEATURE_ARCHITECT_FORTRESS_BUILDER" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I use a lot of jargon and complicated language.</item>
+                <item id="2">I like to talk at length about my profession.</item>
+                <item id="3">I'm always aloof and thinking about my next project.</item>
+                <item id="4">I never enter a building without making sure it's structurally sound.</item>
+                <item id="5">I always try to find the easy way out of a situation.</item>
+                <item id="6">I always second guess my decisions.</item>
+                <item id="7">I easily relate architecture to every day situations.</item>
+                <item id="8">I've let my accomplishments go to my head.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Greed. I cut corners in my job so I can make more money. (Evil)</item>
+                <item id="2">Generosity. I often do charity jobs. My skills must be used to benefit everyone . (Good)</item>
+                <item id="3">Aspiration. I seek to be the best builder and establish my own renown style. (Any)</item>
+                <item id="4">Secrecy. I build secret passages and other things into all my work. (Neutral)</item>
+                <item id="5">Revolution. My knowledge of architecture can change the status quo. No one can hide from me.(Chaotic)</item>
+                <item id="6">Curiosity. I hold myself to the strictest codes and rules. I never cut corners.(Lawful)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">I must finish my dream building.</item>
+                <item id="2">I lost a loved one in a building collapse. I will never allow that to happen to anyone else.</item>
+                <item id="3">Someday my genius will gain my influence with Kings and Emperors</item>
+                <item id="4">I will do anything to uncover ancient artchitectural secrets.</item>
+                <item id="5">My highest goal is to make a truly impregnable fortress.</item>
+                <item id="6">The knowledge of my craft is passed on to future generations at all costs.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I am clausterphobic or scared of heights.</item>
+                <item id="2">I cannot pass up the opportunity to explore a new building in depth.</item>
+                <item id="3">I'm paranoid someone is always trying to steal my blueprints.</item>
+                <item id="4">I've stolen or copied most of my designs. I'm always looking over my shoulder.</item>
+                <item id="5">I detest talking to people below me in intelligence or creativity.</item>
+                <item id="6">My hands shake constantly, making it hard to draw or write correctly.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Fortress Builder" type="Background Feature" source="source" id="ID_author_source_BACKGROUND_FEATURE_ARCHITECT_FORTRESS_BUILDER">
+            <description>
+                <p>You specialize in fortresses, castles, and other types of fortifications. Upon spending a minute examining the outside, you have a rough idea in your head of the layout unless it is of an unusual build. You also know what areas would be weak to assault.</p>
+            </description>
+            <sheet alt="Fortress Builder">
+                <description>Upon spending a minute examining the outside of a castle, fortress or fortification, you have a rough idea in your head of the layout unless it is of an unusual build. You also know what areas would be weak to assault.</description>
+            </sheet>
+        </element>    
+
+
+    <element name="Calligrapher" type="Background" source="source" id="ID_author_source_BACKGROUND_CALLIGRAPHER">
+        <description>
+            <p>You have spent your life honing your fine skill of calligraphy, an artform which focuses on beautiful letters and script. Whether you're scribing this beautiful artwork on paper or skin, your work hints at the beauty of the written language, and perhaps even its magical qualities. No matter your ideals, you wield the powers of the written word with merely a paper and quill.</p>
+            <h5>SPECIALTY</h5>
+            <p>Each calligrapher has a specialty they use to make money.</p>
+            <h5 class="caption">SPECIALIZATION</h5>
+            <table>
+                <thead>
+                    <tr><td>d4</td><td>Specialization</td></tr>
+                </thead>
+                <tr><td>1</td><td>Court scribe</td></tr>
+                <tr><td>2</td><td>Tattoo Artist</td></tr>
+                <tr><td>3</td><td>Commissioned Artist</td></tr>
+                <tr><td>4</td><td>Commercial Scribe</td></tr>
+            </table>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Persuasion, Sleight of Hand</li>
+                <li><strong>Tool Proficiencies:</strong> Calligrapher's tools</li>
+                <li><strong>Languages:</strong> One of your choice</li>
+                <li><strong>Equipment:</strong> An example of your work, a reference from an influential buyer, calligrapher's tools, diplomat's pack, and a pouch with 10 gold.</li>
+            </ul>
+            <div element="ID_author_source_BACKGROUND_FEATURE_CALLIGRAPHER_IN_DEMAND" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+        </description>
+        <setters>
+            <set name="short">Persuasion, Sleight of Hand, Calligrapher's Tools, 1 Language</set>
+        </setters>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+            <select type="Language" name="Language, Scribe" />
+            <grant type="Background Feature" id="ID_author_source_BACKGROUND_FEATURE_CALLIGRAPHER_IN_DEMAND" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I use flamboyant language and wear flamboyant clothes.</item>
+                <item id="2">I love parties and the lavish life.</item>
+                <item id="3">I almost never speak. My thoughts are best written.</item>
+                <item id="4">I talk down to nobility because I think they need me so it doesn't matter.</item>
+                <item id="5">I am extremely shy and never make eye contact.</item>
+                <item id="6">I love to talk extensively about my rare pen collection.</item>
+                <item id="7">I always have a riddle or useless bit of trivia and love to share them.</item>
+                <item id="8">I judge people based on their handwriting.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Fame. I will do just about anything to maintain my fame or gain more. (Any)</item>
+                <item id="2">Consistency. Just like life demands consistency and detail, so must every letter I write always be the same. (Lawful)</item>
+                <item id="3">Creativity. Just like life is always changing, so must every work, every letter I write, be different from every before it. (Chaotic)</item>
+                <item id="4">Secrecy. My writings contain hidden secrets and symbols for those who know how to see them .(Any)</item>
+                <item id="5">Inspiration. The beauty and content of my letters inspire people to be better than they are .(Good)</item>
+                <item id="6">Sabatoge. I destroy the works of other artists so mine is the only beauty in the world.(Evil)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">My pen is my life, I will do anything to protect it.</item>
+                <item id="2">My allegience is to my King.</item>
+                <item id="3">I must teach letters to any who don't know them.</item>
+                <item id="4">I travel so I can leave my mark in every place I visit.</item>
+                <item id="5">Any who work against my aims must be slandered.</item>
+                <item id="6">I long to do more than simple calligraphy, I just don't know what that is yet.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I have a horrible stammer.</item>
+                <item id="2">I will do anything for a paid gig.</item>
+                <item id="3">I get irate when anyone criticizes my work.</item>
+                <item id="4">I leave my mark on walls and people like graffitti.</item>
+                <item id="5">My fame means I can't go anywhere without being recognized.</item>
+                <item id="6">Authority scares me, I will do anything they ask.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: In Demand" type="Background Feature" source="source" id="ID_author_source_BACKGROUND_FEATURE_CALLIGRAPHER_IN_DEMAND">
+            <description>
+                <p>Your work speaks for itself. Everywhere you go, you know where to procure calligraphy work or to sell your work for the highest price.</p>
+            </description>
+            <sheet alt="In Demand">
+                <description>Everywhere you go, you know where to procure calligraphy work or to sell your work for the highest price.</description>
+            </sheet>
+        </element>    
+
+
+    <element name="Iconoclast (Artifact Destroyer)" type="Background" source="source" id="ID_author_source_BACKGROUND_ICONOCLAST">
+        <description>
+            <p>You have devoted your life to finding and destroying, hiding, or cleansing powerful magical items. Perhaps you fear their power and believe the world would be better without them. Maybe you wish to rid the world of cursed and evil items. Or rather, instead your motives are less pure: you seek to destroy any magical item you can't wield yourself,or which threatens your rise to power. Whatever the reason, you are driven by eradicating the presence of at least certain magical items from existence.</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Arcana, Sleight of Hand</li>
+                <li><strong>Tool Proficiencies:</strong> Thieves' tools</li>
+                <li><strong>Languages:</strong> One of your choice</li>
+                <li><strong>Equipment:</strong> Thieves tools, an unfinished map to an item of legendary power, a broken dagger, and a pouch containing 5 gp.</li>
+            </ul>
+            <div element="ID_author_source_BACKGROUND_FEATURE_ICONOCLAST_EXTRACTION" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+        </description>
+        <setters>
+            <set name="short">Arcana, Sleight of Hand, Thieves' tools, 1 Language</set>
+        </setters>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+            <select type="Language" name="Language, Iconoclast" />
+            <grant type="Background Feature" id="ID_author_source_BACKGROUND_FEATURE_ICONOCLAST_EXTRACTION" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I am always cynical of people's motives.</item>
+                <item id="2">I horde an unusual or quirky item.</item>
+                <item id="3">Destroying items makes me numb to the feelings of unrequited love.</item>
+                <item id="4">I'm funny and lovable to put people off their guard.</item>
+                <item id="5">Magic, and people who use it, scare me.</item>
+                <item id="6">I have trouble talking to other people unless I have my "comfort item" with me.</item>
+                <item id="7">My profession drives me to drink and party too much.</item>
+                <item id="8">I'm constantly searching for approval from an authority figure in my life.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Duty. My god or King has ordered me to destroy certain magical items. (Lawful)</item>
+                <item id="2">Security. The world will not be safe until magic is eradicated from the world. (Neutral)</item>
+                <item id="3">Leverage. I will do anything to increase my own power and dimish others'. (Evil)</item>
+                <item id="4">Fear. I fear the power of magic and items of magic. (Chaotic)</item>
+                <item id="5">Revenge. I seek revenge on a magic wielder that took everything from me. (Evil)</item>
+                <item id="6">Purification. I will rid the world of evil magic and items. (Good)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">I will kill the one who wronged me.</item>
+                <item id="2">My mission is the only thing I have left.</item>
+                <item id="3">I will prove my worth to the one I love.</item>
+                <item id="4">I refuse to believe magic is good.</item>
+                <item id="5">I will make this world safe for the one I love.</item>
+                <item id="6">No one will be as powerful as I am.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I will kill anyone who gets in my way.</item>
+                <item id="2">I have no sense of direction. I always get lost.</item>
+                <item id="3">I refuse to speak to anyone who uses magic.</item>
+                <item id="4">I'm almost always drunk.</item>
+                <item id="5">I'm scared of the dark.</item>
+                <item id="6">My choice of fashion makes me very conspicuous.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Extraction" type="Background Feature" source="source" id="ID_author_source_BACKGROUND_FEATURE_ICONOCLAST_EXTRACTION">
+            <description>
+                <p>Once a magical item and its properties have been identified, you have a general idea of its history, who created it, and as such, know where to seek information on its lore and how to dispose, cleanse, or hide it.</p>
+            </description>
+            <sheet alt="Extraction">
+                <description>Once a magical item and its properties have been identified, you have a general idea of its history, who created it, and as such, know where to seek information on its lore and how to dispose, cleanse, or hide it.</description>
+            </sheet>
+        </element>    
+
+
+    <element name="Magical Merchant" type="Background" source="source" id="ID_author_source_BACKGROUND_MAGICAL_MERCHANT">
+        <description>
+            <p>You have spent your life in search of two things--magical items and profit. Maybe you have the ability to acquire these objects yourself, or you know how to obtain them cheaply. You're not necessarily a cheating scumball, and perhaps you have come to your trade through honorable means. No matter how you've come about it, you know how to buy and sell quality magical items.</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Arcana, Persuasion</li>
+                <li><strong>Tool Proficiencies:</strong> Land or water vehicles</li>
+                <li><strong>Languages:</strong> One of your choice</li>
+                <li><strong>Equipment:</strong> Scribbled notes on an ancient and valuable artifact, a mule and cart, a diplomat's pack, and a pouch with 15 gold.</li>
+            </ul>
+            <div element="ID_author_source_BACKGROUND_FEATURE_MAGICAL_MERCHANT_PROCUREMENT" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+        </description>
+        <setters>
+            <set name="short">Arcana, Persuasion, 1 Vehicle, 1 Language</set>
+        </setters>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+            <select type="Proficiency" name="Vehicle Proficiency, Magical Merchant" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND|ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+            <select type="Language" name="Language, Magical Merchant" />
+            <grant type="Background Feature" id="ID_author_source_BACKGROUND_FEATURE_MAGICAL_MERCHANT_PROCUREMENT" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I judge people based on how rich they look.</item>
+                <item id="2">I like to talk at length about my profession.</item>
+                <item id="3">I'm always looking for the best deal possible.</item>
+                <item id="4">Hearing the jingle of coins gets me daydreaming.</item>
+                <item id="5">The first thing I do in a new place is make contacts.</item>
+                <item id="6">I know a little about every ancient culture.</item>
+                <item id="7">I'd rather sweet talk my way out of a situation than fight.</item>
+                <item id="8">I like to swindle people out of their money.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Greed. I will do anything to obtain more money.(Evil)</item>
+                <item id="2">Generosity. Money is meant to be a force for good. It can change the world.(Good)</item>
+                <item id="3">Security. I make just enough money to provide for me and those I love.(Neutral)</item>
+                <item id="4">Freedom. Money gives me the ability to live freely and make my own choices.(Chaotic)</item>
+                <item id="5">Fairness. Everyone deserves a fair price.(Lawful)</item>
+                <item id="6">Curiosity. Buying and selling magical items keeps me curious and learning.(Any)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">I will do anything to protect my reputation.</item>
+                <item id="2">Money is my god.</item>
+                <item id="3">I must never be burdened by others' motives.</item>
+                <item id="4">Injustice of every kind must be eradicated.</item>
+                <item id="5">I must learn everything there is to know about magical items.</item>
+                <item id="6">I will do anything to make sure those I love are safe.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I have a lot of trouble with basic counting.</item>
+                <item id="2">People I've cheated often seek to get revenge on me.</item>
+                <item id="3">I'm often too generous, leaving nothing for myself.</item>
+                <item id="4">I frequently mix up words in other languages.</item>
+                <item id="5">I have a tendency to "acquire" other culture's valuable artifacts.</item>
+                <item id="6">I have a really bad gambling problem.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Procurement" type="Background Feature" source="source" id="ID_author_source_BACKGROUND_FEATURE_MAGICAL_MERCHANT_PROCUREMENT">
+            <description>
+                <p>Because of your business dealings, you are able to obtain loans, investments, and discounts with relative ease. You know the best place to obtain money, who is likely to give you good rates, and have a knack for knowing what to offer as collatoral.</p>
+            </description>
+            <sheet alt="Procurement">
+                <description>You know the best place to obtain money, who is likely to give you good rates, and have a knack for knowing what to offer as collatoral.</description>
+            </sheet>
+        </element>    
+
+
+    <element name="Scientist" type="Background" source="source" id="ID_author_source_BACKGROUND_SCIENTIST">
+        <description>
+            <p>You have spent years learning the inner workings of complex mundane items. You have disassembled and reassembled, studied bluprints, and conceived of machines not yet invented. Your efforts have given you ability to craft items others would not be able to.</p>
+            <ul class="unstyled">
+                <li><strong>Skill Proficiencies:</strong> Investigation, Sleight of Hand</li>
+                <li><strong>Tool Proficiencies:</strong> Choose one from: alchemy tools, tinker's tools.</li>
+                <li><strong>Languages:</strong> Choose one from Gnomish, Goblin, or Modron</li>
+                <li><strong>Equipment:</strong> One set of tools you are proficient with, a half completed formula or mechanical blue print, common clothes, dungeoner's pack, and 10 gp.</li>
+            </ul>
+            <div element="ID_author_source_BACKGROUND_FEATURE_SCIENTIST_MECHANICALLY_MINDED" />
+            <h5>SUGGESTED CHARACTERISTICS</h5>
+        </description>
+        <setters>
+            <set name="short">Investigation, Sleight of Hand, 1 Tool, 1 Language</set>
+        </setters>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+            <select type="Proficiency" name="Tool Proficiency, Scientist" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES|ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+            <select type="Language" name="Language, Scientist" supports="ID_LANGUAGE_GNOMISH|ID_LANGUAGE_GOBLIN|ID_MM_LANGUAGE_MODRON" />
+            <grant type="Background Feature" id="ID_author_source_BACKGROUND_FEATURE_SCIENTIST_MECHANICALLY_MINDED" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+            <select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+            <select type="List" name="Personality Trait" number="2">
+                <item id="1">I always have my nose in a book, notebook, or contraption.</item>
+                <item id="2">I find it difficult to talk to most people--I prefer machines or animals.</item>
+                <item id="3">I know how to be the life of the party. It's great for raising money!</item>
+                <item id="4">I'm so smart people usually find me difficult to understand</item>
+                <item id="5">I can talk for hours and hours about whatever I'm working on.</item>
+                <item id="6">I constantly analyze and judge people in my head before they even have a chance to talk.</item>
+                <item id="7">I'm certain that nearly everyone finds me attractive.</item>
+                <item id="8">I'm as obsessed with good food as I am with my work.</item>
+            </select>
+            <select type="List" name="Ideal">
+                <item id="1">Progress. My work will change the world.(Any)</item>
+                <item id="2">Curiosity. I could never know enough about the world around me.(Chaotic)</item>
+                <item id="3">Power. I will create the most powerful item the world has seen.(Evil)</item>
+                <item id="4">Methodology. Life, like science, must abide by a strict methodology. (Lawful)</item>
+                <item id="5">Balance. I create items that will bring balance if good or evil become too powerful.(Neutral)</item>
+                <item id="6">Greed. My inventions are available to the highest bidder.(Chaotic)</item>
+            </select>
+            <select type="List" name="Bond">
+                <item id="1">My inventions must reveal the truth of the world around them.</item>
+                <item id="2">My mind is my most important aspect. I will do anything to protect it.</item>
+                <item id="3">I will do anything to protect and cultivate my reputation.</item>
+                <item id="4">My work must create a better life for the opressed and marginalized.</item>
+                <item id="5">My work and my name will be known throughout the world.</item>
+                <item id="6">No one must ever discover my secret.</item>
+            </select>
+            <select type="List" name="Flaw">
+                <item id="1">I have a bad case of narcolepsy .</item>
+                <item id="2">My contraptions have a tendancy to "malfunction".</item>
+                <item id="3">I sometimes dissapear for days to work on things.</item>
+                <item id="4">I often forget to eat or take care of myself, leading to exhaustion.</item>
+                <item id="5">I'm not afraid to leave everyone behind if there's trouble.</item>
+                <item id="6">My aloof nature tends to annoy other people.</item>
+            </select>
+        </rules>
+    </element>
+        <element name="Feature: Mechanically Minded" type="Background Feature" source="source" id="ID_author_source_BACKGROUND_FEATURE_SCIENTIST_MECHANICALLY_MINDED">
+            <description>
+                <p>Your years working with mechanical items have made you especially good at dealing with traps. Wherever you go, your skill becomes known quickly, and people seek out your advice in protecting their assets or acquiring various targets. They are willing to pay a modest price for your advice, but are more apt to hire you for various installation and acquisition contracts.</p>
+            </description>
+            <sheet alt="Mechanically Minded">
+                <description>Wherever you go, your skill becomes known quickly, and people seek out your advice in protecting their assets or acquiring various targets. They are willing to pay a modest price for your advice, but are more apt to hire you for various installation and acquisition contracts.</description>
+            </sheet>
+        </element>    
+
+
+</elements>
