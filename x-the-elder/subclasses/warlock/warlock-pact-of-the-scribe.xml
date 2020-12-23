@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Warlock Pact of the Scribe and Invocations</name>
+        <update version="0.0.1">
+            <file name="warlock-pact-of-the-scribe.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-pact-of-the-scribe.xml" />
+        </update>
+    </info>
+    
+    <element name="Eldritch Marks" type="Source" source="Core" id="ID_AEYANA_GMBINDER_SOURCE_Eldritch Marks">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">WEM</set>
+            <set name="url">https://www.gmbinder.com/share/-M6NrhDB_QodlNzpk9Oh</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="AEYANA" url="https://www.gmbinder.com/profile/witchfire">Witchfire</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20201218</set>
+        </setters>
+    </element>
+    
+    <element name="Pact of the Scribe" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_SCRIBE">
+        <supports>Pact Boon</supports>
+        <description>
+            <p>Your patron imprints into your mind an eldritch mark: a magical symbol of power entrusted to you, and offers you the tools to create it.</p>
+            <div class="sidebar">
+                <h5 class="caption">WARLOCK PACT OF THE SCRIBE</h5>
+                <p>A patron who wants to leave their physical trace on the world may grant a warlock the Pact of the Scribe. When a warlock is given this pact boon, they are entrusted with a magical symbol and given a set of artistic abilities. The warlock’s life then is then defined by this mystical glyph.</p>
+            </div>
+            <p class="indent">You gain proficiency with one type of artisan’s tools: the tools you use to make your mark. Your patron also grants you a matching set of tools. If you lose your tools, you can perform a 1-hour ritual to conjure a new set. The set turns to ash when you die.</p>
+            <p class="indent">As an action while you have the chosen tools in hand, you conjure your eldritch mark on a flat surface within 5 feet. Your mark can cover an area up to 5 feet in diameter and can be made nearly invisible, requiring a successful Investigation check against your spell save DC to discern. If the object it’s placed on moves, the mark moves with it.</p>
+            <p class="indent">While you’re on the same plane as your eldritch mark, it functions as a magical extension of your being.</p>
+            <ul>
+                <li>You know the approximate distance and direction to the mark, and can tell if it’s being moved.</li>
+                <li>You can channel your senses through the mark, using your action to see and hear as if you were in its space. You can only see in the direction the mark is facing, and only while it remains uncovered. You return to your senses if you use your action to do anything else or if you willingly end the effect. For the duration, you’re deaf and blind with regards to your current senses.</li>
+                <li>While channeling your senses through the mark, you can cast a warlock spell as if you were in its space. The spell must only target creatures you can perceive through the mark or create an area effect originating from the mark’s location. The mark is then dispelled.</li>
+            </ul>
+            <p class="indent">You can have a number of active eldritch marks equal to the number of spell slots you gain from pact magic. If you exceed this limit, the oldest mark is immediately dispelled. A mark is also dispelled if it’s targeted by <i>dispel magic</i>, or if the surface it’s on takes damage. A dispelled mark loses its magic and can’t be used by you but leaves behind its physical form.</p>
+            <div class="sidebar">
+                <h5 class="caption">A MARK’S APPEARANCE</h5>
+                <p>Eldritch marks are symbolic of your pact with your patron. When designing your eldritch mark, consider the imagery associated with your patron. For instance, if your patron is the archfey, your mark may contain intricate knotwork, or if your patron is the celestial, your mark may contain runes, hieroglyphics, or the symbol of your deity.</p>
+                <p class="indent">While an eldritch mark’s design rarely changes over the span of a warlock’s pact, the way it appears on an object can vary with each inscription. For instance, a mark may appear as a drawing, a painting, an engraving, or even a natural discoloration. Its physical form should be appropriate to the material it’s placed on.</p>
+                <p class="indent">When a mark is dispelled, it loses any semblance of magic but leaves behind its physical form, a memoir of the warlock’s presence.</p>
+            </div>
+        </description>
+        <sheet action="Action">
+            <description>You conjure your eldritch mark on a flat surface within 5 feet. Your mark can cover an area up to 5 feet in diameter and can be made nearly invisible, requiring a successful Investigation check against your spell save DC to discern. If the object it’s placed on moves, the mark moves with it. You can have up to {{warlock:spellcasting:slots:count}} active at once.</description>
+        </sheet>
+        <rules>
+            <select type="Proficiency" name="Artisan’s Tools Proficiency, Pact of the Scribe" supports="Artisan tools" />
+        </rules>
+    </element>
+    <element name="Conjurer of the All-Seeing Eye" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_CONJURER_OF_THE_ALL_SEEING_EYE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_SCRIBE</requirements>
+        <prerequisite>Pact of the Scribe feature</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Pact of the Scribe feature</p>
+            <p class="indent">You learn the <i>alarm</i> spell and can cast it as a ritual using your artisan’s tools. The spell is a warlock spell, and doesn’t count against your total number of spells known. When you cast the spell using this feature, your eldritch mark’s design appears around the warded object or area.</p>
+        </description>
+        <sheet>
+            <description>You can cast alarm using your artisan’s tools. When you cast the spell using this feature, your eldritch mark’s design appears around the warded object or area.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_ALARM" spellcasting="Warlock" />
+        </rules>
+    </element>
+    <element name="Eldritch Transposition" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_TRANSPOSITION">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:12],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_SCRIBE</requirements>
+        <prerequisite>12th level, Pact of the Scribe feature</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 12th level, Pact of the Scribe feature</p>
+            <p class="indent">You can transpose yourself through space, channeling your physical form through your mark’s magic. As an action, you teleport to an unoccupied space within 30 feet of one of your eldritch marks. After you teleport, the mark is dispelled and the total number of eldritch marks you can have is reduced by 1, to a possible minimum of 0. This reduction lasts until you finish a long rest.</p>
+            <p class="indent">You cannot use this feature to teleport to a different plane.</p>
+        </description>
+        <sheet action="Action">
+            <description>You teleport to an unoccupied space within 30 feet of one of your eldritch marks. After you teleport, the mark is dispelled and the total number of eldritch marks you can have is reduced by 1, to a possible minimum of 0. This reduction lasts until you finish a long rest.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Speaker of the Cabal" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_SPEAKER_OF_THE_CABAL">
+        <supports>Eldritch Invocation</supports>
+        <requirements>ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_SCRIBE</requirements>
+        <prerequisite>Pact of the Scribe feature</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Pact of the Scribe feature</p>
+            <p class="indent">While perceiving through your eldritch mark, you can speak telepathically to any creature you can see within 30 feet of it. Your telepathic utterances are in a language that you know, and the creature understands you only if it knows that language. Your communication doesn’t give the creature the ability to respond to you telepathically.</p>
+            <p class="indent">After speaking to a creature this way, it gains advantage on any Investigation checks made to discern your eldritch marks for one minute.</p>
+        </description>
+        <sheet>
+            <description>While perceiving through your eldritch mark, you can speak telepathically to any creature you can see within 30 feet of it. Your telepathic utterances are in a language that you know, and the creature understands you only if it knows that language. Your communication doesn’t give the creature the ability to respond to you telepathically. After speaking to a creature this way, it gains advantage on any Investigation checks made to discern your eldritch marks for one minute.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Witch’s Circle" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_WITCHS_CIRCLE">
+        <supports>Eldritch Invocation</supports>
+        <requirements>[level:5],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_SCRIBE</requirements>
+        <prerequisite>5th level, Pact of the Scribe feature</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level, Pact of the Scribe feature</p>
+            <p class="indent">You can cast <i>glyph of warding</i> once without consuming material components or a spell slot, but must finish a long rest before you can do so again. When you cast the spell using this feature, the glyph incorporates your eldritch mark’s design into its form.</p>
+            <p class="indent">If you use this feature again before the first glyph has been triggered, the first one harmlessly disappears without triggering.</p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_GLYPH_OF_WARDING" />
+            </div>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>You can cast glyph of warding once without consuming material components or a spell slot. When you cast the spell using this feature, the glyph incorporates your eldritch mark’s design into its form. If you use this feature again before the first glyph has been triggered, the first one harmlessly disappears without triggering.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_GLYPH_OF_WARDING" />
+        </rules>
+    </element>
+
+</elements>
