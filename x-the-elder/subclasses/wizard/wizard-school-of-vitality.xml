@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>School of Vitality Arcane Tradition</name>
+        <update version="0.0.1">
+            <file name="wizard-school-of-vitality.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/wizard/wizard-school-of-vitality.xml" />
+        </update>
+    </info>
+    
+    <element name="School of Vitality" type="Source" source="Core" id="ID_author_source_SOURCE_School of Vitality">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SOV</set>
+            <set name="url">https://www.gmbinder.com/share/-M4qLRNk3MVJ-E3C-uKo</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="G2" url="https://www.gmbinder.com/profile/gannoh2">Gannoh2</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20201223</set>
+        </setters>
+    </element>
+
+    <element name="School of Vitality" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_WIZARD_SCHOOL_OF_VITALITY">
+        <supports></supports>
+        <description>
+            <p>Practitioners of the School of Vitality, commonly called vitalists or white mages, are wizards who use their magic to aid the sick and wounded. They can be found serving as battlefield medics, royal doctors, and itinerant healers.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_VITALITY_SKILLED_HEALER" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_VITALITY_VITALITY_MAGIC" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_VITALITY_BOLSTER" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_VITALITY_VITAL_SURGE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_VITALITY_GREATER_BOLSTER" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_VITALITY_SKILLED_HEALER" level="2" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_VITALITY_VITALITY_MAGIC" level="2" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_VITALITY_BOLSTER" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_VITALITY_VITAL_SURGE" level="10" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_VITALITY_GREATER_BOLSTER" level="14" />
+        </rules>
+    </element>
+        <element name="Skilled Healer" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_VITALITY_SKILLED_HEALER">
+            <description>
+                <p>At 2nd level, you learn the <i>spare the dying</i> cantrip. It doesn't count against the number of cantrips you know. You also gain proficiency in the Medicine skill. If you are already proficient, add double your proficiency bonus to any checks made using it.</p>
+                <p class="indent">In addition, vitality spells (see below) are added to the wizard spell for you. Vitalists can copy vitality spells from each others' spellbooks, but other wizards cannot. However, you cannot select vitality spells for your Spell Mastery feature.</p>
+                <table>
+                    <tr><td>CANTRIPS</td><td>3RD LEVEL</td><td>6TH LEVEL</td></tr>
+                    <tr><td>Resistance</td><td>Mass Healing Word</td><td>Heal</td></tr>
+                    <tr><td>Spare the Dying</td><td>Revivify</td><td>7TH LEVEL</td></tr>
+                    <tr><td>1ST LEVEL</td><td>4TH LEVEL</td><td>Regenerate</td></tr>
+                    <tr><td>Cure Wounds</td><td>Aura of Life</td><td>8TH LEVEL</td></tr>
+                    <tr><td>Healing Word</td><td>Death Ward</td><td>None</td></tr>
+                    <tr><td>Detect Poison and Disease</td><td>5TH LEVEL</td><td>9TH LEVEL</td></tr>
+                    <tr><td>Purify Food and Drink</td><td>Greater Restoration</td><td>Mass Heal</td></tr>
+                    <tr><td>2ND LEVEL</td><td>Mass Cure Wounds</td><td>True Resurrection</td></tr>
+                    <tr><td>Aid</td><td>Raise Dead</td><td></td></tr>
+                    <tr><td>Lesser Restoration</td><td></td><td></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Wizard" extend="true">
+                <extend>ID_PHB_SPELL_RESISTANCE</extend>
+                <extend>ID_PHB_SPELL_SPARE_THE_DYING</extend>
+                <extend>ID_PHB_SPELL_CURE_WOUNDS</extend>
+                <extend>ID_PHB_SPELL_HEALING_WORD</extend>
+                <extend>ID_PHB_SPELL_DETECT_POISON_AND_DISEASE</extend>
+                <extend>ID_PHB_SPELL_PURIFY_FOOD_AND_DRINK</extend>
+                <extend>ID_PHB_SPELL_AID</extend>
+                <extend>ID_PHB_SPELL_LESSER_RESTORATION</extend>
+                <extend>ID_PHB_SPELL_MASS_HEALING_WORD</extend>
+                <extend>ID_PHB_SPELL_REVIVIFY</extend>
+                <extend>ID_PHB_SPELL_AURA_OF_LIFE</extend>
+                <extend>ID_PHB_SPELL_DEATH_WARD</extend>
+                <extend>ID_PHB_SPELL_GREATER_RESTORATION</extend>
+                <extend>ID_PHB_SPELL_MASS_CURE_WOUNDS</extend>
+                <extend>ID_PHB_SPELL_RAISE_DEAD</extend>
+                <extend>ID_PHB_SPELL_HEAL</extend>
+                <extend>ID_PHB_SPELL_REGENERATE</extend>
+                <extend>ID_PHB_SPELL_MASS_HEAL</extend>
+                <extend>ID_PHB_SPELL_TRUE_RESURRECTION</extend>
+            </spellcasting>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" spellcasting="Wizard" known="true" />
+                <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_MEDICINE" />
+            </rules>
+        </element>
+        <element name="Vitality Magic" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_VITALITY_VITALITY_MAGIC">
+            <description>
+                <p>Starting at 2nd level, you gain the ability to recycle expended arcane energy for bolstering and healing. When you expend a spell slot, choose one of the following effects.</p>
+                <p class="indent">Choose one creature you can see within 30 feet of you. It either gains a number of temporary hit points or regains a number of hit points equal to the level of the expended spell slot (your choice).</p>
+                <p class="indent">You gain a number of vitality points equal to the level of the expended spell slot. When you target one or more creatures with a spell that restores hit points, you can expend vitality points to make one target regain additional hit points equal to the number of vitality points expended. You can expend more vitality points to make a different target regain additional hit points as well.</p>
+                <p class="indent">Additionally, as a bonus action, you can choose one creature you can see within 30 feet of you and expend any number of vitality points. It either gains a number of temporary hit points or regains a number of hit points equal to the number of vitality points expended (your choice). You lose any unused vitality points when you finish a long rest.</p>
+            </description>
+            <sheet>
+                <description>When you expend a spell slot, choose one of the following effects. Choose one creature you can see within 30 feet of you. It either gains a number of temporary hit points or regains a number of hit points equal to the level of the expended spell slot (your choice). You gain a number of vitality points equal to the level of the expended spell slot. When you target one or more creatures with a spell that restores hit points, you can expend vitality points to make one target regain additional hit points equal to the number of vitality points expended. You can expend more vitality points to make a different target regain additional hit points as well. Additionally, as a bonus action, you can choose one creature you can see within 30 feet of you and expend any number of vitality points. It either gains a number of temporary hit points or regains a number of hit points equal to the number of vitality points expended (your choice). You lose any unused vitality points when you finish a long rest.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Bolster" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_VITALITY_BOLSTER">
+            <description>
+                <p>Starting at 6th level, you can enhance your restorative spells. When you target a creature with a vitality spell of 1st level or higher, you can give it one of the following benefits.</p>
+                <p class="indent"><b><i>Alacrity.</i></b> The target's movement speed increases by 5 feet until the end of its next turn.</p>
+                <p class="indent"><b><i>Might.</i></b> The target receives a +1 bonus to its attack rolls until the end of its next turn.</p>
+                <p class="indent"><b><i>Ward.</i></b> The target gains a number of temporary hit points equal to the spell's level.</p>
+            </description>
+            <sheet>
+                <description>When you target a creature with a vitality spell of 1st level or higher, you can give it one of the following benefits: Alacrity, Might, or Ward.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Vital Surge" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_VITALITY_VITAL_SURGE">
+            <description>
+                <p>Beginning at 10th level, you can use an action or bonus action to flood your body with life energy. Doing so gives you the following benefits.</p>
+                <p class="indent">If you are blinded, deafened, poisoned, or diseased, the condition ends.</p>
+                <p class="indent">For 1 minute, your current and maximum hit points increase by your wizard level.</p>
+                <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>You can use an action or bonus action to flood your body with life energy. Doing so gives you the following benefits. If you are blinded, deafened, poisoned, or diseased, the condition ends. For 1 minute, your current and maximum hit points increase by {{level:wizard}}.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Greater Bolster" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_VITALITY_GREATER_BOLSTER">
+            <description>
+                <p>Starting at 14th level, whenever you target a creature with a vitality spell of 1st level or higher, you can give it two benefits from Bolster.</p>
+            </description>
+            <sheet>
+                <description>Whenever you target a creature with a vitality spell of 1st level or higher, you can give it two benefits from Bolster.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
