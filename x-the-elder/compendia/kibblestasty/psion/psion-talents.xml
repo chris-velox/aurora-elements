@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name></name>
-        <update version="0.0.4">
+        <name>Psion Talents v1.4</name>
+        <update version="0.0.5">
             <file name="psion-talents.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/kibblestasty/psion/psion-talents.xml" />
         </update>
     </info>
@@ -18,14 +18,14 @@
                 <div element="ID_PHB_SPELL_ANIMATE_OBJECTS" />
             </div>
         </description>
-        <sheet action="Action" usage="5 Psi Points">
+        <sheet action="Action" usage="5 Psi points">
             <description>You can cast expend 5 psi points to cast animate object but it creates new ethereal objects rather than animating existing ones.</description>
         </sheet>
         <rules>
             <grant type="Spell" id="ID_PHB_SPELL_ANIMATE_OBJECTS" />
         </rules>
     </element>
-    <element name="Astral Swap" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_ASTRAL_SWAP">
+    <!--<element name="Astral Swap" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_ASTRAL_SWAP">
         <supports>Kibbles Psionic Talent</supports>
         <requirements>ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_PROJECTION_DISCIPLINE,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TRANSPOSITION_DISCIPLINE</requirements>
         <prerequisite>Projection and Transposition Disciplines.</prerequisite>
@@ -33,19 +33,19 @@
             <p class="flavor">Prerequisite: Projection and Transposition Disciplines.</p>
             <p>As an action, you can expend 1 psi point to swap places with your Astral Construct. You can expend 3 psi points to cause the effect of Exploding Phase Rift where you or your Astral Construct arrive.</p>
         </description>
-        <sheet action="Action" usage="1 or 3 Psi Points">
+        <sheet action="Action" usage="1 or 3 Psi points">
             <description>You can expend 1 psi point to swap places with your Astral Construct. You can expend 3 psi points to cause the effect of Exploding Phase Rift where you or your Astral Construct arrive.</description>
         </sheet>
-    </element>
+    </element>-->
     <element name="Aura Sight" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_AURA_SIGHT">
         <supports>Kibbles Psionic Talent</supports>
         <requirements></requirements>
         <prerequisite></prerequisite>
         <description>
-            <p>You gain the ability to psionically see a creature’s aura. By spending 1 psi point you can determine if a creature is under the influence of magic and what school it is, or if a creature is under the influence of psionics. A shape shifter or disguised creature makes a Charisma (Decepction) check against your Psionics save, on failure you can see their true nature in their aura.</p>
+            <p>You gain the ability to psionically see a creature's aura. As an action you can spend 1 psi point you can determine if a creature of your choice within 30 feet is under the influence of magic and what school it is, or if a creature is under the influence of psionics. A shape shifter or disguised creature makes a Charisma (Deception) check against your Psionics save, on failure you can see their true nature in their aura.</p>
         </description>
-        <sheet usage="1 Psi Point">
-            <description>By spending 1 psi point you can determine if a creature is under the influence of magic and what school it is, or if a creature is under the influence of psionics. A shape shifter or disguised creature makes a Decepction check against your Psionics save, on failure you can see their true nature in their aura.</description>
+        <sheet action="Action" usage="1 Psi point">
+            <description>You can determine if a creature of your choice within 30 feet is under the influence of magic and what school it is, or if a creature is under the influence of psionics.</description>
         </sheet>
     </element>
     <element name="Awaken Mind" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_AWAKEN_MIND">
@@ -54,13 +54,13 @@
         <prerequisite>9th level Psion</prerequisite>
         <description>
             <p class="flavor">Prerequisite: 9th level Psion</p>
-            <p>You gain the ability to cast awaken without expending a spell slot. Once you cast this spell in this way, you cannot cast it again until you complete a long or short rest.</p>
+            <p>You gain the ability to cast <i>awaken</i> without expending a spell slot. Once you cast this spell in this way, you cannot cast it again until you complete a long or short rest.</p>
             <div class="reference">
                 <div element="ID_PHB_SPELL_AWAKEN" />
             </div>
         </description>
-        <sheet usage="1/Short Rest">
-            <description>You can cast awaken without expending a spell slot or Psi Points.</description>
+        <sheet usage="1/Long Rest">
+            <description>You can cast awaken without expending a spell slot or Psi points.</description>
         </sheet>
         <rules>
             <grant type="Spell" id="ID_PHB_SPELL_AWAKEN" />
@@ -68,10 +68,10 @@
     </element>
     <element name="Body Control" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_BODY_CONTROL">
         <supports>Kibbles Psionic Talent</supports>
-        <requirements>ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_ENHANCEMENT_DISCIPLINE</requirements>
-        <prerequisite>Enhancement Discipline</prerequisite>
+        <requirements>[level:psion:5],ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_ENHANCEMENT_DISCIPLINE</requirements>
+        <prerequisite>5th level Psion, Enhancement Discipline</prerequisite>
         <description>
-            <p class="flavor">Prerequisite: Enhancement Discipline</p>
+            <p class="flavor">Prerequisite: 5th level Psion, Enhancement Discipline</p>
             <p>You gain the ability to use your <em>alter self</em> ability at-will without expending psi points. Additionally, you can cast <em>enlarge/reduce</em> on yourself for half the psi point cost it would normally cost.</p>
         </description>
         <sheet>
@@ -85,21 +85,25 @@
         <description>
             <p>You gain the ability to suppress the glow and somatic component of a Psionic Power. You can expend 2 psi points to use a power without a visual sign or somatic component. Each time you do this, the cost of doing so doubles until you complete a short or long rest.</p>
         </description>
-        <sheet usage="2 Psi Points">
+        <sheet usage="2 Psi points">
             <description>You can expend 2 psi points to use a power without a visual sign or somatic component. Each time you do this, the cost of doing so doubles until you complete a short or long rest.</description>
         </sheet>
     </element>
     <element name="Divided Mind" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_DIVIDED_MIND">
-        <supports>Kibbles Psionic Talent</supports>
-        <requirements>ID_KT_PSION_SPELL_DIVIDE_SELF</requirements>
-        <prerequisite>Divide Spell Known</prerequisite>
+        <supports>Kibbles Psionic Talent,Level Minimum</supports>
+        <requirements>[level:psion:9]</requirements>
+        <prerequisite>9th level Psion</prerequisite>
         <description>
-            <p class="flavor">Prerequisite: Divide Spell Known</p>
-            <p>You can sustain your <em>divide self</em> spell by one additional round by expending 2 psi points at the start of your turn.</p>
+            <p class="flavor">Prerequisite: 9th level Psion</p>
+            <p>You learn the divide self spell, and can cast it by expending 5 psi points. You can cast it higher levels by expending a use of Innate Psionics to cast it once you gain the feature, casting it at the level of the level of the use of Innate Psionics expended to cast it. You do not require the material component of the spell even when casting it with Innate Psionics.</p>
+            <div element="ID_KT_PSION_SPELL_DIVIDE_SELF" />
         </description>
-        <sheet usage="2 Psi Points">
-            <description>You can sustain your divide self spell by one additional round by expending 2 psi points at the start of your turn.</description>
+        <sheet usage="5 psi points">
+            <description>You can cast the divide self spell. You can cast it higher levels by expending a use of Innate Psionics to cast it once you gain the feature, casting it at the level of the level of the use of Innate Psionics expended to cast it. You do not require the material component of the spell.</description>
         </sheet>
+        <rules>
+            <grant type="Spell" id="ID_KT_PSION_SPELL_DIVIDE_SELF" spellcasting="Psion" known="true" />
+        </rules>
     </element>
     <element name="Empathy" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_EMPATHY">
         <supports>Kibbles Psionic Talent</supports>
@@ -126,13 +130,14 @@
             <description>You surround yourself with a swirling shield shield of fire, ice, or lightning. You gain {{level:psion}} temporary hit points. Creatures that strike you while you have these temporary hitpoints take 1d4 damage of the shield type chosen.</description>
         </sheet>
     </element>
-    <element name="Elemental Weapon" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_ELEMENTAL_WEAPON">
+    <element name="Empowered Strike" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_EMPOWERED_STRIKE">
         <supports>Kibbles Psionic Talent</supports>
         <requirements>ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_PSYCHOKINETICS_DISCIPLINE</requirements>
         <prerequisite>Psychokenetics Discipline</prerequisite>
         <description>
             <p class="flavor">Prerequisite: Psychokenetics Discipline</p>
-            <p>As part of taking the attack action, you can empower a melee weapon you are holding with elemental energy. The next time before the end of your turn you deal damage to a creature with that weapon, you can treat the attack as an Elemental Blast, adding the Elemental Blast modifiers to that attack as if using the power (you can use Psionic Mastery on this). This does not deal the base damage of Elemental Blast, but any added damage causes the additional effects of Elemental Blast damage effects to occur.</p>
+            <p>Once per turn, as part of making a weapon attack as part of the attack action, you can empower a melee weapon you are holding with psionic power. When you hit a creature with a weapon, you can apply Elemental Blast or Telekinetic Force modifiers (you can only select a power you know) to the attack (you can use Psionic Mastery on this). This does not deal the base damage of the power, but any added damage causes the additional effects of the power damage effects to occur.</p>
+            <p class="indent">When applying a modifier that would make it target an area of effect, only the target takes the weapon damage, but other creatures in the radius become a target of the attack as if using the power normally.</p>
         </description>
         <sheet>
             <description>As part of taking the attack action, you can empower a melee weapon you are holding with elemental energy. The next time before the end of your turn you deal damage to a creature with that weapon, you can treat the attack as an Elemental Blast, adding the Elemental Blast modifiers to that attack as if using the power (you can use Psionic Mastery on this). This does not deal the base damage of Elemental Blast, but any added damage causes the additional effects of Elemental Blast damage effects to occur.</description>
@@ -237,13 +242,14 @@
         <requirements></requirements>
         <prerequisite></prerequisite>
         <description>
-            <p>As an action, you can touch a willing creature to see through its eyes and hear what it hears for the next hour, gaining the benefits of any Special Senses that the creature has. During this time, you are deaf and blind with regard to your own Senses. You can end this effect at any time. While this is active, the creature has advantage against being charmed or frightened.</p>
+            <p>As an action, you can touch a willing creature to see through its eyes and hear what it hears for the next hour, gaining the benefits of any Special Senses that the creature has.</p>
+            <p class="indent">During this time, you are deaf and blind with regard to your own Senses. You can end this effect at any time. While this is active, the creature has advantage on Intelligence, Wisdom, and Charisma saving throws.</p>
         </description>
         <sheet action="Action">
             <description>You can touch a willing creature to see through its eyes and hear what it hears for the next hour, gaining the benefits of any Special Senses that the creature has. During this time, you are deaf and blind with regard to your own Senses. You can end this effect at any time. While this is active, the creature has advantage against being charmed or frightened.</description>
         </sheet>
     </element>
-    <element name="Mind Thrust" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_MIND_THRUST">
+    <!--<element name="Mind Thrust" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_MIND_THRUST">
         <supports>Kibbles Psionic Talent</supports>
         <requirements>ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TELEPATHY_DISCIPLINE</requirements>
         <prerequisite>Telepathy Discipline</prerequisite>
@@ -254,7 +260,7 @@
         <sheet>
             <description>When you use your Telepathic Intrusion power, you can wield it as a lance of mental power. You can use your power as a ranged psionic attack (applying damage and effect on hit). You can only select the Rending modifier when you use it this way.</description>
         </sheet>
-    </element>
+    </element>-->
     <element name="Perfect Focus" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_PERFECT_FOCUS">
         <supports>Kibbles Psionic Talent,Level Minimum</supports>
         <requirements>[level:psion:10]</requirements>
@@ -273,10 +279,10 @@
         <prerequisite>Transposition Discipline</prerequisite>
         <description>
             <p class="flavor">Prerequisite: Transposition Discipline</p>
-            <p>When you use your Phase Rift power, you can make one melee weapon attack as a bonus action against a target you pass through with your Phase Rift.</p>
+            <p>When you use your Phase Rift power, you can make one melee weapon attack as a bonus action against a target you pass through with your Phase Rift. You can spend 1 or more psi points to make an additional attacks as part of the same bonus action, but can only attack a creature as you pass through them once per Phase Rift.</p>
         </description>
-        <sheet>
-            <description></description>
+        <sheet usage="1+ psi points">
+            <description>When you use your Phase Rift power, you can make one melee weapon attack as a bonus action against a target you pass through with your Phase Rift. You can spend 1 or more psi points to make an additional attacks as part of the same bonus action, but can only attack a creature as you pass through them once per Phase Rift.</description>
         </sheet>
     </element>
     <element name="Phase Shot" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_PHASE_SHOT">
@@ -326,7 +332,7 @@
             <p class="indent">Cruelty. When your Psi Crystal is within 30 feet of a creature that takes damage, you can use your reaction to shatter the crystal releasing that emotion and causing the creature take additional damage equal to your Psion level.</p>
             <p class="indent">Sympathy. When your Psi crystal is within 30 feet of you and another creature, if that creature takes damage, you can use your reaction shatter the crystal relasing that emotion and granting the creature resistance to that damage and take an equal amount of damage to the damage it takes.</p>
         </description>
-        <sheet usage="2 Psi Points">
+        <sheet usage="2 psi points">
             <description>You can expend 2 psi points to cast the find familiar spell but your familiar takes on the statics of a psi crystal (below) and the material component required is a crystal worth 10 gp instead of the normal material components.</description>
         </sheet>
         <rules>
@@ -392,11 +398,11 @@
         <requirements></requirements>
         <prerequisite></prerequisite>
         <description>
-            <p>As a bonus action, you can expend 2 psi points to imbue a weapon you are holding with psionic energy. For the next minute, once per turn when you deal damage with that weapon, you can deal an additional 1d6 psychic damage.</p>
-            <p class="indent">The damage increases by 1d6 when you reach 5th level in Psion (2d6), 11th level in Psion (3d6), and 17th level in Psion (4d6).</p>
+            <p>As a bonus action, you can expend 1 psi point to imbue a weapon you are holding with psionic energy. For 1 minute, once per turn when you deal damage with that weapon, you can deal an additional 1d6 psychic damage.</p>
+            <p class="indent">At higher levels you can expend additional psi points to further enhance the Psionic weapon; 2 points to enhance it 2d6 at 5th level, 3 points to enhance it to 3d6 at 11th level, and 4 points to enhance it to 4d6 at 17th level.</p>
         </description>
-        <sheet action="Bonus Action" usage="2 Psi Points">
-            <description>You can expend 2 psi points to imbue a weapon you are holding with psionic energy. For the next minute, once per turn when you deal damage with that weapon, you can deal an additional {{psionic-weapon:damage-dice}}d6 psychic damage.</description>
+        <sheet action="Bonus Action" usage="1+ psi points">
+            <description>You can expend 1 or more psi points (max {{psionic-weapon:damage:dice}}) to imbue a weapon you are holding with psionic energy. For the next minute, once per turn when you deal damage with that weapon, you can deal an additional {{psionic-weapon:damage-dice}}d6 psychic damage per psi point.</description>
         </sheet>
         <rules>
             <stat name="psionic-weapon:damage:dice" value="1" />
@@ -413,7 +419,7 @@
             <p class="flavor">Prerequisite: 5th level Psion</p>
             <p>You can spend a psi point to temporarily subdivide your mind to do two things at once until the end of your turn. While are dividing your mind, if you use your action on a psionic power or spell granted by a psionic discipline, you can use your bonus action to use a psionic power. The two powers share your per use psi point limit between them.</p>
         </description>
-        <sheet usage="1 Psi Point">
+        <sheet usage="1 Psi point">
             <description>ou can spend a psi point to temporarily subdivide your mind to do two things at once until the end of your turn. While are dividing your mind, if you use your action on a psionic power or spell granted by a psionic discipline, you can use your bonus action to use a psionic power. The two powers share your per use psi point limit between them.</description>
         </sheet>
     </element>
@@ -423,10 +429,22 @@
         <prerequisite>Enhancement Discipline</prerequisite>
         <description>
             <p class="flavor">Prerequisite: Enhancement Discipline</p>
-            <p>Your power is at your finger-tips. When you target only yourself with Enhancing Surge, you can use the power as a bonus action instead of an action.</p>
+            <p>When you target only yourself with Enhancing Surge, you can use the power as a bonus action instead of an action, but the damage and temporary hit points the base power grants are reduced to 1d4 when using the power this way.</p>
         </description>
         <sheet action="Bonus Action">
-            <description>When you target only yourself with Enhancing Surge, you can use the power as a bonus action instead of an action.</description>
+            <description>When you target only yourself with Enhancing Surge, you can use the power as a bonus action instead of an action, but the damage and temporary hit points the base power grants are reduced to 1d4 when using the power this way.</description>
+        </sheet>
+    </element>
+    <element name="Telekinetic Movement" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_TELEKINETIC_MOVEMENT">
+        <supports>Kibbles Psionic Talent</supports>
+        <requirements>ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TELEKINESIS_DISCIPLINE</requirements>
+        <prerequisite>Telekinesis Discipline</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Telekinesis Discipline</p>
+            <p class="indent">You can expend a psi point to gain 10 additional feet of movement and the effect of <i>spiderclimb</i>, <i>feather fall</i>, or <i>levitate</i> until the start of your next turn. At the start of your next turn you can expend a psi point to maintain the effect before it would end.</p>
+        </description>
+        <sheet usage="1 Psi point">
+            <description>You gain 10 additional feet of movement and the effect of spiderclimb, feather fall, or levitate until the start of your next turn. At the start of your next turn you can expend a psi point to maintain the effect before it would end.</description>
         </sheet>
     </element>
     <element name="Telepathic Link" type="Class Feature" source="Kibbles’ Psion" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_TELEPATHIC_LINK">
@@ -490,7 +508,7 @@
             <p class="flavor">Prerequisite: Schism</p>
             <p>You can expend an additional psi point when using Schism to quicken your thoughts. When you do so, the action and the bonus action no longer share a per use psi point limit.</p>
         </description>
-        <sheet usage="1 Psi Point">
+        <sheet usage="1 Psi point">
             <description>You can expend an additional psi point when using Schism to quicken your thoughts. When you do so, the action and the bonus action no longer share a per use psi point limit.</description>
         </sheet>
     </element>-->

@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>KibblesTasty’s Psion Class</name>
-        <update version="0.0.4">
+        <update version="0.0.5">
             <file name="class-psion.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/kibblestasty/psion/class-psion.xml" />
         </update>
     </info>
@@ -261,7 +261,7 @@
             <p class="indent">An Awakened can be either empathetic or cruel, good or evil. Knowing what is on the minds of others affects people in different ways, driving some away from society as they see its true face, while others feel drawn to help the problems only they can see.</p>
             <div element="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_OPENED_MIND" />
             <div element="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_MENTAL_AWARENESS" />
-            <div element="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_EXPOSED_PLANS" />
+            <div element="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_MIND_READER" />
             <div element="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_EMPOWERED_PSIONICS" />
             <div element="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_ALL_SEEING_EYE" />
             <div element="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_FULL_AWAKENING" />
@@ -272,7 +272,7 @@
         <rules>
             <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_OPENED_MIND" level="1" />
             <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_MENTAL_AWARENESS" level="1" />
-            <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_EXPOSED_PLANS" level="3" />
+            <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_MIND_READER" level="3" />
             <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_EMPOWERED_PSIONICS" level="6" />
             <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_ALL_SEEING_EYE" level="10" />
             <grant type="Archetype Feature" id="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_FULL_AWAKENING" level="14" />
@@ -297,12 +297,13 @@
                 <description>You can use Intelligence instead of Wisdom when making an Insight check against a creature with an Intelligence ability score of 6 or higher. Further, once you have telepathically communicated with an allied creature, you know their location for next hour.</description>
             </sheet>
         </element>
-        <element name="Exposed Plans" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_EXPOSED_PLANS">
+        <element name="Mind Reader" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_MIND_READER">
             <description>
-                <p>Starting at 3rd level, if a creature has failed a saving throw against your Telepathic Intrusion since the start of your last turn, you can use a bonus action to give it disadvantage on its next saving throw against a psionic power besides Telepathic Intrusion or give yourself advantage on your next attack roll against that target.</p>
+                <p>Starting at 3rd level, when you use Telepathic intrusion, you can force the target to make an Intelligence saving throw instead of a Wisdom saving throw against the power (deciding when you use the ability).</p>
+                <p class="indent">When a creature fails a saving throw against your Telepathic Intrusion, you gain a d4. Until the end of your next turn, if you make an attack roll against the creature or the creature makes a saving throw against a Psionic power other than Telepathic Intrusion against you, you can add or subtract the d6 from the roll (deciding to roll before you roll the attack or use the power).</p>
             </description>
             <sheet action="Bonus Action">
-                <description>If a creature has failed a saving throw against your Telepathic Intrusion since the start of your last turn, you can use a bonus action to give it disadvantage on its next saving throw against a psionic power besides Telepathic Intrusion or give yourself advantage on your next attack roll against that target.</description>
+                <description>When you use Telepathic intrusion, you can force the target to make an Intelligence saving throw instead of a Wisdom saving throw against the power (deciding when you use the ability). When a creature fails a saving throw against your Telepathic Intrusion, you gain a d4. Until the end of your next turn, if you make an attack roll against the creature or the creature makes a saving throw against a Psionic power other than Telepathic Intrusion against you, you can add or subtract the d6 from the roll (deciding to roll before you roll the attack or use the power).</description>
             </sheet>
         </element>
         <element name="Empowered Psionics" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_AWAKENED_EMPOWERED_PSIONICS">
@@ -467,10 +468,10 @@
         </element>
         <element name="Perfected Enhancement" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_TRANSCENDED_PERFECTED_ENHANCEMENT">
             <description>
-                <p>Starting at 6th level, when you grant temporary hit points with a psionic power you can add half your Intelligence modifier (rounded up) to the temporary hit points gained by one creature.</p>
+                <p>Starting at 6th level, when you grant temporary hit points with a psionic power you can add your proficiency bonus to the temporary hit points gained by one creature.</p>
             </description>
             <sheet>
-                <description>When you grant temporary hit points with a psionic power you can add half your Intelligence modifier (rounded up) to the temporary hit points gained by one creature.</description>
+                <description>Starting at 6th level, when you grant temporary hit points with a psionic power you can {{proficiency}} to the temporary hit points gained by one creature.</description>
             </sheet>
         </element>
         <element name="Mental Control" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_TRANSCENDED_MENTAL_CONTROL">
@@ -528,12 +529,13 @@
         </element>
         <element name="Boundless Imagination" type="Archetype Feature" source="Kibbles’ Psion" id="ID_KT_PSION_ARCHETYPE_FEATURE_SHAPER_BOUNDLESS_IMAGINATION">
             <description>
-                <p>Additionally at 1st level, as an action, you can conjure new powers for your Astral Construct in your mind and project them into reality. You can only apply one of the following properties at a time:</p>
-                <p class="indent"><strong>Devastating Weapons.</strong> You imagine more deadly armaments - from a greatsword to vicious fangs - causing your Astral Construct to grow more deadly. The Astral Construct’s damage becomes 1d12.</p>
+                <p>Additionally at 1st level, when you conjure your Astral Construct, you can apply one of the following powers to it:</p>
+                <p class="indent"><strong>Devastating Weapons.</strong> You imagine more deadly armaments - from a greatsword to vicious fangs - causing your Astral Construct to grow more deadly. The Astral Construct's damage becomes 1d12</p>
                 <p class="indent"><strong>Psionic Conduit.</strong> You can use your Psionic powers through your Astral Construct, as if you were where it is.</p>
                 <p class="indent"><strong>Vivid Existence.</strong> Your Astral Construct fully materializes and automatically uses Solidify at the start of its turn without requiring a command to do so.</p>
+                <p class="indent">You can change which benefit you grant it for the duration of the effect as a bonus action.</p>
             </description>
-            <sheet action="Action">
+            <sheet>
                 <description>You can conjure new powers for your Astral Construct in your mind and project them into reality. You can only apply one of the following properties at a time: Devastating Weapons, Psionic Conduit, or Vivid Existence.</description>
             </sheet>
         </element>
@@ -634,10 +636,10 @@
         <description>
             <p class="flavor">Prerequisite: At least 1 psi or ki point</p>
             <p>Your body is powered by the inner powers that course through it. Your maximum psi or ki points (if you have both, your choice of which) increases by one.</p>
-            <p class="indent">At the end of your turn after spending one or more psi or ki points during your turn, you heal for a number of hit points equal to the psi or ki points spent, up to a maximum of your Constitution modifier (minimum 1).</p>
+            <p class="indent">At the end of your turn after expending one or more psi or ki points during your turn (not counting temporary or free points, such as those from Psionic Mastery), you heal for a number of hit points equal to the psi or ki points spent.</p>
         </description>
         <sheet>
-            <description>At the end of your turn after spending one or more psi or ki points during your turn, you heal for a number of hit points equal to the psi or ki points spent, up to a maximum {{inner-power:hp}}.</description>
+            <description>At the end of your turn after spending one or more psi (not counting temporary or free points, such as those from Psionic Mastery) during your turn, you heal for a number of hit points equal to the psi or ki points spent, up to a maximum {{inner-power:hp}}.</description>
         </sheet>
         <rules>
             <stat name="psi:points" value="1" />
@@ -651,10 +653,10 @@
         <description>
             <p class="flavor">Prerequisite: At least 1 psi or ki point</p>
             <p>Your body is powered by the inner powers that course through it. Your maximum psi or ki points (if you have both, your choice of which) increases by one.</p>
-            <p class="indent">At the end of your turn after spending one or more psi or ki points during your turn, you heal for a number of hit points equal to the psi or ki points spent, up to a maximum of your Constitution modifier (minimum 1).</p>
+            <p class="indent">At the end of your turn after expending one or more psi or ki points during your turn (not counting temporary or free points), you heal for a number of hit points equal to the psi or ki points spent.</p>
         </description>
         <sheet>
-            <description>At the end of your turn after spending one or more psi or ki points during your turn, you heal for a number of hit points equal to the psi or ki points spent, up to a maximum {{inner-power:hp}}.</description>
+            <description>At the end of your turn after spending one or more ki points (not counting temporary or free points) during your turn, you heal for a number of hit points equal to the psi or ki points spent, up to a maximum {{inner-power:hp}}.</description>
         </sheet>
         <rules>
             <stat name="ki:points" value="1" />

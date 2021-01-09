@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>KibblesTasty’s Psion Expanded v1.3</name>
-        <update version="0.0.13">
+        <name>KibblesTasty’s Psion Expanded v1.4</name>
+        <update version="0.0.14">
             <file name="psion-expanded.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/kibblestasty/psion/psion-expanded.xml" />
         </update>
     </info>
@@ -187,6 +187,7 @@
         <rules>
             <grant type="Grants" id="ID_INTERNAL_GRANT_KT_PSIONIC_DISCIPLINE" />
             <grant type="Class Feature" id="ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_DISCIPLINE_NULLIFICATION_DISCIPLINE_ALTERNATE_EFFECTS" requirements="!ID_KT_KTPE_FEAT_PSIONIC_ADEPT" />
+            <grant type="Spell" id="ID_KT_PSION_EXP_PSIONIC_POWER_DENIAL" spellcasting="Psion" known="true" />
         </rules>
     </element>
         <element name="Alternate Effects" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_DISCIPLINE_NULLIFICATION_DISCIPLINE_ALTERNATE_EFFECTS">
@@ -209,7 +210,6 @@
                 <description></description>
             </sheet>
             <rules>
-                <grant type="Spell" id="ID_KT_PSION_EXP_PSIONIC_POWER_DENIAL" spellcasting="Psion" known="true" />
                 <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" spellcasting="Psion" known="true" requirements="[psi:limit:1]" />
                 <grant type="Spell" id="ID_KT_PSION_EXP_SPELL_NULLIFY_EFFECT" spellcasting="Psion" known="true" requirements="[psi:limit:2]" />
                 <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" spellcasting="Psion" known="true" requirements="[psi:limit:3]" />
@@ -254,23 +254,46 @@
         </setters>
     </element>
 
-    <element name="Nullify Effect" type="Spell" source="Kibbles’ Psion Expanded" id="ID_KT_PSION_EXP_SPELL_NULLIFY_EFFECT">
-        <supports>Kibbles Psion</supports>
+    <element name="Consumption Discipline (Beta)" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_DISCIPLINE_CONSUMPTION_DISCIPLINE">
+        <supports>Kibbles Psionic Discipline</supports>
         <description>
-            <p>You gain advantage on Intelligence, Wisdom, and Charisma saving throws until the start of your next turn. You also gain resistance to Psychic and Force damage until the start of your next turn.</p>
-            <p class="indent"><b><em>At Higher Levels.</em></b> When you cast this spell using a spell slot of 4th level or higher, you can roll an additional d20 as part of your advantage roll. If you cast this at the 5th level or higher, it grants immunity to Psyhic and Force damage for the duration.</p>
+            <p>Your psychic powers are that of a predator, and your prey is the minds of others. Their thoughts, their feelings, their vital psionic energies are your food.</p>
+            <h5>ADAPTIVE HUNTER</h5>
+            <p>After using your Mind Leech on a target, you can gain one skill, tool or language proficiency that creature has until the end of your next long rest. If you use this ability again, you lose the last proficiency or language to acquire the new one.</p>
+            <div element="ID_KT_PSION_EXP_PSIONIC_POWER_MIND_LEECH" />
+        </description>
+        <sheet alt="Adaptive Hunter">
+            <description>After using your Mind Leech on a target, you can gain one skill, tool or language proficiency that creature has until the end of your next long rest. If you use this ability again, you lose the last proficiency or language to acquire the new one.</description>
+        </sheet>
+        <rules>
+            <grant type="Grants" id="ID_INTERNAL_GRANT_KT_PSIONIC_DISCIPLINE" />
+            <grant type="Spell" id="ID_KT_PSION_EXP_PSIONIC_POWER_MIND_LEECH" spellcasting="Psion" known="true" />
+        </rules>
+    </element>
+
+    <element name="Mind Leech" type="Spell" source="Kibbles’ Psion Expanded" id="ID_KT_PSION_EXP_PSIONIC_POWER_MIND_LEECH">
+        <supports>Kibbles Psionic Power</supports>
+        <description>
+            <p>You assault the mind of a target you can see within range, rending and devouring its psionic energy. The target must succeed a Charisma saving throw or take 1d6 psychic damage. If the target is frightened or charmed by you, the psychic damage becomes 1d10 instead. Your consumption of this energy grants you temporarily boosted psionic power. The next time you deal damage with a psionic power before the end of your next turn, you deal an additional 1d6 damage on that power.</p>
+            <p class="indent">You can target the corpse of a recently perished creature with this power, as long as the target has died within the last minute and not been previously leached by this power.</p>
+            <p class="indent"><b>Rending (1+ psi points):</b> The target takes +1d6 psychic damage for each additional point spent. If the target is frightened of you or charmed by you, this adds +1d10 psychic damage per point spent instead.</p>
+            <p class="indent"><b>Shredding (1 psi point):</b> You leave the targets mind and soul shredded, reducing their next Wisdom, Intelligence, or Charisma saving throw before the end of your next turn by 1d4.</p>
+            <p class="indent"><b>Nourishing (1 psi points):</b> On a failed saving throw, you gain 1d6 temporary hit points. If you are below half of your maximum hit points, you can choose to regain 1d6 hit points instead of gaining temporary hit points.</p>
+            <p class="indent"><b>Devouring (2 psi points):</b> The range of Mind Leech becomes a radius of 5 feet, centered on you.</p>
+            <p class="indent"><b>Stunning (3 psi points):</b> On a failed saving throw, the target becomes stunned until the start of your next turn. If the power effects multiple targets, select one target for this effect</p>
+            <p class="indent"><b>Thieving (1 psi point):</b> On a failed saving throw, you can draw from the target's mind a spell it can cast (from a Spellcasting or Psionics feature). You must be aware that it can cast that spell; the target retains the ability to cast the spell, but you gain the ability to cast the spell using your Psionics feature by spending psi points equal to the level of the spell (restricted by your psi point limit). You can know one spell in this manner at a time, and retain the ability to cast the spell for 1 minute or until cast. If the spell is one that restores hit points, you reduce your own hit points by the amount healed by the spell.</p>
         </description>
         <setters>
             <set name="keywords"></set>
-            <set name="level">2</set>
-            <set name="school">psionic</set>
-            <set name="time">1 reaction, which you take when you are forced to make an Intelligence, a Wisdom, or a Charisma saving throw</set>
-            <set name="range">Self</set>
+            <set name="level">1</set>
+            <set name="school">Psionic Power</set>
+            <set name="time">1 Action</set>
+            <set name="range">Touch</set>
             <set name="hasVerbalComponent">false</set>
             <set name="hasSomaticComponent">true</set>
             <set name="hasMaterialComponent">false</set>
             <set name="materialComponent">component</set>
-            <set name="duration">1 round.</set>
+            <set name="duration">Instantaneous</set>
             <set name="isConcentration">false</set>
             <set name="isRitual">false</set>
         </setters>
@@ -291,7 +314,7 @@
             <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_NOMADS_GEAR" />
             <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_CURIOUS_MIND" />
             <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_AGILE_SLIDER" />
-            <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_DIMENSION_STRIDER" />
+            <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_PHASE_DANCER" />
             <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_FLICKERING_PRESENCE" />
             <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_PLANESWALKER" />
             <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_WINDING_PATHS" />
@@ -302,7 +325,7 @@
             <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_NOMADS_GEAR" level="1" />
             <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_CURIOUS_MIND" level="3" />
             <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_AGILE_SLIDER" level="3" />
-            <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_DIMENSION_STRIDER" level="6" />
+            <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_PHASE_DANCER" level="6" />
             <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_FLICKERING_PRESENCE" level="10" />
             <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_PLANESWALKER" level="14" />
             <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_WINDING_PATHS" level="14" />
@@ -341,13 +364,14 @@
         </element>
         <element name="Agile Slider" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_AGILE_SLIDER">
             <description>
-                <p>Additionally at 3rd level, your transdimensional powers are such that you can slide through the spaces you see in dimensions as another slip through a tight space, without concious thought or effort. You can use your Dexterity ability score in place of your Intelligence ability score calculating the DC or attack roll modifier of Transpositional powers, alternate effects, or talents that require the Transpositional discipline.</p>
+                <p>Starting at 6th level, you get one free psi point at the start of your turn you can spend on the Long, Blurring or Ethereal modifiers of Phase Rift.</p>
+                <p class="indent">If you have any unspent free psi points left at the end of your turn, then they are lost.</p>
             </description>
             <sheet>
-                <description>You can use your Dexterity ability score in place of your Intelligence ability score calculating the DC or attack roll modifier of Transpositional powers, alternate effects, or talents that require the Transpositional discipline.</description>
+                <description>You get one free psi point at the start of your turn you can spend on the Long, Blurring or Ethereal modifiers of Phase Rift. If you have any unspent free psi points left at the end of your turn, then they are lost.</description>
             </sheet>
         </element>
-        <element name="Dimension Strider" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_DIMENSION_STRIDER">
+        <element name="Phase Dancer" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_PHASE_DANCER">
             <description>
                 <p>Starting at 6th level, the base distance of your Phase Rift is increased by 10 feet.</p>
             </description>
@@ -355,6 +379,14 @@
                 <description>The base distance of your Phase Rift is increased by 10 feet.</description>
             </sheet>
         </element>
+        <!--<element name="Dimension Strider" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_PHASE_DANCER">
+            <description>
+                <p>Starting at 6th level, the base distance of your Phase Rift is increased by 10 feet.</p>
+            </description>
+            <sheet>
+                <description>The base distance of your Phase Rift is increased by 10 feet.</description>
+            </sheet>
+        </element>-->
         <element name="Flickering Presence" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_FLICKERING_PRESENCE">
             <description>
                 <p>Starting at 10th level, your unspent Psionic Mastery points are not lost until the start of your next turn, but can only be used to cast <i>flicker</i>.</p>
@@ -366,10 +398,10 @@
         </element>
         <element name="Planeswalker" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_WANDERING_MIND_PLANESWALKER">
             <description>
-                <p>Starting at 14th level, your understanding of how to traverse space expands to a previously incomprehensible scale. You gain the ability to cast <i>plane shift</i> and <i>teleport</i>, and can use your 7th level or Higher use of Innate Psionics to cast these spells instead of the spell selected for that level. If you already have one of these spells selected for your 7th level Innate Psionic power, you can select a new 7th level spell from the Psion list for that slot.</p>
+                <p>Starting at 14th level, your understanding of how to traverse space expands to a previously incomprehensible scale. You gain the ability to cast <i>planeshift</i> and <i>teleport</i>. You can cast one of these spells per day once without expending a spell slot or use of innate psionics. Once you do this, you must complete a long rest before you can use them again, or use your 7th level or Higher use of Innate Psionics instead of the spell selected for that level to cast these spells again before completing a long rest. If you already have one of these spells selected for your 7th level Innate Psionic power, you can select a new 7th level spell from the Psion list for that slot.</p>
             </description>
-            <sheet>
-                <description>You can use your 7th level or Higher use of Innate Psionics to cast plane shift and teleport instead of the spell selected for that level.</description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast either planeshift or teleport without expending a spell slot or use of psionics. You can use your 7th level or Higher use of Innate Psionics to cast plane shift and teleport instead of the spell selected for that level as normal.</description>
             </sheet>
             <rules>
                 <grant type="Spell" id="ID_PHB_SPELL_PLANE_SHIFT" spellcasting="Psion" known="true" />
@@ -418,7 +450,7 @@
                 <description></description>
             </sheet>
             <rules>
-            <grant type="Class Feature" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_PSYCHOKINETICS_DISCIPLINE" level="1" />
+                <grant type="Class Feature" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_PSYCHOKINETICS_DISCIPLINE" level="1" />
             </rules>
         </element>
         <element name="One with the Elements" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_ELEMENTAL_MIND_ONE_WITH_THE_ELEMENTS">
@@ -478,6 +510,105 @@
             <sheet>
                 <description>At the start of your turn, you can expend 1 psi point, reduce your movement speed to zero to concentrate, creating a cloud of cold, fire, or lightning power. This lasts until the start of your next turn. Whenever a creature within 5 feet of you hits you with a melee attack or ends their turn within 5 feet of you, they take 2d8 elemental damage of the type chosen. While supercharged in this way, the first time you expend one psi point on an effect that deals the damage of selected elemental type, you treat it as spending 2 psi points if the effect would scale with additional psi points. Additionally, if you use the Overcharge modifier of Elemental Burst while supercharged, you do not take damage from overcharging.</description>
             </sheet>
+        </element>
+
+    <element name="Consuming Mind (Beta)" type="Archetype" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_PSION_CONSUMING_MIND">
+        <supports></supports>
+        <description>
+            <p>A dangerous branch of psionics that are born from the ability to sap energy from other creatures, tearing from them their thoughts, their mind, and ultimately their vitality for your own consumption. A feared branch of power, it is often believed to be one of the roots of psionic power as it is a branch of power found in many of the most ancient and terrible practitioners of psionics, such as Illithids and Aboleths.</p>
+            <p class="indent">It has been refined by those that seek greater power either from ambition or desperation, and unlocks a terrible but effective path. One example of mortal creatures walking this path is the drow House Oblodra, who developed their dark powers from their study of feral vampiric mindflayers.</p>
+            <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_PSIONIC_PREDATOR" />
+            <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_DARK_LURKER" />
+            <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_RAVENOUS_POWERS" />
+            <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_EMPOWERED_PSIONICS" />
+            <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_MIND_VAMPIRE" />
+            <div element="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_SHATTERED_HUSKS" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_PSIONIC_PREDATOR" level="1" />
+            <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_DARK_LURKER" level="1" />
+            <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_RAVENOUS_POWERS" level="3" />
+            <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_EMPOWERED_PSIONICS" level="6" />
+            <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_MIND_VAMPIRE" level="10" />
+            <grant type="Archetype Feature" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_SHATTERED_HUSKS" level="14" />
+        </rules>
+    </element>
+        <element name="Psionic Predator" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_PSIONIC_PREDATOR">
+            <description>
+                <p>At 1st level when you select this archetype, you gain the ability to consume the psionic power of others. You gain the psionic discipline of Consumption. When you use your Mind Leech psionic power as an action, you can extend the range of it to 30 feet; if using a modifier that grants it a radius, you can center that radius on a point within 30 feet.</p>
+            </description>
+            <sheet>
+                <description>When you use your Mind Leech psionic power as an action, you can extend the range of it to 30 feet; if using a modifier that grants it a radius, you can center that radius on a point within 30 feet.</description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_CONSUMPTION_DISCIPLINE" level="1" />
+            </rules>
+        </element>
+        <element name="Dark Lurker" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_DARK_LURKER">
+            <description>
+                <p>Additionally at 1st level, your powers grant you intuition that allows you to better adapt and survive as a mind hunter. You gain proficiency in Stealth and Deception.</p>
+                <p class="indent">When you use psionic abilities, you can make an Intelligence (Deception) check contested by a target's Wisdom (Insight) to conceal your use of psionic powers, suppressing their usual visible indicators. If you spend psi points on the ability, you must subtract the psi points spent from your Intelligence (Deception) roll result (concealing greater uses of psionics being more difficult).</p>
+            </description>
+            <sheet>
+                <description>When you use psionic abilities, you can make an Deception check contested by a target's Insight to conceal your use of psionic powers, suppressing their usual visible indicators. If you spend psi points on the ability, you must subtract the psi points spent from your Deception roll result.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+            </rules>
+        </element>
+        <element name="Ravenous Powers" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_RAVENOUS_POWERS">
+            <description>
+                <p>Starting at 3rd level, you gain the psionic talent Mind Devourer; this talent ignores the normal level restriction, and does not count against your Psionic Talents known, but cannot be switched out on leveling up.</p>
+                <p class="indent">Additionally, you can gain the benefit of this talent from a range of 30 feet when the creature is killed by one of your Psionic powers.</p>
+                <div class="sidebar">
+                    <h5>CONSUMPTION &amp; TELEPATHY</h5>
+                    <p>As with all Psion subclasses, the 2nd psionic discipline can be selected from any of the available options, but the combination of Consumption and Telepathy is the default selection. Your features do not rely on this combination, but it opens some interesting possibilities in the Talents, and will best represent some of the sources of inspiration for the subclass.</p>
+                </div>
+            </description>
+            <sheet>
+                <description>You can use Mind Devourer to a range of 30 feet.</description>
+            </sheet>
+            <rules>
+                <grant type="Class Feature" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_MIND_DEVOURER" level="3" />
+            </rules>
+        </element>
+        <element name="Empowered Psionics" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_EMPOWERED_PSIONICS">
+            <description>
+                <p>Starting at 6th level, when you deal damage with a Psionic Discipline power you can add your Intelligence modifier to the damage dealt.</p>
+            </description>
+            <sheet>
+                <description>When you deal damage with a Psionic Discipline power you can add {{intelligence:modifier}} to the damage dealt.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Mind Vampire" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_MIND_VAMPIRE">
+            <description>
+                <p>Starting at 10th level, you can trigger Mind Devourer anytime you deal psychic damage to a target within 30 feet, regardless if it kills the target or not.</p>
+                <p class="indent">Further, you can have additional psi points (over your normal limit) equal to your half your Intelligence modifier (rounded down) when gaining psi points from Mind Devourer, but any additional psi points are lost when you complete a short or long rest.</p>
+                <div class="sidebar">
+                    <h5>LIMITATIONS</h5>
+                    <p>Even when used with Mind Vampire, Mind Devourer still requires a reaction to use, meaning that it can still effectively trigger once per round. All normal restrictions of Mind Devourer still apply (such as a minimum Intelligence ability score of the target.)</p>
+                </div>
+            </description>
+            <sheet>
+                <description>You can trigger Mind Devourer anytime you deal psychic damage to a target within 30 feet, regardless if it kills the target or not. Further, you can have additional psi points (over your normal limit) equal to your half your Intelligence modifier (rounded down) when gaining psi points from Mind Devourer, but any additional psi points are lost when you complete a short or long rest.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Shattered Husks" type="Archetype Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_ARCHETYPE_FEATURE_CONSUMING_MIND_SHATTERED_HUSKS">
+            <description>
+                <p>Starting at 14th level, your Mind Leech ability always gains the Shredding modifier, and it does not cost a psi point to add the modifier.</p>
+                <p class="indent">Further, you can use additional power to leave their mind further vulnerable. You can spend additional psi points on the Shredding modifier to further reduce their next Wisdom, Intelligence or Charisma saving throw (up to 2 additional points to reduce it by a total of 3d4). Once this is effect has been applied to a creature, you cannot spend additional psi points on the Shredding modifier against the creature until 1 hour has passed.</p>
+            </description>
+            <sheet>
+                <description>Your Mind Leech ability always gains the Shredding modifier, and it does not cost a psi point to add the modifier. Further, you can use additional power to leave their mind further vulnerable. You can spend additional psi points on the Shredding modifier to further reduce their next Wisdom, Intelligence or Charisma saving throw (up to 2 additional points to reduce it by a total of 3d4). Once this is effect has been applied to a creature, you cannot spend additional psi points on the Shredding modifier against the creature until 1 hour has passed.</description>
+            </sheet>
+            <rules>
+            </rules>
         </element>
 
   <!-- Additional Psionic Spells -->
@@ -546,7 +677,7 @@
             <set name="keywords"></set>
             <set name="level">2</set>
             <set name="school">psionic</set>
-            <set name="time">: 1 reaction, which you take when you are forced to make an Intelligence, a Wisdom, or a Charisma saving throw</set>
+            <set name="time">1 reaction, which you take when you are forced to make an Intelligence, a Wisdom, or a Charisma saving throw</set>
             <set name="range">Self</set>
             <set name="hasVerbalComponent">false</set>
             <set name="hasSomaticComponent">true</set>
@@ -651,6 +782,78 @@
             <grant type="Spell" id="ID_PHB_SPELL_DREAM" />
         </rules>
     </element>
+    <element name="Consuming Link" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_CONSUMING_LINK">
+        <supports>Kibbles Psionic Talent</supports>
+        <requirements>ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_DISCIPLINE_CONSUMPTION_DISCIPLINE</requirements>
+        <prerequisite>Consumption Discipline</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Consumption Discipline</p>
+            <p class="indent">You can target a creature that is charmed or frightened by you with Mind Leech as long as they are within 120 feet. You do not need to be able to see the target when targeting them in this way and the target has disadvantage on the saving throw against Mind Leech.</p>
+        </description>
+        <sheet>
+            <description>You can target a creature that is charmed or frightened by you with Mind Leech as long as they are within 120 feet. You do not need to be able to see the target when targeting them in this way and the target has disadvantage on the saving throw against Mind Leech.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Mind Thief" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_MIND_THIEF">
+        <supports>Kibbles Psionic Talent</supports>
+        <requirements>ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_DISCIPLINE_CONSUMPTION_DISCIPLINE</requirements>
+        <prerequisite>Consumption Discipline</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Consumption Discipline</p>
+            <p class="indent">You can gain an additional number of skill, tool, or language proficiencies from Adaptive Hunter equal to half your proficiency bonus (rounded down) before losing the previously gained proficiency. If you would gain an additional proficiency from it beyond that, the first one you gained is lost.</p>
+        </description>
+        <sheet>
+            <description>You can gain an additional {{proficiency:half}} skills, tools or language proficiencies from Adaptive Hunter before losing a previoulsy gained proficiency. If you would gain an additional proficiency from it beyond that, the first one you gained is lost.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Master of Stolen Power" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_MASTER_OF_STOLEN_POWER">
+        <supports>Kibbles Psionic Talent,Level Minimum</supports>
+        <requirements>ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_DISCIPLINE_CONSUMPTION_DISCIPLINE, [level:psion:15]</requirements>
+        <prerequisite>Consumption Discipline, 15th-level Psion</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Consumption Discipline, 15th-level Psion</p>
+            <p class="indent">While you are in a boosted state from Mind Leech (with an additional 1d6 damage to add to psionic power), you gain an additional psi point from Psionic Mastery.</p>
+        </description>
+        <sheet>
+            <description>While you are in a boosted state from Mind Leech (with an additional 1d6 damage to add to psionic power), you gain an additional psi point from Psionic Mastery.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Mind Feast" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_MIND_FEAST">
+        <supports>Kibbles Psionic Talent,Level Minimum</supports>
+        <requirements>ID_KT_KTPE_ARCHETYPE_PSION_CONSUMING_MIND,[level:psion:9]</requirements>
+        <prerequisite>Consuming Mind, 9th-level Psion</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Consuming Mind, 9th-level Psion</p>
+            <p class="indent">You can gain further nourishment by literally consuming the minds of your fallen foes, adapting your metabolism. If you take a short or long rest while having access to the corpse of a fallen foe that died in the last hour and that had an Intelligence of 8 or higher, you can consume part of their mind, gaining extra psi points over your normal limit equal to the creature's CR (up to your proficiency bonus).</p>
+        </description>
+        <sheet>
+            <description>If you take a short or long rest while having access to the corpse of a fallen foe that died in the last hour and that had an Intelligence of 8 or higher, you can consume part of their mind, gaining extra psi points over your normal limit equal to the creature's CR (up to {{proficiency}}).</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Vampiric Strength" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_VAMPIRIC_STRENGTH">
+        <supports>Kibbles Psionic Talent</supports>
+        <requirements>ID_KT_KTPE_ARCHETYPE_PSION_CONSUMING_MIND</requirements>
+        <prerequisite>Consuming Mind subclass</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Consuming Mind subclass</p>
+            <p class="indent">A creature that is grappled by you has disadvantage on saving throws against your Mind Leech psionic power.</p>
+            <p class="indent">Additionally, a creature that fails its saving throw against Mind Leech has disadvantage on Strength (Athletics) and Dexterity (Acrobatics) checks to contest grapples against you until the start of your next turn.</p>
+        </description>
+        <sheet>
+            <description>A creature that is grappled by you has disadvantage on saving throws against your Mind Leech psionic power. Additionally, a creature that fails its saving throw against Mind Leech has disadvantage on Athletics and Acrobatics checks to contest grapples against you until the start of your next turn.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+
 
   <!-- Additional Psion Talents -->
     <element name="Beam of Annihilation" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_BEAM_OF_ANNIHILATION">
@@ -773,6 +976,39 @@
             <grant type="Spell" id="ID_PHB_SPELL_PHANTOM_STEED" />
         </rules>
     </element>
+    <element name="Iron Templar" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_IRON_TEMPLAR">
+        <supports>Kibbles Psionic Talent</supports>
+        <requirements>ID_KT_KTPE_CLASS_FEATURE_PSIONIC_DISCIPLINE_PRECOGNITION</requirements>
+        <prerequisite>Nullification Discipline</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Nullification Discipline</p>
+            <p class="indent">You gain proficiency with medium armor. If you already have proficiency with medium armor, you gain proficiency with heavy armor.</p>
+            <p class="indent">Additionally, when you hit a creature with an melee weapon attack or with a spell attack with the range of touch, you can use your Denial power as a bonus action targeting that creature.</p>
+        </description>
+        <sheet>
+            <description>When you hit a creature with an melee weapon attack or with a spell attack with the range of touch, you can use your Denial power as a bonus action targeting that creature.</description>
+        </sheet>
+        <rules>
+            <grant type="Class Feature" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_IRON_TEMPLAR_MEDIUM" requirements="!ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+            <grant type="Class Feature" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_IRON_TEMPLAR_HEAVY" requirements="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR,!ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_IRON_TEMPLAR_MEDIUM" />
+        </rules>
+    </element>
+        <element name="Medium Armor" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_IRON_TEMPLAR_MEDIUM">
+            <compendium display="false" />
+            <description />
+            <sheet display="false"/>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+            </rules>
+        </element>
+        <element name="Heavy Armor" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_IRON_TEMPLAR_HEAVY">
+            <compendium display="false" />
+            <description />
+            <sheet display="false"/>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+            </rules>
+        </element>
     <element name="Lingering Rifts" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_LINGERING_RIFTS">
         <supports>Kibbles Psionic Talent</supports>
         <requirements>ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TRANSPOSITION_DISCIPLINE</requirements>
@@ -914,6 +1150,20 @@
             <description>When a creature deals damage to you, you can spend expend 1 or more psi points (up to your psi limit) to share the pain you experienced back at them, dealing 1d10 psychic damage per point spent. The damage this deals cannot exceed the damage taken from the attack.</description>
         </sheet>
     </element>
+    <element name="Swfit Strike" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_SWIFT_STRIKE">
+        <supports>Kibbles Psionic Talent</supports>
+        <requirements>[level:psion:5],ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_ENHANCEMENT_DISCIPLINE</requirements>
+        <prerequisite>5th-level Psion, Enhancement Discipline</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th-level Psion, Enhancement Discipline</p>
+            <p class="indent">When you grant Swift with your Enhancing Surge ability, the target can use the action granted to take the Attack action (one weapon attack only).</p>
+        </description>
+        <sheet>
+            <description>When you grant Swift with your Enhancing Surge ability, the target can use the action granted to take the Attack action (one weapon attack only).</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
     <element name="Tantrum" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_TANTRUM">
         <supports>Kibbles Psionic Talent</supports>
         <requirements>ID_KT_PSION_ARCHETYPE_PSION_UNLEASHED</requirements>
@@ -937,18 +1187,6 @@
         </description>
         <sheet usage="2 Psi Points">
             <description>You create a wall of weak telekinetic force up to 40 feet long, or as a 15 radius around you. This barrier is visible as small objects hover and float within it. If you create it around yourself, it moves when you move. Ranged attacks that pass through this barrier are made with disadvantage as their trajectory is deflected. You can maintain this barrier by concentrating, as if concentrating on a spell, for up to 1 minute after creating it.</description>
-        </sheet>
-    </element>
-    <element name="Telekinetic Movement" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_TELEKINETIC_MOVEMENT">
-        <supports>Kibbles Psionic Talent</supports>
-        <requirements>ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TELEKINESIS_DISCIPLINE</requirements>
-        <prerequisite>Telekinesis Discipline</prerequisite>
-        <description>
-            <p class="flavor">Prerequisite: Telekinesis Discipline</p>
-            <p class="indent">You can expend a psi point to gain 10 additional feet of movement and the effect of <i>spiderclimb</i>, <i>feather fall</i>, or <i>levitate</i> until the start of your next turn. At the start of your next turn you can expend a psi point to maintain the effect before it would end.</p>
-        </description>
-        <sheet usage="1 Psi Point">
-            <description>You gain 10 additional feet of movement and the effect of spiderclimb, feather fall, or levitate until the start of your next turn. At the start of your next turn you can expend a psi point to maintain the effect before it would end.</description>
         </sheet>
     </element>
     <element name="Tranquil Meditation" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_TRANQUIL_MEDITATION">
@@ -1114,7 +1352,7 @@
             <select type="Class Feature" name="Psionic Discipline" supports="Kibbles Psionic Discipline" />
             <stat name="psi:points" value="1" />
         </rules>
-    </element>
+    </element>-->
     <element name="Inner Power" type="Feat" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_FEAT_INNER_POWER">
         <requirements>([psi:points:1]||[ki:points:1])</requirements>
         <prerequisite>At least 1 psi or ki point</prerequisite>
@@ -1152,7 +1390,7 @@
         <sheet>
             <description>You have advantage on Constitution saving throws that you make to maintain your concentration on a psionic ability when you take damage. You can perform the somatic components of psionic abilities even when you have weapons or a shield in one or both hands. When a hostile creature’s movement provokes an opportunity attack from you, you can use your reaction to use a psionic discipline power or spell targeting the creature, rather than making an opportunity attack. The spell must have a casting time of 1 action and must target only that creature.</description>
         </sheet>
-    </element>-->
+    </element>
     <element name="Psionic Reach" type="Feat" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_FEAT_PSIONIC_REACH">
         <requirements>ID_INTERNAL_GRANT_KT_PSIONIC_DISCIPLINE</requirements>
         <prerequisite>The ability to use at least one Psionic Discipline</prerequisite>
@@ -1208,221 +1446,455 @@
         </rules>
     </element>
 
-
-    <element name="Amplifying Crystal, Uncommon" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_AMPLIFYING_CRYSTAL_UNCOMMON">
-        <description>
-            <p class="indent">While holding this crystal, you gain a +1 bonus to psionics attack rolls and to the psionic saving throw DCs of your psionic abilities. The bonus is determined by the crystal’s rarity</p>
-            <p class="indent">In addition, when you use a psionic power, you can add 1 psi points; these points can only be used on psionic powers, but can exceed your normal psi limit. You can’t use this property again until you finish a long rest.</p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="attunement" addition="by a Psionic">true</set>
-            <set name="rarity">Uncommon</set>
-        </setters>
-        <rules>
-            <stat name="psi:limit" value="1" />
-            <stat name="spellcasting:attack" value="1" />
-            <stat name="spellcasting:dc" value="1" />
-        </rules>
-    </element>
-    <element name="Amplifying Crystal, Rare" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_AMPLIFYING_CRYSTAL_RARE">
-        <description>
-            <p class="indent">While holding this crystal, you gain a +2 bonus to psionics attack rolls and to the psionic saving throw DCs of your psionic abilities. The bonus is determined by the crystal’s rarity</p>
-            <p class="indent">In addition, when you use a psionic power, you can add 2 psi points; these points can only be used on psionic powers, but can exceed your normal psi limit. You can’t use this property again until you finish a long rest.</p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="attunement" addition="by a Psionic">true</set>
-            <set name="rarity">Rare</set>
-        </setters>
-        <rules>
-            <stat name="psi:limit" value="2" />
-            <stat name="spellcasting:attack" value="2" />
-            <stat name="spellcasting:dc" value="2" />
-        </rules>
-    </element>
-    <element name="Amplifying Crystal, Very Rare" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_AMPLIFYING_CRYSTAL_VERYRARE">
-        <description>
-            <p class="indent">While holding this crystal, you gain a +3 bonus to psionics attack rolls and to the psionic saving throw DCs of your psionic abilities. The bonus is determined by the crystal’s rarity</p>
-            <p class="indent">In addition, when you use a psionic power, you can add 3 psi points; these points can only be used on psionic powers, but can exceed your normal psi limit. You can’t use this property again until you finish a long rest.</p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="attunement" addition="by a Psionic">true</set>
-            <set name="rarity">Very Rare</set>
-        </setters>
-        <rules>
-            <stat name="psi:limit" value="3" />
-            <stat name="spellcasting:attack" value="3" />
-            <stat name="spellcasting:dc" value="3" />
-        </rules>
-    </element>
-    <element name="Focusing Crystal" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_FOCUSING_CRYSTAL">
-        <description>
-            <p class="indent">While holding this crystal, you can use it to focus your mind, more perfectly opening your psionic senses. You can use this spell to cast clairvoyance without expending psi points. Once while the effect is active, you can use a Psionic ability (power, spell or talent) that does not deal damage on a creature within range of the sensor as if it was in range and sight of you. You can’t use this property again until you finish a long rest.</p>
-            <p class="indent">At the start of your turn, you can focus this crystal (as if concentrating on a spell) and reduce your movement speed to zero. When you do so, until the end of your turn the range of all psionic abilities with a range other than touch are doubled.</p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="attunement" addition="by a Psionic">true</set>
-            <set name="rarity">Uncommon</set>
-        </setters>
-    </element>
-    <element name="Resonating Crystal" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_RESONATING_CRYSTAL">
-        <description>
-            <p class="indent">This is a crystal that has been fundamentally warped by exposure to psionic powers. It now holds the perfect resonance to trap and hold psionic energy, though it does not naturally generate it.</p>
-            <p class="indent">While holding this crystal, as an action you can imbue up to 4 psi points into it. While it is imbued it gives off 10 feet of bright light and 10 feet of dim light with a eerie purple hue.</p>
-            <p class="indent">If it has one or more points imbued in it, as an action you can reclaim the psi points stored in it, regaining expended psi points from it up to your maximum psi points.</p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="attunement" addition="by a Psionic">true</set>
-            <set name="rarity">Uncommon</set>
-        </setters>
-    </element>
-    <element name="Psi Blade Crystal, Uncommon" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_PSI_BLADE_CRYSTAL_UNCOMMON">
-        <description>
-            <p class="indent">Embedded in a ring, braclet, bladeless sword hilt, or similar item, this small gem seems to have minimal value to the casual observer, but has perfect psionic resonance.</p>
-            <p class="indent">While carried by a Way of the Soul Knife Monk, that monk can use this crystal to focus a purer Soul Knife, adding +1 to attack and damage rolls with their Soul Knife.</p>
-            <p class="indent">Some crystals come in various colors, and change the hue of your psi blade to match the color of the crystal.</p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Uncommon</set>
-        </setters>
-    </element>
-    <element name="Psi Blade Crystal, Rare" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_PSI_BLADE_CRYSTAL_RARE">
-        <description>
-            <p class="indent">Embedded in a ring, braclet, bladeless sword hilt, or similar item, this small gem seems to have minimal value to the casual observer, but has perfect psionic resonance.</p>
-            <p class="indent">While carried by a Way of the Soul Knife Monk, that monk can use this crystal to focus a purer Soul Knife, adding +2 to attack and damage rolls with their Soul Knife.</p>
-            <p class="indent">Some crystals come in various colors, and change the hue of your psi blade to match the color of the crystal.</p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Rare</set>
-        </setters>
-    </element>
-    <element name="Psi Blade Crystal, Very Rare" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_PSI_BLADE_CRYSTAL_VERYRARE">
-        <description>
-            <p class="indent">Embedded in a ring, braclet, bladeless sword hilt, or similar item, this small gem seems to have minimal value to the casual observer, but has perfect psionic resonance.</p>
-            <p class="indent">While carried by a Way of the Soul Knife Monk, that monk can use this crystal to focus a purer Soul Knife, adding +3 to attack and damage rolls with their Soul Knife.</p>
-            <p class="indent">Some crystals come in various colors, and change the hue of your psi blade to match the color of the crystal.</p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Very Rare</set>
-        </setters>
-    </element>
-    <element name="Purity of Mind" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_PURITY_OF_MIND">
-        <description>
-            <p class="indent">A blindfold made of heavy silken cloth, it is emblazoned with strange patterns. When worn, you are lose any normal vision that relies on your eyes and are blinded but gain several benefits as your mind is cleared of visual distractions.</p>
-            <ul>
-                <li>You gain a mindsight of 60 feet, allowing you to see creatures with an Intelligence of 6 or higher within range as if by blindsight. A creature you are unaware of can still be hidden from you.</li>
-                <li>You gain a blindsight of 10 feet. If you already have a blindsight, its range is increased by 10 feet.</li>
-                <li>You are immune to effects that require you to see the target or effect, even if they are within your mindsight or blindsight.</li>
-            </ul>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="attunement" addition="by a Psionic">true</set>
-            <set name="rarity">Rare</set>
-        </setters>
-        <rules>
-            <grant type="Vision" id="ID_VISION_BLINDSIGHT" />
-            <grant type="Vision" id="ID_KT_KTPE_VISION_MINDSIGHT" />
-        </rules>
-    </element>
-        <element name="Mindsight" type="Vision" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_VISION_MINDSIGHT">
+    <!-- Advanced Psionic Options -->
+        <element name="Psionic Synthesis" type="Feat" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS">
+            <requirements>[level:psion:4],ID_KT_PSION_CLASS_FEATURE_PSION_SECOND_DISCIPLINE</requirements>
+            <prerequisite>4th level Psion, 2 or more Psionic Disciplines known</prerequisite>
             <description>
-                <p>You can see creatures with an Intelligence of 6 or higher within range as if by blindsight. A creature you are unaware of can still be hidden from you.</p>
+                <p class="flavor">Prerequisite: 4th level Psion, 2 or more Psionic Disciplines known</p>
+                <p class="indent">You gain the ability to meld your Psionic abilities together to produce potent new effects. When you select this feat, you can select one Fusion talent for free. You can only select fusion talents when you have all the Disciplines in their prerequisite.</p>
+                <div class="sidebar">
+                    <h5 class="caption">Warning! Playtest Material</h5>
+                    <p>This section document opens up a lot of new interactions for the already quite modular Psion class, and is still under review and playtesting (and will be for sometime). If you're a DM and you have concerns with an interaction, feel free to work with your player on modifications or reach out to me for clarity.</p>
+                </div>
             </description>
-            <sheet>
-                <description>You can see creatures with an Intelligence of 6 or higher within {{mindsight:range}} feet as if by blindsight. A creature you are unaware of can still be hidden from you.</description>
-            </sheet>
+            <sheet display="false" />
             <rules>
-                <stat name="mindsight:range" value="60" bonus="base" />
+                <select type="Class Feature" name="Psionic Synthesis Talent" supports="Kibbles Psionic Talent,Psionic Synthesis" />
             </rules>
         </element>
-    <element name="Psionically Attuned Weapon" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_PSIONICALLY_ATTUNED_WEAPON">
-        <description>
-            <p class="indent">This weapon is perfectly attuned to conducting psionic energy. While wielding it, you gain the Psionic Weapon talent, but it can only be used when targeting this weapon. When you use Psionic Weapon in this way, it requires only 1 psi point to activate.</p>
-        </description>
-        <setters>
-            <set name="category">Magic Weapons</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type" addition="any melee">Weapon</set>
-			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE</set>
-            <set name="rarity">Uncommon</set>
-			<set name="name-format">Psionically Attuned {{parent}}</set>
-        </setters>
-        <rules>
-            <grant type="Class Feature" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_PSIONIC_WEAPON" />
-        </rules>
-    </element>
-    <element name="Soul Shard" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_SOUL_SHARD">
-        <description>
-            <p class="indent">A crystalized fragment of a dead psionic creature. How these form, few know. Many suspect dark secrets at their origin. These shards can be driven into the flesh of another psionic creature, dealing 1d4 piercing damage and 4d12 psychic damage and causing them to instantly become attuned to it. When you do so, you gain access to a Psionic Discipline that the creature it was formed from presumably had, along with one flaw formed from the fragment of their soul within the shard.</p>
-            <p class="indent">When you find a soul shard, the DM can determine the Discipline it contains and the flaw it confers while attuned, you can roll on the following table to determine them.</p>
-            <p class="indent">To unattune to it, must spend an action to try to rip it free. You must succeed a DC 15 Charsma saving throw. Each time you fail this this save, you take 4d12 psychic damage.</p>
-            <table>
-                <thead>
-                    <tr><td>d6</td><td>Discipline</td></tr>
-                </thead>
-                <tr><td>1</td><td>Telekinesis</td></tr>
-                <tr><td>2</td><td>Telepathy</td></tr>
-                <tr><td>3</td><td>Enhancement</td></tr>
-                <tr><td>4</td><td>Psychokinetics</td></tr>
-                <tr><td>5</td><td>Transposition</td></tr>
-                <tr><td>6</td><td>Precognition</td></tr>
-            </table>
-            <table>
-                <thead>
-                    <tr><td>d6</td><td>Flaw</td></tr>
-                </thead>
-                <tr><td>1</td><td>Your anger grows harder to control, your eyes change color and start glowing when you become angry.</td></tr>
-                <tr><td>2</td><td>You hear a faint screaming at all times. It sounds almost... familiar.</td></tr>
-                <tr><td>3</td><td>A strange swirling tattoo-like scar very slowly grows from where it pierces you that burns painfully.</td></tr>
-                <tr><td>4</td><td>When you sleep, you have nightmares about another life filled with horror, fear and revulsion.</td></tr>
-                <tr><td>5</td><td>You cannot remember your own name, even when told.</td></tr>
-                <tr><td>6</td><td>You grow small vestigial tentacles along your jawline like a strange beard after being attuned to it for 1d4 days.</td></tr>
-            </table>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">0 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="attunement" addition="by a Psionic">true</set>
-            <set name="rarity">Legendary</set>
-        </setters>
-    </element>
+        <element name="Enhanced Constructs" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_ENHANCED_CONSTRUCTS">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_ENHANCEMENT_DISCIPLINE,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_PROJECTION_DISCIPLINE</requirements>
+            <prerequisite>Psionic Synthesis, Enhancement Discipline, Projection Discipline</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Psionic Synthesis, Enhancement Discipline, Projection Discipline</p>
+                <p class="indent">Your Astral Construct can be affected by Enhancing Surge, and for the purposes of Talents, is considered you, though you must choose if you or it receive the benefits. Additionally, you can consider your Astral Construct a creature for the purposes of Enhancement Alternate Effects in the following ways:</p>
+                <ul>
+                    <li>Any time it gains hit points or temporary hit points, it becomes Solidified and gains those hit points until they are depleted; it can have a maximum hit points equal to your Psion level.</li>
+                    <li>Increased Movement Speed increases the distance you can move it, including movement gained from the Dash action.</li>
+                    <li>Any additional actions it gains, it can take during your turn at your direction (no action required).</li>
+                </ul>
+                <p class="indent">Additionally, when you use an Enhancing Surge or Alternate Effect, you can double the psi points spent to make it affect both you and your Astral Construct (you cannot exceed your normal psi point limit doing this).</p>
+            </description>
+            <sheet>
+                <description>Your Astral Construct can be affected by Enhancing Surge, and for the purposes of Talents, is considered you, though you must choose if you or it receive the benefits.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Elemental Phasing" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_ELEMENTAL_PHASING">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TRANSPOSITION_DISCIPLINE,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_PSYCHOKINETICS_DISCIPLINE</requirements>
+            <prerequisite>Psionic Synthesis, Psychokinetics Discipline, Transposition Discipline</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Psionic Synthesis, Psychokinetics Discipline, Transposition Discipline</p>
+                <p class="indent">As you step between planes, you can tap into the Elemental Planes, bringing their power into the material with you. You can use Psychokinetic modifiers on Phase Rift (excluding Massive).</p>
+                <p class="indent">Additionally, whenever you deal damage to an area with a Psychokinetics ability that would include yourself, you can phase yourself out of reality taking no damage from the effect.</p>
+            </description>
+            <sheet>
+                <description>You can use Psychokinetic modifiers on Phase Rift (excluding Massive). Additionally, whenever you deal damage to an area with a Psychokinetics ability that would include yourself, you can phase yourself out of reality taking no damage from the effect.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Kinetic Mastery" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_KINETIC_MASTERY">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TELEKINESIS_DISCIPLINE,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_PSYCHOKINETICS_DISCIPLINE</requirements>
+            <prerequisite>Psionic Synthesis, Psychokinetics Discipline, Telekinesis Discipline</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Psionic Synthesis, Psychokinetics Discipline, Telekinesis Discipline</p>
+                <p class="indent">Your ability to manipulate energy becomes a single blended prowess, freely swapping between manipulating force and energy. You can apply Telekinetic Force modifiers to Kinetic Blast and Elemental Blast modifiers to Telekinetic Force (though to do not gain any benefits from from a Specialization while doing so).</p>
+            </description>
+            <sheet>
+                <description>You can apply Telekinetic Force modifiers to Kinetic Blast and Elemental Blast modifiers to Telekinetic Force (though to do not gain any benefits from from a Specialization while doing so).</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Kinetic Storm" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_KINETIC_STORM">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TELEKINESIS_DISCIPLINE,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_PSYCHOKINETICS_DISCIPLINE</requirements>
+            <prerequisite>Psionic Synthesis, Psychokinetics Discipline, Telekinesis Discipline</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Psionic Synthesis, Psychokinetics Discipline, Telekinesis Discipline</p>
+                <p class="indent">You as an action, you can expend 3 psi points to cast <i>fire cyclone</i>. If you have a psychokinetic specialization, it becomes the damage type of your specialization.</p>
+            </description>
+            <sheet action="Action" usage="3 psi points">
+                <description>You can cast fire cyclone. If you have a psychokinetic specialization, it becomes the damage type of your specialization.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Physical Telekinesis" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_PHYSICAL_TELEKINESIS">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_ENHANCEMENT_DISCIPLINE,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TELEKINESIS_DISCIPLINE</requirements>
+            <prerequisite>Psionic Synthesis, Enhancement Discipline, Telekinesis Discipline</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Psionic Synthesis, Enhancement Discipline, Telekinesis Discipline</p>
+                <p class="indent">When you use a Enhancing Surge to empower a creature, you can expend a psi point augment it with your Telekinesis to further assist them, optionally granting one of the following benefits:</p>
+                <ul>
+                    <li>You can move the creature 10 feet (this movement does not provoke opportunity attacks).</li>
+                    <li>You can telekinetically deflect the first weapon attack against them before the start of your next turn, giving that attack disadvantage.</li>
+                    <li>You can telekinetically boost their next athletics check or weapon attack before the start of your next turn, granting that check or attack advantage.</li>
+                </ul>
+                <p class="indent">Addititionally, while under the effect of Enhancing Surge, the amount you can lift, drag, or carry is doubled with assistance of your telekinesis, and you can apply Telekinetic Force modifiers to your weapon attacks.</p>
+            </description>
+            <sheet usage="1 psi point">
+                <description>When you use a Enhancing Surge to empower a creature, you can expend a psi point augment it with your Telekinesis to further assist them, optionally granting one benefits. Addititionally, while under the effect of Enhancing Surge, the amount you can lift, drag, or carry is doubled with assistance of your telekinesis, and you can apply Telekinetic Force modifiers to your weapon attacks.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Planar Projections" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_PLANAR_PROJECTIONS">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TRANSPOSITION_DISCIPLINE,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_PROJECTION_DISCIPLINE</requirements>
+            <prerequisite>Psionic Synthesis, Projection Discipline, Transposition Discipline</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Psionic Synthesis, Projection Discipline, Transposition Discipline</p>
+                <p class="indent">You gain the ability to project beings from other planes into partial reality as magical constructs. You learn the following spells and cast them as Alternate Effects of Projection, expending psi points as shown on the table below to cast them using your Psionics feature. You can cast them at higher levels be expending additional psi points.</p>
+                <p class="indent">Unlike other spells cast by the Psionics feature, you need either material component of the spell, or a psionic crystal worth at least 100 gp x the number of psi points spent to cast the spell as the material component; the material component is not consumed by the casting of the spell. Additionally, any of the following spells that you are concentrating ends if you complete a short or long rest.</p>
+                <table>
+                    <thead>
+                        <tr><td>Psi Points</td><td>Alternate Effect</td></tr>
+                    </thead>
+                    <tr><td>2</td><td>summon beast</td></tr>
+                    <tr><td>3</td><td>summon fey</td></tr>
+                    <tr><td>4</td><td>summon elemental</td></tr>
+                    <tr><td>5</td><td>summon aberration</td></tr>
+                    <tr><td>5</td><td>summon celestial</td></tr>
+                    <tr><td>6</td><td>summon fiend</td></tr>
+                </table>
+                <div class="sidebar">
+                    <h5 class="caption">Summon Spells</h5>
+                    <p>The listed summoning spells can be found in Tasha's Cauldron of Everything.</p>
+                </div>
+            </description>
+            <sheet usage="2+ psi points">
+                <description>You can cast specific summoning spells as Alternate Effects of your Projection by expending psi points. You need either material component of the spell, or a psionic crystal worth at least 100 gp x the number of psi points spent to cast the spell as the material component; the material component is not consumed by the casting of the spell. Additionally, any spells that you are concentrating ends if you complete a short or long rest.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Astral Swap" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_ASTRAL_SWAP">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TRANSPOSITION_DISCIPLINE,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_PROJECTION_DISCIPLINE</requirements>
+            <prerequisite>Psionic Synthesis, Projection Discipline, Transposition Discipline</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Psionic Synthesis, Projection Discipline, Transposition Discipline</p>
+                <p class="indent">As a bonus action, you can Phase Rift to where your Astral Construct is; this movement counts as a Phase Rift, and you can apply modifiers to it as normal. Your Astral Construct is moved to where you started this movement along the Phase Rift; during the movement you can command your Astral Construct to attack a creature pases with its action.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can Phase Rift to where your Astral Construct is; this movement counts as a Phase Rift, and you can apply modifiers to it as normal.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Reality Warper" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_REALITY_WARPER">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_MATTER_MADE_REAL,ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_MENTAL_IMAGE</requirements>
+            <prerequisite>Psionic Synthesis, Matter Made Real, Mental Image</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Psionic Synthesis, Matter Made Real, Mental Image</p>
+                <p class="indent">You can bring the illusions you make people see to life. When you are concentrating on an illusion spell, as a bonus action you can expend psi points during your turn you can bring aspects of the illusion into reality. For each psi point spent you can bring a 5-foot cube section of the illusion into reality until the start of your next turn, and it can have the following effects:</p>
+                <ul>
+                    <li>If the effect would do damage, each 5-foot cube damage one target. That target must pass a Dexterity saving throw, or take damage equal to a number of d8 dice equal to the level of the spell.</li>
+                    <li>If the effect would stop a creature, they cannot move through it. If the effect would restrain a creature, the that creature must pass a Dexterity saving throw or become restrained until the start of your next turn.</li>
+                </ul>
+                <p class="indent">Each 5-foot cube can effect only one creature that is either within it or adjacent to it. The DM may allow grant it other effects as their discretion.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>When you are concentrating on an illusion spell, you can expend psi points during your turn you can bring aspects of the illusion into reality. For each psi point spent you can bring a 5-foot cube section of the illusion into reality until the start of your next turn.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Phantom Blade Barrage" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_PHANTOM_BLADE_BARRAGE">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_PROJECTED_WEAPONRY,ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_TELEKINETIC_WEAPONS</requirements>
+            <prerequisite>Psionic Synthesis, Projected Weaponry, Telekinetic Weapons</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Psionic Synthesis, Projected Weaponry, Telekinetic Weapons</p>
+                <p class="indent">You can create a weapon with Projected Weapon as part of making an attack with it using Telekinetic Weapons, allowing you to project as many weapons in this manner as you make attacks (no additional action required). When you use weapons created by Projected Weaponry as the projectiles for your Telekinetic Weapons, the range you can fling the weapons is doubled.</p>
+                <p class="indent">Additionally, if you expend 6 psi points on the Whirling modifier of Telekinetic Weapons, you can cast blade barrier instead of cloud of daggers, generating much larger number of ethereal blades as part of the casting.</p>
+            </description>
+            <sheet>
+                <description>You can create a weapon with Projected Weapon as part of making an attack with it using Telekinetic Weapons, allowing you to project as many weapons in this manner as you make attacks (no additional action required).</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Parasitic Nightmare" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_PARASITIC_NIGHTMARE">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_PSION_CLASS_FEATURE_PSIONIC_DISCIPLINE_TELEPATHY_DISCIPLINE,ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_DISCIPLINE_CONSUMPTION_DISCIPLINE</requirements>
+            <prerequisite>Psionic Synthesis, Consumption Discipline, Telepathy Discipline</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Consumption Discipline, Telepathy Discipline</p>
+                <p class="indent">You gain the ability to add Telepathic Intrusion modifiers to Mind Leech.</p>
+                <p class="indent">Additionally, when you deal psychic damage to a creature that is frightened of you, you can render yourself invisible to that creature until the start of your next turn; you can immediately (no action required) roll an Intelligence (Stealth) check affecting only creatures you are invisible from as a result of this talent.</p>
+                <p class="indent">If you are hidden from a creature that is frightened of you, when it moves, you can use your reaction to teleport to an unoccupied space within 5 feet of that creature (at the completion of their movement).</p>
+        <div class="sidebar">
+            <h5 class="caption">Rules Interaction</h5>
+            <p>The frightened condition impacts a creature while it can see the target it is frightened of. If you are invisible, it cannot see, and will not suffer the conditions of the frightened condition. You are essentially trading the frightened for them being unable to see you.</p>
+        </div>
+            </description>
+            <sheet>
+                <description>You can add Telepathic Intrusion modifiers to Mind Leech. Additionally, when you deal psychic damage to a creature that is frightened of you, you can render yourself invisible to that creature until the start of your next turn. If you are hidden from a creature that is frightened of you, when it moves, you can use your reaction to teleport to an unoccupied space within 5 feet of that creature.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="The Void" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_THE_VOID">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_DISCIPLINE_CONSUMPTION_DISCIPLINE,ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_DISCIPLINE_NULLIFICATION_DISCIPLINE</requirements>
+            <prerequisite>Psionic Synthesis, Consumption Discipline, Nullification Discipline</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Consumption Discipline, Nullification Discipline</p>
+                <p class="indent">You devour all supernatural effects near you. Whenever a creature (including yourself) within 5 feet of you takes damage from magical source, you can expend 1 or more psi points to use your reaction to reduce the damage taken by 1d8 per psi point spent. You can divide this amount between multiple creatures within range if they take damage at the same time.</p>
+                <p class="indent">Additionally, whenever you successfully cast <i>counterspell</i>, <i>dispel magic</i>, or <i>remove curse</i>, you regain hit points equal to the level of spell stopped or ended.</p>
+            </description>
+            <sheet>
+                <description>Whenever a creature (including yourself) within 5 feet of you takes damage from magical source, you can expend 1 or more psi points to use your reaction to reduce the damage taken by 1d8 per psi point spent. You can divide this amount between multiple creatures within range if they take damage at the same time. Additionally, whenever you successfully cast counterspell, dispel magic, or remove curse, you regain hit points equal to the level of spell stopped or ended.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Element Eater" type="Class Feature" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_CLASS_FEATURE_PSIONIC_TALENT_ELEMENT_EATER">
+            <supports>Kibbles Psionic Talent,Psionic Synthesis</supports>
+            <requirements>ID_KT_KTPE_FEAT_PSIONIC_SYNTHESIS,ID_KT_PSION_EXP_CLASS_FEATURE_PSIONIC_DISCIPLINE_CONSUMPTION_DISCIPLINE,ID_KT_KTPE_ARCHETYPE_PSION_ELEMENTAL_MIND</requirements>
+            <prerequisite>Psionic Synthesis, Elemental Mind, Consumption Discipline</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Elemental Mind, Consumption Discipline</p>
+                <p class="indent">Your mind is merged with your elemental power, and it is life and sustainence for you, integrating with your powers of consumption, granting you the following benefits:</p>
+                <ul>
+                    <li>When you cast <i>absorb elements</i> the damage bonus can applied to your Mind Leech power as bonus psychic damage.</li>
+                    <li>When a creature with resistance or immunity to Acid, Cold, Fire, Lightning, or Thunder damage fails a saving throw against your Mind Leech power, you gain resistance to the damage type it has resistance or immunity to (if the creature has multiple resistances or immunities to those damage types, you gain one of your choice).</li>
+                    <li>You can using the Living Power modifiers Forming or Reaching to turn Mind Leech into a melee or ranged spell attack, as per those modifiers; you cannot add any Modifier that requires the target to fail a saving throw when using it this way.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>When you cast absorb elements the damage bonus can applied to your Mind Leech power as bonus psychic damage. When a creature with resistance or immunity to Acid, Cold, Fire, Lightning, or Thunder damage fails a saving throw against your Mind Leech power, you gain resistance to the damage type it has resistance or immunity to. You can using the Living Power modifiers Forming or Reaching to turn Mind Leech into a melee or ranged spell attack, as per those modifiers; you cannot add any Modifier that requires the target to fail a saving throw when using it this way.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+
+    <!-- Psionic Items -->
+        <element name="Amplifying Crystal, Uncommon" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_AMPLIFYING_CRYSTAL_UNCOMMON">
+            <description>
+                <p class="indent">While holding this crystal, you gain a +1 bonus to psionics attack rolls and to the psionic saving throw DCs of your psionic abilities. The bonus is determined by the crystal’s rarity</p>
+                <p class="indent">In addition, when you use a psionic power, you can add 1 psi points; these points can only be used on psionic powers, but can exceed your normal psi limit. You can’t use this property again until you finish a long rest.</p>
+            </description>
+            <setters>
+                <set name="category">Wondrous Items</set>
+                <set name="cost" currency="gp">0</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="type">Wondrous Item</set>
+                <set name="attunement" addition="by a Psionic">true</set>
+                <set name="rarity">Uncommon</set>
+            </setters>
+            <rules>
+                <stat name="psi:limit" value="1" />
+                <stat name="spellcasting:attack" value="1" />
+                <stat name="spellcasting:dc" value="1" />
+            </rules>
+        </element>
+        <element name="Amplifying Crystal, Rare" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_AMPLIFYING_CRYSTAL_RARE">
+            <description>
+                <p class="indent">While holding this crystal, you gain a +2 bonus to psionics attack rolls and to the psionic saving throw DCs of your psionic abilities. The bonus is determined by the crystal’s rarity</p>
+                <p class="indent">In addition, when you use a psionic power, you can add 2 psi points; these points can only be used on psionic powers, but can exceed your normal psi limit. You can’t use this property again until you finish a long rest.</p>
+            </description>
+            <setters>
+                <set name="category">Wondrous Items</set>
+                <set name="cost" currency="gp">0</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="type">Wondrous Item</set>
+                <set name="attunement" addition="by a Psionic">true</set>
+                <set name="rarity">Rare</set>
+            </setters>
+            <rules>
+                <stat name="psi:limit" value="2" />
+                <stat name="spellcasting:attack" value="2" />
+                <stat name="spellcasting:dc" value="2" />
+            </rules>
+        </element>
+        <element name="Amplifying Crystal, Very Rare" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_AMPLIFYING_CRYSTAL_VERYRARE">
+            <description>
+                <p class="indent">While holding this crystal, you gain a +3 bonus to psionics attack rolls and to the psionic saving throw DCs of your psionic abilities. The bonus is determined by the crystal’s rarity</p>
+                <p class="indent">In addition, when you use a psionic power, you can add 3 psi points; these points can only be used on psionic powers, but can exceed your normal psi limit. You can’t use this property again until you finish a long rest.</p>
+            </description>
+            <setters>
+                <set name="category">Wondrous Items</set>
+                <set name="cost" currency="gp">0</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="type">Wondrous Item</set>
+                <set name="attunement" addition="by a Psionic">true</set>
+                <set name="rarity">Very Rare</set>
+            </setters>
+            <rules>
+                <stat name="psi:limit" value="3" />
+                <stat name="spellcasting:attack" value="3" />
+                <stat name="spellcasting:dc" value="3" />
+            </rules>
+        </element>
+        <element name="Focusing Crystal" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_FOCUSING_CRYSTAL">
+            <description>
+                <p class="indent">While holding this crystal, you can use it to focus your mind, more perfectly opening your psionic senses. You can use this spell to cast clairvoyance without expending psi points. Once while the effect is active, you can use a Psionic ability (power, spell or talent) that does not deal damage on a creature within range of the sensor as if it was in range and sight of you. You can’t use this property again until you finish a long rest.</p>
+                <p class="indent">At the start of your turn, you can focus this crystal (as if concentrating on a spell) and reduce your movement speed to zero. When you do so, until the end of your turn the range of all psionic abilities with a range other than touch are doubled.</p>
+            </description>
+            <setters>
+                <set name="category">Wondrous Items</set>
+                <set name="cost" currency="gp">0</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="type">Wondrous Item</set>
+                <set name="attunement" addition="by a Psionic">true</set>
+                <set name="rarity">Uncommon</set>
+            </setters>
+        </element>
+        <element name="Resonating Crystal" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_RESONATING_CRYSTAL">
+            <description>
+                <p class="indent">This is a crystal that has been fundamentally warped by exposure to psionic powers. It now holds the perfect resonance to trap and hold psionic energy, though it does not naturally generate it.</p>
+                <p class="indent">While holding this crystal, as an action you can imbue up to 4 psi points into it. While it is imbued it gives off 10 feet of bright light and 10 feet of dim light with a eerie purple hue.</p>
+                <p class="indent">If it has one or more points imbued in it, as an action you can reclaim the psi points stored in it, regaining expended psi points from it up to your maximum psi points.</p>
+            </description>
+            <setters>
+                <set name="category">Wondrous Items</set>
+                <set name="cost" currency="gp">0</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="type">Wondrous Item</set>
+                <set name="attunement" addition="by a Psionic">true</set>
+                <set name="rarity">Uncommon</set>
+            </setters>
+        </element>
+        <element name="Psi Blade Crystal, Uncommon" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_PSI_BLADE_CRYSTAL_UNCOMMON">
+            <description>
+                <p class="indent">Embedded in a ring, braclet, bladeless sword hilt, or similar item, this small gem seems to have minimal value to the casual observer, but has perfect psionic resonance.</p>
+                <p class="indent">While carried by a Way of the Soul Knife Monk, that monk can use this crystal to focus a purer Soul Knife, adding +1 to attack and damage rolls with their Soul Knife.</p>
+                <p class="indent">Some crystals come in various colors, and change the hue of your psi blade to match the color of the crystal.</p>
+            </description>
+            <setters>
+                <set name="category">Wondrous Items</set>
+                <set name="cost" currency="gp">0</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="type">Wondrous Item</set>
+                <set name="rarity">Uncommon</set>
+            </setters>
+        </element>
+        <element name="Psi Blade Crystal, Rare" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_PSI_BLADE_CRYSTAL_RARE">
+            <description>
+                <p class="indent">Embedded in a ring, braclet, bladeless sword hilt, or similar item, this small gem seems to have minimal value to the casual observer, but has perfect psionic resonance.</p>
+                <p class="indent">While carried by a Way of the Soul Knife Monk, that monk can use this crystal to focus a purer Soul Knife, adding +2 to attack and damage rolls with their Soul Knife.</p>
+                <p class="indent">Some crystals come in various colors, and change the hue of your psi blade to match the color of the crystal.</p>
+            </description>
+            <setters>
+                <set name="category">Wondrous Items</set>
+                <set name="cost" currency="gp">0</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="type">Wondrous Item</set>
+                <set name="rarity">Rare</set>
+            </setters>
+        </element>
+        <element name="Psi Blade Crystal, Very Rare" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_PSI_BLADE_CRYSTAL_VERYRARE">
+            <description>
+                <p class="indent">Embedded in a ring, braclet, bladeless sword hilt, or similar item, this small gem seems to have minimal value to the casual observer, but has perfect psionic resonance.</p>
+                <p class="indent">While carried by a Way of the Soul Knife Monk, that monk can use this crystal to focus a purer Soul Knife, adding +3 to attack and damage rolls with their Soul Knife.</p>
+                <p class="indent">Some crystals come in various colors, and change the hue of your psi blade to match the color of the crystal.</p>
+            </description>
+            <setters>
+                <set name="category">Wondrous Items</set>
+                <set name="cost" currency="gp">0</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="type">Wondrous Item</set>
+                <set name="rarity">Very Rare</set>
+            </setters>
+        </element>
+        <element name="Purity of Mind" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_PURITY_OF_MIND">
+            <description>
+                <p class="indent">A blindfold made of heavy silken cloth, it is emblazoned with strange patterns. When worn, you are lose any normal vision that relies on your eyes and are blinded but gain several benefits as your mind is cleared of visual distractions.</p>
+                <ul>
+                    <li>You gain a mindsight of 60 feet, allowing you to see creatures with an Intelligence of 6 or higher within range as if by blindsight. A creature you are unaware of can still be hidden from you.</li>
+                    <li>You gain a blindsight of 10 feet. If you already have a blindsight, its range is increased by 10 feet.</li>
+                    <li>You are immune to effects that require you to see the target or effect, even if they are within your mindsight or blindsight.</li>
+                </ul>
+            </description>
+            <setters>
+                <set name="category">Wondrous Items</set>
+                <set name="cost" currency="gp">0</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="type">Wondrous Item</set>
+                <set name="attunement" addition="by a Psionic">true</set>
+                <set name="rarity">Rare</set>
+            </setters>
+            <rules>
+                <grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+                <grant type="Vision" id="ID_KT_KTPE_VISION_MINDSIGHT" />
+            </rules>
+        </element>
+            <element name="Mindsight" type="Vision" source="Kibbles’ Psion Expanded" id="ID_KT_KTPE_VISION_MINDSIGHT">
+                <description>
+                    <p>You can see creatures with an Intelligence of 6 or higher within range as if by blindsight. A creature you are unaware of can still be hidden from you.</p>
+                </description>
+                <sheet>
+                    <description>You can see creatures with an Intelligence of 6 or higher within {{mindsight:range}} feet as if by blindsight. A creature you are unaware of can still be hidden from you.</description>
+                </sheet>
+                <rules>
+                    <stat name="mindsight:range" value="60" bonus="base" />
+                </rules>
+            </element>
+        <element name="Psionically Attuned Weapon" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_PSIONICALLY_ATTUNED_WEAPON">
+            <description>
+                <p class="indent">This weapon is perfectly attuned to conducting psionic energy. While wielding it, you gain the Psionic Weapon talent, but it can only be used when targeting this weapon. When you use Psionic Weapon in this way, it requires only 1 psi point to activate.</p>
+            </description>
+            <setters>
+                <set name="category">Magic Weapons</set>
+                <set name="cost" currency="gp">0</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="type" addition="any melee">Weapon</set>
+                <set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE</set>
+                <set name="rarity">Uncommon</set>
+                <set name="name-format">Psionically Attuned {{parent}}</set>
+            </setters>
+            <rules>
+                <grant type="Class Feature" id="ID_KT_PSION_CLASS_FEATURE_PSIONIC_TALENT_PSIONIC_WEAPON" />
+            </rules>
+        </element>
+        <element name="Soul Shard" type="Magic Item" source="Kibbles’ Psion Expanded" id="ID_source_abbreviation_MAGIC_ITEM_SOUL_SHARD">
+            <description>
+                <p class="indent">A crystalized fragment of a dead psionic creature. How these form, few know. Many suspect dark secrets at their origin. These shards can be driven into the flesh of another psionic creature, dealing 1d4 piercing damage and 4d12 psychic damage and causing them to instantly become attuned to it. When you do so, you gain access to a Psionic Discipline that the creature it was formed from presumably had, along with one flaw formed from the fragment of their soul within the shard.</p>
+                <p class="indent">When you find a soul shard, the DM can determine the Discipline it contains and the flaw it confers while attuned, you can roll on the following table to determine them.</p>
+                <p class="indent">To unattune to it, must spend an action to try to rip it free. You must succeed a DC 15 Charsma saving throw. Each time you fail this this save, you take 4d12 psychic damage.</p>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Discipline</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>Telekinesis</td></tr>
+                    <tr><td>2</td><td>Telepathy</td></tr>
+                    <tr><td>3</td><td>Enhancement</td></tr>
+                    <tr><td>4</td><td>Psychokinetics</td></tr>
+                    <tr><td>5</td><td>Transposition</td></tr>
+                    <tr><td>6</td><td>Precognition</td></tr>
+                </table>
+                <table>
+                    <thead>
+                        <tr><td>d6</td><td>Flaw</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>Your anger grows harder to control, your eyes change color and start glowing when you become angry.</td></tr>
+                    <tr><td>2</td><td>You hear a faint screaming at all times. It sounds almost... familiar.</td></tr>
+                    <tr><td>3</td><td>A strange swirling tattoo-like scar very slowly grows from where it pierces you that burns painfully.</td></tr>
+                    <tr><td>4</td><td>When you sleep, you have nightmares about another life filled with horror, fear and revulsion.</td></tr>
+                    <tr><td>5</td><td>You cannot remember your own name, even when told.</td></tr>
+                    <tr><td>6</td><td>You grow small vestigial tentacles along your jawline like a strange beard after being attuned to it for 1d4 days.</td></tr>
+                </table>
+            </description>
+            <setters>
+                <set name="category">Wondrous Items</set>
+                <set name="cost" currency="gp">0</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="type">Wondrous Item</set>
+                <set name="attunement" addition="by a Psionic">true</set>
+                <set name="rarity">Legendary</set>
+            </setters>
+        </element>
 
 </elements>
