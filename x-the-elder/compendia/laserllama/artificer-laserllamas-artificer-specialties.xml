@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>LaserLlama's Artificer Specialties</name>
+        <name>LaserLlama’s Artificer Specialties</name>
         <update version="0.0.1">
             <file name="artificer-laserllamas-artificer-specialties.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/laserllama/artificer-laserllamas-artificer-specialties.xml" />
         </update>
     </info>
     
-    <element name="LaserLlama's Artificer Specialties" type="Source" source="Core" id="ID_LASERLLAMA_GMBINDER_SOURCE_LaserLlama's Artificer Specialties">
+    <element name="LaserLlama’s Artificer Specialties" type="Source" source="Core" id="ID_LASERLLAMA_GMBINDER_SOURCE_LaserLlama’s Artificer Specialties">
         <description>
             <![CDATA[<p></p>]]>
         </description>
@@ -26,7 +26,7 @@
         </setters>
     </element>
     
-    <element name="Aeronaut" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_ARTIFICER_AERONAUT">
+    <element name="Aeronaut" type="Archetype" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_ARTIFICER_AERONAUT">
         <supports>Artificer Specialist</supports>
         <description>
             <p>One of the most dangerous obsessions an artificer can pursue has always been mechanical flight. Many strive for this lofty goal, and all but the most dedicated, and often the most foolhardy, artificers fail in their pursuits. Experiments that end in disastrous explosions, catastrophic falls from the sky, and deadly malfunctions are not out of the norm for an Aeronaut perfecting their mechanical flying machine.</p>
@@ -42,11 +42,11 @@
                 <tr><td>13th</td><td><em>death ward, summon elemental (air)</em></td></tr>
                 <tr><td>17th</td><td><em>control winds, steel wind strike</em></td></tr>
             </table>
-            <div element="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_TOOLS_OF_THE_TRADE" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_FLYING_MACHINE" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_AIRBORNE_ASSAULT" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_AERIAL_MANEUVERS" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_MASTER_AERONAUT" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_TOOLS_OF_THE_TRADE" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_FLYING_MACHINE" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_AIRBORNE_ASSAULT" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_AERIAL_MANEUVERS" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_MASTER_AERONAUT" />
         </description>
         <sheet display="false" />
         <rules>
@@ -60,35 +60,35 @@
             <grant type="Spell" id="ID_PHB_SPELL_SUMMON_ELEMENTAL" spellcasting="Artificer" known="true" level="13" />
             <grant type="Spell" id="ID_XGTE_SPELL_CONTROL_WINDS" spellcasting="Artificer" known="true" level="17" />
             <grant type="Spell" id="ID_XGTE_SPELL_STEEL_WIND_STRIKE" spellcasting="Artificer" known="true" level="17" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_TOOLS_OF_THE_TRADE" level="3" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_FLYING_MACHINE" level="3" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_AIRBORNE_ASSAULT" level="5" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_AERIAL_MANEUVERS" level="9" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_MASTER_AERONAUT" level="15" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_TOOLS_OF_THE_TRADE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_FLYING_MACHINE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_AIRBORNE_ASSAULT" level="5" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_AERIAL_MANEUVERS" level="9" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_MASTER_AERONAUT" level="15" />
         </rules>
     </element>
-        <element name="Tools of the Trade" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_TOOLS_OF_THE_TRADE">
+        <element name="Tools of the Trade" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_TOOLS_OF_THE_TRADE">
             <description>
-                <p>When you adopt this specialization at 3rd level, you gain proficiency with woodcarver's tools. If you are already proficient with woodcarver's tools you instead gain proficiency with one type of artisan's tools of your choice.</p>
+                <p>When you adopt this specialization at 3rd level, you gain proficiency with woodcarver’s tools. If you are already proficient with woodcarver’s tools you instead gain proficiency with one type of artisan’s tools of your choice.</p>
             </description>
             <sheet display="false" />
             <rules>
-                <select type="Proficiency" name="Tool Proficiency, Aeronaut" supports="Artisan tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS" />
+                <select type="Proficiency" name="Tool Proficiency, Aeronaut" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS" />
             </rules>
         </element>
-        <element name="Flying Machine" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_FLYING_MACHINE">
+        <element name="Flying Machine" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_FLYING_MACHINE">
             <description>
-                <p>Upon reaching 3rd level, your experiments with flight have paid off. At the end of a long rest, as long as you have access to your woodcarver's tools, you can construct a personal flying machine. You determine its appearance, and it can be used as a spellcasting focus for your artificer spells. You cannot operate your flying machine while wearing heavy armor or while you have a shield or heavy weapon equipped. You must use your woodcarver's tools to maintain your flying machine as part of each long rest or it ceases to function.</p>
+                <p>Upon reaching 3rd level, your experiments with flight have paid off. At the end of a long rest, as long as you have access to your woodcarver’s tools, you can construct a personal flying machine. You determine its appearance, and it can be used as a spellcasting focus for your artificer spells. You cannot operate your flying machine while wearing heavy armor or while you have a shield or heavy weapon equipped. You must use your woodcarver’s tools to maintain your flying machine as part of each long rest or it ceases to function.</p>
                 <p class="indent">As a bonus action on your turn, you can activate your flying machine to gain a temporary flying speed equal to your remaining movement speed. This flight lasts until the end of your current turn, at which point you fall to the ground unless you have a way to remain airborne. While using your flying speed, opportunity attacks against you have disadvantage.</p>
             </description>
             <sheet>
-                <description>At the end of a long rest, as long as you have access to your woodcarver's tools, you can construct a personal flying machine. As a bonus action on your turn, you can activate your flying machine to gain a temporary flying speed of {{speed}} feet until the end of your current turn, at which point you fall to the ground unless you have a way to remain airborne. While using your flying speed, opportunity attacks against you have disadvantage.</description>
-                <description level="9">At the end of a long rest, as long as you have access to your woodcarver's tools, you can construct a personal flying machine. As a bonus action on your turn, you can activate your flying machine to gain a temporary flying speed of {{speed}} feet  and can hover in place for up to 1 minute. While using your flying speed, opportunity attacks against you have disadvantage.</description>
+                <description>At the end of a long rest, as long as you have access to your woodcarver’s tools, you can construct a personal flying machine. As a bonus action on your turn, you can activate your flying machine to gain a temporary flying speed of {{speed}} feet until the end of your current turn, at which point you fall to the ground unless you have a way to remain airborne. While using your flying speed, opportunity attacks against you have disadvantage.</description>
+                <description level="9">At the end of a long rest, as long as you have access to your woodcarver’s tools, you can construct a personal flying machine. As a bonus action on your turn, you can activate your flying machine to gain a temporary flying speed of {{speed}} feet  and can hover in place for up to 1 minute. While using your flying speed, opportunity attacks against you have disadvantage.</description>
             </sheet>
             <rules>
             </rules>
         </element>
-        <element name="Airborne Assault" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_AIRBORNE_ASSAULT">
+        <element name="Airborne Assault" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_AIRBORNE_ASSAULT">
             <description>
                 <p>Your flying machine allows you to attack from unorthodox positions to inflict more damage. Starting at 5th level, when you are using your flying speed and are at least 5 feet off the ground, your attacks deal an additional 1d8 damage.</p>
                 <p class="indent">At 15th level this bonus damage increases to 2d8.</p>
@@ -101,7 +101,7 @@
                 <stat name="airborne-assault:damage" value="1" level="15" />
             </rules>
         </element>
-        <element name="Aerial Maneuvers" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_AERIAL_MANEUVERS">
+        <element name="Aerial Maneuvers" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_AERIAL_MANEUVERS">
             <description>
                 <p>Beginning at 9th level, improvements to your flying machine have made it more reliable. When you activate your flying machine, you gain a flying speed equal to your movement speed and you can hover in place while midair. Your flying machine stays active in this way for one minute, unless you fall unconscious or deactivate it as a bonus action.</p>
                 <p class="indent">In addition, while you have your flying machine equipped, you gain a bonus to Dexterity ability checks and saving throws equal to your Intelligence modifier (minimum of 1)</p>
@@ -112,7 +112,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Master Aeronaut" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_AERONAUT_MASTER_AERONAUT">
+        <element name="Master Aeronaut" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_AERONAUT_MASTER_AERONAUT">
             <description>
                 <p>Upon reaching 15th level you have reached the peak of Aeronautical expertise. While your flying machine is equipped you have a permanent flying speed of 60 feet.</p>
                 <p class="indent">Additionally, if you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage while your flying machine is equipped, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.</p>
@@ -124,7 +124,7 @@
             </rules>
         </element>
 
-    <element name="Archivist" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_ARTIFICER_ARCHIVIST">
+    <element name="Archivist" type="Archetype" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_ARTIFICER_ARCHIVIST">
         <supports>Artificer Specialist</supports>
         <description>
             <p>For centuries chroniclers and librarians have sought the best way to store vast troves of information. While most were satisfied with scrolls, tomes, and books, the first archivists strove for something greater, storing libraries worth of information in one solitary object, and created the first artificial minds. As an archivist, you are on the cutting edge of arcane advancement. Like all new breakthroughs, you must be careful with who you allow to witness this ability. How will you use your fringe ability to create artificial intelligence?</p>
@@ -139,11 +139,11 @@
                 <tr><td>13th</td><td><em>locate creature, phantasmal killer</em></td></tr>
                 <tr><td>17th</td><td><em>modify memory, synaptic static</em></td></tr>
             </table>
-            <div element="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_TOOLS_OF_THE_TRADE" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_ARTIFICIAL_MIND" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_ACUTE_OVERLOAD" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_IMPROVED_CONSCIOUSNESS" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_MASTER_ARCHIVIST" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_TOOLS_OF_THE_TRADE" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_ARTIFICIAL_MIND" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_ACUTE_OVERLOAD" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_IMPROVED_CONSCIOUSNESS" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_MASTER_ARCHIVIST" />
         </description>
         <sheet display="false" />
         <rules>
@@ -157,25 +157,25 @@
             <grant type="Spell" id="ID_PHB_SPELL_PHANTASMAL_KILLER" spellcasting="Artificer" known="true" level="13" />
             <grant type="Spell" id="ID_PHB_SPELL_MODIFY_MEMORY" spellcasting="Artificer" known="true" level="17" />
             <grant type="Spell" id="ID_XGTE_SPELL_SYNAPTIC_STATIC" spellcasting="Artificer" known="true" level="17" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_TOOLS_OF_THE_TRADE" level="3" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_ARTIFICIAL_MIND" level="3" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_ACUTE_OVERLOAD" level="5" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_IMPROVED_CONSCIOUSNESS" level="9" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_MASTER_ARCHIVIST" level="15" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_TOOLS_OF_THE_TRADE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_ARTIFICIAL_MIND" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_ACUTE_OVERLOAD" level="5" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_IMPROVED_CONSCIOUSNESS" level="9" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_MASTER_ARCHIVIST" level="15" />
         </rules>
     </element>
-        <element name="Tools of the Trade" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_TOOLS_OF_THE_TRADE">
+        <element name="Tools of the Trade" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_TOOLS_OF_THE_TRADE">
             <description>
-                <p>When you adopt this specialization at 3rd level, you gain proficiency with calligrapher's supplies. If you already have proficiency with calligrapher's supplies you gain proficiency with another type of artisan's tools of your choice.</p>
+                <p>When you adopt this specialization at 3rd level, you gain proficiency with calligrapher’s supplies. If you already have proficiency with calligrapher’s supplies you gain proficiency with another type of artisan’s tools of your choice.</p>
             </description>
             <sheet display="false" />
             <rules>
-                <select type="Proficiency" name="Tool Proficiency, Archivist" supports="Artisan tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+                <select type="Proficiency" name="Tool Proficiency, Archivist" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
             </rules>
         </element>
-        <element name="Artificial Mind" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_ARTIFICIAL_MIND">
+        <element name="Artificial Mind" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_ARTIFICIAL_MIND">
             <description>
-                <p>Starting at 3rd level, you can awaken artificial minds. At the end of each long rest, you can touch a Tiny nonmagical object with calligrapher's supplies, awakening a mind within. While the mind is inside it, the object is a magic item that requires attunement, and you can use it as a spellcasting focus. If you rouse an artificial mind while you already have one from this feature, the mind transfers to the new object. While attuned to the mind, you gain the following features:</p>
+                <p>Starting at 3rd level, you can awaken artificial minds. At the end of each long rest, you can touch a Tiny nonmagical object with calligrapher’s supplies, awakening a mind within. While the mind is inside it, the object is a magic item that requires attunement, and you can use it as a spellcasting focus. If you rouse an artificial mind while you already have one from this feature, the mind transfers to the new object. While attuned to the mind, you gain the following features:</p>
                 <p class="indent">Information Overload. Your artificial mind can overload the minds of your enemies with information. As an action, you can force a creature that you can see within 30 feet to make an Intelligence saving throw. On a failed save, it takes 1d8 psychic damage and disadvantage on the next attack roll it makes before the start of your next turn. The damage of this feature increases as you gain levels in this class: to 2d8 at 5th level, 3d8 at 11th, and 4d8 at 17th level.</p>
                 <p class="indent">Magical Telephony. You can communicate telepathically with any creature carrying one of your infused items within a 1-mile radius. The creature can respond telepathically.</p>
                 <p class="indent">Skill Proficiencies. You gain proficiency in two skills from the respective column on the table below. The material of the object that houses your artificial mind determines the skills you choose from, as its nature affects its innate knowledge.</p>
@@ -189,13 +189,13 @@
                 </table>
             </description>
             <sheet>
-                <description>At the end of each long rest, you can touch a Tiny nonmagical object with calligrapher's supplies, awakening a mind within. While attuned to the mind, you can communicate telepathically with any creature carrying one of your infused items within a 1-mile radius. The creature can respond telepathically. Additionally, you gain two skill proficiencies based on the material of the object.</description>
+                <description>At the end of each long rest, you can touch a Tiny nonmagical object with calligrapher’s supplies, awakening a mind within. While attuned to the mind, you can communicate telepathically with any creature carrying one of your infused items within a 1-mile radius. The creature can respond telepathically. Additionally, you gain two skill proficiencies based on the material of the object.</description>
             </sheet>
             <rules>
-                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_ARTIFICIAL_MIND_INFORMATION_OVERLOAD" level="3" />
+                <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_ARTIFICIAL_MIND_INFORMATION_OVERLOAD" level="3" />
             </rules>
         </element>
-            <element name="Information Overload" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_ARTIFICIAL_MIND_INFORMATION_OVERLOAD">
+            <element name="Information Overload" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_ARTIFICIAL_MIND_INFORMATION_OVERLOAD">
                 <compendium display="false" />
                 <description>
                     <p>Your artificial mind can overload the minds of your enemies with information. As an action, you can force a creature that you can see within 30 feet to make an Intelligence saving throw. On a failed save, it takes 1d8 psychic damage and disadvantage on the next attack roll it makes before the start of your next turn. The damage of this feature increases as you gain levels in this class: to 2d8 at 5th level, 3d8 at 11th, and 4d8 at 17th level.</p>
@@ -210,7 +210,7 @@
                     <stat name="information-overload:damage-dice" value="1" level="17" />
                 </rules>
             </element>
-        <element name="Acute Overload" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_ACUTE_OVERLOAD">
+        <element name="Acute Overload" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_ACUTE_OVERLOAD">
             <description>
                 <p>Starting at 5th level, when you deal psychic damage to a creature you gain a bonus to the damage roll equal to your Intelligence modifier (minimum of +1).</p>
                 <p class="indent">In addition, you can expend a spell slot to increase the psychic damage dealt by your Information Overload feature. The damage increases by 2d8 for a 1st-level spell slot, and an additional 1d8 for each spell level higher than 1st-level.</p>
@@ -221,7 +221,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Improved Consciousness" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_IMPROVED_CONSCIOUSNESS">
+        <element name="Improved Consciousness" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_IMPROVED_CONSCIOUSNESS">
             <description>
                 <p>The cognitive abilities of the artificial mind have grown and it can aid you in spellcasting. Starting at 9th level, when you are forced to make a Constitution saving throw to maintain concentration on a spell, you gain a bonus to the saving throw equal to your Intelligence modifier (minimum of +1).</p>
             </description>
@@ -231,7 +231,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Master Archivist" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHIVIST_MASTER_ARCHIVIST">
+        <element name="Master Archivist" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_ARCHIVIST_MASTER_ARCHIVIST">
             <description>
                 <p>Upon reaching 15th level you have attained the peak of archival expertise. As an action on your turn, you can turn into pure information and teleport to an unoccupied space within 60 feet that you can see, or to an unoccupied space within 5 feet of an object bearing one of your infusions.</p>
             </description>
@@ -242,7 +242,7 @@
             </rules>
         </element>
 
-    <element name="Composer" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_ARTIFICER_COMPOSER">
+    <element name="Composer" type="Archetype" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_ARTIFICER_COMPOSER">
         <supports>Artificer Specialist</supports>
         <description>
             <p>Behind every great musician, every standing ovation, every sold out concert, there is someone who put quill to parchment and penned the notes. These great minds are known as composers. Unlike other bards and entertainers, composers take a more mathematical and cerebral approach to music and song. They are masters of patterns that go unnoticed, and when they apply their analytical minds to a problem it is only a matter of time before they find a solution.</p>
@@ -257,11 +257,11 @@
                 <tr><td>13th</td><td><em>charm monster, dominate beast</em></td></tr>
                 <tr><td>17th</td><td><em>destructive wave, dominate person</em></td></tr>
             </table>
-            <div element="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_TOOLS_OF_THE_TRADE" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_MUSICAL_APPARATUS" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_THUNDEROUS_NOTE" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_RESONANT_FREQUENCY" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_MASTER_COMPOSER" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_TOOLS_OF_THE_TRADE" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_MUSICAL_APPARATUS" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_THUNDEROUS_NOTE" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_RESONANT_FREQUENCY" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_MASTER_COMPOSER" />
         </description>
         <sheet display="false" />
         <rules>
@@ -275,28 +275,28 @@
             <grant type="Spell" id="ID_PHB_SPELL_DOMINATE_BEAST" spellcasting="Artificer" known="true" level="13" />
             <grant type="Spell" id="ID_PHB_SPELL_DESTRUCTIVE_WAVE" spellcasting="Artificer" known="true" level="17" />
             <grant type="Spell" id="ID_PHB_SPELL_DOMINATE_PERSON" spellcasting="Artificer" known="true" level="17" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_TOOLS_OF_THE_TRADE" level="3" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_MUSICAL_APPARATUS" level="3" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_THUNDEROUS_NOTE" level="5" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_RESONANT_FREQUENCY" level="9" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_MASTER_COMPOSER" level="15" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_TOOLS_OF_THE_TRADE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_MUSICAL_APPARATUS" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_THUNDEROUS_NOTE" level="5" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_RESONANT_FREQUENCY" level="9" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_MASTER_COMPOSER" level="15" />
         </rules>
     </element>
-        <element name="Tools of the Trade" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_TOOLS_OF_THE_TRADE">
+        <element name="Tools of the Trade" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_TOOLS_OF_THE_TRADE">
             <description>
-                <p>When you adopt the composer specialty at 3rd level, you gain proficiency with smith's tools and one instrument of your choice. If you already proficient with smith's tools, you gain proficiency with another set of artisan's tools of your choice.</p>
+                <p>When you adopt the composer specialty at 3rd level, you gain proficiency with smith’s tools and one instrument of your choice. If you already proficient with smith’s tools, you gain proficiency with another set of artisan’s tools of your choice.</p>
                 <p class="indent">At the end of a long rest, you can switch the instrument proficiency you gained from this feature with another instrument, provided you have the new instrument available.</p>
             </description>
             <sheet>
                 <description>At the end of a long rest, you can choose an instrument proficiency you gained from this feature with another instrument, provided you have the new instrument available.</description>
             </sheet>
             <rules>
-                <select type="Proficiency" name="Tool Proficiency, Composer" supports="Artisan tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+                <select type="Proficiency" name="Tool Proficiency, Composer" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
             </rules>
         </element>
-        <element name="Musical Apparatus" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_MUSICAL_APPARATUS">
+        <element name="Musical Apparatus" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_MUSICAL_APPARATUS">
             <description>
-                <p>Starting at 3rd level, you construct a completely unique musical instrument of your own design. You are proficient and with this instrument and it can be used as a spellcasting focus by you. Whenever you make skill check with this apparatus you can add double your proficiency bonus to the roll. If it is destroyed, you can construct a new musical apparatus with your smith's tools at the end of a long rest.</p>
+                <p>Starting at 3rd level, you construct a completely unique musical instrument of your own design. You are proficient and with this instrument and it can be used as a spellcasting focus by you. Whenever you make skill check with this apparatus you can add double your proficiency bonus to the roll. If it is destroyed, you can construct a new musical apparatus with your smith’s tools at the end of a long rest.</p>
                 <p class="indent">You can only maintain one musical apparatus at a time, and if you create a new one, your previous musical apparatus falls into disrepair and becomes unusable.</p>
                 <p class="indent">Your musical apparatus can also be weaponized depending on its design. At the end of each long rest, you can choose one of the following options for your musical apparatus:</p>
                 <p class="indent">Raucous Blast. Your apparatus can assault creatures with a blast of painful sound. As an action, make a spell attack against a creature within 60 feet that can hear you. On hit the creature takes 1d8thunder damage and is deafened until the start of your next turn. The damage increases by 1d8 at 5th-level (2d8), and again at 11th-level (3d8), and 17th-level (4d8).</p>
@@ -309,7 +309,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Thunderous Note" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_THUNDEROUS_NOTE">
+        <element name="Thunderous Note" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_THUNDEROUS_NOTE">
             <description>
                 <p>Starting at 5th level, when you deal thunder damage to a creature you gain a bonus to the damage roll equal to your Intelligence modifier (minimum of 1).</p>
                 <p class="indent">In addition, when you attack with your musical apparatus, you can expend a spell slot to knock the target back. The creature is knocked back 10 feet for a 1st-level spell slot, and an additional 10 feet for each spell level higher than 1st.</p>
@@ -320,7 +320,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Resonant Frequency" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_RESONANT_FREQUENCY">
+        <element name="Resonant Frequency" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_RESONANT_FREQUENCY">
             <description>
                 <p>Beginning at 9th level, as an action you can play a note at a pitch that causes a creature of your choice within 10 feet to resonate with undetectable vibrations for 1 hour. The next time that creature is hit with a melee attack, the attacker must make a Constitution saving throw. On a failed save, they take 2d8 thunder damage and cannot take reactions until the beginning of their next turn. On a successful save they take half damage and can use their reaction as normal.</p>
                 <p class="indent">You may use this feature a number of times equal to your Intelligence modifier (minimum of 1), and you regain all expended uses when you finish a long rest.</p>
@@ -333,7 +333,7 @@
                 <stat name="resonant-frequency:damage-dice" value="2" level="15" />
             </rules>
         </element>
-        <element name="Master Composer" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COMPOSER_MASTER_COMPOSER">
+        <element name="Master Composer" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_COMPOSER_MASTER_COMPOSER">
             <description>
                 <p>You have mastered both the theory and applications of sound and used this knowledge to improve the effectiveness of your musical apparatus and your composer techniques. Upon reaching 15th level, you gain the following features:</p>
                 <ul>
@@ -351,7 +351,7 @@
             </rules>
         </element>
 
-    <element name="Dungeoneer" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_ARTIFICER_DUNGEONEER">
+    <element name="Dungeoneer" type="Archetype" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_ARTIFICER_DUNGEONEER">
         <supports>Artificer Specialist</supports>
         <description>
             <p>While most focus on singular inventions, dungeoneers use their know-how to weaponize mundane objects. Trusted to safeguard untold riches and powerful artifacts, dungeoneers use basic adventuring gear to construct defensive traps, puzzles, and structures that can repel all but the most hardy adventurers. Did you learn your craft in the service of a powerful creature, or under the tutilage of a master?</p>
@@ -366,12 +366,12 @@
                 <tr><td>13th</td><td><em>guardian of faith, resilient sphere</em></td></tr>
                 <tr><td>17th</td><td><em>passwall, wall of stone</em></td></tr>
             </table>
-            <div element="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_TOOLS_OF_THE_TRADE" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_DUNGEONCRAFT" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_RESOURCEFUL_FIGHTING" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_EXTRA_ATTACK" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_ARCANE_IMPROVISATION" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_MASTER_DUNGEONEER" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_TOOLS_OF_THE_TRADE" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_DUNGEONCRAFT" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_RESOURCEFUL_FIGHTING" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_EXTRA_ATTACK" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_ARCANE_IMPROVISATION" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_MASTER_DUNGEONEER" />
         </description>
         <sheet display="false" />
         <rules>
@@ -385,25 +385,25 @@
             <grant type="Spell" id="ID_PHB_SPELL_OTILUKES_RESILIENT_SPHERE" spellcasting="Artificer" known="true" level="13" />
             <grant type="Spell" id="ID_PHB_SPELL_PASSWALL" spellcasting="Artificer" known="true" level="17" />
             <grant type="Spell" id="ID_PHB_SPELL_WALL_OF_STONE" spellcasting="Artificer" known="true" level="17" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_TOOLS_OF_THE_TRADE" level="3" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_DUNGEONCRAFT" level="3" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_RESOURCEFUL_FIGHTING" level="3" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_EXTRA_ATTACK" level="5" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_ARCANE_IMPROVISATION" level="9" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_MASTER_DUNGEONEER" level="15" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_TOOLS_OF_THE_TRADE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_DUNGEONCRAFT" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_RESOURCEFUL_FIGHTING" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_EXTRA_ATTACK" level="5" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_ARCANE_IMPROVISATION" level="9" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_MASTER_DUNGEONEER" level="15" />
         </rules>
     </element>
-        <element name="Tools of the Trade" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_TOOLS_OF_THE_TRADE">
+        <element name="Tools of the Trade" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_TOOLS_OF_THE_TRADE">
             <description>
-                <p>When you adopt the dungeoneer specialty at 3rd level, you gain proficiency with carpenter's tools and mason's tools. If you already proficient with either of these tools, you gain proficiency with another set of artisan's tools of your choice.</p>
+                <p>When you adopt the dungeoneer specialty at 3rd level, you gain proficiency with carpenter’s tools and mason’s tools. If you already proficient with either of these tools, you gain proficiency with another set of artisan’s tools of your choice.</p>
             </description>
             <sheet display="false" />
             <rules>
-                <select type="Proficiency" name="Tool Proficiency, Dungeoneer" supports="Artisan tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS" />
-                <select type="Proficiency" name="Tool Proficiency, Dungeoneer" supports="Artisan tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_MASONS_TOOLS" />
+                <select type="Proficiency" name="Tool Proficiency, Dungeoneer" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS" />
+                <select type="Proficiency" name="Tool Proficiency, Dungeoneer" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_MASONS_TOOLS" />
             </rules>
         </element>
-        <element name="Dungeoncraft" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_DUNGEONCRAFT">
+        <element name="Dungeoncraft" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_DUNGEONCRAFT">
             <description>
                 <p>Starting at 3rd level, when you finish a long rest, you can create a number of objects from the Dungeoncraft Table equal to your proficiency bonus. If an object forces a creature to make a saving throw they use your artificer spell save DC.</p>
                 <h5>DUNGEONCRAFT OBJECTS</h5>
@@ -411,7 +411,7 @@
                 <p class="indent">Permanent objects can be created using the appropriate materials and tools as determined by your Dungeon Master.</p>
                 <table>
                     <tr><td>acid (1 vial)</td><td>hunting trap</td></tr>
-                    <tr><td>alchemist's fire (1 vial)</td><td>lock and key</td></tr>
+                    <tr><td>alchemist’s fire (1 vial)</td><td>lock and key</td></tr>
                     <tr><td>ball bearings (1,000)</td><td>manacles and key</td></tr>
                     <tr><td>block and tackle</td><td>oil (1 vial)</td></tr>
                     <tr><td>caltrops (200)</td><td>portable ram</td></tr>
@@ -427,7 +427,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Resourceful Fighting" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_RESOURCEFUL_FIGHTING">
+        <element name="Resourceful Fighting" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_RESOURCEFUL_FIGHTING">
             <description>
                 <p>Beginning at 3rd level, you can arm yourself with whatever is around you, turning mundane objects into weapons. You gain proficiency with improvised weapons, and when you attack with an improvised weapon you can use your Intelligence, in place of Strength or Dexterity, for attack and damage rolls.</p>
             </description>
@@ -437,7 +437,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Extra Attack" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_EXTRA_ATTACK">
+        <element name="Extra Attack" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_EXTRA_ATTACK">
             <description>
                 <p>Starting at 5th level, you can attack twice, rather than once, whenever you take the Attack action on your turn.</p>
             </description>
@@ -448,7 +448,7 @@
                 <stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
             </rules>
         </element>
-        <element name="Arcane Improvisation" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_ARCANE_IMPROVISATION">
+        <element name="Arcane Improvisation" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_ARCANE_IMPROVISATION">
             <description>
                 <p>Starting at 9th level, when you cast a Dungeoneer Spell that has a material component, you can cast the spell without providing the material component. Once you use this feature you must finish a long rest before you can do so again.</p>
                 <p class="indent">In addition, your improvised weapons and Dungeoncraft objects are considered magic for the purpose of overcoming resistances and immunities.</p>
@@ -459,13 +459,13 @@
             <rules>
             </rules>
         </element>
-        <element name="Master Dungeoneer" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_DUNGEONEER_MASTER_DUNGEONEER">
+        <element name="Master Dungeoneer" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_DUNGEONEER_MASTER_DUNGEONEER">
             <description>
                 <p>You have become a master Dungeoneer. Upon reaching 15th level, when a creature makes a saving throw against one of your Dungeoncraft Objects or Dungeoneer Spells, they have disadvantage on their saving throw.</p>
-                <p class="indent">In addition you can cast the passwall and wall of stone spells as rituals. Their casting time becomes 1 hour, they don't consume spell slots, and the structure is permanent.</p>
+                <p class="indent">In addition you can cast the passwall and wall of stone spells as rituals. Their casting time becomes 1 hour, they don’t consume spell slots, and the structure is permanent.</p>
             </description>
             <sheet>
-                <description>When a creature makes a saving throw against one of your Dungeoncraft Objects or Dungeoneer Spells, they have disadvantage on their saving throw. In addition you can cast the passwall and wall of stone spells as rituals. Their casting time becomes 1 hour, they don't consume spell slots, and the structure is permanent.</description>
+                <description>When a creature makes a saving throw against one of your Dungeoncraft Objects or Dungeoneer Spells, they have disadvantage on their saving throw. In addition you can cast the passwall and wall of stone spells as rituals. Their casting time becomes 1 hour, they don’t consume spell slots, and the structure is permanent.</description>
             </sheet>
             <rules>
                 <grant type="Spell" id="ID_PHB_SPELL_PASSWALL" />
@@ -473,7 +473,7 @@
             </rules>
         </element>
 
-    <element name="Forgewright" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_ARTIFICER_FORGEWRIGHT">
+    <element name="Forgewright" type="Archetype" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_ARTIFICER_FORGEWRIGHT">
         <supports>Artificer Specialist</supports>
         <description>
             <p>While most artificers are primarily inventors that take up a life of adventure to further their research or test experiments in the field, those known as forgewrights seek out battle for its own sake. Reveling in the thrill of combat, they combine their innovative spirit with their skill as a warrior to forge the signature weapon of a forgewright, an arcane armament.</p>
@@ -488,11 +488,11 @@
                 <tr><td>13th</td><td><em>fire shield, staggering smite</em></td></tr>
                 <tr><td>17th</td><td><em>conjure volley, steel wind strike</em></td></tr>
             </table>
-            <div element="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_TOOLS_OF_THE_TRADE" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_ARMAMENT" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_EXTRA_ATTACK" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_SMITE" />
-            <div element="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_MASTER_FORGEWRIGHT" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_TOOLS_OF_THE_TRADE" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_ARMAMENT" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_EXTRA_ATTACK" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_SMITE" />
+            <div element="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_MASTER_FORGEWRIGHT" />
         </description>
         <sheet display="false" />
         <rules>
@@ -506,23 +506,23 @@
             <grant type="Spell" id="ID_PHB_SPELL_STAGGERING_SMITE" spellcasting="Artificer" known="true" level="13" />
             <grant type="Spell" id="ID_PHB_SPELL_CONJURE_VOLLEY" spellcasting="Artificer" known="true" level="17" />
             <grant type="Spell" id="ID_XGTE_SPELL_STEEL_WIND_STRIKE" spellcasting="Artificer" known="true" level="17" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_TOOLS_OF_THE_TRADE" level="3" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_ARMAMENT" level="3" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_EXTRA_ATTACK" level="5" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_SMITE" level="9" />
-            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_MASTER_FORGEWRIGHT" level="15" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_TOOLS_OF_THE_TRADE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_ARMAMENT" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_EXTRA_ATTACK" level="5" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_SMITE" level="9" />
+            <grant type="Archetype Feature" id="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_MASTER_FORGEWRIGHT" level="15" />
         </rules>
     </element>
-        <element name="Tools of the Trade" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_TOOLS_OF_THE_TRADE">
+        <element name="Tools of the Trade" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_TOOLS_OF_THE_TRADE">
             <description>
-                <p>When you adopt the forgewright specialty at 3rd level, you gain proficiency with smith's tools and martial weapons. If you are already proficient with smith's tools, you gain proficiency in another set of artisan's tools of your choice.</p>
+                <p>When you adopt the forgewright specialty at 3rd level, you gain proficiency with smith’s tools and martial weapons. If you are already proficient with smith’s tools, you gain proficiency in another set of artisan’s tools of your choice.</p>
             </description>
             <sheet display="false" />
             <rules>
-                <select type="Proficiency" name="Tool Proficiency, Forgewright" supports="Artisan tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+                <select type="Proficiency" name="Tool Proficiency, Forgewright" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
             </rules>
         </element>
-        <element name="Arcane Armament" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_ARMAMENT">
+        <element name="Arcane Armament" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_ARMAMENT">
             <description>
                 <p>Your intimate knowledge of warfare and arcane magic allows you to combine both with ease. Starting at 3rd level, you learn to forge an arcane armament. At the end of each long rest, you touch one melee weapon and turn it into your arcane armament, granting it the following properties:</p>
                 <ul>
@@ -542,7 +542,7 @@
                 <stat name="arcane-armament:bonus" value="1" level="15" />
             </rules>
         </element>
-        <element name="Extra Attack" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_EXTRA_ATTACK">
+        <element name="Extra Attack" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_EXTRA_ATTACK">
             <description>
                 <p>You wield your arcane armament as an extension of yourself. Starting at 5th level, you can attack twice, rather than once, whenever you take the Attack action on your turn.</p>
             </description>
@@ -553,7 +553,7 @@
                 <stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
             </rules>
         </element>
-        <element name="Arcane Smite" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_SMITE">
+        <element name="Arcane Smite" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_ARCANE_SMITE">
             <description>
                 <p>Your connection with your arcane armament has grown, allowing you to enhance your strikes. Beginning at 9th level, when you hit a target with a magic weapon attack you can channel magical energy through your arcane armament to create one of the following effects:</p>
                 <ul>
@@ -569,7 +569,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Master Forgewright" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_FORGEWRIGHT_MASTER_FORGEWRIGHT">
+        <element name="Master Forgewright" type="Archetype Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_ARCHETYPE_FEATURE_FORGEWRIGHT_MASTER_FORGEWRIGHT">
             <description>
                 <p>You have become a master among forgewright artificers. Upon reaching 15th level, you can extend the power of your arcane armament to your allies. As an action, choose a number of weapons equal to your Intelligence modifier (minimum of 1) within 30 feet. For the next minute these weapons deal an additional 1d6 force damage on hit.</p>
                 <p class="indent">You can use this feature once per long rest, unless you spend a spell slot of 3rd-level or higher to use it again.</p>
@@ -582,7 +582,7 @@
         </element>
 
 
-        <element name="Arcane Instrument" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_ARCANE_INSTRUMENT">
+        <element name="Arcane Instrument" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_ARCANE_INSTRUMENT">
             <supports>Artificer Infusion</supports>
             <description>
                 <p class="flavor">Item: A rod or wand</p>
@@ -594,7 +594,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Arm Launcher" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_ARM_LAUNCHER">
+        <element name="Arm Launcher" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_ARM_LAUNCHER">
             <supports>Artificer Infusion</supports>
             <description>
                 <p class="flavor">Item: A glove or gauntlet</p>
@@ -606,7 +606,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Featherweight Belt" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_FEATHERWEIGHT_BELT">
+        <element name="Featherweight Belt" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_FEATHERWEIGHT_BELT">
             <supports>Artificer Infusion</supports>
             <description>
                 <p class="flavor">Item: A belt or cloak (requires attunement)</p>
@@ -620,7 +620,7 @@
                 <stat name="featherweight-belt:ratio" value="100" bonus="base" level="9" />
             </rules>
         </element>
-        <element name="Featherweight Weapon" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_FEATHERWEIGHT_WEAPON">
+        <element name="Featherweight Weapon" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_FEATHERWEIGHT_WEAPON">
             <supports>Artificer Infusion</supports>
             <description>
                 <p class="flavor">Item: A weapon with the heavy property</p>
@@ -632,7 +632,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Goggles of Clearsight" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_GOGGLES_OF_CLEARSIGHT">
+        <element name="Goggles of Clearsight" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_GOGGLES_OF_CLEARSIGHT">
             <supports>Artificer Infusion</supports>
             <description>
                 <p class="flavor">Item: A pair of goggles or glasses</p>
@@ -644,31 +644,31 @@
             <rules>
             </rules>
         </element>
-        <element name="Homing Weapon" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_HOMING_WEAPON">
+        <element name="Homing Weapon" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_HOMING_WEAPON">
             <supports>Artificer Infusion</supports>
             <description>
                 <p class="flavor">Item: A ranged or thrown weapon</p>
-                <p class="indent">The wielder of this magic weapon ignores the disadvantage imposed when attacking at the weapon's long range.</p>
+                <p class="indent">The wielder of this magic weapon ignores the disadvantage imposed when attacking at the weapon’s long range.</p>
             </description>
             <sheet>
-                <description>The wielder of this magic weapon ignores the disadvantage imposed when attacking at the weapon's long range.</description>
+                <description>The wielder of this magic weapon ignores the disadvantage imposed when attacking at the weapon’s long range.</description>
             </sheet>
             <rules>
             </rules>
         </element>
-        <element name="Power Whip" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_POWER_WHIP">
+        <element name="Power Whip" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_POWER_WHIP">
             <supports>Artificer Infusion</supports>
             <description>
                 <p class="flavor">Item: A whip or chain</p>
-                <p class="indent">This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it's damage die increases to 1d8.</p>
+                <p class="indent">This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it’s damage die increases to 1d8.</p>
             </description>
             <sheet>
-                <description>This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it's damage die increases to 1d8.</description>
+                <description>This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it’s damage die increases to 1d8.</description>
             </sheet>
             <rules>
             </rules>
         </element>
-        <element name="Martial Gauntlet" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_MARTIAL_GAUNTLET">
+        <element name="Martial Gauntlet" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_MARTIAL_GAUNTLET">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>6th-level artificer</prerequisite>
@@ -683,7 +683,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Ring of Proficiency" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_RING_OF_PROFICIENCY">
+        <element name="Ring of Proficiency" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_RING_OF_PROFICIENCY">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>6th-level artificer</prerequisite>
@@ -698,22 +698,22 @@
             <rules>
             </rules>
         </element>
-        <element name="Skyfall Harness" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_SKYFALL_HARNESS">
+        <element name="Skyfall Harness" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_SKYFALL_HARNESS">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>6th-level artificer</prerequisite>
             <description>
                 <p class="flavor">Prerequisite: 6th-level artificer</p>
                 <p  class="flavor">Item: a cloak, vest, or harness</p>
-                <p class="indent">This magic harness automatically sizes to fit the wearer, and can be worn over clothing or light armor. It has wing-like fins between your limbs that can slow your fall or allow you to glide. When you fall, and aren't incapacitated, you subtract up to 100 feet from your fall when calculating falling damage, and can move 2 feet horizontally every 1 foot you fall.</p>
+                <p class="indent">This magic harness automatically sizes to fit the wearer, and can be worn over clothing or light armor. It has wing-like fins between your limbs that can slow your fall or allow you to glide. When you fall, and aren’t incapacitated, you subtract up to 100 feet from your fall when calculating falling damage, and can move 2 feet horizontally every 1 foot you fall.</p>
             </description>
             <sheet>
-                <description>This magic harness automatically sizes to fit the wearer, and can be worn over clothing or light armor. It has wing-like fins between your limbs that can slow your fall or allow you to glide. When you fall, and aren't incapacitated, you subtract up to 100 feet from your fall when calculating falling damage, and can move 2 feet horizontally every 1 foot you fall.</description>
+                <description>This magic harness automatically sizes to fit the wearer, and can be worn over clothing or light armor. It has wing-like fins between your limbs that can slow your fall or allow you to glide. When you fall, and aren’t incapacitated, you subtract up to 100 feet from your fall when calculating falling damage, and can move 2 feet horizontally every 1 foot you fall.</description>
             </sheet>
             <rules>
             </rules>
         </element>
-        <element name="Immovable Boots" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_IMMOVABLE_BOOTS">
+        <element name="Immovable Boots" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_IMMOVABLE_BOOTS">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>6th-level artificer</prerequisite>
@@ -729,7 +729,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Light Blade" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_LIGHT_BLADE">
+        <element name="Light Blade" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_LIGHT_BLADE">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>6th-level artificer</prerequisite>
@@ -745,7 +745,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Repulsion Gauntlets" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_REPULSION_GAUNTLETS">
+        <element name="Repulsion Gauntlets" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_REPULSION_GAUNTLETS">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>6th-level artificer</prerequisite>
@@ -760,7 +760,7 @@
             <rules>
             </rules>
         </element>
-        <element name="Chameleon Armor" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_CHAMELEON_ARMOR">
+        <element name="Chameleon Armor" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_CHAMELEON_ARMOR">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>10th-level artificer</prerequisite>
@@ -775,23 +775,23 @@
             <rules>
             </rules>
         </element>
-        <element name="Elemental Weapon" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_ELEMENTAL_WEAPON">
+        <element name="Elemental Weapon" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_ELEMENTAL_WEAPON">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>10th-level artificer</prerequisite>
             <description>
                 <p class="flavor">Prerequisite: 10th-level artificer</p>
                 <p  class="flavor">Item: A melee weapon (requires attunement)</p>
-                <p class="indent">You infuse a weapon with elemental energy. As a bonus action the wielder can speak the weapon's command word (chosen upon infusion) and cause elemental energy to burst forth. The weapon deals an additional 1d4 of one of the following damage types, which you choose when you infuse the item: acid, cold, fire, or lightning damage.</p>
+                <p class="indent">You infuse a weapon with elemental energy. As a bonus action the wielder can speak the weapon’s command word (chosen upon infusion) and cause elemental energy to burst forth. The weapon deals an additional 1d4 of one of the following damage types, which you choose when you infuse the item: acid, cold, fire, or lightning damage.</p>
                 <p class="indent">The additional elemental damage from this infusion increases to 1d6 when you reach 14th level in this class.</p>
             </description>
             <sheet>
-                <description>You infuse a weapon with elemental energy. As a bonus action the wielder can speak the weapon's command word (chosen upon infusion) and cause elemental energy to burst forth. The weapon deals an additional 1d4 of one of the following damage types, which you choose when you infuse the item: acid, cold, fire, or lightning damage. The additional elemental damage from this infusion increases to 1d6 when you reach 14th level in this class.</description>
+                <description>You infuse a weapon with elemental energy. As a bonus action the wielder can speak the weapon’s command word (chosen upon infusion) and cause elemental energy to burst forth. The weapon deals an additional 1d4 of one of the following damage types, which you choose when you infuse the item: acid, cold, fire, or lightning damage. The additional elemental damage from this infusion increases to 1d6 when you reach 14th level in this class.</description>
             </sheet>
             <rules>
             </rules>
         </element>
-        <element name="Ring of the Elements" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_RING_OF_THE_ELEMENTS">
+        <element name="Ring of the Elements" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_RING_OF_THE_ELEMENTS">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>10th-level artificer</prerequisite>
@@ -807,23 +807,23 @@
             <rules>
             </rules>
         </element>
-        <element name="Vampiric Weapon" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_VAMPIRIC_WEAPON">
+        <element name="Vampiric Weapon" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_VAMPIRIC_WEAPON">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>10th-level artificer</prerequisite>
             <description>
                 <p class="flavor">Prerequisite: 10th-level artificer</p>
                 <p  class="flavor">Item: A melee weapon (requires attunement)</p>
-                <p class="indent">You enchant a weapon to drain life from enemies. When the wielder rolls a 20 on an attack roll with this weapon the target takes an additional 2d6 necrotic damage, provided it isn't a construct or undead. The wielder gains temporary hit points equal to the extra necrotic damage dealt.</p>
+                <p class="indent">You enchant a weapon to drain life from enemies. When the wielder rolls a 20 on an attack roll with this weapon the target takes an additional 2d6 necrotic damage, provided it isn’t a construct or undead. The wielder gains temporary hit points equal to the extra necrotic damage dealt.</p>
                 <p class="indent">The additional necrotic damage from this infusion increases to 4d6 when you reach 14th level in this class.</p>
             </description>
             <sheet>
-                <description>You enchant a weapon to drain life from enemies. When the wielder rolls a 20 on an attack roll with this weapon the target takes an additional 2d6 necrotic damage, provided it isn't a construct or undead. The wielder gains temporary hit points equal to the extra necrotic damage dealt.The additional necrotic damage from this infusion increases to 4d6 when you reach 14th level in this class.</description>
+                <description>You enchant a weapon to drain life from enemies. When the wielder rolls a 20 on an attack roll with this weapon the target takes an additional 2d6 necrotic damage, provided it isn’t a construct or undead. The wielder gains temporary hit points equal to the extra necrotic damage dealt.The additional necrotic damage from this infusion increases to 4d6 when you reach 14th level in this class.</description>
             </sheet>
             <rules>
             </rules>
         </element>
-        <element name="Helm of Mind Shielding" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_HELM_OF_MIND_SHIELDING">
+        <element name="Helm of Mind Shielding" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_HELM_OF_MIND_SHIELDING">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>14th-level artificer</prerequisite>
@@ -838,22 +838,22 @@
             <rules>
             </rules>
         </element>
-        <element name="Masterwork Homunculus" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_MASTERWORK_HOMUNCULUS">
+        <element name="Masterwork Homunculus" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_MASTERWORK_HOMUNCULUS">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>14th-level artificer</prerequisite>
             <description>
                 <p class="flavor">Prerequisite: 14th-level artificer</p>
-                <p class="indent">You have discovered the secrets to the creation of life. You learn the clone spell. It counts as an artificer spell for you, but it doesn't count against your number of Spells Known. You can cast clone without expending a spell slot as long as you have the material components available.</p>
+                <p class="indent">You have discovered the secrets to the creation of life. You learn the clone spell. It counts as an artificer spell for you, but it doesn’t count against your number of Spells Known. You can cast clone without expending a spell slot as long as you have the material components available.</p>
                 <p class="indent">If you replace this infusion with another at any point during the incubation period, the spell immediately fails.</p>
             </description>
             <sheet>
-                <description>You have discovered the secrets to the creation of life. You learn the clone spell. It counts as an artificer spell for you, but it doesn't count against your number of Spells Known. You can cast clone without expending a spell slot as long as you have the material components available. If you replace this infusion with another at any point during the incubation period, the spell immediately fails.</description>
+                <description>You have discovered the secrets to the creation of life. You learn the clone spell. It counts as an artificer spell for you, but it doesn’t count against your number of Spells Known. You can cast clone without expending a spell slot as long as you have the material components available. If you replace this infusion with another at any point during the incubation period, the spell immediately fails.</description>
             </sheet>
             <rules>
             </rules>
         </element>
-        <element name="Mystic Armament" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ARTIFICER_INFUSION_MYSTIC_ARMAMENT">
+        <element name="Mystic Armament" type="Class Feature" source="LaserLlama’s Artificer Specialties" id="ID_LL_LLAS_CLASS_FEATURE_ARTIFICER_INFUSION_MYSTIC_ARMAMENT">
             <supports>Artificer Infusion</supports>
             <requirements></requirements>
             <prerequisite>14th-level artificer</prerequisite>
