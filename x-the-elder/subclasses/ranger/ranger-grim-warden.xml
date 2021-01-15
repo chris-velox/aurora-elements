@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Grim Warden Ranger Archetype</name>
+        <update version="0.0.1">
+            <file name="ranger-grim-warden.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/ranger/ranger-grim-warden.xml" />
+        </update>
+    </info>
+    
+    <element name="Ranger: Grim Warden" type="Source" source="Core" id="ID_GEMOZ_GMBINDER_SOURCE_RANGER_GRIM_WARDEN">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">RGW</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/F6JEO375</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="GEMOZ">GemOz</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210115</set>
+        </setters>
+    </element>
+    <element name="Grim Warden" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_RANGER_GRIM_WARDEN">
+        <supports></supports>
+        <description>
+            <p>Armed with ancient divine scriptures and modern arcane practices, Grim Wardens protect the world from the occult. They travel the land pursuing those who would abuse the weave with wicked intent, as well as the monstrous abominations that materialize from such abuse. These rangers often spend a great deal of time preparing for their hunts, as they are acutely aware of their physical limitations versus that of the monsters they face.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_GRIM_WARDEN_MAGIC" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_OCCULT_SECRETS" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_SEVER_THE_THREAD" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_FIELD_TRAINING" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_RING_OF_THE_WORTHY" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_CALL_TO_GRIM" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_GRIM_WARDEN_MAGIC" level="3" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_OCCULT_SECRETS" level="3" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_SEVER_THE_THREAD" level="3" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_FIELD_TRAINING" level="7" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_RING_OF_THE_WORTHY" level="11" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_CALL_TO_GRIM" level="15" />
+        </rules>
+    </element>
+        <element name="Grim Warden Magic" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_GRIM_WARDEN_MAGIC">
+            <description>
+                <p>Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Grim Warden Spells table. The spell counts as a ranger spell for you, but it doesn't count against the number of ranger spells you know.</p>
+                <h5 class="caption">Grim Warden Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Ranger Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>protection from evil and good</em></td></tr>
+                    <tr><td>5th</td><td><em>see invisibility</em></td></tr>
+                    <tr><td>9th</td><td><em>counterspell</em></td></tr>
+                    <tr><td>13th</td><td><em>banishment</em></td></tr>
+                    <tr><td>17th</td><td><em>dispel evil and good</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" spellcasting="Ranger" known="true" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_SEE_INVISIBILITY" spellcasting="Ranger" known="true" level="5" />
+                <grant type="Spell" id="ID_PHB_SPELL_COUNTERSPELL" spellcasting="Ranger" known="true" level="9" />
+                <grant type="Spell" id="ID_PHB_SPELL_BANISHMENT" spellcasting="Ranger" known="true" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_DISPEL_EVIL_AND_GOOD" spellcasting="Ranger" known="true" level="17" />
+            </rules>
+        </element>
+        <element name="Occult Secrets" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_OCCULT_SECRETS">
+            <description>
+                <p>At 3rd level, you gain the ability to cast the <i>detect magic</i> and <i>identify</i> spells as rituals, without the need of material components.</p>
+            </description>
+            <sheet>
+                <description>You can cast detect magic and identify as rituals without the need of material components.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Sever the Thread" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_SEVER_THE_THREAD">
+            <description>
+                <p>At 3rd level, when you hit a creature with a weapon attack, the creature takes an extra 1d4 radiant damage, and has disadvantage on the saving throw it makes to maintain its concentration if the creature is concentrating on a spell. You can deal this extra damage only once per turn. The damage increases by 1d4 if the target is an Undead, fiend, fey, or aberration.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with a weapon attack, the creature takes an extra 1d4 radiant damage, and has disadvantage on the saving throw it makes to maintain its concentration if the creature is concentrating on a spell. You can deal this extra damage only once per turn. The damage increases by 1d4 if the target is an Undead, fiend, fey, or aberration.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Field Training" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_FIELD_TRAINING">
+            <description>
+                <p>Starting at 7th level, you've gain a better understanding of the inner workings of the arcane, not through study, but through experience. Whenever you make a Intelligence (Arcana) check or a Intelligence (Investigation) check you can add your Wisdom modifier to it.</p>
+                <p class="indent">Additionally, you have advantage on saving throws against being charmed or frightened.</p>
+            </description>
+            <sheet>
+                <description>Whenever you make an Arcana or Investigation check you can add {{wisdom:modifier}} to it.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Ring of the Worthy" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_RING_OF_THE_WORTHY">
+            <description>
+                <p>Beginning at 11th level, you learn to invoke the ancient knowledge of the divine scriptures. As an action, you can create a circle of holy runes with a radius of up to 30 feet on a point on the ground that you can see within 15 feet of you, and place one effect in the area. If a hostile creature tries to leave the area, it must succeed on a Charisma saving throw. If the creature is an Undead, fiend, fey, or aberration, it makes the saving throw with disadvantage. </p>
+                <p class="indent">The divine scripture lasts for a number of rounds equal to your Wisdom modifier. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+                <p class="indent">The effect of the area is based on the divine scripture you choose to invoke.</p>
+                <p class="indent"><b>Scripture of Zeal.</b> As a bonus action, you can grant you and your allies a bonus to all saving throws equal to your Wisdom modifier until the beginning of your next turn.</p>
+                <p class="indent"><b>Scripture of Fervour.</b> As a bonus action, you can reduce the speed of all hostile creatures by half until the beginning of your next turn. </p>
+                <p class="indent"><b>Scripture of Faith.</b> As a bonus action, you can grant you and your allies a number of temporary hit points equal to your Wisdom modifier.</p>
+            </description>
+            <sheet action="Action" usage="1/Short Rest">
+                <description>You can create a circle of holy runes with a radius of up to 30 feet on a point on the ground that you can see within 15 feet of you, and place one effect in the area. If a hostile creature tries to leave the area, it must succeed on a Charisma saving throw (DC {{spellcasting:dc:wis}}). If the creature is an Undead, fiend, fey, or aberration, it makes the saving throw with disadvantage. The divine scripture lasts for {{wisdom:modifier}} rounds.</description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_RING_OF_THE_WORTHY_SCRIPTURE_OF_ZEAL" level="11" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_RING_OF_THE_WORTHY_SCRIPTURE_OF_FERVOUR" level="11" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_RING_OF_THE_WORTHY_SCRIPTURE_OF_FAITH" level="11" />
+            </rules>
+        </element>
+            <element name="Scripture of Zeal" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_RING_OF_THE_WORTHY_SCRIPTURE_OF_ZEAL">
+                <description>
+                    <p>As a bonus action, you can grant you and your allies a bonus to all saving throws equal to your Wisdom modifier until the beginning of your next turn.</p>
+                </description>
+                <sheet action="Bonus Action" usage="Ring of the Worthy">
+                    <description>You can grant you and your allies a bonus to all saving throws equal to your Wisdom modifier until the beginning of your next turn.</description>
+                </sheet>
+            </element>
+            <element name="Scripture of Fervour" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_RING_OF_THE_WORTHY_SCRIPTURE_OF_FERVOUR">
+                <description>
+                    <p>As a bonus action, you can reduce the speed of all hostile creatures by half until the beginning of your next turn.</p>
+                </description>
+                <sheet action="Bonus Action" usage="Ring of the Worthy">
+                    <description>You can reduce the speed of all hostile creatures by half until the beginning of your next turn. </description>
+                </sheet>
+            </element>
+            <element name="Scripture of Faith" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_RING_OF_THE_WORTHY_SCRIPTURE_OF_FAITH">
+                <description>
+                    <p>As a bonus action, you can grant you and your allies a number of temporary hit points equal to your Wisdom modifier.</p>
+                </description>
+                <sheet action="Bonus Action" usage="Ring of the Worthy">
+                    <description>You can grant you and your allies a number of temporary hit points equal to your Wisdom modifier.</description>
+                </sheet>
+            </element>
+        <element name="Call to Grim" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GRIM_WARDEN_CALL_TO_GRIM">
+            <description>
+                <p>At 15th level, when you roll initiative and are not surprised, you can demand the last rites of your foes. Each hostile creature that you can see or hear you within 80 feet of you must make a Wisdom saving throw. If a creature fails its saving throw, its speed is reduced to 0 and it is frightened until the end of its next turn.</p>
+            </description>
+            <sheet>
+                <description>When you roll initiative and are not surprised, you can force each hostile creature that you can see or hear you within 80 feet of you to make a Wisdom saving throw (DC {{spellcasting:dc:wis}}). on a failure, its speed is reduced to 0 and it is frightened until the end of its next turn.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
