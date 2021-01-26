@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Falconer Rogue</name>
+        <update version="0.0.1">
+            <file name="rogue-falconer.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/dmhavuhk/rogue-falconer.xml" />
+        </update>
+    </info>
+    
+    <element name="Falconer Rogue" type="Source" source="Core" id="ID_DMHAVUHK_GMBINDER_SOURCE_FALCONER_ROGUE">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">FR</set>
+            <set name="url">https://www.gmbinder.com/share/-MN3uDrbu_gNibUfLoW1</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="DMH" url="https://www.gmbinder.com/profile/dmhavuhk">DMHavuhk</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210118</set>
+        </setters>
+    </element>
+    
+    <element name="Falconer" type="Archetype" source="Falconer Rogue" id="ID_DMH_FR_ARCHETYPE_ROGUE_FALCONER">
+        <supports></supports>
+        <description>
+            <p>Most rogues prefer to work alone, tending to keep to themselves. However, you know the value of working with others. But instead of relying on people who might betray your trust, you’ve trained a majestic and powerful bird to fight by your side. As a falconer, you work together with your falcon both in and out of combat, giving you the upper hand. While other rogues sulk in their loneliness, you have the companionship of a loyal friend.</p>
+            <div element="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_FALCON_FRIEND" />
+            <div element="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_BATTLE_COMMANDS" />
+            <div element="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_SCRATCH_OUT_THEIR_EYES" />
+            <div element="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_COMBAT_TRAINING" />
+            <div element="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_STAY_STRONG_FRIEND" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_FALCON_FRIEND" level="3" />
+            <grant type="Archetype Feature" id="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_BATTLE_COMMANDS" level="3" />
+            <grant type="Archetype Feature" id="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_SCRATCH_OUT_THEIR_EYES" level="9" />
+            <grant type="Archetype Feature" id="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_COMBAT_TRAINING" level="13" />
+            <grant type="Archetype Feature" id="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_STAY_STRONG_FRIEND" level="17" />
+        </rules>
+    </element>
+        <element name="Falcon Friend" type="Archetype Feature" source="Falconer Rogue" id="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_FALCON_FRIEND">
+            <description>
+                <p>Starting at 3rd level, you’ve gained the assistance of a trained falcon to aid you in your travels. The falcon uses the stat block below, however rather than dying when it falls to 0 hit points, it becomes scared and flees from combat, returning to you at the end of a short or long rest, with all of its hit points recovered.</p>
+                <p class="indent">While you have your falcon with you, you have advantage on all perception checks that rely on sight.</p>
+            </description>
+            <sheet>
+                <description>While you have your falcon with you, you have advantage on all perception checks that rely on sight.</description>
+            </sheet>
+            <rules>
+                <select type="Companion" name="Falcon Companion" supports="Falconer Rogue Companion" default="ID_DMH_FR_COMPANION_FALCON" />
+            </rules>
+        </element>
+        <element name="Battle Commands:" type="Archetype Feature" source="Falconer Rogue" id="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_BATTLE_COMMANDS">
+            <description>
+                <p>Also at 3rd level, your falcon is trained to aid you in combat. As a bonus action, you can have your falcon use its movement, and give it one of the following commands:</p>
+                <ul>
+                    <li><b>Keep them busy!:</b> Your falcon distracts a creature within 5 feet of it, giving you advantage on your next attack against that creature.</li>
+                    <li><b>Sick em!:</b> Your falcon makes one attack against a creature within 5 feet of it using its talons.</li>
+                    <li><b>Eyes in the Sky!:</b> Your falcon circles the air around you and makes a perception check, alerting you to hidden enemies within 30 feet of you.</li>
+                </ul>
+                <p class="indent">If you are unconscious, your falcon does not act, as you are not there to command it. Additionally, your falcon is unable to make attacks of opportunity.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can have your falcon use its movement, and give it one of the following commands: Keep them busy!, Sick em!, or Eyes in the Sky!</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Scratch out their Eyes!" type="Archetype Feature" source="Falconer Rogue" id="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_SCRATCH_OUT_THEIR_EYES">
+            <description>
+                <p>At 9th level, you’ve trained your falcon to aim for the enemies eyes, potentially blinding them. When you falcon hits a creature with its talon attack, it can force them to make a Constitution saving throw (DC = 8 + Your prof bonus + falcon’s dex). On a failure, the creature is blinded for 1 minute. The creature can remake this saving throw at the end of their turn, ending the effect on a success.</p>
+                <p class="indent">Your falcon can use this ability a number of times equal to their Dexterity modifier. They regain all uses at the end of a long rest.</p>
+            </description>
+            <sheet usage="{{companion:dexterity:modifier}}/Long Rest">
+                <description>When you falcon hits a creature with its talon attack, it can force them to make a Constitution saving throw (DC {{falconer:save-dc}}) or be blinded for up to 1 minute.</description>
+            </sheet>
+            <rules>
+                <stat name="falconer:save-dc" value="8" />
+                <stat name="falconer:save-dc" value="proficiency" />
+                <stat name="falconer:save-dc" value="companion:dexterity:modifier" />
+            </rules>
+        </element>
+        <element name="Combat Training" type="Archetype Feature" source="Falconer Rogue" id="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_COMBAT_TRAINING">
+            <description>
+                <p>At 13th level, your falcon’s Battle Commands are improved:</p>
+                <ul>
+                    <li><b>Keep them busy!:</b> When your falcon is distracting a creature, that creature also has disadvantage on attack rolls until the start of your next turn.</li>
+                    <li><b>Sick em!:</b> Your falcon’s attacks are considered magical for the sake of overcoming resistances. Additionally, your falcon can attack twice instead of once when you use this command.</li>
+                    <li><b>Eyes in the Sky!:</b> Your falcon has advantage on the perception check, and the range of this command is increased to 60 feet.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>Your falcon’s battle commands are improved.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Stay Strong Friend!" type="Archetype Feature" source="Falconer Rogue" id="ID_DMH_FR_ARCHETYPE_FEATURE_FALCONER_STAY_STRONG_FRIEND">
+            <description>
+                <p>At 17th level, the bond between you and your falcon inspires you both to keep fighting. Your falcon is able to use your Evasion feature, and gains a special reaction that it can use to use your Uncanny Dodge feature.</p>
+                <p class="indent">Additionally, while your falcon is present, you have advantage on death saving throws.</p>
+                <p class="indent">Finally, when your falcon falls to 0 hit points, you can use your reaction to rally it, healing it for half of its maximum hit points. Once you use this feature, you cannot do so again until you finish a long rest.</p>
+            </description>
+            <sheet>
+                <description>Your falcon is able to use your Evasion feature, and gains a special reaction that it can use to use your Uncanny Dodge feature. Additionally, while your falcon is present, you have advantage on death saving throws. When your falcon falls to 0 hit points, you can use your reaction to rally it, healing it for half of its maximum hit points. Once you use this feature, you cannot do so again until you finish a long rest.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="Falcon" type="Companion" source="Falconer Rogue" id="ID_DMH_FR_COMPANION_FALCON">
+        <supports>Falconer Rogue Companion</supports>
+        <description />
+        <setters>
+            <set name="size">Tiny</set>
+            <set name="type">beast</set>
+            <set name="alignment">unaligned</set>
+            <set name="ac">13 + Your Prof Bonus</set>
+            <set name="hp">4 times your rogue level</set>
+            <set name="speed">10ft, fly 60ft</set>
+            <set name="strength">5</set>
+            <set name="dexterity">16</set>
+            <set name="constitution">10</set>
+            <set name="intelligence">4</set>
+            <set name="wisdom">16</set>
+            <set name="charisma">6</set>
+            <set name="skills">Perception (3 + your prof bonus), Stealth (3 + your prof bonus)</set>
+            <set name="languages">>Understands the same languages you do, cannot speak</set>
+            <set name="challenge">0</set>
+            <set name="actions"></set>
+        </setters>
+        <sheet />
+        <rules>
+            <stat name="companion:ac" value="13" bonus="base" />
+            <stat name="companion:ac" value="proficiency" bonus="proficiency" />
+            <stat name="companion:hp" value="level:rogue" />
+            <stat name="companion:hp" value="level:rogue" />
+            <stat name="companion:hp" value="level:rogue" />
+            <stat name="companion:hp" value="level:rogue" />
+            <stat name="companion:speed" value="10" bonus="base" />
+            <stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="proficiency" bonus="base" />
+        </rules>
+    </element>
+        <element name="Talons" type="Companion Action" source="Falconer Rogue" id="ID_DMH_FR_COMPANION_ACTION_TALON">
+            <description>
+                <p>Melee weapon attack: 3 + Your Prof Bonus to hit, reach 5 ft, one target. Hit: 1d6 + 2 slashing damage.</p>
+            </description>
+            <sheet>
+                <description>Melee weapon attack: 3 + Your Prof Bonus to hit, reach 5 ft, one target. Hit: 1d6 + 2 slashing damage.</description>
+            </sheet>
+        </element>
+
+
+</elements>

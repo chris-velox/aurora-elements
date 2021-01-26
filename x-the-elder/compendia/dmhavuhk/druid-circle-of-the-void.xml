@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Druid Circle of the Void</name>
+        <update version="0.0.1">
+            <file name="druid-circle-of-the-void.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/dmhavuhk/druid-circle-of-the-void.xml" />
+        </update>
+    </info>
+    
+    <element name="Circle of the Void" type="Source" source="Core" id="ID_DMHAVUHK_GMBINDER_SOURCE_CIRCLE_OF_THE_VOID">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">COTV</set>
+            <set name="url">https://www.gmbinder.com/share/-MN4EcG37CukS1ShJoI2</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="DMH" url="https://www.gmbinder.com/profile/dmhavuhk">DMHavuhk</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210119</set>
+        </setters>
+    </element>
+    
+    <element name="Circle of the Void" type="Archetype" source="Circle of the Void" id="ID_DMH_COTV_ARCHETYPE_CIRCLE_OF_THE_VOID">
+        <supports>Druid Circle</supports>
+        <description>
+            <p>Druids generally draw their power from their connection to nature, forming a codependent relationship with the wilds. However, you have found a new source of magic to draw from. You draw your power from the Void, a realm of darkness, filled with the souls of the those that have betrayed their gods, forever damned to exist within a world of nothingness. As a druid of the Circle of the Void, you act as an emissary of the void, hunting down those that have turned from the light and sending their souls to the void.</p>
+            <div element="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_COMBAT_WILD_SHAPE" />
+            <div element="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_SHADOW_FORM" />
+            <div element="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_SHADOW_STRIKES" />
+            <div element="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_SABLION_FORM" />
+            <div element="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_REAPER_FORM" />
+            <div element="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_VOID_CONSUMPTION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_COMBAT_WILD_SHAPE" level="2" />
+            <grant type="Archetype Feature" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_SHADOW_FORM" level="3" />
+            <grant type="Archetype Feature" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_SHADOW_STRIKES" level="6" />
+            <grant type="Archetype Feature" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_SABLION_FORM" level="6" />
+            <grant type="Archetype Feature" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_REAPER_FORM" level="10" />
+            <grant type="Archetype Feature" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_VOID_CONSUMPTION" level="14" />
+        </rules>
+    </element>
+        <element name="Combat Wild Shape" type="Archetype Feature" source="Circle of the Void" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_COMBAT_WILD_SHAPE">
+            <description>
+                <p>When you choose this circle at 2nd level, you gain the ability to use your Wild Shape feature as a bonus action, rather than as an action.</p>
+                <p class="indent">Additionally, you can use your Wild Shape to transform into a creature with a CR as high as 1 (You ignore the Max CR column of the Beast Shapes table, but must abide by the other limitations there).</p>
+                <p class="indent">Starting at 6th level, you can transform into a beast with a CR as high as your druid level divided by 3, rounded down.</p>
+            </description>
+            <sheet action="Bonus Action" usage="Wild Shape">
+                <description>You can assume your wild shape, with a CR up to 1.</description>
+                <description level="6">You can assume your wild shape, with a CR up to 1.</description>
+                <description level="9">You can assume your wild shape, with a CR up to 2.</description>
+                <description level="12">You can assume your wild shape, with a CR up to 3.</description>
+                <description level="15">You can assume your wild shape, with a CR up to 4.</description>
+                <description level="18">You can assume your wild shape, with a CR up to 5.</description>
+            </sheet>
+        </element>
+        <element name="Shadow Form" type="Archetype Feature" source="Circle of the Void" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_SHADOW_FORM">
+            <description>
+                <p>Also at 3rd level, you draw your power from the void, rather than from nature, which has affected the nature of your wild shapes. When your use your Wild Shape feature, you gain the following features:</p>
+                <ul>
+                    <li>Your creature type is changed to undead, instead of beast.</li>
+                    <li>When you hit a creature with an attack, you can choose to change the damage type to necrotic.</li>
+                    <li>You gain proficiency with the stealth skill if you didn’t already have it. Your proficiency bonus is doubled for any ability checks using this skill.</li>
+                    <li>You can move through a space as narrow as 1 inch wide without squeezing. Additionally, you can move through creatures as if they were difficult terrain. You take 1d10 force damage if you end your turn in an occupied space.</li>
+                </ul>
+                <p class="indent">Your wild shape forms resemble creatures made of shifting shadows, with small specks of gold dotted around your form.</p>
+            </description>
+            <sheet usage="Wild Shape">
+                <description>When your use your Wild Shape feature, you gain the following features: Your creature type is undead. When you hit a creature with an attack, you can choose to change the damage type to necrotic. You gain proficiency with the stealth skill and your proficiency bonus is doubled for any ability checks using this skill. You can move through a space as narrow as 1 inch wide without squeezing. Additionally, you can move through creatures as if they were difficult terrain. You take 1d10 force damage if you end your turn in an occupied space.</description>
+            </sheet>
+        </element>
+        <element name="Shadow Strikes" type="Archetype Feature" source="Circle of the Void" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_SHADOW_STRIKES">
+            <description>
+                <p>At 6th level, your attacks in your wild shape forms ignore resistance to necrotic damage.</p>
+            </description>
+            <sheet>
+                <description>Your attacks in your wild shape forms ignore resistance to necrotic damage.</description>
+            </sheet>
+        </element>
+        <element name="Sablion Form" type="Archetype Feature" source="Circle of the Void" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_SABLION_FORM">
+            <description>
+                <p>Also at 6th level, you’ve learned to assume the form of a Sablion, a mighty creature of the void. This form uses the Griffon stat block. You are able to ignore the flight restriction of the Beast Shapes table, however you cannot use your flight speed until 8th level, as normal.</p>
+            </description>
+            <sheet>
+                <description>You’ve learned to assume the form of a Sablion, a mighty creature of the void. This form uses the Griffon stat block but you cannot fly.</description>
+                <description level="8">You’ve learned to assume the form of a Sablion, a mighty creature of the void. This form uses the Griffon stat block.</description>
+            </sheet>
+        </element>
+        <element name="Reaper Form" type="Archetype Feature" source="Circle of the Void" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_REAPER_FORM">
+            <description>
+                <p>At 10th level, you are able to assume the form of The Reaper, a being of the void made to harvest souls. To assume this form, you must expend both uses of your Wild Shape feature. The stat block for this form is shown below.</p>
+            </description>
+            <sheet>
+                <description>You can expend both uses of your Wild Shape feature to take the form of a Reaper.</description>
+            </sheet>
+        </element>
+        <element name="Void Consumption" type="Archetype Feature" source="Circle of the Void" id="ID_DMH_COTV_ARCHETYPE_FEATURE_COTV_VOID_CONSUMPTION">
+            <description>
+                <p>At 14th level, your connection to the void allows you to consume the magic of your victims, empowering yourself. When you reduce a creature to 0 hit points, you regain 1 use of your Wild Shape feature, and can immediately use that use to change forms (No action required). When doing this, you cannot change into a form that you are already in.</p>
+            </description>
+            <sheet>
+                <description>When you reduce a creature to 0 hit points, you regain 1 use of your Wild Shape feature, and can immediately use that use to change forms (No action required). When doing this, you cannot change into a form that you are already in.</description>
+            </sheet>
+        </element>
+
+
+</elements>
