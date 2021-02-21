@@ -7,8 +7,8 @@
         </update>
     </info>
     
-    <element name="Artificial Companion" type="Feat" source="Kibbles’ Artificer Extended Toolbox" id="ID_KIBBLESTASTY_GM_BINDER_FEAT_ARTIFICIAL_COMPANION">
-        <requirements>ID_KIBBLESTASTY_GM_BINDER_CLASS_ARTIFICER</requirements>
+    <element name="Artificial Companion" type="Feat" source="Kibbles’ Artificer Extended Toolbox" id="ID_KT_KAET_FEAT_ARTIFICIAL_COMPANION">
+        <requirements>ID_KT_KAET_CLASS_ARTIFICER</requirements>
         <prerequisite>Artificer</prerequisite>
         <description>
             <p class="flavor">Prerequisite: Artificer</p>
@@ -44,8 +44,8 @@
             <grant type="Spell" id="ID_PHB_SPELL_CLAIRVOYANCE" />
         </rules>
     </element>
-    <element name="Magic Mutater" type="Feat" source="Kibbles’ Artificer Extended Toolbox" id="ID_KIBBLESTASTY_GM_BINDER_FEAT_MAGIC_MUTATER">
-        <requirements>ID_KIBBLESTASTY_GM_BINDER_CLASS_ARTIFICER</requirements>
+    <!--<element name="Magic Mutater" type="Feat" source="Kibbles’ Artificer Extended Toolbox" id="ID_KT_KAET_FEAT_MAGIC_MUTATER">
+        <requirements>ID_KT_KAET_CLASS_ARTIFICER</requirements>
         <prerequisite>Artificer</prerequisite>
         <description>
             <p class="flavor">Prerequisite: Artificer</p>
@@ -59,8 +59,8 @@
         <rules>
             <select type="Class Feature" name="Metamagic (Magic Mutator)" supports="Metamagic" />
         </rules>
-    </element>
-    <element name="Warforged Customization" type="Feat" source="Kibbles’ Artificer Extended Toolbox" id="ID_KIBBLESTASTY_GM_BINDER_FEAT_WARFORGED_CUSTOMIZATION">
+    </element>-->
+    <element name="Warforged Customization" type="Feat" source="Kibbles’ Artificer Extended Toolbox" id="ID_KT_KAET_FEAT_WARFORGED_CUSTOMIZATION">
         <requirements>ID_WOTC_ERLW_RACE_WARFORGED||ID_WOTC_WGTE_RACE_WARFORGED||ID_WOTC_UA_RACE_WARFORGED</requirements>
         <prerequisite>Artificer</prerequisite>
         <description>
@@ -70,11 +70,27 @@
                 <li>You can select an upgrade from the Golemsmith or Warsmith upgrade lists, and apply it to yourself as if you were the golem or warplate. This upgrade cannot be a level restricted upgrade.</li>
             </ul>
         </description>
-        <sheet>
+        <sheet display="false">
             <description></description>
         </sheet>
         <rules>
             <select type="Archetype Feature" name="Upgrade (Warforged Customization)" supports="Specialization Upgrade,(Golemsmith||Warsmith),3" />
+        </rules>
+    </element>
+    <element name="Artificial Metamagic" type="Feat" source="Kibbles’ Artificer Extended Toolbox" id="ID_KT_KAET_FEAT_ARTIFICIAL_METAMAGIC">
+        <requirements>ID_KT_KAET_CLASS_ARTIFICER</requirements>
+        <prerequisite>Artificer</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Artificer</p>
+            <p>Magic is great and all, but what if it was... better? You modify an arcane focus in your possession. Select a Metamagic Option from the Sorcerer's list of Metamagic options.</p>
+            <p class="indent">The device has 2 charges. When you cast a spell using this arcane focus, you can use the devices charges to power applying the metamagic option to the spell cast as 1 charge per Sorcery point spent.</p>
+            <p class="indent">The device regains all charges when you finish a short or long rest. As an action, you can expend a first level spell to recharge the Arcane Focus to use it again before completing a rest.</p>
+        </description>
+        <sheet usage="2/Short Rest">
+            <description>You modify an arcane focus in your possession. The device has 2 charges. When you cast a spell using this arcane focus, you can use the devices charges to power applying the metamagic option to the spell cast as 1 charge per Sorcery point spent. As an action, you can expend a first level spell to recharge the Arcane Focus to use it again before completing a rest.</description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Metamagic (Artificial Metamagic)" supports="Metamagic" />
         </rules>
     </element>
     
