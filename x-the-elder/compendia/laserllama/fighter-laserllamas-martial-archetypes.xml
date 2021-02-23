@@ -2,12 +2,12 @@
 <elements>
     <info>
         <name>Laserllama’s Martial Archetypes</name>
-        <update version="0.0.1">
+        <update version="0.0.2">
             <file name="fighter-laserllamas-martial-archetypes.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/laserllama/fighter-laserllamas-martial-archetypes.xml" />
         </update>
     </info>
     
-    <element name="LaserLlama’s Martial Archetypes" type="Source" source="Core" id="ID_LASERLLAMA_GMBINDER_SOURCE_LASERLLAMAS_MARTIAL_ARCHETYPES">
+    <element name="LaserLlama’s Martial Archetypes" type="LaserLlama’s Martial Archetypes" source="Core" id="ID_LASERLLAMA_GMBINDER_SOURCE_LASERLLAMAS_MARTIAL_ARCHETYPES">
         <description>
             <![CDATA[<p></p>]]>
         </description>
@@ -25,7 +25,336 @@
             <set name="release">20210110</set>
         </setters>
     </element>
-    
+
+    <element name="Guardian" type="Archetype" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FIGHTER_GUARDIAN">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Guardians are elite fighters whose true strength shows when defending or fighting side by side with an ally. Skilled with weapons of all types, they are especially deadly with a protective style of fighting that utilizes a weapon and shield. They coordinate their tactics with their allies, becoming a deadly unit on the battlefield.</p>
+            <p class="indent">When alone, Guardians are a minor threat, but when standing beside powerful allies they become impenetrable walls of flesh and steel. If a Guardian chooses to block your path, it is best to find another way around.</p>
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_DEFENSIVE_STANCE" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_TACTICAL_SIGNALS" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_RALLYING_WIND" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_STALWART_DEFENDER" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_IMPROVED_DEFENSIVE_STANCE" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_UNSHAKABLE_DEFENSE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_DEFENSIVE_STANCE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_TACTICAL_SIGNALS" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_RALLYING_WIND" level="7" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_STALWART_DEFENDER" level="10" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_IMPROVED_DEFENSIVE_STANCE" level="15" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_UNSHAKABLE_DEFENSE" level="18" />
+        </rules>
+    </element>
+        <element name="Defensive Stance" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_DEFENSIVE_STANCE">
+            <description>
+                <p>Beginning at 3rd level, your skills as a Guardian allow you to defend nearby allies. While you are wielding a shield, you can enter a defensive stance as a bonus action on your turn. While in this stance, your movement speed is reduced by 10 feet, and you, and creatures of your choice within 5 feet, gain a +1 bonus to their Armor Class. Your stance only ends if you fall unconscious, or end it as a bonus action.</p>
+                <p class="indent">While you in your defensive stance, you gain access to the following defensive actions detailed below:</p>
+                <p class="indent"><b>Brace.</b> As a reaction, when you, or a creature within your defensive stance, is forced to make a saving throw to resist being grappled, moved against their will, or knocked prone, you can grant that creature advantage on their roll.</p>
+                <p class="indent"><b>Intercept.</b> As a reaction, when a creature within the range of your defensive stance is hit by an attack, you can interpose yourself between them and the attack. If the triggering attack would meet or exceed your Armor Class, you take damage as if you had been the original target.</p>
+                <p class="indent"><b>Shield Bash.</b> When you take the attack action, you can use a bonus action on that same turn to attack a creature within 5 feet with your shield. On hit, your shield attack deals bludgeoning damage equal to 1d4 + your Strength modifier.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>While wielding a shield, you can enter a defensive stance. While in this stance, your movement speed is reduced by 10 feet, and you, and creatures of your choice within 5 feet, gain a +1 bonus to their Armor Class. While in your stance, you can take the Brace, or Intercept reactions, and the Shield Bash bonus action.</description>
+                <description level="15">While wielding a shield, you can enter a defensive stance. While in this stance, your movement speed is reduced by 10 feet, and you, and creatures of your choice within 5 feet, gain the benefit of half cover. While in your stance, you can take the Brace, or Intercept reactions, and the Shield Bash bonus action.</description>
+                <description level="18">While wielding a shield, you can enter a defensive stance. While in this stance, your movement speed is reduced by 10 feet, and you, and creatures of your choice within 10 feet, gain the benefit of half cover. While in your stance, you can take the Brace, or Intercept reactions, and the Shield Bash bonus action.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Tactical Signals" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_TACTICAL_SIGNALS">
+            <description>
+                <p>Starting at 3rd level, you learn a form of communication unique to Guardians. You can communicate simple ideas to other creatures that can see you as long as you have a free hand and they understand your symbols.</p>
+                <p class="indent">You can teach one creature of your choice your tactical hand signals over the course of each short or long rest.</p>
+            </description>
+            <sheet>
+                <description>You can communicate simple ideas to other creatures that can see you as long as you have a free hand and they understand your symbols. You can teach one creature of your choice your tactical hand signals over the course of each short or long rest.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Rallying Wind" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_RALLYING_WIND">
+            <description>
+                <p>You can rally your allies to hold in formation. Starting at 7th level, when you use your Second Wind feature, creatures of your choice within your defensive stance gain temporary hit points equal to your fighter level.</p>
+            </description>
+            <sheet>
+                <description>When you use your Second Wind feature, creatures of your choice within your defensive stance gain {{level:fighter}} temporary hit points.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Stalwart Defender" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_STALWART_DEFENDER">
+            <description>
+                <p>Your defensive tactics stand out among elite warriors. At 10th level, you gain an additional Fighting Style, chosen from styles often employed by Guardians. You gain either the Defense, Interception, or Protection Fighting Style. You can't select a Fighting Style that you have already learned.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Class Feature" name="Fighting Style, Stalwart Defender" supports="ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_DEFENSE|ID_WOTC_PHB_CLASS_FEATURE_FIGHTINGSTYLE_PROTECTION|ID_WOTC_TCE_CLASS_FEATURE_FIGHTING_STYLE_INTERCEPTION" level="10" />
+            </rules>
+        </element>
+        <element name="Improved Defensive Stance" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_IMPROVED_DEFENSIVE_STANCE">
+            <description>
+                <p>You have improved your defensive technique so that you may better defend nearby allies. Starting at 15th level, creatures within the area of your defensive stance gain the benefits of half cover in place of the bonus to their Armor Class.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+        <element name="Unshakable Defense" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUARDIAN_UNSHAKABLE_DEFENSE">
+            <description>
+                <p>You have mastered the fighting techniques of the Guardian warrior. Upon reaching 18th level, your defensive stance affects creatures of your choice within 10 feet of you.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+            </rules>
+        </element>
+
+    <element name="Guerrilla" type="Archetype" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FIGHTER_GUERRILLA">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>When commanders and conquerers need a mission executed with the utmost precision, they turn to the elite Guerrilla warriors in their ranks. Though these elite warriors may vary in skill or title depending on the civilization they hail from, all Guerrillas have the same resolute determination to overcome any obstacle between them and their mission.</p>
+            <p class="indent">Whether harsh terrain, vicious monsters, enemy soldiers, or powerful spellcasters, nothing short of death itself can cause the willpower of a Commando to waver.</p>
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_ADAPTABLE_SUPERIORITY" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_GUERRILLA_TRAINING" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_BY_LAND_OR_SEA" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_COMBAT_VERSATILITY" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_UNWAVERING" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_ELITE_GUERRILLA" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_ADAPTABLE_SUPERIORITY" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_GUERRILLA_TRAINING" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_BY_LAND_OR_SEA" level="7" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_COMBAT_VERSATILITY" level="10" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_UNWAVERING" level="15" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_ELITE_GUERRILLA" level="18" />
+        </rules>
+    </element>
+        <element name="Adaptable Superiority" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_ADAPTABLE_SUPERIORITY">
+            <description>
+                <p>You have trained to utilize a select few maneuvers in combat. Starting at 3rd level, you gain the following features:</p>
+                <p class="indent"><b>Maneuvers.</b> You learn three maneuvers of your choice from the Battle Master archetype. You can use only one maneuver per attack. You learn another maneuver of your choice when you reach 7th, 10th, and 15th level in this class.</p>
+                <p class="indent"><b>Versatility.</b> At the end of a long rest, you can replace one maneuver you know with another maneuver of your choice.</p>
+                <p class="indent"><b>Superiority Dice.</b> You have four superiority dice, which are d6s for you. A superiority die is expended when you use it, and you regain all expended superiority dice when you finish a short or long rest. You gain one additional superiority die at 10th level and one more 18th level (for a total of 5).</p>
+                <p class="indent"><b>Saving Throws.</b> Some of your maneuvers require your target to make a saving throw to resist the maneuver's effects. The saving throw DC is calculated as follows:</p>
+                <p style="text-align: center;"><b>Maneuver save DC</b> = 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).</p>
+            </description>
+            <sheet>
+                <description>You have {{superiority dice:amount}} superiority dice which are d{{superiority dice:size}}s. DC {{superiority dice:dc}}. At the end of a long rest, you can replace one maneuver you know with another maneuver of your choice.</description>
+            </sheet>
+            <rules>
+                <stat name="superiority dice:amount" value="4" level="3" />
+                <stat name="superiority dice:amount" value="1" level="10" />
+                <stat name="superiority dice:amount" value="1" level="18" />
+                <stat name="superiority dice:size" value="6" level="3" />
+                <stat name="maneuver:save-dc:ability-mod" value="strength:modifier" bonus="ability" />
+                <stat name="maneuver:save-dc:ability-mod" value="dexterity:modifier" bonus="ability" />
+                <stat name="maneuver:save-dc" value="8" />
+                <stat name="maneuver:save-dc" value="proficiency" />
+                <stat name="maneuver:save-dc" value="maneuver:save-dc:ability-mod" />
+                <select type="Archetype Feature" name="Adaptable Superiority (Level 3)" supports="Maneuver,Battle Master" number="3" />
+                <select type="Archetype Feature" name="Adaptable Superiority (Level 7)" supports="Maneuver,Battle Master" number="1" level="7" />
+                <select type="Archetype Feature" name="Adaptable Superiority (Level 10)" supports="Maneuver,Battle Master" number="1" level="10" />
+                <select type="Archetype Feature" name="Adaptable Superiority (Level 15)" supports="Maneuver,Battle Master" number="1" level="15" />
+            </rules>
+        </element>
+        <element name="Guerrilla Training" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_GUERRILLA_TRAINING">
+            <description>
+                <p>When you adopt the Guerrilla archetype at 3rd level, you are trained in the skills necessary to overcome any obstacle. You gain proficiency in two of the following skills of your choice: Athletics, Perception, Medicine, Stealth, or Survival.</p>
+                <p class="indent">When you reach 7th level in this class, you gain two more proficiencies from the list above. If you choose the same skill that you chose at 3rd level, you add double your proficiency bonus to any ability check you make with that skill.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Proficiency" name="Skill Proficiency, Guerilla Training" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_STEALTH|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" level="3" />
+                <select type="Proficiency" name="Skill Proficiency, Guerilla Training" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_STEALTH|ID_PROFICIENCY_SKILL_SURVIVAL|ID_EXPERTISE_SKILL_ATHLETICS|ID_EXPERTISE_SKILL_MEDICINE|ID_EXPERTISE_SKILL_PERCEPTION|ID_EXPERTISE_SKILL_STEALTH|ID_EXPERTISE_SKILL_SURVIVAL" number="2" level="7" />
+            </rules>
+        </element>
+        <element name="By Land or Sea" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_BY_LAND_OR_SEA">
+            <description>
+                <p>You have trained to succeed in any environment. Upon reaching 7th level, you gain one of the following features of your choice. You gain the second feature at 15th level.</p>
+                <p class="indent"><b>Alpine Combatant.</b> You steel yourself for battle at great heights. You gain a climbing speed equal to your movement speed, and as a reaction, you can reduce any falling damage you take by an amount equal to your fighter level.</p>
+                <p class="indent"><b>Marine Combatant.</b> You prepare for amphibious combat. You gain a swimming speed equal to your movement speed, and you can hold your breath for up to 1 hour underwater.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Archetype Feature" name="By Land or Sea" supports="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_BY_LAND_OR_SEA_ALPINE_COMBATANT|ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_BY_LAND_OR_SEA_MARINE_COMBATANT" level="7" />
+                <select type="Archetype Feature" name="By Land or Sea" supports="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_BY_LAND_OR_SEA_ALPINE_COMBATANT|ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_BY_LAND_OR_SEA_MARINE_COMBATANT" level="15" />
+            </rules>
+        </element>
+            <element name="Alpine Combatant" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_BY_LAND_OR_SEA_ALPINE_COMBATANT">
+                <compendium display="false" />
+                <description>
+                    <p>You steel yourself for battle at great heights. You gain a climbing speed equal to your movement speed, and as a reaction, you can reduce any falling damage you take by an amount equal to your fighter level.</p>
+                </description>
+                <sheet action="Reaction">
+                    <description>You can reduce any falling damage you take by {{level:fighter}}.</description>
+                </sheet>
+                <rules>
+                    <stat name="speed:climb" value="speed" bonus="base" />
+                </rules>
+            </element>
+            <element name="Marine Combatant" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_BY_LAND_OR_SEA_MARINE_COMBATANT">
+                <compendium display="false" />
+                <description>
+                    <p>You prepare for amphibious combat. You gain a swimming speed equal to your movement speed, and you can hold your breath for up to 1 hour underwater.</p>
+                </description>
+                <sheet>
+                    <description>You can hold your breath for up to 1 hour.</description>
+                </sheet>
+                <rules>
+                    <stat name="speed:swim" value="speed" bonus="base" />
+                </rules>
+            </element>
+        <element name="Combat Versatility" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_COMBAT_VERSATILITY">
+            <description>
+                <p>You are able to adapt in order to better face the task at hand. Starting at 10th level, when you finish a long rest, you can replace your Fighting Style with another Fighting Style of your choice from the list in the fighter class description.</p>
+            </description>
+            <sheet>
+                <description></description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Unwavering" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_UNWAVERING">
+            <description>
+                <p>You can persevere through any hardship to complete the task at hand. Beginning at 15th level, when you use your Second Wind feature you gain the following additional benefits:</p>
+                <ul>
+                    <li>You regain one of your expended superiority dice.</li>
+                    <li>Your level of exhaustion, if any, is reduced by 1.</li>
+                    <li>You can add double your proficiency bonus to your next Strength, Dexterity, or Constitution ability check.</li>
+                </ul>
+            </description>
+            <sheet usage="Second Wind">
+                <description>When you use your Second Wind feature you gain the following additional benefits: You regain 1 superiority die. Your level of exhaustion, if any, is reduced by 1. You can add double your proficiency bonus to your next Strength, Dexterity, or Constitution ability check.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Elite Guerrilla" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_GUERRILLA_ELITE_GUERRILLA">
+            <description>
+                <p>Your ability to adapt to any challenge is beyond compare. Upon reaching 18th level, you can use your Adaptable Superiority Versatility feature to replace one of your maneuvers, and your Combat Versatility feature to replace your Fighting Style at the end of each short or long rest.</p>
+            </description>
+            <sheet>
+                <description>You can use your Adaptable Superiority Versatility feature to replace one of your maneuvers, and your Combat Versatility feature to replace your Fighting Style at the end of each short or long rest.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="Marksman" type="Archetype" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FIGHTER_MARKSMAN">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>While all fighters have skill with ranged weapons, some dedicate themselves exclusively to improving their accuracy and precision with the bow. Know as marksmen, these specialists are masters of ranged weapons, and a rare few are known to make use of strange weapons powered by explosive alchemical powders that propel metal with deadly force.</p>
+            <p class="indent">No matter their weapon of choice, all marksmen back up their deadly marksmanship with unshakable confidence and an unmistakable swagger. Confident in the speed, accuracy, and precision of their shots, there are few challenges a true marksman cannot overcome.</p>
+            <div class="sidebar">
+                <h5 class="caption">Gunpowder &amp; Firearms</h5>
+                <p>If your Dungeon Master uses the rules for firearms from Chapter 9 of the <i>Dungeon Master's Guide</i>, and your Marksman has been exposed to the workings and operation of such weapons, you are considered proficient with all firearms.</p>
+            </div>
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_BONUS_PROFICIENCIES" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_STEADY_AIM" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_CUNNING_SHOT" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_QUICKDRAW" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_GRIN_AND_BEAR_IT" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_RELIABLE_SHOT" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_DEADEYE" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_BONUS_PROFICIENCIES" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_STEADY_AIM" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_CUNNING_SHOT" level="7" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_QUICKDRAW" level="7" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_GRIN_AND_BEAR_IT" level="10" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_RELIABLE_SHOT" level="15" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_DEADEYE" level="18" />
+            <grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FIREARMS" requirements="ID_WOTC_DMG_OPTION_FIREARMS" />
+        </rules>
+    </element>
+        <element name="Bonus Proficiencies" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_BONUS_PROFICIENCIES">
+            <description>
+                <p>When you adopt the Marksman archetype at 3rd level, you gain the confidence that comes with the skill of a professional marksman. You gain proficiency in two of the following skills of your choice: Deception, Perception, Persuasion, or Sleight of Hand.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Proficiency" name="Bonus Proficiency, Marksman" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" number="2" />
+            </rules>
+        </element>
+        <element name="Steady Aim" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_STEADY_AIM">
+            <description>
+                <p>You can quiet your body so as to fire with deadly accuracy. Starting at 3rd level, if you haven't moved during your turn, you can us a bonus action to take aim, granting you the following benefits until the end of your current turn:</p>
+                <ul>
+                    <li>Your movement speed is reduced to 0 feet.</li>
+                    <li>Until you hit a creature with a ranged weapon attack, you have advantage on all ranged weapon attack rolls.</li>
+                    <li>When you roll a 1 or 2 on a damage die for an attack you make with a ranged weapon, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>If you haven't moved during your turn, you can us a bonus action to take aim, granting you the following benefits until the end of your current turn: Your movement speed is reduced to 0 feet. Until you hit a creature with a ranged weapon attack, you have advantage on all ranged weapon attack rolls. When you roll a 1 or 2 on a damage die for an attack you make with a ranged weapon, you can reroll the die and must use the new roll</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Cunning Shot" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_CUNNING_SHOT">
+            <description>
+                <p>Your experience as a marksman allows you to identify and exploit the weak points of your enemies. Beginning at 7th level, any attack that you make with a ranged weapon ignores any resistances or reductions to piercing damage.</p>
+            </description>
+            <sheet>
+                <description>Any attack that you make with a ranged weapon ignores any resistances or reductions to piercing damage.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Quickdraw" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_QUICKDRAW">
+            <description>
+                <p>You have learned that whoever shoots second sometimes doesn’t get to shoot at all. Starting at 7th level, you gain a bonus to your Initiative rolls equal to your proficiency bonus.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <stat name="initiative" value="proficiency" bonus="proficiency" />
+            </rules>
+        </element>
+        <element name="Grin and Bear It" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_GRIN_AND_BEAR_IT">
+            <description>
+                <p>Beginning at 10th level, when you use Second Wind, you gain the following additional benefits until the end of your turn:</p>
+                <ul>
+                    <li>Your speed increases by 10 feet.</li>
+                    <li>Opportunity attacks against you are made at disadvantage.</li>
+                    <li>You gain a +1 bonus to your Armor Class.</li>
+                </ul>
+            </description>
+            <sheet usage="Second Wind">
+                <description>When you use Second Wind, you gain the following additional benefits until the end of your turn: Your speed increases by 10 feet. Opportunity attacks against you are made at disadvantage. You gain a +1 bonus to your Armor Class.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Reliable Shot" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_RELIABLE_SHOT">
+            <description>
+                <p>No matter how impossible the shot may seem, you are always ready to fire with precision. Starting at 15th level, you ignore the disadvantage imposed at your weapon's long range.</p>
+                <p class="indent">In addition, if you have advantage on a ranged weapon attack against a target, you can forgo advantage and make one additional ranged weapon attack against the same target.</p>
+            </description>
+            <sheet>
+                <description>You ignore the disadvantage imposed at your weapon's long range. In addition, if you have advantage on a ranged weapon attack against a target, you can forgo advantage and make one additional ranged weapon attack against the same target.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Deadeye" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_MARKSMAN_DEADEYE">
+            <description>
+                <p>Your marksmanship is supernatural in its precision. Starting at 18th level, your Steady Aim feature lasts for 1 minute, and you have advantage on all ranged weapon attacks while it is active. Your Steady Aim only ends early if you move.</p>
+            </description>
+            <sheet>
+                <description>Your Steady Aim feature lasts for 1 minute, and you have advantage on all ranged weapon attacks while it is active. Your Steady Aim only ends early if you move.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
     <element name="Pact Warrior" type="Archetype" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FIGHTER_PACT_WARRIOR">
         <supports>Martial Archetype</supports>
         <description>
@@ -54,10 +383,10 @@
         <element name="Pact Magic" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_PACT_WARRIOR_PACT_MAGIC">
             <description>
                 <p>Beginning at 3rd level, your bargain with an eldritch power allows you to cast spells much like a warlock does.</p>
-                <p class="indent">Cantrips. You learn two cantrips of your choice from the warlock spell list. You learn an additional warlock cantrip of your choice at 10th level.</p>
-                <p class="indent">Spell Slots. The Pact Warrior Spellcasting table shows how many spell slots you have. The table also shows what the level of those slots; all of your spell slots are the same level. To cast one of your warlock spells of 1st-level or higher, you must expend a spell slot. You regain all expended spell slots when you finish a short or long rest.</p>
-                <p class="indent">Spells Known of 1st-Level and Higher. At 3rd level, you learn two 1st-level spells of your choice from the warlock spell list. The Spells Known column of the Pact Warrior Spellcasting table shows when you learn more warlock spells of your choice of 1st-level or higher. A spell you choose must be of a level no higher than what’s shown in the table’s Slot Level column for your level. When you reach 7th level, for example, you learn a new warlock spell, which can be 1st or 2nd-level. When you gain a level in this class, you can choose one of the warlock spells you know and replace it with another spell from the warlock spell list, which also must be of a level for which you have spell slots.</p>
-                <p class="indent">Spellcasting Ability. Charisma is your spellcasting ability for your warlock spells. You use your Charisma whenever a spell refers to your spellcasting ability, when setting the saving throw DC for a warlock spell you cast, and when making an attack roll with one.</p>
+                <p class="indent"><b>Cantrips.</b> You learn two cantrips of your choice from the warlock spell list. You learn an additional warlock cantrip of your choice at 10th level.</p>
+                <p class="indent"><b>Spell Slots.</b> The Pact Warrior Spellcasting table shows how many spell slots you have. The table also shows what the level of those slots; all of your spell slots are the same level. To cast one of your warlock spells of 1st-level or higher, you must expend a spell slot. You regain all expended spell slots when you finish a short or long rest.</p>
+                <p class="indent"><b>Spells Known of 1st-Level and Higher.</b> At 3rd level, you learn two 1st-level spells of your choice from the warlock spell list. The Spells Known column of the Pact Warrior Spellcasting table shows when you learn more warlock spells of your choice of 1st-level or higher. A spell you choose must be of a level no higher than what’s shown in the table’s Slot Level column for your level. When you reach 7th level, for example, you learn a new warlock spell, which can be 1st or 2nd-level. When you gain a level in this class, you can choose one of the warlock spells you know and replace it with another spell from the warlock spell list, which also must be of a level for which you have spell slots.</p>
+                <p class="indent"><b>Spellcasting Ability.</b> Charisma is your spellcasting ability for your warlock spells. You use your Charisma whenever a spell refers to your spellcasting ability, when setting the saving throw DC for a warlock spell you cast, and when making an attack roll with one.</p>
                 <p style="text-align: center;"><b>Spell save DC</b> = 8 + your proficiency bonus + your Charisma modifier</p>
                 <p style="text-align: center;"><b>Spell attack modifier</b> = your proficiency bonus + your Charisma modifier</p>
                 <h5 class="caption">PACT WARRIOR SPELLCASTING</h5>
@@ -169,7 +498,7 @@
             </rules>
         </element>
 
-    <element name="Phalanx" type="Archetype" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FIGHTER_PHALANX">
+    <!--<element name="Phalanx" type="Archetype" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FIGHTER_PHALANX">
         <supports>Martial Archetype</supports>
         <description>
             <p>Phalanx warriors are elite fighters who excel at fighting as a unit. Skilled with weapons of all types, they are especially deadly with a protective style of fighting that utilizes a spear and shield. They use their combat training to coordinate their tactics with those of their allies, becoming a deadly unit on the battlefield. When fighting alone, a Phalanx warrior is a minor threat, but when combined with powerful allies they are a force to be reckoned with.</p>
@@ -294,35 +623,34 @@
             </sheet>
             <rules>
             </rules>
-        </element>
+        </element>-->
 
     <element name="Quartermaster" type="Archetype" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FIGHTER_QUARTERMASTER">
         <supports>Martial Archetype</supports>
         <description>
             <p>The secret to being a successful adventurer often lies in your ability to work as part of a team. Quartermasters are fighters that not only work to increase their own combat capability, but strive to help their allies reach their full potential. Often putting the needs of their companions ahead of their own, they support their teammates with a slew of prepared rations.</p>
             <p class="indent">A Quartermaster is always there to make sure their adventuring party is in top condition, and ready to face any challenge that lies in their path. The companions of a quartermaster will never face their obstacles alone.</p>
-            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_EVER_READY" />
-            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_WORKHORSE" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_BONUS_PROFICIENCIES" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_RATIONS" />
             <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE" />
-            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_POTENT_RATIONS" />
-            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_RESOURCEFUL" />
-            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_IRON_WILL" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_IMPROVED_RATIONS" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_EVER_READY" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_IRON_STOMACH" />
         </description>
         <sheet display="false" />
         <rules>
-            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_EVER_READY" level="3" />
-            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_WORKHORSE" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_BONUS_PROFICIENCIES" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_RATIONS" level="3" />
             <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE" level="7" />
-            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_POTENT_RATIONS" level="10" />
-            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_RESOURCEFUL" level="15" />
-            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_IRON_WILL" level="18" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_IMPROVED_RATIONS" level="10" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_EVER_READY" level="15" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_IRON_STOMACH" level="18" />
         </rules>
     </element>
-        <element name="Ever Ready" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_EVER_READY">
+        <element name="Rations" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_RATIONS">
             <description>
-                <p>Starting at 3rd level, your training allows you to prepare rations that keep your allies in top condition. At the end of a long rest, you prepare a number of rations equal to your Constitution modifier (minimum of 1). You can prepare any ration from the list at the end of this subclass description as long as you meet it’s level requirements. You can use your action to eat or feed a creature within 5 feet one ration.</p>
-                <p class="indent">Creatures can only be under the effect of one ration at a time, and consuming a new ration immediately ends any current ration effects. Rations lose their potency and expire at the end of your next long rest. Rations can be distributed to the party at any point during the adventuring day, and can be consumed by any creature as an action.</p>
-                <p class="indent">If a ration has prerequisites, like your fighter level, you must meet them to prepare it. You can prepare the ration at the same time that you meet its prerequisites.</p>
+                <p>Your have learned to prepare a slew of rations that keep your allies in top condition. Beginning at 3rd level, at the end of each long rest, you prepare a number of rations equal to your Constitution modifier (minimum of 1) from the list at the end of this subclass description. You can prepare any ration as long as you meet its prerequisites. Any unused rations expire and become inert at the end of your next long rest.</p>
+                <p class="indent">As an action, a creature can eat, or feed a another willing creature within 5 feet, one ration. Creatures can only be under the effect of one ration at a time, and consuming a new ration immediately ends any current ration effects.</p>
                 <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_RATIONS_3RD_LEVEL_RATIONS" />
                 <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_RATIONS_5TH_LEVEL_RATIONS" />
                 <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_RATIONS_7TH_LEVEL_RATIONS" />
@@ -342,7 +670,7 @@
                 <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_RATIONS_15TH_LEVEL_RATIONS" level="15" />
             </rules>
         </element>
-        <element name="Workhorse" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_WORKHORSE">
+        <element name="Bonus Proficiencies" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_BONUS_PROFICIENCIES">
             <description>
                 <p>Beginning at 3rd level, you gain abilities necessary for you to shoulder the burdens of your allies. You gain proficiency in Animal Handling, vehicles (land), and your choice of either carpenter’s tools or cook’s utensils. If you are already proficient in any of these skills or tools, you gain Expertise, which means you add double your proficiency bonus to any ability check you make with that proficiency.</p>
             </description>
@@ -357,25 +685,27 @@
         </element>
         <element name="Dependable" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE">
             <description>
-                <p>Starting at 7th level you use your skills as a quartermaster to make sure your allies always have the supplies they need to thrive. As a bonus action on your turn, you can use one of the following abilities on a target within 5 feet of you.</p>
-                <p class="indent">Aid. You allow a willing, or unconscious, creature to drink a potion, consume ration, or eat another consumable item.</p>
-                <p class="indent">Arm. You give a weapon or item you are carrying to a willing creature. The creature can equip the weapon or item you give them, and stow their current weapon or item, as a free action. You can also use this ability to give a creature any amount of ranged ammunition you are carrying.</p>
-                <p class="indent">Handiwork. You can make an ability check using any skill or tool proficiency you gained from your Workhorse feature.</p>
+                <p>You make sure your allies have the supplies and support that they need to thrive. Starting at 7th level, you can use any of the features listed below as bonus action on your turn.</p>
+                <p class="indent"><b>Administer.</b> You feed a ration, potion, or other consumable item to a willing, or unconscious, creature within 5 feet.</p>
+                <p class="indent"><b>Arm.</b> You give a weapon or item you are carrying to a willing creature. The creature can equip the weapon or item you give them, and stow their current weapon or item, as a free action. You can also use this ability to give a creature any amount of ranged ammunition you are carrying.</p>
+                <p class="indent"><b>Encourage.</b> You use the Help action, targeting a creature within 5 feet of you, offering them words of support.</p>
+                <p class="indent"><b>Wrangle.</b> You make a Wisdom (Animal Handling) or a land vehicles check to control a mount or cart you are riding.</p>
             </description>
             <sheet display="false" />
             <rules>
-                <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_AID" level="7" />
+                <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_ADMINISTER" level="7" />
                 <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_ARM" level="7" />
-                <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_HANDIWORK" level="7" />
+                <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_ENCOURAGE" level="7" />
+                <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_WRANGLE" level="7" />
             </rules>
         </element>
-            <element name="Aid" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_AID">
+            <element name="Administer" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_ADMINISTER">
                 <compendium display="false" />
                 <description>
-                    <p>You allow a willing, or unconscious, creature to drink a potion, consume ration, or eat another consumable item.</p>
+                    <p>You feed a ration, potion, or other consumable item to a willing, or unconscious, creature within 5 feet.</p>
                 </description>
-                <sheet action="Bonus Action">
-                    <description>You allow a willing, or unconscious, creature to drink a potion, consume ration, or eat another consumable item.</description>
+                <sheet>
+                    <description>You feed a ration, potion, or other consumable item to a willing, or unconscious, creature within 5 feet.</description>
                 </sheet>
             </element>
             <element name="Arm" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_ARM">
@@ -383,31 +713,39 @@
                 <description>
                     <p>You give a weapon or item you are carrying to a willing creature. The creature can equip the weapon or item you give them, and stow their current weapon or item, as a free action. You can also use this ability to give a creature any amount of ranged ammunition you are carrying.</p>
                 </description>
-                <sheet action="Bonus Action">
+                <sheet>
                     <description>You give a weapon or item you are carrying to a willing creature. The creature can equip the weapon or item you give them, and stow their current weapon or item, as a free action. You can also use this ability to give a creature any amount of ranged ammunition you are carrying.</description>
                 </sheet>
             </element>
-            <element name="Handiwork" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_HANDIWORK">
+            <element name="Encourage" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_ENCOURAGE">
                 <compendium display="false" />
                 <description>
-                    <p>You can make an ability check using any skill or tool proficiency you gained from your Workhorse feature.</p>
+                    <p>You use the Help action, targeting a creature within 5 feet of you, offering them words of support.</p>
                 </description>
-                <sheet action="Bonus Action">
-                    <description>You can make an ability check using any skill or tool proficiency you gained from your Workhorse feature.</description>
+                <sheet>
+                    <description>You use the Help action, targeting a creature within 5 feet of you, offering them words of support.</description>
                 </sheet>
             </element>
-        <element name="Potent Rations" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_POTENT_RATIONS">
+            <element name="Wrangle" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_DEPENDABLE_WRANGLE">
+                <compendium display="false" />
+                <description>
+                    <p>You make a Wisdom (Animal Handling) or a land vehicles check to control a mount or cart you are riding.</p>
+                </description>
+                <sheet>
+                    <description>You make an Animal Handling or a land vehicles check to control a mount or cart you are riding.</description>
+                </sheet>
+            </element>
+        <element name="Improved Rations" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_IMPROVED_RATIONS">
             <description>
-                <p>Beginning at 10th level, you’ve improved the process of supplying an adventuring party. When you prepare your rations at the end of a long rest, you now prepare the improved versions.</p>
-                <p class="indent">Additionally, you have made your rations more compact while still retaining their potency. Your rations can be consumed by, or fed to, a willing creature as a bonus action.</p>
+                <p>You have made your rations more compact while still retaining their potency. Starting at 10th level, a creature can use a bonus action on their turn to eat a single ration, or feed another willing creature within 5 feet a single ration.</p>
             </description>
             <sheet display="false" />
             <rules>
             </rules>
         </element>
-        <element name="Resourceful" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_RESOURCEFUL">
+        <element name="Resourceful" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_EVER_READY">
             <description>
-                <p>Beginning at 15th level you are always ready to support those who travel with you. You now prepare a number rations equal to your Constitution modifier (minimum of 1) at the end of every short or long rest. These rations expire at the end of your next short or long rest.</p>
+                <p>You are always ready to support those who travel with you. Beginning at 15th level, you now prepare a number rations equal to your Constitution modifier (minimum of 1) at the end of every short or long rest. Any unused rations become inert at the end of the following short or long rest.</p>
                 <p class="indent">Additionally, if you roll initiative with no rations remaining, you immediately prepare one ration of your choice.</p>
             </description>
             <sheet>
@@ -416,17 +754,18 @@
             <rules>
             </rules>
         </element>
-        <element name="Iron Will" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_IRON_WILL">
+        <element name="Iron Stomach" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_QUARTERMASTER_IRON_STOMACH">
             <description>
-                <p>Your close work with your rations and supplies has toughened your body and soul to a point only few have reached. Upon reaching 18th level your Constitution score, and maximum Constitution score, both increase by 2.</p>
-                <p class="indent">Additionally, you are always under the effect of one ration of your choice. The ration must have a duration longer then instantaneous. You can change this effect at the end of every short or long rest.</p>
+                <p>Your work tasting and experimenting with powerful and experimental ration recipes has toughened your body and stomach. Upon reaching 18th level your Constitution score, and maximum Constitution score, both increase by 2. You also gain immunnity to the poisoned condition.</p>
+                <p class="indent">In addition, you are always under the effects of one ration of your choice with a duration longer than instantaneous. It does not need to be a ration that you prepare, and you can change this effect at the end of each short or long rest.</p>
             </description>
             <sheet>
-                <description>You are always under the effect of one ration of your choice. The ration must have a duration longer then instantaneous. You can change this effect at the end of every short or long rest.</description>
+                <description>You are always under the effect of one ration of your choice. The ration must have a duration longer then instantaneous. You can change this effect at the end of every short or long rest. You are immune to the poisoned condition.</description>
             </sheet>
             <rules>
                 <stat name="constitution:max" value="2" />
                 <stat name="constitution" value="2" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_IMMUNITY_POISONED" />
             </rules>
         </element>
 
@@ -523,6 +862,293 @@
             </description>
             <sheet>
                 <description></description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="Tinker Knight" type="Archetype" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FIGHTER_TINKER_KNIGHT">
+        <supports>Martial Archetype</supports>
+        <description>
+            <p>Those that fit under the archetype of the Tinker Knight seek an unorthodox form of martial prowess. Rather than hone their body into a weapon, they look to augment their physical ability with mechanical inventions and innovative weaponry. Though they spend most of their time theorizing, tinkering, and experimenting, Tinker Knights and their inventive arsenals are a force to be reckoned with on the battlefield.</p>
+            <p class="indent">Warriors follow the path of the Tinker Knight for many reasons. Some have been grievously injured, and they use their ingenuity to make up for their physical shortcomings. Others seek to put their sharp minds to use, but still desire to swing their sword and hoist their shield on the front lines.</p>
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_BONUS_PROFICIENCIES" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_INVENTIVE_ARSENAL" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_TINKERS_EXPERTISE" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_MECHANICAL_SYNERGY" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_FLEXIBLE_INNOVATION" />
+            <div element="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_MASTERWORK_INVENTIONS" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_BONUS_PROFICIENCIES" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_INVENTIVE_ARSENAL" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_TINKERS_EXPERTISE" level="7" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_MECHANICAL_SYNERGY" level="10" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_FLEXIBLE_INNOVATION" level="15" />
+            <grant type="Archetype Feature" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_MASTERWORK_INVENTIONS" level="18" />
+        </rules>
+    </element>
+        <element name="Bonus Proficiencies" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_BONUS_PROFICIENCIES">
+            <description>
+                <p>When you choose this archetype at 3rd level, you gain the skill to maintain your inventive arsenal. You gain proficiency with tinker's tools and smith's tools. If you already proficient in either of these tools, you instead gain proficiency in another set of artisan's tools of your choice.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Proficiency" name="Tool Proficiency, Tinker Knight" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS" />
+                <select type="Proficiency" name="Tool Proficiency, Tinker Knight" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+            </rules>
+        </element>
+        <element name="Inventive Arsenal" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_INVENTIVE_ARSENAL">
+            <description>
+                <p>You have come up with a cacophony of strange modifications for weapons and armor. At 3rd level, you learn two schematics of your choice, from the schematics at the end of this archetype description, and each time you gain a level, you can replace one schematic you know with a different one from this feature. You learn additional schematics as you gain levels in this class, as shown in the Schematics Known table.</p>
+                <h5 class="caption">Schematics Known</h5>
+                <table>
+                    <thead>
+                        <tr><td>Fighter Level</td><td>Number of Schematics</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td>2</td></tr>
+                    <tr><td>7th</td><td>3</td></tr>
+                    <tr><td>10th</td><td>4</td></tr>
+                    <tr><td>15th</td><td>5</td></tr>
+                </table>
+                <p class="indent">Whenever you finish a long rest, you can touch a number of objects equal to the number of schematics you know, modifying each object to gain the features of each schematic. To be eligible, an object must meet the requirements stated in the schematic description. The modifications from each schematic last until the end of your next long rest, and an object can only be modified by one schematic at a time.</p>
+                <p class="indent"><b>Saving Throws.</b> If a schematic requires a saving throw, your Schematic save DC is calculated as follows:</p>
+                <p style="text-align: center;"><b>Spell save DC</b> = 8 + your proficiency bonus + your Intelligence modifier</p>
+            </description>
+            <sheet>
+                <description>You can touch up to {{schematic:count}} objects, modifying each with a schematic of your choice. The modifications from each schematic last until the end of your next long rest, and an object can only be modified by one schematic at a time. Your schematic save DC is {{schematic:save-dc}}.</description>
+            </sheet>
+            <rules>
+                <stat name="schematic:save-dc" value="8" />
+                <stat name="schematic:save-dc" value="proficiency" />
+                <stat name="schematic:save-dc" value="intelligence:modifier" />
+                <stat name="schematic:count" value="2" level="3" />
+                <stat name="schematic:count" value="1" level="7" />
+                <stat name="schematic:count" value="1" level="10" />
+                <stat name="schematic:count" value="1" level="15" />
+                <select type="Archetype Feature" name="Tinker Knight Schematic" supports="Tinker Knight Schematic" number="2" level="3" />
+                <select type="Archetype Feature" name="Tinker Knight Schematic" supports="Tinker Knight Schematic" level="7" />
+                <select type="Archetype Feature" name="Tinker Knight Schematic" supports="Tinker Knight Schematic" level="10" />
+                <select type="Archetype Feature" name="Tinker Knight Schematic" supports="Tinker Knight Schematic" level="15" />
+            </rules>
+        </element>
+        <element name="Tinker's Expertise" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_TINKERS_EXPERTISE">
+            <description>
+                <p>Your inventive skill has grown to rival the best of innovators. Starting at 7th level, your proficiency bonus is doubled for any ability check you make that uses your proficiency with tinker's tools or smith's tools.</p>
+                <p class="indent">In addition, items modified by your schematics count as magical for overcoming resistances and immunities, and you can apply your schematics to magic weapons and armor.</p>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any ability check you make that uses your proficiency with tinker's tools or smith's tools. In addition, items modified by your schematics count as magical for overcoming resistances and immunities, and you can apply your schematics to magic weapons and armor.</description>
+            </sheet>
+            <rules>
+                <stat name="tinkers tools:proficiency" value="proficiency" bonus="double" />
+                <stat name="smiths tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Mechanical Synergy" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_MECHANICAL_SYNERGY">
+            <description>
+                <p>You have learned to make your modifications work together. Beginning at 10th level, you can apply two of your schematics to one item as long as the item meets both prerequisites.</p>
+            </description>
+            <sheet>
+                <description>You can apply two of your schematics to one item as long as the item meets both prerequisites.</description>
+                <description level="15">You can apply three of your schematics to one item as long as the item meets all prerequisites.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Flexible Innovation" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_FLEXIBLE_INNOVATION">
+            <description>
+                <p>You have gained a such a familiarity with your inventive arsenal that you can make adjustments in a relatively short amount of time. Beginning at 15th level, at the end of a short rest, you can remove the effects of one of your schematics from an item and apply the schematic to different item that meets the prerequisites. If a schematic's effect has a limited amount of uses per day, the number of expended uses stays the same when transferred.</p>
+                <p class="indent">In addition, you can apply up to three schematics to one item if that item meets the prerequisites for each schematic.</p>
+            </description>
+            <sheet>
+                <description>At the end of a short rest, you can remove the effects of one of your schematics from an item and apply the schematic to different item that meets the prerequisites.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Masterwork Inventions" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_MASTERWORK_INVENTIONS">
+            <description>
+                <p>Your innovations to the armaments of war are beyond compare. Upon reaching 18th level, weapons modified by your schematics gain a +1 bonus to attack and damage rolls for each schematic applied to them. In the same vein, suits of armor modified by your schematics gain a +1 bonus to Armor Class for each schematic applied to them.</p>
+                <p class="indent">A weapon or suit of armor modified by your schematics cannot gain a bonus greater then +3, regardless of any innate bonuses the item may have had before being modified.</p>
+            </description>
+            <sheet>
+                <description>Weapons modified by your schematics gain a +1 bonus to attack and damage rolls (+3 max) for each schematic applied to them. In the same vein, suits of armor modified by your schematics gain a +1 bonus to Armor Class (+3 max) for each schematic applied to them.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <!-- Tinker Knight Schematics -->
+        <element name="Featherweight Schematic" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_SCHEMATIC_FEATHERWEIGHT_SCHEMATIC">
+            <supports>Tinker Knight Schematic</supports>
+            <description>
+                <p>You modify the metallurgical makeup of an item, making it lighter. While wearing or wielding an item modified by this schematic, your movement speed increases by 10 feet.</p>
+                <p class="indent"><b>Heavy Armor.</b> When applied, the wearer ignores any Strength requirements the armor may have, or any penalty it imposes upon Dexterity (Stealth) checks.</p>
+                <p class="indent"><b>Light Armor.</b> When applied, the wearer can subtract up to 100 feet from their fall when calculating fall damage and can move horizontally 2 feet for every 1 foot they fall.</p>
+                <p class="indent"><b>Weapon.</b> When applied, a Heavy weapon becomes normal weight, and a normal weapon becomes Light.</p>
+            </description>
+            <sheet>
+                <description>While wearing or wielding an item modified by this schematic, your movement speed increases by 10 feet.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Intuitive Schematic" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_SCHEMATIC_INTUITIVE_SCHEMATIC">
+            <supports>Tinker Knight Schematic</supports>
+            <description>
+                <p>You modify an item to take advantage of your martial and investigative instincts. While wearing or wielding an item modified by this schematic, you gain proficiency in the Investigation skill and can add double your proficiency bonus to any Intellignece (Investigation) checks you make.</p>
+                <p class="indent"><b>Armor.</b> When applied, the wearer can use their Intelligence in place of Dexterity, when calculating their Armor Class.</p>
+                <p class="indent"><b>Weapon.</b> When applied, the wielder can use their Intelligence modifier, in place of Strength or Dexterity, for attack and damage rolls with this weapon.</p>
+            </description>
+            <sheet>
+                <description>While wearing or wielding an item modified by this schematic, you gain proficiency in the Investigation skill and can add double your proficiency bonus to any Investigation checks you make.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Radiant Schematic" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_SCHEMATIC_RADIANT_SCHEMATIC">
+            <supports>Tinker Knight Schematic</supports>
+            <description>
+                <p>You imbue an item with a source of radiant energy. While wearing or wielding an item modified by this schematic, you can use a bonus action to cause the item to emit bright light in a 15-foot radius, and dim light 15 feet beyond that. You can extinguish the light as a bonus action on your turn.</p>
+                <p class="indent"><b>Armor or Weapon.</b> When you are hit by an attack (armor), or hit a creature with an attack (weapon), you can use your reaction to force the creature to make a Constitution saving throw. On a failed save, the creature is blinded for 1 minute. It can repeat this saving throw at the end of each of its turns, ending the effect on a success.</p>
+                <p class="indent">Once you use this feature, you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet>
+                <description>While wearing or wielding an item modified by this schematic, you can use a bonus action to cause the item to emit bright light in a 15-foot radius, and dim light 15 feet beyond that. You can extinguish the light as a bonus action on your turn.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Rebounding Schematic" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_SCHEMATIC_REBOUNDING_SCHEMATIC">
+            <supports>Tinker Knight Schematic</supports>
+            <description>
+                <p>You modify an item so that it has elastic properties. While wearing or wielding of an item modified by this schematic, you can use you reaction to add your Intelligence modifier (minimum of 1) to your Armor Class against one attack.</p>
+                <p class="indent"><b>Armor.</b> When the wearer of this armor is hit by an attack, they can use their reaction to reduce the damage by an amount equal to 1d12 + their Intelligence modifier. If they reduce the damage to 0, the attacker takes the full damage of the attack as if they had been the original target.</p>
+                <p class="indent">Once you use this feature you must finish a short or long rest before you can use it again.</p>
+                <p class="indent"><b>Non-Heavy Weapon.</b> When applied, the weapon gains the thrown property with a range of 20 feet. After making an attack with this weapon, it immediately returns to the wielder.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>While wearing or wielding of an item modified by this schematic, you can use you reaction to add {{int-mod:min-one}} to your Armor Class against one attack.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Empowered Schematic" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_SCHEMATIC_EMPOWERED_SCHEMATIC">
+            <supports>Tinker Knight Schematic</supports>
+            <requirements>[level:fighter:7]</requirements>
+            <prerequisite>7th level Tinker Knight</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th level Tinker Knight</p>
+                <p class="indent">You modify this item with complex clockwork mechanics that improve your physical capability and hone your reflexes. While wearing of wielding an item modified by this schematic, you gain a bonus to your initiative rolls equal to your Intelligence modifier (minimum of 1).</p>
+                <p class="indent"><b>Heavy Armor.</b> When applied, the wearer can use their Intelligence score, in place of Strength, for any Strength ability checks or saving throws you make.</p>
+                <p class="indent"><b>Light Armor.</b> When applied, the wearer can use their Intelligence score, in place of Dexterity, for any Dexterity ability checks or saving throws they make.</p>
+                <p class="indent"><b>Weapon.</b> When applied, anytime you roll a 1 or 2 for a damage roll with this weapon, you can choose to re-roll the die, but you must use the new result even if it is a 1 or 2.</p>
+            </description>
+            <sheet>
+                <description>While wearing of wielding an item modified by this schematic, you gain a +{{int-mod:min-one}} bonus to your initiative rolls.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Resilient Schematic" type="Archetype Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_ARCHETYPE_FEATURE_TINKER_KNIGHT_SCHEMATIC_RESILIENT_SCHEMATIC">
+            <supports>Tinker Knight Schematic</supports>
+            <requirements>[level:fighter:7]</requirements>
+            <prerequisite>7th level Tinker Knight</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th level Tinker Knight</p>
+                <p class="indent">You modify the metallurgical makeup of this item to make it far more resilient. While wearing or wielding an item modified by this schematic you have advantage on saving throws to resist being grappled or moved against your will.</p>
+                <p class="indent"><b>Armor.</b> When applied, this armor grants resistance to nonmagical bludgeoning, piercing, and slashing damage.</p>
+                <p class="indent"><b>Weapon.</b> When applied, this weapon deals bonus damage equal to your Intelligence modifier (minimum of 1) + your fighter level when you score a critical hit.</p>
+            </description>
+            <sheet>
+                <description>While wearing or wielding an item modified by this schematic you have advantage on saving throws to resist being grappled or moved against your will.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <!-- Additional Fighting Styles -->
+        <element name="Close Quarters Shooter" type="Class Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_CLASS_FEATURE_FIGHTINGSTYLE_CLOSE_QUARTERS_SHOOTER">
+            <supports>Fighting Style, Fighter, Ranger</supports>
+            <description>
+                <p class="indent">When you make a ranged attack targeting a creature within 5 feet of you, you do not have disadvantage on the attack roll.</p>
+                <p class="indent">If you make a ranged attack against a creature within 5 feet, you can use a bonus action to strike the creature with your ranged weapon, dealing 1d4 bludgeoning damage on hit.</p>
+            </description>
+            <sheet>
+                <description>When you make a ranged attack targeting a creature within 5 feet of you, you do not have disadvantage on the attack roll. If you make a ranged attack against a creature within 5 feet, you can use a bonus action to strike the creature with your ranged weapon, dealing 1d4 bludgeoning damage on hit.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Finesse Fighting" type="Class Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_CLASS_FEATURE_FIGHTINGSTYLE_FINESSE_FIGHTING">
+            <supports>Fighting Style, Fighter, Paladin</supports>
+            <description>
+                <p class="indent">You have trained in the classical art of light swordplay. When wielding a finesse weapon in one hand, and nothing in your other hand, you gain a +2 bonus to both your attack and damage rolls, and a +1 bonus to your Armor Class.</p>
+            </description>
+            <sheet>
+                <description>When wielding a finesse weapon in one hand, and nothing in your other hand, you gain a +2 bonus to both your attack and damage rolls, and a +1 bonus to your Armor Class.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Grappler" type="Class Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_CLASS_FEATURE_FIGHTINGSTYLE_GRAPPLER">
+            <supports>Fighting Style, Fighter</supports>
+            <description>
+                <p class="indent">When you hit a creature with a melee weapon attack, you can use a bonus action on that turn to attempt to grapple them. You must have a free hand in order to initiate the grapple.</p>
+                <p class="indent">In addition, you can drag a grappled creature up to your full movement speed if they are your size or smaller.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with a melee weapon attack, you can use a bonus action on that turn to attempt to grapple them. You must have a free hand in order to initiate the grapple. In addition, you can drag a grappled creature up to your full movement speed if they are your size or smaller.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Improvised Fighting" type="Class Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_CLASS_FEATURE_FIGHTINGSTYLE_IMPROVISED_FIGHTING">
+            <supports>Fighting Style, Fighter</supports>
+            <description>
+                <p class="indent">You are a master of fighting dirty and underhanded. You gain proficiency with improvised weapons. Once per turn, when you make an attack using a non-magical improvised weapon, you can choose to roll the damage die twice and take the higher damage roll. When you do this the improvised weapon is destroyed and rendered useless for any further attacks.</p>
+            </description>
+            <sheet>
+                <description>You have proficiency with improvised weapons. Once per turn, when you make an attack using a non-magical improvised weapon, you can choose to roll the damage die twice and take the higher damage roll. When you do this the improvised weapon is destroyed and rendered useless for any further attacks.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Mariner" type="Class Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_CLASS_FEATURE_FIGHTINGSTYLE_MARINER">
+            <supports>Fighting Style, Fighter, Ranger</supports>
+            <description>
+                <p class="indent">You have trained to fight on, around, and in the water. As long as you are not wearing medium or heavy armor or using a shield, you have a swimming speed equal to your movement speed, and you gain a +1 bonus to your Armor Class.</p>
+            </description>
+            <sheet>
+                <description>As long as you are not wearing medium or heavy armor or using a shield, you have a swimming speed equal to your movement speed, and you gain a +1 bonus to your Armor Class.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Mounted Warrior" type="Class Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_CLASS_FEATURE_FIGHTINGSTYLE_MOUNTED_WARRIOR">
+            <supports>Fighting Style, Fighter, Paladin</supports>
+            <description>
+                <p class="indent">Once per turn, when you hit a creature with a melee attack while riding a mount, you can force the target to make a Strength saving throw. Save DC = 8 + your proficiency bonus + your Strength modifier. On a failure, it is knocked prone.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with a melee attack while riding a mount, you can force the target to make a Strength saving throw (DC {{mounted-warrior:save-dc}}), or be knocked prone.</description>
+            </sheet>
+            <rules>
+                <stat name="mounted-warrior:save-dc" value="8" />
+                <stat name="mounted-warrior:save-dc" value="proficiency" />
+                <stat name="mounted-warrior:save-dc" value="strength:modifier" />
+            </rules>
+        </element>
+        <element name="Versatile Fighting" type="Class Feature" source="LaserLlama’s Martial Archetypes" id="ID_LL_LLMA_CLASS_FEATURE_FIGHTINGSTYLE_VERSATILE_FIGHTING">
+            <supports>Fighting Style, Fighter, Paladin, Ranger</supports>
+            <description>
+                <p class="indent">When wielding a versatile weapon, you gain a +1 bonus to attack rolls when wielding it one-handed, and a +1 bonus to damage rolls when wielding it two-handed.</p>
+                <p class="indent">In addition, as a bonus action you can use your free hand to make an unarmed strike, shove attack, or don or doff a shield.</p>
+            </description>
+            <sheet>
+                <description>When wielding a versatile weapon, you gain a +1 bonus to attack rolls when wielding it one-handed, and a +1 bonus to damage rolls when wielding it two-handed. In addition, as a bonus action you can use your free hand to make an unarmed strike, shove attack, or don or doff a shield.</description>
             </sheet>
             <rules>
             </rules>
