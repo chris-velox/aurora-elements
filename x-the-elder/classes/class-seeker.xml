@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>The Seeker Class v3.4</name>
-        <update version="0.0.1">
+        <name>The Seeker Class v4.0</name>
+        <update version="0.0.4">
             <file name="class-seeker.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-seeker.xml" />
         </update>
     </info>
@@ -13,8 +13,10 @@
         </description>
         <setters>
             <set name="abbreviation">TSC</set>
+			<!-- version 3.4.1 https://homebrewery.naturalcrit.com/share/BZGWSstiDSZu -->
+			<!-- version 3.4 https://homebrewery.naturalcrit.com/share/BZGWSstiDSZu -->
             <!-- version 3.3 <set name="url">https://homebrewery.naturalcrit.com/share/mjqKSW5Gsc8t</set>-->
-            <set name="url">https://homebrewery.naturalcrit.com/share/BZGWSstiDSZu</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/AEJJNTA6VlxJ</set>
             <set name="image"></set>
             <set name="author" abbreviation="FR" url="https://www.reddit.com/u/FriskyRisque">u/FriskyRisque</set>
             <set name="official">false</set>
@@ -187,7 +189,7 @@
 				<p>You can use a divine focus as a spellcasting focus for your seeker spells. This divine focus can be your fortune telling device.</p>
 				<h5>RITES</h5>
 				<p>For any seeker spell prepared of 5th level and below, you are able to cast those spells as a Rite instead of using a spell slot. The cast time for these spells follows the format of rituals and equals the standard casting time plus 10 minutes. You regain all expended Rites when you finish a long rest.</p>
-				<p class="indent">Spellspell cast using a Rite has an associated cost depending on what spell level it is used at, as seen in the table below.</p>
+				<p class="indent">Spells cast using a Rite has an associated cost depending on what spell level it is used at, as seen in the table below.</p>
 				<table>
 					<tr><td>Spell Level</td><td>Rites Used</td></tr>
 					<tr><td>1st, 2nd, &amp; 3rd</td><td>1</td></tr>
@@ -360,6 +362,110 @@
 		</element>
 
     <!-- Mavenhood Archetypes -->    
+        <element name="Maven of the Brightened Spirit" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_SEEKER_MAVEN_OF_THE_BRIGHTENED_SPIRIT">
+            <supports>Seeker Mavenhood</supports>
+            <description>
+                <p>Bringers of hope and renewal, the Mavens of the Brightened Spirit help lighten the darkest of times. Although all seekers tend towards darkness to hide their movements, Seekers that follow this Mavenhood focus on supporting the group. In this Mavenhood, many seekers gain their power and divine the future through seeing visions in a burning fire or by attaining a meditative state through energetic activities such as repetitive dances or deep breathing.</p>
+                <div element="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_BRIGHTENED_SPIRIT_SPELLS" />
+                <div element="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_BONUS_PROFICIENCIES" />
+                <div element="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_SPIRIT_OF_THE_LIGHT" />
+                <div element="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_BLESSED_WARMTH" />
+                <div element="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_GIFT_OF_THE_MARTYR" />
+            </description>
+            <sheet display="false" />
+            <rules>
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_BRIGHTENED_SPIRIT_SPELLS" level="3" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_BONUS_PROFICIENCIES" level="3" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_SPIRIT_OF_THE_LIGHT" level="3" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_BLESSED_WARMTH" level="10" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_GIFT_OF_THE_MARTYR" level="14" />
+            </rules>
+        </element>
+			<element name="Brightened Spirit Spells" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_BRIGHTENED_SPIRIT_SPELLS">
+				<description>
+					<p>When choosing this Mavenhood, you gain access to spells that bring the light to those around you, be them friend or foe. At 1st, 3rd, 5th, 7th, and 9th level you gain access to the following spells.</p>
+					<table>
+						<thead>
+							<tr><td>Seeker Level</td><td>Maven Spell</td></tr>
+						</thead>
+						<tr><td>1st</td><td><em>bless, ceremony, healing word</em></td></tr>
+						<tr><td>3rd</td><td><em>calm emotions, healing spirit</em></td></tr>
+						<tr><td>5th</td><td><em>daylight, revivify</em></td></tr>
+						<tr><td>7th</td><td><em>aura of life, guardian of faith</em></td></tr>
+						<tr><td>9th</td><td><em>dawn, greater restoration, hallow</em></td></tr>
+					</table>
+				</description>
+				<sheet display="false" />
+					<rules>
+					<grant type="Spell" id="ID_PHB_SPELL_BLESS" spellcasting="Seeker" prepared="true" level="1" />
+					<grant type="Spell" id="ID_PHB_SPELL_CEREMONY" spellcasting="Seeker" prepared="true" level="1" />
+					<grant type="Spell" id="ID_PHB_SPELL_HEALING_WORD" spellcasting="Seeker" prepared="true" level="1" />
+					<grant type="Spell" id="ID_PHB_SPELL_CALM_EMOTIONS" spellcasting="Seeker" prepared="true" level="3" />
+					<grant type="Spell" id="ID_PHB_SPELL_HEALING_SPIRIT" spellcasting="Seeker" prepared="true" level="3" />
+					<grant type="Spell" id="ID_PHB_SPELL_DAYLIGHT" spellcasting="Seeker" prepared="true" level="5" />
+					<grant type="Spell" id="ID_PHB_SPELL_REVIVIFY" spellcasting="Seeker" prepared="true" level="5" />
+					<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_LIFE" spellcasting="Seeker" prepared="true" level="7" />
+					<grant type="Spell" id="ID_PHB_SPELL_GUARDIAN_OF_FAITH" spellcasting="Seeker" prepared="true" level="7" />
+					<grant type="Spell" id="ID_PHB_SPELL_DAWN" spellcasting="Seeker" prepared="true" level="9" />
+					<grant type="Spell" id="ID_PHB_SPELL_GREATER_RESTORATION" spellcasting="Seeker" prepared="true" level="9" />
+					<grant type="Spell" id="ID_PHB_SPELL_HALLOW" spellcasting="Seeker" prepared="true" level="9" />
+				</rules>
+			</element>
+			<element name="Bonus Proficiencies" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_BONUS_PROFICIENCIES">
+				<description>
+					<p>When you choose this Mavenhood at 1st level, you gain proficiency in medium armor. Additionally, you gain proficiency in the Medicine and Religion skills. Choose one of these two skills, you add double your proficiency bonus to checks you make with it. 6th level, you can choose a second skill that you are proficient with to add double your proficiency bonus to checks you make with it.</p>
+				</description>
+				<sheet display="false" />
+				<rules>
+					<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+					<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_MEDICINE" />
+					<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+					<select type="Class Feature" name="Skill Expertise" supports="ID_EXPERTISE_SKILL_MEDICINE|ID_EXPERTISE_SKILL_RELIGION" level="3" />
+					<select type="Class Feature" name="Skill Expertise" supports="ID_EXPERTISE_SKILL_MEDICINE|ID_EXPERTISE_SKILL_RELIGION" level="6" />
+				</rules>
+			</element>
+			<element name="Spirit of the Light" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_SPIRIT_OF_THE_LIGHT">
+				<description>
+					<p>At 3rd level, you are blessed with a beneficent spirit from your patron. When casting Healing Spirit, either with a spell slot and using a Rite or by casting the spell as a Rite, Healing Spirit changes, as below:</p>
+					<ul>
+						<li>The spirit appears in a form you choose that represents your deity.</li>
+						<li>This spell doesn’t require concentration; it ends either after a minute has passed since casting it, when you choose (as a free action), or you fall unconscious.</li>
+						<li>When you cast this spell, choose either a skill or a save, when you heal someone with this spell, the healed target has advantage on that skill or save you chose until the spirit heals another target or the spell ends.</li>
+						<li>Hostile creatures within a 10 foot radius of the Spirit cannot benefit from advantage on attacks or ability checks.</li>
+					</ul>
+					<p class="indent">Also at 3rd level, you may choose to reroll any 1 rolled once per use ofDivine Inspiration. When you reroll, you may also choose to create a burst of light that blinds foes within 10 feet who fail a Constitution saving throw against your spell save DC until the end of your Divine Inspiration.</p>
+				</description>
+				<sheet>
+					<description>When casting Healing Spirit, either with a spell slot and using a Rite or by casting the spell as a Rite, Healing Spirit changes. You may choose to reroll any 1 rolled once per use ofDivine Inspiration. When you reroll, you may also choose to create a burst of light that blinds foes within 10 feet who fail a Constitution saving throw against your spell save DC until the end of your Divine Inspiration.</description>
+				</sheet>
+				<rules>
+				</rules>
+			</element>
+			<element name="Blessed Warmth" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_BLESSED_WARMTH">
+				<description>
+					<p>At 10th level, you are able to call on your deity for additional aid in the form of an avatar. As the sun rises, whether you are able to see it or not, choose a target to be blessed. This target has advantage on saves against blindness and deafness as well as being poisoned and frightened.</p>
+					<p class="indent">Additionally, you learn the <i>dancing lights</i>> cantrip which does not count against your cantrip total. When you cast this cantrip, you may spend two Rites to end the cantrip early and cast either <i>mass cure wounds</i> or <i>destructive wave</i> centered on your <i>dancing lights</i>. You may not use this feature again until you have finished a long rest.</p>
+				</description>
+				<sheet>
+					<description>As the sun rises, whether you are able to see it or not, choose a target to be blessed. This target has advantage on saves against blindness and deafness as well as being poisoned and frightened. When you cast this cantrip, you may spend two Rites to end the cantrip early and cast either mass cure wounds or destructive wave centered on your dancing lights. You may not use this feature again until you have finished a long rest.</description>
+				</sheet>
+				<rules>
+					<grant type="Spell" id="ID_PHB_SPELL_DANCING_LIGHTS" known="true" />
+				</rules>
+			</element>
+			<element name="Gift of the Martyr" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_BRIGHTENED_SPIRIT_GIFT_OF_THE_MARTYR">
+				<description>
+					<p>At 14th level, when healing an ally using magical means, you can choose to spend your own hit dice to increase the healing you impart. Choose a number of your hit dice up to your Intelligence modifier to increase the healing of one target you heal by 5 hit points for every hit dice spent this way.</p>
+					<p class="indent">Also at 14th level, you become a vessel for the light of your patron! Once per long rest, you may spend three Rites to cast either <i>divine word</i>, <i>heal</i>, or <i>sunbeam</i>. When the spell ends, you cannot move or take actions until after your next turn, as you experience the elation of your diety's force moving through you.</p>
+				</description>
+				<sheet>
+					<description>When healing an ally using magical means, you can spend up to {{intelligence:modifier}} of your hit dice up to increase the healing of one target you heal by 5 hit points for every hit dice spent this way. Once per long rest, you may spend three Rites to cast either divine word, heal, or sunbeam. When the spell ends, you cannot move or take actions until after your next turn.</description>
+				</sheet>
+				<rules>
+				</rules>
+			</element>
+
+
 		<element name="Maven of the Cunning Eye" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_SEEKER_MAVEN_OF_THE_CUNNING_EYE">
 			<supports>Seeker Mavenhood</supports>
 			<description>
@@ -453,9 +559,10 @@
 						<li><b>Greater Comprehension.</b> You can read any language.</li>
 						<li><b>See Invisibility.</b> You can see invisible creatures and objects within 10 feet of you that are within line of sight.</li>
 					</ul>
+					<p class="indent">Additionally, when casting a divination spell, you may avoid the material component, consumed or not, of that spell by using by spending a Rite once per long rest.</p>
 				</description>
 				<sheet action="Action" usage="1/Short Rest or 1 Rite">
-					<description>Choose one of the following benefits, which lasts until you are incapacitated, or you take a short or long rest: Tremorsense, Ethereal Sight, Greater Comprehension, See Invisibility.</description>
+					<description>Choose one of the following benefits, which lasts until you are incapacitated, or you take a short or long rest: Tremorsense, Ethereal Sight, Greater Comprehension, See Invisibility. Additionally, when casting a divination spell, you may avoid the material component, consumed or not, of that spell by using by spending a Rite once per long rest.</description>
 				</sheet>
 				<rules>
 				</rules>
@@ -526,9 +633,7 @@
 				<description>
 					<p>When you choose this Mavenhood at 1st level, you gain proficiency with martial weapons and medium armor. Additionally, you gain proficiency in the Insight and Intimidation skills. At 6th level, choose one of these skills, you add double your proficiency bonus to checks you make with it.</p>
 				</description>
-				<sheet>
-					<description></description>
-				</sheet>
+				<sheet display="false" />
 				<rules>
                     <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
                     <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
