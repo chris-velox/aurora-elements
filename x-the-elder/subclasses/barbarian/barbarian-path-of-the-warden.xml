@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Path of the Warden Primal Path</name>
+        <update version="0.0.1">
+            <file name="barbarian-path-of-the-warden.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/barbarian/barbarian-path-of-the-warden.xml" />
+        </update>
+    </info>
+    
+    <element name="Path of the Warden" type="Source" source="Core" id="ID_NOTTHESMOOZE_GMBINDER_SOURCE_PATH_OF_THE_WARDEN">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">POTW</set>
+            <set name="url">https://www.gmbinder.com/share/-MUi_ZaVQKq2ftGtJqt2</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="NTS" url="https://www.gmbinder.com/profile/notthesmoooze">NotTheSmooze</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210305</set>
+        </setters>
+    </element>
+
+    <element name="Path of the Warden" type="Archetype" source="Path of the Warden" id="ID_NTS_POTW_ARCHETYPE_BARBARIAN_PATH_OF_THE_WARDEN">
+        <supports>Primal Path</supports>
+        <description>
+            <p>Some barbarians rage not for love of violence, but out of a duty to protect. The Path of the Warden is one of a stalwart defender, always ready to protect those they care for.</p>
+            <p class="indent">For a warden, a shield is more important than any weapon, and many personalise their shields to reflect their home, their duty, or their deeds. At your option, you can pick from or roll on the Shield Appearance table to personalise your shield.</p>
+            <h5 class="caption">Shield Appearance</h5>
+            <table>
+                <thead>
+                    <tr><td>d6</td><td>Appearance</td></tr>
+                </thead>
+                <tr><td>1</td><td>You paint your shield in the colours of your tribe.</td></tr>
+                <tr><td>2</td><td>You coat your shields with reflective metal.</td></tr>
+                <tr><td>3</td><td>You decorate your shield with the bones of beasts.</td></tr>
+                <tr><td>4</td><td>You wrap your shields in vine and moss.</td></tr>
+                <tr><td>5</td><td>Your shield is bare. It's not for decoration.</td></tr>
+                <tr><td>6</td><td>You carve detailed depictions of your adventures and successes into each of your shields.</td></tr>
+            </table>
+            <div element="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_WARDENS_RAGE" />
+            <div element="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_UNFLINCHING_DEFENCE" />
+            <div element="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_SHIELD_CHARGE" />
+            <div element="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_WARDENS_FURY" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_WARDENS_RAGE" level="3" />
+            <grant type="Archetype Feature" id="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_UNFLINCHING_DEFENCE" level="6" />
+            <grant type="Archetype Feature" id="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_SHIELD_CHARGE" level="10" />
+            <grant type="Archetype Feature" id="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_WARDENS_FURY" level="14" />
+        </rules>
+    </element>
+        <element name="Warden's Rage" type="Archetype Feature" source="Path of the Warden" id="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_WARDENS_RAGE">
+            <description>
+                <p>Starting when you choose this path at 3rd level, you leap to the defence of others during your rage. While raging, when a friendly creature you can see within 30 feet of you is attacked, you can use your reaction to move up to half your speed. This movement doesn't provoke opportunity attacks. If you end the move within 5 feet of the attacker, you can become the target of the attack, provided you're wielding a shield.</p>
+            </description>
+            <sheet action="Reaction" usage="While raging">
+                <description>When a friendly creature you can see within 30 feet of you is attacked, you can use your reaction to move up to half your speed. This movement doesn't provoke opportunity attacks. If you end the move within 5 feet of the attacker, you can become the target of the attack, provided you're wielding a shield.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Unflinching Defence" type="Archetype Feature" source="Path of the Warden" id="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_UNFLINCHING_DEFENCE">
+            <description>
+                <p>Beginning at 6th level, you can't be knocked prone or moved against your will while you're raging and wielding a shield.</p>
+                <p class="indent">Additionally, when you use Warden's Rage to become the target of an attack, you have resistance to the damage of that attack, even if it isn't bludgeoning, piercing, or slashing.</p>
+            </description>
+            <sheet>
+                <description>You can't be knocked prone or moved against your will while you're raging and wielding a shield. Additionally, when you use Warden's Rage to become the target of an attack, you have resistance to the damage of that attack, even if it isn't bludgeoning, piercing, or slashing.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Shield Charge" type="Archetype Feature" source="Path of the Warden" id="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_SHIELD_CHARGE">
+            <description>
+                <p>Starting at 10th level, if you move at least 10 feet directly toward a creature while you're raging and hit it with an attack on the same turn, it must succeed on a Strength saving throw (DC = 8 + your Strength modifier + your proficiency bonus) or be pushed up to 10 feet directly away from you, provided that you're wielding a shield. If the creature would strike a surface, such as a wall, it takes 2d6 bludgeoning damage.</p>
+            </description>
+            <sheet>
+                <description>If you move at least 10 feet directly toward a creature while you're raging and hit it with an attack on the same turn, it must succeed on a Strength saving throw (DC {{shield-charge:save-dc}}) or be pushed up to 10 feet directly away from you, provided that you're wielding a shield. If the creature would strike a surface, such as a wall, it takes 2d6 bludgeoning damage.</description>
+            </sheet>
+            <rules>
+                <stat name="shield-charge:save-dc" value="8" />
+                <stat name="shield-charge:save-dc" value="proficiency" />
+                <stat name="shield-charge:save-dc" value="strength:modifier" />
+            </rules>
+        </element>
+        <element name="Warden's Fury" type="Archetype Feature" source="Path of the Warden" id="ID_NTS_POTW_ARCHETYPE_FEATURE_POTW_WARDENS_FURY">
+            <description>
+                <p>By 14th level, whenever you use Warden's Rage to become the target of an attack, you can make a melee weapon attack against the attacker as part of the same reaction.</p>
+            </description>
+            <sheet>
+                <description>Whenever you use Warden's Rage to become the target of an attack, you can make a melee weapon attack against the attacker as part of the same reaction.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+
+</elements>
