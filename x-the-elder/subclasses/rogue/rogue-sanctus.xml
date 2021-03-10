@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Sanctus Roguish Archetype</name>
+        <update version="0.0.1">
+            <file name="rogue-sanctus.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/rogue/rogue-sanctus.xml" />
+        </update>
+    </info>
+    
+    <element name="Roguish Archetype: Sanctus" type="Source" source="Core" id="ID_THUDNFER_GMBINDER_SOURCE_ROGUISH_ARCHETYPE_SANCTUS">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SANCTUS</set>
+            <set name="url">https://www.gmbinder.com/share/-MDYpUDrm9NA4ve0gI0K</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="THUDNFER" url="https://www.gmbinder.com/profile/thudnfer">Thudnfer</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210309</set>
+        </setters>
+    </element>
+
+    <element name="Sanctus" type="Archetype" source="Roguish Archetype: Sanctus" id="ID_THUDNFER_SANCTUS_ARCHETYPE_ROGUE_SANCTUS">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>When the gods need a heathen warlord silenced, a path scouted for a holy crusade, or a bridge lowered for warriors to gain access, they call upon their darting blades in the dark. They lay waste to the enemies dictated by their faith, even at the cost of their honour.</p>
+            <div element="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_HOLY_BLADE" />
+            <div element="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_DYING_DECLARATION" />
+            <div element="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_HOLY_WOUNDS" />
+            <div element="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_HASTY_ASSASSINATION" />
+            <div element="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_FORTITUDE_OF_FAITH" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_HOLY_BLADE" level="3" />
+            <grant type="Archetype Feature" id="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_DYING_DECLARATION" level="3" />
+            <grant type="Archetype Feature" id="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_HOLY_WOUNDS" level="9" />
+            <grant type="Archetype Feature" id="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_HASTY_ASSASSINATION" level="13" />
+            <grant type="Archetype Feature" id="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_FORTITUDE_OF_FAITH" level="17" />
+        </rules>
+    </element>
+        <element name="Holy Blade" type="Archetype Feature" source="Roguish Archetype: Sanctus" id="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_HOLY_BLADE">
+            <description>
+                <p>When you reach 3rd level, you gain the ability to cast spells. See chapter 10 of the Player's Handbook for the general rules of spellcasting.</p>
+                <p class="indent"><b><i>Cantrips.</i></b> You learn the message and minor illusion cantrips. You learn another cantrip of your choice from the cleric spell list at 10th level in this class.</p>
+                <p class="indent"><b><i>Spells.</i></b> You gain the ability to cast spells from the Sanctus Spells table. Once you reach the required level, you can cast the spells listed without expending a spell slot. If the spell requires material components, they don't for you. Once you cast a spell using this ability, you can't do so again until you finish a long rest.</p>
+                <p class="indent">Alternatively, you can sacrifice the casting of one spell on the table to gain an additional casting of a Sanctus Spell of the same level. For example, you could sacrifice your casting of hunter's mark to cast zephyr strike twice.</p>
+                <p class="indent">Wisdom is your spellcasting ability for these spells, as they rely upon your insight into your targets.</p>
+                <p class="indent"><b>Spell Save DC</b> = 8 + your proficiency bonus + your Wisdom modifier</p>
+                <p class="indent"><b>Spell attack modifier</b> = your proficiency bonus + your Wisdom modifier</p>
+                <h5 class="caption">Sanctus Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Rogue Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>disguise self, hunter's mark, zephyr strike</em></td></tr>
+                    <tr><td>7th</td><td><em>detect thoughts, mind spike, silence</em></td></tr>
+                    <tr><td>13th</td><td><em>divination, major image</em></td></tr>
+                    <tr><td>17th</td><td><em>freedom of movement, locate creature</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Sanctus" ability="Wisdom" prepare="false">
+                <list>Sanctus</list>
+            </spellcasting>
+            <rules>
+                <grant type="Spell" id="" known="true" spellcasting="Sanctus" level="3" />
+                <grant type="Spell" id="" known="true" spellcasting="Sanctus" level="3" />
+                <select type="Spell" name="Cantrip (Sanctus)" supports="Cleric,0" spellcasting="Sanctus" level="10" />
+                <stat name="sanctus:spellcasting:slots:1" value="3" level="3" />
+                <stat name="sanctus:spellcasting:slots:2" value="3" level="7" />
+                <stat name="sanctus:spellcasting:slots:3" value="1" level="13" />
+                <stat name="sanctus:spellcasting:slots:4" value="1" level="13" />
+                <stat name="sanctus:spellcasting:slots:4" value="2" level="17" />
+                <grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" known="true" spellcasting="Sanctus" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_HUNTERS_MARK" known="true" spellcasting="Sanctus" level="3" />
+                <grant type="Spell" id="ID_XGTE_SPELL_ZEPHYR_STRIKE" known="true" spellcasting="Sanctus" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_DETECT_THOUGHTS" known="true" spellcasting="Sanctus" level="7" />
+                <grant type="Spell" id="ID_XGTE_SPELL_MIND_SPIKE" known="true" spellcasting="Sanctus" level="7" />
+                <grant type="Spell" id="ID_PHB_SPELL_SILENCE" known="true" spellcasting="Sanctus" level="7" />
+                <grant type="Spell" id="ID_PHB_SPELL_DIVINATION" known="true" spellcasting="Sanctus" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_MAJOR_IMAGE" known="true" spellcasting="Sanctus" level="13" />
+                <grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" known="true" spellcasting="Sanctus" level="17" />
+                <grant type="Spell" id="ID_PHB_SPELL_LOCATE_CREATURE" known="true" spellcasting="Sanctus" level="17" />
+            </rules>
+        </element>
+        <element name="Dying Declaration" type="Archetype Feature" source="Roguish Archetype: Sanctus" id="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_DYING_DECLARATION">
+            <description>
+                <p>Beginning at 3rd level, your dedication leaks into the minds of your victims. When you reduce a creature to 0 hit points, you can use your reaction to mentally ask a question of the creature, which it must answer honestly. You can recite this answer perfectly as long as you have it memorised, regardless of whether you can speak the creature's language.</p>
+                <p class="indent">Once you use this feature, you must spend 1 minute in silent repose to separate your mind from that creature's last thoughts before you can do so again. Once you complete this ritual, you can't recite the previous answer as it becomes wiped from your memory.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When you reduce a creature to 0 hit points, you can use your reaction to mentally ask a question of the creature, which it must answer honestly. You can recite this answer perfectly as long as you have it memorised, regardless of whether you can speak the creature's language. Once you use this feature, you must spend 1 minute in silent repose to separate your mind from that creature's last thoughts before you can do so again. Once you complete this ritual, you can't recite the previous answer as it becomes wiped from your memory.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Holy Wounds" type="Archetype Feature" source="Roguish Archetype: Sanctus" id="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_HOLY_WOUNDS">
+            <description>
+                <p>Starting at 9th level, your injuries spark a dance of divine power within you. When you are forced to make a saving throw that you are proficient in, you can treat a roll of 7 or lower as an 8.</p>
+                <p class="indent">In addition, you gain proficiency in one saving throw of your choice.</p>
+            </description>
+            <sheet>
+                <description>When you are forced to make a saving throw that you are proficient in, you can treat a roll of 7 or lower as an 8.</description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Saving Throw Proficiency" supports="ID_PROFICIENCY_SAVINGTHROW_STRENGTH|ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION|ID_PROFICIENCY_SAVINGTHROW_WISDOM|ID_PROFICIENCY_SAVINGTHROW_CHARISMA" level="9" />
+            </rules>
+        </element>
+        <element name="Hasty Assassination" type="Archetype Feature" source="Roguish Archetype: Sanctus" id="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_HASTY_ASSASSINATION">
+            <description>
+                <p>Beginning at 13th level, you can sacrifice your lethal strike to get into a better position. You can use your bonus action to teleport into an unoccupied space within 10 feet of a creature you can see or are aware of (such as through casting detect thoughts or mind spike) within 30 feet of you. If you attempt to teleport into an occupied space, you are ejected to the nearest unoccupied space and take 3d12 force damage.</p>
+                <p class="indent">If you use your Sneak Attack on the same turn you use this ability, you only roll half the number of damage dice.</p>
+            </description>
+            <sheet>
+                <description>You can use your bonus action to teleport into an unoccupied space within 10 feet of a creature you can see or are aware of within 30 feet of you. If you attempt to teleport into an occupied space, you are ejected to the nearest unoccupied space and take 3d12 force damage. If you use your Sneak Attack on the same turn you use this ability, you only roll half the number of damage dice.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Fortitude of Faith" type="Archetype Feature" source="Roguish Archetype: Sanctus" id="ID_THUDNFER_SANCTUS_ARCHETYPE_FEATURE_SANCTUS_FORTITUDE_OF_FAITH">
+            <description>
+                <p>At 17th level, your faith allows you exploit your own pain, and make your injuries lesser. When you use your Uncanny Dodge ability, your Sneak Attack deals an additional 2d6 damage if you use it before the end of your next turn.</p>
+                <p class="indent">You can then roll a d4. If you roll a 4, you regain use of your reaction.</p>
+            </description>
+            <sheet>
+                <description>When you use your Uncanny Dodge ability, your Sneak Attack deals an additional 2d6 damage if you use it before the end of your next turn. You can then roll a d4. If you roll a 4, you regain use of your reaction.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
