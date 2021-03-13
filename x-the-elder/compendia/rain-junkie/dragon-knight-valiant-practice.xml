@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Valiant Dragon Knight Practice</name>
+        <update version="0.0.1">
+            <file name="dragon-knight-valiant-practice.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/rain-junkie/dragon-knight-valiant-practice.xml" />
+        </update>
+    </info>
+    
+        <element name="Valiant Practice" type="Source" source="Core" id="ID_RAINJUNKIE_GMBINDER_SOURCE_VALIANT_PRACTICE">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">DKVP</set>
+            <set name="url">https://www.gmbinder.com/share/-MG4aS_y6Kb4N5dpFfN2</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="RJ" url="https://www.gmbinder.com/profile/rain-junkie">Rain-Junkie</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200904</set>
+        </setters>
+    </element>
+
+    <element name="Valiant Practice" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_DRAGON_KNIGHT_VALIANT_PRACTICE">
+        <supports>Dragon Knight Practice</supports>
+        <description>
+            <p>Those of the Valiant Practice strive to lead their allies in battle. By weilding a magical banner to inspire valor and hope in their allies, these dragon knights are able to control and command the battlefield with their presence.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_VALIANT_BANNER" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_SAFEGUARD" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_WAR_FRONT" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_RESOLVING_BANNER" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_STEADFAST_BANNER" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_VALIANT_BANNER" level="3" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_SAFEGUARD" level="7" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_WAR_FRONT" level="10" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_RESOLVING_BANNER" level="15" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_STEADFAST_BANNER" level="18" />
+        </rules>
+    </element>
+        <element name="Valiant Banner" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_VALIANT_BANNER">
+            <description>
+                <p>Starting at 3rd level, you're able to empower others for battle, enhancing their skills and granting them strength. You can plant a banner in the ground within 5 feet of you as an action on your turn. The banner is incorporeal, can't be destroyed, and lasts for 1 minute. Once per turn whenever a friendly creature within 10 feet of the banner hits a creature with an attack or damages it with a spell, it can choose one creature damaged by that attack or spell and deal an additional 1d4 damage to it. This additional damage is your relevant damage type.</p>
+                <p class="indent">Once you place this banner, you can't do so again until you finish a short or long rest.</p>
+                <p class="indent">The additional damage increases as you gain levels in this class, increasing to 1d6 at 7th level, 1d8 at 10th level, 1d10 at 15th level, and 1d12 at 18th level.</p>
+            </description>
+            <sheet action="Action" usage="1/Short Rest">
+                <description>You can plant a banner in the ground within 5 feet of you. The banner is incorporeal, can't be destroyed, and lasts for 1 minute. Once per turn whenever a friendly creature within {{valiant-banner:range}} feet of the banner hits a creature with an attack or damages it with a spell, it can choose one creature damaged by that attack or spell and deal an additional 1d{{valiant-banner:die-type}} damage to it. This additional damage is your relevant damage type.</description>
+                <description level="7" action="Bonus Action">You can plant a banner in the ground within 5 feet of you. The banner is incorporeal, can't be destroyed, and lasts for 1 minute. Once per turn whenever a friendly creature within {{valiant-banner:range}} feet of the banner hits a creature with an attack or damages it with a spell, it can choose one creature damaged by that attack or spell and deal an additional 1d{{valiant-banner:die-type}} damage to it. This additional damage is your relevant damage type.</description>
+            </sheet>
+            <rules>
+                <stat name="valiant-banner:die-type" value="4" bonus="base" level="3" />
+                <stat name="valiant-banner:die-type" value="6" bonus="base" level="7" />
+                <stat name="valiant-banner:die-type" value="8" bonus="base" level="10" />
+                <stat name="valiant-banner:die-type" value="10" bonus="base" level="15" />
+                <stat name="valiant-banner:die-type" value="12" bonus="base" level="18" />
+                <stat name="valiant-banner:range" value="10" level="3" />
+                <stat name="valiant-banner:range" value="10" level="10" />
+                <stat name="valiant-banner:range" value="10" level="18" />
+            </rules>
+        </element>
+        <element name="Safeguard" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_SAFEGUARD">
+            <description>
+                <p>At 7th level, you can plant your banner as a bonus action on your turn, rather than an action.</p>
+                <p class="indent">Also, when your dragon uses its breath weapon, it can choose any number of creatures it can see that are both in the area of its breath weapon and within your banner's range. The chosen creatures automatically succeed on their saving throws against the breath weapon, and they take no damage if they would normally take half damage on a successful save.</p>
+            </description>
+            <sheet>
+                <description>When your dragon uses its breath weapon, it can choose any number of creatures it can see that are both in the area of its breath weapon and within your banner's range. The chosen creatures automatically succeed on their saving throws against the breath weapon, and they take no damage if they would normally take half damage on a successful save.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="War Front" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_WAR_FRONT">
+            <description>
+                <p>At 10th level, your banner affects creatures within 20 feet of it. At 18th level, this aura increases to 30 feet.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Resolving Banner" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_RESOLVING_BANNER">
+            <description>
+                <p>At 15th level, your banner enhances the abilities of your allies. When you plant your banner, choose an ability score. Whenever a friendly creature within your banner's range makes an ability check or saving throw using that ability score, they can roll a d4 and add the result to their roll.</p>
+            </description>
+            <sheet>
+                <description>When you plant your banner, choose an ability score. Whenever a friendly creature within your banner's range makes an ability check or saving throw using that ability score, they can roll a d4 and add the result to their roll.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Steadfast Banner" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_VALIANT_PRACTICE_STEADFAST_BANNER">
+            <description>
+                <p>At 18th level, your banner can prevent all harm, for a brief moment. As an action on your turn, you can shield all friendly creatures within your banner's range. While a shielded creature remains within your banner's range, it is immune to all damage until the start of your next turn.</p>
+                <p class="indent">Once you use this feature, you can't do so again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest" action="Action">
+                <description>You can shield all friendly creatures within your banner's range. While a shielded creature remains within your banner's range, it is immune to all damage until the start of your next turn.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
