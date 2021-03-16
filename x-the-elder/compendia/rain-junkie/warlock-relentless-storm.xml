@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Relentless Storm Otherworldly Patron v1</name>
+        <update version="0.0.1">
+            <file name="warlock-relentless-storm.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/rain-junkie/warlock-relentless-storm.xml" />
+        </update>
+    </info>
+    
+    <element name="The Relentless Storm" type="Source" source="Core" id="ID_RAINJUNKIE_GMBINDER_SOURCE_THE_RELENTLESS_STORM">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">TRSOP</set>
+            <set name="url">https://www.gmbinder.com/share/-M-ocYkVu8iRuCjNyoq8</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="RJ" url="https://www.gmbinder.com/profile/rain-junkie">Rain-Junkie</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20200118</set>
+        </setters>
+    </element>
+
+    <element name="The Relentless Storm" type="Archetype" source="The Relentless Storm" id="ID_RJ_TRSOP_ARCHETYPE_WARLOCK_RELENTLESS_STORM">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>The crack of lightning and boom of thunder herald the Relentless Storm, a being of immense power and strength that invokes storms wherever they tread. With them as your patron, you can channel this raw, powerful energy to demolish your foes, as well as the structures they hide behind, with the strength of the storm, leaving nothing but rubble in your wake.</p>
+            <div element="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_EXPANDED_SPELL_LIST" />
+            <div element="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_SKY_SPLITTER" />
+            <div element="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_STORMS_BLESSINGS" />
+            <div element="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_LIGHTNING_REFLEXES" />
+            <div element="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_ROLLING_THUNDER" />
+            <div element="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_THUNDERCRASH" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_SKY_SPLITTER" level="1" />
+            <grant type="Archetype Feature" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_STORMS_BLESSINGS" level="1" />
+            <grant type="Archetype Feature" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_LIGHTNING_REFLEXES" level="6" />
+            <grant type="Archetype Feature" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_ROLLING_THUNDER" level="10" />
+            <grant type="Archetype Feature" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_THUNDERCRASH" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Relentless Storm lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">Relentless Storm Expanded Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>fog cloud, thunderwave</em></td></tr>
+                    <tr><td>2nd</td><td><em>gust of wind, warding wind</em></td></tr>
+                    <tr><td>3rd</td><td><em>lightning bolt, wind wall</em></td></tr>
+                    <tr><td>4th</td><td><em>ice storm, storm sphere</em></td></tr>
+                    <tr><td>5th</td><td><em>cone of cold, control winds</em></td></tr>
+                </table>
+            </description>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_FOG_CLOUD</extend>
+                <extend>ID_PHB_SPELL_THUNDERWAVE</extend>
+                <extend>ID_PHB_SPELL_GUST_OF_WIND</extend>
+                <extend>ID_XGTE_SPELL_WARDING_WIND</extend>
+                <extend>ID_PHB_SPELL_LIGHTNING_BOLT</extend>
+                <extend>ID_PHB_SPELL_WIND_WALL</extend>
+                <extend>ID_PHB_SPELL_ICE_STORM</extend>
+                <extend>ID_XGTE_SPELL_STORM_SPHERE</extend>
+                <extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+                <extend>ID_XGTE_SPELL_CONTROL_WINDS</extend>
+            </spellcasting>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Sky Splitter" type="Archetype Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_SKY_SPLITTER">
+            <description>
+                <p>Starting at 1st level, you can call down a bolt of lightning to both empower you and strike back your foes. As a bonus action on your turn, you choose a point you can see within 60 feet of you, which begins to spark with energy. At the start of your next turn, a blast of lightning strikes down, causing a 10-foot radius sphere to erupt centred on the point. Hostile creatures inside the sphere must make a Strength saving throw against your warlock spell save DC, being pushed 10 feet directly away from the centre of the sphere on a failed save. Additionally, hostile creatures that are inside the sphere when the lightning strikes can't take reactions until the start of your next turn.</p>
+                <p class="indent">If you're inside the sphere when the lightning strikes, your patron's strength shields you. You gain temporary hit points equal to 1d12 + your Charisma modifier + half your warlock level. These temporary hit points last for 1 minute.</p>
+                <p class="indent">The radius of the sphere increases as you gain levels in this class; becoming a 15-foot radius sphere at 5th level, and a 20-foot radius sphere at 9th level.</p>
+                <p class="indent">Once you use this feature, you can’t do so again until you finish a short or long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1/Short Rest">
+                <description>You choose a point you can see within 60 feet of you. At the start of your next turn, a blast of lightning strikes down, causing a {{sky-splitter:range}}-foot radius sphere to erupt centred on the point. Hostile creatures inside the sphere must make a Strength saving throw against your warlock spell save DC, being pushed 10 feet directly away from the centre of the sphere on a failed save. Additionally, hostile creatures that are inside the sphere when the lightning strikes can't take reactions until the start of your next turn. If you're inside the sphere when the lightning strikes, you gain 1d12 + {{sky-splitter:temp-hp}} temporary hit that last for up to 1 minute.</description>
+            </sheet>
+            <rules>
+                <stat name="sky-splitter:range" value="10" level="1" />
+                <stat name="sky-splitter:range" value="5" level="5" />
+                <stat name="sky-splitter:range" value="5" level="9" />
+                <stat name="sky-splitter:temp-hp" value="charisma:modifier" />
+                <stat name="sky-splitter:temp-hp" value="level:warlock:half" />
+            </rules>
+        </element>
+        <element name="Storm's Blessings" type="Archetype Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_STORMS_BLESSINGS">
+            <description>
+                <p>Also at 1st level, your patron grants you minor boons. You learn the <i>gust</i> cantrip, and can speak, read, and write Auran. You're also naturally adapted to strong wind and heavy precipitation, as described in chapter 5 of the Dungeon Master's Guide.</p>
+            </description>
+            <sheet>
+                <description>You're also naturally adapted to strong wind and heavy precipitation.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_XGTE_SPELL_GUST" />
+                <grant type="Language" id="ID_MM_LANGUAGE_AURAN" />
+            </rules>
+        </element>
+        <element name="Lightning Reflexes" type="Archetype Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_LIGHTNING_REFLEXES">
+            <description>
+                <p>At 6th level, you can move with quick bursts of agility when in danger. When you would be subjected to an effect that targets an area, you can use your reaction to move up to half your speed. If at the end of the movement you are outside of the targeted area, you are unaffected by the triggering effect.</p>
+                <p class="indent">Once you use this feature, you can't do so again until you finish a short or long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="1/Short Rest">
+                <description>When you would be subjected to an effect that targets an area, you can move up to half your speed. If at the end of the movement you are outside of the targeted area, you are unaffected by the triggering effect.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Rolling Thunder" type="Archetype Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_ROLLING_THUNDER">
+            <description>
+                <p>At 10th level, the power of the storm guides your steps, allowing you to stand firm against the world. You can't suffer disadvantage on Strength or Dexterity checks or saving throws while you're not unconscious or incapacitated. Additionally, you gain resistance to lightning and thunder damage.</p>
+            </description>
+            <sheet>
+                <description>You can't suffer disadvantage on Strength or Dexterity checks or saving throws while you're not unconscious or incapacitated.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+            </rules>
+        </element>
+        <element name="Thundercrash" type="Archetype Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_ARCHETYPE_FEATURE_RELENTLESS_STORM_THUNDERCRASH">
+            <description>
+                <p>At 14th level, you fully embrace the storm. As an action on your turn, you can launch into the air, vanishing from sight. At the start of your next turn, you can crash down on an empty space within 500 feet of your original location. Hostile creatures within 20 feet of the space you land must make a Dexterity saving throw, taking 3d12 lightning damage and 3d12 thunder damage and be knocked prone on a failed save, or half as much damage and isn't knocked prone on a success. Creatures within 1 mile of the space you land can hear the impact as it reverberates out.</p>
+                <p class="indent">A nonmagical object or structure that isn't being worn or carried takes twice as much damage if it's in the area.</p>
+                <p class="indent">Once you use this feature, you can't do so again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can launch into the air, vanishing from sight. At the start of your next turn, you can crash down on an empty space within 500 feet of your original location. Hostile creatures within 20 feet of the space you land must make a Dexterity saving throw, taking 3d12 lightning damage and 3d12 thunder damage and be knocked prone on a failed save, or only half as much damage on a success. Creatures within 1 mile of the space you land can hear the impact as it reverberates out. A nonmagical object or structure that isn't being worn or carried takes twice as much damage if it's in the area.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <!-- New Eldritch Invocations -->
+        <element name="Arcing Storm" type="Class Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_CLASS_FEATURE_">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_RJ_TRSOP_ARCHETYPE_WARLOCK_RELENTLESS_STORM</requirements>
+            <prerequisite>The Relentless Storm Patron</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: The Relentless Storm Patron</p>
+                <p class="indent">You can cast the lightning lure and shocking grasp cantrips, with Charisma being your spellcasting ability for them. When you cast either spell as an action on your turn, you can immediately cast it again as part of the same action against a different creature within 10 feet of the initial target, ignoring the range of each spell when cast as the second part of this feature.</p>
+            </description>
+            <sheet>
+                <description>You can cast the <i>lightning lure</i> and <i>shocking grasp</i> cantrips. (Charisma)
+                When you cast either spell as an action on your turn, you can immediately cast it again as part of the same action against a different creature within 10 feet of the initial target, ignoring the range of each spell when cast as the second part of this feature.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_TCE_SPELL_LIGHTNING_LURE" />
+                <grant type="Spell" id="ID_PHB_SPELL_SHOCKING_GRASP" />
+            </rules>
+        </element>
+        <element name="Disciple of the Storm" type="Class Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_CLASS_FEATURE_">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_RJ_TRSOP_ARCHETYPE_WARLOCK_RELENTLESS_STORM,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+            <prerequisite>The Relentless Storm Patron, Pact of the Tome feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: The Relentless Storm Patron, Pact of the Tome feature</p>
+                <p class="indent">You've studied the ways of the storm. You can tell when an area has been ravaged by a storm, and can also sense when a nonmagical storm will arrive in an area that you're in, up to 24 hours before the storm hits.</p>
+                <p class="indent">Additionally, you ignore the creature size restriction of gust, and can cast it as a bonus action a number of times equal to your Charisma modifier (minimum of 1). You regain all uses of this feature when you finish a long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{cha-mod:min-one}}/Long Rest">
+                <description>You ignore the creature size restriction of gust, and can cast it as a bonus action. Additionally, you can tell when an area has been ravaged by a storm, and can also sense when a nonmagical storm will arrive in an area that you're in, up to 24 hours before the storm hits. </description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Lightning Strikes Twice" type="Class Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_CLASS_FEATURE_">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7], ID_RJ_TRSOP_ARCHETYPE_WARLOCK_RELENTLESS_STORM</requirements>
+            <prerequisite>7th level, The Relentless Storm Patron</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th level, The Relentless Storm Patron</p>
+                <p class="indent">When the blast of lightning strikes down as part of your Sky Splitter feature, you can have it mark the spot again, which continues to spark with energy. At the start of your next turn, another lightning bolt strikes down, and hostile creatures inside the sphere must make a Dexterity saving throw against your warlock spell save DC. On a failed save, creatures take 4d12 lightning damage, or half as much on a success.</p>
+                <p class="indent">Once you use this feature, you can't do so again until you finish a long rest.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When the blast of lightning strikes down as part of your Sky Splitter feature, you can have it mark the spot again. At the start of your next turn, another lightning bolt strikes down, and hostile creatures inside the sphere must make a Dexterity saving throw against your warlock spell save DC. On a failed save, creatures take 4d12 lightning damage, or half as much on a success.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Storm's Vengance" type="Class Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_CLASS_FEATURE_">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_RJ_TRSOP_ARCHETYPE_WARLOCK_RELENTLESS_STORM,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+            <prerequisite>The Relentless Storm Patron, Pact of the Blade feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: The Relentless Storm Patron, Pact of the Blade feature</p>
+                <p class="indent">When you hit a creature with your pact weapon, you can mark them with the fury of the storm, which lasts for 1 minute. When you hit a marked creature with a pact weapon, they take an additional 1d12 lightning damage from the attack, you can push them up to 10 feet in a horizontal direction of your choice, and the mark is removed. If the attack that removed the mark was a melee weapon attack, you can push the creature an additional 10 feet.</p>
+                <p class="indent">You have a number of uses of this mark equal to your Charisma modifier (minimum of 1), and regain all uses when you finish a long rest.</p>
+            </description>
+            <sheet usage="{{cha-mod:min-one}}/Long Rest">
+                <description>When you hit a creature with your pact weapon, you can mark them with the fury of the storm, which lasts for 1 minute. When you hit a marked creature with a pact weapon, they take an additional 1d12 lightning damage from the attack, you can push them up to 10 feet in a horizontal direction of your choice, and the mark is removed. If the attack that removed the mark was a melee weapon attack, you can push the creature an additional 10 feet.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Updraft" type="Class Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_CLASS_FEATURE_">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_RJ_TRSOP_ARCHETYPE_WARLOCK_RELENTLESS_STORM</requirements>
+            <prerequisite>The Relentless Storm patron</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: The Relentless Storm patron</p>
+                <p class="indent">You're always under the effects of the <i>feather fall</i> spell while you aren't wearing heavy armour and aren't unconcious or incapacitated. You can end this effect or activate it on your turn (no action required).</p>
+            </description>
+            <sheet>
+                <description>You're always under the effects of the featherfall spell while you aren't wearing heavy armour and aren't unconcious or incapacitated.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_FEATHER_FALL" />
+            </rules>
+        </element>
+        <element name="Wind Spirit" type="Class Feature" source="The Relentless Storm" id="ID_RJ_TRSOP_CLASS_FEATURE_">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_RJ_TRSOP_ARCHETYPE_WARLOCK_RELENTLESS_STORM,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN</requirements>
+            <prerequisite>The Relentless Storm patron, Pact of the Chain feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: The Relentless Storm patron, Pact of the Chain feature</p>
+                <p class="indent">When you summon your familiar, you can have it appear as a wind spirit. Your familiar has the statistics of a blood hawk (found on page 319 of the Monster Manual) except it is an elemental, rather than a celestial, fey, or fiend.</p>
+                <p class="indent">While the spirit is perched on your shoulder, your movement speed increases by 10 feet and you gain a bonus to your passive Wisdom (Perception) score and to Wisdom (Perception) checks. The bonus equals your Charisma modifier. While perched on your shoulder, the spirit can’t be targeted by any attack or other harmful effect; only you can cast spells on it; it can’t take damage; and it is incapacitated.</p>
+            </description>
+            <sheet>
+                <description>When you summon your familiar, you can have it appear as a wind spirit. While the spirit is perched on your shoulder, your movement speed increases by 10 feet and you gain a +{{charisma:modifier}} bonus to your passive Perception score and to Perception checks.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
