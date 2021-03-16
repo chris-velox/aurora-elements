@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Way of the Dance Monastic Tradition</name>
+        <update version="0.0.1">
+            <file name="monk-way-of-the-dance.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/monk/monk-way-of-the-dance.xml" />
+        </update>
+    </info>
+    
+    <element name="Way of the Dance" type="Source" source="Core" id="ID_FRAILLUNA_HOMEBREWERY_SOURCE_WAY_OF_THE_DANCE">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">WOTD</set>
+            <set name="url">https://homebrewery.naturalcrit.com/share/ZjHqiq7p-q_G</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="FL" url="https://www.reddit.com/user/Frail_Luna/">u/Frail_Luna</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210303</set>
+        </setters>
+    </element>
+
+    <element name="Way of the Dance" type="Archetype" source="Way of the Dance" id="ID_FL_WOTD_ARCHETYPE_MONK_WAY_OF_THE_DANCE">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>The monastic tradition of the Dance, is a tradition of control and skill, weaving martial arts and performance together into one special set of abilities, used for combat, traditional rituals as well as entertainment. Followers of the Way of the Dance see combat as a way to express their artistic creativity, showing fluidity in their moves, power in their strikes and control of their art.</p>
+            <div element="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_WEAPON_OF_ART" />
+            <div element="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_LEAF_IN_THE_WIND" />
+            <div element="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_FLUIDITY" />
+            <div element="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_MASTER_OF_ENTERTAINMENT" />
+            <div element="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_RYTHM_OF_LIFE" />
+            <div element="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_HARMONY" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_WEAPON_OF_ART" level="3" />
+            <grant type="Archetype Feature" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_LEAF_IN_THE_WIND" level="3" />
+            <grant type="Archetype Feature" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_FLUIDITY" level="6" />
+            <grant type="Archetype Feature" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_MASTER_OF_ENTERTAINMENT" level="6" />
+            <grant type="Archetype Feature" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_RYTHM_OF_LIFE" level="11" />
+            <grant type="Archetype Feature" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_HARMONY" level="17" />
+        </rules>
+    </element>
+        <element name="Weapon of Art" type="Archetype Feature" source="Way of the Dance" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_WEAPON_OF_ART">
+            <description>
+                <p>When choosing the Way of Dance as your monastic tradition at 3rd Level, you gain great knowledge in the usage of certain objects or weapons, vital to your dance performances:</p>
+                <p class="indent">You choose a object or weapon to become your artist weapon.</p>
+                <p class="indent">Your artist weapon is considered a monk weapon, it retains its statistics and abilities if it has any, otherwise it has a range of 5 ft. and deals either bludgeoning, slashing or piercing damage. Whenever an ability refers to your unarmed strikes, you can use you artist weapon instead.</p>
+                <p class="indent">Switching your artist weapon requires you to spend one long rest, training your performances and dances with the new object.</p>
+            </description>
+            <sheet>
+                <description>You choose a object or weapon to become your artist weapon. Your artist weapon is considered a monk weapon. Whenever an ability refers to your unarmed strikes, you can use you artist weapon instead.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Leaf in the Wind" type="Archetype Feature" source="Way of the Dance" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_LEAF_IN_THE_WIND">
+            <description>
+                <p>Starting at 3rd Level, you gain proficiency in the Performance skill. Instead of Charisma, you can use your Wisdom modifier when determining your bonus in this skill.</p>
+                <p class="indent">Your character can enter two different combat stances, called Dances. Each Dance has different benefits and disadvantages and resembles a different style of performance. You can spend one ki point to enter a Dance for one minute as a bonus action. You can also choose to end your performance as an action.</p>
+                <p class="indent">The Dances effects are as follows:</p>
+                <ul>
+                    <li>The Dance of the Flowing River is a slow, controlled, and methodical approach to combat.<br />
+                    When entering this stance, you gain temporary hit points equal to your performance skill.<br />
+                    Additionally, when damage reduces these temporary hit points to 0, while you are performing this dance, the source of that damage is considered vulnerable against any damage of the next attack that it receives.<br />
+                    Drawback: While performing this Dance your speed is halved.</li>
+                    <li>The Dance of the Roaring Veins is a aggressive and wild form, using force and fury to express powerful combat moves and exploit weak points of your enemies, not caring much for defense.<br />
+                    While in this stance, your attacks with your artist weapon deal additional force damage equal to your performance skill, and critically hit when rolling a 19 or 20 on an attack roll.<br />
+                    Drawback: While in this Dance, you suffer additional damage equal to your martial arts die, when suffering damage for the first time in a round.</li>
+                </ul>
+            </description>
+            <sheet action="Bonus Action" usage="1 ki">
+                <description>You can enter one of your Dances for up to 1 minute.</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+                <stat name="performance:proficiency" value="-charisma:modifier" />
+                <stat name="performance:proficiency:ability" value="charisma:modifier" bonus="base" />
+                <stat name="performance:proficiency:ability" value="wisdom:modifier" bonus="base" />
+                <stat name="performance:proficiency" value="performance:proficiency:ability" />
+                <grant type="Archetype Feature" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_LITW_DANCE_OF_THE_FLOWING_RIVER" level="3" />
+                <grant type="Archetype Feature" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_LITW_DANCE_OF_THE_ROARING_VEINS" level="3" />
+            </rules>
+        </element>
+            <element name="Dance of the Flowing River" type="Archetype Feature" source="Way of the Dance" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_LITW_DANCE_OF_THE_FLOWING_RIVER">
+                <description>
+                    <p>The Dance of the Flowing River is a slow, controlled, and methodical approach to combat.</p>
+                    <p class="indent">When entering this stance, you gain temporary hit points equal to your performance skill.</p>
+                    <p class="indent">Additionally, when damage reduces these temporary hit points to 0, while you are performing this dance, the source of that damage is considered vulnerable against any damage of the next attack that it receives.</p>
+                    <p class="indent"><b>Drawback:</b> While performing this Dance your speed is halved.</p>
+                </description>
+                <sheet>
+                    <description>You gain {{performance:proficiency}} temporary hit points. When damage reduces these temporary hit points to 0, while you are performing this dance, the source of that damage is considered vulnerable against any damage of the next attack that it receives. Drawback: Your speed is halved while in this dance.</description>
+                    <description alt="Dance of the Breathing Ocean" level="11">You gain {{performance:proficiency}} temporary hit points. When damage reduces these temporary hit points to 0, while you are performing this dance, the source of that damage is considered vulnerable against any damage of the next attack that it receives. Also, performing this advanced form, you gain resistance against any damage that you take. Drawback: Your speed is halved while in this dance.</description>
+                </sheet>
+            </element>
+            <element name="Dance of the Roaring Veins" type="Archetype Feature" source="Way of the Dance" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_LITW_DANCE_OF_THE_ROARING_VEINS">
+                <description>
+                    <p>The Dance of the Roaring Veins is a aggressive and wild form, using force and fury to express powerful combat moves and exploit weak points of your enemies, not caring much for defense.</p>
+                    <p class="indent">While in this stance, your attacks with your artist weapon deal additional force damage equal to your performance skill, and critically hit when rolling a 19 or 20 on an attack roll.</p>
+                    <p class="indent"><b>Drawback:</b> While in this Dance, you suffer additional damage equal to your martial arts die, when suffering damage for the first time in a round.</p>
+                </description>
+                <sheet>
+                    <description>Your attacks with your artist weapon deal {{performance:proficiency}} additional force damage, and critically hit when rolling a 19 or 20 on an attack roll. Drawback: While in this Dance, you suffer additional 1d{{martial arts:dice}} damage when suffering damage for the first time in a round.</description>
+                    <description alt="Dance of the Beating Heart" level="11">Your attacks with your artist weapon deal {{performance:proficiency}} additional force damage, and critically hit when rolling a 19 or 20 on an attack roll. Additionally, the first time when you hit an attack on your turn, you make an additional attack against that target with your artist weapon. Drawback: While in this Dance, you suffer additional 1d{{martial arts:dice}} damage when suffering damage for the first time in a round.</description>
+                </sheet>
+            </element>
+        <element name="Fluidity" type="Archetype Feature" source="Way of the Dance" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_FLUIDITY">
+            <description>
+                <p>At 6th level, you gain the ability to switch Dances on the fly, fluidly leaving one stance and entering another. While performing a Dance, as a reaction or before your turn, you can spend one ki point to change from one form into another. If you are performing Dance of the flowing River you can choose to enter Dance of the roaring Veins, and vice versa.</p>
+                <p class="indent">You can also decide to end a Dance this way, by expending one ki point.</p>
+            </description>
+            <sheet usage="1 ki" action="Reaction">
+                <description>As a reaction or before your turn, you can spend one ki point to change from one form into another. You can also decide to end a Dance this way, by expending one ki point.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Master of Entertainment" type="Archetype Feature" source="Way of the Dance" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_MASTER_OF_ENTERTAINMENT">
+            <description>
+                <p>After reaching 6th Level, you gain the ability to perform a non-combat version of the Dances described in Leaf in the Wind. Performing this form for at least 1 minute and spending one ki point, allows you to choose one of the following effects:</p>
+                <ul>
+                    <li>You attempt to suppress strong emotions in your audience. Each creature that can see you perform must succeed on a Charisma saving throw against your ki save DC, or feel calm. Strong emotions are suppressed until you end your performance, or any action is taken, that provokes the strong emotion again.</li>
+                    <li>You attempt to foster strong emotions in your audience. Each creature that can see you perform must succeed on a Charisma saving throw against your ki save DC, or experience a strong emotion determined by you. All creatures must experience the same emotion.</li>
+                    <li>While you perform, any Charisma checks on creatures that can see you perform have advantage.</li>
+                </ul>
+                <p class="indent">While you perform, you cannot take any other actions, without interrupting your performance. Targets that you use this ability on have no hint that you tried to influence them in any way.</p>
+            </description>
+            <sheet>
+                <description>You gain the ability to perform a non-combat version of the Dances described in Leaf in the Wind.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Rythm of Life" type="Archetype Feature" source="Way of the Dance" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_RYTHM_OF_LIFE">
+            <description>
+                <p>When reaching Level 11, you have perfected your form, and you are able to enter advanced forms of your Dances. Whenever you enter or switch Dances, you now enter one of the following forms and gain benefits in addition to the effects of the basic form:</p>
+                <ul>
+                    <li>The Dance of the Breathing Ocean is the advanced form of the Dance of the Flowing River. It perfects its defensive combat abilities, making you more resilient and able to withstand harder blows, while maintaining control over your body.<br />
+                    You gain the effects of the Dance of the Flowing River. Also, performing this advanced form, you gain resistance against any damage that you take.</li>
+                    <li>The Dance of the Beating Heart is the advanced form of the Dance of the Roaring Veins, perfecting your aggressive form, doubling down on speed and having even less care for your own body's limits.<br />
+                    While in this stance, you gain the effects of the Dance of the Roaring Veins. Additionally, the first time when you hit an attack on your turn, you make an additional attack against that target with your artist weapon.</li>
+                </ul>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Harmony" type="Archetype Feature" source="Way of the Dance" id="ID_FL_WOTD_ARCHETYPE_FEATURE_WOTD_HARMONY">
+            <description>
+                <p>By Level 17, you have reached your maximum potential. Having perfected your abilities over hours of study and care, it is now time to combine your craft into one final, ultimate dance performance, that requires the skills, concentration and control of a legend.</p>
+                <p class="indent">When switching or entering a Dance, you can instead choose to enter the following Dance once per day, regaining your ability to do so after finishing a long rest:</p>
+                <ul>
+                    <li>The Ocean of Life. While performing this Dance you reached the apex of your performance, combining the advantages of both the Dance of the breathing Ocean and the Dance of the beating Heart.<br />
+                    You gain the effects of both advanced forms without their drawbacks.</li>
+                </ul>
+            </description>
+            <sheet usage="1/Long Rest" alt="The Ocean of Life">
+                <description>While performing this Dance you the advantages of both the Dance of the Breathing Ocean and the Dance of the Beating Heart without their drawbacks.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    
+</elements>
