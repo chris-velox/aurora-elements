@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Radiant Dragonborn Race Variant</name>
+        <update version="0.0.1">
+            <file name="race-radiant-dragonborn.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/shilonious/race-radiant-dragonborn.xml" />
+        </update>
+    </info>
+    
+    <element name="Radiant Dragonborn" type="Source" source="Core" id="ID_SHILONIOUS_GMBINDER_SOURCE_RADIANT_DRAGONBORN">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">RDB</set>
+            <set name="url">https://www.gmbinder.com/share/-M3VOK5S53hdshz401gM</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="SHI" url="https://www.gmbinder.com/profile/shilonious">Shilonious</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210305</set>
+        </setters>
+    </element>
+    
+
+    <element name="Radiant Dragonborn" type="Race Variant" source="Radiant Dragonborn" id="ID_SHI_RDB_RACE_VARIANT_RADIANT_DRAGONBORN">
+        <supports>Dragonborn</supports>
+        <description>
+            <p>Long gone healers of an ancient age, radiant dragonborn have since resurfaced in the corners of the known world. Commonly mistook for red dragonborn, they are thought to be an interesting result of albinism working towards their genetic favor. Gifted with the ability to heal those who come in contact with their mist, they are coveted as beautiful blessings from the gods themselves.</p>
+            <h4>Radiant Dragonborn Traits</h4>
+            <p>Your radiant heritage manifests in a variety of traits, faintly sharing semblance to your dragonborn kin.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Constitution score increases by 2, and your Wisdom score increases by 1.</p>
+            <p class="indent"><strong><em>Age.</em></strong> Radiant dragonborn age slightly slower than regular dragonborn. They have been known to live for up to 100 years.</p>
+            <p class="indent"><strong><em>Alignment.</em></strong> Radiant dragonborn tend towards good. They believe in the power of generosity, kindness, and acceptance of all beings.</p>
+            <p class="indent"><strong><em>Size.</em></strong> Radiant dragonborn are smaller and lighter than common dragonborn. They average in the 5 to 6 foot range, and weigh roughly 190 pounds. Their size is Medium.</p>
+            <p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 35 feet.</p>
+            <p class="indent"><strong><em>Benevolent Mist.</em></strong> When you use your breath weapon you can instead choose to exhale a pinkish mist that restores life to those it touches. You roll half the regular damage dice (rounded up) for your breath weapon, and creatures of your choice within your mist regain hit points equal to the total dice value + your Constitution modifier. After you use your breath weapon like this, you must have a long rest before using your breath weapon again.</p>
+            <p class="indent"><strong><em>Damage Resistance.</em></strong> You have resistance to the damage type associated with your draconic ancestry.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common, Celestial, and Draconic. Draconic is thought to be one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard consonants and sibilants.</p>
+            <h5 class="caption">Additional Draconic Ancestry</h5>
+            <table>
+                <thead>
+                    <tr><td>Dragon</td><td>Damage Type</td><td>Breath Weapon</td></tr>
+                </thead>
+                <tr><td>Rose Gold</td><td>Radiant</td><td>15 ft. cone (Dex. save)</td></tr>
+            </table>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="constitution" value="2" />
+            <stat name="wisdom" value="1" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <stat name="speed:innate" value="35" bonus="base" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_CELESTIAL" />
+            <grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+            <grant type="Racial Trait" id="ID_SHI_RDB_RACIAL_TRAIT_RADIANT_DRAGONBORN_BENEVOLENT_MIST" />
+            <grant type="Racial Trait" id="ID_SHI_RDB_RACIAL_TRAIT_DAMAGE_RESISTANCE" />
+			<grant type="Grants" id="ID_WOTC_EGTW_GRANTS_DRAGONBORN_VARIANT" />
+        </rules>
+    </element>
+        <element name="Benevolent Mist" type="Racial Trait" source="Radiant Dragonborn" id="ID_SHI_RDB_RACIAL_TRAIT_RADIANT_DRAGONBORN_BENEVOLENT_MIST">
+            <description>
+                <p>When you use your breath weapon you can instead choose to exhale a pinkish mist that restores life to those it touches. You roll half the regular damage dice (rounded up) for your breath weapon, and creatures of your choice within your mist regain hit points equal to the total dice value + your Constitution modifier. After you use your breath weapon like this, you must have a long rest before using your breath weapon again.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When you use your breath weapon you can instead choose to exhale a pinkish mist that restores life to those it touches. You roll half the regular damage dice (rounded up) for your breath weapon, and creatures of your choice within your mist regain hit points equal to the total dice value + {{constitution:modifier}}.</description>
+            </sheet>
+        </element>
+	<element name="Damage Resistance" type="Racial Trait" source="Radiant Dragonborn" id="ID_SHI_RDB_RACIAL_TRAIT_DAMAGE_RESISTANCE">
+		<description>
+			<p>You have resistance to the damage type associated with your draconic ancestry.</p>
+		</description>
+		<sheet>
+			<description>You have resistance to {{draconic-ancestry:damage type}}.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLACK||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_COPPER" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLUE||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BRONZE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BRASS||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_GOLD||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_RED" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_GREEN" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_SILVER||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_WHITE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_ROSE_GOLD" />
+		</rules>
+	</element>
+
+	<element name="Draconic Ancestry (Rose Gold)" type="Racial Trait" source="Radiant Dragonborn" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_ROSE_GOLD">
+		<supports>Draconic Ancestry</supports>
+		<description>
+			<div element="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Gray">
+			<description>Your draconic ancestry is {{draconic-ancestry}}. Your damage type is {{draconic-ancestry:damage type}}. Your breath weapon is {{draconic-ancestry:breath}}.</description>
+		</sheet>
+		<rules>
+			<stat inline="true" name="draconic-ancestry" value="Rose Gold"/>
+			<stat inline="true" name="draconic-ancestry:damage type" value="Radiant" />
+			<stat inline="true" name="draconic-ancestry:breath" value="15 ft. cone (Dex. save)" />
+		</rules>
+	</element>
+
+</elements>

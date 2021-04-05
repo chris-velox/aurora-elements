@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Necrotic Dragonborn Race Variant</name>
+        <update version="0.0.1">
+            <file name="race-necrotic-dragonborn.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/shilonious/race-necrotic-dragonborn.xml" />
+        </update>
+    </info>
+    
+    <element name="Necrotic Dragonborn" type="Source" source="Core" id="ID_SHILONIOUS_GMBINDER_SOURCE_NECROTIC_DRAGONBORN">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">NDB</set>
+            <set name="url">https://www.gmbinder.com/share/-M3V1_G6qqwt54bBM2jv</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="SHI" url="https://www.gmbinder.com/profile/shilonious">Shilonious</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210305</set>
+        </setters>
+    </element>
+    <element name="Necrotic Dragonborn" type="Race Variant" source="Necrotic Dragonborn" id="ID_SHI_NDB_RACE_VARIANT_NECROTIC_DRAGONBORN">
+        <supports>Dragonborn</supports>
+        <description>
+            <p>Infamous creatures, that's what they are known as. Once practitioners of dark magics, the necrotic dragonborn were cast out over time and lost to the annals of history. Recently, these outcasts have been rediscovered, found hiding as commonfolk and passing as black dragonborn. But they have been outed as of late. Thrust back into the spotlight and revealed to the world, they now have a second shot at proving their worth as valid dragonborn.</p>
+            <h4>Necrotic Dragonborn Traits</h4>
+            <p>Your necrotic heritage manifests in a variety of traits, faintly sharing semblance to your dragonborn kin.</p>
+            <p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength score increases by 2, and your Constitution score increase by 1.</p>
+            <p class="indent"><strong><em>Age.</em></strong> Necrotic dragonborn age much slower than regular dragonborn. They have been known to live for up to 150 years.</p>
+            <p class="indent"><strong><em>Alignment.</em></strong> Necrotic dragonborn tend towards neutrality. Unlike other subspecies of dragonborn, their time spent as outcasts causes them to be impartial to the whims of greater morality.</p>
+            <p class="indent"><strong><em>Size.</em></strong> Necrotic dragonborn are taller and heavier than common dragonborn. They average in the 7 to 8 foot range, and weigh roughly 320 pounds. However, their size is still Medium.</p>
+            <p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 30 feet.</p>
+            <p class="indent"><strong><em>Night Walker.</em></strong> Regardless of your size, you move deftly through the darkness. You gain proficiency in Dexterity (Stealth) checks when you are in dim light or darkness.</p>
+            <p class="indent"><strong><em>Sturdy Sunlight Sensitivity.</em></strong> You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you are in direct sunlight.</p>
+            <p class="indent"><strong><em>Superior Darkvision.</em></strong> Accustomed to living in the shadows, you have superior vision in dark and dim conditions. You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</p>
+            <p class="indent"><strong><em>Gray Magician.</em></strong> You know the chill touch cantrip. When you reach 3rd level, you can cast the inflict wounds spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the blindness/deafness spell once with this trait and regain the ability to do so when you finish a long rest. Constitution is your spellcasting ability for these spells.</p>
+            <p class="indent"><strong><em>Damage Resistance.</em></strong> You have resistance to the damage type associated with your draconic ancestry.</p>
+            <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common, Undercommon, and Draconic. Draconic is thought to be one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard consonants and sibilants.</p>
+            <h5 class="caption">Additional Draconic Ancestry</h5>
+            <table>
+                <thead>
+                    <tr><td>Dragon</td><td>Damage Type</td><td>Breath Weapon</td></tr>
+                </thead>
+                <tr><td>Gray</td><td>Necrotic</td><td>5 by 20 ft. line (Con. save)</td></tr>
+            </table>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <stat name="strength" value="2" />
+            <stat name="constitution" value="1" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <stat name="speed:innate" value="30" bonus="base" />
+            <grant type="Vision" id="ID_VISION_SUPERIORDARKVISION" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_UNDERCOMMON" />
+            <grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+            <grant type="Racial Trait" id="ID_SHI_NDB_RACIAL_TRAIT_NECROTIC_DRAGONBORN_STURDY_SUNLIGHT_SENSITIVITY" />
+            <grant type="Racial Trait" id="ID_SHI_NDB_RACIAL_TRAIT_NECROTIC_DRAGONBORN_GRAY_MAGICIAN" />
+            <grant type="Racial Trait" id="ID_SHI_NDB_RACIAL_TRAIT_DAMAGE_RESISTANCE" />
+			<grant type="Grants" id="ID_WOTC_EGTW_GRANTS_DRAGONBORN_VARIANT" />
+        </rules>
+    </element>
+        <element name="Sturdy Sunlight Sensitivity" type="Racial Trait" source="Necrotic Dragonborn" id="ID_SHI_NDB_RACIAL_TRAIT_NECROTIC_DRAGONBORN_STURDY_SUNLIGHT_SENSITIVITY">
+            <description>
+                <p>You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you are in direct sunlight.</p>
+            </description>
+            <sheet>
+                <description>You have disadvantage on attack rolls and on Perception checks that rely on sight when you are in direct sunlight.</description>
+            </sheet>
+        </element>
+        <element name="Gray Magician" type="Racial Trait" source="Necrotic Dragonborn" id="ID_SHI_NDB_RACIAL_TRAIT_NECROTIC_DRAGONBORN_GRAY_MAGICIAN">
+            <description>
+                <p>You know the <i>chill touch</i> cantrip. When you reach 3rd level, you can cast the <i>inflict wounds</i> spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the <i>blindness/deafness</i> spell once with this trait and regain the ability to do so when you finish a long rest. Constitution is your spellcasting ability for these spells.</p>
+            </description>
+            <sheet>
+                <description>You know the chill touch cantrip.</description>
+                <description level="3" usage="1/Long Rest">You know the chill touch cantrip. You can cast inflict wounds once with this trait. (Constitution)</description>
+                <description level="5" usage="1/Long Rest">You know the chill touch cantrip. You can cast inflict wounds and blindness/deafness once each with this trait. (Constitution)</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_CHILL_TOUCH" />
+                <grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" level="3" />
+                <grant type="Spell" id="ID_PHB_SPELL_BLINDNESS_DEAFNESS" level="5" />
+            </rules>
+        </element>
+	<element name="Damage Resistance" type="Racial Trait" source="Necrotic Dragonborn" id="ID_SHI_NDB_RACIAL_TRAIT_DAMAGE_RESISTANCE">
+		<description>
+			<p>You have resistance to the damage type associated with your draconic ancestry.</p>
+		</description>
+		<sheet>
+			<description>You have resistance to {{draconic-ancestry:damage type}}.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLACK||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_COPPER" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLUE||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BRONZE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BRASS||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_GOLD||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_RED" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_GREEN" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_SILVER||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_WHITE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_GRAY" />
+		</rules>
+	</element>
+
+	<element name="Draconic Ancestry (Gray)" type="Racial Trait" source="Necrotic Dragonborn" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_GRAY">
+		<supports>Draconic Ancestry</supports>
+		<description>
+			<div element="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Gray">
+			<description>Your draconic ancestry is {{draconic-ancestry}}. Your damage type is {{draconic-ancestry:damage type}}. Your breath weapon is {{draconic-ancestry:breath}}.</description>
+		</sheet>
+		<rules>
+			<stat inline="true" name="draconic-ancestry" value="Gray"/>
+			<stat inline="true" name="draconic-ancestry:damage type" value="Necrotic" />
+			<stat inline="true" name="draconic-ancestry:breath" value="5 by 20 ft. line (Con. save)" />
+		</rules>
+	</element>
+
+</elements>
