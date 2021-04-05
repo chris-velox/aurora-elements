@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>The Harbinger Otherworldly Patron</name>
+        <update version="0.0.1">
+            <file name="warlock-harbinger.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/warlock/warlock-harbinger.xml" />
+        </update>
+    </info>
+    
+    <element name="Warlock Patron: The Harbinger" type="Source" source="Core" id="ID_DODST_GMBINDER_SOURCE_Warlock Patron: The Harbinger">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">THOP</set>
+            <set name="url">https://www.gmbinder.com/share/-MQyTxQrZDTOfp0hbYtz</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="DODST" url="https://www.gmbinder.com/profile/dodst">Dodst</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210125</set>
+        </setters>
+    </element>
+
+    <element name="The Harbinger" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_WARLOCK_HARBINGER">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Your patron is an acolyte of the four Horsemen, a being of the end times, who are the living manifestations of the apocalypse. These beings desire nothing but the day they will ride, granting people a portion of their power in hopes that their acolytes will bring forth that day. As a harbinger warlock, you become a proxie of the apocalypse, and with every soul you consume, your patron horseman grows in strength. Beings of this sort include the Horseman of Death; the Horseman of War; the Horseman of Pestilence; the Horseman of Famine; and Acolytes of their will.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_EXPANDED_SPELL_LIST" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOUL_POOL" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_STEEDS_OF_THE_END_TIMES" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_MANIFESTATIONS_OF_THE_APOCALYPSE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_HARBINGERS_WISH" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOUL_POOL" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_STEEDS_OF_THE_END_TIMES" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_MANIFESTATIONS_OF_THE_APOCALYPSE" level="10" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_HARBINGERS_WISH" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The harbinger lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>false life, ray of sickness</em></td></tr>
+                    <tr><td>2nd</td><td><em>blindness/deafness, ---</em></td></tr>
+                    <tr><td>3rd</td><td><em>animate dead, bestow curse</em></td></tr>
+                    <tr><td>4th</td><td><em>---, locate creature</em></td></tr>
+                    <tr><td>5th</td><td><em>cloudkill, dominate person</em></td></tr>
+                </table>
+            </description>
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_FALSE_LIFE</extend>
+                <extend>ID_PHB_SPELL_RAY_OF_SICKNESS</extend>
+                <extend>ID_PHB_SPELL_BLINDNESS_DEAFNESS</extend>
+                <extend>ID_PHB_SPELL_ANIMATE_DEAD</extend>
+                <extend>ID_PHB_SPELL_BESTOW_CURSE</extend>
+                <extend>ID_PHB_SPELL_LOCATE_CREATURE</extend>
+                <extend>ID_PHB_SPELL_CLOUDKILL</extend>
+                <extend>ID_PHB_SPELL_DOMINATE_PERSON</extend>
+            </spellcasting>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Apocalyptic Vow" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW">
+            <description>
+                <p>Starting at 1st level, you must select one of the Four Horsemen to swear an apocalyptic vow to. These horsemen are Famine, Death, Pestilence, and War. Once you have made your vow, you cannot switch it to another horseman.</p>
+                <p class="indent">This vow grants you a +3 bonus on life or death saving throws. When you die, the entity to which you swore your vow claims your soul. A character attempting to resurrect a slain harbinger warlock must succeed a DC 10 + the harbinger warlock’s character level or the spell fails. Upon failure, that character cannot attempt to resurrect the warlock again until 24 hours have passed, though other characters can still attempt to do so.</p>
+            </description>
+            <sheet>
+                <description>You have a +3 bonus to death saving throws. A character attempting to resurrect you must succeed a DC {{vow:resurrection-dc}} check or the spell fails. Upon failure, that character cannot attempt to resurrect the warlock again until 24 hours have passed, though other characters can still attempt to do so.</description>
+            </sheet>
+            <rules>
+                <stat name="vow:resurrection-dc" value="10" />
+                <stat name="vow:resurrection-dc" value="level" />
+                <select type="Archetype Feature" name="Patron" supports="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_FAMINE|ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_DEATH|ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_PESTILENCE|ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_WAR" />
+            </rules>
+        </element>
+            <element name="Horseman of Famine" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_FAMINE">
+                <description>
+                    <p>Your patron is the Horseman of Famine.</p>
+                </description>
+                <sheet>
+                    <description></description>
+                </sheet>
+            </element>
+            <element name="Horseman of Death" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_DEATH">
+                <description>
+                    <p>Your patron is the Horseman of Death.</p>
+                </description>
+                <sheet>
+                    <description></description>
+                </sheet>
+            </element>
+            <element name="Horseman of Pestilence" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_PESTILENCE">
+                <description>
+                    <p>Your patron is the Horseman of Pestilence.</p>
+                </description>
+                <sheet>
+                    <description></description>
+                </sheet>
+            </element>
+            <element name="Horseman of War" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_WAR">
+                <description>
+                    <p>Your patron is the Horseman of War.</p>
+                </description>
+                <sheet>
+                    <description></description>
+                </sheet>
+            </element>
+        <element name="Soul Pool" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOUL_POOL">
+            <description>
+                <p>Also starting at 1st level, you gain a pool of soul points, stolen life energy with which you can use to accomplish unnatural feats. The number of soul points in the pool begins at 0 and only increases when you collect the soul remnants of a recently deceased monster. As an action, you can collect the soul remnants of a dead creature within 15 ft. of you, that has not been dead for over 1 minute. This collection counts as 1 soul point.</p>
+                <p class="indent">Creatures that do not have a soul, such as a construct or an undead, are immune to the Soul Pool feature. You can store a number of soul points equal to 1/2 your warlock level plus your Charisma modifier (minimum 0). Note that soul points are fragments of souls and do not prevent a slain creature from being raised.</p>
+                <p class="indent">A harbinger warlock can use soul points for the following:</p>
+                <ul>
+                    <li><b>Raise Soul.</b> You can return a portion of your soul remnants to a nearby corpse to have it serve your will. As an action, you can expend 3 soul points to cast the animate dead spell. (possibly limit to one corpse per use of this feature.)</li>
+                    <li><b>Recover Spell Slot.</b> As an action, you can expend a number of soul points equal to twice the level of your spell slots in order to regain one warlock spellslot.</li>
+                    <li><b>Soul Deflect.</b> When in danger, you can use your soul remnants to protect yourself. As a reaction, when a creature targets you and makes an attack roll against you, you can expend 1 soul point to increase your AC by 1d6 for that attack.</li>
+                    <li><b>Soul Possess.</b> You can use you soul remnants to temporarily take over the will of a creature you can see. As an action, you can expend 5 soul points to cast the dominate person spell.</li>
+                    <li><b>Syphon Life.</b> You can pull health from your soul pool to reinvigorate yourself. As a bonus action, you can sacrifice 1 soul point to regain 1d6 hit points.</li>
+                </ul>
+                <p class="indent">Additionally, when you reach 10th level, you can expend soul points to perform one of the following features, so long as you have the required pact.</p>
+                <ul>
+                    <li><b>Gripping Chain.</b> If you are a Pact of the Link warlock, you can infuse your chains with the gripping inevitability of the end. As an action you can sacrifice 10 soul points to chain's grapple save a +3 bonus for 1 hour. Once you have done so, your chains cannot be infused again in this way for 7 days.</li>
+                    <li><b>Return Familiar.</b> If you are a Pact of the Chain warlock, you can re-summon a recently killed familiar. As an action you can sacrifice 10 soul points to recast the find familiar spell with a casting time of 1 action. Once you have done so, your familiar cannot be summon again in this way for 7 days.</li>
+                    <li><b>Return Star.</b> If you are a Pact of the Star Chain warlock, you can re-summon a recently lost chain. As an action you can sacrifice 10 soul points to re-summon your pact chain. Once you have done so, your chain cannot be summon again in this way for 7 days.</li>
+                    <li><b>Return Talisman.</b> If you are a Pact of the Talisman warlock, you can re-summon a recently lost talisman. As an action you can sacrifice 10 soul points to re-summon your pact talisman. Once you have done so, your talisman cannot be summon again in this way for 7 days.</li>
+                    <li><b>Return Tome.</b> If you are a Pact of the Tome warlock, you can re-summon a recently lost tome. As an action you can sacrifice 10 soul points to re-summon your pact tome. Once you have done so, your tome cannot be summon again in this way for 7 days.</li>
+                    <li><b>Violent Blade.</b> If you are a Pact of the Blade warlock, you can infuse your blade with immense apocalyptic energy. As an action you can sacrifice 10 soul points to grant your pact of the blade weapon a +3 bonus to all Attack and Damage rolls made with it for 1 hour. Once you have done so, your pact weapon cannot be infused again in this way for 7 days.</li>
+                </ul>
+            </description>
+            <sheet action="Action">
+                <description>You can collect the soul remnants of a dead creature within 15 ft. of you, that has not been dead for over 1 minute. This collection counts as 1 soul point. You can store up to {{soul-points:max}} soul points.</description>
+            </sheet>
+            <rules>
+                <stat name="soul-points:max" value="charisma:modifier" />
+                <stat name="soul-points:max" value="level:warlock:half" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RAISE_SOUL" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RECOVER_SPELL_SLOT" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_SOUL_DEFLECT" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_SOUL_POSSESS" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_SYPHON_LIFE" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_GRIPPING_CHAIN" level="10" requirements="ID__CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_LINK" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RETURN_FAMILIAR" level="10" requirements="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RETURN_STAR" level="10" requirements="ID_WOTC_UA_CLASS_FEATURE_WARLOCK_THE_SEEKER_PACT_OF_THE_STAR_CHAIN" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RETURN_TALISMAN" level="10" requirements="ID_WOTC_UA20191104_CLASS_FEATURE_WARLOCK_PACT_OF_THE_TALISMAN||ID_WOTC_TCE_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TALISMAN" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RETURN_TOME" level="10" requirements="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_VIOLENT_BLADE" level="10" requirements="ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE" />
+            </rules>
+        </element>
+            <element name="Raise Soul" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RAISE_SOUL">
+                <compendium display="false" />
+                <description>
+                    <p>You can return a portion of your soul remnants to a nearby corpse to have it serve your will. As an action, you can expend 3 soul points to cast the <i>animate dead</i> spell. (possibly limit to one corpse per use of this feature.)</p>
+                    <div class="reference">
+                        <div element="ID_PHB_SPELL_ANIMATE_DEAD" />
+                    </div>
+                </description>
+                <sheet action="Action" usage="3 Soul Points">
+                    <description>You can cast the animate dead spell on one corpse.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" />
+                </rules>
+            </element>
+            <element name="Recover Spell Slot" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RECOVER_SPELL_SLOT">
+                <compendium display="false" />
+                <description>
+                    <p>As an action, you can expend a number of soul points equal to twice the level of your spell slots in order to regain one warlock spellslot.</p>
+                </description>
+                <sheet action="Action" usage="2+ Soul Points">
+                    <description>You can expend a number of soul points equal to twice the level of your spell slots in order to regain one warlock spellslot.</description>
+                </sheet>
+            </element>
+            <element name="Soul Deflect" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_SOUL_DEFLECT">
+                <compendium display="false" />
+                <description>
+                    <p>When in danger, you can use your soul remnants to protect yourself. As a reaction, when a creature targets you and makes an attack roll against you, you can expend 1 soul point to increase your AC by 1d6 for that attack.</p>
+                </description>
+                <sheet action="Reaction" usage="1 Soul Point">
+                    <description>When a creature targets you and makes an attack roll against you, you can increase your AC by 1d6 for that attack.</description>
+                </sheet>
+            </element>
+            <element name="Soul Possess" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_SOUL_POSSESS">
+                <compendium display="false" />
+                <description>
+                    <p>You can use you soul remnants to temporarily take over the will of a creature you can see. As an action, you can expend 5 soul points to cast the <i>dominate person</i> spell.</p>
+                    <div class="reference">
+                        <div element="ID_PHB_SPELL_DOMINATE_PERSON" />
+                    </div>
+                </description>
+                <sheet action="Action" usage="5 Soul Points">
+                    <description>You can cast the dominate person spell.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_DOMINATE_PERSON" />
+                </rules>
+            </element>
+            <element name="Syphon Life" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_SYPHON_LIFE">
+                <compendium display="false" />
+                <description>
+                    <p>You can pull health from your soul pool to reinvigorate yourself. As a bonus action, you can sacrifice 1 soul point to regain 1d6 hit points.</p>
+                </description>
+                <sheet action="Bonus Action" usage="1 Soul Point">
+                    <description>You regain 1d6 hit points.</description>
+                </sheet>
+            </element>
+            <element name="Gripping Chain" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_GRIPPING_CHAIN">
+                <compendium display="false" />
+                <description>
+                    <p>If you are a Pact of the Link warlock, you can infuse your chains with the gripping inevitability of the end. As an action, you can sacrifice 10 soul points to chain's grapple save a +3 bonus for 1 hour. Once you have done so, your chains cannot be infused again in this way for 7 days.</p>
+                </description>
+                <sheet action="Action" usage="10 Soul Points">
+                    <description></description>
+                </sheet>
+            </element>
+            <element name="Return Familiar" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RETURN_FAMILIAR">
+                <compendium display="false" />
+                <description>
+                    <p>If you are a Pact of the Chain warlock, you can re-summon a recently killed familiar. As an action you can sacrifice 10 soul points to recast the <i>find familiar</i> spell with a casting time of 1 action. Once you have done so, your familiar cannot be summon again in this way for 7 days.</p>
+                </description>
+                <sheet action="Action" usage="10 Soul Points">
+                    <description>You can recast the find familiar spell with a casting time of 1 action. Once you have done so, your familiar cannot be summon again in this way for 7 days.</description>
+                </sheet>
+            </element>
+            <element name="Return Star" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RETURN_STAR">
+                <compendium display="false" />
+                <description>
+                    <p>If you are a Pact of the Star Chain warlock, you can re-summon a recently lost chain. As an action you can sacrifice 10 soul points to re-summon your pact chain. Once you have done so, your chain cannot be summon again in this way for 7 days.</p>
+                </description>
+                <sheet action="Action" usage="10 Soul Points">
+                    <description>You can re-summon your lost pact chain. Once you have done so, your chain cannot be summon again in this way for 7 days.</description>
+                </sheet>
+            </element>
+            <element name="Return Talisman" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RETURN_TALISMAN">
+                <compendium display="false" />
+                <description>
+                    <p>If you are a Pact of the Talisman warlock, you can re-summon a recently lost talisman. As an action you can sacrifice 10 soul points to re-summon your pact talisman. Once you have done so, your talisman cannot be summon again in this way for 7 days.</p>
+                </description>
+                <sheet action="Action" usage="10 Soul Points">
+                    <description>You can re-summon your lost pact talisman. Once you have done so, your talisman cannot be summon again in this way for 7 days.</description>
+                </sheet>
+            </element>
+            <element name="Return Tome" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_RETURN_TOME">
+                <compendium display="false" />
+                <description>
+                    <p>If you are a Pact of the Tome warlock, you can re-summon a recently lost tome. As an action you can sacrifice 10 soul points to re-summon your pact tome. Once you have done so, your tome cannot be summon again in this way for 7 days.</p>
+                </description>
+                <sheet action="Action" usage="10 Soul Points">
+                    <description>You can re-summon your lost pact tome. Once you have done so, your tome cannot be summon again in this way for 7 days.</description>
+                </sheet>
+            </element>
+            <element name="Violent Blade" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_SOULPOOL_VIOLENT_BLADE">
+                <compendium display="false" />
+                <description>
+                    <p>If you are a Pact of the Blade warlock, you can infuse your blade with immense apocalyptic energy. As an action you can sacrifice 10 soul points to grant your pact of the blade weapon a +3 bonus to all Attack and Damage rolls made with it for 1 hour. Once you have done so, your pact weapon cannot be infused again in this way for 7 days.</p>
+                </description>
+                <sheet action="Action" usage="10 Soul Points">
+                    <description>You can grant your pact weapon a +3 bonus to all Attack and Damage rolls made with it for 1 hour. Once you have done so, your pact weapon cannot be infused again in this way for 7 days.</description>
+                </sheet>
+            </element>
+        <element name="Steeds of the End Times" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_STEEDS_OF_THE_END_TIMES">
+            <description>
+                <p>Starting at 6th level, you can summon an avatar of your Riders Steed as a mount for you to ride into combat. You an expend 4 soul points to summon one of the steeds below, as dictated by your Apocalyptic Vow. The summoning takes 10 minutes. You control the steed in combat. While the steed is within 1 mile of you, you can communicate with it telepathically. While mounted on it, you can make any spell you cast that targets only you also target the steed. The steed disappears temporarily when it drops to 0 hit points or when you dismiss it as an action. Using the Steeds of the End Times feature again re—summons the steed, with all its hit points restored and any conditions removed. your steed counts towards any mounts bonded by the find steed or find greater steed spell. Whenever the mount disappears, it leaves behind any objects it was wearing or carrying.</p>
+                <table>
+                    <thead>
+                        <tr><td>Horseman</td><td class="left">Steed</td></tr>
+                    </thead>
+                    <tr><td>Death</td><td class="left">Avatar of Despair</td></tr>
+                    <tr><td>Famine</td><td class="left">Avatar of Fear</td></tr>
+                    <tr><td>Pestilence</td><td class="left">Avatar of Conquest</td></tr>
+                    <tr><td>War</td><td class="left">Avatar of Ruin</td></tr>
+                </table>
+            </description>
+            <sheet usage="4 Soul Points">
+                <description>You can summon an avatar of your vow in a 10 minute ritual. You control the steed in combat. While the steed is within 1 mile of you, you can communicate with it telepathically. While mounted on it, you can make any spell you cast that targets only you also target the steed.</description>
+            </sheet>
+            <rules>
+                <select type="Companion" name="Steed of the End Times" supports="ID_author_source_COMPANION_AVATAR_OF_CONQUEST|ID_author_source_COMPANION_AVATAR_OF_DESPAIR|ID_author_source_COMPANION_AVATAR_OF_FEAR|ID_author_source_COMPANION_AVATAR_OF_RUIN" />
+            </rules>
+        </element>
+        <element name="Manifestations of the Apocalypse" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_MANIFESTATIONS_OF_THE_APOCALYPSE">
+            <description>
+                <p>Starting at 10th level, you gain the ability to resist some of the harshest of ailments. The vow you made grants you one of the following features.</p>
+                <table>
+                    <thead>
+                        <tr><td>Horseman</td><td class="left">Vow's Benefit</td></tr>
+                    </thead>
+                    <tr><td>Death</td><td class="left">Immune to aging effects and Constitution penalties.</td></tr>
+                    <tr><td>Famine</td><td class="left">Immune to the poisoned condition, you no longer need to eat or drink.</td></tr>
+                    <tr><td>Pestilence</td><td class="left">Immune to disease, including supernatural and magical disease.</td></tr>
+                    <tr><td>War</td><td class="left">Immunity to fear condition and Strength penalties.</td></tr>
+                </table>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_MANIFESTATIONS_OF_THE_APOCALYPSE_DEATH" requirements="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_DEATH" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_MANIFESTATIONS_OF_THE_APOCALYPSE_FAMINE" requirements="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_FAMINE" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_MANIFESTATIONS_OF_THE_APOCALYPSE_PESTILENCE" requirements="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_PESTILENCE" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_MANIFESTATIONS_OF_THE_APOCALYPSE_WAR" requirements="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_WAR" />
+            </rules>
+        </element>
+            <element name="Manifestation of the Apocalypse" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_MANIFESTATIONS_OF_THE_APOCALYPSE_DEATH">
+                <compendium display="false" />
+                <description>
+                    <p>You are immune to aging effects and Constitution penalties.</p>
+                </description>
+                <sheet>
+                    <description>You are immune to aging effects and Constitution penalties.</description>
+                </sheet>
+            </element>
+            <element name="Manifestation of the Apocalypse" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_MANIFESTATIONS_OF_THE_APOCALYPSE_FAMINE">
+                <compendium display="false" />
+                <description>
+                    <p>You are immune to the poisoned condition, you no longer need to eat or drink.</p>
+                </description>
+                <sheet>
+                    <description>You are immune to the poisoned condition, you no longer need to eat or drink.</description>
+                </sheet>
+            </element>
+            <element name="Manifestation of the Apocalypse" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_MANIFESTATIONS_OF_THE_APOCALYPSE_PESTILENCE">
+                <compendium display="false" />
+                <description>
+                    <p>You are immune to disease, including supernatural and magical disease.</p>
+                </description>
+                <sheet>
+                    <description>You are immune to disease, including supernatural and magical disease.</description>
+                </sheet>
+            </element>
+            <element name="Manifestation of the Apocalypse" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_MANIFESTATIONS_OF_THE_APOCALYPSE_WAR">
+                <compendium display="false" />
+                <description>
+                    <p>You are immunity to fear condition and Strength penalties.</p>
+                </description>
+                <sheet>
+                    <description>You are immunity to fear condition and Strength penalties.</description>
+                </sheet>
+            </element>
+        <element name="Harbinger's Wish" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_HARBINGERS_WISH">
+            <description>
+                <p>Starting at 14th level, your connection to a harbinger of the end times grants you an additional way to utilize your soul remnants. You can expend 3 soul points to cast the <i>enervation</i> spell.</p>
+                <p class="indent">Additionally, you Apocalyptic Vow grants you an additional spell that you can cast for 3 soul points.</p>
+                <table>
+                    <thead>
+                        <tr><td>Horseman</td><td class="left">Vow's Benefit</td></tr>
+                    </thead>
+                    <tr><td>Death</td><td class="left">You can cast the <i>negative energy flood</i> spell.</td></tr>
+                    <tr><td>Famine</td><td class="left">You can cast the <i>insect plague</i> spell.</td></tr>
+                    <tr><td>Pestilence</td><td class="left">You can cast the <i>contagion</i> spell.</td></tr>
+                    <tr><td>War</td><td class="left">You can cast the <i>conjure volley</i> spell.</td></tr>
+                </table>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_ENERVATION" />
+                </div>
+            </description>
+            <sheet usage="3 Soul Points">
+                <description>You can cast the enervation spell.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_ENERVATION" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_HARBINGERS_WISH_DEATH" requirements="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_DEATH" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_HARBINGERS_WISH_FAMINE" requirements="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_FAMINE" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_HARBINGERS_WISH_PESTILENCE" requirements="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_PESTILENCE" />
+                <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_HARBINGERS_WISH_WAR" requirements="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_WAR" />
+            </rules>
+        </element>
+            <element name="Harbinger's Wish: Death" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_HARBINGERS_WISH_DEATH">
+                <compendium display="false" />
+                <description>
+                    <p>You can cast the negative energy flood spell.</p>
+                </description>
+                <sheet usage="3 Soul Points">
+                    <description>You can cast the negative energy flood spell.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_XGTE_SPELL_NEGATIVE_ENERGY_FLOOD" />
+                </rules>
+            </element>
+            <element name="Harbinger's Wish: Famine" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_HARBINGERS_WISH_FAMINE">
+                <compendium display="false" />
+                <description>
+                    <p>You can cast the insect plague spell.</p>
+                </description>
+                <sheet usage="3 Soul Points">
+                    <description>You can cast the insect plague spell.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_INSECT_PLAGUE" />
+                </rules>
+            </element>
+            <element name="Harbinger's Wish: Pestilence" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_HARBINGERS_WISH_PESTILENCE">
+                <compendium display="false" />
+                <description>
+                    <p>You can cast the contagion spell.</p>
+                </description>
+                <sheet usage="3 Soul Points">
+                    <description>You can cast the contagion spell.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_CONTAGION" />
+                </rules>
+            </element>
+            <element name="Harbinger's Wish: War" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HARBINGER_HARBINGERS_WISH_WAR">
+                <compendium display="false" />
+                <description>
+                    <p>You can cast the conjure volley spell.</p>
+                </description>
+                <sheet usage="3 Soul Points">
+                    <description>You can cast the conjure volley spell.</description>
+                </sheet>
+                <rules>
+                    <grant type="Spell" id="ID_PHB_SPELL_CONJURE_VOLLEY" />
+                </rules>
+            </element>
+
+    <!-- New Pact Boons -->
+        <element name="Pact of the Mantle" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_MANTLE">
+            <supports>Pact Boon</supports>
+            <description>
+                <p>Your patron grants you a cloak called the Cloak of Preservation. While you don this cloak, you and a number of creatures of your choice equal to your proficiency bonus within 10 ft. of you gain a +1 to their AC.</p>
+                <p class="indent">If you lose your Cloak of Preservation, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and it destroys the previous cloak. The cloak turns to ash when you die.</p>
+            </description>
+            <sheet>
+                <description>While wearing your Cloak of Preservation, you and up to {{proficiency}} creatures of your choice within {{cloak-of-preservation:range}} feet gain +1 to their AC.</description>
+            </sheet>
+            <rules>
+                <stat name="cloak-of-preservation:range" value="10" />
+            </rules>
+        </element>
+        <element name="Pact of the Rune" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_RUNE">
+            <supports>Pact Boon</supports>
+            <description>
+                <p>Your patron grants you a rune called the Purs Rune. When you gain this feature, you can use your action to restrict the movements of one creature you can see within 30 ft. of you. While restricted, the creatures movement is halfed, with the rune appearing on their forehead.</p>
+                <p class="indent">You can only have one creature under the effects of the Purs Rune at a time.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can restrict the movements of one creature you can see within 30 ft. of you. While restricted, the creatures movement is halfed, with the rune appearing on their forehead. You can only have one creature under the effects of the Purs Rune at a time.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <!-- New Eldritch Invocations -->
+        <element name="Blade of Ild" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_BLADE_OF_ILD">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_RUNE</requirements>
+            <prerequisite>7th level, Pact of the Rune feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th level, Pact of the Rune feature</p>
+                <p class="indent">You can expend a warlock spell slot to inscribe the Ild rune onto a melee weapon. The weapon gains a ghostly aura of yellow flame and deals fire damage instead of piercing, slashing, or bludgeoning damage, as well as bonus damage equal to your spell slot level.</p>
+                <p class="indent">These effects last for 24 hours or until you use this property again.</p>
+            </description>
+            <sheet>
+                <description>You can expend a warlock spell slot to inscribe the Ild rune onto a melee weapon. The weapon deals fire damage instead of piercing, slashing, or bludgeoning damage, as well as bonus damage equal to your spell slot level. These effects last for 24 hours or until you use this property again.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Bow of Vind" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_BOW_OF_VIND">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_RUNE</requirements>
+            <prerequisite>7th level, Pact of the Rune feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th level, Pact of the Rune feature</p>
+                <p class="indent">You can expend a warlock spell slot to inscribe the Vind rune onto a ranged weapon. The weapon gains a ghostly blue aura and has its normal and maximum range doubled. The weapon’s attacks do not suffer disadvantage due to range.</p>
+                <p class="indent">Additionally, your attacks deal bonus damage equal to your spell slot level.</p>
+                <p class="indent">These effects last for 24 hours or until you use this property again.</p>
+            </description>
+            <sheet>
+                <description>You can expend a warlock spell slot to inscribe the Vind rune onto a ranged weapon. The weapon has its normal and maximum range doubled. The weapon’s attacks do not suffer disadvantage due to range. Your attacks deal bonus damage equal to your spell slot level. These effects last for 24 hours or until you use this property again.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Brands of Ild and Kalt" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_BRANDS_OF_ILD_AND_KALT">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:5],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_RUNE</requirements>
+            <prerequisite>5th level, Pact of the Rune feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 5th level, Pact of the Rune feature</p>
+                <p class="indent">Whenever you target a creature with your Purs Rune feature, the creature makes a Wisdom saving throw against your spell save DC. Upon a failure, the creature take 1d8 damage of your choice of fire or cold damage.</p>
+            </description>
+            <sheet>
+                <description>Whenever you target a creature with your Purs Rune feature, the creature makes a Wisdom saving throw against your spell save DC. Upon a failure, the creature take 1d8 damage of your choice of fire or cold damage.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Bulwark Brand" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_BULWARK_BRAND">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:9],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_RUNE</requirements>
+            <prerequisite>9th level, Pact of the Rune feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 9th level, Pact of the Rune feature</p>
+                <p class="indent">You Learn of a rune that grants you additional protection. You gain a +1 bonus to your AC.</p>
+            </description>
+            <sheet>
+                <description>You gain a +1 bonus to your AC.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Dagger of Kalt" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_DAGGER_OF_KALT">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_RUNE</requirements>
+            <prerequisite>7th level, Pact of the Rune feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th level, Pact of the Rune feature</p>
+                <p class="indent">You can expend a warlock spell slot to inscribe the Kalt rune onto a melee weapon. The weapon gains a ghostly white aura and deals cold damage instead of piercing, slashing, or bludgeoning damage, as well as bonus damage equal to your spell slot level.</p>
+                <p class="indent">These effects last for 24 hours or until you use this property again.</p>
+            </description>
+            <sheet>
+                <description>You can expend a warlock spell slot to inscribe the Kalt rune onto a melee weapon. The weapon deals cold damage instead of piercing, slashing, or bludgeoning damage, as well as bonus damage equal to your spell slot level. These effects last for 24 hours or until you use this property again.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Defensive One" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_DEFENSIVE_ONE">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_MANTLE</requirements>
+            <prerequisite>7th level, Pact of the Mantle feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th level, Pact of the Mantle feature</p>
+                <p class="indent">You learn to alter the properties of your Cloak of Preservation. Whenever you or a friendly creature within you cloaks radius must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (minimum 1) while you are conscious.</p>
+            </description>
+            <sheet>
+                <description>Whenever you or a friendly creature within you cloaks radius must make a saving throw, the creature gains a +{{cha-mod:min-one}} bonus to the saving throw while you are conscious.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Eldritch Enhancement" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_ENHANCEMENT">
+            <supports>Eldritch Invocation</supports>
+            <description>
+                <p>You gain proficiency in the Acrobatics and Athletics skills.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ACROBATICS" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+            </rules>
+        </element>
+        <element name="Eldritch Mobility" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_MOBILITY">
+            <supports>Eldritch Invocation</supports>
+            <description>
+                <p>Your walking speed increases by 10 feet.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="innate speed:misc" value="10" bons="eldritch mobility" />
+            </rules>
+        </element>
+        <element name="Eye of the Beast" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_EYE_OF_THE_BEAST">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN</requirements>
+            <prerequisite>Pact of the Chain feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Chain feature</p>
+                <p class="indent">While you're familiar is summoned with your Pact of the Chain feature, you can use a free action to see through your familiar’s eyes and hear what it hears, gaining the benefits of any special senses that the familiar has, without deafening and blinding your own senses.</p>
+            </description>
+            <sheet>
+                <description>While you're familiar is summoned, you can use a free action to see through your familiar’s eyes and hear what it hears, gaining the benefits of any special senses that the familiar has, without deafening and blinding your own senses.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Far Watch" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_FAR_WATCH">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+            <prerequisite>7th level, Pact of the Tome feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th level, Pact of the Tome feature</p>
+                <p class="indent">A new page appears in your Book of Shadows. With your permission, a creature can use its action to write its name on that page, which can contain a number of names equal to your proficiency bonus.</p>
+                <p class="indent">You can cast the locate creature spell, targeting a creature whose name is on the page, without using a spell slot and without using material components. When you do so, a map of the area around you appears in your tome, with a mark showing the creatures position.</p>
+                <p class="indent">As an action, you can magically erase a name on the page by touching it.</p>
+            </description>
+            <sheet>
+                <description>A new page appears in your Book of Shadows. With your permission, up to {{proficiency}} creatures can use their action to write their name on that page. You can cast the locate creature spell, targeting a creature whose name is on the page, without using a spell slot and without using material components. When you do so, a map of the area around you appears in your tome, with a mark showing the creatures position.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Fearless One" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_FEARLESS_ONE">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:12],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_MANTLE</requirements>
+            <prerequisite>12th level, Pact of the Mantle feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 12th level, Pact of the Mantle feature</p>
+                <p class="indent">You learn to alter the properties of your Cloak of Preservation. You and friendly creatures within you cloaks radius can not be frightened while you are conscious.</p>
+            </description>
+            <sheet>
+                <description>You and friendly creatures within you cloaks radius can not be frightened while you are conscious.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Hammer of Stein" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_HAMMER_OF_STEIN">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_RUNE</requirements>
+            <prerequisite>7th level, Pact of the Rune feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th level, Pact of the Rune feature</p>
+                <p class="indent">You can expend a warlock spell slot to inscribe the Stein rune onto a weapon that deals bludgeoning damage. The weapon gains a ghostly brown aura, and bludgeoning damage dealt by the weapon ignores resistance and immunity. If you roll the maximum on the weapon’s damage die or dice, the target of your attack is knocked prone if it is a creature.</p>
+                <p class="indent">Additionally, your attacks deal bonus damage equal to your spell slot level.</p>
+                <p class="indent">These effects last for 24 hours or until you use this property again.</p>
+            </description>
+            <sheet>
+                <description>You can expend a warlock spell slot to inscribe the Stein rune onto a weapon that deals bludgeoning damage. Bludgeoning damage dealt by the weapon ignores resistance and immunity. If you roll the maximum on the weapon’s damage die or dice, the target of your attack is knocked prone if it is a creature. Additionally, your attacks deal bonus damage equal to your spell slot level. These effects last for 24 hours or until you use this property again.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Improved Pact Link" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_LINK">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID__CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_LINK</requirements>
+            <prerequisite>Pact of the Link feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Link feature</p>
+                <p class="indent">You can use your summoned chain as a spellcasting focus for your warlock spells.</p>
+                <p class="indent">In addition, the chain gains a +1 bonus to its attack and damage rolls.</p>
+            </description>
+            <sheet>
+                <description>You can use your summoned chain as a spellcasting focus for your warlock spells. In addition, the chain gains a +1 bonus to its attack and damage rolls.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Mantle of the Veil" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_MANTLE_OF_THE_VEIL">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:12],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_MANTLE</requirements>
+            <prerequisite>12th level, Pact of the Mantle feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 12th level, Pact of the Mantle feature</p>
+                <p class="indent">While wearing your Cloak of Preservation, you can pull its hood over your head to cause yourself to become invisible. While you are invisible, anything you are carrying or wearing is invisible with you. You become visible when you cease wearing the hood. Pulling the hood up or down requires an action.</p>
+                <p class="indent">Deduct the time you are invisible, in increments of 1 minute, from the cloak's maximum duration of 10 minutes. After 1 hour of use, the cloak's invisibility ceases to function. For every uninterrupted period of 12 hours the cloak goes unused, it regains 5 minutes of duration.</p>
+            </description>
+            <sheet>
+                <description>While wearing your Cloak of Preservation, you can become invisible.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Reaching Aid" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_REACHING_AID">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_MANTLE</requirements>
+            <prerequisite>Pact of the Mantle feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Mantle feature</p>
+                <p class="indent">You learn to alter the properties of your Cloak of Preservation. The range of your features is doubled from 10 ft. to 20 ft.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="cloak-of-preservation:range" value="10" />
+            </rules>
+        </element>
+        <element name="Restraining Rune" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_RESTRAINING_RUNE">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:12],ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_RUNE</requirements>
+            <prerequisite>12th level, Pact of the Rune</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 12th level, Pact of the Rune</p>
+                <p class="indent">Whenever you target a creature with your Purs Rune feature, the creature must make a Strength saving throw against your spell save DC. Upon failure, the creature is restrained for one minute.</p>
+                <p class="indent">The creature can make a Strength saving throw at the end of its turn to end the effect early.</p>
+            </description>
+            <sheet>
+                <description>Whenever you target a creature with your Purs Rune feature, the creature must make a Strength saving throw against your spell save DC. Upon failure, the creature is restrained for one minute. The creature can make a Strength saving throw at the end of its turn to end the effect early.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Rune Casting" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_RUNE_CASTING">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_author_source_CLASS_FEATURE_PACT_BOON_PACT_OF_THE_RUNE</requirements>
+            <prerequisite>Pact of the Rune</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Rune</p>
+                <p class="indent">Whenever you use your Purs Rune feature, you can target a number of creatures equal to 1/2 you charisma modifier rounded down (minimum 1).</p>
+            </description>
+            <sheet>
+                <description>Whenever you use your Purs Rune feature, you can target a number of creatures equal to 1/2 you charisma modifier rounded down (minimum 1).</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Swarm of Locusts" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_SWARM_OF_LOCUSTS">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:9]</requirements>
+            <prerequisite>9th level</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 9th level</p>
+                <p class="indent">You can cast insect plague once using a warlock spell slot. You can't do so again until you finish a long rest.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_INSECT_PLAGUE" />
+                </div>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast insect plague once using a warlock spell slot.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_INSECT_PLAGUE" />
+            </rules>
+        </element>
+
+    <!-- Avatars of the Apocalypse -->
+        <element name="Avatar of Conquest" type="Companion" source="source" id="ID_author_source_COMPANION_AVATAR_OF_CONQUEST">
+            <requirements>ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_PESTILENCE</requirements>
+            <description />
+            <setters>
+                <set name="size">Large</set>
+                <set name="type">fiend</set>
+                <set name="alignment">neutral evil</set>
+                <set name="ac">13 (natural armor)</set>
+                <set name="hp">68 (8d10+24)</set>
+                <set name="speed">60 ft., fly 90 ft.</set>
+                <set name="strength">18</set>
+                <set name="dexterity">15</set>
+                <set name="constitution">16</set>
+                <set name="intelligence">10</set>
+                <set name="wisdom">13</set>
+                <set name="charisma">15</set>
+                <set name="saves">Dex +4, Wis +3, Cha +4</set>
+                <set name="skills">Perception +6</set>
+                <set name="damage immunities">Acid</set>
+                <set name="senses">passive Perception 16</set>
+                <set name="languages">Knows all languages, but can't speak</set>
+                <set name="challenge">3 (700 XP)</set>
+                <set name="traits">ID_author_source_COMPANION_TRAIT_CONFER_ACID_RESISTANCE</set>
+                <set name="actions">ID_author_source_COMPANION_ACTION_CONQUEST_HOOVES,ID_author_source_COMPANION_ACTION_AVATAR_ETHEREAL_STRIDE</set>
+            </setters>
+            <rules>
+                <stat name="companion:ac" value="13" />
+                <stat name="companion:hp:max" value="68" bonus="base" />
+                <stat name="companion:speed" value="30" bonus="base" />
+                <stat name="companion:speed:fly" value="60" bonus="base" />
+                <stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+                <stat name="companion:dexterity:save:proficiency" value="companion:proficiency" />
+                <stat name="companion:wisdom:save:proficiency" value="companion:proficiency" />
+                <stat name="companion:charisma:save:proficiency" value="companion:proficiency" />
+            </rules>
+        </element>
+        <element name="Avatar of Despair" type="Companion" source="source" id="ID_author_source_COMPANION_AVATAR_OF_DESPAIR">
+            <requirements>ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_DEATH</requirements>
+            <description />
+            <setters>
+                <set name="size">Large</set>
+                <set name="type">fiend</set>
+                <set name="alignment">neutral evil</set>
+                <set name="ac">13 (natural armor)</set>
+                <set name="hp">68 (8d10+24)</set>
+                <set name="speed">60 ft., fly 90 ft.</set>
+                <set name="strength">18</set>
+                <set name="dexterity">15</set>
+                <set name="constitution">16</set>
+                <set name="intelligence">10</set>
+                <set name="wisdom">13</set>
+                <set name="charisma">15</set>
+                <set name="saves">Dex +4, Wis +3, Cha +4</set>
+                <set name="skills">Perception +6</set>
+                <set name="damage immunities">Necrotic</set>
+                <set name="senses">passive Perception 16</set>
+                <set name="languages">Knows all languages, but can't speak</set>
+                <set name="challenge">3 (700 XP)</set>
+                <set name="traits">ID_author_source_COMPANION_TRAIT_CONFER_NECROTIC_RESISTANCE</set>
+                <set name="actions">ID_author_source_COMPANION_ACTION_DESPAIR_HOOVES,ID_author_source_COMPANION_ACTION_AVATAR_ETHEREAL_STRIDE</set>
+            </setters>
+            <rules>
+                <stat name="companion:ac" value="13" />
+                <stat name="companion:hp:max" value="68" bonus="base" />
+                <stat name="companion:speed" value="30" bonus="base" />
+                <stat name="companion:speed:fly" value="60" bonus="base" />
+                <stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+                <stat name="companion:dexterity:save:proficiency" value="companion:proficiency" />
+                <stat name="companion:wisdom:save:proficiency" value="companion:proficiency" />
+                <stat name="companion:charisma:save:proficiency" value="companion:proficiency" />
+            </rules>
+        </element>
+        <element name="Avatar of Fear" type="Companion" source="source" id="ID_author_source_COMPANION_AVATAR_OF_FEAR">
+            <requirements>ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_FAMINE</requirements>
+            <description />
+            <setters>
+                <set name="size">Large</set>
+                <set name="type">fiend</set>
+                <set name="alignment">neutral evil</set>
+                <set name="ac">13 (natural armor)</set>
+                <set name="hp">68 (8d10+24)</set>
+                <set name="speed">60 ft., fly 90 ft.</set>
+                <set name="strength">18</set>
+                <set name="dexterity">15</set>
+                <set name="constitution">16</set>
+                <set name="intelligence">10</set>
+                <set name="wisdom">13</set>
+                <set name="charisma">15</set>
+                <set name="saves">Dex +4, Wis +3, Cha +4</set>
+                <set name="skills">Perception +6</set>
+                <set name="damage immunities">Poison</set>
+                <set name="senses">passive Perception 16</set>
+                <set name="languages">Knows all languages, but can't speak</set>
+                <set name="challenge">3 (700 XP)</set>
+                <set name="traits">ID_author_source_COMPANION_TRAIT_CONFER_POISON_RESISTANCE</set>
+                <set name="actions">ID_author_source_COMPANION_ACTION_FEAR_HOOVES,ID_author_source_COMPANION_ACTION_AVATAR_ETHEREAL_STRIDE</set>
+            </setters>
+            <rules>
+                <stat name="companion:ac" value="13" />
+                <stat name="companion:hp:max" value="68" bonus="base" />
+                <stat name="companion:speed" value="30" bonus="base" />
+                <stat name="companion:speed:fly" value="60" bonus="base" />
+                <stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+                <stat name="companion:dexterity:save:proficiency" value="companion:proficiency" />
+                <stat name="companion:wisdom:save:proficiency" value="companion:proficiency" />
+                <stat name="companion:charisma:save:proficiency" value="companion:proficiency" />
+            </rules>
+        </element>
+        <element name="Avatar of Ruin" type="Companion" source="source" id="ID_author_source_COMPANION_AVATAR_OF_RUIN">
+            <requirements>ID_author_source_ARCHETYPE_FEATURE_HARBINGER_APOCALYPTIC_VOW_WAR</requirements>
+            <description />
+            <setters>
+                <set name="size">Large</set>
+                <set name="type">fiend</set>
+                <set name="alignment">neutral evil</set>
+                <set name="ac">13 (natural armor)</set>
+                <set name="hp">68 (8d10+24)</set>
+                <set name="speed">60 ft., fly 90 ft.</set>
+                <set name="strength">18</set>
+                <set name="dexterity">15</set>
+                <set name="constitution">16</set>
+                <set name="intelligence">10</set>
+                <set name="wisdom">13</set>
+                <set name="charisma">15</set>
+                <set name="saves">Dex +4, Wis +3, Cha +4</set>
+                <set name="skills">Perception +6</set>
+                <set name="damage immunities">Fire</set>
+                <set name="senses">passive Perception 16</set>
+                <set name="languages">Knows all languages, but can't speak</set>
+                <set name="challenge">3 (700 XP)</set>
+                <set name="traits">ID_author_source_COMPANION_TRAIT_CONFER_FIRE_RESISTANCE</set>
+                <set name="actions">ID_author_source_COMPANION_ACTION_RUIN_HOOVES,ID_author_source_COMPANION_ACTION_AVATAR_ETHEREAL_STRIDE</set>
+            </setters>
+            <rules>
+                <stat name="companion:ac" value="13" />
+                <stat name="companion:hp:max" value="68" bonus="base" />
+                <stat name="companion:speed" value="30" bonus="base" />
+                <stat name="companion:speed:fly" value="60" bonus="base" />
+                <stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+                <stat name="companion:dexterity:save:proficiency" value="companion:proficiency" />
+                <stat name="companion:wisdom:save:proficiency" value="companion:proficiency" />
+                <stat name="companion:charisma:save:proficiency" value="companion:proficiency" />
+            </rules>
+        </element>
+            <element name="Confer Acid Resistance" type="Companion Trait" source="source" id="ID_author_source_COMPANION_TRAIT_CONFER_ACID_RESISTANCE">
+                <compendium display="false" />
+                <description>
+                    <p>The Avatar of Conquest can grant resistance to acid damage to anyone riding it.</p>
+                </description>
+                <sheet>
+                    <description>The Avatar of Conquest can grant resistance to acid damage to anyone riding it.</description>
+                </sheet>
+            </element>
+            <element name="Confer Necrotic Resistance" type="Companion Trait" source="source" id="ID_author_source_COMPANION_TRAIT_CONFER_NECROTIC_RESISTANCE">
+                <compendium display="false" />
+                <description>
+                    <p>The Avatar of Despair can grant resistance to necrotic damage to anyone riding it.</p>
+                </description>
+                <sheet>
+                    <description>The Avatar of Despair can grant resistance to necrotic damage to anyone riding it.</description>
+                </sheet>
+            </element>
+            <element name="Confer Poison Resistance" type="Companion Trait" source="source" id="ID_author_source_COMPANION_TRAIT_CONFER_POISON_RESISTANCE">
+                <compendium display="false" />
+                <description>
+                    <p>The Avatar of Fear can grant resistance to poison damage to anyone riding it.</p>
+                </description>
+                <sheet>
+                    <description>The Avatar of Fear can grant resistance to poison damage to anyone riding it.</description>
+                </sheet>
+            </element>
+            <element name="Confer Fire Resistance" type="Companion Trait" source="source" id="ID_author_source_COMPANION_TRAIT_CONFER_FIRE_RESISTANCE">
+                <compendium display="false" />
+                <description>
+                    <p>The Avatar of Fear can grant resistance to fire damage to anyone riding it.</p>
+                </description>
+                <sheet>
+                    <description>The Avatar of Fear can grant resistance to fire damage to anyone riding it.</description>
+                </sheet>
+            </element>
+        <element name="Hooves" type="Companion Action" source="source" id="ID_author_source_COMPANION_ACTION_CONQUEST_HOOVES">
+            <description>
+                <p>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) acid damage.</p>
+            </description>
+            <sheet>
+                <description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) acid damage.</description>
+            </sheet>
+        </element>
+        <element name="Hooves" type="Companion Action" source="source" id="ID_author_source_COMPANION_ACTION_DESPAIR_HOOVES">
+            <description>
+                <p>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) necrotic damage.</p>
+            </description>
+            <sheet>
+                <description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) necrotic damage.</description>
+            </sheet>
+        </element>
+        <element name="Hooves" type="Companion Action" source="source" id="ID_author_source_COMPANION_ACTION_FEAR_HOOVES">
+            <description>
+                <p>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) poison damage.</p>
+            </description>
+            <sheet>
+                <description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) poison damage.</description>
+            </sheet>
+        </element>
+        <element name="Hooves" type="Companion Action" source="source" id="ID_author_source_COMPANION_ACTION_RUIN_HOOVES">
+            <description>
+                <p>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) fire damage.</p>
+            </description>
+            <sheet>
+                <description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) fire damage.</description>
+            </sheet>
+        </element>
+        <element name="Ethereal Stride" type="Companion Action" source="source" id="ID_author_source_COMPANION_ACTION_AVATAR_ETHEREAL_STRIDE">
+            <description>
+                <p>The Avatar up to three willing creatures within 5 feet of it magically enter the Plane of Abaddon from the Material Plane, or vice versa.</p>
+            </description>
+            <sheet>
+                <description>The Avatar and up to three willing creatures within 5 feet of it magically enter the Plane of Abaddon from the Material Plane, or vice versa.</description>
+            </sheet>
+        </element>
+
+</elements>
