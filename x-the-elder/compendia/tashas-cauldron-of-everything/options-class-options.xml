@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>Tasha’s Cauldron of Everything New Class Options</name>
-        <update version="0.0.1">
+        <update version="0.0.2">
             <file name="options-class-options.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/tashas-cauldron-of-everything/options-class-options.xml" />
         </update>
     </info>
@@ -468,10 +468,13 @@
                 <p class="indent">You can use this feature to mark a favored enemy a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
                 <p class="indent">This feature’s extra damage increases when you reach certain levels in this class: to 1d6 at 6th level and to 1d8 at 14th level.</p>
             </description>
-            <sheet>
-                <description></description>
+            <sheet usage="{{proficiency}}/Long Rest">
+                <description>When you hit a creature with an attack roll, you can call on your mystical bond with nature to mark the target as your favored enemy for 1 minute or until you lose your concentration. The first time on each of your turns that you hit the favored enemy and deal damage to it, including when you mark it, you can increase that damage by 1d{{favored-foe:damage-dice}}.</description>
             </sheet>
             <rules>
+                <stat name="favored-foe:damage-dice" value="4" bonus="base" level="1" />
+                <stat name="favored-foe:damage-dice" value="6" bonus="base" level="6" />
+                <stat name="favored-foe:damage-dice" value="8" bonus="base" level="14" />
             </rules>
         </element>
         <element name="Deft Explorer" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCE_CLASS_FEATURE_RANGER_DEFT_EXPLORER">
