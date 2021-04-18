@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Embodiment of the Protector 1.1.1 Draconic Embodiment</name>
+        <update version="0.0.1">
+            <file name="demi-dragon-protector.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/aron/demi-dragon-protector.xml" />
+        </update>
+    </info>
+    
+    <element name="Embodiment of the Protector" type="Source" source="Core" id="ID_ARON_GMBINDER_SOURCE_EMBODIMENT_OF_THE_PROTECTOR">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">EOTP</set>
+            <set name="url">https://www.gmbinder.com/share/-MEXwcurRmzBNXqjGsoZ</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="ARON" url="https://www.gmbinder.com/profile/aron">Aron</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210225</set>
+        </setters>
+    </element>
+
+    <element name="Embodiment of the Protector" type="Archetype" source="Embodiment of the Protector" id="ID_ARON_EOTP_ARCHETYPE_DEMI_DRAGON_EMBODIMENT_OF_THE_PROTECTOR">
+        <supports>Draconic Embodiment</supports>
+        <description>
+            <p>Some demi-dragons choose a path of protection. These demi-dragons are often of a metallic or even an earthen hue. Those that choose to embody protection become a stalwart shield to their allies, emboldening themselves with the magical powers of their foes.</p>
+            <div element="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_SHELTER_THE_BROOD" />
+            <div element="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_STRENGTH_OF_STEEL" />
+            <div element="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_RAPID_RESPONSE" />
+            <div element="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_VIGOROUS_WINGS" />
+            <div element="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_WINGS_OF_PROTECTION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_SHELTER_THE_BROOD" level="3" />
+            <grant type="Archetype Feature" id="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_STRENGTH_OF_STEEL" level="3" />
+            <grant type="Archetype Feature" id="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_RAPID_RESPONSE" level="6" />
+            <grant type="Archetype Feature" id="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_VIGOROUS_WINGS" level="10" />
+            <grant type="Archetype Feature" id="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_WINGS_OF_PROTECTION" level="17" />
+        </rules>
+    </element>
+        <element name="Shelter the Brood" type="Archetype Feature" source="Embodiment of the Protector" id="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_SHELTER_THE_BROOD">
+            <description>
+                <p class="flavor">3rd-level Protector feature</p>
+                <p class="indent">Your wings grow thick plates of armor and your bones strengthen. You can use your wings to protect yourself and your allies. As a bonus action, you can spread your wings in an area around you. Until the start of your next turn, you and creatures of your choosing within 5 ft. of you are considered to be behind half cover. This cover protects from danger from all sides, except from below. If a creature moves within 5 ft. of you while this ability is active, you can choose to extend the bonus of this ability to them.</p>
+                <div class="sidebar">
+                    <h5 class="caption">Cover (PHB 196)</h5>
+                    <p>Walls, trees, creatures, and other obstacles can provide cover during combat, making a target more difficult to harm. A target can benefit from cover only when an attack or other effect originates on the opposite side of the cover.</p>
+                   <p class="indent">A target with half cover has a +2 bonus to AC and Dexterity saving throws. A target has half cover if an obstacle blocks at least half of its body. The obstacle might be a low wall, a large piece of furniture, a narrow tree trunk, or a creature, whether that creature is an enemy or a friend.</p>
+                </div>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can spread your wings in an area around you. Until the start of your next turn, you and creatures of your choosing within 5 ft. of you are considered to be behind half cover.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Strength of Steel" type="Archetype Feature" source="Embodiment of the Protector" id="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_STRENGTH_OF_STEEL">
+            <description>
+                <p class="flavor">3rd-level Protector feature</p>
+                <p class="indent">Like true steel dragons, you are resistant to magic. Whenever you are a target of any spell of 1st level or higher, you gain temporary hit points equal to your Constitution modifier (minimum 1) before the spell's effects are resolved.</p>
+            </description>
+            <sheet>
+                <description>Whenever you are a target of any spell of 1st level or higher, you gain {{con-mod:min-one}} temporary hit points before the spell's effects are resolved.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Rapid Response" type="Archetype Feature" source="Embodiment of the Protector" id="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_RAPID_RESPONSE">
+            <description>
+                <p class="flavor">6th-level Protector feature</p>
+                <p class="indent">In battle, your watchful alertness is matched only by the speed of your response. Whenever a creature that is granted cover from your Shelter the Brood is attacked, you can make a tail attack against the attacking creature as a reaction.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>Whenever a creature that is granted cover from your Shelter the Brood is attacked, you can make a tail attack against the attacking creature.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Vigorous Wings" type="Archetype Feature" source="Embodiment of the Protector" id="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_VIGOROUS_WINGS">
+            <description>
+                <p class="flavor">10th-level Protector feature</p>
+                <p class="indent">The edges of your wings are bladed like those of a steel dragon. You can use your wings as natural weapons, with which you are proficient, to make melee weapon attacks. When you attack with them, your wings shear an area dealing 1d4 + your Strength modifier slashing damage to each enemy in a 10 ft. cone. Roll an attack separately for each target in the cone.</p>
+            </description>
+            <sheet>
+                <description>+{{natural-weapons:attack-bonus}} to hit, all enemies within 10-ft. cone. Hit: 1d6 + {{strength:modifier}} slashing damage. Roll an attack separately for each target in the cone.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Wings of Protection" type="Archetype Feature" source="Embodiment of the Protector" id="ID_ARON_EOTP_ARCHETYPE_FEATURE_PROTECTOR_WINGS_OF_PROTECTION">
+            <description>
+                <p class="flavor">17th-level Protector feature</p>
+                <p class="indent">You are a living avatar of protection to any who find themselves under your watchful gaze. When a friendly creature that you can see is the target of an attack, you can use your reaction to move up to 30 ft. using your glide or flying speed and resolve that attack with yourself as the target. If the attack would still hit you, you reduce the damage that you take by an amount equal to your Constitution + Charisma modifiers. You can use this feature a number of times equal to your Constitution modifier (a minimum of once). You regain expended uses when you finish a short or long rest.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When a friendly creature that you can see is the target of an attack, you can use your reaction to move up to 30 ft. using your glide or flying speed and resolve that attack with yourself as the target.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>

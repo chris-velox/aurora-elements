@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Demi-Dragon v4.0.1 Feats</name>
+        <update version="0.0.2">
+            <file name="feats-demi-dragon.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/aron/feats-demi-dragon.xml" />
+        </update>
+    </info>
+    
+    <element name="Broadened Breath" type="Feat" source="Demi-Dragon" id="ID_ARON_DD_FEAT_DEMI_DRAGON_BROADENED_BREATH">
+        <requirements>ID_ARON_DD_RACE_DEMI_DRAGON||ID_RACE_DRAGONBORN</requirements>
+        <prerequisite>Demi-dragon or dragonborn, line breath</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Demi-dragon or dragonborn, line breath</p>
+            <p class="indent">The width of your elemental breath broadens, spilling forth to wash over your enemies. You gain the following benefits:</p>
+            <ul>
+                <li>Your Constitution or Charisma increases by 1, to a maximum of 20.</li>
+                <li>The width of the area created by your Dragon's Breath or Breath Weapon increases from 5 feet to 10 feet.</li>
+            </ul>
+        </description>
+        <sheet display="false" />
+        <rules>
+			<select type="Ability Score Improvement" name="ASI, Broadened Breath" supports="ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+            <stat name="dragons-breath:width" value="5" />
+            <stat name="dragons-breath:cone-length" value="5" />
+        </rules>
+    </element>
+    <element name="Dragon's Hoard" type="Feat" source="Demi-Dragon" id="ID_ARON_DD_FEAT_DEMI_DRAGON_DRAGONS_HOARD">
+        <requirements>ID_ARON_DD_RACE_DEMI_DRAGON,[level:8]</requirements>
+        <prerequisite>Demi-dragon, 8th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Demi-dragon, 8th level</p>
+            <p class="indent">A deep-seated greed takes hold of you, and the sight of wealth excites you. You can construct a hoard using any amount of your treasure anywhere you like; during a long rest, you magically link yourself to that spot, claiming it as your hoard. Coins, gems, art, and other nonmagical wealth contribute to your hoard, calculated in gold pieces. You can only be linked to one hoard at a time, and can only link yourself to a new hoard once every seven days. If any treasure is removed from the hoard, you immediately know what is being taken. You gain the following benefits based on how much wealth is stored in the hoard. If enough wealth is lost to put you below a wealth threshold, you lose all benefits associated with that threshold until you again have enough wealth to qualify.</p>
+            <table>
+                <thead>
+                    <tr><td>Wealth</td><td>Absorb Magic Enchantments</td><td>Features</td></tr>
+                </thead>
+                <tr><td>3,000</td><td>+3</td><td><b>Siphon Treasure</b></td></tr>
+                <tr><td>10,000</td><td>+1</td><td><b>Auric Slumber</b></td></tr>
+                <tr><td>30,000</td><td>+1</td><td><b>Unbound Attunement</b></td></tr>
+            </table>
+            <p class="indent"><b>Absorb Magic Enchantments.</b> The maximum limit of magic items that you can have absorbed with Absorb Magic increases by the listed amount for that threshold.</p>
+            <p class="indent"><b>Siphon Treasure.</b> Your magical hunger extends across any distance to the extraordinary items stored in your hoard. You can use any piece of non-equipment treasure, such as a potion or wondrous item, that is stored within your hoard as if you were holding it. The item functions as normal, and is consumed on use or expends charges if it normally would. If the item requires itself to function, such as an immovable rod or a figurine of wondrous power, you conjure a spectral projection of it. Such a spectral projection represents the magical essence of the item being pulled forth by you, and any damage taken by such a projection carries over to the real item. An unattended projection fades after 1d4 hours.</p>
+            <p class="indent"><b>Auric Slumber.</b> Whenever you finish a long rest while resting within 30 feet of your hoard, you gain temporary hit points equal to twice your level, lasting for up to 7 days. In addition, your exhaustion level, if any, is decreased by 1.</p>
+            <p class="indent"><b>Unbound Attunement.</b> You can attune to up to four magic items at once. Additionally, you ignore all class, race, and level requirements on the use of magic items.</p>
+        </description>
+        <sheet>
+            <description>During a long rest, you magically link yourself to your hoard. Coins, gems, art, and other nonmagical wealth contribute to your hoard, calculated in gold pieces. You can only be linked to one hoard at a time, and can only link yourself to a new hoard once every seven days.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+        <element name="3,000 gp Demi-Dragon Hoard" type="Item" source="Demi-Dragon" id="ID_source_abbreviation_ITEM_TREASURE_DEMI_DRAGON_HOARD_3000">
+            <requirements>ID_ARON_DD_RACE_DEMI_DRAGON</requirements>
+            <description>
+                <p>Your dragon hoard reaches 3,000 gp in coins, gems, art and items.</p>
+            </description>
+            <setters>
+                <set name="category">Treasure</set>
+                <set name="cost" currency="gp">3000</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="stackable">false</set>
+                <set name="valuable">true</set>
+            </setters>
+            <rules>
+                <stat name="absorb-magic:enchantments" value="3" />
+                <grant type="Feat Feature" id="ID_ARON_DD_FEAT_FEATURE_DEMI_DRAGON_DRAGONS_HOARD_SIPHON_TREASURE" />
+            </rules>
+        </element>
+        <element name="10,000 gp Demi-Dragon Hoard" type="Item" source="Demi-Dragon" id="ID_source_abbreviation_ITEM_TREASURE_DEMI_DRAGON_HOARD_10000">
+            <requirements>ID_source_abbreviation_ITEM_TREASURE_DEMI_DRAGON_HOARD_3000,ID_ARON_DD_RACE_DEMI_DRAGON</requirements>
+            <description>
+                <p>Your dragon hoard reaches 10,000 gp in coins, gems, art and items.</p>
+            </description>
+            <setters>
+                <set name="category">Treasure</set>
+                <set name="cost" currency="gp">3000</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="stackable">false</set>
+                <set name="valuable">true</set>
+            </setters>
+            <rules>
+                <stat name="absorb-magic:enchantments" value="1" />
+                <grant type="Feat Feature" id="ID_ARON_DD_FEAT_FEATURE_DEMI_DRAGON_DRAGONS_HOARD_AURIC_SLUMBER" />
+            </rules>
+        </element>
+        <element name="30,000 gp Demi-Dragon Hoard" type="Item" source="Demi-Dragon" id="ID_source_abbreviation_ITEM_TREASURE_DEMI_DRAGON_HOARD_30000">
+            <requirements>ID_source_abbreviation_ITEM_TREASURE_DEMI_DRAGON_HOARD_10000,ID_ARON_DD_RACE_DEMI_DRAGON</requirements>
+            <description>
+                <p>Your dragon hoard reaches 30,000 gp in coins, gems, art and items.</p>
+            </description>
+            <setters>
+                <set name="category">Treasure</set>
+                <set name="cost" currency="gp">3000</set>
+                <set name="weight" lb="0">0 lb.</set>
+                <set name="stackable">false</set>
+                <set name="valuable">true</set>
+            </setters>
+            <rules>
+                <stat name="absorb-magic:enchantments" value="1" />
+                <grant type="Feat Feature" id="ID_ARON_DD_FEAT_FEATURE_DEMI_DRAGON_DRAGONS_HOARD_UNBOUND_ATTUNEMENT" />
+            </rules>
+        </element>
+        <element name="Siphon Treasure" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_FEAT_FEATURE_DEMI_DRAGON_DRAGONS_HOARD_SIPHON_TREASURE">
+            <compendium display="false" />
+            <description>
+                <p>Your magical hunger extends across any distance to the extraordinary items stored in your hoard. You can use any piece of non-equipment treasure, such as a potion or wondrous item, that is stored within your hoard as if you were holding it. The item functions as normal, and is consumed on use or expends charges if it normally would. If the item requires itself to function, such as an immovable rod or a figurine of wondrous power, you conjure a spectral projection of it. Such a spectral projection represents the magical essence of the item being pulled forth by you, and any damage taken by such a projection carries over to the real item. An unattended projection fades after 1d4 hours.</p>
+            </description>
+            <sheet>
+                <description>You can use any piece of non-equipment treasure, such as a potion or wondrous item, that is stored within your hoard as if you were holding it. If the object is requires itself to function, a spectral version appears.</description>
+            </sheet>
+        </element>
+        <element name="Auric Slumber" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_FEAT_FEATURE_DEMI_DRAGON_DRAGONS_HOARD_AURIC_SLUMBER">
+            <compendium display="false" />
+            <description>
+                <p>Whenever you finish a long rest while resting within 30 feet of your hoard, you gain temporary hit points equal to twice your level, lasting for up to 7 days. In addition, your exhaustion level, if any, is decreased by 1.</p>
+            </description>
+            <sheet>
+                <description>Whenever you finish a long rest while resting within 30 feet of your hoard, you gain {{auric-slumber:temp-hp}} temporary hit points, lasting for up to 7 days. In addition, your exhaustion level, if any, is decreased by 1.</description>
+            </sheet>
+            <rules>
+                <stat name="auric-slumber:temp-hp" value="level" />
+                <stat name="auric-slumber:temp-hp" value="level" />
+            </rules>
+        </element>
+        <element name="Unbound Attunement" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_FEAT_FEATURE_DEMI_DRAGON_DRAGONS_HOARD_UNBOUND_ATTUNEMENT">
+            <compendium display="false" />
+            <description>
+                <p>You can attune to up to four magic items at once. Additionally, you ignore all class, race, and level requirements on the use of magic items.</p>
+            </description>
+            <sheet>
+                <description>You ignore all class, race, and level requirements on the use of magic items.</description>
+            </sheet>
+            <rules>
+                <stat name="attunement:max" value="1" bonus="unbound attunement" />
+            </rules>
+        </element>
+    <element name="Misfit's Adaptation" type="Feat" source="Demi-Dragon" id="ID_ARON_DD_FEAT_DEMI_DRAGON_MISFITS_ADAPTATION">
+        <requirements>ID_ARON_DD_RACE_DEMI_DRAGON</requirements>
+        <prerequisite>Demi-dragon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Demi-dragon</p>
+            <p class="indent">Your body continues to change in unexpected ways. You gain the following benefits:</p>
+            <ul>
+                <li>Your Strength, Constitution, or Charisma score increases by 1, to a maximum of 20.</li>
+                <li>Choose one named feature from among the morphs available to the Embodiment of the Metamorph. You gain the chosen effect, which is permanent. If you already had access to morphs and have learned the associated morph category, you can choose whether to change this or your other Waning morph whenever you change morphs. The effect doesn't stack with itself.</li>
+            </ul>
+            <p class="indent">You can take this feat multiple times. Each time you do, choose a different morph.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Archetype Feature" name="Misfit's Adaptation" supports="Demi-Dragon Metamorph Morph" />
+			<select type="Ability Score Improvement" name="Misfit's Adaptation" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+        </rules>
+    </element>
+        <element name="Misfit's Adaptation" type="Feat" source="Demi-Dragon" id="ID_ARON_DD_FEAT_DEMI_DRAGON_MISFITS_ADAPTATION1">
+            <requirements>ID_ARON_DD_RACE_DEMI_DRAGON,ID_ARON_DD_FEAT_DEMI_DRAGON_MISFITS_ADAPTATION</requirements>
+            <prerequisite>Demi-dragon</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Demi-dragon</p>
+                <p class="indent">Your body continues to change in unexpected ways. You gain the following benefits:</p>
+                <ul>
+                    <li>Your Strength, Constitution, or Charisma score increases by 1, to a maximum of 20.</li>
+                    <li>Choose one named feature from among the morphs available to the Embodiment of the Metamorph. You gain the chosen effect, which is permanent. If you already had access to morphs and have learned the associated morph category, you can choose whether to change this or your other Waning morph whenever you change morphs. The effect doesn't stack with itself.</li>
+                </ul>
+                <p class="indent">You can take this feat multiple times. Each time you do, choose a different morph.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Archetype Feature" name="Misfit's Adaptation" supports="Demi-Dragon Metamorph Morph" />
+                <select type="Ability Score Improvement" name="Misfit's Adaptation" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+            </rules>
+        </element>
+        <element name="Misfit's Adaptation" type="Feat" source="Demi-Dragon" id="ID_ARON_DD_FEAT_DEMI_DRAGON_MISFITS_ADAPTATION2">
+            <requirements>ID_ARON_DD_RACE_DEMI_DRAGON,ID_ARON_DD_FEAT_DEMI_DRAGON_MISFITS_ADAPTATION1</requirements>
+            <prerequisite>Demi-dragon</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Demi-dragon</p>
+                <p class="indent">Your body continues to change in unexpected ways. You gain the following benefits:</p>
+                <ul>
+                    <li>Your Strength, Constitution, or Charisma score increases by 1, to a maximum of 20.</li>
+                    <li>Choose one named feature from among the morphs available to the Embodiment of the Metamorph. You gain the chosen effect, which is permanent. If you already had access to morphs and have learned the associated morph category, you can choose whether to change this or your other Waning morph whenever you change morphs. The effect doesn't stack with itself.</li>
+                </ul>
+                <p class="indent">You can take this feat multiple times. Each time you do, choose a different morph.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Archetype Feature" name="Misfit's Adaptation" supports="Demi-Dragon Metamorph Morph" />
+                <select type="Ability Score Improvement" name="Misfit's Adaptation" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+            </rules>
+        </element>
+        <element name="Misfit's Adaptation" type="Feat" source="Demi-Dragon" id="ID_ARON_DD_FEAT_DEMI_DRAGON_MISFITS_ADAPTATION3">
+            <requirements>ID_ARON_DD_RACE_DEMI_DRAGON,ID_ARON_DD_FEAT_DEMI_DRAGON_MISFITS_ADAPTATION2</requirements>
+            <prerequisite>Demi-dragon</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Demi-dragon</p>
+                <p class="indent">Your body continues to change in unexpected ways. You gain the following benefits:</p>
+                <ul>
+                    <li>Your Strength, Constitution, or Charisma score increases by 1, to a maximum of 20.</li>
+                    <li>Choose one named feature from among the morphs available to the Embodiment of the Metamorph. You gain the chosen effect, which is permanent. If you already had access to morphs and have learned the associated morph category, you can choose whether to change this or your other Waning morph whenever you change morphs. The effect doesn't stack with itself.</li>
+                </ul>
+                <p class="indent">You can take this feat multiple times. Each time you do, choose a different morph.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Archetype Feature" name="Misfit's Adaptation" supports="Demi-Dragon Metamorph Morph" />
+                <select type="Ability Score Improvement" name="Misfit's Adaptation" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+            </rules>
+        </element>
+        <element name="Misfit's Adaptation" type="Feat" source="Demi-Dragon" id="ID_ARON_DD_FEAT_DEMI_DRAGON_MISFITS_ADAPTATION4">
+            <requirements>ID_ARON_DD_RACE_DEMI_DRAGON,ID_ARON_DD_FEAT_DEMI_DRAGON_MISFITS_ADAPTATION3</requirements>
+            <prerequisite>Demi-dragon</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Demi-dragon</p>
+                <p class="indent">Your body continues to change in unexpected ways. You gain the following benefits:</p>
+                <ul>
+                    <li>Your Strength, Constitution, or Charisma score increases by 1, to a maximum of 20.</li>
+                    <li>Choose one named feature from among the morphs available to the Embodiment of the Metamorph. You gain the chosen effect, which is permanent. If you already had access to morphs and have learned the associated morph category, you can choose whether to change this or your other Waning morph whenever you change morphs. The effect doesn't stack with itself.</li>
+                </ul>
+                <p class="indent">You can take this feat multiple times. Each time you do, choose a different morph.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Archetype Feature" name="Misfit's Adaptation" supports="Demi-Dragon Metamorph Morph" />
+                <select type="Ability Score Improvement" name="Misfit's Adaptation" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+            </rules>
+        </element>
+        <element name="Misfit's Adaptation" type="Feat" source="Demi-Dragon" id="ID_ARON_DD_FEAT_DEMI_DRAGON_MISFITS_ADAPTATION5">
+            <requirements>ID_ARON_DD_RACE_DEMI_DRAGON,ID_ARON_DD_FEAT_DEMI_DRAGON_MISFITS_ADAPTATION4</requirements>
+            <prerequisite>Demi-dragon</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Demi-dragon</p>
+                <p class="indent">Your body continues to change in unexpected ways. You gain the following benefits:</p>
+                <ul>
+                    <li>Your Strength, Constitution, or Charisma score increases by 1, to a maximum of 20.</li>
+                    <li>Choose one named feature from among the morphs available to the Embodiment of the Metamorph. You gain the chosen effect, which is permanent. If you already had access to morphs and have learned the associated morph category, you can choose whether to change this or your other Waning morph whenever you change morphs. The effect doesn't stack with itself.</li>
+                </ul>
+                <p class="indent">You can take this feat multiple times. Each time you do, choose a different morph.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Archetype Feature" name="Misfit's Adaptation" supports="Demi-Dragon Metamorph Morph" />
+                <select type="Ability Score Improvement" name="Misfit's Adaptation" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+            </rules>
+        </element>
+    <element name="Natural Ferocity" type="Feat" source="Demi-Dragon" id="ID_ARON_DD_FEAT_DEMI_DRAGON_NATURAL_FEROCITY">
+        <requirements>ID_ARON_DD_RACE_DEMI_DRAGON</requirements>
+        <prerequisite>Demi-dragon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Demi-dragon</p>
+            <p class="indent">You've grown used to using your body as the weapon it was meant to be. You gain the following benefits:</p>
+            <ul>
+                <li>You learn two maneuvers of your choice from among those available to the Embodiment of the Juggernaut. If a maneuver you use requires your target to make a saving throw to resist the maneuver’s effects, the saving throw DC equals 8 + your proficiency bonus + your Strength modifier. If the maneuver makes use of a horn or wing natural weapon, you add it to your list of natural weapons.</li>
+                <li>You gain 2 points of fury, as described under the Embodiment of the Juggernaut. You can spend them on any Juggernaut maneuver you know and which you can pay the fury cost for. If you already had fury, your total increases by 2. You regain your expended fury when you finish a short or long rest.</li>
+            </ul>
+        </description>
+        <sheet  display="false" />
+        <rules>
+            <grant type="Feat Feature" id="ID_ARON_DD_FEAT_FEATURE_DEMI_DRAGON_NATURAL_FEROCITY_DEFAULT" requirements="!ID_ARON_DD_ARCHETYPE_FEATURE_JUGGERNAUT_FURY" />
+            <grant type="Feat Feature" id="ID_ARON_DD_FEAT_FEATURE_DEMI_DRAGON_NATURAL_FEROCITY_JUGGERNAUT" requirements="ID_ARON_DD_ARCHETYPE_FEATURE_JUGGERNAUT_FURY" />
+        </rules>
+    </element>
+        <element name="Natural Ferocity" type="Feat Feature" source="Demi-Dragon" id="ID_ARON_DD_FEAT_FEATURE_DEMI_DRAGON_NATURAL_FEROCITY_DEFAULT">
+            <description>
+                <p class="flavor">Prerequisite: Demi-dragon</p>
+                <p class="indent">You've grown used to using your body as the weapon it was meant to be. You gain the following benefits:</p>
+                <ul>
+                    <li>You learn two maneuvers of your choice from among those available to the Embodiment of the Juggernaut. If a maneuver you use requires your target to make a saving throw to resist the maneuver’s effects, the saving throw DC equals 8 + your proficiency bonus + your Strength modifier. If the maneuver makes use of a horn or wing natural weapon, you add it to your list of natural weapons.</li>
+                    <li>You gain 2 points of fury, as described under the Embodiment of the Juggernaut. You can spend them on any Juggernaut maneuver you know and which you can pay the fury cost for. If you already had fury, your total increases by 2. You regain your expended fury when you finish a short or long rest.</li>
+                </ul>
+            </description>
+            <sheet usage="{{juggernaut:fury}} Fury Points/Short Rest">
+                <description>Your maneuver save DC is {{natural-ferocity:save-dc}}.</description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Manuever, Natural Ferocity" supports="Demi-Dragon Juggernaut Maneuver" number="2" />
+                <stat name="natural-ferocity:save-dc" value="8" />
+                <stat name="natural-ferocity:save-dc" value="proficiency" />
+                <stat name="natural-ferocity:save-dc" value="strength:modifier" />
+                <stat name="juggernaut:fury" value="2" />
+            </rules>
+        </element>
+        <element name="Natural Ferocity" type="Feat Feature" source="Demi-Dragon" id="ID_ARON_DD_FEAT_FEATURE_DEMI_DRAGON_NATURAL_FEROCITY_JUGGERNAUT">
+            <description />
+            <sheet display="false" />
+            <rules>
+                <select type="Archetype Feature" name="Manuever, Natural Ferocity" supports="Demi-Dragon Juggernaut Maneuver" number="2" />
+                <stat name="juggernaut:fury" value="2" />
+            </rules>
+        </element>
+    <element name="Skyterror" type="Feat" source="Demi-Dragon" id="ID_ARON_DD_FEAT_DEMI_DRAGON_SKYTERROR">
+        <requirements>ID_ARON_DD_RACE_DEMI_DRAGON</requirements>
+        <prerequisite>Demi-dragon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Demi-dragon</p>
+            <p class="indent">The weight of your body is a terrifying weapon in its own right, and you've learned to master it by brutally diving onto your enemies. You gain the following benefits:</p>
+            <ul>
+                <li>On your turn, when you score a critical hit with a natural weapon or reduce a creature to 0 hit points with one, you can use your bonus action to launch yourself up to 15 feet into the air without provoking opportunity attacks.</li>
+                <li>Your Glide &amp; Fly Speed is doubled when moving directly toward the ground.</li>
+                <li>If you move at least 30 feet directly toward a target on a turn before you make a melee attack with a natural weapon against it, you can choose to take a -5 penalty to the attack roll. If the attack hits, you add +10 to the attack's damage.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>When you score a critical hit with a natural weapon or reduce a creature to 0 hit points with one, you can use your bonus action to launch yourself up to 15 feet into the air without provoking opportunity attacks. Your Glide &amp; Fly Speed is doubled when moving directly toward the ground. If you move at least 30 feet directly toward a target on a turn before you make a melee attack with a natural weapon against it, you can choose to take a -5 penalty to the attack roll. If the attack hits, you add +10 to the attack's damage.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="War Plating" type="Feat" source="Demi-Dragon" id="ID_ARON_DD_FEAT_DEMI_DRAGON_WAR_PLATING">
+        <requirements>ID_ARON_DD_RACE_DEMI_DRAGON</requirements>
+        <prerequisite>Demi-dragon</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Demi-dragon</p>
+            <p class="indent">You've trained in wearing heavy armor into combat, rendering you a truly terrifying combatant on the battlefield. You gain the following benefits:</p>
+            <ul>
+                <li>Your Constitution increases by 1, to a maximum of 20.</li>
+                <li>You gain proficiency with heavy armor.</li>
+                <li>Wearing heavy armor no longer restricts the Flight or Stride features.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>Wearing heavy armor doesn't restrict the Flight or Stride features.</description>
+        </sheet>
+        <rules>
+            <stat name="constitution" value="1" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+        </rules>
+    </element>
+
+
+</elements>

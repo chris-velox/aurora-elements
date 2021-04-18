@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Embodiment of the Genesis Draconic Embodiment</name>
+        <update version="0.0.1">
+            <file name="demi-dragon-genesis.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/aron/demi-dragon-genesis.xml" />
+        </update>
+    </info>
+    
+    <element name="Embodiment of the Genesis" type="Source" source="Core" id="ID_DAWNHELLION_RDDT_SOURCE_EMBODIMENT_OF_THE_GENESIS">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">EOTG</set>
+            <set name="url">https://drive.google.com/file/d/1gMMCBbiSzEC4JagoHK40moS2pHJaIOie/view</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="DH" url="https://www.reddit.com/user/Dawnhellion/">DawnHellion</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210225</set>
+        </setters>
+    </element>
+
+    <element name="Embodiment of the Genesis" type="Archetype" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_DEMI_DRAGON_EMBODIMENT_OF_THE_GENESIS">
+        <supports>Draconic Embodiment</supports>
+        <description>
+            <p>While most demi-dragons model themselves after dragons of legend, some seek to carve a path entirely their own. These demi-dragons nurture their inner spark above all else, and let it find its shape as it grows. While this process is both abstract and tenuous, a devotee can find inspiration from planes outside the Material Plane, such as the Elemental planes, Limbo, and Mechanus. Through this process, they become a living conduit of the planes, and a force of elemental might on the battlefield. The scales of a Genesis dragon change color as they grow in strength, eventually settling on abnormal hues such as violet, orange, pink, or even prismatic or opalescent palettes.</p>
+            <div element="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_SHIFTING_TIDES" />
+            <div element="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_PRISMATIC_SCALES" />
+            <div element="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_CHAOTIC_MIRE" />
+            <div element="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_UNPREDICTABLE_SPIRIT" />
+            <div element="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_FLUX_INCARNATUS" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_SHIFTING_TIDES" level="3" />
+            <grant type="Archetype Feature" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_PRISMATIC_SCALES" level="3" />
+            <grant type="Archetype Feature" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_CHAOTIC_MIRE" level="6" />
+            <grant type="Archetype Feature" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_UNPREDICTABLE_SPIRIT" level="10" />
+            <grant type="Archetype Feature" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_FLUX_INCARNATUS" level="17" />
+        </rules>
+    </element>
+        <element name="Shifting Tides" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_SHIFTING_TIDES">
+            <description>
+                <p>3rd-level Genesis feature</p>
+                <p class="indent">Your elemental attunement is less defined, but more potent. You roll d8s instead of d6s for the damage of your Dragon's Breath. However, you can no longer choose the damage type. Instead, roll on the following table every time you use your Dragon's Breath. If you roll acid, fire, force or lightning, the target must make a Dexterity saving throw. If you roll cold, poison, or thunder, the target must make a Constitution saving throw.</p>
+                <h5 class="caption">Shifting Tides</h5>
+                <table>
+                    <thead>
+                        <tr><td>d8</td><td>Damage Type</td></tr>
+                    </thead>
+                    <tr><td>1</td><td>Fire</td></tr>
+                    <tr><td>2</td><td>Cold</td></tr>
+                    <tr><td>3</td><td>Poison</td></tr>
+                    <tr><td>4</td><td>Acid</td></tr>
+                    <tr><td>5</td><td>Lightning</td></tr>
+                    <tr><td>6</td><td>Thunder</td></tr>
+                    <tr><td>7</td><td>Force</td></tr>
+                    <tr><td>8</td><td>Choose a damage type from this list. You deal additional damage equal to your Constitution modifier</td></tr>
+                </table>
+                <p class="indent">Additionally, the spark within you never truly burns out. Once on each of your turns when you hit a creature with a natural weapon attack while you are out of uses of your Dragon's Breath feature, you deal an additional 1d6 damage, matching the damage type of your last Dragon's Breath.</p>
+            </description>
+            <sheet>
+                <description>You no longer choose the damage type of your Dragon's Breath. You roll on the Damage Type table. Additionally, once on each of your turns when you hit a creature with a natural weapon attack while you are out of uses of your Dragon's Breath feature, you deal an additional 1d6 damage, matching the damage type of your last Dragon's Breath.</description>
+            </sheet>
+            <rules>
+                <stat name="dragons-breath:die-type" value="8" bonus="base" />
+            </rules>
+        </element>
+        <element name="Prismatic Scales" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_PRISMATIC_SCALES">
+            <description>
+                <p>3rd-level Genesis feature</p>
+                <p class="indent">Your scales shimmer with power, often changing to an unnatural hue. When you take a short or long rest, you can choose to exchange the resistance granted by your Elemental Adaptation feature for a weaker but more varied elemental protection. While Prismatic Scales is active, acid, cold, fire, force, lightning, poison, and thunder damage you take is reduced by an amount equal to your Constitution modifier.</p>
+            </description>
+            <sheet>
+                <description>When you take a short or long rest, you can choose to activate Prismatic Scales. While active, acid, cold, fire, force, lightning, poison, and thunder damage you take is reduced by {{constitution:modifier}}.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Chaotic Mire" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_CHAOTIC_MIRE">
+            <description>
+                <p>6th-level Genesis feature</p>
+                <p class="indent">The energy within you constantly struggles to escape, building up until you allow it to burst free. Whenever an enemy hits you with a melee attack, you can use your reaction and spend a use of your Dragon's Breath feature to unleash a wave of elemental power. Roll on the Shifting Tides table. All creatures within a 15-foot wide radius of you must make a Dexterity or Constitution saving throw depending on the damage type you roll, taking damage equal to your Dragon's Breath Damage on a failure and half as much on a success. The affected area then becomes difficult terrain until the start of your next turn.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>Whenever an enemy hits you with a melee attack, you can use your reaction and spend a use of your Dragon's Breath feature to unleash a wave of elemental power. Roll on the Shifting Tides table. All creatures within a 15-foot wide radius of you must make a saving throw depending on the damage type you roll, taking {{dragons-breath:damage-dice}}d{{dragons-breath:die-type}} damage on a failure and half as much on a success. The affected area then becomes difficult terrain until the start of your next turn.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Unpredictable Spirit" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_UNPREDICTABLE_SPIRIT">
+            <description>
+                <p>10th-level Genesis feature</p>
+                <p class="indent">You have learned how to better channel the raw, unformed energy of the outer planes, granting additional effects to your non-damaging combat actions. When you gain this feature, choose two of the following effects, which you gain access to. Each time you gain a level in this class, you can replace one effect you know with a different one.</p>
+                <p class="indent"><b>Mechanus' Rhythm:</b> Disengage--When you use your action to Disengage, you can choose a creature you can see within 60 feet of you. You have advantage on all your attack rolls against that creature until the end of your next turn.</p>
+                <p class="indent"><b>Dance of the Fey:</b> Dodge--When you take this action, until the start of your next turn, whenever an attack roll is made against you, you can teleport 5 feet in a direction of your choice after the roll is resolved.</p>
+                <p class="indent"><b>Ethereal Jaunt:</b> Dash--When you take this action, you have resistance to all damage until the end your turn.</p>
+                <p class="indent"><b>Gaze of Pandemonium:</b> Search--When you use your action to Search, other creatures provoke a special opportunity attack from you when they enter your reach. As part of this opportunity attack, you can make one tail attack, one claw attack, and one bite attack. Additionally, until the start of your next turn you can see through lightly obscured areas as though they were normal.</p>
+                <p class="indent"><b>Beastland's Focus:</b> Grapple--While you are grappling a creature that is on the ground, ranged attacks have disadvantage against you.</p>
+                <p class="indent"><b>Celestia's Decree, Hell's Demand:</b> Help--You may take this action as a bonus action.</p>
+                <p class="indent"><b>Veil of Limbo:</b> Hide--The damage reduction granted by your Prismatic Scales feature increases to twice your Constitution modifier.</p>
+                <p class="indent"><b>Ysgardian Blessing:</b> Shove--When you shove an allied creature, their movement does not provoke opportunity attacks until the end of their next turn.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Archetype Feature" name="Unpredictable Spirit" supports="Demi-Dragon Unpredictable Spirit" number="2" allowReplace="true" />
+            </rules>
+        </element>
+            <element name="Mechanus' Rhythm" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_UNPREDICTABLE_SPIRIT_MECHANUS_RHYTHM">
+                <supports>Demi-Dragon Unpredictable Spirit</supports>
+                <description>
+                    <p>Disengage--When you use your action to Disengage, you can choose a creature you can see within 60 feet of you. You have advantage on all your attack rolls against that creature until the end of your next turn.</p>
+                </description>
+                <sheet>
+                    <description>Disengage--When you use your action to Disengage, you can choose a creature you can see within 60 feet of you. You have advantage on all your attack rolls against that creature until the end of your next turn.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Dance of the Fey" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_UNPREDICTABLE_SPIRIT_DANCE_OF_THE_FEY">
+                <supports>Demi-Dragon Unpredictable Spirit</supports>
+                <description>
+                    <p>Dodge--When you take this action, until the start of your next turn, whenever an attack roll is made against you, you can teleport 5 feet in a direction of your choice after the roll is resolved.</p>
+                </description>
+                <sheet>
+                    <description>Dodge--When you take this action, until the start of your next turn, whenever an attack roll is made against you, you can teleport 5 feet in a direction of your choice after the roll is resolved.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Ethereal Jaunt" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_UNPREDICTABLE_SPIRIT_ETHEREAL_JAUNT">
+                <supports>Demi-Dragon Unpredictable Spirit</supports>
+                <description>
+                    <p>Dash--When you take this action, you have resistance to all damage until the end your turn.</p>
+                </description>
+                <sheet>
+                    <description>Dash--When you take this action, you have resistance to all damage until the end your turn.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Gaze of Pandemonium" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_UNPREDICTABLE_SPIRIT_GAZE_OF_PANDEMONIUM">
+                <supports>Demi-Dragon Unpredictable Spirit</supports>
+                <description>
+                    <p>Search--When you use your action to Search, other creatures provoke a special opportunity attack from you when they enter your reach. As part of this opportunity attack, you can make one tail attack, one claw attack, and one bite attack. Additionally, until the start of your next turn you can see through lightly obscured areas as though they were normal.</p>
+                </description>
+                <sheet>
+                    <description>Search--When you use your action to Search, other creatures provoke a special opportunity attack from you when they enter your reach. As part of this opportunity attack, you can make one tail attack, one claw attack, and one bite attack. Additionally, until the start of your next turn you can see through lightly obscured areas as though they were normal.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Beastland's Focus" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_UNPREDICTABLE_SPIRIT_BEASTLANDS_FOCUS">
+                <supports>Demi-Dragon Unpredictable Spirit</supports>
+                <description>
+                    <p>Grapple--While you are grappling a creature that is on the ground, ranged attacks have disadvantage against you.</p>
+                </description>
+                <sheet>
+                    <description>Grapple--While you are grappling a creature that is on the ground, ranged attacks have disadvantage against you.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Celestia's Decree, Hell's Demand" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_UNPREDICTABLE_SPIRIT_CELESTIAS_DECREE_HELLS_DEMAND">
+                <supports>Demi-Dragon Unpredictable Spirit</supports>
+                <description>
+                    <p>Help--You may take this action as a bonus action.</p>
+                </description>
+                <sheet>
+                    <description>Help--You may take this action as a bonus action.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Veil of Limbo" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_UNPREDICTABLE_SPIRIT_VEIL_OF_LIMBO">
+                <supports>Demi-Dragon Unpredictable Spirit</supports>
+                <description>
+                    <p>Hide--The damage reduction granted by your Prismatic Scales feature increases to twice your Constitution modifier.</p>
+                </description>
+                <sheet>
+                    <description>Hide--The damage reduction granted by your Prismatic Scales feature increases to twice your Constitution modifier.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+            <element name="Ysgardian Blessing" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_UNPREDICTABLE_SPIRIT_YSGARDIAN_BLESSING">
+                <supports>Demi-Dragon Unpredictable Spirit</supports>
+                <description>
+                    <p>Shove--When you shove an allied creature, their movement does not provoke opportunity attacks until the end of their next turn.</p>
+                </description>
+                <sheet>
+                    <description>Shove--When you shove an allied creature, their movement does not provoke opportunity attacks until the end of their next turn.</description>
+                </sheet>
+                <rules>
+                </rules>
+            </element>
+        <element name="Flux Incarnatus" type="Archetype Feature" source="Embodiment of the Genesis" id="ID_DH_EOTG_ARCHETYPE_FEATURE_GENESIS_FLUX_INCARNATUS">
+            <description>
+                <p>17th-level Genesis feature</p>
+                <p class="indent">Your attunement to untamed power is such that it shields you of its own volition. Whenever you expend a use of your Dragon's Breath feature, you wreath yourself in elemental power. Until the start of your next turn, you gain immunity to the damage type you rolled on the Shifting Tides table. Additionally, when an enemy hits you with a melee attack, they take 2d8 damage of the same damage type.</p>
+            </description>
+            <sheet>
+                <description>Whenever you expend a use of your Dragon's Breath feature, until the start of your next turn, you gain immunity to the damage type you rolled on the Shifting Tides table. Additionally, when an enemy hits you with a melee attack, they take 2d8 damage of the same damage type.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
