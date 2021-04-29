@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>Various Wondrous Items</name>
-        <update version="0.0.1">
+        <update version="0.0.3">
             <file name="items-wondrous.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/options/items-wondrous.xml" />
         </update>
     </info>
@@ -30,4 +30,31 @@
         </setters>
     </element>
     
+    <element name="Sanctified Wings" type="Magic Item" source="Monkey DM" id="ID_MONKEYDB_RDDTUA_MAGIC_ITEM_SANCTIFIED_WINGS">
+        <!-- https://www.reddit.com/r/UnearthedArcana/comments/mznz1c/sanctified_wings_let_your_righteous_fury_burn/ -->
+        <description>
+            <p>While attuned to this item, you have resistance to radiant damage and a flying speed of 40 feet.</p>
+            <p class="indent">In addition, while attuned, you can, as a bonus action, summon the sacred powers held within the wings, transforming yourself into a celestial knight. You gain the following benefits:</p>
+            <ul>
+                <li>Your creature type becomes Celestial.</li>
+                <li>The first time you are reduced to 0 hit points but not killed outright during the transformation, you can drop to 1 hit point instead.</li>
+                <li>You can use the wings to shield you against damage. When you are hit by an attack or you fail a Strength, Dexterity, or Constitution saving throw, you can use your reaction to gain a +2 bonus to your AC against that attack or a +4 bonus to that saving throw.</li>
+                <li>You unleash a dangerously powerful light that radiates from your entire being, threatening to destroy all. You shed a bright light in a 10-foot radius and dim light for an additional 10 feet, and each time you deal damage to a creature, you deal additional radiant damage equal to your proficiency bonus.</li>
+            </ul>
+            <p class="indent">This transformation lasts for 1 minute and ends early if you fall unconscious. Once you've used the wings in this way, you can't do so again until you complete a long rest.</p>
+        </description>
+        <setters>
+            <set name="category">Wondrous Items</set>
+            <set name="cost" currency="gp">0</set>
+            <set name="weight" lb="0">0 lb.</set>
+            <set name="type">Wondrous Item</set>
+            <set name="rarity">Artifact</set>
+            <set name="attunement" addition="by a non-evil creature">true</set>
+        </setters>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+            <stat name="speed:fly" value="40" bonus="base" />
+        </rules>
+    </element>
+
 </elements>
