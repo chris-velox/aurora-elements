@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Alternate Fighter Expanded v1.2.0</name>
-        <update version="0.0.1">
+        <name>Alternate Fighter Expanded v1.3.0</name>
+        <update version="0.0.2">
             <file name="class-alternate-fighter-expanded.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/laserllama/class-alternate-fighter-expanded.xml" />
         </update>
     </info>
@@ -375,7 +375,7 @@
             </element>
         <element name="Combat Versatility" type="Archetype Feature" source="Alternate Fighter Expanded" id="ID_LL_LLAFE_ARCHETYPE_FEATURE_GUERILLA_COMBAT_VERSATILITY">
             <description>
-                <p>You are able to adapt in order to better face the task at hand. Starting at 10th level, when you finish a long rest, you can replace your Fighting Style with another Fighting Style of your choice from the list in the fighter class description.</p>
+                <p>Starting at 10th level, when you finish a long rest, you can replace your Fighting Style with another Fighting Style of your choice from the list in the fighter class description.</p>
             </description>
             <sheet>
                 <description>When you finish a long rest, you can replace your Fighting Style with another Fighting Style of your choice.</description>
@@ -516,7 +516,7 @@
                     <tr><td>20th</td><td>7</td><td>2</td><td>4th</td></tr>
                 </table>
             </description>
-            <spellcasting name="Pact Warrior" ability="Charisma" prepare="false">
+            <spellcasting name="Pact Warrior" ability="Charisma" prepare="false" allowReplace="true">
                 <list>Warlock</list>
             </spellcasting>
             <sheet display="false">
@@ -775,14 +775,14 @@
         </element>
 
     <!-- Pact Warrior Maneuvers -->
-        <element name="Arcane Smite" type="Class Feature" source="Alternate Fighter Expanded" id="ID_LL_LLAFE_CLASS_FEATURE_AF_MANEUVER_ARCANE_SMITE">
+        <element name="Eldritch Smite" type="Class Feature" source="Alternate Fighter Expanded" id="ID_LL_LLAFE_CLASS_FEATURE_AF_MANEUVER_ELDRITCH_SMITE">
             <supports>LL Alternate Fighter Maneuver</supports>
             <requirements>ID_LL_LLAFE_ARCHETYPE_ALTERNATE_FIGHTER_PACT_WARRIOR</requirements>
             <description>
                 <p>When you hit a creature with a melee weapon attack, you can expend a superiority die to deal additional force damage to the target equal to one roll of your superiority die + your spellcasting modifier.</p>
             </description>
             <sheet usage="1 Superiority Die">
-                <description>When you hit a creature with a melee weapon attack, you deal additional force damage to the target equal to one roll of your superiority die + {{spellcasting:attack}}.</description>
+                <description>When you hit a creature with a melee weapon attack, you deal additional force damage to the target equal to one roll of your superiority die + {{charisma:modifier}}.</description>
             </sheet>
             <rules>
             </rules>
