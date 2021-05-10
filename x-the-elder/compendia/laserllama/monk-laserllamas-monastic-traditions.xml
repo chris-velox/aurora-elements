@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Laserllama’s Monastic Traditions v1.1</name>
+        <update version="0.0.1">
+            <file name="monk-laserllamas-monastic-traditions.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/laserllama/monk-laserllamas-monastic-traditions.xml" />
+        </update>
+    </info>
+    
+    <element name="Laserllama’s Monastic Traditions" type="Source" source="Core" id="ID_LASERLLAMA_GMBINDER_SOURCE_Laserllama’s Monastic Traditions">
+        <description>
+            <![CDATA[<p>Five new Monastic Traditions for the Monk Class in the World’s Greatest Roleplaying Game</p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">MT</set>
+            <set name="url">https://www.gmbinder.com/share/-M0lvi0bSsDe2rtbMJAF</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="LL" url="https://www.gmbinder.com/profile/laserllama">laserllama</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210507</set>
+        </setters>
+    </element>
+
+    <element name="Way of the Boulder" type="Archetype" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_MONK_WAY_OF_THE_BOULDER">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>The Way of the Boulder is a tradition as old as the mountains themselves. Dwelling in secluded monasteries on mountain peaks and deep in subterranean caverns, Boulder monks focus on becoming as large and immovable as the mountains that surround them. They grow in girth and size, and use their weight to land devastating blows.</p>
+            <p class="indent">You seek to become solid imposing like the mountain peak, unmoving like bedrock, and fruitful like fertile soil. Boulder monks are often stubborn and inflexible in their thinking, and take a great deal of time to come to a decision.</p>
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_SOLID_BODY" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_STRENGTH_OF_THE_MOUNTAINS" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_REBOUNDING_DEFENSE" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_THICK_FAT" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_MIGHTY_FORM" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_SOLID_BODY" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_STRENGTH_OF_THE_MOUNTAINS" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_REBOUNDING_DEFENSE" level="6" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_THICK_FAT" level="11" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_MIGHTY_FORM" level="17" />
+        </rules>
+    </element>
+        <element name="Solid Body" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_SOLID_BODY">
+            <description>
+                <p>Upon adopting this monastic tradition at 3rd level, you learn to use your physical bulk to enhance your defenses and empower your strikes. When not wearing armor or using a shield, your Armor Class is equal to 10 + your Constitution modifier + your Wisdom modifier. You can also use your Constitution, in place of Strength or Dexterity, for the attack and damage rolls of your unarmed strikes or monk weapons.</p>
+            </description>
+            <sheet>
+                <description>When not wearing armor or using a shield, your AC is {{ac:solid body monk}}. You can also use your Constitution, in place of Strength or Dexterity, for the attack and damage rolls of your unarmed strikes or monk weapons.</description>
+            </sheet>
+            <rules>
+                <stat name="ac:solid body monk:base" value="10" />
+                <stat name="ac:solid body monk:constitution" value="constitution:modifier" />
+                <stat name="ac:solid body monk:wisdom" value="wisdom:modifier" />
+                <stat name="ac:solid body monk" value="ac:solid body monk:base" />
+                <stat name="ac:solid body monk" value="ac:solid body monk:constitution" />
+                <stat name="ac:solid body monk" value="ac:solid body monk:wisdom" />
+                <stat name="ac:calculation" value="ac:solid body monk" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Solid Body (Monk)" />
+                <stat name="martial arts:attack" value="constitution:modifier" bonus="martial arts" />
+                <stat name="martial arts:damage" value="constitution:modifier" bonus="martial arts" />
+            </rules>
+        </element>
+        <element name="Strength of the Mountains" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_STRENGTH_OF_THE_MOUNTAINS">
+            <description>
+                <p>Also at 3rd level, you can use your ki to reinforce your robust frame. When you make a Strength check or Strength saving throw, you can use your reaction to draw upon the earth below you and grant yourself advantage on the roll.</p>
+                <p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. While you have no uses available, you can spend 1 ki point to use this feature again.</p>
+            </description>
+            <sheet action="Reaction" usage="{{proficiency}}/Long Rest or 1 ki">
+                <description>When you make a Strength check or Strength saving throw, you can grant yourself advantage on the roll. While you have no uses available, you can spend 1 ki point to use this feature again.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Rebounding Defense" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_REBOUNDING_DEFENSE">
+            <description>
+                <p>Starting at 6th level, you can use your massive body to absorb or reflect all but the most powerful blows. As a reaction, when you are hit by a melee weapon attack, you can expend 1 ki point to reduce the damage by an amount equal to 1d12 + your Constitution modifier + your monk level.</p>
+                <p class="indent">If you reduce the damage of the melee weapon attack to 0, you can use your great girth to rebound the blow back at your attacker. If you stop an attack in this way, you make can make a melee weapon attack, targeting the attacker, as part of the same reaction. You make this attack with proficiency, and the rebounded attack counts as a monk weapon for the purposes of this special reaction attack.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When you are hit by a melee weapon attack, you can expend 1 ki point to reduce the damage by an amount equal to 1d12 + {{rebounding-defense:reduction}}. If you reduce the damage of the melee weapon attack to 0, you can use your great girth to rebound the blow back at your attacker. If you stop an attack in this way, you make can make a melee weapon attack, targeting the attacker, as part of the same reaction. You make this attack with proficiency, and the rebounded attack counts as a monk weapon for the purposes of this special reaction attack.</description>
+            </sheet>
+            <rules>
+                <stat name="rebounding-defense:reduction" value="constitution:modifier" />
+                <stat name="rebounding-defense:reduction" value="level:monk" />
+            </rules>
+        </element>
+        <element name="Thick Fat" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_THICK_FAT">
+            <description>
+                <p>Beginning at 11th level, your dense physical form lets you resist physical as well as elemental assaults. When you finish a short or long rest, you choose one of the following damage types: bludgeoning, piercing, slashing, acid, cold, fire, lighting, or thunder. You are resistant to that type of damage until the end of your next short or long rest.</p>
+                <p class="indent">As a bonus action, you can spend 2 ki points to realign your ki and switch the damage resistance you gained from this ability to another damage resistance from the list above.</p>
+            </description>
+            <sheet action="Bonus Action" usage="2 ki">
+                <description>When you finish a short or long rest, you choose one of the following damage types: bludgeoning, piercing, slashing, acid, cold, fire, lighting, or thunder. You are resistant to that type of damage until the end of your next short or long rest. As a bonus action, you can spend 2 ki points to realign your ki and switch the damage resistance you gained from this ability to another damage resistance from the list above.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Mighty Form" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_BOULDER_MIGHTY_FORM">
+            <description>
+                <p>Upon reaching 17th level your body has surpassed the normal mortal limits of density and mass. Your Constitution score, and maximum Constitution score, both increase by 2.</p>
+                <p class="indent">In addition, you can use your immense bulk to shake the world around you. As an action you expend 3 ki points and stomp ground beneath your feet. The ground in a 15-foot radius around you becomes difficult terrain, and creatures of your choice within the 15-foot radius must make a Strength saving throw. Creatures take 2d10 bludgeoning damage and fall prone on a failed save, and on a success creatures take half damage but do not fall prone.</p>
+                <p class="indent">When you use this feature, you can expend additional ki points, increasing the damage of your stomp by 1d10 for each additional ki point, to a maximum of 10d10.</p>
+            </description>
+            <sheet action="Action" usage="3+ ki">
+                <description>You stomp ground. The ground in a 15-foot radius around you becomes difficult terrain, and creatures of your choice within the 15-foot radius must make a Strength saving throw, or take 2d10 bludgeoning damage and fall prone. On a success creatures take half damage but do not fall prone. When you use this feature, you can expend additional ki points, increasing the damage of your stomp by 1d10 for each additional ki point, to a maximum of 10d10.</description>
+            </sheet>
+            <rules>
+                <stat name="constitution" value="2" />
+                <stat name="constitution:max" value="2" />
+            </rules>
+        </element>
+
+    <element name="Way of the Sacred Inks" type="Archetype" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_MONK_WAY_OF_THE_SACRED_INKS">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>Initiates of the Sacred Inks spend years practicing celestial calligraphy. Once they are ready, the monks mark their bodies with increasingly complex celestial tattoos, granting them access to divine power. As the monk’s spiritual connection to the divine grows, so does the beauty of their celestial tattoos.</p>
+            <p class="indent">Monks of this Monastic Tradition usually travel the world, supporting those who treasure beauty and kindling hope within those who have lost it. These Celestial warriors also do not hesitate to use their divine power to smite any who stand against them or their ideals.</p>
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_CELESTIAL_ARTIST" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_DIVINE_CONDUIT" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_HEAVENLY_PROTECTION" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_LIGHT_OF_THE_HEAVENS" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_CELESTIAL_ASPECT" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_CELESTIAL_ARTIST" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_DIVINE_CONDUIT" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_HEAVENLY_PROTECTION" level="6" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_LIGHT_OF_THE_HEAVENS" level="11" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_CELESTIAL_ASPECT" level="17" />
+        </rules>
+    </element>
+        <element name="Celestial Artist" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_CELESTIAL_ARTIST">
+            <description>
+                <p>When you adopt this Monastic Tradition at 3rd level, you master the techniques necessary to become a monk of the Sacred Inks. You learn to speak, read, and write Celestial. Though most monks will refuse to speak Celestial out loud out of reverence for the divine.</p>
+                <p class="indent">You also gain proficiency with calligrapher’s supplies, and you can add double your proficiency bonus to any ability check you make that uses your calligrapher’s supplies.</p>
+            </description>
+            <sheet>
+                <description>You can add +{{calligraphers supplies:proficiency}} bonus to any ability check you make that uses your calligrapher’s supplies.</description>
+            </sheet>
+            <rules>
+                <grant type="Language" id="ID_LANGUAGE_CELESTIAL" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+                <stat name="calligraphers supplies:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Divine Conduit" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_DIVINE_CONDUIT">
+            <description>
+                <p>Your Celestial tattoos allow you to channel the radiant power of the upper planes through your hands. Starting at 3rd level, you can align yourself with an aspect of the upper planes. At the end of a short or long rest, choose one of the following abilities, which lasts until the end of your next rest.</p>
+                <p class="indent"><b><i>Divine Shield.</i></b> You can channel the power of your sacred tattoos to shield you. You gain a bonus to your Armor Class equal to half your proficiency bonus (rounded down).</p>
+                <p class="indent">In addition, you can expend 1 ki point as a bonus action to grant yourself temporary hit points equal to your monk level.</p>
+                <p class="indent"><b><i>Healing Touch.</i></b> The power of your sacred tattoos can heal. When a spell or other feature restores your hit points, you regain additional hit points equal to your Wisdom modifier.</p>
+                <p class="indent">As an action on your turn, you can spend 2 ki points and touch a willing creature, restoring their hit points by an amount equal to 1d8 + your Wisdom modifier.</p>
+                <p class="indent"><b><i>Radiant Strike.</i></b> You can channel the power of your sacred tattoos to smite your enemies. When you hit a creature with an unarmed strike, you can expend ki points to deal extra radiant damage to the target. You deal 1d6 for each ki point you expend, to a maximum of 6d6 additional radiant damage.</p>
+            </description>
+            <sheet>
+                <description>At the end of a short or long rest, choose one of the following abilities, which lasts until the end of your next rest: Divine Shield, Healing Touch, or Radiant Strike.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Heavenly Protection" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_HEAVENLY_PROTECTION">
+            <description>
+                <p>Upon reaching 6th level, your connection to the divine, and the complexity of your celestial tattoos has grown, allowing you to protect yourself from death. You can cast <i>death ward</i>, targeting only yourself, without expending a spell slot.</p>
+                <p class="indent">Once you cast <i>death ward</i> in this way you must finish a long rest before you can cast it in this way again.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast death ward, targeting only yourself, without expending a spell slot.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" />
+            </rules>
+        </element>
+        <element name="Light of the Heavens" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_LIGHT_OF_THE_HEAVENS">
+            <description>
+                <p>Your sacred tattoos can provide a glimpse of the divine. Starting at 11th level, you can cause your celestial tattoos to emit the light of the upper planes. As a bonus action, you can emit bright sunlight in a 10-foot radius. While this feature is active, you add your Wisdom modifier (minimum of 1) to any temporary hit points you grant, hit points you restore, or damage you deal using your Divine Conduit features.</p>
+                <p class="indent">This feature lasts for 1 minute unless you end it as a bonus action or fall unconscious. Once you use this feature you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1/Short Rest">
+                <description>You can emit bright sunlight in a 10-foot radius for up to 1 minute. While this feature is active, you add {{wis-mod:min-one}} to any temporary hit points you grant, hit points you restore, or damage you deal using your Divine Conduit features.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Celestial Aspect" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_SACRED_INKS_CELESTIAL_ASPECT">
+            <description>
+                <p>You have become a master of the Sacred Ink, and the divine art that covers your body is a direct reflection of otherworldly beauty. Starting at 17th level, you can use an action to briefly assume a celestial form. For the next minute you gain the following benefits:</p>
+                <ul>
+                    <li>Your celestial tattoos manifest angelic wings. You gain a flying speed equal to your movement speed.</li>
+                    <li>When you hit a creature with an unarmed strike you can choose to deal radiant in place of bludgeoning damage.</li>
+                    <li>Your attacks deal an additional 1d6 radiant damage on hit.</li>
+                    <li>You gain access to all three abilities from your Divine Conduit feature for the duration.</li>
+                </ul>
+                <p class="indent">Once you use this feature you must finish a long rest before you can use it again, unless you expend 6 ki points to use it.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest or 6 ki">
+                <description>You assume celestial form. You gain a flying speed of {{speed}} feet. When you hit a creature with an unarmed strike you can choose to deal radiant in place of bludgeoning damage. Your attacks deal an additional 1d6 radiant damage on hit. You gain access to all three abilities from your Divine Conduit feature for the duration.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="Way of the Vigilante" type="Archetype" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_MONK_WAY_OF_THE_VIGILANTE">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>While all monks strive for perfection in one way or another, monks of this tradition stand as paragons of justice, liberty, and fair play. Lauded as heroes by some, and derided as extrajudicial criminals by others, Vigilante monks work to perform ever more impressive feats of heroism.</p>
+            <p class="indent">The signature mark of a Vigilante monk is their Heroic Persona, a mantle they create for themselves that protects their true identity. Vigilante monks almost always have a deeply personal reason for donning their Heroic Persona and working to thwart villains of all kinds, what is yours?</p>
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_VIGILANTE_PROFICIENCIES" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_HEROIC_PERSONA" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_VALIANT_ACTION" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_INSPIRING_PRESENCE" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_PARAGON_OF_VIRTUE" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_HEROIC_STRIKE" />
+            <div class="sidebar">
+                <h5 class="caption">Variant Rule: Heroic Personality</h5>
+                <p>The Way of the Vigilante is meant to evoke the archetypal super hero. In order for the mechanics to match the fantasy of playing this type of character, talk to your Dungeon Master about switching Wisdom for Charisma for your monk class and subclass features that use Wisdom.</p>
+            </div>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_VIGILANTE_PROFICIENCIES" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_HEROIC_PERSONA" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_VALIANT_ACTION" level="6" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_INSPIRING_PRESENCE" level="11" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_PARAGON_OF_VIRTUE" level="17" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_HEROIC_STRIKE" level="17" />
+        </rules>
+    </element>
+        <element name="Vigilante Proficiencies" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_VIGILANTE_PROFICIENCIES">
+            <description>
+                <p>When you adopt this Tradition, you gain the skills to succeed as a heroic Vigilante. At 3rd level, you gain proficiency in your choice of either Intimidation or Performance.</p>
+                <p class="indent">In addition, you gain proficiency with light armor, medium armor, and shields. When you are wearing armor or using a shield you still gain the benefits of both your Martial Arts and Unarmored Movement feature.</p>
+            </description>
+            <sheet>
+                <description>When you are wearing armor or using a shield you still gain the benefits of both your Martial Arts and Unarmored Movement feature.</description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Vigilante Proficiency" supports="ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERFORMANCE" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+                <stat name="ac:calculation" value="ac:unarmored defense monk" bonus="calculation" equipped="[armor:none]||[shield:none]" alt="Unarmored Defense (Monk)" />
+            </rules>
+        </element>
+        <element name="Heroic Persona" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_HEROIC_PERSONA">
+            <description>
+                <p>At 3rd level, you design your Heroic Persona, a lager than life identity usually marked by a thematic costume or flashy suit of armor. You can adopt your Heroic Persona, which can include a suit of light or medium armor and a shield, as a bonus action, so long as you cannot be seen. While your Heroic Persona is active you gain the following benefits:</p>
+                <ul>
+                    <li>You gain temporary hit points equal to your monk level.</li>
+                    <li>As a bonus action, you can spend 1 ki point to grant yourself temporary hit points equal to your monk level.</li>
+                    <li>When you hit with a melee attack, you can spend 1 ki point to deal an additional 1d10 bludgeoning damage.</li>
+                    <li>You can use your Wisdom, in place of Dexterity, when calculating your Armor Class in light or medium armor.</li>
+                    <li>Ability checks and divination spells that would discern your true identity automatically fail.</li>
+                </ul>
+                <p class="indent">Your Heroic Persona lasts for one hour, unless you use a bonus action to dismiss it. Once you use this feature you can’t use it again until you finish a short or long rest, unless you expend 3 ki points to use it again.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You adopt your Heroic Persona for up to one hour. While your Heroic Persona is active: You gain {{level:monk}} temporary hit points. As a bonus action, you can spend 1 ki point to grant yourself {{level:monk}} temporary hit points. When you hit with a melee attack, you can spend 1 ki point to deal an additional 1d10 bludgeoning damage. You can use your Wisdom, in place of Dexterity, when calculating your Armor Class in light or medium armor. Ability checks and divination spells that would discern your true identity automatically fail.</description>
+                <description level="17">You adopt your Heroic Persona until you dismiss it as a bonus action. While your Heroic Persona is active: You gain {{level:monk}} temporary hit points. As a bonus action, you can spend 1 ki point to grant yourself {{level:monk}} temporary hit points. When you hit with a melee attack, you can spend 1 ki point to deal an additional 1d10 bludgeoning damage. You can use your Wisdom, in place of Dexterity, when calculating your Armor Class in light or medium armor. Ability checks and divination spells that would discern your true identity automatically fail.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Valiant Action" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_VALIANT_ACTION">
+            <description>
+                <p>As the reputation and power of your Heroic Persona grows, it grants you enhanced physical abilities. At 6th level, you gain proficiency in your choice of either Acrobatics or Athletics.</p>
+                <p class="indent">In addition, whenever you make a Strength (Athletics) or Dexterity (Acrobatics) check while your Heroic Persona is active, you can treat a d20 roll of 9 or lower as a 10.</p>
+            </description>
+            <sheet>
+                <description>Whenever you make a Athletics or Acrobatics check while your Heroic Persona is active, you can treat a d20 roll of 9 or lower as a 10.</description>
+            </sheet>
+            <rules>
+                <select type="Proficiency" name="Valiant Action" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ATHLETICS" />
+            </rules>
+        </element>
+        <element name="Inspiring Presence" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_INSPIRING_PRESENCE">
+            <description>
+                <p>Your presence inspires confidence in those who fight alongside you. Beginning at 11th level, while you are in your Heroic Persona, friendly creatures within 15 feet of you, that can see or hear you, have advantage on saving throws to resist being charmed or frightened.</p>
+                <p class="indent">At 17th level, the radius of this ability increases to 30 feet.</p>
+            </description>
+            <sheet>
+                <description>While you are in your Heroic Persona, friendly creatures within {{inspiring-presence:range}} feet of you, that can see or hear you, have advantage on saving throws to resist being charmed or frightened.</description>
+            </sheet>
+            <rules>
+            <stat name="inspiring-presence:range" value="15" level="11" />
+            <stat name="inspiring-presence:range" value="15" level="17" />
+            </rules>
+        </element>
+        <element name="Paragon of Virtue" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_PARAGON_OF_VIRTUE">
+            <description>
+                <p>Your true identity and your Heroic Persona have become one. Starting at 17th level, when you adopt your Heroic Persona, it lasts until you choose to dismiss it as a bonus action.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Heroic Strike" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VIGILANTE_HEROIC_STRIKE">
+            <description>
+                <p>Beginning at 17th level, you can channel all that you are into one devastating blow. As an action on your turn, you can spend 1 or more ki points and force a creature within 5 feet to make a Strength saving throw. For each ki point you spend you deal 1d10 magical bludgeoning damage and the creature is knocked back 10 feet. On a failed save, a creature takes the full damage and is knocked back. On a successful save, the creature takes half damage and is not moved.</p>
+            </description>
+            <sheet action="Action" usage="1+ ki">
+                <description>You can spend 1 or more ki points and force a creature within 5 feet to make a Strength saving throw. For each ki point you spend you deal 1d10 magical bludgeoning damage and the creature is knocked back 10 feet. On a failed save, a creature takes the full damage and is knocked back. On a successful save, the creature takes half damage and is not moved.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="Way of the Void" type="Archetype" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_MONK_WAY_OF_THE_VOID">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>While all monks seek unity with the cosmos in one way or another, those who follow the Way of the Void seek unity through annihilation. These strange nihilistic warriors channel the power of entropy, the gradual journey of the universe towards nothingness. Known as Void Wielders, these monks seek to accelerate the natural process of cosmic decay. Mortal or immortal, mundane or magical in origin, all will eventually become one in the inescapable void.</p>
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_ENTROPIC_TOUCH" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_VOID_WIELDER" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_VORPAL_STEP" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_DEGRADED_FORM" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_AVATAR_OF_ENTROPY" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_ENTROPIC_TOUCH" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_VOID_WIELDER" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_VORPAL_STEP" level="6" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_DEGRADED_FORM" level="11" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_AVATAR_OF_ENTROPY" level="17" />
+        </rules>
+    </element>
+        <element name="Entropic Touch" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_ENTROPIC_TOUCH">
+            <description>
+                <p>Starting at 3rd level, you can draw upon the power of the void and destroy one Tiny or smaller object that you touch. The item must be non-magical in nature, and cannot be on object that is being worn or carried by another creature.</p>
+                <p class="indent">The item remains destroyed for as long as you concentrate on this ability, as if concentrating on a spell. If you maintain concentration for 1 hour, the object is permanently destroyed. If you loose your concentration, the object reappears in an unoccupied space as close as possible to its last location.</p>
+                <p class="indent">Once you destroy an object with this feature, you can’t do so again until you finish a long rest, unless you expend 3 ki points to use this feature again.</p>
+                <p class="indent">The size of the non-magical item you can destroy with this feature increases as you gain levels in this class: at 6th level (Medium), 11th level (Large), and 17th level (Huge).</p>
+            </description>
+            <sheet usage="1/Long Rest or 3 ki">
+                <description>You destroy one {{entropic-touch:size}} or smaller object that you touch. The item must be non-magical in nature, and cannot be on object that is being worn or carried by another creature. The item remains destroyed for as long as you concentrate on this ability. If you maintain concentration for 1 hour, the object is permanently destroyed.</description>
+            </sheet>
+            <rules>
+                <stat name="entropic-touch:size" value="Tiny" inline="true" level="3" />
+                <stat name="entropic-touch:size" value="Medium" inline="true" level="6" />
+                <stat name="entropic-touch:size" value="Large" inline="true" level="11" />
+                <stat name="entropic-touch:size" value="Huge" inline="true" level="17" />
+            </rules>
+        </element>
+        <element name="Void Wielder" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_VOID_WIELDER">
+            <description>
+                <p>When you adopt this Monastic Tradition at 3rd level, you gain the signature ability of a Void monk. Once per turn, when you hit a creature with an unarmed strike, you can spend 1 ki point to deal and additional 1d12 force damage to the target.</p>
+                <p class="indent">If the creature you hit is concentrating on a a spell, it has disadvantage on the saving throw to maintain concentration.</p>
+            </description>
+            <sheet usage="1 ki">
+                <description>Once per turn, when you hit a creature with an unarmed strike, you can spend 1 ki point to deal and additional 1d12 force damage to the target. If the creature you hit is concentrating on a a spell, it has disadvantage on the saving throw to maintain concentration.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Vorpal Step" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_VORPAL_STEP">
+            <description>
+                <p>Beginning at 6th level, when you use Step of the Wind, you draw upon the power of the void to partially discorporate. Until the end of your current turn, you can move through non-magical objects and creatures as if they were difficult terrain.</p>
+                <p class="indent">If you end your movement inside an object or creature, you are immediately shunted to the nearest unoccupied space, taking 1d10 force damage per 5 feet you are forced to move.</p>
+            </description>
+            <sheet>
+                <description>When you use Step of the Wind, until the end of your current turn, you can move through non-magical objects and creatures as if they were difficult terrain. If you end your movement inside an object or creature, you are immediately shunted to the nearest unoccupied space, taking 1d10 force damage per 5 feet you are forced to move.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Degraded Form" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_DEGRADED_FORM">
+            <description>
+                <p>Drawing upon the cosmic forces of entropy has changed you. Beginning at 11th level, your touch can undo arcane weaves. As an action, you can spend 4 ki points to touch a creature, object, or magical effect and cast <i>dispel magic</i> at 3rd-level, using Wisdom as your spellcasting modifier.</p>
+                <p class="indent">In addition, when you pass through a creature with your Vorpal Step, you can force it to make a Constitution saving throw. On a failed save they take force damage equal to your Martial Arts die + your Wisdom modifier. You can only force a creature to make this saving throw once per turn.</p>
+            </description>
+            <sheet action="Action" usage="4 ki">
+                <description>You touch a creature, object, or magical effect and cast dispel magic at 3rd-level (Wisdom). When you pass through a creature with your Vorpal Step, you can force it to make a Constitution saving throw (once per turn). On a failed save they take 1d{{martial arts:dice}} + {{wisdom:modifier}} force damage.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" />
+            </rules>
+        </element>
+        <element name="Avatar of Entropy" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_VOID_AVATAR_OF_ENTROPY">
+            <description>
+                <p>Upon reaching 17th level, you can use an action on your turn to touch a creature and force them to make a Constitution saving throw. On a failed save, the creature suffers the effects of the disintegrate spell cast at 6th-level.</p>
+                <p class="indent">Once you use this ability you can’t use it again until you finish a long rest, unless you spend 6 ki points to use it again.</p>
+            </description>
+            <sheet action="Action">
+                <description>You touch a creature and force them to make a Constitution saving throw. On a failed save, the creature suffers the effects of the disintegrate spell cast at 6th-level.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DISINTEGRATE" />
+            </rules>
+        </element>
+
+    <element name="Way of the Wilds" type="Archetype" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_MONK_WAY_OF_THE_WILDS">
+        <supports>Monastic Tradition</supports>
+        <description>
+            <p>Monks of all traditions strive for mastery over their physical form, honing their bodies into deadly weapons, mastering ancient martial arts techniques. Creatures born with natural weapons; vicious claws, imposing horns, sharp teeth, thick scales, or lashing tails, have a natural advantage over other monks in their quest to weaponize their bodies for combat.</p>
+            <p class="indent">Monks with these natural advantages often use their physical form to their advantage and adopt the Way of Wilds. Through the practice of this ancient and savage tradition they enhance their physiological features with secret techniques, and combine their mastery of ki with the primal ferocity that dwells within all creatures of wild heritage.</p>
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_SAVAGE_STRIKES" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_NATURAL_PREDATOR" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_PRIMAL_INTUITION" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_POWER_OF_THE_WILDS" />
+            <div element="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_APEX_PREDATOR" />
+            <div class="sidebar">
+                <h5 class="caption">Optional Rule: Race Restriction</h5>
+                <p>The Way of the Feral Warrior is typically practiced by creatures of bestial ancestry. Only creatures with natural weapons, such as Lizardfolk, Tortles, Minotaurs, or Leonin can choose this Monastic Tradition. Your Dungeon Master can lift this restriction to better suit your campaign setting.</p>
+            </div>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_SAVAGE_STRIKES" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_NATURAL_PREDATOR" level="3" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_PRIMAL_INTUITION" level="6" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_POWER_OF_THE_WILDS" level="11" />
+            <grant type="Archetype Feature" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_APEX_PREDATOR" level="17" />
+        </rules>
+    </element>
+        <element name="Savage Strikes" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_SAVAGE_STRIKES">
+            <description>
+                <p>Your body itself evolved to be a weapon. Whether it be claws, teeth, spines, or scales, your physical form has innate combat potential. Starting at 3rd level your Martial Arts damage die increases to a d6 for your unarmed strikes.</p>
+                <p class="indent">The size of your Martial Arts die for your unarmed strikes increases as you gain levels in this class; to a d8 at 5th level, a d10 at 11th level, and finally it becomes a d12 at 17th level.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+    			<stat name="martial arts:dice" value="2" bonus="savage strikes" />
+            </rules>
+        </element>
+        <element name="Natural Predator" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_NATURAL_PREDATOR">
+            <description>
+                <p>Upon adopting this Tradition at 3rd level, you can enhance your natural ability with one of the disciplines below:</p>
+                <p class="indent"><b>Bestial Rend.</b> This discipline is most often adopted by creatures with natural claws. Your unarmed strikes now deal slashing damage, and inflict deep wounds in your target. Each time you hit a creature with an unarmed strike, its movement speed is reduced by a cumulative 5 feet until the start of your next turn. If you reduce a creature’s speed to 0, they are restrained until the beginning of your next turn.</p>
+                <p class="indent"><b>Natural Defense.</b> This discipline is most often adopted by creatures with scales or shells. When you hit a creature with an unarmed strike, it has disadvantage on the first attack roll it makes against you before the start of your next turn.</p>
+                <p class="indent"><b>Savage Charge.</b> This discipline is most often adopted by creatures with hooves or horns. When you move at least 20 feet on your turn, you have advantage on the attack roll for the first unarmed strike or natural weapon attack you make.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Archetype Feature" name="Natural Predator" supports="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_NATURAL_PREDATOR_BESTIAL_REND|ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_NATURAL_PREDATOR_NATURAL_DEFENSE|ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_NATURAL_PREDATOR_SAVAGE_CHARGE" />
+            </rules>
+        </element>
+            <element name="Bestial Rend" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_NATURAL_PREDATOR_BESTIAL_REND">
+                <compendium display="false" />
+                <description>
+                    <p>This discipline is most often adopted by creatures with natural claws. Your unarmed strikes now deal slashing damage, and inflict deep wounds in your target. Each time you hit a creature with an unarmed strike, its movement speed is reduced by a cumulative 5 feet until the start of your next turn. If you reduce a creature’s speed to 0, they are restrained until the beginning of your next turn.</p>
+                </description>
+                <sheet>
+                    <description>Your unarmed strikes now deal slashing damage, and inflict deep wounds in your target. Each time you hit a creature with an unarmed strike, its movement speed is reduced by a cumulative 5 feet until the start of your next turn. If you reduce a creature’s speed to 0, they are restrained until the beginning of your next turn.</description>
+                </sheet>
+            </element>
+            <element name="Natural Defense" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_NATURAL_PREDATOR_NATURAL_DEFENSE">
+                <compendium display="false" />
+                <description>
+                    <p>This discipline is most often adopted by creatures with scales or shells. When you hit a creature with an unarmed strike, it has disadvantage on the first attack roll it makes against you before the start of your next turn.</p>
+                </description>
+                <sheet>
+                    <description>When you hit a creature with an unarmed strike, it has disadvantage on the first attack roll it makes against you before the start of your next turn.</description>
+                </sheet>
+            </element>
+            <element name="Savage Charge" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_NATURAL_PREDATOR_SAVAGE_CHARGE">
+                <compendium display="false" />
+                <description>
+                    <p>This discipline is most often adopted by creatures with hooves or horns. When you move at least 20 feet on your turn, you have advantage on the attack roll for the first unarmed strike or natural weapon attack you make.</p>
+                </description>
+                <sheet>
+                    <description>When you move at least 20 feet on your turn, you have advantage on the attack roll for the first unarmed strike or natural weapon attack you make.</description>
+                </sheet>
+            </element>
+        <element name="Primal Intuition" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_PRIMAL_INTUITION">
+            <description>
+                <p>You have worked to hone your instinctive abilities along with your physical form. At 6th level, choose one skill proficiency you gained as a racial feature. You can add double your proficiency bonus to any check you make with that skill.</p>
+                <p class="indent">If you did not gain a skill proficiency from your racial features, you instead gain proficiency in your choice of either Insight, Intimidation, Perception, or Survival.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Class Feature" name="Primal Intuition" supports="Expertise" />
+            </rules>
+        </element>
+        <element name="Power of the Wilds" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_POWER_OF_THE_WILDS">
+            <description>
+                <p>In your training you have learned to augment your physical strikes with the power of ki. Starting at 11th level, when you hit a creature with an unarmed strike you can expend 1 ki point to deal an additional 2d6 damage to the target.</p>
+            </description>
+            <sheet usage="1 ki">
+                <description>When you hit a creature with an unarmed strike you can expend 1 ki point to deal an additional 2d6 damage to the target.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Apex Predator" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_APEX_PREDATOR">
+            <description>
+                <p>You have brought forth the true potential of your wild body. At 17th level, you learn one of the following disciplines:</p>
+                <p class="indent"><b>Bestial Fury.</b> You can whip yourself into a primal fury when hunting your foes. When you score a critical hit against a creature with an unarmed strike, its speed is reduced to 0, and you have advantage on any unarmed strikes you make against that creature until the start of your next turn.</p>
+                <p class="indent"><b>Natural Resilience.</b> You can harden your exterior to deflect incoming blows. As a reaction, when you are hit by an attack, you can expend ki to increase your Armor Class until the start of your next turn. For each ki point you expend your Armor Class increases by 2, up to a maximum of 5 ki points.</p>
+                <p class="indent"><b>Savage Rush.</b> You can draw upon primal speed to trample those in your path. As an action, you can expend 4 ki points and move up to your full movement speed in a straight line. Any creatures you pass through must make a Dexterity saving throw. Creatures take 8d6 bludgeoning damage and fall prone on a failed save, and half damage on a success.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Archetype Feature" name="Apex Predator" supports="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_APEX_PREDATOR_BESTIAL_FURY|ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_APEX_PREDATOR_NATURAL_RESILIENCE|ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_APEX_PREDATOR_SAVAGE_RUSH" />
+            </rules>
+        </element>
+            <element name="Bestial Fury" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_APEX_PREDATOR_BESTIAL_FURY">
+                <compendium display="false" />
+                <description>
+                    <p>You can whip yourself into a primal fury when hunting your foes. When you score a critical hit against a creature with an unarmed strike, its speed is reduced to 0, and you have advantage on any unarmed strikes you make against that creature until the start of your next turn.</p>
+                </description>
+                <sheet>
+                    <description>When you score a critical hit against a creature with an unarmed strike, its speed is reduced to 0, and you have advantage on any unarmed strikes you make against that creature until the start of your next turn.</description>
+                </sheet>
+            </element>
+            <element name="Natural Resilience" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_APEX_PREDATOR_NATURAL_RESILIENCE">
+                <compendium display="false" />
+                <description>
+                    <p>You can harden your exterior to deflect incoming blows. As a reaction, when you are hit by an attack, you can expend ki to increase your Armor Class until the start of your next turn. For each ki point you expend your Armor Class increases by 2, up to a maximum of 5 ki points.</p>
+                </description>
+                <sheet action="Reaction" usage="1-5 ki">
+                    <description>When you are hit by an attack, you can expend ki to increase your Armor Class until the start of your next turn. For each ki point you expend your Armor Class increases by 2, up to a maximum of 5 ki points.</description>
+                </sheet>
+            </element>
+            <element name="Savage Rush" type="Archetype Feature" source="Laserllama’s Monastic Traditions" id="ID_LL_MT_ARCHETYPE_FEATURE_WOT_WILDS_APEX_PREDATOR_SAVAGE_RUSH">
+                <compendium display="false" />
+                <description>
+                    <p>You can draw upon primal speed to trample those in your path. As an action, you can expend 4 ki points and move up to your full movement speed in a straight line. Any creatures you pass through must make a Dexterity saving throw. Creatures take 8d6 bludgeoning damage and fall prone on a failed save, and half damage on a success.</p>
+                </description>
+                <sheet action="Action" usage="4 ki">
+                    <description>You move up to your full movement speed in a straight line. Any creatures you pass through must make a Dexterity saving throw. Creatures take 8d6 bludgeoning damage and fall prone on a failed save, and half damage on a success.</description>
+                </sheet>
+            </element>
+
+</elements>
