@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>School of Hemomancy</name>
+        <update version="0.0.1">
+            <file name="wizard-school-of-hemomancy.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/subclasses/wizard/wizard-school-of-hemomancy.xml" />
+        </update>
+    </info>
+    
+    <element name="School of Hemomancy" type="Source" source="Core" id="ID_DODST_GMBINDER_SOURCE_SCHOOL_OF_HEMOMANCY">
+        <description>
+            <![CDATA[<p></p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">SOH</set>
+            <set name="url">https://www.gmbinder.com/share/-MOSrOVINBukkqknTErc</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="DODST" url="https://www.gmbinder.com/profile/dodst">Dodst</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210510</set>
+        </setters>
+    </element>
+
+    <element name="School of Hemomancy" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_WIZARD_SCHOOL_OF_HEMOMANCY">
+        <supports></supports>
+        <description>
+            <p>The School of Hemomancy is a rarely seen tradition of arcane blood manipulation. Originally created by blood cultists and dark wizards, this tradition has been adopted by practitioners, who have shied away from the dark rituals of the past.</p>
+            <p class="indent">In combat, a hemomancer uses his blood, and the blood of his enemies, to protect himself and harm the foes he faces. Many who have observed the works of a hemomancer have born witness to the fearsome manipulations and attacks of those who manipulate blood and know to escape if combat with a hemomancer seems likely.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_EXSANGUINATE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_THE_TAINTED_BLADE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_ARMOR_OF_ICHOR" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_BLOOD_WOUND" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_BLOOD_MANIPULATION" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_EXSANGUINATE" level="2" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_THE_TAINTED_BLADE" level="2" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_ARMOR_OF_ICHOR" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_BLOOD_WOUND" level="10" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_BLOOD_MANIPULATION" level="14" />
+        </rules>
+    </element>
+        <element name="Exsanguinate" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_EXSANGUINATE">
+            <description>
+                <p>Beginning when you select this school at 2nd level, you learn to reinvigorate yourself with the blood of the fallen. As an action, you can regain 1d4 hit points from the corpse of a dead creature within 15 ft. of you, and has not been dead for over 1 minute. You can use this feature on a medium creature once, twice on a large creature, three times for a huge creature and four times for a gargantuan creature. This feature cannot be used on the corpses for creatures sized small or smaller. Creatures that do not have blood in their bodies are immune to the Exsanguinate feature.</p>
+                <p class="indent">You can use this feature a number of times equal to your proficiency modifier. You regain all expended uses after you complete a long rest.</p>
+                <p class="indent">When you reach the 6th level, you regain 1d6 hit points, and an additional +1 temporary hit point per creature size above medium. The die becomes 1d8 at 10th level with a +2 temporary hit points per creature size above medium, and 1d10 at 14th level with a +3 temporary hit points per creature size above medium.</p>
+            </description>
+            <sheet action="Action" usage="{{proficiency}}/Long Rest">
+                <description>You can regain 1d{{exsanguinate:die-type}} hit points from the corpse of a medium-sized dead creature within 15 ft. of you, and has not been dead for over 1 minute. You can use this feature on a medium creature once, twice on a large creature, three times for a huge creature and four times for a gargantuan creature.</description>
+                <description level="6">You can regain 1d{{exsanguinate:die-type}} hit points from the corpse of a medium-sized dead creature within 15 ft. of you, and has not been dead for over 1 minute. You can use this feature on a medium creature once, twice on a large creature, three times for a huge creature and four times for a gargantuan creature. You gain +{{exsanguinate:temp-hp}} temporary hit points for each size above medium.</description>
+            </sheet>
+            <rules>
+                <stat name="exsanguinate:die-type" value="4" bonus="base" level="2" />
+                <stat name="exsanguinate:die-type" value="6" bonus="base" level="6" />
+                <stat name="exsanguinate:die-type" value="8" bonus="base" level="10" />
+                <stat name="exsanguinate:die-type" value="10" bonus="base" level="14" />
+                <stat name="exsanguinate:temp-hp" value="1" level="6" />
+                <stat name="exsanguinate:temp-hp" value="1" level="10" />
+                <stat name="exsanguinate:temp-hp" value="1" level="14" />
+            </rules>
+        </element>
+        <element name="The Tainted Blade" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_THE_TAINTED_BLADE">
+            <description>
+                <p>Also starting at 2nd level, you can use your action to sacrifice your hit points, and create a weapon of your choice from the Weapons table found on page 149 of the Players Handbook in an empty hand, which you are proficient with it while you wield it. The hit points you lose are equal to a roll of the damage die for the weapon you are creating, and your hit point maximum is reduced by that number until you complete a long rest. While the weapon is summoned, you use your intelligence modifier in place of your Strength or Dexterity modifiers when making Attack or damage rolls, it can act as your arcane focus, and you can summon and dismiss the blade without taking damage until you complete a long rest.</p>
+                <p class="indent">Your tainted blade disappears if it is more than 5 feet away from you. It also disappears if you dismiss the weapon (no action required), or if you die.</p>
+                <p class="indent">When you reach the 6th level, you can instead summon a +1 Tainted Blade by sacrificing an additional 2 hit points on your hit point maximum reduction, and the weapon counts as magical for the purpose of overcoming Resistance and Immunity to nonmagical attacks and damage. This bonus becomes +2 at 10th level for an additional sacrifice of 4 hit points, and +3 at 14th level for and additional sacrifice of 6 hit points.</p>
+            </description>
+            <sheet action="Action">
+                <description>You sacrifice your hit points, and create a weapon of your choice in an empty hand, which you are proficient with it while you wield it. The hit points you lose are equal to a roll of the damage die for the weapon you are creating, and your hit point maximum is reduced by that number until you complete a long rest.</description>
+                <description level="6">You sacrifice your hit points, and create a weapon of your choice in an empty hand, which you are proficient with it while you wield it. You can summon a +{{exsanguinate:temp-hp}} weapon by sacrificing and additional {{tainted-blade:hp-loss}} hit points. The hit points you lose are equal to a roll of the damage die for the weapon you are creating, and your hit point maximum is reduced by that number until you complete a long rest.</description>
+            </sheet>
+            <rules>
+                <stat name="tainted-blade:hp-loss" value="2" level="6" />
+                <stat name="tainted-blade:hp-loss" value="2" level="10" />
+                <stat name="tainted-blade:hp-loss" value="2" level="14" />
+            </rules>
+        </element>
+        <element name="Armor of Ichor" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_ARMOR_OF_ICHOR">
+            <description>
+                <p>At 6th level, your manipulation of blood has improved greatly. Whenever you use your Hemomancy Savant feature, you can choose to forgo the hit points and instead don the blood as armor. While wearing the Armor of Ichor, your AC becomes 13 + your Intelligence modifier for 10 minutes.</p>
+                <p class="indent">Creatures that do not have blood in their bodies, or have been dead for over 1 minute, are immune to the Armor of Ichor feature. The Armor of Ichor disappears if you use this feature again, if you dismiss the armor (no action required), fall unconscious or if you die. The armor also disappears when you complete a long rest.</p>
+                <p class="indent">Once this feature has been used, you must complete a short rest before you can do so again.</p>
+                <p class="indent">When you reach the 14th level, the AC from your Armor of Ichor feature becomes 14 + your Intelligence modifier.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>Whenever you use your Hemomancy Savant feature, you can choose to forgo the hit points and instead, your AC becomes {{armor-of-ichor:ac}} for 10 minutes.</description>
+            </sheet>
+            <rules>
+                <stat name="armor-of-ichor:ac" value="13" />
+                <stat name="armor-of-ichor:ac" value="1" level="14" />
+                <stat name="armor-of-ichor:ac" value="intelligence:modifier" />
+            </rules>
+        </element>
+        <element name="Blood Wound" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_BLOOD_WOUND">
+            <description>
+                <p>At 10th level, The blood of all hostile creatures within range of the player boils within their veins. As an action, you inflict 3d8 necrotic damage to all creatures within 15 feet of you that are missing any of their hit points. The creature then must make a Constitution saving throw against your spell save DC, and is restrained for a number of rounds equaling your Intelligence modifier on a failure. At the end of a restrained creatures turn, it can make a Constitution saving throw against your spell save DC, ending the effect on itself on a success.</p>
+                <p class="indent">Creatures that do not have blood in their bodies are immune to the Blood Wound feature. Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Short Rest">
+                <description>All creatures within 15 feet of you that are missing any of their hit points must make a Constitution saving throw or take 3d8 necrotic damage, and be restrained for {{intelligence:modifier}} rounds.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Blood Manipulation" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_HEMOMANCY_BLOOD_MANIPULATION">
+            <description>
+                <p>At 14th level, your knowledge of organic processes and experience with your victims' blood grants you the ability to siphon out your target's blood, and shape it into a construct of your will. As an action you can drain the blood of a creature that is missing any of its hit points, inflicting 1d12 necrotic damage, and creating a Blood Child in the nearest open space to the target.</p>
+                <p class="indent">The Blood Child is a strange humanoid construct created from arcane energy and blood. It is friendly to you and your companions, and it obeys your commands. See this construct’s game statistics in the Blood Child stat block.</p>
+                <p class="indent">In combat, the Blood Child shares your initiative count, but it takes its turn immediately after yours. The Blood Child can take any action of its choice, as shown in its stat block, or mechanically acceptable.</p>
+                <p class="indent">The Blood Child ceases to exist after 10 minutes, or if you dismiss it with a bonus action.</p>
+                <p class="indent">Creatures that do not have blood in their bodies are immune to the Blood Manipulation feature. Once you use this feature, you can’t use it again until you finish a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can drain the blood of a creature that is missing any of its hit points, inflicting 1d12 necrotic damage, and creating a Blood Child in the nearest open space to the target.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
