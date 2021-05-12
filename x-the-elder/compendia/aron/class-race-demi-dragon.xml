@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Demi-Dragon v4.0.2</name>
-        <update version="0.0.1">
+        <name>Demi-Dragon v4.1</name>
+        <update version="0.0.2">
             <file name="class-race-demi-dragon.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/aron/class-race-demi-dragon.xml" />
         </update>
     </info>
@@ -337,13 +337,11 @@
         <element name="Devour Magic" type="Class Feature" source="Demi-Dragon" id="ID_ARON_DD_CLASS_FEATURE_DEMI_DRAGON_DEVOUR_MAGIC">
             <description>
                 <p class="flavor">1st, 5th, and 18th-level demi-dragon feature</p>
-                <p class="indent">To sustain your new form, you have developed an innate ability that lets you consume magical effects.</p>
-                <p class="indent">As an action, choose one creature, object, or magical effect within a range of 10 feet of you. Any spell of a level lower than or equal to one third your demi-dragon level (minimum 1, rounded down) on the target is dispelled. For each spell of a level higher than that, make a Charisma check. The DC equals 10 + the spell's level. On a success, the spell is dispelled. If at least one effect is dispelled, you regain hit points equal to your demi-dragon level + your Constitution modifier (minimum 1).</p>
-                <p class="indent">You can use this feature once, and must finish a long rest before you can use it again.</p>
-                <p class="indent">Starting at 5th level, the range increases to 60 feet. At 18th level, you can use it twice before a long rest.</p>
+                <p class="indent">To sustain your new form, you have developed an innate ability that lets you consume magic. As an action, choose one creature, object, or magical effect within a range of 10 feet of you. Any spell of a level lower than or equal to one third your demi-dragon level (minimum 1) on the target is dispelled. For each spell of a level higher than that, make a Charisma check. The DC equals 10 + the spell's level. On a success, the spell is dispelled. Regardless of success, you then regain hit points equal to your demi-dragon level + your Constitution modifier (minimum 1). Effects that refer to <i>dispel magic</i> also apply to this feature, such as <i>wall of force</i>.</p>
+                <p class="indent">You can use this feature once, and must finish a long rest before you can use it again. Starting at 5th level, the range increases to 60 feet. At 18th level, you can use it twice before a long rest.</p>
             </description>
             <sheet action="Action" usage="{{devour-magic:uses}}/Long Rest">
-                <description>Choose one creature, object, or magical effect within a range of {{devour-magic:range}} feet of you. Any spell of a level lower than or equal to one third your demi-dragon level (minimum 1, rounded down) on the target is dispelled. For each spell of a level higher than that, make a Charisma check. The DC equals 10 + the spell's level. On a success, the spell is dispelled. If at least one effect is dispelled, you regain {{devour-magic:hp}} hit points.</description>
+                <description>Choose one creature, object, or magical effect within a range of {{devour-magic:range}} feet of you. Any spell of a level lower than or equal to one third your demi-dragon level (minimum 1, rounded down) on the target is dispelled. For each spell of a level higher than that, make a Charisma check. The DC equals 10 + the spell's level. On a success, the spell is dispelled. Regardless of success, you regain {{devour-magic:hp}} hit points.</description>
             </sheet>
             <rules>
                 <stat name="devour-magic:range" value="10" level="1" />
@@ -605,10 +603,10 @@
             <description>
                 <p class="flavor">5th-level demi-dragon feature</p>
                 <p class="indent">You've become better used to your still-growing body. Your walking speed increases by 10 feet while you aren't wearing heavy armor.</p>
-                <p class="indent">Additionally, a Medium or smaller creature can ride on your back if you allow it. In such a situation, you continue to act independently, not as a controlled mount.</p>
+                <p class="indent">Additionally, a creature that is the same size category as you or smaller can ride on your back if you allow it. In such a situation, you continue to act independently, not as a controlled mount.</p>
             </description>
             <sheet>
-                <description>A Medium or smaller creature can ride on your back if you allow it. In such a situation, you continue to act independently, not as a controlled mount.</description>
+                <description>A creature the same size as you or smaller can ride on your back if you allow it. In such a situation, you continue to act independently, not as a controlled mount.</description>
             </sheet>
             <rules>
                 <stat name="innate speed:misc" value="10" requirements="![armor:heavy]" />
@@ -713,10 +711,10 @@
         <element name="Rend and Ruin" type="Class Feature" source="Demi-Dragon" id="ID_ARON_DD_CLASS_FEATURE_DEMI_DRAGON_REND_AND_RUIN">
             <description>
                 <p class="flavor">17th-level demi-dragon feature</p>
-                <p class="indent">Your savage strikes leave your foes broken and bleeding. Once on each of your turns if you deal damage to a target with at least two natural weapon attacks, the target takes an additional 2d6 damage of the same type, and has its speed reduced by 10 feet until the start of your next turn.</p>
+                <p class="indent">Your savage strikes leave your foes broken and bleeding. Once on each of your turns if you deal damage to a target with at least two natural weapon attacks, the target takes an additional 3d6 damage of the same type, and has its speed reduced by 10 feet until the start of your next turn.</p>
             </description>
             <sheet>
-                <description>Once on each of your turns if you deal damage to a target with at least two natural weapon attacks, the target takes an additional 2d6 damage of the same type, and has its speed reduced by 10 feet until the start of your next turn.</description>
+                <description>Once on each of your turns if you deal damage to a target with at least two natural weapon attacks, the target takes an additional 3d6 damage of the same type, and has its speed reduced by 10 feet until the start of your next turn.</description>
             </sheet>
             <rules>
             </rules>
@@ -1090,7 +1088,7 @@
                 <description>
                     <p>As an action, you breathe forth a vaporous poison, which billows around one creature you can see that is within the range of your Line Range. The creature must succeed on a Wisdom saving throw against your Dragon Spark save DC or become charmed by you for 1 minute. If the charmed target takes any damage, it can repeat the saving throw, ending the effect on a success. While charmed in this way, the target is poisoned.</p>
                 </description>
-                <sheet alt="Beguiling Miasma" usage="{{ardent-breath:uses}}/Short Rest" action="Action">
+                <sheet alt="Beguiling Miasma" usage="{{ardent-breath:uses}}/Short Rest" action="Bonus Action">
                     <description>You breathe forth a vaporous poison, which billows around one creature you can see that is within {{dragons-breath:length}} feet. The creature must succeed on a Wisdom saving throw (DC {{dragon-spark:save-dc}}) or become charmed by you for 1 minute. If the charmed target takes any damage, it can repeat the saving throw, ending the effect on a success. While charmed in this way, the target is poisoned.</description>
                     <description level="6">You breathe forth a vaporous poison, which billows around one creature you can see that is within {{dragons-breath:length}} feet. The creature must succeed on a Wisdom saving throw (DC {{dragon-spark:save-dc}}) or become charmed by you for 1 minute. If the charmed target takes any damage, it can repeat the saving throw, ending the effect on a success. While charmed in this way, the target is poisoned.
                     As a bonus action while the charmed target is within 10 feet of you, you can force the target to make a Constitution saving throw or be rendered unconscious for up to 1d4 hours. If the unconscious creature takes any damage, it wakes up.</description>
@@ -1150,7 +1148,7 @@
                 <p class="indent">You've learned how to get the most out of your Ardent Breath. Depending on your damage type, you gain the following benefit:</p>
                 <ul>
                     <li><b>Corrosion:</b> Any target hit by your Acid Barrage is left open to attack. Before the end of your next turn, the next attack roll made against each target has advantage.</li>
-                    <li><b>Induce Torpor:</b> As a bonus action while the charmed target of your Beguiling Miasma is within 10 feet of you, you can force the target to make a Constitution saving throw against your Dragon Spark save DC or be rendered unconscious for up to 1d4 hours. If the unconscious creature takes any damage, it wakes up.</li>
+                    <li><b>Induce Torpor:</b> As an action while the charmed target of your Beguiling Miasma is within 10 feet of you, you can force the target to make a Constitution saving throw against your Dragon Spark save DC or be rendered unconscious for up to 1d4 hours. If the unconscious creature takes any damage, it wakes up.</li>
                     <li><b>Explosive Departure:</b> When you use Fiery Eruption, you can use your bonus action to take flight and launch yourself 15 feet into the air. This movement doesn't provoke opportunity attacks.</li>
                     <li><b>Glacial Chill:</b> Creatures that fail their saving throw against your Freezing Mist have their speed halved until the end of their next turn.</li>
                     <li><b>Sweeping Lightning:</b> As a reaction when Lightning Lance misses its initial target or would end, you can redirect the beam of lightning to another target. Make a Dragon Spark attack against a different target that is within range. On a hit, the target takes no damage, but becomes the new target of your Lightning Lance. Once you use your reaction in this way, you can't do so again until you initiate Lightning Lance again.</li>
@@ -1212,11 +1210,11 @@
         <element name="Veil of Smoke" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_SHADESTALKER_VEIL_OF_SMOKE">
             <description>
                 <p>3rd-, 6th-, and 10th-level Shadestalker feature</p>
-                <p class="indent">You learn to use your breath to create a veil of smoke, mist, gas, or fog to blind your foes. As an action, you breathe forth a cone of smoke equal in range to your Dragon's Breath Cone Range. The area is heavily obscured for 1 minute, or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it. Once on each of your turns when you move while within your Veil of Smoke, you can cause it to drift up to 15 feet in a direction of your choosing.</p>
+                <p class="indent">You learn to use your breath to create a veil of smoke, mist, gas, or fog to blind your foes. As an action, you breathe forth a cone of smoke equal in range to your Dragon's Breath Cone Range. The area is heavily obscured for 1 minute, or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it. Once on each of your turns when you move while within your Veil of Smoke, you can use your reaction to cause it to drift up to 15 feet in a direction of your choosing.</p>
                 <p class="indent">You can use this feature once, and must then complete a short or long rest before you can use it again. At 6th level, and again at 10th level, you gain an additional use of it.</p>
             </description>
             <sheet action="Action" usage="{{veil-of-smoke:uses}}/Long Rest">
-                <description>You breathe a {{dragons-breath:cone-length}}-foot long cone of smoke. The area is heavily obscured for 1 minute, or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it. Once on each of your turns when you move while within your Veil of Smoke, you can cause it to drift up to 15 feet in a direction of your choosing.</description>
+                <description>You breathe a {{dragons-breath:cone-length}}-foot long cone of smoke. The area is heavily obscured for 1 minute, or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it. Once on each of your turns when you move while within your Veil of Smoke, you can use your reaction to cause it to drift up to 15 feet in a direction of your choosing.</description>
             </sheet>
             <rules>
                 <stat name="veil-of-smoke:uses" value="1" level="3" />
@@ -1228,12 +1226,12 @@
             <description>
                 <p>3rd-level Shadestalker feature</p>
                 <p class="indent">Predatory instincts awaken within you. You gain blindsight out to 10 feet. When you gain Eye of the Dragon at 9th level, it increases to 20 feet.</p>
-                <p class="indent">Additionally, once per turn when you hit with a melee weapon attack roll which you had advantage on, you can choose to reduce the target's speed by half until the start of your next turn.</p>
+                <p class="indent">Additionally, once per turn when you hit with a melee weapon attack roll which you had advantage on, you can choose to reduce the target's speed by 10 feet until the start of your next turn.</p>
                 <p class="indent">You don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll.</p>
             </description>
             <sheet>
-                <description>Once per turn when you hit with a melee weapon attack roll which you had advantage on, or if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, you can choose to reduce the target's speed by half until the start of your next turn.</description>
-                <description level="17">Once per turn when you hit with a melee weapon attack roll which you had advantage on, or if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, you can choose to reduce the target's speed by half for 1 minute.</description>
+                <description>Once per turn when you hit with a melee weapon attack roll which you had advantage on, or if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, you can choose to reduce the target's speed by 10 feet until the start of your next turn.</description>
+                <description level="17">Once per turn when you hit with a melee weapon attack roll which you had advantage on, or if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, you can choose to reduce the target's speed by 10 feet for 1 minute.</description>
             </sheet>
             <rules>
                 <grant type="Vision" id="ID_VISION_BLINDSIGHT" />
@@ -1741,7 +1739,7 @@
         <element name="Bolstering Roar (1)" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_JUGGERNAUT_MANEUVER_BOLSTERING_ROAR">
             <supports>Demi-Dragon Juggernaut Maneuver</supports>
             <description>
-                <p>As a bonus action, you roar, bolstering the conviction of your companions. Each creature of your choice within 30 feet of you can reroll a saving throw against one effect that is causing them to be charmed or frightened. Targets have advantage on this saving throw. A target must be able to see or hear you to benefit from this effect.</p>
+                <p>As a bonus action, you roar, bolstering the conviction of your companions. Each creature of your choice within 60 feet of you can reroll a saving throw against one effect that is causing them to be charmed or frightened. Targets have advantage on this saving throw. A target must be able to see or hear you to benefit from this effect.</p>
             </description>
             <sheet alt="Bolstering Roar" usage="1 fury" action="Bonus Action">
                 <description>Each creature of your choice within 30 feet of you that can see and hear you can reroll a saving throw against one effect that is causing them to be charmed or frightened. Targets have advantage on this saving throw.</description>
@@ -1763,10 +1761,10 @@
         <element name="Launch Ally (1)" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_JUGGERNAUT_MANEUVER_LAUNCH_ALLY">
             <supports>Demi-Dragon Juggernaut Maneuver</supports>
             <description>
-                <p>As a bonus action, choose a friendly creature within 5 feet of you that is Medium or smaller. That creature can use its reaction to let you launch it to an unoccupied space you can see within a number of feet of it equal to your Strength score.</p>
+                <p>As a bonus action, choose a friendly creature within 5 feet of you that is the same size category as you or smaller. That creature can use its reaction to let you launch it to an unoccupied space you can see within a number of feet of it equal to your Strength score.</p>
             </description>
             <sheet alt="Launch Ally" usage="1 fury" action="Bonus Action">
-                <description>Choose a friendly creature within 5 feet of you that is Medium or smaller. That creature can use its reaction to let you launch it to an unoccupied space you can see within {{strength}} feet.</description>
+                <description>Choose a friendly creature within 5 feet of you that is the same size category as you or smaller. That creature can use its reaction to let you launch it to an unoccupied space you can see within {{strength}} feet.</description>
             </sheet>
             <rules>
             </rules>
@@ -1774,10 +1772,10 @@
         <element name="Skylaunch (1)" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_JUGGERNAUT_MANEUVER_SKYLAUNCH">
             <supports>Demi-Dragon Juggernaut Maneuver</supports>
             <description>
-                <p>As an action, you spread your wings and launch 15 feet into the air. This maneuver doesn't expend your available movement and doesn't provoke opportunity attacks. Large or smaller creatures within 5 feet of you must succeed on a Strength saving throw or be knocked prone by a powerful gust of wind. You remain airborne until the start of your next turn or until you are incapacitated, at which point you must glide, fly, or fall.</p>
+                <p>As an action, you spread your wings and launch 15 feet into the air. This maneuver doesn't expend your available movement and doesn't provoke opportunity attacks. Creatures up to one size category larger than you that are within 5 feet of you must succeed on a Strength saving throw or be knocked prone by a powerful gust of wind. You remain airborne until the start of your next turn or until you are incapacitated, at which point you must glide, fly, or fall.</p>
             </description>
             <sheet alt="Skylaunch" usage="1 fury" action="Action">
-                <description>You launch 15 feet into the air. This maneuver doesn't expend your available movement and doesn't provoke opportunity attacks. Large or smaller creatures within 5 feet of you must succeed on a Strength saving throw or be knocked prone by a powerful gust of wind. You remain airborne until the start of your next turn or until you are incapacitated, at which point you must glide, fly, or fall.</description>
+                <description>You launch 15 feet into the air. This maneuver doesn't expend your available movement and doesn't provoke opportunity attacks. Creatures up to one size category larger than you within 5 feet of you must succeed on a Strength saving throw or be knocked prone by a powerful gust of wind. You remain airborne until the start of your next turn or until you are incapacitated, at which point you must glide, fly, or fall.</description>
             </sheet>
             <rules>
             </rules>
@@ -1785,10 +1783,10 @@
         <element name="Suppressing Gale (1)" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_JUGGERNAUT_MANEUVER_SUPPRESSING_GALE">
             <supports>Demi-Dragon Juggernaut Maneuver</supports>
             <description>
-                <p>As a bonus action, you blast gusts of wind at your surroundings. Large or smaller creatures within 30 feet of you must spend 2 feet of movement for every 1 feet when moving closer to you. The gale disperses gas or vapor, and extinguishes candles, torches, and smaller unprotected flames in the area. This effect lasts until the start of your next turn, you are incapacitated, or you choose to end it (no action required).</p>
+                <p>As a bonus action, you blast gusts of wind at your surroundings. Creatures up to one size category larger than you within 30 feet of you must spend 2 feet of movement for every 1 feet when moving closer to you. The gale disperses gas or vapor, and extinguishes candles, torches, and smaller unprotected flames in the area. This effect lasts until the start of your next turn, you are incapacitated, or you choose to end it (no action required).</p>
             </description>
             <sheet alt="Suppressing Gale" usage="1 fury" action="Bonus Action">
-                <description>You blast gusts of wind at your surroundings. Large or smaller creatures within 30 feet of you must spend 2 feet of movement for every 1 feet when moving closer to you. The gale disperses gas or vapor, and extinguishes candles, torches, and smaller unprotected flames in the area. This effect lasts until the start of your next turn, you are incapacitated, or you choose to end it.</description>
+                <description>You blast gusts of wind at your surroundings. Creatures up to one size category larger than you within 30 feet of you must spend 2 feet of movement for every 1 feet when moving closer to you. The gale disperses gas or vapor, and extinguishes candles, torches, and smaller unprotected flames in the area. This effect lasts until the start of your next turn, you are incapacitated, or you choose to end it.</description>
             </sheet>
             <rules>
             </rules>
@@ -1807,10 +1805,10 @@
         <element name="Brutal Dive (2)" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_JUGGERNAUT_MANEUVER_BRUTAL_DIVE">
             <supports>Demi-Dragon Juggernaut Maneuver</supports>
             <description>
-                <p>When you are flying or gliding at least 30 feet above a Large or smaller creature that you can see, you can dive towards the creature. The creature must make a Strength saving throw. On a failed save, the target is knocked prone. You can then immediately use your bonus action to make a bite attack against the creature. You don't take falling damage as a result of this maneuver.</p>
+                <p>When you are flying or gliding at least 30 feet above a creature up to one size category larger than you that you can see, you can dive towards the creature. The creature must make a Strength saving throw. On a failed save, the target is knocked prone. You can then immediately use your bonus action to make a bite attack against the creature. You don't take falling damage as a result of this maneuver.</p>
             </description>
             <sheet alt="Brutal Dive" usage="2 fury">
-                <description>When you are flying or gliding at least 30 feet above a Large or smaller creature that you can see, you can dive towards the creature. The creature must make a Strength saving throw. On a failed save, the target is knocked prone. You can then immediately use your bonus action to make a bite attack against the creature.</description>
+                <description>When you are flying or gliding at least 30 feet above a creature up to one size category larger than you that you can see, you can dive towards the creature. The creature must make a Strength saving throw. On a failed save, the target is knocked prone. You can then immediately use your bonus action to make a bite attack against the creature.</description>
             </sheet>
             <rules>
             </rules>
@@ -1840,10 +1838,10 @@
         <element name="Lockjaw (2)" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_JUGGERNAUT_MANEUVER_LOCKJAW">
             <supports>Demi-Dragon Juggernaut Maneuver</supports>
             <description>
-                <p>As a bonus action, make a bite attack against a target. If the attack hits, the target must make a Strength saving throw if they are Large or smaller. On a failed save, the target is grappled.</p>
+                <p>As a bonus action, make a bite attack against a target. If the attack hits, the target must make a Strength saving throw if they are a creature that is up to one size category larger than you. On a failed save, the target is grappled.</p>
             </description>
             <sheet alt="Lockjaw" usage="2 fury" action="Bonus Action">
-                <description>Make a bite attack against a target. If the attack hits, the target must make a Strength saving throw if they are Large or smaller, or become grappled.</description>
+                <description>Make a bite attack against a target. If the attack hits, the target must make a Strength saving throw if they are up to one size category larger than you, or become grappled.</description>
             </sheet>
             <rules>
             </rules>
@@ -1851,10 +1849,10 @@
         <element name="Overbearing Sweep (2)" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_JUGGERNAUT_MANEUVER_OVERBEARING_SWEEP">
             <supports>Demi-Dragon Juggernaut Maneuver</supports>
             <description>
-                <p>As a bonus action, make a claw attack against a target. On a hit, the target takes damage and must make a Strength saving throw if they are Large or smaller. On a failed save, the target is knocked prone.</p>
+                <p>As a bonus action, make a claw attack against a target. On a hit, the target takes damage and must make a Strength saving throw if they are a creature that is up to one size category larger than you. On a failed save, the target is knocked prone.</p>
             </description>
             <sheet alt="Overbearing Sweep" usage="2 fury" action="Bonus Action">
-                <description>Make a claw attack against a target. On a hit, the target takes damage and must make a Strength saving throw if they are Large or smaller, or be knocked prone.</description>
+                <description>Make a claw attack against a target. On a hit, the target takes damage and must make a Strength saving throw if they are up to one size category larger than you, or be knocked prone.</description>
             </sheet>
             <rules>
             </rules>
@@ -1862,10 +1860,10 @@
         <element name="Reprisal (2)" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_JUGGERNAUT_MANEUVER_REPRISAL">
             <supports>Demi-Dragon Juggernaut Maneuver</supports>
             <description>
-                <p>When a creature misses you with a melee attack, you can use your reaction to make a horn attack against the creature. On a hit, the creature takes damage and must succeed on a Strength saving throw or be pushed 5 feet away from you if they are Large or smaller.</p>
+                <p>When a creature misses you with a melee attack, you can use your reaction to make a horn attack against the creature. On a hit, the creature takes damage and must succeed on a Strength saving throw or be pushed 5 feet away from you if they a creature that is up to one size category larger than you.</p>
             </description>
             <sheet alt="Reprisal" usage="2 fury" action="Reaction">
-                <description>When a creature misses you with a melee attack, you can use your reaction to make a horn attack against the creature. On a hit, the creature takes damage and must succeed on a Strength saving throw or be pushed 5 feet away from you if they are Large or smaller.</description>
+                <description>When a creature misses you with a melee attack, you can use your reaction to make a horn attack against the creature. On a hit, the creature takes damage and must succeed on a Strength saving throw or be pushed 5 feet away from you if they are up to one size category larger than you.</description>
             </sheet>
             <rules>
             </rules>
@@ -1873,10 +1871,10 @@
         <element name="Tail Sweep (3)" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_JUGGERNAUT_MANEUVER_TAIL_SWEEP">
             <supports>Demi-Dragon Juggernaut Maneuver</supports>
             <description>
-                <p>As a bonus action, make a tail attack against up to two targets, both of which must be within your reach and within 10 feet of each other. Roll separately for each. If the attack hits, the target must make a Strength saving throw if they are Large or smaller. On a failed save, the target is pushed up to 15 feet away from you.</p>
+                <p>As a bonus action, make a tail attack against up to two targets, both of which must be within your reach and within 10 feet of each other. Roll separately for each. If the attack hits, the target must make a Strength saving throw if they are a creature that is up to one size category larger than you. On a failed save, the target is pushed up to 15 feet away from you.</p>
             </description>
             <sheet alt="Tail Sweep" usage="3 fury" action="Bonus Action">
-                <description>Make a tail attack against up to two targets, both of which must be within your reach and within 10 feet of each other. Roll separately for each. If the attack hits, the target must make a Strength saving throw if they are Large or smaller, or be pushed up to 15 feet away from you.</description>
+                <description>Make a tail attack against up to two targets, both of which must be within your reach and within 10 feet of each other. Roll separately for each. If the attack hits, the target must make a Strength saving throw if they up to one size category larger than you, or be pushed up to 15 feet away from you.</description>
             </sheet>
             <rules>
             </rules>
@@ -1884,10 +1882,10 @@
         <element name="Battering Ram (3)" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_JUGGERNAUT_MANEUVER_BATTERING_RAM">
             <supports>Demi-Dragon Juggernaut Maneuver</supports>
             <description>
-                <p>As an action, you can move up to your speed as you charge in a straight line, during which you can enter other creatures' spaces and creatures have disadvantage on opportunity attacks against you. While charging, you can make a number of horn attacks against creatures within 5 feet of you as if you had taken the Attack action. One Large or smaller creature you hit must succeed on a Strength saving throw or be pushed forward to the end of your charge. If the target ends its movement adjacent to another creature or a solid object, both the target and the creature or object take bludgeoning damage equal to 2d6 + your Strength modifier. This maneuver deals double damage to objects and structures.</p>
+                <p>As an action, you can move up to your speed as you charge in a straight line, during which you can enter other creatures' spaces and creatures have disadvantage on opportunity attacks against you. While charging, you can make a number of horn attacks against creatures within 5 feet of you as if you had taken the Attack action. One creature that is up to one size category larger than you which you hit must succeed on a Strength saving throw or be pushed forward to the end of your charge. If the target ends its movement adjacent to another creature or a solid object, both the target and the creature or object take bludgeoning damage equal to 2d6 + your Strength modifier. This maneuver deals double damage to objects and structures.</p>
             </description>
             <sheet alt="Battering Ram" usage="3 fury" action="Action">
-                <description>You can move up to your speed as you charge in a straight line, during which you can enter other creatures' spaces and creatures have disadvantage on opportunity attacks against you. While charging, you can make a number of horn attacks against creatures within 5 feet of you as if you had taken the Attack action. One Large or smaller creature you hit must succeed on a Strength saving throw or be pushed forward to the end of your charge. If the target ends its movement adjacent to another creature or a solid object, both the target and the creature or object take 2d6 + {{strength:modifier}} bludgeoning (double damage to objects and structures).</description>
+                <description>You can move up to your speed as you charge in a straight line, during which you can enter other creatures' spaces and creatures have disadvantage on opportunity attacks against you. While charging, you can make a number of horn attacks against creatures within 5 feet of you as if you had taken the Attack action. One creature that is up to one size category larger than you which you hit must succeed on a Strength saving throw or be pushed forward to the end of your charge. If the target ends its movement adjacent to another creature or a solid object, both the target and the creature or object take 2d6 + {{strength:modifier}} bludgeoning (double damage to objects and structures).</description>
             </sheet>
             <rules>
             </rules>
@@ -1932,7 +1930,7 @@
             <supports>Demi-Dragon Metamorph Morph</supports>
             <description>
                 <p><b>Warrior's Will.</b> You quiet your mind as your focus sharpens. You gain advantage on Wisdom saving throws.</p>
-                <p><b>Goring Charge.</b> Your horns curl into a sturdy ram design, capable of punching holes through hide and armor alike. Add a ram attack to your list of natural weapons. You can use it to make melee weapon attacks, with which you are proficient. Your ram's horns deal piercing damage equal to 3d4 + your Strength modifier. If you move at least 10 feet in a straight line during your turn, you gain advantage on the first attack you make with your ram attack.</p>
+                <p><b>Ivory Charge.</b> Your horns curl into a sturdy ram design, capable of punching holes through hide and armor alike. Add a ram attack to your list of natural weapons. You can use it to make melee weapon attacks, with which you are proficient. Your ram's horns deal piercing damage equal to 3d4 + your Strength modifier. If you move at least 10 feet in a straight line during your turn, you gain advantage on the first attack you make with your ram attack.</p>
             </description>
             <sheet usage="Morph">
                 <description></description>
@@ -1943,7 +1941,7 @@
         <element name="Creation" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_METAMORPH_MORPH_CREATION">
             <supports>Demi-Dragon Metamorph Morph</supports>
             <description>
-                <p><b>Capable Claws.</b> Your claws reshape, growing better suited to holding and manipulating objects. You can ignore the disadvantage imposed on melee weapons by Mythic Build. Additionally, you gain proficiency with simple weapons as well as with two tools of your choice. Once chosen, these tool proficiencies can't be changed with subsequent morphs.</p>
+                <p><b>Capable Claws.</b> Your claws reshape, growing better suited to holding and manipulating objects. You can ignore the disadvantage imposed on melee weapons by Mythic Build. Additionally, you gain proficiency with simple and martial weapons as well as with two tools of your choice. Once chosen, these tool proficiencies can't be changed with subsequent morphs.</p>
                 <p><b>Stone Scales.</b> You assimilate available minerals in order to create a thick layer of defensive stone scales. Your Armor Class becomes equal to 16 + your Constitution modifier. You are considered as wearing heavy armor, but don't suffer penalties to your Dexterity (Stealth) or due to a lack of heavy armor proficiency. You lose access to the Flight feature, as well as the speed benefit of Stride.</p>
             </description>
             <sheet usage="Morph">
@@ -2004,7 +2002,7 @@
             <supports>Demi-Dragon Metamorph Morph</supports>
             <description>
                 <p><b>Elemental Maw.</b> Volatile energy fills your gullet. Once on each of your turns when you hit with a bite attack, you deal an additional 1d6 damage of your Dragon's Breath damage type.</p>
-                <p><b>Driving Strikes.</b> The tip of your tail develops a tough, bony club, and the force of your blows leaves your enemies reeling. When you make a tail attack on your turn, your reach for it is 5 feet greater than normal. Additionally, when you hit a target twice on the same turn with any combination of natural weapons, the target must succeed on a Strength saving throw or be pushed 5 feet away from you.</p>
+                <p><b>Driving Strikes.</b> The tip of your tail develops a tough, bony club, and the force of your blows leaves your enemies reeling. When you make a tail attack on your turn, your reach for it is 5 feet greater than normal. Additionally, when you hit a target twice on the same turn with any combination of natural weapons, the target must succeed on a Strength saving throw or be pushed 10 feet away from you.</p>
                 <p style="text-align: center;"><b>Save DC</b> = 8 + your proficiency bonus + your Strength modifier</p>
             </description>
             <sheet usage="Morph">
@@ -2028,8 +2026,20 @@
         <element name="Pain" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_METAMORPH_MORPH_PAIN">
             <supports>Demi-Dragon Metamorph Morph</supports>
             <description>
-                <p><b>Skewering Quills.</b> You develop clusters of quills along your limbs and tail. Add a quills attack to your list of natural weapons. You can use it to make ranged weapon attacks, which use your Strength modifier and with which you are proficient. When taking the Attack action to make a weapon attack with your quills, you can launch them at a 5 feet square within 60/120 feet of you. On a hit, they deal piercing damage equal to 1d8 + your Strength modifier to any creature in the square and fills that square with quills. Any creature that subsequently enters the area must succeed on a Dexterity saving throw against your Dragon Spark save DC or stop moving this turn and take 1d8 piercing damage. A creature moving through the area at half speed doesn't need to make the save. You can use this attack a number of times equal to 1 + your Constitution modifier (minimum 1), after which you must finish a short or long rest to use it again.</p>
+                <p><b>Skewering Quills.</b> You develop clusters of quills along your limbs and tail. Add a quills attack to your list of natural weapons. You can use it to make ranged weapon attacks, which use your Strength modifier and with which you are proficient. When taking the Attack action to make a weapon attack with your quills, you can launch them at a 5 feet square within 60/120 feet of you. On a hit, they deal piercing damage equal to 1d8 + your Strength modifier to any creature in the square and fills that square with quills. Any creature that subsequently enters the area must succeed on a Dexterity saving throw against your Dragon Spark save DC or stop moving this turn and take 1 piercing damage. A creature moving through the area at half speed doesn't need to make the save. You can use this attack a number of times equal to 1 + your Constitution modifier (minimum 1), after which you must finish a short or long rest to use it again.</p>
                 <p><b>Thorny Spines.</b> You grow a series of sharp, slender spikes across your body, providing you with a layer of natural defense. Any enemy that deals damage to you in melee suffers 1d4 piercing damage. At the start of each of your turns you deal 1d4 piercing damage to any creature grappling you or any creature grappled by you.</p>
+            </description>
+            <sheet usage="Morph">
+                <description></description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Salvatoin" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_METAMORPH_MORPH_SALVATION">
+            <supports>Demi-Dragon Metamorph Morph</supports>
+            <description>
+                <p><b>Breath of Bolstering Essence.</b> Your magical essence is a wellspring of vitality waiting to be shared. As an action, you exhale revitalizing power unto a creature of your choice within 5 feet of you. Roll a number of d4s equal to your level. The target regains a number of hit points equal to the total. Alternatively, you can choose to end one disease or one condition afflicting the target. The condition can be blinded, deafened, paralyzed, or poisoned. Regardless of your choice, you then suffer one level of exhaustion and cannot use this property again until you finish a short rest.</p>
+                <p><b>Enthralling Dragonsong.</b> As a bonus action, you can sing a wordless aria that pacifies your audience. Every creature of your choice within 20 feet of you must succeed on a Wisdom saving throw against your Dragon Spark or become charmed by you until you or your companions do anything harmful to it or until your song ends. If you or your companions are fighting the creature, it has advantage on its saving throw. A creature that cannot hear you is immune to your song. A creature can repeat the saving throw at the end of each of its turns. A creature that successfully saves against this charm becomes immune to your song for 24 hours. The song ends if you are incapacitated, if you speak, or if you do not maintain it with a bonus action each turn.</p>
             </description>
             <sheet usage="Morph">
                 <description></description>
@@ -2040,7 +2050,8 @@
         <element name="Sanctuary" type="Archetype Feature" source="Demi-Dragon" id="ID_ARON_DD_ARCHETYPE_FEATURE_DEMI_DRAGON_METAMORPH_MORPH_SANCTUARY">
             <supports>Demi-Dragon Metamorph Morph</supports>
             <description>
-                <p><b>Branching Ivory.</b> Your horns split into great jagged antlers, with which you can hold off attackers. Add an antler attack to your list of natural weapons. You can use it to make melee weapon attacks, with which you are proficient. Your great antlers deal piercing damage equal to 2d4 + your Strength modifier. Other creatures provoke an opportunity attack from your antlers when they enter the reach of your antlers.</p>
+                <!--<p><b>Branching Ivory.</b> Your horns split into great jagged antlers, with which you can hold off attackers. Add an antler attack to your list of natural weapons. You can use it to make melee weapon attacks, with which you are proficient. Your great antlers deal piercing damage equal to 2d4 + your Strength modifier. Other creatures provoke an opportunity attack from your antlers when they enter the reach of your antlers.</p>-->
+                <p><b>Numinous Dragonsong.</b> As a bonus action, you can sing a wordless hymn that guides your allies. Your song lasts until the start of your next turn, and while it lasts you and friendly creatures within 20 feet of you have advantage on death saving throws and Constitution saving throws made to maintain concentration. A creature that cannot hear you receives no benefit from your song. While singing, you gain blindsight out to 10 feet. If you already have blindsight, it instead increases by 10 feet. The song ends if you are incapacitated, if you speak, or if you do not maintain it with a bonus action each turn.</p>
                 <p><b>Shape Breath.</b> When you breathe destructive energy, you can shape pockets of relative safety within the area of your breath. When you use your Dragon's Breath feature, you can choose a number of creatures that are within the area of the breath weapon and which you can see equal to 1 + your Charisma modifier (minimum 1). The chosen creatures need not make a saving throw, and take no damage from your Dragon's Breath.</p>
             </description>
             <sheet usage="Morph">
@@ -2077,7 +2088,7 @@
             <supports>Demi-Dragon Metamorph Morph</supports>
             <description>
                 <p><b>Skittering Crawl.</b> You gain a climbing speed equal to your walking speed, and become able to hang on to even vertical surfaces. If you move at least 20 feet on the ground or as part of a climb, you can choose to take the Dodge action as a bonus action.</p>
-                <p><b>Snatching Tail.</b> Your tail grows longer and more flexible, letting you unexpectedly catch your foes and yank them around. When you deal damage to an enemy that is Large or smaller with your tail, you can use your bonus action to force them to roll a Strength saving throw. On a failure, they are pulled to a space of your choosing within 10 feet of you. The space must be unoccupied.</p>
+                <p><b>Snatching Tail.</b> Your tail grows longer and more flexible, letting you unexpectedly catch your foes and yank them around. When you deal damage to a creature that is up to one size category larger than you with your tail, you can use your bonus action to force them to roll a Strength saving throw. On a failure, they are pulled to a space of your choosing within 10 feet of you. The space must be unoccupied.</p>
                 <p style="text-align: center;"><b>Save DC</b> = 8 + your proficiency bonus + your Strength modifier</p>
             </description>
             <sheet usage="Morph">
@@ -2206,8 +2217,8 @@
             <requirements>ID_ARON_DD_OPTION_DEMI_DRAGON_OPTIONAL_FEATURES</requirements>
             <description>
                 <p class="flavor">10th- and 20th-level demi-dragon feature</p>
-                <p class="indent">Upon reaching 10th and 20th level, your size increases to Large and Huge, respectively. Any demi-dragon class features that refer to an enemy's size are increased by one step per size category grown.</p>
-                <p class="indent">Note: A permanent size increase can be a significant problem during the course of a campaign, especially from the DM's perspective. Consider carefully whether to allow this. At the DM's option, the suggested levels can be adjusted.</p>
+                <p class="indent">Upon reaching 10th level, your size increases to Large. Your size increases again at 20th level to Huge.</p>
+                <p class="indent flavor">Note: A permanent size increase can be a significant problem during the course of a campaign, especially from the DM's perspective. Consider carefully whether to allow this. At the DM's option, the suggested levels can be adjusted.</p>
             </description>
             <sheet>
                 <description></description>
