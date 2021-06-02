@@ -1,0 +1,1375 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Laserllama’s Otherworldly Patrons v.1.1.1</name>
+        <update version="0.0.1">
+            <file name="warlock-laserllamas-patrons-boons-invocations.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/laserllama/warlock-laserllamas-patrons-boons-invocations.xml" />
+        </update>
+    </info>
+    
+    <element name="Laserllama’s Otherworldly Patrons" type="Source" source="Core" id="ID_LASERLLAMA_GMBINDER_SOURCE_name">
+        <description>
+            <![CDATA[<p>Seven new Otherworldly Patrons for the Warlock Class in the World's Greatest Roleplaying Game</p>]]>
+        </description>
+        <setters>
+            <set name="abbreviation">OP</set>
+            <set name="url">https://www.gmbinder.com/share/-M0nfCy-YdpDUgCACGc0</set>
+            <set name="image"></set>
+            <set name="author" abbreviation="LL" url="https://www.gmbinder.com/profile/laserllama">laserllama</set>
+            <set name="official">false</set>
+            <set name="supplement">false</set>
+            <set name="playtest">false</set>
+            <set name="third-party">false</set>
+            <set name="homebrew">true</set>
+            <set name="league">false</set>
+            <set name="release">20210531</set>
+        </setters>
+    </element>
+
+    <element name="The Archmage" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_WARLOCK_THE_ARCHMAGE">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>For those with the willpower and time, arcane magic can be a path to great power. Those who ascend to these lofty heights of arcane power are known as Archmages, masters of the weave. So wondrous is their power, and so strange are their goals, these masters of magic will sometimes enlist warlocks to help with, what appear to the Archmage, to be trivial tasks.</p>
+            <p class="indent">What drove you into the service of an Archmage? Was it a desire for their power, or a simpler path to arcane mastery?</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_EXPANDED_SPELL_LIST" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_ARCANE_APPRENTICE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_ASTRAL_SLIP" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_ARCANE_SAVANT" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_SPELL_WARD" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_BANISHING_SHUNT" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_ARCANE_APPRENTICE" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_ASTRAL_SLIP" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_ARCANE_SAVANT" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_SPELL_WARD" level="10" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_BANISHING_SHUNT" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Archmage lets you choose from an expanded list of spells when you learn a warlock spell. Beginning at 1st level, the following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">Archmage Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>magic missile, shield</em></td></tr>
+                    <tr><td>2nd</td><td><em>magic weapon, rope trick</em></td></tr>
+                    <tr><td>3rd</td><td><em>lightning bolt, tiny servant</em></td></tr>
+                    <tr><td>4th</td><td><em>arcane eye, resilient sphere</em></td></tr>
+                    <tr><td>5th</td><td><em>arcane hand, wall of force</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false" />
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_MAGIC_MISSILE</extend>
+                <extend>ID_PHB_SPELL_SHIELD</extend>
+                <extend>ID_PHB_SPELL_MAGIC_WEAPON</extend>
+                <extend>ID_PHB_SPELL_ROPE_TRICK</extend>
+                <extend>ID_PHB_SPELL_LIGHTNING_BOLT</extend>
+                <extend>ID_XGTE_SPELL_TINY_SERVANT</extend>
+                <extend>ID_PHB_SPELL_ARCANE_EYE</extend>
+                <extend>ID_PHB_SPELL_OTILUKES_RESILIENT_SPHERE</extend>
+                <extend>ID_PHB_SPELL_ARCANE_HAND</extend>
+                <extend>ID_PHB_SPELL_WALL_OF_FORCE</extend>
+            </spellcasting>
+            <rules>
+            </rules>
+        </element>
+        <element name="Arcane Apprentice" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_ARCANE_APPRENTICE">
+            <description>
+                <p>When you make your pact with the Archmage at 1st level, they impart to you a mote of their immense arcane ability. Your spellcasting ability for warlock spells and class features becomes Intelligence, and anytime you gain a warlock feature that is Charisma-based, it becomes Intelligence-based for you.</p>
+                <p class="indent">In addition, you gain proficiency in the Arcana skill, and you learn one cantrip of your choice from the wizard spell list. It counts as a warlock cantrip for you, but doesn't count against your total number of Cantrips Known.</p>
+            </description>
+            <sheet>
+                <description>Your spellcasting ability for warlock spells and class features becomes Intelligence, and anytime you gain a warlock feature that is Charisma-based, it becomes Intelligence-based for you.
+                Spell attack bonus: {{spellcasting:attack:int}}
+                Spell save DC: {{spellcasting:dc:int}}</description>
+            </sheet>
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+                <select type="Spell" name="Cantrip, Arcane Apprentice" supports="Wizard,0" level="1" />
+            </rules>
+        </element>
+        <element name="Astral Slip" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_ASTRAL_SLIP">
+            <description>
+                <p>You can draw on the arcane power of your patron to save you from harm. Beginning at 6th level, when you are hit by an attack, you can use your reaction to instantly teleport through the Astral Plane, causing the triggering attack to miss. You then immediately reappear in an unoccupied space of your choice within 30 feet of where you disappeared.</p>
+                <p class="indent">Once you use this reaction to evade an attack, you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet action="Reaction" usage="1/Short Rest">
+                <description>When you are hit by an attack, you can instantly teleport through the Astral Plane, causing the triggering attack to miss. You then immediately reappear in an unoccupied space of your choice within 30 feet of where you disappeared.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Arcane Savant" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_ARCANE_SAVANT">
+            <description>
+                <p>Your patron grants you enhanced insight into the theories of arcane magic. Starting at 6th level, each time you finish a long rest you can replace one warlock spell you know of 1st-level or higher with another warlock spell of your choice.</p>
+            </description>
+            <sheet>
+                <description>Each time you finish a long rest you can replace one warlock spell you know of 1st-level or higher with another warlock spell of your choice.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Spell Ward" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_SPELL_WARD">
+            <description>
+                <p>Your knowledge of the weave allows you to resist arcane effects. At 10th level, you gain resistance to force damage, and when you are forced to make a saving throw to resist the effects of a spell, you can use your reaction to make an Intelligence saving throw in place of the normal saving throw.</p>
+                <p class="indent">You can use this reaction a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="{{int-mod:min-one}}/Long Rest">
+                <description>When you are forced to make a saving throw to resist the effects of a spell, you can use your reaction to make an Intelligence saving throw in place of the normal saving throw.</description>
+            </sheet>
+            <rules>
+                <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FORCE" />
+            </rules>
+        </element>
+        <element name="Banishing Shunt" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ARCHMAGE_BANISHING_SHUNT">
+            <description>
+                <p>Starting at 14th level, when you hit a creature with an attack, you can force them to make a Charisma saving throw in place of dealing damage. On a failed save, the target is instantly transported to a demiplane of your patron's creation for up to 1 minute, or until you lose concentration on this ability.</p>
+                <p class="indent">When this feature ends, the banished creature returns to the space that it was previously occupying (or the nearest unoccupied space) and must make an additional Charisma saving throw, taking 5d10 force damage on a failed save.</p>
+                <p class="indent">Once you use this feature to banish a creature you must finish a long rest before you can use it again.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>When you hit a creature with an attack, you can force them to make a Charisma saving throw in place of dealing damage. On a failed save, the target is instantly transported to a demiplane of your patron's creation for up to 1 minute, or until you lose concentration on this ability.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="The Coven" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_WARLOCK_THE_COVEN">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Grandmother, auntie, wood witch, medicine woman, crone; the strange creatures known as hags go by many names. Their motivations are often sinister, and they delight in the suffering of others. When hags gather and form a magic pact, known as a Coven, they gain access to power beyond what any of them could hope to achieve individually. Together, their ability to sow pain increases tenfold. What strange bargain have you made to access the Coven's unorthodox magic?</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_COVEN_EXPANDED_SPELL_LIST" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_COVEN_WEIRD_MAGICKS" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_COVEN_DEVIANT_RECOVERY" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_COVEN_VILE_RESILIENCE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_COVEN_SHARED_SPELLCASTING" />
+            <div class="sidebar">
+                <h5 class="caption">Forming Your Coven</h5>
+                <p>Each warlock may have different requirements for others to enter their Coven. Some take any who provide their power freely, while others require members to swear loyalty to their own patron Coven.</p>
+            </div>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COVEN_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COVEN_WEIRD_MAGICKS" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COVEN_DEVIANT_RECOVERY" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COVEN_VILE_RESILIENCE" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_COVEN_SHARED_SPELLCASTING" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COVEN_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Coven lets you choose from an expanded list of spells when you learn a warlock spell. Beginning at 1st level, the following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">Coven Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>inflict wounds, ray of sickness</em></td></tr>
+                    <tr><td>2nd</td><td><em>alter self, enhance ability</em></td></tr>
+                    <tr><td>3rd</td><td><em>bestow curse, nondetection</em></td></tr>
+                    <tr><td>4th</td><td><em>dominate beast, polymorph</em></td></tr>
+                    <tr><td>5th</td><td><em>insect plague, skill empowerment</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false" />
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_INFLICT_WOUNDS</extend>
+                <extend>ID_PHB_SPELL_RAY_OF_SICKNESS</extend>
+                <extend>ID_PHB_SPELL_ALTER_SELF</extend>
+                <extend>ID_PHB_SPELL_ENHANCE_ABILITY</extend>
+                <extend>ID_PHB_SPELL_BESTOW_CURSE</extend>
+                <extend>ID_PHB_SPELL_NONDETECTION</extend>
+                <extend>ID_PHB_SPELL_DOMINATE_BEAST</extend>
+                <extend>ID_PHB_SPELL_POLYMORPH</extend>
+                <extend>ID_PHB_SPELL_INSECT_PLAGUE</extend>
+                <extend>ID_XGTE_SPELL_SKILL_EMPOWERMENT</extend>
+            </spellcasting>
+            <rules>
+            </rules>
+        </element>
+        <element name="Weird Magicks" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COVEN_WEIRD_MAGICKS">
+            <description>
+                <p>When you enter this pact at 1st level, the Coven you serve grants you knowledge of their unorthodox spellcasting. When you cast a warlock spell of 1st-level or higher, you can replace its damage type with a damage type from another warlock spell you know, altering the spell for this casting only.</p>
+                <p class="indent">Spells cast in this way resemble the strange magic of hags, and may be unrecognizable to traditional spellcasters.</p>
+            </description>
+            <sheet>
+                <description>When you cast a warlock spell of 1st-level or higher, you can replace its damage type with a damage type from another warlock spell you know, altering the spell for this casting only. Spells cast in this way resemble the strange magic of hags, and may be unrecognizable to traditional spellcasters.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Deviant Recovery" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COVEN_DEVIANT_RECOVERY">
+            <description>
+                <p>Upon reaching 6th level, you have been granted rare insights into the magic of Covens. At the end of a short rest, in place of regaining one of your expended Pact Magic spell slots, you can impart that magical energy to a friendly spellcaster who completed the short rest with you. They immediately regain expended spell slots that have a combined level equal to or less than the level of your Pact Magic spell slot.</p>
+                <p class="indent">Once you impart magical energy with this feature you must finish a long rest before you can do so again.</p>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>At the end of a short rest, in place of regaining one of your expended Pact Magic spell slots, you can impart that magical energy to a friendly spellcaster who completed the short rest with you. They immediately regain expended spell slots that have a combined level equal to or less than the level of your Pact Magic spell slot.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Vile Resilience" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COVEN_VILE_RESILIENCE">
+            <description>
+                <p>You have served your Coven well and they have rewarded you with a strange magical ward. Beginning at 10th level, when you take damage from a spell or other magical effect, you can use your reaction to grant yourself resistance to the damage from the triggering spell or magical effect.</p>
+                <p class="indent">You can use this reaction a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
+            </description>
+            <sheet action="Reaction" usage="{{cha-mod:min-one}}/Long Rest">
+                <description>When you take damage from a spell or other magical effect, you can grant yourself resistance to the damage from the triggering spell or magical effect.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Shared Spellcasting" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_COVEN_SHARED_SPELLCASTING">
+            <description>
+                <p>Starting at 14th level, you have grown powerful enough to form a Coven of your own. At the end of a long rest, choose up to two other willing spellcasters to form your Coven with. While all members of the Coven are within 30 feet of one another, they can all cast any spell known or prepared by another member of the Coven in addition to their own spells. They must still expend their own spell slots to do so.</p>
+                <p class="indent">All members of a Coven are always aware of the direction and distance between them and the other members of their Coven, so long as they are on the same plane of existence.</p>
+                <p class="indent">When you form a Coven, the bond remains in place until you complete 1d6 long rests, or a Coven member dies. You can then form a new Coven at the end of your next long rest.</p>
+            </description>
+            <sheet>
+                <description>At the end of a long rest, choose up to two other willing spellcasters to form your Coven with. While all members of the Coven are within 30 feet of one another, they can all cast any spell known or prepared by another member of the Coven in addition to their own spells. They must still expend their own spell slots to do so.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="The Elder Sphinx" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_WARLOCK_THE_ELDER_SPHINX">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Immortal guardians of divine treasures, Sphinxes live to test mortals who desire the relics of forgotten gods. They are masters of riddles and other trials that reveal the true nature of those they test. To an Elder Sphinx, time has no meaning, and legends say the most powerful Sphinxes can influence the flow of time with their ancient magic.</p>
+            <p class="indent">You have entered into a pact with one such Elder Sphinx. Do you work in tandem, or did you fail the test of the Sphinx, and rather then perish you opted to serve them with your life?</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_EXPANDED_SPELL_LIST" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_GUARDIANS_WARD" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_TIME_SLIP" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_INSCRUTABLE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_ETERNAL_GUARDIAN" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_POWER_OF_THE_ANCIENTS" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_GUARDIANS_WARD" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_TIME_SLIP" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_INSCRUTABLE" level="10" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_ETERNAL_GUARDIAN" level="10" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_POWER_OF_THE_ANCIENTS" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Elder Sphinx lets you choose from an expanded list of spells when you learn a warlock spell. Beginning at 1st level, the following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">Elder Sphinx Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>command, detect evil and good</em></td></tr>
+                    <tr><td>2nd</td><td><em>lesser restoration, zone of truth</em></td></tr>
+                    <tr><td>3rd</td><td><em>clairvoyance, slow</em></td></tr>
+                    <tr><td>4th</td><td><em>divination, freedom of movement</em></td></tr>
+                    <tr><td>5th</td><td><em>dispel evil and good, greater restoration</em></td></tr>
+                    <tr><td>9th</td><td><em>time stop</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false" />
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_COMMAND</extend>
+                <extend>ID_PHB_SPELL_DETECT_EVIL_AND_GOOD</extend>
+                <extend>ID_PHB_SPELL_LESSER_RESTORATION</extend>
+                <extend>ID_PHB_SPELL_ZONE_OF_TRUTH</extend>
+                <extend>ID_PHB_SPELL_CLAIRVOYANCE</extend>
+                <extend>ID_PHB_SPELL_SLOW</extend>
+                <extend>ID_PHB_SPELL_DIVINATION</extend>
+                <extend>ID_PHB_SPELL_FREEDOM_OF_MOVEMENT</extend>
+                <extend>ID_PHB_SPELL_DISPEL_EVIL_AND_GOOD</extend>
+                <extend>ID_PHB_SPELL_GREATER_RESTORATION</extend>
+                <extend>ID_PHB_SPELL_TIME_STOP</extend>
+            </spellcasting>
+            <rules>
+            </rules>
+        </element>
+        <element name="Guardian's Ward" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_GUARDIANS_WARD">
+            <description>
+                <p>The power granted by your patron allows you to prevent the unworthy from approaching you, or the things you protect. Starting at 1st level, you can use an action to project a small but powerful ward outward from yourself, with a radius in feet equal to five times your proficiency bonus.</p>
+                <p class="indent">When a creature enters the area of your ward, or starts its turn within it, it must succeed on a Strength saving throw in order to move. On a successful save, it can move, but it treats the area within your ward as difficult terrain. On a failed save, the creature cannot move into, or within, the area.</p>
+                <p class="indent">You must concentrate on your ward as if concentrating on a spell. Your ward lasts for 1 minute, unless you choose to end it early (no action required). Once you use your ward you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet action="Action" usage="1/Short Rest">
+                <description>You project a defensive ward with a {{guardians-ward:range}}-foot range. When a creature enters the area of your ward, or starts its turn within it, it must succeed on a Strength saving throw in order to move. On a successful save, it can move, but it treats the area within your ward as difficult terrain. On a failed save, the creature cannot move into, or within, the area. (Concentration)</description>
+            </sheet>
+            <rules>
+                <stat name="guardians-ward:range" value="proficiency" />
+                <stat name="guardians-ward:range" value="proficiency" />
+                <stat name="guardians-ward:range" value="proficiency" />
+                <stat name="guardians-ward:range" value="proficiency" />
+                <stat name="guardians-ward:range" value="proficiency" />
+            </rules>
+        </element>
+        <element name="Time Slip" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_TIME_SLIP">
+            <description>
+                <p>Beginning at 6th level, you can manipulate time, much like your patron. As an action, you can pause time and move up to twice your movement speed without provoking opportunity attacks. You can only use your movement while time is stopped, you cannot use actions, bonus actions, or reactions. Time resumes when you finish your movement.</p>
+                <p class="indent">Once you use this action you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet action="Action" usage="1/Short Rest">
+                <description>You can pause time and move up to twice your movement speed without provoking opportunity attacks. You can only use your movement while time is stopped, you cannot use actions, bonus actions, or reactions. Time resumes when you finish your movement.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Inscrutable" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_INSCRUTABLE">
+            <description>
+                <p>Your patron shields you from divination magic, much like they are shielded from such spells. Beginning at 10th level, you are immune to any effect that would sense your emotions or read your thoughts, as well as any divination spell that you refuse. Additionally, any Wisdom (Insight) checks made to ascertain your intentions or sincerity are made at disadvantage.</p>
+            </description>
+            <sheet>
+                <description>You are immune to any effect that would sense your emotions or read your thoughts, as well as any divination spell that you refuse. Any Insight checks made to ascertain your intentions or sincerity are made at disadvantage.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Eternal Guardian" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_ETERNAL_GUARDIAN">
+            <description>
+                <p>The Sphinx you serve has blessed you with a semblance of their immortality. Starting at 10th level, you no longer require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from both short and long rests.</p>
+                <p class="indent">In addition, for every 10 years that pass, your body ages only 1 year, and you are immune to being aged by magic.</p>
+            </description>
+            <sheet>
+                <description>You no longer require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from both short and long rests. For every 10 years that pass, your body ages only 1 year, and you are immune to being aged by magic.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Power of the Ancients" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_ELDER_SPHINX_POWER_OF_THE_ANCIENTS">
+            <description>
+                <p>Starting at 14th level, you gain an empowered mastery over time, but only in your sphere of influence. As an action, while your Guardian's Ward is active, you can cast a limited version of <i>time stop</i>. However, you may only interact with creatures and objects within the radius of your Guardian's Ward.</p>
+                <p class="indent">When the time stop spell ends, your Guardian's Ward ends as well. Once you use this feature you must finish a long rest before you can use it again.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>While your Guardian's Ward is active, you can cast a limited version of time stop. However, you may only interact with creatures and objects within the radius of your Guardian's Ward. When the time stop spell ends, your Guardian's Ward ends as well.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="The Great Wyrm" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_WARLOCK_THE_GREAT_WYRM">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Inherently magical creatures with incredibly long lifespans, dragons hoard not only wealth and material possessions, but servants and slaves as well. Benevolent and malicious, kind and terrible, good and evil, ancient dragons of all types have motivations beyond comprehension to most mortal beings.</p>
+            <p class="indent">What sort of bargain did you enter into in order to access the overwhelming elemental power of an ancient dragon?</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_EXPANDED_SPELL_LIST" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_ELEMENTAL_POTENCY" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_IMPOSING_PRESENCE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRAGON_WINGS" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_ELEMENTAL_POTENCY" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_IMPOSING_PRESENCE" level="10" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRAGON_WINGS" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Great Wyrm lets you choose from an expanded list of spells when you learn a warlock spell. Beginning at 1st level, the following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">Great Wyrm Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>chromatic orb, command</em></td></tr>
+                    <tr><td>2nd</td><td><em>dragon's breath, scorching ray</em></td></tr>
+                    <tr><td>3rd</td><td><em>fireball, lightning bolt</em></td></tr>
+                    <tr><td>4th</td><td><em>vitriolic sphere, wall of fire</em></td></tr>
+                    <tr><td>5th</td><td><em>dominate person, cone of cold</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false" />
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_CHROMATIC_ORB</extend>
+                <extend>ID_PHB_SPELL_COMMAND</extend>
+                <extend>ID_XGTE_SPELL_DRAGONS_BREATH</extend>
+                <extend>ID_PHB_SPELL_SCORCHING_RAY</extend>
+                <extend>ID_PHB_SPELL_FIREBALL</extend>
+                <extend>ID_PHB_SPELL_LIGHTNING_BOLT</extend>
+                <extend>ID_XGTE_SPELL_VITRIOLIC_SPHERE</extend>
+                <extend>ID_PHB_SPELL_WALL_OF_FIRE</extend>
+                <extend>ID_PHB_SPELL_DOMINATE_PERSON</extend>
+                <extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+            </spellcasting>
+            <rules>
+            </rules>
+        </element>
+        <element name="Draconic Spark" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK">
+            <description>
+                <p>When you form your pact at 1st level, the Great Wyrm imbues you with a Draconic Spark, a fraction of its elemental power. Ancient dragons can impart any element, but they most often bestow one that matches their breath weapon. Choose either acid, cold, fire, lighting, or poison for your Draconic Spark.</p>
+                <p class="indent">You gain resistance to your Draconic Spark damage type, and any time you cast a warlock spell that deals damage, you can change the damage type to match your Draconic Spark.</p>
+                <p class="indent">In addition, the power of your Draconic Spark allows you to speak, read, and write Draconic.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+                <select type="Archetype Feature" name="Draconic Spark" supports="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK_ACID|ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK_COLD|ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK_FIRE|ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK_LIGHTNING|ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK_POISON" />
+            </rules>
+        </element>
+            <element name="Draconic Spark: Acid" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK_ACID">
+                <compendium display="false" />
+                <description>
+                    <p>When you form your pact at 1st level, the Great Wyrm imbues you with an acid Draconic Spark, a fraction of its elemental power.</p>
+                    <p class="indent">You gain resistance to acid damage type, and any time you cast a warlock spell that deals damage, you can change the damage type to acid damage.</p>
+                    <p class="indent">In addition, the power of your Draconic Spark allows you to speak, read, and write Draconic.</p>
+                </description>
+                <sheet alt="Draconic Spark">
+                    <description>Any time you cast a warlock spell that deals damage, you can change the damage type to acid damage.</description>
+                </sheet>
+                <rules>
+                    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+                </rules>
+            </element>
+            <element name="Draconic Spark: Cold" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK_COLD">
+                <compendium display="false" />
+                <description>
+                    <p>When you form your pact at 1st level, the Great Wyrm imbues you with a Cold Draconic Spark, a fraction of its elemental power.</p>
+                    <p class="indent">You gain resistance to cold damage type, and any time you cast a warlock spell that deals damage, you can change the damage type to cold damage.</p>
+                    <p class="indent">In addition, the power of your Draconic Spark allows you to speak, read, and write Draconic.</p>
+                </description>
+                <sheet alt="Draconic Spark">
+                    <description>Any time you cast a warlock spell that deals damage, you can change the damage type to cold damage.</description>
+                </sheet>
+                <rules>
+                    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+                </rules>
+            </element>
+            <element name="Draconic Spark: Fire" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK_FIRE">
+                <compendium display="false" />
+                <description>
+                    <p>When you form your pact at 1st level, the Great Wyrm imbues you with a Fire Draconic Spark, a fraction of its elemental power.</p>
+                    <p class="indent">You gain resistance to fire damage type, and any time you cast a warlock spell that deals damage, you can change the damage type fire damage.</p>
+                    <p class="indent">In addition, the power of your Draconic Spark allows you to speak, read, and write Draconic.</p>
+                </description>
+                <sheet alt="Draconic Spark">
+                    <description>Any time you cast a warlock spell that deals damage, you can change the damage type to fire damage.</description>
+                </sheet>
+                <rules>
+                    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+                </rules>
+            </element>
+            <element name="Draconic Spark: Lighting" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK_LIGHTNING">
+                <compendium display="false" />
+                <description>
+                    <p>When you form your pact at 1st level, the Great Wyrm imbues you with a lightning Draconic Spark, a fraction of its elemental power.</p>
+                    <p class="indent">You gain resistance to lightning damage type, and any time you cast a warlock spell that deals damage, you can change the damage type lightning damage.</p>
+                    <p class="indent">In addition, the power of your Draconic Spark allows you to speak, read, and write Draconic.</p>
+                </description>
+                <sheet alt="Draconic Spark">
+                    <description>Any time you cast a warlock spell that deals damage, you can change the damage type to lightning damage.</description>
+                </sheet>
+                <rules>
+                    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+                </rules>
+            </element>
+            <element name="Draconic Spark: Poison" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRACONIC_SPARK_POISON">
+                <compendium display="false" />
+                <description>
+                    <p>When you form your pact at 1st level, the Great Wyrm imbues you with a Poison Draconic Spark, a fraction of its elemental power.</p>
+                    <p class="indent">You gain resistance to poison damage type, and any time you cast a warlock spell that deals damage, you can change the damage type poison damage.</p>
+                    <p class="indent">In addition, the power of your Draconic Spark allows you to speak, read, and write Draconic.</p>
+                </description>
+                <sheet alt="Draconic Spark">
+                    <description>Any time you cast a warlock spell that deals damage, you can change the damage type to poison damage.</description>
+                </sheet>
+                <rules>
+                    <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+                </rules>
+            </element>
+        <element name="Elemental Potency" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_ELEMENTAL_POTENCY">
+            <description>
+                <p>The power of your Spark grows, increasing the power of your spells. Starting at 6th level, when you cast a spell of 1st-level or higher that deals your Draconic Spark damage type, you gain a bonus to one damage roll of the spell equal to 1d8.</p>
+            </description>
+            <sheet>
+                <description>When you cast a spell of 1st-level or higher that deals your Draconic Spark damage type, you gain a 1d8 bonus to one damage roll.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Imposing Presence" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_IMPOSING_PRESENCE">
+            <description>
+                <p>Your body has been steeped in the overwhelming draconic magic of your patron, empowering your willpower and force of personality. Beginning at 10th level, you cannot be charmed or frightened while you are conscious.</p>
+            </description>
+            <sheet>
+                <description>You cannot be charmed or frightened while you are conscious.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Dragon Wings" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_GREAT_WYRM_DRAGON_WINGS">
+            <description>
+                <p>Starting at 14th level, you can use a bonus action on your turn to manifest a pair of leathery dragon wings from your back, which grant you a flying speed equal to your movement speed, and last until you use a bonus action to dismiss them.</p>
+                <p class="indent">You cannot manifest your wings while wearing armor unless the armor is specifically made to accommodate them. Any clothes you are wearing that do not accommodate your wings may be destroyed when you manifest them.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You manifest a pair of leathery dragon wings from your back, which grant you a flying speed of {{speed}} feet.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="The Primeval Growth" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_WARLOCK_THE_PRIMEVAL_GROWTH">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>Not all who serve the wild seek balance as Druidic Circles do. Older, and oftentimes more sinister forces are at work in the ancient forests of the world. Eldest of all plant life, ancient trees, sacred groves, and sentient forests can remember an age when plants, not mortals or beasts, dominated the land. These ancient beings are known as Primeval Growths, the power limited only by the roots that hold them in place.</p>
+            <p class="indent">Able to channel elder nature magic, these ancient beings lend their power to mortals who have the ability to move about the world, and can work to enact their primal will.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_EXPANDED_SPELL_LIST" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_GRASPING_VINES" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_PRIMEVAL_RESILIENCE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_ARBOREAL_GUARDIAN" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_WRATH_OF_THE_FOREST" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_GRASPING_VINES" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_PRIMEVAL_RESILIENCE" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_ARBOREAL_GUARDIAN" level="10" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_WRATH_OF_THE_FOREST" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Primeval Growth lets you choose from an expanded list of spells when you learn a warlock spell. Starting at 1st level, the following spells are added to your warlock spell list.</p>
+                <h5 class="caption">Primeval Growth Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>ensnaring strike, entangle</em></td></tr>
+                    <tr><td>2nd</td><td><em>barkskin, spike growth</em></td></tr>
+                    <tr><td>3rd</td><td><em>erupting earth, plant growth</em></td></tr>
+                    <tr><td>4th</td><td><em>grasping vine, guardian of nature</em></td></tr>
+                    <tr><td>5th</td><td><em>tree stride, wrath of nature</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false" />
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_PHB_SPELL_ENSNARING_STRIKE</extend>
+                <extend>ID_PHB_SPELL_ENTANGLE</extend>
+                <extend>ID_PHB_SPELL_BARKSKIN</extend>
+                <extend>ID_PHB_SPELL_SPIKE_GROWTH</extend>
+                <extend>ID_XGTE_SPELL_ERUPTING_EARTH</extend>
+                <extend>ID_PHB_SPELL_PLANT_GROWTH</extend>
+                <extend>ID_PHB_SPELL_GRASPING_VINE</extend>
+                <extend>ID_XGTE_SPELL_GUARDIAN_OF_NATURE</extend>
+                <extend>ID_PHB_SPELL_TREE_STRIDE</extend>
+                <extend>ID_XGTE_SPELL_WRATH_OF_NATURE</extend>
+            </spellcasting>
+            <rules>
+            </rules>
+        </element>
+        <element name="Grasping Vines" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_GRASPING_VINES">
+            <description>
+                <p>When you enter your pact with the Primeval Growth you are imbued with a seed of natural magic. At 1st level, you learn the <i>thorn whip</i> cantrip. It counts as a warlock cantrip for you, but it doesn't count against your number of Cantrips Known.</p>
+                <p class="indent">When you hit a creature with thorn whip, or when you damage or restrain a creature with one of your Primeval Growth spells, you can use a bonus action to drain the life force from one target of the spell. The creature takes necrotic damage equal to your warlock level, and you immediately gain temporary hit points equal to the necrotic damage dealt.</p>
+                <p class="indent">You can use this bonus action a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
+            </description>
+            <sheet action="Bonus Action" usage="{{cha-mod:min-one}}/Long Rest">
+                <description>When you hit a creature with thorn whip, or when you damage or restrain a creature with one of your Primeval Growth spells, you can use a bonus action to deal {{level:warlock}} necrotic damage and gain {{level:warlock}} temporary hit points.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_THORN_WHIP" spellcasting="Warlock" known="true" />
+            </rules>
+        </element>
+        <element name="Primeval Resilience" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_PRIMEVAL_RESILIENCE">
+            <description>
+                <p>The magic of the Primeval Growth has begun to change your body. Starting at 6th level, your skin becomes rough and treelike, and your Armor Class cannot be less than 16.</p>
+                <p class="indent">In addition, when you cast thorn whip, you can target up to two creatures that are within the range of the spell.</p>
+            </description>
+            <sheet>
+                <description>Your Armor Class cannot be less than 16.
+                When you cast thorn whip, you can target up to two creatures that are within the range of the spell.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Arboreal Guardian" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_ARBOREAL_GUARDIAN">
+            <description>
+                <p>Upon reaching 10th level, your bark-like skin grants you resistance to all non-magical bludgeoning, piercing, and slashing damage, and you no longer require food or drink, so long as you spend at least one hour in sunlight each day.</p>
+            </description>
+            <sheet>
+                <description>You have resistance to all non-magical bludgeoning, piercing, and slashing damage, and you no longer require food or drink, so long as you spend at least one hour in sunlight each day.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Wrath of the Forest" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_PRIMEVAL_GROWTH_WRATH_OF_THE_FOREST">
+            <description>
+                <p>Starting at 14th level, you can use an action to lash out with grasping roots at a number of creatures within 30 feet, equal to your proficiency bonus. They must make a Strength saving throw, or be restrained for 1 minute. As an action, creatures can make a Strength (Athletics) check against your warlock save DC, escaping from the primeval growth on a success.</p>
+                <p class="indent">Once you use this feature you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet action="Action" usage="1/Short Rest">
+                <description>You lash out at up to {{proficiency}} creatures within 30 feet. They must make a Strength saving throw, or be restrained for 1 minute. As an action, creatures can make a Strength (Athletics) check against your warlock save DC, escaping from the primeval growth on a success.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="The Titan" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_WARLOCK_THE_TITAN">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>At the dawn of creation the world was dominated by massive creatures; powerful giants bound together by the Ordning, hulking elementals that would become the landscape itself, and legendary titans, like the Tarrasque, that slumber beneath the earth. In remote places of the material plane these ancient beings slumber, their power dormant, waiting for an opportunity to remind the world of their existence.</p>
+            <p class="indent">Why were you chosen by a titan? Are they trapped, needing someone to be their representative in the world, or do you carefully draw power from an ancient slumbering giant?</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_TITAN_EXPANDED_SPELL_LIST" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_TITAN_ELDER_SOUL" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_TITAN_COLOSSAL_FORM" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_TITAN_TITANIC_ENDURANCE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_TITAN_STALWART_BLOOD" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_TITAN_LEGENDARY_BEHEMOTH" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_ELDER_SOUL" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_COLOSSAL_FORM" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_TITANIC_ENDURANCE" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_STALWART_BLOOD" level="10" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_LEGENDARY_BEHEMOTH" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Titan lets you choose from an expanded list of spells when you learn a warlock spell. Beginning at 1st-level, the following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">Titan Expanded Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>catapult, earth tremor</em></td></tr>
+                    <tr><td>2nd</td><td><em>enlarge/reduce (enlarge only), spike growth</em></td></tr>
+                    <tr><td>3rd</td><td><em>erupting earth, protection from energy</em></td></tr>
+                    <tr><td>4th</td><td><em>stoneskin, stone shape</em></td></tr>
+                    <tr><td>5th</td><td><em>transmute rock, wall of stone</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false" />
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_XGTE_SPELL_CATAPULT</extend>
+                <extend>ID_XGTE_SPELL_EARTH_TREMOR</extend>
+                <extend>ID_PHB_SPELL_ENLARGE_REDUCE</extend>
+                <extend>ID_PHB_SPELL_SPIKE_GROWTH</extend>
+                <extend>ID_XGTE_SPELL_ERUPTING_EARTH</extend>
+                <extend>ID_PHB_SPELL_PROTECTION_FROM_ENERGY</extend>
+                <extend>ID_PHB_SPELL_STONESKIN</extend>
+                <extend>ID_PHB_SPELL_STONE_SHAPE</extend>
+                <extend>ID_XGTE_SPELL_TRANSMUTE_ROCK</extend>
+                <extend>ID_PHB_SPELL_WALL_OF_STONE</extend>
+            </spellcasting>
+            <rules>
+            </rules>
+        </element>
+        <element name="Elder Soul" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_ELDER_SOUL">
+            <description>
+                <p>Your Titanic patron greatly enhances your durability. At 1st level, your hit point maximum increases by 1, and it increases by 1 again whenever you gain a level in this class.</p>
+                <p class="indent">You also learn to speak, read, and write Primordial or Giant (your choice). Whenever you make a Charisma check when interacting with elementals (if you chose Primordial) or giants (if you chose Giant), your proficiency bonus is doubled.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <stat name="hp" value="level:warlock" bonus="elder soul" />
+                <select type="Archetype Feature" name="Elder Sould" supports="ID_author_source_ARCHETYPE_FEATURE_TITAN_ELDER_SOUL_ELEMENTALS|ID_author_source_ARCHETYPE_FEATURE_TITAN_ELDER_SOUL_GIANTS" />
+            </rules>
+        </element>
+            <element name="Elder Soul: Elemental" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_ELDER_SOUL_ELEMENTALS">
+                <compendium display="false" />
+                <description>
+                    <p>You also learn to speak, read, and write Primordial. Whenever you make a Charisma check when interacting with elementals, your proficiency bonus is doubled.</p>
+                </description>
+                <sheet>
+                    <description>Whenever you make a Charisma check when interacting with elementals, your proficiency bonus is doubled.</description>
+                </sheet>
+                <rules>
+                    <grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
+                </rules>
+            </element>
+            <element name="Elder Soul: Giant" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_ELDER_SOUL_GIANTS">
+                <compendium display="false" />
+                <description>
+                    <p>You also learn to speak, read, and write Giant. Whenever you make a Charisma check when interacting with giants, your proficiency bonus is doubled.</p>
+                </description>
+                <sheet>
+                    <description>Whenever you make a Charisma check when interacting with giants, your proficiency bonus is doubled.</description>
+                </sheet>
+                <rules>
+                    <grant type="Language" id="ID_LANGUAGE_GIANT" />
+                </rules>
+            </element>
+        <element name="Colossal Form" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_COLOSSAL_FORM">
+            <description>
+                <p>Also beginning at 1st level, you can channel your patron's power to grow in size. As a bonus action on your turn, you can activate your Colossal Form, gaining temporary hit points equal to your warlock level and increasing your size by one category, for example, from Medium to Large. While in your Colossal Form, you gain a bonus to the following rolls equal to your Charisma modifier (minimum of +1):</p>
+                <ul>
+                    <li>All Strength ability checks and Strength saving throws.</li>
+                    <li>All damage rolls for melee weapon attacks using Strength.</li>
+                </ul>
+                <p class="indent">Your Colossal Form lasts for 1 minute, but ends early if you are incapacitated or you end it as a bonus action. Once you use your Colossal Form, you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet action="Bonus Action" usage="1/Short Rest">
+                <description>You can activate your Colossal Form for up to 1 minute, gaining {{level:warlock}} temporary hit points and increasing your size by one category. While in your Colossal Form, you gain a +{{cha-mod:min-one}} bonus to the following rolls: All Strength ability checks and Strength saving throws. All damage rolls for melee weapon attacks using Strength.</description>
+                <description level="14">You can activate your Colossal Form for lasts until you are incapacitated or end it as a bonus action, gaining {{level:warlock}} temporary hit points and increasing your size by two categories. While in your Colossal Form, you gain a +{{cha-mod:min-one}} bonus to the following rolls: All Strength ability checks and Strength saving throws. All damage rolls for melee weapon attacks using Strength.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Titanic Endurance" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_TITANIC_ENDURANCE">
+            <description>
+                <p>Beginning at 6th level, you can channel the resilience of your patron to reduce incoming damage. You have a pool of d8s that you spend to fuel this damage reduction. The number of dice in the pool is equal to 1 + your warlock level.</p>
+                <p class="indent">As a reaction, when you take damage, you can roll a number of dice from this pool, reducing the damage by an amount equal to your roll + your Charisma modifier. Your pool regains all expended dice at the end of each long rest.</p>
+            </description>
+            <sheet usage="{{titanic-endurance:pool}}/Long Rest">
+                <description>You have a pool of {{titanic-endurance:pool}} d8s that you spend to reduce incoming damage. As a reaction, when you take damage, you can roll a number of dice from this pool, reducing the damage by an amount equal to your roll + {{charisma:modifier}}.</description>
+            </sheet>
+            <rules>
+                <stat name="titanic-endurance:pool" value="1" />
+                <stat name="titanic-endurance:pool" value="level:warlock" />
+            </rules>
+        </element>
+        <element name="Stalwart Blood" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_STALWART_BLOOD">
+            <description>
+                <p>Your connection to your gargantuan patron has deepened. Starting at 10th level, when you make a Constitution check or Constitution saving throw, you gain a bonus to your roll equal to your Charisma modifier (minimum of +1).</p>
+            </description>
+            <sheet>
+                <description>When you make a Constitution check or Constitution saving throw, you gain a +{{cha-mod:min-one}} bonus to your roll.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Legendary Behemoth" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_TITAN_LEGENDARY_BEHEMOTH">
+            <description>
+                <p>You have mastered the magic of the titans, and can you wield their power with ease. Starting at 14th level, when you adopt your Colossal Form, you can choose to grow by two size categories, for example, from Medium to Huge. When you hit a creature with a weapon attack while transformed, you can roll one of the weapon's damage dice an additional time.</p>
+                <p class="indent">In addition, once you adopt your Colossal Form, it lasts until you are incapacitated or end it as a bonus action.</p>
+            </description>
+            <sheet usage="Colossal Form">
+                <description>When you hit a creature with a weapon attack while in your Colossal Form, you can roll one of the weapon's damage dice an additional time.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <element name="The Wild Hunt" type="Archetype" source="source" id="ID_author_source_ARCHETYPE_WARLOCK_THE_WILD_HUNT">
+        <supports>Otherworldly Patron</supports>
+        <description>
+            <p>The Wild Hunt is a strange phenomenon that takes hold of mortals, driving them to track and kill whatever poor creature they perceive to be their prey. The source of this phenomenon is unclear, but legends tell of raiding parties from the Feywild that draw unsuspecting mortals into their hunt, or of individuals cursed by dark druidic magic.</p>
+            <p class="indent">While its exact origins are unclear, mortals who are bound to this force by a pact start to take on the strange and unusual characteristics of the Feywild; sprouting antlers and their ears growing pointed. As their appearance changes, they slowly lose who they are, becoming one with the Wild Hunt.</p>
+            <div element="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_EXPANDED_SPELL_LIST" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_HUNTERS_QUARRY" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_WILD_WARRIOR" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_EXTRA_ATTACK" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_SPIRIT_OF_THE_HUNT" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_PREDATORY_RESOLVE" />
+            <div element="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_MASTER_OF_THE_HUNT" />
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_EXPANDED_SPELL_LIST" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_HUNTERS_QUARRY" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_WILD_WARRIOR" level="1" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_EXTRA_ATTACK" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_SPIRIT_OF_THE_HUNT" level="6" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_PREDATORY_RESOLVE" level="10" />
+            <grant type="Archetype Feature" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_MASTER_OF_THE_HUNT" level="14" />
+        </rules>
+    </element>
+        <element name="Expanded Spell List" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_EXPANDED_SPELL_LIST">
+            <description>
+                <p>The Wild Hunt lets you choose from an expanded list of spells when you learn a warlock spell. Beginning at 1st level, the following spells are added to the warlock spell list for you.</p>
+                <h5 class="caption">Wild Hunt Expanded Spells</h5>
+                <table>
+                    <thead>
+                        <tr><td>Spell Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>1st</td><td><em>beast bond, hail of thorns</em></td></tr>
+                    <tr><td>2nd</td><td><em>beast sense, find steed</em></td></tr>
+                    <tr><td>3rd</td><td><em>conjure barrage, haste</em></td></tr>
+                    <tr><td>4th</td><td><em>find greater steed, locate creature</em></td></tr>
+                    <tr><td>5th</td><td><em>conjure volley, tree stride</em></td></tr>
+                </table>
+            </description>
+            <sheet display="false" />
+            <spellcasting name="Warlock" extend="true">
+                <extend>ID_XGTE_SPELL_BEAST_BOND</extend>
+                <extend>ID_PHB_SPELL_HAIL_OF_THORNS</extend>
+                <extend>ID_PHB_SPELL_BEAST_SENSE</extend>
+                <extend>ID_PHB_SPELL_FIND_STEED</extend>
+                <extend>ID_PHB_SPELL_CONJURE_BARRAGE</extend>
+                <extend>ID_PHB_SPELL_HASTE</extend>
+                <extend>ID_XGTE_SPELL_FIND_GREATER_STEED</extend>
+                <extend>ID_PHB_SPELL_LOCATE_CREATURE</extend>
+                <extend>ID_PHB_SPELL_CONJURE_VOLLEY</extend>
+                <extend>ID_PHB_SPELL_TREE_STRIDE</extend>
+            </spellcasting>
+            <rules>
+            </rules>
+        </element>
+        <element name="Hunter's Quarry" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_HUNTERS_QUARRY">
+            <description>
+                <p>You can mark a creature as a quarry of the Wild Hunt. At 1st level, you learn the <i>hunter's mark</i> spell. It counts as a warlock spell for you, but it doesn't count against your Spells Known.</p>
+                <p class="indent">When you hit a creature with a weapon attack, you can cast hunter's mark, targeting that creature, at a level equal to your Pact Magic spell slot, without expending a spell slot.</p>
+                <p class="indent">Once you use this feature you must finish a short or long rest before you can cast hunter's mark in this way again.</p>
+            </description>
+            <sheet>
+                <description>When you hit a creature with a weapon attack, you can cast hunter's mark, targeting that creature, at level {{warlock:spellcasting:slot}}, without expending a spell slot.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_HUNTERS_MARK" spellcasting="Warlock" known="true" />
+            </rules>
+        </element>
+        <element name="Wild Warrior" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_WILD_WARRIOR">
+            <description>
+                <p>Upon entering into your pact at 1st level, the dark magic of the Wild Hunt imbues you with the skills of an expert hunter. You gain proficiency in the Survival skill, and with all medium armor, shields, and martial weapons.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+                <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+            </rules>
+        </element>
+        <element name="Extra Attack" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_EXTRA_ATTACK">
+            <description>
+                <p>The Wild Hunt drives you to attack with the fervor of a true predator. Beginning at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+            </description>
+            <sheet>
+                <description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+            </sheet>
+            <rules>
+                <stat name="extra attack:count" value="2" level="6" bonus="extra attack" />
+            </rules>
+        </element>
+        <element name="Spirit of the Hunt" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_SPIRIT_OF_THE_HUNT">
+            <description>
+                <p>Starting at 6th level, you can use an action to summon a Wild Spirit to join you for 1 minute. As a bonus action, you can command the Wild Spirit to harry a creature within 60 feet, reducing the it's movement speed by a number of feet equal to five times your Charisma modifier (minimum of 5 feet).</p>
+                <p class="indent">Once you summon a Wild Spirit with this feature, you can't summon another until you finish a short or long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Short Rest">
+                <description>You can use an action to summon a Wild Spirit to join you for 1 minute. As a bonus action, you can command the Wild Spirit to harry a creature within 60 feet, reducing the it's movement speed by {{spirit-of-the-hunt:speed}} feet.</description>
+            </sheet>
+            <rules>
+                <stat name="spirit-of-the-hunt:speed" value="cha-mod:min-one" />
+                <stat name="spirit-of-the-hunt:speed" value="cha-mod:min-one" />
+                <stat name="spirit-of-the-hunt:speed" value="cha-mod:min-one" />
+                <stat name="spirit-of-the-hunt:speed" value="cha-mod:min-one" />
+                <stat name="spirit-of-the-hunt:speed" value="cha-mod:min-one" />
+            </rules>
+        </element>
+        <element name="Predatory Resolve" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_PREDATORY_RESOLVE">
+            <description>
+                <p>The wild fervor of the Wild Hunt heightens your instincts. Starting at 10th level, you gain the following benefits:</p>
+                <ul>
+                    <li>When a creature marked by <i>hunter's mark</i> hits you with an attack, you can use your reaction to grant yourself a bonus to your Armor Class equal to your Charisma modifier (minimum of +1) against that attack.</li>
+                    <li>While you have a Wild Spirit summoned and you are hit by an attack, you can use your reaction to have the Spirit take the damage of the attack and immediately disappear.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>When a creature marked by hunter's mark hits you with an attack, you can use your reaction to grant yourself a +{{cha-mod:min-one}} bonus to your Armor Class against that attack. While you have a Wild Spirit summoned and you are hit by an attack, you can use your reaction to have the Spirit take the damage of the attack and immediately disappear.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Master of the Hunt" type="Archetype Feature" source="source" id="ID_author_source_ARCHETYPE_FEATURE_WILD_HUNT_MASTER_OF_THE_HUNT">
+            <description>
+                <p>Upon reaching 14th level, you can call on your allies to join you in the Wild Hunt. When you mark a creature with the <i>hunter's mark</i> spell, you can extend the benefits of <i>hunter's mark</i> to up to two other friendly creatures of your choice.</p>
+            </description>
+            <sheet>
+                <description>When you mark a creature with the hunter's mark spell, you can extend the benefits of hunter's mark to up to two other friendly creatures of your choice.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <!-- New Pact Boons -->
+        <element name="Pact of the Chalice" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHALICE">
+            <supports>Pact Boon</supports>
+            <description>
+                <p>Your patron has bestowed upon you a vessel for the creation of potions and poultices. As an action, you can create a pact chalice in your empty hand. Each time you summon it, it takes the form of a tiny object of your choice that is capable of holding liquid, and it can be used as a spellcasting focus by you. Moreover, your chalice counts as either a herbalism kit or a set of alchemist's supplies (your choice), and you can add double your proficiency bonus to any check you make with that tool while your pact chalice is summoned.</p>
+                <p class="indent">At the end of each short or long rest, you can use your pact chalice to conjure a vial of the following liquids: alchemist's fire, acid, holy water, a potion of healing, or a potion of climbing. The liquid retains its potency until the end of your next long rest, at which point it becomes inert and unusable.</p>
+                <p class="indent">Your pact chalice disappears if it is more than 5 feet away from you for 1 minute, if you use this feature again, if you dismiss the chalice (no action required), or if you die.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can create a pact chalice in your empty hand. Each time you summon it, it takes the form of a tiny object of your choice that is capable of holding liquid, and it can be used as a spellcasting focus by you.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Pact of the Flesh" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_FLESH">
+            <supports>Pact Boon</supports>
+            <description>
+                <p>Your patron twists your body, enhancing your physicality in a way that reflects their own physical form. While you are not wearing armor or using a shield, your Armor Class is equal to 10 + your Constitution modifier + your Charisma modifier.</p>
+                <p class="indent">In addition, you can use a bonus action to morph one or both of your hands into savage claws that reflect the nature of your patron. Your claws count as simple melee weapons with the light property, and they deal 1d6 slashing damage on hit.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>While you are not wearing armor or using a shield, your Armor Class is {{ac:pact of the flesh}}.
+                You can use a bonus action to morph one or both of your hands into savage claws that reflect the nature of your patron. Your claws count as simple melee weapons with the light property, and they deal 1d6 slashing damage on hit.</description>
+            </sheet>
+            <rules>
+                <stat name="ac:pact of the flesh:base" value="10" />
+                <stat name="ac:pact of the flesh:constitution" value="constitution:modifier" />
+                <stat name="ac:pact of the flesh:charisma" value="charisma:modifier" />
+                <stat name="ac:pact of the flesh" value="ac:pact of the flesh:base" />
+                <stat name="ac:pact of the flesh" value="ac:pact of the flesh:constitution" />
+                <stat name="ac:pact of the flesh" value="ac:pact of the flesh:charisma" />
+                <stat name="ac:calculation" value="ac:pact of the flesh" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Pact of the Flesh (Warlock)" />
+            </rules>
+        </element>
+        <element name="Pact of the Hourglass" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_HOURGLASS">
+            <supports>Pact Boon</supports>
+            <description>
+                <p>Your patron has gifted you a mystical timekeeping device. As an action, you can create a pact hourglass in your empty hand. It takes the form of a timekeeping device of your choice each time you summon it, and it can be used as a spellcasting focus by you. While you have your pact hourglass summoned, you can use your reaction to rewind time and re-roll one attack roll, ability check, or saving throw you make.</p>
+                <p class="indent">You can use this special reaction a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
+                <p class="indent">Your pact hourglass disappears if it is more than 5 feet away from you for 1 minute, if you use this feature again, if you dismiss your hourglass (no action required), or if you die.</p>
+            </description>
+            <sheet action="Reaction" usage="{{cha-mod:min-one}}/Long Rest">
+                <description>As an action, you can create a pact hourglass in your empty hand. It can be used as a spellcasting focus by you. While you have your pact hourglass summoned, you can use your reaction to rewind time and re-roll one attack roll, ability check, or saving throw you make.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Pact of the Runestone" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_RUNESTONE">
+            <supports>Pact Boon</supports>
+            <description>
+                <p>Your patron has granted you insight into the magic of Elder Runes. At the end of a long rest you designate a Tiny stone of your choice as your pact Runestone. While it is in your hand you, you can use your pact Runestone as a spellcasting focus.</p>
+                <p class="indent">As an action, you can cause your pact Runestone to fly and strike a target. Make a ranged spell attack against a creature you can see within 60 feet. On hit, the target takes magical bludgeoning damage equal to 1d8 + your Charisma modifier, and Medium or smaller creatures must make a Strength saving throw. On a failed save, they are knocked prone. After the attack, your Runestone immediately returns to your hand.</p>
+                <p class="indent">At certain levels your Runestone increases in power and can knock larger creatures prone; at 5th level (2d8, Large), 11th level (3d8, Huge), and 17th level (4d8, Gargantuan).</p>
+            </description>
+            <sheet>
+                <description>At the end of a long rest you designate a Tiny stone of your choice as your pact Runestone. While it is in your hand you, you can use your pact Runestone as a spellcasting focus.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Pact of the Shroud" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_SHROUD">
+            <supports>Pact Boon</supports>
+            <description>
+                <p>Your patron has gifted you a mystical cloak to shield you from harm and hide your movements. As an action on your turn, you can summon your pact shroud, which takes the form of a robe or cloak of your choice. While wearing your pact shroud, you are considered invisible while obscured by shadows, darkness, or other natural phenomenon such as fog or mist.</p>
+                <p class="indent">Your pact shroud disappears if it is more than 5 feet away from you for 1 minute, if you use this feature again, if you dismiss your shroud (no action required), or if you die.</p>
+                <p class="indent">You can bond a magic robe or cloak as your pact shroud by performing a ritual over a short or long rest. Once bonded, you can shunt it to an extradimensional space, or summon it, as an action. You cannot bond artifacts or sentient clothing, and you can only have one pact shroud at a time.</p>
+            </description>
+            <sheet>
+                <description>As an action on your turn, you can summon your pact shroud, which takes the form of a robe or cloak of your choice. While wearing your pact shroud, you are considered invisible while obscured by shadows, darkness, or other natural phenomenon such as fog or mist.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Pact of the Strings" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_STRINGS">
+            <supports>Pact Boon</supports>
+            <description>
+                <p>Your patron has granted you otherworldly musical talent. As an action, you can create a pact instrument in an empty hand. It takes the form of an instrument of your choice, and it can be used as a spellcasting focus by you. You are proficient with your pact instrument, and you add double your proficiency bonus to any ability check you make that uses the instrument.</p>
+                <p class="indent">When you use your pact instrument to cast a spell with a verbal component or a spell that deals thunder damage, you gain a bonus to one of the spell's damage rolls equal to 1d8.</p>
+                <p class="indent">Your pact instrument disappears if it is more than 5 feet away from you for 1 minute, if you use this feature again, if you dismiss the instrument (no action required), or if you die.</p>
+                <p class="indent">You can bond a magic instrument as your pact instrument by performing a ritual over a short or long rest. Once bonded, you can shunt it to an extradimensional space, or summon it, as an action. You cannot bond artifacts or sentient items, and you can only have one pact instrument at a time.</p>
+            </description>
+            <sheet>
+                <description>As an action, you can create a pact instrument in an empty hand. It takes the form of an instrument of your choice, and it can be used as a spellcasting focus by you. You are proficient with your pact instrument, and you add double your proficiency bonus to any ability check you make that uses the instrument. When you use your pact instrument to cast a spell with a verbal component or a spell that deals thunder damage, you gain a 1d8 bonus to one of the spell's damage rolls.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <!-- New Eldritch Invocations -->
+        <element name="Eldritch Strike" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_STRIKE">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
+            <prerequisite>eldritch bast cantrip.</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: eldritch bast cantrip.</p>
+                <p class="indent">For you, the range of eldritch blast is reduced to 5 feet and it becomes a melee spell attack. Make a separate melee spell attack for each beam, dealing 1d12 force damage on hit.</p>
+                <p class="indent">Any class features or Eldritch Invocations that affect the range of eldritch blast do not work with this Invocation.</p>
+            </description>
+            <sheet>
+                <description>The range of eldritch blast is reduced to 5 feet and it becomes a melee spell attack. Make a separate melee spell attack for each beam, dealing 1d12 force damage on hit.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Grasping Tendrils" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_GRASPING_TENDRILS">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_FLESH</requirements>
+            <prerequisite>Pact of the Flesh feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Flesh feature</p>
+                <p class="indent">When you take Attack action on your turn, you can use your bonus action to try and grapple a creature with a Strength (Athletics) check, as long as you have a free hand.</p>
+                <p class="indent">In addition, you can use Charisma (Athletics) checks in place of the normal Strength (Athletics) checks to initiate and maintain grapples while your pact claws are manifested.</p>
+            </description>
+            <sheet>
+                <description>When you take Attack action on your turn, you can use your bonus action to try and grapple a creature with a Athletics check, as long as you have a free hand. In addition, you can use Charisma (Athletics) checks in place of the normal Strength (Athletics) checks to initiate and maintain grapples while your pact claws are manifested.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Harmonic Spellcasting" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_HARMONIC_SPELLCASTING">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_STRINGS</requirements>
+            <prerequisite>Pact of the Strings feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Strings feature</p>
+                <p class="indent">When you cast a warlock spell with a verbal component while using your pact instrument as your spellcasting focus, the saving throw DC for that spell increases by 1.</p>
+            </description>
+            <sheet>
+                <description>When you cast a warlock spell with a verbal component while using your pact instrument as your spellcasting focus, the saving throw DC for that spell increases by 1.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Knowledge of Antiquity" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_KNOWLEDGE_OF_ANTIQUITY">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_HOURGLASS</requirements>
+            <prerequisite>Pact of the Hourglass feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Hourglass feature</p>
+                <p class="indent">When you make an Intelligence (History) check related to an event, in the place where that event took place, you see echos of the past and treat a roll of 9 or lower on the d20 as a 10.</p>
+            </description>
+            <sheet>
+                <description>When you make an Intelligence (History) check related to an event, in the place where that event took place, you see echos of the past and treat a roll of 9 or lower on the d20 as a 10.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Mirror of Fates" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_MIRROR_OF_FATES">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHALICE</requirements>
+            <prerequisite>Pact of the Chalice feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Chalice feature</p>
+                <p class="indent">Filling your pact chalice with clear liquid, you can peer into the uncertain future. Using your pact chalice as a spellcasting focus, you can cast the <i>augury</i> spell at-will, without expending a spell slot or material components.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_AUGURY" />
+                </div>
+            </description>
+            <sheet>
+                <description>Using your pact chalice as a spellcasting focus, you can cast the augury spell at-will, without expending a spell slot or material components.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_AUGURY" />
+            </rules>
+        </element>
+        <element name="Protective Cowl" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_PROTECTIVE_COWL">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_SHROUD</requirements>
+            <prerequisite>Pact of the Shroud feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Shroud feature</p>
+                <p class="indent">As a reaction, when you take damage while you are wearing your pact shroud, you can have your shroud absorb some of the damage. You gain resistance to the damage from that attack, but your pact shroud disappears, and you must finish a short or long rest before you can summon it again.</p>
+            </description>
+            <sheet action="Reaction">
+                <description>When you take damage while you are wearing your pact shroud, you gain resistance to the damage from that attack, but your pact shroud disappears, and you must finish a short or long rest before you can summon it again.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Rune of Absorption" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_RUNE_OF_ABSORPTION">
+            <supports>Eldritch Invocation</supports>
+            <requirements>ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_RUNESTONE</requirements>
+            <prerequisite>Pact of the Runestone feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Pact of the Runestone feature</p>
+                <p class="indent">As a reaction, while holding your Runestone, you can cast <i>absorb elements</i> at a level equal to your Pact Magic spells. You can't do so again until you finish a short or long rest.</p>
+                <div class="reference">
+                    <div element="ID_XGTE_SPELL_ABSORB_ELEMENTS" />
+                </div>
+            </description>
+            <sheet action="Reaction" usage="1/Short Rest">
+                <description>While holding your Runestone, you can cast absorb elements at  level {{warlock:spellcasting:slot}}.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_XGTE_SPELL_ABSORB_ELEMENTS" />
+            </rules>
+        </element>
+        <element name="Cup of Recovery" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_CUP_OF_RECOVERY">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:5],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHALICE</requirements>
+            <prerequisite>5th-level, Pact of the Chalice feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 5th-level, Pact of the Chalice feature</p>
+                <p class="indent">Using your pact chalice as a spellcasting focus, you can use an action to cast <i>lesser restoration</i> without expending a spell slot. You can't do so again until you finish a short or long rest.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_LESSER_RESTORATION" />
+                </div>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>Using your pact chalice as a spellcasting focus, you can use an action to cast lesser restoration without expending a spell slot.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" />
+            </rules>
+        </element>
+        <element name="Cloak of Winds" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_CLOAK_OF_WINDS">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:5],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_SHROUD</requirements>
+            <prerequisite>5th-level, Pact of the Shroud feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 5th-level, Pact of the Shroud feature</p>
+                <p class="indent">Your pact shroud billows out around you, slowing your fall and allowing you to glide. When you fall, you can subtract up to 100 feet from your fall when calculating your fall damage and can move horizontally 2 feet for every 1 foot you fall.</p>
+            </description>
+            <sheet>
+                <description>While wearing your pact shroud, when you fall, you can subtract up to 100 feet from your fall when calculating your fall damage and can move horizontally 2 feet for every 1 foot you fall.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Discordant Melody" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_DISCORDANT_MELODY">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:5],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_STRINGS</requirements>
+            <prerequisite>5th-level, Pact of the Strings feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 5th-level, Pact of the Strings feature</p>
+                <p class="indent">When you, or another creature within 30 feet, is forced to make a saving throw to resist being charmed or frightened, you can play your pact instrument as a reaction, weakening the spell, and granting them advantage on their saving throw.</p>
+                <p class="indent">Once you use this reaction you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet action="Reaction" usage="1/Short Rest">
+                <description>When you, or another creature within 30 feet, is forced to make a saving throw to resist being charmed or frightened, you can play your pact instrument, weakening the spell, and granting them advantage on their saving throw.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Iron Grip" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_IRON_GRIP">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:5],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_FLESH</requirements>
+            <prerequisite>5th-level, Pact of the Flesh feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 5th-level, Pact of the Flesh feature</p>
+                <p class="indent">While you have your claws manifested, you gain a climbing speed equal to your movement speed, and you can climb difficult surfaces, including scaling walls and upside down on ceilings, without needing to make an ability check.</p>
+            </description>
+            <sheet>
+                <description>While you have your claws manifested, you gain a climbing speed of {{speed}} feet, and you can climb difficult surfaces, including scaling walls and upside down on ceilings, without needing to make an ability check.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Opportune Moment" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_OPPORTUNE_MOMENT">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:5],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_HOURGLASS</requirements>
+            <prerequisite>5th-level, Pact of the Hourglass feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 5th-level, Pact of the Hourglass feature</p>
+                <p class="indent">When you roll initiative while your hourglass is summoned, you, and creatures of your choice within 10 feet of you, gain a bonus to your initiative rolls equal to your Charisma modifier.</p>
+            </description>
+            <sheet>
+                <description>When you roll initiative while your hourglass is summoned, you, and creatures of your choice within 10 feet of you, gain a +{{charisma:modifier}} bonus to your initiative rolls.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Thirsting Claws" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_THIRSTING_CLAWS">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:5],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_FLESH</requirements>
+            <prerequisite>5th-level, Pact of the Flesh feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 5th-level, Pact of the Flesh feature</p>
+                <p class="indent">You can attack with your claws twice, instead of once, each time you take the Attack action on your turn. Your claw attacks also count as magical for the sake of overcoming resistance and immunity to non-magical damage.</p>
+            </description>
+            <sheet>
+                <description>You can attack with your claws twice, instead of once, each time you take the Attack action on your turn. Your claw attacks also count as magical for the sake of overcoming resistance and immunity to non-magical damage.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Cloak of Twilight" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_CLOAK_OF_TWILIGHT">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_SHROUD</requirements>
+            <prerequisite>7th-level, Pact of the Shroud feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th-level, Pact of the Shroud feature</p>
+                <p class="indent">You can cast the <i>greater invisibility</i> spell once using a warlock spell slot. You can't do so again until you finish a long rest.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_GREATER_INVISIBILITY" />
+                </div>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast the greater invisibility spell once using a warlock spell slot.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_GREATER_INVISIBILITY" />
+            </rules>
+        </element>
+        <element name="Enchanting Melody" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_ENCHANTING_MELODY">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_STRINGS</requirements>
+            <prerequisite>7th-level, Pact of the Strings feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th-level, Pact of the Strings feature</p>
+                <p class="indent">You can cast <i>charm monster</i> once using a warlock spell slot. You can't do so again until you finish a long rest.</p>
+                <div class="reference">
+                    <div element="ID_XGTE_SPELL_CHARM_MONSTER" />
+                </div>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast charm monster once using a warlock spell slot.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_XGTE_SPELL_CHARM_MONSTER" />
+            </rules>
+        </element>
+        <element name="Elder Rune of Abjuration" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDER_RUNE_OF_ABJURATION">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_RUNESTONE</requirements>
+            <prerequisite>7th-level, Pact of the Runestone feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th-level, Pact of the Runestone feature</p>
+                <p class="indent">You can cast counterspell once, at a level equal to your Pact Magic spell slots, without expending a spell slot. You can't do so again until you finish a long rest.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_COUNTERSPELL" />
+                </div>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast counterspell once, at level {{warlock:spellcasting:slot}} without expending a spell slot.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_COUNTERSPELL" />
+            </rules>
+        </element>
+        <element name="Elder Rune of Immovability" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDER_RUNE_OF_IMMOVABILITY">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_RUNESTONE</requirements>
+            <prerequisite>7th-level, Pact of the Runestone feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th-level, Pact of the Runestone feature</p>
+                <p class="indent">As an action, you can activate the rune, which causes your Runestone to become magically fixed in place. Until you use a bonus action to recall the Runestone to your hand, it doesn't move. Your Runestone can hold up to 8,000 pounds of weight. More weight causes the rune to dispel and fall. As an action, a creture can make a Strength check (DC equals 10 + your warlock spell save DC), to move the Runestone 10 feet.</p>
+            </description>
+            <sheet action="Action">
+                <description>You can activate the rune, which causes your Runestone to become magically fixed in place. Until you use a bonus action to recall the Runestone to your hand, it doesn't move.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Improved Shroud" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_SHROUD">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_SHROUD</requirements>
+            <prerequisite>7th-level, Pact of the Shroud feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th-level, Pact of the Shroud feature</p>
+                <p class="indent">While wearing your pact shroud while in darkness or shadows, you are considered invisible to any creature that relies on darkvision to see you in that darkness.</p>
+            </description>
+            <sheet>
+                <description>While wearing your pact shroud while in darkness or shadows, you are considered invisible to any creature that relies on darkvision to see you in that darkness.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Time Dilation" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_TIME_DILATION">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:7],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_HOURGLASS</requirements>
+            <prerequisite>7th-level, Pact of the Hourglass feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 7th-level, Pact of the Hourglass feature</p>
+                <p class="indent">You can cast <i>haste</i> once, at a level equal to your Pact Magic spell slots, without expending a spell slot. You can't do so again until you finish a long rest.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_HASTE" />
+                </div>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>You can cast haste once, at a level {{warlock:spellcasting:slot}}, without expending a spell slot.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_HASTE" />
+            </rules>
+        </element>
+        <element name="Cup of Protection" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_CUP_OF_PROTECTION">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:9],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHALICE</requirements>
+            <prerequisite>9th-level, Pact of the Chalice feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 9th-level, Pact of the Chalice feature</p>
+                <p class="indent">As an action, a creature of your choice can drink from your pact chalice, gaining the effects of the death ward spell. Once used, you must finish a long rest to use thie feature again.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_DEATH_WARD" />
+                </div>
+            </description>
+            <sheet usage="1/Long Rest">
+                <description>As an action, a creature of your choice can drink from your pact chalice, gaining the effects of the death ward spell.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" />
+            </rules>
+        </element>
+        <element name="Cursed Flesh" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_CURSED_FLESH">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:9],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_FLESH</requirements>
+            <prerequisite>9th-level, Pact of the Flesh feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 9th-level, Pact of the Flesh feature</p>
+                <p class="indent">As a bonus action, you can grant yourself temporary hit points equal to your Charisma modifier (minimum of 1).</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>You can grant yourself {{cha-mod:min-one}} temporary hit points.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Elder Rune of Protection" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDER_RUNE_OF_PROTECTION">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:9],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_RUNESTONE</requirements>
+            <prerequisite>9th-level, Pact of the Runestone feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 9th-level, Pact of the Runestone feature</p>
+                <p class="indent">While you hold your Runestone, you gain a bonus to saving throws equal to your Charisma modifier (minimum of +1).</p>
+            </description>
+            <sheet>
+                <description>While you hold your Runestone, you gain a +{{cha-mod:min-one}} bonus to saving throws.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Alchemical Restoration" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_ALCHEMICAL_RESTORATION">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:15],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHALICE</requirements>
+            <prerequisite>15th-level, Pact of the Chalice feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 15th-level, Pact of the Chalice feature</p>
+                <p class="indent">As an action on your turn, you can cast the <i>reincarnate</i> spell without expending a spell slot or material components. Once you cast reincarnate in this way, you must finish 1d4 long rests before you can cast the spell in this way again.</p>
+                <div class="reference">
+                    <div element="ID_PHB_SPELL_REINCARNATE" />
+                </div>
+            </description>
+            <sheet action="Action" usage="1/1d4 Long Rests">
+                <description>You can cast the reincarnate spell without expending a spell slot or material components.</description>
+            </sheet>
+            <rules>
+                <grant type="Spell" id="ID_PHB_SPELL_REINCARNATE" />
+            </rules>
+        </element>
+        <element name="Eldritch Flight" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_FLIGHT">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:15],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_FLESH</requirements>
+            <prerequisite>15th-level, Pact of the Flesh feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 15th-level, Pact of the Flesh feature</p>
+                <p class="indent">As a bonus action, you can manifest (or dismiss) wings reminiscent of your patron's physical form, granting you a flying speed equal to your movement speed.</p>
+            </description>
+            <sheet action="Bonus Action">
+                <description>you can manifest (or dismiss) wings reminiscent of your patron's physical form, granting you a flying speed of {{speed}} feet.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Temporal Rewind" type="Class Feature" source="source" id="ID_author_source_CLASS_FEATURE_ELDRITCH_INVOCATION_TEMPORAL_REWIND">
+            <supports>Eldritch Invocation</supports>
+            <requirements>[level:15],ID_author_source_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_HOURGLASS</requirements>
+            <prerequisite>15th-level, Pact of the Hourglass feature</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 15th-level, Pact of the Hourglass feature</p>
+                <p class="indent">As a reaction when you finish your turn, you can undo everything that happened on your turn. You return to the space you began that turn in and you regain all resources you expended. You can then immediately repeat your turn.</p>
+                <p class="indent">Once you use this feature you must finish a short or long rest before you can use it again.</p>
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>As a reaction when you finish your turn, you can undo everything that happened on your turn. You return to the space you began that turn in and you regain all resources you expended. You can then immediately repeat your turn.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
