@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Martial Artist Techniques, Simple v.17</name>
+        <update version="0.0.1">
+            <file name="techniques-simple.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-martial-artist/techniques-simple.xml" />
+        </update>
+    </info>
+
+    <element name="Ascetic Habits" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_ASCETIC_HABITS">
+        <supports>Martial Artist Technique</supports>
+        <description>
+            <p>You have disciplined and strengthened your body with habitual fasts and vigils. You require only half as much food and drink as normal, and have advantage on saving throws against exhaustion due solely to lack of food, drink, or sleep.</p>
+            <p class="indent">You can choose to ignore the effects of exhaustion levels up to one fourth your martial artist level, rounded down. If so, your ki point maximum goes down by 1 per exhaustion level.</p>
+        </description>
+        <sheet>
+            <description>You require only half as much food and drink as normal, and have advantage on saving throws against exhaustion due solely to lack of food, drink, or sleep.</description>
+            <description level="4">You require only half as much food and drink as normal, and have advantage on saving throws against exhaustion due solely to lack of food, drink, or sleep. You can choose to ignore the effects of exhaustion levels up to {{ascetic-habits:exhaustion-level}}, rounded down. If so, your ki point maximum goes down by 1 per exhaustion level.</description>
+        </sheet>
+        <rules>
+            <stat name="ascetic-habits:exhaustion-level" value="1" level="4" />
+            <stat name="ascetic-habits:exhaustion-level" value="1" level="8" />
+            <stat name="ascetic-habits:exhaustion-level" value="1" level="12" />
+            <stat name="ascetic-habits:exhaustion-level" value="1" level="16" />
+            <stat name="ascetic-habits:exhaustion-level" value="1" level="20" />
+            <stat name="focused-prescience:pre-req" value="1" />
+            <stat name="tornado-strike:pre-req" value="1" />
+        </rules>
+    </element>
+    <element name="Danica’s Dance" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DANICAS_DANCE">
+        <supports>Martial Artist Technique</supports>
+        <description>
+            <p>Developed by a famous monk long ago, this technique uses an enemy’s lunging strength against them. When a creature of size Medium or smaller within 5 feet of you misses you with a melee attack on their turn, you can use your reaction to switch places with them. Until the start of its next turn, this attacker loses 10 feet of movement speed, can’t use reactions, and gets disadvantage on its next attack against you.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>When a creature of size Medium or smaller within 5 feet of you misses you with a melee attack on their turn, you can switch places with them. Until the start of its next turn, this attacker loses 10 feet of movement speed, can’t use reactions, and gets disadvantage on its next attack against you.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Dedicated Weapon (Simpler Version)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DEDICATED_WEAPON">
+        <supports>Martial Artist Technique</supports>
+        <requirements>!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_DEDICATED_WEAPON</requirements>
+        <description>
+            <p>You have learned to use your ki in armed combat as well as unarmed. Whenever you finish a short or long rest, you can touch one weapon, focus your ki on it, and then count it as a monk weapon until you use this feature again. The weapon must be simple or martial; you must be proficient with it; and it must lack the heavy and special properties.</p>
+            <p class="indent">There is another optional version of this technique below.</p>
+        </description>
+        <sheet alt="Dedicated Weapon">
+            <description>Whenever you finish a short or long rest, you can touch one weapon, focus your ki on it, and then count it as a monk weapon until you use this feature again. The weapon must be simple or martial; you must be proficient with it; and it must lack the heavy and special properties.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Dizzying Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DIZZYING_STRIKE">
+        <supports>Martial Artist Technique</supports>
+        <description>
+            <p>Your blows leave your enemies addled. When you hit with an unarmed attack and choose to use this strike technique, then until the end of its next turn, the target can not take reactions and its speed is reduced by 10 feet. Once this effect ends, target is immune to it for the next minute. Targets immune to the Stunned condition are immune to this technique.</p>
+            <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+        </description>
+        <sheet usage="Strike Technique">
+            <description>When you hit with an unarmed attack, then until the end of its next turn, the target can not take reactions and its speed is reduced by 10 feet. Once this effect ends, target is immune to it for the next minute. Targets immune to the Stunned condition are immune to this technique.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Iron Body" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_IRON_BODY">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[str:13]</requirements>
+        <prerequisite>Base Strength score of 13 or higher</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Base Strength score of 13 or higher</p>
+            <p class="indent">Your martial arts training is focused on the tangible, not the spiritual; and though you are no stranger to finesse, brute force is your weapon of choice. This has the following effects:</p>
+            <ul>
+                <li>You must use Strength for the attack and damage rolls of unarmed strikes and martial artist weapons.</li>
+                <li>While you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Constitution modifier.</li>
+                <li>Your Ki save DC for strike techniques with a prerequisite of 8th level or less is 8 + your proficiency bonus + your Dexterity modifier.</li>
+                <li>Replace "Wisdom" with "Dexterity" for Ki Shield, and "Dexterity" with "Strength" for Tumbling Dodge.</li>
+            </ul>
+        </description>
+        <sheet>
+            <description>You must use Strength for the attack and damage rolls of unarmed strikes and martial artist weapons. You use Dexterity for Ki Shield and Strength for Tumbling Dodge.</description>
+        </sheet>
+        <rules>
+            <stat name="ki:dc" value="-wisdom:modifier" />
+            <stat name="ki:dc" value="dexterity:modifier" />
+            <stat name="ac:iron body martial artist:base" value="10" />
+            <stat name="ac:iron body martial artist:dexterity" value="dexterity:modifier" />
+            <stat name="ac:iron body martial artist:constitution" value="constitution:modifier" />
+            <stat name="ac:iron body martial artist" value="ac:iron body martial artist:base" />
+            <stat name="ac:iron body martial artist" value="ac:iron body martial artist:dexterity" />
+            <stat name="ac:iron body martial artist" value="ac:iron body martial artist:constitution" />
+            <stat name="ac:calculation" value="ac:iron body martial artist" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Unarmored Defense (Iron Body)" />
+        </rules>
+    </element>
+    <element name="Ki Infusion (Simpler Version)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_KI_INFUSION">
+        <supports>Martial Artist Technique</supports>
+        <requirements>!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_KI_INFUSION</requirements>
+        <description>
+            <p>
+                You can give your ki to others, restoring them to a stable flow of life energy. You learn the cantrip <i>spare the dying</i>.
+            </p>
+            <div class="reference">
+                <div element="ID_PHB_SPELL_SPARE_THE_DYING" />
+            </div>
+            <p class="indent">There is another optional version of this technique below.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" />
+        </rules>
+    </element>
+    <element name="Restoring Mantra" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_RESTORING_MANTRA">
+        <supports>Martial Artist Technique</supports>
+        <description>
+            <p>By sitting in unbroken meditation, quietly repeating a mantra, you can get all the effects of a short rest in 10 minutes (one sixth of the normal time). Once you have used this technique, you can not do so again until you finish a long rest.</p>
+        </description>
+        <sheet usage="1/Long Rest">
+            <description>You can get all the effects of a short rest in 10 minutes.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Sensei" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_SENSEI">
+        <supports>Martial Artist Technique</supports>
+        <description>
+            <p>
+                Your aphorisms help enlighten those around you. You learn the cantrip <i>guidance</i>, with a range of 30 feet. The target must be able to hear and understand you, and you cannot target the same creature more than twice per short or long rest.
+            </p>
+            <div element="ID_PHB_SPELL_GUIDANCE" />
+        </description>
+        <sheet>
+            <description>You can cast guidance with a range of 30 feet. The target must be able to hear and understand you, and you cannot target the same creature more than twice per short or long rest.</description>
+        </sheet>
+        <rules>
+            <grant type="Spell" id="ID_PHB_SPELL_GUIDANCE" />
+        </rules>
+    </element>
+    <element name="Two Heavens As One" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_TWO_HEAVENS_AS_ONE">
+        <supports>Martial Artist Technique</supports>
+        <description>
+            <p>You have studied the art of two-weapon fighting. Whenever you are wielding a martial artist weapon in each hand, you get the following benefits:</p>
+            <ul>
+                <li>You can use weapon attacks with Flurry of Blows.</li>
+                <li>You can use Critical Strike with weapon attacks, with no prerequisites or ki cost.</li>
+                <li>If you have the Dual Wielder feat, you also get the benefits of the Defensive Duelist feat.</li>
+            </ul>
+            <p class="indent">Note that, as always, you can make unarmed attacks with both hands full. Rapier with dagger counts for this technique.</p>
+        </description>
+        <sheet>
+            <description>Whenever you are wielding a martial artist weapon in each hand, you get the following benefits: You can use weapon attacks with Flurry of Blows. You can use Critical Strike with weapon attacks, with no prerequisites or ki cost.</description>
+        </sheet>
+        <rules>
+            <grant type="Feat" id="ID_PHB_FEAT_DEFENSIVE_DUELIST" requirements="ID_PHB_FEAT_DUALWIELDER" />
+        </rules>
+    </element>
+    <element name="Breath Control" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_BREATH_CONTROL">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:2]</requirements>
+        <prerequisite>2nd level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 2nd level</p>
+            <p class="indent">By concentrating on your breathing during meditation, you have sharpened your control. You gain the following benefits:</p>
+            <ul>
+                <li>When you use Focused Breathing, your next attack before the end of your next turn has advantage.</li>
+                <li>You can hold your breath for an additional 30 seconds (5 rounds) per Martial Artist level.</li>
+                <li>As an action, you can spend 2 ki points to gain the effects of feign death on yourself.</li>
+            </ul>
+            <div class="sidebar">
+                <h5 class="caption">Feign Death</h5>
+                <p>You enter a cataleptic state that is indistinguishable from death.</p>
+                <p class="indent">For 1 hour, or until you use an action to dismiss the spell, you appear dead to all outward inspection and to spells used to determine your status. You are blinded and incapacitated (except for dismissing this spell), and your speed drops to 0. You have resistance to all damage except psychic damage.</p>
+                <p class="indent">If you are diseased or poisoned when you use the effect, or becomes diseased or poisoned while under the effect, the disease and poison have no impact until the effect ends.</p>
+            </div>
+        </description>
+        <sheet action="Action" usage="2 Ki">
+            <description>You gain the effects of feign death on yourself. Additonally, when you use Focused Breathing, your next attack before the end of your next turn has advantage, and you can hold your breath for up to {{breath-control:duration}} rounds.</description>
+        </sheet>
+        <rules>
+            <stat name="breath-control:duration" value="level:martial artist" level="2" />
+            <stat name="breath-control:duration" value="level:martial artist" level="2" />
+            <stat name="breath-control:duration" value="level:martial artist" level="2" />
+            <stat name="breath-control:duration" value="level:martial artist" level="2" />
+            <stat name="breath-control:duration" value="level:martial artist" level="2" />
+        </rules>
+    </element>
+    <element name="Deflect Missiles" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DEFLECT_MISSILES">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:2]</requirements>
+        <prerequisite>2nd level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 2nd level</p>
+            <p class="indent">You can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your Martial Artist level.</p>
+            <p class="indent">If you reduce the damage to 0, you can catch the missile if you could hold in one hand and you have at least one hand free. If you do so, you can spend 1 ki point to make a ranged attack (range 20/60 feet) with the missile you just caught, as part of the same reaction. You make this attack with proficiency, using the missile as a martial artist weapon.</p>
+        </description>
+        <sheet action="Reaction" usage="Ki">
+            <description>When you are hit by a ranged weapon attack, the damage you take from the attack is reduced by 1d10 + {{deflect-missiles:modifier}}. If you reduce the damage to 0, you can catch the missile if you could hold in one hand and you have at least one hand free. If you do so, you can spend 1 ki point to make a ranged attack (range 20/60 feet) with the missile you just caught, as part of the same reaction. You make this attack with proficiency, using the missile as a martial artist weapon.</description>
+        </sheet>
+        <rules>
+            <stat name="deflect-missiles:modifier" value="dexterity:modifier" />
+            <stat name="deflect-missiles:modifier" value="level:martial artist" />
+        </rules>
+    </element>
+    <element name="Double Echo" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DOUBLE_ECHO">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:2]</requirements>
+        <prerequisite>2nd level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 2nd level</p>
+            <p class="indent">Your practiced combinations of attacks are nearly second nature to you. Whenever you could make an attack as a reaction, you can spend 1 ki point to instead make two unarmed attacks.</p>
+        </description>
+        <sheet usage="1 Ki">
+            <description>Whenever you could make an attack as a reaction, you can spend 1 ki point to make two unarmed attacks.</description>
+        </sheet>
+        <rules>
+            <stat name="tornado-strike:pre-req" value="1" />
+        </rules>
+    </element>
+    <element name="Flurry of Missiles" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_FLURRY_OF_MISSILES">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:2]</requirements>
+        <prerequisite>2nd level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 2nd level</p>
+            <p class="indent">When you use Flurry of Blows, you can replace any of the unarmed attacks with ranged attacks using one-handed weapons (eg, daggers or throwing stars). These attacks do not reveal your location if you are hidden and succeed on one stealth check per attack to remain so.</p>
+            <p class="indent">These are considered attacks with martial artist weapons, using your Martial Arts die. Kensei monks can spend 1 ki to get Kensei’s Shot (+1d4 damage) for all these attacks.</p>
+        </description>
+        <sheet>
+            <description>When you use Flurry of Blows, you can replace any of the unarmed attacks with ranged attacks using one-handed weapons. These attacks do not reveal your location if you are hidden and succeed on one stealth check per attack to remain so. These are considered attacks with martial artist weapons, using your Martial Arts die. Kensei monks can spend 1 ki to get Kensei’s Shot (+1d4 damage) for all these attacks.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Grasscutter Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_GRASSCUTTER_STRIKE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:2]</requirements>
+        <prerequisite>2nd level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 2nd level</p>
+            <p class="indent">You have tricks to leave your opponent prostrate or worse. When you hit a target of size Large or smaller with an unarmed attack, you can spend 1 ki to attempt to take them down. Target makes a Dexterity saving throw. If it fails, you knock it prone. If it fails by more than 5, then until the start of your next turn, it makes skill and ability checks and Strength or Dexterity saving throws with disadvantage. After level 12, you can use this technique on targets size Huge or smaller.</p>
+            <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+        </description>
+        <sheet usage="Strike Technique: 1 Ki">
+            <description>When you hit a target of size Large or smaller with an unarmed attack, you attempt to take them down. Target makes a Dexterity saving throw, or is knocked prone. If it fails by more than 5, then until the start of your next turn, it makes skill and ability checks and Strength or Dexterity saving throws with disadvantage.</description>
+            <description level="12">When you hit a target of size Huge or smaller with an unarmed attack, you attempt to take them down. Target makes a Dexterity saving throw, or is knocked prone. If it fails by more than 5, then until the start of your next turn, it makes skill and ability checks and Strength or Dexterity saving throws with disadvantage.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Leopard’s Grace" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_LEOPARDS_GRACE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:2]</requirements>
+        <prerequisite>2nd level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 2nd level</p>
+            <p class="indent">Your superlative control over your muscles gives your movements a feline grace. After you roll a Dexterity saving throw, skill check, or ability check (including initiative), you can spend 1 ki to roll your martial arts die and add that amount to the result.</p>
+            <p class="indent">If you know the Iron Body or Pushy technique, you can also do this for Strength skill or ability checks and saving throws.</p>
+            <p class="indent">Starting at 11th level, when you use Patient Defense or Step of the Wind, and you are not already first in the initiative order, then you can add your proficiency bonus to your initiative count. This may change your position in the initiative order for next round. If you do this, Improved Ki Techniques does not apply.</p>
+            <p class="indent">The ki cost of this technique cannot be reduced in any way.</p>
+        </description>
+        <sheet usage="1 Ki">
+            <description>After you roll a Dexterity saving throw, skill check, or ability check (including initiative), you roll your martial arts die and add that amount to the result. The ki cost of this technique cannot be reduced in any way.</description>
+            <description level="11">After you roll a Dexterity saving throw, skill check, or ability check (including initiative), you roll your martial arts die and add that amount to the result. The ki cost of this technique cannot be reduced in any way.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Owl’s Senses" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_OWLS_SENSES">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:2]</requirements>
+        <prerequisite>2nd level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 2nd level</p>
+            <p class="indent">Your discipline and focus means you rarely miss a detail. You can ignore any environmental circumstances (such as dim lighting) that would cause you to make Wisdom (Perception) checks with disadvantage.</p>
+            <p class="indent">When you use Focused Breathing, you can attack at long range without disadvantage until the end of your next turn.</p>
+            <p class="indent">As a reaction to making a Wisdom (Perception) check without advantage, you can spend 1 ki. When you do, roll your martial arts die and add it to the result. You can then concentrate for up to a total of 10 minutes to sustain this effect. While this lasts, add +5 to your passive perception up to a maximum of 20, and add a roll of your martial arts die to any Wisdom (Perception) rolls you make.</p>
+            <p class="indent">The ki cost of this technique cannot be reduced in any way.</p>
+        </description>
+        <sheet>
+            <description>You can ignore any environmental circumstances that would cause you to make Perception checks with disadvantage. When you use Focused Breathing, you can attack at long range without disadvantage until the end of your next turn. As a reaction to making a Perception check without advantage, you can spend 1 ki. When you do, add 1d{{martial arts:dice}} to the result. You can then concentrate for up to a total of 10 minutes to sustain this effect. While this lasts, add +5 to your passive perception up to a maximum of 20, and add 1d{{martial arts:dice}} to any Perception rolls you make.</description>
+        </sheet>
+        <rules>
+            <stat name="focused-prescience:pre-req" value="1" />
+        </rules>
+    </element>
+    <element name="Ribbon’s Binding" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_RIBBONS_BINDING">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:2]</requirements>
+        <prerequisite>2nd level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 2nd level</p>
+            <p class="indent">You have studied ways of wrestling that divert, rather than overcome, your opponent’s strength. When attempting to shove or grapple, you can spend 1 ki to use Dexterity (Acrobatics) instead of Strength (Athletics) for the duration of this interaction.</p>
+            <p class="indent">Creatures that you have grappled have disadvantage on saving throws against your strike techniques on your first attack in any turn.</p>
+        </description>
+        <sheet>
+            <description>When attempting to shove or grapple, you can spend 1 ki to use Acrobatics instead of Athletics for the duration of this interaction. Creatures that you have grappled have disadvantage on saving throws against your strike techniques on your first attack in any turn.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Slow Fall" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_SLOW_FALL">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:2]</requirements>
+        <prerequisite>2nd level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 2nd level</p>
+            <p class="indent">You can use your reaction when you fall to reduce falling damage by an amount equal to 5 x your martial artist level.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>You can reduce falling damage by an {{slow-fall:damage}}.</description>
+        </sheet>
+        <rules>
+            <stat name="slow-fall:damage" value="level:martial artist" />
+            <stat name="slow-fall:damage" value="level:martial artist" />
+            <stat name="slow-fall:damage" value="level:martial artist" />
+            <stat name="slow-fall:damage" value="level:martial artist" />
+            <stat name="slow-fall:damage" value="level:martial artist" />
+        </rules>
+    </element>
+    <element name="Abiding Will" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_ABIDING_WILL">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p class="indent">Even at death’s door, your training and drive persists. When you make a death saving throw, you can spend 1 ki point to change a failure into a success, or 3 ki points to change a success into a critical success. Once you use this technique, you can’t do so again until you finish a long rest.</p>
+        </description>
+        <sheet usage="1 or 3 ki, 1/Long Rest">
+            <description>When you make a death saving throw, you can spend 1 ki point to change a failure into a success, or 3 ki points to change a success into a critical success.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Blinding Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_BLINDING_STRIKE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p class="indent">You can strike at a creature’s eyes, temporarily blinding them. When you hit with an unarmed attack, you can spend 1 ki point. Target makes a Constitution saving throw. If they fail, up to two of their eyes are Blinded until the end of your next turn. Creatures without eyes are immune to this effect.</p>
+            <p class="indent">If they fail by more than 5, the blindness lasts 1 minute, but they can make another Constitution saving throw at the end of each of their turns to end it.</p>
+            <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+        </description>
+        <sheet usage="Strike Technique">
+            <description>When you hit with an unarmed attack, you can spend 1 ki point. Target makes a Constitution saving throw. If they fail, up to two of their eyes are Blinded until the end of your next turn. If they fail by more than 5, the blindness lasts 1 minute, but they can make another Constitution saving throw at the end of each of their turns to end it.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Defensive Stance" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DEFENSIVE_STANCE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p class="indent">When you spend ki to use Patient Defense, you can choose to enter a loose, mobile defensive stance. For the next minute, Patient Defense, Step of the Wind, Tumbling Dodge, and Ki Shield cost you no ki and are available regardless of prerequisites. If you use Flurry of Blows, Double Echo, or the Hide action, this ends immediately.</p>
+        </description>
+        <sheet>
+            <description>When you spend ki to use Patient Defense, you can choose to enter a loose, mobile defensive stance. For the next minute, Patient Defense, Step of the Wind, Tumbling Dodge, and Ki Shield cost you no ki and are available regardless of prerequisites. If you use Flurry of Blows, Double Echo, or the Hide action, this ends immediately.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Focused Aim" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_FOCUSED_AIM">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p class="indent">You can use your ki to give yourself pinpoint accuracy. After you make an attack roll, you can spend ki points to change the outcome in one of the following ways: For 1, 2, or 3 ki points you can add +2, +4, or +6 to the result, potentially turning a miss into a hit. Or instead, for 1 ki point, you can increase the raw die roll by 1, potentially turning a hit into a critical hit.</p>
+        </description>
+        <sheet usage="1-3 ki">
+            <description>After you make an attack roll, you can spend ki points to change the outcome in one of the following ways: For 1, 2, or 3 ki points you can add +2, +4, or +6 to the result, potentially turning a miss into a hit. Or instead, for 1 ki point, you can increase the raw die roll by 1, potentially turning a hit into a critical hit.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Martial Arcanist" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_MARTIAL_ARCANIST">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:5]||ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS</requirements>
+        <prerequisite>Way of the Four Elements or 5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Way of the Four Elements or 5th level</p>
+            <p class="indent">You have trained to blend spellcasting with your attacks. As part of Focused Breathing, you can cast a cantrip. Or when you use Flurry of Blows, you can replace one attack with a cantrip, without needing any incidental material components. In either case, this cantrip must have a casting time of one action, and does damage as if you were first level.</p>
+            <p class="indent">If you fail a saving throw to maintain concentration, you can use your reaction and spend 2 ki to succeed instead.</p>
+            <p class="indent">If you follow the Way of the 4 Elements, when you finish a long rest, you can learn 2 cantrips from the following list: conrol flame, create bonfire, fire bolt, frostbite, gust, mold earth, produce flame, ray of Frost, shape water. You forget any you learned from this technique before. From 11th level, you learn 3 cantrips in total; from 17th level, 4 in total.</p>
+            <p class="indent">If you follow the Way of the Sun Soul, you learn the cantrip sacred flame; for Way of the Astral Self, you learn mage hand.</p>
+        </description>
+        <sheet>
+            <description>As part of Focused Breathing, you can cast a cantrip. Or when you use Flurry of Blows, you can replace one attack with a cantrip, without needing any incidental material components. In either case, this cantrip must have a casting time of one action, and does damage as if you were first level. If you fail a saving throw to maintain concentration, you can use your reaction and spend 2 ki to succeed instead.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS_MARTIAL_ARCANIST" requirements="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS" />
+            <select type="Spell" name="Cantrip, Martial Arcanist" supports="Wizard,0" requirements="!ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS" />
+            <!-- need to add way of the Sun Soul and way of the Astral Self -->
+        </rules>
+    </element>
+        <element name="name" type="Archetype Feature" source="The Martial Artist" id="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS_MARTIAL_ARCANIST">
+            <compendium display="false" />
+            <description>
+                <p>You can learn 2 cantrips from the following list: conrol flame, create bonfire, fire bolt, frostbite, gust, mold earth, produce flame, ray of Frost, shape water. You forget any you learned from this technique before. From 11th level, you learn 3 cantrips in total; from 17th level, 4 in total.</p>
+            </description>
+            <sheet display="false" />
+            <rules>
+                <select type="Spell" name="Cantrip, Martial Arcanist" supports="ID_XGTE_SPELL_CONROL_FLAMES|ID_XGTE_SPELL_CREATE_BONFIRE|ID_PHB_SPELL_FIRE_BOLT|ID_XGTE_SPELL_FROSTBITE|ID_XGTE_SPELL_GUST|ID_XGTE_SPELL_MOLD_EARTH|ID_PHB_SPELL_PRODUCE_FLAME|ID_PHB_SPELL_RAY_OF_FROST|ID_XGTE_SPELL_SHAPE_WATER." number="2" />
+                <select type="Spell" name="Cantrip, Martial Arcanist" supports="ID_XGTE_SPELL_CONROL_FLAMES|ID_XGTE_SPELL_CREATE_BONFIRE|ID_PHB_SPELL_FIRE_BOLT|ID_XGTE_SPELL_FROSTBITE|ID_XGTE_SPELL_GUST|ID_XGTE_SPELL_MOLD_EARTH|ID_PHB_SPELL_PRODUCE_FLAME|ID_PHB_SPELL_RAY_OF_FROST|ID_XGTE_SPELL_SHAPE_WATER." level="11" />
+                <select type="Spell" name="Cantrip, Martial Arcanist" supports="ID_XGTE_SPELL_CONROL_FLAMES|ID_XGTE_SPELL_CREATE_BONFIRE|ID_PHB_SPELL_FIRE_BOLT|ID_XGTE_SPELL_FROSTBITE|ID_XGTE_SPELL_GUST|ID_XGTE_SPELL_MOLD_EARTH|ID_PHB_SPELL_PRODUCE_FLAME|ID_PHB_SPELL_RAY_OF_FROST|ID_XGTE_SPELL_SHAPE_WATER." level="17" />
+            </rules>
+        </element>
+    <element name="Quickened Healing (Simpler Version)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_QUICKENED_HEALING">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:5],!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_QUICKENED_HEALING</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p class="indent">As a bonus action, you can spend 2 ki points and roll a Martial Arts die. You regain the number rolled in hit points.</p>
+            <p class="indent">The ki cost of this technique cannot be reduced in any way.</p>
+        </description>
+        <sheet action="Bonus Action" usage="2 ki" alt="Quickened Healing">
+            <description>You regain 1d{{martial arts:dice}} hit points. The ki cost of this technique cannot be reduced in any way.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Stunning Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_STUNNING_STRIKE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p class="indent">Your strikes can block the natural flow of ki in the body of your target, freezing them in place. When you hit with an unarmed attack, you can spend 1 ki to try to slow or stun them. Target makes a Constitution saving throw. If it fails, it is slowed (same effects as the slow spell) until the end of your next turn. If it fails by over 5, it is Stunned until then instead. Creatures immune to being stunned succeed this saving throw automatically.</p>
+            <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+            <div class="sidebar">
+                <h5 class="caption">Effects of being slowed:</h5>
+                <p>When a creature is slowed, their speed is halved, they get a −2 penalty to AC and Dexterity saving throws, and they can’t use reactions. On their turn, they can use either an action or a bonus action, not both. Regardless of their abilities or magic items, they can’t make more than one melee or ranged attack during their turn.</p>
+                <p class="indent">If the creature attempts to cast a spell with a casting time of 1 action, roll a d20. On an 11 or higher, the spell doesn’t take effect until their next turn, and they must use its action on that turn to complete the spell. If they can’t, the spell is wasted.</p>
+            </div>
+        </description>
+        <sheet usage="Strike Technique: 1 ki">
+            <description>When you hit with an unarmed attack, you can spend 1 ki to try to slow or stun them. Target makes a Constitution saving throw. If it fails, it is slowed (same effects as the slow spell) until the end of your next turn. If it fails by over 5, it is Stunned until then instead. Creatures immune to being stunned succeed this saving throw automatically.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Touch of Insight" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_TOUCH_OF_INSIGHT">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:5]</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p class="indent">You have learned to feel how deception alters the flow of ki.</p>
+            <p class="indent">You immediately resist illusion effects if you touch them or the spellcaster concentrating on them. If you are touching a creature, its Charisma (Deception) checks against you are made with disadvantage, and if your Wisdom (Insight) check beats them, you clearly know it is lying.</p>
+            <p class="indent">Whenever you make a Wisdom (Insight) check against possible deception, whether or not you are touching the speaker, you can spend 2 ki points to roll your martial arts die once and add it to the result. This bonus works against overt deception, not concealed intentions.</p>
+        </description>
+        <sheet>
+            <description>You immediately resist illusion effects if you touch them or the spellcaster concentrating on them. If you are touching a creature, its Deception checks against you are made with disadvantage, and if your Insight check beats them, you clearly know it is lying. Whenever you make an Insight check against possible deception, whether or not you are touching the speaker, you can spend 2 ki points to roll 1d{{martial arts:dice}} once and add it to the result. This bonus works against overt deception, not concealed intentions.</description>
+        </sheet>
+        <rules>
+            <stat name="dispelling-strike:pre-req" value="1" />
+        </rules>
+    </element>
+    <element name="Tranquility of Mind (Simpler Version)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_TRANQUILITY_OF_MIND">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:5],!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_TRANQUILITY_OF_MIND</requirements>
+        <prerequisite>5th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 5th level</p>
+            <p class="indent">You have refined your sense of mental calm. You can use your action to end one effect on yourself that is causing you to be charmed or frightened. You can choose to use this technique even if you do not otherwise control your actions.</p>
+            <p class="indent">There is another optional version of this technique below.</p>
+        </description>
+        <sheet action="Action" alt="Tranquility of Mind">
+            <description>You end one effect on yourself that is causing you to be charmed or frightened. You can choose to use this technique even if you do not otherwise control your actions.</description>
+        </sheet>
+        <rules>
+            <stat name="focused-prescience:pre-req" value="1" />
+        </rules>
+    </element>
+    <element name="Bonding Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_BONDING_STRIKE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:8]</requirements>
+        <prerequisite>8th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 8th level</p>
+            <p class="indent">You can temporarily connect your ki to that of another creature with a blow. When you hit with an unarmed attack, you can spend 1 ki point and concentrate on establishing a mental connection. If target’s Intelligence is 2 or more, they make an Intelligence saving throw. If they fail, then until the end of your next turn, you have a mental connection to them. If they fail by more than 5, or fail deliberately, this lasts for up to 1 hour, as long as you maintain concentration.</p>
+            <p class="indent">While the connection lasts:</p>
+            <ul>
+                <li>Their attacks against you are made at disadvantage.</li>
+                <li>You have advantage on insight checks against them, and on Intelligence, Wisdom, or Charisma saving throws against their spells or effects.</li>
+                <li>If they are within 1000 feet, you are aware of their general state of mind, you have a rough sense of their direction and distance, and they have a feeling of being watched.</li>
+                <li>Within 1000 ft, as an action from either side, you and they can mentally send each other simple one-word messages which are understood without needing a common language. The one who takes the action sends first.</li>
+            </ul>
+            <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+        </description>
+        <sheet usage="Strike Technique: 1 ki">
+            <description>When you hit with an unarmed attack, you can spend 1 ki point and concentrate on establishing a mental connection. If target’s Intelligence is 2 or more, they make an Intelligence saving throw. If they fail, then until the end of your next turn, you have a mental connection to them. If they fail by more than 5, or fail deliberately, this lasts for up to 1 hour, as long as you maintain concentration.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Flow of the Wind" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_FLOW_OF_THE_WIND">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:8]</requirements>
+        <prerequisite>8th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 8th level</p>
+            <p class="indent">Your movement is as light and free as the breeze. Once on your turn you can spend 2 ki (as a free action) to get the following benefits until the end of your next turn:</p>
+            <ul>
+                <li>Your speed increases by 10 feet.</li>
+                <li>You are unaffected by difficult terrain.</li>
+                <li>Step of the Wind and Tumbling Dodge cost you no ki, and you can use the latter regardless of prerequisites.</li>
+                <li>Opportunity attacks against you have disadvantage.</li>
+                <li>You have advantage on any rolls to avoid or escape being grappled, paralyzed, or restrained.</li>
+                <li>You have advantage on stealth rolls to move undetected (but not to hide).</li>
+            </ul>
+        </description>
+        <sheet usage="2 ki">
+            <description>Once on your turn you can spend 2 ki (as a free action) to get multiple benefits until the end of your next turn. Speed +10 feet. Unaffected by difficult terrain. Step of the Wind and Tumbling Dodge cost you no ki. Opportunity attacks against you have disadvantage. You have advantage on any rolls to avoid or escape being grappled, paralyzed, or restrained. You have advantage on stealth rolls to move undetected (but not to hide).</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Guided Meditation" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_GUIDED_MEDITATION">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:8],ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_BREATH_CONTROL</requirements>
+        <prerequisite>8th level, Breath Control technique</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 8th level, Breath Control technique</p>
+            <p class="indent">Your meditation fortifies your body as it restores your energy, and you can lead others in the same practice. When you meditate to regain ki points, you can spend 1 ki (after regaining ki) to gain temporary hit points equal to half your martial artist level, rounded down. These temporary hit points last until you finish a long rest or fail a Wisdom saving throw. While they last, add 1d6 to your Wisdom saving throws.</p>
+            <p class="indent">At the same time, you can guide other creatures within 30 feet in this meditation, for a cost of 1 ki point per creature (spent after regaining ki); if they carry out verbal and somatic actions as you instruct, they gain the same benefits you do from this technique. They can not benefit from this technique again until they finish a long rest.</p>
+            <p class="indent">If you have the Restoring Mantra technique, you can use both of these together. Other creatures who participate in Guided Meditation don’t get the benefits of Restoring Mantra. The ki cost of this technique cannot be reduced in any way.</p>
+        </description>
+        <sheet>
+            <description>When you meditate to regain ki points, you can spend 1 ki (after regaining ki) to gain temporary hit points equal to half your martial artist level, rounded down. These temporary hit points last until you finish a long rest or fail a Wisdom saving throw. While they last, add 1d6 to your Wisdom saving throws. At the same time, you can guide other creatures within 30 feet in this meditation, for a cost of 1 ki point per creature (spent after regaining ki).</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Iron Palms" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_IRON_PALMS">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:8],ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DEFLECT_MISSILES</requirements>
+        <prerequisite>8th level, Deflect Missiles technique</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 8th level, Deflect Missiles technique</p>
+            <p class="indent">Your study of ki has let you catch some spells as easily as you catch arrows. When you are hit by a ranged spell attack, you can use your reaction to reduce the damage by 1d10 + your Dexterity modifier + your martial artist level.</p>
+            <p class="indent">If you reduce the damage from a spell to 0, this cancels any other effects it might have. Starting at 12th level, you can spend 1 ki to double the damage reduction. In that case, if you reduce the damage to 0, you can spend 1 more ki (2 total) to redirect the spell (including any effects) against its source, rolling a proficient attack using your Dexterity.</p>
+        </description>
+        <sheet action="Reaction">
+            <description>When you are hit by a ranged spell attack, you can use your reaction to reduce the damage by 1d10 + {{iron-palms:damage}}. If you reduce the damage from a spell to 0, this cancels any other effects it might have.</description>
+            <description level="12">When you are hit by a ranged spell attack, you can use your reaction to reduce the damage by 1d10 + {{iron-palms:damage}}. If you reduce the damage from a spell to 0, this cancels any other effects it might have. You can spend 1 ki to double the damage reduction. In that case, if you reduce the damage to 0, you can spend 1 more ki (2 total) to redirect the spell (including any effects) against its source, rolling a proficient attack using your Dexterity.</description>
+        </sheet>
+        <rules>
+            <stat name="iron-palms:damage" value="dexterity:modifiery" />
+            <stat name="iron-palms:damage" value="level:martial artist" />
+            <stat name="dispelling-strike:pre-req" value="1" />
+        </rules>
+    </element>
+    <element name="Lizard’s Step" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_LIZARDS_STEP">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:8]</requirements>
+        <prerequisite>8th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 8th level</p>
+            <p class="indent">You gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.</p>
+        </description>
+        <sheet>
+            <description>You can move along vertical surfaces and across liquids on your turn without falling during the move.</description>
+        </sheet>
+        <rules>
+            <stat name="tornado-strike:pre-req" value="1" />
+        </rules>
+    </element>
+    <element name="Sensei (combat)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_SENSEI_COMBAT">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:8],ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_SENSEI</requirements>
+        <prerequisite>8th level, Sensei technique</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 8th level, Sensei technique</p>
+            <p class="indent">When you use the attack action, you can spend 1 ki and forego one attack to give wise combat advice to an ally.</p>
+            <p class="indent">Another creature of your choice within 30 feet who can hear you can make their next attack or saving throw (before the end of your next turn) with advantage.</p>
+        </description>
+        <sheet>
+            <description>When you use the attack action, you can spend 1 ki and forego one attack to give another creature of your choice within 30 feet who can hear you can make their next attack or saving throw (before the end of your next turn) with advantage.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Silent Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_SILENT_STRIKE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:8]</requirements>
+        <prerequisite>8th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 8th level</p>
+            <p class="indent">You have studied how to disable or fight your enemies without giving them the chance to raise the alarm.</p>
+            <p class="indent">When you hit with an unarmed attack, you can spend 1 ki point. This attack makes no noise and does nonlethal damage. After taking damage, if the target’s hit points plus its Constitution add to less than 30, it becomes unconscious for one minute for each point of difference from the sum to 30.</p>
+            <p class="indent">If target remains conscious, and is not already affected by this technique, it must make a Constitution saving throw.</p>
+            <p class="indent">If it fails, it is unable to speak, and it makes all melee attacks at disadvantage. It cannot cast spells requiring a verbal component, and its breathing comes in strained, quiet gasps. At the end of each of its turns, it makes a Constitution saving throw to end this effect, with +1 for each full turn it has taken since you last hit it with this technique. It can use its action to give itself advantage on this saving throw.</p>
+            <p class="indent">Creatures without a mouth, creatures that do not breathe, creatures that do not use their breath to speak, and creatures immune to the stunned condition, are immune to this effect.</p>
+            <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique, you cannot use it again on the same creature until the end of the turn.</p>
+        </description>
+        <sheet usage="Strike Technique: 1 ki">
+            <description>This attack makes no noise and does nonlethal damage. After taking damage, if the target’s hit points plus its Constitution add to less than 30, it becomes unconscious for one minute for each point of difference from the sum to 30.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Subduing Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_SUBDUING_STRIKE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:8]</requirements>
+        <prerequisite>8th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 8th level</p>
+            <p class="indent">Your blows can be calculated not to physically wound, but to humiliate and subjugate. When you hit with an unarmed attack, you can spend 2 ki points. This attack does half damage, then the target must make a Charisma saving throw. If its challenge rating exceeds your total level plus the number of similarly-powerful companions you have present, or it has over half its maximum hit points, it makes this save with advantage; if both are true, it automatically succeeds.</p>
+            <p class="indent">If it fails, its will to oppose you is broken, and it is charmed by you for 1 minute. If it fails by 5 or more, this effect lasts for an hour. You know which of those, if any, has happened.</p>
+            <p class="indent">Unlike the normal "charmed" effect, it does not see you as a friend, merely as a threat to be appeased; but it still will cooperate with you and obey reasonable requests or demands as with a normal charm. It might try to escape if it thinks it can get away cleanly, but will not do so if you or your companions are watching it.</p>
+            <p class="indent">If you or your companions do anything further to harm it, the effect ends. When it senses you or your companions harm its allies, it can make a Wisdom or Charisma saving throw (its choice), up to once per time. If it succeeds, the effect ends, without your knowledge.</p>
+            <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+        </description>
+        <sheet usage="Strike Technique: 2 ki">
+            <description>When you hit with an unarmed attack, you can spend 2 ki points. This attack does half damage, then the target must make a Charisma saving throw. If it fails, its will to oppose you is broken, and it is charmed by you for 1 minute. If it fails by 5 or more, this effect lasts for an hour. You know which of those, if any, has happened.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Tongue of the Stars*" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_TONGUE_OF_THE_STARS">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:8]</requirements>
+        <prerequisite>8th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 8th level</p>
+            <p class="indent">You have learned to touch the ki of simpler beings, allowing mutual understanding.</p>
+            <p class="indent">You can gain the effects of speak with animals at will; this is not a spell. As an action, you can spend 3 ki points to cast speak with plants.</p>
+            <div class="sidebar">
+                <h5 class="caption">Speak with Animals/Plants</h5>
+                <p>
+                    <b>
+                        <i>Animals:</i>
+                    </b>
+                    Range: Self Duration: 10 minutes
+                </p>
+                <p class="indent">You gain the ability to comprehend and verbally communicate with beasts for the duration. The knowledge and awareness of many beasts is limited by their intelligence, but at minimum, beasts can give you information about nearby locations and monsters, including whatever they can perceive or have perceived within the past day. You might be able to persuade a beast to perform a small favor for you, at the GM’s discretion.</p>
+                <p class="indent">
+                    <b>
+                        <i>Plants:</i>
+                    </b>
+                    Range: 30-foot radius Duration: 10 mins
+                </p>
+                <p class="indent">You imbue Plants within 30 feet of you with limited sentience and animation, giving them the ability to communicate with you and follow your simple commands. You can question Plants about events in the spell’s area within the past day, gaining information about creatures that have passed, weather, and other circumstances.</p>
+                <p class="indent">You can also turn Difficult Terrain caused by Plant Growth (such as thickets and undergrowth) into ordinary terrain that lasts for the Duration. Or you can turn ordinary terrain where Plants are present into Difficult Terrain that lasts for the Duration, causing vines and branches to hinder pursuers, for example.</p>
+                <p class="indent">Plants might be able to perform other tasks on your behalf, at the DM’s discretion. The spell doesn’t enable Plants to uproot themselves and move about, but they can freely move branches, tendrils, and stalks.</p>
+                <p class="indent">You can communicate with plant creatures in the area as if you shared a Common language, but you gain no magical ability to influence them.</p>
+                <p class="indent">This spell can cause the Plants created by the Entangle spell to release a Restrained creature.</p>
+            </div>
+        </description>
+        <sheet usage="1 or 3 ki">
+            <description>You can gain the effects of speak with animals at will; this is not a spell. As an action, you can spend 3 ki points to cast speak with plants.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Dry in the Rain (Simpler Version)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DRY_IN_THE_RAIN">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:10],ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DEFLECT_MISSILES,!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_DRY_IN_THE_RAIN</requirements>
+        <prerequisite>10th level, Deflect Missiles technique</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 10th level, Deflect Missiles technique</p>
+            <p class="indent">Even in the stiffest shower of arrows, your hands become a blur, protecting you from attacks. When you use Deflect Missiles or Iron Palms, you get +5 to your AC against further ranged attacks until the start of your next turn.</p>
+            <p class="indent">There is another optional version of this technique below.</p>
+        </description>
+        <sheet alt="Dry in the Rain">
+            <description>When you use Deflect Missiles or Iron Palms, you get +5 to your AC against further ranged attacks until the start of your next turn.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Purity of Body" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_PURITY_OF_BODY">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:10]</requirements>
+        <prerequisite>10th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 10th level</p>
+            <p class="indent">Your mastery of the ki flowing through you makes you immune to disease and poison. In addition, your Evasion feature applies to any saving throws to take half damage.</p>
+            <p class="indent">Starting at 15th level as a Martial Artist, you also have a Timeless Body: your ki sustains you so that you suffer none of the frailty of old age, though you can still die of old age. You can’t be aged magically, and you no longer need food or water.</p>
+        </description>
+        <sheet>
+            <description>You are immune to disease and poison. Your Evasion feature applies to any saving throws to take half damage.</description>
+            <description level="15">You are immune to disease and poison. Your Evasion feature applies to any saving throws to take half damage. You can’t be aged magically, and you no longer need food or water.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Spider’s Stillness" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_SPIDERS_STILLNESS">
+        <supports>Martial Artist Technique</supports>
+        <requirements></requirements>
+        <prerequisite>Permanent blindness; OR 10th level and Owl’s Senses technique</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: Permanent blindness; OR 10th level and Owl’s Senses technique</p>
+            <p class="indent">You have heightened your hearing and other senses, giving you blindsense with a range of 20 feet. This does not work if you are deafened or in magical silence.</p>
+            <p class="indent">If you have this technique and are blind, understanding light is a struggle for you. Whenever you cast the spell darkness in any manner, the effect is that of the spell silence.</p>
+        </description>
+        <sheet>
+            <description>You have blindsight with a range of {{blindsight:range}} feet. This does not work if you are deafened or in magical silence.</description>
+        </sheet>
+        <rules>
+            <grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+            <stat name="blindsight:range" value="20" bonus="base" />
+        </rules>
+    </element>
+    <element name="Uncanny Stagger" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_UNCANNY_STAGGER">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:10]</requirements>
+        <prerequisite>10th level, or Way of the Drunken Master</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 10th level, or Way of the Drunken Master</p>
+            <p class="indent">Your unpredictable movement can make you difficult to attack. As an action, you can spend 2 ki points. While you keep concentration on this effect, for up to a minute, any creature that relies on sight has disadvantage to attack you.</p>
+        </description>
+        <sheet action="Action" usage="2 ki">
+            <description>While you keep concentration on this effect, for up to a minute, any creature that relies on sight has disadvantage to attack you.</description>
+        </sheet>
+        <rules>
+            <stat name="tornado-strike:pre-req" value="1" />
+        </rules>
+    </element>
+    <element name="Dispelling Strike (Simpler Version)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DISPELLING_STRIKE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:13],ID_PROFICIENCY_SKILL_ARCANA,[dispelling-strike:pre-req:2],!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_DISPELLING_STRIKE</requirements>
+        <prerequisite>13th level; Two of the following: Meridian Node Touch, Iron Palms, Touch of Insight, and Arcana skill</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 13th level; Two of the following: Meridian Node Touch, Iron Palms, Touch of Insight, and Arcana skill</p>
+            <p class="indent">When you hit a creature with an unarmed attack, you can spend 3 ki to cast <i>dispel magic</i> on them/it. This is cast at 3rd level using Wisdom as your spellcasting modifier.</p>
+            <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+            <p class="indent">Once you have used this technique a number of times equal to your proficiency bonus, you can not use it again until you finish a long rest.</p>
+        </description>
+        <sheet usage="Strike Technique: 3 ki, {{proficiency}}/Long Rest">
+            <description>When you hit a creature with an unarmed attack, you can spend 3 ki to cast dispel magic on them/it at 3rd level using Wisdom as your spellcasting modifier.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Iron Skin" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_IRON_SKIN">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:13],ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_IRON_PALMS</requirements>
+        <prerequisite>13th level, Iron Palms technique</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 13th level, Iron Palms technique</p>
+            <p class="indent">You can concentrate to temporarily steel your body against attacks. As an action, you can spend 4 ki points to gain resistance to the damage type of your choice, as long as you maintain concentration, for up to a minute. You can use this ability as a reaction to taking damage, instead, by spending 6 ki points; if so, your concentration automatically holds against the initial triggering damage. You can not use this technique to gain resistance to psychic damage, or to magical bludgeoning, piercing, or slashing damage.</p>
+        </description>
+        <sheet action="Action" usage="4 ki">
+            <description>You gain resistance to the damage type of your choice, as long as you maintain concentration, for up to a minute. You can use this ability as a reaction to taking damage, instead, by spending 6 ki points; if so, your concentration automatically holds against the initial triggering damage. You can not use this technique to gain resistance to psychic damage, or to magical bludgeoning, piercing, or slashing damage.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Leaf on the Wind" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_LEAF_ON_THE_WIND">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:13],ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_SLOW_FALL,ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_LIZARDS_STEP</requirements>
+        <prerequisite>13th level, Slow Fall and Lizard’s Step techniques</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 13th level, Slow Fall and Lizard’s Step techniques</p>
+            <p class="indent">Your power to leap from rooftop to rooftop or cliff to cliff defies ordinary limits.</p>
+            <p class="indent">When you use Step of the Wind, you gain a flying speed equal to your walking speed until the end of your turn. If you end your turn without support, you fall.</p>
+        </description>
+        <sheet>
+            <description>When you use Step of the Wind, you gain a flying speed of {{speed}} feet until the end of your turn. If you end your turn without support, you fall.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Pure Mindfulness" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_PURE_MINDFULNESS">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:13],ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_OWLS_SENSES</requirements>
+        <prerequisite>13th level, Owl’s Senses technique</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 13th level, Owl’s Senses technique</p>
+            <p class="indent">Your enlightenment has reached a stage where you are able to pierce the veil of worldly illusion.</p>
+            <p class="indent">You can spend 8 ki points to gain 60 feet of truesight for ten minutes. Once you use this technique, you can’t use it again until you finish a long rest.</p>
+            <div class="sidebar">
+                <h5 class="caption">Truesight</h5>
+                <p>With Truesight you can, out to a specific range, see in normal and magical Darkness, see Invisible creatures and objects, automatically detect visual illusions and succeed on Saving Throws against them, and perceive the original form of a Shapechanger or a creature that is transformed by magic. Furthermore, you can see into the Ethereal Plane within the same range.</p>
+            </div>
+        </description>
+        <sheet usage="8 ki, 1/Long Rest">
+            <description>You gain 60 feet of truesight for ten minutes.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Tongue of the Sun and Moon" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_TONGUE_OF_THE_SUN_AND_MOON">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:13]</requirements>
+        <prerequisite>13th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 13th level</p>
+            <p class="indent">You learn to touch the ki of other minds so that you understand all spoken languages. Moreover, any creature that can understand a language can understand what you say.</p>
+        </description>
+        <sheet>
+            <description>You understand all spoken languages. Moreover, any creature that can understand a language can understand what you say.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Twist of the Rapids" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_TWIST_OF_THE_RAPIDS">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:13],(ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_SLIPPERY_ESCAPE||ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_HARE_STRIKE||ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_FLOW_OF_THE_WIND||ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_FLOW_OF_THE_RIVER)</requirements>
+        <prerequisite>13th level; Slippery Escape, Hare Strike, Flow of the Wind, or Flow of the River technique</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 13th level; Slippery Escape, Hare Strike, Flow of the Wind, or Flow of the River technique</p>
+            <p class="indent">As long as your movement speed is at least 50 feet, you get +1 to your AC. If you also take the Dash action in any way, or if your movement speed is at least 100 feet, this becomes +2 until the end of your next turn.</p>
+        </description>
+        <sheet>
+            <description>As long as your movement speed is at least 50 feet, you get +1 to your AC. If you also take the Dash action in any way, or if your movement speed is at least 100 feet, this becomes +2 until the end of your next turn.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Vigil’s Virtue" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_VIGILS_VIRTUE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:13],(ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_ASCETIC_HABITS||ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_RESTORING_MANTRA)</requirements>
+        <prerequisite>13th level; Ascetic Habits or Restoring Mantra</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 13th level; Ascetic Habits or Restoring Mantra</p>
+            <p class="indent">If you spend at least 4 hours resting, including at least half the sleep you need, you can gain the benefits of a long rest, then spend 8 ki points. For every level of exhaustion you have, it takes one additional hour of rest before you can do this.</p>
+            <p class="indent">Until you complete a long rest without using this technique, you can not use this technique again, and you only recover half your ki points (rounded up) when completing a short rest.</p>
+        </description>
+        <sheet usage="8 ki">
+            <description>If you spend at least 4 hours resting, including at least half the sleep you need, you can gain the benefits of a long rest, then spend 8 ki points. For every level of exhaustion you have, it takes one additional hour of rest before you can do this. Until you complete a long rest without using this technique, you can not use this technique again, and you only recover half your ki points (rounded up) when completing a short rest.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Adamantine Soul" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_ADAMANTINE_SOUL">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:18],(ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_ASCETIC_HABITS||ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_PATIENT_RESPONSE||ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_TRANQUILITY_OF_MIND||ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_TRANQUILITY_OF_MIND_OPTIONAL)</requirements>
+        <prerequisite>18th level; Ascetic Habits, Patient Response, or Tranquility of Mind technique</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 18th level; Ascetic Habits, Patient Response, or Tranquility of Mind technique</p>
+            <p class="indent">Your mastery of ki allows you to resist even the most powerful magics and effects. When you fail a saving throw, you can use your reaction and spend 6 ki to succeed instead. Once you have used this technique twice, you can’t use it again until you finish a long rest.</p>
+        </description>
+        <sheet action="Reaction" usage="6 ki, 2/Long Rest">
+            <description>When you fail a saving throw, you can use your reaction and spend 6 ki to succeed instead.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Empty Body" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_EMPTY_BODY">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:18],ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_PURITY_OF_BODY</requirements>
+        <prerequisite>18th level, Purity of Body technique</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 18th level, Purity of Body technique</p>
+            <p class="indent">You can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.</p>
+            <p class="indent">Additionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you can’t take any other creatures with you.</p>
+            <div class="sidebar">
+                <h5 class="caption">Astral Projection</h5>
+                <p>Necromancy, Casting Time: 1 hour</p>
+                <p class="indent">You project your astral body into the Astral Plane (the spell fails if you are already on that plane). The material body you leave behind is unconscious and in a state of suspended animation; it doesn’t need food or air and doesn’t age.</p>
+                <p class="indent">Your astral body resembles your mortal form in almost every way, replicating your game statistics and possessions. The principal difference is the silvery cord that extends from between your shoulder blades and trails behind you, fading to invisibility after 1 foot. This cord is your tether to your material body.</p>
+                <p class="indent">As long as the tether remains intact, you can find your way home. If the cord is cut—something that can happen only when an effect specifically states that it does—your soul and body are separated, killing you instantly.</p>
+                <p class="indent">Your astral form can freely travel through the Astral Plane and can pass through portals there leading to any other plane. If you enter a new plane or return to the plane your body is on, your body and possessions are transported along the silver cord, allowing you to re-enter your body as you enter the new plane. Your astral form is a separate incarnation. Any damage or other effects that apply to it have no effect on your physical body and do not persist when you return to it.</p>
+                <p class="indent">The spell ends when you use your action to dismiss it. When the spell ends, you return to your physical body, and awaken.</p>
+                <p class="indent">The spell might also end early. A successful dispel magic spell used against an astral or physical body ends the spell for that creature. If your original body or astral form drops to 0 hit points, the spell ends. If the spell ends and the silver cord is intact, the cord pulls your astral form back to your body, ending its suspended animation.</p>
+            </div>
+        </description>
+        <sheet action="Action" usage="4, 8 ki">
+            <description>You can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage. Additionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you can’t take any other creatures with you.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Extra Attack" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_EXTRA_ATTACK">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:18]</requirements>
+        <prerequisite>18th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 18th level</p>
+            <p class="indent">When you take the Attack action, you can spend 1 ki to attack three times, instead of twice.</p>
+            <p class="indent">If your initiative score is 5 or higher, then you can use this technique without spending ki. If you do, then subtract 5 from your initiative score; use this new score starting with the next round of combat.</p>
+        </description>
+        <sheet usage="1 kit">
+            <description>When you take the Attack action, you can spend 1 ki to attack three times, instead of twice. If your initiative score is 5 or higher, then you can use this technique without spending ki. If you do, then subtract 5 from your initiative score; use this new score starting with the next round of combat.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Focused Prescience" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_FOCUSED_PRESCIENCE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:18],[focused-prescience:pre-req:2]</requirements>
+        <prerequisite>18th level; Two of: Ascetic Habits, Patient Response, Tranquility of Mind, or Owl’s Senses techniques</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 18th level; Two of: Ascetic Habits, Patient Response, Tranquility of Mind, or Owl’s Senses techniques</p>
+            <p class="indent">You can spend 1 minute and 10 ki points to gain a limited ability to see into the immediate future.</p>
+            <p class="indent">For one hour, you can’t be surprised; you have advantage on attack rolls, ability checks, and saving throws; and other creatures have disadvantage on attack rolls against you. You can end this effect at will, and cannot rest until you end it.</p>
+            <p class="indent">When this effect ends, make a Constitution check. The DC is 5 + the number of times you’ve used this technique in the last seven days. If you fail, suffer one level of exhaustion.</p>
+        </description>
+        <sheet usage="10 ki">
+            <description>You can spend 1 minute and 10 ki points to gain a limited ability to see into the immediate future. For one hour, you can’t be surprised; you have advantage on attack rolls, ability checks, and saving throws; and other creatures have disadvantage on attack rolls against you. You can end this effect at will, and cannot rest until you end it. When this effect ends, make a Constitution check. The DC is 5 + the number of times you’ve used this technique in the last seven days. If you fail, suffer one level of exhaustion.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Perfected Arts" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_PERFECTED_ARTS">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:18]</requirements>
+        <prerequisite>18th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 18th level</p>
+            <p class="indent">Gain expertise (2 times proficiency bonus) with up to 2 sets of tools that you are proficient in.</p>
+            <p class="indent">Your Martial Arts die is 1d12.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Perfected Arts" supports="Expertise, Tool" number="2" />
+            <stat name="martial arts:dice" value="12" bonus="martial arts" />
+        </rules>
+    </element>
+    <element name="Unparalleled Speed" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_UNPARALLELED_SPEED">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:18],ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_LEOPARDS_GRACE</requirements>
+        <prerequisite>18th level, Leopard’s Grace technique</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 18th level, Leopard’s Grace technique</p>
+            <p class="indent">As an action, you can spend 7 ki points to gain +2 Dexterity, +2 initiative, and +15ft of speed, for 10 minutes. During this time, you can use a reaction 1 additional time per round.</p>
+            <p class="indent">When this effect ends, make a Constitution check. The DC is 5 + the number of times you’ve used this technique in the last seven days. If you fail, suffer one level of exhaustion.</p>
+            <p class="indent">You can not use this technique again if it is already active. However, if you are a 20th level Martial Artist, you can spend double or triple the ki costs (14 or 21 ki points) when activating it. If you do so, this counts as two or three uses, and all the bonuses, as well as the duration and the exhaustion, are also doubled or tripled.</p>
+        </description>
+        <sheet action="Action" usage="7 ki">
+            <description>You gain +2 Dexterity, +2 initiative, and +15ft of speed, for 10 minutes. During this time, you can use a reaction 1 additional time per round. When this effect ends, make a Constitution check. The DC is 5 + the number of times you’ve used this technique in the last seven days. If you fail, suffer one level of exhaustion.</description>
+            <description level="20" usage="7, 14, 21 ki">You gain +2 Dexterity, +2 initiative, and +15ft of speed, for 10 minutes. During this time, you can use a reaction 1 additional time per round. When this effect ends, make a Constitution check. The DC is 5 + the number of times you’ve used this technique in the last seven days. If you fail, suffer one level of exhaustion. You can spend double or triple the ki costs (14 or 21 ki points) when activating it. If you do so, this counts as two or three uses, and all the bonuses, as well as the duration and the exhaustion, are also doubled or tripled.</description>
+        </sheet>
+        <rules>
+        </rules>
+    </element>
+    <element name="Variable Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_VARIABLE_STRIKE">
+        <supports>Martial Artist Technique</supports>
+        <requirements>[level:martial artist:18]</requirements>
+        <prerequisite>18th level</prerequisite>
+        <description>
+            <p class="flavor">Prerequisite: 18th level</p>
+            <p class="indent">Learn any 3 strike techniques, ignoring prerequisites.</p>
+            <p class="indent">These techniques each cost you 1 extra ki to use.</p>
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        <rules>
+            <select type="Class Feature" name="Variable Strike" supports="Martial Artist Variable Strike Technique" number="3" />
+        </rules>
+    </element>
+        <element name="Dizzying Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_VARIABLE_DIZZYING_STRIKE">
+            <supports>Martial Artist Variable Strike Technique</supports>
+            <requirements>!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DIZZYING_STRIKE</requirements>
+            <description>
+                <p>Your blows leave your enemies addled. When you hit with an unarmed attack and choose to use this strike technique, then until the end of its next turn, the target can not take reactions and its speed is reduced by 10 feet. Once this effect ends, target is immune to it for the next minute. Targets immune to the Stunned condition are immune to this technique.</p>
+                <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+            </description>
+            <sheet usage="Strike Technique: 1 ki">
+                <description>When you hit with an unarmed attack, then until the end of its next turn, the target can not take reactions and its speed is reduced by 10 feet. Once this effect ends, target is immune to it for the next minute. Targets immune to the Stunned condition are immune to this technique.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Grasscutter Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_VARIABLE_GRASSCUTTER_STRIKE">
+            <supports>Martial Artist Variable Strike Technique</supports>
+            <requirements>!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_GRASSCUTTER_STRIKE</requirements>
+            <description>
+                <p>You have tricks to leave your opponent prostrate or worse. When you hit a target of size Large or smaller with an unarmed attack, you can spend 1 ki to attempt to take them down. Target makes a Dexterity saving throw. If it fails, you knock it prone. If it fails by more than 5, then until the start of your next turn, it makes skill and ability checks and Strength or Dexterity saving throws with disadvantage. After level 12, you can use this technique on targets size Huge or smaller.</p>
+                <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+            </description>
+            <sheet usage="Strike Technique: 1 Ki">
+                <description>When you hit a target of size Large or smaller with an unarmed attack, you attempt to take them down. Target makes a Dexterity saving throw, or is knocked prone. If it fails by more than 5, then until the start of your next turn, it makes skill and ability checks and Strength or Dexterity saving throws with disadvantage.</description>
+                <description level="12">When you hit a target of size Huge or smaller with an unarmed attack, you attempt to take them down. Target makes a Dexterity saving throw, or is knocked prone. If it fails by more than 5, then until the start of your next turn, it makes skill and ability checks and Strength or Dexterity saving throws with disadvantage.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Blinding Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_VARIABLE_BLINDING_STRIKE">
+            <supports>Martial Artist Variable Strike Technique</supports>
+            <requirements>!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_BLINDING_STRIKE</requirements>
+            <description>
+                <p>You can strike at a creature’s eyes, temporarily blinding them. When you hit with an unarmed attack, you can spend 2 ki points. Target makes a Constitution saving throw. If they fail, up to two of their eyes are Blinded until the end of your next turn. Creatures without eyes are immune to this effect.</p>
+                <p class="indent">If they fail by more than 5, the blindness lasts 1 minute, but they can make another Constitution saving throw at the end of each of their turns to end it.</p>
+                <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+            </description>
+            <sheet usage="Strike Technique">
+                <description>When you hit with an unarmed attack, you can spend 2 ki points. Target makes a Constitution saving throw. If they fail, up to two of their eyes are Blinded until the end of your next turn. If they fail by more than 5, the blindness lasts 1 minute, but they can make another Constitution saving throw at the end of each of their turns to end it.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Stunning Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_VARIABLE_STUNNING_STRIKE">
+            <supports>Martial Artist Variable Strike Technique</supports>
+            <requirements>!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_STUNNING_STRIKE</requirements>
+            <description>
+                <p>Your strikes can block the natural flow of ki in the body of your target, freezing them in place. When you hit with an unarmed attack, you can spend 2 ki to try to slow or stun them. Target makes a Constitution saving throw. If it fails, it is slowed (same effects as the slow spell) until the end of your next turn. If it fails by over 5, it is Stunned until then instead. Creatures immune to being stunned succeed this saving throw automatically.</p>
+                <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+                <div class="sidebar">
+                    <h5 class="caption">Effects of being slowed:</h5>
+                    <p>When a creature is slowed, their speed is halved, they get a −2 penalty to AC and Dexterity saving throws, and they can’t use reactions. On their turn, they can use either an action or a bonus action, not both. Regardless of their abilities or magic items, they can’t make more than one melee or ranged attack during their turn.</p>
+                    <p class="indent">If the creature attempts to cast a spell with a casting time of 1 action, roll a d20. On an 11 or higher, the spell doesn’t take effect until their next turn, and they must use its action on that turn to complete the spell. If they can’t, the spell is wasted.</p>
+                </div>
+            </description>
+            <sheet usage="Strike Technique: 2 ki">
+                <description>When you hit with an unarmed attack, you can spend 2 ki to try to slow or stun them. Target makes a Constitution saving throw. If it fails, it is slowed (same effects as the slow spell) until the end of your next turn. If it fails by over 5, it is Stunned until then instead. Creatures immune to being stunned succeed this saving throw automatically.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Bonding Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_VARIABLE_BONDING_STRIKE">
+            <supports>Martial Artist Variable Strike Technique</supports>
+            <requirements>!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_BONDING_STRIKE</requirements>
+            <description>
+                <p>You can temporarily connect your ki to that of another creature with a blow. When you hit with an unarmed attack, you can spend 2 ki points and concentrate on establishing a mental connection. If target’s Intelligence is 2 or more, they make an Intelligence saving throw. If they fail, then until the end of your next turn, you have a mental connection to them. If they fail by more than 5, or fail deliberately, this lasts for up to 1 hour, as long as you maintain concentration.</p>
+                <p class="indent">While the connection lasts:</p>
+                <ul>
+                    <li>Their attacks against you are made at disadvantage.</li>
+                    <li>You have advantage on insight checks against them, and on Intelligence, Wisdom, or Charisma saving throws against their spells or effects.</li>
+                    <li>If they are within 1000 feet, you are aware of their general state of mind, you have a rough sense of their direction and distance, and they have a feeling of being watched.</li>
+                    <li>Within 1000 ft, as an action from either side, you and they can mentally send each other simple one-word messages which are understood without needing a common language. The one who takes the action sends first.</li>
+                </ul>
+                <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+            </description>
+            <sheet usage="Strike Technique: 2 ki">
+                <description>When you hit with an unarmed attack, you can spend 2 ki points and concentrate on establishing a mental connection. If target’s Intelligence is 2 or more, they make an Intelligence saving throw. If they fail, then until the end of your next turn, you have a mental connection to them. If they fail by more than 5, or fail deliberately, this lasts for up to 1 hour, as long as you maintain concentration.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Subduing Strike" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_VARIABLE_SUBDUING_STRIKE">
+            <supports>Martial Artist Variable Strike Technique</supports>
+            <requirements>!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_SUBDUING_STRIKE</requirements>
+            <description>
+                <p>Your blows can be calculated not to physically wound, but to humiliate and subjugate. When you hit with an unarmed attack, you can spend 3 ki points. This attack does half damage, then the target must make a Charisma saving throw. If its challenge rating exceeds your total level plus the number of similarly-powerful companions you have present, or it has over half its maximum hit points, it makes this save with advantage; if both are true, it automatically succeeds.</p>
+                <p class="indent">If it fails, its will to oppose you is broken, and it is charmed by you for 1 minute. If it fails by 5 or more, this effect lasts for an hour. You know which of those, if any, has happened.</p>
+                <p class="indent">Unlike the normal "charmed" effect, it does not see you as a friend, merely as a threat to be appeased; but it still will cooperate with you and obey reasonable requests or demands as with a normal charm. It might try to escape if it thinks it can get away cleanly, but will not do so if you or your companions are watching it.</p>
+                <p class="indent">If you or your companions do anything further to harm it, the effect ends. When it senses you or your companions harm its allies, it can make a Wisdom or Charisma saving throw (its choice), up to once per time. If it succeeds, the effect ends, without your knowledge.</p>
+                <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+            </description>
+            <sheet usage="Strike Technique: 3 ki">
+                <description>When you hit with an unarmed attack, you can spend 3 ki points. This attack does half damage, then the target must make a Charisma saving throw. If it fails, its will to oppose you is broken, and it is charmed by you for 1 minute. If it fails by 5 or more, this effect lasts for an hour. You know which of those, if any, has happened.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Dispelling Strike (Simpler Version)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_VARIABLE_DISPELLING_STRIKE">
+            <supports>Martial Artist Variable Strike Technique</supports>
+            <requirements>!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_OPTIONAL_DISPELLING_STRIKE,!ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_DISPELLING_STRIKE</requirements>
+            <description>
+                <p>When you hit a creature with an unarmed attack, you can spend 4 ki to cast <i>dispel magic</i> on them/it. This is cast at 3rd level using Wisdom as your spellcasting modifier.</p>
+                <p class="indent">This is a strike technique. You can not use more than one strike technique on the same attack. Once you have used this technique against a creature, you can not use it again against the same creature until the end of the turn.</p>
+                <p class="indent">Once you have used this technique a number of times equal to your proficiency bonus, you can not use it again until you finish a long rest.</p>
+            </description>
+            <sheet usage="Strike Technique: 4 ki, {{proficiency}}/Long Rest" alt="Dispelling Strike">
+                <description>When you hit a creature with an unarmed attack, you can spend 4 ki to cast dispel magic on them/it at 3rd level using Wisdom as your spellcasting modifier.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+    <!-- Tools expertise -->
+        <element name="Tool Expertise (Tinker’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_TINKERS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Tinker’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_TINKERS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Tinker’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="tinkers tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Smith’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_SMITHS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Smiths’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_SMITHS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Smiths’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="smiths tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Carpenter’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_CARPENTERS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Carpenters’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_CARPENTERS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Carpenters’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="carpenters tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Cartographer’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_CARTOGRAPHERS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_CARTOGRAPHERS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Cartographers’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_CARTOGRAPHERS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Cartographers’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="cartographers tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Cobbler’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_COBBLERS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_COBBLERS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Cobbler’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_COBBLERS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Cobbler’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="cobblers tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Navigator’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_NAVIGATORS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Navigators’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_NAVIGATORS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Navigators’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="navigators tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Jeweler’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_JEWELERS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_JEWELERS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Jewelers’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_JEWELERS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Jewelers’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="jewelers tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Glassblower’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_GLASSBLOWERS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_GLASSBLOWERS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Glassblowers’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_GLASSBLOWERS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Glassblowers’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="glassblowers tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Weaver’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_WEAVERS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_WEAVERS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Weaver’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_WEAVERS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Weaver’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="weavers tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Woodcarver’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_WOODWORKERS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Woodcarver’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_WOODWORKERS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Woodcarver’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="woodcarvers tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Leatherworkers’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_LEATHERWORKERS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Leatherworkers’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_LEATHERWORKERS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Leatherworkers’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="leatherworkers tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Mason’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_MASONS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_MASONS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Mason’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_MASONS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Mason’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="masons tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Potters’s Tools)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_POTTERS_TOOLS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_POTTERS_TOOLS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Potters’s Tools check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_POTTERS_TOOLS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Potters’s Tools check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="potters tools:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Alchemist’s Supplies)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_ALCHEMISTS_SUPPLIES">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Alchemist’s Supplies check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_ALCHEMISTS_SUPPLIES" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Alchemist’s Supplies check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="alchemists supplies:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Brewer’s Supplies)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_BREWERS_SUPPLIES">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_BREWERS_SUPPLIES</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Brewer’s Supplies check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_BREWERS_SUPPLIES" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Brewer’s Supplies check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="brewers supplies:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Calligrapher’s Supplies)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_CALLIGRAPHERS_SUPPLIES">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Calligrapher’s Supplies check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_CALLIGRAPHERS_SUPPLIES" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Calligrapher’s Supplies check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="calligraphers supplies:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Painter’s Supplies)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_PAINTERS_SUPPLIES">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_PAINTERS_SUPPLIES</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Painter’s Supplies check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_PAINTERS_SUPPLIES" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Painter’s Supplies check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="painters supplies:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+        <element name="Tool Expertise (Cook’s Utensils)" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_EXPERTISE_TOOL_COOKS_UTENSILS">
+            <supports>Expertise, Tool, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+            <requirements>ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS</requirements>
+            <description>
+                <p>Your proficiency bonus is doubled for any Cook’s Utensils check you make.</p>
+                <div class="reference">
+                    <div element="ID_WOTC_PHB_ITEM_TOOL_COOKS_UTENSILS" />
+                </div>
+            </description>
+            <sheet>
+                <description>Your proficiency bonus is doubled for any Cook’s Utensils check you make.</description>
+            </sheet>
+            <rules>
+                <stat name="cooks utensils:proficiency" value="proficiency" bonus="double" />
+            </rules>
+        </element>
+
+</elements>
