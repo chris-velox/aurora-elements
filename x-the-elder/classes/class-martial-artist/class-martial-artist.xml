@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>Martial Artist Class v.17</name>
-        <update version="0.0.1">
+        <update version="0.0.2">
             <file name="class-martial-artist.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-martial-artist/class-martial-artist.xml" />
         </update>
     </info>
@@ -112,6 +112,8 @@
             <grant type="Class Feature" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_IMPROVED_KI_TECHNIQUES" level="11" />
             <grant type="Class Feature" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_DIAMOND_SOUL" level="14" />
             <grant type="Class Feature" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_FLEXIBLE_TECHNIQUE" level="20" />
+            <!-- support for monk monastic tradition features that use monk level -->
+            <stat name="level:monk" value="level:martial artist" />
         </rules>
     </element>
         <element name="Unarmored Defense" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_UNARMORED_DEFENSE">
@@ -233,7 +235,7 @@
                 <description>You have {{ki:points}} Ki Points and your Ki DC is {{ki:dc}}.</description>
             </sheet>
             <rules>
-                <stat name="ki:points" value="level:monk" />
+                <stat name="ki:points" value="level:martial artist" />
                 <stat name="ki:dc" value="8" />
                 <stat name="ki:dc" value="proficiency" />
                 <stat name="ki:dc" value="wisdom:modifier" />
