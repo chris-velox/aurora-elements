@@ -2,7 +2,7 @@
 <elements>
     <info>
         <name>Martial Artist Techniques, Simple v.17</name>
-        <update version="0.0.1">
+        <update version="0.0.2">
             <file name="techniques-simple.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-martial-artist/techniques-simple.xml" />
         </update>
     </info>
@@ -390,11 +390,13 @@
         </sheet>
         <rules>
             <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS_MARTIAL_ARCANIST" requirements="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS" />
-            <select type="Spell" name="Cantrip, Martial Arcanist" supports="Wizard,0" requirements="!ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS" />
-            <!-- need to add way of the Sun Soul and way of the Astral Self -->
+            <select type="Spell" name="Cantrip, Martial Arcanist" supports="Wizard,0" requirements="!ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS,!ID_WOTC_TCE_ARCHETYPE_MONK_WAY_OF_THE_ASTRAL_SELF,!ID_AO_MA_ARCHETYPE_WAY_OF_THE_SUN_SOUL" />
+            <!-- need to add way of the Sun Soul -->
+            <grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" requirements="ID_WOTC_TCE_ARCHETYPE_MONK_WAY_OF_THE_ASTRAL_SELF" />
+            <grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" requirements="ID_AO_MA_ARCHETYPE_WAY_OF_THE_SUN_SOUL" />
         </rules>
     </element>
-        <element name="name" type="Archetype Feature" source="The Martial Artist" id="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS_MARTIAL_ARCANIST">
+        <element name="Martial Arcanist" type="Archetype Feature" source="The Martial Artist" id="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS_MARTIAL_ARCANIST">
             <compendium display="false" />
             <description>
                 <p>You can learn 2 cantrips from the following list: conrol flame, create bonfire, fire bolt, frostbite, gust, mold earth, produce flame, ray of Frost, shape water. You forget any you learned from this technique before. From 11th level, you learn 3 cantrips in total; from 17th level, 4 in total.</p>
