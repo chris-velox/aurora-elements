@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Martial Artist XGTE Monastic Traditions</name>
+        <update version="0.0.1">
+            <file name="martial-artist-xgte-traditions.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-martial-artist/martial-artist-xgte-traditions.xml" />
+        </update>
+    </info>
+    
+    <append id="ID_WOTC_XGTE_ARCHETYPE_WAY_OF_THE_DRUNKEN_MASTER">
+        <supports>Martial Artist Monastic Tradition</supports>
+    </append>
+
+    <element name="Way of the Kensei" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_AO_MA_ARCHETYPE_WAY_OF_THE_KENSEI">
+        <supports>Martial Artist Monastic Tradition</supports>
+        <description>
+            <p>Monks of the Way of the Kensei train relentlessly with their weapons, to the point where the weapon becomes an extension of the body. Founded on a mastery of sword fighting, the tradition has expanded to include many different weapons.</p>
+            <p class="indent">A kensei sees a weapon in much the same way a calligrapher or painter regards a pen or brush. Whatever the weapon, the kensei views it as a tool used to express the beauty and precision of the martial arts. That such mastery makes a kensei a peerless warrior is but a side effect of intense devotion, practice, and study.</p>
+            <div element="ID_AO_MA_ARCHETYPE_FEATURE_KENSEI_PATH_OF_THE_KENSEI" />
+            <div element="ID_AO_MA_ARCHETYPE_FEATURE_KENSEI_ONE_WITH_THE_BLADE" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_SHARPEN_THE_BLADE" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_UNERRING_ACCURACY" />
+        </description>
+        <sheet>
+            <description>Channels ki through a set of mastered weapons</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_AO_MA_ARCHETYPE_FEATURE_KENSEI_PATH_OF_THE_KENSEI" level="3" />
+            <grant type="Archetype Feature" id="ID_AO_MA_ARCHETYPE_FEATURE_KENSEI_ONE_WITH_THE_BLADE" level="6" />
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_SHARPEN_THE_BLADE" level="11" />
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_UNERRING_ACCURACY" level="17" />
+        </rules>
+    </element>
+    <element name="Path of the Kensei" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_AO_MA_ARCHETYPE_FEATURE_KENSEI_PATH_OF_THE_KENSEI">
+        <description>
+            <p>When you choose this tradition at 3rd level, your special martial arts training leads you to master the use of certain weapons. This path also includes instruction in the deft strokes of calligraphy or painting. You gain the following benefits.</p>
+            <p class="indent"><b><i>Kensei Weapons. </i></b>Choose two types of weapons to be your kensei weapons: one melee weapon and one ranged weapon. Each of these weapons can be any simple or martial weapon that lacks the heavy and special properties. The longbow is also a valid choice. You gain proficiency with these weapons if you don’t already have it. Weapons of the chosen types are monk weapons for you. Many of this tradition’s features work only with your kensei weapons. When you reach 6th, 11th, and 17th level in this class, you can choose another type of weapon—either melee or ranged—to be a kensei weapon for you following the criteria above.</p>
+            <p class="indent"><b><i>Agile Parry. </i></b>If you make an unarmed strike as part of the Attack action on your turn and are holding a kensei weapon, you can use it to defend yourself if it is a melee weapon. You gain a +2 bonus to AC until the start of your next turn, while the weapon is in your hand and you aren't incapacitated.</p>
+            <p class="indent"><b><i>Kensei’s Shot. </i></b>You can use a bonus action on your turn to make your ranged attacks with a kensei weapon more deadly. When you do so, any target you hit with a ranged attack using a kensei weapon takes an extra 1d4 damage of the weapons type. You retain this benefit until the end of the current turn.</p>
+            <p class="indent"><b><i>Way of the Brush. </i></b>You gain proficiency with your choice of calligrapher's supplies or painter's supplies.</p>
+        </description>
+        <sheet>
+            <description>Your kensei weapons are monk weapons. You can use Strike Techniques with your kensei weapons.</description>
+        </sheet>
+        <rules>
+            <select type="Proficiency" name="Way of the Brush (Kensei)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES|ID_PROFICIENCY_TOOL_PROFICIENCY_PAINTERS_SUPPLIES"/>
+            <select type="Archetype Feature" name="Kensei Weapon, Melee" supports="Kensei Weapon,Melee" level="3" />
+            <select type="Archetype Feature" name="Kensei Weapon, Ranged" supports="Kensei Weapon,Ranged" level="3" />
+            <select type="Archetype Feature" name="Kensei Weapon, 6" supports="Kensei Weapon,(Melee||Ranged)" level="6" />
+            <select type="Archetype Feature" name="Kensei Weapon, 11" supports="Kensei Weapon,(Melee||Ranged)" level="11" />
+            <select type="Archetype Feature" name="Kensei Weapon, 17" supports="Kensei Weapon,(Melee||Ranged)" level="17" />
+			<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_PATH_OF_THE_KENSEI_AGILE_PARRY" />
+			<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_PATH_OF_THE_KENSEI_KENSEIS_SHOT" />
+        </rules>
+    </element>
+    <element name="One with the Blade" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_AO_MA_ARCHETYPE_FEATURE_KENSEI_ONE_WITH_THE_BLADE">
+        <description>
+            <p>At 6th level, you extend your ki into your kensei weapons, granting you the following benefits.</p>
+            <p class="indent"><b><i>Magic Kensei Weapons. </i></b>Your attacks with your kensei weapons count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
+            <p class="indent"><b><i>Deft Strike. </i></b>When you hit a target with a kensei weapon, you can spend 1 ki point to cause the weapon to deal extra damage to the target equal to your Martial Arts die. You can use this feature only once on each of your turns.</p>
+        </description>
+        <sheet usage="Strike Technique: 1 Ki, 1/Turn">
+            <description>Attacks with kensei weapons are considered magical. When you hit a target with a kensei weapon, spend 1 ki point to cause an extra {{martial arts:dice}} damage.</description>
+        </sheet>
+    </element>
+
+    <element name="Way of the Sun Soul" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_AO_MA_ARCHETYPE_WAY_OF_THE_SUN_SOUL">
+        <supports>Martial Artist Monastic Tradition</supports>
+        <description>
+            <p>Monks of the Way of the Sun Soul learn to channel their life energy into searing bolts of light. They teach that meditation can unlock the ability to unleash the indomitable light shed by the soul of every living creature.</p>
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_RADIANT_SUN_BOLT" />
+            <div element="ID_AO_MA_ARCHETYPE_FEATURE_SUN_SOUL_SEARING_ARC_STRIKE" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_SEARING_SUNBURST" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_SUN_SHIELD" />
+        </description>
+        <sheet>
+            <description>Transforms ki into bursts of fire and searing bolts of light</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_RADIANT_SUN_BOLT" level="3"/>
+            <grant type="Archetype Feature" id="ID_AO_MA_ARCHETYPE_FEATURE_SUN_SOUL_SEARING_ARC_STRIKE" level="6"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_SEARING_SUNBURST" level="11"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_SUN_SHIELD" level="17"/>
+        </rules>
+    </element>
+    <element name="Radiant Sun Bolt" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SUN_SOUL_RADIANT_SUN_BOLT">
+        <description>
+            <p>Starting when you Choose this tradition at 3rd level, you can hurl searing bolts of magical radiance.</p>
+            <p class="indent">You gain a new attack option that you can use with the Attack action. This special attack is a ranged spell attack with a range of 30 feet. You are proficient with it, and you add your Dexterity modifier to its attack and damage rolls. Its damage is radiant, and its damage die is a d4. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.</p>
+            <p class="indent">When you take the Attack action on your turn and use this special attack as part of it, you can spend 1 ki point to make the special attack twice as a bonus action.</p>
+            <p class="indent">When you gain the Extra Attack feature, this special attack can be used for any of the attacks you make as part of the Attack action.</p>
+        </description>
+        <sheet action="Attack">
+            <description>Make a ranged spell attack ({{radiant sun bolt:range}}ft, +{{radiant sun bolt:attack}} vs AC, {{radiant sun bolt:die:count}}d{{radiant sun bolt:die:size}}+{{radiant sun bolt:damage}} radiant damage) When you use this attack, spend 1 ki point to make it twice as a bonus action.</description>
+        </sheet>
+        <rules>
+            <stat name="radiant sun bolt:attack" value="proficiency" bonus="proficiency" />
+            <stat name="radiant sun bolt:attack" value="dexterity:modifier" bonus="ability"/>
+            <stat name="radiant sun bolt:damage" value="dexterity:modifier" bonus="ability"/>
+            <stat name="radiant sun bolt:range" value="30" />
+            <stat name="radiant sun bolt:die:count" value="1" />
+            <stat name="radiant sun bolt:die:size" value="martial arts:dice" />
+        </rules>
+    </element>
+    <element name="Searing Arc Strike" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_AO_MA_ARCHETYPE_FEATURE_SUN_SOUL_SEARING_ARC_STRIKE">
+        <description>
+            <p>At 6th level, you gain the ability to channel your ki into searing waves of energy. Immediately after you take the Attack action on your turn, you can spend 2 ki points to cast the <i>burning hands</i> spell as a bonus action.</p>
+            <p class="indent">You can spend additional ki points to cast burning hands as a higher-level spell. Each additional ki point you spend increases the spell’s level by 1. The maximum number of ki points (2 plus any additional points) that you can spend on the spell equals half your monk level.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>After an attack, spend 2 ki point to cast <i>burning hands</i>. Additional ki points to cast the spell at higher levels (1/level). You can spent maximum {{searing arc strike:ki maximum}} ki points (2 plus any additional points).</description>
+        </sheet>
+        <rules>
+            <stat name="searing arc strike:ki maximum" value="level:monk:half" />
+            <!-- setters for modification on spells not completed -->
+            <grant type="Spell" id="ID_PHB_SPELL_BURNING_HANDS" />
+        </rules>
+    </element>
+
+    
+</elements>
