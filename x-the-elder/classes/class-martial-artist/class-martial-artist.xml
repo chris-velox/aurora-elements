@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Martial Artist Class v.17</name>
-        <update version="0.0.2">
+        <name>Martial Artist Class v.18</name>
+        <update version="0.0.3">
             <file name="class-martial-artist.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-martial-artist/class-martial-artist.xml" />
         </update>
     </info>
@@ -220,11 +220,10 @@
                 <p class="indent">Some of your ki features, as well as certain martial arts techniques (below), require your target to make a saving throw to resist the feature’s effects. The DC is calculated as:</p>
                 <p style="text-align: center;"><b>Ki save DC</b> = 8 + proficiency bonus + Wisdom modifier</p>
                 <h5>BASIC (ACTIVE) KI TECHNIQUES</h5>
+                <h5 class="caption">Energy Reserves</h5>
+                <p>As a bonus action, you can spend one hit die to regain up to your wisdom modifier in ki points. Once you do this, you cannot do so again until you finish a short or long rest.</p>
                 <h5 class="caption">Flurry of Blows</h5>
                 <p>As a bonus action, you can spend 1 ki point to make two unarmed attacks.</p>
-                <h5 class="caption">Focused Breathing</h5>
-                <p>As an action, you can regain up to your wisdom modifier in ki points. Once you do this, you cannot do so again until you finish a short or long rest.</p>
-                <p class="indent">As a bonus action, you can clear your mind and focus on your breathing. Once before the start of your next turn, when you would use a technique (including basic or novice ki techniques), you reduce the ki cost of that technique by 1 (to a minimum of 0).</p>
                 <h5 class="caption">Patient Defense</h5>
                 <p>As a bonus action, you can spend 1 ki point to take the Dodge action. As noted above, the benefits lasts until the end of your next turn.</p>
                 <h5 class="caption">Step of the Wind</h5>
@@ -240,7 +239,7 @@
                 <stat name="ki:dc" value="proficiency" />
                 <stat name="ki:dc" value="wisdom:modifier" />
                 <grant type="Class Feature" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_BASIC_TECHNIQUE_FLURRY_OF_BLOWS" level="2" />
-                <grant type="Class Feature" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_BASIC_TECHNIQUE_FOCUSED_BREATHING" level="2" />
+                <grant type="Class Feature" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_BASIC_TECHNIQUE_ENERGY_RESERVES" level="2" />
                 <grant type="Class Feature" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_BASIC_TECHNIQUE_PATIENT_DEFENSE" level="2" />
                 <grant type="Class Feature" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_BASIC_TECHNIQUE_STEP_OF_THE_WIND" level="2" />
             </rules>
@@ -255,18 +254,13 @@
                     <description level="11">You make three unarmed attacks. The third attack cannot be replaced or augmented using monastic tradition features.</description>
                 </sheet>
             </element>
-            <element name="Focused Breathing" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_BASIC_TECHNIQUE_FOCUSED_BREATHING">
+            <element name="Energy Reserves" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_BASIC_TECHNIQUE_ENERGY_RESERVES">
                 <compendium display="false" />
                 <description>
-                    <p>As an action, you can regain up to your wisdom modifier in ki points. Once you do this, you cannot do so again until you finish a short or long rest.</p>
-                    <p class="indent">As a bonus action, you can clear your mind and focus on your breathing. Once before the start of your next turn, when you would use a technique (including basic or novice ki techniques), you reduce the ki cost of that technique by 1 (to a minimum of 0).</p>
+                    <p>As a bonus action, you can spend one hit die to regain up to your wisdom modifier in ki points. Once you do this, you cannot do so again until you finish a short or long rest.</p>
                 </description>
-                <sheet action="Action" usage="1/Short Rest">
-                    <description>You regain up to {{wisdom:modifier}} ki points.
-                    As a bonus action, you can clear your mind and focus on your breathing. Once before the start of your next turn, when you would use a technique, you reduce the ki cost of that technique by 1 (to a minimum of 0).</description>
-                    <description level="11">You regain up to {{wisdom:modifier}} ki points.
-                    As a bonus action, you can clear your mind and focus on your breathing. Once before the start of your next turn, when you would use a technique, you reduce the ki cost of that technique by 1 (to a minimum of 0).
-                    You can use your reaction one extra time before the start of your next turn. This costs 1 ki unless your Monastic Tradition lets you use your reaction extra times. (You can never react more than once to the same triggering event.)</description>
+                <sheet action="Bonus Action" usage="1/Short Rest">
+                    <description>You can spend one hit die to regain up to {{wisdom:modifier}}  ki points.</description>
                 </sheet>
             </element>
             <element name="Patient Defense" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_BASIC_TECHNIQUE_PATIENT_DEFENSE">

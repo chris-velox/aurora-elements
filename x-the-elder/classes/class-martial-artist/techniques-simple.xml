@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Martial Artist Techniques, Simple v.17</name>
-        <update version="0.0.2">
+        <name>Martial Artist Techniques, Simple v.18</name>
+        <update version="0.0.3">
             <file name="techniques-simple.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-martial-artist/techniques-simple.xml" />
         </update>
     </info>
@@ -253,7 +253,7 @@
         <description>
             <p class="flavor">Prerequisite: 2nd level</p>
             <p class="indent">Your superlative control over your muscles gives your movements a feline grace. After you roll a Dexterity saving throw, skill check, or ability check (including initiative), you can spend 1 ki to roll your martial arts die and add that amount to the result.</p>
-            <p class="indent">If you know the Iron Body or Pushy technique, you can also do this for Strength skill or ability checks and saving throws.</p>
+            <p class="indent">If you know the Iron Body technique, you can also do this for Strength skill or ability checks and saving throws.</p>
             <p class="indent">Starting at 11th level, when you use Patient Defense or Step of the Wind, and you are not already first in the initiative order, then you can add your proficiency bonus to your initiative count. This may change your position in the initiative order for next round. If you do this, Improved Ki Techniques does not apply.</p>
             <p class="indent">The ki cost of this technique cannot be reduced in any way.</p>
         </description>
@@ -380,22 +380,36 @@
         <prerequisite>Way of the Four Elements or 5th level</prerequisite>
         <description>
             <p class="flavor">Prerequisite: Way of the Four Elements or 5th level</p>
-            <p class="indent">You have trained to blend spellcasting with your attacks. As part of Focused Breathing, you can cast a cantrip. Or when you use Flurry of Blows, you can replace one attack with a cantrip, without needing any incidental material components. In either case, this cantrip must have a casting time of one action, and does damage as if you were first level.</p>
-            <p class="indent">If you fail a saving throw to maintain concentration, you can use your reaction and spend 2 ki to succeed instead.</p>
+            <p class="indent">You have trained to blend spellcasting with your attacks. Once on your turn, you can replace one attack with a cantrip, without using any incidental material components. This cantrip must have a casting time of one action, and does any damage as if you were only first level.</p>
+            <p class="indent">You can reduce the ki cost to cast a spell by 1. If you do, you can not cast that spell using ki again until you finish a short or long rest.</p>
+            <p class="indent">You can use Ki Shield on concentration saving throws (once per saving throw) without using your reaction.</p>
             <p class="indent">If you follow the Way of the 4 Elements, when you finish a long rest, you can learn 2 cantrips from the following list: conrol flame, create bonfire, fire bolt, frostbite, gust, mold earth, produce flame, ray of Frost, shape water. You forget any you learned from this technique before. From 11th level, you learn 3 cantrips in total; from 17th level, 4 in total.</p>
             <p class="indent">If you follow the Way of the Sun Soul, you learn the cantrip sacred flame; for Way of the Astral Self, you learn mage hand.</p>
+            <p class="indent">When you know this technique, you can consider any damaging cantrip from the druid or artificer spell lists as a Martial Artist technique with this technique as a prerequisite. Thus, when leveling up, you can learn such a cantrip as a new or replacement technique, using the technique rules.</p>
         </description>
         <sheet>
-            <description>As part of Focused Breathing, you can cast a cantrip. Or when you use Flurry of Blows, you can replace one attack with a cantrip, without needing any incidental material components. In either case, this cantrip must have a casting time of one action, and does damage as if you were first level. If you fail a saving throw to maintain concentration, you can use your reaction and spend 2 ki to succeed instead.</description>
+            <description>Once on your turn, you can replace one attack with a cantrip, without using any incidental material components. This cantrip must have a casting time of one action, and does any damage as if you were only first level. You can reduce the ki cost to cast a spell by 1. If you do, you can not cast that spell using ki again until you finish a short or long rest. You can use Ki Shield on concentration saving throws (once per saving throw) without using your reaction.</description>
         </sheet>
         <rules>
             <grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS_MARTIAL_ARCANIST" requirements="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS" />
-            <select type="Spell" name="Cantrip, Martial Arcanist" supports="Wizard,0" requirements="!ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS,!ID_WOTC_TCE_ARCHETYPE_MONK_WAY_OF_THE_ASTRAL_SELF,!ID_AO_MA_ARCHETYPE_WAY_OF_THE_SUN_SOUL" />
+            <grant type="Class Feature" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_MARTIAL_ARCANIST_DEFAULT" requirements="!ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS,!ID_WOTC_TCE_ARCHETYPE_MONK_WAY_OF_THE_ASTRAL_SELF,!ID_AO_MA_ARCHETYPE_WAY_OF_THE_SUN_SOUL" />
             <!-- need to add way of the Sun Soul -->
             <grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" requirements="ID_WOTC_TCE_ARCHETYPE_MONK_WAY_OF_THE_ASTRAL_SELF" />
             <grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" requirements="ID_AO_MA_ARCHETYPE_WAY_OF_THE_SUN_SOUL" />
         </rules>
     </element>
+        <element name="Martial Arcanist" type="Class Feature" source="source" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_TECHNIQUE_SIMPLE_MARTIAL_ARCANIST_DEFAULT">
+            <compendium display="false" />
+            <description>
+                <p>When you know this technique, you can consider any damaging cantrip from the druid or artificer spell lists as a Martial Artist technique with this technique as a prerequisite. Thus, when leveling up, you can learn such a cantrip as a new or replacement technique, using the technique rules.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+                <select type="Spell" name="Cantrip, Martial Arcanist" supports="(Druid||Artificer),0" />
+            </rules>
+        </element>
         <element name="Martial Arcanist" type="Archetype Feature" source="The Martial Artist" id="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_THE_FOUR_ELEMENTS_MARTIAL_ARCANIST">
             <compendium display="false" />
             <description>
