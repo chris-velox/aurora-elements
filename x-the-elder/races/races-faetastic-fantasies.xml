@@ -480,7 +480,7 @@
             <p class="indent"><strong><em>Flammable.</em></strong> Due to you being made of wood, you are extremely flammable, and hold a fear of fire in your wooden heart. You are vulnerable to fire damage.</p>
             <p class="indent"><strong><em>Powerful Build.</em></strong> You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
             <p class="indent"><strong><em>Speech of Beast and Leaf.</em></strong> You have the ability to communicate in a limited manner with beasts and plants. They can understand the meaning of your words, though you have no special ability to understand them in return. You have advantage on all Charisma checks you make to influence them.</p>
-            <p class="indent"><strong><em>Spriggan Magic.</em></strong> Starting at 3rd level, you learn the enlarge/reduce spell, targeting yourself. You can cast enlarge/reduce without expending a spell slot, and you must finish a long rest before you can cast it this way again. You can also cast this spell using any spell slots you have. Your spellcasting ability for these spells is your choice of Intelligence, Wisdom, or Charisma.</p>
+            <p class="indent"><strong><em>Spriggan Magic.</em></strong> Starting at 3rd level, you learn the <i>enlarge/reduce</i> spell, targeting yourself. You can cast <i>enlarge/reduce</i> without expending a spell slot, and you must finish a long rest before you can cast it this way again. You can also cast this spell using any spell slots you have. Your spellcasting ability for these spells is your choice of Intelligence, Wisdom, or Charisma.</p>
             <p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common, and your choice of either Giant or Sylvan.</p>
             <div class="sidebar">
                 <h5 class="caption">Variant Creature Type</h5>
@@ -505,6 +505,8 @@
             <grant type="Racial Trait" id="ID_author_source_RACIAL_TRAIT_SPRIGGAN_POWERFUL_BUILD" />
             <grant type="Racial Trait" id="ID_author_source_RACIAL_TRAIT_SPRIGGAN_SPEECH_OF_BEAST_AND_LEAF" />
             <grant type="Racial Trait" id="ID_author_source_RACIAL_TRAIT_SPRIGGAN_SPRIGGAN_MAGIC" level="3" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <select type="Language" name="Language, Spriggan" supports="ID_LANGUAGE_GIANT|ID_LANGUAGE_SYLVAN" />
         </rules>
     </element>
         <element name="False Appearance" type="Racial Trait" source="source" id="ID_author_source_RACIAL_TRAIT_SPRIGGAN_FALSE_APPEARANCE">
@@ -544,13 +546,14 @@
         </element>
         <element name="Spriggan Magic" type="Racial Trait" source="source" id="ID_author_source_RACIAL_TRAIT_SPRIGGAN_SPRIGGAN_MAGIC">
             <description>
-                <p>Starting at 3rd level, you learn the enlarge/ reduce spell, targeting yourself. You can cast enlarge/ reduce without expending a spell slot, and you must finish a long rest before you can cast it this way again. You can also cast this spell using any spell slots you have. Your spellcasting ability for this spell is your choice of Intelligence, Wisdom, or Charisma.</p>
+                <p>Starting at 3rd level, you learn the <i>enlarge/reduce spell</i>, targeting yourself. You can cast <i>enlarge/reduce</i> without expending a spell slot, and you must finish a long rest before you can cast it this way again. You can also cast this spell using any spell slots you have. Your spellcasting ability for this spell is your choice of Intelligence, Wisdom, or Charisma.</p>
             </description>
             <sheet usage="1/Long Rest">
                 <description>You can cast enlarge/ reduce without expending a spell slot. ({{spriggan-magic:ability}})</description>
             </sheet>
             <rules>
                 <select type="Racial Trait" name="Spriggan Magic Ability" supports="ID_author_source_RACIAL_TRAIT_SPRIGGAN_SPRIGGAN_MAGIC_INTELLIGENCE|ID_author_source_RACIAL_TRAIT_SPRIGGAN_SPRIGGAN_MAGIC_WISDOM|ID_author_source_RACIAL_TRAIT_SPRIGGAN_SPRIGGAN_MAGIC_CHARISMA" />
+                <grant type="Spell" id="ID_PHB_SPELL_ENLARGE_REDUCE" />
             </rules>
         </element>
             <element name="Intelligence" type="Racial Trait" source="source" id="ID_author_source_RACIAL_TRAIT_SPRIGGAN_SPRIGGAN_MAGIC_INTELLIGENCE">
