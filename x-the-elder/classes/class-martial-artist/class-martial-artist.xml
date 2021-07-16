@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
     <info>
-        <name>Martial Artist Class v.18</name>
-        <update version="0.0.3">
+        <name>Martial Artist Class v.18.2</name>
+        <update version="0.0.4">
             <file name="class-martial-artist.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/classes/class-martial-artist/class-martial-artist.xml" />
         </update>
     </info>
@@ -138,18 +138,21 @@
                 <p>Your practice of martial arts gives you mastery of combat styles that use unarmed attacks and martial artist weapons, which are shortswords and any simple melee weapons that don’t have the two-handed or heavy property.</p>
                 <p class="indent">You gain the following benefits while you are unarmed or wielding only martial artist weapons and you aren’t wearing armor or wielding a shield.</p>
                 <ul>
-                    <li>You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed attacks and martial artist weapons.</li>
-                    <li>You can roll a d4 in place of the normal damage of your unarmed attack or martial artist weapon. You can use a larger die as you gain martial artist levels, as shown in the Martial Arts column of the Martial Artist table.</li>
-                    <li>You can use any feature which protects you or your allies despite lacking the right weapon(s), armor, or shield to do so. Examples: Defensive Duelist; Protection fighting style.</li>
-                    <li>You can make one unarmed or one-handed martial artist weapon attack as a bonus action.</li>
-                    <li>When you take the Dodge action, you get the usual benefit, but it lasts a bit longer. Until the end of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated or if your speed drops to 0.</li>
+                    <li>You can make one unarmed or one-handed martial artist weapon attack as a bonus action. <i>(Note: unlike a Monk, you do <b>not</b> have to use the attack action first.)</i></li>
+                    <li>For your unarmed and martial artist weapon attacks:
+                        <ul>
+                            <li>You can use Dexterity instead of Strength for attack and damage rolls.</li>
+                            <li>You can roll a d4 in place of the normal damage. You can use a larger die as you gain martial artist levels, as shown in the Martial Arts column of the Martial Artist table.</li>
+                        </ul>
+                    </li>
+                    <li>You can use any feature which protects you or your allies despite lacking the right weapon(s), armor, or shield to do so. <i>(Examples: Defensive Duelist; Protection fighting style. Note that this feature is not available to Monks.)</i></li>
+                    <!--<li>When you take the Dodge action, you get the usual benefit, but it lasts a bit longer. Until the end of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated or if your speed drops to 0.</li>-->
                 </ul>
             </description>
             <sheet>
                 <description>Your unarmed strike does 1d{{martial arts:dice}}+{{martial arts:damage}} damage. You can use Strength or Dexterity for these attacks.
-                When you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action. For example, if you take the Attack action and attack with a quarterstaff, you can also make an unarmed strike as a bonus action, assuming you haven’t already taken a bonus action this turn.
-                You can use any feature which protects you or your allies despite lacking the right weapon(s), armor, or shield to do so.
-                When you take the Dodge action, until the end of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated or if your speed drops to 0.</description>
+                You can make one unarmed or one-handed martial artist weapon attack as a bonus action.
+                You can use any feature which protects you or your allies despite lacking the right weapon(s), armor, or shield to do so.</description>
             </sheet>
             <rules>
                 <stat name="martial arts:attack" value="strength:modifier" bonus="martial arts" />
@@ -227,8 +230,12 @@
                 <h5 class="caption">Patient Defense</h5>
                 <p>As a bonus action, you can spend 1 ki point to take the Dodge action. As noted above, the benefits lasts until the end of your next turn.</p>
                 <h5 class="caption">Step of the Wind</h5>
-                <p class="indent">As a bonus action, you can spend 1 ki point to take the Dash or Disengage action.</p>
-                <p class="indent">When you do, for the rest of this turn, your jump distance is doubled, and your melee attacks get +2 to attack and damage if you’ve moved since your last attack.</p>
+                <p class="indent">As a bonus action, you can spend 1 ki point to take the Dash or Disengage action. Until the end of your next turn:</p>
+                <ul>
+                    <li>You make Dexterity (Acrobatics) checks with advantage.</li>
+                    <li>You can use Dexterity (Acrobatics) instead of Dexterity (Stealth) for skill checks to move silently. This does not apply to hiding from sight.</li>
+                    <li>Calculate your jump distance using your Dexterity in place of your Strength, then double that. For example, your running long jump can be twice your Dexterity in feet.</li>
+                </ul>
             </description>
             <sheet>
                 <description>You have {{ki:points}} Ki Points and your Ki DC is {{ki:dc}}.</description>
@@ -261,6 +268,7 @@
                 </description>
                 <sheet action="Bonus Action" usage="1/Short Rest">
                     <description>You can spend one hit die to regain up to {{wisdom:modifier}}  ki points.</description>
+                    <description level="11">You can spend one hit die to regain up to {{wisdom:modifier}} ki points. You can spend 1 ki to use your reaction one extra time before the start of your next turn. (You can never react more than once to the same triggering event.)</description>
                 </sheet>
             </element>
             <element name="Patient Defense" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_BASIC_TECHNIQUE_PATIENT_DEFENSE">
@@ -271,18 +279,22 @@
                 <sheet action="Bonus Action" usage="1 Ki">
                     <description>You take the Dodge action. The benefits last until the end of your next turn.</description>
                     <description level="11">You take the Dodge action. The benefits last until the end of your next turn.
-                    You can use your reaction one extra time before the start of your next turn. This costs 1 ki unless your Monastic Tradition lets you use your reaction extra times. (You can never react more than once to the same triggering event.)</description>
+                    You can spend 1 ki to use your reaction one extra time before the start of your next turn. (You can never react more than once to the same triggering event.)</description>
                 </sheet>
             </element>
             <element name="Step of the Wind" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_BASIC_TECHNIQUE_STEP_OF_THE_WIND">
                 <compendium display="false" />
                 <description>
-                    <p>As a bonus action, you can spend 1 ki point to take the Dash or Disengage action.</p>
-                    <p class="indent">When you do, for the rest of this turn, your jump distance is doubled, and your melee attacks get +2 to attack and damage if you’ve moved since your last attack.</p>
+                    <p>As a bonus action, you can spend 1 ki point to take the Dash or Disengage action. Until the end of your next turn:</p>
+                    <ul>
+                        <li>You make Dexterity (Acrobatics) checks with advantage.</li>
+                        <li>You can use Dexterity (Acrobatics) instead of Dexterity (Stealth) for skill checks to move silently. This does not apply to hiding from sight.</li>
+                        <li>Calculate your jump distance using your Dexterity in place of your Strength, then double that. For example, your running long jump can be twice your Dexterity in feet.</li>
+                    </ul>
                 </description>
                 <sheet action="Bonus Action" usage="1 Ki">
-                    <description>You can take the Dash or Disengage action. When you do, for the rest of this turn, your jump distance is doubled, and your melee attacks get +2 to attack and damage if you’ve moved since your last attack.</description>
-                    <description level="11">You take the Dash and Disengage actions. When you do, for the rest of this turn, your jump distance is doubled, and your melee attacks get +2 to attack and damage if you’ve moved since your last attack.</description>
+                    <description>You Dash or Disengage. When you do, for the rest of this turn, you get advantage on Acrobatics, you can use Acrobatics to move silently, you use twice your Dexterity to calculate your jump distance.</description>
+                    <description level="11">You Dash and Disengage. When you do, for the rest of this turn, you get advantage on Acrobatics, you can use Acrobatics to move silently, you use twice your Dexterity to calculate your jump distance.</description>
                 </sheet>
             </element>
         <element name="Monastic Tradition" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_MONASTIC_TRADITION">
@@ -293,7 +305,7 @@
                 <ul>
                     <li>Kensei monks can use strikes when they hit with a martial artist melee weapon.</li>
                     <li>Tradition features that add effects to unarmed strikes, such as Way of the Open Hand’s Open Hand Technique or Quivering Palm, count as strike techniques and thus cannot be combined with other strike techniques.</li>
-                    <li>Any tradition feature which spends 2 or more ki to cast a spell counts as a technique for Focused Breathing. Once you have used focused breathing to cast a given spell twice, you cannot reduce that spell’s ki cost again until you finish a short or long rest.</li>
+                    <li>Any tradition feature which spends 2 or more ki to cast a spell counts as a technique for Energy Reserves. Once you have used focused breathing to cast a given spell twice, you cannot reduce that spell’s ki cost again until you finish a short or long rest.</li>
                     <li>See the end of this document for optional rules to simplify choosing techniques for each monastic tradition.</li>
                 </ul>
             </description>
@@ -323,10 +335,10 @@
                 <p class="indent">When you make a critical hit with an unarmed attack, you can spend 1 ki point to roll your martial arts die and see the amount. If you then choose to use a strike technique that requires the target to make a saving throw, subtract the amount from the saving throw result. Otherwise, add the amount as extra damage.</p>
                 <h5 class="caption">Tumbling Dodge (novice ki technique)</h5>
                 <p class="flavor">Prerequisite: 17 Dexterity or 11th level</p>
-                <p class="indent">When your speed is not 0, and a creature you can see hits you with a melee attack, you can use your reaction to try to dodge. Roll your martial arts die; if you get 4 or higher, you can use 5 feet of movement without provoking opportunity attacks. If you successfully move 5 feet, the attack misses.</p>
+                <p class="indent">When a creature you can see hits you with a melee attack, you can use your reaction to try to dodge. Roll your martial arts die; if you get 4 or higher, you can use 5 feet of movement without provoking opportunity attacks. If you successfully move 5 feet, the attack misses.</p>
                 <h5 class="caption">Ki Shield (novice ki technique)</h5>
                 <p class="flavor">Prerequisite: 17 Wisdom or 11th level</p>
-                <p class="indent">After rolling a saving throw you aren’t proficient in, you can use your reaction and spend 1 ki point to add your Wisdom modifier to the result.</p>
+                <p class="indent">After rolling a saving throw you aren't proficient in, you can use your reaction and spend 1 ki point to roll your martial arts die and add it to the result.</p>
             </description>
             <sheet display="false" />
             <rules>
@@ -344,8 +356,8 @@
                     <p class="indent">When you make a critical hit with an unarmed attack, you can spend 1 ki point to roll your martial arts die and see the amount. If you then choose to use a strike technique that requires the target to make a saving throw, subtract the amount from the saving throw result. Otherwise, add the amount as extra damage.</p>
                 </description>
                 <sheet usage="1 Ki">
-                    <description>When you make a critical hit with an unarmed attack, roll your martial arts die and see the amount. If you then choose to use a strike technique that requires the target to make a saving throw, subtract the amount from the saving throw result. Otherwise, add the amount as extra damage.</description>
-                    <description level="11">When you make a critical hit with an unarmed attack, roll your martial arts die and see the amount. If you then choose to use a strike technique that requires the target to make a saving throw, subtract the amount from the saving throw result and add the amount as extra damage.</description>
+                    <description>When you make a critical hit with an unarmed attack, roll 1d{{martial arts:dice}}, and either subtract the amount from the saving throw result, or add the amount as extra damage.</description>
+                    <description level="11">When you make a critical hit with an unarmed attack, subtract 1d{{martial arts:dice}} from the saving throw result and add the amount as extra damage.</description>
                 </sheet>
             </element>
             <element name="Tumbling Dodge" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_NOVICE_TECHNIQUE_TUMBLING_DODGE">
@@ -354,10 +366,10 @@
                 <prerequisite>17 Dexterity or 11th level</prerequisite>
                 <description>
                     <p class="flavor">Prerequisite: 17 Dexterity or 11th level</p>
-                    <p class="indent">When your speed is not 0, and a creature you can see hits you with a melee attack, you can use your reaction to try to dodge. Roll your martial arts die; if you get 4 or higher, you can use 5 feet of movement without provoking opportunity attacks. If you successfully move 5 feet, the attack misses.</p>
+                    <p class="indent">When a creature you can see hits you with a melee attack, you can use your reaction to try to dodge. Roll your martial arts die; if you get 4 or higher, you can use 5 feet of movement without provoking opportunity attacks. If you successfully move 5 feet, the attack misses.</p>
                 </description>
                 <sheet action="Reaction">
-                    <description>When your speed is not 0, and a creature you can see hits you with a melee attack, you can try to dodge. Roll your martial arts die; if you get 4 or higher, you can use {{tumbling-dodge:movement}} feet of movement without provoking opportunity attacks. If you successfully move at least 5 feet, the attack misses.</description>
+                    <description>When a creature you can see hits you with a melee attack, you can try to dodge. Roll your martial arts die; if you get 4 or higher, you can use {{tumbling-dodge:movement}} feet of movement without provoking opportunity attacks. If you successfully move at least 5 feet, the attack misses.</description>
                 </sheet>
                 <rules>
                     <stat name="tumbling-dodge:movement" value="5" level="4" />
@@ -370,11 +382,11 @@
                 <prerequisite>17 Wisdom or 11th level</prerequisite>
                 <description>
                     <p class="flavor">Prerequisite: 17 Wisdom or 11th level</p>
-                    <p class="indent">After rolling a saving throw you aren’t proficient in, you can use your reaction and spend 1 ki point to add your Wisdom modifier to the result.</p>
+                    <p class="indent">After rolling a saving throw you aren't proficient in, you can use your reaction and spend 1 ki point to roll your martial arts die and add it to the result.</p>
                 </description>
                 <sheet action="Reaction" usage="1 Ki">
-                    <description>After rolling a saving throw you aren’t proficient in, you can use your reaction and spend 1 ki point to {{wisdom:modifier}} to the result.</description>
-                    <description level="11">After rolling a saving throw, you can use your reaction and spend 1 ki point to add {{wisdom:modifier}} to the result. If you spend 2 ki total, it does not use your reaction.</description>
+                    <description>After rolling a saving throw you aren’t proficient in, you can use your reaction and spend 1 ki point to add 1d{{martial arts:dice}} to the result.</description>
+                    <description level="11">After rolling a saving throw, you can use your reaction and spend 1 ki point to add 1d{{martial arts:dice}} to the result.</description>
                 </sheet>
             </element>
         <element name="Extra Attack" type="Class Feature" source="The Martial Artist" id="ID_AO_MA_CLASS_FEATURE_MARTIAL_ARTIST_EXTRA_ATTACK">
@@ -414,9 +426,9 @@
                 <ul>
                     <li>When you use Flurry of Blows, you can make a total of three unarmed attacks. The third attack cannot be replaced or augmented using monastic tradition features.</li>
                     <li>When you use Step of the Wind, you get the benefits of both the Disengage and Dash actions. Likewise, when you use Critical Strike, you get both benefits: both subtracting from any saving throw and adding to damage.</li>
-                    <li>When you use Patient Defense or Focused Breathing, you can use your reaction one extra time before the start of your next turn. This costs 1 ki unless your Monastic Tradition lets you use your reaction extra times. (You can never react more than once to the same triggering event.)</li>
+                    <li>When you use Patient Defense or Energy Reserves, you can use your reaction one extra time before the start of your next turn. This costs 1 ki unless your Monastic Tradition lets you use your reaction extra times. (You can never react more than once to the same triggering event.)</li>
                     <li>You can use up to 10 feet of movement with Tumbling Dodge (when you roll a 4 or higher).</li>
-                    <li>Ki Shield works on saving throws you’re proficient in. If you spend 2 ki total, it does not use your reaction.</li>
+                    <li>Ki Shield works on saving throws you’re proficient in.</li>
                 </ul>
             </description>
             <sheet display="false" />
