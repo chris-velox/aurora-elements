@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Fleshsmith Additional Theses for Kibbles’ Inventor v2.2</name>
+        <update version="0.0.1">
+            <file name="inventor-fleshsmith-theses.xml" url="https://raw.githubusercontent.com/chris-velox/aurora-elements/master/x-the-elder/compendia/kibblestasty/inventor-extended-toolbox/inventor-fleshsmith-theses.xml" />
+        </update>
+    </info>
+    
+    <element name="Perfection of Technique" type="Archetype Feature" source="Kibbles’ Inventor Extended Toolbox" id="ID_KT_KIET_ARCHETYPE_FEATURE_FLESHSMITH_THESIS_OF_FLESH_PERFECTION_OF_TECHNIQUE">
+        <supports>Fleshsmith Thesis of Flesh</supports>
+        <description>
+            <p>Others may call themselves flesh smiths or flesh crafters, but you are a flesh artist. Flaying, dicing, deboning, you’ve mastered it all. When you select this thesis option, you gain proficiency with martial weapons and gain the Flaying Hook upgrade, and it does not count against your upgrade total. You can integrate your Flaying Hook into another weapon, attaching it’s heavy chain to the hilt of your weapon, allowing you to attack with either weapon, and being considered to be carrying both when carrying one. Any magical bonus to attack and damage rolls the attached weapon has are also applied to the Flaying Hook (if higher).</p>
+            <p class="indent">When you using your Flaying Hook to pull a target or pull yourself toward a target, you use your bonus action to make a single weapon attack against it. You can do this a number of times equal to your Artificer level and you regain all uses at the end of a long rest.</p>
+            <div class="sidebar">
+                <h5 class="caption">Implements of the Butcher</h5>
+                <p>A Perfect of Technique Fleshsmith’s martial weapons often particularly gory weapons - from large butchers knives to massive cleavers. The stats for these can use the those of scimitars, battle axes, and greatswords or greataxes respectively, and fall under the martial weapon proficiency granted by Perfection of Technique.</p>
+            </div>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can integrate your Flaying Hook into another weapon, attaching it’s heavy chain to the hilt of your weapon, allowing you to attack with either weapon. When you using your Flaying Hook to pull a target or pull yourself toward a target, you use your bonus action to make a single weapon attack against it. ({{inventor:level}}/Long Rest)</description>
+        </sheet>
+        <rules>
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+        </rules>
+    </element>
+
+    <!-- Perfection of Technique Upgrades -->
+        <element name="Bathed In Blood" type="Archetype Feature" source="Kibbles’ Inventor Extended Toolbox" id="ID_KT_KIET_ARCHETYPE_FEATURE_UPGRADE_FLESHSMITH_BATHED_IN_BLOOD">
+            <supports>Specialization Upgrade,Fleshsmith,Level 11 Specialization Upgrade,11</supports>
+            <requirements>[level:inventor:11],ID_KT_KIET_ARCHETYPE_FEATURE_UPGRADE_FLESHSMITH_FLAYING_HOOK</requirements>
+            <prerequisite>Flaying Hook, 11th level Artificer</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Flaying Hook, 11th level Artificer</p>
+                <p class="indent">You can determine when a creature you can see within 30 feet is bloodied just be looking at it. Once per turn, when you deal damage to a bloodied with your Flaying Hook (including any weapon it is integrated to) or Butcher’s Knack, that creature takes an additional 1d12 damage.</p>
+            </description>
+            <sheet>
+                <description>Once per turn, when you deal damage to a bloodied with your Flaying Hook (including any weapon it is integrated to) or Butcher’s Knack, that creature takes an additional 1d12 damage.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Butcher’s Knack" type="Archetype Feature" source="Kibbles’ Inventor Extended Toolbox" id="ID_KT_KIET_ARCHETYPE_FEATURE_UPGRADE_FLESHSMITH_BUTCHERS_KNACK">
+            <supports>Specialization Upgrade,Fleshsmith,Unrestricted Specialization Upgrade,3</supports>
+            <requirements>ID_KT_KIET_ARCHETYPE_FEATURE_FLESHSMITH_THESIS_OF_FLESH_PERFECTION_OF_TECHNIQUE</requirements>
+            <prerequisite>Perfection of Technique</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Perfection of Technique</p>
+                <p class="indent">Your skill with butchering allows you inflict brutal wounds. Once per turn when you deal piercing or slashing damage to a creature that is not a construct or undead, you can inflict a rending wound on it. Any movement speed the target has is reduced by 5 feet.</p>
+                <p class="indent">At the end of that creatures next turn, it makes a Constitution saving throw against your spell save DC, taking 1d8 slashing damage on failure. It has disadvantage on the saving throw if it used its movement during its turn. This damage is doubled if the it was inflicted by a critical hit.</p>
+            </description>
+            <sheet>
+                <description>Once per turn when you deal piercing or slashing damage to a creature that is not a construct or undead, you can inflict a rending wound on it. Any movement speed the target has is reduced by 5 feet. At the end of that creatures next turn, it makes a Constitution saving throw against your spell save DC, taking 1d8 slashing damage on failure. It has disadvantage on the saving throw if it used its movement during its turn. This damage is doubled if the it was inflicted by a critical hit.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Death Flail" type="Archetype Feature" source="Kibbles’ Inventor Extended Toolbox" id="ID_KT_KIET_ARCHETYPE_FEATURE_UPGRADE_FLESHSMITH_DEATH_FLAIL">
+            <supports>Specialization Upgrade,Fleshsmith,Unrestricted Specialization Upgrade,3</supports>
+            <requirements>ID_KT_KIET_ARCHETYPE_FEATURE_FLESHSMITH_THESIS_OF_FLESH_PERFECTION_OF_TECHNIQUE</requirements>
+            <prerequisite>Perfection of Technique</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Perfection of Technique</p>
+                <p class="indent">Rather than cast out the Flaying Hook, you master the art of spinning your weapon by the chain in windmill of death. Your weapon gains the Reach property when used in this way.</p>
+                <p class="indent">Additionally, instead of attacking at target with it normally, as an action, you can spin the weapon wildly in giant deadly sweeps. Creatures within 10 feet (select four if there are more than four) must make a Dexterity saving throw against a DC of 8 + your Strength modifier + your proficiency bonus. On failure they take damage equal to your weapon damage dice + your Strength modifier of your weapons damage type.</p>
+                <p class="indent">If you have the Spiked Chain upgrade and hit one or more targets, you can select one of them to be effected by the special property of Spiked Chain.</p>
+            </description>
+            <sheet>
+                <description>You spin your weapon by the chain in windmill of death. Your weapon gains the Reach property when used in this way. Four creatures within 10 feet make Dexterity saving throw (DC {{death-flail:save-dc}}) or take the weapon damage + {{strength:modifier}}.</description>
+            </sheet>
+            <rules>
+                <stat name="death-flail:save-dc" value="8" />
+                <stat name="death-flail:save-dc" value="strength:modifier" />
+                <stat name="death-flail:save-dc" value="proficiency" />
+            </rules>
+        </element>
+        <element name="Flaying Hook" type="Archetype Feature" source="Kibbles’ Inventor Extended Toolbox" id="ID_KT_KIET_ARCHETYPE_FEATURE_UPGRADE_FLESHSMITH_FLAYING_HOOK">
+            <supports>Specialization Upgrade,Fleshsmith,Unrestricted Specialization Upgrade,3</supports>
+            <requirements>ID_KT_KIET_ARCHETYPE_FEATURE_FLESHSMITH_THESIS_OF_FLESH_PERFECTION_OF_TECHNIQUE</requirements>
+            <prerequisite>Perfection of Technique</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Perfection of Technique</p>
+                <p>A metal hook attached to a chain. You a proficient with this weapon, and it has the Special property. It deals 1d6 piercing damage.</p>
+                <p class="indent"><i>Special:</i> This weapon has a range of 20 feet. When you hit at a target that is more than 5 feet away from you, if the target is medium or smaller, you can make a Strength (Athletics) check contested by its Strength (Athletics) to pull the target toward you. On a successful check, a smaller or smaller target is pulled to you, and a medium target is pulled half the distance (rounding up) toward you. The creature takes 1 additional damage for each 5 feet it is pulled.</p>
+                <p class="indent">If the creature is medium or larger, when hit a target more than 5 feet away from you you can pull yourself up to 10 feet toward the target.</p>
+            </description>
+            <sheet>
+                <description>A metal hook attached to a chain. You a proficient with this weapon, and it has the Special property. It deals 1d6 piercing damage. This weapon has a range of 20 feet. When you hit at a target that is more than 5 feet away from you, if the target is medium or smaller, you can make a Athletics check contested by its Athletics to pull the target toward you.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="Spiked Chain" type="Archetype Feature" source="Kibbles’ Inventor Extended Toolbox" id="ID_KT_KIET_ARCHETYPE_FEATURE_UPGRADE_FLESHSMITH_SPIKED_CHAIN">
+            <supports>Specialization Upgrade,Fleshsmith,Unrestricted Specialization Upgrade,3</supports>
+            <requirements>ID_KT_KIET_ARCHETYPE_FEATURE_UPGRADE_FLESHSMITH_FLAYING_HOOK</requirements>
+            <prerequisite>Flaying Hook</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: Flaying Hook</p>
+                <p class="indent">You lace the chain of your Flaying Hook with spikes. When you attack a creature within 5 with your Flaying Hook, you can opt to make a Spiked Chain attack. This attack deals 2d4 piercing damage on hit, and has the Special property.</p>
+                <p class="indent"><i>Special:</i> When you hit a creature with this weapon, that target loses 10 feet of movement (hindered by the chain) and takes 1d4 damage each time they move 5 feet, up to 2d4 damage (for 10 feet of movement). You cannot use your weapon against another creature until the start of your next turn, but have advantage on attacks of opportunity against the that target. If it does not move before the start of your next turn, you reel your chain back in, dealing 1d4 slashing damage to that target.</p>
+            </description>
+            <sheet>
+                <description>When you attack a creature within 5 with your Flaying Hook, you can opt to make a Spiked Chain attack. This attack deals 2d4 piercing damage on hit, and has the Special property.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+
+    <element name="Perfection of Creation" type="Archetype Feature" source="Kibbles’ Inventor Extended Toolbox" id="ID_KT_KIET_ARCHETYPE_FEATURE_FLESHSMITH_THESIS_OF_FLESH_PERFECTION_OF_CREATION">
+        <supports>Fleshsmith Thesis of Flesh</supports>
+        <description>
+            <p>Why let the gods have all the fun? You’ve created life. When you take this path, you gain the Adorable Critter upgrade, and it does not count against your upgrade total. Your Adorable Critter gains temporary hit points equal to your Artificer level + Intelligence modifier each time you complete a short or long rest.</p>
+            <p class="indent">Your Adorable Critter gains a natural weapon dealing 1d6 + your Intelligence modifier piercing damage, though as normal it cannot take the attack action. As a bonus action, you can cause your Familiar to move up to 10 feet and take an attack action (requiring no action from the familiar).</p>
+            <div class="sidebar">
+                <h5 class="caption">Why No Reaction?</h5>
+                <p>If this took the familiars reaction, it would interfere with the familiar being able to channel spells for you, and remove a lot of the potential utility of a familiar.</p>
+            </div>
+        </description>
+        <sheet>
+            <description>Your Adorable Critter gains {{adorable-critter:temp-hp}} temporary hit points each time you complete a short or long rest. Your Adorable Critter gains a natural weapon dealing 1d6 + {{intelligence:modifier}} piercing damage, though as normal it cannot take the attack action. As a bonus action, you can cause your Familiar to move up to 10 feet and take an attack action.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_KT_KI_ARCHETYPE_FEATURE_INVENTOR_UPGRADE_FLESHSMITH_ADORABLE_CRITTER" />
+            <stat name="adorable-critter:temp-hp" value="level:inventor" />
+            <stat name="adorable-critter:temp-hp" value="intelligence:modifier" />
+        </rules>
+    </element>
+    
+    <!-- Perfection of Creation Upgrades -->
+        <element name="Corrosive Critter?!" type="Archetype Feature" source="Kibbles’ Inventor Extended Toolbox" id="ID_KT_KIET_ARCHETYPE_FEATURE_UPGRADE_FLESHSMITH_CORROSIVE_CRITTER">
+            <supports>Specialization Upgrade,Fleshsmith,Level 5 Specialization Upgrade,5</supports>
+            <requirements>[level:inventor:5],ID_KT_KIET_ARCHETYPE_FEATURE_FLESHSMITH_THESIS_OF_FLESH_PERFECTION_OF_CREATION</requirements>
+            <prerequisite>5th level, Perfection of Creation</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 5th level, Perfection of Creation</p>
+                <p class="indent">Your adorable critters natural weapon deals an additional 1d6 acid damage on hit.</p>
+            </description>
+            <sheet>
+                <description>Your adorable critters natural weapon deals an additional 1d6 acid damage on hit.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+        <element name="...Adorable Critter?" type="Archetype Feature" source="Kibbles’ Inventor Extended Toolbox" id="ID_KT_KIET_ARCHETYPE_FEATURE_UPGRADE_FLESHSMITH_ADORABLE_CRITTER_11">
+            <supports>Specialization Upgrade,Fleshsmith,Level 11 Specialization Upgrade,11</supports>
+            <requirements>[level:inventor:11],ID_KT_KIET_ARCHETYPE_FEATURE_FLESHSMITH_THESIS_OF_FLESH_PERFECTION_OF_CREATION</requirements>
+            <prerequisite>11th level, Perfection of Creation</prerequisite>
+            <description>
+                <p class="flavor">Prerequisite: 11th level, Perfection of Creation</p>
+                <p class="indent">As an action, your familiar can become small, medium, or large. It can revert to its normal size as a bonus action. While Medium or larger, it’s natural weapon deals 1d12 + your Intelligence modifier piercing damage. Its strength ability score increases by 4 for each size category larger it becomes, to a maximum of 18.</p>
+            </description>
+            <sheet action="Action">
+                <description>Your familiar can become small, medium, or large. It can revert to its normal size as a bonus action. While Medium or larger, it’s natural weapon deals 1d12 + your Intelligence modifier piercing damage. Its strength ability score increases by 4 for each size category larger it becomes, to a maximum of 18.</description>
+            </sheet>
+            <rules>
+            </rules>
+        </element>
+
+</elements>
