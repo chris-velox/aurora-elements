@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Animist</name>
+		<description>Animist Background</description>
+		  <author url="www.studio-agate.com">Studio Agate</author>
+        <update version="0.0.5">
+         <file name="background-animist.xml" url="https://raw.githubusercontent.com/th3R3df0xx/Dnd/master/Fate-Forge/Backgrounds/background-animist.xml" />
+		</update>
+	</info>
+
+	<element name="Animist" type="Background" source="Fate Forge" id="ID_BACKGROUND_ANIMIST">
+		<description>
+			<p>Not everyone may believe you, but for you there is no doubt about it: you are able to communicate with
+                spirits. The spirits of animals, the spirit of every object, the spirits of storms and rivers… maybe even the
+                spirits of the dead. You may not have complete mastery over your talent, but you feel the auras, hear the voices,
+                and receive the visions. Were you born with this gift, or did it strike you at a momentous time?
+                If your culture of origin traditionally accepts gifted people such as you, your condition probably did not bring
+                you any trouble, but if you were part of a more skeptical or superstitious society, you most likely had to deal
+                with bullying, slander, and perhaps even the threat of being burned at the stake. Fortunately, whatever your
+                community was like, you received help from people who see in you an intermediary with the afterlife.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Choose two from Insight, Perception, Persuasion, and Religion</li>
+                <li><strong>Tool Proficiencies:</strong> Herbalism kit or alchemist’s supplies</li>
+                <li><strong>Language:</strong> One language of your choice</li>
+				<li><strong>Equipment:</strong> A set of traveler’s clothes, various knick-knacks (of an essentially ornamental nature), and a belt pouch containing 15 gp</li>
+			</ul>
+			<div element="ID_BACKGROUND_FEATURE_ESOTERIC_APPEAL" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>All animists are aware of their uniqueness. Some take advantage of the influence it grants them while others
+                genuinely seek to help other people. However, all are aware that their talent is not universally recognized and
+                that they are often taken for madmen or charlatans. Among groups of adventurers, it is rare for every party
+                member to be amenable to what might pass for hocus-pocus, but as long as the animist does not overstep any
+                boundaries, they should, at worst, only suffer bemused smiles from the more incredulous of their companions.
+                Communion with souls is not always the main subject of preoccupation for a hero with this background, but it
+                is generally a recurring theme.</p>
+		</description>
+		<setters>
+			<set name="short">One language of your choice. Choose two from Insight, Perception, Persuasion, and Religion and ether proficiency with the Herbalism kit or alchemist’s supplies. </set>
+		</setters>
+		<rules>
+            <select type="Proficiency" name="Skill (Animists)" Number="2" supports="ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_RELIGION" />
+            <select type="Proficiency" name="Tool (Animists)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT|ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+            <select type="Language" name="Language (Animists)" supports="Standard||Exotic" />
+            <grant type="Background Feature" id="ID_BACKGROUND_FEATURE_ESOTERIC_APPEAL" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Personality Trait" type="List">
+				<item id="1">I often open my eyes wide, the better to see the spirits that wander about.</item>
+				<item id="2">My resounding peals of laughter sometimes startle people, even those who are familiar with me.</item>
+				<item id="3">Sometimes, I get carried away and go into speeches about entities or concepts, then remember that I am the only one able to wholly understand these truths.</item>
+				<item id="4">A metaphor is better than a long speech, and not all sentences deserve to be finished.</item>
+				<item id="5">People think I am full of quirks and odd habits, when I am actually communicating with the afterlife and exorcising demons.</item>
+				<item id="6">When others give in to panic and adversity is overwhelming, I feel great serenity.</item>
+				<item id="7">Most people are surprised, or even repulsed by my dietary or hygienic habits.</item>
+				<item id="8">This being refers to himself in the third person, just like he does with other people.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Sway. The spirits allow me to influence other people and dominate the weak. (Evil)</item>
+				<item id="2">Protection. Every thing has a spirit, but some of them are ill-intentioned, and I must protect the innocent against them. (Good)</item>
+				<item id="3">Harmony. The balance and hierarchy of souls and spirits must be reestablished for the universe to thrive. (Lawful)</item>
+				<item id="4">Flame. Certain entities seek to silence the more creative souls, which must be freed at any cost. (Chaotic)</item>
+				<item id="5">Compromise. I must take care that no form of conscience becomes ascendant to the detriment of others. The future of the world depends on it. (Neutral)</item>
+				<item id="6">Enlightenment. The gift of communing with spirits is sometimes a burden, but one I bear in the pursuit of revelation. (Any)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">An entity regularly comes to haunt me. As long as it is more powerful than me, I cannot defy it.</item>
+				<item id="2">I must restore the honor of my ancestors through an exemplary existence.</item>
+				<item id="3">The spirit of my tribe has been unresponsive, and I must understand why.</item>
+				<item id="4">When I was younger, I made a secret promise that I know I will regret one day.</item>
+				<item id="5">One person at least is convinced that I am the cause of her troubles and intends to make me pay.</item>
+				<item id="6">I must find a relic related to a spirit, for I am certain that the future of the world depends on it.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I have become addicted to a substance supposed to facilitate my communion with souls.</item>
+				<item id="2">Sometimes, I feel tempted to destroy the bodies of those who doubt the existence of spiritual energy, if only to prove to them that the soul is immortal.</item>
+				<item id="3">The spirits appear more real to me than the “living,” with whom I grow increasingly disinterested.</item>
+				<item id="4">I frequently overplay my bond with the spiritual to impress other people and am starting to doubt my own talent: am I just a fraud?</item>
+				<item id="5">It is said that a dark fate awaits those with my gift. Indeed, I have seen some get lost on this winding path, and I sometimes feel I am not myself any longer. The worst thing is, it does not even frighten me.</item>
+				<item id="6">I have performed unspeakable acts in the service of things no one can understand, and I am willing to do more.</item>
+			</select>
+		</rules>
+	</element>
+	
+	<element name="Feature: Esoteric Appeal" type="Background Feature" source="Fate Forge" id="ID_BACKGROUND_FEATURE_ESOTERIC_APPEAL">
+		<supports>Background Feature</supports>
+		<description>
+			<p>Within any community, you can find people interested in your spiritual experiments, willing to listen to you and
+                aid you. Some of them even get teary-eyed when you mention the possibility of speaking with the invisible and
+                the heavens. In time, you have learned to recognize these more receptive individuals who will be glad to lend you
+                a hand if you are in trouble. You can always rely on being welcomed and supported (possibly in financial ways)
+                by a generally small part of the population, provided you bring them what they expect from you.</p>
+		</description>
+		<sheet alt="Esoteric Appeal" />
+	</element>
+</elements>

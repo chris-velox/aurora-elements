@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+			<name>Savant</name>
+		<description>Savant Background</description>
+	  <author url="www.studio-agate.com">Studio Agate</author>
+       
+		<update version="0.0.5">
+			<file name="background-savant.xml" url="https://raw.githubusercontent.com/th3R3df0xx/Dnd/master/Fate-Forge/Backgrounds/background-savant.xml" />  </update>
+	</info>
+	<element name="Savant" type="Background" source="Fate Forge" id="ID_BACKGROUND_SAVANT">
+		<description>
+			<p>To many, you are a font of knowledge. You know, however, that said font does not fill itself. You have spent so many hours poring over manuscripts and scrolls, attentively listening to your teachers’ lectures, and reflecting upon the mysteries of the mind and the most complex theories that one might think you unfit for more pragmatic activities. You, however, beg to differ: the more you know, the better you can handle yourself.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong>History and choose one from Arcana, Nature, or Religion</li>
+                <!--<li><strong>Tool Proficiencies:</strong> One musical instrument or type of gaming set</li>-->
+                <li><strong>Language:</strong> two languages of your choice</li>
+				<li><strong>Equipment:</strong>A set of common clothes, a quill, an ink bottle, two bedside books, and a belt pouch containing 15 gp </li>
+			</ul>
+			<div element="ID_BACKGROUND_FEATURE_BOOKWORM" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Some savants are full of themselves, while others are humble, indulgent, and amicable toward those who are less learned, sometimes waxing downright loquacious.
+                Savants do not always have their feet on the ground, and their traveling companions know it. However, they are aware of the wealth of knowledge these scholars possess and of the gaps they can fill.</p>
+		</description>
+		<setters>
+			<set name="short">Two languages of your choice. Proficiency in History and choose one from Arcana, Nature, or Religion</set>
+		</setters>
+		<rules>
+            <select type="Proficiency" name="Skill (Savant)" Number="1" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_RELIGION|ID_PROFICIENCY_SKILL_NATURE" />
+            <grant type="Proficiency" name="Tools (Savant)" supports="ID_PROFICIENCY_SKILL_HISTORY" />
+            <select type="Language" name="Language (Savant)" Number="2" supports="Standard||Exotic" />
+            <grant type="Background Feature" id="ID_BACKGROUND_FEATURE_BOOKWORM" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Personality Trait" type="List">
+       
+                <item id="1"> I see analogies in everything and have a metaphor for every circumstance.</item>
+                <item id="2"> I cannot help correcting the linguistic and semantic mistakes of other people.</item>
+                <item id="3"> I like to share my knowledge, but oddly, it sometimes seems to get on other people’s nerves.</item>
+                <item id="4"> My curiosity is insatiable: I must learn everything, particularly about subjects I have just become acquainted with.</item>
+                <item id="5"> I frown upon those who rely on their “intuition.” Only reason can prevail.</item>
+                <item id="6"> I get easily distracted when practical matters are discussed.</item>
+                <item id="7"> I am extremely patient with the unlearned, and yet, they get cross.</item>
+                <item id="8">I am always surprised when people are not familiar with the most elementary notions, and I make it a point to let them know.</item>
+              </select>
+            
+			<select name="Ideal" type="List">
+               
+                <item id="1"> Now that I have started defending the weak and the oppressed, I would look like the scum of the earth if I betrayed my reputation.</item>
+                <item id="2"> Reason. Do not give in to anger or pity, always rely on logic. (Lawful)</item>
+                <item id="3"> Influence. Knowledge is only a gateway to power. (Evil)</item>
+                <item id="4"> Infinity. I lose myself in the inexhaustible bubbling of the flow of knowledge. (Chaotic)</item>
+                <item id="5"> Sharing. When other people know as much as I do, the world will be a better place. (Good)</item>
+                <item id="6"> Enlightenment. One day, the knowledge we will have gathered will allow us to transcend our condition. (Any)</item>   </select>
+                   
+			<select name="Bond" type="List">
+                <item id="1"> belong to a secret faction that makes use of my knowledge to provide its members throughout the world with information.</item>
+                <item id="2"> I was able to learn all I know thanks to the support of an individual or group I admire or despise.</item>
+                <item id="3"> My field of expertise is still considered a minor one. It must not remain so.</item>
+                <item id="4"> A question obsesses me and I put myself in the most inconvenient situations in my attempts to answer it.</item>
+                <item id="5"> My master expects a lot from me; I could not bear to disappoint them.</item>
+                <item id="6"> Some truths are dangerous and I must make sure that they are not spread.</item>
+     </select>
+                     
+                <select name="Flaw" type="List">
+                    <item id="1"> I cannot bear to hear fallacies about a subject I am proficient in.</item>
+                    <item id="2"> They tell me that I can never accept being wrong, but they forget that I am always right.</item>
+                    <item id="3"> I am too forgiving toward anyone who can teach me.</item>
+                    <item id="4"> Sometimes, very rarely, I do not know so I fib.</item>
+                    <item id="5"> When a consensus is reached too quickly, I cannot help but play the devil’s advocate.</item>
+                    <item id="6"> I am horribly afraid of death and I intend to delay it for as long as possible perhaps even indefinitely.</item>
+                     </select>
+		</rules>]
+	</element>
+	
+	<element name="Feature: Bookworm" type="Background Feature" source="Fate Forge" id="ID_BACKGROUND_FEATURE_BOOKWORM">
+		<supports>Background Feature</supports>
+		<description>
+			<p>Your knowledge is vast, but not absolute, this goes without saying. However, you have spent so much time in places of learning that they hold no secrets for you. When you are looking for written information, and provided you are in a town or community with at least one library, bookshop, or teaching establishment, you can find what you are after in record time. Of course, it must make sense for the information you require to be available in such a place. If access to the location is restricted, your familiarity with such institutions might open you a few doors.</p>
+		</description>
+		<sheet alt="Bookworm" />
+	</element>
+</elements>
+

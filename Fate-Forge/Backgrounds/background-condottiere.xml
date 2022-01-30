@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+			<name>Condottiere</name>
+		<description>Condottiere Background</description>
+	  <author url="www.studio-agate.com">Studio Agate</author>
+       
+		<update version="0.0.5">
+			<file name="background-condottiere.xml" url="https://raw.githubusercontent.com/th3R3df0xx/Dnd/master/Fate-Forge/Backgrounds/background-condottiere.xml" />  </update>
+	</info>
+	<element name="Condottiere" type="Background" source="Fate Forge" id="ID_BACKGROUND_CONDOTTIERE">
+		<description>
+			<p>You are not the kind who goes unnoticed. The gleam in your eye and the smirk at the corner of your mouth show everyone that you are not to be messed with. After all, you have already proven yourself, and people love to spread word of these kinds of exploits. You know how to fight, that is certain, but you have always done so with manners, and your feats of arms are the talk of the local inns.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong>Choose two from Acrobatics, Athletics, and Intimidation</li>
+                <li><strong>Tool Proficiencies:</strong> One musical instrument or type of gaming set</li>
+                <li><strong>Language:</strong> One language of your choice</li>
+				<li><strong>Equipment:</strong>A set of traveler’s clothes, a flashy or unique accessory or article of clothing (hat, scarf, scabbard, boots, insignia, etc.), the gaming set you are proficient in, and a belt pouch containing 15 gp</li>
+			</ul>
+			<div element="ID_BACKGROUND_FEATURE_NATURALAUTHORITY" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>A condottiere wins most of their fights without having to deal a single strike: it only takes their opponents a good, long glance to think better of it. Their companions are glad to have such a seasoned combatant by their side. And when push comes to shove, a condottiere is not afraid to uphold and even reinforce their reputation. They are probably not indifferent to the glory they reap, but it does not make their intentions any less noble. Deep down, they know their limits better than anyone else.</p>
+		</description>
+		<setters>
+			<set name="short">One language of your choice. Choose two from Acrobatics, Athletics, and Intimidation and One type of gaming set, and vehicles (land) </set>
+		</setters>
+		<rules>
+            <select type="Proficiency" name="Skill (Condottiere)" Number="2" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_RELIGION|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <select type="Proficiency" name="Tools (Condottiere)" supports="Gaming Set|ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+            <select type="Language" name="Language (Condottiere)" supports="Standard||Exotic" />
+            <grant type="Background Feature" id="ID_BACKGROUND_FEATURE_NATURALAUTHORITY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Personality Trait" type="List">
+                <item id="1"> My humor is often cringeworthy.</item>
+                <item id="2"> Nothing upsets me more than those who abuse a position of strength.</item>
+                <item id="3"> A good brawl is generally a nice way to resolve tension.</item>
+                <item id="4"> I systematically assess the people I get acquainted with. Should I have to fight or even kill them one day, I would prefer to know why.</item>
+                <item id="5"> I cannot hold my tongue, which has landed me in trouble more than once.</item>
+                <item id="6"> Those who think me a savage understand nothing of the artfulness of my feats of strength.</item>
+                <item id="7"> My relaxed mien is only a facade, I am ever-vigilant.</item>
+                <item id="8"> There is no way I would let anyone order me around, particularly someone who does not know how to fight.</item>
+              </select>
+            
+			<select name="Ideal" type="List">
+                <item id="1"> Protection. Strength is a virtue, but only when put to the service of the weak. (Good)</item>
+                <item id="2"> Order. Without discipline, violence is nothing but savagery. (Lawful)</item>
+                <item id="3"> Terror. Cow the weak, dominate them. (Evil)</item>
+                <item id="4"> Liberation. Show people that the mighty and their tyrannical traditions are not invincible. (Chaotic)</item>
+                <item id="5"> Panache. There is nothing sadder than mediocrity. Everything is a matter of style. (Any)</item>
+                <item id="6"> Honor. Those with nothing to defend and no convictions have lost the fight before it has even begun.(Any)</item>
+                  </select>
+                   
+			<select name="Bond" type="List">
+                <item id="1"> Now that I have started defending the weak and the oppressed, I would look like the scum of the earth if I betrayed my reputation.</item>
+                <item id="2"> I would rather suffer a thousand deaths than dishonor my ancestors.</item>
+                <item id="3"> Now, I fight for a cause or, at least, for something. Before that, I was simply violent.</item>
+                <item id="4"> I am not yet ready to take on the villain who destroyed what I held dear, but every day, I hone my skills.</item>
+                <item id="5"> I fight tirelessly to forget, but some memories never go away.</item>
+                <item id="6"> One day, the gold I am gathering through campaigns and adventures will allow me to fulfill my dream.</item>
+     </select>
+                     
+                <select name="Flaw" type="List">
+                    <item id="1"> Better not look at me the wrong way when I have had a drink.</item>
+                    <item id="2"> I have a soft heart, and some people take advantage of it.</item>
+                    <item id="3"> People think me fearless, but no one saw me fight and flee from that one opponent I hope never to meet again.</item>
+                    <item id="4"> So long as I am healthy, everything is fine, but when my stamina falters, I fall apart.</item>
+                    <item id="5"> The memory of a past battle haunts me every night.</item>
+                    <item id="6"> I know that my daredevil instincts can put innocents in danger, but I cannot always keep myself inb check.</item>
+                     </select>
+		</rules>]
+	</element>
+	
+	<element name="Feature: Natural Authority" type="Background Feature" source="Fate Forge" id="ID_BACKGROUND_FEATURE_NATURALAUTHORITY">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You behave with such confidence that you can easily get people to fear or respect you, particularly in places where swagger of this kind goes a long way (barracks, taverns, slums, etc.) So long as you do not take things too far and do not go looking for trouble with the wrong people, you are generally left alone. And provided you have not managed to get on their bad side, people are well-disposed toward you, preferring to count you an ally rather than an enemy.</p>
+		</description>
+		<sheet alt="Natural Authority" />
+	</element>
+</elements>
+

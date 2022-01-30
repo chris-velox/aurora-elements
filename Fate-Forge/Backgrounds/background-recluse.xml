@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+			<name>Recluse</name>
+		<description>Recluse Background</description>
+	  <author url="www.studio-agate.com">Studio Agate</author>
+       
+		<update version="0.0.5">
+			<file name="background-recluse.xml" url="https://raw.githubusercontent.com/th3R3df0xx/Dnd/master/Fate-Forge/Backgrounds/background-recluse.xml" />  </update>
+	</info>
+	<element name="Recluse" type="Background" source="Fate Forge" id="ID_BACKGROUND_RECLUSE">
+		<description>
+			<p>You spent a good part of your life in the middle of nature or in a remote place of contemplation, either alone or with little company. Whether such isolation was imposed or voluntary, whether it was motivated by faith or by a need to go back to your roots, it had a profound influence on your outlook on life. People respect your abnegation, but rarely understand it. You have been through trials that many would have balked at. These inner tribulations have made you stronger and more self-assured, but you are not necessarily prideful about it.Since then, you have given up on this way of life. Whether it was willingly or not, you must now adapt to life in society and face the outside world.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Choose two from Religion, Athletics, Insight, Medicine, and Survival</li>
+                <li><strong>Tool Proficiencies:</strong> Herbalism kit or alchemist’s supplies</li>
+                <li><strong>Language:</strong> One language of your choice</li>
+				<li><strong>Equipment:</strong>A quarterstaff, a blanket, a set of common clothes, a sheaf of notes and writing utensils, the tools you are proficient in, and a belt pouch containing 5 gp</li>
+			</ul>
+			<div element="ID_BACKGROUND_FEATURE_SIXTH_SENSE" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Most recluses remain so. Leaving on an adventure is a huge change for such an individual. Parties who include a recluse usually respect their privacy and value the necessary sense of perspective they bring. The reserve shown  by such characters makes the times they slip out of it all the more noteworthy</p>
+		</description>
+		<setters>
+			<set name="short">One language of your choice. Choose two from Athletics, Insight, Medicine, Religion, and Survival and ether herbalism kit, alchemist’s supplies, or a type of artisan’s tools </set>
+		</setters>
+		<rules>
+            <select type="Proficiency" name="Skill (Recluse)" Number="2" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_RELIGION|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <select type="Proficiency" name="Tools (Recluse)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT |ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES|| Artisan tools" />
+            <select type="Language" name="Language (Recluse)" supports="Standard||Exotic" />
+            <grant type="Background Feature" id="ID_BACKGROUND_FEATURE_SIXTH_SENSE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Personality Trait" type="List">
+                <item id="1"> I am infinitely patient, so long as I am left to my reflections.</item>
+                <item id="2"> I keep my body fully shaved.</item>
+                <item id="3"> Life in society and its constraints seem absurd to me, and I have a hard time conforming to them.</item>
+                <item id="4"> When talked to, I only react after a few seconds.</item>
+                <item id="5"> I always keep my voice level and my movements composed.</item>
+                <item id="6"> I let nature run its course on my body without seeking to alter it: I have been keeping my hair uncut and my nails untrimmed for years.</item>
+                <item id="7"> I am often early or late, as I have obviously little notion of time.</item>
+                <item id="8"> My days are punctuated with various rituals.</item>
+				</select>
+            
+			<select name="Ideal" type="List">
+                <item id="1"> Salvation. Wisdom and compassion will save the world. (Good)</item>
+                <item id="2"> Enlightenment. I have set myself on the right path and will soon be ready for the ultimate step. (Any)</item>
+                <item id="3"> Reason. Contemplation is the only way to stave off feelings, lies, and outside influences that sow confusion in the mind. (Lawful)</item>
+                <item id="4"> Refuge. The preoccupations of the world are but a source of suffering. Deliverance will come from seclusion. (Neutral)</item>
+                <item id="5"> Cynicism. Moral and social conventions are but tools to enslave the weak. Whoever understands this is that much closer to the truth. (Evil)</item>
+                <item id="6"> Maturity. Amidst the depths of solitude, I have learned that company is necessary. (Any)</item>
+               </select>
+                   
+			<select name="Bond" type="List">
+                    <item id="1"> My mentor, to whom I owe everything, expects great things from me.</item>
+                    <item id="2"> My seclusion was ordered against my will, and I never accepted it.</item>
+                    <item id="3"> I went into isolation after a love story that went wrong.</item>
+                    <item id="4"> My long retirement has brought me closer to values that were originally not mine or my people’s.</item>
+                    <item id="5"> I must at all costs preserve the secret of the order who has housed me.</item>
+                    <item id="6"> My isolation has allowed me to lie low long enough to be forgotten. At least, I hope so.</item>
+            </select>
+                     
+                <select name="Flaw" type="List">
+                    <item id="1"> I usually appear to listen to people, but their opinion is of little importance to me.</item>
+                    <item id="2"> Every day, I find it increasingly difficult to convince myself not to leave my companions and go back to my secluded life.</item>
+                    <item id="3"> Through years of meditation, I have been able to repress a terrible vice of mine, but not overcome it.</item>
+                    <item id="4"> I still do not understand why people are so attached to their paltry existences.</item>
+                    <item id="5"> In consumption as in privation, I know only excess.</item>
+                    <item id="6"> People think I meditate when I stare into space, but they have no idea of the sinister ideas that sometimes flow through my mind.</item>
+                    </select>
+		</rules>
+	</element>
+	
+	<element name="Feature: Sixth Sense" type="Background Feature" source="Fate Forge" id="ID_BACKGROUND_FEATURE_SIXTH_SENSE">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You do not always know why, but solitude and silence sometimes gift you with epiphanies, premonitions that you can often only understand after the fact. However, sometimes, you manage to follow your instincts, and thereafter realize that you were correct. The reason for such intuitions is probably fated to remain a mystery, but you have learned to trust them. It is up to your leader to decide when you receive such inklings. However, do not count on them to solve the campaign’s plot more easily, as you will probably only be able to make full sense of them at the conclusion of the story.</p>
+		</description>
+		<sheet alt="Sixth Sense" />
+	</element>
+</elements>
+

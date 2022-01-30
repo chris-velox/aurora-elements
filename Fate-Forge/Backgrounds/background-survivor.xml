@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+			<name>Survivor</name>
+		<description>Survivor Background</description>
+	  <author url="www.studio-agate.com">Studio Agate</author>
+       
+		<update version="0.0.5">
+			<file name="background-survivor.xml" url="https://raw.githubusercontent.com/th3R3df0xx/Dnd/master/Fate-Forge/Backgrounds/background-survivor.xml" />  </update>
+	</info>
+	<element name="Survivor" type="Background" source="Fate Forge" id="ID_BACKGROUND_SURVIVOR">
+		<description>
+			<p>For as long as you can remember, you have always been surrounded by blood and death. War took many of your loved ones, mercilessly drove you from one country to another, stripped you bare more than once, but finally spat you out. Now, you see war as something of a dreadful parent. Alternatively, your community may have been the victim of natural disasters, epidemics, or any other series of calamities through which you made it out alive.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Choose two from Athletics, Investigation, Perception, and Survival</li>
+                <li><strong>Tool Proficiencies:</strong> Herbalism kit or alchemist’s supplies</li>
+                <li><strong>Language:</strong> One language of your choice</li>
+				<li><strong>Equipment:</strong>A set of common clothes, a memento of your community of origin (a worthless but
+                    cherished item), a herbalism kit (if you are proficient in it), and a belt pouch containing 5 gp</li>
+			</ul>
+			<div element="ID_BACKGROUND_FEATURE_BETWEEN_THE_RAINDROPS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>By definition, survivors are hurt people, usually psychologically more than physically. They are more hardened than most fledgling adventurers and can pass as more experienced. They are often protective toward their companions, which makes them an appreciated presence. The biggest problems surface when badly healed scars reopen under the pressure of stress or a trying event.</p>
+		</description>
+		<setters>
+			<set name="short">One language of your choice. Choose two from Animal Handling, Investigation, Perception, and Survival and ether One type of artisan’s tools, musical instrument, or gaming set </set>
+		</setters>
+		<rules>
+            <select type="Proficiency" name="Skill (Survivor)" Number="2" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <select type="Proficiency" name="Tools (Survivor)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT |ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER|ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_AIR|ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND|| Artisan tools" />
+            <select type="Language" name="Language (Survivor)" supports="Standard||Exotic" />
+            <grant type="Background Feature" id="ID_BACKGROUND_FEATURE_BETWEEN_THE_RAINDROPS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Personality Trait" type="List">
+                <item id="1"> I never show optimism. Actually, I am rather more inclined to pessimism.</item>
+                <item id="2"> My best weapon against horror? Derision.</item>
+                <item id="3"> I endeavor to disarm any fruitless conflict, being all too aware that most are.</item>
+                <item id="4"> I am very touchy-feely: I hug others, slap them on the back, pat their heads, etc. to bring them comfort or to reassure myself.</item>
+                <item id="5"> I am very hygienic. Excessively so, some might say.</item>
+                <item id="6"> I am pretty shy, but when people start spouting nonsense about something I know all too well, I often lose it.</item>
+                <item id="7"> I am ever alert and only relax on exceptional occasions.</item>
+                <item id="8"> I frequently isolate myself, because I feel even more alone among others.</item>
+				</select>
+            
+			<select name="Ideal" type="List">
+                <item id="1"> Fate. I made it more or less unscathed through everything I suffered. It is a miracle, but there is surely a meaning to all of this. (Any)</item>
+                <item id="2"> Sharing. Life has taught me many things, particularly that you cannot survive without the help of others. (Good)</item>
+                <item id="3"> Culling. Life has taught me many things, particularly that only the strongest deserve to survive. (Evil)</item>
+                <item id="4"> Disillusionment. One fights in the name of one’s lord, country, faith, or ideals, but mostly, one dies at the whims of a few selfish monsters. (Chaotic)</item>
+                <item id="5"> Anticipation. War is inevitable. Sooner or later, it strikes. Only those who prepare for it can hope to be spared. (Lawful)</item>
+                <item id="6"> Indifference. The one thing I have understood is that the more people a cause involves, the more it is beyond them. Maybe, in the end, they are all equally worthwhile… or worthless. (Neutral)</item>
+                   </select>
+                   
+			<select name="Bond" type="List">
+                <item id="1"> Faith has allowed me to overcome my ordeals. I am now its servant.</item>
+                 <item id="2"> I ran away from my disaster-ridden country, but I will go back one day.</item>
+                  <item id="3"> I know the identity of those who persecuted my loved ones, and I intend to pay them a visit.</item>
+                  <item id="4"> I have lost track of the person who saved my life, but I am certain they are still alive.</item>
+                  <item id="5"> A monstrous creature saved me in the past, which made me understand that all that is gold does not glitter. Ever since that day, I have made sure not to judge anything or anyone based on appearances.</item>
+                  <item id="6"> Without an impetus, things will never change. I will not be a pawn all my life.</item>
+				</select>
+                     
+                <select name="Flaw" type="List">
+                    <item id="1"> I often feel like I am a ghost among the living.</item>
+                    <item id="2"> I have not become attached to anyone for a long time, since all those I love die horribly.</item>
+                    <item id="3"> In some circumstances, I sink to what I abhor the most: blind violence.</item>
+                    <item id="4"> I hate the gods for taking away all those I held dear. It would not have been as bad had they not decided to spare me.</item>
+                    <item id="5"> I often feel pity toward my opponents, and I have had cause to regret it.</item>
+                    <item id="6"> I have survived so many things that I sometimes feel immortal.</item>
+                   </select>
+		</rules>
+	</element>
+	
+	<element name="Feature: Between the Raindrops" type="Background Feature" source="Fate Forge" id="ID_BACKGROUND_FEATURE_BETWEEN_THE_RAINDROPS">
+		<supports>Background Feature</supports>
+		<description>
+			<p>Your experience with war and assorted calamities has made you sensitive to portents of mortal danger, allowing you to steer clear of it. When you are traveling through a region where large-scale fighting is taking place (at least several dozen combatants) or where disaster is brewing, you can spontaneously find the least exposed paths and locate the safest resting spots.</p>
+		</description>
+		<sheet alt="Between the Raindrops" />
+	</element>
+</elements>

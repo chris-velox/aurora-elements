@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Bohemian</name>
+		<description>Bohemian Background</description>
+	  <author url="www.studio-agate.com">Studio Agate</author>
+        <update version="0.0.5">
+           <file name="background-bohemian.xml" url="https://raw.githubusercontent.com/th3R3df0xx/Dnd/master/Fate-Forge/Backgrounds/background-bohemian.xml" />  </update>
+	</info>
+
+	<element name="Bohemian" type="Background" source="Fate Forge" id="ID_BACKGROUND_BOHEMIAN">
+		<description>
+			<p>Always on the road, from one town to another, from festival to gathering, you have journeyed thousands of
+                miles. You are from an itinerant, nomadic community organized around colorful wagons and dazzling shows.
+                You grew up in this seemingly frivolous environment, steeped in a disregard for the conventions of civilization
+                that others find both fascinating and disturbing. But let them slander and sneer; the caravan proudly travels the
+                roads to the sound of music and to the perfume of exoticism… but also sometimes to the smell of scandal.
+                You cannot imagine life without art, without distraction, without embellishment. Soothsayers, fire breathers,
+                jugglers, storytellers, dancers, and musicians have always been part of your days and nights. And now, they
+                captivate their audiences with tales of your deeds.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Choose two from Animal Handling, Performance, Sleight of Hand, and Survival</li>
+                <li><strong>Tool Proficiencies:</strong> Herbalism kit or alchemist’s supplies</li>
+                <li><strong>Language:</strong> One language of your choice</li>
+				<li><strong>Equipment:</strong>A costume, a set of traveler’s clothes, a safe-conduct to perform before a lord, the tool, instrument, or gaming set you are proficient in, and a belt pouch containing 5 gp</li>
+			</ul>
+			<div element="ID_BACKGROUND_FEATURE_A_FAMILY_IN_EVERY_TOWN" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>In the best of cases, you only get passing tolerance from society, but you know that your culture is far-reaching,
+                not limited to a single region. Whatever the community you are currently in, you can count on the local presence
+                of your own, though as a fringe or grudgingly accepted group. You can always find support from these resourceful
+                and generous people and rely on them to get you out of a pinch.</p>
+		</description>
+		<setters>
+			<set name="short">One language of your choice. Choose two from Animal Handling, Performance, Sleight of Hand, and Survival and ether One type of artisan’s tools, musical instrument, or gaming set </set>
+		</setters>
+		<rules>
+            <select type="Proficiency" name="Skill (Bohemian)" Number="2" supports="ID_PROFICIENCY_SKILL_ANIMAL_HANDLING|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND|ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <select type="Proficiency" name="Tools of the Road (Bohemian)" supports="Musical Instrument || Gaming Set || Artisan tools" />
+            <select type="Language" name="Language (Bohemian)" supports="Standard||Exotic" />
+            <grant type="Background Feature" id="ID_BACKGROUND_FEATURE_A_FAMILY_IN_EVERY_TOWN" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Personality Trait" type="List">
+
+				<item id="1"> I do my best to make a good impression wherever I go.</item>
+				<item id="2"> My days are split between intense periods of activity and relaxation.</item>
+				<item id="3">I rarely spend more than a few minutes without singing, telling tales, dancing, or playing.</item>
+				<item id="4">I always dedicate some of my time to helping other people—or at least, my companions.</item>
+				<item id="5">I easily get along with other people, without necessarily developing attachments.</item>
+				<item id="6">Any public space is an opportunity for me to perform and show off my talents.</item>
+				<item id="7"> Whatever must be done, I am game, no matter the danger.</item>
+				<item id="8">It is not a disservice to truth to embellish and enliven it.</item>
+            </select>
+            
+			<select name="Ideal" type="List">
+                <item id="1"> Party. The purpose of life is to enjoy all the pleasures it can offer. (Chaotic)</item>
+                <item id="2"> Laxity. Negotiating, avoiding commitments, bending the rules are all fair play. (Chaotic)</item>
+                <item id="3"> Curiosity. My wanderlust is fed by a thirst for knowledge. (Any)</item>
+                <item id="4"> Benevolence. Life is harsh for everyone and I devote mine to making those of others easier. (Good)</item>
+                <item id="5"> Immorality. The masses bend to conventions, leaving sharper minds like mine free to exploit them. The weak have it coming. (Evil)</item>
+                <item id="6"> Detachment. I keep walking because I do not want to suffer after getting attached to places, rules, people, or the past. (Neutral)</item>
+			</select>
+			<select name="Bond" type="List">
+                <item id="1"> My people are spread far and wide, but our mutual loyalty is stronger than anything.</item>
+                <item id="2"> I am the pride of my clan, who trust me to bring them fame and to get rid of the prejudices they are the victims of.</item>
+                <item id="3"> My beloved made me promise something that goes against my convictions.</item>
+                <item id="4"> More and more want to catch me. One day, they may well succeed.</item>
+                <item id="5"> The reason I am still free is because I do small favors for powerful people.</item>
+                <item id="6"> A member of my family betrayed the clan. I have been tasked with finding them and enacting justice.</item>
+				</select>
+                     
+                <select name="Flaw" type="List">
+                    <item id="1"> I may not look like it, but I find it difficult to respect the opinions of those who share neither my roots nor my path.</item>
+                    <item id="2"> I like to take risks, but more than that, I like to make others take risks.</item>
+                    <item id="3"> I keep making commitments when I should know that I never hold to them.</item>
+                    <item id="4"> Better anything than to lose face.</item>
+                    <item id="5"> I am often told I am thin-skinned and irritable, which infuriates me.</item>
+                    <item id="6"> I always have a hard time believing anyone might want to help me without an ulterior motive.</item>
+			</select>
+		</rules>
+	</element>
+	
+	<element name="Feature: A Family in Every Town" type="Background Feature" source="Fate Forge" id="ID_BACKGROUND_FEATURE_A_FAMILY_IN_EVERY_TOWN">
+		<supports>Background Feature</supports>
+		<description>
+			<p>Within any community, you can find people interested in your spiritual experiments, willing to listen to you and
+                aid you. Some of them even get teary-eyed when you mention the possibility of speaking with the invisible and
+                the heavens. In time, you have learned to recognize these more receptive individuals who will be glad to lend you
+                a hand if you are in trouble. You can always rely on being welcomed and supported (possibly in financial ways)
+                by a generally small part of the population, provided you bring them what they expect from you.</p>
+		</description>
+		<sheet alt="A Family in Every Town" />
+	</element>
+</elements>

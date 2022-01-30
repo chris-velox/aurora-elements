@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+			<name>Scoundrel</name>
+		<description>Scoundrel Background</description>
+	  <author url="www.studio-agate.com">Studio Agate</author>
+       
+		<update version="0.0.5">
+			<file name="background-scoundrel.xml" url="https://raw.githubusercontent.com/th3R3df0xx/Dnd/master/Fate-Forge/Backgrounds/background-scoundrel.xml" />  </update>
+	</info>
+	<element name="Scoundrel" type="Background" source="Fate Forge" id="ID_BACKGROUND_SCOUNDREL">
+		<description>
+			<p>You have taken part in less-than-legal businesses for quite some time. You are a person of the world, oh yes.
+                The underworld offers many career opportunities, and you may have tried your hand at several of them. In
+                the eyes of many, it is a perverse, rotten universe, but to you, it is a complicated, turbulent family among which
+                both camaraderie and treachery can be found at every turn.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Choose two from Deception, Investigation, Stealth, and Sleight of Hand</li>
+                <li><strong>Tool Proficiencies:</strong> thieves’ tools, disguise kit, or forgery kit</li>
+                <li><strong>Language:</strong> One language of your choice</li>
+				<li><strong>Equipment:</strong>A set of common clothes, various forged documents, the tools you are proficient in, and a belt pouch containing 15 gp</li>
+			</ul>
+			<div element="ID_BACKGROUND_FEATURE_KNOWLEDGE_OF_THE_UNDERWORLD" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Adventurers with a criminal background are plentiful. Most, but not all, take this path out of greed. Some see in it a way to make a name for themselves, to perform beyond the uneasy tedium of their questionable activities. When their traveling companions are aware of their origins, they tend to be wary of such a disreputable individual, but such suspicion rapidly fades if there is nothing on which to ground it. Characters with this background tend to have particularly troublesome bonds.</p>
+		</description>
+		<setters>
+			<set name="short">One language of your choice. Choose two from Deception, Investigation, Stealth, and Sleight of Hand and ether thieves’ tools, disguise kit, or forgery kit </set>
+		</setters>
+		<rules>
+            <select type="Proficiency" name="Skill (Scoundrel)" Number="2" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_STEALTH|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+            <select type="Proficiency" name="Tools (Scoundrel)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT|ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT|ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+            <select type="Language" name="Language (Scoundrel)" supports="Standard||Exotic" />
+            <grant type="Background Feature" id="ID_BACKGROUND_FEATURE_KNOWLEDGE_OF_THE_UNDERWORLD" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Personality Trait" type="List">
+             <item id="1"> When I meet someone, I like to make them squirm, to make them feel I am a threat to them, particularly if they think themselves better than me.</item>
+             <item id="2"> I need to probe people, to get a good idea of their intentions through a few well-chosen remarks and questions.</item>
+             <item id="3"> I am very ill-tempered. And I hold a mean grudge.</item>
+             <item id="4"> Nice people bore me, I enjoy the company of rascals.</item>
+             <item id="5"> Baubles, gaudy clothes, swaggering stride; I make a display of my wealth, whether my pockets are full or empty.</item>
+             <item id="6"> Few know who I truly am. I am always playing a role.</item>
+             <item id="7"> I like looking for trouble, and trouble seems to like me.</item>
+             <item id="8"> Scornful tone, cocked eyebrow; I always look like I am making fun of other people, even when I have no ill intent</item>
+	</select>
+            
+			<select name="Ideal" type="List">
+                <item id="1"> Freedom. Rules are made to be broken. (Chaotic)</item>
+                <item id="2"> Charity. One way or another, wealth must be redistributed. (Good)</item>
+                    <item id="3"> Power. Accumulate wealth and influence by any means possible. (Evil)</item>
+                        <item id="4"> Structure. Hierarchy and honor ensure the prosperity of the underworld. (Lawful)</item>
+                            <item id="5"> Hellraising. Too many castes, too many prejudices; only a good kick to the anthill can bring some vigor back into this moribund world. (Chaos)</item>
+                                <item id="6"> Pragmatism. Expect nothing from doctrines, people, organizations, and other such facades. Only rely on yourself and, at most, a few trustworthy comrades. (Neutral)</item>
+                 </select>
+                   
+			<select name="Bond" type="List">
+                <item id="1"> A criminal organization blackmails me by threatening a loved one I cannot protect.</item>
+                    <item id="2"> I am on the run and must rely on the assistance of local contacts to ensure my freedom.</item>
+                        <item id="3"> I have ended up on the bad side of a crime lord and they intend to make me pay.</item>
+                            <item id="4"> I gave up on my real identity long ago, but I know I will have to assume it again one day.</item>
+                                <item id="5"> Some criminal big shot double-crossed me in the past. They do not know that I am plotting their downfall.</item>
+                                    <item id="6"> My family would be ashamed if they knew better about my past.</item>
+                                </select>
+                     
+                <select name="Flaw" type="List">
+                    <item id="1"> When I get bored, I try to inject a little chaos into the situation.</item>
+                    <item id="2"> I cannot rest easy if I have not lied through my teeth at least once during the day.</item>
+                    <item id="3"> I do not always think about the safety of others.</item>
+                    <item id="4"> I have a troublesome tendency to fall in love with agents of the official authority.</item>
+                    <item id="5">I find it hard to resist the call of a good drink when I am at a tavern or party. </item>                                                                                                    
+                    <item id="6">A soothsayer told me that all my wishes would come true once I had killed a certain number of innocents. Sometimes, I believe it.</item>
+                  
+                   </select>
+		</rules>
+	</element>
+	
+	<element name="Feature: Knowledge of the Underworld" type="Background Feature" source="Fate Forge" id="ID_BACKGROUND_FEATURE_KNOWLEDGE_OF_THE_UNDERWORLD">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You can smell out corruption. Most communities have their share of criminals and crooked officials. Obviously, you cannot spot whether someone is involved in such dealings at a glance, but you can readily find unlawful people whom you can negotiate with or ask for information. From this point onward, what happens is up to you, but you know what you are getting into.</p>
+		</description>
+		<sheet alt="Knowledge of the Underworld" />
+	</element>
+</elements>

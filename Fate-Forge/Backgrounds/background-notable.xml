@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+			<name>Notable</name>
+		<description>Notable Background</description>
+	  <author url="www.studio-agate.com">Studio Agate</author>
+       
+		<update version="0.0.5">
+			<file name="background-notable.xml" url="https://raw.githubusercontent.com/th3R3df0xx/Dnd/master/Fate-Forge/Backgrounds/background-notable.xml" />  </update>
+	</info>
+	<element name="Notable" type="Background" source="Fate Forge" id="ID_BACKGROUND_NOTABLE">
+		<description>
+			<p>Many people would have liked to grow up in such a comfortable environment as yours. Whether you are from the nobility, from the upper middle class, or from an influential family of notables of the Free City, you have never wanted for anything. You have been spared most of the turmoil and trouble that plague the common man but does that make you a happier person? What you cannot ignore, however, is that you are widely respected at least, seemingly—sometimes feared, often envied, and occasionally hated. But whatever the opinion others have of you, your words are almost always heeded. Whether it seems natural to you or keeps puzzling you, the fact is that your voice carries more weight than most.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Choose two from History, Insight, and Persuasion</li>
+                <li><strong>Tool Proficiencies:</strong> One musical instrument or type of gaming set</li>
+                <li><strong>Language:</strong> One language of your choice</li>
+				<li><strong>Equipment:</strong>A set of fine clothes, various safe-conducts and recommendation letters, the tools you are proficient in, and a belt pouch containing 25 gp</li>
+			</ul>
+			<div element="ID_BACKGROUND_FEATURE_CLOUT" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Nobles, burghers, and other members of the privileged castes of Eana who take up the mantle of an adventurer must usually learn to live in less comfortable conditions that those they have been used to. Such a transition is a lesson of humility for the haughtiest of them. This can result in tensions, but notables are usually able to get along with their less fortunate companions in time.</p>
+		</description>
+		<setters>
+			<set name="short">One language of your choice. Choose two from  History, Insight, and Persuasion and ether a musical instrument or a type of gaming set </set>
+		</setters>
+		<rules>
+            <select type="Proficiency" name="Skill (Notable)" Number="2" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_RELIGION|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <select type="Proficiency" name="Tools (Notable)" supports="Gaming Set|| Musical Instruments" />
+            <select type="Language" name="Language (Notable)" supports="Standard||Exotic" />
+            <grant type="Background Feature" id="ID_BACKGROUND_FEATURE_CLOUT" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Personality Trait" type="List">
+                <item id="1"> As high-society as I may be, I endeavor to be courteous toward commoners.</item>
+                <item id="2"> I only let out my breath once success has been secured. I have seen too many people fail due to celebrating too early.</item>
+                <item id="3"> I like to share my wisdom with others, so that they may profit from the experience of the mighty.</item>
+                <item id="4"> I drive a hard bargain. Otherwise, I would not enjoy a position like mine.</item>
+                <item id="5"> I remain cheerful in every circumstance. It is the best cure against hardships.</item>
+                <item id="6"> Paupers and boors make me uneasy. I would rather not mingle with them lest I prove myself unpleasant.</item>
+                <item id="7"> I tend to be very controlling, if only to avoid the incompetence of others compromising our goals.</item>
+                <item id="8"> No, I do not think I know better. But I would be remiss not to remind others of proper behavior.</item>
+             	</select>
+            
+			<select name="Ideal" type="List">
+                <item id="1"> Civilization. Our traditions and culture must be preserved from the ravages of barbarism. (Lawful)</item>
+                <item id="2"> Charity. If I have more than I need, it is to share it with the underprivileged. (Good)</item>
+                <item id="3"> Troublemaking. Secular authority has no reason to be anymore. Letting me prosper was its mistake, as I will now work to overthrow it. (Chaotic)</item>
+                <item id="4"> Power. To contribute to the stability of the social structure, I must first rise in its hierarchy. (Lawful)</item>
+                <item id="5"> Greed. There are no haves without have-nots, and I have chosen my side. (Evil)</item>
+                <item id="6"> Notoriety. The respect shown to me by the community is proof of my worth and a bulwark for those I hold dear. (Any)</item>
+                </select>
+                   
+			<select name="Bond" type="List">
+                <item id="1"> I had to make a deal with an individual or group, and this alliance would spell infamy for my familyould it become public knowledge. should it become public knowledge.</item>
+                <item id="2"> I have lost sight of the love of my younger years, but my flame still burns hot.</item>
+                <item id="3"> I will relentlessly hunt down those who have ruined my family.</item>
+                <item id="4"> When someone recognizes my origins, which happens more often than I would like, I must honor them.</item>
+                <item id="5"> I owe everything or almost everything to a notable not from my family.</item>
+                <item id="6"> My people have sacrificed much to support me in the path I have chosen, and I intend to repay them.</item>
+                      </select>
+                     
+                <select name="Flaw" type="List">
+                    <item id="1"> I am an unrepentant seducer.</item>
+                    <item id="2"> I irresistibly spend whatever money I have.</item>
+                    <item id="3"> I easily tend to treat others like my lackeys.</item>
+                    <item id="4"> When I speak about someone else, I cannot help badmouthing them, especially if they are not there.</item>
+                    <item id="5"> I get tetchy when things drag on.</item>
+                    <item id="6"> I am growing increasingly frustrated with rich people, and I feel it is starting to show.</item>
+                       </select>
+		</rules>
+	</element>
+	
+	<element name="Feature: Clout" type="Background Feature" source="Fate Forge" id="ID_BACKGROUND_FEATURE_CLOUT">
+		<supports>Background Feature</supports>
+		<description>
+			<p>In most civilized environments, you have no trouble making your opinion respected, or at least voicing it. Even if your parentage is not known locally, people can easily see that you have the bearing of a well-to-do. Provided a community is not overtly hostile to you, you can get an audience with the local authorities within a shorter time than normal. However, be careful not to boast too loudly about your prerogatives, lest you start attracting other people’s contempt or jealousy.</p>
+		</description>
+		<sheet alt="Clout" />
+	</element>
+</elements>
+

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Explorer of Wild Lands</name>
+		<description>Explorer of Wild Lands</description>
+	  <author url="https://www.studio-agate.com">Studio Agate</author>
+        <update version="0.0.6">
+           <file name="background-explorer.xml" url="https://raw.githubusercontent.com/th3R3df0xx/Dnd/master/Fate-Forge/Backgrounds/background-explorer.xml" />  </update>
+	</info>
+
+	<element name="Explorer" type="Background" source="Fate Forge" id="ID_BACKGROUND_EXPLORER">
+		<description>
+			<p>Some spend their lives sheltered from the perils of the untamed world, but without these dangers, your existence would be absolutely devoid of interest. This merciless nature that so many fear, you love it for its serenity, its majesty, and its impartiality—qualities that towns and their denizens too often lack. You have lost count of the miles you have walked, the forests you have crossed, and the mountains you have scaled, but you keep a vivid memory of each land you have traveled. Sometimes, you feel tired and weary, but at every dawn, the horizon shows you a new face, more resplendent than that of the previous day. Before you became an adventurer for good, you may have worked as a guide, poacher, lumberjack, or huntsman, but your hunger for gold or for faraway lands took your wanderlust to another level.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Choose two from Animal Handling, Athletics, Nature, and Survival</li>
+                <li><strong>Tool Proficiencies:</strong> Vehicles (land)</li>
+                <li><strong>Language:</strong> One language of your choice</li>
+				<li><strong>Equipment:</strong>A quarterstaff, a set of traveler’s clothes, a hunting trap, a worthless but cherished item (lucky charm, memento of a hunt, etc.), and a belt pouch containing 5 gp</li>
+			</ul>
+			<div element="ID_BACKGROUND_FEATURE_UNDER_THE_STARS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Most explorers have always had a taste for adventure. Never able to stay put, they spontaneously found an outlet for their restlessness in exploration. Casting their lot with people from other walks of life, however, is a novelty for a good part of them. They have to adapt to people who are not necessarily used to hoofing ten miles a day or to venturing into unexplored regions. They also must accept their companions and, eventually, recognize that they are not just burdens and have worthwhile skills that the explorer could learn from.</p>
+		</description>
+		<setters>
+			<set name="short">One language of your choice. Choose two from Animal Handling, Athletics, Nature, and Survival. you are proficient in land Vehicles.  </set>
+		</setters>
+		<rules>
+            <select type="Proficiency" name="Skill (Explorer)" Number="2" supports="ID_PROFICIENCY_SKILL_ANIMAL_HANDLING|ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+            <select type="Language" name="Language (Explorer)" supports="Standard||Exotic" />
+            <grant type="Background Feature" id="ID_BACKGROUND_FEATURE_UNDER_THE_STARS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Personality Trait" type="List">
+<item id="1"> I spontaneously take the lead whenever we go from one place to another.</item>
+<item id="2"> It goes against my nature to take a path I have already walked.</item>
+<item id="3"> Prissy people make me laugh. To their faces.</item>
+<item id="4"> I love a physical challenge, no matter how daunting.</item>
+<item id="5"> I always feel like my traveling companions would be lost without me babysitting them.</item>
+<item id="6"> I speak with gestures and sounds more often than with words.</item>
+<item id="7"> I hate warm water, beds, chairs, benches, and what city dwellers call perfume.</item>
+<item id="8"> I am an unrepentant trickster.</item>
+				</select>
+            
+			<select name="Ideal" type="List"> 
+<item id="1"> Balance. Prevent those ambitious and uncaring people from ravaging the land that bears and feeds them. (Neutral)</item>
+<item id="2"> Back to the roots. The more I think about it, the more the gifts of civilization seem paltry to me, and its evils considerable. (Neutral)</item>
+<item id="3"> Bellicosity. Being able to give in to one’s most brutal instincts without fear of authorities. (Evil)</item>
+<item id="4"> Solidarity. Discover new places to house those who need it and make them understand that their condition is not irremediable. (Good)</item>
+<item id="5"> Renewal. Every now and then, things must be shaken up to bring some life back into them. (Chaotic)</item>
+<item id="6"> Self-sufficiency. Never depend on other people’s help, whether it comes with strings attached or not. (Any)</item>
+                	</select>
+			<select name="Bond" type="List">
+<item id="1"> My village is counting on me to save it from the misfortune that struck it.</item>
+<item id="2"> Generous souls have helped me out of a bind more than once, and I intend to do the same for others.</item>
+<item id="3"> I get bored whenever I remain in the same place for more than a few days.</item>
+<item id="4"> I am spurred by the hope of one day finding the land of my dreams.</item>
+<item id="5"> I am from a well-respected family and I take care not to bring them shame through my actions.</item>
+<item id="6"> Faith guides my steps.</item>
+             	</select>
+                     
+                <select name="Flaw" type="List">
+ <item id="1"> I readily believe in the silliest superstitions.</item>
+ <item id="2"> I hide a phobia that conflicts with my character.</item>
+ <item id="3"> When things do not go my way, I can easily get violent, particularly if I am out of my element.</item>
+ <item id="4"> I like to talk big about my outdoorsman abilities, sometimes even faking ones I do not have.</item>
+ <item id="5"> I cannot bear people who talk loudly even outside of cities.</item>
+ <item id="6"> I absolutely cannot stay awake beyond a certain hour.</item>
+                 	</select>
+		</rules>
+	</element>
+	
+	<element name="Feature: Under the Stars" type="Background Feature" source="Fate Forge" id="ID_BACKGROUND_FEATURE_UNDER_THE_STARS">
+		<supports>Background Feature</supports>
+		<description>
+			<p>Necessity and experience have taught you to live without a roof above your head. You can find shelter from the foulest weather, identify the best natural places to rest your aching legs, and forage enough food for you and up to four companions, provided you are in a plentiful enough natural environment.</p>
+		</description>
+		<sheet alt="Under the Stars" />
+	</element>
+</elements>
